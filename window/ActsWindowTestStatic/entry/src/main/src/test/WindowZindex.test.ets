@@ -860,6 +860,34 @@ export default function WindowZindexTest() {
             }
         });
 
+/**
+         * @tc.number     SUB_BASIC_WMS_SetWindowDelayRaiseOnDrag_0200
+         * @tc.name       test_SetWindowDelayRaiseOnDrag_1300002
+         * @tc.desc       test_SetWindowDelayRaiseOnDrag_1300002
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+        it('test_SetWindowDelayRaiseOnDrag_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'jsunittest test_SetWindowDelayRaiseOnDrag_1300002';
+            console.log(caseName + 'begin');
+            let windowClass = await windowStage.createSubWindow('test_SetWindowDelayRaiseOnDrag_1300002');
+            try{
+                await windowClass.destroyWindow();
+                windowClass.setWindowDelayRaiseOnDrag(true);
+                console.log(`${caseName} :setWindowDelayRaiseOnDrag success`);
+                expect().assertFail();
+                done();
+            }catch(err: BusinessError){
+                console.log(`${caseName} :setWindowDelayRaiseOnDrag fail:`+err.code);
+                if(err.code == 801){
+                    done();
+                }else{
+                    expect(err.code).assertEqual(1300002);
+                    done();
+                }
+            }
+        });
 
 
 

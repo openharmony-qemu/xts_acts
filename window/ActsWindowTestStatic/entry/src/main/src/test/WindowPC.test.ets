@@ -447,6 +447,127 @@ export default function WindowPCTest() {
                 done()
             }
         })
+/**
+         * @tc.number      testSetWindowRectAutoSavePromiseErrCode1300002_static_0100
+         * @tc.name        testSetWindowRectAutoSavePromiseErrCode1300002_static_0100
+         * @tc.desc        testSetWindowRectAutoSavePromiseErrCode1300002_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testSetWindowRectAutoSavePromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName :string = "testSetWindowRectAutoSavePromiseErrCode1300002_static_0100";
+            let msgStr :string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
+            await terminateAbility(caseName);
+            try {
+                 windowStageStart.setWindowRectAutoSave(true).then(() => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in calling setWindowRectAutoSave.');
+                    expect(false).assertTrue();
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,msgStr + 'Failed to call setWindowRectAutoSave. Cause: ' + JSON.stringify(err));
+                    expect(err.code).assertEqual(1300002);
+                    expect(err.message!=null).assertTrue();
+                });
+                done()
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+                expect(exception.code).assertEqual(1300002);
+                expect(exception.message!=null).assertTrue();
+                done()
+            }
+        })
+        /**
+         * @tc.number     SUB_BASIC_WMS_SetWindowRectAutoSave_ErrorCode_static_0300
+         * @tc.name       test_setWindowRectAutoSave_1300002_static
+         * @tc.desc       test_setWindowRectAutoSave_1300002_static
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 2
+         */
+        it('test_setWindowRectAutoSave_1300002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_setWindowRectAutoSave_1300002_static';
+            hilog.info(domain, tag,caseName + 'begin');
+            let msgStr :string = 'jsunittest ' + caseName + ' ';
+            let windowStageStart :window.WindowStage = await startAbility(caseName, context);
+            await terminateAbility(caseName);
+            try {
+                windowStageStart.setWindowRectAutoSave(true,true).then(() => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in calling setWindowRectAutoSave.');
+                    expect(false).assertTrue();
+                }).catch((err: BusinessError) :PromiseLike<void>|undefined=> {
+                    hilog.error(domain, tag,msgStr + 'Failed to call setWindowRectAutoSave. Cause: ' + JSON.stringify(err));
+                    if (err.code == 801) {
+                        hilog.info(domain, tag,caseName + 'this deviceType does not support the Capability.');
+                        done()
+                    } else {
+                        expect(err.code).assertEqual(1300002);
+                        done();
+                    }
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'Failed to set the call setWindowRectAutoSave. Cause:' + JSON.stringify(exception));
+                expect(exception.code).assertEqual(1300002);
+                done()
+            }
+        });
+        /**
+         * @tc.number      testOn_windowStageCloseErrCode1300002_0100
+         * @tc.name        testOn_windowStageCloseErrCode1300002_0100
+         * @tc.desc        testOn_windowStageCloseErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testOnWindowStageCloseErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testOnWindowStageCloseErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let windowStageStart = await startAbility(caseName, context);
+            await terminateAbility(caseName);
+            try {
+                const callback = () => {
+                };
+                windowStageStart.onWindowStageClose(callback);
+                console.error(msgStr + 'Succeeded in calling on windowStageClose.');
+                expect().assertFail();
+                done()
+            } catch (e: BusinessError) {
+                console.log(msgStr + 'Failed to call on windowStageClose. Cause:' + JSON.stringify(e));
+                expect(e.code).assertEqual(1300002);
+                done()
+            }
+        })
+
+
+        /**
+         * @tc.number      testOffWindowStageCloseErrCode1300002_0100
+         * @tc.name        testOffWindowStageCloseErrCode1300002_0100
+         * @tc.desc        testOffWindowStageCloseErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testOffWindowStageCloseErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testOffWindowStageCloseErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let windowStageStart = await startAbility(caseName, context);
+            await terminateAbility(caseName);
+            try {
+                const callback = () => {
+                };
+                windowStageStart.offWindowStageClose(callback);
+                console.error(msgStr + 'Succeeded in calling on windowStageClose.');
+                expect().assertFail();
+                done()
+            } catch (e: BusinessError) {
+                console.log(msgStr + 'Failed to call on windowStageClose. Cause:' + JSON.stringify(e));
+                expect(e.code).assertEqual(1300002);
+                done()
+            }
+        })
 
 
 
