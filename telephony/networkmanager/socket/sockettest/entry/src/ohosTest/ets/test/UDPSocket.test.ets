@@ -79,6 +79,12 @@ export default function UDPSocketTest() {
       console.info(`${caseName} test start`);
       try {
         let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+        udp.on('error',(err:BusinessError) => {
+          console.error("on error,err:" + JSON.stringify(err));
+        });
+        udp.on('listening',() => {
+          console.info("on listening success");
+        });
         udp.bind(UDPAddr1, (err: BusinessError) => {
           if (err) {
             console.info(`${caseName} err: ${JSON.stringify(err)}`);
@@ -86,6 +92,10 @@ export default function UDPSocketTest() {
           }
           expectTrue(true);
           console.info(`${caseName} test end`);
+          udp.off('error',(err:BusinessError) => {
+            console.error("off error,err:" + JSON.stringify(err));
+          });
+          udp.off('listening');
           udp.close();
           done();
         });
