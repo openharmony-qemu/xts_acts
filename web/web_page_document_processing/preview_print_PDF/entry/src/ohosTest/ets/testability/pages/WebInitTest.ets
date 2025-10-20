@@ -114,6 +114,31 @@ struct WebInitTest {
                 }
                 break;
               }
+
+              case "emitSetPrintBackgroundTwo": {
+                this.isEnd = -1;
+                this.controller.runJavaScript("tryPrint()", (error, result) => {
+                  if (error) {
+                    console.info(`emitSetPrintBackgroundOne runJavaScript error: ` + JSON.stringify(error))
+                    return;
+                  } else {
+                    this.isEnd = 0;
+                    console.log("emitSetPrintBackgroundOne runJavaScript.result: " + result);
+                  }
+                })
+                await waitForExist(()=>this.isEnd, this.str + 'IsEnd',0,1000);
+                try {
+                  this.controller.setPrintBackground(true);
+                  let enable = this.controller.getPrintBackground();
+                  console.info("getPrintBackground: " + enable);
+                  Utils.emitEvent(enable, 20251025)
+                  console.info("emitSetPrintBackgroundOne  res: " + enable);
+                } catch (error) {
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                }
+                break;
+              }
+
             }
           })
 
