@@ -45,23 +45,9 @@ let audioConfig: media.AudioRecorderConfig = {
   numberOfChannels: CHANNEL_TWO,
   uri: 'fd://',
   location: ({ latitude: 30, longitude: 30 } as GeneratedObjectLiteralInterface_1),
+  aacProfile: media.AacProfile.AAC_HE_V2,
   audioEncoderMime: media.CodecMimeType.AUDIO_AAC,
   fileFormat: media.ContainerFormatType.CFT_MPEG_4A,
-}
-
-let avProfile: media.AVRecorderProfile = {
-  audioBitrate: 64000, // set audioBitrate according to device ability
-  audioChannels: 1, // set audioChannels, valid value 1-8
-  aacProfile: media.AacProfile.AAC_HE_V2, // set audioCodec, AUDIO_AAC is the only choice
-  audioCodec: media.CodecMimeType.AUDIO_AAC, // 音频编码格
-  audioSampleRate: 8000, // set audioSampleRate according to device ability
-  fileFormat: media.ContainerFormatType.CFT_MPEG_4A, // set fileFormat, for video is m4a
-}
-
-let audioAacProfileConfig: media.AVRecorderConfig = {
-audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
-profile: avProfile,
-url: 'fd://',
 }
 
 function initAudioRecorder() {
@@ -1039,7 +1025,7 @@ export default function RecorderLocalTestAudioAPI() {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioRecorder.prepare(audioAacProfileConfig);
+      audioRecorder?.prepare(audioConfig);
     });
     /* *
         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0002
@@ -1053,8 +1039,8 @@ export default function RecorderLocalTestAudioAPI() {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioAacProfileConfig.profile.aacProfile = 2;
-      audioRecorder.prepare(audioAacProfileConfig);
+      audioConfig.aacProfile = 2;
+      audioRecorder?.prepare(audioConfig);
     });
     /* *
         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0003
@@ -1068,8 +1054,8 @@ export default function RecorderLocalTestAudioAPI() {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      audioAacProfileConfig.profile.aacProfile = 1;
-      audioRecorder.prepare(audioAacProfileConfig);
+      audioConfig.aacProfile = 1;
+      audioRecorder?.prepare(audioConfig);
     });
   })
 }
