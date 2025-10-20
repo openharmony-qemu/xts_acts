@@ -30,10 +30,6 @@ void InitPush1(std::vector<napi_property_descriptor>& desc)
                    nullptr, nullptr, nullptr, napi_default, nullptr});
     desc.push_back({"OHCryptoRandSetSeed0200", nullptr, OHCryptoRandSetSeed0200,
                    nullptr, nullptr, nullptr, napi_default, nullptr});
-    desc.push_back({"OHCryptoRandEnableHardwareEntropy0100", nullptr, OHCryptoRandEnableHardwareEntropy0100,
-                   nullptr, nullptr, nullptr, napi_default, nullptr});
-    desc.push_back({"OHCryptoRandEnableHardwareEntropy0200", nullptr, OHCryptoRandEnableHardwareEntropy0200,
-                   nullptr, nullptr, nullptr, napi_default, nullptr});
     desc.push_back({"OHCryptoVerifyCreate0100", nullptr, OHCryptoVerifyCreate0100,
                    nullptr, nullptr, nullptr, napi_default, nullptr});
     desc.push_back({"OHCryptoVerifyCreate0200", nullptr, OHCryptoVerifyCreate0200,

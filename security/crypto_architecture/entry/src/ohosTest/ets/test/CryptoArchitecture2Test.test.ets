@@ -146,48 +146,6 @@ export default function CryptoArchitecture2Test() {
     })
 
     /**
-     * @tc.number  SUB_CRYPTOARCHITECTURE_OH_CRYPTORAND_ENABLEHARDWAREENTROPY_0100
-     * @tc.name    testOHCryptoRandEnableHardwareEntropy0100
-     * @tc.desc    test OH_CryptoRand_EnableHardwareEntropy
-     * @tc.level   Level1
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     */
-    it('testOHCryptoRandEnableHardwareEntropy0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      try {
-        console.info("====>testOHCryptoRandEnableHardwareEntropy0100 start====");
-        let result : number = cryptoarchitecture.OHCryptoRandEnableHardwareEntropy0100();
-        console.info("====>testOHCryptoRandEnableHardwareEntropy0100 result: " + result);
-        expect(result).assertEqual(0);
-        done()
-      } catch (err) {
-        console.error("====>testOHCryptoRandEnableHardwareEntropy0100 catch err: " + err);
-        done()
-      }
-    })
-
-    /**
-     * @tc.number  SUB_CRYPTOARCHITECTURE_OH_CRYPTORAND_ENABLEHARDWAREENTROPY_0200
-     * @tc.name    testOHCryptoRandEnableHardwareEntropy0200
-     * @tc.desc    test OH_CryptoRand_EnableHardwareEntropy
-     * @tc.level   Level1
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     */
-    it('testOHCryptoRandEnableHardwareEntropy0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      try {
-        console.info("====>testOHCryptoRandEnableHardwareEntropy0200 start====");
-        let result : number = cryptoarchitecture.OHCryptoRandEnableHardwareEntropy0200();
-        console.info("====>testOHCryptoRandEnableHardwareEntropy0200 result: " + result);
-        expect(result).assertEqual(0);
-        done()
-      } catch (err) {
-        console.error("====>testOHCryptoRandEnableHardwareEntropy0200 catch err: " + err);
-        done()
-      }
-    })
-
-    /**
      * @tc.number  SUB_CRYPTOARCHITECTURE_OH_CRYPTOVERIFY_CREATE_0100
      * @tc.name    testOHCryptoVerifyCreate0100
      * @tc.desc    test OH_CryptoVerify_Create

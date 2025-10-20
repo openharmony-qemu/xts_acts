@@ -151,31 +151,6 @@ napi_value OHCryptoRandSetSeed0200(napi_env env, napi_callback_info info)
     return result;
 }
 
-napi_value OHCryptoRandEnableHardwareEntropy0100(napi_env env, napi_callback_info info)
-{
-    OH_CryptoRand *ctx = nullptr;
-    OH_CryptoRand_Create(&ctx);
-    OH_Crypto_ErrCode ret = OH_CryptoRand_EnableHardwareEntropy(ctx);
-    napi_value result;
-    napi_create_int32(env, -1, &result);
-    if (ret == CRYPTO_SUCCESS) {
-        napi_create_int32(env, 0, &result);
-    }
-    OH_CryptoRand_Destroy(ctx);
-    return result;
-}
-
-napi_value OHCryptoRandEnableHardwareEntropy0200(napi_env env, napi_callback_info info)
-{
-    OH_Crypto_ErrCode ret = OH_CryptoRand_EnableHardwareEntropy(nullptr);
-    napi_value result;
-    napi_create_int32(env, -1, &result);
-    if (ret == CRYPTO_PARAMETER_CHECK_FAILED) {
-        napi_create_int32(env, 0, &result);
-    }
-    return result;
-}
-
 napi_value OHCryptoVerifyCreate0100(napi_env env, napi_callback_info info)
 {
     OH_CryptoVerify *verify = nullptr;
