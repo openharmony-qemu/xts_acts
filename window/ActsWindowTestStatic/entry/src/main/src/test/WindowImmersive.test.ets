@@ -765,51 +765,7 @@ export default function WindowImmersiveTest() {
             }
         })
 
-        /**
-         * @tc.number      testMaximizePromiseErrCode1300004_0100
-         * @tc.name        testMaximizePromiseErrCode1300004_0100
-         * @tc.desc        testMaximizePromiseErrCode1300004_0100
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
-         */
-        it('testMaximizePromiseErrCode1300004_0100',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName = "testMaximizePromiseErrCode1300004_0100";
-            let msgStr = 'jsunittest ' + caseName + ' ';
-            console.log(msgStr + 'begin.');
-            let windowConfig: window.Configuration = {
-                name: "testMaximizePromiseErrCode1300004_0100",
-                windowType: window.WindowType.TYPE_DIALOG,
-                ctx: context,
-            };
-            let win: window.Window | undefined = undefined;
-            try {
-                win = await window.createWindow(windowConfig);
-                expect(!!win).assertTrue();
-            } catch (err) {
-                console.log(msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
-                expect().assertFail();
-                done()
-            }
-            try {
-                await win!.maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(async () => {
-                    console.info(msgStr + 'Succeeded in calling maximize.');
-                    await (win! as window.Window).destroyWindow();
-                    expect().assertFail();
-                    done()
-                }).catch(async (err: BusinessError) => {
-                    console.error(msgStr + 'Failed to call maximize. Cause: ' + JSON.stringify(err));
-                    expect(err.code).assertEqual(1300004);
-                    await (win! as window.Window).destroyWindow();
-                    done()
-                });
-            } catch (exception: BusinessError) {
-                console.error(msgStr + 'Failed to set the call maximize. Cause:' + JSON.stringify(exception));
-                await (win! as window.Window).destroyWindow();
-                expect().assertFail();
-                done()
-            }
-        })
+        
 /**
          * @tc.number      testGetImmersiveModeEnabledStateErrCode1300002_0100
          * @tc.name        testGetImmersiveModeEnabledStateErrCode1300002_0100

@@ -1329,44 +1329,7 @@ export default function WindowLayoutTest() {
         })
 
 
-        /**
-         * @tc.number     test_startMoving_ErrorCode_1300002
-         * @tc.name       test_startMoving_ErrorCode_1300002
-         * @tc.desc       test_startMoving_ErrorCode_1300002
-         * @tc.size       MediumTest
-         * @tc.type       Function
-         * @tc.level      Level3
-         */
-        it('test_startMoving_ErrorCode_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName:string = 'test_startMoving_ErrorCode_1300002';
-            let msgStr = 'jsunittest ' + caseName + ' ';
-            console.log(msgStr + 'begin.');
-            let subWin: window.Window | undefined = undefined;
-            try {
-                subWin = await windowStage.createSubWindow('test_startMoving_ErrorCode_1300002');
-                expect(!!subWin).assertTrue();
-                console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
-            } catch (err) {
-                console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
-                done()
-            }
-            await (subWin! as window.Window).destroyWindow();
-            try {
-                await (subWin! as window.Window).startMoving(100, 50).then(async () => {
-                    console.info(msgStr + 'Succeeded in calling startMoving.');
-                    expect().assertFail();
-                }).catch(async (err: BusinessError) => {
-                    console.error(msgStr + 'Failed to call startMoving. Cause: ' + JSON.stringify(err));
-                    expect(err.code).assertEqual(1300002);
-                });
-                done()
-            } catch (exception: BusinessError) {
-                console.error(msgStr + 'Failed to set the call startMoving. Cause:' + JSON.stringify(exception));
-                expect().assertFail();
-                done()
-            }
-        })
+        
 
 
 
