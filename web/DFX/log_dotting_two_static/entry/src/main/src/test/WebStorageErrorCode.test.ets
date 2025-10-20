@@ -82,7 +82,7 @@ export default function webTwoJsunit() {
     */
     it('testPrepareForPageLoadError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       Utils.emitEvent('testPrepareForPageLoadError001', 10)
-      Utils.registerEvent('testPrepareForPageLoadError001', 17100001, 50025, done);
+      Utils.registerEvent('testPrepareForPageLoadError001', 17100013, 50025, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('ErrorCodeTestSuiteButton', 10, '');
       await Utils.msSleep(4000);
@@ -121,7 +121,8 @@ export default function webTwoJsunit() {
       await Utils.msSleep(4000);
       done()
     })
-    /*
+
+    /*	
    * @tc.number     : SUB_WEB_ERRORCODE_POSTMESSAGE_0300
    * @tc.name       : SwitchNextPageStatic
    * @tc.desc       : test PAGE_REDIRECT
@@ -140,3 +141,4 @@ export default function webTwoJsunit() {
       })
   })
 }
+
