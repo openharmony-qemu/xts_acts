@@ -56,9 +56,10 @@ export default function inputMethodJSUnit() {
     it('inputmethoh_test_001', Level.LEVEL2, async (done: Function) => {
       let inputMethodSetting = inputMethod.getInputMethodSetting();
       console.info("====>inputmethoh_test_001 result:" + JSON.stringify(inputMethodSetting));
-      inputMethodSetting.listInputMethod((arr) => {
+      inputMethodSetting.listInputMethod((err, arr) => {
         console.info("====>appInfoTest_input_2 listInputMethod result---" + JSON.stringify(arr));
-        expect(1 == 1).assertTrue();
+        console.info(`====> inputmethoh_test_001 success data: ${JSON.stringify(arr)}`);
+        expect(arr.length > 0).assertTrue();
         done();
       });
     });
@@ -76,6 +77,8 @@ export default function inputMethodJSUnit() {
       console.info("====>inputmethoh_test_002 result:" + JSON.stringify(inputMethodSetting));
       inputMethodSetting.listInputMethod().then(inputMethodProperty => {
         if (inputMethodProperty.length > 0) {
+          console.info(`====> inputMethod_test_listCurrentInputMethodSubtype_002 success data: ${JSON.stringify(inputMethodProperty)}`);
+          expect(inputMethodProperty.length > 0).assertTrue();
           let obj = inputMethodProperty[0]
           console.info("====>inputmethoh_test_002 listInputMethod obj---" + JSON.stringify(obj));
           expect(obj.packageName != null).assertTrue();
@@ -256,7 +259,8 @@ export default function inputMethodJSUnit() {
           }
           ;
           console.info("====>inputmethod_test_getInputMethods_001 listInputMethod result---" + JSON.stringify(arr));
-          expect(arr != null).assertTrue();
+          console.info(`====> inputmethod_test_getInputMethods_001 success data: ${JSON.stringify(arr)}`);
+          expect(arr.length > 0).assertTrue();
           console.info("====>************* inputmethod_test_getInputMethods_001 Test end*************");
           done();
         } catch (err) {
@@ -309,6 +313,8 @@ export default function inputMethodJSUnit() {
         let setting = await inputMethodSetting.getInputMethods(true);
         console.info("inputmethod_test_getInputMethods_003 success because: " + setting);
         expect(typeof (setting) === 'object').assertTrue();
+        console.info(`====> inputmethod_test_getInputMethods_003 success data: ${JSON.stringify(setting)}`);
+        expect(setting.length > 0).assertTrue();
         done();
         console.info("====>************* inputmethod_test_getInputMethods_003 Test end*************");
         done();
@@ -358,6 +364,8 @@ export default function inputMethodJSUnit() {
       let enable: boolean = true;
       let bool: boolean = false;
       let Enable_List = inputMethodSetting.getInputMethodsSync(enable);
+      console.info(`====> SUB_InputMethod_IMF_Enable_0100 success data: ${JSON.stringify(Enable_List)}`);
+      expect(Enable_List.length > 0).assertTrue();
       console.info("====>SUB_InputMethod_IMF_Enable_0100 getInputMethodsSync success: " + JSON.stringify(Enable_List));
       let arr = Array<string>();
       for (let i = 0; i < Enable_List.length; i++) {
@@ -443,6 +451,8 @@ export default function inputMethodJSUnit() {
             expect().assertFail();
             done();
           }
+          console.info(`====> SUB_InputMethod_IMF_Enable_0400 success data: ${JSON.stringify(Enable_List)}`);
+          expect(Enable_List.length > 0).assertTrue();
           console.info('====>SUB_InputMethod_IMF_Enable_0400 getAllInputMethods success: ' + JSON.stringify(Enable_List));
           let arr = Array<string>();
           for (let i = 0; i < Enable_List.length; i++) {
@@ -480,6 +490,8 @@ export default function inputMethodJSUnit() {
       let inputMethodSetting = inputMethod.getSetting();
       try {
         let Enable_List = await inputMethodSetting.getAllInputMethods();
+        console.info(`====> SUB_InputMethod_IMF_Enable_0500 success data: ${JSON.stringify(Enable_List)}`);
+        expect(Enable_List.length > 0).assertTrue();
         console.info('====>SUB_InputMethod_IMF_Enable_0500 getAllInputMethods success: ' + JSON.stringify(Enable_List));
         let arr = Array<string>();
         for (let i = 0; i < Enable_List.length; i++) {
@@ -516,6 +528,8 @@ export default function inputMethodJSUnit() {
       let bool: boolean = false;
       let inputMethodSetting = inputMethod.getSetting();
       let Enable_List = inputMethodSetting.getAllInputMethodsSync();
+      console.info(`====> SUB_InputMethod_IMF_Enable_0600 success data: ${JSON.stringify(Enable_List)}`);
+      expect(Enable_List.length > 0).assertTrue();
       console.info("====>SUB_InputMethod_IMF_Enable_0600 getAllInputMethodsSync success: " + JSON.stringify(Enable_List));
       let arr = Array<string>();
       for (let i = 0; i < Enable_List.length; i++) {

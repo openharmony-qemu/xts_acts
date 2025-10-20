@@ -377,5 +377,139 @@ export default function inputMethodTest() {
       }
     });
 
+    /**
+     * @tc.number inputMethod_test_stopInputSession_0011
+     * @tc.name inputMethod_test_stopInputSession_0011
+     * @tc.desc Stop input().interfaces.Callback
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('inputMethod_test_stopInputSession_0011', Level.LEVEL3, async (done: Function) => {
+      const ATTRIBUTE: inputMethod.TextConfig = {
+        inputAttribute: {
+          textInputType: 0, enterKeyType: 0
+        }
+      }
+      let inputMethodCtrl = inputMethod.getInputMethodController();
+      await inputMethod.getController().attach(false, ATTRIBUTE);
+      console.info("====>inputMethod_test_stopInputSession_0011 attach success");
+      console.info("====>inputMethod_test_stopInputSession_0011 result:" + JSON.stringify(inputMethodCtrl));
+      inputMethodCtrl.stopInputSession((err, res) => {
+        try {
+          if (err) {
+            console.error(`====>Failed to stopInput: rrCode:${err.code}, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`====>inputMethod_test_stopInputSession_0011 stopInput result: ${res}`);
+            expect(res).assertTrue();
+            done();
+          }
+        } catch (err) {
+          console.info(`====>inputMethod_test_stopInputSession_0011 stopInput throw err errCode:${err.code}, errMessage is ${err.message}`);
+          expect().assertFail();
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.number inputMethod_test_stopInputSession_0021
+     * @tc.name inputMethod_test_stopInputSession_0021
+     * @tc.desc Stop input().interfaces.Promise
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('inputMethod_test_stopInputSession_0021', Level.LEVEL3, async (done: Function) => {
+      let inputMethodCtrl = inputMethod.getInputMethodController();
+      const ATTRIBUTE: inputMethod.TextConfig = {
+        inputAttribute: {
+          textInputType: 0, enterKeyType: 0
+        }
+      }
+      await inputMethod.getController().attach(false, ATTRIBUTE);
+      console.info("====>inputMethod_test_stopInputSession_0021 attach success");
+      try {
+        let res = await inputMethodCtrl.stopInputSession()
+        console.info(`====>inputMethod_test_stopInputSession_0021 stopInput result: ${res}`);
+        expect(res).assertTrue();
+        await inputMethod.getController().detach();
+        done();
+      } catch (err) {
+        console.info(`====>inputMethod_test_stopInputSession_0021 errCode:${err.code}, errMessage is ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number inputmethoh_test_0051
+     * @tc.name inputmethoh_test_0051
+     * @tc.desc Stop input().interfaces.Callback
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('inputmethoh_test_0051', Level.LEVEL3, async (done: Function) => {
+      let inputMethodCtrl = inputMethod.getInputMethodController();
+      const ATTRIBUTE: inputMethod.TextConfig = {
+        inputAttribute: {
+          textInputType: 0, enterKeyType: 0
+        }
+      }
+      await inputMethod.getController().attach(false, ATTRIBUTE);
+      console.info("====>inputmethoh_test_0051 attach success");
+      console.info("====>inputmethoh_test_0051 result:" + JSON.stringify(inputMethodCtrl));
+      inputMethodCtrl.stopInput((err, res) => {
+        try {
+          if (err) {
+            console.error(`====>Failed to stopInput: rrCode:${err.code}, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(`====>inputmethoh_test_0051 stopInput result: ${res}`);
+            expect(res).assertTrue();
+            done();
+          }
+        } catch (err) {
+          console.info(`====>inputmethoh_test_0051 stopInput throw err errCode:${err.code}, errMessage is ${err.message}`);
+          expect().assertFail();
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.number inputmethoh_test_0061
+     * @tc.name inputmethoh_test_0061
+     * @tc.desc Stop input().interfaces.Promise
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it('inputmethoh_test_0061', Level.LEVEL3, async (done: Function) => {
+      let inputMethodCtrl = inputMethod.getInputMethodController();
+      const ATTRIBUTE: inputMethod.TextConfig = {
+        inputAttribute: {
+          textInputType: 0, enterKeyType: 0
+        }
+      }
+      await inputMethod.getController().attach(false, ATTRIBUTE);
+      console.info("====>inputmethoh_test_0061 attach success");
+      try {
+        let res = await inputMethodCtrl.stopInput()
+        console.info(`====>inputmethoh_test_0061 stopInput result: ${res}`);
+        expect(res).assertTrue();
+        await inputMethod.getController().detach();
+        done();
+      } catch (err) {
+        console.info(`====>inputmethoh_test_0061 errCode:${err.code}, errMessage is ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+    });
+
   })
 }
