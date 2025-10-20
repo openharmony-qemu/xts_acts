@@ -37,9 +37,12 @@ import SendableImageRotateTest from './sendableImage/SendableImageRotate.test';
 import SendableImageScale from './sendableImage/SendableImageScale.test';
 import SendableImageTranslateTest from './sendableImage/SendableImageTranslate.test';
 import ImageCreatePixelMapSyncAbnormalTest from "./image/ImageCreatePixelMapSyncAbnormal.test"
-
 import PictureSetAuxiliaryPictureTest from './Picture/PictureSetAuxiliaryPicture.test';
 import pixelMapGetBytesNumberPerRowTest from './pixelMap/PixelMapGetBytesNumberPerRow.test';
+import CreateImageSourceSuppTest from "./image/CreateImageSource.test";
+import ImageSourceCreatePixelMapListSupp from "./image/ImageSourceCreatePixelMapList.test";
+import ImageSourceGetDelayTimeListSupp from "./image/ImageSourceGetDelayTimeList.test";
+import getImagePropertySyncTest from "./image/ImageSourceGetImagePropertySync.test";
 
 export default function testsuite() {
   ImagePropertyKeyTest();
@@ -68,4 +71,8 @@ export default function testsuite() {
   ImageCreatePixelMapSyncAbnormalTest();
   PictureSetAuxiliaryPictureTest();
   pixelMapGetBytesNumberPerRowTest();
+  CreateImageSourceSuppTest();
+  ImageSourceCreatePixelMapListSupp();
+  ImageSourceGetDelayTimeListSupp();
+  getImagePropertySyncTest();
 }
