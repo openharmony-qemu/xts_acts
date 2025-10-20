@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,9 +14,9 @@
  */
 import huks from '@ohos.security.huks';
 
-export function isKeyItemExist(srcKeyAlias, HuksOptions) {
+export function isKeyItemExist(srcKeyAlias, huksOptions) {
     return new Promise((resolve,reject) => {
-        huks.isKeyItemExist(srcKeyAlias, HuksOptions, function (error, data) {
+        huks.isKeyItemExist(srcKeyAlias, huksOptions, function (error, data) {
             if (error) {
                 reject(error);
             } else {
@@ -26,9 +26,9 @@ export function isKeyItemExist(srcKeyAlias, HuksOptions) {
     });
 }
 
-export function hasKeyItem(srcKeyAlias, HuksOptions) {
+export function hasKeyItem(srcKeyAlias, huksOptions) {
     return new Promise((resolve,reject) => {
-        huks.hasKeyItemExist(srcKeyAlias, HuksOptions, function (error, data) {
+        huks.hasKeyItem(srcKeyAlias, huksOptions, function (error, data) {
             if (error) {
                 reject(error);
             } else {
@@ -38,9 +38,9 @@ export function hasKeyItem(srcKeyAlias, HuksOptions) {
     });
 }
 
-export async function generateKeyItem(srcKeyAlias, HuksOptions) {
+export async function generateKeyItem(srcKeyAlias, huksOptions) {
     return new Promise((resolve,reject) => {
-        huks.generateKeyItem(srcKeyAlias, HuksOptions, function (error, data) {
+        huks.generateKeyItem(srcKeyAlias, huksOptions, function (error, data) {
             if (error) {
                 reject(error);
             } else {
@@ -50,9 +50,9 @@ export async function generateKeyItem(srcKeyAlias, HuksOptions) {
     });
 }
 
-export async function deleteKeyItem(srcKeyAlias, HuksOptions) {
+export async function deleteKeyItem(srcKeyAlias, huksOptions) {
     return new Promise((resolve,reject) => {
-        huks.deleteKeyItem(srcKeyAlias,HuksOptions, function (error, data) {
+        huks.deleteKeyItem(srcKeyAlias,huksOptions, function (error, data) {
             if (error) {
                 reject(error);
             } else {

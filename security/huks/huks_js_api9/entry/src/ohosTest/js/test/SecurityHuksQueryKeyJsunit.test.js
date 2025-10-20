@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -84,6 +84,7 @@ export default function SecurityHuksQueryKeyJsunit(){
                 const srcKeyAlias = 'SUB_Security_HUKS_QueryKey_hasKey_API11_Func_0210';
                 try {
                     await huksCallBack.hasKeyItem(srcKeyAlias, huksOptions);
+                    expect(null).assertFail();
                 } catch (err) {
                     console.error(srcKeyAlias + `: fail, err: ${JSON.stringify(err)}`);
                     expect(null).assertFail();
@@ -149,6 +150,7 @@ export default function SecurityHuksQueryKeyJsunit(){
                 const srcKeyAlias = 'SUB_Security_HUKS_QueryKey_IsKeyExist_API9_Func_0200';
                 try {
                     await huks.isKeyItemExist(srcKeyAlias, huksOptions);
+                    expect(null).assertFail();
                 } catch (err) {
                     console.error(srcKeyAlias + `: fail, err: ${JSON.stringify(err)}`);
                     expect(err.code).assertEqual(12000011);
@@ -171,6 +173,7 @@ export default function SecurityHuksQueryKeyJsunit(){
                     await huks.generateKeyItem(srcKeyAlias, huksOptions);
                     await huks.deleteKeyItem(srcKeyAlias, huksOptions);
                     await huks.isKeyItemExist(srcKeyAlias, huksOptions);
+                    expect(null).assertFail();
                 } catch (err) {
                     console.error(srcKeyAlias + `: fail, err: ${JSON.stringify(err)}`);
                     expect(err.code).assertEqual(12000011);
@@ -213,6 +216,7 @@ export default function SecurityHuksQueryKeyJsunit(){
                 const srcKeyAlias = 'SUB_Security_HUKS_QueryKey_IsKeyExist_API9_Func_0210';
                 try {
                     await huksCallBack.isKeyItemExist(srcKeyAlias, huksOptions)
+                    expect(null).assertFail();
                 } catch (err) {
                     console.error(srcKeyAlias + `: fail, err: ${JSON.stringify(err)}`);
                     expect(err.code).assertEqual(12000011);
