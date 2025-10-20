@@ -31,8 +31,8 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
     beforeAll(async (): Promise<void> => {
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName:"entry",
+        abilityName: 'EntryAbility',
+        moduleName:'entry',
         onAbilityCreate: (abilitys : UIAbility) : void => {
           testAbilityContext = abilitys.context
         },
@@ -43,7 +43,7 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
         console.log('BusinessError  end')
       });
       await Utils.msSleep(2000)
-      abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.open.harmony.actsaceloadstatusenhancedtesttwo.static")
+      abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.actsaceloadstatusenhancedtesttwo.static')
       await Utils.msSleep(5000)
       console.log('beforeAll end,%s', 'Succeed!')
     });
@@ -59,20 +59,31 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
     * @tc.desc       : test onPageVisible
     * @tc.size       : MediumTest
     * @tc.type       : Function
-    * @tc.level      : Level 1
+    * @tc.level      : Level 3
     */
     it('testOnPageVisibleStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(3000);
       inspector.sendEventByKey('buttonJavaScriptProxyAndPageVisible', 10, '');
-      Utils.emitEvent("emitOnPageVisible", 10)
+      Utils.emitEvent('emitOnPageVisible', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent("testOnPageVisible001", 'resource://rawfile/icon.html', 1372, done);
+      Utils.registerEvent('testOnPageVisible001', 'resource://rawfile/icon.html', 1372, done);
+      await Utils.msSleep(2000);
       inspector.sendEventByKey('buttonJavaScriptProxyAndPageVisible', 10, '');
       await Utils.msSleep(3000);
-      Utils.emitEvent("", 10)
+      Utils.emitEvent('', 10)
       inspector.sendEventByKey('buttonJavaScriptProxyAndPageVisible', 10, '');
-      await Utils.msSleep(3000);
+      await Utils.msSleep(6000);
       done();
     })
+
+    it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('SwitchNextPageStatic', 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('buttonJavaScriptProxyAndPageVisible', 10, '');
+        await Utils.msSleep(2000);
+        done()
+      })
   })
 }
