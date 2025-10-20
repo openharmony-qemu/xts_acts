@@ -87,7 +87,7 @@ export default function ResponseRegionJsunit() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push ResponseRegion page error:" + err);
       }
 
@@ -122,7 +122,7 @@ export default function ResponseRegionJsunit() {
           console.info("[testResponseRegion01_static] start to publish emit:" +
           JSON.stringify(((eventData.data) as Record<string, RecordData>)));
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[testResponseRegion01_static] change component data error: " + err.message);
         }
         await Utils.sleep(1000);
@@ -168,7 +168,7 @@ export default function ResponseRegionJsunit() {
       }
       try {
         events_emitter.on(innerEventTwo, callbackTwo)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("[testResponseRegion02_static] on events_emitter err : " + JSON.stringify(err));
       }
       console.info('[testResponseRegion02_static] testSendTouchEvent ' + sendTouchEvent(point));

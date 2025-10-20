@@ -70,7 +70,7 @@ export default function PhotoAccessHelperStaticTest() {
           hilog.info(0x0000, 'testTag', 'PhotoAccessHelperStaticTest end');
           expect(true).assertTrue();
           done();
-        } catch (err: Error) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag', 'PhotoAccessHelperStaticTest failed' + err.name + err.message);
           expect(false).assertTrue();
           done();

@@ -74,7 +74,7 @@ struct StateArrayNew {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('StateArrayNew', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

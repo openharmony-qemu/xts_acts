@@ -89,7 +89,7 @@ export default function comSizeAbilityTest_06() {
         console.info('[comSizeAbilityTestJsunit_static_17] END')
         await CommonFunc.sleep(1000);
         done()
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     })
@@ -121,7 +121,7 @@ export default function comSizeAbilityTest_06() {
         console.info('[comSizeAbilityTestJsunit_static_18] END')
         await CommonFunc.sleep(1000);
         done()
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     })
@@ -153,7 +153,7 @@ export default function comSizeAbilityTest_06() {
         console.info('[comSizeAbilityTestJsunit_static_19] END')
         await CommonFunc.sleep(1000);
         done()
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     })

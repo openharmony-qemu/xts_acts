@@ -100,7 +100,7 @@ export default function dragEventJsunit() {
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("dragEventTest_0100 on events_emitter err : " + JSON.stringify(err));
       }
       console.info('dragEventTest_0100 END');
@@ -135,7 +135,7 @@ export default function dragEventJsunit() {
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("dragEventTest_0200 on events_emitter err : " + JSON.stringify(err));
       }
       console.info('dragEventTest_0200 END');
@@ -169,7 +169,7 @@ export default function dragEventJsunit() {
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("dragEventTest_0300 on events_emitter err : " + JSON.stringify(err));
       }
       console.info('dragEventTest_0300 END');
@@ -203,7 +203,7 @@ export default function dragEventJsunit() {
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("dragEventTest_0400 on events_emitter err : " + JSON.stringify(err));
       }
       console.info('dragEventTest_0400 END');
@@ -237,7 +237,7 @@ export default function dragEventJsunit() {
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("dragEventTest_0500 on events_emitter err : " + JSON.stringify(err));
       }
       console.info('dragEventTest_0500 END');

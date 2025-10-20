@@ -68,7 +68,7 @@ export default function SXSymbolGlyphSINGLE01Jsunit() {
           await CommonFunc.sleep(2000);
          
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push SXSymbolGlyphSINGLE01Jsunit page error:" + err);
         expect().assertFail();
       }

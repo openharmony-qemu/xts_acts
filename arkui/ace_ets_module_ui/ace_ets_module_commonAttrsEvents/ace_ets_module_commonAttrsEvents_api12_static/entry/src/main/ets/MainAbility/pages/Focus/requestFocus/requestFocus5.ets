@@ -73,7 +73,7 @@ struct requestFocus5 {
       Button('Focus-text2').onClick((e: ClickEvent) => {
         try {
           this.getUIContext().getFocusController().requestFocus('requestFocus5_text2')
-        } catch (error: Error) {
+        } catch (error) {
           this.text1 = '' + error.code
         }
       }).id('requestFocus5_btn1')

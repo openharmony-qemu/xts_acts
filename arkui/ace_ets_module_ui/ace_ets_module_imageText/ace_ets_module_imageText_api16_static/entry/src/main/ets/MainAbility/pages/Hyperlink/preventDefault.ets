@@ -79,7 +79,7 @@ struct Index {
               console.log('Hyperlink1 Click Begin')
               event.preventDefault();
               console.log('Hyperlink1 Click After')
-            } catch (e:Error) {
+            } catch (e) {
               console.log('Hyperlink1 Click ErrorCode:' + JSON.stringify(e))
               console.log('Hyperlink1 Click ErrorMessage:' + e.message)
             }
@@ -98,7 +98,7 @@ struct Index {
               console.log('Hyperlink1 Touch Begin')
               event.preventDefault();
               console.log('Hyperlink1 Touch After')
-            } catch (e:Error) {
+            } catch (e) {
               console.log('Hyperlink1 Touch ErrorCode:' + JSON.stringify(e))
               console.log('Hyperlink1 Touch ErrorMessage:' + e.message)
             }

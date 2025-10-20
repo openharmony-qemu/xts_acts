@@ -76,7 +76,7 @@ async function setArrowStyle(arrowStyle: ArrowStyle) {
     console.info("setArrowStyle start send emitKey");
     console.info("setArrowStyle backData :" + JSON.stringify(backData));
     events_emitter.emit(backEvent, backData);
-  } catch (err: Error) {
+  } catch (err) {
     console.info("setArrowStyle emit emitKey  err: " + JSON.stringify(err));
   }
   await sleep(2000);
@@ -105,7 +105,7 @@ export default function swiperTest() {
             console.error(`Swiper1_1 router.pushUrl failed, code is ${error.code}, message is ${error.message}`);
           })
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`Swiper1_1 beforeEach error:` + JSON.stringify(err));
       }
     });
@@ -141,7 +141,7 @@ export default function swiperTest() {
           expect(obj2.getString('selectedItemWidth')).assertEqual("5.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0100 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0100 ERR  ' + JSON.stringify(err));
           done();
@@ -175,7 +175,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedItemWidth')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0200 ERR  ' + JSON.stringify(err));
           done();
@@ -209,7 +209,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedItemWidth')).assertEqual("9999.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0300 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0300 ERR  ' + JSON.stringify(err));
           done();
@@ -243,7 +243,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedItemWidth')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0400 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0400 ERR  ' + JSON.stringify(err));
           done();
@@ -277,7 +277,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedItemWidth')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0500 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0500 ERR  ' + JSON.stringify(err));
           done();
@@ -311,7 +311,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedItemWidth')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0600 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0600 ERR  ' + JSON.stringify(err));
           done();
@@ -345,7 +345,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedItemWidth')).assertEqual("8.00fp");
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0700 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0700 ERR  ' + JSON.stringify(err));
           done();
@@ -379,7 +379,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedItemWidth')).assertEqual("8.00lpx");
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0800 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemWidth_static_0800 ERR  ' + JSON.stringify(err));
           done();
@@ -413,7 +413,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedItemHeight')).assertEqual("3.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0100 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0100 ERR  ' + JSON.stringify(err));
           done();
@@ -447,7 +447,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedItemHeight')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0200 ERR  ' + JSON.stringify(err));
           done();
@@ -481,7 +481,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedItemHeight')).assertEqual("9999.00fp");
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0300 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0300 ERR  ' + JSON.stringify(err));
           done();
@@ -515,7 +515,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedItemHeight')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0400 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0400 ERR  ' + JSON.stringify(err));
           done();
@@ -549,7 +549,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedItemHeight')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0500 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0500 ERR  ' + JSON.stringify(err));
           done();
@@ -583,7 +583,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedItemHeight')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0600 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0600 ERR  ' + JSON.stringify(err));
           done();
@@ -617,7 +617,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedItemHeight')).assertEqual("8.00vp");
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0700 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0700 ERR  ' + JSON.stringify(err));
           done();
@@ -651,7 +651,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedItemHeight')).assertEqual("8.00lpx");
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0800 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedItemHeight_static_0800 ERR  ' + JSON.stringify(err));
           done();
@@ -684,7 +684,7 @@ export default function swiperTest() {
           expect(obj2.getElement('itemWidth')).assertEqual("3.00vp");
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0100 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0100 ERR  ' + JSON.stringify(err));
           done();
@@ -717,7 +717,7 @@ export default function swiperTest() {
           expect(obj2.getElement('itemWidth')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0200 ERR  ' + JSON.stringify(err));
           done();
@@ -750,7 +750,7 @@ export default function swiperTest() {
           expect(obj2.getElement('itemWidth')).assertEqual("9999.00lpx");
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0300 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0300 ERR  ' + JSON.stringify(err));
           done();
@@ -783,7 +783,7 @@ export default function swiperTest() {
           expect(obj2.getElement('itemWidth')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0400 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0400 ERR  ' + JSON.stringify(err));
           done();
@@ -816,7 +816,7 @@ export default function swiperTest() {
           expect(obj2.getElement('itemWidth')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0500 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0500 ERR  ' + JSON.stringify(err));
           done();
@@ -849,7 +849,7 @@ export default function swiperTest() {
           expect(obj2.getElement('itemWidth')).assertEqual("8.00px");
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0600 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0600 ERR  ' + JSON.stringify(err));
           done();
@@ -882,7 +882,7 @@ export default function swiperTest() {
           expect(obj2.getElement('itemWidth')).assertEqual("8.00fp");
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0700 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemWidth_static_0700 ERR  ' + JSON.stringify(err));
           done();
@@ -916,7 +916,7 @@ export default function swiperTest() {
           expect(obj2.getElement('itemHeight')).assertEqual("3.00vp");
           console.info('ArkUX_Stage_Swiper_ItemHeight__static_0100 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemHeight__static_0100 ERR  ' + JSON.stringify(err));
           done();
@@ -950,7 +950,7 @@ export default function swiperTest() {
           expect(obj2.getElement('itemHeight')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_ItemHeight__static_0200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemHeight__static_0200 ERR  ' + JSON.stringify(err));
           done();
@@ -984,7 +984,7 @@ export default function swiperTest() {
           expect(obj2.getElement('itemHeight')).assertEqual("9999.00vp");
           console.info('ArkUX_Stage_Swiper_ItemHeight__static_0300 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemHeight__static_0300 ERR  ' + JSON.stringify(err));
           done();
@@ -1018,7 +1018,7 @@ export default function swiperTest() {
           expect(obj2.getElement('itemHeight')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_ItemHeight__static_0400 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemHeight__static_0400 ERR  ' + JSON.stringify(err));
           done();
@@ -1052,7 +1052,7 @@ export default function swiperTest() {
           expect(obj2.getElement('itemHeight')).assertEqual("6.00vp");
           console.info('ArkUX_Stage_Swiper_ItemHeight__static_0500 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemHeight__static_0500 ERR  ' + JSON.stringify(err));
           done();
@@ -1086,7 +1086,7 @@ export default function swiperTest() {
           expect(obj2.getElement('itemHeight')).assertEqual("8.00fp");
           console.info('ArkUX_Stage_Swiper_ItemHeight__static_0600 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemHeight__static_0600 ERR  ' + JSON.stringify(err));
           done();
@@ -1120,7 +1120,7 @@ export default function swiperTest() {
           expect(obj2.getElement('itemHeight')).assertEqual("8.00lpx");
           console.info('ArkUX_Stage_Swiper_ItemHeight__static_0700 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_ItemHeight__static_0700 ERR  ' + JSON.stringify(err));
           done();
@@ -1154,7 +1154,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedFontColor')).assertEqual("#FF00FF00");
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0100 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0100 ERR  ' + JSON.stringify(err));
           done();
@@ -1188,7 +1188,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedFontColor')).assertEqual("#FFFF0000");
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0200 ERR  ' + JSON.stringify(err));
           done();
@@ -1222,7 +1222,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedFontColor')).assertEqual("#FF8A2BE2");
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0300 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0300 ERR  ' + JSON.stringify(err));
           done();
@@ -1256,7 +1256,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedFontColor')).assertEqual("#FFFFC0CB");
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0400 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0400 ERR  ' + JSON.stringify(err));
           done();
@@ -1290,7 +1290,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedFontColor')).assertEqual(obj.getElement('$attrs').getElement('borderColor'));
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0500 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0500 ERR  ' + JSON.stringify(err));
           done();
@@ -1324,7 +1324,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedFontColor')).assertEqual(obj.getElement('$attrs').getElement('borderColor'));
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0600 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0600 ERR  ' + JSON.stringify(err));
           done();
@@ -1358,7 +1358,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedFontColor')).assertEqual("#FFFF0000");
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0700 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0700 ERR  ' + JSON.stringify(err));
           done();
@@ -1393,7 +1393,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedFontColor')).assertEqual(obj.getElement('$attrs').getElement('borderColor'));
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0800 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0800 ERR  ' + JSON.stringify(err));
           done();
@@ -1427,7 +1427,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedFontColor')).assertEqual(obj.getElement('$attrs').getElement('borderColor'));
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0900 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_0900 ERR  ' + JSON.stringify(err));
           done();
@@ -1461,7 +1461,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedFontColor')).assertEqual("#FF808080");
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_1000 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_1000 ERR  ' + JSON.stringify(err));
           done();
@@ -1495,7 +1495,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedFontColor')).assertEqual("#FF00FF00");
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_1100 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_1100 ERR  ' + JSON.stringify(err));
           done();
@@ -1529,7 +1529,7 @@ export default function swiperTest() {
           expect(obj2.getElement('selectedFontColor')).assertEqual(obj.getElement('$attrs').getElement('borderColor'));
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_1200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_SelectedFontColor_static_1200 ERR  ' + JSON.stringify(err));
           done();
@@ -1562,7 +1562,7 @@ export default function swiperTest() {
           expect(obj2.getElement('fontColor')).assertEqual("#FF00FF00");
           console.info('ArkUX_Stage_Swiper_FontColor_static_0100 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_0100 ERR  ' + JSON.stringify(err));
           done();
@@ -1595,7 +1595,7 @@ export default function swiperTest() {
           expect(obj2.getElement('fontColor')).assertEqual("#FFFF0000");
           console.info('ArkUX_Stage_Swiper_FontColor_static_0200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_0200 ERR  ' + JSON.stringify(err));
           done();
@@ -1628,7 +1628,7 @@ export default function swiperTest() {
           expect(obj2.getElement('fontColor')).assertEqual("#FF8A2BE2");
           console.info('ArkUX_Stage_Swiper_FontColor_static_0300 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_0300 ERR  ' + JSON.stringify(err));
           done();
@@ -1661,7 +1661,7 @@ export default function swiperTest() {
           expect(obj2.getElement('fontColor')).assertEqual("#FFFFC0CB");
           console.info('ArkUX_Stage_Swiper_FontColor_static_0400 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_0400 ERR  ' + JSON.stringify(err));
           done();
@@ -1694,7 +1694,7 @@ export default function swiperTest() {
           expect(obj2.getElement('fontColor')).assertEqual(obj.getElement('$attrs').getElement('borderColor'));
           console.info('ArkUX_Stage_Swiper_FontColor_static_0500 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_0500 ERR  ' + JSON.stringify(err));
           done();
@@ -1727,7 +1727,7 @@ export default function swiperTest() {
           expect(obj2.getElement('fontColor')).assertEqual(obj.getElement('$attrs').getElement('borderColor'));
           console.info('ArkUX_Stage_Swiper_FontColor_static_0600 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_0600 ERR  ' + JSON.stringify(err));
           done();
@@ -1760,7 +1760,7 @@ export default function swiperTest() {
           expect(obj2.getElement('fontColor')).assertEqual("#FFFF0000");
           console.info('ArkUX_Stage_Swiper_FontColor_static_0700 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_0700 ERR  ' + JSON.stringify(err));
           done();
@@ -1794,7 +1794,7 @@ export default function swiperTest() {
           expect(obj2.getElement('fontColor')).assertEqual(obj.getElement('$attrs').getElement('borderColor'));
           console.info('ArkUX_Stage_Swiper_FontColor_static_0800 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_0800 ERR  ' + JSON.stringify(err));
           done();
@@ -1827,7 +1827,7 @@ export default function swiperTest() {
           expect(obj2.getElement('fontColor')).assertEqual(obj.getElement('$attrs').getElement('borderColor'));
           console.info('ArkUX_Stage_Swiper_FontColor_static_0900 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_0900 ERR  ' + JSON.stringify(err));
           done();
@@ -1860,7 +1860,7 @@ export default function swiperTest() {
           expect(obj2.getElement('fontColor')).assertEqual("#FF808080");
           console.info('ArkUX_Stage_Swiper_FontColor_static_1000 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_1000 ERR  ' + JSON.stringify(err));
           done();
@@ -1893,7 +1893,7 @@ export default function swiperTest() {
           expect(obj2.getElement('fontColor')).assertEqual("#FF00FF00");
           console.info('ArkUX_Stage_Swiper_FontColor_static_1100 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_1100 ERR  ' + JSON.stringify(err));
           done();
@@ -1926,7 +1926,7 @@ export default function swiperTest() {
           expect(obj2.getElement('fontColor')).assertEqual(obj.getElement('$attrs').getElement('borderColor'));
           console.info('ArkUX_Stage_Swiper_FontColor_static_1200 END ');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_Swiper_FontColor_static_1200 ERR  ' + JSON.stringify(err));
           done();

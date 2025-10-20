@@ -90,7 +90,7 @@ export default function CloseMask() {
         await CommonFunc.sleep(1000);
         console.info('[CloseMask_0100] END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });

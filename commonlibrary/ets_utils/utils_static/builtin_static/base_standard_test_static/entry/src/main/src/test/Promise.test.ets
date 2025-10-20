@@ -76,7 +76,7 @@ export default function promiseTest() {
             }
           });
           array.push(result);
-        } catch (error: Error) {
+        } catch (error) {
           array.push("reject");
         }
         expect(array[0]).assertEqual('reject result : success');
@@ -144,7 +144,7 @@ export default function promiseTest() {
           array.push('then5');
           array.push('then6');
           array.push('then7');
-        } catch (error: Error) {
+        } catch (error) {
           array.push("reject");
         } finally {
           array.push('finally1');
@@ -232,7 +232,7 @@ export default function promiseTest() {
           array.push('then5');
           array.push('then6');
           array.push('then7');
-        } catch (e : Error) {
+        } catch (e) {
           array.push("reject");
         } finally {
           array.push('finally1');
@@ -277,7 +277,7 @@ export default function promiseTest() {
           array.push('then5');
           array.push('then6');
           array.push('then7');
-        } catch (e: Error) {
+        } catch (e) {
           if (e instanceof Error) {
             array.push(e.message);
           }

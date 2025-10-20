@@ -47,7 +47,7 @@ export default function BigIntTest() {
         let value = BigInt.asIntN(64, I64_CEIL - 1n);
         console.log('result ' + value.toString());
         expect(value.toString()).assertEqual('9223372036854775807');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -68,7 +68,7 @@ export default function BigIntTest() {
         let value = (BigInt.asIntN(64, I64_CEIL));
         console.log('result ' + value.toString());
         expect(value.toString()).assertEqual('-9223372036854775808');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -89,7 +89,7 @@ export default function BigIntTest() {
         let value = (BigInt.asIntN(64, I64_CEIL + 1n));
         console.log('result ' + value.toString());
         expect(value.toString()).assertEqual('-9223372036854775807');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -110,7 +110,7 @@ export default function BigIntTest() {
         let value = (BigInt.asIntN(64, I64_CEIL * 2n));
         console.log('result ' + value.toString());
         expect(value.toString()).assertEqual('0');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -131,7 +131,7 @@ export default function BigIntTest() {
         let value = (BigInt.asIntN(64, -I64_CEIL * -42n));
         console.log('result ' + value.toString());
         expect(value.toString()).assertEqual('0');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -152,7 +152,7 @@ export default function BigIntTest() {
         let value = BigInt.asUintN(64, U64_CEIL - 1n);
         console.log('result ' + value.toString());
         expect(value > 0n).assertEqual(true);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -173,7 +173,7 @@ export default function BigIntTest() {
         let value = BigInt.asUintN(64, U64_CEIL);
         console.log('result ' + value.toString());
         expect(value.toString()).assertEqual('0');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -194,7 +194,7 @@ export default function BigIntTest() {
         let value = BigInt.asUintN(64, U64_CEIL + 1n);
         console.log('result ' + value.toString());
         expect(value.toString()).assertEqual('1');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -215,7 +215,7 @@ export default function BigIntTest() {
         let value = BigInt.asUintN(64, U64_CEIL * 2n);
         console.log('result ' + value.toString());
         expect(value.toString()).assertEqual('0');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -236,7 +236,7 @@ export default function BigIntTest() {
         let value = BigInt.asUintN(64, U64_CEIL * -42n);
         console.log('result ' + value.toString());
         expect(value.toString()).assertEqual('0');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -257,7 +257,7 @@ export default function BigIntTest() {
         let value = Number(bigint1).toLocaleString();
         console.log('result ' + value.toString());
         expect(value).assertEqual('3,500');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -278,7 +278,7 @@ export default function BigIntTest() {
     //         let value = bigint.toLocaleString();
     //         console.log('result ' + value.toString());
     //         expect(value).assertEqual('');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -299,7 +299,7 @@ export default function BigIntTest() {
     //         let value = Number(bigint).toLocaleString();
     //         console.log('result ' + value.toString());
     //         expect(value).assertEqual('-1');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -320,7 +320,7 @@ export default function BigIntTest() {
     //         let value = String(bigint).toLocaleString();
     //         console.log('result ' + value.toString());
     //         expect(value).assertEqual('Test');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -340,7 +340,7 @@ export default function BigIntTest() {
     //         const bigint = 123456789123456789n;
     //         console.log('result ' + bigint.toLocaleString("de-DE"));
     //         expect(bigint.toLocaleString("de-DE")).assertEqual('123.456.789.123.456.789');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -360,7 +360,7 @@ export default function BigIntTest() {
     //         const bigint = 123456789123456789n;
     //         console.log('result ' + bigint.toLocaleString("ar-EG"));
     //         expect(bigint.toLocaleString("ar-EG")).assertEqual('١٢٣٬٤٥٦٬٧٨٩٬١٢٣٬٤٥٦٬٧٨٩');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -380,7 +380,7 @@ export default function BigIntTest() {
     //         const bigint = 123456789123456789n;
     //         console.log('result ' + bigint.toLocaleString("en-IN"));
     //         expect(bigint.toLocaleString('en-IN')).assertEqual('1,23,45,67,89,12,34,56,789');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -401,7 +401,7 @@ export default function BigIntTest() {
     //         console.log('result ' + bigint.toLocaleString('zh-Hans-CN-u-nu-hanidec'));
     //         expect(bigint.toLocaleString('zh-Hans-CN-u-nu-hanidec'))
     //             .assertEqual('一二三,四五六,七八九,一二三,四五六,七八九');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -422,7 +422,7 @@ export default function BigIntTest() {
     //         let value = bigint.toLocaleString(["ban", "id"]);
     //         console.log('result ' + value);
     //         expect(value).assertEqual('123.456.789.123.456.789');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -443,7 +443,7 @@ export default function BigIntTest() {
         let value = s.toString();
         console.log('result ' + value);
         expect(value).assertEqual('17');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -463,7 +463,7 @@ export default function BigIntTest() {
         let s = 17n;
         s.toString(1);
         expect(false).assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("toString() radix argument must be between 2 and 36");
       }
@@ -483,7 +483,7 @@ export default function BigIntTest() {
         let s = 17n;
         s.toString(37);
         expect(false).assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("toString() radix argument must be between 2 and 36");
       }
@@ -503,7 +503,7 @@ export default function BigIntTest() {
         let s = 17n;
         s.toString(-1);
         expect(false).assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("toString() radix argument must be between 2 and 36");
       }
@@ -524,7 +524,7 @@ export default function BigIntTest() {
         let value = s.toString();
         console.log('result ' + value);
         expect(value).assertEqual('66');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -544,7 +544,7 @@ export default function BigIntTest() {
         let s = 66n;
         s.toString(1);
         expect(false).assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("toString() radix argument must be between 2 and 36");
       }
@@ -564,7 +564,7 @@ export default function BigIntTest() {
         let s = 66n;
         s.toString(37);
         expect(false).assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("toString() radix argument must be between 2 and 36");
       }
@@ -584,7 +584,7 @@ export default function BigIntTest() {
         let s = 66n;
         s.toString(-1);
         expect(false).assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("toString() radix argument must be between 2 and 36");
       }
@@ -604,7 +604,7 @@ export default function BigIntTest() {
         let s = 254n;
         let value = s.toString();
         expect(value).assertEqual('254');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -624,7 +624,7 @@ export default function BigIntTest() {
         let s = 254n;
         let value = s.toString(1);
         expect(false).assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("toString() radix argument must be between 2 and 36");
       }
@@ -644,7 +644,7 @@ export default function BigIntTest() {
         let s = 254n;
         s.toString(37);
         expect(false).assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("toString() radix argument must be between 2 and 36");
       }
@@ -664,7 +664,7 @@ export default function BigIntTest() {
         let s = 254n;
         s.toString(-1);
         expect(false).assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("toString() radix argument must be between 2 and 36");
       }
@@ -685,7 +685,7 @@ export default function BigIntTest() {
         let value = s.toString();
         console.log('result ' + value);
         expect(value).assertEqual('-10');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -705,7 +705,7 @@ export default function BigIntTest() {
         let s = -10n;
         let value = s.toString(1);
         expect(false).assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual('toString() radix argument must be between 2 and 36');
       }
@@ -725,7 +725,7 @@ export default function BigIntTest() {
         let s = -10n;
         let value = s.toString(37);
         expect(false).assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual('toString() radix argument must be between 2 and 36');
       }
@@ -745,7 +745,7 @@ export default function BigIntTest() {
         let s = -10n;
         let value = s.toString(-1);
         expect(false).assertFail();
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual('toString() radix argument must be between 2 and 36');
       }
@@ -766,7 +766,7 @@ export default function BigIntTest() {
     //         let value = s.toString();
     //         console.log('result ' + value);
     //         expect(value).assertEqual('-255');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -786,7 +786,7 @@ export default function BigIntTest() {
     //         let s = -0xffn;
     //         s.toString(1);
     //         expect(false).assertFail();
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(`${err.message}`).assertEqual("toString() radix argument must be between 2 and 36");
     //     }
@@ -806,7 +806,7 @@ export default function BigIntTest() {
     //         let s = -0xffn;
     //         s.toString(37);
     //         expect(false).assertFail();
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(`${err.message}`).assertEqual("toString() radix argument must be between 2 and 36");
     //     }
@@ -826,7 +826,7 @@ export default function BigIntTest() {
     //         let s = -0xffn;
     //         s.toString(-1);
     //         expect(false).assertFail();
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(`${err.message}`).assertEqual("toString() radix argument must be between 2 and 36");
     //     }
@@ -847,7 +847,7 @@ export default function BigIntTest() {
         let result = s.toString();
         console.log('result ' + result);
         expect(result).assertEqual("0");
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -867,7 +867,7 @@ export default function BigIntTest() {
             let result = BigInt(-0).toString();
             console.log('result ' + result);
             expect(result).assertEqual("0");
-        } catch (err: Error) {
+        } catch (err) {
             console.error(`${TAG} failed, error: ${err.message}`);
             expect(false).assertFail();
         }

@@ -104,7 +104,7 @@ export default function enableJsunit() {
         }
         console.info("[testEnable03] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testEnable03] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -136,7 +136,7 @@ export default function enableJsunit() {
         }
         console.info("testEnable04 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testEnable04 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -168,7 +168,7 @@ export default function enableJsunit() {
         }
         console.info("[testEnable02] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testEnable02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

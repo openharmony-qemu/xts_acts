@@ -72,7 +72,7 @@ export default function EsimPublic1() {
           ExpectTrue(true);
           hilog.info(domain, tag, `${caseName} test end`);
           done();
-        } catch (error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           if (err?.code === 801) {
             hilog.error(domain, tag,
@@ -114,7 +114,7 @@ export default function EsimPublic1() {
             hilog.info(domain, tag, `${caseName} test end`);
             done();
           }
-        } catch (error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, caseName + " err = " + JSON.stringify(err));
           ExpectFail();
@@ -140,7 +140,7 @@ export default function EsimPublic1() {
           ExpectTrue(true);
           hilog.info(domain, tag, `${caseName} test end`);
           done();
-        } catch (error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.error(domain, tag, `${caseName} IsSupported failed, promise: err->${JSON.stringify(err)}`);
           expect(err?.code).assertEqual(401);
@@ -167,7 +167,7 @@ export default function EsimPublic1() {
           ExpectTrue(true);
           hilog.info(domain, tag, `${caseName} test end`);
           done();
-        } catch (error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.error(domain, tag, `${caseName} IsSupported failed, promise: err->${JSON.stringify(err)}`);
           expect(err?.code).assertEqual(401);
@@ -194,7 +194,7 @@ export default function EsimPublic1() {
           ExpectTrue(true);
           hilog.info(domain, tag, `${caseName} test end`);
           done();
-        } catch (error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.error(domain, tag, `${caseName} IsSupported failed, promise: err->${JSON.stringify(err)}`);
           expect(err?.code).assertEqual(401);

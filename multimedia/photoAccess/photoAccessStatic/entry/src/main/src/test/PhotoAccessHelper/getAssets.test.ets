@@ -48,13 +48,13 @@ export default function getAssetsTest() {
               expect(fetchResult?.getCount()).assertEqual(expectCount);
               fetchResult?.close();
             }
-          } catch (error: Error) {
+          } catch (error) {
             hilog.info(domain, tag,
               testNum + ' getAssets failed' + ", error.name:" + error.name + ", error.message:" + error.message);
           }
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag,
           testNum + ' test failed' + ", error.name:" + error.name + ", error.message:" + error.message);
         expect(false).assertTrue();
@@ -77,13 +77,13 @@ export default function getAssetsTest() {
               fetchResult?.close();
               expect(false).assertTrue();
             }
-          } catch (error: Error) {
+          } catch (error) {
             hilog.info(domain, tag,
               testNum + ' getAssets failed' + ", error.name:" + error.name + ", error.message:" + error.message);
           }
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag,
           testNum + ' test failed' + ", error.name:" + error.name + ", error.message:" + error.message);
         done();
@@ -97,7 +97,7 @@ export default function getAssetsTest() {
         expect(fetchResult.getCount()).assertEqual(expectCount);
         fetchResult.close();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag,
           testNum + ' test failed' + ", error.name:" + error.name + ", error.message:" + error.message);
         expect(false).assertTrue();
@@ -111,7 +111,7 @@ export default function getAssetsTest() {
         await helper.getAssets(fetchOps as photoAccessHelper.FetchOptions);
         expect(false).assertTrue();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag,
           testNum + ' test failed' + ", error.name:" + error.name + ", error.message:" + error.message);
         done();

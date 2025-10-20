@@ -60,7 +60,7 @@ export default function numberTest() {
       try {
         const result: string = expo(123456, 2);
         expect(result).assertEqual("1.23e+5");
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -79,7 +79,7 @@ export default function numberTest() {
       try {
         const result: string = expo(123543, 2);
         expect(result).assertEqual("1.24e+5");
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -98,7 +98,7 @@ export default function numberTest() {
       try {
         const result: string = expo(123456, 2.5);
         expect(result).assertEqual("1.23e+5");
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -163,7 +163,7 @@ export default function numberTest() {
       try {
         const result: string = expo(123456, 0);
         expect(result).assertEqual("1e+5");
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -183,7 +183,7 @@ export default function numberTest() {
         const result: string = expo(123456, 100);
         expect(result)
           .assertEqual("1.2345600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e+5");
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -202,7 +202,7 @@ export default function numberTest() {
       try {
         const result: string = expo1(123456);
         expect(result).assertEqual("1.23456e+5");
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -221,7 +221,7 @@ export default function numberTest() {
     //     try {
     //         const result: string = expo2('123456');
     //         expect(result).assertEqual("1.23456e+5");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -240,7 +240,7 @@ export default function numberTest() {
       try {
         const result: string = expo1(0);
         expect(result).assertEqual("0e+0");
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -259,7 +259,7 @@ export default function numberTest() {
       try {
         const result: string = expo1(100);
         expect(result).assertEqual("1e+2");
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -278,7 +278,7 @@ export default function numberTest() {
     //     try {
     //         const result: string = expo2('oink');
     //         expect(result).assertEqual("NaN");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -298,7 +298,7 @@ export default function numberTest() {
     //         const result01 = financial1(123.456, 2);
     //         console.log(result01);
     //         expect(result01).assertEqual("123.46");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -318,7 +318,7 @@ export default function numberTest() {
     //         const result02 = financial1(0.004, 2);
     //         console.log(result02);
     //         expect(result02).assertEqual("0.00");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -338,7 +338,7 @@ export default function numberTest() {
     //         const result03 = financial2('1.23e+5', 2);
     //         console.log(result03);
     //         expect(result03).assertEqual("123000.00");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -358,7 +358,7 @@ export default function numberTest() {
     //         const result04 = financial0('ww');
     //         console.log(result04);
     //         expect(result04).assertEqual("NaN");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -378,7 +378,7 @@ export default function numberTest() {
     //         const result = financial0('1.23e+5');
     //         console.log(result);
     //         expect(result).assertEqual("123000");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -398,7 +398,7 @@ export default function numberTest() {
     //         const result06 = financial2('1.23e+5', 0);
     //         console.log(result06);
     //         expect(result06).assertEqual("123000"); // 输出结果
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -418,7 +418,7 @@ export default function numberTest() {
     //         const result: string = financial2('1.23e+5', 100);
     //         expect(result)
     //             .assertEqual("123000.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -437,7 +437,7 @@ export default function numberTest() {
     //     try {
     //         const result: string = financial2('1.23e+5', 1.9);
     //         expect(result).assertEqual("123000.0");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -456,7 +456,7 @@ export default function numberTest() {
     //     try {
     //         const result: string = financial2('1.23e+5', -1);
     //         expect(false).assertFail();
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(`${err.message}`).assertEqual("fraction must be 0 to 100");
     //     }
@@ -475,7 +475,7 @@ export default function numberTest() {
     //     try {
     //         const result: string = financial2('1.23e+5', 101);
     //         expect(false).assertFail();
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(`${err.message}`).assertEqual("fraction must be 0 to 100");
     //     }
@@ -494,7 +494,7 @@ export default function numberTest() {
     //     try {
     //         const result: string = financial(0);
     //         expect(result).assertEqual("0");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -513,7 +513,7 @@ export default function numberTest() {
     //     try {
     //         const result = financial(100);
     //         expect(result).assertEqual("100");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -532,7 +532,7 @@ export default function numberTest() {
     //     try {
     //         const result = financial1(0.3, 50);
     //         expect(result).assertEqual('0.29999999999999998889776975374843459576368331909180');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -551,7 +551,7 @@ export default function numberTest() {
     //     try {
     //         const result = financial1(2.55, 1);
     //         expect(result).assertEqual('2.5');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -570,7 +570,7 @@ export default function numberTest() {
     //     try {
     //         const result = financial1(6.02e23, 50);
     //         expect(result).assertEqual('6.02e+23');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -588,7 +588,7 @@ export default function numberTest() {
     //     const TAG = "testNUMBER0001";
     //     try {
     //         expect(2.34.toFixed(1)).assertEqual('2.3');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -607,7 +607,7 @@ export default function numberTest() {
     //     const num = -2.34;
     //     try {
     //         expect(num.toFixed(1)).assertEqual('-2.3');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -625,7 +625,7 @@ export default function numberTest() {
         const TAG = "testNUMBER0003";
         try {
             expect((-2.34).toFixed(1)).assertEqual('-2.3');
-        } catch (err: Error) {
+        } catch (err) {
             console.error(`${TAG} failed, error: ${err.message}`);
             expect(false).assertFail();
         }
@@ -645,7 +645,7 @@ export default function numberTest() {
         const str: String = "١٢٣٬٤٥٦٫٧٨٩"
         const num: Number = 123456.789
         expect(eArabic(num)).assertEqual(str)
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -664,7 +664,7 @@ export default function numberTest() {
       try {
         const str: string = "123456.789"
         expect(eArabic1(str)).assertEqual("123456.789")
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -682,7 +682,7 @@ export default function numberTest() {
       const TAG = 'testNumberArabic0003';
       try {
         expect(eArabic(NaN)).assertEqual("ليس رقم")
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -701,7 +701,7 @@ export default function numberTest() {
       try {
         const str: String = "٠"
         expect(eArabic(0)).assertEqual(str)
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -720,7 +720,7 @@ export default function numberTest() {
     //     try {
     //         const number = 123456.789;
     //         expect(number.toLocaleString()).assertEqual('123,456.789');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -739,7 +739,7 @@ export default function numberTest() {
       try {
         const str = '123456.789';
         expect(str.toLocaleString()).assertEqual('123456.789');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -758,7 +758,7 @@ export default function numberTest() {
       try {
         const str = '-123456.789';
         expect(str.toLocaleString()).assertEqual('-123456.789');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -777,7 +777,7 @@ export default function numberTest() {
     //     try {
     //         const number = -123.789;
     //         expect(number.toLocaleString()).assertEqual('-123.789');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -797,7 +797,7 @@ export default function numberTest() {
     //         const number = 123.456;
     //         const result = number.toLocaleString('de-DE');
     //         expect(result).assertEqual('123,456');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -817,7 +817,7 @@ export default function numberTest() {
     //         const number = 123456.789;
     //         const result = number.toLocaleString("en-IN");
     //         expect(result).assertEqual("1,23,456.789");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -837,7 +837,7 @@ export default function numberTest() {
     //         const number = 123456.789;
     //         const result = number.toLocaleString("zh-Hans-CN-u-nu-hanidec");
     //         expect(result).assertEqual("一二三,四五六.七八九");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -857,7 +857,7 @@ export default function numberTest() {
     //         const number = 123456.789;
     //         const result = number.toLocaleString(["ban", "id"]);
     //         expect(result).assertEqual("123.456,789");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -879,7 +879,7 @@ export default function numberTest() {
     //             style: "currency", currency: "EUR"
     //         });
     //         expect(result).assertEqual("123.456,79 €");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -901,7 +901,7 @@ export default function numberTest() {
     //             style: "currency", currency: "JPY"
     //         });
     //         expect(result).assertEqual("￥123,457");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -923,7 +923,7 @@ export default function numberTest() {
     //             maximumSignificantDigits: 3
     //         });
     //         expect(result).assertEqual("1,23,000");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -944,7 +944,7 @@ export default function numberTest() {
           return x.toPrecision(4);
         };
         expect(precise(123.456)).assertEqual('123.5');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -965,7 +965,7 @@ export default function numberTest() {
           return x.toPrecision(4);
         };
         expect(precise(0.004)).assertEqual('0.004000');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -986,7 +986,7 @@ export default function numberTest() {
           return x.toPrecision(4);
         };
         expect(precise(1.230e5)).assertEqual('1.230e+5');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1007,7 +1007,7 @@ export default function numberTest() {
           return x.toPrecision();
         };
         expect(precise(123.456)).assertEqual('123.456');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1028,7 +1028,7 @@ export default function numberTest() {
           return x.toPrecision();
         };
         expect(precise(0.004)).assertEqual('0.004');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1049,7 +1049,7 @@ export default function numberTest() {
           return x.toPrecision();
         };
         expect(precise(1.23e5)).assertEqual('123000');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1096,7 +1096,7 @@ export default function numberTest() {
           return x.toPrecision(1);
         };
         expect(precise(123.456)).assertEqual("1e+2");
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1118,7 +1118,7 @@ export default function numberTest() {
         };
         expect(precise(123.456))
           .assertEqual("123.4560000000000030695446184836328029632568359375000000000000000000000000000000000000000000000000000");
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1165,7 +1165,7 @@ export default function numberTest() {
           return x.toPrecision(2.5);
         };
         expect(precise(123.456)).assertEqual("1.2e+2");
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1186,7 +1186,7 @@ export default function numberTest() {
           return x.toPrecision(2);
         };
         expect(precise(1234.456)).assertEqual("1.2e+3");
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1210,7 +1210,7 @@ export default function numberTest() {
     //             return 0;
     //         };
     //         expect(hexColour(233, 16)).assertEqual('e9');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -1235,7 +1235,7 @@ export default function numberTest() {
     //         }
     //         const result: string | Number = hexColour(11, 16);
     //         expect(result).assertEqual('b');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -1260,7 +1260,7 @@ export default function numberTest() {
     //         };
     //         hexColour(233, 1);
     //         expect(false).assertFail();
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         expect(err.message).assertEqual("radix must be 2 to 36");
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //     }
@@ -1285,7 +1285,7 @@ export default function numberTest() {
     //         }
     //         const result: string | Number = hexColour(233, 2);
     //         expect(result).assertEqual("11101001");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -1310,7 +1310,7 @@ export default function numberTest() {
     //         }
     //         const result: string | Number = hexColour(233, 36);
     //         expect(result).assertEqual("6h");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -1335,7 +1335,7 @@ export default function numberTest() {
     //         };
     //         hexColour(233, 37);
     //         expect(false).assertFail();
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         expect(err.message).assertEqual("radix must be 2 to 36");
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //     }
@@ -1355,7 +1355,7 @@ export default function numberTest() {
     //         const num = 1e21 * Math.pow(10, 0.5);
     //         const result = num.toString();
     //         expect(result).assertEqual('3.1622776601683794e+21');
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -1375,7 +1375,7 @@ export default function numberTest() {
     //         const num = 1e21 * 3.16227766;
     //         const result = num.toString(8);
     //         expect(result).assertEqual("526665530627250154000000");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -1395,7 +1395,7 @@ export default function numberTest() {
     //         const x = 6;
     //         const result = x.toString(2);
     //         expect(result).assertEqual("110");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -1414,7 +1414,7 @@ export default function numberTest() {
     //     try {
     //         const result = (254).toString(16);
     //         expect(result).assertEqual("fe");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -1433,7 +1433,7 @@ export default function numberTest() {
     //     try {
     //         const result = (-10).toString(2);
     //         expect(result).assertEqual("-1010");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -1452,7 +1452,7 @@ export default function numberTest() {
     //     try {
     //         const result = (-0xff).toString(2);
     //         expect(result).assertEqual("-11111111");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -1472,7 +1472,7 @@ export default function numberTest() {
     //         const hex = "CAFEBABE";
     //         const result = parseInt(hex, 16).toString(2);
     //         expect(result).assertEqual("11001010111111101011101010111110");
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }

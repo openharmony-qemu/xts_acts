@@ -70,7 +70,7 @@ export default function abilityDelegatorStage() {
           expect(testAbilityContext.config.colorMode === ConfigurationConstant.ColorMode.COLOR_MODE_DARK);
         }
         done();
-      } catch (error:Error) {
+      } catch (error) {
         hilog.info(0x0000, 'testTag', '%{public}s',
           'SetColorMode_0200 failed ' +  error.message);
         expect().assertFail();
@@ -102,7 +102,7 @@ export default function abilityDelegatorStage() {
           expect(testAbilityContext.config.language === 'zh-cn');
         }
         done();
-      } catch (error:Error) {
+      } catch (error) {
         hilog.info(0x0000, 'testTag', '%{public}s',
           'SetLanguage_0200 failed ' + error.message);
         expect().assertFail();

@@ -92,7 +92,7 @@ export default function longPressGestureJsunit() {
       try {
         console.info("testLongPressGesture01 on events_emitter on");
         events_emitter.on(innerEvent, callback)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testLongPressGesture01 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("testLongPressGesture01 sendEventByKey result: " +
@@ -123,7 +123,7 @@ export default function longPressGestureJsunit() {
       try {
         console.info("testLongPressGesture02 on events_emitter on");
         events_emitter.on(innerEvent, callback)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testLongPressGesture02 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("testLongPressGesture02 sendEventByKey result: " +

@@ -84,7 +84,7 @@ export default function commonJsunit() {
 
         console.info('commonTest_0100 END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });
@@ -100,7 +100,7 @@ export default function commonJsunit() {
       try {
         console.info('commonTest_0200 END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });
@@ -120,7 +120,7 @@ export default function commonJsunit() {
 
         console.info('commonTest_0300 END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });
@@ -138,7 +138,7 @@ export default function commonJsunit() {
 
         console.info('commonTest_0400 END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });
@@ -156,7 +156,7 @@ export default function commonJsunit() {
 
         console.info('commonTest_0500 END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });
@@ -176,7 +176,7 @@ export default function commonJsunit() {
 
         console.info('commonTest_0600 END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });
@@ -194,7 +194,7 @@ export default function commonJsunit() {
 
         console.info('commonTest_0700 END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });
@@ -212,7 +212,7 @@ export default function commonJsunit() {
 
         console.info('commonTest_0800 END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });
@@ -230,7 +230,7 @@ export default function commonJsunit() {
 
         console.info('commonTest_0900 END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });
@@ -248,7 +248,7 @@ export default function commonJsunit() {
 
         console.info('commonTest_1000 END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });
@@ -265,7 +265,7 @@ export default function commonJsunit() {
 
 
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });
@@ -285,7 +285,7 @@ export default function commonJsunit() {
 
         console.info('commonTest_1200 END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });
@@ -306,7 +306,7 @@ export default function commonJsunit() {
 
         console.info('commonTest_1500 END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });
@@ -326,7 +326,7 @@ export default function commonJsunit() {
 
         console.info('commonTest_1800 END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });

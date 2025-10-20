@@ -69,7 +69,7 @@ export default function listUxTest() {
           })
           await CommonFunc.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
       }
     });
@@ -105,7 +105,7 @@ export default function listUxTest() {
           expect(listItemGroupRight).assertEqual(right)
           expect(parseFloat(listItemHeight.asString())).assertEqual(48);
           expect(listItemHeight.asString().substr(listItemHeight.asString().length - 2, 2)).assertEqual("vp");
-        } catch (err: Error) {
+        } catch (err) {
           console.info('ArkUX_Stage_List_Style_static_0100 ERR  ' + JSON.stringify(err));
           expect().assertFail();
         }
@@ -147,7 +147,7 @@ export default function listUxTest() {
           expect(listItemGroupRight).assertEqual(right)
           expect(parseFloat(listItemHeight.asString())).assertEqual(48);
           expect(listItemHeight.asString().substr(listItemHeight.asString().length - 2, 2)).assertEqual("vp");
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_List_Style_static_0200 ERR  ' + JSON.stringify(err));
         }
@@ -187,7 +187,7 @@ export default function listUxTest() {
         expect(listItemGroupLeft).assertEqual(left)
         expect(listItemGroupRight).assertEqual(right)
         expect(parseFloat(listItemHeight.asString()) == 48).assertFalse();
-      } catch (err: Error) {
+      } catch (err) {
         console.info('ArkUX_Stage_List_Style_static_0300 ERR  ' + JSON.stringify(err));
         expect().assertFail();
       }
@@ -226,7 +226,7 @@ export default function listUxTest() {
         expect(listItemGroupLeft).assertEqual(left)
         expect(listItemGroupRight).assertEqual(right)
         expect(parseFloat(listItemHeight.asString()) == 48).assertFalse();
-      } catch (err: Error) {
+      } catch (err) {
         console.info('ArkUX_Stage_List_Style_static_0400 ERR  ' + JSON.stringify(err));
         expect().assertFail();
       }
@@ -265,7 +265,7 @@ export default function listUxTest() {
         expect(listItemGroupLeft).assertEqual(left)
         expect(listItemGroupRight).assertEqual(right)
         expect(parseFloat(listItemHeight.asString()) == 48).assertFalse();
-      } catch (err: Error) {
+      } catch (err) {
         console.info('ArkUX_Stage_List_Style_static_0500 ERR  ' + JSON.stringify(err));
         expect().assertFail();
       }
@@ -304,7 +304,7 @@ export default function listUxTest() {
         expect(listItemGroupLeft).assertEqual(left)
         expect(listItemGroupRight).assertEqual(right)
         expect(parseFloat(listItemHeight.asString()) == 48).assertFalse();
-      } catch (err: Error) {
+      } catch (err) {
         console.info('ArkUX_Stage_List_Style_static_0600 ERR  ' + JSON.stringify(err));
         expect().assertFail();
       }
@@ -343,7 +343,7 @@ export default function listUxTest() {
         expect(listItemGroupLeft).assertEqual(left)
         expect(listItemGroupRight).assertEqual(right)
         expect(parseFloat(listItemHeight.asString()) == 48).assertFalse();
-      } catch (err: Error) {
+      } catch (err) {
         console.info('ArkUX_Stage_List_Style_static_0700 ERR  ' + JSON.stringify(err));
         expect().assertFail();
       }
@@ -368,7 +368,7 @@ export default function listUxTest() {
             .getElement('$attrs').getElement('margin'))
         console.log("====> ArkUX_Stage_List_Style_static_0800 listItemGroupMargin:" + listItemGroupMargin)
         expect(listItemGroupMargin == margin).assertFalse()
-      } catch (err: Error) {
+      } catch (err) {
         console.info('ArkUX_Stage_List_Style_static_0800 ERR  ' + JSON.stringify(err));
         expect().assertFail();
       }
@@ -393,7 +393,7 @@ export default function listUxTest() {
             .getElement('$attrs').getElement('margin'))
         console.log("====> ArkUX_Stage_List_Style_static_0900 listItemGroupMargint:" + listItemGroupMargint)
         expect(listItemGroupMargint == margin).assertFalse()
-      } catch (err: Error) {
+      } catch (err) {
         console.info('ArkUX_Stage_List_Style_static_0900 ERR  ' + JSON.stringify(err));
         expect().assertFail();
       }
@@ -418,7 +418,7 @@ export default function listUxTest() {
             .getElement('$attrs').getElement('margin'))
         console.log("====> ArkUX_Stage_List_Style_1000 listItemGroupMargin:" + listItemGroupMargin)
         expect(listItemGroupMargin == margin).assertFalse()
-      } catch (err: Error) {
+      } catch (err) {
         console.info('ArkUX_Stage_List_Style_1000 ERR' + JSON.stringify(err));
         expect().assertFail();
       }
@@ -443,7 +443,7 @@ export default function listUxTest() {
             .getElement('$attrs').getElement('margin'))
         console.log("====> ArkUX_Stage_List_Style_1100 listItemGroupMargin:" + listItemGroupMargin)
         expect(listItemGroupMargin == margin).assertFalse()
-      } catch (err: Error) {
+      } catch (err) {
         console.info('ArkUX_Stage_List_Style_1100 ERR' + JSON.stringify(err));
         expect().assertFail();
       }
@@ -468,7 +468,7 @@ export default function listUxTest() {
             .getElement('$attrs').getElement('margin'))
         console.log("====> ArkUX_Stage_List_Style_1200 listItemGroupMargin:" + listItemGroupMargin)
         expect(listItemGroupMargin == margin).assertFalse()
-      } catch (err: Error) {
+      } catch (err) {
         console.info('ArkUX_Stage_List_Style_1200 ERR  ' + JSON.stringify(err));
         expect().assertFail();
       }
@@ -489,7 +489,7 @@ export default function listUxTest() {
           .getElement('$attrs')
           .getElement('scrollerForList'))
         expect(obj).assertEqual(undefined)
-      } catch (err: Error) {
+      } catch (err) {
         console.info('ArkUX_Stage_List_RollBack_0100 ERR  ' + JSON.stringify(err));
         expect().assertFail();
       }
@@ -511,7 +511,7 @@ export default function listUxTest() {
               .getElement('$attrs').getElement('scrollSnapAlign')
           console.log("====> ArkUX_Stage_List_LimitAnimation_0100 listItemLeft:" + scrollSnapAlign)
           expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.NONE")
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.log('ArkUX_Stage_List_LimitAnimation_0100 ERR  ' + JSON.stringify(err));
         }
@@ -534,7 +534,7 @@ export default function listUxTest() {
               .getElement('$attrs').getElement('scrollSnapAlign')
           console.log("====> ArkUX_Stage_List_LimitAnimation_0200 listItemLeft:" + scrollSnapAlign)
           expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.START")
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_List_LimitAnimation_0200 ERR  ' + JSON.stringify(err));
         }
@@ -557,7 +557,7 @@ export default function listUxTest() {
               .getElement('$attrs').getElement('scrollSnapAlign')
           console.log("====> ArkUX_Stage_List_LimitAnimation_0300 listItemLeft:" + scrollSnapAlign)
           expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.CENTER")
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_List_LimitAnimation_0300 ERR  ' + JSON.stringify(err));
         }
@@ -580,7 +580,7 @@ export default function listUxTest() {
               .getElement('$attrs').getElement('scrollSnapAlign')
           console.log("====> ArkUX_Stage_List_LimitAnimation_0400 listItemLeft:" + scrollSnapAlign)
           expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.END")
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_List_LimitAnimation_0400 ERR  ' + JSON.stringify(err));
         }
@@ -603,7 +603,7 @@ export default function listUxTest() {
               .getElement('$attrs').getElement('scrollSnapAlign')
           console.log("====> ArkUX_Stage_List_LimitAnimation_0500 listItemLeft:" + scrollSnapAlign)
           expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.NONE")
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_List_LimitAnimation_0500 ERR  ' + JSON.stringify(err));
         }
@@ -626,7 +626,7 @@ export default function listUxTest() {
               .getElement('$attrs').getElement('scrollSnapAlign')
           console.log("====> ArkUX_Stage_List_LimitAnimation_0600 listItemLeft:" + scrollSnapAlign)
           expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.NONE")
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_List_LimitAnimation_0600 ERR  ' + JSON.stringify(err));
         }
@@ -649,7 +649,7 @@ export default function listUxTest() {
               .getElement('$attrs').getElement('scrollSnapAlign')
           console.log("====> ArkUX_Stage_List_LimitAnimation_0700 listItemLeft:" + scrollSnapAlign)
           expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.NONE")
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_List_LimitAnimation_0700 ERR  ' + JSON.stringify(err));
         }
@@ -672,7 +672,7 @@ export default function listUxTest() {
               .getElement('$attrs').getElement('scrollSnapAlign')
           console.log("====> ArkUX_Stage_List_LimitAnimation_0800 listItemLeft:" + scrollSnapAlign)
           expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.NONE")
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_List_LimitAnimation_0800 ERR  ' + JSON.stringify(err));
         }
@@ -695,7 +695,7 @@ export default function listUxTest() {
               .getElement('$attrs').getElement('scrollSnapAlign')
           console.log("====> ArkUX_Stage_List_LimitAnimation_0900 listItemLeft:" + scrollSnapAlign)
           expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.NONE")
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_List_LimitAnimation_0900 ERR  ' + JSON.stringify(err));
         }
@@ -718,7 +718,7 @@ export default function listUxTest() {
               .getElement('$attrs').getElement('scrollSnapAlign')
           console.log("====> ArkUX_Stage_List_LimitAnimation_static_1000 listItemLeft:" + scrollSnapAlign)
           expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.NONE")
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_List_LimitAnimation_static_1000 ERR  ' + JSON.stringify(err));
         }
@@ -741,7 +741,7 @@ export default function listUxTest() {
               .getElement('$attrs').getElement('scrollSnapAlign')
           console.log("====> ArkUX_Stage_List_LimitAnimation_static_1100 listItemLeft:" + scrollSnapAlign)
           expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.START")
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_List_LimitAnimation_static_1100 ERR  ' + JSON.stringify(err));
         }
@@ -764,7 +764,7 @@ export default function listUxTest() {
               .getElement('$attrs').getElement('scrollSnapAlign')
           console.log("====> ArkUX_Stage_List_LimitAnimation_static_1200 listItemLeft:" + scrollSnapAlign)
           expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.NONE")
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_List_LimitAnimation_static_1200 ERR  ' + JSON.stringify(err));
         }
@@ -787,7 +787,7 @@ export default function listUxTest() {
               .getElement('$attrs').getElement('scrollSnapAlign')
           console.log("====> ArkUX_Stage_List_LimitAnimation_static_1300 listItemLeft:" + scrollSnapAlign)
           expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.START")
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_List_LimitAnimation_static_1300 ERR  ' + JSON.stringify(err));
         }
@@ -810,7 +810,7 @@ export default function listUxTest() {
               .getElement('$attrs').getElement('scrollSnapAlign')
           console.log("====> ArkUX_Stage_List_LimitAnimation_static_1400 listItemLeft:" + scrollSnapAlign)
           expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.NONE")
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_List_LimitAnimation_static_1400 ERR  ' + JSON.stringify(err));
         }
@@ -833,7 +833,7 @@ export default function listUxTest() {
               .getElement('$attrs').getElement('scrollSnapAlign')
           console.log("====> ArkUX_Stage_List_LimitAnimation_static_1500 listItemLeft:" + scrollSnapAlign)
           expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.START")
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_List_LimitAnimation_static_1500 ERR  ' + JSON.stringify(err));
         }
@@ -856,7 +856,7 @@ export default function listUxTest() {
               .getElement('$attrs').getElement('scrollSnapAlign')
           console.log("====> ArkUX_Stage_List_LimitAnimation_static_1600 listItemLeft:" + scrollSnapAlign)
           expect(scrollSnapAlign).assertEqual("ScrollSnapAlign.NONE")
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_List_LimitAnimation_static_1600 ERR  ' + JSON.stringify(err));
         }

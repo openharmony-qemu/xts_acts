@@ -119,7 +119,7 @@ export default function zIndexJsunit() {
         }
         console.info("[testZIndex02] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testZIndex02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -150,7 +150,7 @@ export default function zIndexJsunit() {
         }
         console.info("[testZIndex03] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testZIndex03] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -181,7 +181,7 @@ export default function zIndexJsunit() {
         }
         console.info("[testZIndex04] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testZIndex04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

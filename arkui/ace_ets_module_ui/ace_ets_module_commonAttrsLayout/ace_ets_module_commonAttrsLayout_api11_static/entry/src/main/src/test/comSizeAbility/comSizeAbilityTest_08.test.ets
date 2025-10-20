@@ -86,7 +86,7 @@ export default function comSizeAbilityTest_08() {
         console.info('[comSizeAbilityTestJsunit_static_23] END')
         await CommonFunc.sleep(1000);
         done()
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     })
@@ -115,7 +115,7 @@ export default function comSizeAbilityTest_08() {
         console.info('[comSizeAbilityTestJsunit_static_24] END')
         await CommonFunc.sleep(1000);
         done()
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     })

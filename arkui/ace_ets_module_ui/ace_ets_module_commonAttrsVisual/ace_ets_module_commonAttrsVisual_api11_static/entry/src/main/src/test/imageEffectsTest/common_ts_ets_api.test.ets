@@ -105,7 +105,7 @@ export default function common_ts_ets_apiStaticClearJsunit() {
         console.info("PersistProp0001 click result is: " +
         JSON.stringify(inspector.sendEventByKey('PersistPropText', 10, "")));
         events_emitter.on(innerEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("common_ts_ets_apiPersistProp0001 on events_emitter err : " + JSON.stringify(err));
       }
     });
@@ -131,7 +131,7 @@ export default function common_ts_ets_apiStaticClearJsunit() {
         }
         console.info("EnvProp0001 click result is: " + JSON.stringify(inspector.sendEventByKey('EnvPropText', 10, "")));
         events_emitter.on(innerEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("common_ts_ets_apiEnvProp0001 on events_emitter err : " + JSON.stringify(err));
       }
     });
@@ -154,7 +154,7 @@ export default function common_ts_ets_apiStaticClearJsunit() {
       try {
 
 
-      } catch (err: Error) {
+      } catch (err) {
         console.info("test_font_registerFont_0001  err : " + JSON.stringify(err));
         expect().assertFail();
 

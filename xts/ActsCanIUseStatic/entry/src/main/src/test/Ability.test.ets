@@ -35,7 +35,7 @@ export default function abilityTest() {
             try{
                 let result =  canIUse("")
                 expect(result == false).assertTrue()
-            }catch(e:Error){
+            } catch (e){
                 hilog.info(domain, tag, `SUB_GLOBAL_CANIUSE_STATIC_0100 failed: ${JSON.stringify(e)}`);
                 expect().assertFail();
             }

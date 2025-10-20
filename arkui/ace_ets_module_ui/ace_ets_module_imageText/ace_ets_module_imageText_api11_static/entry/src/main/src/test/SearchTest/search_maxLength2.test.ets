@@ -68,7 +68,7 @@ export default function search_maxLength2() {
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push search_maxLength2 page error: " + err);
         expect().assertFail();
       }

@@ -55,7 +55,7 @@ export default function SearchModifierTest() {
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push SearchModifierTest page error: " + err);
         expect().assertFail();
       }

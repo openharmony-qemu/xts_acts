@@ -92,7 +92,7 @@ export default function menuDividerTest() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push menuDivider page error " + JSON.stringify(err));
       }
       await sleep(2000)

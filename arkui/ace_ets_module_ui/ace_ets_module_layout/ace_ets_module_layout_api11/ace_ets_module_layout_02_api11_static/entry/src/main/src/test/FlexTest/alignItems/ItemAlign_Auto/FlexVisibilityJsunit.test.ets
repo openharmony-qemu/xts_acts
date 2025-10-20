@@ -128,7 +128,7 @@ it('testFlexItemAlignAutoFlexVisibilityNone_static', Level.LEVEL0, async () : Pr
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('visibility')).assertEqual("Visibility.Visible");
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Auto')
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexItemAlignAutoFlexVisibilityNone_static] failed');
         expect().assertFail();
       }
@@ -193,7 +193,7 @@ it('testFlexItemAlignAutoFlexVisibilityHidden_static', Level.LEVEL0, async () : 
           .assertTrue()
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Auto')
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexItemAlignAutoFlexVisibilityHidden_static] failed');
         expect().assertFail();
       }

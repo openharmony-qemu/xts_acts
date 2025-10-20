@@ -162,7 +162,7 @@ struct FlexGrowPage {
       this.standardComponentKey = routerParamOptions.view.standardComponentKey
       this.targetWidth = routerParamOptions.view.targetWidth
       this.targetHeight = routerParamOptions.view.targetHeight
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }

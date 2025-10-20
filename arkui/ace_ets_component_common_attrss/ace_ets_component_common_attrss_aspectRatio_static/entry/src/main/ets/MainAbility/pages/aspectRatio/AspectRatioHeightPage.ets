@@ -70,7 +70,7 @@ struct AspectRatioHeightPage {
       this.componentKey = router.getParams() ? (router.getParams() as ViewI)?.view?.componentKey : ''
       this.parentWidth = router.getParams() ? (router.getParams() as ViewI)?.view?.parentWidth : 0
       this.parentHeight = router.getParams() ? (router.getParams() as ViewI)?.view?.parentHeight : 0
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

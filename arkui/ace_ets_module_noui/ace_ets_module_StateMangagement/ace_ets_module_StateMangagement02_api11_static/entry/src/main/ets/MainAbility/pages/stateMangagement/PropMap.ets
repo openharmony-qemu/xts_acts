@@ -109,7 +109,7 @@ struct PropMapSample2 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('PropMap', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

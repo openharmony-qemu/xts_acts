@@ -92,7 +92,7 @@ export default function menuSecondTest() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push menusecond page error " + JSON.stringify(err));
       }
       await sleep(2000)

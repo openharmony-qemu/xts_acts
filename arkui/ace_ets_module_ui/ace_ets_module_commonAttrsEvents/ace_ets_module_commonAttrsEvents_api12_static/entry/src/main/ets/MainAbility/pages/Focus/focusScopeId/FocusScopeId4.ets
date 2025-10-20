@@ -109,7 +109,7 @@ struct FocusScopeId4 {
                     let val: string = i18n.System.getAppPreferredLanguage()
                     this.languageValue = val
                     console.log('getAppPreferredLanguage new ' + val)
-                  } catch (exception: Error) {
+                  } catch (exception) {
                     console.error(`Call System.setAppPreferredLanguage failed. Cause code: ${exception.code}, message: ${exception.message}`);
                     ;
                   }
@@ -124,7 +124,7 @@ struct FocusScopeId4 {
                     let val: string = i18n.System.getAppPreferredLanguage()
                     this.languageValue = val
                     console.log('getAppPreferredLanguage new ' + val)
-                  } catch (exception: Error) {
+                  } catch (exception) {
                     console.error(`Call System.setAppPreferredLanguage failed. Cause code: ${exception.code}, message: ${exception.message}`);
                     ;
                   }

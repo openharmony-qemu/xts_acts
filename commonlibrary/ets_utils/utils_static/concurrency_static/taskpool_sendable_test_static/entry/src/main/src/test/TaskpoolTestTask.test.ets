@@ -83,7 +83,7 @@ export default function TaskpoolTestTask() {
     //     expect(testTask1.cpuDuration != -1).assertTrue();
     //     console.info(`${caseName}: ${JSON.stringify(typeof (taskgroup1.name))}`);
     //     expect(typeof (taskgroup1.name) == 'string').assertTrue();
-    //    } catch (error: Error) {
+    //    } catch (error) {
     //     console.info(`${caseName}: catch error: code =>   message => ${error.message}`);
     //     done();
     //   }
@@ -119,7 +119,7 @@ export default function TaskpoolTestTask() {
     //     expect(type_duration == 'number').assertTrue();
     //     const type_name: string = typeof (taskInfo_0.name);
     //     expect(type_name == 'string').assertTrue();
-    //    } catch (error: Error) {
+    //    } catch (error) {
     //     console.info(`${caseName}: catch error: code =>   message => ${error.message}`);
     //     done();
     //   }
@@ -151,7 +151,7 @@ export default function TaskpoolTestTask() {
     //     expect(type_tid === 'number').assertTrue();
     //     expect(Array.isArray(threadInfos.taskIds)).assertTrue();
     //     expect(type_priority === 'number').assertTrue();
-    //    } catch (error: Error) {
+    //    } catch (error) {
     //     console.info(`${caseName}: catch error: code =>   message => ${error.message}`);
     //     done();
     //   }
@@ -179,7 +179,7 @@ export default function TaskpoolTestTask() {
     //     expect(Array.isArray(taskPoolInfo.taskInfos)).assertTrue();
     //     expect((taskPoolInfo.taskInfos).length != 0).assertTrue();
     //     done();
-    //    } catch (error: Error) {
+    //    } catch (error) {
     //     console.info(`${caseName}: catch error: code =>   message => ${error.message}`);
     //     done();
     //   }

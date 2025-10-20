@@ -114,7 +114,7 @@ export default function edgeEffectJsunit() {
         }
         console.info("edgeEffectTest_static_0200 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("edgeEffectTest_static_0200 change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

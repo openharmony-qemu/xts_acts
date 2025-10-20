@@ -66,7 +66,7 @@ struct requestFocus9 {
       Button('Focus-TextInput1').onClick((e: ClickEvent) => {
         try {
           this.getUIContext().getFocusController().requestFocus('requestFocus9_TextInput1')
-        } catch (error: Error) {
+        } catch (error) {
           this.text1 = '' + error.code
         }
       }).id('requestFocus9_btn1')

@@ -44,7 +44,7 @@ export default function GetPhotoAccessHelper() {
           expect(helper !== undefined).assertTrue();
           done();
           hilog.info(0x0000, 'testTag', 'getPhotoAccessHelper_static_000 end');
-        } catch (err: Error) {
+        } catch (err) {
           hilog.info(0x0000, 'testTag', 'getPhotoAccessHelper_static_000 failed' + err.name + err.message);
           expect(false).assertTrue();
           done();

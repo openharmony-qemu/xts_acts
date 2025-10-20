@@ -124,7 +124,7 @@ it('testFlexAlignCenterVisibilityNone_static', Level.LEVEL0, async () : Promise<
           .assertTrue();
         expect(Math.abs((Center_AddVisibility_013.bottom - Center_AddVisibility_013.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
           .assertTrue();
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexAlignCenterVisibilityNone] failed');
         expect().assertFail();
       }
@@ -188,7 +188,7 @@ it('testFlexAlignCenterVisibilityHidden_static', Level.LEVEL0, async () : Promis
           .assertTrue();
         expect(Math.abs((Center_AddVisibility_013.bottom - Center_AddVisibility_013.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
           .assertTrue();
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexAlignCenterVisibilityHidden] failed');
         expect().assertFail();
       }
@@ -252,7 +252,7 @@ it('testFlexAlignCenterVisibilityVisible_static', Level.LEVEL0, async () : Promi
           .assertTrue();
         expect(Math.abs((Center_AddVisibility_013.bottom - Center_AddVisibility_013.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1)
           .assertTrue();
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexAlignCenterVisibilityVisible_static] failed');
         expect().assertFail();
       }

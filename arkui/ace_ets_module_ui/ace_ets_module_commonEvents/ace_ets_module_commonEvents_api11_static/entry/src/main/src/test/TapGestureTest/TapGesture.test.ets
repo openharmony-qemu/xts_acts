@@ -122,7 +122,7 @@ export default function tapGestureTest() {
       }
       try {
         events_emitter.on(innerEvent, callback)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("[testTapGesture01] on events_emitter err : " + JSON.stringify(err));
       }
       console.info('testTapGesture01 sendTouchEvent one:' + sendTouchEvent(point));

@@ -56,7 +56,7 @@ export default function itemInGroupError() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push itemInGroupError page error:" + err);
       }
       console.info("itemInGroupError beforeEach end");

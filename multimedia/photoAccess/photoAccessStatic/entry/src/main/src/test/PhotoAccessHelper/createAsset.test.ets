@@ -50,13 +50,13 @@ export default function createAssetTest() {
               } else {
                 hilog.info(domain, tag, testNum + ' uri: ' + uri);
               }
-            } catch (error: Error) {
+            } catch (error) {
               hilog.info(domain, tag,
                 testNum + ' createAsset failed' + ", error.name:" + error.name + ", error.message:" + error.message);
             }
             done();
           });
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag,
           testNum + ' test failed' + ", error.name:" + error.name + ", error.message:" + error.message);
         expect(false).assertTrue();
@@ -75,12 +75,12 @@ export default function createAssetTest() {
             } else {
               hilog.info(domain, tag, testNum + " uri: " + uri)
             }
-          } catch (error: Error) {
+          } catch (error) {
             hilog.info(domain, tag, testNum + " error.name: " + error.name + ", error.message: " + error.message)
           }
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag, testNum + "failed; error.name: " + error.name + ", error.message: " + error.message)
         expect(false).assertTrue();
         done();
@@ -100,12 +100,12 @@ export default function createAssetTest() {
               } else {
                 expect(false).assertTrue();
               }
-            } catch (error: Error) {
+            } catch (error) {
               hilog.info(domain, tag, testNum + " error.name: " + error.name + ", error.message: " + error.message)
             }
             done();
           });
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag, testNum + "failed; error.name: " + error.name + ", error.message: " + error.message)
         expect(true).assertTrue();
         done();
@@ -117,7 +117,7 @@ export default function createAssetTest() {
       try {
         await helper.createAsset(type, extension, options);
         done();
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag, testNum + "failed; error.name: " + error.name + ", error.message: " + error.message)
         expect(false).assertTrue();
         done();
@@ -129,7 +129,7 @@ export default function createAssetTest() {
       try {
         await helper.createAsset(type, extension);
         done();
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag, testNum + "failed; error.name: " + error.name + ", error.message: " + error.message)
         expect(false).assertTrue();
         done();
@@ -144,7 +144,7 @@ export default function createAssetTest() {
           options as photoAccessHelper.CreateOptions);
         expect(false).assertTrue();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         hilog.info(domain, tag, testNum + "failed; error.name: " + error.name + ", error.message: " + error.message)
         expect(true).assertTrue();
         done();

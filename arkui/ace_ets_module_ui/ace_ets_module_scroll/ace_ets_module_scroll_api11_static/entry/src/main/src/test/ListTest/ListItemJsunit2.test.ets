@@ -68,7 +68,7 @@ export default function listItemJsunit2() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push listItem page error:" + err);
       }
     });
@@ -115,7 +115,7 @@ export default function listItemJsunit2() {
         }
         console.info("[testListItem_static_02] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testListItem_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -164,7 +164,7 @@ export default function listItemJsunit2() {
         }
         console.info("[testListItem_static_04] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testListItem_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

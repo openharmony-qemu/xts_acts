@@ -48,7 +48,7 @@ export default function DataViewTest() {
         dView.setUint32(0, 3);
         let value: Number = dView.getUint32(1);
         expect(value.toString()).assertEqual('768');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -70,7 +70,7 @@ export default function DataViewTest() {
         dView.setUint32(5, 3);
         let value: Number = dView.getUint32(1);
         expect(value.toString()).assertEqual('0');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -92,7 +92,7 @@ export default function DataViewTest() {
         dView.setUint32(5.5 as int, 3);
         let value: Number = dView.getUint32(1);
         expect(value.toString()).assertEqual('0');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -166,7 +166,7 @@ export default function DataViewTest() {
         dView.setUint16(0, 3);
         let value = dView.getUint16(0);
         expect(value).assertEqual(3);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -188,7 +188,7 @@ export default function DataViewTest() {
         dView.setUint16(5, 3);
         let value: Number = dView.getUint16(1);
         expect(value).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -210,7 +210,7 @@ export default function DataViewTest() {
         dView.setUint16(5.5 as int, 3);
         let value: Number = dView.getUint16(1);
         expect(value).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     })
@@ -283,7 +283,7 @@ export default function DataViewTest() {
         dView.setUint8(0, 3);
         let value = dView.getUint8(1);
         expect(value).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -305,7 +305,7 @@ export default function DataViewTest() {
         dView.setUint8(5, 3);
         let value = dView.getUint8(1);
         expect(value).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -327,7 +327,7 @@ export default function DataViewTest() {
         dView.setUint8(5.5 as int, 3);
         let value = dView.getUint8(1);
         expect(value).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -401,7 +401,7 @@ export default function DataViewTest() {
         dView.setInt32(0, 3);
         let value = dView.getInt32(1);
         expect(value).assertEqual(768);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -423,7 +423,7 @@ export default function DataViewTest() {
         dView.setInt32(5, 3);
         let value = dView.getInt32(1);
         expect(value).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -445,7 +445,7 @@ export default function DataViewTest() {
         dView.setInt32(5.5 as int, 3);
         let value = dView.getInt32(1);
         expect(value).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -519,7 +519,7 @@ export default function DataViewTest() {
         dView.setUint16(0, 3);
         let value: Number = dView.getUint16(1);
         expect(value.toString()).assertEqual('768');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err).assertFail();
       }
@@ -541,7 +541,7 @@ export default function DataViewTest() {
         dView.setUint16(5, 3);
         let value: Number = dView.getUint16(1);
         expect(value).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err).assertFail();
       }
@@ -563,7 +563,7 @@ export default function DataViewTest() {
         dView.setUint16(5.5 as int, 3);
         let value: Number = dView.getUint16(1);
         expect(value).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err).assertFail();
       }
@@ -637,7 +637,7 @@ export default function DataViewTest() {
         dView.setUint8(0, 3);
         let value = dView.getUint8(1);
         expect(value).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err).assertFail();
       }
@@ -659,7 +659,7 @@ export default function DataViewTest() {
         dView.setUint8(5, 3);
         let value = dView.getUint8(1);
         expect(value).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err).assertFail();
       }
@@ -681,7 +681,7 @@ export default function DataViewTest() {
         dView.setInt8(5.5 as int, 3);
         let value = dView.getUint8(1);
         expect(value).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -754,7 +754,7 @@ export default function DataViewTest() {
         dView.setFloat64(0, 3);
         let result: Number = dView.getFloat64(1);
         expect(result.toString()).assertEqual('3.785766995733679e-270');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -880,7 +880,7 @@ export default function DataViewTest() {
         dView.setFloat32(0, 3);
         let value = dView.getFloat32(1);
         expect(value).assertEqual(2);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -902,7 +902,7 @@ export default function DataViewTest() {
         dView.setFloat32(1, 3);
         let value = dView.getFloat32(1);
         expect(value).assertEqual(3);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -924,7 +924,7 @@ export default function DataViewTest() {
         dView.setFloat32(5.5 as int, 3);
         let value = dView.getFloat32(1);
         expect(value).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -998,7 +998,7 @@ export default function DataViewTest() {
         dView.setBigUint64(1, 4n);
         let value = dView.getBigUint64(1);
         expect(value).assertEqual(4n);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1124,7 +1124,7 @@ export default function DataViewTest() {
         dView.setBigInt64(0, 4n);
         let value = dView.getBigInt64(1);
         expect(value.toString()).assertEqual('1024')
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1249,7 +1249,7 @@ export default function DataViewTest() {
         const dataview = new DataView(buffer);
         let value = dataview.byteOffset;
         expect(value).assertEqual(0)
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1270,7 +1270,7 @@ export default function DataViewTest() {
         const dataview = new DataView(buffer);
         let value = dataview.byteOffset;
         expect(value).assertEqual(0)
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1291,7 +1291,7 @@ export default function DataViewTest() {
         const dataview = new DataView(buffer);
         let value = dataview.byteOffset;
         expect(value).assertEqual(0)
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1336,7 +1336,7 @@ export default function DataViewTest() {
         const dataView = new DataView(new ArrayBuffer(8));
         const value = dataView.getBigInt64(0);
         expect(value.toString()).assertEqual('0');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1452,7 +1452,7 @@ export default function DataViewTest() {
         const dataView = new DataView(new ArrayBuffer(8));
         const value = dataView.getBigUint64(0);
         expect(value.toString()).assertEqual('0');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1568,7 +1568,7 @@ export default function DataViewTest() {
         const dataView = new DataView(new ArrayBuffer(4));
         const value = dataView.getFloat32(0);
         expect(value).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1713,7 +1713,7 @@ export default function DataViewTest() {
         const dataview = new DataView(buffer);
         let res = dataview.getFloat64(0);
         expect(res).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1859,7 +1859,7 @@ export default function DataViewTest() {
         view.setInt8(1, 0);
         const result = view.getInt8(0);
         expect(result).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1880,7 +1880,7 @@ export default function DataViewTest() {
         const view = new DataView(buffer);
         const result = view.getInt8(1);
         expect(result).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1900,7 +1900,7 @@ export default function DataViewTest() {
         const buffer = new ArrayBuffer(8);
         const dataView = new DataView(buffer);
         expect(dataView.getInt8(5)).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1970,7 +1970,7 @@ export default function DataViewTest() {
         const buffer = new ArrayBuffer(8);
         const dataView = new DataView(buffer);
         expect(dataView.getInt16(0)).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1990,7 +1990,7 @@ export default function DataViewTest() {
         const buffer = new ArrayBuffer(8);
         const dataView = new DataView(buffer);
         expect(dataView.getInt16(1)).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2010,7 +2010,7 @@ export default function DataViewTest() {
         const buffer = new ArrayBuffer(8);
         const dataView = new DataView(buffer);
         expect(dataView.getInt16(5)).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2080,7 +2080,7 @@ export default function DataViewTest() {
         const buffer = new ArrayBuffer(8);
         const dataView = new DataView(buffer);
         expect(dataView.getInt32(0)).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2100,7 +2100,7 @@ export default function DataViewTest() {
         const buffer = new ArrayBuffer(8);
         const dataView = new DataView(buffer);
         expect(dataView.getInt32(1)).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2221,7 +2221,7 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         const result = dataView.getUint8(0);
         expect(result).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2242,7 +2242,7 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         const result = dataView.getUint8(1);
         expect(result).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2263,7 +2263,7 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         const result = dataView.getUint8(5);
         expect(result).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2334,7 +2334,7 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         const result = dataView.getUint16(0);
         expect(result).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2355,7 +2355,7 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         const result = dataView.getUint16(1);
         expect(result).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2376,7 +2376,7 @@ export default function DataViewTest() {
         const dataView = new DataView(buffer);
         const result = dataView.getUint16(5);
         expect(result).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2398,7 +2398,7 @@ export default function DataViewTest() {
         const result = dataView.getUint16(5.5 as int);
         // 断言结果应为0
         expect(result).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2470,7 +2470,7 @@ export default function DataViewTest() {
         const result = dataView.getUint32(0);
         // 断言结果应为0
         expect(result).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2492,7 +2492,7 @@ export default function DataViewTest() {
         const result = dataView.getUint32(1);
         console.info('Result of getUint32(1): ' + result);
         expect(result).assertEqual(0);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2613,7 +2613,7 @@ export default function DataViewTest() {
     //         const dataView = new DataView(buffer);
     //         let len:Number = dataView.buffer.byteLength;
     //         expect(len).assertEqual(8);
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -2634,7 +2634,7 @@ export default function DataViewTest() {
     //         const dataView = new DataView(buffer);
     //         let len:Number = dataView.buffer.byteLength;
     //         expect(len).assertEqual(65536);
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }
@@ -2655,7 +2655,7 @@ export default function DataViewTest() {
     //         const dataView = new DataView(buffer);
     //         let len:Number = dataView.buffer.byteLength;
     //         expect(false).assertFail();
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         expect(err.message).assertEqual('integerIndex < 0 or integerIndex > SAFE_NUMBER');
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //     }
@@ -2676,7 +2676,7 @@ export default function DataViewTest() {
     //         const dataView = new DataView(buffer);
     //         let len:Number = dataView.buffer.byteLength;
     //         expect(len).assertEqual(5);
-    //     } catch (err: Error) {
+    //     } catch (err) {
     //         console.error(`${TAG} failed, error: ${err.message}`);
     //         expect(false).assertFail();
     //     }

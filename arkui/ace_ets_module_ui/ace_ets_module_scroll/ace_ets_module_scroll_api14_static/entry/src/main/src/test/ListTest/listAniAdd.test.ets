@@ -56,7 +56,7 @@ export default function listAniAdd() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push listAniAdd page error:" + err);
       }
       console.info("listAniAdd beforeEach end");

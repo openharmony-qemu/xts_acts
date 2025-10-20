@@ -139,7 +139,7 @@ export default function WebsocketTestStatic() {
           done();
           hilog.info(domain, tag, `${caseName} test end`);
         })
-      } catch (err:Error) {
+      } catch (err) {
         let error = err as  BusinessError;
         hilog.info(domain, tag, `${caseName} catch error ${JSON.stringify(error)}`);
         if (error?.code === PERMISSION_DENIED_CODE){
@@ -195,7 +195,7 @@ export default function WebsocketTestStatic() {
           done();
           hilog.info(domain, tag, `${caseName} test end`);
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch error ${JSON.stringify(err)}`);
         expectTrue(false);
         hilog.info(domain, tag, `${caseName} test end`);
@@ -243,7 +243,7 @@ export default function WebsocketTestStatic() {
           done();
           hilog.info(domain, tag, `${caseName} test end`);
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch error ${JSON.stringify(err)}`);
         expectTrue(false);
         hilog.info(domain, tag, `${caseName} test end`);
@@ -291,7 +291,7 @@ export default function WebsocketTestStatic() {
           done();
           hilog.info(domain, tag, `${caseName} test end`);
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch error ${JSON.stringify(err)}`);
         expectTrue(false);
         hilog.info(domain, tag, `${caseName} test end`);
@@ -337,7 +337,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch err is ${JSON.stringify(err)}`);
         ExpectTrue(false)
         done();
@@ -388,7 +388,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -439,7 +439,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -491,7 +491,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -543,7 +543,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -577,7 +577,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test end`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -638,7 +638,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -689,7 +689,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -739,7 +739,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -788,7 +788,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -838,7 +838,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -889,7 +889,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -923,7 +923,7 @@ export default function WebsocketTestStatic() {
           done();
           hilog.info(domain, tag, `${caseName} test end`);
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -981,7 +981,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1030,7 +1030,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1081,7 +1081,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1145,7 +1145,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1179,7 +1179,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test end`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1231,7 +1231,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1282,7 +1282,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1333,7 +1333,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1385,7 +1385,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1437,7 +1437,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1471,7 +1471,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test end`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1520,7 +1520,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1569,7 +1569,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1619,7 +1619,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1669,7 +1669,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1718,7 +1718,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1751,7 +1751,7 @@ export default function WebsocketTestStatic() {
           done();
           hilog.info(domain, tag, `${caseName} test end`);
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1787,7 +1787,7 @@ export default function WebsocketTestStatic() {
           done();
           hilog.info(domain, tag, `${caseName} test end`);
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1842,7 +1842,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1869,7 +1869,7 @@ export default function WebsocketTestStatic() {
         })
         expectTrue(true);
         done();
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1903,7 +1903,7 @@ export default function WebsocketTestStatic() {
           done();
           hilog.info(domain, tag, `${caseName} test end`);
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1936,7 +1936,7 @@ export default function WebsocketTestStatic() {
           done();
           hilog.info(domain, tag, `${caseName} test end`);
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1969,7 +1969,7 @@ export default function WebsocketTestStatic() {
           done();
           hilog.info(domain, tag, `${caseName} test end`);
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -1997,7 +1997,7 @@ export default function WebsocketTestStatic() {
         })
         expectTrue(true);
         done();
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -2053,7 +2053,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -2111,7 +2111,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -2168,7 +2168,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -2225,7 +2225,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -2252,7 +2252,7 @@ export default function WebsocketTestStatic() {
         })
         expectTrue(true);
         done();
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -2308,7 +2308,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -2364,7 +2364,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -2422,7 +2422,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -2479,7 +2479,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -2536,7 +2536,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -2568,7 +2568,7 @@ export default function WebsocketTestStatic() {
           done();
           hilog.info(domain, tag, `${caseName} test end`);
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -2601,7 +2601,7 @@ export default function WebsocketTestStatic() {
           done();
           hilog.info(domain, tag, `${caseName} test end`);
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -2634,7 +2634,7 @@ export default function WebsocketTestStatic() {
           done();
           hilog.info(domain, tag, `${caseName} test end`);
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -2666,7 +2666,7 @@ export default function WebsocketTestStatic() {
           done();
           hilog.info(domain, tag, `${caseName} test end`);
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -2726,7 +2726,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -2789,7 +2789,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -2850,7 +2850,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -2911,7 +2911,7 @@ export default function WebsocketTestStatic() {
             hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
           }
         })
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();

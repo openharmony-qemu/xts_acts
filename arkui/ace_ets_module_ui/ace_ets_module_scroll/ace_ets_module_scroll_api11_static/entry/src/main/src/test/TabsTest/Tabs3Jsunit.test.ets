@@ -55,7 +55,7 @@ export default function tabsJsunit() {
           await CommonFunc.sleep(2000);
 
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push tabs page error:" + err);
       }
     });
@@ -211,7 +211,7 @@ export default function tabsJsunit() {
         }
         console.info("testTabs_static_0800 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testTabs_static_0800 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -243,7 +243,7 @@ export default function tabsJsunit() {
         }
         console.info("testTabs_static_0900 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testTabs_static_0900 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -275,7 +275,7 @@ export default function tabsJsunit() {
         }
         console.info("testTabs_static_1000 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testTabs_static_1000 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -307,7 +307,7 @@ export default function tabsJsunit() {
         }
         console.info("testTabs_static_1100 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testTabs_static_1100 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -339,7 +339,7 @@ export default function tabsJsunit() {
         }
         console.info("testTabs_static_1200 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testTabs_static_1200 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -371,7 +371,7 @@ export default function tabsJsunit() {
         }
         console.info("testTabs_static_1300 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testTabs_static_1300 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -404,7 +404,7 @@ export default function tabsJsunit() {
         }
         try {
           events_emitter.on(indexEvent, callback);
-        } catch (err: Error) {
+        } catch (err) {
           console.info("testTabs_static_1400 on events_emitter err : " + JSON.stringify(err));
         }
         console.info("testTabs_static_1400 click result is: " +

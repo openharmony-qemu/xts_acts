@@ -95,7 +95,7 @@ export default function datepicker() {
           }
           console.info("[datePicker_afterEach] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-          } catch (err:Error) {
+          } catch (err) {
             console.log("[selectTest_afterEach] change component data error: " + err.message);
         }
     })

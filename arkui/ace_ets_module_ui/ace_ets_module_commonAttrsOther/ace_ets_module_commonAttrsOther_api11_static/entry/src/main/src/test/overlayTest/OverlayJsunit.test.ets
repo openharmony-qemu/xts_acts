@@ -143,7 +143,7 @@ export default function overLayJsunit() {
         }
         console.info("[testOverlay02] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -179,7 +179,7 @@ export default function overLayJsunit() {
         }
         console.info("[testOverlay03] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay03] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -229,7 +229,7 @@ export default function overLayJsunit() {
         }
         console.info("[testOverlay04] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -266,7 +266,7 @@ export default function overLayJsunit() {
         }
         console.info("[testOverlay05] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -304,7 +304,7 @@ export default function overLayJsunit() {
         }
         console.info("[testOverlay06] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -348,7 +348,7 @@ export default function overLayJsunit() {
         }
         console.info("[testOverlay07] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay07] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -386,7 +386,7 @@ export default function overLayJsunit() {
         }
         console.info("[testOverlay08] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testOverlay08] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

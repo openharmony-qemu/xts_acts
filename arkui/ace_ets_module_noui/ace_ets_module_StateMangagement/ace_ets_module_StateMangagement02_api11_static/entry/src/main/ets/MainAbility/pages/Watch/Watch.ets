@@ -79,7 +79,7 @@ struct WATCHBasketModifier {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('Watch', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

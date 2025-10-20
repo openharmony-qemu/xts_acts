@@ -148,7 +148,7 @@ export default function telephonyRadioPublicTest() {
               done();
             }
           });
-        } catch(error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();
@@ -183,7 +183,7 @@ export default function telephonyRadioPublicTest() {
               done();
             }
           });
-        } catch (error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();
@@ -217,7 +217,7 @@ export default function telephonyRadioPublicTest() {
             hilog.info(domain, tag, `${caseName} test end`);
             done();
           });
-        } catch(error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();
@@ -251,7 +251,7 @@ export default function telephonyRadioPublicTest() {
             hilog.info(domain, tag, `${caseName} test end`);
             done();
           });
-        } catch (error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();
@@ -286,7 +286,7 @@ export default function telephonyRadioPublicTest() {
               done();
             }
           });
-        } catch(error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();
@@ -321,7 +321,7 @@ export default function telephonyRadioPublicTest() {
               done();
             }
           });
-        } catch(error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();
@@ -355,7 +355,7 @@ export default function telephonyRadioPublicTest() {
             hilog.error(domain, tag, `${caseName} test end`);
             done();
           });
-        } catch(error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();
@@ -389,7 +389,7 @@ export default function telephonyRadioPublicTest() {
             hilog.error(domain, tag, `${caseName} test end`);
             done();
           });
-        } catch(error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();
@@ -424,7 +424,7 @@ export default function telephonyRadioPublicTest() {
               done();
             }
           });
-        } catch(error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();
@@ -459,7 +459,7 @@ export default function telephonyRadioPublicTest() {
               done();
             }
           });
-        } catch(error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();
@@ -486,7 +486,7 @@ export default function telephonyRadioPublicTest() {
           expect().assertFail();
           hilog.info(domain, tag, `${caseName} test end`);
           done();
-        } catch (error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.error(domain, tag, `${caseName} failed, Promise: err->${err}`);
           expect(true).assertEqual(err?.code === 8300001);
@@ -513,7 +513,7 @@ export default function telephonyRadioPublicTest() {
           expect().assertFail();
           hilog.info(domain, tag, `${caseName} test end`);
           done();
-        } catch (error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.error(domain, tag, `${caseName} failed, Promise: err->${err}`);
           expect(true).assertEqual(err?.code === 8300001);
@@ -548,7 +548,7 @@ export default function telephonyRadioPublicTest() {
               done();
             }
           });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, `${caseName} failed, Callback: err->${err}`);
         expect().assertFail();
@@ -582,7 +582,7 @@ export default function telephonyRadioPublicTest() {
               done();
             }
           });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, `${caseName} failed, Callback: err->${err}`);
         expect().assertFail();
@@ -614,7 +614,7 @@ export default function telephonyRadioPublicTest() {
           hilog.info(domain, tag, `${caseName} test end`);
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, `${caseName} failed, Promise: err->${err}`);
         expect().assertFail();
@@ -646,7 +646,7 @@ export default function telephonyRadioPublicTest() {
           hilog.info(domain, tag, `${caseName} test end`);
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, `${caseName} failed, Promise: err->${err}`);
         expect().assertFail();
@@ -671,7 +671,7 @@ export default function telephonyRadioPublicTest() {
         ExpectTrue(true);
         hilog.info(domain, tag,`${caseName} test end`);
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag,`${caseName} failed: " + err`);
         ExpectFail();
@@ -697,7 +697,7 @@ export default function telephonyRadioPublicTest() {
         ExpectTrue(true);
         hilog.info(domain, tag,`${caseName} test end`);
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag,`${caseName} failed: " + err`);
         ExpectFail();

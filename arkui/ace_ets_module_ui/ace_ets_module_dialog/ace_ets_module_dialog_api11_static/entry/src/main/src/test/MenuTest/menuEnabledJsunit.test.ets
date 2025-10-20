@@ -84,7 +84,7 @@ export default function menuEnabledJsunit() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push menuEnabledJsunit page error: " + err);
         expect().assertFail();
       }

@@ -68,7 +68,7 @@ export default function listNewJsunit() {
           await CommonFunc.sleep(2000);
 
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push list page error: " + err);
       }
     });
@@ -219,7 +219,7 @@ export default function listNewJsunit() {
 
 
             console.info("testListNe_static_0007 end");
-          } catch (err: Error) {
+          } catch (err) {
             console.info("testListNe_static_0007 on events_emitter err : " + JSON.stringify(err));
           }
         }
@@ -227,7 +227,7 @@ export default function listNewJsunit() {
           console.info("testListNe_static_0007 click result is: " +
             JSON.stringify(inspector.sendEventByKey('onScrollBegin', 10, "")));
           events_emitter.on(innerEvent, callback);
-        } catch (err: Error) {
+        } catch (err) {
           console.info("testListNe_static_0007 on events_emitter err : " + JSON.stringify(err));
         }
       } catch (ERROR) {

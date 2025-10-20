@@ -145,7 +145,7 @@ it('testPositionSetting_static_003', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[testPositionSetting003] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testPositionSetting003] change component data error: " + err.message );
       }
       await CommonFunc.sleep(4000);
@@ -185,7 +185,7 @@ it('testPositionSetting_static_004', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[testPositionSetting004] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err : Error) {
+      } catch (err) {
         console.log("[testPositionSetting004] change component data error: " + err?.message);
       }
       await CommonFunc.sleep(3000);
@@ -264,7 +264,7 @@ it('testPositionSetting_static_006', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[testPositionSetting006] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testPositionSetting006] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -341,7 +341,7 @@ it('testPositionSetting_static_008', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[testPositionSetting008] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err :Error) {
+      } catch (err) {
         console.log("[testPositionSetting008] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -411,7 +411,7 @@ it('testPositionSetting_static_010', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[testPositionSetting010] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err :Error) {
+      } catch (err) {
         console.log("[testPositionSetting010] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -475,7 +475,7 @@ it('testPositionSetting_static_012', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[testPositionSetting012] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err :Error) {
+      } catch (err) {
         console.log("[testPositionSetting012] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

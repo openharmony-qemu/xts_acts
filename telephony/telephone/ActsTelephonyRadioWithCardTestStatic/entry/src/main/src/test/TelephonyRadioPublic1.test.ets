@@ -105,7 +105,7 @@ export default function TelephonyRadioPublic1Static() {
               }
             });
           }
-        } catch(error: Error){
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();
@@ -154,7 +154,7 @@ export default function TelephonyRadioPublic1Static() {
               done();
             }
           }
-        } catch(error: Error){
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();
@@ -206,7 +206,7 @@ export default function TelephonyRadioPublic1Static() {
               }
             });
           }
-        } catch(error: Error){
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();
@@ -256,7 +256,7 @@ export default function TelephonyRadioPublic1Static() {
               }
             });
           }
-        } catch(error: Error){
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();
@@ -297,7 +297,7 @@ export default function TelephonyRadioPublic1Static() {
               }
             });
           }
-        } catch(error: Error){
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();
@@ -337,7 +337,7 @@ export default function TelephonyRadioPublic1Static() {
               done();
             });
           }
-        } catch(error: Error){
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();
@@ -370,7 +370,7 @@ export default function TelephonyRadioPublic1Static() {
               expect(true).assertEqual(typeof data === 'string');
               hilog.info(domain, tag, `${caseName} test end`);
               done();
-            } catch (error: Error) {
+            } catch (error) {
               let err = error as BusinessError;
               hilog.error(domain, tag, `${caseName} failed, err->${JSON.stringify(err)}`);
               expect().assertFail();
@@ -378,7 +378,7 @@ export default function TelephonyRadioPublic1Static() {
               done();
             }
           }
-        } catch(error: Error){
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();
@@ -423,7 +423,7 @@ export default function TelephonyRadioPublic1Static() {
               done();
             }
           });
-        } catch(error: Error){
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();
@@ -453,7 +453,7 @@ export default function TelephonyRadioPublic1Static() {
                 ExpectTrue(true);
                 hilog.info(domain, tag, `${caseName} test end`);
                 done();
-              } catch (error: Error) {
+              } catch (error) {
                 let err = error as BusinessError;
                 hilog.error(domain, tag, `${caseName} failed, Promise: err->${err}`);
                 expect().assertFail();
@@ -467,7 +467,7 @@ export default function TelephonyRadioPublic1Static() {
               done();
             }
           });
-        } catch(error: Error){
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, catch: err->${JSON.stringify(err)}`);
           expect().assertFail();

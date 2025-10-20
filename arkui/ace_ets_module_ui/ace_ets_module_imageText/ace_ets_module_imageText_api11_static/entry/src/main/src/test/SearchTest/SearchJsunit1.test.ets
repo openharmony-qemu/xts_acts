@@ -60,7 +60,7 @@ export default function searchTest() {
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push search page error: " + err);
       }
     });
@@ -94,7 +94,7 @@ it('testSearchCaretStyle_static_02', Level.LEVEL0, async (done: () => void): Pro
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -138,7 +138,7 @@ it('testSearchPlaceholderFont_static_04', Level.LEVEL0, async (done: () => void)
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -174,7 +174,7 @@ it('testSearchSearchIcon_static_05', Level.LEVEL0, async (done: () => void): Pro
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -219,7 +219,7 @@ it('testSearchSearchButton_static_06', Level.LEVEL0, async (done: () => void): P
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -254,7 +254,7 @@ it('testSearchFontColor_static_07', Level.LEVEL0, async (done: () => void): Prom
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -296,7 +296,7 @@ it('testSearchCopyOption_static_08', Level.LEVEL0, async (done: () => void): Pro
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -338,7 +338,7 @@ it('testSearchTextFont_static_09', Level.LEVEL0, async (done: () => void): Promi
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -374,7 +374,7 @@ it('testSearchPlaceholderColor_static_10', Level.LEVEL0, async (done: () => void
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -409,7 +409,7 @@ it('testSearchCancelButton_static_11', Level.LEVEL0, async (done: () => void): P
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -454,7 +454,7 @@ it('testSearchTextAlign_static_12', Level.LEVEL0, async (done: () => void): Prom
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);

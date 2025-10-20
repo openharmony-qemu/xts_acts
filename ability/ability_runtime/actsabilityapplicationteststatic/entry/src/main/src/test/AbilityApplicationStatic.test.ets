@@ -44,7 +44,7 @@ export default function AbilityApplicationStaticTest() {
           expect(typeof (applicationContext.resourceDir) == 'string').assertTrue();
           hilog.info(domain, tag, `${caseName} end.`)
           done();
-        } catch (err: Error) {
+        } catch (err) {
           hilog.error(domain, tag, `${caseName} fail.`);
           expect().assertFail();
           done();

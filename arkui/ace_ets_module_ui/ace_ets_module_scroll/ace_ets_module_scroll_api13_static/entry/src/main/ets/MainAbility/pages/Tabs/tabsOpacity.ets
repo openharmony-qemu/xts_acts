@@ -38,7 +38,7 @@ struct tabsOpacityExample {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('tabsOpacity', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

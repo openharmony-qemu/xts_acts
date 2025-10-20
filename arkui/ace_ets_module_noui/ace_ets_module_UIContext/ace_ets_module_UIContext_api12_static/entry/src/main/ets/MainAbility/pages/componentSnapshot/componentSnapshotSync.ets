@@ -52,7 +52,7 @@ struct componentSnapshotSync{
               try {
                 let pixelmap = componentSnapshot.getSync('image2',{scale:1,waitUntilRenderFinished:true});
                 this.pixmap = pixelmap
-              } catch (error:Error) {
+              } catch (error) {
                 this.code = error.code.toString()
               }
             }).height('5%')
@@ -62,7 +62,7 @@ struct componentSnapshotSync{
               try {
                 let pixelmap =componentSnapshot.getSync('-0.1',{scale:4,waitUntilRenderFinished:true});
                 this.pixmap = pixelmap
-              } catch (error:Error) {
+              } catch (error) {
                 this.code1 = error.code.toString()
               }
             }).height('5%')
@@ -72,7 +72,7 @@ struct componentSnapshotSync{
               try {
                 let pixelmap = componentSnapshot.getSync('-2',{scale:4,waitUntilRenderFinished:false});
                 this.pixmap = pixelmap
-              } catch (error:Error) {
+              } catch (error) {
                 this.code2 = error.code.toString()
               }
             }).height('5%')
@@ -82,7 +82,7 @@ struct componentSnapshotSync{
               try {
                 let pixelmap = componentSnapshot.getSync('ab',{scale:0.5,waitUntilRenderFinished:true});
                 this.pixmap = pixelmap
-              } catch (error:Error) {
+              } catch (error) {
                 this.code3 = error.code.toString()
               }
             }).height('5%')
@@ -92,7 +92,7 @@ struct componentSnapshotSync{
               try {
                 let pixelmap = componentSnapshot.getSync('1',{scale:1,waitUntilRenderFinished:true});
                 this.pixmap = pixelmap
-              } catch (error:Error) {
+              } catch (error) {
                 this.code4 = error.code.toString()
               }
             }).height('5%')

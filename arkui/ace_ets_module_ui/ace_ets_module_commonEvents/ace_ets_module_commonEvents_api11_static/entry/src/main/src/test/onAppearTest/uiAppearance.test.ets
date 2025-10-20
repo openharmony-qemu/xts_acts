@@ -96,7 +96,7 @@ export default function uiAppearanceALWAYS_DARKJsunit() {
         console.info("testuiAppearanceALWAYS_DARK0001 click result is: " +
         JSON.stringify(inspector.sendEventByKey('ALWAYS_DARKText', 10, "")));
         events_emitter.on(event, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testuiAppearanceALWAYS_DARK0001 on events_emitter err : " + JSON.stringify(err));
       }
     });
@@ -125,7 +125,7 @@ export default function uiAppearanceALWAYS_DARKJsunit() {
         console.info("testuiAppearanceALWAYS_LIGHT0001 click result is: " +
         JSON.stringify(inspector.sendEventByKey('ALWAYS_LIGHTText', 10, "")));
         events_emitter.on(event, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testuiAppearanceALWAYS_LIGHT0001 on events_emitter err : " + JSON.stringify(err));
       }
     });

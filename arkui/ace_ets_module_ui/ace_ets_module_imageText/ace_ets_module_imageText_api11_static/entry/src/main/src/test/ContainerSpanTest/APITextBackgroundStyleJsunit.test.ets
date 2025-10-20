@@ -74,7 +74,7 @@ export default function APITextBackgroundStyleJsunit() {
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push APITextBackgroundStyleJsunit page error:" + err);
         expect().assertFail();
       }

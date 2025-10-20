@@ -168,7 +168,7 @@ struct MarginPage {
       this.parentWidth = routerParamOptions.view.parentWidth
       this.parentHeight = routerParamOptions.view.parentHeight
       this.buttonComponentKey = routerParamOptions.view.buttonComponentKey
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
 

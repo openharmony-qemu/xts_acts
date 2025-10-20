@@ -121,7 +121,7 @@ export default function imageDecodeOptionsYuvTest() {
           pixelMap.getColorSpace().getColorSpaceName() === colorSpaceManager.getColorSpaceName()) {
           result = true
         }
-      } catch(err: Error) {
+      } catch(err) {
         hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
       }
     }

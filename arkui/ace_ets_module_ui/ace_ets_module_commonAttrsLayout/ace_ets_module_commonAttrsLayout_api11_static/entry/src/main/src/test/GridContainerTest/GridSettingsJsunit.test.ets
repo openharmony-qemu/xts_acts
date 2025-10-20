@@ -563,7 +563,7 @@ export default function gridSettingsJsunit() {
         }
         console.info("[testGridSettings015] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testGridSettings015] change component data error: " + err.message);
       }
       await Utils.sleep(4000);

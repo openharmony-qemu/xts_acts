@@ -57,7 +57,7 @@ export default function span3Jsunit() {
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push span page error " + JSON.stringify(err));
       }
     });
@@ -125,7 +125,7 @@ it('testSpan_static_003', Level.LEVEL1, async (done: () => void): Promise<void> 
         }
         console.info("[testSpan003] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testSpan003] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -177,7 +177,7 @@ it('testSpan_static_005', Level.LEVEL1, async (done: () => void): Promise<void> 
         }
         console.info("[testSpan005] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testSpan005] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -210,7 +210,7 @@ it('testSpan_static_006', Level.LEVEL1, async (done: () => void): Promise<void> 
         }
         console.info("[testSpan006] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testSpan006] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -243,7 +243,7 @@ it('testSpan_static_007', Level.LEVEL1, async (done: () => void): Promise<void> 
         }
         console.info("[testSpan007] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testSpan007] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

@@ -106,7 +106,7 @@ export default function noBarriersGroupTest() {
 
           expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Column");
           console.info('noBarriersGroup001 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('noBarriersGroup001 ERR  ' + JSON.stringify(err));
         }
@@ -128,7 +128,7 @@ export default function noBarriersGroupTest() {
           console.info('noBarriersGroup START  :' + JSON.stringify(strJson));
           expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Column");
           console.info('noBarriersGroup002 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('noBarriersGroup002 ERR  ' + JSON.stringify(err));
         }
@@ -150,7 +150,7 @@ export default function noBarriersGroupTest() {
           console.info('noBarriersGroup START  :' + JSON.stringify(strJson));
           expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Column");
           console.info('noBarriersGroup003 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('noBarriersGroup003 ERR  ' + JSON.stringify(err));
         }
@@ -172,7 +172,7 @@ export default function noBarriersGroupTest() {
           console.info('noBarriersGroup START  :' + JSON.stringify(strJson));
           expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Column");
           console.info('noBarriersGroup004 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('noBarriersGroup004 ERR  ' + JSON.stringify(err));
         }
@@ -194,7 +194,7 @@ export default function noBarriersGroupTest() {
           console.info('noBarriersGroup START  :' + JSON.stringify(strJson));
           expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Column");
           console.info('noBarriersGroup005 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('noBarriersGroup005 ERR  ' + JSON.stringify(err));
         }
@@ -216,7 +216,7 @@ export default function noBarriersGroupTest() {
           console.info('noBarriersGroup START  :' + JSON.stringify(strJson));
           expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Column");
           console.info('noBarriersGroup006 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('noBarriersGroup006 ERR  ' + JSON.stringify(err));
         }
@@ -238,7 +238,7 @@ export default function noBarriersGroupTest() {
           console.info('noBarriersGroup START  :' + JSON.stringify(strJson));
           expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Column");
           console.info('noBarriersGroup007 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('noBarriersGroup007 ERR  ' + JSON.stringify(err));
         }
@@ -260,7 +260,7 @@ export default function noBarriersGroupTest() {
           console.info('noBarriersGroup START  :' + JSON.stringify(strJson));
           expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Column");
           console.info('noBarriersGroup008 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('noBarriersGroup008 ERR  ' + JSON.stringify(err));
         }
@@ -282,7 +282,7 @@ export default function noBarriersGroupTest() {
           console.info('noBarriersGroup START  :' + JSON.stringify(strJson));
           expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Column");
           console.info('noBarriersGroup009 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('noBarriersGroup009 ERR  ' + JSON.stringify(err));
         }
@@ -304,7 +304,7 @@ export default function noBarriersGroupTest() {
           console.info('noBarriersGroup START  :' + JSON.stringify(strJson));
           expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Column");
           console.info('noBarriersGroup0010 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('noBarriersGroup0010 ERR  ' + JSON.stringify(err));
         }
@@ -326,7 +326,7 @@ export default function noBarriersGroupTest() {
           console.info('noBarriersGroup START  :' + JSON.stringify(strJson));
           expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Column");
           console.info('noBarriersGroup0011 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('noBarriersGroup0011 ERR  ' + JSON.stringify(err));
         }
@@ -348,7 +348,7 @@ export default function noBarriersGroupTest() {
           console.info('noBarriersGroup START  :' + JSON.stringify(strJson));
           expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Column");
           console.info('noBarriersGroup0012 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('noBarriersGroup0012 ERR  ' + JSON.stringify(err));
         }

@@ -70,7 +70,7 @@ export default function imageDecodeOptionsRawTest() {
             }
             await imageSourceApi.release();
           }
-        } catch(err: Error) {
+        } catch(err) {
           hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
           await imageSourceApi.release();
         }
@@ -152,7 +152,7 @@ export default function imageDecodeOptionsRawTest() {
           }
 	        await imageSourceApi.release();
         }
-      } catch(err: Error) {
+      } catch(err) {
         hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
         await imageSourceApi.release();
       }

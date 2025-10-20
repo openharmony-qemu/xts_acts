@@ -116,7 +116,7 @@ export default function gridMaxCountJsunit() {
         }
         console.info("[testEdgeEffectOptions0003_static_03] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testEdgeEffectOptions0003_static_03] change component data error: " + err.message);
       }
       await Utils.sleep(2000);

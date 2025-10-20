@@ -125,7 +125,7 @@ it('testFlexAlignStartTextVisibilityNone_static', Level.LEVEL0, async () : Promi
         expect(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
         expect(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
         expect(Math.abs((Start_AddVisibility_01.right - Start_AddVisibility_013.right) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue();
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexAlignStartTextVisibilityNone] failed');
         expect().assertFail();
       }
@@ -187,7 +187,7 @@ it('testFlexAlignStartTextVisibilityHidden_static', Level.LEVEL0, async () : Pro
         expect(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
         expect(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
         expect(Math.abs((Start_AddVisibility_012.left - Start_AddVisibility_01.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexAlignStartTextVisibilityHidden] failed');
         expect().assertFail();
       }
@@ -251,7 +251,7 @@ it('testFlexAlignStartTextVisibilityVisible_static', Level.LEVEL0, async () : Pr
         expect(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
         expect(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
         expect(Math.abs((Start_AddVisibility_012.left - Start_AddVisibility_01.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexAlignStartTextVisibilityVisible] failed');
         expect().assertFail();
       }

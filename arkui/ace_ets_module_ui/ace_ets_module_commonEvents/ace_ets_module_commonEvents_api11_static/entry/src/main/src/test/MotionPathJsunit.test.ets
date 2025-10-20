@@ -108,7 +108,7 @@ export default function motionPathJsunit() {
       }
       try {
         events_emitter.on(indexEventOne, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("motionPathTest_0200 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("motionPathTest_0200 click result is: " +
@@ -138,7 +138,7 @@ export default function motionPathJsunit() {
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("motionPathTest_0300 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("motionPathTest_0300 click result is: " +

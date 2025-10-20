@@ -68,7 +68,7 @@ export default function spanApi1() {
           await CommonFunc.sleep(2000);
          
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push spanApi1 page error:" + err);
       }
       console.info("spanApi1 beforeEach end");

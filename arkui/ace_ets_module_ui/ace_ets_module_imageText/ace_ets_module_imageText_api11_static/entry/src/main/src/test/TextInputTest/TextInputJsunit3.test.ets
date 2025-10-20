@@ -112,7 +112,7 @@ it('textInputTest_static_02', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[textInputTest_static_02] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[textInputTest_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -160,7 +160,7 @@ it('textInputTest_static_04', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[textInputTest_static_04] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[textInputTest_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -208,7 +208,7 @@ it('textInputTest_static_06', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[textInputTest_static_06] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[textInputTest_static_06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -256,7 +256,7 @@ it('textInputTest_static_08', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[textInputTest_static_08] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[textInputTest_static_08] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -310,7 +310,7 @@ it('textInputTest_static_10', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[textInputTest_static_10] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[textInputTest_static_10] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -347,7 +347,7 @@ it('textInputTest_static_11', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[textInputTest_static_11] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[textInputTest_static_11] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

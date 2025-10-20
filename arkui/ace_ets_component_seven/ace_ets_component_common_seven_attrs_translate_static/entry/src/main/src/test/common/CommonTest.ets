@@ -109,7 +109,7 @@ export default class CommonTest {
               await (functions[functions.length - 1] as CallbackWithReturn)(data);
               console.info(' ================== strJson: str12 ' );
 
-            } catch (err: Error) {
+            } catch (err) {
               let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
               console.error(msg);
               console.error(err.stack);

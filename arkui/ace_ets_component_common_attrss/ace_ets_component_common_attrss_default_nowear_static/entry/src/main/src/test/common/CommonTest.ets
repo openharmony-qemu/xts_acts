@@ -105,7 +105,7 @@ export default class CommonTest {
               let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
               await (funcs[funcs.length - 1] as CallbackWithReturn)(data);
 
-            } catch (err: Error) {
+            } catch (err) {
               let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
               console.error(msg);
               console.error(err.stack);

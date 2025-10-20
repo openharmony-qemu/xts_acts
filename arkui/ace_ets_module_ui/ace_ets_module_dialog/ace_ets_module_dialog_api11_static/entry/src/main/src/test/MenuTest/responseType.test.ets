@@ -84,7 +84,7 @@ export default function responseTypeJsunit() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push responseType page error: " + err);
       }
 

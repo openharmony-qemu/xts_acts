@@ -44,7 +44,7 @@ struct Index {
       }
       AppStorage.setOrCreate<Router>('router', router1);
       AppStorage.setOrCreate<UIContext>('uiContext', uiContext1);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

@@ -47,7 +47,7 @@ struct search_center {
         let router = (uiContext as UIContext).getRouter();
         AppStorage.setOrCreate<Router>('router', router);
       }
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

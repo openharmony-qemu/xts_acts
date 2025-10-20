@@ -130,7 +130,7 @@ export default function lifecycleStaticTest() {
             expect().assertFail();
           })
           await Utils.msSleep(2000);
-        } catch(err: Error) {
+        } catch(err) {
           hilog.info(domain, tag, `${itName} error error: ${JSON.stringify(err)}`)
           hilog.info(domain, tag, `${itName} error code: ${err?.code}, msg: ${err?.message}`);
           expect().assertFail();

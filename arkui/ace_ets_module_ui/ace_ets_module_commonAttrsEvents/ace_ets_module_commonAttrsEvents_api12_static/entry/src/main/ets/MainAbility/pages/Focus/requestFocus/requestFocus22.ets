@@ -103,7 +103,7 @@ export struct pageTwo {
         Button('Focus-textInput1').onClick((e: ClickEvent) => {
           try {
             this.getUIContext().getFocusController().requestFocus('requestFocus22_textInput1')
-          } catch (error: Error) {
+          } catch (error) {
             this.text1 = '' + error.code
           }
         }).id('requestFocus22_btn2')

@@ -153,7 +153,7 @@ export default function globalShortcutKeyTest3() {
 
           console.info("SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0800 end");
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
         }
       });

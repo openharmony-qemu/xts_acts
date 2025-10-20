@@ -64,7 +64,7 @@ export default function AbilityStaticTest() {
         caller.release();
         expect().assertFail();
         hilog.info(domain, tag, `${itName} end`);
-      } catch(e: Error) {
+      } catch (e) {
         const err = e as BusinessError;
         hilog.info(domain, tag, `${itName} caller release fail error code: ${err?.code}, msg: ${err?.message}`);
         done();
@@ -127,7 +127,7 @@ export default function AbilityStaticTest() {
         caller.onRelease((msg) => {});
         expect().assertFail();
         hilog.info(domain, tag, `${itName} end`);
-      } catch(e: Error) {
+      } catch (e) {
         const err = e as BusinessError;
         hilog.info(domain, tag, `${itName} caller onRelease fail error code: ${err?.code}, msg: ${err?.message}`);
         expect(`${err?.code}`).assertEqual('16200001');
@@ -148,7 +148,7 @@ export default function AbilityStaticTest() {
         caller.onRemoteStateChange((msg) => {});
         expect().assertFail();
         hilog.info(domain, tag, `${itName} end`);
-      } catch(e: Error) {
+      } catch (e) {
         const err = e as BusinessError;
         hilog.info(domain, tag, `${itName} caller onRemoteStateChange fail error code: ${err?.code}, msg: ${err?.message}`);
         expect(`${err?.code}`).assertEqual('16200001');
@@ -169,7 +169,7 @@ export default function AbilityStaticTest() {
         caller.onRelease((msg) => {});
         expect().assertFail();
         hilog.info(domain, tag, `${itName} end`);
-      } catch(e: Error) {
+      } catch (e) {
         const err = e as BusinessError;
         hilog.info(domain, tag, `${itName} caller on release fail error code: ${err?.code}, msg: ${err?.message}`);
         expect(`${err?.code}`).assertEqual('16200001');
@@ -190,7 +190,7 @@ export default function AbilityStaticTest() {
         caller.offRelease((msg) => {});
         done();
         hilog.info(domain, tag, `${itName} end`);
-      } catch(e: Error) {
+      } catch (e) {
         const err = e as BusinessError;
         hilog.info(domain, tag, `${itName} caller off release with callback fail error code: ${err?.code}, msg: ${err?.message}`);
         expect().assertFail();
@@ -210,7 +210,7 @@ export default function AbilityStaticTest() {
         caller.offRelease();
         done();
         hilog.info(domain, tag, `${itName} end`);
-      } catch(e: Error) {
+      } catch (e) {
         const err = e as BusinessError;
         hilog.info(domain, tag, `${itName} caller off release fail error code: ${err?.code}, msg: ${err?.message}`);
         expect().assertFail();

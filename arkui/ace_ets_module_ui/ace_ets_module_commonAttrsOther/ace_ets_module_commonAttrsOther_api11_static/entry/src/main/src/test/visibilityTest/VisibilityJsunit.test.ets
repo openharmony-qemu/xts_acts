@@ -125,7 +125,7 @@ export default function visibilityJsunit() {
         }
         console.info("[testVisibility02] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testVisibility02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -159,7 +159,7 @@ export default function visibilityJsunit() {
         }
         console.info("[testVisibility03] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testVisibility03] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -193,7 +193,7 @@ export default function visibilityJsunit() {
         }
         console.info("[testVisibility04] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testVisibility04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -226,7 +226,7 @@ export default function visibilityJsunit() {
         }
         console.info("[testVisibility05] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testVisibility05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

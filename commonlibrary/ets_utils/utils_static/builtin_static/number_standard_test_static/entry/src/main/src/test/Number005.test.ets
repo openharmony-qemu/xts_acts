@@ -803,7 +803,7 @@ export default function BuiltinsNumberPrototypeTest() {
         try {
           const exponentialStr5 = num.toString(1);
           console.log(`${exponentialStr5}`);
-        } catch (error: Error) {
+        } catch (error) {
           console.log(`${caseName} test error:`, error);
           expect("radix must be 2 to 36").assertEqual(error.message);
         }
@@ -828,7 +828,7 @@ export default function BuiltinsNumberPrototypeTest() {
         try {
           const exponentialStr5 = num.toString(37);
           console.log(`${exponentialStr5}`);
-        } catch (error: Error) {
+        } catch (error) {
           console.log(`${caseName} test error:`, error);
           expect("radix must be 2 to 36").assertEqual(error.message);
         }

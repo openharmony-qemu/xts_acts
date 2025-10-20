@@ -55,7 +55,7 @@ export default function tabs() {
           routerAlp.pushUrl(options)
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push Index page error " + JSON.stringify(err));
       }
 
@@ -110,7 +110,7 @@ export default function tabs() {
         }
         console.info("start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -245,7 +245,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -293,7 +293,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -341,7 +341,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_0800] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -379,7 +379,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_0900] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -417,7 +417,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_1000] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -456,7 +456,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_1100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_1100] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -502,7 +502,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -529,7 +529,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -556,7 +556,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -583,7 +583,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_Divider_static_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_Divider_static_1200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -872,7 +872,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_FadingEdge_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_FadingEdge_static_0200] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -906,7 +906,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_FadingEdge_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_FadingEdge_static_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1044,7 +1044,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorColor_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorColor_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1091,7 +1091,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorColor_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorColor_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1222,7 +1222,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorHeight_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorHeight_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1265,7 +1265,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorHeight_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorHeight_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1289,7 +1289,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorHeight_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorHeight_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1312,7 +1312,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorHeight_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorHeight_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1423,7 +1423,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorWidth_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorWidth_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1459,7 +1459,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorWidth_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorWidth_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1483,7 +1483,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorWidth_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorWidth_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1506,7 +1506,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorWidth_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorWidth_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1617,7 +1617,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorBorderRadius_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorBorderRadius_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1653,7 +1653,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorBorderRadius_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorBorderRadius_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1677,7 +1677,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorBorderRadius_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorBorderRadius_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1701,7 +1701,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorBorderRadius_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorBorderRadius_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1816,7 +1816,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_SubTabBorderRadius_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBorderRadius_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1858,7 +1858,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_SubTabBorderRadius_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBorderRadius_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1881,7 +1881,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_SubTabBorderRadius_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBorderRadius_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1904,7 +1904,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_SubTabBorderRadius_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBorderRadius_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -1939,7 +1939,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_SubTabBorderRadius_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SubTabBorderRadius_0700] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2013,7 +2013,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_SelectedMode_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_SelectedMode_static_0300] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2131,7 +2131,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorMarginTop_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorMarginTop_static_0500] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2174,7 +2174,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorMarginTop_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorMarginTop_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2198,7 +2198,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorMarginTop_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorMarginTop_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);
@@ -2221,7 +2221,7 @@ export default function tabs() {
         }
         console.info("[ArkUI_Tabs_IndicatorMarginTop_static_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Tabs_IndicatorMarginTop_static_0600] change component data error: " + err.message);
       }
       await Utils.sleep(2000);

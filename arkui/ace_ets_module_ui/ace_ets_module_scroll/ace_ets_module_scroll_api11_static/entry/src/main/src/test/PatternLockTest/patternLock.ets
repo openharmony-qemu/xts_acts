@@ -64,7 +64,7 @@ export default function patternLockTest() {
           router.pushUrl(options)
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push PatternLockIndex page error " + JSON.stringify(err));
       }
     });
@@ -90,7 +90,7 @@ export default function patternLockTest() {
           console.info("ArkUX_Stage_PatternLock_setChallengeResult_static_0100 component obj.getElement('$attrs').getElement('setChallengeResult') is: " +
           JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('setChallengeResult')));
           console.info('ArkUX_Stage_PatternLock_setChallengeResult_static_0100 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUX_Stage_PatternLock_setChallengeResult_static_0100 ERR  ' + JSON.stringify(err));
         }
@@ -117,7 +117,7 @@ export default function patternLockTest() {
         console.info("ArkUX_Stage_PatternLock_onDotConnect_0100 component obj.$attrs.onDotConnect is: " +
         JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('onDotConnect')));
         console.info('ArkUX_Stage_PatternLock_onDotConnect_0100 END ');
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
         console.info('ArkUX_Stage_PatternLock_onDotConnect_0100 ERR  ' + JSON.stringify(err));
       }

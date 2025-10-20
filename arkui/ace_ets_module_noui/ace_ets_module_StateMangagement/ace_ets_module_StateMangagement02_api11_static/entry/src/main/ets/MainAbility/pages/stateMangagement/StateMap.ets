@@ -65,7 +65,7 @@ struct StateMapSample {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('StateMap', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

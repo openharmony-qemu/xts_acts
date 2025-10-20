@@ -157,7 +157,7 @@ struct ZIndexPage {
       this.targetComponentHeight = routerParamOptions.view.targetComponentHeight
       this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
       console.info('[TabIndexPage] end router ');
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }

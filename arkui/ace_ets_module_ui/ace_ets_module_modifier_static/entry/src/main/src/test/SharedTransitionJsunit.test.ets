@@ -91,7 +91,7 @@ export default function sharedTransitionJsunit() {
         }
         events_emitter.emit(indexEvent, eventData);
        await UtilsTest.msSleep(2500);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("sharedTransitionTest_static_0100 change component data error: " + err.message);
       }
       let callback = (indexEventOne: events_emitter.EventData) => {
@@ -100,7 +100,7 @@ export default function sharedTransitionJsunit() {
           expect((indexEventOne.data as EventD)?.duration).assertEqual(2000);
           expect((indexEventOne.data as EventD)?.delay).assertEqual(5);
           expect((indexEventOne.data as EventD)?.type).assertEqual(SharedTransitionEffectType.Exchange);
-        } catch (err: Error) {
+        } catch (err) {
           console.info("sharedTransitionTest_static_0100 error: " + err.message);
         }
 

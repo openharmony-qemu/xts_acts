@@ -109,7 +109,7 @@ struct LinkArrayNumber {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('LinkArrayNumber', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

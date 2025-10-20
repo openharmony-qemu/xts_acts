@@ -113,7 +113,7 @@ export default function provisionResourcesTest() {
           ];
           await pushCreateAsset(testContext, fileNames);
           await checkResourceAsset(done, testNum, fileNames);
-        } catch (error: Error) {
+        } catch (error) {
         }
 
       });

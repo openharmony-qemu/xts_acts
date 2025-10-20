@@ -63,7 +63,7 @@ struct PropString {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('PropString', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

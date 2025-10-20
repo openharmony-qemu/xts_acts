@@ -49,7 +49,7 @@ struct bindTabsScrollExample {
     try {
       let router = context.getRouter();
       AppStorage.setOrCreate<Router>('bindTabsScroll', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

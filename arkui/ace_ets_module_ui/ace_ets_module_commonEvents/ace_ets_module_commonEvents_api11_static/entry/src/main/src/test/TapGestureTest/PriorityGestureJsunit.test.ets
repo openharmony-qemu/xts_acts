@@ -107,7 +107,7 @@ export default function priorityGestureJsunit() {
       }
       try {
         events_emitter.on(innerEvent, callback)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("priorityGestureTest_0100 on events_emitter err : " + JSON.stringify(err));
       }
       console.info('priorityGestureTest_0100 sendTouchEvent one:' + sendTouchEvent(point));

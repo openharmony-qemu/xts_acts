@@ -45,7 +45,7 @@ class MainAbility extends UIAbility {
         }
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');
       });
-    } catch (e: Error) {
+    } catch (e) {
       hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent catch error：-----------' + e.message);
     }
   }

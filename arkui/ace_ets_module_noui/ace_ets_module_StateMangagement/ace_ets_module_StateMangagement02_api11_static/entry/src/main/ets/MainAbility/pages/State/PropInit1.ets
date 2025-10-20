@@ -89,7 +89,7 @@ struct PropInit1 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('PropInit1', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

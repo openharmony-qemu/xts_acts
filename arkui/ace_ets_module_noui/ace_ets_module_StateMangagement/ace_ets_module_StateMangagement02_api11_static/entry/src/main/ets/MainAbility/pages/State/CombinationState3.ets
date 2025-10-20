@@ -165,7 +165,7 @@ struct CombinationState4 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('CombinationState3', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

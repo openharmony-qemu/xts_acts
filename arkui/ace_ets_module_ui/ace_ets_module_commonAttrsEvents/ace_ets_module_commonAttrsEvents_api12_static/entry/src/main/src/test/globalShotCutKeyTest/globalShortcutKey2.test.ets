@@ -105,7 +105,7 @@ export default function globalShortcutKeyTest2() {
           }
           console.info("SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0160 end");
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
         }
       });

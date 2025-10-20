@@ -67,7 +67,7 @@ export default function symbolGlyphApi1() {
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push symbolGlyphApi1 page error:" + err);
       }
       console.info("symbolGlyphApi1 beforeEach end");

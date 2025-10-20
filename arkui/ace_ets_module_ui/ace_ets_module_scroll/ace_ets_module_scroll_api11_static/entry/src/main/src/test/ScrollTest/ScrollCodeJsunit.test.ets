@@ -54,7 +54,7 @@ export default function scrollCodeJsunit() {
           await CommonFunc.sleep(2000);
 
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push ScrollCode page error " + JSON.stringify(err));
       }
     });
@@ -107,7 +107,7 @@ export default function scrollCodeJsunit() {
         }
         console.info("[test_scrollCode_static_002] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[test_scrollCode_static_002] change scrollable error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -141,7 +141,7 @@ export default function scrollCodeJsunit() {
         }
         console.info("[test_scrollCode_static_003] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[test_scrollCode_static_003] change scrollBar error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -174,7 +174,7 @@ export default function scrollCodeJsunit() {
         }
         console.info("[test_scrollCode_static_004] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[test_scrollCode_static_004] change scrollBar error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -207,7 +207,7 @@ export default function scrollCodeJsunit() {
         }
         console.info("[test_scrollCode_static_005] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[test_scrollCode_static_005] change scrollBar error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -239,7 +239,7 @@ export default function scrollCodeJsunit() {
         }
         try {
           events_emitter.on(innerEvent, callback)
-        } catch (err: Error) {
+        } catch (err) {
           console.info("[test_scrollCode_static_06] on events_emitter err : " + JSON.stringify(err));
         }
         console.info('[test_scrollCode_static_006] sendEventByKey ' +

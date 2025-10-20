@@ -70,7 +70,7 @@ struct requestFocus2 {
       Button('Focus-img1').onClick((e: ClickEvent) => {
         try {
           this.getUIContext().getFocusController().requestFocus('image1')
-        } catch (error: Error) {
+        } catch (error) {
           this.text1 = '' + error.code
         }
       }).id('requestFocus2_btn1')

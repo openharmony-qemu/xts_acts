@@ -3748,7 +3748,7 @@ export default function audioRendererTest() {
           console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
         });
         done();
-      } catch (err: Error) {
+      } catch (err) {
         console.info(`${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_getAudioStreamId_0100 OUT OF BORDER PROMISE: ERROR: ${err.message}`);
         expect(false).assertTrue();
         await audioRenderer.release().then(() => {

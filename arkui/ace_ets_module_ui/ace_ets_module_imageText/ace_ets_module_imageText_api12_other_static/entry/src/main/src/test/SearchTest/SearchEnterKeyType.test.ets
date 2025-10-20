@@ -95,7 +95,7 @@ export default function searchEnterKeyTypeTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -134,7 +134,7 @@ export default function searchEnterKeyTypeTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -173,7 +173,7 @@ export default function searchEnterKeyTypeTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -212,7 +212,7 @@ export default function searchEnterKeyTypeTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -251,7 +251,7 @@ export default function searchEnterKeyTypeTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -290,7 +290,7 @@ export default function searchEnterKeyTypeTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);
@@ -328,7 +328,7 @@ export default function searchEnterKeyTypeTest() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       CommonFunc.sleep(2000);

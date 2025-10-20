@@ -239,7 +239,7 @@ export default function radioSecondJsunit() {
             expect(data?.csRadioTech?.toString() === "-1").assertFalse();
             done();
           });
-        } catch (error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag,
             "Telephony_NetworkSearch_getRadioTech_try_catch_async_0500 err = " + JSON.stringify(err));
@@ -274,7 +274,7 @@ export default function radioSecondJsunit() {
             expect().assertFail();
             done();
           });
-        } catch (error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag,
             "Telephony_NetworkSearch_getRadioTech_try_catch_promise_0500 err = " + JSON.stringify(err));
@@ -303,7 +303,7 @@ export default function radioSecondJsunit() {
             done();
           }
         });
-      } catch(error: Error) {
+      } catch(error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, "Telephony_NetworkSearch_getISOCountryCodeForNetwork_Async_static_0500 err = " + JSON.stringify(err));
         expect().assertFail();
@@ -355,7 +355,7 @@ export default function radioSecondJsunit() {
               done();
             }
           });
-      } catch(error: Error) {
+      } catch(error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, "Telephony_NetworkSearch_getNetworkSelectionMode_Async_static_0600 err = " + JSON.stringify(err));
         expect().assertFail();

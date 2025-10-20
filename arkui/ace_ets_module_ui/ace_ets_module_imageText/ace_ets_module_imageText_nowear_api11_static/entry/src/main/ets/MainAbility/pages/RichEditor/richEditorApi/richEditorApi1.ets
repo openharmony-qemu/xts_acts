@@ -33,7 +33,7 @@ struct richEditorApi1 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('ImageSpanVisibility', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

@@ -49,7 +49,7 @@ export default function arrayTest() {
         let element0 = 'app';
         let obj: Array<string> = new Array<string>(element0);
         expect(JSON.stringify(obj)).assertEqual(`["app"]`);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -68,7 +68,7 @@ export default function arrayTest() {
         let element0 = 'app';
         let obj: Array<string> = new Array<string>(element0);
         expect(JSON.stringify(obj)).assertEqual(`["app"]`);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -88,7 +88,7 @@ export default function arrayTest() {
         let element1 = 'app1';
         let obj: Array<string> = new Array<string>(element0, element1);
         expect(JSON.stringify(obj)).assertEqual(`["app0","app1"]`);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -108,7 +108,7 @@ export default function arrayTest() {
         let element1 = 'app1';
         let obj: Array<string> = new Array<string>(element0, element1);
         expect(JSON.stringify(obj)).assertEqual(`["app0","app1"]`);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -127,7 +127,7 @@ export default function arrayTest() {
         const set: Set<string> = new Set<string>(["foo", "bar", "baz", "foo"]);
         let obj = Array.from(set);
         expect(JSON.stringify(obj)).assertEqual("[\"foo\",\"bar\",\"baz\"]");
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -145,7 +145,7 @@ export default function arrayTest() {
       try {
         let obj = Array.from('ABC');
         expect(JSON.stringify(obj)).assertEqual("[\"A\",\"B\",\"C\"]");
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -168,7 +168,7 @@ export default function arrayTest() {
         ]);
         let obj = Array.from(map);
         expect(JSON.stringify(obj)).assertEqual("[[1,2],[2,4],[4,8]]");
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -187,7 +187,7 @@ export default function arrayTest() {
         let result = Array.isArray(new Array<string>());
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('true');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -206,7 +206,7 @@ export default function arrayTest() {
         let result = Array.isArray([1]);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('true');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -225,7 +225,7 @@ export default function arrayTest() {
         let result = Array.isArray(new Array<boolean>());
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('true');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -244,7 +244,7 @@ export default function arrayTest() {
         let result = Array.isArray(new Array<string>("a", "b", "c", "d"));
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('true');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -263,7 +263,7 @@ export default function arrayTest() {
         let result = Array.isArray(new Array<string>(3));
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('true');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -283,7 +283,7 @@ export default function arrayTest() {
     //     let result = Array.isArray(new C());
     //     console.log(`${TAG} result:` + result);
     //     expect(String(result)).assertEqual('false');
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(false).assertFail();
     //   }
@@ -302,7 +302,7 @@ export default function arrayTest() {
         let result = Array.isArray(null);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('false');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -321,7 +321,7 @@ export default function arrayTest() {
         let result = Array.isArray(undefined);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('false');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -340,7 +340,7 @@ export default function arrayTest() {
         let result = Array.isArray(17);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('false');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -359,7 +359,7 @@ export default function arrayTest() {
         let result = Array.isArray("Array");
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('false');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -378,7 +378,7 @@ export default function arrayTest() {
         let result = Array.isArray(true);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('false');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -397,7 +397,7 @@ export default function arrayTest() {
         let result = Array.isArray(false);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('false');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -416,7 +416,7 @@ export default function arrayTest() {
         let result = Array.isArray(new Uint8Array(32));
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('false');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -435,7 +435,7 @@ export default function arrayTest() {
       try {
         let result = Array.of(1);
         expect(JSON.stringify(result)).assertEqual('[1]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -453,7 +453,7 @@ export default function arrayTest() {
       try {
         let result = Array.of(1, 2, 3);
         expect(JSON.stringify(result)).assertEqual('[1,2,3]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -471,7 +471,7 @@ export default function arrayTest() {
       try {
         let result = Array.of(undefined);
         expect(JSON.stringify(result)).assertEqual('[null]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -489,7 +489,7 @@ export default function arrayTest() {
       try {
         let result = Array.of(null);
         expect(JSON.stringify(result)).assertEqual('[null]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -510,7 +510,7 @@ export default function arrayTest() {
         const alphaNumeric = letters1.concat(letters2);
         console.log(`${TAG} result:` + JSON.stringify(alphaNumeric));
         expect(JSON.stringify(alphaNumeric)).assertEqual('["a","b","c","D","E","F"]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -532,7 +532,7 @@ export default function arrayTest() {
         const alphaNumeric = letters1.concat(letters2);
         console.log(`${TAG} result:` + JSON.stringify(alphaNumeric));
         expect(JSON.stringify(alphaNumeric)).assertEqual('["a","b","c"]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -553,7 +553,7 @@ export default function arrayTest() {
         const alphaNumeric = letters1.concat(letters2);
         console.log(`${TAG} result:` + JSON.stringify(alphaNumeric));
         expect(JSON.stringify(alphaNumeric)).assertEqual('["a","b","c",""]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -575,7 +575,7 @@ export default function arrayTest() {
         const numbers = num1.concat(num2, num3);
         console.log(`${TAG} result:` + JSON.stringify(numbers));
         expect(JSON.stringify(numbers)).assertEqual('[1,2,3,4,5,6,7,8,9]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -595,7 +595,7 @@ export default function arrayTest() {
         const alphaNumeric = letters.concat(['z'], ['d', 'e']);
         console.log(`${TAG} result:` + JSON.stringify(alphaNumeric));
         expect(JSON.stringify(alphaNumeric)).assertEqual('["a","b","c","z","d","e"]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -617,7 +617,7 @@ export default function arrayTest() {
     //     console.log(`${TAG} result:` + JSON.stringify(obj));
     //     expect(JSON.stringify(obj)).assertEqual('[[1],2,3]');
     //     expect(obj.length).assertEqual(3);
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(false).assertFail();
     //   }
@@ -638,7 +638,7 @@ export default function arrayTest() {
         const obj = num1.concat(num2);
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[1,2,3,4,5]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -659,7 +659,7 @@ export default function arrayTest() {
         const obj = num1.concat(num2);
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[1,2,3,4]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -679,7 +679,7 @@ export default function arrayTest() {
         const obj = arr1.copyWithin(-2, 1);
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[1,2,3,2,3]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -699,7 +699,7 @@ export default function arrayTest() {
         const obj = arr1.copyWithin(0, 3);
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[4,5,3,4,5]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -719,7 +719,7 @@ export default function arrayTest() {
         const obj = arr1.copyWithin(0, 3, 4);
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[4,2,3,4,5]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -739,7 +739,7 @@ export default function arrayTest() {
         const obj = arr1.copyWithin(-2, -3, -1);
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[1,2,3,3,4]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -759,7 +759,7 @@ export default function arrayTest() {
         let obj = arr.fill(4);
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[4,4,4]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -779,7 +779,7 @@ export default function arrayTest() {
         let obj = arr.fill(4, 1);
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[1,4,4]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -799,7 +799,7 @@ export default function arrayTest() {
         let obj = arr.fill(4, 1, 2);
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[1,4,3]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -819,7 +819,7 @@ export default function arrayTest() {
         let obj = arr.fill(4, 1, 1);
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[1,2,3]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -839,7 +839,7 @@ export default function arrayTest() {
         let obj = arr.fill(4, 3, 3);
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[1,2,3]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -859,7 +859,7 @@ export default function arrayTest() {
         let obj = arr.fill(4, -3, -2);
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[4,2,3]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -879,7 +879,7 @@ export default function arrayTest() {
         let obj = arr.fill(4, NaN.toInt(), NaN.toInt());
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[1,2,3]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -899,7 +899,7 @@ export default function arrayTest() {
         let obj = arr.fill(4, 3, 5);
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[1,2,3]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -919,7 +919,7 @@ export default function arrayTest() {
         let obj = arr.fill(4);
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[4,4,4]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -939,7 +939,7 @@ export default function arrayTest() {
         let obj = arr.fill(4, undefined, undefined);
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[4,4,4]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -959,7 +959,7 @@ export default function arrayTest() {
         const found = array1.find((element) => element > 10);
         console.log(`${TAG} result:` + JSON.stringify(found));
         expect(JSON.stringify(found)).assertEqual('11');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -979,7 +979,7 @@ export default function arrayTest() {
         const found = array1.find((element) => element > 10);
         console.log(`${TAG} result:` + JSON.stringify(found));
         expect(JSON.stringify(found)).assertEqual('12');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -999,7 +999,7 @@ export default function arrayTest() {
         const found = array1.find((element) => element > 100);
         console.log(`${TAG} result:` + JSON.stringify(found));
         expect(JSON.stringify(found)).assertEqual('255');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1019,7 +1019,7 @@ export default function arrayTest() {
     //     const obj = arr1.flat();
     //     console.log(`${TAG} result:` + JSON.stringify(found));
     //     expect(JSON.stringify(found)).assertEqual('[0,1,2,3,4]');
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(false).assertFail();
     //   }
@@ -1039,7 +1039,7 @@ export default function arrayTest() {
     //     let obj = arr2.flat();
     //     console.log(`${TAG} result:` + JSON.stringify(arr2.flat()));
     //     expect(JSON.stringify(arr2.flat())).assertEqual('[1,2,3,4,[5,6]]');
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(false).assertFail();
     //   }
@@ -1059,7 +1059,7 @@ export default function arrayTest() {
     //     let obj = arr3.flat(2);
     //     console.log(`${TAG} result:` + JSON.stringify(arr3.flat(2)));
     //     expect(JSON.stringify(arr3.flat(2))).assertEqual('[1,2,3,4,5,6]');
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(false).assertFail();
     //   }
@@ -1079,7 +1079,7 @@ export default function arrayTest() {
         let obj = arr5.flat();
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[1,2,3,4,5]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1099,7 +1099,7 @@ export default function arrayTest() {
     //     let obj = arr5.flat();
     //     console.log(`${TAG} result:` + JSON.stringify(obj));
     //     expect(JSON.stringify(obj)).assertEqual('[1,2,3,"a","b","c"]');
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(false).assertFail();
     //   }
@@ -1119,7 +1119,7 @@ export default function arrayTest() {
         let obj = array2.flat();
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[1,2,3,"a","b",["d",null,"e"]]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1139,7 +1139,7 @@ export default function arrayTest() {
     //     let obj = array2.flat(2);
     //     console.log(`${TAG} result:` + JSON.stringify(obj));
     //     expect(JSON.stringify(obj)).assertEqual('[1,3,"a","d","e"]');
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(false).assertFail();
     //   }
@@ -1159,7 +1159,7 @@ export default function arrayTest() {
         let obj = array2.flat();
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[1,null,3]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1179,7 +1179,7 @@ export default function arrayTest() {
         let obj = array2.flat();
         console.log(`${TAG} result:` + JSON.stringify(obj));
         expect(JSON.stringify(obj)).assertEqual('[null,null,null]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1198,7 +1198,7 @@ export default function arrayTest() {
     //     const arr1 = new Array<number>(1, 2, 1);
     //     const result = arr1.flatMap((num) => (num === 2 ? [2, 2] : 1));
     //     expect(JSON.stringify(result)).assertEqual('[1,2,2,1]');
-    //   } catch (err: Error) {
+    //   } catch (err) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
     //     expect(false).assertFail();
     //   }
@@ -1217,7 +1217,7 @@ export default function arrayTest() {
         const arr1 = new Array<Number | undefined>(1,2 , 1);
         const result = arr1.flatMap((num) => (num === 2 ? [2, 2] : 1));
         expect(JSON.stringify(result)).assertEqual('[1,2,2,1]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1236,7 +1236,7 @@ export default function arrayTest() {
         const arr1 = new Array<Number | undefined>(1, undefined, 1);
         const result = arr1.flatMap((num) => (num === 2 ? [2, 2] : 1));
         expect(JSON.stringify(result)).assertEqual('[1,1,1]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1256,7 +1256,7 @@ export default function arrayTest() {
         const result = array1.includes(2);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('true');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1276,7 +1276,7 @@ export default function arrayTest() {
         let value = array1.includes(2.1);
         console.log(`${TAG} result:` + value);
         expect(String(value)).assertEqual('false');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1296,7 +1296,7 @@ export default function arrayTest() {
         let value = array1.includes(1, 2);
         console.log(`${TAG} result:` + value);
         expect(String(value)).assertEqual('false');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1316,7 +1316,7 @@ export default function arrayTest() {
         let value = array1.includes(-1);
         console.log(`${TAG} result:` + value);
         expect(String(value)).assertEqual('false');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1336,7 +1336,7 @@ export default function arrayTest() {
         let value = array1.includes(-1, -2);
         console.log(`${TAG} result:` + value);
         expect(String(value)).assertEqual('false');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1356,7 +1356,7 @@ export default function arrayTest() {
         let value = array1.includes(NaN);
         console.log(`${TAG} result:` + value);
        expect(String(value)).assertEqual('true');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1376,7 +1376,7 @@ export default function arrayTest() {
         let value = array1.includes('3');
         console.log(`${TAG} result:` + value);
         expect(String(value)).assertEqual('true');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1396,7 +1396,7 @@ export default function arrayTest() {
         let value = arr.includes("c", 3);
         console.log(`${TAG} result:` + value);
         expect(String(value)).assertEqual('false');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1416,7 +1416,7 @@ export default function arrayTest() {
         let value = arr.includes("c", 100);
         console.log(`${TAG} result:` + value);
         expect(String(value)).assertEqual('false');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1436,7 +1436,7 @@ export default function arrayTest() {
         let value = arr.includes("c", 3);
         console.log(`${TAG} result:` + value);
         expect(String(value)).assertEqual('false');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1456,7 +1456,7 @@ export default function arrayTest() {
         let value = arr.includes("c", 100);
         console.log(`${TAG} result:` + value);
         expect(String(value)).assertEqual('false');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1476,7 +1476,7 @@ export default function arrayTest() {
         let value = arr.includes("a", -100);
         console.log(`${TAG} result:` + value);
         expect(String(value)).assertEqual('true');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1496,7 +1496,7 @@ export default function arrayTest() {
         let value = arr.includes("b", -100);
         console.log(`${TAG} result:` + value);
         expect(String(value)).assertEqual('true');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1516,7 +1516,7 @@ export default function arrayTest() {
         let value = arr.includes("c", -100);
         console.log(`${TAG} result:` + value);
         expect(String(value)).assertEqual('true');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1536,7 +1536,7 @@ export default function arrayTest() {
         let value = arr.includes("a", -2);
         console.log(`${TAG} result:` + value);
         expect(String(value)).assertEqual('false');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1556,7 +1556,7 @@ export default function arrayTest() {
         const result = array.indexOf(2);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1576,7 +1576,7 @@ export default function arrayTest() {
         const result = array.indexOf(7);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('-1');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1596,7 +1596,7 @@ export default function arrayTest() {
         const result = array.indexOf(9, 2);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('2');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1616,7 +1616,7 @@ export default function arrayTest() {
         const result = array.indexOf(2, -1);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('-1');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1636,7 +1636,7 @@ export default function arrayTest() {
         const result = array.indexOf(2, -3);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1656,7 +1656,7 @@ export default function arrayTest() {
         const result = array.indexOf(NaN);
         console.log(`${TAG} result:` + result);
         expect(result).assertEqual(-1);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1676,7 +1676,7 @@ export default function arrayTest() {
         const result = array.indexOf('1');
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('-1');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1696,7 +1696,7 @@ export default function arrayTest() {
         const result = array.indexOf('apple');
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1716,7 +1716,7 @@ export default function arrayTest() {
         const result = array.indexOf('abc', 2);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('-1');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1736,7 +1736,7 @@ export default function arrayTest() {
         const result = array.indexOf('apple', 0);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1756,7 +1756,7 @@ export default function arrayTest() {
         const result = array.indexOf('banana', 2);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('-1');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1776,7 +1776,7 @@ export default function arrayTest() {
         const result = array.join();
         console.log(`${TAG} result:` + result);
         expect(result).assertEqual('Wind,Water,Fire');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1796,7 +1796,7 @@ export default function arrayTest() {
         const result = array.join(", ");
         console.log(`${TAG} result:` + result);
         expect(result).assertEqual('Wind, Water, Fire');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1816,7 +1816,7 @@ export default function arrayTest() {
         const result = array.join(" + ");
         console.log(`${TAG} result:` + result);
         expect(result).assertEqual('Wind + Water + Fire');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1836,7 +1836,7 @@ export default function arrayTest() {
         const result = array.join("");
         console.log(`${TAG} result:` + result);
         expect(result).assertEqual('WindWaterFire');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1856,7 +1856,7 @@ export default function arrayTest() {
         const result = array.join();
         console.log(`${TAG} result:` + result);
         expect(result).assertEqual('1,2,3');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1876,7 +1876,7 @@ export default function arrayTest() {
         const result = array.join(", ");
         console.log(`${TAG} result:` + result);
         expect(result).assertEqual('1, 2, 3');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1896,7 +1896,7 @@ export default function arrayTest() {
         const result = array.join(" + ");
         console.log(`${TAG} result:` + result);
         expect(result).assertEqual('1 + 2 + 3');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1916,7 +1916,7 @@ export default function arrayTest() {
         const result = array.join("");
         console.log(`${TAG} result:` + result);
         expect(result).assertEqual('123');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1936,7 +1936,7 @@ export default function arrayTest() {
         const result = array.join();
         console.log(`${TAG} result:` + result);
         expect(result).assertEqual('1,,3');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1956,7 +1956,7 @@ export default function arrayTest() {
         const sparseKeys = Object.keys(arr);
         console.log(`${TAG} result:` + JSON.stringify(sparseKeys));
         expect(JSON.stringify(sparseKeys)).assertEqual('["0","1","2"]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1976,7 +1976,7 @@ export default function arrayTest() {
         const sparseKeys = Object.keys(arr);
         console.log(`${TAG} result:` + JSON.stringify(sparseKeys));
         expect(JSON.stringify(sparseKeys)).assertEqual('["0","1","2"]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1996,7 +1996,7 @@ export default function arrayTest() {
         const sparseKeys = Object.keys(arr);
         console.log(`${TAG} result:` + JSON.stringify(sparseKeys));
         expect(JSON.stringify(sparseKeys)).assertEqual('["0","1","2"]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2016,7 +2016,7 @@ export default function arrayTest() {
         const sparseKeys = Object.keys(arr);
         console.log(`${TAG} result:` + JSON.stringify(sparseKeys));
         expect(JSON.stringify(sparseKeys)).assertEqual('["0","1","2"]');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2036,7 +2036,7 @@ export default function arrayTest() {
         const result = numbers.lastIndexOf(2);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('3');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2056,7 +2056,7 @@ export default function arrayTest() {
         const result = numbers.lastIndexOf(2.5);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('-1');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2076,7 +2076,7 @@ export default function arrayTest() {
         const result = numbers.lastIndexOf(7);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('-1');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2096,7 +2096,7 @@ export default function arrayTest() {
         const result = numbers.lastIndexOf(2, 3);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('3');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2116,7 +2116,7 @@ export default function arrayTest() {
         const result = numbers.lastIndexOf(2, 2);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2136,7 +2136,7 @@ export default function arrayTest() {
         const result = numbers.lastIndexOf(2, -2);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2156,7 +2156,7 @@ export default function arrayTest() {
         const result = numbers.lastIndexOf(-1);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('-1');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2176,7 +2176,7 @@ export default function arrayTest() {
         const result = numbers.lastIndexOf(500);
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('-1');
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2196,7 +2196,7 @@ export default function arrayTest() {
         const result = numbers.lastIndexOf(NaN);
         console.log(`${TAG} result:` + result);
         expect(result).assertEqual(-1);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }

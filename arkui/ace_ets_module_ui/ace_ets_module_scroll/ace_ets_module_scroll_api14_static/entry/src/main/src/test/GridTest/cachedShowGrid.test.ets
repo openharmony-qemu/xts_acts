@@ -109,7 +109,7 @@ export default function cachedShowGrid() {
         }
         console.info("[cachedShowGrid_static_0200] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[cachedShowGrid_static_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -143,7 +143,7 @@ export default function cachedShowGrid() {
         }
         console.info("[cachedShowGrid_static_0300] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[cachedShowGrid_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -177,7 +177,7 @@ export default function cachedShowGrid() {
         }
         console.info("[cachedShowGrid_static_0400] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
         console.log("[cachedShowGrid_static_0400] change component data error: " + err.message);
       }
@@ -213,7 +213,7 @@ export default function cachedShowGrid() {
         }
         console.info("[cachedShowGrid_static_0500] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[cachedShowGrid_static_0500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -247,7 +247,7 @@ export default function cachedShowGrid() {
         }
         console.info("[cachedShowGrid_static_0600] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[cachedShowGrid_static_0600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

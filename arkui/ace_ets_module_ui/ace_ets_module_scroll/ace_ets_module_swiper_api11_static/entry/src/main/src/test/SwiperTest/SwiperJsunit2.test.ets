@@ -117,7 +117,7 @@ export default function swiperJsunit2() {
           router.pushUrl(options)
           console.info("push Swiper page success ");
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push Swiper page error " + JSON.stringify(err));
       }
       await sleep(2)

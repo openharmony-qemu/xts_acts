@@ -56,7 +56,7 @@ export default function getListVisible() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push getListVisible page error:" + err);
       }
       console.info("getListVisible beforeEach end");

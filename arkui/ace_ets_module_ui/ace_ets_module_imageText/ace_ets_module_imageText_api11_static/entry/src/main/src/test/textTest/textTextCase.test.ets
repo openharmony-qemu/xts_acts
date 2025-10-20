@@ -96,7 +96,7 @@ it('textTextCase_static_0100', Level.LEVEL0, async (done: ()=>void) => {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       Utils.sleep(2000);
@@ -135,7 +135,7 @@ it('textTextCase_static_0200', Level.LEVEL0, async (done: ()=>void) => {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       Utils.sleep(2000);
@@ -174,7 +174,7 @@ it('textTextCase_static_0300', Level.LEVEL0, async (done: ()=>void) => {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       Utils.sleep(2000);

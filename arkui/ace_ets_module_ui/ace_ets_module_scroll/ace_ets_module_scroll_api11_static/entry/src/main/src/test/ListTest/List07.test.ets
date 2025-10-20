@@ -66,7 +66,7 @@ export default function List07Test() {
           router.pushUrl(options);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push list page error: " + err);
       }
     });
@@ -89,7 +89,7 @@ export default function List07Test() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('laneGutter')).assertEqual("20.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0250 END ');
 
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0250 ERR  ' + JSON.stringify(err));
         }
@@ -113,7 +113,7 @@ export default function List07Test() {
           JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('laneGutter')).assertEqual("100.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0260 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0260 ERR  ' + JSON.stringify(err));
         }
@@ -137,7 +137,7 @@ export default function List07Test() {
           JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('laneGutter')).assertEqual("0.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0270 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0270 ERR  ' + JSON.stringify(err));
         }
@@ -161,7 +161,7 @@ export default function List07Test() {
           JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('laneGutter')).assertEqual("500.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0280 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0280 ERR  ' + JSON.stringify(err));
         }
@@ -185,7 +185,7 @@ export default function List07Test() {
           JSON.stringifyJsonElement(JSON.parseJsonElement(strJson)));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('laneGutter')).assertEqual("250.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0290 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0290 ERR  ' + JSON.stringify(err));
         }

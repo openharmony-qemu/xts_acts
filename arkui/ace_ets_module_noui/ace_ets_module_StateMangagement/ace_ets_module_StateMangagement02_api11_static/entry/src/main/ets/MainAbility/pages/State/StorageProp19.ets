@@ -72,7 +72,7 @@ struct StorageProp19 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('StorageProp19', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

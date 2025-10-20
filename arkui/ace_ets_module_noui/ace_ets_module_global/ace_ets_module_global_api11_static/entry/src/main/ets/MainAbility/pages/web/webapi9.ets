@@ -289,7 +289,7 @@ struct Index {
                 }
                 
               });
-            }catch(error:Error){
+            } catch (error) {
               console.error(`ErrorCode:${error.code},Message:${error.message}`);
             }
             break;
@@ -299,11 +299,7 @@ struct Index {
               this.controllerTwo.hasImage().then((data)=>{
                 
               })
-                
-                
-                
-
-            }catch(error:Error){
+            } catch (error) {
               console.error(`ErrorCode:${error.code},Message:${error.message}`);
             }
             break;

@@ -117,7 +117,7 @@ export default function audioRendererEnhanceTest() {
       try {
         filePath = testContext.filesDir;
         console.info(`${Tag}:  case2 dirPath is  ${JSON.stringify(filePath)}`);
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`audioRenderer err:` + err);
       }
 

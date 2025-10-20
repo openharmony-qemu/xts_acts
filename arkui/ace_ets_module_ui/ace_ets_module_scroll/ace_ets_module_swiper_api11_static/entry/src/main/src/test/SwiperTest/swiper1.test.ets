@@ -75,7 +75,7 @@ export default function swiperCurveJsunit() {
             console.error(`Swiper1_1 router.pushUrl failed, code is ${error.code}, message is ${error.message}`);
           })
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`Swiper1_1 beforeEach error:` + JSON.stringify(err));
       }
     });
@@ -294,7 +294,7 @@ export default function swiperCurveJsunit() {
       try {
         obj.getElement('$attrs').getElement('isOn').setBoolean(!obj.getElement('$attrs').getBoolean('isOn'))
         
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testswiperCurve_static_00011 on event err : " + JSON.stringify(err));
       }
       console.info("[testswiperCurve_static_00011] onChange value :" + obj.getElement('$attrs').getElement('onChange'));

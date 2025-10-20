@@ -71,7 +71,7 @@ struct AreaExample {
             }
             console.info("onClick start to emit action state")
             events_emitter.emit(backEvent, backData)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("onClick emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
@@ -92,7 +92,7 @@ struct AreaExample {
             }
             console.info("onAreaChange start to emit action state")
             events_emitter.emit(backEvent1, backData1)
-          } catch (err: Error) {
+          } catch (err) {
             console.info("onAreaChange emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })

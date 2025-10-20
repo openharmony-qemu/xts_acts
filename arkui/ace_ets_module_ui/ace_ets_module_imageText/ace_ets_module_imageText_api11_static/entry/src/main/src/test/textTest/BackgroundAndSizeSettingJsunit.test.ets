@@ -107,7 +107,7 @@ it('testBackgroundAndSizeSetting_static_0200', Level.LEVEL1, async (done: ()=>vo
         }
         console.info("testBackgroundAndSizeSetting_static_0200 start pages");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testBackgroundAndSizeSetting_static_0200 change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -198,7 +198,7 @@ it('testBackgroundAndSizeSetting_static_0600', Level.LEVEL1, async (done: ()=>vo
         }
         console.info("[testBackgroundAndSizeSetting_static_0600] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testBackgroundAndSizeSetting_static_0600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -235,7 +235,7 @@ it('testBackgroundAndSizeSetting_static_0700', Level.LEVEL1, async (done: ()=>vo
         }
         console.info("[testBackgroundAndSizeSetting_static_0700] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testBackgroundAndSizeSetting_static_0700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -286,7 +286,7 @@ it('testBackgroundAndSizeSetting_static_0900', Level.LEVEL1, async (done: ()=>vo
         }
         console.info("[testBackgroundAndSizeSetting_static_0900] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testBackgroundAndSizeSetting_static_0900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

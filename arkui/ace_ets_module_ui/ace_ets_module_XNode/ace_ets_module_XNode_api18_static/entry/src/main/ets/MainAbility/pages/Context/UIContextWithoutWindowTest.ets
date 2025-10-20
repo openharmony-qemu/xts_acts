@@ -89,7 +89,7 @@ class MyNodeController extends NodeController {
       uiContext = UIContext.createUIContextWithoutWindow(context);
       console.log('sally----- content1', JSON.stringify(uiContext)) //{"instanceId_":900000}
       resultStr = JSON.stringify(uiContext);
-    } catch (e: Error) {
+    } catch (e) {
       resultStr = e.code + '';
     }
     return resultStr

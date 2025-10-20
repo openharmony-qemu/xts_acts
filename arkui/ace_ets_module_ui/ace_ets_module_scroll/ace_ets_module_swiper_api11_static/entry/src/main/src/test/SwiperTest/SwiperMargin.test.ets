@@ -83,7 +83,7 @@ export default function SwiperMarginTest() {
             console.error(`${SUITE} router.pushUrl failed, code is ${error.code}, message is ${error.message}`);
           })
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
       }
     });

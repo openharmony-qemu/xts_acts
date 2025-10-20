@@ -97,13 +97,13 @@ export default function PanGesture3Jsunit() {
           }
           console.info("[testPanGesture01] start to publish emit:" + JSON.stringify(eventData.data));
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: Error) {
+        } catch (err) {
           console.log("[testPanGesture01] change component data error: " + err.message);
         }
         await CommonFunc.sleep(1000);
         console.info('[testPanGesture01] END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });
@@ -143,7 +143,7 @@ export default function PanGesture3Jsunit() {
       }
       try {
         events_emitter.on(innerEventTwo, callbackTwo)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("[testPanGesture02] on events_emitter err : " + JSON.stringify(err));
       }
       console.info('[testPanGesture02] testSendTouchEvent ' + sendTouchEvent(point));

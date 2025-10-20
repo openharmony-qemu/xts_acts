@@ -105,7 +105,7 @@ struct PropArrayNumber {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('PropArrayNumber', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

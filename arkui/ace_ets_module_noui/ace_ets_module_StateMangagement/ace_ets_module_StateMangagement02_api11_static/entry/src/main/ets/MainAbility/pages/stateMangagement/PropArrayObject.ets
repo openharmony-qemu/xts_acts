@@ -124,7 +124,7 @@ struct PropArrayObject {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('PropArrayObject', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

@@ -60,7 +60,7 @@ struct Index {
       this.parentHeight = routerParamOptions.view.parentHeight
       this.subassemblyWidth = routerParamOptions.view.subassemblyWidth
       this.subassemblyHeight = routerParamOptions.view.subassemblyHeight
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }

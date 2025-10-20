@@ -722,7 +722,7 @@ export default function AbilityDelegatorStageStaticTest() {
 
           const isOnBackground = AppStorage.get<boolean>('onBackground') as boolean;
           expect(isOnBackground).assertTrue();
-        } catch (e: Error) {
+        } catch (e) {
           const err = e as BusinessError;
           hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
           expect().assertFail();

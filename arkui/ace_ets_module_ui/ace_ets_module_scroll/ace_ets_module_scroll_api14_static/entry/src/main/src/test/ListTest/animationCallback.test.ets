@@ -56,7 +56,7 @@ export default function animationCallback() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push animationCallback page error:" + err);
       }
       console.info("animationCallback beforeEach end");

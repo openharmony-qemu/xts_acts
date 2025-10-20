@@ -98,7 +98,7 @@ export default function Swiper07Test() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('minSize')).assertEqual("200.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0300 END ');
 
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0300 ERR  ' + JSON.stringify(err));
         }
@@ -125,7 +125,7 @@ export default function Swiper07Test() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('minSize')).assertEqual("100.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0310 END ');
 
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0310 ERR  ' + JSON.stringify(err));
         }
@@ -149,7 +149,7 @@ export default function Swiper07Test() {
           JSON.stringify(JSON.parseJsonElement(strJson)));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('minSize')).assertEqual("0.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0320 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0320 ERR  ' + JSON.stringify(err));
         }
@@ -173,7 +173,7 @@ export default function Swiper07Test() {
           JSON.stringify(JSON.parseJsonElement(strJson)));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('minSize')).assertEqual("500.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0330 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0330 ERR  ' + JSON.stringify(err));
         }
@@ -197,7 +197,7 @@ export default function Swiper07Test() {
           JSON.stringify(JSON.parseJsonElement(strJson)));
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('minSize')).assertEqual("0.00vp");
           console.info('ArkUX_Grid_List_Swiper_static_0340 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('ArkUX_Grid_List_Swiper_static_0340 ERR  ' + JSON.stringify(err));
         }

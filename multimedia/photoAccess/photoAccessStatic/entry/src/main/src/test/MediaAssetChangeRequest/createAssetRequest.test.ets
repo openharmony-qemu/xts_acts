@@ -58,7 +58,7 @@ export default function createAssetRequest() {
           expect(resultTwo.getCount()).assertEqual(count + 1);
           console.info(`${testNum} succeed to create image without options`);
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${testNum} failed; error: ${err}`);
           expect(false).assertTrue();
           done();
@@ -98,7 +98,7 @@ export default function createAssetRequest() {
           expect(resultTwo.getCount()).assertEqual(count + 1);
           console.info(`${testNum} succeed to create image with options`);
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${testNum} failed; error: ${err}`);
           expect(false).assertTrue();
           done();
@@ -137,7 +137,7 @@ export default function createAssetRequest() {
           hilog.info(0x0000, 'testTag', 'count   ' + resultTwo.getCount() + count);
           console.info(`${testNum} succeed to create video without options`);
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${testNum} failed; error: ${err}`);
           hilog.info(0x0000, 'testTag', 'create_asset_request_static_002 failed' + err.name + err.message);
           expect(false).assertTrue();
@@ -178,7 +178,7 @@ export default function createAssetRequest() {
           expect(resultTwo.getCount()).assertEqual(count + 1);
           console.info(`${testNum} succeed to create video with options`);
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${testNum} failed; error: ${err}`);
           hilog.info(0x0000, 'testTag', 'create_asset_request_static_002 failed' + err.name + err.message);
           expect(false).assertTrue();

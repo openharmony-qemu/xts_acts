@@ -50,7 +50,7 @@ struct UIContextComponentSnapshot{
                 if(pixelmap) {
                     this.pixmap = pixelmap
                 }
-              } catch (error:Error) {
+              } catch (error) {
                 this.code = error!.code.toString()
               }
             }).height('5%')
@@ -62,7 +62,7 @@ struct UIContextComponentSnapshot{
                 if(pixelmap) {
                     this.pixmap = pixelmap
                 }
-              } catch (error:Error) {
+              } catch (error) {
                 this.code1 = error!.code.toString()
               }
             }).height('5%')
@@ -74,7 +74,7 @@ struct UIContextComponentSnapshot{
                 if(pixelmap) {
                     this.pixmap = pixelmap
                 }
-              } catch (error:Error) {
+              } catch (error) {
                 this.code2 = error!.code.toString()
               }
             }).height('5%')
@@ -86,7 +86,7 @@ struct UIContextComponentSnapshot{
                 if(pixelmap) {
                     this.pixmap = pixelmap
                 }
-              } catch (error:Error) {
+              } catch (error) {
                 this.code3 = error!.code.toString()
               }
             }).height('5%')
