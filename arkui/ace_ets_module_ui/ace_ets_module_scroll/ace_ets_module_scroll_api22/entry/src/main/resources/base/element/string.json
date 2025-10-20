@@ -21,6 +21,10 @@
       "value": "label"
     },
     {
+        "name": "description_application",
+        "value": "demo for test"
+    },
+    {
       "name":"string_hello",
       "value":"Hello"
     },
