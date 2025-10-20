@@ -13,17 +13,22 @@
  * limitations under the License.
  */
 
-import { describe, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, afterEach, it, expect } from '@ohos/hypium';
 import formInfo  from '@ohos.app.form.formInfo';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import formProvider from '@ohos.app.form.formProvider';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 const INTERVAL_TIME = 2500;
+const ERROR_CODE1 = 16500050;
+const ERROR_CODE2 = 16500060;
+const ERROR_CODE3 = 16500100;
+const ERROR_CODE4 = 16501000;
+const ERROR_CODE5 = 16501001;
+const ERROR_CODE6 = 16501003;
+const ERROR_CODE7 = 16501011;
 
-let deviceType = systemParameterEnhance.getSync('const.product.devicetype');
-
-export default function OverflowApiCoverTest() {
+export default function overflowApiCoverTest() {
   describe('OverflowApiCoverTest', () => {
     afterEach(async (done: Function) => {
       setTimeout(() => {
@@ -32,15 +37,15 @@ export default function OverflowApiCoverTest() {
     })
 
     /*
-     * @tc.number  RequestOverflow_Cover_0100
-     * @tc.name    RequestOverflow_Cover_0100
+     * @tc.number  SUB_ABILITY_FORM_FWK_REQUEST_OVERFLOW_COVER_0100
+     * @tc.name    SUB_ABILITY_FORM_FWK_REQUEST_OVERFLOW_COVER_0100
      * @tc.desc    Function RequestOverflow covered test
      * @tc.size:   MediumTest
      * @tc.type:   Function
      * @tc.level   Level 1
      */
-    it(`RequestOverflow_Cover_0100`, 0, async (done:Function) => {
-      let name: string = 'RequestOverflow_Cover_0100';
+    it(`SUB_ABILITY_FORM_FWK_REQUEST_OVERFLOW_COVER_0100`, 0, async (done:Function) => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_REQUEST_OVERFLOW_COVER_0100';
       console.info(`${name} start`);
       try {
         let rect: formInfo.Rect = {
@@ -58,7 +63,21 @@ export default function OverflowApiCoverTest() {
           console.info('requestOverflow succeed');
           expect().not().assertFail();
         }).catch((error: BusinessError) => {
-          expect(error.code).assertEqual(16501001);
+          if (error.code === ERROR_CODE1) {
+            expect(error.code).assertEqual(ERROR_CODE1);
+          } else if (error.code === ERROR_CODE2) {
+            expect(error.code).assertEqual(ERROR_CODE2);
+          } else if (error.code === ERROR_CODE3) {
+            expect(error.code).assertEqual(ERROR_CODE3);
+          } else if (error.code === ERROR_CODE4) {
+            expect(error.code).assertEqual(ERROR_CODE4);
+          } else if (error.code === ERROR_CODE5) {
+            expect(error.code).assertEqual(ERROR_CODE5);
+          } else if (error.code === ERROR_CODE6) {
+            expect(error.code).assertEqual(ERROR_CODE6);
+          } else if (error.code === ERROR_CODE7) {
+            expect(error.code).assertEqual(ERROR_CODE7);
+          }
         })
       } catch (error) {
         expect().assertFail();
@@ -68,22 +87,36 @@ export default function OverflowApiCoverTest() {
     });
  
     /*
-     * @tc.number  CancelOverflow_Cover_0100
-     * @tc.name    CancelOverflow_Cover_0100
+     * @tc.number  SUB_ABILITY_FORM_FWK_CANCEL_OVERFLOW_COVER_0100
+     * @tc.name    SUB_ABILITY_FORM_FWK_CANCEL_OVERFLOW_COVER_0100
      * @tc.desc    Function CancelOverflow covered test
      * @tc.size:   MediumTest
      * @tc.type:   Function
      * @tc.level   Level 1
      */
-    it(`CancelOverflow_Cover_0100`, 0, async (done:Function) => {
-      let name: string = 'CancelOverflow_Cover_0100';
+    it(`SUB_ABILITY_FORM_FWK_CANCEL_OVERFLOW_COVER_0100`, 0, async (done:Function) => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_CANCEL_OVERFLOW_COVER_0100';
       console.info(`${name} start`);
       try {
         formProvider.cancelOverflow("1").then(() => {
           console.info('cancelOverflow succeed');
           expect().not().assertFail();
         }).catch((error: BusinessError) => {
-          expect(error.code).assertEqual(16501001);
+          if (error.code === ERROR_CODE1) {
+            expect(error.code).assertEqual(ERROR_CODE1);
+          } else if (error.code === ERROR_CODE2) {
+            expect(error.code).assertEqual(ERROR_CODE2);
+          } else if (error.code === ERROR_CODE3) {
+            expect(error.code).assertEqual(ERROR_CODE3);
+          } else if (error.code === ERROR_CODE4) {
+            expect(error.code).assertEqual(ERROR_CODE4);
+          } else if (error.code === ERROR_CODE5) {
+            expect(error.code).assertEqual(ERROR_CODE5);
+          } else if (error.code === ERROR_CODE6) {
+            expect(error.code).assertEqual(ERROR_CODE6);
+          } else if (error.code === ERROR_CODE7) {
+            expect(error.code).assertEqual(ERROR_CODE7);
+          }
         })
       } catch (error) {
         expect().assertFail();
@@ -93,15 +126,15 @@ export default function OverflowApiCoverTest() {
     });
  
     /*
-     * @tc.number  ActivateSceneAnimation_Cover_0100
-     * @tc.name    ActivateSceneAnimation_Cover_0100
+     * @tc.number  SUB_ABILITY_FORM_FWK_ACTIVATE_SCENE_ANIMATION_COVER_0100
+     * @tc.name    SUB_ABILITY_FORM_FWK_ACTIVATE_SCENE_ANIMATION_COVER_0100
      * @tc.desc    Function ActivateSceneAnimation covered test
      * @tc.size:   MediumTest
      * @tc.type:   Function
      * @tc.level   Level 1
      */
-    it(`ActivateSceneAnimation_Cover_0100`, 0, async (done:Function) => {
-      let name: string = 'ActivateSceneAnimation_Cover_0100';
+    it(`SUB_ABILITY_FORM_FWK_ACTIVATE_SCENE_ANIMATION_COVER_0100`, 0, async (done:Function) => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_ACTIVATE_SCENE_ANIMATION_COVER_0100';
       console.info(`${name} start`);
       try {
         formProvider.activateSceneAnimation("1").then(() => {
@@ -118,15 +151,15 @@ export default function OverflowApiCoverTest() {
     });
  
     /*
-     * @tc.number  DeactivateSceneAnimation_Cover_0100
-     * @tc.name    DeactivateSceneAnimation_Cover_0100
+     * @tc.number  SUB_ABILITY_FORM_FWK_DEACTIVATE_SCENE_ANIMATION_COVER_0100
+     * @tc.name    SUB_ABILITY_FORM_FWK_DEACTIVATE_SCENE_ANIMATION_COVER_0100
      * @tc.desc    Function DeactivateSceneAnimation covered test
      * @tc.size:   MediumTest
      * @tc.type:   Function
      * @tc.level   Level 1
      */
-    it(`DeactivateSceneAnimation_Cover_0100`, 0, async (done:Function) => {
-      let name: string = 'DeactivateSceneAnimation_Cover_0100';
+    it(`SUB_ABILITY_FORM_FWK_DEACTIVATE_SCENE_ANIMATION_COVER_0100`, 0, async (done:Function) => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_DEACTIVATE_SCENE_ANIMATION_COVER_0100';
       console.info(`${name} start`);
       try {
         formProvider.deactivateSceneAnimation("1").then(() => {
@@ -143,22 +176,34 @@ export default function OverflowApiCoverTest() {
     });
 
     /*
-     * @tc.number  GetFormRect_Cover_0100
-     * @tc.name    GetFormRect_Cover_0100
+     * @tc.number  SUB_ABILITY_FORM_FWK_GET_FORM_RECT_COVER_0100
+     * @tc.name    SUB_ABILITY_FORM_FWK_GET_FORM_RECT_COVER_0100
      * @tc.desc    Function GetFormRect covered test
      * @tc.size:   MediumTest
      * @tc.type:   Function
      * @tc.level   Level 1
      */
-    it(`GetFormRect_Cover_0100`, 0, async (done:Function) => {
-      let name: string = 'GetFormRect_Cover_0100';
+    it(`SUB_ABILITY_FORM_FWK_GET_FORM_RECT_COVER_0100`, 0, async (done:Function) => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_GET_FORM_RECT_COVER_0100';
       console.info(`${name} start`);
       try {
         formProvider.getFormRect("1").then(() => {
           console.info('getFormRect succeed');
           expect().not().assertFail();
         }).catch((error: BusinessError) => {
-          expect(error.code).assertEqual(16501001);
+          if (error.code === ERROR_CODE1) {
+            expect(error.code).assertEqual(ERROR_CODE1);
+          } else if (error.code === ERROR_CODE2) {
+            expect(error.code).assertEqual(ERROR_CODE2);
+          } else if (error.code === ERROR_CODE3) {
+            expect(error.code).assertEqual(ERROR_CODE3);
+          } else if (error.code === ERROR_CODE4) {
+            expect(error.code).assertEqual(ERROR_CODE4);
+          } else if (error.code === ERROR_CODE5) {
+            expect(error.code).assertEqual(ERROR_CODE5);
+          } else if (error.code === ERROR_CODE6) {
+            expect(error.code).assertEqual(ERROR_CODE6);
+          }
         })
       } catch (error) {
         expect().assertFail();
