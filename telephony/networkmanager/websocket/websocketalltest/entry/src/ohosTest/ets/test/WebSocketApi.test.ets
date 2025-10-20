@@ -236,7 +236,7 @@ export default function WebSocketApiTest() {
             console.info(`${caseName} test end`);
           } else {
             console.info(`${caseName} test connect success and value is ${value}`);
-            expectTrue(value);
+            expectTrue(value == true);
             done();
             console.info(`${caseName} test end`);
           }
@@ -471,7 +471,7 @@ export default function WebSocketApiTest() {
             console.info(`${caseName} test end`);
           } else {
             console.info(`${caseName} test connect success and value is ${value}`);
-            expectTrue(value);
+            expectTrue(value == true);
             done();
             console.info(`${caseName} test end`);
           }
@@ -504,7 +504,7 @@ export default function WebSocketApiTest() {
             console.info(`${caseName} test end`);
           } else {
             console.info(`${caseName} test connect success and value is ${value}`);
-            expectTrue(value);
+            expectTrue(value == true);
             done();
             console.info(`${caseName} test end`);
           }
@@ -573,7 +573,7 @@ export default function WebSocketApiTest() {
             console.info(`${caseName} test end`);
           } else {
             console.info(`${caseName} test connect success and value is ${value}`);
-            expectTrue(value);
+            expectTrue(value == true);
             done();
             console.info(`${caseName} test end`);
           }
@@ -767,7 +767,7 @@ export default function WebSocketApiTest() {
       try {
         ws.connect(availableWebSocketAddress).then((value: boolean) => {
           console.info(`${caseName} test connect success and value is ${value}`);
-          expectTrue(value);
+          expectTrue(value == true);
           done();
           console.info(`${caseName} test end`);
         }).catch((err: BusinessError) => {
@@ -798,7 +798,7 @@ export default function WebSocketApiTest() {
       try {
         ws.connect(availableWebSocketAddress,{}).then((value: boolean) => {
           console.info(`${caseName} test connect success and value is ${value}`);
-          expectTrue(value);
+          expectTrue(value == true);
           done();
           console.info(`${caseName} test end`);
         }).catch((err: BusinessError) => {
@@ -829,7 +829,7 @@ export default function WebSocketApiTest() {
       try {
         ws.connect(availableWebSocketAddress,{ header: {'Content-Type': 30} }).then((value: boolean) => {
           console.info(`${caseName} test connect success and value is ${value}`);
-          expectTrue(value);
+          expectTrue(value == true);
           done();
           console.info(`${caseName} test end`);
         }).catch((err: BusinessError) => {
@@ -891,7 +891,7 @@ export default function WebSocketApiTest() {
       try {
         ws.connect(availableWebSocketAddress,options).then((value: boolean) => {
           console.info(`${caseName} test connect success and value is ${value}`);
-          expectTrue(value);
+          expectTrue(value == true);
           done();
           console.info(`${caseName} test end`);
         }).catch((err: BusinessError) => {
@@ -1033,7 +1033,7 @@ export default function WebSocketApiTest() {
               console.info(`${caseName} test end`);
             } else {
               console.info(`${caseName} send success and value is ${value}`);
-              expectTrue(value);
+              expectTrue(value == true);
               done();
               console.info(`${caseName} test end`);
             }
@@ -1088,7 +1088,7 @@ export default function WebSocketApiTest() {
               console.info(`${caseName} test end`);
             } else {
               console.info(`${caseName} send success and value is ${value}`);
-              expectTrue(value);
+              expectTrue(value == true);
               done();
               console.info(`${caseName} test end`);
             }
@@ -1144,7 +1144,7 @@ export default function WebSocketApiTest() {
               console.info(`${caseName} test end`);
             } else {
               console.info(`${caseName} send success and value is ${value}`);
-              expectTrue(value);
+              expectTrue(value == true);
               done();
               console.info(`${caseName} test end`);
             }
@@ -1296,7 +1296,7 @@ export default function WebSocketApiTest() {
                   console.info(`${caseName} test end`);
                 } else {
                   console.info(`${caseName} send2 success and value is ${value}`);
-                  expectTrue(value);
+                  expectTrue(value == true);
                   done();
                   console.info(`${caseName} test end`);
                 }
@@ -1353,7 +1353,7 @@ export default function WebSocketApiTest() {
               console.info(`${caseName} test end`);
             } else {
               console.info(`${caseName} send success and value is ${value}`);
-              expectTrue(value);
+              expectTrue(value == true);
               done();
               console.info(`${caseName} test end`);
             }
@@ -1409,7 +1409,7 @@ export default function WebSocketApiTest() {
               console.info(`${caseName} test end`);
             } else {
               console.info(`${caseName} send success and value is ${value}`);
-              expectTrue(value);
+              expectTrue(value == true);
               done();
               console.info(`${caseName} test end`);
             }
@@ -1511,7 +1511,7 @@ export default function WebSocketApiTest() {
           expectEqual(status,101);
           ws.send('').then((value: boolean) => {
             console.info(`${caseName} send success and value is ${value}`);
-            expectTrue(value);
+            expectTrue(value == true);
             done();
             console.info(`${caseName} test end`);
           }).catch((err: BusinessError) => {
@@ -1564,7 +1564,7 @@ export default function WebSocketApiTest() {
           expectEqual(status,101);
           ws.send('Hello').then((value: boolean) => {
             console.info(`${caseName} send success and value is ${value}`);
-            expectTrue(value);
+            expectTrue(value == true);
             done();
             console.info(`${caseName} test end`);
           }).catch((err: BusinessError) => {
@@ -1618,7 +1618,7 @@ export default function WebSocketApiTest() {
           expectEqual(status,101);
           ws.send(sendMessage).then((value: boolean) => {
             console.info(`${caseName} send success and value is ${value}`);
-            expectTrue(value);
+            expectTrue(value == true);
             done();
             console.info(`${caseName} test end`);
           }).catch((err: BusinessError) => {
@@ -1758,7 +1758,7 @@ export default function WebSocketApiTest() {
             console.info(`${caseName} send1 success and value is ${value}`);
             ws.send('Hello').then((value: boolean) => {
               console.info(`${caseName} send2 success and value is ${value}`);
-              expectTrue(value);
+              expectTrue(value == true);
               done();
               console.info(`${caseName} test end`);
             }).catch((err: BusinessError) => {
@@ -1817,7 +1817,7 @@ export default function WebSocketApiTest() {
           expectEqual(status,101);
           ws.send(sendLongMessage).then((value: boolean) => {
             console.info(`${caseName} send success and value is ${value}`);
-            expectTrue(value);
+            expectTrue(value == true);
             done();
             console.info(`${caseName} test end`);
           }).catch((err: BusinessError) => {
@@ -1871,7 +1871,7 @@ export default function WebSocketApiTest() {
           expectEqual(status,101);
           ws.send(sendMessage).then((value: boolean) => {
             console.info(`${caseName} send success and value is ${value}`);
-            expectTrue(value);
+            expectTrue(value == true);
             done();
             console.info(`${caseName} test end`);
           }).catch((err: BusinessError) => {
@@ -1930,7 +1930,7 @@ export default function WebSocketApiTest() {
               console.info(`${caseName} test end`);
             } else {
               console.info(`${caseName} close success and value is ${value}`);
-              expectTrue(value);
+              expectTrue(value == true);
               done();
               console.info(`${caseName} test end`);
             }
@@ -2140,7 +2140,7 @@ export default function WebSocketApiTest() {
               console.info(`${caseName} test end`);
             } else {
               console.info(`${caseName} close success ${value}`);
-              expectTrue(value);
+              expectTrue(value == true);
               done();
               console.info(`${caseName} test end`);
             }
@@ -2195,7 +2195,7 @@ export default function WebSocketApiTest() {
               console.info(`${caseName} test end`);
             } else {
               console.info(`${caseName} close success ${value}`);
-              expectTrue(value);
+              expectTrue(value == true);
               done();
               console.info(`${caseName} test end`);
             }
@@ -2250,7 +2250,7 @@ export default function WebSocketApiTest() {
               console.info(`${caseName} test end`);
             } else {
               console.info(`${caseName} close success ${value}`);
-              expectTrue(value);
+              expectTrue(value == true);
               done();
               console.info(`${caseName} test end`);
             }
@@ -2305,7 +2305,7 @@ export default function WebSocketApiTest() {
               console.info(`${caseName} test end`);
             } else {
               console.info(`${caseName} close success ${value}`);
-              expectTrue(value);
+              expectTrue(value == true);
               done();
               console.info(`${caseName} test end`);
             }
@@ -2360,7 +2360,7 @@ export default function WebSocketApiTest() {
               console.info(`${caseName} test end`);
             } else {
               console.info(`${caseName} close success ${value}`);
-              expectTrue(value);
+              expectTrue(value == true);
               done();
               console.info(`${caseName} test end`);
             }
@@ -2415,7 +2415,7 @@ export default function WebSocketApiTest() {
               console.info(`${caseName} test end`);
             } else {
               console.info(`${caseName} close success ${value}`);
-              expectTrue(value);
+              expectTrue(value == true);
               done();
               console.info(`${caseName} test end`);
             }
@@ -2470,7 +2470,7 @@ export default function WebSocketApiTest() {
               console.info(`${caseName} test end`);
             } else {
               console.info(`${caseName} close success ${value}`);
-              expectTrue(value);
+              expectTrue(value == true);
               done();
               console.info(`${caseName} test end`);
             }
@@ -2552,7 +2552,7 @@ export default function WebSocketApiTest() {
           expectEqual(status,101);
           ws.close({}).then((value: boolean) => {
             console.info(`${caseName} close success ${value}`);
-            expectTrue(value);
+            expectTrue(value == true);
             done();
             console.info(`${caseName} test end`);
           }).catch((err: BusinessError) => {
@@ -2605,7 +2605,7 @@ export default function WebSocketApiTest() {
           expectEqual(status,101);
           ws.close({code: -100,reason: 'error'}).then((value: boolean) => {
             console.info(`${caseName} close success ${value}`);
-            expectTrue(value);
+            expectTrue(value == true);
             done();
             console.info(`${caseName} test end`);
           }).catch((err: BusinessError) => {
@@ -2658,7 +2658,7 @@ export default function WebSocketApiTest() {
           expectEqual(status,101);
           ws.close({code: 0,reason: 'error'}).then((value: boolean) => {
             console.info(`${caseName} close success ${value}`);
-            expectTrue(value);
+            expectTrue(value == true);
             done();
             console.info(`${caseName} test end`);
           }).catch((err: BusinessError) => {
@@ -2711,7 +2711,7 @@ export default function WebSocketApiTest() {
           expectEqual(status,101);
           ws.close({code: 100,reason: 'error'}).then((value: boolean) => {
             console.info(`${caseName} close success ${value}`);
-            expectTrue(value);
+            expectTrue(value == true);
             done();
             console.info(`${caseName} test end`);
           }).catch((err: BusinessError) => {
@@ -2764,7 +2764,7 @@ export default function WebSocketApiTest() {
           expectEqual(status,101);
           ws.close({code: 1000,reason: 'error'}).then((value: boolean) => {
             console.info(`${caseName} close success ${value}`);
-            expectTrue(value);
+            expectTrue(value == true);
             done();
             console.info(`${caseName} test end`);
           }).catch((err: BusinessError) => {
@@ -2850,7 +2850,7 @@ export default function WebSocketApiTest() {
         });
         ws.connect(availableWebSocketAddress, (error: BusinessError, value: boolean) => {
           console.info(`${caseName} test result error ${JSON.stringify(error)} and value is ${value}`);
-          expectTrue(value);
+          expectTrue(value == true);
           done();
           console.info(`${caseName} test end`);
         })
@@ -2893,7 +2893,7 @@ export default function WebSocketApiTest() {
               console.info(`${caseName} test end`);
             } else {
               console.info(`${caseName} close success and value is ${value}`);
-              expectTrue(value);
+              expectTrue(value == true);
               ws.on('open', (err: BusinessError, value: Object) => {
                 console.info(`${caseName} onopen2 err is ${JSON.stringify(err)} and value is ${JSON.stringify(value)}`);
                 done();
