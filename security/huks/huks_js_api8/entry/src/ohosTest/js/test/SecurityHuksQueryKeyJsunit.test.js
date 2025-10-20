@@ -116,7 +116,7 @@ export default function SecurityHuksQueryKeyJsunit() {
     /**
      * @tc.number SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0210
      * @tc.name SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0210
-     * @tc.desc test isKeyExist, key not exist, return false
+     * @tc.desc test isKeyExist, key not exist, err.code -13
      * @tc.size Medium
      * @tc.type Func
      * @tc.level Level3
@@ -137,7 +137,7 @@ export default function SecurityHuksQueryKeyJsunit() {
     /**
      * @tc.number SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0300
      * @tc.name SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0300
-     * @tc.desc test isKeyExist, key not exist, return false
+     * @tc.desc test isKeyExist, key not exist, err.code -13
      * @tc.size Medium
      * @tc.type Func
      * @tc.level Level3

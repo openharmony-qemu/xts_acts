@@ -148,8 +148,8 @@ export default function SecurityHuksQueryKeyJsunit() {
       async function (done) {
         const srcKeyAlias = 'SUB_Security_HUKS_QueryKey_IsKeyExist_API9_Func_0200';
         try {
-          let res = await huks.isKeyItemExist(srcKeyAlias, huksOptions);
-          expect(res).assertEqual(false);
+          await huks.isKeyItemExist(srcKeyAlias, huksOptions);
+          expect(null).assertFail();
         } catch (err) {
           console.error(srcKeyAlias + `: fail, err: ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000011);
@@ -171,8 +171,8 @@ export default function SecurityHuksQueryKeyJsunit() {
         try {
           await huks.generateKeyItem(srcKeyAlias, huksOptions);
           await huks.deleteKeyItem(srcKeyAlias, huksOptions);
-          let res = await huks.isKeyItemExist(srcKeyAlias, huksOptions);
-          expect(res).assertEqual(false);
+          await huks.isKeyItemExist(srcKeyAlias, huksOptions);
+          expect(null).assertFail();
         } catch (err) {
           console.error(srcKeyAlias + `: fail, err: ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000011);
@@ -215,7 +215,7 @@ export default function SecurityHuksQueryKeyJsunit() {
         const srcKeyAlias = 'SUB_Security_HUKS_QueryKey_IsKeyExist_API9_Func_0210';
         try {
           let res = await huksCallBack.isKeyItemExist(srcKeyAlias, huksOptions)
-          expect(res).assertEqual(false);
+          expect(null).assertFail();
         } catch (err) {
           console.error(srcKeyAlias + `: fail, err: ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000011);
