@@ -285,6 +285,44 @@ export default function preferencesPromiseTest(){
         })
 
         /**
+         * @tc.name testPreferencesHasKey0036
+         * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_2600
+         * @tc.desc has long interface test
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testPreferencesHasKey0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            await mPreferences.has(KEY_TEST_STRING_ELEMENT).then((ret) => {
+                expect(ret).assertEqual(false);
+                done();
+            }).catch((err) => {
+                expect(null).assertFail();
+                done();
+            });
+
+        })
+
+        /**
+         * @tc.name testPreferencesHasKey0037
+         * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_2700
+         * @tc.desc has long interface test
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testPreferencesHasKey0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            try {
+                let ret:boolean = await mPreferences.hasSync(KEY_TEST_STRING_ELEMENT);
+                expect(ret).assertEqual(false);
+                done();
+            } catch (err) {
+                expect().assertFail();
+                done();
+            }
+        })
+
+        /**
          * @tc.name testPreferencesGetDefValue0061
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiPromiseTest_1100
          * @tc.desc get string promise interface test

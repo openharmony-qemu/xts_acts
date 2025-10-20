@@ -140,6 +140,21 @@ export default function storageCallBackTest() {
         })
 
         /**
+         * @tc.name testHasKey0037
+         * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_2300
+         * @tc.desc has string callback interface test
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testHasKey0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            await mPref.has(KEY_TEST_STRING_ELEMENT, (err, ret) => {
+                expect(ret).assertEqual(false);
+                done();
+            })
+        })
+
+        /**
          * @tc.name testGetDefValue0062
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_0700
          * @tc.desc get defaultValue callback interface test
