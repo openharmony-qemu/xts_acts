@@ -104,14 +104,14 @@ export default function ConnectionRegisterTest() {
 
         /**
          * @tc.number SUB_NetworkManager_Register_Async_0100
-         * @tc.name testNetworkManagerRegisterAsync0100
+         * @tc.name testNetworkManagerRegisterAsync_static_0100
          * @tc.desc activate the default network, and see if the callback information is generated
          * @tc.level Level1
          * @tc.type: Function
          * @tc.size: SmallTest
          */
-        it('testNetworkManagerRegisterAsync0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName = 'testNetworkManagerRegisterAsync0100';
+        it('testNetworkManagerRegisterAsync_static_0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName = 'testNetworkManagerRegisterAsync_static_0100';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try {
                 let netConn = connection.createNetConnection();
@@ -151,14 +151,14 @@ export default function ConnectionRegisterTest() {
 
         /**
          * @tc.number SUB_NetworkManager_Register_Async_0200
-         * @tc.name testNetworkManagerRegisterAsync0200
+         * @tc.name testNetworkManagerRegisterAsync_static_0200
          * @tc.desc activate the default network, and see if the callback information is generated
          * @tc.level Level1
          * @tc.type: Function
          * @tc.size: SmallTest
          */
-        it('testNetworkManagerRegisterAsync0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName = 'testNetworkManagerRegisterAsync0200';
+        it('testNetworkManagerRegisterAsync_static_0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName = 'testNetworkManagerRegisterAsync_static_0200';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try {
                 let netSpecifier: connection.NetSpecifier = {
@@ -204,14 +204,14 @@ export default function ConnectionRegisterTest() {
 
         /**
          *@tc.number SUB_NetworkManager_Register_Async_2300
-         *@tc.name testNetworkManagerRegisterAsync2300
+         *@tc.name testNetworkManagerRegisterAsync_static_2300
          *@tc.desc  activate the default network ,and see if the callback information is generated
          * @tc.level Level0
          * @tc.type: Function
          * @tc.size: SmallTest
          */
-        it('testNetworkManagerRegisterAsync2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName = 'testNetworkManagerRegisterAsync2300';
+        it('testNetworkManagerRegisterAsync_static_2300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = 'testNetworkManagerRegisterAsync_static_2300';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let netConn = connection.createNetConnection();
@@ -251,14 +251,14 @@ export default function ConnectionRegisterTest() {
 
         /**
          * @tc.number SUB_NetworkManager_Register_Async_2500
-         * @tc.name testNetworkManagerRegisterAsync2500
+         * @tc.name testNetworkManagerRegisterAsync_static_2500
          * @tc.desc activate the default network, and see if the callback information is generated
          * @tc.level Level1
          * @tc.type: Function
          * @tc.size: SmallTest
          */
-        it('testNetworkManagerRegisterAsync2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName = 'testNetworkManagerRegisterAsync2500';
+        it('testNetworkManagerRegisterAsync_static_2500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName = 'testNetworkManagerRegisterAsync_static_2500';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try {
                 let netConn = connection.createNetConnection();
@@ -298,14 +298,14 @@ export default function ConnectionRegisterTest() {
 
         /**
          * @tc.number SUB_NetworkManager_Register_Async_2600
-         * @tc.name testNetworkManagerRegisterAsync2600
+         * @tc.name testNetworkManagerRegisterAsync_static_2600
          * @tc.desc activate the default network, and see if the callback information is generated
          * @tc.level Level1
          * @tc.type: Function
          * @tc.size: SmallTest
          */
-        it('testNetworkManagerRegisterAsync2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName = 'testNetworkManagerRegisterAsync2600';
+        it('testNetworkManagerRegisterAsync_static_2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+            let caseName = 'testNetworkManagerRegisterAsync_static_2600';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try {
                 let netSpecifier: connection.NetSpecifier = {
@@ -350,14 +350,14 @@ export default function ConnectionRegisterTest() {
 
         /**
          *@tc.number SUB_NetworkManager_Register_Async_2700
-         *@tc.name testNetworkManagerRegisterAsync2700
+         *@tc.name testNetworkManagerRegisterAsync_static_2700
          *@tc.desc  activate the default network ,and see if the callback information is generated
          * @tc.level Level0
          * @tc.type: Function
          * @tc.size: SmallTest
          */
-        it('testNetworkManagerRegisterAsync2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName = 'testNetworkManagerRegisterAsync2700';
+        it('testNetworkManagerRegisterAsync_static_2700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = 'testNetworkManagerRegisterAsync_static_2700';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
             try{
                 let netConn = connection.createNetConnection();
