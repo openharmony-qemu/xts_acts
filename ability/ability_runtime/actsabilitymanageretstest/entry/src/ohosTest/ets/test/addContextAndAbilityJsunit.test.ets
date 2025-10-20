@@ -36,7 +36,6 @@ const TAG_TEST_0012 = ' context_featureAbility_test_0400 ';
 export default function addContextAndAbilityJsunit() {
   describe('addContextTest', () => {
     let TAG1 = "SUB_AA_OpenHarmony == addContextTest: ";
-    let sleepTimeOne = 1000;
     let id: number;
     beforeAll(async (done: Function) => {
       console.log(TAG1 + "beforeAll called");
@@ -46,19 +45,15 @@ export default function addContextAndAbilityJsunit() {
       })
       id = delayInfo.requestId;
       console.log(TAG1 + "requestId is : " + id);
-      setTimeout(() => {
-        console.log(TAG1 + "beforeAll end");
-        done();
-      }, sleepTimeOne);
+      console.log(TAG1 + "beforeAll end");
+      done();
     })
 
     afterAll(async (done: Function) => {
       console.log(TAG1 + "afterAll called");
       backgroundTaskManager.cancelSuspendDelay(id);
-      setTimeout(() => {
-        console.log(TAG1 + "afterAll end");
-        done();
-      }, sleepTimeOne);
+      console.log(TAG1 + "afterAll end");
+      done();
     })
 
     /*
@@ -96,19 +91,17 @@ export default function addContextAndAbilityJsunit() {
     it(TAG_TEST_0200, Level.LEVEL0, async (done: Function) => {
       let detailed: boolean = false;
       console.info(TAG_TEST_0200 + 'callBack START');
-      try {
-        let startTime = await Utils.getNowTime();
-        let context = ability_featureAbility.getContext();
-        context.isUpdatingConfigurations((error, data) => {
-          let endTime = Utils.getNowTime();
-          Utils.getDurationTime(TAG_TEST_0200, startTime, endTime);
-          detailed = data;
-          console.info(TAG_TEST_0200 + ' callBack succeeded. data is:' + JSON.stringify(data));
-        })
-      } catch (error) {
-        console.error(TAG_TEST_0200 + 'Operation failed. Cause: ' + JSON.stringify(error));
-      }
-      await Utils.sleep(2000);
+      let startTime = await Utils.getNowTime();
+      let context = ability_featureAbility.getContext();
+      await context.isUpdatingConfigurations().then((data) => {
+        let endTime = Utils.getNowTime();
+        Utils.getDurationTime(TAG_TEST_0200, startTime, endTime);
+        detailed = data;
+        console.info(TAG_TEST_0200 + ' callBack succeeded. data is:' + JSON.stringify(data));
+      }).catch((error: BusinessError) => 
+      {
+          console.error(TAG_TEST_0200 + 'Operation failed. Cause: ' + JSON.stringify(error));
+      })
       expect(typeof (detailed)).assertEqual("boolean");
       expect(detailed).assertEqual(false);
       done();
@@ -135,7 +128,6 @@ export default function addContextAndAbilityJsunit() {
       }).catch((error: BusinessError) => {
         console.error(TAG_TEST_0300 + 'promise error is: ' + JSON.stringify(error));
       })
-      await Utils.sleep(2000);
       expect(detailed).assertEqual(null);
       done();
       console.log('------------------ ' + TAG_TEST_0300 + ' end -------------------');
@@ -152,19 +144,17 @@ export default function addContextAndAbilityJsunit() {
     it(TAG_TEST_0400, Level.LEVEL0, async (done: Function) => {
       let detailed: ESObject;
       console.info(TAG_TEST_0400 + 'callBack START');
-      try {
-        let startTime = await Utils.getNowTime();
-        let context = ability_featureAbility.getContext();
-        context.printDrawnCompleted((error, data) => {
-          let endTime = Utils.getNowTime();
-          Utils.getDurationTime(TAG_TEST_0400, startTime, endTime);
-          detailed = data;
-          console.info(TAG_TEST_0400 + ' callBack succeeded. data is:' + JSON.stringify(data));
-        })
-      } catch (error) {
+      let startTime = await Utils.getNowTime();
+      let context = ability_featureAbility.getContext();
+      await context.printDrawnCompleted().then((data) => {
+        let endTime = Utils.getNowTime();
+        Utils.getDurationTime(TAG_TEST_0400, startTime, endTime);
+        detailed = data;
+        console.info(TAG_TEST_0400 + ' callBack succeeded. data is:' + JSON.stringify(data));
+      }).catch((error: BusinessError) =>
+      {
         console.error(TAG_TEST_0400 + 'Operation failed. Cause: ' + JSON.stringify(error));
-      }
-      await Utils.sleep(2000);
+      })
       expect(detailed).assertEqual(null);
       done();
       console.log('------------------ ' + TAG_TEST_0400 + ' end -------------------');
@@ -190,7 +180,6 @@ export default function addContextAndAbilityJsunit() {
         }).catch((error: BusinessError) => {
           console.error(TAG_TEST_0500 + 'promise errors is: ' + JSON.stringify(error));
         })
-      await Utils.sleep(2000)
       expect(typeof (detailed)).assertEqual("number");
       expect(detailed).assertLarger(0);
       done();
@@ -236,7 +225,6 @@ export default function addContextAndAbilityJsunit() {
       }).catch((error: BusinessError) => {
         console.error(TAG_TEST_0700 + 'promise errors is: ' + JSON.stringify(error));
       })
-      await Utils.sleep(1000);
       expect(typeof (detailed)).assertEqual("boolean");
       expect(detailed).assertEqual(false);
       done();
