@@ -1102,6 +1102,162 @@ export default function SocketErrorCodeTest01() {
         done();
       }
     });
+    /* *
+     * @tc.number: SUB_Socket_ErrorCode_TCPSocketServer_0300
+     * @tc.name  : testSocketErrorCodeTCPSocketServer0300
+     * @tc.desc  : Test TCPSocketConnection onMessage 401 event
+     * @tc.size  : MediumTest
+     * @tc.type  : Function
+     * @tc.level : level 3
+     */
+    it('testSocketErrorCodeTCPSocketServer0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testSocketErrorCodeTCPSocketServer0300';
+      let server = socket.constructTCPSocketServerInstance();
+      try {
+        console.info(`${caseName} test start`);
+        server.on('connect', (data) => {
+          console.info(`${caseName} on connect success ${JSON.stringify(data)}`);
+          data.on('message',undefined);
+        });
+        server.off('connect');
+        done();
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectTrue(err.code == 401)
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+    /* *
+     * @tc.number: SUB_Socket_ErrorCode_TCPSocketServer_0400
+     * @tc.name  : testSocketErrorCodeTCPSocketServer0400
+     * @tc.desc  : Test TCPSocketConnection offMessage 401 event
+     * @tc.size  : MediumTest
+     * @tc.type  : Function
+     * @tc.level : level 3
+     */
+    it('testSocketErrorCodeTCPSocketServer0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testSocketErrorCodeTCPSocketServer0400';
+      let server = socket.constructTCPSocketServerInstance();
+      try {
+        console.info(`${caseName} test start`);
+        server.on('connect', (data) => {
+          console.info(`${caseName} on connect success ${JSON.stringify(data)}`);
+          data.off('message',undefined);
+        });
+        server.off('connect');
+        done();
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectTrue(err.code == 401)
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+    /* *
+     * @tc.number: SUB_Socket_ErrorCode_TCPSocketServer_0500
+     * @tc.name  : testSocketErrorCodeTCPSocketServer0500
+     * @tc.desc  : Test TCPSocketConnection onError 401 event
+     * @tc.size  : MediumTest
+     * @tc.type  : Function
+     * @tc.level : level 3
+     */
+    it('testSocketErrorCodeTCPSocketServer0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testSocketErrorCodeTCPSocketServer0500';
+      let server = socket.constructTCPSocketServerInstance();
+      try {
+        console.info(`${caseName} test start`);
+        server.on('connect', (data) => {
+          console.info(`${caseName} on connect success ${JSON.stringify(data)}`);
+          data.on('error',undefined);
+        });
+        server.off('connect');
+        done();
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectTrue(err.code == 401)
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+    /* *
+     * @tc.number: SUB_Socket_ErrorCode_TCPSocketServer_0600
+     * @tc.name  : testSocketErrorCodeTCPSocketServer0600
+     * @tc.desc  : Test TCPSocketConnection offError 401 event
+     * @tc.size  : MediumTest
+     * @tc.type  : Function
+     * @tc.level : level 3
+     */
+    it('testSocketErrorCodeTCPSocketServer0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testSocketErrorCodeTCPSocketServer0600';
+      let server = socket.constructTCPSocketServerInstance();
+      try {
+        console.info(`${caseName} test start`);
+        server.on('connect', (data) => {
+          console.info(`${caseName} on connect success ${JSON.stringify(data)}`);
+          data.off('error',undefined);
+        });
+        server.off('connect');
+        done();
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectTrue(err.code == 401)
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+    /* *
+     * @tc.number: SUB_Socket_ErrorCode_TCPSocketServer_0700
+     * @tc.name  : testSocketErrorCodeTCPSocketServer0700
+     * @tc.desc  : Test TCPSocketConnection onClose 401 event
+     * @tc.size  : MediumTest
+     * @tc.type  : Function
+     * @tc.level : level 3
+     */
+    it('testSocketErrorCodeTCPSocketServer0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testSocketErrorCodeTCPSocketServer0700';
+      let server = socket.constructTCPSocketServerInstance();
+      try {
+        console.info(`${caseName} test start`);
+        server.on('connect', (data) => {
+          console.info(`${caseName} on connect success ${JSON.stringify(data)}`);
+          data.on('close',undefined);
+        });
+        server.off('connect');
+        done();
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectTrue(err.code == 401)
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+     /* *
+     * @tc.number: SUB_Socket_ErrorCode_TCPSocketServer_0800
+     * @tc.name  : testSocketErrorCodeTCPSocketServer0800
+     * @tc.desc  : Test TCPSocketConnection offClose 401 event
+     * @tc.size  : MediumTest
+     * @tc.type  : Function
+     * @tc.level : level 3
+     */
+     it('testSocketErrorCodeTCPSocketServer0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testSocketErrorCodeTCPSocketServer0800';
+      let server = socket.constructTCPSocketServerInstance();
+      try {
+        console.info(`${caseName} test start`);
+        server.on('connect', (data) => {
+          console.info(`${caseName} on connect success ${JSON.stringify(data)}`);
+          data.off('close',undefined);
+        });
+        server.off('connect');
+        done();
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectTrue(err.code == 401)
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
 
   })
 }
