@@ -15,12 +15,10 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from "../../../hypium/index";
 import drawing from '@ohos.graphics.drawing';
-import { getEnumCount } from './Util.test';
 import { BusinessError } from '@ohos.base';
 
 export default function samplingOptionsTest() {
   describe('DrawingTsSamplingOptionsTest', () => {
-    const DEFAULT = 0;
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -77,7 +75,10 @@ export default function samplingOptionsTest() {
      */
     it('testSamplingOptionsConstructorMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testSamplingOptionsConstructorMultipleCallsStatic';
-
+      let itemList: drawing.FilterMode[] = [
+        drawing.FilterMode.FILTER_MODE_NEAREST,
+        drawing.FilterMode.FILTER_MODE_LINEAR
+      ];
       for (let i = 0; i < 20; i++) {
         try {
           new drawing.SamplingOptions();
@@ -90,7 +91,8 @@ export default function samplingOptionsTest() {
 
       for (let i = 0; i < 20; i++) {
         try {
-          new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_NEAREST);
+          const randomEnum = Math.round(Math.random()).toInt();
+          new drawing.SamplingOptions(itemList[randomEnum]);
           console.info(`${msg} SamplingOptions with random enum value  succeeded`);
         } catch (e: BusinessError) {
           console.info(`${msg} SamplingOptions errorCode is:  ${e.code} + errormsg is: ${e.message}`);
