@@ -95,7 +95,7 @@ export default function WindowLifecycle() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     let isPCStatus: string = '';
     let isAutoWindow: string = '';
-    beforeAll(() => {
+    beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
