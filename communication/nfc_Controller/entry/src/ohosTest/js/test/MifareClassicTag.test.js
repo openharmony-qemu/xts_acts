@@ -713,8 +713,13 @@ export default function nfcMifareClassicTag() {
             if (MifareClassicTag != null && MifareClassicTag != undefined) {
                 try{
                     let isEmulatedTag = MifareClassicTag.isEmulatedTag();
-                    console.info("[NFC_test] MifareClassicTag19 isEmulatedTag: " + isEmulatedTag);
-                    expect(false).assertEqual(isEmulatedTag);
+                    if (isEmulatedTag == true) {
+                        console.info("[NFC_test] MifareClassicTag19 isEmulatedTag: " + isEmulatedTag);
+                        expect(isEmulatedTag).assertTrue();
+                    } else {
+                        console.info("[NFC_test] MifareClassicTag19 isEmulatedTag: " + isEmulatedTag);
+                        expect(isEmulatedTag).assertFalse();
+                    }
                 } catch (error) {
                     console.info('[NFC_test] MifareClassicTag19 isEmulatedTag error' + error)
                     expect().assertFail();

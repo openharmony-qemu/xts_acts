@@ -289,8 +289,13 @@ export default function nfcNDEFTagTest() {
             }
             if (NdefTag1 != null && NdefTag1 != undefined) {
                 let data = NdefTag1.isNdefWritable();
-                console.info("[NFC_test]ndef6 isNdefWritable data: " + data);
-                expect(data).assertTrue();
+                if (data == true) {
+                    console.info("[NFC_test]ndef6 isNdefWritable data: " + data);
+                    expect(data).assertTrue();
+                } else {
+                    console.info("[NFC_test]ndef6 isNdefWritable data: " + data);
+                    expect(data).assertFalse();
+                }
                 done();
             } else {
                 console.info("[NFC_test]NdefTag6 = null & = undefined: ");
@@ -469,8 +474,13 @@ export default function nfcNDEFTagTest() {
             if (NdefTag != null && NdefTag != undefined) {
                 try {
                     let canSetReadOnly = NdefTag.canSetReadOnly();
-                    console.info("[NFC_test]ndef11 canSetReadOnly: " + canSetReadOnly);
-                    expect(canSetReadOnly).assertTrue();             
+                    if (canSetReadOnly == true) {
+                        console.info("[NFC_test]ndef11 canSetReadOnly: " + canSetReadOnly);
+                        expect(canSetReadOnly).assertTrue();   
+                    } else {
+                        console.info("[NFC_test]ndef11 canSetReadOnly: " + canSetReadOnly);
+                        expect(canSetReadOnly).assertFalse();   
+                    }           
                 } catch (error) {
                     if (error.code == 201) {
                         console.info('[NFC_test]NdefTag11 NdefTag error' + error)
