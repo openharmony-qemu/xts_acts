@@ -1152,8 +1152,8 @@ export default function fileIOCopyDir() {
     });
 
     /**
-     * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_1700
-     * @tc.name fileIO_test_copyDir_async_static_017
+     * @tc.number SUB_DF_FILEIO_COPYDIR_ASYNC_1800
+     * @tc.name fileIO_test_copyDir_async_static_018
      * @tc.desc Test copyDir() interface.Promise.
      * There is no target folder(src) under path dest. Mode is undefined.
      * @tc.size MEDIUM
