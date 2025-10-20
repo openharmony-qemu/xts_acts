@@ -19,7 +19,7 @@ group("concurrent_builtin_test") {
     deps = [
       "concurrent_baselib_test:ActsConcurrentBaselibTest",
       "concurrent_global_test:ActsConcurrentGlobalTest",
-      "concurrent_builtins_test:ActsConcurrentBuiltinsTest"
+      "concurrent_builtins_test:ActsConcurrentBuiltinsTest",
     ]
   }
 }
