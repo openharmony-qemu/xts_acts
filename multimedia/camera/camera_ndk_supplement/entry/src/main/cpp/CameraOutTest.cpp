@@ -451,88 +451,6 @@ static napi_value PreviewOutputSetPreviewRotationInvalidParm(napi_env env, napi_
     napi_value result;
     return ReturnInt(env, ret, &result);
 }
-    
-static napi_value PhotoOutputIsSupported(napi_env env, napi_callback_info info)
-{
-    int32_t ret = INVALID_STATUS;
-    int32_t index = 0;
-    napi_value result;
-    if (GetInt(env, info, 0, index) == false) {
-        return ReturnInt(env, ret, &result);
-    }
-    std::string outstr;
-    if (GetString(env, info, 1, outstr) == false) {
-        return ReturnInt(env, ret, &result);
-    }
-    if (index == ARG_INDEX_0) {
-        OHOS::CameraStandard::CameraNdkCommon cameraNdkCommon;
-        cameraNdkCommon.InitCamera();
-        Camera_PhotoOutput* photoOutput = cameraNdkCommon.CreatePhotoOutput(outstr.c_str());
-        PhotoOutput_Callbacks photoOutputListener = {
-            .onFrameStart = PhotoOutputOnFrameStart,
-            .onFrameShutter = PhotoOutputOnFrameShutter,
-            .onFrameEnd = PhotoOutputOnFrameEnd,
-            .onError = PhotoOutputOnError
-        };
-        Camera_PhotoQualityPrioritization qualitypz;
-        bool isSp;
-        Camera_ErrorCode rest = OH_PhotoOutput_IsPhotoQualityPrioritizationSupported(photoOutput, qualitypz, &isSp);
-        ret = rest;
-        if (rest == CAMERA_OK) {
-            ret = CAMERA_OK;
-        }
-    } else if (index == ARG_INDEX_1) {
-        Camera_PhotoOutput* photoOutput = nullptr;
-        Camera_PhotoQualityPrioritization qualitypz;
-        bool isSp;
-        Camera_ErrorCode rest = OH_PhotoOutput_IsPhotoQualityPrioritizationSupported(photoOutput, qualitypz, &isSp);
-        if (rest == CAMERA_INVALID_ARGUMENT) {
-            ret = CAMERA_OK;
-        }
-    }
-    return ReturnInt(env, ret, &result);
-}
-
-static napi_value PhotoOutputQuality(napi_env env, napi_callback_info info)
-{
-    int32_t ret = INVALID_STATUS;
-    int32_t index = 0;
-    napi_value result;
-    if (GetInt(env, info, 0, index) == false) {
-        return ReturnInt(env, ret, &result);
-    }
-    std::string outstr;
-    if (GetString(env, info, 1, outstr) == false) {
-        return ReturnInt(env, ret, &result);
-    }
-    Camera_PhotoOutput* photoOutput = nullptr;
-    Camera_PhotoQualityPrioritization qualityPrioritization = CAMERA_PHOTO_QUALITY_PRIORITIZATION_SPEED;
-    if (index == ARG_INDEX_0) {
-        OHOS::CameraStandard::CameraNdkCommon cameraNdkCommon;
-        cameraNdkCommon.InitCamera();
-        photoOutput = cameraNdkCommon.CreatePhotoOutput(outstr.c_str());
-        Camera_ErrorCode rest = OH_PhotoOutput_SetPhotoQualityPrioritization(photoOutput, qualityPrioritization);
-        ret = rest;
-        if (rest == CAMERA_OPERATION_NOT_ALLOWED) {
-            ret = CAMERA_OK;
-        }
-    } else if (index == ARG_INDEX_1) {
-        Camera_ErrorCode rest = OH_PhotoOutput_SetPhotoQualityPrioritization(photoOutput, qualityPrioritization);
-        if (rest == CAMERA_INVALID_ARGUMENT) {
-            ret = CAMERA_OK;
-        }
-    } else if (index == ARG_INDEX_2) {
-        OHOS::CameraStandard::CameraNdkCommon cameraNdkCommon;
-        cameraNdkCommon.InitCamera();
-        photoOutput = cameraNdkCommon.CreatePhotoOutput(outstr.c_str());
-        Camera_ErrorCode rest = OH_PhotoOutput_SetPhotoQualityPrioritization(photoOutput, qualityPrioritization);
-        ret = rest;
-        if (rest == CAMERA_OK) {
-            ret = CAMERA_OK;
-        }
-    }
-    return ReturnInt(env, ret, &result);
-}
 
 void CameraMetadataOutputOnErrorCb(Camera_MetadataOutput* metadataOutput, Camera_ErrorCode errorCode)
 {
@@ -1165,7 +1083,17 @@ static napi_value PhotoOutputCaptureWithCaptureSetting(napi_env env, napi_callba
         return ReturnInt(env, ret, &result);
     }
     Camera_PhotoOutput* photoOutput = nullptr;
-    Camera_PhotoCaptureSetting capSettings;
+    Camera_Location cameraLocation = {
+        .latitude = 0.0f,
+        .longitude = 0.0f,
+        .altitude = 0.0f
+    };
+    Camera_PhotoCaptureSetting capSettings = {
+        .mirror = false,
+        .quality = QUALITY_LEVEL_HIGH,
+        .rotation = IAMGE_ROTATION_0,
+        .location = &cameraLocation
+    };
     Camera_ErrorCode rest;
     OHOS::CameraStandard::CameraNdkCommon cameraNdkCommon;
     cameraNdkCommon.InitCamera();
@@ -1741,10 +1669,6 @@ static napi_value Register01(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"PreviewOutputSetPreviewRotationInvalidParm", nullptr, PreviewOutputSetPreviewRotationInvalidParm, nullptr,
             nullptr, nullptr, napi_default, nullptr},
-        {"PhotoOutputIsSupported", nullptr, PhotoOutputIsSupported, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
-        {"PhotoOutputQuality", nullptr, PhotoOutputQuality, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
