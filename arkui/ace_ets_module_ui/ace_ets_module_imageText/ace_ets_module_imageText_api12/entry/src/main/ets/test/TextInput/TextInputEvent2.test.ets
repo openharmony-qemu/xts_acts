@@ -256,8 +256,6 @@ export default function TextInputEvent2() {
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('TextInputEvent2Text5')
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
