@@ -51,7 +51,7 @@ export default function SecurityHuksQueryKeyJsunit() {
     /**
      * @tc.number SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0100
      * @tc.name SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0100
-     * @tc.desc test isKetExist
+     * @tc.desc test isKeyExist
      * @tc.size Medium
      * @tc.type Func
      * @tc.level Level1
@@ -73,7 +73,7 @@ export default function SecurityHuksQueryKeyJsunit() {
     /**
      * @tc.number SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0110
      * @tc.name SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0110
-     * @tc.desc test isKetExist
+     * @tc.desc test isKeyExist
      * @tc.size Medium
      * @tc.type Func
      * @tc.level Level3
@@ -95,7 +95,7 @@ export default function SecurityHuksQueryKeyJsunit() {
     /**
      * @tc.number SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0200
      * @tc.name SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0200
-     * @tc.desc test isKetExist, key not exist, return false
+     * @tc.desc test isKeyExist, key not exist, return false
      * @tc.size Medium
      * @tc.type Func
      * @tc.level Level2
@@ -116,7 +116,7 @@ export default function SecurityHuksQueryKeyJsunit() {
     /**
      * @tc.number SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0210
      * @tc.name SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0210
-     * @tc.desc test isKetExist, key not exist, return false
+     * @tc.desc test isKeyExist, key not exist, return false
      * @tc.size Medium
      * @tc.type Func
      * @tc.level Level3
@@ -137,7 +137,7 @@ export default function SecurityHuksQueryKeyJsunit() {
     /**
      * @tc.number SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0300
      * @tc.name SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0300
-     * @tc.desc test isKetExist, key not exist, return false
+     * @tc.desc test isKeyExist, key not exist, return false
      * @tc.size Medium
      * @tc.type Func
      * @tc.level Level3
