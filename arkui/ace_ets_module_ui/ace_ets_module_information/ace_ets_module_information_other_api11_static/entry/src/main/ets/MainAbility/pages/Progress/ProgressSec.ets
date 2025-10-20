@@ -82,8 +82,8 @@ struct progressSecTest {
 
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    console.info("progress page state change called:" + JSON.stringify(eventData));
-    console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_0400]: callback " +
+    console.info('progress page state change called:' + JSON.stringify(eventData));
+    console.info('[ArkUI_Stage_Progress_Capsule_BorderWidth_0400]: callback ' +
       ((eventData.data) as ESObject).getProperty('progress_capsule_borderWidth_resource'));
 
     this.progress_capsule_borderWidth_number = ((eventData.data) as ESObject).getProperty('progress_capsule_borderWidth_number').toNumber();
@@ -139,10 +139,10 @@ struct progressSecTest {
     console.info('divider onPageShow')
   
     AppStorage.setOrCreate<Context>('context', this.getUIContext().getHostContext()!)
-    AppStorage.setOrCreate<object>("messageManager",  this.messageManager);
+    AppStorage.setOrCreate<object>('messageManager',  this.messageManager);
 
     let callback: Callback<object> = (message: Message<object>) => {
-      console.error('message = ' + message.name + "--" + message.value)
+      console.error('message = ' + message.name + '--' + message.value)
       if (message.name == 'progress_capsule_borderWidth_resource') {
         this.progress_capsule_borderWidth_resource = message.value as Resource
       }
