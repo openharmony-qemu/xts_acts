@@ -15,5 +15,5 @@
 
 export class Constants {
   static readonly EXAMPLE_URL: string = 'https://www.example.com/';
-  static readonly ORIGIN_URL: string = 'https://www.huaweicloud.com/';
+  static readonly ORIGIN_URL: string = 'https://docs.qq.com/';
 }
