@@ -2632,7 +2632,7 @@ export default function audioFramework() {
             if (err) {
               console.error(`${TagFrmwk}: Callback : RINGER_MODE_NORMAL: Error: ${err.message}`);
               expect().assertFail();
-            } else if (value == RINGER_MODE_NORMAL) {
+            } else if (value == audio.AudioRingMode.RINGER_MODE_NORMAL) {
               console.info(`${TagFrmwk}: Callback: getRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
               expect(true).assertTrue();
             } else {
@@ -2665,7 +2665,7 @@ export default function audioFramework() {
             if (err) {
               console.error(`${TagFrmwk}: Callback : RINGER_MODE_SILENT: Error: ${err.message}`);
               expect().assertFail();
-            } else if (value == RINGER_MODE_SILENT) {
+            } else if (value == audio.AudioRingMode.RINGER_MODE_SILENT) {
               console.info(`${TagFrmwk}: Callback: getRingerMode RINGER_MODE_SILENT: PASS :${value}`);
               expect(true).assertTrue();
             } else {
@@ -2698,7 +2698,7 @@ export default function audioFramework() {
             if (err) {
               console.error(`${TagFrmwk}: Callback : RINGER_MODE_VIBRATE: Error: ${err.message}`);
               expect().assertFail();
-            } else if (value == RINGER_MODE_VIBRATE) {
+            } else if (value == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
               console.info(`${TagFrmwk}: Callback: getRingerMode RINGER_MODE_VIBRATE: PASS :${value}`);
               expect(true).assertTrue();
             } else {
@@ -4180,7 +4180,7 @@ export default function audioFramework() {
         await audioManager.mute(audio.AudioVolumeType.MEDIA, true);
         console.log(`${TagFrmwk}: Set Stream Mute: MEDIA: Promise: TRUE`);
         let value = await audioManager.getVolume(audio.AudioVolumeType.MEDIA);
-        let data = await audioManager.isMuteSync(audio.AudioVolumeType.MEDIA);
+        let data:boolean = await audioVolumeGroupManager.isMuteSync(audio.AudioVolumeType.MEDIA);
         expect(data).assertEqual(true);
         console.log(`${TagFrmwk}: indicate that the mute status of the stream is obtained : PASS:${data}`);
         done();
@@ -4192,20 +4192,20 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTESYNC_0001
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTESYNC_0002
      * @tc.name      : ismuteSync - AudioVolumeType.Media - false
      * @tc.desc      : ismuteSync - AudioVolumeType.Media - false
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTESYNC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTESYNC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
         await audioManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
         await audioManager.mute(audio.AudioVolumeType.MEDIA, false);
         console.log(`${TagFrmwk}: Set Stream Mute: MEDIA: Promise: TRUE`);
         let value = await audioManager.getVolume(audio.AudioVolumeType.MEDIA);
-        let data = await audioManager.isMuteSync(audio.AudioVolumeType.MEDIA);
+        let data:boolean = await audioVolumeGroupManager.isMuteSync(audio.AudioVolumeType.MEDIA);
         expect(data).assertEqual(false);
         console.log(`${TagFrmwk}: indicate that the mute status of the stream is obtained : PASS:${data}`);
         done();
