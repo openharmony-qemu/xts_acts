@@ -78,6 +78,6 @@ export default class SecondAbility extends Ability {
   }
 
   onPrepareToTerminate() {
-    return false;
+    return true;
   }
 }
