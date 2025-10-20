@@ -109,6 +109,13 @@ export default function WindowLifecycle() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      let windowclassArr:Array<window.Window> = await windowStage.getSubWindow();
+      console.log(`brforeAll getSubWindow success. Cause: ${JSON.stringify(windowclassArr)}`);
+      if(windowclassArr.length!=0){
+        for(let i = 0;i<=windowclassArr.length;i++){
+            await windowclassArr[i].destroyWindow();
+        }
+      }
     });
     beforeEach(() => {
     });
