@@ -3749,7 +3749,7 @@ export default function windowPCTest() {
         let windowClass = windowStage.getMainWindowSync()
         // 获取窗口状态 - 自由窗口
           let windowStatusType = windowClass.getWindowStatus();
-          console.info(caseName + ' windowClass.getWindowStatus(). windowStatusType: ' + windowStatusType);
+          console.info(message + ' windowClass.getWindowStatus(). windowStatusType: ' + windowStatusType);
           if (windowStatusType == window.WindowStatusType.MAXIMIZE) {
             await windowClass.recover();
             await sleep(200);
