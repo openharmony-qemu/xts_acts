@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// Index.ets
+
 @Entry
 @Component
 struct NavigationExample2 {
@@ -20,17 +20,16 @@ struct NavigationExample2 {
   private isUseInterception: boolean = true;
   @State interceptionText: string = '路由拦截：启用';
   @State logText: string = 'Navigation 日志: \n';
-
   private updateLog(content: string) {
     this.logText = `${content}`;
     console.info(`PageOne001 Log: ${content}`);
   }
 
   @Builder
-  pageMap(name: string) {
-    if (name == 'pageOne001') {
+  pageMap(name:string){
+    if(name == 'pageOne001'){
       PageOne001()
-    } else {
+    }else{
       PageTwo002()
     }
   }
@@ -44,9 +43,11 @@ struct NavigationExample2 {
         if (!this.isUseInterception) {
           return;
         }
+        
         if (typeof from === 'string' || typeof to === 'string') {
           return;
         }
+
         let target: NavDestinationContext = to as NavDestinationContext;
         const logContent = `willShow:from.mode ${from.mode}to.mode ${to.mode}`;
         this.updateLog(logContent);
@@ -66,14 +67,13 @@ struct NavigationExample2 {
         if (typeof from === 'string' || typeof to === 'string') {
           return;
         }
+
         let target: NavDestinationContext = to as NavDestinationContext;
         const logContent = `didShow:from.mode ${from.mode}to.mode ${to.mode}`;
         this.updateLog(logContent);
         if (target.pathInfo.name === 'pageTwo002') {
           target.pathStack.pop();
           target.pathStack.pushPathByName('pageOne001', null);
-
-
         }
       },
     })
@@ -81,75 +81,63 @@ struct NavigationExample2 {
 
   build() {
     Navigation(this.pageInfos) {
+       Column() {
+          Button('pushPath pageTwo002', { stateEffect: true, type: ButtonType.Capsule })
+            .id('pageTwo002')
+            .width('80%')
+            .height(40)
+            .margin(10)
+            .onClick(() => {
+              this.pageInfos.pushPath({ name: 'pageTwo002' });
+            })
+          Button('pushPath pageOne001', { stateEffect: true, type: ButtonType.Capsule })
+            .id('pageOne001')
+            .width('80%')
+            .height(40)
+            .margin(10)
+            .onClick(() => {
+              this.pageInfos.pushPath({ name: 'pageOne001' });
+            })
+          Text(this.interceptionText)
+            .fontSize(10)
+            .fontColor(Color.Green)
+        }
+        .width('100%')
+        .height('100%')
       Column({ space: 15 }) {
         Text(this.logText)
           .width('100%')
           .backgroundColor('#fffcf0f0')
-          .padding(20)
-          .fontSize(14)
+          .fontSize(10)
           .id('indexLogId')
-        Column() {
-          Text(this.interceptionText)
-            .fontSize(14)
-            .fontColor(Color.Green)
-            .margin({ top: 10 })
-
-          Button('pushPath pageOne001', { stateEffect: true, type: ButtonType.Capsule })
-            .width('80%')
-            .height(40)
-            .margin(20)
-            .onClick(() => {
-              this.pageInfos.pushPath({ name: 'pageOne001' });
-            })
-          Button('pushPath pageTwo002', { stateEffect: true, type: ButtonType.Capsule })
-            .width('80%')
-            .height(40)
-            .margin(20)
-            .onClick(() => {
-              this.pageInfos.pushPath({ name: 'pageTwo002' });
-            })
-        }
-        .width('100%')
-        .height('100%')
       }
       .width('100%')
       .height('100%')
-      .padding(15)
     }
-    .title('Navigation').navDestination(this.pageMap)
+    .navDestination(this.pageMap)
     .onAppear(() => {
       this.registerInterception();
       this.updateLog('路由拦截：开启');
     })
   }
 }
-
 class TmpClass {
-  public count: number = 10;
+  private count: number = 10;
 }
-
 @Component
 struct PageOne001 {
   @Consume('pageInfos') pageInfos: NavPathStack;
   @State logText: string = '日志: \n';
-
   private updateLog(content: string) {
     this.logText = `日志: \n${content}`;
     console.info(`PageOne001 Log: ${content}`);
   }
-
   build() {
     NavDestination() {
       Column({ space: 15 }) {
-        Text(this.logText)
-          .width('100%')
-          .backgroundColor('#ffffe6e6')
-          .padding(12)
-          .fontSize(14)
-          .id('pageOne001LogId')
-
         Column() {
           Button('push pageTwo002', { stateEffect: true, type: ButtonType.Capsule })
+            .id('pageTwo02')
             .width('80%')
             .height(40)
             .margin(20)
@@ -161,10 +149,16 @@ struct PageOne001 {
         }
         .width('100%')
         .height('100%')
+
+        Text(this.logText)
+          .width('100%')
+          .backgroundColor('#ffffe6e6')
+          .fontSize(10)
+          .id('pageOne001LogId')
+
       }
       .width('100%')
       .height('100%')
-      .padding(15)
     }
     .title('pageOne001')
     .mode(NavDestinationMode.STANDARD)
@@ -186,7 +180,6 @@ struct PageOne001 {
 struct PageTwo002 {
   @Consume('pageInfos') pageInfos: NavPathStack;
   @State logText: string = '日志: \n';
-
   private updateLog(content: string) {
     this.logText = `日志: \n${content}`;
     console.info(`PageTwo002 Log: ${content}`);
@@ -195,15 +188,10 @@ struct PageTwo002 {
   build() {
     NavDestination() {
       Column({ space: 15 }) {
-        Text(this.logText)
-          .width('100%')
-          .backgroundColor('#ffffe6e6')
-          .padding(12)
-          .fontSize(14)
-          .id('pageTwo002LogId')
 
         Column() {
           Button('push pageOne001', { stateEffect: true, type: ButtonType.Capsule })
+            .id('pageOne01')
             .width('80%')
             .height(40)
             .margin(20)
@@ -214,10 +202,17 @@ struct PageTwo002 {
         }
         .width('100%')
         .height('100%')
+
+        Text(this.logText)
+          .width('100%')
+          .backgroundColor('#ffffe6e6')
+          .padding(12)
+          .fontSize(14)
+          .id('pageTwo002LogId')
+
       }
       .width('100%')
       .height('100%')
-      .padding(15)
     }
     .title('pageTwo002')
     .mode(NavDestinationMode.DIALOG)

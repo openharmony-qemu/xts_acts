@@ -58,17 +58,17 @@ export default function NavigationTest() {
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
-      let pushPageOne001Btn = await driver.findComponent(ON.text('pushPath pageTwo002'));
+      let pushPageOne001Btn = await driver.findComponent(ON.id('pageTwo002'));
       await pushPageOne001Btn.click();
       await CommonFunc.sleep(2000);
-      console.info("[NavigationMode_001] Jumped to pageOne001");
+      console.info("[NavigationMode_001] Jumped to pageTwo002");
 
-      let pageTwo002ToPageOne001Btn = await driver.findComponent(ON.text('push pageOne001'));
+      let pageTwo002ToPageOne001Btn = await driver.findComponent(ON.id('pageOne01'));
       await pageTwo002ToPageOne001Btn.click();
       await CommonFunc.sleep(2000);
       console.info("[NavigationMode_001] Jumped back to pageOne001 from pageTwo002");
 
-      let pushPageTwo002Btn = await driver.findComponent(ON.text('push pageTwo002'));
+      let pushPageTwo002Btn = await driver.findComponent(ON.id('pageTwo02'));
       await pushPageTwo002Btn.click();
       await CommonFunc.sleep(2000);
       console.info("[NavigationMode_001] Jumped to pageTwo002");
