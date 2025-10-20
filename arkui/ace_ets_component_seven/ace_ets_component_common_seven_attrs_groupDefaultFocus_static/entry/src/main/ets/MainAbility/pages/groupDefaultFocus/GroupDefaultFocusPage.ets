@@ -549,7 +549,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	mGroupDefaultFocus: boolean = false
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		instance.groupDefaultFocus(this.mGroupDefaultFocus)
+		/* groupDefaultFocus not supported */
 	}
 }
 

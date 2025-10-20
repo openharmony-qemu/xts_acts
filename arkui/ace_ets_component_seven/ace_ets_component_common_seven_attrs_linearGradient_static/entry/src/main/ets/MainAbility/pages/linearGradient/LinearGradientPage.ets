@@ -869,7 +869,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 }
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		instance.linearGradient(this.mLinearGradient)
+		/* linearGradient not supported */
 	}
 }
 

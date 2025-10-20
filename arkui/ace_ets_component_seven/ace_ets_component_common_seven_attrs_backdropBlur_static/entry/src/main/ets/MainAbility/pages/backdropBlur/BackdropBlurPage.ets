@@ -549,7 +549,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
   backdropBlur: number = 3
 
   applyNormalAttribute(instance: SpanAttribute): void {
-    instance.backdropBlur(this.backdropBlur)
+    /* backdropBlur not supported */
   }
 }
 

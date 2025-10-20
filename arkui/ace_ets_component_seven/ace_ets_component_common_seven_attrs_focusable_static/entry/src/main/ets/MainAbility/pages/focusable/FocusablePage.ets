@@ -549,7 +549,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	mFocusable: boolean = false
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		instance.focusable(this.mFocusable)
+    	/* focusable not supported */
 	}
 }
 

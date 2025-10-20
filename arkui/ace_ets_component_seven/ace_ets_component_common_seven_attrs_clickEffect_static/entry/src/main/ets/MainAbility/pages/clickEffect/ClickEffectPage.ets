@@ -548,7 +548,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	mClickEffect: ClickEffect = { level: ClickEffectLevel.HEAVY, scale: 0.9 }
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		instance.clickEffect(this.mClickEffect)
+    	/* clickEffect not supported */
 	}
 }
 

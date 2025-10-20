@@ -526,7 +526,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	mTranslate: TranslateOptions = { x: 6, y: 5, z: 4 }
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		instance.translate(this.mTranslate)
+		/* translate not supported */
 	}
 }
 

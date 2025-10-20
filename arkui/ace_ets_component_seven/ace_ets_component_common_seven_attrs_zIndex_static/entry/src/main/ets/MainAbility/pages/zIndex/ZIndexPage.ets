@@ -669,7 +669,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
   mZIndex: int = 7
 
   applyNormalAttribute(instance: SpanAttribute): void {
-    instance.zIndex(this.mZIndex)
+    /* zIndex not supported */
   }
 }
 

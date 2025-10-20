@@ -1253,7 +1253,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		instance.borderImage(this.mBorderImage)
+    	/* borderImage not supported */
 	}
 }
 

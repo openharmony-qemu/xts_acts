@@ -888,8 +888,6 @@ function commonStyle(this: SliderAttribute, componentKey: string): this {
 }
 
 function commonStyle(this: SpanAttribute, componentKey: string): this {
-  this.width(50)
-  this.height('100%')
   this.key(componentKey)
   return this
 }

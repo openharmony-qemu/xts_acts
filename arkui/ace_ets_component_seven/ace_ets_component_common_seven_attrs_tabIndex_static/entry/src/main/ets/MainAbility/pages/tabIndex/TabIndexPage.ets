@@ -526,7 +526,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	mTabIndex: number = 1
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		instance.tabIndex(this.mTabIndex)
+		/* tabIndex not supported */
 	}
 }
 

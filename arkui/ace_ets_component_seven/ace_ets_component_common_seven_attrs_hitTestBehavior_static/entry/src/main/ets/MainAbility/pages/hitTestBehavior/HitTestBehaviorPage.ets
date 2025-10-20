@@ -551,7 +551,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	mHitTestBehavior: HitTestMode = HitTestMode.Transparent
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		instance.hitTestBehavior(this.mHitTestBehavior)
+		/* hitTestBehavior not supported */
 	}
 }
 

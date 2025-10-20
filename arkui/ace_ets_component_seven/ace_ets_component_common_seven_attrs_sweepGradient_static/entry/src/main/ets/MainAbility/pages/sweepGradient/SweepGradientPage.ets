@@ -954,7 +954,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	}
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		instance.sweepGradient(this.mSweepGradient)
+		/* sweepGradient not supported */
 	}
 }
 

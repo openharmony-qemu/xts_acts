@@ -1196,7 +1196,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
   }
 
   applyNormalAttribute(instance: SpanAttribute): void {
-    instance.rotate(this.mRotate)
+	/* rotate not supported */
   }
 }
 
