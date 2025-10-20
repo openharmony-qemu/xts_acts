@@ -1067,5 +1067,41 @@ export default function SocketErrorCodeTest01() {
         done();
       }
     });
+    /* *
+     * @tc.number: SUB_Socket_ErrorCode_TCPSocketServer_0200
+     * @tc.name  : testSocketErrorCodeTCPSocketServer0200
+     * @tc.desc  : Test TCPSocketConnection send 401 event
+     * @tc.size  : MediumTest
+     * @tc.type  : Function
+     * @tc.level : level 3
+     */
+    it('testSocketErrorCodeTCPSocketServer0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testSocketErrorCodeTCPSocketServer0200';
+      let server = socket.constructTCPSocketServerInstance();
+      try {
+        console.info(`${caseName} test start`);
+        server.on('connect', (data) => {
+          console.info(`${caseName} on connect success ${JSON.stringify(data)}`);
+          data.send(null,(err,data) => {
+            if(err){
+              console.info(`${caseName} send failed ${JSON.stringify(err)}`);
+              done();
+            } else{
+              console.info(`${caseName} on send data ${JSON.stringify(data)}`);
+              ExpectFail();
+              done();
+            }
+          })
+        });
+        server.off('connect');
+        done();
+      } catch (err) {
+        console.info(`${caseName}_catch fail err:${JSON.stringify(err)}`);
+        expectTrue(err.code == 401)
+        console.info(`${caseName} test end`);
+        done();
+      }
+    });
+
   })
 }
