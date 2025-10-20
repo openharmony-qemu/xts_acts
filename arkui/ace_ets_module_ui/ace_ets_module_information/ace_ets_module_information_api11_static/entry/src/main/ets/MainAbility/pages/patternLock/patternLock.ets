@@ -27,7 +27,7 @@ struct PatternLockExample {
   @State sideLength: number = 150;
   @State circleRadius: number = 7;
   @State pathStrokeWidth: double = 17;
-  @State backgroundColor1: string = "#FF008000";
+  @State backgroundColor1: string = '#FF008000';
   @State autoReset: boolean = true;
   private patternLockController: PatternLockController = new PatternLockController();
   @State onActionCalled: boolean = false;
@@ -42,10 +42,10 @@ struct PatternLockExample {
 
   }
 
-  private stateChangCallBack = (eventData: events_emitter.EventData) => {
-    console.info("[PatternLock] page stateChangCallBack");
+  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+    console.info('[PatternLock] page stateChangCallBack');
     if (eventData != null && eventData.data != null) {
-      console.info("[PatternLock] page state change called:" + JSON.stringify(eventData));
+      console.info('[PatternLock] page state change called:' + JSON.stringify(eventData));
       if (((eventData.data) as ESObject).getProperty('sideLength') != null) {
         this.sideLength = ((eventData.data) as ESObject).getProperty('sideLength').toNumber();
       }
@@ -93,7 +93,7 @@ struct PatternLockExample {
             }
           } else {
             this.passwords = input;
-            this.message = "Please enter again.";
+            this.message = 'Please enter again.';
             console.log('Please enter again');
           }
         })
@@ -105,19 +105,19 @@ struct PatternLockExample {
         try {
           let backData: events_emitter.EventData = {
             data: {
-              "ACTION": this.onActionCalled,
+              'ACTION': this.onActionCalled,
             } as Record<String, RecordData>
           } as events_emitter.EventData
           let backEvent: events_emitter.InnerEvent = {
             eventId: 153,
             priority: events_emitter.EventPriority.LOW
           }
-          console.info("reset button start to emit action state");
+          console.info('reset button start to emit action state');
           events_emitter.emit(backEvent, backData);
 
 
         } catch (err) {
-          console.info("reset button emit action state err: " + JSON.stringify((err as Error)?.message));
+          console.info('reset button emit action state err: ' + JSON.stringify((err as Error)?.message));
         }
       }).key('button1')
     }

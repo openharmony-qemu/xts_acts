@@ -47,20 +47,20 @@ struct Index {
   ports: Array<webview.WebMessagePort> = new Array<webview.WebMessagePort>();
   testObj:MyTestObject = {
     test: (data1: string, data2: string, data3: string):string => {
-      console.log("data1:" + data1);
-      console.log("data2:" + data2);
-      console.log("data3:" + data3);
-      return "AceString";
+      console.log('data1:' + data1);
+      console.log('data2:' + data2);
+      console.log('data3:' + data3);
+      return 'AceString';
     },
     toStr: () => {
-      console.log('toString' + "interface instead.");
+      console.log('toString' + 'interface instead.');
     }
   } as MyTestObject
   
-  message = new ConsoleMessage();
+  message: ConsoleMessage = new ConsoleMessage();
   controller: webview.WebviewController = new webview.WebviewController();
   controllerTwo: webview.WebviewController = new webview.WebviewController();
-  @State str: string = "emitStoreWebArchive"
+  @State str: string = 'emitStoreWebArchive'
 
   onPageShow() {
     let valueChangeEvent: emitter.InnerEvent = {
@@ -70,10 +70,10 @@ struct Index {
     emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  private valueChangeCallBack = (eventData: emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+  private valueChangeCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if ((eventData.data as ESObject).getProperty('ACTION') != null) {
         this.str = (eventData.data as ESObject).getProperty('ACTION').toString() as String;
       }
@@ -94,13 +94,13 @@ struct Index {
       Web({ src: 'www.baidu.com', controller: this.controller })
         .multiWindowAccess(true).key('multiwindow')
         .onWindowExit(() => {
-          console.log("onWindowExit...");
+          console.log('onWindowExit...');
           setTimeout(()=>{
             
           },1000)
         }).
       onWindowNew((event) => {
-        console.log("onWindowNew...");
+        console.log('onWindowNew...');
         let popController: webview.WebviewController = new webview.WebviewController();
         event.handler.setWebController(popController);
         setTimeout(()=>{
@@ -108,24 +108,24 @@ struct Index {
         },1000)
 
       }).onFullScreenEnter((event) => {
-        console.log("onFullScreenEnter...");
+        console.log('onFullScreenEnter...');
         this.handler = event.handler;
         setTimeout(()=>{
           
         },1000)
       }).onFullScreenExit(() => {
-        console.info("onFullScreenExit...");
+        console.info('onFullScreenExit...');
         this.handler!.exitFullScreen();
       })
 
       Web({ src: 'www.baidu.com', controller: this.controller })
         .key('web2')
-        .webStandardFont("HarmonyOS-Sans-Condensed")
+        .webStandardFont('HarmonyOS-Sans-Condensed')
         
         
-        .webFixedFont("HarmonyOS-Sans-Condensed")
-        .webFantasyFont("HarmonyOS-Sans-Condensed")
-        .webCursiveFont("HarmonyOS-Sans-Condensed")
+        .webFixedFont('HarmonyOS-Sans-Condensed')
+        .webFantasyFont('HarmonyOS-Sans-Condensed')
+        .webCursiveFont('HarmonyOS-Sans-Condensed')
         .defaultFixedFontSize(this.defaultFixed)
         
         
@@ -160,8 +160,8 @@ struct Index {
         
         .javaScriptProxy({
           jsObject: this.testObj,
-          name: "objName",
-          methodList: ["test", "toString"],
+          name: 'objName',
+          methodList: ['test', 'toString'],
           controller: this.controller,
         }).onConsole((event) => {
         console.log('getMessage:' + event.message.getMessage());
@@ -190,101 +190,101 @@ struct Index {
           return false;
         })
 
-      Button("web click").key('webcomponentapi9').onClick((e:ClickEvent):void=>{
-        console.info("key==>"+this.str)
+      Button('web click').key('webcomponentapi9').onClick((e:ClickEvent):void=>{
+        console.info('key==>'+this.str)
         switch(this.str){
           
-          case "emitGeturl":
+          case 'emitGeturl':
             let url = this.controllerTwo.getUrl();
             
             break;
-          case "emitclearClientAuthenticationCache":
+          case 'emitclearClientAuthenticationCache':
             this.controllerTwo.clearClientAuthenticationCache();
             
             break;
-          case "emitclearSslCache":
+          case 'emitclearSslCache':
             this.controllerTwo.clearSslCache();
             
             break;
-          case "emitsearchNext":
+          case 'emitsearchNext':
             this.controllerTwo.searchNext(true);
             
             break;
-          case "emitclearMatches":
+          case 'emitclearMatches':
             this.controllerTwo.clearMatches();
             
             break;
-          case "emitDefaultUserAgent":
+          case 'emitDefaultUserAgent':
             let usrAgent = webview.WebviewController.getDefaultUserAgent();
             
             break;
-          case "emitgetWebId":
+          case 'emitgetWebId':
             let webId = this.controllerTwo.getWebId();
             
             break;
-          case "emitpostMessage":
+          case 'emitpostMessage':
             let sendPortArray:Array<webview.WebMessagePort> = [this.ports[1]!] as Array<webview.WebMessagePort>;
             
             
             
             
             break;
-          case "emitcreateWebMessagePorts":
+          case 'emitcreateWebMessagePorts':
             this.ports = this.controller.createWebMessagePorts();
-            console.info("createWebMessagePorts size:" + this.ports!.length)
+            console.info('createWebMessagePorts size:' + this.ports!.length)
             
             break;
-          case "emitdeleteSessionCookie":
+          case 'emitdeleteSessionCookie':
             webview.WebCookieManager.clearSessionCookieSync();  
             
             break;
-          case "emitdeleteExpiredCookie":
+          case 'emitdeleteExpiredCookie':
             
             
             break;
-          case "emitexistCookie":
+          case 'emitexistCookie':
             let vaue = webview.WebCookieManager.existCookie();
             
             break;
-          case "emitgetCookie":
+          case 'emitgetCookie':
             let value = webview.WebCookieManager.fetchCookieSync('www.baidu.com'); 
-            console.info("value: " + value);
+            console.info('value: ' + value);
             
             break;
 
-          case "emitsetCookie":
-            console.info("value: ");
+          case 'emitsetCookie':
+            console.info('value: ');
             webview.WebCookieManager.configCookieSync('www.baidu.com','a=b'); 
             
             break;
 
-          case "emitsaveCookie":
+          case 'emitsaveCookie':
             webview.WebCookieManager.saveCookieAsync(); 
             
             break;
-          case "emitputAcceptFileURICookieEnabled":
+          case 'emitputAcceptFileURICookieEnabled':
             
             
             break;
-          case "emitputAcceptThirdPartyCookieEnabled":
+          case 'emitputAcceptThirdPartyCookieEnabled':
             webview.WebCookieManager.putAcceptThirdPartyCookieEnabled(false)
             
             break;
 
-          case "emitisFileURICookieAllowed":
+          case 'emitisFileURICookieAllowed':
             
             
             break;
-          case "emitisThirdPartyCookieAllowed":
+          case 'emitisThirdPartyCookieAllowed':
             let isThirdParty = webview.WebCookieManager.isThirdPartyCookieAllowed();
             
             break;
-          case "hasImage":
+          case 'hasImage':
             
             try{
               this.controllerTwo.hasImage((err,data)=>{
                 if(err) {
-                  console.info("has ImageError" + JSON.stringify(err))
+                  console.info('has ImageError' + JSON.stringify(err))
                   return;
                 }
                 
@@ -293,7 +293,7 @@ struct Index {
               console.error(`ErrorCode:${error.code},Message:${error.message}`);
             }
             break;
-          case "hasImageTwo":
+          case 'hasImageTwo':
             let flag = true
             try{
               this.controllerTwo.hasImage().then((data)=>{
@@ -307,20 +307,20 @@ struct Index {
               console.error(`ErrorCode:${error.code},Message:${error.message}`);
             }
             break;
-          case "setNetworkAvailable":
+          case 'setNetworkAvailable':
             this.controllerTwo.setNetworkAvailable(this.netWorkStatus);
             
             break;
-          case "getFavicon":
-            let icon = "baidu"
+          case 'getFavicon':
+            let icon = 'baidu'
             this.controllerTwo.getFavicon();
             
             break;
-          case "getOriginalUrl":
+          case 'getOriginalUrl':
             this.controllerTwo.getOriginalUrl();
             
             break;
-          case "history":
+          case 'history':
             let res = 1;
             let historyList = this.controllerTwo.getBackForwardEntries();
             webview.WebviewController.initializeWebEngine();
@@ -328,7 +328,7 @@ struct Index {
             
             
             break;
-          case "pageUp":
+          case 'pageUp':
             
             this.controllerTwo.pageUp(true);
             this.controllerTwo.pageDown(true);
@@ -337,7 +337,7 @@ struct Index {
             break;
 
           default:
-            console.info("can not match case")
+            console.info('can not match case')
         }
       })
     }

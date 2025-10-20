@@ -56,17 +56,17 @@ struct MotionPath7Example {
           try {
             let backData: events_emitter.EventData = {
               data: {
-                "ACTION": this.rotatable,
+                'ACTION': this.rotatable,
               } as Record<String, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 132,
               priority: events_emitter.EventPriority.LOW
             }
-            console.info("button start to emit action state")
+            console.info('button start to emit action state')
             events_emitter.emit(backEvent, backData)
           } catch (err) {
-            console.info("button emit action state err: " + JSON.stringify((err as Error)?.message))
+            console.info('button emit action state err: ' + JSON.stringify((err as Error)?.message))
           }
           animateTo({ duration: 4000, curve: Curve.Linear }, () => {
             this.toggle = !this.toggle;
@@ -79,18 +79,18 @@ struct MotionPath7Example {
           try {
             let backData: events_emitter.EventData = {
               data: {
-                "fromX": this.fromX,
-                "toY": this.toY
+                'fromX': this.fromX,
+                'toY': this.toY
               } as Record<String, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 133,
               priority: events_emitter.EventPriority.LOW
             }
-            console.info("button1 position start to emit action state")
+            console.info('button1 position start to emit action state')
             events_emitter.emit(backEvent, backData)
           } catch (err) {
-            console.info("button1 position emit action state err: " + JSON.stringify((err as Error)?.message))
+            console.info('button1 position emit action state err: ' + JSON.stringify((err as Error)?.message))
           }
         })
     }
@@ -107,7 +107,8 @@ struct MotionPath7Example {
     events_emitter.on(stateChangeEvent, this.stateChangeCallBack)
   }
 
-  private stateChangeCallBack = (eventData: events_emitter.EventData) => {
+  private stateChangeCallBack: (eventData: events_emitter.EventData) => void =
+    (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info('motionPath page state change called:' + JSON.stringify(eventData));
       if ((eventData.data as FormXy)?.fromX != null) {

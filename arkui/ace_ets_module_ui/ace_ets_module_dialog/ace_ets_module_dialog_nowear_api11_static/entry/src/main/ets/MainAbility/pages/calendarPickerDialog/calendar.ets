@@ -57,7 +57,7 @@ struct CalendarComponentExample {
     }.height(400).padding({ left: 35, right: 35, top: 35 } as Padding)
   }
 
-  private stateChangCallBack = (eventData: events_emitter.EventData) => {
+  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
 
   }
 }

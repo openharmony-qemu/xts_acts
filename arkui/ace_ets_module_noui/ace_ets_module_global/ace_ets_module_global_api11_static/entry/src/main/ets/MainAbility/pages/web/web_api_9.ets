@@ -33,7 +33,7 @@ struct Index {
   controller: webview.WebviewController = new webview.WebviewController();
   @State isSuccess: Boolean = false;
   
-  @State str: string = "emitUserAgent"
+  @State str: string = 'emitUserAgent'
   webConTextMenuResult: WebContextMenuResult = new WebContextMenuResult();
   controllerWeb: webview.WebviewController = new webview.WebviewController();
   fileSelector: FileSelectorResult = new FileSelectorResult();
@@ -47,10 +47,10 @@ struct Index {
     emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  private valueChangeCallBack = (eventData: emitter.EventData) => {
-    console.info("web page valueChangeCallBack");
+  private valueChangeCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
+      console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if ((eventData.data as ESObject).getProperty('ACTION') != null) {
         this.str = (eventData.data as ESObject).getProperty('ACTION').toString() as string;
       }
@@ -68,19 +68,19 @@ struct Index {
     Column() {
       Web({ src: 'www.baidu.com', controller: this.controller })
         .onContextMenuShow((event) => {
-          console.info("x coord = " + event.param.x());
-          console.info("x coord = " + event.param.y());
-          console.info("link url = " + event.param.getLinkUrl());
-          console.info("source url = " + event.param.getSourceUrl());
-          console.info("source url = " + event.param.getUnfilteredLinkUrl());
-          console.info("source url = " + event.param.existsImageContents());
+          console.info('x coord = ' + event.param.x());
+          console.info('x coord = ' + event.param.y());
+          console.info('link url = ' + event.param.getLinkUrl());
+          console.info('source url = ' + event.param.getSourceUrl());
+          console.info('source url = ' + event.param.getUnfilteredLinkUrl());
+          console.info('source url = ' + event.param.existsImageContents());
           event.result.copyImage()
           event.result.closeContextMenu()
           this.isSuccess = true;
           
           return true;
         }).onWindowNew((event) => {
-        console.log("onWindowNew...");
+        console.log('onWindowNew...');
         let popController: webview.WebviewController = new webview.WebviewController();
         event.handler.setWebController(popController);
         this.isSuccess = true;
@@ -88,7 +88,7 @@ struct Index {
       }).onShowFileSelector((event) => {
         uiContext.showAlertDialog({
           title: event.fileSelector.getTitle(),
-          message: 'isCapture:' + event.fileSelector.isCapture() + " mode:" + event.fileSelector.getMode() + 'acceptType:' + event.fileSelector.getAcceptType(),
+          message: 'isCapture:' + event.fileSelector.isCapture() + ' mode:' + event.fileSelector.getMode() + 'acceptType:' + event.fileSelector.getAcceptType(),
           confirm: {
             value: 'upload',
             action: () => {
@@ -117,7 +117,7 @@ struct Index {
           secondaryButton: {
             value: 'ok',
             action: () => {
-              event.result.handlePromptConfirm("已經確認")
+              event.result.handlePromptConfirm('已經確認')
             }
           },
           cancel: () => {
@@ -132,7 +132,7 @@ struct Index {
         .onShowFileSelector((event) => {
           uiContext.showAlertDialog({
             title: event.fileSelector.getTitle(),
-            message: 'isCapture:' + event.fileSelector.isCapture() + " mode:" + event.fileSelector.getMode() + 'acceptType:' + event.fileSelector.getAcceptType(),
+            message: 'isCapture:' + event.fileSelector.isCapture() + ' mode:' + event.fileSelector.getMode() + 'acceptType:' + event.fileSelector.getAcceptType(),
             confirm: {
               value: 'upload',
               action: () => {
@@ -144,10 +144,10 @@ struct Index {
             },
             cancel: () => {
               let fileList: Array<string> = []
-              console.info("this is Capture " + event.fileSelector.isCapture());
-              console.info("this is getTitle" + event.fileSelector.getTitle());
-              console.info("this is getMode" + event.fileSelector.getMode());
-              console.info("this is getAcceptType" + event.fileSelector.getAcceptType().length);
+              console.info('this is Capture ' + event.fileSelector.isCapture());
+              console.info('this is getTitle' + event.fileSelector.getTitle());
+              console.info('this is getMode' + event.fileSelector.getMode());
+              console.info('this is getAcceptType' + event.fileSelector.getAcceptType().length);
             }
           } as AlertDialogParamWithConfirm)
           return true;
@@ -155,17 +155,17 @@ struct Index {
 
 
       Row() {
-        Button("webTest").key('web2').onClick((e:ClickEvent):void => {
-          console.info("key==>" + this.str);
+        Button('webTest').key('web2').onClick((e:ClickEvent):void => {
+          console.info('key==>' + this.str);
           switch (this.str) {
             
-            case "emitHitTestValue":
+            case 'emitHitTestValue':
               
               
               
               
             default:
-              console.info("can not match case")
+              console.info('can not match case')
           }
 
         })
