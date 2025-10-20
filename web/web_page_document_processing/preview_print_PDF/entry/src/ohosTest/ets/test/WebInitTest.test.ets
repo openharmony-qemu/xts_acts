@@ -46,6 +46,16 @@ export default function webInitTest() {
       sendEventByKey('WebInitTestButton',10,'');
     })
 
-    
+    /*
+     * tc.number SUB_ACE_BASIC_ETS_API_SETPRINTBACKGROUND_0200
+     * tc.name testSetPrintBackgroundOne
+     * tc.desc Support printing background colors
+    */
+    it('emitSetPrintBackgroundTwo',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
+      Utils.emitEvent("emitSetPrintBackgroundTwo", 300530)
+      Utils.registerEvent("emitSetPrintBackgroundTwo",true,20251025,done);
+      sendEventByKey('WebInitTestButton',10,'');
+    })
+
   })
 }
