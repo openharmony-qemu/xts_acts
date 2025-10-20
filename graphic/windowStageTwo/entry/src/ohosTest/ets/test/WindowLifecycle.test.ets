@@ -1743,6 +1743,14 @@ export default function WindowLifecycle() {
         }
       }
     });
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0500
+     * @tc.name      : testWindowVisibilityChange_subWindow
+     * @tc.desc      : testWindowVisibilityChange_subWindow
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
     it("testWindowVisibilityChange_subWindow", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let msgStr = "testWindowVisibilityChange_subWindow";
       console.log(msgStr + "begin");
@@ -1759,9 +1767,11 @@ export default function WindowLifecycle() {
         await subwindowClass.setUIContent('testability/pages/Index2');
         await subwindowClass.showWindow();
         await sleep(300);
+        console.log(msgStr + 'windowVisable1:' + windowVisable);
         expect(windowVisable).assertEqual(true);
         await subwindowClass.minimize();
         await sleep(300);
+        console.log(msgStr + 'windowVisable2:' + windowVisable);
         expect(windowVisable).assertEqual(false);
         await subwindowClass.destroyWindow();
         done();
@@ -2270,7 +2280,8 @@ export default function WindowLifecycle() {
         expect(windoweventChange[2]).assertEqual(window.WindowEventType.WINDOW_INACTIVE);
         expect(windoweventChange[3]).assertEqual(window.WindowEventType.WINDOW_ACTIVE);
         expect(windoweventChange[4]).assertEqual(window.WindowEventType.WINDOW_HIDDEN);
-        expect(windoweventChange[5]).assertEqual(window.WindowEventType.WINDOW_DESTROYED);
+        expect(windoweventChange[5]).assertEqual(window.WindowEventType.WINDOW_INACTIVE);
+        expect(windoweventChange[6]).assertEqual(window.WindowEventType.WINDOW_DESTROYED);
         done();
       }catch (err) {
         console.error(message + ' failed: '+err);
@@ -2303,7 +2314,7 @@ export default function WindowLifecycle() {
         await terminateAbility1(caseName);
         await sleep(2000);
         let arr:Array<window.WindowStageEventType> = AppStorage.get('arrary') as Array<window.WindowStageEventType>;
-        console.error(`drr arr get. ${JSON.stringify(arr)}`);
+        console.log(`${caseName} arr get. ${JSON.stringify(arr)}`);
         expect(arr[0]).assertEqual(window.WindowStageEventType.SHOWN);
         expect(arr[1]).assertEqual(window.WindowStageEventType.ACTIVE);
         expect(arr[2]).assertEqual(window.WindowStageEventType.INACTIVE);

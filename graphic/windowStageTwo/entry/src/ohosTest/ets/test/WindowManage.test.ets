@@ -150,25 +150,27 @@ export default function windowManageTest() {
           await mainWindowClass.minimize();
           await sleep(1000);
           window.getWindowsByCoordinate(displayId, 0, width/2,height/2).then(async (data) => {
-            console.info(`${caseName} The window displayId is: ` + displayId);
-            console.info(`${caseName} Succeeded in getting window from point. Data: ` + JSON.stringify(data));
+            console.info(`${caseName} The window displayId is:` + displayId);
+            console.info(`${caseName} Succeeded in getting window from point. Data: + JSON.stringify(data)`);
             expect(data.length).assertEqual(0);
+            await mainWindowClass.restore();
             done();
-          }).catch((err: BusinessError) => {
+          }).catch(async (err: BusinessError) => {
             console.error(`${caseName} Failed to get window from point. Cause code: ${err.code}, message: ${err.message}`);
+            await mainWindowClass.restore();
             expect().assertFail();
             done();
           });
         }catch(err){
-           console.error(`${caseName} Error. Cause code: ${err.code}, message: ${err.message}`);
-           if (err.code === 801) {
+          console.error(`${caseName} Error. Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code === 801) {
             done();
           } else {
-              expect().assertFail();
-              done();
+            expect().assertFail();
+            done();
           }
         }
-        
+
       }else{
         done();
       }

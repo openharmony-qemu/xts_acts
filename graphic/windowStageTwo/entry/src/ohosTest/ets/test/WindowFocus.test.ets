@@ -547,10 +547,12 @@ export default function windowFocusTest() {
         await sleep(300);
         let res = windowClass1.isWindowHighlighted();
         expect(res).assertEqual(true)
+        console.log(`${caseName} res:`+res+',highlightChange:'+highlightChange);
         expect(highlightChange).assertEqual(true);
         await windowClass1.minimize();
         await sleep(300);
         let res2 = windowClass1.isWindowHighlighted();
+        console.log(`${caseName} res2:`+res2+',highlightChange:'+highlightChange);
         expect(res2).assertEqual(false)
         expect(highlightChange).assertEqual(false);
         windowClass1.off('windowHighlightChange')

@@ -3748,33 +3748,38 @@ export default function windowPCTest() {
       if (isPCStatus != '') {
         let windowClass = windowStage.getMainWindowSync()
         // 获取窗口状态 - 自由窗口
-          let windowStatusType = windowClass.getWindowStatus();
-          console.info(message + ' windowClass.getWindowStatus(). windowStatusType: ' + windowStatusType);
-          if (windowStatusType == window.WindowStatusType.MAXIMIZE) {
-            await windowClass.recover();
-            await sleep(200);
-          }
+        let windowStatusType = windowClass.getWindowStatus();
+        console.info(message + ' windowClass.getWindowStatus(). windowStatusType: ' + windowStatusType);
+        if (windowStatusType == window.WindowStatusType.MAXIMIZE) {
+          await windowClass.recover();
+          await sleep(200);
+        }
         windowClass.on('windowStatusChange', (WindowStatusType) => {
-            console.info(message + ' Succeeded in enabling the listener for window status changes. Data: ' + JSON.stringify(WindowStatusType));
-            windowStatusChange = WindowStatusType;
+          console.info(message + ' Succeeded in enabling the listener for window status changes. Data: ' + JSON.stringify(WindowStatusType));
+          windowStatusChange = WindowStatusType;
         });
         await sleep(1000)
         await windowClass.maximize(window.MaximizePresentation.EXIT_IMMERSIVE)
         await sleep(1000)
+        console.error(message + ' Succeeded in maximize(window.MaximizePresentation.EXIT_IMMERSIVE). windowStatusChange: ' + JSON.stringify(windowStatusChange));
         expect(windowStatusChange).assertEqual(window.WindowStatusType.MAXIMIZE);
         await windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE)
         await sleep(1000)
+        console.error(message + ' Succeeded in maximize(window.MaximizePresentation.ENTER_IMMERSIVE). windowStatusChange: ' + JSON.stringify(windowStatusChange));
         expect(windowStatusChange).assertEqual(window.WindowStatusType.FULL_SCREEN);
+        await windowClass.recover();
+        await sleep(1000)
+        console.error(message + ' Succeeded in recover. windowStatusChange: ' + JSON.stringify(windowStatusChange));
+        expect(windowStatusChange).assertEqual(window.WindowStatusType.FLOATING);
+        await sleep(1000)
         await windowClass.minimize();
         await sleep(1000)
+        console.error(message + ' Succeeded in minimize. windowStatusChange: ' + JSON.stringify(windowStatusChange));
         let windowStatusType2 = windowClass.getWindowStatus();
         expect(windowStatusChange).assertEqual(window.WindowStatusType.MINIMIZE);
         expect(windowStatusType2).assertEqual(window.WindowStatusType.MINIMIZE);
-        await windowClass.recover();
-        await sleep(1000)
-        expect(windowStatusChange).assertEqual(window.WindowStatusType.FLOATING);
-        await sleep(1000)
         windowClass.off('windowStatusChange')
+        await windowClass.restore();
         done();
       } else {
         console.info(`${message} not support`);
