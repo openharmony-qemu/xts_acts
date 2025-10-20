@@ -15,49 +15,49 @@
 import huks from '@ohos.security.huks';
 
 export function isKeyItemExist(srcKeyAlias, huksOptions) {
-    return new Promise((resolve,reject) => {
-        huks.isKeyItemExist(srcKeyAlias, huksOptions, function (error, data) {
-            if (error) {
-                reject(error);
-            } else {
-                resolve(data);
-            }
-        });
+  return new Promise((resolve, reject) => {
+    huks.isKeyItemExist(srcKeyAlias, huksOptions, function (error, data) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(data);
+      }
     });
+  });
 }
 
 export function hasKeyItem(srcKeyAlias, huksOptions) {
-    return new Promise((resolve,reject) => {
-        huks.hasKeyItem(srcKeyAlias, huksOptions, function (error, data) {
-            if (error) {
-                reject(error);
-            } else {
-                resolve(data);
-            }
-        });
+  return new Promise((resolve, reject) => {
+    huks.hasKeyItem(srcKeyAlias, huksOptions, function (error, data) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(data);
+      }
     });
+  });
 }
 
 export async function generateKeyItem(srcKeyAlias, huksOptions) {
-    return new Promise((resolve,reject) => {
-        huks.generateKeyItem(srcKeyAlias, huksOptions, function (error, data) {
-            if (error) {
-                reject(error);
-            } else {
-                resolve(data);
-            }
-        });
+  return new Promise((resolve, reject) => {
+    huks.generateKeyItem(srcKeyAlias, huksOptions, function (error, data) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(data);
+      }
     });
+  });
 }
 
 export async function deleteKeyItem(srcKeyAlias, huksOptions) {
-    return new Promise((resolve,reject) => {
-        huks.deleteKeyItem(srcKeyAlias,huksOptions, function (error, data) {
-            if (error) {
-                reject(error);
-            } else {
-                resolve(data);
-            }
-        });
+  return new Promise((resolve, reject) => {
+    huks.deleteKeyItem(srcKeyAlias, huksOptions, function (error, data) {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(data);
+      }
     });
+  });
 }
