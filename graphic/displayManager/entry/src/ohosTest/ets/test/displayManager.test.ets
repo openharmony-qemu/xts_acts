@@ -2322,7 +2322,7 @@ export default function displayTest() {
       let caseName = 'testisFoldable';
       try {
         let isFoldable = display.isFoldable();
-        console.log(`${caseName} isFoldable. : ${JSON.stringify(idFoldable)}`);
+        console.log(`${caseName} isFoldable. : ${JSON.stringify(isFoldable)}`);
         expect(isFoldable == true || isFoldable == false).assertEqual(true);
         done();
       } catch (e) {
