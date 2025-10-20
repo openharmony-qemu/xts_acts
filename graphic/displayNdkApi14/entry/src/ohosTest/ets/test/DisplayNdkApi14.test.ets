@@ -612,7 +612,7 @@ export default function ActsDisplayNdkApi14Test() {
         };
         let isCaptured = false;
         let callback = (status: boolean) => {
-          console.info(msgStr + 'capture status: ' + status);
+          console.info(caseName + 'capture status: ' + status);
           isCaptured = status;
         };
         display.on('captureStatusChange', callback);
