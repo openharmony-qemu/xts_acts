@@ -1053,7 +1053,7 @@ export default function RecorderLocalTestAudioAPI() {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      //audioAacProfileConfig.profile.aacProfile = 2;
+      audioAacProfileConfig.profile.aacProfile = 2;
       audioRecorder.prepare(audioAacProfileConfig);
     });
     /* *
@@ -1068,7 +1068,7 @@ export default function RecorderLocalTestAudioAPI() {
       initAudioRecorder();
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
-      //audioAacProfileConfig.profile.aacProfile = 1;
+      audioAacProfileConfig.profile.aacProfile = 1;
       audioRecorder.prepare(audioAacProfileConfig);
     });
   })
