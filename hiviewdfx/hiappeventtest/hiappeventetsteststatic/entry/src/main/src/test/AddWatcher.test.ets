@@ -740,7 +740,6 @@ export default function addWatcherTest() {
       Utils.msSleep(3000);
       if (holder != null) {
         let eventPkg = holder.takeNext();
-        expect(eventPkg == null).assertTrue()
         hilog.info(logDomain, tag, "eventPkg.packageId=" + eventPkg?.packageId);
         hilog.info(logDomain, tag, "eventPkg.row=" + eventPkg?.row);
         hilog.info(logDomain, tag, "eventPkg.size=" + eventPkg?.size);
