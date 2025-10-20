@@ -4037,26 +4037,26 @@ export default function audioFramework() {
     })
     
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTE_0001
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0001
      * @tc.name      : ismute - AudioVolumeType.Media - Promise - true
      * @tc.desc      : ismute - AudioVolumeType.Media - Promise - true
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTE_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        await audioManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
-        await audioManager.mute(audio.AudioVolumeType.MEDIA, true);
+        await audioVolumeGroupManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
+        await audioVolumeGroupManager.mute(audio.AudioVolumeType.MEDIA, true);
         console.log(`${TagFrmwk}: Set Stream Mute: MEDIA: Promise: TRUE`);
-        let value = await audioManager.getVolume(audio.AudioVolumeType.MEDIA);
+        let value = await audioVolumeGroupManager.getVolume(audio.AudioVolumeType.MEDIA);
         console.info("AudioFrameworkTest: value is " + value);
         if (value == 0) {
           expect(true).assertTrue();
         } else {
           expect(false).assertTrue();
         }
-        await audioManager.setVolume(audio.AudioVolumeType.MEDIA, lowVol);
+        await audioVolumeGroupManager.setVolume(audio.AudioVolumeType.MEDIA, lowVol);
         let data:boolean = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA);
         if (data == true) {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute MEDIA: SetVolume: PASS:${data}`);
@@ -4070,26 +4070,26 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTE_0002
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0002
      * @tc.name      : ismute - AudioVolumeType.Media - Promise - false
      * @tc.desc      : ismute - AudioVolumeType.Media - Promise - false
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTE_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        await audioManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
-        await audioManager.mute(audio.AudioVolumeType.MEDIA, false);
+        await audioVolumeGroupManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
+        await audioVolumeGroupManager.mute(audio.AudioVolumeType.MEDIA, false);
         console.log(`${TagFrmwk}: Set Stream Mute: MEDIA: Promise: TRUE`);
-        let value = await audioManager.getVolume(audio.AudioVolumeType.MEDIA);
+        let value = await audioVolumeGroupManager.getVolume(audio.AudioVolumeType.MEDIA);
         console.info("AudioFrameworkTest: value is " + value);
         if (value == 0) {
           expect(true).assertTrue();
         } else {
           expect(false).assertTrue();
         }
-        await audioManager.setVolume(audio.AudioVolumeType.MEDIA, lowVol);
+        await audioVolumeGroupManager.setVolume(audio.AudioVolumeType.MEDIA, lowVol);
         let data:boolean = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA);
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute MEDIA: SetVolume: PASS:${data}`);
@@ -4103,17 +4103,17 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTE_0003
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0003
      * @tc.name      : ismute - AudioVolumeType.Media - Callback - true
      * @tc.desc      : ismute - AudioVolumeType.Media - Callback - true
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTE_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const muteValue = true;
-      await audioManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
-      await audioManager.mute(audio.AudioVolumeType.MEDIA, true);
+      await audioVolumeGroupManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
+      await audioVolumeGroupManager.mute(audio.AudioVolumeType.MEDIA, true);
       console.log(`${TagFrmwk}: Set Stream Mute: MEDIA: Callback: TRUE`);
       let data = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA,(err,data) => {
         if (err) {
@@ -4135,17 +4135,17 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTE_0004
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0004
      * @tc.name      : ismute - AudioVolumeType.Media - Callback - false
      * @tc.desc      : ismute - AudioVolumeType.Media - Callback - false
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTE_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const muteValue = false;
-      await audioManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
-      await audioManager.mute(audio.AudioVolumeType.MEDIA, false);
+      await audioVolumeGroupManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
+      await audioVolumeGroupManager.mute(audio.AudioVolumeType.MEDIA, false);
       console.log(`${TagFrmwk}: Set Stream Mute: MEDIA: Callback: TRUE`);
       let data = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA,(err,data) => {
         if (err) {
@@ -4167,19 +4167,19 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTESYNC_0001
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTESYNC_0001
      * @tc.name      : ismuteSync - AudioVolumeType.Media - true
      * @tc.desc      : ismuteSync - AudioVolumeType.Media - true
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTESYNC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTESYNC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        await audioManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
-        await audioManager.mute(audio.AudioVolumeType.MEDIA, true);
+        await audioVolumeGroupManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
+        await audioVolumeGroupManager.mute(audio.AudioVolumeType.MEDIA, true);
         console.log(`${TagFrmwk}: Set Stream Mute: MEDIA: Promise: TRUE`);
-        let value = await audioManager.getVolume(audio.AudioVolumeType.MEDIA);
+        let value = await audioVolumeGroupManager.getVolume(audio.AudioVolumeType.MEDIA);
         let data:boolean = await audioVolumeGroupManager.isMuteSync(audio.AudioVolumeType.MEDIA);
         expect(data).assertEqual(true);
         console.log(`${TagFrmwk}: indicate that the mute status of the stream is obtained : PASS:${data}`);
@@ -4192,19 +4192,19 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTESYNC_0002
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTESYNC_0002
      * @tc.name      : ismuteSync - AudioVolumeType.Media - false
      * @tc.desc      : ismuteSync - AudioVolumeType.Media - false
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTESYNC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTESYNC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {
-        await audioManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
-        await audioManager.mute(audio.AudioVolumeType.MEDIA, false);
+        await audioVolumeGroupManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
+        await audioVolumeGroupManager.mute(audio.AudioVolumeType.MEDIA, false);
         console.log(`${TagFrmwk}: Set Stream Mute: MEDIA: Promise: TRUE`);
-        let value = await audioManager.getVolume(audio.AudioVolumeType.MEDIA);
+        let value = await audioVolumeGroupManager.getVolume(audio.AudioVolumeType.MEDIA);
         let data:boolean = await audioVolumeGroupManager.isMuteSync(audio.AudioVolumeType.MEDIA);
         expect(data).assertEqual(false);
         console.log(`${TagFrmwk}: indicate that the mute status of the stream is obtained : PASS:${data}`);
