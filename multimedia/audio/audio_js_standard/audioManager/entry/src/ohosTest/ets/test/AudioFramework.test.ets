@@ -2544,8 +2544,7 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        let modeValue = await audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_NORMAL);
-        console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_NORMAL Value :${modeValue}`);
+        await audioVolumeGroupManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_NORMAL);
         let value = await audioVolumeGroupManager.getRingerMode();
         if (value == audio.AudioRingMode.RINGER_MODE_NORMAL) {
           console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
@@ -2571,8 +2570,7 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        let modeValue = await audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_SILENT);
-        console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_NORMAL Value :${modeValue}`);
+        await audioVolumeGroupManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_SILENT);
         let value = await audioVolumeGroupManager.getRingerMode();
         if (value == audio.AudioRingMode.RINGER_MODE_SILENT) {
           console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_SILENT: PASS :${value}`);
@@ -2598,8 +2596,7 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        let modeValue = await audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_VIBRATE);
-        console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_NORMAL Value :${modeValue}`);
+        await audioVolumeGroupManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_VIBRATE);
         let value = await audioVolumeGroupManager.getRingerMode();
         if (value == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
           console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_VIBRATE: PASS :${value}`);
@@ -2624,7 +2621,7 @@ export default function audioFramework() {
      * @tc.level     : Level 1
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_NORMAL, (err) => {
+      audioVolumeGroupManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_NORMAL, (err) => {
         console.info(`${TagFrmwk}: Callback : setRingerMode RINGER_MODE_NORMAL`);
         if (err) {
           console.error(`${TagFrmwk}: Callback : setRingerMode RINGER_MODE_NORMAL: Error: ${err.message}`);
@@ -2657,7 +2654,7 @@ export default function audioFramework() {
      * @tc.level     : Level 1
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_SILENT, (err) => {
+      audioVolumeGroupManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_SILENT, (err) => {
         console.info(`${TagFrmwk}: Callback : setRingerMode RINGER_MODE_SILENT`);
         if (err) {
           console.error(`${TagFrmwk}: Callback : setRingerMode RINGER_MODE_SILENT: Error: ${err.message}`);
@@ -2690,7 +2687,7 @@ export default function audioFramework() {
      * @tc.level     : Level 1
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_VIBRATE, (err) => {
+      audioVolumeGroupManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_VIBRATE, (err) => {
         console.info(`${TagFrmwk}: Callback : setRingerMode RINGER_MODE_VIBRATE`);
         if (err) {
           console.error(`${TagFrmwk}: Callback : setRingerMode RINGER_MODE_VIBRATE: Error: ${err.message}`);
@@ -2724,7 +2721,7 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        await audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_VIBRATE);
+        await audioVolumeGroupManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_VIBRATE);
         let data = audioVolumeGroupManager.getRingerModeSync();
         if (data == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
@@ -2752,7 +2749,7 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        await audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_NORMAL);
+        await audioVolumeGroupManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_NORMAL);
         let data = audioVolumeGroupManager.getRingerModeSync();
         if (data == audio.AudioRingMode.RINGER_MODE_NORMAL) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
@@ -2780,7 +2777,7 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        await audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_SILENT);
+        await audioVolumeGroupManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_SILENT);
         let data = audioVolumeGroupManager.getRingerModeSync();
         if (data == audio.AudioRingMode.RINGER_MODE_SILENT) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
