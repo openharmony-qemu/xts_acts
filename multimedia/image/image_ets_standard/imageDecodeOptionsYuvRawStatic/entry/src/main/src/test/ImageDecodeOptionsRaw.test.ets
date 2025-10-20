@@ -21,8 +21,6 @@ import colorSpaceManager from '@ohos.graphics.colorSpaceManager';
 import common from '@ohos.app.ability.common';
 import { initialize } from './AbilityContextHelper.test';
 
-let testContext: common.UIAbilityContext;
-
 let sleep = async (count:int) : Promise<int> => {
   return new Promise<int>((resolve, reject) => {
     setTimeout(() => {
@@ -70,9 +68,11 @@ export default function imageDecodeOptionsRawTest() {
             if (pixelMap != undefined) {
               pixelMap.release();
             }
+            await imageSourceApi.release();
           }
         } catch(err: Error) {
           hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
+          await imageSourceApi.release();
         }
     }
 
@@ -82,6 +82,7 @@ export default function imageDecodeOptionsRawTest() {
       imageSourceApi.createPixelMap(decodingOptions, (err: BusinessError|null, pixelMap: image.PixelMap|undefined) => {
         if (err && err.code) {
           hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
+          await imageSourceApi.release();
         } else {
           globalPixelMap = pixelMap!;
           let imageInfo = await pixelMap!.getImageInfo();
@@ -91,6 +92,7 @@ export default function imageDecodeOptionsRawTest() {
           hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' imageInfo:' + JSON.stringify(imageInfo));
           pixelFormat === desiredPixelFormat && (result = true);
           pixelMap!.release();
+          await imageSourceApi.release();
         }
       })
     }
@@ -148,9 +150,11 @@ export default function imageDecodeOptionsRawTest() {
           if (pixelMap != undefined) {
             pixelMap.release();
           }
+	        await imageSourceApi.release();
         }
       } catch(err: Error) {
         hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
+        await imageSourceApi.release();
       }
     }
 
@@ -160,6 +164,7 @@ export default function imageDecodeOptionsRawTest() {
       imageSourceApi.createPixelMap(decodingOptions, (err: BusinessError|null, pixelMap: image.PixelMap|undefined) => {
         if (err && err.code) {
           hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
+          await imageSourceApi.release();
         } else {
           globalPixelMap = pixelMap!;
           let imageInfo = await pixelMap!.getImageInfo();
@@ -171,6 +176,7 @@ export default function imageDecodeOptionsRawTest() {
             pixelFormat === image.PixelMapFormat.RGBA_8888 && (result = true);
           }
           pixelMap!.release();
+          await imageSourceApi.release();
         }
       })
     }
@@ -207,10 +213,9 @@ export default function imageDecodeOptionsRawTest() {
       }
     }
 
-    beforeAll(async () => {
+    beforeAll(() => {
       await initialize();
       filesDir = Hypium.get('filesDir') as string | undefined | null;
-      testContext = Hypium.get('context') as common.UIAbilityContext;
       hilog.info(0x0000, 'testTag', '%{public}s', 'beforeAll case');
     })
 
