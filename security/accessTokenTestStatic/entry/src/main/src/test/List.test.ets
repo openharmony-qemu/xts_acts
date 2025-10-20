@@ -14,6 +14,9 @@
  */
 
 import AccessTokenStaticTest from "./AccessTokenStatic.test";
+import GlobalSwitchStaticTest from "./GlobalSwitchStatic.test";
+
 export default function testsuite() {
     AccessTokenStaticTest();
+    GlobalSwitchStaticTest();
 }

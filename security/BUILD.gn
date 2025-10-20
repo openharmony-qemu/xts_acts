@@ -25,6 +25,7 @@ group("security") {
       "accessTokenTestStatic:ActsAccessTokenStaticTest",
       "requestPermissionsFromUserTestStatic:ActsRequestPermissionsFromUserStaticTest",
       "requestPermissionOnSettingTestStatic:ActsRequestPermissionsOnSettingStaticTest",
+      "sandboxAPITestStatic:ActsSandboxAPIStaticTest",      
       "asset",
       "certificate_framework",
       "certificate_manager",
