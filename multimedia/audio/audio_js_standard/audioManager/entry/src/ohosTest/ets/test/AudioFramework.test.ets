@@ -6239,6 +6239,7 @@ export default function audioFramework() {
             let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_LIVE);
             console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupportAEC}`);
             flag = true;
+            expect(data).assertEqual(true);
         } catch (err) {
             let error = err as BusinessError;
             console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
@@ -6263,6 +6264,7 @@ export default function audioFramework() {
             let param: ESObject = -100;
             let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(param);
             console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupportAEC}`);
+            expect(audioStreamManager.isAcousticEchoCancelerSupported(param)).assertEqual(flase);
         } catch (err) {
             let error = err as BusinessError;
             console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
