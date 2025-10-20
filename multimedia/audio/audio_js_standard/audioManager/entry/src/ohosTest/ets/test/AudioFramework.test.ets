@@ -6533,14 +6533,14 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_VOLUMECHANGE_0100
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_VOLUMECHANGE_0200
      * @tc.name      : AudioRendererChange - ON_AUDIOCAPTURERCHANGE 6800101
      * @tc.desc      : AudioRendererChange - ON_AUDIOCAPTURERCHANGE 6800101
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('SUB_MULTIMEDIA_AUDIO_ON_VOLUMECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_ON_VOLUMECHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       let volumeManager = audio.getAudioManager().getVolumeManager();
       let flag: boolean = false;
       try {
