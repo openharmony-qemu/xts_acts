@@ -24,7 +24,6 @@ import {
   ItemAlign,
   Margin,
   Row,
-  TextPickerDialog,
   TextPickerResult
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'

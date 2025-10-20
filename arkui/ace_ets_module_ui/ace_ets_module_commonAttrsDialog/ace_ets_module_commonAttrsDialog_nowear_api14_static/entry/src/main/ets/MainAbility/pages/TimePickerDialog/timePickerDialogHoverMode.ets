@@ -37,8 +37,7 @@ import {
   SheetOptions,
   SheetType,
   Text,
-  TextAlign,
-  TimePickerDialog
+  TextAlign
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Router, UIContext } from '@ohos.arkui.UIContext';

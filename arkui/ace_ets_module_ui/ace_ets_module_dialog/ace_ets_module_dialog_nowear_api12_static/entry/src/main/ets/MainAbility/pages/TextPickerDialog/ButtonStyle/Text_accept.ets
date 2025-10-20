@@ -32,9 +32,7 @@ import {
   Row,
   ShadowStyle,
   Text,
-  TextPickerDialog,
   TextPickerDialogOptions,
-  TimePickerDialog,
   TimePickerDialogOptions
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'

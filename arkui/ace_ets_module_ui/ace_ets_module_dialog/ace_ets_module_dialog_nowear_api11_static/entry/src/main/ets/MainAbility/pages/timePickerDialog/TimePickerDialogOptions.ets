@@ -61,7 +61,6 @@ import {
   TextInput,
   TextInputController,
   ThemeColorMode,
-  TimePickerDialog,
   TimePickerResult
 } from '@ohos.arkui.component'
 import { Link, ObjectLink, Observed, PropRef, State, } from '@ohos.arkui.stateManagement'

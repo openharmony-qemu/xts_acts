@@ -38,7 +38,6 @@ import {
   SheetType,
   Text,
   TextAlign,
-  TextPickerDialog,
   TextPickerDialogOptions
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'

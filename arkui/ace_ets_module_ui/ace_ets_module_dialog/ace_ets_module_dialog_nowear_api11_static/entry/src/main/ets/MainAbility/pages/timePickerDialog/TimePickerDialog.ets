@@ -23,7 +23,6 @@ import {
   Margin,
   Padding,
   Row,
-  TimePickerDialog,
   TimePickerResult
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
