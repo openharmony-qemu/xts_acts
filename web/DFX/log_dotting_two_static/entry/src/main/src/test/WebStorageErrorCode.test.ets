@@ -121,14 +121,7 @@ export default function webTwoJsunit() {
       await Utils.msSleep(4000);
       done()
     })
-    /*
-   * @tc.number     : SUB_WEB_ERRORCODE_POSTMESSAGE_0300
-   * @tc.name       : SwitchNextPageStatic
-   * @tc.desc       : test PAGE_REDIRECT
-   * @tc.size       : MEDIUM
-   * @tc.type       : Function
-   * @tc.level      : Level 3
-   */
+
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -138,5 +131,8 @@ export default function webTwoJsunit() {
         await Utils.msSleep(6000);
         done();
       })
+
+
   })
 }
+

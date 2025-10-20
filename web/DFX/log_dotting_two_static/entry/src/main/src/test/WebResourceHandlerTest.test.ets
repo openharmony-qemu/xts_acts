@@ -110,14 +110,6 @@ export default function webResourceHandlerTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBNAVIGATIONTYPE_0400
-    * @tc.name       : SwitchNextPageStatic
-    * @tc.desc       : test PAGE_REDIRECT
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -127,5 +119,8 @@ export default function webResourceHandlerTest() {
         await Utils.msSleep(6000);
         done();
       })
+
+
+
   })
 }

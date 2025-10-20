@@ -17,6 +17,7 @@ import { Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.ar
 import Utils from '../../src/test/Utils.test';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { JsProxyObject } from '../../src/test/Interfaces';
 import { BusinessError } from '@ohos.base';
 import { State } from '@ohos.arkui.stateManagement'
@@ -655,6 +656,13 @@ struct Index {
                 Utils.emitEvent(String(error.code), 30443)
               }
               break;
+            }
+
+            case 'SwitchNextPageStatic' : {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webViewControllerErrorCodeSecond' })
+              console.log('push URL success')
             }
 
           }
