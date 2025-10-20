@@ -47,7 +47,7 @@ export default function getBundleInfo() {
               expect(data!.versionCode + '').assertEqual('1000000');
               expect(data!.versionName).assertEqual("1.0.0");
               expect(data!.minCompatibleVersionCode + '').assertEqual('1000000');
-              expect(data!.targetVersion + '').assertEqual('21');
+              expect(data!.targetVersion + '').assertEqual('22');
               expect(data!.installTime).assertLarger(0.0);
               expect(data!.updateTime).assertLarger(0.0);
               expect(data!.firstInstallTime).assertLarger(0.0);
@@ -84,7 +84,7 @@ export default function getBundleInfo() {
               expect(data!.versionCode + '').assertEqual('1000000');
               expect(data!.versionName).assertEqual("1.0.0");
               expect(data!.minCompatibleVersionCode + '').assertEqual('1000000');
-              expect(data!.targetVersion + '').assertEqual('21');
+              expect(data!.targetVersion + '').assertEqual('22');
               expect(data!.installTime).assertLarger(0.0);
               expect(data!.updateTime).assertLarger(0.0);
               expect(data!.firstInstallTime).assertLarger(0.0);
@@ -116,7 +116,7 @@ export default function getBundleInfo() {
             expect(data.versionCode + '').assertEqual('1000000');
             expect(data.versionName).assertEqual("1.0.0");
             expect(data.minCompatibleVersionCode + '').assertEqual('1000000');
-            expect(data.targetVersion + '').assertEqual('21');
+            expect(data.targetVersion + '').assertEqual('22');
             expect(data.installTime).assertLarger(0.0);
             expect(data.updateTime).assertLarger(0.0);
             expect(data.firstInstallTime).assertLarger(0.0);
@@ -150,7 +150,7 @@ export default function getBundleInfo() {
         expect(data.versionCode + '').assertEqual('1000000');
         expect(data.versionName).assertEqual("1.0.0");
         expect(data.minCompatibleVersionCode + '').assertEqual('1000000');
-        expect(data.targetVersion + '').assertEqual('21');
+        expect(data.targetVersion + '').assertEqual('22');
         expect(data.installTime).assertLarger(0.0);
         expect(data.updateTime).assertLarger(0.0);
         expect(data.firstInstallTime).assertLarger(0.0);
@@ -178,7 +178,7 @@ export default function getBundleInfo() {
         expect(data.versionCode + '').assertEqual('1000000');
         expect(data.versionName).assertEqual("1.0.0");
         expect(data.minCompatibleVersionCode + '').assertEqual('1000000');
-        expect(data.targetVersion + '').assertEqual('21');
+        expect(data.targetVersion + '').assertEqual('22');
         expect(data.installTime).assertLarger(0.0);
         expect(data.updateTime).assertLarger(0.0);
         expect(data.firstInstallTime).assertLarger(0.0);
