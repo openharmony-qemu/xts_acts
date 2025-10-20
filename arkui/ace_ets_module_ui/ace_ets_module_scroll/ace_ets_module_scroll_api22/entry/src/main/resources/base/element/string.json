@@ -21,10 +21,6 @@
       "value": "label"
     },
     {
-        "name": "description_application",
-        "value": "demo for test"
-    },
-    {
       "name":"string_hello",
       "value":"Hello"
     },
@@ -37,28 +33,32 @@
       "value":"We will arrive at %s."
     },
     {
-      "name": "Refresh_SpecialCharacters",
-      "value": "*&^%$#@!~..."
+      "name": "phone_entry_dsc",
+      "value": "i am an entry for phone"
     },
     {
-      "name": "Refresh_ChineseCharacters",
-      "value": "下拉刷新。。。"
+      "name": "phone_entry_main",
+      "value": "the phone entry ability"
     },
     {
-      "name": "Refresh_Alphabet",
-      "value": "abcabc"
+      "name": "entry_label",
+      "value": "ActsContextTest"
     },
     {
-      "name": "Refresh_VeryLongText",
-      "value": "文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本文本"
+      "name": "form_description",
+      "value": "my form"
     },
     {
-      "name": "Refresh_MixedContent",
-      "value": "*&#123swq..."
+      "name": "serviceability_description",
+      "value": "my whether"
     },
     {
-      "name": "Refresh_Numbers",
-      "value": "123456"
+      "name": "description_application",
+      "value": "demo for test"
+    },
+    {
+      "name": "app_name",
+      "value": "Demo"
     }
     
   ]
