@@ -125,11 +125,11 @@ export default function SecurityHuksQueryKeyJsunit() {
       async function (done) {
         let srcKeyAlias = 'SUB_Security_HUKS_QueryKey_IsKeyExist_API8_Func_0210';
         try {
-          let res = await huksCallback.isKeyExist(srcKeyAlias, huksOptions);
-          expect(res).assertEqual(false);
+          await huksCallback.isKeyExist(srcKeyAlias, huksOptions);
+          expect(null).assertFail();
         } catch (err) {
           console.error(srcKeyAlias + `: fail, err: ${JSON.stringify(err)}`);
-          expect(null).assertFail();
+          expect(err.code).assertEqual(-13);
         }
         done();
       });
@@ -148,11 +148,11 @@ export default function SecurityHuksQueryKeyJsunit() {
         try {
           await huksCallback.generateKey(srcKeyAlias, huksOptions);
           await huksCallback.deleteKey(srcKeyAlias, huksOptions);
-          let res = await huksCallback.isKeyExist(srcKeyAlias, huksOptions);
-          expect(res).assertEqual(false);
+          await huksCallback.isKeyExist(srcKeyAlias, huksOptions);
+          expect(null).assertFail();
         } catch (err) {
           console.error(srcKeyAlias + `: fail, err: ${JSON.stringify(err)}`);
-          expect(null).assertFail();
+          expect(err.code).assertEqual(-13);
         }
         done();
       });
