@@ -60,6 +60,48 @@ export default function VSyncFenceTest() {
           done();
         }
       })
+
+      /**
+       * @tc.number  : SUB_OH_NativeVSync_DVSyncSwitch_0100
+       * @tc.name    : SUB_OH_NativeVSync_DVSyncSwitch_0100
+       * @tc.desc    : test SUB_OH_NativeVSync_DVSyncSwitch ok Scene
+       * @tc.level   : Level0
+       * @tc.size    : MediumTest
+       * @tc.type    : Function
+       */
+      it('SUB_OH_NativeVSync_DVSyncSwitch_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+        async (done: Function) => {
+          try {
+            console.info("====>SUB_OH_NativeVSync_DVSyncSwitch_0100 start====");
+            let result: number = libGraphics2DApi20.NativeVSyncDVSyncSwitchSuccess();
+            console.info("====>SUB_OH_NativeVSync_DVSyncSwitch_0100 result====", result);
+            expect(result).assertEqual(1);
+            done();
+          } catch (err) {
+            console.error("====>SUB_OH_NativeVSync_DVSyncSwitch_0100 catch err: " + err);
+          }
+        })
+
+      /**
+       * @tc.number  : SUB_OH_NativeVSync_DVSyncSwitch_0200
+       * @tc.name    : SUB_OH_NativeVSync_DVSyncSwitch_0200
+       * @tc.desc    : test SUB_OH_NativeVSync_DVSyncSwitch ok Scene
+       * @tc.level   : Level3
+       * @tc.size    : MediumTest
+       * @tc.type    : Function
+       */
+      it('SUB_OH_NativeVSync_DVSyncSwitch_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+        async (done: Function) => {
+          try {
+            console.info("====>SUB_OH_NativeVSync_DVSyncSwitch_0200 start====");
+            let result: number = libGraphics2DApi20.NativeVSyncDVSyncSwitchInvalue();
+            console.info("====>SUB_OH_NativeVSync_DVSyncSwitch_0200 result====", result);
+            expect(result).assertEqual(1);
+            done();
+          } catch (err) {
+            console.error("====>SUB_OH_NativeVSync_DVSyncSwitch_0200 catch err: " + err);
+          }
+        })
     /**
      * @tc.number  : SUB_OH_NativeFence_IsValid_0100
      * @tc.name    : SUB_OH_NativeFence_IsValid_0100
@@ -231,6 +273,50 @@ export default function VSyncFenceTest() {
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeFence_Close_0200 catch err: " + err);
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_OH_NativeVSync_SetExpectedFrameRateRange_0100
+     * @tc.name    : SUB_OH_NativeVSync_SetExpectedFrameRateRange_0100
+     * @tc.desc    : test SUB_OH_NativeVSync_SetExpectedFrameRateRange success Scene
+     * @tc.level   : Level3
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_OH_NativeVSync_SetExpectedFrameRateRange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_OH_NativeVSync_SetExpectedFrameRateRange_0100 start====");
+          let result: number = libGraphics2DApi20.setExpectedFrameRateRangeSuccess();
+          console.info("====>SUB_OH_NativeVSync_SetExpectedFrameRateRange_0100 result====", result);
+          expect(result).assertEqual(1);
+          done();
+        } catch (err) {
+          console.error("====>SUB_OH_NativeVSync_SetExpectedFrameRateRange_0100 catch err: " + err);
+          done();
+        }
+      })
+
+    /**
+     * @tc.number  : SUB_OH_NativeVSync_SetExpectedFrameRateRange_0200
+     * @tc.name    : SUB_OH_NativeVSync_SetExpectedFrameRateRange_0200
+     * @tc.desc    : test SUB_OH_NativeVSync_SetExpectedFrameRateRange fail Scene
+     * @tc.level   : Level3
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('SUB_OH_NativeVSync_SetExpectedFrameRateRange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        try {
+          console.info("====>SUB_OH_NativeVSync_SetExpectedFrameRateRange_0200 start====");
+          let result: number = libGraphics2DApi20.setExpectedFrameRateRangeNull();
+          console.info("====>SUB_OH_NativeVSync_SetExpectedFrameRateRange_0200 result====", result);
+          expect(result).assertEqual(1);
+          done();
+        } catch (err) {
+          console.error("====>SUB_OH_NativeVSync_SetExpectedFrameRateRange_0200 catch err: " + err);
           done();
         }
       })

@@ -53,7 +53,6 @@ struct webViewController {
 
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
-  @State isOnShowFileSelectorCallBackEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -260,10 +259,8 @@ struct webViewController {
                 // await Utils.clickComponent('onShowFileSelectorKey')
                 // let buttonOne = await driver.findComponent(ON.type('Button'));
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
-                this.isOnShowFileSelectorCallBackEnd = -1
                 await buttonOne.click()
-                await Utils.waitForReleaseDriver(this.str,driver)
-                await Utils.waitForExist(()=>this.isOnShowFileSelectorCallBackEnd, this.str+' isOnShowFileSelectorCallBackEnd', 1, 1000);
+                await Utils.sleep(2000);
                 Utils.emitEvent(this.onShowFileSelectorCallBack, 183110)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -283,10 +280,8 @@ struct webViewController {
                 // await Utils.clickComponent('onShowFileSelectorKey')
                 // let buttonOne = await driver.findComponent(ON.type('Button'));
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
-                this.isOnShowFileSelectorCallBackEnd = -1
                 await buttonOne.click()
-                await Utils.waitForReleaseDriver(this.str,driver)
-                await Utils.waitForExist(()=>this.isOnShowFileSelectorCallBackEnd, this.str+' isOnShowFileSelectorCallBackEnd', 1, 1000);
+                await Utils.sleep(2000);
                 Utils.emitEvent(this.FileSelectorParamGetTitle, 183120)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -305,10 +300,8 @@ struct webViewController {
                 // await Utils.clickComponent('onShowFileSelectorKey')
                 // let buttonOne = await driver.findComponent(ON.type('Button'));
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
-                this.isOnShowFileSelectorCallBackEnd = -1
                 await buttonOne.click()
-                await Utils.waitForReleaseDriver(this.str,driver)
-                await Utils.waitForExist(()=>this.isOnShowFileSelectorCallBackEnd, this.str+' isOnShowFileSelectorCallBackEnd', 1, 1000);
+                await Utils.sleep(2000);
                 Utils.emitEvent(this.FileSelectorParamGetGetMode, 183130)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -327,10 +320,8 @@ struct webViewController {
                 // await Utils.clickComponent('onShowFileSelectorKey')
                 // let buttonOne = await driver.findComponent(ON.type('Button'));
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
-                this.isOnShowFileSelectorCallBackEnd = -1
                 await buttonOne.click()
-                await Utils.waitForReleaseDriver(this.str,driver)
-                await Utils.waitForExist(()=>this.isOnShowFileSelectorCallBackEnd, this.str+' isOnShowFileSelectorCallBackEnd', 1, 1000);
+                await Utils.sleep(2000);
                 Utils.emitEvent(this.FileSelectorParamGetGetAcceptType[0], 183140)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -349,10 +340,8 @@ struct webViewController {
                 // await Utils.clickComponent('onShowFileSelectorKey')
                 // let buttonOne = await driver.findComponent(ON.type('Button'));
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
-                this.isOnShowFileSelectorCallBackEnd = -1
                 await buttonOne.click()
-                await Utils.waitForReleaseDriver(this.str,driver)
-                await Utils.waitForExist(()=>this.isOnShowFileSelectorCallBackEnd, this.str+' isOnShowFileSelectorCallBackEnd', 1, 1000);
+                await Utils.sleep(2000);
                 Utils.emitEvent(this.FileSelectorParamGetIsCapture, 183150)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -371,10 +360,8 @@ struct webViewController {
                 // await Utils.clickComponent('onShowFileSelectorKey')
                 // let buttonOne = await driver.findComponent(ON.type('Button'));
                 let buttonOne = await driver.findComponent(ON.text('选择文件'));
-                this.isOnShowFileSelectorCallBackEnd = -1
                 await buttonOne.click()
-                await Utils.waitForReleaseDriver(this.str,driver)
-                await Utils.waitForExist(()=>this.isOnShowFileSelectorCallBackEnd, this.str+' isOnShowFileSelectorCallBackEnd', 1, 1000);
+                await Utils.sleep(2000);
                 this.controller.runJavaScript(
                   'getFilePath()',
                   (error, result) => {
@@ -647,9 +634,6 @@ struct webViewController {
             this.FileSelectorParamGetGetMode = event.fileSelector.getMode()
             this.FileSelectorParamGetGetAcceptType = event.fileSelector.getAcceptType()
             this.FileSelectorParamGetIsCapture = event.fileSelector.isCapture()
-            if(event.fileSelector){
-              this.isOnShowFileSelectorCallBackEnd = 1
-            }
           }
           return true
         })

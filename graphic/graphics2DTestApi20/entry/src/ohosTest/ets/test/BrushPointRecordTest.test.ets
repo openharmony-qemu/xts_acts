@@ -212,7 +212,6 @@ export default function BrushPointRecordTest() {
         done();
       } catch (err) {
         console.error("====>SUB_OH_Drawing_PointGetX_0100 catch err: " + err);
-        done();
       }
     })
 
@@ -233,7 +232,6 @@ export default function BrushPointRecordTest() {
         done();
       } catch (err) {
         console.error("====>SUB_OH_Drawing_PointGetX_0200 catch err: " + err);
-        done();
       }
     })
 
@@ -254,7 +252,6 @@ export default function BrushPointRecordTest() {
         done();
       } catch (err) {
         console.error("====>SUB_OH_Drawing_PointGetY_0100 catch err: " + err);
-        done();
       }
     })
 
@@ -275,7 +272,6 @@ export default function BrushPointRecordTest() {
         done();
       } catch (err) {
         console.error("====>SUB_OH_Drawing_PointGetY_0200 catch err: " + err);
-        done();
       }
     })
 
@@ -296,7 +292,6 @@ export default function BrushPointRecordTest() {
         done();
       } catch (err) {
         console.error("====>SUB_OH_Drawing_PointSet_0100 catch err: " + err);
-        done();
       }
     })
 
@@ -317,7 +312,6 @@ export default function BrushPointRecordTest() {
         done();
       } catch (err) {
         console.error("====>SUB_OH_Drawing_PointSet_0200 catch err: " + err);
-        done();
       }
     })
 

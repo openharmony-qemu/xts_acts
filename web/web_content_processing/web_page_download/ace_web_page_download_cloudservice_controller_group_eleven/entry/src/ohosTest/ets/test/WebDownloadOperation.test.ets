@@ -19,9 +19,11 @@ import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponents } from './WaitTest.test';
 import { webview } from '@kit.ArkWeb';
 import events_emitter from '@ohos.events.emitter';
+import { Driver } from '@kit.TestKit';
 
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+const driver = Driver.create();
 
 export default function webDownloadOperation() {
   describe('webDownloadOperation', () => {
@@ -74,7 +76,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
     /**
@@ -91,7 +93,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
     /**
@@ -108,7 +110,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
     /**
@@ -125,7 +127,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
     /**
@@ -142,7 +144,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
     /**
@@ -159,7 +161,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
 
@@ -177,7 +179,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
     /**
@@ -194,7 +196,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
     /**
@@ -211,7 +213,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
     /**
@@ -228,7 +230,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
     /**
@@ -245,7 +247,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
     /**
@@ -262,7 +264,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
     /**
@@ -279,7 +281,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
     /**
@@ -296,7 +298,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
     /**
@@ -313,7 +315,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
 
@@ -331,7 +333,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
     /**
@@ -348,7 +350,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
     /**
@@ -365,7 +367,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
     /**
@@ -382,7 +384,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
     /**
@@ -399,7 +401,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
 
@@ -417,7 +419,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
     /**
@@ -434,7 +436,7 @@ export default function webDownloadOperation() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('subAceWebButton', 10, '');
+      await Utils.waitAndClickComponent(driver, 'subAceWebButton');
     })
 
   })

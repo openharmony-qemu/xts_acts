@@ -968,6 +968,30 @@ static napi_value WebSaveCookieAsync(napi_env env, napi_callback_info info)
     return result;
 }
 
+napi_value SetActiveWebEngineVersionSystemDefault(napi_env env, napi_callback_info info)
+{
+    OH_NativeArkWeb_SetActiveWebEngineVersion(SYSTEM_DEFAULT);
+    napi_value result;
+    napi_create_int32(env, ARKWEB_SUCCESS, &result);
+    return result;
+}
+
+napi_value SetActiveWebEngineVersionArkwebM114(napi_env env, napi_callback_info info)
+{
+    OH_NativeArkWeb_SetActiveWebEngineVersion(ARKWEB_M114);
+    napi_value result;
+    napi_create_int32(env, ARKWEB_SUCCESS, &result);
+    return result;
+}
+
+napi_value SetActiveWebEngineVersionArkwebM132(napi_env env, napi_callback_info info)
+{
+    OH_NativeArkWeb_SetActiveWebEngineVersion(ARKWEB_M132);
+    napi_value result;
+    napi_create_int32(env, ARKWEB_SUCCESS, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -1000,6 +1024,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"WebSetBlankCacheCap", nullptr, WebSetBlankCacheCap, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"WebSaveCookieSync", nullptr, WebSaveCookieSync, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"WebSaveCookieAsync", nullptr, WebSaveCookieAsync, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SetActiveWebEngineVersionSystemDefault", nullptr, SetActiveWebEngineVersionSystemDefault, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"SetActiveWebEngineVersionArkwebM114", nullptr, SetActiveWebEngineVersionArkwebM114, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"SetActiveWebEngineVersionArkwebM132", nullptr, SetActiveWebEngineVersionArkwebM132, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
     };
 
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

@@ -2,9 +2,9 @@
 
 #### 1 上库工程迁移
 
-0528模板前工程迁移，网址：https://gitee.com/openharmony/xts_acts/tree/OpenHarmony_feature_20250328/README_migrate0528.md
+0528模板前工程迁移，网址：https://gitcode.com/openharmony/xts_acts/tree/OpenHarmony_feature_20250328/README_migrate0528.md
 
-0603，0604模板前工程迁移，网址：https://gitee.com/openharmony/xts_acts/tree/OpenHarmony_feature_20250328/README_migrate0604.md
+0603，0604模板前工程迁移，网址：https://gitcode.com/openharmony/xts_acts/tree/OpenHarmony_feature_20250328/README_migrate0604.md
 
 #### 2 hypium文件夹，本地验证时需下载存放，上库时需要将hypium文件夹删除掉
 
