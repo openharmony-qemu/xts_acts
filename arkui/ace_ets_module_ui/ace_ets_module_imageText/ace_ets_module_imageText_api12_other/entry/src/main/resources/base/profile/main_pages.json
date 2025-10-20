@@ -22,6 +22,8 @@
   "MainAbility/pages/StyledString/ParagraphStyle2",
   "MainAbility/pages/StyledString/ParagraphStyle3",
   "MainAbility/pages/RichEditor/RichEditorEKeyboardTest",
-  "MainAbility/pages/RichEditor/RichEditorSymbolSpanStyleTest"
+  "MainAbility/pages/RichEditor/RichEditorSymbolSpanStyleTest",
+  "MainAbility/pages/StyledString/StyleStringEqualsTest",
+  "MainAbility/pages/Text/TextMenuItemIdEqualsTest"
   ]
 }

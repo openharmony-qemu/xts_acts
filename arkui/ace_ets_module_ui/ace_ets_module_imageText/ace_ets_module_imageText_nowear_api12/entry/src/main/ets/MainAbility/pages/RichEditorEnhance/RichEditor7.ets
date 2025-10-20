@@ -158,6 +158,7 @@ struct RichEditor7 {
           .onEditingChange((isEditing: boolean) => {
             this.isEditing2 = isEditing
             this.controllerIsEditing2 = this.controller2.isEditing()
+            AppStorage.setOrCreate('controllerIsEditing2',this.controller2.isEditing())
             console.log('Juan Current Editing Status:' + isEditing)
             console.log('Juan this.controller.isEditable():' + this.controller.isEditing())
           })
