@@ -1711,27 +1711,6 @@ export default function dateTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_8000
-     * @tc.name       : testGetUTCHours0001
-     * @tc.desc       : Test the function of the interface GetUTCHours.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
-    it('testGetUTCHours0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const TAG = "testGetUTCHours0001";
-      try {
-        const birthday = new Date();
-        const result = birthday.getUTCHours();
-        console.log(`${TAG} result:` + result);
-        expect(result > 0 && result < 23).assertTrue();
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect().assertFail();
-      }
-    })
-
-    /**
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_DATE_8100
      * @tc.name       : testGetUTCHours0002
      * @tc.desc       : Test the function of the interface GetUTCHours.

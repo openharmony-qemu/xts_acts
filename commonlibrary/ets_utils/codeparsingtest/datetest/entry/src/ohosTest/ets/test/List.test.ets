@@ -13,7 +13,21 @@
  * limitations under the License.
  */
 import dateTest from './Date/Date.test';
+import Date1Test from './Date/Date1.test';
+import Date2Test from './Date/Date2.test';
+import Date3Test from './Date/Date3.test';
+import Date4Test from './Date/Date4.test';
+import Date5Test from './Date/Date5.test';
+import Date6Test from './Date/Date6.test';
+import Date7Test from './Date/Date7.test';
 
 export default function testsuite() {
   dateTest();
+  Date1Test();
+  Date2Test();
+  Date3Test();
+  Date4Test();
+  Date5Test();
+  Date6Test();
+  Date7Test();
 }
