@@ -60,8 +60,8 @@ export default function ContentOffset() {
       console.info("[ContentOffset_0100] contentEndOffset: " + JSON.stringify(JSON.parse(strJson).$attrs.contentEndOffset));
       await CommonFunc.sleep(1000);
       expect(JSON.parse(strJson).$type).assertEqual("List");
-      expect(JSON.parse(strJson).$attrs.divider.strokeWidth).assertEqual("20.000000");
-      expect(JSON.parse(strJson).$attrs.divider.startMargin).assertEqual("20.000000");
+      expect(JSON.parse(strJson).$attrs.contentStartOffset).assertEqual("20.000000");
+      expect(JSON.parse(strJson).$attrs.contentEndOffset).assertEqual("20.000000");
       console.info('[ContentOffset_0100] END');
       done();
     });
