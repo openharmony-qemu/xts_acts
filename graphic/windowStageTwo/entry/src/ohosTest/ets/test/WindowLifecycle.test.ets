@@ -95,6 +95,7 @@ export default function WindowLifecycle() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     let isPCStatus: string = '';
     let isAutoWindow: string = '';
+    let windowclassArr:Array<window.Window>;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -109,12 +110,17 @@ export default function WindowLifecycle() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
-      let windowclassArr:Array<window.Window> = await windowStage.getSubWindow();
-      console.log(`brforeAll getSubWindow success. Cause: ${JSON.stringify(windowclassArr)}`);
-      if(windowclassArr.length!=0){
-        for(let i = 0;i<=windowclassArr.length;i++){
-            await windowclassArr[i].destroyWindow();
-        }
+      try{
+          windowclassArr = await windowStage.getSubWindow();
+          console.log(`brforeAll getSubWindow success. Cause: ${JSON.stringify(windowclassArr)}`);
+          if(windowclassArr.length!=0){
+            for(let i = 0;i<windowclassArr.length;i++){
+              await windowclassArr[i].destroyWindow();
+              console.log(`brforeAll destroyWindow windowclassArr ${i} success`);
+            }
+          }
+      }catch (err) {
+        console.error(`brforeAll destroyWindow failed`+ err);
       }
     });
     beforeEach(() => {
