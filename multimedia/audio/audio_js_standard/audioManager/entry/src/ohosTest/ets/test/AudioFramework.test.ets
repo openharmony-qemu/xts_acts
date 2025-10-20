@@ -4057,7 +4057,7 @@ export default function audioFramework() {
           expect(false).assertTrue();
         }
         await audioManager.setVolume(audio.AudioVolumeType.MEDIA, lowVol);
-        let data = await audioManager.isMute(audio.AudioVolumeType.MEDIA);
+        let data:boolean = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA);
         if (data == true) {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute MEDIA: SetVolume: PASS:${data}`);
           expect(true).assertTrue();
@@ -4090,7 +4090,7 @@ export default function audioFramework() {
           expect(false).assertTrue();
         }
         await audioManager.setVolume(audio.AudioVolumeType.MEDIA, lowVol);
-        let data = await audioManager.isMute(audio.AudioVolumeType.MEDIA);
+        let data:boolean = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA);
         if (data == false) {
           console.log(`${TagFrmwk}: Promise: Is Stream Mute MEDIA: SetVolume: PASS:${data}`);
           expect(true).assertTrue();
@@ -4115,7 +4115,7 @@ export default function audioFramework() {
       await audioManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
       await audioManager.mute(audio.AudioVolumeType.MEDIA, true);
       console.log(`${TagFrmwk}: Set Stream Mute: MEDIA: Callback: TRUE`);
-      let data = await audioManager.isMute(audio.AudioVolumeType.MEDIA,(err,data) => {
+      let data:boolean = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA,(err,data) => {
         if (err) {
           console.log(`${TagFrmwk}: Callback: Is Stream Mute MEDIA: SetVolume: FAIL:${data}`);
           expect().assertFail();
@@ -4147,7 +4147,7 @@ export default function audioFramework() {
       await audioManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
       await audioManager.mute(audio.AudioVolumeType.MEDIA, false);
       console.log(`${TagFrmwk}: Set Stream Mute: MEDIA: Callback: TRUE`);
-      let data = await audioManager.isMute(audio.AudioVolumeType.MEDIA,(err,data) => {
+      let data:boolean = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA,(err,data) => {
         if (err) {
           console.log(`${TagFrmwk}: Callback: Is Stream Mute MEDIA: SetVolume: FAIL:${data}`);
           expect().assertFail();
