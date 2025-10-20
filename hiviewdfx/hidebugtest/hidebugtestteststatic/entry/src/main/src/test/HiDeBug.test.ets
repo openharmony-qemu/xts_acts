@@ -697,7 +697,7 @@ export default function HidebugJsTest() {
                 let path = "/proc/self/root/data/storage/el2/base/files/" + filename + ".json";
                 let data = fileIo.readTextSync(path);
                 if (data.includes("napi")) {
-                    expect(true).assertTrue();
+                    console.info('DFX_DFR_Hiprofiler_Interface_1800 xxx ' + data);
                 } else {
                     expect(false).assertTrue();
                 }
