@@ -213,7 +213,7 @@ export default function WindowTitleTest() {
             hilog.info(0x0000, '[ANI]',msgStr + "begin on")
             try {
                 let windowClass: window.Window = await windowStage.getMainWindow();
-                windowClass.on('windowTitleButtonRectChange', (titleButtonRect:window.TitleButtonRect) => {
+                windowClass.onWindowTitleButtonRectChange((titleButtonRect:window.TitleButtonRect) => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window title buttons area changes. Data: ' + JSON.stringify(titleButtonRect));
                     // hilog.info(0x0000, '[ANI]',msgStr + 'titleButtonRect Data: right' + JSON.stringify(titleButtonRect.right));
                     // hilog.info(0x0000, '[ANI]',msgStr + 'titleButtonRect Data: top' + JSON.stringify(titleButtonRect.top));
@@ -222,7 +222,7 @@ export default function WindowTitleTest() {
                     expect(true).assertTrue();
                     done();
                 });
-                windowClass.off('windowTitleButtonRectChange');
+                windowClass.offWindowTitleButtonRectChange();
                 expect(true).assertTrue();
                 done();
             } catch (err: BusinessError) {
@@ -251,7 +251,7 @@ export default function WindowTitleTest() {
             hilog.info(0x0000, '[ANI]',msgStr + 'begin off');
             try {
                 let windowClass: window.Window = await windowStage.getMainWindow();
-                windowClass.off('windowTitleButtonRectChange');
+                windowClass.offWindowTitleButtonRectChange();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window title buttons area changes');
                 expect(true).assertTrue();
                 done();
