@@ -885,8 +885,7 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_2500 start');
       try {
         let jobId : string = "testJobId";
-        let type = 'spooler_closed_for_cancelled';
-        print.notifyPrintService(jobId, type).then(() => {
+        print.notifyPrintServiceSpoolerClosedForCancelled(jobId).then(() => {
           hilog.info(domain, tag, 'print_function_2500 success');
           done();
         }).catch((err: Object | null | undefined) => {
@@ -916,8 +915,7 @@ export default function printTest() {
       try {
         let printerId : string = 'testPrinterId';
         let jobId : string = "testJobId";
-        let type = 'spooler_closed_for_cancelled';
-        print.notifyPrintService(jobId, type, (err: Object | null | undefined) => {
+        print.notifyPrintServiceSpoolerClosedForCancelled(jobId, (err: Object | null | undefined) => {
           if (err) {
             const error = err as BusinessError;
             hilog.error(domain, tag, 'print_function_2600 error, code: %{public}d, message: %{public}s',
@@ -1262,7 +1260,10 @@ export default function printTest() {
             name : 'nameTest',
             width : 1,
             height : 2,
-          }
+          },
+          isLandscape : false,
+          colorMode : 1,
+          duplexMode : 1
         };
         print.requestPrintPreview(printJob).then((ret : int) => {
           hilog.info(domain, tag, 'print_function_3600 success, %{public}d', ret);
@@ -1310,7 +1311,10 @@ export default function printTest() {
             name : "nameTest",
             width : 1,
             height : 2,
-          }
+          },
+          isLandscape : false,
+          colorMode : 1,
+          duplexMode : 1
         };
         print.requestPrintPreview(printJob, (err: Object | null | undefined) => {
           if (err) {
@@ -1421,7 +1425,10 @@ export default function printTest() {
             name : 'nameTest',
             width : 1,
             height : 2,
-          }
+          },
+          isLandscape : false,
+          colorMode : 1,
+          duplexMode : 1
         };
         print.startPrintJob(printJob).then(() => {
           hilog.info(domain, tag, 'print_function_4000 success');
@@ -1469,7 +1476,10 @@ export default function printTest() {
             name : 'nameTest',
             width : 1,
             height : 2,
-          }
+          },
+          isLandscape : false,
+          colorMode : 1,
+          duplexMode : 1
         };
         print.startPrintJob(printJob, (err: Object | null | undefined) => {
           if (err) {
@@ -1845,8 +1855,7 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_5300 start');
 
       try {
-        let type : string = 'printerStateChange';
-        print.on(type, (state: print.PrinterState, info: print.PrinterInfo) => {
+        print.onPrinterStateChange((state: print.PrinterState, info: print.PrinterInfo) => {
           hilog.info(domain, tag, 'print_function_5300 success');
         });
       } catch (err) {
@@ -1870,8 +1879,7 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_5400 start');
 
       try {
-        let type : string = 'jobStateChange';
-        print.on(type, (state: print.PrintJobState, job: print.PrintJob) => {
+        print.onJobStateChange(type, (state: print.PrintJobState, job: print.PrintJob) => {
           hilog.info(domain, tag, 'print_function_5400 success');
         });
       } catch (err) {
@@ -1895,8 +1903,7 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_5500 start');
 
       try {
-        let type : string = 'extInfoChange';
-        print.on(type, (extensionId: string, info: string) => {
+        print.onExtInfoChange(type, (extensionId: string, info: string) => {
           hilog.info(domain, tag, 'print_function_5500 success');
         });
       } catch (err) {
@@ -1920,8 +1927,7 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_5600 start');
 
       try {
-        let type : string = 'printerStateChange';
-        print.off(type, (state: boolean) => {
+        print.offPrinterStateChange(type, (state: boolean) => {
           hilog.info(domain, tag, 'print_function_5600 success');
         });
       } catch (err) {
@@ -1945,8 +1951,7 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_5700 start');
 
       try {
-        let type : string = 'jobStateChange';
-        print.off(type, (state: boolean) => {
+        print.offJobStateChange(type, (state: boolean) => {
           hilog.info(domain, tag, 'print_function_5700 success');
         });
       } catch (err) {
@@ -1970,8 +1975,7 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_5800 start');
 
       try {
-        let type : string = 'extInfoChange';
-        print.off(type, (state: boolean) => {
+        print.offExtInfoChange(type, (state: boolean) => {
           hilog.info(domain, tag, 'print_function_5800 success');
         });
       } catch (err) {
@@ -2579,28 +2583,28 @@ export default function printTest() {
           hilog.info(domain, tag, '%{public}s', 'enter print callback');
           if (printTask != undefined) {
             try {
-              printTask.on('block', () => {
+              printTask.onBlock(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask on block');
               })
-              printTask.on('succeed', () => {
+              printTask.onSucceed(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask on succeed');
               })
-              printTask.on('fail', () => {
+              printTask.onFail(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask on fail');
               })
-              printTask.on('cancel', () => {
+              printTask.onCancel(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask on cancel');
               })
-              printTask.off('block', () => {
+              printTask.offBlock(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask off block');
               })
-              printTask.off('succeed', () => {
+              printTask.offSucceed(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask off succeed');
               })
-              printTask.off('fail', () => {
+              printTask.offFail(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask off fail');
               })
-              printTask.off('cancel', () => {
+              printTask.offCancel(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask off cancel');
               })
             } catch(err) {
