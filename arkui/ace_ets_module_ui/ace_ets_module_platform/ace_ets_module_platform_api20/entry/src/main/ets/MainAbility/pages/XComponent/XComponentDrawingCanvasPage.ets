@@ -53,6 +53,8 @@ struct XComponentDrawingCanvasPage {
         .onClick(()=>{
           let mCanvas1 = this.xcController1.lockCanvas();
           let mCanvas2 = this.xcController2.lockCanvas();
+          let mCanvas3 = this.xcController1.lockCanvas();
+          let mCanvas4 = this.xcController2.lockCanvas();
           if (mCanvas1) {
             this.xc_text1 = 'ok'
             this.mCanvas1 = mCanvas1;
@@ -95,8 +97,6 @@ struct XComponentDrawingCanvasPage {
             this.mCanvas2.detachBrush();
             this.xcController2.unlockCanvasAndPost(this.mCanvas2)
           }
-          let mCanvas3 = this.xcController1.lockCanvas();
-          let mCanvas4 = this.xcController2.lockCanvas();
           AppStorage.SetOrCreate('XComponentDrawingCanvasPage_mCanvas3', mCanvas3);
           AppStorage.SetOrCreate('XComponentDrawingCanvasPage_mCanvas4', mCanvas4);
           let mCanvas5 = this.xcController1.lockCanvas();
