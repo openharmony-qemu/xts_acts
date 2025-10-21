@@ -2721,7 +2721,7 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        let value = await audioVolumeGroupManager.getRingerMode();
+        let data = await audioVolumeGroupManager.getRingerMode();
         if (data == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
           console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerMode : PASS :${data}`);
           expect(true).assertTrue();
