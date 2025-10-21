@@ -17,5 +17,6 @@ import HuksApiTest from './nativehukstest/HuksApi.test'
 import HuksApiTest2 from './nativehukstest/HuksApi2.test'
 
 export default function testsuite() {
+  HuksApiTest()
   HuksApiTest2()
 }
