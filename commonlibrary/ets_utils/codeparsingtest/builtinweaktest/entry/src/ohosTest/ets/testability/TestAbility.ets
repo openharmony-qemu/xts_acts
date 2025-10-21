@@ -17,7 +17,7 @@ import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { Hypium } from '@ohos/hypium';
-import testsuite from '../test/List.test';
+import testsuite from '../test/weak/List.test';
 
 export default class TestAbility extends UIAbility {
     onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
