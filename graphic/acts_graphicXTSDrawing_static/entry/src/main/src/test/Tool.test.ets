@@ -213,13 +213,13 @@ export default function toolTest() {
         expect().assertFail();
       }
       try {
-        let color4: common2D.Color | undefined = drawing.Tool.makeColorFromResourceColor(255.0001);
-        console.info(msg + ' makeColorFromResourceColor 255.0001 successed');
+        let color4: common2D.Color | undefined = drawing.Tool.makeColorFromResourceColor(255);
+        console.info(msg + ' makeColorFromResourceColor 255 successed');
         if (color4) {
           expect(color4 != null).assertTrue();
         }
       } catch (e: BusinessError) {
-        console.info(msg + ` makeColorFromResourceColor 255.0001 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` makeColorFromResourceColor 255 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
