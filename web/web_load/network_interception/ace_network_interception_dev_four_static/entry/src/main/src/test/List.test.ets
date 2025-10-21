@@ -14,7 +14,9 @@
  */
 import  WebSchemeHandlerResponse from './WebSchemeHandlerResponse.test'
 import  WebHttpBodyStream from './WebHttpBodyStream.test'
+import  setAndClearServiceWorkerWebSchemeHandler from './setAndClearServiceWorkerWebSchemeHandler.test'
 export default function testsuite() {
   WebSchemeHandlerResponse();
   WebHttpBodyStream();
+  setAndClearServiceWorkerWebSchemeHandler();
 }

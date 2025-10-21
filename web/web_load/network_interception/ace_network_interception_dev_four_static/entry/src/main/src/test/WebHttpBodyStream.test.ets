@@ -65,6 +65,16 @@ export default function WebHttpBodyStream() {
       done();
     })
 
+    it('emitonSwitchNextPage02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(2000);
+        Utils.emitEvent('emitonSwitchNextPage', 10)
+        await Utils.msSleep(2000);
+        inspector.sendEventByKey('WebHttpBodyStream', 10, '');
+        await Utils.msSleep(2000);
+        done();
+      })
+
 
   })
 }

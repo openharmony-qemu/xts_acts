@@ -1,6 +1,7 @@
 {
   "src": [
     "pages/webSchemeHandlerResponse",
-    "pages/webHttpBodyStream"
+    "pages/webHttpBodyStream",
+    "pages/setAndClearServiceWorkerWebSchemeHandler"
   ]
 }
