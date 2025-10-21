@@ -211,7 +211,7 @@ export default function graphicDrawingFontInterfaceTest() {
         expect(peek6).assertEqual(drawing.PathIteratorVerb.CLOSE);
         expect(peek7).assertEqual(drawing.PathIteratorVerb.DONE);
         expect(hasNext1).assertEqual(true);
-        expect(hasNext1).assertEqual(false);
+        expect(hasNext2).assertEqual(false);
         done()
       } catch (err) {
         console.log(msg + " Faild in testPathIteratorPeekReturnValue " + JSON.stringify(err))
