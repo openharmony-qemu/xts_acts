@@ -511,11 +511,13 @@ export default function MapValueTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('MapValuesTest029',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const date = new Date(2023,TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, 1);
-      const map = new Map([[1, date]]);
-      const values = Array.from(map.values());
-      expect(values[0]).assertEqual(date);
+    it('MapValuesTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const date: Date = new Date(2023, 0, 1);
+      const map: Map<number, Date> = new Map([[1, date]]);
+      const values: Date[] = Array.from(map.values());
+
+      expect(values.length).assertEqual(1);
+      expect(values[0].getTime()).assertEqual(date.getTime());
       expect(values[0].getFullYear()).assertEqual(2023);
     });
 

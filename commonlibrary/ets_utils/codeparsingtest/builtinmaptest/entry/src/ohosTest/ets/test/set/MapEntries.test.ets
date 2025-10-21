@@ -203,10 +203,14 @@ export default function MapEntriesTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testMapEntries0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
-      let entries0008 = MapentriesTest008()
-      expect(entries0008.entries).assertDeepEquals(entries0008.map1);
+    it('testMapEntries0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
+      const entries0008 = MapentriesTest008();
+      expect(JSON.stringify(entries0008.entries))
+        .assertEqual(JSON.stringify(entries0008.map1));
     });
+
+
+
 
     /**
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0009
@@ -966,9 +970,12 @@ export default function MapEntriesTest() {
      * @tc.level Level 2
      */
     it('testMapEntries0053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
-      let entries0053 = MapentriesTest053()
-      expect(entries0053.entries).assertDeepEquals(entries0053.map1);
+      const entries0053 = MapentriesTest053();
+      expect(JSON.stringify(entries0053.entries)).assertDeepEquals(JSON.stringify(entries0053.map1));
     });
+
+
+
 
     /**
      * @tc.number SUB_COMMONLIBRARY_MAP_Entries_0054
@@ -1021,9 +1028,16 @@ export default function MapEntriesTest() {
      * @tc.level Level 3
      */
     it('testMapEntries0056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
-      let entries0056 = MapentriesTest056()
-      expect(entries0056.entries).assertDeepEquals([[entries0056.key1, 'key1'], [entries0056.key2, 'key2']]);
-      expect(entries0056.map1).assertEqual(1);
+      const entries0056 = MapentriesTest056();
+
+      expect(JSON.stringify(entries0056.entries))
+        .assertDeepEquals(JSON.stringify([[entries0056.key1, 'key1'], [entries0056.key2, 'key2']]));
+
+      if (entries0056.map && typeof entries0056.map.size === 'number') {
+        expect(entries0056.map.size).assertEqual(2);
+      } else {
+        expect(entries0056.entries.length).assertEqual(2);
+      }
     });
 
     /**

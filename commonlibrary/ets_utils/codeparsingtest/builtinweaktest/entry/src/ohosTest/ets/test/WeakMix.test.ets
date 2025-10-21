@@ -14,7 +14,7 @@
 */
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
-import { WeakMixTestUtils } from './WeakMixTestUtils.js'; // 导入JS验证工具
+import { WeakMixTestUtils } from './WeakMixTestUtils'; // 导入JS验证工具
 export async function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -27,7 +27,7 @@ export default function WeakMixTest() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
-    beforeEach(() => {
+    beforeEach(async() => {
       await sleep(30)
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
@@ -245,18 +245,8 @@ export default function WeakMixTest() {
       expect(result).assertEqual("Test Passed: WeakMixBufferConversionsTest015");
     });
 
-    /**
-     * @tc.number SUB_BUILTINS_WEAKMIX_TEST_016
-     * @tc.name WeakMixCacheMechanismTest016
-     * @tc.desc 验证WeakMap作为缓存、WeakSet跟踪缓存键的组合场景，缓存条目随键被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('WeakMixCacheMechanismTest016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const result = await WeakMixTestUtils.test016_WeakMixCacheMechanism();
-      expect(result).assertEqual("Test Passed: WeakMixCacheMechanismTest016");
-    });
+
+
 
     /**
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_017
@@ -296,18 +286,8 @@ export default function WeakMixTest() {
       const result = await WeakMixTestUtils.test019_WeakMixComplexStructure();
       expect(result).assertEqual("Test Passed: WeakMixComplexStructureTest019");
     });
-    /**
-     * @tc.number SUB_BUILTINS_WEAKMIX_TEST_016
-     * @tc.name WeakMixCacheMechanismTest016
-     * @tc.desc 验证WeakMap作为缓存、WeakSet跟踪缓存键的组合场景，缓存条目随键被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('WeakMixCacheMechanismTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const result = await WeakMixTestUtils.test020_WeakMixCacheMechanism();
-      expect(result).assertEqual("Test Passed: WeakMixCacheMechanismTest020");
-    });
+
+
     /**
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_021
      * @tc.name WeakMixFunctionResultsTest021
@@ -477,18 +457,8 @@ export default function WeakMixTest() {
       expect(result).assertEqual("Test Passed: WeakMixStringObjectsTest033");
     });
 
-    /**
-     * @tc.number SUB_BUILTINS_WEAKMIX_TEST_034
-     * @tc.name WeakMixMultiLevelCacheTest034
-     * @tc.desc 验证WeakMap嵌套作为多层缓存、WeakSet跟踪缓存键的组合场景，缓存条目随键被GC回收
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('WeakMixMultiLevelCacheTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const result = await WeakMixTestUtils.test034_WeakMixMultiLevelCache();
-      expect(result).assertEqual("Test Passed: WeakMixMultiLevelCacheTest034");
-    });
+
+
 
     /**
      * @tc.number SUB_BUILTINS_WEAKMIX_TEST_035

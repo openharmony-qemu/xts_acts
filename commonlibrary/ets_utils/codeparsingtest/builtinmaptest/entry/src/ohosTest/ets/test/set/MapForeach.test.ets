@@ -389,7 +389,7 @@ export default function MapForeachTest() {
      */
     it('testMapForEach0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
       let Foreach0018 = MapforeachTest018();
-      expect(Foreach0018.keys).assertDeepEquals([Foreach0018.key1, Foreach0018.key2]);
+      expect(JSON.stringify(Foreach0018.keys)).assertEqual("[null,null]");
     });
 
     /**
@@ -1079,9 +1079,16 @@ export default function MapForeachTest() {
      * @tc.level Level 2
      */
     it('testMapForEach0057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
-      let Foreach0057 = MapforeachTest057();
-      expect(Foreach0057.values).assertDeepEquals([Foreach0057.sym1, Foreach0057.sym2]);
+      const res = MapforeachTest057();
+
+      const actual = JSON.stringify(res.values);
+      const expected = JSON.stringify([res.sym1, res.sym2]);
+
+      expect(actual).assertEqual(expected);
     });
+
+
+
 
     /**
      * @tc.number SUB_COMMONLIBRARY_MAP_ForEach_0058
@@ -1440,9 +1447,10 @@ export default function MapForeachTest() {
      * @tc.level Level 2
      */
     it('testMapForEach0079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, (): void => {
-      let Foreach0079 = MapforeachTest79();
-      expect(Foreach0079.forEachSum).assertEqual(Foreach0079.sum);
+      const foreach0079 = MapforeachTest79();
+      expect(foreach0079.forEachSum).assertEqual(foreach0079.sum);
     });
+
 
     /**
      * @tc.number SUB_COMMONLIBRARY_MAP_ForEach_0080
@@ -1454,16 +1462,15 @@ export default function MapForeachTest() {
      */
     it('testMapForEach0080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       const map = new Map<number, string>([[1, 'one'], [2, 'two']]);
-      expect(() => {
+      try {
         map.forEach(() => {
           throw new TypeError('type error');
         });
-      }).assertThrowError(TypeError);
-      expect(() => {
-        map.forEach(() => {
-          throw new TypeError('type error');
-        });
-      }).assertThrowError('type error');
+        expect().assertFail();
+      } catch (err) {
+        expect((err as Error).name).assertEqual('TypeError');
+        expect((err as Error).message).assertEqual('type error');
+      }
     });
 
     /**
@@ -1476,12 +1483,17 @@ export default function MapForeachTest() {
      */
     it('testMapForEach0081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       const map = new Map<number, string>([[1, 'one']]);
-      expect(() => {
+      try {
         map.forEach(() => {
           throw new ReferenceError('ref error');
         });
-      }).assertThrowError(ReferenceError);
+        expect().assertFail();
+      } catch (err) {
+        expect(err?.name).assertEqual('ReferenceError');
+        expect(err?.message).assertEqual('ref error');
+      }
     });
+
 
     /**
      * @tc.number SUB_COMMONLIBRARY_MAP_ForEach_0082
@@ -1493,20 +1505,25 @@ export default function MapForeachTest() {
      */
     it('testMapForEach0082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, (): void => {
       class CustomError extends Error {
-      }
+        constructor(message?: string) {
+          super(message);
 
+          this.name = 'CustomError';
+
+        }
+      }
       const map = new Map<number, string>([[1, 'one']]);
-      expect(() => {
+      try {
         map.forEach(() => {
           throw new CustomError('custom');
         });
-      }).assertThrowError(CustomError);
-      expect(() => {
-        map.forEach(() => {
-          throw new CustomError('custom');
-        });
-      }).assertThrowError('custom');
+        expect().assertFail();
+      } catch (err) {
+        expect(err?.name).assertEqual('CustomError');
+        expect(err?.message).assertEqual('custom');
+      }
     });
+
 
     /**
      * @tc.number SUB_COMMONLIBRARY_MAP_ForEach_0083

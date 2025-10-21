@@ -260,8 +260,10 @@ export default function MapKeyTest() {
      */
     it('MapKeysTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest013 = MapKeysTest013();
-      expect(keysTest013.keys).assertDeepEquals(keysTest013.keys1);
+      expect(JSON.stringify(keysTest013.keys)).assertDeepEquals(JSON.stringify(keysTest013.keys1));
     });
+
+
 
     /**
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0014
@@ -272,9 +274,11 @@ export default function MapKeyTest() {
      * @tc.level Level 2
      */
     it('MapKeysTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      let keysTest014 = MapKeysTest014();
-      expect(keysTest014).assertDeepEquals(42n);
+      const keysTest014 = MapKeysTest014();
+      expect(typeof keysTest014 === 'bigint').assertTrue();
+      expect(keysTest014).assertEqual(42n);
     });
+
 
     /**
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0015
@@ -894,8 +898,6 @@ export default function MapKeyTest() {
     /**
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0060
      * @tc.name MapKeysTest060
-     * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0060
-     * @tc.name MapKeysTest060
      * @tc.desc No results when iterating after Map is cleared
      * @tc.size MediumTest
      * @tc.type Function
@@ -1106,8 +1108,11 @@ export default function MapKeyTest() {
      */
     it('MapKeysTest074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let keysTest074 = MapKeysTest074();
-      expect(keysTest074.keys).assertDeepEquals([keysTest074.s, 123]);
+      expect(JSON.stringify(keysTest074.keys)).assertDeepEquals(JSON.stringify([keysTest074.s, 123]));
     });
+
+
+
 
     /**
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0075
@@ -1389,10 +1394,15 @@ export default function MapKeyTest() {
      * @tc.level Level 2
      */
     it('MapKeysTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      let keysTest096 = MapKeysTest096();
-      expect(keysTest096.keys[0]).assertDeepEquals(42n);
-      expect(keysTest096.keys[1]).assertDeepEquals('42n');
+      const keysTest096 = MapKeysTest096();
+
+      expect(typeof keysTest096.keys[0]).assertEqual('bigint');
+      expect(keysTest096.keys[0]).assertEqual(42n);
+
+      expect(typeof keysTest096.keys[1]).assertEqual('string');
+      expect(keysTest096.keys[1]).assertEqual('42n');
     });
+
 
     /**
      * @tc.number SUB_BUILTINS_MAP_KEYS_TEST_0097

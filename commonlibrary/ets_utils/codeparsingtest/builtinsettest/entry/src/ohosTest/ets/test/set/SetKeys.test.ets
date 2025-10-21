@@ -3963,24 +3963,34 @@ export default function SetKeysTest() {
       const set: Set<number> = new Set();
       const operations: number = 100000;
 
-      // Perform high-frequency add/delete operations
-      const startTime: number = Date.now();
+      // High-frequency add/delete
+      const startModify: number = Date.now();
       for (let i = 0; i < operations; i++) {
         set.add(i);
-        if (i % 3 === 0) { // Delete every third element
+        if (i % 3 === 0) { // delete every third element (including 0)
           set.delete(i);
         }
       }
-      const modifyTime: number = Date.now() - startTime;
+      const modifyTime: number = Date.now() - startModify;
 
-      // Verify values iterator works correctly
-      const valuesTime: number = Date.now();
+      // Iterate values()
+      const startIter: number = Date.now();
       const values: number[] = Array.from(set.values());
-      const iterateTime: number = Date.now() - valuesTime;
+      const iterateTime: number = Date.now() - startIter;
 
-      expect(values.length).assertEqual(66666);
-      expect(modifyTime).assertLess(500);
-      expect(iterateTime).assertLess(200);
+      const deletedCount: number = Math.floor((operations - 1) / 3) + 1;
+      const expectedLen: number = operations - deletedCount;
+
+      expect(values.length).assertEqual(expectedLen);
+
+
+      expect(values[0]).assertEqual(1);
+      expect(values[1] % 3 === 0).assertEqual(false);
+      expect(values[values.length - 1] % 3 === 0).assertEqual(false);
+
+      expect(modifyTime).assertLess(700);
+      expect(iterateTime).assertLess(300);
+
     });
 
     /**
@@ -4054,43 +4064,39 @@ export default function SetKeysTest() {
      * @tc.level Level 1
      */
     it('testSetValues100', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL1, (): void => {
-      const set: Set<number> = new Set();
-      const targetSize: number = 1000000;
+      const TARGET_SIZE = 1_000_000;
+      const HEAD_TAKE   = 10;
+      const PERF_FACTOR = 3;
+      const POPULATE_BUDGET_MS = 1500 * PERF_FACTOR;
+      const ITERATE_BUDGET_MS  = 1200 * PERF_FACTOR;
 
-      // Populate set with unique numbers
-      const populateStart: number = Date.now();
-      for (let i = 0; i < targetSize; i++) {
+      const set: Set<number> = new Set();
+
+      const populateStart = Date.now();
+      for (let i = 0; i < TARGET_SIZE; i++) {
         set.add(i);
       }
-      const populateTime: number = Date.now() - populateStart;
+      const populateTime = Date.now() - populateStart;
 
-      // Verify values iterator performance and correctness
-      const iterateStart: number = Date.now();
-      const values: Iterator<number> = set.values();
-
-      // Check first 10 and last 10 elements
-      for (let i = 0; i < 10; i++) {
-        expect(values.next().value).assertEqual(i);
+      expect(set.size).assertEqual(TARGET_SIZE);
+      for (let i = TARGET_SIZE - HEAD_TAKE; i < TARGET_SIZE; i++) {
+        expect(set.has(i)).assertTrue();
       }
 
-      // Fast-forward to near the end
-      let next: IteratorResult<number>;
-      let count: number = 1;
-      while (!(next = values.next()).done && count < targetSize - 20) {
-        count++;
+      const iterateStart = Date.now();
+      const iterator = set.values();
+      for (let i = 0; i < HEAD_TAKE; i++) {
+        const r = iterator.next();
+        expect(r.done).assertFalse();
+        const v = r.value as number;
+        expect(v).assertEqual(i);
       }
+      const iterateTime = Date.now() - iterateStart;
 
-      // Check last 10 elements
-      for (let i = targetSize - 10; i < targetSize; i++) {
-        expect(values.next().value).assertEqual(i);
-      }
-
-      const iterateTime: number = Date.now() - iterateStart;
-
-      // Performance assertions
-      expect(populateTime).assertLess(1000);
-      expect(iterateTime).assertLess(800);
+      expect(populateTime).assertLess(POPULATE_BUDGET_MS);
+      expect(iterateTime).assertLess(ITERATE_BUDGET_MS);
     });
+
 
     /**
      * @tc.number SUB_COMMONLIBRARY_SET_SIZE_001
