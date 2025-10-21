@@ -263,9 +263,8 @@ function getDSt(outputName: string) {
 
 async function getfdScrAndfdDst() {
   console.info('case getfdScrAndfdDst start');
-  await mediaTestBase.getStageFileDescriptor(inputName).then((res: resourceManager.RawFileDescriptor) => {
-    let fd: media.AVFileDescriptor = { fd: res.fd as int, length: res.length as long, offset: res.offset as long };
-    fileDescriptor = fd
+  await mediaTestBase.getFileDescriptorFromFileDir(inputName, () => {}).then((res: media.AVFileDescriptor) => {
+    fileDescriptor = { fd: res!.fd } as media.AVFileDescriptor;
   });
   outputFdObject = getDSt(outputName);
   console.info('case getfdScrAndfdDst end');
@@ -297,7 +296,7 @@ export default function AVTransCoderTest() {
         await mediaTestBase.closeFd(outputFdObject!!.fdNumber);
       }
       try {
-        await closeRawFd(inputName);
+        fs.closeSync(fileDescriptor!.fd);
       } catch (error) {
         console.info('closeRawFd' + error);
       }
