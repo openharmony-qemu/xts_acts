@@ -164,6 +164,24 @@ export default function storagePromiseTest() {
         })
 
         /**
+         * @tc.name testHasKey0036
+         * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_2600
+         * @tc.desc has long interface test
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testHasKey0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            await mPref.has(KEY_TEST_STRING_ELEMENT).then((ret) => {
+                expect(ret).assertEqual(false);
+                done();
+            }).catch((err) => {
+                expect().assertFail();
+                done();
+            });
+        })
+
+        /**
          * @tc.name testGetDefValue0061
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_0800
          * @tc.desc get string promise interface test
@@ -556,6 +574,26 @@ export default function storagePromiseTest() {
                 expect(null).assertFail();
                 done();
             });
+        })
+
+
+        /**
+         * @tc.name testHassyncKeyTest0001
+         * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiPromiseTest_2700
+         * @tc.desc has string interface test
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testHassyncKeyTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            try {
+                let ret = await mPref.hasSync(KEY_TEST_STRING_ELEMENT)
+                expect(ret).assertEqual(false);
+                done();
+            } catch (err) {
+                expect().assertFail()
+                done();
+      }
         })
     })
 }
