@@ -25,9 +25,20 @@ struct NavigationLevelTest2 {
       Column({ space: 10 }) {
         Button('pop(false)')
           .onClick(()=>{
-            this.pageInfos.pop(false)
+            let popFalseResult: NavPathInfo | undefined = this.pageInfos.pop(false)
+            console.log('NavigationLevelTest2 popFalseResult: ', popFalseResult)
+            AppStorage.setOrCreate('popFalseResult', popFalseResult)
           })
           .id('NavigationLevelTest2_btn2')
+          .height('10%')
+        Button('pop2(false)')
+          .onClick(()=>{
+            let popFalseResult2: NavPathInfo | undefined = this.pageInfos.pop({name: 'test'}, false)
+            console.log('NavigationLevelTest2 popFalseResult2: ', popFalseResult2)
+            AppStorage.setOrCreate('popFalseResult2', popFalseResult2)
+          })
+          .id('pop2FalseBtn')
+          .height('10%')
       }
     }.title('pageOne')
   }
@@ -55,12 +66,30 @@ struct NavigationLevelTest2 {
       Navigation(this.pageInfos) {
         Column({space:10}) {
           Text(this.message).id('NavigationLevelTest2_text1')
+          .height('10%')
 
           Button('pushPath pageOne')
             .onClick(() => {
               this.pageInfos.pushPath({ name: 'pageOne' , param:'mes'})
             })
             .id('NavigationLevelTest2_btn1')
+            .height('10%')
+          Button('pop(true)')
+            .onClick(()=>{
+              let popResult = this.pageInfos.pop(true)
+              console.log('NavigationLevelTest2 popResult: ', popResult)
+              AppStorage.setOrCreate('popResult', popResult)
+            })
+            .id('popTrueBtn2')
+            .height('10%')
+          Button('pop2(true)')
+            .onClick(()=>{
+              let pop2Result = this.pageInfos.pop({name: 'test'}, true)
+              console.log('NavigationLevelTest2 popResult: ', pop2Result)
+              AppStorage.setOrCreate('pop2Result', pop2Result)
+            })
+            .id('pop2TrueBtn2')
+            .height('10%')
         }
       }
       .mode(NavigationMode.Stack)

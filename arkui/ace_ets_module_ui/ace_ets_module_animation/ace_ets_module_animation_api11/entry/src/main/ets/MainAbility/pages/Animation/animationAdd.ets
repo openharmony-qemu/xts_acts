@@ -109,12 +109,12 @@ struct AnimatablePropertyExample {
     Column() {
       Polyline()
         .animatablePoints(this.points)
-        .animation({ duration: 1000, curve: "ease" })
-        .size({ height: 220, width: 300 })
+        .animation({ duration: 1000, curve: 'ease' })
+        .size({ height: '50%', width: '100%' })
         .fill(Color.Green)
         .stroke(Color.Red)
         .backgroundColor('#eeaacc')
-      Button("Play")
+      Button('Play')
         .onClick(() => {
           this.points = new PointVector([
             new Point(50, Math.random() * 200),
@@ -123,8 +123,14 @@ struct AnimatablePropertyExample {
             new Point(200, Math.random() * 200),
             new Point(250, Math.random() * 200),
           ])
+          let trueFlag = this.points.equals(this.points);
+          let falseFlag = this.points.equals(new PointVector([new Point(50, Math.random() * 200)]))
+          console.log('AnimatableArithmetic trueFlag : ', trueFlag)
+          console.log('AnimatableArithmetic falseFlag: ', falseFlag)
+          AppStorage.setOrCreate('trueFlag', trueFlag)
+          AppStorage.setOrCreate('falseFlag', falseFlag)
         })
-    }.width("100%")
+    }.width('100%')
     .padding(10)
   }
 }

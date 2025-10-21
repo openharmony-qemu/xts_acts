@@ -14,8 +14,10 @@
  */
 import ReplaceDestination1Test from './Navigation/ReplaceDestination1.test'
 import ReplaceDestination2 from './Navigation/ReplaceDestination2.test'
+import QueryRouterPageInfoUndefined from './Navigation/QueryRouterPageInfoUndefined.test'
 
 export default function testsuite() {
   ReplaceDestination1Test();
   ReplaceDestination2();
+  QueryRouterPageInfoUndefined();
 }
