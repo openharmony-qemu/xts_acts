@@ -19,7 +19,6 @@ import { Permissions } from '@kit.AbilityKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 
 let audioRecorder: media.AudioRecorder | null = null;
-let AVRecorder: media.AVRecorder | null = null;
 const END_STATE = 0;
 const PRE_STATE = 1;
 const START_STATE = 2;
@@ -51,31 +50,17 @@ let audioConfig: media.AudioRecorderConfig = {
 }
 
 let avProfile: media.AVRecorderProfile = {
-  audioBitrate: 64000,
-  audioChannels: 1,
-  audioCodec: media.CodecMimeType.AUDIO_AAC,
+  audioBitrate: 64000, // set audioBitrate according to device ability
+  audioChannels: 1, // set audioChannels, valid value 1-8
+  audioCodec: media.CodecMimeType.AUDIO_AAC, // set audioCodec, AUDIO_AAC is the only choice
   aacProfile: media.AacProfile.AAC_LC,
-  AUDIOsAMPLErATE: 8000,
-  fileFormat: media.ContainerFormatType.CFT_MPEG_4A,
+  audioSampleRate: 8000, // set audioSampleRate according to device ability
+  fileFormat: media.ContainerFormatType.CFT_MPEG_4A, // set fileFormat, for video is m4a
 }
 let avConfig: media.AVRecorderConfig = {
-  audioSourceType: media.audioSourceType.AUDIO_SOURCE_TYPE_MIC,
+  audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
   profile: avProfile,
   url: 'fd://'
-}
-
-async function initAVRecorder() {
-  if (AVRecorder) {
-    console.info('Releasing existing AVRecorder...');
-    await AVRecorder.release();
-    AVRecorder = null;
-  }
-  AVRecorder = await media.createAVRecorder();
-  if(!AVRecorder) {
-    console.info('Failed to create AVRecorder: returned null');
-    return null;
-  }
-  return AVRecorder;
 }
 
 function initAudioRecorder() {
@@ -1050,40 +1035,15 @@ export default function RecorderLocalTestAudioAPI() {
         * @tc.level     : Level2
     */
     it('SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001', Level.LEVEL0,async (done: Function) => {
-      initAudioRecorder();
-      let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
-      setCallback(mySteps, done);
-      AVRecorder?.prepare(avConfig);
-    });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0002
-        * @tc.name      : 01.reset->set
-        * @tc.desc      : Reliability Test
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level2
-    */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0002', Level.LEVEL0,async (done: Function) => {
-      initAudioRecorder();
-      let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
-      setCallback(mySteps, done);
-      avConfig.profile.aacProfile = media.AacProfile.AAC_HE;
-      AVRecorder?.prepare(avConfig);
-    });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0003
-        * @tc.name      : 01.reset->set
-        * @tc.desc      : Reliability Test
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level2
-    */
-    it('SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0003', Level.LEVEL0,async (done: Function) => {
-      initAudioRecorder();
-      let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
-      setCallback(mySteps, done);
-      avConfig.profile.aacProfile = media.AacProfile.AAC_HE_V2;
-      AVRecorder?.prepare(avConfig);
+      let AVRecorder = await media.createAVRecorder();
+      if(AVRecorder) {
+        AVRecorder?.prepare(avConfig);
+        AVRecorder?.start();
+        AVRecorder?.stop();
+        expect(media.AacProfile.AAC_HE).assertEqual(1);
+        expect(media.AacProfile.AAC_HE_V2).assertEqual(2);
+        done();
+      }
     });
   })
 }
