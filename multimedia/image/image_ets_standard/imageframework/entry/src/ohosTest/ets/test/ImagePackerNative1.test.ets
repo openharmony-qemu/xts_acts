@@ -60,13 +60,13 @@ export default function ImagePackerNativeTest1() {
     });
 
     const getFd = async (fileName: string) => {
-      filePath = filesDir + '/testImages/' + fileName;
+      filePath = filesDir + '/' + fileName;
       console.log('filePath:', filePath)
 
       //resfile下面文件 只有只读权限 copy到沙箱下面在操作.注意:测试图片放到resfile下，不要放到rawfile下。
       if(!fs.accessSync(filePath)){
-        let srcPath = testContext.resourceDir + '/testImages/';
-        let desPath = testContext.filesDir + '/testImages/';
+        let srcPath = testContext.resourceDir + '/';
+        let desPath = testContext.filesDir + '/';
         if (!fs.accessSync(desPath)) {
           fs.mkdirSync(desPath)
         }
@@ -89,9 +89,8 @@ export default function ImagePackerNativeTest1() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_PACKTODATAFROMIMAGESOURCE_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       const parker: image.ImagePacker = ndkTest.packerCreate();
-      await getFd("test5.jpg");
+      await getFd("test51.jpg");
       const imageSourceApi: image.ImageSource = ndkTest.createFromFd(fileFd);
-
       let packOpts: image.PackingOption = ndkTest.createPackingOptions();
       ndkTest.jsPackingOptionsSetQuality(packOpts, 100);
       ndkTest.jsPackingOptionsSetMimeType(packOpts, "image/jpeg");
@@ -126,7 +125,7 @@ export default function ImagePackerNativeTest1() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_PACKTODATAFROMPIXELMAP_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       const parker: image.ImagePacker = ndkTest.packerCreate();
-      await getFd("test5.jpg");
+      await getFd("test51.jpg");
       let packOpts: image.PackingOption = ndkTest.createPackingOptions();
       ndkTest.jsPackingOptionsSetQuality(packOpts, 100);
       ndkTest.jsPackingOptionsSetMimeType(packOpts, "image/jpeg");
@@ -166,7 +165,7 @@ export default function ImagePackerNativeTest1() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_PACKTODATAFROMPICTURE_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       const parker: image.ImagePacker = ndkTest.packerCreate();
-      await getFd("test5.jpg");
+      await getFd("test51.jpg");
       let packOpts: image.PackingOption = ndkTest.createPackingOptions();
       ndkTest.jsPackingOptionsSetQuality(packOpts, 100);
       ndkTest.jsPackingOptionsSetMimeType(packOpts, "image/jpeg");
@@ -205,7 +204,7 @@ export default function ImagePackerNativeTest1() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_PACKTODATAFROMPIXELMAPSEQUENCE_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       const parker: image.ImagePacker = ndkTest.packerCreate();
-      await getFd("test5.jpg");
+      await getFd("test51.jpg");
       const imagesource: image.ImageSource = ndkTest.createFromFd(fileFd);
       const DecodingOptions: image.DecodingOptions = ndkTest.createDecodingOptions();
       const pixelMap: image.PixelMap | number = ndkTest.createPixelMapWithImageSoure(imagesource, DecodingOptions);
@@ -239,7 +238,7 @@ export default function ImagePackerNativeTest1() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_PACKTOFILEFROMIMAGESOURCE_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       const parker: image.ImagePacker = ndkTest.packerCreate();
-      await getFd("test5.jpg");
+      await getFd("test51.jpg");
       const imageSourceApi: image.ImageSource = ndkTest.createFromFd(fileFd);
 
       let packOpts: image.PackingOption = ndkTest.createPackingOptions();
@@ -277,7 +276,7 @@ export default function ImagePackerNativeTest1() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_PACKTOFILEFROMPIXELMAP_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       const parker: image.ImagePacker = ndkTest.packerCreate();
-      await getFd("test5.jpg");
+      await getFd("test51.jpg");
       let packOpts: image.PackingOption = ndkTest.createPackingOptions();
       ndkTest.jsPackingOptionsSetQuality(packOpts, 100);
       ndkTest.jsPackingOptionsSetMimeType(packOpts, "image/jpeg");
@@ -317,7 +316,7 @@ export default function ImagePackerNativeTest1() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACKER_NATIVE_PACKTOFILEFROMPRICTURE_ERROR_0100", Level.LEVEL3, async (done: Function) => {
       const parker: image.ImagePacker = ndkTest.packerCreate();
-      await getFd("test5.jpg");
+      await getFd("test51.jpg");
       let packOpts: image.PackingOption = ndkTest.createPackingOptions();
       ndkTest.jsPackingOptionsSetQuality(packOpts, 100);
       ndkTest.jsPackingOptionsSetMimeType(packOpts, "image/jpeg");

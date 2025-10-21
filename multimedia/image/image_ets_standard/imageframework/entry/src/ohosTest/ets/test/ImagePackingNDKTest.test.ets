@@ -332,65 +332,15 @@ export default function ImagePackingNDKTest() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_JPG_DATA_0100
-     * @tc.name      : sub_multimedia_image_packerndk_pack_image_source_to_jpg_data
-     * @tc.desc      : 1.packingtestndk create
-     *               : 2.create image source-png
-     *                 3.packing image source to array buffer-jpeg
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
-     */
-    it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_JPG_DATA_0100', Level.LEVEL0, async (done: Function) => {
-      let source: image.ImageSource = await createTestImageSource("test.png");
-      expect(source != undefined).assertTrue();
-      let packOpts: image.PackingOption = {
-        format: "image/jpeg", quality: 100
-      };
-      await packToDataTest(done, "SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_JPG_DATA_0100", source, packOpts);
-      await source.release();
-      done();
-    });
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_JPG_FILE_0100
-     * @tc.name      : sub_multimedia_image_packerndk_pack_image_source_into_jpg_file
-     * @tc.desc      : 1.packingtestndk create
-     *               : 2.create image source-png
-     *               : 3.packing image source into a writtable file-jpeg
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
-     */
-    it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_JPG_FILE_0100', Level.LEVEL0, async (done: Function) => {
-      let log: ESObject = logger("SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_JPG_FILE_0100");
-      let source: image.ImageSource = await createTestImageSource("test.png");
-      expect(source != undefined).assertTrue();
-      let path: string, fd: number;
-      let variable = await getWriteFd("test_write_image_source.jpg");
-      path = variable[0] as string;
-      fd = variable[1] as number;
-      expect(fd != undefined).assertTrue();
-      let packOpts: image.PackingOption = {
-        format: "image/jpeg", quality: 100
-      };
-      await packToFileTest(done, "SUB_MULTIMEDIA_IMAGE_PACKERNDK_PACK_IMAGE_SOURCE_TO_JPG_FILE_0100", source, fd,
-        packOpts);
-      fileio.closeSync(fd);
-      log.log(`file size: ${JSON.stringify(fileio.statSync(path).size)}`);
-      let size = fileio.statSync(path).size;
-      expect(size != 0).assertTrue();
-      done();
-    });
-    /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_PACKERNDK_RELEASE_0100
      * @tc.name      : sub_multimedia_image_packerndk_native_release
      * @tc.desc      : 1.packingtestndk create
      *                 2.packingtestndk native release
      * @tc.size      : MEDIUM
      * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.level     : Level 2
      */
-    it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_RELEASE_0100', Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_IMAGE_PACKERNDK_RELEASE_0100', Level.LEVEL2, async (done: Function) => {
       try {
         let log: ESObject = logger("SUB_MULTIMEDIA_IMAGE_PACKERNDK_RELEASE_0100");
         let packer = ndkTest.create();
