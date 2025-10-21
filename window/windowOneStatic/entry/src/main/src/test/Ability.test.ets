@@ -736,7 +736,7 @@ export default function abilityTest() {
           })
         };
         try {
-          win.on('windowWillClose', callback);
+          win.onWindowWillClose(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowWillClose success');
           expect(true).assertTrue();
         } catch (e) {
@@ -753,7 +753,7 @@ export default function abilityTest() {
           }
         }
         try {
-          win.off('windowWillClose', callback);
+          win.offWindowWillClose(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowWillClose success');
           expect(true).assertTrue();
         } catch (e) {
@@ -782,7 +782,7 @@ export default function abilityTest() {
             `finaltest [ANI] onOffWindowTitleButtonRectChangeTest callback success:${JSON.stringify(data)}`);
         };
         try {
-          win.on('windowTitleButtonRectChange', callback);
+          win.onWindowTitleButtonRectChange(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowTitleButtonRectChange success');
           expect(true).assertTrue();
         } catch (e) {
@@ -801,7 +801,7 @@ export default function abilityTest() {
           }
         }
         try {
-          win.off('windowTitleButtonRectChange', callback);
+          win.offWindowTitleButtonRectChange(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowTitleButtonRectChange success');
           expect(true).assertTrue();
         } catch (e) {
@@ -829,7 +829,7 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] onOffWindowStageCloseTest callback success`);
         };
         try {
-          windowStage.on('windowStageClose', callback);
+          windowStage.onWindowStageClose(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowStageClose success');
           expect(true).assertTrue();
         } catch (e) {
@@ -847,7 +847,7 @@ export default function abilityTest() {
 
         }
         try {
-          windowStage.off('windowStageClose', callback);
+          windowStage.offWindowStageClose(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowStageClose success');
           expect(true).assertTrue();
         } catch (e) {
