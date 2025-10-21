@@ -76,8 +76,9 @@ class EntryAbility2 extends UIAbility {
     hilog.info(0x0000, 'testTag  EntryAbility2', 'EntryAbility2 onNewWant');
   }
 
-  onDump() {
+  onDump(params:Array<string>) {
     hilog.info(0x0000, 'testTag  EntryAbility2', 'EntryAbility2 onDump');
+    return [];
   }
 
   onShare() {

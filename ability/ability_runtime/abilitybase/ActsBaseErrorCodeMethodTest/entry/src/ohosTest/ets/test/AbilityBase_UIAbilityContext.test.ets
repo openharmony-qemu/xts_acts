@@ -23,9 +23,12 @@ import OpenLinkOptions from '@ohos.app.ability.OpenLinkOptions';
 import { common, StartOptions, Want } from '@kit.AbilityKit';
 import { rpc } from '@kit.IPCKit';
 import { bundleManager } from '@kit.MDMKit';
+import CompletionHandler from '@ohos.app.ability.CompletionHandler';
+import hilog from '@ohos.hilog';
 
 let context = getContext(this) as common.UIAbilityContext;;
-
+const DOMAIN = 0x0000;
+const LOG_TAG = 'COMPLETION_HANDLER_TEST';
 export default function openLinkTest() {
   describe('AbilityBaseUIAbilityContextTest', () => {
     beforeAll(() => {
@@ -371,8 +374,23 @@ export default function openLinkTest() {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_1100`;
       console.log(`${tag}, it begin`);
       let link: string|null|undefined = null;
+      let handler: CompletionHandler = {
+        onRequestSuccess: (element: bundleManager.ElementName, message: string) => {
+          hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContext_1100 onRequestSuccess called,
+            element: ${JSON.stringify(element)}, message: ${message}`);
+            expect().assertFail();
+          done();
+        },
+        onRequestFailure: (element: bundleManager.ElementName, message: string) => {
+          hilog.info(DOMAIN, LOG_TAG, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContext_1100 onRequestFailure called,
+            element: ${JSON.stringify(element)}, message: ${message}`);
+          expect().assertFail();
+          done();
+        }
+      }
       let options: OpenLinkOptions|undefined = {
-        appLinkingOnly: true
+        appLinkingOnly: true,
+        completionHandler: handler
       }
       try {
         context.openLink(link, options, (err: BusinessError) => {

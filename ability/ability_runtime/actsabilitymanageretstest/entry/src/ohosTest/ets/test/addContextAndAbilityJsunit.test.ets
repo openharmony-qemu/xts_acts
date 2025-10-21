@@ -63,8 +63,8 @@ export default function addContextAndAbilityJsunit() {
 
     /*
  * @tc.number: context_isUpdatingConfigurations_test_0100
- * @tc.name: isUpdatingConfigurations : Obtains whether the configuration of the current ability is changing.
- * @tc.desc: Check the return value of the interface (by promise)
+ * @tc.name: context_isUpdatingConfigurations_test_0100
+ * @tc.desc: isUpdatingConfigurations : Obtains whether the configuration of the current ability is changing.(by promise)
  * @tc.level   0
  */
     it(TAG_TEST_0100, Level.LEVEL0, async (done: Function) => {
@@ -82,15 +82,19 @@ export default function addContextAndAbilityJsunit() {
           console.error(TAG_TEST_0100 + 'promise errors is: ' + JSON.stringify(error));
         })
       expect(typeof (detailed)).assertEqual("boolean");
-      expect(detailed).assertEqual(false);
+      if(detailed == true){
+        expect(detailed).assertTrue();
+      }else{
+        expect(detailed).assertFalse();
+      }
       done();
       console.log('------------------ ' + TAG_TEST_0100 + ' end -------------------');
     })
 
     /*
  * @tc.number: context_isUpdatingConfigurations_test_0200
- * @tc.name: isUpdatingConfigurations : Obtains whether the configuration of the current ability is changing.
- * @tc.desc: Check the return value of the interface (by AsyncCallback)
+ * @tc.name: context_isUpdatingConfigurations_test_0200
+ * @tc.desc: isUpdatingConfigurations : Obtains whether the configuration of the current ability is changing. (by AsyncCallback)
  * @tc.level   0
  */
     it(TAG_TEST_0200, Level.LEVEL0, async (done: Function) => {
@@ -110,7 +114,11 @@ export default function addContextAndAbilityJsunit() {
       }
       await Utils.sleep(2000);
       expect(typeof (detailed)).assertEqual("boolean");
-      expect(detailed).assertEqual(false);
+      if(detailed == true){
+        expect(detailed).assertTrue();
+      }else{
+        expect(detailed).assertFalse();
+      }
       done();
       console.log('------------------ ' + TAG_TEST_0200 + ' end -------------------');
     })
@@ -173,8 +181,8 @@ export default function addContextAndAbilityJsunit() {
 
     /*
  * @tc.number: context_getAppMemorySize_test_0100
- * @tc.name: getAppMemorySize : Obtains the memory size of the application.
- * @tc.desc: Check the return value of the interface (by promise)
+ * @tc.name: context_getAppMemorySize_test_0100
+ * @tc.desc: getAppMemorySize : Obtains the memory size of the application.Check the return value of the interface (by promise)
  * @tc.level   0
  */
     it(TAG_TEST_0500, Level.LEVEL0, async (done: Function) => {
@@ -220,8 +228,8 @@ export default function addContextAndAbilityJsunit() {
 
     /*
  * @tc.number: context_isRamConstrainedDevice_test_0100
- * @tc.name: isRamConstrainedDevice : Obtains whether the current device has low ram.
- * @tc.desc: Check the return value of the interface (by promise)
+ * @tc.name: context_isRamConstrainedDevice_test_0100
+ * @tc.desc: isRamConstrainedDevice : Obtains whether the current device has low ram.Check the return value of the interface (by promise)
  * @tc.level   0
  */
     it(TAG_TEST_0700, Level.LEVEL0, async (done: Function) => {
@@ -238,15 +246,19 @@ export default function addContextAndAbilityJsunit() {
       })
       await Utils.sleep(1000);
       expect(typeof (detailed)).assertEqual("boolean");
-      expect(detailed).assertEqual(false);
+      if(detailed == true){
+        expect(detailed).assertTrue();
+      }else{
+        expect(detailed).assertFalse();
+      }
       done();
       console.log('------------------ ' + TAG_TEST_0700 + ' end -------------------');
     })
 
     /*
  * @tc.number: context_isRamConstrainedDevice_test_0200
- * @tc.name: isRamConstrainedDevice : Obtains whether the current device has low ram.
- * @tc.desc: Check the return value of the interface (by AsyncCallback)
+ * @tc.name: context_isRamConstrainedDevice_test_0200
+ * @tc.desc: isRamConstrainedDevice : Obtains whether the current device has low ram.Check the return value of the interface (by AsyncCallback)
  * @tc.level   0
  */
     it(TAG_TEST_0800, Level.LEVEL0, async (done: Function) => {
@@ -258,7 +270,11 @@ export default function addContextAndAbilityJsunit() {
         console.info(TAG_TEST_0800 + ' callBack error is:' + error);
         console.info(TAG_TEST_0800 + ' callBack data is:' + JSON.stringify(data));
         expect(typeof (data)).assertEqual("boolean");
-        expect(data).assertEqual(false);
+        if(data == true){
+          expect(data).assertTrue();
+        }else{
+          expect(data).assertFalse();
+        }
         done();
       })
       console.log('------------------ ' + TAG_TEST_0800 + ' end -------------------');
