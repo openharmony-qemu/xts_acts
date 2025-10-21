@@ -131,6 +131,7 @@ describe('ActsNetworkSearchTest',  () => {
                 expect(data.shortOperatorName != 'shortOperatorName').assertTrue();
                 expect(data.plmnNumeric != 'plmnNumeric').assertTrue();
                 expect(data.isRoaming != true).assertTrue();
+                expect(data.isCaActive != true).assertTrue();
                 expect(data.regState != radio.RegState.REG_STATE_IN_SERVICE).assertTrue();
                 expect(data.nsaState != radio.NsaState.NSA_STATE_SA_ATTACHED).assertTrue();
                 expect().assertFail();
