@@ -629,6 +629,63 @@ export default function userauthTest() {
             done();
         })
 
+        /*
+        * @tc.number     SUB_Security_IAM_UserAuth_FUNC_0110
+        * @tc.name       SUB_Security_IAM_UserAuth_FUNC_0110
+        * @tc.desc       getAuthLockState parameter validity check
+        * @tc.size       MediumTest
+        * @tc.type       Function
+        * @tc.level      Level 1
+        */
+        it('SUB_Security_IAM_UserAuth_FUNC_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            console.info('testFace SUB_Security_IAM_UserAuth_FUNC_0110 start');
+            let checkFace = await checkSupportOrNot(userAuthNorth.UserAuthType.FACE);
+            let checkPin = await checkSupportOrNot(userAuthNorth.UserAuthType.PIN);
+            let checkFingerprint = await checkSupportOrNot(userAuthNorth.UserAuthType.FINGERPRINT);
+            let authTypeParamError = [0, -1];
+            let authType = [userAuthNorth.UserAuthType.FACE, userAuthNorth.UserAuthType.FINGERPRINT, userAuthNorth.UserAuthType.PIN];
+            if (checkPin == 0 && checkFace == 0 && checkFingerprint == 0) {
+                for (let idx0 = 0; idx0 < authTypeParamError.length; idx0++) {
+                    try {
+                        console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 authType: ${authTypeParamError[idx0]}`);
+                        await userAuthNorth.getAuthLockState(authTypeParamError[idx0]);
+                    } catch (error) {
+                        console.error(`SUB_Security_IAM_UserAuth_FUNC_0110 fail code: ${error.code} authType: ${authTypeParamError[idx0]}`);
+                        expect(error.code).assertEqual(userAuthNorth.UserAuthResultCode.TYPE_NOT_SUPPORT);
+                    }
+                };
+
+                try {
+                    console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 authType is empty`);
+                    await userAuthNorth.getAuthLockState();
+                } catch (error) {
+                    console.error(`SUB_Security_IAM_UserAuth_FUNC_0110 fail code: ${error.code} authType is empty`);
+                    expect(error.code).assertEqual(userAuthNorth.UserAuthResultCode.INVALID_PARAMETERS);
+                };
+
+                try {
+                    console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 authType is NULL`);
+                    await userAuthNorth.getAuthLockState(null);
+                } catch (error) {
+                    console.error(`SUB_Security_IAM_UserAuth_FUNC_0110 fail code: ${error.code} authType is NULL`);
+                    expect(error.code).assertEqual(userAuthNorth.UserAuthResultCode.INVALID_PARAMETERS);
+                };
+
+                for (let idx0 = 0; idx0 < authType.length; idx0++) {
+                    try {
+                        console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 authType: ${authType[idx0]}`);
+                        let AuthLockState = await userAuthNorth.getAuthLockState(authType[idx0]);
+                        console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 AuthLockState.isLocked : ${AuthLockState.isLocked}`);
+                        console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 AuthLockState.remainingAuthAttempts : ${AuthLockState.remainingAuthAttempts}`);
+                        console.info(`SUB_Security_IAM_UserAuth_FUNC_0110 AuthLockState.lockoutDuration : ${AuthLockState.lockoutDuration}`);
+                    } catch (error) {
+                        console.error(`SUB_Security_IAM_UserAuth_FUNC_0110 fail code: ${error.code} authType: ${authType[idx0]}`);
+                        expect(error.code).assertEqual(userAuthNorth.UserAuthResultCode.NOT_ENROLLED);
+                    }
+                };
+            }
+            done();
+        })
     })
 
 }
