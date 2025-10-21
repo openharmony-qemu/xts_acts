@@ -280,6 +280,7 @@ import TextInputTypeTest from "./TextInput/TextInputType.test";
 import RichEditorFromStyledStringTest from "./RichEditor/RichEditorFromStyledString.test";
 
 export default function testsuite() {
+  textAreaInputTest();
   TextCommonTextComputing1();
   TextCommonTextComputing2();
   TextCommonTextComputing3();
@@ -289,7 +290,6 @@ export default function testsuite() {
   TextCommonTextComputing7();
   TextCommonTextComputing8();
   TextCommonTextComputing9();
-  textAreaInputTest();
   APIContentTypeTest();
   APIUnderlineColorTest();
   TextInputAddApi();
