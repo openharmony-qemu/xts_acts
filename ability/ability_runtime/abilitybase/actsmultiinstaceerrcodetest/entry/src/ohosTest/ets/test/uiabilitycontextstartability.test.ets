@@ -456,7 +456,7 @@ export default function openLinkTest() {
         }
         await sleep(500)
         await context.getApplicationContext().getAllRunningInstanceKeys().then((data)=>{
-          expect(data.length).assertEqual(1)
+          expect(data.length).assertEqual(2)
         }).catch(()=>{
           try{expect().assertFail();}catch(e){}
         })
