@@ -41,7 +41,7 @@ let STORE_CONFIG :data_relationalStore.StoreConfig = {
   securityLevel: data_relationalStore.SecurityLevel.S1,
 }
 const CREATE_TABLE_TESTTRANS = "CREATE TABLE IF NOT EXISTS testTrans (" + "id INTEGER PRIMARY KEY, " +
-  "name TEXT NOT NULL, " + "age INTEGER, " + "salary REAL, " + "blobType BLOB)";
+  "name TEXT" + ")";
 
 const DROP_TABLE_TESTTRANS = "DROP TABLE IF EXISTS testTrans";
 
