@@ -885,7 +885,7 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_2500 start');
       try {
         let jobId : string = "testJobId";
-        print.notifyPrintServiceSpoolerClosedForCancelled(jobId).then(() => {
+        print.notifyPrintServiceSpoolerCloseForCancelled(jobId).then(() => {
           hilog.info(domain, tag, 'print_function_2500 success');
           done();
         }).catch((err: Object | null | undefined) => {
@@ -915,7 +915,7 @@ export default function printTest() {
       try {
         let printerId : string = 'testPrinterId';
         let jobId : string = "testJobId";
-        print.notifyPrintServiceSpoolerClosedForCancelled(jobId, (err: Object | null | undefined) => {
+        print.notifyPrintServiceSpoolerCloseForCancelled(jobId, (err: Object | null | undefined) => {
           if (err) {
             const error = err as BusinessError;
             hilog.error(domain, tag, 'print_function_2600 error, code: %{public}d, message: %{public}s',
@@ -1879,7 +1879,7 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_5400 start');
 
       try {
-        print.onJobStateChange(type, (state: print.PrintJobState, job: print.PrintJob) => {
+        print.onJobStateChange((state: print.PrintJobState, job: print.PrintJob) => {
           hilog.info(domain, tag, 'print_function_5400 success');
         });
       } catch (err) {
@@ -1903,7 +1903,7 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_5500 start');
 
       try {
-        print.onExtInfoChange(type, (extensionId: string, info: string) => {
+        print.onExtInfoChange((extensionId: string, info: string) => {
           hilog.info(domain, tag, 'print_function_5500 success');
         });
       } catch (err) {
@@ -1927,7 +1927,7 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_5600 start');
 
       try {
-        print.offPrinterStateChange(type, (state: boolean) => {
+        print.offPrinterStateChange((state: boolean) => {
           hilog.info(domain, tag, 'print_function_5600 success');
         });
       } catch (err) {
@@ -1951,7 +1951,7 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_5700 start');
 
       try {
-        print.offJobStateChange(type, (state: boolean) => {
+        print.offJobStateChange((state: boolean) => {
           hilog.info(domain, tag, 'print_function_5700 success');
         });
       } catch (err) {
@@ -1975,7 +1975,7 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_5800 start');
 
       try {
-        print.offExtInfoChange(type, (state: boolean) => {
+        print.offExtInfoChange((state: boolean) => {
           hilog.info(domain, tag, 'print_function_5800 success');
         });
       } catch (err) {
@@ -2320,12 +2320,11 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_6400 start');
 
       try {
-        let type: string = 'printerChange';
         let callback: print.PrinterChangeCallback = (event: print.PrinterEvent, printerInformation: print.PrinterInformation) => {
           hilog.info(domain, tag, 'print_function_6400 callback, event: %{public}d, printerId: %{public}s',
             event, printerInformation.printerId);
         };
-        print.on(type, callback);
+        print.onPrinterChange(callback);
         hilog.info(domain, tag, 'print_function_6400 success');
       } catch (err) {
         const error = err as BusinessError;
@@ -2348,12 +2347,11 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_6500 start');
 
       try {
-        let type: string = 'printerChange';
         let callback: print.PrinterChangeCallback = (event: print.PrinterEvent, printerInformation: print.PrinterInformation) => {
           hilog.info(domain, tag, 'print_function_6500 callback, event: %{public}d, printerId: %{public}s',
             event, printerInformation.printerId);
         };
-        print.off(type, callback);
+        print.offPrinterChange(callback);
         hilog.info(domain, tag, 'print_function_6500 success');
       } catch (err) {
         const error = err as BusinessError;
@@ -2725,12 +2723,11 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_7500 start');
 
       try {
-        let type: string = 'printerChange';
         let callback: print.PrinterChangeCallback = (event: print.PrinterEvent, printerInformation: print.PrinterInformation) => {
           hilog.info(domain, tag, 'print_function_7500 callback, event: %{public}d, printerId: %{public}s',
             event, printerInformation.printerId);
         };
-        print.on(type, callback);
+        print.onPrinterChange(callback);
         hilog.info(domain, tag, 'print_function_7500 success');
       } catch (err) {
         const error = err as BusinessError;
@@ -2753,12 +2750,11 @@ export default function printTest() {
       hilog.info(domain, tag, '%{public}s', 'print_function_7600 start');
 
       try {
-        let type: string = 'printerChange';
         let callback: print.PrinterChangeCallback = (event: print.PrinterEvent, printerInformation: print.PrinterInformation) => {
           hilog.info(domain, tag, 'print_function_7600 callback, event: %{public}d, printerId: %{public}s',
             event, printerInformation.printerId);
         };
-        print.off(type, callback);
+        print.offPrinterChange(callback);
         hilog.info(domain, tag, 'print_function_7600 success');
       } catch (err) {
         const error = err as BusinessError;
