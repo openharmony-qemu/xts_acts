@@ -17,10 +17,12 @@ import searchTest from './TextChangeObserverTest/search.test';
 import textAreaTest from './TextChangeObserverTest/textArea.test';
 import textInputTest from './TextChangeObserverTest/textInput.test';
 import richEditorTest from './TextChangeObserverTest/richEditor.test';
+import imageAltTest from './Image/imageAltTest.test';
 
 export default function testsuite() {
   searchTest();
   textAreaTest();
   textInputTest();
   richEditorTest();
+  imageAltTest();
 }
