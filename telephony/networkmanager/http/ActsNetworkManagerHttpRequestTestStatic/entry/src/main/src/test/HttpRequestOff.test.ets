@@ -660,7 +660,7 @@ export default function HttpRequestOffTest() {
               let count: number = 1;
               const callback: (data: http.DataReceiveProgressInfo) => void = (data: http.DataReceiveProgressInfo) => {
                 count = count + 1;
-                hilog.info(domain, tag, `${caseName} dataReceiveProgress:${JSON.stringify(data)}`);
+                hilog.info(domain, tag, `${caseName} dataReceiveProgress.receiveSize: ${data.receiveSize}, dataReceiveProgress.totalSize: ${data.totalSize}`);
               };
               httpRequest.offDataReceiveProgress(callback);
               httpRequest.requestInStream(XTS_TEST_STREAM_HTTPS_URL,
@@ -712,7 +712,7 @@ export default function HttpRequestOffTest() {
               let count: number = 1;
               const callback: (data: http.DataSendProgressInfo) => void = (data: http.DataSendProgressInfo) => {
                 count = count + 1;
-                hilog.info(domain, tag, `${caseName} dataSendProgress: ${JSON.stringify(data)}`);
+                hilog.info(domain, tag, `${caseName} dataSendProgress.sendSize: ${data.sendSize}, dataSendProgress.totalSize: ${data.totalSize}`);
               };
               httpRequest.offDataSendProgress(callback);
               httpRequest.request(XTS_TEST_HTTP_URL,
