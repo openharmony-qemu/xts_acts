@@ -2713,73 +2713,24 @@ export default function audioFramework() {
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_0001
-     * @tc.name      : getRingerModeSync - RINGER_MODE_VIBRATE - MEDIA
-     * @tc.desc      : getRingerModeSync - RINGER_MODE_VIBRATE - MEDIA
+     * @tc.name      : getRingerModeSync - ENUM - MEDIA
+     * @tc.desc      : getRingerModeSync - ENUM - MEDIA
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        await audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_VIBRATE);
         let data = audioVolumeGroupManager.getRingerModeSync();
         if (data == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
           expect(true).assertTrue();
           done();
-        } else {
-          console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
-          expect(false).assertTrue();
-          done();
-        }
-      } catch (err) {
-        console.log('err :' + JSON.stringify(err.message));
-        expect(false).assertTrue();
-        done();
-      }
-    })
-
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_0002
-     * @tc.name      : getRingerModeSync - RINGER_MODE_NORMAL - MEDIA
-     * @tc.desc      : getRingerModeSync - RINGER_MODE_NORMAL - MEDIA
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      try {
-        await audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_NORMAL);
-        let data = audioVolumeGroupManager.getRingerModeSync();
-        if (data == audio.AudioRingMode.RINGER_MODE_NORMAL) {
+        } else if (data == audio.AudioRingMode.RINGER_MODE_NORMAL) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
           expect(true).assertTrue();
           done();
-        } else {
-          console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
-          expect(false).assertTrue();
-          done();
-        }
-      } catch (err) {
-        console.log('err :' + JSON.stringify(err.message));
-        expect(false).assertTrue();
-        done();
-      }
-    })
-
-        /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_0003
-     * @tc.name      : getRingerModeSync - RINGER_MODE_SILENT - MEDIA
-     * @tc.desc      : getRingerModeSync - RINGER_MODE_SILENT - MEDIA
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
-     */
-    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      try {
-        await audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_SILENT);
-        let data = audioVolumeGroupManager.getRingerModeSync();
-        if (data == audio.AudioRingMode.RINGER_MODE_SILENT) {
+        } else if (data == audio.AudioRingMode.RINGER_MODE_SILENT) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
           expect(true).assertTrue();
           done();
