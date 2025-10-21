@@ -29,9 +29,6 @@ export const PreviewOutputReleaseInvalidParm: () => number;
 export const PreviewOutputGetPreviewRotationInvalidParm: () => number;
 export const PreviewOutputSetPreviewRotationInvalidParm: () => number;
 
-export const PhotoOutputIsSupported: (index: number, args: string) => number;
-export const PhotoOutputQuality: (index: number, args: string) => number;
-
 export const MetadataOutputRegisterCallback: (index: number) => number;
 export const MetadataOutputUnregisterCallback: (index: number) => number;
 export const MetadataOutputStart: (index: number) => number;

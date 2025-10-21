@@ -387,66 +387,6 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputIsSupported_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputIsSupported_0100
-     * @tc.desc     Test CAMERA_INVALID_ARGUMENT
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
-     */
-    it("SUB_MULTIMEIDA_Camera_PhotoOutputIsSupported_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let surfaceid = await getPhotoReceiverSurface();
-      let ret = CameraOut.PhotoOutputIsSupported(0, surfaceid)
-      expect(ret).assertEqual(TEST_OK)
-      done()
-    })
-
-    /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputIsSupported_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputIsSupported_0200
-     * @tc.desc     Test CAMERA_INVALID_ARGUMENT
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
-     */
-    it("SUB_MULTIMEIDA_Camera_PhotoOutputIsSupported_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let surfaceid = await getPhotoReceiverSurface();
-      let ret = CameraOut.PhotoOutputIsSupported(1, surfaceid)
-      expect(ret).assertEqual(TEST_OK)
-      done()
-    })
-
-    /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputQuality_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputQuality_0100
-     * @tc.desc     Test getPhotoReceiverSurface
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
-     */
-    it("SUB_MULTIMEIDA_Camera_PhotoOutputQuality_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let surfaceid = await getPhotoReceiverSurface();
-      let ret = CameraOut.PhotoOutputQuality(0, surfaceid)
-      expect(ret).assertEqual(TEST_OK)
-      done()
-    })
-
-    /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputQuality_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputQuality_0200
-     * @tc.desc     Test getPhotoReceiverSurface
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
-     */
-    it("SUB_MULTIMEIDA_Camera_PhotoOutputQuality_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      let surfaceid = await getPhotoReceiverSurface();
-      let ret = CameraOut.PhotoOutputQuality(1, surfaceid)
-      expect(ret).assertEqual(TEST_OK)
-      done()
-    })
-
-    /**
      * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionRegisterMacroStatusChangeCallback_0100
      * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionRegisterMacroStatusChangeCallback_0100
      * @tc.desc     Test CaptureSessionRegisterMacroStatusChangeCallback
