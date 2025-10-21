@@ -22,7 +22,7 @@ import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import OpenLinkOptions from '@ohos.app.ability.OpenLinkOptions';
 import { common, StartOptions, Want } from '@kit.AbilityKit';
 import { rpc } from '@kit.IPCKit';
-import { bundleManager } from '@kit.MDMKit';
+import bundleManager from '@ohos.bundle.bundleManager';
 import CompletionHandler from '@ohos.app.ability.CompletionHandler';
 import hilog from '@ohos.hilog';
 

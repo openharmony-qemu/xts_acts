@@ -78,15 +78,15 @@ export default function addContextAndAbilityJsunit() {
           Utils.getDurationTime(TAG_TEST_0100, startTime, endTime);
           console.info(TAG_TEST_0100 + ' promise data is:' + JSON.stringify(data));
           detailed = data;
+          if(data == true){
+            expect(data).assertTrue();
+          }else{
+            expect(data).assertFalse();
+          }
         }).catch((error: BusinessError) => {
           console.error(TAG_TEST_0100 + 'promise errors is: ' + JSON.stringify(error));
         })
       expect(typeof (detailed)).assertEqual("boolean");
-      if(detailed == true){
-        expect(detailed).assertTrue();
-      }else{
-        expect(detailed).assertFalse();
-      }
       done();
       console.log('------------------ ' + TAG_TEST_0100 + ' end -------------------');
     })
@@ -107,6 +107,11 @@ export default function addContextAndAbilityJsunit() {
           let endTime = Utils.getNowTime();
           Utils.getDurationTime(TAG_TEST_0200, startTime, endTime);
           detailed = data;
+          if(data == true){
+            expect(data).assertTrue();
+          }else{
+            expect(data).assertFalse();
+          }
           console.info(TAG_TEST_0200 + ' callBack succeeded. data is:' + JSON.stringify(data));
         })
       } catch (error) {
@@ -114,11 +119,6 @@ export default function addContextAndAbilityJsunit() {
       }
       await Utils.sleep(2000);
       expect(typeof (detailed)).assertEqual("boolean");
-      if(detailed == true){
-        expect(detailed).assertTrue();
-      }else{
-        expect(detailed).assertFalse();
-      }
       done();
       console.log('------------------ ' + TAG_TEST_0200 + ' end -------------------');
     })
@@ -241,16 +241,16 @@ export default function addContextAndAbilityJsunit() {
         Utils.getDurationTime(TAG_TEST_0700, startTime, endTime)
         console.info(TAG_TEST_0700 + ' promise data is:' + JSON.stringify(data));
         detailed = data;
+        if(data == true){
+          expect(data).assertTrue();
+        }else{
+          expect(data).assertFalse();
+        }
       }).catch((error: BusinessError) => {
         console.error(TAG_TEST_0700 + 'promise errors is: ' + JSON.stringify(error));
       })
       await Utils.sleep(1000);
       expect(typeof (detailed)).assertEqual("boolean");
-      if(detailed == true){
-        expect(detailed).assertTrue();
-      }else{
-        expect(detailed).assertFalse();
-      }
       done();
       console.log('------------------ ' + TAG_TEST_0700 + ' end -------------------');
     })
