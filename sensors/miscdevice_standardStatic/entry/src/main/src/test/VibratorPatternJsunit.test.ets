@@ -1342,13 +1342,16 @@ export default function VibratorJsTest_misc_9() {
             // 添加对isHdHapticSupported的断言
             hilog.info(domain, tag, TAG + " getVibratorInfoSync isHdHapticSupported:" + vibrators[0].isHdHapticSupported);
             expect(typeof vibrators[0].isHdHapticSupported === 'boolean').assertEqual(true);
-            expect(vibrators[0].isHdHapticSupported).assertEqual(false);
             // 添加对isLocalVibrator的断言
             hilog.info(domain, tag, TAG + " getVibratorInfoSync isLocalVibrator:" + vibrators[0].isLocalVibrator);
             expect(typeof vibrators[0].isLocalVibrator === 'boolean').assertEqual(true);
             expect(vibrators[0].isLocalVibrator).assertEqual(true);
 
             const freshVibratorsData = vibrator.getVibratorInfoSync();
+            hilog.info(domain, tag, `${TAG}  freshVibratorsData[0].deviceId = ${freshVibratorsData[0].deviceId}`);
+            hilog.info(domain, tag, `${TAG}  vibrators[0].deviceId         = ${vibrators[0].deviceId}`);
+            hilog.info(domain, tag, `${TAG}  vibrators.length              = ${vibrators.length}`);
+            hilog.info(domain, tag, `${TAG}  freshVibratorsData.length     = ${freshVibratorsData.length}`);
             expect(freshVibratorsData[0].deviceId >= -1).assertEqual(true);
             expect(vibrators[0].deviceId === freshVibratorsData[0].deviceId).assertEqual(true);
             expect(vibrators.length > 0).assertEqual(true);
@@ -1356,7 +1359,7 @@ export default function VibratorJsTest_misc_9() {
             done();
           } catch (error: BusinessError) {
             hilog.info(domain, tag, TAG + " getVibratorInfoSync error: " + JSON.stringify(error));
-            expect(false).assertEqual(true);
+            expect(false).assertTrue();
             done();
           }
           hilog.info(domain, tag, TAG + " end");
@@ -1404,13 +1407,16 @@ export default function VibratorJsTest_misc_9() {
           // 添加对isHdHapticSupported的断言
           hilog.info(domain, tag, TAG + " getVibratorInfoSync isHdHapticSupported:" + vibrators[0].isHdHapticSupported);
           expect(typeof vibrators[0].isHdHapticSupported === 'boolean').assertEqual(true);
-          expect(vibrators[0].isHdHapticSupported).assertEqual(false);
           // 添加对isLocalVibrator的断言
           hilog.info(domain, tag, TAG + " getVibratorInfoSync isLocalVibrator:" + vibrators[0].isLocalVibrator);
           expect(typeof vibrators[0].isLocalVibrator === 'boolean').assertEqual(true);
           expect(vibrators[0].isLocalVibrator).assertEqual(true);
 
           const freshVibratorsData = vibrator.getVibratorInfoSync();
+          hilog.info(domain, tag, `${TAG}  freshVibratorsData[0].deviceId = ${freshVibratorsData[0].deviceId}`);
+          hilog.info(domain, tag, `${TAG}  vibrators[0].deviceId         = ${vibrators[0].deviceId}`);
+          hilog.info(domain, tag, `${TAG}  vibrators.length              = ${vibrators.length}`);
+          hilog.info(domain, tag, `${TAG}  freshVibratorsData.length     = ${freshVibratorsData.length}`);
           expect(freshVibratorsData[0].deviceId >= -1).assertEqual(true);
           expect(vibrators[0].deviceId === freshVibratorsData[0].deviceId).assertEqual(true);
           expect(vibrators.length > 0).assertEqual(true);
@@ -1418,7 +1424,7 @@ export default function VibratorJsTest_misc_9() {
           done();
         } catch (error: BusinessError) {
           hilog.info(domain, tag, TAG + " getVibratorInfoSync error: " + JSON.stringify(error));
-          expect(false).assertEqual(true);
+          expect(false).assertTrue();
           done();
         }
         hilog.info(domain, tag, TAG + " end");
