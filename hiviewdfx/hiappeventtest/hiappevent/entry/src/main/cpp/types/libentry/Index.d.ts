@@ -104,14 +104,6 @@ export const HiDebugSetMallocDispatchTableInvalid: () => number;
 
 export const HiDebugSymbolicAddressInvalid: () => number;
 
-export const HiDebugGetGraphicsMemorySummarySuccess: () => number;
-
-export const HiDebugGetGraphicsMemorySummaryInvalid: () => number;
-
-export const HiDebugSuccessCode: () => number;
-
-export const HiDebugInvalidArgumentCode: () => number;
-
 export const HiDebugTraceCapturedAlreadyCode: () => number;
 
 export const HiDebugNoTraceRunningCode: () => number;

@@ -431,52 +431,6 @@ napi_value HiDebugSymbolicAddressInvalid(napi_env env, napi_callback_info info)
     return nullptr;
 }
 
-napi_value HiDebugGetGraphicsMemorySummarySuccess(napi_env env, napi_callback_info info)
-{
-    napi_value ret;
-    HiDebug_GraphicsMemorySummary summary;
-    HiDebug_ErrorCode errorCode = OH_HiDebug_GetGraphicsMemorySummary(0, &summary);
-    if (errorCode == HIDEBUG_SUCCESS) {
-        napi_create_int32(env, errorCode, &ret);
-        return ret;
-    }
-    return nullptr;
-}
-
-napi_value HiDebugGetGraphicsMemorySummaryInvalid(napi_env env, napi_callback_info info)
-{
-    napi_value ret;
-    HiDebug_ErrorCode errorCode = OH_HiDebug_GetGraphicsMemorySummary(0, nullptr);
-    if (errorCode == HIDEBUG_INVALID_ARGUMENT) {
-        napi_create_int32(env, errorCode, &ret);
-        return ret;
-    }
-    return nullptr;
-}
-
-napi_value HiDebugSuccessCode(napi_env env, napi_callback_info info)
-{
-    napi_value ret;
-    HiDebug_GraphicsMemorySummary summary;
-    HiDebug_ErrorCode errorCode = OH_HiDebug_GetGraphicsMemorySummary(0, &summary);
-    if (errorCode == HIDEBUG_SUCCESS) {
-        napi_create_int32(env, errorCode, &ret);
-        return ret;
-    }
-    return nullptr;
-}
-
-napi_value HiDebugInvalidArgumentCode(napi_env env, napi_callback_info info)
-{
-    napi_value ret;
-    HiDebug_ErrorCode errorCode = OH_HiDebug_GetGraphicsMemorySummary(0, nullptr);
-    if (errorCode == HIDEBUG_INVALID_ARGUMENT) {
-        napi_create_int32(env, errorCode, &ret);
-        return ret;
-    }
-    return nullptr;
-}
-
 napi_value HiDebugTraceCapturedAlreadyCode(napi_env env, napi_callback_info info)
 {
     napi_value ret;

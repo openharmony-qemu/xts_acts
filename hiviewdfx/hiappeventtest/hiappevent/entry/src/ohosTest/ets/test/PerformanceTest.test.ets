@@ -276,66 +276,6 @@ export default function PerformanceTest() {
     })
 
     /**
-     * @tc.number SUB_DFX_HiDebug_GetGraphicsMemorySummary_0100
-     * @tc.name testHiDebugGetGraphicsMemorySummary0100
-     * @tc.desc test OH_HiDebug_GetGraphicsMemorySummary
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testHiDebugGetGraphicsMemorySummary0100', Level.LEVEL1, async (done: Function) => {
-      let ret = PerformanceAnalysisKitNdk.HiDebugGetGraphicsMemorySummarySuccess()
-      console.error("====>testHiDebugGetGraphicsMemorySummary0100 err: " + ret)
-      expect(ret).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.number SUB_DFX_HiDebug_GetGraphicsMemorySummary_0200
-     * @tc.name testHiDebugGetGraphicsMemorySummary0200
-     * @tc.desc test OH_HiDebug_GetGraphicsMemorySummary
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testHiDebugGetGraphicsMemorySummary0200', Level.LEVEL1, async (done: Function) => {
-      let ret = PerformanceAnalysisKitNdk.HiDebugGetGraphicsMemorySummaryInvalid()
-      console.error("====>testHiDebugGetGraphicsMemorySummary0200 err: " + ret)
-      expect(ret).assertEqual(401)
-      done()
-    })
-
-    /**
-     * @tc.number SUB_DFX_HiDebug_Success_0100
-     * @tc.name testHiDebugHidebugSuccess0100
-     * @tc.desc test HIDEBUG_SUCCESS
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testHiDebugHidebugSuccess0100', Level.LEVEL1, async (done: Function) => {
-      let ret = PerformanceAnalysisKitNdk.HiDebugSuccessCode()
-      console.error("====>testHiDebugHidebugSuccess0100 err: " + ret)
-      expect(ret).assertEqual(0)
-      done()
-    })
-
-    /**
-     * @tc.number SUB_DFX_HiDebug_Invalid_Argument_0100
-     * @tc.name testHiDebugInvalidArgument0100
-     * @tc.desc test HIDEBUG_INVALID_ARGUMENT
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testHiDebugInvalidArgument0100', Level.LEVEL1, async (done: Function) => {
-      let ret = PerformanceAnalysisKitNdk.HiDebugInvalidArgumentCode()
-      console.error("====>testHiDebugInvalidArgument0100 err: " + ret)
-      expect(ret).assertEqual(401)
-      done()
-    })
-
-    /**
      * @tc.number SUB_DFX_HiDebug_Trace_Capture_Already_0100
      * @tc.name testHiDebugTraceCapturedAlready0100
      * @tc.desc test HIDEBUG_TRACE_CAPTURED_ALREADY

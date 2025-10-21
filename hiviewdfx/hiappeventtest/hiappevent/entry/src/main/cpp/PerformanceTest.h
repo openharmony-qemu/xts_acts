@@ -35,10 +35,6 @@ napi_value HiDebugGetGraphicsMemoryInvalid(napi_env env, napi_callback_info info
 napi_value HiDebugSetMallocDispatchTableSuccess(napi_env env, napi_callback_info info);
 napi_value HiDebugSetMallocDispatchTableInvalid(napi_env env, napi_callback_info info);
 napi_value HiDebugSymbolicAddressInvalid(napi_env env, napi_callback_info info);
-napi_value HiDebugGetGraphicsMemorySummarySuccess(napi_env env, napi_callback_info info);
-napi_value HiDebugGetGraphicsMemorySummaryInvalid(napi_env env, napi_callback_info info);
-napi_value HiDebugSuccessCode(napi_env env, napi_callback_info info);
-napi_value HiDebugInvalidArgumentCode(napi_env env, napi_callback_info info);
 napi_value HiDebugTraceCapturedAlreadyCode(napi_env env, napi_callback_info info);
 napi_value HiDebugNoTraceRunningCode(napi_env env, napi_callback_info info);
 napi_value HiDebugTraceFlagAllThreadsCode(napi_env env, napi_callback_info info);
