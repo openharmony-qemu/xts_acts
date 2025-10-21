@@ -52,15 +52,15 @@ export default function textBlobTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0100
-     * @tc.name      : testTextBlobMakeFromStringNormal
-     * @tc.desc      : Test for testTextBlobMakeFromStringNormal.
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_STATIC_0100
+     * @tc.name      : testTextBlobMakeFromStringNormalStatic
+     * @tc.desc      : Test for testTextBlobMakeFromStringNormalStatic.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('testTextBlobMakeFromStringNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const msg = 'testTextBlobMakeFromStringNormal';
+    it('testTextBlobMakeFromStringNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const msg = 'testTextBlobMakeFromStringNormalStatic';
 
       let font = new drawing.Font();
 
@@ -104,15 +104,15 @@ export default function textBlobTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0103
-     * @tc.name      : testTextBlobMakeFromStringMultipleCalls
-     * @tc.desc      : Test for testTextBlobMakeFromStringMultipleCalls.
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_STATIC_0103
+     * @tc.name      : testTextBlobMakeFromStringMultipleCallsStatic
+     * @tc.desc      : Test for testTextBlobMakeFromStringMultipleCallsStatic.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testTextBlobMakeFromStringMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-      const msg = 'testTextBlobMakeFromStringMultipleCalls';
+    it('testTextBlobMakeFromStringMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testTextBlobMakeFromStringMultipleCallsStatic';
       let font = new drawing.Font();
       let itemList: drawing.TextEncoding[] =
         [
@@ -138,15 +138,15 @@ export default function textBlobTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0200
-     * @tc.name      : testTextBlobMakeFromRunBufferBoundsNormal
-     * @tc.desc      : Test for testTextBlobMakeFromRunBufferBoundsNormal.
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_STATIC_0200
+     * @tc.name      : testTextBlobMakeFromRunBufferBoundsNormalStatic
+     * @tc.desc      : Test for testTextBlobMakeFromRunBufferBoundsNormalStatic.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('testTextBlobMakeFromRunBufferBoundsNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const msg = 'testTextBlobMakeFromRunBufferBoundsNormal';
+    it('testTextBlobMakeFromRunBufferBoundsNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const msg = 'testTextBlobMakeFromRunBufferBoundsNormalStatic';
       let font = new drawing.Font(); // Create a new Font object
 
       // Make a TextBlob from a run buffer using the Font object and various bounds
@@ -256,15 +256,15 @@ export default function textBlobTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_0203
-     * @tc.name      : testTextBlobMakeFromRunBufferBoundsMultipleCalls
-     * @tc.desc      : Test for testTextBlobMakeFromRunBufferBoundsMultipleCalls.
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TEXTBLOB_STATIC_0203
+     * @tc.name      : testTextBlobMakeFromRunBufferBoundsMultipleCallsStatic
+     * @tc.desc      : Test for testTextBlobMakeFromRunBufferBoundsMultipleCallsStatic.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testTextBlobMakeFromRunBufferBoundsMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-      const msg = 'testTextBlobMakeFromRunBufferBoundsMultipleCalls';
+    it('testTextBlobMakeFromRunBufferBoundsMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testTextBlobMakeFromRunBufferBoundsMultipleCallsStatic';
       let font = new drawing.Font(); // Create a new Font object
 
       for (let i = 0; i < 20; i++) {

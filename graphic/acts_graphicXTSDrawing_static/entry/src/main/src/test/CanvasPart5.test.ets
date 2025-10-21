@@ -777,7 +777,7 @@ export default function drawingTsCanvasPart5Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_4500
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_4505
      * @tc.name      : testCanvasDrawShadowNormalStatic
      * @tc.desc      : testCanvasDrawShadowNormalStatic
      * @tc.size      : SmallTest
