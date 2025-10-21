@@ -130,6 +130,23 @@ struct webResourceResponseGet {
               }
               break;
             }
+
+            case "testscrollByWithResult002": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl($rawfile('theScrolltwo.html'))
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                let result = this.controller.scrollByWithResult(200, 200);
+                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+                console.log("original result: " + result);
+                Utils.emitEvent(result, 20251026);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent("error", 20251026);
+              }
+              break;
+            }
+
           }
         })
       }
