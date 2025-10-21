@@ -21,27 +21,21 @@ import common from '@ohos.app.ability.common';
 @Entry
 @Component
 struct Index4 {
-  @State errCode: string = ''
-  @State message: string = ''
+  @State errCode: string = 'errCode'
+  @State message: string = 'message'
   build() {
     Row() {
       Column() {
         Text(this.errCode)
           .id('errCode')
-          .fontSize(50)
           .fontWeight(FontWeight.Bold)
         Text(this.message)
           .id('errMessage')
-          .fontSize(50)
           .fontWeight(FontWeight.Bold)
         Button() {
           Text('next page')
-            .fontSize(20)
             .fontWeight(FontWeight.Bold)
         }.type(ButtonType.Capsule)
-        .margin({
-          top: 20
-        })
         .id('SubWinTestId')
         .backgroundColor('#0D9FFB')
         .width('35%')

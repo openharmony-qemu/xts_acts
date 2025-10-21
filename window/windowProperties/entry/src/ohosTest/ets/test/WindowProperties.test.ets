@@ -7381,36 +7381,44 @@ export default function windowPropertiesTest() {
         let ops: image.SourceOptions = {
           sourceDensity: 98,
         }
-        let imageSource: image.ImageSource = image.createImageSource(rawFile.buffer as ArrayBuffer, ops);
+        try{
+          let imageSource: image.ImageSource = image.createImageSource(rawFile.buffer as ArrayBuffer, ops);
 
-        imageSource.createPixelMap().then((pixelMap: image.PixelMap) => {
-          console.info(caseName + " Succeeded in creating pixelmap.");
-          try {
-            let promise = window.setWatermarkImageForAppWindows(pixelMap);
-            promise.then(async () => {
-              console.info(caseName + " Succeeded in setting watermark image.");
-              await window.setWatermarkImageForAppWindows(undefined);
-              expect().assertTrue();
-              done();
-            }).catch((err: BusinessError) => {
-              console.error(`${caseName} Failed to set watermark image. Cause code: ${err.code}, message: ${err.message}`);
-              if (err.code == 801) {
-                done()
-              } else {
-                expect().assertFail();
+          imageSource.createPixelMap().then((pixelMap: image.PixelMap) => {
+            console.info(caseName + " Succeeded in creating pixelmap.");
+            try {
+              let promise = window.setWatermarkImageForAppWindows(pixelMap);
+              promise.then(async () => {
+                console.info(caseName + " Succeeded in setting watermark image.");
+                await window.setWatermarkImageForAppWindows(undefined);
+                console.info(caseName + " Succeeded in setWatermarkImageForAppWindows undefined.");
+                expect(true).assertTrue();
                 done();
-              }
-            });
-          } catch (exception) {
-            console.error(`${caseName} Failed to set watermark image. Exception code: ${exception.code}, message: ${exception.message}`);
+              }).catch((err: BusinessError) => {
+                console.error(`${caseName} Failed to set watermark image. Cause code: ${err.code}, message: ${err.message}`);
+                if (err.code == 801) {
+                  done()
+                } else {
+                  expect().assertFail();
+                  done();
+                }
+              });
+            } catch (exception) {
+              console.error(`${caseName} Failed to set watermark image. Exception code: ${exception.code}, message: ${exception.message}`);
+              expect().assertFail();
+              done();
+            }
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} Failed to create PixelMap. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
             done();
-          }
-        }).catch((err: BusinessError) => {
-          console.error(`${caseName} Failed to create PixelMap. Cause code: ${err.code}, message: ${err.message}`);
+          });
+        }catch (err) {
+          console.error(`${caseName} Failed . Cause code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
-        });
+        }
+
       })
 
       /**
@@ -7429,17 +7437,21 @@ export default function windowPropertiesTest() {
         try {
           let windowLimits = subWindowClass.getWindowLimits();
           console.log(caseName + ' windowLimits:' + JSON.stringify(windowLimits));
-          await subWindowClass.resize(windowLimits.minWidth as number, windowLimits.minHeight as number)
+          await subWindowClass.resize(windowLimits.minWidth as number+200, windowLimits.minHeight as number+200)
+          subWindowClass.moveWindowToAsync(100,150);
           await sleep(200);
           await subWindowClass.setUIContent('testability/pages/First/index4');
           await subWindowClass.showWindow();
+          await sleep(1000);
           let btn = await driver.findComponent(ON.id('SubWinTestId'));
           await sleep(1000);
           await btn.click();
           await sleep(1000);
           let errCode = await driver.findComponent(ON.id('errCode'));
+          console.log(caseName + ' errCode:' + JSON.stringify(errCode));
           await sleep(1000);
           let errMessage = await driver.findComponent(ON.id('errMessage'));
+          console.log(caseName + ' errMessage:' + JSON.stringify(errMessage));
           await sleep(1000);
           let errCodeText = await errCode.getText();
           let errMessageText = await errMessage.getText();
@@ -7563,7 +7575,7 @@ export default function windowPropertiesTest() {
               console.info(caseName + " Succeeded in setting watermark image.");
               await subWindowClass?.showWindow();
               await subWindowClass?.destroyWindow()
-              expect().assertTrue();
+              expect(true).assertTrue();
               done();
             }).catch(async (err: BusinessError) => {
               console.error(`${caseName} Failed to set watermark image. Cause code: ${err.code}, message: ${err.message}`);

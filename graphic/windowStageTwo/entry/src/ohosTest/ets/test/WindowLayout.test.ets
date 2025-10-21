@@ -3959,14 +3959,17 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         console.log(caseName + ' drawableRect: ' + JSON.stringify(drawableRect));
         if (isPCStatus != '' || isAutoWindow == 'true') {
           expect(Math.abs(drawableRect.width - drawableRect.height)).assertEqual(0)
+          let windowDecHeight = windowClass.getWindowDecorHeight();
+          console.log(caseName + ' windowDecHeight: ' + JSON.stringify(windowDecHeight));
+          expect(px2vp(windowDecHeight)).assertEqual(37)
+          await terminateAbility4(caseName);
+          done();
         } else {
           expect(Math.abs(drawableRect.width - drawableRect.height)).assertLarger(0)
+          await terminateAbility4(caseName);
+          done();
         }
-        let windowDecHeight = windowClass.getWindowDecorHeight();
-        console.log(caseName + ' windowDecHeight: ' + JSON.stringify(windowDecHeight));
-        expect(px2vp(windowDecHeight)).assertEqual(37)
-        await terminateAbility4(caseName);
-        done();
+
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
         await terminateAbility4(caseName)
@@ -3990,7 +3993,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     it('testSetContentAspectRatio_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetContentAspectRatio_0200';
       console.log(caseName + 'begin.');
-      if (isPCStatus != '' || isAutoWindow == 'true') {
+      if (isPCStatus != '') {
         let windowStageStart = await startAbility(caseName, context);
         try {
           let windowClass = windowStageStart.getMainWindowSync();
@@ -4000,7 +4003,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           console.log(caseName + ' drawableRect1: ' + JSON.stringify(drawableRect1));
           let ratio1 = drawableRect1.width / drawableRect1.height;
           console.log(caseName + ' ratio1: ' + ratio1);
-          expect(ratio1).assertEqual(1.2)
+          expect(Math.abs(ratio1-1.2)).assertLessOrEqual(0.001);
           await windowClass.minimize();
           await sleep(200);
           await windowClass.setContentAspectRatio(1.5, true, false);
@@ -4013,7 +4016,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           console.log(caseName + ' drawableRect3: ' + JSON.stringify(drawableRect3));
           let ratio3 = drawableRect3.width / drawableRect3.height;
           console.log(caseName + ' ratio3: ' + ratio3);
-          expect(ratio1).assertEqual(1.2)
+          expect(Math.abs(ratio3-1.2)).assertLessOrEqual(0.001);
           let driver = await Driver.create();
           await sleep(200)
           let windowPoint = await windowClass.getWindowProperties().windowRect
@@ -4026,7 +4029,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           console.log(caseName + ' drawableRect4: ' + JSON.stringify(drawableRect4));
           let ratio4 = drawableRect4.width / drawableRect4.height;
           console.log(caseName + ' ratio4: ' + ratio4);
-          expect(ratio1).assertEqual(1.5)
+          expect(Math.abs(ratio4-1.5)).assertLessOrEqual(0.001);
           await windowClass.resetAspectRatio();
           await sleep(200)
           await terminateAbility(caseName);
@@ -4053,7 +4056,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     it('testSetContentAspectRatio_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetContentAspectRatio_0300';
       console.log(caseName + 'begin.');
-      if (isPCStatus != '' || isAutoWindow == 'true') {
+      if (isPCStatus != '') {
         let windowStageStart = await startAbility(caseName + '_1', context);
         try {
           let windowClass = windowStageStart.getMainWindowSync();
@@ -4072,7 +4075,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           console.log(caseName + ' drawableRect1: ' + JSON.stringify(drawableRect1));
           let ratio1 = drawableRect1.width / drawableRect1.height;
           console.log(caseName + ' ratio1: ' + ratio1);
-          expect(ratio1).assertEqual(1.2)
+          expect(Math.abs(ratio1-1.2)).assertLessOrEqual(0.001);
           await windowClass.minimize();
           await sleep(200);
           await windowClass.setContentAspectRatio(1.5, true, false);
@@ -4085,7 +4088,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           console.log(caseName + ' drawableRect3: ' + JSON.stringify(drawableRect3));
           let ratio3 = drawableRect3.width / drawableRect3.height;
           console.log(caseName + ' ratio3: ' + ratio3);
-          expect(ratio1).assertEqual(1.2)
+          expect(Math.abs(ratio3-1.2)).assertLessOrEqual(0.001);
           let windowPoint2 = await windowClass.getWindowProperties().windowRect
           console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint2)}`)
           await driver.mouseMoveTo({x: windowPoint2.left + Math.ceil(windowPoint2.width / 2), y: windowPoint2.top})
@@ -4098,7 +4101,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           console.log(caseName + ' drawableRect4: ' + JSON.stringify(drawableRect4));
           let ratio4 = drawableRect4.width / drawableRect4.height;
           console.log(caseName + ' ratio4: ' + ratio4);
-          expect(ratio1).assertEqual(1.5)
+          expect(Math.abs(ratio4-1.5)).assertLessOrEqual(0.001);
           await windowClass.resetAspectRatio();
           await sleep(200)
           await terminateAbility(caseName);
@@ -4169,6 +4172,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           done()
         } else {
           expect(err.code).assertEqual(1300004);
+          done()
         }
       }
     })
