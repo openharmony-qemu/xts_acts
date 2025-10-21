@@ -1101,7 +1101,7 @@ napi_value StartNativeChildProcessWithConfigsServiceError(napi_env env, napi_cal
     NativeChildProcess_Args args;
     args.entryParams = (char *)malloc(sizeof(char) * size);
     for(int i = 0; i < size; i++){
-        args.entryParams[i] = a;
+        args.entryParams[i] = 'a';
     }
     args.fdList.head = NULL;
     Ability_ChildProcessConfigs* configs = OH_Ability_CreateChildProcessConfigs();
@@ -1633,7 +1633,7 @@ napi_value NcpErrorServiceErrorCode(napi_env env, napi_callback_info info)
     NativeChildProcess_Args args;
     args.entryParams = (char *)malloc(sizeof(char) * size);
     for(int i = 0; i < size; i++){
-        args.entryParams[i] = a;
+        args.entryParams[i] = 'a';
     }
     args.fdList.head = NULL;
     Ability_ChildProcessConfigs* configs = OH_Ability_CreateChildProcessConfigs();
