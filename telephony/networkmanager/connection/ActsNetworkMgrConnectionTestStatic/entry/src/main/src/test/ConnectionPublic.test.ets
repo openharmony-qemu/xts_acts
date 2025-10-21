@@ -1,3 +1,17 @@
+/*
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import { BusinessError } from '@ohos.base';
@@ -600,8 +614,8 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionGetDefaultNetCallback_static_0100";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-         connection.getDefaultNet((err: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
-           hilog.info(domain, tag, '%{public}s', caseName +' data -> '+JSON.stringify(data)+' err -> '+JSON.stringify(err));
+        connection.getDefaultNet((err: BusinessError<void>|null, data: connection.NetHandle| undefined) => {
+          hilog.info(domain, tag, '%{public}s', caseName +' data -> '+JSON.stringify(data)+' err -> '+JSON.stringify(err));
           if (err?.code == 0) {
             ExpectTrue(true);
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -890,7 +904,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_0100";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           connection.getConnectionProperties(netHandle, (error: BusinessError<void>|null, data: connection.ConnectionProperties| undefined) => {
             if (error?.code == 0) {
               hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties data ->'+JSON.stringify(data));
@@ -905,10 +919,10 @@ export default function ConnectionPublicTest() {
             }
           });
         }).catch((error: Error) => {
-           let err = error as BusinessError;
-           hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-           ExpectFail();
-           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          let err = error as BusinessError;
+          hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
       } catch(err:BusinessError){
@@ -1015,7 +1029,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_0800";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 23;
           connection.getConnectionProperties(netHandle, (error: BusinessError<void>|null, data: connection.ConnectionProperties| undefined) => {
             if (error?.code != 0) {
@@ -1057,7 +1071,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_1700";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 9999999;
           connection.getConnectionProperties(netHandle, (error: BusinessError<void>|null, data: connection.ConnectionProperties| undefined) => {
             if (error?.code != 0) {
@@ -1099,7 +1113,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_0900";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           connection.getConnectionProperties(netHandle).then((data: connection.ConnectionProperties) => {
             let netConnectionProInfo: connection.NetConnectionPropertyInfo = {
               netHandle: netHandle,
@@ -1142,7 +1156,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_1400";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 200;
           connection.getConnectionProperties(netHandle).then((data: connection.ConnectionProperties) => {
             hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties data ->'+JSON.stringify(data));
@@ -1183,7 +1197,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_1500";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 0;
           connection.getConnectionProperties(netHandle).then((data: connection.ConnectionProperties) => {
             hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties data ->'+JSON.stringify(data));
@@ -1224,7 +1238,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_1600";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 23;
           connection.getConnectionProperties(netHandle).then((data: connection.ConnectionProperties) => {
             hilog.info(domain, tag, '%{public}s', caseName +':  getConnectionProperties data ->'+JSON.stringify(data));
@@ -1265,7 +1279,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_1800";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 999999;
           connection.getConnectionProperties(netHandle).then((data: connection.ConnectionProperties) => {
             hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties data ->'+JSON.stringify(data));
@@ -1439,7 +1453,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_0100";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           connection.getNetCapabilities(netHandle, (error: BusinessError<void>|null, data: connection.NetCapabilities| undefined) => {
             if (error?.code == 0) {
               hilog.info(domain, tag, '%{public}s', caseName +': getNetCapabilities data ->'+JSON.stringify(data));
@@ -1522,7 +1536,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_0700";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 0;
           connection.getNetCapabilities(netHandle, (error: BusinessError<void>|null, data: connection.NetCapabilities| undefined) => {
             if (error?.code != 0) {
@@ -1564,7 +1578,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_0800";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 23;
           connection.getNetCapabilities(netHandle, (error: BusinessError<void>|null, data: connection.NetCapabilities| undefined) => {
             if (error?.code != 0) {
@@ -1606,7 +1620,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_1700";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 9999999;
           connection.getNetCapabilities(netHandle, (error: BusinessError<void>|null, data: connection.NetCapabilities| undefined) => {
             if (error?.code != 0) {
@@ -1648,7 +1662,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_0900";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           connection.getNetCapabilities(netHandle).then((data: connection.NetCapabilities) => {
             let netCapInfo: connection.NetCapabilityInfo= {
               netHandle: netHandle,
@@ -1691,7 +1705,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_1400";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 200;
           connection.getNetCapabilities(netHandle).then((data: connection.NetCapabilities) => {
             hilog.info(domain, tag, '%{public}s', caseName +':GetNetCapabilities data ->'+JSON.stringify(data));
@@ -1773,7 +1787,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_1600";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 23;
           connection.getNetCapabilities(netHandle).then((data: connection.NetCapabilities) => {
             hilog.info(domain, tag, '%{public}s', caseName +':GetNetCapabilities data ->'+JSON.stringify(data));
@@ -1814,7 +1828,7 @@ export default function ConnectionPublicTest() {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_1800";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           netHandle.netId = 999999;
           connection.getNetCapabilities(netHandle).then((data: connection.NetCapabilities) => {
             hilog.info(domain, tag, '%{public}s', caseName +':GetNetCapabilities  data ->'+JSON.stringify(data));
@@ -2873,6 +2887,47 @@ export default function ConnectionPublicTest() {
         done();
       }
     });
+    /**
+     * @tc.number     : SUB_NetworkMgr_Connection_RouteInfo_0100
+     * @tc.name       : testNetworkMgrConnectionRouteInfo_static_0100
+     * @tc.desc       : Network routing information.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it('testNetworkMgrConnectionRouteInfo_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionRouteInfo_static_0100";
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          connection.getConnectionProperties(netHandle, (error: BusinessError<void>|null, data: connection.ConnectionProperties| undefined) => {
+            if (error?.code != 0) {
+              hilog.info(domain, tag, '%{public}s', caseName +'  getConnectionProperties: BusinessError-> '+JSON.stringify(error));
+              ExpectFail();
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+              done();
+            } else {
+              hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties: data->'+JSON.stringify(data));
+              ExpectTrue(typeof data?.routes[0].iface == 'string');
+              hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+              done();
+            }
+          });
+        }).catch((error: Error) => {
+          let err = error as BusinessError;
+          hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
+        });
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      }
+    });
+
 
     /**
      * @tc.number     : SUB_NetworkMgr_Connection_RouteInfo_0200
@@ -3022,6 +3077,46 @@ export default function ConnectionPublicTest() {
               hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             }
+          });
+        }).catch((error: Error) => {
+          let err = error as BusinessError;
+          hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+          ExpectFail();
+          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+          done();
+        });
+      } catch (err: BusinessError) {
+        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+        ExpectFail();
+        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_NetworkMgr_Connection_RouteInfo_0600
+     * @tc.name       : testNetworkMgrConnectionRouteInfo_static_0600
+     * @tc.desc       : Network routing information.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it('testNetworkMgrConnectionRouteInfo_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      const caseName: string = "testNetworkMgrConnectionRouteInfo_static_0600";
+      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
+      try {
+        connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
+          connection.getConnectionProperties(netHandle).then((data: connection.ConnectionProperties) => {
+            hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties: success data ->'+JSON.stringify(data));
+            ExpectTrue(typeof data.routes[0].iface == 'string');
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+            done();
+          }).catch((error: Error) => {
+            let err = error as BusinessError;
+            hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+            ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+            done();
           });
         }).catch((error: Error) => {
           let err = error as BusinessError;
@@ -3621,17 +3716,17 @@ export default function ConnectionPublicTest() {
       try {
         let netCon: connection.NetConnection = connection.createNetConnection();
         netCon.register((error: BusinessError<void>|null) => {
-            hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(error));
-            if (error?.code != 0) {
-                ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                done();
-            } else {
-                hilog.info(domain, tag, '%{public}s', caseName +' register success ');
-            }
+          hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(error));
+          if (error?.code != 0) {
+            ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+            done();
+          } else {
+            hilog.info(domain, tag, '%{public}s', caseName +' register success ');
+          }
         });
         netCon.on('netAvailable', (data: connection.NetHandle) => {
-            hilog.info(domain, tag, '%{public}s', caseName +' on netAvailable  success : '+JSON.stringify(data));
+          hilog.info(domain, tag, '%{public}s', caseName +' on netAvailable  success : '+JSON.stringify(data));
         });
         ExpectTrue(true);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -3658,17 +3753,17 @@ export default function ConnectionPublicTest() {
       try {
         let netCon: connection.NetConnection = connection.createNetConnection();
         netCon.register((error: BusinessError<void>|null) => {
-            hilog.info(domain, tag, '%{public}s', caseName +'  register error is '+JSON.stringify(error));
-            if (error?.code != 0) {
-                ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                done();
-            } else {
-                console.info(`${caseName}register success`);
-            }
+          hilog.info(domain, tag, '%{public}s', caseName +'  register error is '+JSON.stringify(error));
+          if (error?.code != 0) {
+            ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+            done();
+          } else {
+            console.info(`${caseName}register success`);
+          }
         });
         netCon.on('netCapabilitiesChange', (data: connection.NetCapabilityInfo) => {
-            hilog.info(domain, tag, '%{public}s', caseName +' Succeeded to get data:  '+JSON.stringify(data));
+          hilog.info(domain, tag, '%{public}s', caseName +' Succeeded to get data:  '+JSON.stringify(data));
         });
         ExpectTrue(true);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -3695,19 +3790,19 @@ export default function ConnectionPublicTest() {
       try {
         let netCon: connection.NetConnection = connection.createNetConnection();
         netCon.register((error: BusinessError<void>|null) => {
-            hilog.info(domain, tag, '%{public}s', caseName +'  register error  '+JSON.stringify(error));
-            if (error?.code != 0) {
-                ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                done();
-            } else {
-                hilog.info(domain, tag, '%{public}s', caseName +' register success');
+          hilog.info(domain, tag, '%{public}s', caseName +'  register error  '+JSON.stringify(error));
+          if (error?.code != 0) {
+            ExpectFail();
+            hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
+            done();
+          } else {
+            hilog.info(domain, tag, '%{public}s', caseName +' register success');
 
-            }
+          }
         });
         netCon.on('netConnectionPropertiesChange', (data: connection.NetConnectionPropertyInfo) => {
-            hilog.info(domain, tag, '%{public}s', caseName +' Succeeded to get data: ');
-            console.info(`${caseName}  + ${JSON.stringify(data)}}`);
+          hilog.info(domain, tag, '%{public}s', caseName +' Succeeded to get data: ');
+          console.info(`${caseName}  + ${JSON.stringify(data)}}`);
         });
         ExpectTrue(true);
         console.info(`${caseName}---End`);
