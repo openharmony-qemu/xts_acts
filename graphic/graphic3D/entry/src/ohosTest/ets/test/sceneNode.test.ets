@@ -48,6 +48,8 @@ export default function sceneNodeTest() {
         node = scene?.root?.getNodeByPath('Scene/node_damagedHelmet_-6514') as Node;
         expect(node != null).assertTrue();
         console.info(msg + " Succeed in scene.root?.getNodeByPath('Scene/node_damagedHelmet_-6514') ");
+        let node1 = scene.root?.getNodeByPath('Scene/node_123');
+        expect(node1).assertNull();
         done();
       } catch (err) {
         console.info(msg + " Failed in scene.root?.getNodeByPath('Scene/node_damagedHelmet_-6514') " +
@@ -169,6 +171,9 @@ export default function sceneNodeTest() {
         let node1 = scene?.root?.children.get(count - 1) as Node;
         console.info(msg + " Succeed in scene.root?.children.get(count - 1) ");
         expect(node1).assertEqual(node);
+        let node2 =scene?.root?.children.get(count);
+        console.info(msg + "node2: " + JSON.stringify(node2));
+        expect(node2).assertNull();
         done();
       } catch (err) {
         console.info(msg + " Failed in scene.root?.children.get(count - 1) " + JSON.stringify(err));
@@ -918,22 +923,23 @@ export default function sceneNodeTest() {
         let cameraParams: scene3d.SceneNodeParameters = { name: "camera1" };
         let camera = await factory.createCamera(cameraParams);
         camera.enabled = true;
-
         lookAt(camera, { x: 15, y: 10, z: 20 }, { x: 0, y: 0, z: 0 }, { x: 0, y: 1, z: 0 });
         let viewPos: scene3d.Vec2 = { x: 0.5, y: 0.5 };
-
         let results: scene3d.RaycastResult[] = await camera.raycast(viewPos, { rootNode: raycastNode });
         expect(results != null && results.length > 0).assertTrue();
         let hit = results[0];
-
         expect(hit.node != null).assertTrue();
         console.info(msg + " Hit node name:", hit.node.name);
-
         expect(typeof hit.centerDistance === 'number' && hit.centerDistance > 0).assertTrue();
         console.info(msg + " Hit centerDistance:", hit.centerDistance);
-
         expect(hit.hitPosition != null).assertTrue();
         console.info(msg + " Hit position:", JSON.stringify(hit.hitPosition));
+
+        scene.root?.children.clear();
+        raycastNode = scene.root as Node;
+        viewPos = {x: -1, y: 1};
+        results = await camera.raycast(viewPos, { rootNode: raycastNode });
+        expect(results.length).assertEqual(0);
 
         console.info(msg + " test completed successfully");
         done();
