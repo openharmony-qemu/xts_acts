@@ -1032,6 +1032,34 @@ export default function nativeAVScreenCaptureNdkTest() {
     });
 
     /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0001
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0001
+     * @tc.desc         OH_AVScreenCapture_StrategyForFillMode-Scale
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0001', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForCornerWrapMode();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0002
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0002
+     * @tc.desc         OH_AVScreenCapture_StrategyForFillMode-Scale
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_SET_HIGHLIGHT_0002', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForClosedMode();
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
      * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001
      * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_SET_PICKER_MODE_0001
      * @tc.desc         OH_AVScreenCapture_SetPickerMode

@@ -1106,6 +1106,13 @@ function testGetDisallowedNearLinkProtocols() {
         DEFAULT_USER_ID);
       expect(protocols).not().assertNull();
       expect(protocols.length).assertEqual(0);
+      let nearlinkProtocols: Array<number> = new Array();
+      nearlinkProtocols.push(systemManager.NearLinkProtocol.SSAP);
+      nearlinkProtocols.push(systemManager.NearLinkProtocol.DATA_TRANSFER);
+      systemManager.addDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
+      let protocols1: Array<systemManager.NearLinkProtocol> =
+        systemManager.getDisallowedNearLinkProtocols(SELFWANT, DEFAULT_USER_ID);
+      expect(protocols1.length == nearlinkProtocols.length).assertTrue();
     } catch (error) {
       expect(error.code == 801).assertTrue();
     } finally {

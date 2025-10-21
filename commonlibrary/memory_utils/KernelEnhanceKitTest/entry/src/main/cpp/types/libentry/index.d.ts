@@ -41,3 +41,4 @@ export const cstandardLibrary_mallinfo2_fordblks: () => number;
 export const cstandardLibrary_mallinfo2_keepcost: () => number;
 export const qoSGewuErrorCode_OH_QOS_GEWU_NOMEM: () => number;
 export const qoSGewuErrorCode_OH_QOS_GEWU_NOENT: () => number;
+export const cstandardLibrary_malloc_check_from_ptr: () => number;

@@ -31,6 +31,7 @@ struct testWebResponseSetErrorFailParamIsString {
   @State str: string = ''
 
   @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   aboutToAppear() {
     testNapi.registerCustomSchemes()
@@ -73,6 +74,7 @@ struct testWebResponseSetErrorFailParamIsString {
         .key('SetErrorButton')
         .onClick(async () => {
           await Utils.waitForExist(()=>this.isReceive, 'SetErrorButtonIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case 'testWebResponse_SetError_Fail_ParamIsString': {
               let result: number = testNapi.setError();
@@ -90,7 +92,11 @@ struct testWebResponseSetErrorFailParamIsString {
       Web({
         src: 'https:' +
           '//www.example.com', controller: this.controller
-      });
+      })
+      .onPageEnd((event) => {
+        console.log('onPageEnd url:' + event.url);
+        this.isPageEnd = 1;
+      })
     }
   }
 }

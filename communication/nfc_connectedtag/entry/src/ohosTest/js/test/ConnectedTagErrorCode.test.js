@@ -367,7 +367,57 @@ export default function ConnectedTagErrorTest() {
                 }
             }
             done();
-        })        
+        })
+		/**
+         * @tc.number SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0900
+         * @tc.name SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0900
+         * @tc.desc Init return false.
+         * @tc.size since 8
+         * @tc.type Function
+         * @tc.level Level 0
+         */
+        it('SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0900', Level.LEVEL0, function (done)  {
+            var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
+            console.info("testSysCaps01 test.syscap.param.001 : " + isAccessToken);
+            if (!isAccessToken) {
+                console.info("The device does not support active label chips.")
+                expect(isAccessToken).assertFalse()
+            } else {
+                let inittag = connectedTag.init();
+                console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0900 inittag: " + inittag );
+                let inittag2 = connectedTag.init();
+                console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_0900 inittag: " + inittag2 );
+                expect(inittag2).assertFalse();
+            }
+            done();
+        })
+        /**
+         * @tc.number SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_1000
+         * @tc.name SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_1000
+         * @tc.desc Initializes the active label chip.
+         * @tc.size since 8
+         * @tc.type Function
+         * @tc.level Level 0
+         */
+        it('SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_1000', Level.LEVEL0, function (done)  {
+            var isAccessToken = canIUse("SystemCapability.Communication.ConnectedTag");
+            console.info("testSysCaps01 test.syscap.param.001 : " + isAccessToken);
+            if (!isAccessToken) {
+                console.info("The device does not support active label chips.")
+                expect(isAccessToken).assertFalse()
+            } else {
+                try{
+                    let uninittag = connectedTag.uninit();
+                    console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_1000 uninit success: " + uninittag );
+                    let uninittag2 = connectedTag.uninit();
+                    console.info("[NFC_test] SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_1000 uninit fail: " + uninittag2 );
+                    expect(uninittag2).assertFalse();
+                }catch(error){
+                    console.error(`[NFC_test] SUB_Communication_NFC_nfcConnectedTag_ErrorCode_js_1000 uninit failed,code is ${error.code},message is ${error.message}`);
+                }
+            }
+            done();
+        })           
         console.info("*************[nfc_test] start nfc errorcode js unit test end*************");
     })
 }

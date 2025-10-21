@@ -69,8 +69,35 @@ export default function StyledStringKeyTest1() {
       let strJson = getInspectorByKey('StyledStringKeyTest1_text');
       console.info("[StyledStringKeyTest1_text] component obj is: " + JSON.stringify(JSON.parse(strJson)));
       expect(JSON.parse(strJson).$attrs.content).assertEqual('hello');
+      let stylesList1:SpanStyle[]|undefined = AppStorage.get('stylesList1')
+      expect(stylesList1 && stylesList1.length>0).assertTrue()
+      AppStorage.delete('stylesList1')
 
       console.info('StyledStringKeyTest1_0100 END');
+      done();
+    });
+
+    /**
+     * @tc.number    StyledStringKeyTest1_0200
+     * @tc.name      StyledStringKeyTest1_0200
+     * @tc.desc      Test StyledStringKey.USER_DATA
+     * @tc.level     Level 3
+     */
+    it('StyledStringKeyTest1_0200',  Level.LEVEL3, async (done: Function) => {
+      console.info('StyledStringKeyTest1_0200 START');
+      await CommonFunc.sleep(1000);
+
+      let driver = Driver.create();
+      await CommonFunc.sleep(1000);
+
+      let btn = await driver.findComponent(ON.id('StyledStringKeyTest2_btn'));
+      await btn.click();
+      await CommonFunc.sleep(1000);
+      console.info("[StyledStringKeyTest2_btn] btn click");
+      let stylesList2:SpanStyle[]|undefined = AppStorage.get('stylesList2')
+      expect(stylesList2 && stylesList2.length==0).assertTrue()
+      AppStorage.delete('stylesList2')
+      console.info('StyledStringKeyTest1_0200 END');
       done();
     });
 

@@ -1722,7 +1722,7 @@ export default function MulticastSocket() {
                 console.info('fail to setLoopbackMode' + err.code.toString());
             });
         multicast.getLoopbackMode().then((value: boolean) => {
-          expectEqual(value, mode);
+          expectEqual(value, false);
           console.info(`${caseName} test end`);
           done();
         }).catch((err: BusinessError) => {

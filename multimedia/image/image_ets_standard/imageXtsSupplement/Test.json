@@ -51,7 +51,20 @@
                 "./resource/image/test.cr3 ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
                 "./resource/image/test.nrw ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
                 "./resource/image/test.bmp ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
-                "./resource/image/test.dng ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files"
+                "./resource/image/test.dng ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/test_tree_400.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/test_exif_v3.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/test_exif_v4.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/test_exif_empty_2.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/moving_test_loop0.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/pixel_webp_6144x8192.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/pixel_webp_3072x4096.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/pixel_webp_1440x1920.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/pixel_webp_481x361.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/pixel_webp_480x360.webp ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/pixel_gif_6144x8192.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/pixel_gif_3072x4096.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files",
+                "./resource/image/pixel_gif_481x361.gif ->/data/app/el2/100/base/ohos.acts.multimedia.image.supp.xts/haps/entry_test/files"
             ]
         },
         {

@@ -18,6 +18,7 @@ import drawingTsCanvasPart5Test from "./CanvasPart5.test";
 import drawingTsMatrixTest from "./Matrix.test";
 import drawingTsMatrixPart2Test from "./MatrixPart2.test";
 import roundRectTest from "./RoundRect.test";
+import rectUtils from './RectUtils.test'
 
 export default function testsuite() {
   samplingOptionsTest();
@@ -40,4 +41,5 @@ export default function testsuite() {
   drawingTsMatrixTest();
   drawingTsMatrixPart2Test();
   roundRectTest();
+  rectUtils();
 }

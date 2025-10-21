@@ -17,8 +17,7 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
-import { waitAndClickComponent, waitForComponent } from './WaitTest.test';
-import { Driver ,ON} from '@ohos.UiTest';
+import { Driver, ON, MouseButton } from '@ohos.UiTest';
 const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
@@ -42,8 +41,7 @@ export default function webViewControllerPart2() {
       } catch (err) {
         console.error("push WebOnNativeEmbedMouseEvent page error: " + err);
       }
-      let driver: Driver = Driver.create();
-      await waitForComponent("WebOnNativeEmbedMouseButton");
+      await driver.waitForComponent(ON.id("WebOnNativeEmbedMouseButton"),10000);
       done()
     });
 
@@ -68,8 +66,7 @@ export default function webViewControllerPart2() {
     it('emitOnNativeEmbedMouseEvent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitOnNativeEmbedMouseEvent001", 153530)
       Utils.registerEvent("emitOnNativeEmbedMouseEvent001", true, 153540, done);
-      let component = await driver.findComponent(ON.id("WebOnNativeEmbedMouseButton"));
-      await component.click();
+      await Utils.waitAndClickComponent(driver, 'WebOnNativeEmbedMouseButton', 'emitOnNativeEmbedMouseEvent001');
     })
   })
 }

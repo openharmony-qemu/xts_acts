@@ -150,6 +150,21 @@ export default function preferencesCallBackTest(){
         })
 
         /**
+         * @tc.name testPreferencesHasKey0037
+         * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiCallbackTest_2600
+         * @tc.desc has boolean callback interface test
+         * @tc.size MediumTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('testPreferencesHasKey0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            await mPreferences.has(KEY_TEST_STRING_ELEMENT, function (err, ret) {
+                expect(ret).assertEqual(false);
+                done();
+            })
+        })
+
+        /**
          * @tc.name testPreferencesGetDefValue0062
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceEtsApiCallbackTest_2100
          * @tc.desc get defaultValue callback interface test

@@ -33,6 +33,8 @@ import ParagraphStyle2 from "./StyledString/ParagraphStyle2.test";
 import ParagraphStyle3 from "./StyledString/ParagraphStyle3.test";
 import RichEditorEKeyboardTest from './RichEditorTest/RichEditorEKeyboardTest.test'
 import RichEditorSymbolSpanStyleTest from './RichEditorTest/RichEditorSymbolSpanStyleTest.test'
+import StyleStringEqualsTest from './StyledString/StyleStringEqualsTest.test'
+import TextMenuItemIdEqualsTest from './TextTest/TextMenuItemIdEqualsTest.test'
 
 export default function testsuite() {
   textAreaInputTest();
@@ -55,4 +57,6 @@ export default function testsuite() {
   ParagraphStyle3();
   RichEditorEKeyboardTest();
   RichEditorSymbolSpanStyleTest();
+  StyleStringEqualsTest();
+  TextMenuItemIdEqualsTest();
 }

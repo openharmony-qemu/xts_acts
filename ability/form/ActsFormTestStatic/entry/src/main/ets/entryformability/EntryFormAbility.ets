@@ -59,6 +59,8 @@ export default class EntryFormAbility extends FormExtensionAbility {
     } catch (error) {
       hilog.error(DOMAIN, TAG, 'OnStop catch error');
     }
+
+    this.onAcquireFormState = onAcquireFormStateCallback;
   }
 
   onAddForm(want: Want) : formBindingData.FormBindingData {
@@ -77,5 +79,12 @@ export default class EntryFormAbility extends FormExtensionAbility {
 
   onRemoveForm(formId: string) {
     hilog.info(DOMAIN, TAG, 'onRemoveForm testing');
+  }
+
+  onConfigurationUpdate(newConfig: Configuration) {
+    hilog.info(DOMAIN, TAG, 'onConfigurationUpdate testing');
+    CommonEventManager.publish('XTS_FormExtensionAbilityOnConfigurationUpdate_commonEvent', () => {
+      hilog.info(DOMAIN, TAG, 'OnConfigurationUpdateStaticTest001 commonEvent publish');
+    });
   }
 }

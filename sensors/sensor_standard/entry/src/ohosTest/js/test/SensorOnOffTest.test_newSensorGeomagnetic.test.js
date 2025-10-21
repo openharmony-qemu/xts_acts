@@ -1735,6 +1735,8 @@ describe("SensorJsTest_sensor_60", function () {
     */
     it('Sensor_CreateRotationMatrix_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         sensor.getRotationMatrix([-0.0245, 0.402, 0.0465], -1).then((data) => {
+            console.info('====> Sensor_CreateRotationMatrix_008 success');
+            expect(data.length > 0).assertTrue();
             for(let i = 0; i < data.length; i++) {
                 console.info("Sensor_CreateRotationMatrix_008 [" + i + "] : " + data[i]);
                 expect(data[i]).assertEqual(createRotationMatrixResult[0][i])
@@ -1806,6 +1808,8 @@ describe("SensorJsTest_sensor_60", function () {
     */
     it('Sensor_CreateRotationMatrix_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         sensor.getRotationMatrix([-0.0245, 0.402, 0.0465], -1).then((data) => {
+            console.info('====> Sensor_CreateRotationMatrix_008 success');
+            expect(data.length > 0).assertTrue();
             for(let i = 0; i < data.length; i++) {
                 console.info("Sensor_CreateRotationMatrix_011 [" + i + "] : " + data[i]);
                 expect(data[i]).assertEqual(createRotationMatrixResult[0][i])
@@ -1905,6 +1909,8 @@ describe("SensorJsTest_sensor_60", function () {
                 console.info('Sensor_GetDirection_001 failed');
                 expect(false).assertTrue();
             } else {
+                console.info(`====> Sensor_GetDirection_001 success data: ${JSON.stringify(data)}`);
+                expect(data.length > 0).assertTrue();
                 for (var i = 1; i < data.length; i++) {
                     console.info("Sensor_GetDirection_001" + data[i])
                     expect(data[i]).assertEqual(GET_DIRECTION[0][i])
@@ -1947,6 +1953,8 @@ describe("SensorJsTest_sensor_60", function () {
     */
     it('Sensor_GetDirection_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         sensor.getOrientation(rotationMatrix[0]).then((data) => {
+            console.info(`====> Sensor_GetDirection_003 success data: ${JSON.stringify(data)}`);
+            expect(data.length > 0).assertTrue();
             for (var i = 0; i<data.length; i++) {
                 console.info("Sensor_GetDirection_003" + data[i])
                 expect(data[i]).assertEqual(GET_DIRECTION[0][i])
@@ -2162,6 +2170,8 @@ describe("SensorJsTest_sensor_60", function () {
                 console.info('Sensor_GetAngleModify_001 failed');
                 expect(false).assertTrue();
             } else {
+                console.info('====> Sensor_GetAngleModify_001 success');
+                expect(data.length > 0).assertTrue();
                 for(var i = 0; i < data.length; i++) {
                     console.info("Sensor_GetAngleModify_001 [" + i + "] = " + data[i]);
                     expect(data[0]).assertEqual(ANGLECHANGE_9_RESULT[0][0]) && expect(Number.isNaN(data[1])).assertTrue() &&
@@ -2295,6 +2305,7 @@ describe("SensorJsTest_sensor_60", function () {
                 expect(data[0]).assertEqual(ANGLECHANGE_9_RESULT[0][0]) && expect(Number.isNaN(data[1])).assertTrue() &&
                 expect(data[2]).assertEqual(ANGLECHANGE_9_RESULT[0][2]);
             }
+            expect(data.length > 0).assertTrue();
             done();
         }, (error) =>{
             expect(false).assertTrue();
@@ -2571,6 +2582,7 @@ describe("SensorJsTest_sensor_60", function () {
                 console.info('Sensor_CreateQuaterniont_001 failed');
                 expect(false).assertTrue();
             } else {
+                expect(data.length > 0).assertTrue();
                 for (var i = 0; i < data.length; i++) {
                     console.info("data[" + i + "]: " + data[i])
                     expect(data[i]).assertEqual(result[0][i])
@@ -2693,7 +2705,8 @@ describe("SensorJsTest_sensor_60", function () {
     it('Sensor_CreateQuaterniont_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async function (done) {
         console.info('Sensor_CreateQuaterniont_006 start')
         sensor.getQuaternion([0.52, -0.336, -0.251]).then((data) => {
-            console.info('Sensor_CreateQuaterniont_006');
+            console.info(`====> Sensor_CreateQuaterniont_006 success data: ${JSON.stringify(data)}`);
+            expect(data.length > 0).assertTrue();
             for (var i = 0; i < data.length; i++) {
                 console.info("data[" + i + "]: " + data[i]);
                 expect(data[i]).assertEqual(result[0][i])
@@ -3325,6 +3338,7 @@ describe("SensorJsTest_sensor_60", function () {
                 expect(false).assertTrue();
             } else {
                 console.info("Sensor_TransformCoordinateSystem_001 " + JSON.stringify(data));
+                expect(data.length > 0).assertTrue();
                 expect(JSON.stringify(data)).assertEqual(JSON.stringify(transformCoordinateSystemResult[0]))
             }
             done()
@@ -3365,6 +3379,8 @@ describe("SensorJsTest_sensor_60", function () {
     it("Sensor_TransformCoordinateSystem_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info("---------------------------Sensor_TransformCoordinateSystem_003----------------------------------");
         sensor.transformRotationMatrix([1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5], {'x':1, 'y':2}).then((data) => {
+            console.info(`====> Sensor_TransformCoordinateSystem_003 success data: ${JSON.stringify(data)}`);
+            expect(data.length > 0).assertTrue();
             for (var i = 0; i < data.length; i++) {
                 console.info("Sensor_TransformCoordinateSystem_003 data[ " + i + "] = " + data[i]);
                 expect(data[i]).assertEqual(transformCoordinateSystemResult[0][i]);

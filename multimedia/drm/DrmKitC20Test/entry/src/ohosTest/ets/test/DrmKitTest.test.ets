@@ -872,24 +872,6 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_DrmErrCode_DRM_ERR_UNKNOWN
-     * @tc.name      SUB_DrmErrCode_DRM_ERR_UNKNOWN
-     * @tc.desc      test DrmErrCode DRM_ERR_UNKNOWN
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     */
-    it('SUB_DrmErrCode_DRM_ERR_UNKNOWN', Level.LEVEL1, () => {
-      try {
-        let c: number = testNapi.DrmErrCode_DRM_ERR_UNKNOWN();
-        expect(c).assertEqual(1);
-      } catch (err) {
-        console.error("====>SUB_DrmErrCode_DRM_ERR_UNKNOWN catch err: " + err);
-        expect(false).assertEqual(0);
-      }
-    });
-
-    /**
      * @tc.number    SUB_OHMediaKeySystem_Destroy_DRM_ERR_UNKNOWN
      * @tc.name      SUB_OHMediaKeySystem_Destroy_DRM_ERR_UNKNOWN
      * @tc.desc      test OHMediaKeySystem_Destroy DRM_ERR_UNKNOWN

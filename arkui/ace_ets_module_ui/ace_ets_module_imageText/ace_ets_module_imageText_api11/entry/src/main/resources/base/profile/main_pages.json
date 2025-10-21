@@ -103,6 +103,7 @@
         "MainAbility/pages/ContainerSpan/ContainerSpanModifier",
         "MainAbility/pages/Search/SearchModifier",
         "MainAbility/pages/SymbolGlyph/fontWeight",
-        "MainAbility/pages/text/SpanTextShadowTest"
+        "MainAbility/pages/text/SpanTextShadowTest",
+        "MainAbility/pages/RichEditor/RichEditorReturnValues"
     ]
 }

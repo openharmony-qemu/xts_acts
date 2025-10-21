@@ -220,7 +220,7 @@ export default function AppStorageReturnValue() {
       AppStorage.delete('res_link');
       console.info('[AppStorageReturnValue_008] END');
       done();
-
+    });
        /**
      * @tc.number    AppStorageReturnValue_009
      * @tc.name      AppStorageReturnValue_009
@@ -265,6 +265,6 @@ export default function AppStorageReturnValue() {
       done();
     });
 
-    });
+    
   })
 }

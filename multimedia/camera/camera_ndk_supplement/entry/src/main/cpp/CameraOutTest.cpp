@@ -1165,7 +1165,17 @@ static napi_value PhotoOutputCaptureWithCaptureSetting(napi_env env, napi_callba
         return ReturnInt(env, ret, &result);
     }
     Camera_PhotoOutput* photoOutput = nullptr;
-    Camera_PhotoCaptureSetting capSettings;
+    Camera_Location cameraLocation = {
+        .latitude = 0.0f,
+        .longitude = 0.0f,
+        .altitude = 0.0f
+    };
+    Camera_PhotoCaptureSetting capSettings = {
+        .mirror = false,
+        .quality = QUALITY_LEVEL_HIGH,
+        .rotation = IAMGE_ROTATION_0,
+        .location = &cameraLocation
+    };
     Camera_ErrorCode rest;
     OHOS::CameraStandard::CameraNdkCommon cameraNdkCommon;
     cameraNdkCommon.InitCamera();

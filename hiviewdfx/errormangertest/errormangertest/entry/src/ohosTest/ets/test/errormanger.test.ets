@@ -18,6 +18,9 @@ import { errorManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { ArkTSUtils, taskpool, worker } from '@kit.ArkTS';
 import { execute1, TaskPoolTest1 } from "./execute";
+import appRecovery from "@ohos.app.ability.appRecovery";
+import AbilityConstant from "@ohos.app.ability.AbilityConstant";
+import Ability from "@ohos.app.ability.UIAbility";
 
 export function asyncSleep(time: number): Promise<Object> {
   return new Promise(resolve => setTimeout(resolve, time));
@@ -123,6 +126,19 @@ export default function ErrormangerTest() {
      */
     it('testErrorManger_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info("====> testErrorManger_0100 globalErrorOccurred start");
+      let State1 = appRecovery.saveAppState(globalThis.abilityContext);
+      console.info("====> DFX_DFR_AppRecovery_Interface_24001  + " + State1);
+      expect(State1 == false).assertTrue();
+      let State2 = appRecovery.saveAppState();
+      console.info("====> DFX_DFR_AppRecovery_Interface_24002  + " + State2);
+      expect(State2 == false).assertTrue();
+      appRecovery.enableAppRecovery();
+      let State3 = appRecovery.saveAppState(globalThis.abilityContext);
+      console.info("====> DFX_DFR_AppRecovery_Interface_24003  + " + State3);
+      expect(State3 == true).assertTrue();
+      let State4 = appRecovery.saveAppState();
+      console.info("====> DFX_DFR_AppRecovery_Interface_24004  + " + State4);
+      expect(State4 == true).assertTrue();
       // promiseFunc
       errorManager.on("globalErrorOccurred", errorFunc);
       try {

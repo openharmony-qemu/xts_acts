@@ -62,6 +62,11 @@ struct PerGlobalConnect {
           PersistenceV2.remove(PerSample)
           PersistenceV2.remove('key_1')
           PersistenceV2.remove('key_2')
+          AppStorage.setOrCreate<undefined | PerSample>('PersistenceV2globalConnect001', PersistenceV2.globalConnect({
+            type: PerSample,
+            key: ''
+          }));
+
         })
 
       // 获取当前PersistenceV2里面的所有key

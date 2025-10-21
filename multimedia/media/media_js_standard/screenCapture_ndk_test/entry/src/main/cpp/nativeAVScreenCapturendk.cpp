@@ -50,6 +50,8 @@ static uint64_t g_userSelectedDisplayId = -1;
 OH_AVCodec *g_videoEnc;
 constexpr uint32_t DEFAULT_WIDTH = 720;
 constexpr uint32_t DEFAULT_HEIGHT = 1280;
+constexpr uint32_t DEFAULT_LINECOLOR = 4;
+constexpr uint32_t DEFAULT_LINETHICKNESS = 0xFF0000;
 constexpr OH_AVPixelFormat DEFAULT_PIXELFORMAT = AV_PIXEL_FORMAT_NV12;
 static int32_t g_aFlag = 0;
 static int32_t g_vFlag = 0;
@@ -2097,6 +2099,64 @@ static napi_value normalAVScreenCaptureStrategyForFillModeScale(napi_env env, na
     return res;
 }
 
+static napi_value normalAVScreenCaptureStrategyForCornerWrapMode(napi_env env, napi_callback_info info)
+{
+    screenCaptureNormal = OH_AVScreenCapture_Create();
+    if (screenCaptureNormal == nullptr) {
+        napi_throw_error((env), nullptr, "error: expect screenCaptureNormal is not nullptr");
+    }
+    OH_AVScreenCaptureHighlightConfig highlightConfig;
+    highlightConfig.lineThickness = DEFAULT_LINECOLOR;
+    highlightConfig.lineColor = DEFAULT_LINETHICKNESS;
+    highlightConfig.mode = OH_ScreenCaptureHighlightMode::OH_HIGHLIGHT_MODE_CORNER_WRAP;
+
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_SetCaptureAreaHighlight(screenCaptureNormal,
+        highlightConfig);
+    if (result != AV_SCREEN_CAPTURE_ERR_OK) {
+        napi_throw_error((env), nullptr, "error : expect SetCaptureAreaHighlight is 0 ");
+    }
+
+    if (screenCaptureNormal) {
+        result = OH_AVScreenCapture_Release(screenCaptureNormal);
+    }
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
+static napi_value normalAVScreenCaptureStrategyForClosedMode(napi_env env, napi_callback_info info)
+{
+    screenCaptureNormal = OH_AVScreenCapture_Create();
+    if (screenCaptureNormal == nullptr) {
+        napi_throw_error((env), nullptr, "error: expect screenCaptureNormal is not nullptr");
+    }
+    OH_AVScreenCaptureHighlightConfig highlightConfig;
+    highlightConfig.lineThickness = DEFAULT_LINECOLOR;
+    highlightConfig.lineColor = DEFAULT_LINETHICKNESS;
+    highlightConfig.mode = OH_ScreenCaptureHighlightMode::OH_HIGHLIGHT_MODE_CLOSED;
+
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_SetCaptureAreaHighlight(screenCaptureNormal,
+        highlightConfig);
+    if (result != AV_SCREEN_CAPTURE_ERR_OK) {
+        napi_throw_error((env), nullptr, "error : expect SetCaptureAreaHighlight is 0 ");
+    }
+    
+    if (screenCaptureNormal) {
+        result = OH_AVScreenCapture_Release(screenCaptureNormal);
+    }
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
 static napi_value normalAVScreenCaptureSetPickerModeWindowOnly(napi_env env, napi_callback_info info)
 {
     screenCaptureNormal = OH_AVScreenCapture_Create();
@@ -2259,6 +2319,10 @@ static napi_value Init(napi_env env, napi_value exports)
             normalAVScreenCaptureStrategyForFillModeAspect, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAVScreenCaptureStrategyForFillModeScale", nullptr,
             normalAVScreenCaptureStrategyForFillModeScale, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureStrategyForCornerWrapMode", nullptr,
+            normalAVScreenCaptureStrategyForCornerWrapMode, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureStrategyForClosedMode", nullptr,
+            normalAVScreenCaptureStrategyForClosedMode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAVScreenCaptureSetPickerModeWindowOnly", nullptr,
             normalAVScreenCaptureSetPickerModeWindowOnly, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAVScreenCaptureSetPickerModeScreenOnly", nullptr,

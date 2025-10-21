@@ -101,6 +101,8 @@ export default function RichEditor7() {
       let IsEditingText = await IsEditing.getText()
       expect(OnEditingChangeText).assertContain("false")
       expect(IsEditingText).assertContain("false")
+      expect(AppStorage.get('controllerIsEditing2')).assertFalse()
+      AppStorage.delete('controllerIsEditing2')
       expect(EnterKeyResult).assertContain("6")
 
       console.info('[RichEditor7_0200] END');
@@ -135,6 +137,8 @@ export default function RichEditor7() {
       let IsEditingText = await IsEditing.getText()
       expect(OnEditingChangeText).assertContain("true")
       expect(IsEditingText).assertContain("true")
+      expect(AppStorage.get('controllerIsEditing2')).assertTrue()
+      AppStorage.delete('controllerIsEditing2')
       expect(EnterKeyResult).assertContain("2")
 
       console.info('[RichEditor7_0300] END');

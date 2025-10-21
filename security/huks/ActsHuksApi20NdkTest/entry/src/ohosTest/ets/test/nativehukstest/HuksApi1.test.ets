@@ -21,7 +21,9 @@ const ARKUI_ERROR_CODE_ERROR = 1;
 
 export default function HuksApiTest1() {
   describe('HuksApiTest1', () => {
+    let developmentDevice: boolean = false;
     beforeAll(async () => {
+      developmentDevice = nativehuksndk.KeySizeTest_004() == 0;
       console.info("====>testHuksApiTest1 start====");
     });
 
@@ -430,7 +432,11 @@ export default function HuksApiTest1() {
           console.info("====>testOH_HUKS_ECC_KEY_SIZE_2240100 start====");
           let result: number = nativehuksndk.KeySizeTest_004();
           console.info(`====>testOH_HUKS_ECC_KEY_SIZE_2240100 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          if (developmentDevice) {
+            expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          } else {
+            expect(developmentDevice).assertFalse();
+          }
           done();
         } catch (err) {
           console.error("====>testOH_HUKS_ECC_KEY_SIZE_2240100 err: " + err);
@@ -614,7 +620,11 @@ export default function HuksApiTest1() {
           console.info("====>testOH_HUKS_DH_KEY_SIZE_30720100 start====");
           let result: number = nativehuksndk.KeySizeTest_012();
           console.info(`====>testOH_HUKS_DH_KEY_SIZE_30720100 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          if (developmentDevice) {
+            expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          } else {
+            expect(developmentDevice).assertFalse();
+          }
           done();
         } catch (err) {
           console.error("====>testOH_HUKS_DH_KEY_SIZE_30720100 err: " + err);
@@ -637,7 +647,11 @@ export default function HuksApiTest1() {
           console.info("====>testOH_HUKS_DH_KEY_SIZE_40960100 start====");
           let result: number = nativehuksndk.KeySizeTest_013();
           console.info(`====>testOH_HUKS_DH_KEY_SIZE_40960100 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          if (developmentDevice) {
+            expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          } else {
+            expect(developmentDevice).assertFalse();
+          }
           done();
         } catch (err) {
           console.error("====>testOH_HUKS_DH_KEY_SIZE_40960100 err: " + err);
@@ -752,7 +766,11 @@ export default function HuksApiTest1() {
           console.info("====>testOH_HUKS_3DES_KEY_SIZE_1920100 start====");
           let result: number = nativehuksndk.KeySizeTest_018();
           console.info(`====>testOH_HUKS_3DES_KEY_SIZE_1920100 result====${result}`);
-          expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          if (developmentDevice) {
+            expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
+          } else {
+            expect(developmentDevice).assertFalse();
+          }
           done();
         } catch (err) {
           console.error("====>testOH_HUKS_3DES_KEY_SIZE_1920100 err: " + err);

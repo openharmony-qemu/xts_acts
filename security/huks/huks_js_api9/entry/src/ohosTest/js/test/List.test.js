@@ -36,6 +36,7 @@ import SecurityHuksFaceFingerJsunit from './SecurityHuksFaceFingerJsunit.test.js
 import SecurityHuksImportJsunit from './SecurityHuksImportJsunit.test.js'
 import SecurityHuksMacHmacCallbackJsunit from './SecurityHuksMacHmacCallbackJsunit.test.js'
 import SecurityHuksMacHmacPromiseJsunit from './SecurityHuksMacHmacPromiseJsunit.test.js'
+import SecurityHuksQueryKeyJsunit from './SecurityHuksQueryKeyJsunit.test.js'
 import SecurityHuksSignExtendRSAJsunit from './SecurityHuksSignExtendRSAJsunit.test.js'
 import SecurityHuksSignVerifyDSACallbackJsunit from './SecurityHuksSignVerifyDSACallbackJsunit.test.js'
 import SecurityHuksSignVerifyDSAPromiseJsunit from './SecurityHuksSignVerifyDSAPromiseJsunit.test.js'
@@ -71,6 +72,7 @@ export default function testsuite() {
     SecurityHuksImportJsunit()
     SecurityHuksMacHmacCallbackJsunit()
     SecurityHuksMacHmacPromiseJsunit()
+    SecurityHuksQueryKeyJsunit()
     SecurityHuksSignExtendRSAJsunit()
     SecurityHuksSignVerifyDSACallbackJsunit()
     SecurityHuksSignVerifyDSAPromiseJsunit()

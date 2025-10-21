@@ -135,6 +135,8 @@ function testAddAllowedUsbDevices() {
       let ret: Array<usbManager.UsbDeviceId> = usbManager.getAllowedUsbDevices(SELFWANT);
       expect(ret.length == 3).assertTrue();
       usbManager.removeAllowedUsbDevices(SELFWANT, ret);
+      let result: Array<usbManager.UsbDeviceId> = usbManager.getAllowedUsbDevices(SELFWANT);
+      expect(result.length == 0).assertTrue();
     } catch (error) {
       expect(error == null).assertTrue();
     } finally {
@@ -509,6 +511,8 @@ function testAddDisallowedUsbDevices() {
       let ret: Array<usbManager.UsbDeviceType> = usbManager.getDisallowedUsbDevices(SELFWANT);
       expect(ret.length == devices.length).assertTrue();
       usbManager.removeDisallowedUsbDevices(SELFWANT, ret);
+      let result: Array<usbManager.UsbDeviceType> = usbManager.getDisallowedUsbDevices(SELFWANT);
+      expect(result.length == 0).assertTrue();
     } catch (error) {
       expect(error == null).assertTrue();
     } finally {
@@ -905,6 +909,8 @@ function testAddDisallowedUsbDevices() {
       ]
       usbManager.addDisallowedUsbDevices(SELFWANT, devices);
       usbManager.setUsbStorageDeviceAccessPolicy(SELFWANT, usbManager.UsbPolicy.READ_ONLY);
+      let result: usbManager.UsbPolicy = usbManager.getUsbStorageDeviceAccessPolicy(SELFWANT);;
+      expect(result == usbManager.UsbPolicy.READ_ONLY).assertTrue();
       let ret: Array<usbManager.UsbDeviceType> = usbManager.getDisallowedUsbDevices(SELFWANT);
       expect(ret.length == 1).assertTrue();
     } catch (error) {
@@ -931,6 +937,8 @@ function testAddDisallowedUsbDevices() {
       ]
       usbManager.addDisallowedUsbDevices(SELFWANT, devices);
       usbManager.setUsbStorageDeviceAccessPolicy(SELFWANT, usbManager.UsbPolicy.READ_WRITE);
+      let result: usbManager.UsbPolicy = usbManager.getUsbStorageDeviceAccessPolicy(SELFWANT);;
+      expect(result == usbManager.UsbPolicy.READ_WRITE).assertTrue();
       let ret: Array<usbManager.UsbDeviceType> = usbManager.getDisallowedUsbDevices(SELFWANT);
       expect(ret.length == 1).assertTrue();
     } catch (error) {
@@ -957,6 +965,8 @@ function testAddDisallowedUsbDevices() {
       ]
       usbManager.addDisallowedUsbDevices(SELFWANT, devices);
       usbManager.setUsbStorageDeviceAccessPolicy(SELFWANT, usbManager.UsbPolicy.DISABLED);
+      let result: usbManager.UsbPolicy = usbManager.getUsbStorageDeviceAccessPolicy(SELFWANT);;
+      expect(result == usbManager.UsbPolicy.DISABLED).assertTrue();
       let ret: Array<usbManager.UsbDeviceType> = usbManager.getDisallowedUsbDevices(SELFWANT);
       expect(ret.length == 1).assertTrue();
     } catch (error) {

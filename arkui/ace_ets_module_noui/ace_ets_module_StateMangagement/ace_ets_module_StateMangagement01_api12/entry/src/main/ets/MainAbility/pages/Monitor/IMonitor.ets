@@ -24,6 +24,7 @@ struct IMonitor1 {
   @Local age: number = 24;
   @Monitor("message", "name")
   onStrChange(monitor: IMonitor) {
+    AppStorage.setOrCreate<IMonitorValue<string> | undefined>('IMonitorValue001', monitor.value('IMonitorValue001'));
     monitor.dirty.forEach((path: string) => {
       this.IMonitorValue = monitor.value(path)
       this.before = this.IMonitorValue?.before;

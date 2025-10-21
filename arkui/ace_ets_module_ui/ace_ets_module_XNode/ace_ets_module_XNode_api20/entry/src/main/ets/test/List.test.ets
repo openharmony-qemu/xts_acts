@@ -37,6 +37,12 @@ import FrameNodeIsDisposedTest from './ContextTest/FrameNodeIsDisposedTest.test'
 import RenderNodeIsDisposedTest from './ContextTest/RenderNodeIsDisposedTest.test';
 import NodeAdapterIsDisposedTest from './ContextTest/NodeAdapterIsDisposedTest.test';
 import frameNodeGetAttributeTest from './FrameNodeTest/frameNodeGetAttributeTest.test';
+import MakeNodeNullTest from './FrameNodeTest/MakeNodeNullTest.test';
+import IsModifiableBooleanTest from './FrameNodeTest/IsModifiableBooleanTest.test';
+import GetAllAvailableItemsTest from './FrameNodeTest/GetAllAvailableItemsTest.test';
+import RenderNodeMethodNullTest from './FrameNodeTest/RenderNodeMethodNullTest.test';
+import AttachNodeAdapterBooleanTest from './FrameNodeTest/AttachNodeAdapterBooleanTest.test';
+import IsFollowingSystemFontScaleFalseTest from './ContextTest/IsFollowingSystemFontScaleFalseTest.test';
 
 export default function testsuite() {
   IsAvailableTest();
@@ -64,4 +70,10 @@ export default function testsuite() {
   RenderNodeIsDisposedTest();
   NodeAdapterIsDisposedTest();
   frameNodeGetAttributeTest();
+  MakeNodeNullTest();
+  IsModifiableBooleanTest();
+  GetAllAvailableItemsTest();
+  RenderNodeMethodNullTest();
+  AttachNodeAdapterBooleanTest();
+  IsFollowingSystemFontScaleFalseTest();
 }

@@ -38,6 +38,26 @@ export default function userauthTest_Nopermission_API12() {
             }
             done();
         })
+
+        /**
+         * @tc.number SUB_Security_IAM_UserAuth_FUNC_0140
+         * @tc.name   SUB_Security_IAM_UserAuth_FUNC_0140
+         * @tc.desc  getAuthLockState Nopermission
+         * @tc.size LargeTest
+         * @tc.type Function
+         * @tc.level Level 2
+         */
+        it('SUB_Security_IAM_UserAuth_FUNC_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            console.info('testFace SUB_Security_IAM_UserAuth_FUNC_0140 start');
+            let authType = 1
+            try {
+                await userAuthNorth.getAuthLockState(authType);
+            } catch (error) {
+                console.error(`SUB_Security_IAM_UserAuth_FUNC_0140 fail code is ${error.code}`);
+                expect(error.code).assertEqual(201);
+            }
+            done();
+        })
     })
 
 }

@@ -276,18 +276,18 @@ napi_value KeyPaddingTest_004(napi_env env, napi_callback_info info)
     struct OH_Huks_Param testParams[] = {
         {.tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_ISO_IEC_9796_2},
         {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_RSA},
-        {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_RSA_KEY_SIZE_512},
+        {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_RSA_KEY_SIZE_1024},
         {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_SIGN | OH_HUKS_KEY_PURPOSE_VERIFY},
         {.tag = OH_HUKS_TAG_DIGEST, .uint32Param = OH_HUKS_DIGEST_SHA256}
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
     InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "KeyPaddingTest_004",
+                 "InitParamSet failed: %{public}s", ohResult1.errorMsg);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
-    napi_create_int32(env, ohResult1.errorCode == OH_HUKS_SUCCESS ? 0 : 1, &retValue);
+    napi_create_int32(env, ohResult1.errorCode == OH_HUKS_SUCCESS ? 0 : ohResult1.errorCode, &retValue);
     return retValue;
 }
 
@@ -537,12 +537,12 @@ napi_value KeySizeTest_004(napi_env env, napi_callback_info info)
     struct OH_Huks_ParamSet *paramSet = nullptr;
     InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "KeySizeTest_004",
+                 "InitParamSet failed: %{public}s", ohResult1.errorMsg);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
-    napi_create_int32(env, ohResult1.errorCode == OH_HUKS_SUCCESS ? 0 : 1, &retValue);
+    napi_create_int32(env, ohResult1.errorCode == OH_HUKS_SUCCESS ? 0 : ohResult1.errorCode, &retValue);
     return retValue;
 }
 
@@ -727,8 +727,8 @@ napi_value KeySizeTest_012(napi_env env, napi_callback_info info)
     struct OH_Huks_ParamSet *paramSet = nullptr;
     InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "KeySizeTest_012",
+                 "InitParamSet failed: %{public}s", ohResult1.errorMsg);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -750,8 +750,8 @@ napi_value KeySizeTest_013(napi_env env, napi_callback_info info)
     struct OH_Huks_ParamSet *paramSet = nullptr;
     InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "KeySizeTest_013",
+                 "InitParamSet failed: %{public}s", ohResult1.errorMsg);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -817,17 +817,17 @@ napi_value KeySizeTest_016(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_DES},
         {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_DES_KEY_SIZE_64},
         {.tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_NONE},
-        {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_MAC},
+        {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_DECRYPT},
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
     InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "KeySizeTest_016",
+                 "InitParamSet failed: %{public}s", ohResult1.errorMsg);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
-    napi_create_int32(env, ohResult1.errorCode == OH_HUKS_SUCCESS ? 0 : 1, &retValue);
+    napi_create_int32(env, ohResult1.errorCode == OH_HUKS_SUCCESS ? 0 : ohResult1.errorCode, &retValue);
     return retValue;
 }
 
@@ -867,8 +867,8 @@ napi_value KeySizeTest_018(napi_env env, napi_callback_info info)
     struct OH_Huks_ParamSet *paramSet = nullptr;
     InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "KeySizeTest_018",
+                 "InitParamSet failed: %{public}s", ohResult1.errorMsg);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;
@@ -1073,13 +1073,13 @@ napi_value KeyAlgTest_009(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_ALGORITHM, .uint32Param = OH_HUKS_ALG_DES},
         {.tag = OH_HUKS_TAG_KEY_SIZE, .uint32Param = OH_HUKS_DES_KEY_SIZE_64},
         {.tag = OH_HUKS_TAG_PADDING, .uint32Param = OH_HUKS_PADDING_NONE},
-        {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_MAC},
+        {.tag = OH_HUKS_TAG_PURPOSE, .uint32Param = OH_HUKS_KEY_PURPOSE_DECRYPT},
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
     InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
-                 "InitParamSet failed: %{public}d", ohResult1.errorCode);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "KeyAlgTest_009",
+                 "InitParamSet failed: %{public}s", ohResult1.errorMsg);
     OH_Huks_DeleteKeyItem(&aliasBlob, nullptr);
     OH_Huks_FreeParamSet(&paramSet);
     napi_value retValue;

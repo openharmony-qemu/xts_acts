@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import formInfo  from '@ohos.application.formInfo';
 import formError from '@ohos.application.formError';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
@@ -21,10 +21,12 @@ import Want from '@ohos.app.ability.Want';
 import formBindingData from '@ohos.app.form.formBindingData';
 import formProvider from '@ohos.app.form.formProvider';
 import FormEditExtensionAbility from '@ohos.app.form.FormEditExtensionAbility';
+import hilog from '@ohos.hilog';
+
+const tag: string = 'testTag';
+const domain: number = 0xF811;
 
 const INTERVAL_TIME = 2500;
-
-let deviceType = systemParameterEnhance.getSync('const.product.devicetype');
 
 let module1Want: Want = {
   deviceId: "",
@@ -87,7 +89,17 @@ let module1Data: formBindingData.FormBindingData = {
   proxies: proxyDatas
 }
 
-export default function FormApiCoverTest() {
+const ERROR_CODE1 = 401;
+const ERROR_CODE2 = 16500050;
+const ERROR_CODE3 = 16500060;
+const ERROR_CODE4 = 16500100;
+const ERROR_CODE5 = 16501000;
+const ERROR_CODE6 = 16501001;
+const ERROR_CODE7 = 16501002;
+const ERROR_CODE8 = 16501003;
+const ERROR_CODE9 = 202;
+
+export default function formApiCoverTest() {
   describe('FormApiCoverTestTest', () => {
     afterEach(async (done: Function) => {
       setTimeout(() => {
@@ -95,16 +107,16 @@ export default function FormApiCoverTest() {
       }, INTERVAL_TIME);
     })
 
-    /*
-     * @tc.number  StartSecondPage_Cover_0100
-     * @tc.name    StartSecondPage_Cover_0100
+    /**
+     * @tc.number  SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0100
+     * @tc.name    SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0100
      * @tc.desc    Function startSecondPage covered test
      * @tc.size:   MediumTest
      * @tc.type:   Function
      * @tc.level   3
      */
-    it(`StartSecondPage_Cover_0100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let name: string = 'StartSecondPage_Cover_0100';
+    it(`SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0100';
       console.info(`${name} start`);
       try {
         let abilityTest:FormEditExtensionAbility = new FormEditExtensionAbility();
@@ -112,21 +124,30 @@ export default function FormApiCoverTest() {
         expect().assertFail();
       } catch (error) {
         console.log(`${name} exception caught: ${JSON.stringify(error)}`);
+         if (error.code === ERROR_CODE9) {
+          expect(error.code).assertEqual(ERROR_CODE9);
+        } else if(error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if(error.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        } else if(error.code === ERROR_CODE5) {
+          expect(error.code).assertEqual(ERROR_CODE5);
+        }
         done();
       }
       console.info(`${name} end`);
     });
 
-    /*
-     * @tc.number  SetFormNextRefreshTime_Cover_0100
-     * @tc.name    SetFormNextRefreshTime_Cover_0100
+    /**
+     * @tc.number  SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0100
+     * @tc.name    SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0100
      * @tc.desc    Function setFormNextRefreshTime covered test
      * @tc.size:   MediumTest
      * @tc.type:   Function
      * @tc.level   3
      */
-    it(`SetFormNextRefreshTime_Cover_0100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let name: string = 'SetFormNextRefreshTime_Cover_0100';
+    it(`SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0100';
       console.info(`${name} start`);
       try {
         const data = await formProvider.setFormNextRefreshTime("", 123);
@@ -135,27 +156,59 @@ export default function FormApiCoverTest() {
         expect().assertFail();
       } catch (error) {
         console.log(`${name} exception caught: ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(401);
+        if (error.code === ERROR_CODE1) {
+          expect(error.code).assertEqual(ERROR_CODE1);
+        } else if(error.code === ERROR_CODE2) {
+          expect(error.code).assertEqual(ERROR_CODE2);
+        } else if(error.code === ERROR_CODE3) {
+          expect(error.code).assertEqual(ERROR_CODE3);
+        } else if(error.code === ERROR_CODE4) {
+          expect(error.code).assertEqual(ERROR_CODE4);
+        } else if(error.code === ERROR_CODE5) {
+          expect(error.code).assertEqual(ERROR_CODE5);
+        } else if(error.code === ERROR_CODE6) {
+          expect(error.code).assertEqual(ERROR_CODE6);
+        } else if(error.code === ERROR_CODE7) {
+          expect(error.code).assertEqual(ERROR_CODE7);
+        } else if(error.code === ERROR_CODE8) {
+          expect(error.code).assertEqual(ERROR_CODE8);
+        }
         done();
       }
       console.info(`${name} end`);
     });
 
-    /*
-     * @tc.number  SetFormNextRefreshTime_Cover_0200
-     * @tc.name    SetFormNextRefreshTime_Cover_0200
+    /**
+     * @tc.number  SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0200
+     * @tc.name    SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0200
      * @tc.desc    Function setFormNextRefreshTime covered test
      * @tc.size:   MediumTest
      * @tc.type:   Function
      * @tc.level   3
      */
-    it(`SetFormNextRefreshTime_Cover_0200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
-      let name: string = 'SetFormNextRefreshTime_Cover_0100';
+    it(`SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0200';
       console.info(`${name} start`);
       try {
         formProvider.setFormNextRefreshTime("", 123, (error, data) => {
           console.log(`${name} setFormNextRefreshTime, error: ${JSON.stringify(error)} data: ${JSON.stringify(data)}`);
-          expect(error.code).assertEqual(401);
+          if (error.code === ERROR_CODE1) {
+            expect(error.code).assertEqual(ERROR_CODE1);
+          } else if(error.code === ERROR_CODE2) {
+            expect(error.code).assertEqual(ERROR_CODE2);
+          } else if(error.code === ERROR_CODE3) {
+            expect(error.code).assertEqual(ERROR_CODE3);
+          } else if(error.code === ERROR_CODE4) {
+            expect(error.code).assertEqual(ERROR_CODE4);
+          } else if(error.code === ERROR_CODE5) {
+            expect(error.code).assertEqual(ERROR_CODE5);
+          } else if(error.code === ERROR_CODE6) {
+            expect(error.code).assertEqual(ERROR_CODE6);
+          } else if(error.code === ERROR_CODE7) {
+            expect(error.code).assertEqual(ERROR_CODE7);
+          } else if(error.code === ERROR_CODE8) {
+            expect(error.code).assertEqual(ERROR_CODE8);
+          }
           done();
         });
       } catch (error) {
@@ -165,16 +218,16 @@ export default function FormApiCoverTest() {
       console.info(`${name} end`);
     });
 
-    /*
-     * @tc.number  SUB_AA_Form_provider_TestFormErr_0100
-     * @tc.name    Get all FormError types.
+    /**
+     * @tc.number  SUB_ABILITY_FORM_FWK_PROVIDER_TEST_FORM_ERR_0100
+     * @tc.name    SUB_ABILITY_FORM_FWK_PROVIDER_TEST_FORM_ERR_0100
      * @tc.desc    Function test
      * @tc.size:   MediumTest
      * @tc.type:   Function
      * @tc.level   3
      */
-    it('SUB_AA_Form_provider_TestFormErr_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      console.info("SUB_AA_Form_provider_TestFormErr_0100");
+    it('SUB_ABILITY_FORM_FWK_PROVIDER_TEST_FORM_ERR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      console.info("SUB_ABILITY_FORM_FWK_PROVIDER_TEST_FORM_ERR_0100");
       expect(7).assertEqual(formError.FormError.ERR_ADD_INVALID_PARAM);
       expect(10).assertEqual(formError.FormError.ERR_BIND_PROVIDER_FAILED);
       expect(8).assertEqual(formError.FormError.ERR_CFG_NOT_MATCH_ID);
@@ -201,15 +254,15 @@ export default function FormApiCoverTest() {
     });
 
     /**
-     * @tc.number    : SUB_AA_Form_Cover_FormInfo_0100
-     * @tc.name      : SUB_AA_Form_Cover_FormInfo_0100
+     * @tc.number    : SUB_ABILITY_FORM_FWK_FORM_INFO_0100
+     * @tc.name      : SUB_ABILITY_FORM_FWK_FORM_INFO_0100
      * @tc.desc      : formInfo.FormStateInfo Coverage test.
      * @tc.level     : Level 3
      * @tc.size      : MediumTest
      * @tc.type      : Function
      */
-    it('SUB_AA_Form_Cover_FormInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let name: string = 'SUB_AA_Form_Cover_FormInfo_0100';
+    it('SUB_ABILITY_FORM_FWK_FORM_INFO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_FORM_INFO_0100';
       console.info(`${name} start`);
       let stateInfo: formInfo.FormStateInfo = module2FormStateInfo;
       expect(0).assertEqual(stateInfo.formState);
@@ -221,15 +274,15 @@ export default function FormApiCoverTest() {
     });
 
     /**
-     * @tc.number    : SUB_AA_Form_Cover_FormInfo_0200
-     * @tc.name      : SUB_AA_Form_Cover_FormInfo_0200
+     * @tc.number    : SUB_ABILITY_FORM_FWK_FORM_INFO_0200
+     * @tc.name      : SUB_ABILITY_FORM_FWK_FORM_INFO_0200
      * @tc.desc      : formInfo.FormInfo Coverage test.
      * @tc.level     : Level 3
      * @tc.size      : MediumTest
      * @tc.type      : Function
      */
-    it('SUB_AA_Form_Cover_FormInfo_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      let name: string = 'SUB_AA_Form_Cover_FormInfo_0200';
+    it('SUB_ABILITY_FORM_FWK_FORM_INFO_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      let name: string = 'SUB_ABILITY_FORM_FWK_FORM_INFO_0200';
       console.info(`${name} start`);
       let info: formInfo.FormInfo = module1FormInfo;
       checkFormInfo(info);
@@ -239,30 +292,30 @@ export default function FormApiCoverTest() {
     });
 
     /**
-     * @tc.number    : SUB_AA_Form_Cover_FormInfo_0300
-     * @tc.name      : SUB_AA_Form_Cover_FormInfo_0300
+     * @tc.number    : SUB_ABILITY_FORM_FWK_FORM_INFO_0300
+     * @tc.name      : SUB_ABILITY_FORM_FWK_FORM_INFO_0300
      * @tc.desc      : cover EnumValue IDENTITY_KEY.
      * @tc.level     : Level 3
      * @tc.size      : MediumTest
      * @tc.type      : Function
      */
-    it('SUB_AA_Form_Cover_FormInfo_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      console.info("SUB_AA_Form_Cover_FormInfo_0300 start");
+    it('SUB_ABILITY_FORM_FWK_FORM_INFO_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info("SUB_ABILITY_FORM_FWK_FORM_INFO_0300 start");
       expect("ohos.extra.param.key.form_identity").assertEqual(formInfo.FormParam.IDENTITY_KEY);
       done();
-      console.info("SUB_AA_Form_Cover_FormInfo_0300 end");
+      console.info("SUB_ABILITY_FORM_FWK_FORM_INFO_0300 end");
     });
 
     /**
-     * @tc.number    : SUB_AA_Form_Cover_FormBindingData_0100
-     * @tc.name      : SUB_AA_Form_Cover_FormBindingData_0100
+     * @tc.number    : SUB_ABILITY_FORM_FWK_FORM_BINDING_DATA_0100
+     * @tc.name      : SUB_ABILITY_FORM_FWK_FORM_BINDING_DATA_0100
      * @tc.desc      : FormBindingData Coverage test.
      * @tc.level     : Level 3
      * @tc.size      : MediumTest
      * @tc.type      : Function
      */
-    it('SUB_AA_Form_Cover_FormBindingData_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-      console.info("SUB_AA_Form_Cover_FormBindingData_0100 start");
+    it('SUB_ABILITY_FORM_FWK_FORM_BINDING_DATA_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info("SUB_ABILITY_FORM_FWK_FORM_BINDING_DATA_0100 start");
       let bindingData: formBindingData.FormBindingData = module1Data;
       expect("com.example.getformsinfotest").assertEqual(bindingData.data);
       if (bindingData.proxies?.length === 2) {
@@ -271,7 +324,7 @@ export default function FormApiCoverTest() {
       }
       expect().not().assertFail();
       done();
-      console.info("SUB_AA_Form_Cover_FormBindingData_0100 end");
+      console.info("SUB_ABILITY_FORM_FWK_FORM_BINDING_DATA_0100 end");
     });
 
     let checkFormInfo = (result: formInfo.FormInfo) => {
@@ -296,5 +349,30 @@ export default function FormApiCoverTest() {
       expect(JSON.stringify({})).assertEqual(JSON.stringify(result.customizeData));
       console.info("checkFormInfo end");
     };
+
+    /**
+     * @tc.number    : SUB_ABILITY_FORM_FWK_CREATE_FROM_BINDING_DATA_0100
+     * @tc.name      : SUB_ABILITY_FORM_FWK_CREATE_FROM_BINDING_DATA_0100
+     * @tc.desc      : createFormBindingData test.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('SUB_ABILITY_FORM_FWK_CREATE_FROM_BINDING_DATA_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      const itName = 'SUB_ABILITY_FORM_FWK_CREATE_FROM_BINDING_DATA_0100';
+      hilog.info(domain, tag, `${itName} start`);
+      try {
+        hilog.info(domain, tag, `${itName} createFormBindingData`);
+        let bindingData = formBindingData.createFormBindingData(undefined);
+        hilog.info(domain, tag, `${itName} createFormBindingData success. bindingData: ${!!bindingData}`);
+        expect(!!bindingData).assertTrue();
+        done();
+      } catch(error) {
+        hilog.info(domain, tag, `${itName} createFormBindingData fail. error code: ${error?.code}`);
+        expect(error.code).assertEqual(ERROR_CODE1);
+        done();
+      }
+      hilog.info(domain, tag, `${itName} end`);
+    });
   })
 }

@@ -29,6 +29,7 @@ struct AppStorageV2Page1 {
     Column() {
       Button('Go to page2')
         .id('router_persistenceV2')
+        .height('5%')
         .onClick(() => {
           router.pushUrl({
             url: 'MainAbility/pages/Storage/persistenceV2'
@@ -36,6 +37,7 @@ struct AppStorageV2Page1 {
         })
       Button('connect the key SampleApp')
         .id('appStorageV2_connect')
+        .height('5%')
         .onClick(() => {
           // 在AppStorageV2中创建一个key为SampleApp的键值对（如果存在，则返回AppStorageV2中的数据），并且和prop关联
           this.prop = AppStorageV2.connect(SampleApp, 'SampleApp', () => new SampleApp())!;
@@ -43,6 +45,7 @@ struct AppStorageV2Page1 {
 
       Button('remove the key SampleApp')
         .id('appStorageV2_remove')
+        .height('5%')
         .onClick(() => {
           // 从AppStorageV2中删除后，prop将不会再与key为SampleApp的值关联
           AppStorageV2.remove(SampleApp);
@@ -50,15 +53,20 @@ struct AppStorageV2Page1 {
 
       Button('Clear Create keys')
         .id('btnAppStorageV2ClearKeys')
+        .height('5%')
         .onClick(()=>{
+          AppStorage.setOrCreate<Array<string>>('AppStorageV2Keys', AppStorageV2.keys());
           if (AppStorageV2.keys().includes('SampleApp')) {
             AppStorageV2.remove('SampleApp')
           }
+          AppStorage.setOrCreate<Array<string>>('AppStorageV2KeysEmpty', AppStorageV2.keys());
+          AppStorage.setOrCreate<undefined | SampleApp>('AppStorageV2Connect001', AppStorageV2.connect(SampleApp, ''));
+
         })
 
       Text(`prop.p1: ${this.prop.p1}`)
         .id('appStorageV2_num')
-        .fontSize(9)
+        .height('5%')
         .onClick(() => {
           this.prop.p1 += 2;
         })
@@ -66,6 +74,7 @@ struct AppStorageV2Page1 {
       // 获取当前AppStorageV2里面的所有key
       Text(`keys in AppStorage: ${AppStorageV2.keys()}`)
         .id('appStorageV2_keys')
+        .height('5%')
         .fontSize(9)
     }
   }

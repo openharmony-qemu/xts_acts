@@ -48,8 +48,8 @@ export default function PanGestureExampleTemplateTest() {
 
     /**
      * @tc.number
-    * @tc.name      PanGestureExampleTemplateTest_0010
-     * @tc.desc      api test TapGesture
+     * @tc.name      PanGestureExampleTemplateTest_0010
+     * @tc.desc      api test TapGesture and test GetHistoricalPoints notNull
      * @tc.level:    Level
      * @tc.type :
      * @tc.size :
@@ -75,8 +75,27 @@ export default function PanGestureExampleTemplateTest() {
       let text1 = getInspectorByKey('PanGestureExampleTemplate_Text');
       let obj1: ESObject = JSON.parse(text1);
       console.log('PanGestureExampleTemplateTest_0010 obj1 $attrs content',obj1.$attrs.content,obj1)
+      expect(AppStorage.get('notNullGetHistoricalPoints')).assertLarger(0);
       expect(obj1.$attrs.content).assertEqual('templateFlag:true');
       console.info('PanGestureExampleTemplateTest_0010 END');
+      done();
+    });
+
+    /**
+     * @tc.number
+     * @tc.name      PanGestureExampleTemplateTest_0020
+     * @tc.desc      api test getHistoricalPoints null
+     * @tc.level:    Level0
+     * @tc.type :
+     * @tc.size :
+     */
+    it('PanGestureExampleTemplateTest_0020', Level.LEVEL0, async (done: Function) => {
+      console.info('PanGestureExampleTemplateTest_0020 START');
+      let driver = await Driver.create()
+      let text: Component = await driver.findComponent(ON.id('PanGestureExampleTemplate_Click'));
+      await text.click();
+      expect(AppStorage.get('nullGetHistoricalPoints')).assertEqual(0);
+      console.info('PanGestureExampleTemplateTest_0020 END');
       done();
     });
   })

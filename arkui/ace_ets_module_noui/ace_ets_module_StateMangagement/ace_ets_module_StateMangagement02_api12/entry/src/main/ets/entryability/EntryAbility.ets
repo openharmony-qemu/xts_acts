@@ -46,7 +46,7 @@ export default class EntryAbility extends UIAbility {
       windowClass = data;
       console.info('Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
       
-      let promise = windowClass.loadContent('MainAbility/pages/index/index', this.storage);
+      let promise = windowClass.loadContent('MainAbility/pages/index/index');
       promise.then(() => {
         console.info('Succeeded in loading the content.');
       }).catch((err: BusinessError) => {
