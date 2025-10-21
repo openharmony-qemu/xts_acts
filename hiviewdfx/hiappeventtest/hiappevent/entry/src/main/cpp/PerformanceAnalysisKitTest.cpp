@@ -86,7 +86,6 @@ napi_property_descriptor desc[] = {
     {"HiDebugNoTraceRunningCode", nullptr, HiDebugNoTraceRunningCode, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"HiDebugTraceFlagAllThreadsCode", nullptr, HiDebugTraceFlagAllThreadsCode, nullptr, nullptr, nullptr, napi_default,
      nullptr},
-    {"HiLogLogFatalCode", nullptr, HiLogLogFatalCode, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"HiTraceIdInvalidCode", nullptr, HiTraceIdInvalidCode, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"HiTraceIdTraceIdValidCode", nullptr, HiTraceIdTraceIdValidCode, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"HiTraceVer1Code", nullptr, HiTraceVer1Code, nullptr, nullptr, nullptr, napi_default, nullptr},

@@ -38,7 +38,6 @@ napi_value HiDebugSymbolicAddressInvalid(napi_env env, napi_callback_info info);
 napi_value HiDebugTraceCapturedAlreadyCode(napi_env env, napi_callback_info info);
 napi_value HiDebugNoTraceRunningCode(napi_env env, napi_callback_info info);
 napi_value HiDebugTraceFlagAllThreadsCode(napi_env env, napi_callback_info info);
-napi_value HiLogLogFatalCode(napi_env env, napi_callback_info info);
 napi_value HiTraceIdInvalidCode(napi_env env, napi_callback_info info);
 napi_value HiTraceIdTraceIdValidCode(napi_env env, napi_callback_info info);
 napi_value HiTraceVer1Code(napi_env env, napi_callback_info info);

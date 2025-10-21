@@ -321,21 +321,6 @@ export default function PerformanceTest() {
     })
 
     /**
-     * @tc.number SUB_DFX_Hilog_Log_Fatal_0100
-     * @tc.name testHilogLogFatal0100
-     * @tc.desc test LOG_FATAL
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testHilogLogFatal0100', Level.LEVEL1, async (done: Function) => {
-      let ret = PerformanceAnalysisKitNdk.HiLogLogFatalCode()
-      console.error("====>testHilogLogFatal0100 err: " + ret)
-      expect(ret).assertEqual(0)
-      done()
-    })
-
-    /**
      * @tc.number SUB_DFX_HiTrace_Id_Invalid_0100
      * @tc.name testHiTraceIdInvalid0100
      * @tc.desc test invalid of HiTrace

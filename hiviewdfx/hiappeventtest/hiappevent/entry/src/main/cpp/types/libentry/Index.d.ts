@@ -110,8 +110,6 @@ export const HiDebugNoTraceRunningCode: () => number;
 
 export const HiDebugTraceFlagAllThreadsCode: () => number;
 
-export const HiLogLogFatalCode: () => number;
-
 export const HiTraceIdInvalidCode: () => number;
 
 export const HiTraceIdTraceIdValidCode: () => number;

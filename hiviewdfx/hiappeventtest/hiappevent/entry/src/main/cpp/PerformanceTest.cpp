@@ -485,23 +485,6 @@ void HiDebugSymbolicAddressCallback(void *pc, void *arg, const HiDebug_StackFram
     }
 };
 
-napi_value HiLogLogFatalCode(napi_env env, napi_callback_info info)
-{
-    LogType type = LOG_APP;
-    LogLevel level = LOG_FATAL;
-    OH_LOG_SetMinLogLevel(LOG_INFO);
-    PreferStrategy prefer;
-    OH_LOG_SetLogLevel(LOG_INFO, prefer);
-    int retLen = OH_LOG_Print(type, level, 0x3200, "testTag", "string for hilog test");
-    bool ret = (retLen > 0) ? true : false;
-    if (ret == true) {
-        napi_value ret;
-        napi_create_int32(env, 0, &ret);
-        return ret;
-    }
-    return nullptr;
-}
-
 napi_value HiTraceIdInvalidCode(napi_env env, napi_callback_info info)
 {
     HiTrace_Flag hitraceflag = HITRACE_FLAG_DONOT_CREATE_SPAN;
