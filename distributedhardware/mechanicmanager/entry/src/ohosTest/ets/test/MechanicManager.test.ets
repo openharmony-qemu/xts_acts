@@ -238,6 +238,33 @@ export default function MechanicManagerAPI() {
         console.info("-----------------SUB_DH_MechanicManager_getAttachedMechDevices_0100 end-----------------");
       });
 
+      /**
+     * @tc.number     : SUB_DH_MechanicManager_getAttachedMechDevices_0200
+     * @tc.name       : SUB_DH_MechanicManager_getAttachedMechDevices_0200
+     * @tc.desc       : Obtain the list of connected mechanical devices,mechanicManager.getAttachedMechDevices接口正常调用
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it("SUB_DH_MechanicManager_getAttachedMechDevices_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async () => {
+        console.info("-----------------SUB_DH_MechanicManager_getAttachedMechDevices_0200 begin-----------------");
+        try {
+          let mechInfos: mechanicManager.MechInfo[] = mechanicManager.getAttachedMechDevices();
+          if (!mechInfos) {
+            console.log("getAttachedMechDevices SUB_DH_MechanicManager_getAttachedMechDevices_0200 fail");
+            expect(mechInfos).assertDeepEquals([]);
+          }
+          console.info('SUB_DH_MechanicManager_getAttachedMechDevices_0200 设备列表: ' + JSON.stringify(mechInfos));
+          expect(mechInfos[0]!=null).assertTrue();
+        } catch (error) {
+          console.error('SUB_DH_MechanicManager_getAttachedMechDevices_0200 查询失败, code: ' + error.code +
+            ' message: ' + error.message);
+          expect(error.code == 33300001).assertTrue();
+        }
+        console.info("-----------------SUB_DH_MechanicManager_getAttachedMechDevices_0200 end-----------------");
+      });
+
     /**
      * @tc.number     : SUB_DH_MechanicManager_setCameraTrackingEnabled_0100
      * @tc.name       : SUB_DH_MechanicManager_setCameraTrackingEnabled_0100
@@ -341,6 +368,31 @@ export default function MechanicManagerAPI() {
         expect(error.code == 33300001||error.code == 33300002).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingEnabled_0100 end-----------------");
+    });
+
+    /**
+     * @tc.number     : SUB_DH_MechanicManager_getCameraTrackingEnabled_0200
+     * @tc.name       : SUB_DH_MechanicManager_getCameraTrackingEnabled_0200
+     * @tc.desc       : Subscribes to tracking events,getCameraTrackingEnabled调用
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it("SUB_DH_MechanicManager_getCameraTrackingEnabled_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingEnabled_0200 begin-----------------");
+      try {
+        let enabled = mechanicManager.getCameraTrackingEnabled();
+        if (!enabled){
+          console.log("getCameraTrackingEnabled SUB_DH_MechanicManager_getCameraTrackingEnabled_0200 fail");
+          expect(enabled).assertFalse();
+        }
+        console.info(`'SUB_DH_MechanicManager_getCameraTrackingEnabled_0200 current tracking status:' ${enabled}`);
+        expect(enabled).assertTrue();
+      } catch (error) {
+        console.error(`SUB_DH_MechanicManager_getCameraTrackingEnabled_0200 failed, code is ${error.code}, message is ${error.message}`);
+        expect(error.code == 33300001||error.code == 33300002).assertTrue();
+      }
+      console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingEnabled_0200 end-----------------");
     });
 
     /**
@@ -580,6 +632,27 @@ export default function MechanicManagerAPI() {
         expect(error.code == 33300001||error.code == 33300002).assertTrue();
       }
       console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingLayout_0100 end-----------------");
+    });
+
+    /**
+     * @tc.number     : SUB_DH_MechanicManager_getCameraTrackingLayout_0200
+     * @tc.name       : SUB_DH_MechanicManager_getCameraTrackingLayout_0200
+     * @tc.desc       : Obtains the camera tracking layout of this mechanical device,getCameraTrackingLayout接口调用
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it("SUB_DH_MechanicManager_getCameraTrackingLayout_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingLayout_0200 begin-----------------");
+      try {
+        let layout = mechanicManager.getCameraTrackingLayout();
+        console.info(`'SUB_DH_MechanicManager_getCameraTrackingLayout_0200 Query layout successful, current layout:' ${layout}`);
+        expect(layout).assertEqual("CameraTrackingLayout");
+      } catch (error) {
+        console.error(`SUB_DH_MechanicManager_getCameraTrackingLayout_0200 mechanicManager.off failed, code is ${error.code}, message is ${error.message}`);
+        expect(error.code == 33300001||error.code == 33300002).assertTrue();
+      }
+      console.info("-----------------SUB_DH_MechanicManager_getCameraTrackingLayout_0200 end-----------------");
     });
 
     /**
