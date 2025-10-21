@@ -21,7 +21,6 @@ import { Vec2, Rotation3, SceneResourceParameters, SceneNodeParameters, Scene, S
   Camera} from '@ohos.graphics.scene'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import * as scene3d from '@ohos.graphics.scene'
-import { cameraPicker } from '@kit.CameraKit';
 
 export default function sceneTest() {
   describe('sceneTest', ()=> {
@@ -618,39 +617,38 @@ export default function sceneTest() {
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testRenderResourceFactory_createSampler', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:Function)=> {
-        let msg = "============================testRenderResourceFactory_createSampler";
-        console.info(msg + ' begin ');
-        try {
-          const scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
-          console.info(msg + " scene loaded:", scene != null);
-          expect(scene != null).assertTrue();
+    it('testRenderResourceFactory_createSampler', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testRenderResourceFactory_createSampler";
+      console.info(msg + ' begin ');
+      try {
+        const scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        console.info(msg + " scene loaded:", scene != null);
+        expect(scene != null).assertTrue();
 
-          const rf: scene3d.RenderResourceFactory = scene.getResourceFactory();
-          expect(rf != null).assertTrue();
-          console.info(msg + " getResourceFactory success (as RenderResourceFactory)");
+        const rf: scene3d.RenderResourceFactory = scene.getResourceFactory();
+        expect(rf != null).assertTrue();
+        console.info(msg + " getResourceFactory success (as RenderResourceFactory)");
 
-          const sampler: scene3d.Sampler = await rf.createSampler({ name: "testSampler" });
-          expect(sampler != null).assertTrue();
-          console.info(msg + " createSampler success:", sampler);
+        const sampler: scene3d.Sampler = await rf.createSampler({ name: "testSampler" });
+        expect(sampler != null).assertTrue();
+        console.info(msg + " createSampler success:", sampler);
 
-          sampler.magFilter = scene3d.SamplerFilter.LINEAR;
-          expect(sampler.magFilter).assertEqual(scene3d.SamplerFilter.LINEAR);
-          console.info(msg + " sampler.magFilter set and verified");
+        sampler.magFilter = scene3d.SamplerFilter.LINEAR;
+        expect(sampler.magFilter).assertEqual(scene3d.SamplerFilter.LINEAR);
+        console.info(msg + " sampler.magFilter set and verified");
 
-          sampler.addressModeU = scene3d.SamplerAddressMode.REPEAT;
-          expect(sampler.addressModeU).assertEqual(scene3d.SamplerAddressMode.REPEAT);
-          console.info(msg + " sampler.addressModeU set and verified");
+        sampler.addressModeU = scene3d.SamplerAddressMode.REPEAT;
+        expect(sampler.addressModeU).assertEqual(scene3d.SamplerAddressMode.REPEAT);
+        console.info(msg + " sampler.addressModeU set and verified");
 
-          console.info(msg + " test completed successfully");
-          done();
-        } catch (err) {
-          console.info(msg + " Failed in testRenderResourceFactory_createSampler " + JSON.stringify(err));
-          expect().assertFail();
-          done();
-        }
-      })
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testRenderResourceFactory_createSampler " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
 
     /**
      * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0690
