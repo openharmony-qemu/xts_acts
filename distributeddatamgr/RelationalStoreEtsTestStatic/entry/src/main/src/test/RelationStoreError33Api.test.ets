@@ -46,8 +46,8 @@ const STORE_CONFIG: relationalStore.StoreConfig = {
 }
 let rdbStore: relationalStore.RdbStore;
 
-export default function RelationStoreError32Test() {
-  describe('RelationStoreError32Test', () => {
+export default function RelationStoreError33Test() {
+  describe('RelationStoreError33Test', () => {
     beforeAll(async () : Promise<void> => {
       console.info(TAG + "*************Unit Test Begin*************");
       console.info(TAG + 'beforeAll');
