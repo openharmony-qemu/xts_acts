@@ -140,7 +140,291 @@ export default function windowPropertiesTest() {
             // Presets a clear action, which is performed after all test cases of the test suite end.
             // This API supports only one parameter: clear action function.
         })
-        /**
+
+      /**
+       * @tc.number    : SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0100
+       * @tc.name      : testSetWatermarkImageForAppWindowswithSizeExceedsScreenSize
+       * @tc.desc      : 验证设置进程水印入参pixelmap大小超过屏幕大小时抛出错误码1300016
+       * @tc.size      : MediumTest
+       * @tc.type      : Function
+       * @tc.level     : Level 3
+       */
+      it('testSetWatermarkImageForAppWindowswithSizeExceedsScreenSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let caseName = 'testSetWatermarkImageForAppWindowswithSizeExceedsScreenSize';
+        const rawFile: Uint8Array = await context.resourceManager.getRawFileContent("test2.jpg");
+        let ops: image.SourceOptions = {
+          sourceDensity: 98,
+        }
+        let imageSource: image.ImageSource = image.createImageSource(rawFile.buffer as ArrayBuffer, ops);
+
+        imageSource.createPixelMap().then((pixelMap: image.PixelMap) => {
+          console.info(caseName + " Succeeded in creating pixelmap.");
+          try {
+            let promise = window.setWatermarkImageForAppWindows(pixelMap);
+            promise.then(() => {
+              console.info(caseName + " Succeeded in setting watermark image.");
+              expect().assertFail();
+              done();
+            }).catch((err: BusinessError) => {
+              console.error(`${caseName} Failed to set watermark image. Cause code: ${err.code}, message: ${err.message}`);
+              if (err.code == 801) {
+                done()
+              } else {
+                expect(err.code).assertEqual(1300016);
+                done();
+              }
+            });
+          } catch (exception) {
+            console.error(`${caseName} Failed to set watermark image. Exception code: ${exception.code}, message: ${exception.message}`);
+            expect().assertFail();
+            done();
+          }
+        }).catch((err: BusinessError) => {
+          console.error(`${caseName} Failed to create PixelMap. Cause code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+          done();
+        });
+      })
+
+      /**
+       * @tc.number    : SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0200
+       * @tc.name      : testSetWatermarkImageForAppWindowswithMainWindow
+       * @tc.desc      : 验证主窗设置和取消水印成功
+       * @tc.size      : MediumTest
+       * @tc.type      : Function
+       * @tc.level     : Level 0
+       */
+      it('testSetWatermarkImageForAppWindowswithMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+        let caseName = 'testSetWatermarkImageForAppWindowswithMainWindow';
+        const rawFile: Uint8Array = await context.resourceManager.getRawFileContent("test1.jpg");
+        let ops: image.SourceOptions = {
+          sourceDensity: 98,
+        }
+        try{
+          let imageSource: image.ImageSource = image.createImageSource(rawFile.buffer as ArrayBuffer, ops);
+
+          imageSource.createPixelMap().then((pixelMap: image.PixelMap) => {
+            console.info(caseName + " Succeeded in creating pixelmap.");
+            try {
+              let promise = window.setWatermarkImageForAppWindows(pixelMap);
+              promise.then(async () => {
+                console.info(caseName + " Succeeded in setting watermark image.");
+                await window.setWatermarkImageForAppWindows(undefined);
+                console.info(caseName + " Succeeded in setWatermarkImageForAppWindows undefined.");
+                expect(true).assertTrue();
+                done();
+              }).catch((err: BusinessError) => {
+                console.error(`${caseName} Failed to set watermark image. Cause code: ${err.code}, message: ${err.message}`);
+                if (err.code == 801) {
+                  done()
+                } else {
+                  expect().assertFail();
+                  done();
+                }
+              });
+            } catch (exception) {
+              console.error(`${caseName} Failed to set watermark image. Exception code: ${exception.code}, message: ${exception.message}`);
+              expect().assertFail();
+              done();
+            }
+          }).catch((err: BusinessError) => {
+            console.error(`${caseName} Failed to create PixelMap. Cause code: ${err.code}, message: ${err.message}`);
+            expect().assertFail();
+            done();
+          });
+        }catch (err) {
+          console.error(`${caseName} Failed . Cause code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+          done();
+        }
+
+      })
+
+      /**
+       * @tc.number    : SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0300
+       * @tc.name      : testSetWatermarkImageForAppWindowswithMainWindowandSubWindow
+       * @tc.desc      : 验证主窗设置，子窗取消水印成功
+       * @tc.size      : MediumTest
+       * @tc.type      : Function
+       * @tc.level     : Level 1
+       */
+      it('testSetWatermarkImageForAppWindowswithMainWindowandSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let caseName = 'testSetWatermarkImageForAppWindowswithMainWindowandSubWindow';
+        let subWindowClass = await windowStage.createSubWindow('testSetWatermarkImageForAppWindowswithMainWindowandSubWindow');
+        let driver: Driver = await Driver.create();
+        await sleep(200)
+        try {
+          let windowLimits = subWindowClass.getWindowLimits();
+          console.log(caseName + ' windowLimits:' + JSON.stringify(windowLimits));
+          await subWindowClass.resize(windowLimits.minWidth as number+200, windowLimits.minHeight as number+200)
+          subWindowClass.moveWindowToAsync(100,150);
+          await sleep(200);
+          await subWindowClass.setUIContent('testability/pages/First/index4');
+          await subWindowClass.showWindow();
+          await sleep(1000);
+          let btn = await driver.findComponent(ON.id('SubWinTestId'));
+          await sleep(1000);
+          await btn.click();
+          await sleep(1000);
+          let errCode = await driver.findComponent(ON.id('errCode'));
+          console.log(caseName + ' errCode:' + JSON.stringify(errCode));
+          await sleep(1000);
+          let errMessage = await driver.findComponent(ON.id('errMessage'));
+          console.log(caseName + ' errMessage:' + JSON.stringify(errMessage));
+          await sleep(1000);
+          let errCodeText = await errCode.getText();
+          let errMessageText = await errMessage.getText();
+          await sleep(200);
+          if (errCodeText == '801') {
+            expect(true).assertTrue()
+          } else if (errMessageText == 'success') {
+            expect(true).assertTrue()
+          } else {
+            console.error(`${caseName} Failed. Cause: ${JSON.stringify(errMessageText)}`);
+            expect().assertFail()
+          }
+          await subWindowClass.destroyWindow();
+          done();
+        } catch (err) {
+          console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code == 801) {
+            await subWindowClass.destroyWindow();
+            done();
+          } else {
+            expect().assertFail()
+            await subWindowClass.destroyWindow();
+            done();
+          }
+        }
+      })
+
+      /**
+       * @tc.number    : SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0400
+       * @tc.name      : testSetWatermarkImageForAppWindowswithMainWindowandSystemWindow
+       * @tc.desc      : 验证主窗设置，系统窗取消水印成功
+       * @tc.size      : MediumTest
+       * @tc.type      : Function
+       * @tc.level     : Level 1
+       */
+      it('testSetWatermarkImageForAppWindowswithMainWindowandSystemWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let caseName = 'testSetWatermarkImageForAppWindowswithMainWindowandSystemWindow';
+        let subWindowClass: window.Window | undefined;
+        let driver: Driver = await Driver.create();
+        await sleep(200)
+        let config: window.Configuration = {
+          name: "testSetWatermarkImageForAppWindowswithMainWindowandSystemWindow",
+          windowType: window.WindowType.TYPE_FLOAT,
+          ctx: context
+        };
+        try {
+          window.createWindow(config).then(async (data) => {
+            subWindowClass = data;
+            await subWindowClass.setUIContent('testability/pages/First/index4');
+            await subWindowClass.showWindow();
+            let btn = await driver.findComponent(ON.id('SubWinTestId'));
+            await sleep(2000);
+            await btn.click();
+            await sleep(1000);
+            let errCode = await driver.findComponent(ON.id('errCode'));
+            await sleep(1000);
+            let errMessage = await driver.findComponent(ON.id('errMessage'));
+            await sleep(1000);
+            let errCodeText = await errCode.getText();
+            let errMessageText = await errMessage.getText();
+            await sleep(200);
+            if (errCodeText == '801') {
+              expect(true).assertTrue()
+            } else if (errMessageText == 'success') {
+              expect(true).assertTrue()
+            } else {
+              console.error(`${caseName} Failed. Cause: ${JSON.stringify(errMessageText)}`);
+              expect().assertFail()
+            }
+            await subWindowClass.destroyWindow();
+            done();
+          }).catch(async (err: BusinessError) => {
+            console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
+            if (err.code === 1300002) {
+              await subWindowClass?.destroyWindow();
+              done()
+            } else {
+              expect().assertFail();
+              await subWindowClass?.destroyWindow();
+              done()
+            }
+          });
+        } catch (err) {
+          console.error(`${caseName} Failed2. Cause code: ${err.code}, message: ${err.message}`);
+          expect().assertFail()
+          await subWindowClass?.destroyWindow();
+          done();
+        }
+      })
+
+      /**
+       * @tc.number    : SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0500
+       * @tc.name      : testSetWatermarkImageForAppWindowsBeforeLoadContent
+       * @tc.desc      : 验证设置进程水印在子窗loadcontent之前调用
+       * @tc.size      : MediumTest
+       * @tc.type      : Function
+       * @tc.level     : Level 1
+       */
+      it('testSetWatermarkImageForAppWindowsBeforeLoadContent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        let caseName = 'testSetWatermarkImageForAppWindowsBeforeLoadContent';
+        const rawFile: Uint8Array = await context.resourceManager.getRawFileContent("test1.jpg");
+        let ops: image.SourceOptions = {
+          sourceDensity: 98,
+        }
+        let imageSource: image.ImageSource = image.createImageSource(rawFile.buffer as ArrayBuffer, ops);
+
+        let subWindowClass: window.Window | undefined;
+
+        imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
+          console.info(caseName + " Succeeded in creating pixelmap.");
+          try {
+            subWindowClass = await windowStage.createSubWindow('testSetWatermarkImageForAppWindowsBeforeLoadContent');
+            let windowLimits = subWindowClass.getWindowLimits();
+            console.log(caseName + ' windowLimits: ' + JSON.stringify(windowLimits));
+            await subWindowClass.resize(windowLimits.minWidth as number, windowLimits.minHeight as number);
+
+            let promise = window.setWatermarkImageForAppWindows(pixelMap);
+            promise.then(async () => {
+              console.info(caseName + " Succeeded in setting watermark image.");
+              await window.setWatermarkImageForAppWindows(undefined);
+              await subWindowClass?.showWindow();
+              await subWindowClass?.destroyWindow()
+              expect(true).assertTrue();
+              done();
+            }).catch(async (err: BusinessError) => {
+              console.error(`${caseName} Failed to set watermark image. Cause code: ${err.code}, message: ${err.message}`);
+              await subWindowClass?.destroyWindow()
+              if (err.code == 801) {
+                done()
+              } else {
+                expect().assertFail();
+                done();
+              }
+            });
+          } catch (exception) {
+            console.error(`${caseName} Failed to set watermark image. Exception code: ${exception.code}, message: ${exception.message}`);
+            if (exception.code == 801) {
+              await subWindowClass?.destroyWindow()
+              done();
+            } else {
+              await subWindowClass?.destroyWindow()
+              expect().assertFail();
+              done();
+            }
+          }
+        }).catch(async (err: BusinessError) => {
+          console.error(`${caseName} Failed to create PixelMap. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindowClass?.destroyWindow()
+          expect().assertFail();
+          done();
+        });
+      })
+
+      /**
      * @tc.number    : SUB_BASIC_WMS_GET_ALL_WINDOW_LAYOUT_INFO_0200
      * @tc.name      : test_getAllWindowLayoutInfo_mainWindow
      * @tc.desc      : test_getAllWindowLayoutInfo_mainWindow
@@ -7322,289 +7606,7 @@ export default function windowPropertiesTest() {
       }
     })
 
-      /**
-       * @tc.number    : SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0100
-       * @tc.name      : testSetWatermarkImageForAppWindowswithSizeExceedsScreenSize
-       * @tc.desc      : 验证设置进程水印入参pixelmap大小超过屏幕大小时抛出错误码1300016
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 3
-       */
-      it('testSetWatermarkImageForAppWindowswithSizeExceedsScreenSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-        let caseName = 'testSetWatermarkImageForAppWindowswithSizeExceedsScreenSize';
-        const rawFile: Uint8Array = await context.resourceManager.getRawFileContent("test2.jpg");
-        let ops: image.SourceOptions = {
-          sourceDensity: 98,
-        }
-        let imageSource: image.ImageSource = image.createImageSource(rawFile.buffer as ArrayBuffer, ops);
 
-        imageSource.createPixelMap().then((pixelMap: image.PixelMap) => {
-          console.info(caseName + " Succeeded in creating pixelmap.");
-          try {
-            let promise = window.setWatermarkImageForAppWindows(pixelMap);
-            promise.then(() => {
-              console.info(caseName + " Succeeded in setting watermark image.");
-              expect().assertFail();
-              done();
-            }).catch((err: BusinessError) => {
-              console.error(`${caseName} Failed to set watermark image. Cause code: ${err.code}, message: ${err.message}`);
-              if (err.code == 801) {
-                done()
-              } else {
-                expect(err.code).assertEqual(1300016);
-                done();
-              }
-            });
-          } catch (exception) {
-            console.error(`${caseName} Failed to set watermark image. Exception code: ${exception.code}, message: ${exception.message}`);
-            expect().assertFail();
-            done();
-          }
-        }).catch((err: BusinessError) => {
-          console.error(`${caseName} Failed to create PixelMap. Cause code: ${err.code}, message: ${err.message}`);
-          expect().assertFail();
-          done();
-        });
-      })
-
-      /**
-       * @tc.number    : SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0200
-       * @tc.name      : testSetWatermarkImageForAppWindowswithMainWindow
-       * @tc.desc      : 验证主窗设置和取消水印成功
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 0
-       */
-      it('testSetWatermarkImageForAppWindowswithMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-        let caseName = 'testSetWatermarkImageForAppWindowswithMainWindow';
-        const rawFile: Uint8Array = await context.resourceManager.getRawFileContent("test1.jpg");
-        let ops: image.SourceOptions = {
-          sourceDensity: 98,
-        }
-        try{
-          let imageSource: image.ImageSource = image.createImageSource(rawFile.buffer as ArrayBuffer, ops);
-
-          imageSource.createPixelMap().then((pixelMap: image.PixelMap) => {
-            console.info(caseName + " Succeeded in creating pixelmap.");
-            try {
-              let promise = window.setWatermarkImageForAppWindows(pixelMap);
-              promise.then(async () => {
-                console.info(caseName + " Succeeded in setting watermark image.");
-                await window.setWatermarkImageForAppWindows(undefined);
-                console.info(caseName + " Succeeded in setWatermarkImageForAppWindows undefined.");
-                expect(true).assertTrue();
-                done();
-              }).catch((err: BusinessError) => {
-                console.error(`${caseName} Failed to set watermark image. Cause code: ${err.code}, message: ${err.message}`);
-                if (err.code == 801) {
-                  done()
-                } else {
-                  expect().assertFail();
-                  done();
-                }
-              });
-            } catch (exception) {
-              console.error(`${caseName} Failed to set watermark image. Exception code: ${exception.code}, message: ${exception.message}`);
-              expect().assertFail();
-              done();
-            }
-          }).catch((err: BusinessError) => {
-            console.error(`${caseName} Failed to create PixelMap. Cause code: ${err.code}, message: ${err.message}`);
-            expect().assertFail();
-            done();
-          });
-        }catch (err) {
-          console.error(`${caseName} Failed . Cause code: ${err.code}, message: ${err.message}`);
-          expect().assertFail();
-          done();
-        }
-
-      })
-
-      /**
-       * @tc.number    : SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0300
-       * @tc.name      : testSetWatermarkImageForAppWindowswithMainWindowandSubWindow
-       * @tc.desc      : 验证主窗设置，子窗取消水印成功
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 1
-       */
-      it('testSetWatermarkImageForAppWindowswithMainWindowandSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        let caseName = 'testSetWatermarkImageForAppWindowswithMainWindowandSubWindow';
-        let subWindowClass = await windowStage.createSubWindow('testSetWatermarkImageForAppWindowswithMainWindowandSubWindow');
-        let driver: Driver = await Driver.create();
-        await sleep(200)
-        try {
-          let windowLimits = subWindowClass.getWindowLimits();
-          console.log(caseName + ' windowLimits:' + JSON.stringify(windowLimits));
-          await subWindowClass.resize(windowLimits.minWidth as number+200, windowLimits.minHeight as number+200)
-          subWindowClass.moveWindowToAsync(100,150);
-          await sleep(200);
-          await subWindowClass.setUIContent('testability/pages/First/index4');
-          await subWindowClass.showWindow();
-          await sleep(1000);
-          let btn = await driver.findComponent(ON.id('SubWinTestId'));
-          await sleep(1000);
-          await btn.click();
-          await sleep(1000);
-          let errCode = await driver.findComponent(ON.id('errCode'));
-          console.log(caseName + ' errCode:' + JSON.stringify(errCode));
-          await sleep(1000);
-          let errMessage = await driver.findComponent(ON.id('errMessage'));
-          console.log(caseName + ' errMessage:' + JSON.stringify(errMessage));
-          await sleep(1000);
-          let errCodeText = await errCode.getText();
-          let errMessageText = await errMessage.getText();
-          await sleep(200);
-          if (errCodeText == '801') {
-            expect(true).assertTrue()
-          } else if (errMessageText == 'success') {
-            expect(true).assertTrue()
-          } else {
-            console.error(`${caseName} Failed. Cause: ${JSON.stringify(errMessageText)}`);
-            expect().assertFail()
-          }
-          await subWindowClass.destroyWindow();
-          done();
-        } catch (err) {
-          console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
-          if (err.code == 801) {
-            await subWindowClass.destroyWindow();
-            done();
-          } else {
-            expect().assertFail()
-            await subWindowClass.destroyWindow();
-            done();
-          }
-        }
-      })
-
-      /**
-       * @tc.number    : SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0400
-       * @tc.name      : testSetWatermarkImageForAppWindowswithMainWindowandSystemWindow
-       * @tc.desc      : 验证主窗设置，系统窗取消水印成功
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 1
-       */
-      it('testSetWatermarkImageForAppWindowswithMainWindowandSystemWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        let caseName = 'testSetWatermarkImageForAppWindowswithMainWindowandSystemWindow';
-        let subWindowClass: window.Window | undefined;
-        let driver: Driver = await Driver.create();
-        await sleep(200)
-        let config: window.Configuration = {
-          name: "testSetWatermarkImageForAppWindowswithMainWindowandSystemWindow",
-          windowType: window.WindowType.TYPE_FLOAT,
-          ctx: context
-        };
-        try {
-          window.createWindow(config).then(async (data) => {
-            subWindowClass = data;
-            await subWindowClass.setUIContent('testability/pages/First/index4');
-            await subWindowClass.showWindow();
-            let btn = await driver.findComponent(ON.id('SubWinTestId'));
-            await sleep(2000);
-            await btn.click();
-            await sleep(1000);
-            let errCode = await driver.findComponent(ON.id('errCode'));
-            await sleep(1000);
-            let errMessage = await driver.findComponent(ON.id('errMessage'));
-            await sleep(1000);
-            let errCodeText = await errCode.getText();
-            let errMessageText = await errMessage.getText();
-            await sleep(200);
-            if (errCodeText == '801') {
-              expect(true).assertTrue()
-            } else if (errMessageText == 'success') {
-              expect(true).assertTrue()
-            } else {
-              console.error(`${caseName} Failed. Cause: ${JSON.stringify(errMessageText)}`);
-              expect().assertFail()
-            }
-            await subWindowClass.destroyWindow();
-            done();
-          }).catch(async (err: BusinessError) => {
-            console.error(`${caseName} Failed. Cause code: ${err.code}, message: ${err.message}`);
-            if (err.code === 1300002) {
-              await subWindowClass?.destroyWindow();
-              done()
-            } else {
-              expect().assertFail();
-              await subWindowClass?.destroyWindow();
-              done()
-            }
-          });
-        } catch (err) {
-          console.error(`${caseName} Failed2. Cause code: ${err.code}, message: ${err.message}`);
-          expect().assertFail()
-          await subWindowClass?.destroyWindow();
-          done();
-        }
-      })
-
-
-      /**
-       * @tc.number    : SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0500
-       * @tc.name      : testSetWatermarkImageForAppWindowsBeforeLoadContent
-       * @tc.desc      : 验证设置进程水印在子窗loadcontent之前调用
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 1
-       */
-      it('testSetWatermarkImageForAppWindowsBeforeLoadContent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        let caseName = 'testSetWatermarkImageForAppWindowsBeforeLoadContent';
-
-        const rawFile: Uint8Array = await context.resourceManager.getRawFileContent("test1.jpg");
-        let ops: image.SourceOptions = {
-          sourceDensity: 98,
-        }
-        let imageSource: image.ImageSource = image.createImageSource(rawFile.buffer as ArrayBuffer, ops);
-
-        let subWindowClass: window.Window | undefined;
-
-        imageSource.createPixelMap().then(async (pixelMap: image.PixelMap) => {
-          console.info(caseName + " Succeeded in creating pixelmap.");
-          try {
-            subWindowClass = await windowStage.createSubWindow('testSetWatermarkImageForAppWindowsBeforeLoadContent');
-            let windowLimits = subWindowClass.getWindowLimits();
-            console.log(caseName + ' windowLimits: ' + JSON.stringify(windowLimits));
-            await subWindowClass.resize(windowLimits.minWidth as number, windowLimits.minHeight as number);
-
-            let promise = window.setWatermarkImageForAppWindows(pixelMap);
-            promise.then(async () => {
-              console.info(caseName + " Succeeded in setting watermark image.");
-              await subWindowClass?.showWindow();
-              await subWindowClass?.destroyWindow()
-              expect(true).assertTrue();
-              done();
-            }).catch(async (err: BusinessError) => {
-              console.error(`${caseName} Failed to set watermark image. Cause code: ${err.code}, message: ${err.message}`);
-              await subWindowClass?.destroyWindow()
-              if (err.code == 801) {
-                done()
-              } else {
-                expect().assertFail();
-                done();
-              }
-            });
-          } catch (exception) {
-            console.error(`${caseName} Failed to set watermark image. Exception code: ${exception.code}, message: ${exception.message}`);
-            if (exception.code == 801) {
-              await subWindowClass?.destroyWindow()
-              done();
-            } else {
-              await subWindowClass?.destroyWindow()
-              expect().assertFail();
-              done();
-            }
-          }
-        }).catch(async (err: BusinessError) => {
-          console.error(`${caseName} Failed to create PixelMap. Cause code: ${err.code}, message: ${err.message}`);
-          await subWindowClass?.destroyWindow()
-          expect().assertFail();
-          done();
-        });
-      })
 
     })
 }

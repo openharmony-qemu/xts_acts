@@ -3950,7 +3950,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       let windowStageStart = await startAbility4(caseName, context);
       try {
         let windowClass = windowStageStart.getMainWindowSync();
-        await windowClass.setContentAspectRatio(1.0, false, false);
+        let windowStatus = windowClass.getWindowStatus();
+        console.log(caseName + ' windowStatus: ' + JSON.stringify(windowStatus));
+        if(windowStatus != window.WindowStatusType.FLOATING){
+          await windowClass.recover();
+        }
+        await windowClass.setContentAspectRatio(1.0, false, true);
         await sleep(200);
         let storage: LocalStorage = new LocalStorage();
         await windowClass.loadContent('testability/pages/First/index2', storage);
@@ -3961,7 +3966,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           expect(Math.abs(drawableRect.width - drawableRect.height)).assertEqual(0)
           let windowDecHeight = windowClass.getWindowDecorHeight();
           console.log(caseName + ' windowDecHeight: ' + JSON.stringify(windowDecHeight));
-          expect(px2vp(windowDecHeight)).assertEqual(37)
+          expect(windowDecHeight).assertEqual(37)
           await terminateAbility4(caseName);
           done();
         } else {
