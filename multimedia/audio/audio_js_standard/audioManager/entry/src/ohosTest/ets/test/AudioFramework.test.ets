@@ -2721,21 +2721,21 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        let value = await audioManager.getRingerMode();
+        let value = await audioVolumeGroupManager.getRingerMode();
         if (data == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
-          console.info(`${TagFrmwk}: Media getRingerMode : PASS :${data}`);
+          console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerMode : PASS :${data}`);
           expect(true).assertTrue();
           done();
         } else if (data == audio.AudioRingMode.RINGER_MODE_NORMAL) {
-          console.info(`${TagFrmwk}: Media getRingerMode : PASS :${data}`);
+          console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerMode : PASS :${data}`);
           expect(true).assertTrue();
           done();
         } else if (data == audio.AudioRingMode.RINGER_MODE_SILENT) {
-          console.info(`${TagFrmwk}: Media getRingerMode : PASS :${data}`);
+          console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerMode : PASS :${data}`);
           expect(true).assertTrue();
           done();
         } else {
-          console.info(`${TagFrmwk}: Media getRingerMode : FAIL :${data}`);
+          console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerMode : FAIL :${data}`);
           expect(false).assertTrue();
           done();
         }
@@ -2762,24 +2762,24 @@ export default function audioFramework() {
           expect().assertFail();
           done();
         } else {
-          audioManager.getRingerMode((err, value) => {
+          audioVolumeGroupManager.getRingerMode((err, value) => {
             if (err) {
               console.error(`${TagFrmwk}: Callback : RINGER_MODE_VIBRATE: Error: ${err.message}`);
               expect().assertFail();
             } else if (value == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
-              console.info(`${TagFrmwk}: Callback: getRingerMode RINGER_MODE_VIBRATE: PASS :${value}`);
+              console.info(`${TagFrmwk}: Callback: audioVolumeGroupManager.getRingerMode RINGER_MODE_VIBRATE: PASS :${value}`);
               expect(true).assertTrue();
               done();
             } else if (value == audio.AudioRingMode.RINGER_MODE_NORMAL) {
-              console.info(`${TagFrmwk}: Callback: getRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
+              console.info(`${TagFrmwk}: Callback: audioVolumeGroupManager.getRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
               expect(true).assertTrue();
               done();
             } else if (value == audio.AudioRingMode.RINGER_MODE_SILENT) {
-              console.info(`${TagFrmwk}: Callback: getRingerMode RINGER_MODE_SILENT: PASS :${value}`);
+              console.info(`${TagFrmwk}: Callback: audioVolumeGroupManager.getRingerMode RINGER_MODE_SILENT: PASS :${value}`);
               expect(true).assertTrue();
               done();
             } else {
-              console.info(`${TagFrmwk}: Callback: getRingerMode : FAIL :${value}`);
+              console.info(`${TagFrmwk}: Callback: audioVolumeGroupManager.getRingerMode : FAIL :${value}`);
               expect(false).assertTrue();
             }
             done();
@@ -2800,19 +2800,20 @@ export default function audioFramework() {
       try {
         let data = audioVolumeGroupManager.getRingerModeSync();
         if (data == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
-          console.info(`${TagFrmwk}: Media getRingerModeSync : PASS :${data}`);
+        let data = audioVolumeGroupManager.getRingerModeSync();
+          console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerModeSync : PASS :${data}`);
           expect(true).assertTrue();
           done();
         } else if (data == audio.AudioRingMode.RINGER_MODE_NORMAL) {
-          console.info(`${TagFrmwk}: Media getRingerModeSync : PASS :${data}`);
+          console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerModeSync : PASS :${data}`);
           expect(true).assertTrue();
           done();
         } else if (data == audio.AudioRingMode.RINGER_MODE_SILENT) {
-          console.info(`${TagFrmwk}: Media getRingerModeSync : PASS :${data}`);
+          console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerModeSync : PASS :${data}`);
           expect(true).assertTrue();
           done();
         } else {
-          console.info(`${TagFrmwk}: Media getRingerModeSync : FAIL :${data}`);
+          console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerModeSync : FAIL :${data}`);
           expect(false).assertTrue();
           done();
         }
