@@ -25,7 +25,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 
 let testAbilityContext:common.UIAbilityContext;
 
-export default function setAndClearServiceWorkerWebSchemeHandler() {
+export default function SetAndClearServiceWorkerWebSchemeHandler() {
   describe('componentLifeCycleTestOne', (): void => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')
