@@ -37,12 +37,12 @@ struct TabsUIOptionsExample {
 
   aboutToAppear(): void {
     let observer = this.getUIContext().getUIObserver();
-    observer.on('tabContentUpdate', { id: 'tabsId_uiUpdate' }, callbackFunc);
+    observer.onTabContentUpdate({ id: 'tabsId_uiUpdate' }, callbackFunc);
   }
 
   aboutToDisappear(): void {
     let observer = this.getUIContext().getUIObserver();
-    observer.off('tabContentUpdate', { id: 'tabsId_uiUpdate' }, callbackFunc);
+    observer.offTabContentUpdate({ id: 'tabsId_uiUpdate' }, callbackFunc);
   }
 
   build() {
