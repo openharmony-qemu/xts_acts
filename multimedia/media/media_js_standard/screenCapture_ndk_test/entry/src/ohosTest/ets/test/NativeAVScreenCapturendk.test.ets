@@ -58,11 +58,14 @@ function reqPermissionsFromUser(permissions: Array<Permissions>, context:common.
 
 export default function nativeAVScreenCaptureNdkTest() {
   describe('NativeAVScreenCaptureNdkTest', () => {
+    let currentDeviceIsPc: boolean = false;
     beforeAll(async (done: Function) => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
       let context2: UIAbility = await delegator.getCurrentTopAbility();
       reqPermissionsFromUser(permissions, context2.context, done);
+      currentDeviceIsPc = deviceinfo.deviceType === '2in1';
+      console.info('the value of the deviceType is: ' + deviceinfo.deviceType);
       console.info('beforeAll case');
       Utils.allowScreenCapture();
     });
@@ -1090,6 +1093,20 @@ export default function nativeAVScreenCaptureNdkTest() {
       let result: number = myScreenCaptureNdk.normalAVScreenCaptureExcludePickerWindows();
       let expectedResult: number = deviceinfo.deviceType === '2in1' ? 0 : 1;
       expect(result).assertEqual(expectedResult);
+      done();
+    });
+
+    /**
+     * @tc.number       SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_Fresent_picker_0001
+     * @tc.name         SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_Fresent_picker_0001
+     * @tc.desc         OH_AVScreenCapture_presentPicker not surport
+     * @tc.size         MediumTest
+     * @tc.type         Function
+     * @tc.level        Level 0
+     */
+    it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_Fresent_picker_0001', Level.LEVEL0, async (done: Function) => {
+      let result: number = myScreenCaptureNdk.normalAVScreenCaptureStrategyForPresenPicker1();
+      expect(result).assertEqual(0);
       done();
     });
   })

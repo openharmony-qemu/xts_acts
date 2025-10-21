@@ -37,6 +37,7 @@ export default class MediaTestBase {
   SKIPPRIVACYMODE_EVENT = 'skipPrivacyMode';
   STOPRECORDER_EVENT = 'stop';
   RELEASECORDER_EVENT = 'release';
+  PRESENTT_PICKER_EVENT = 'presentPicker';
   END_EVENT = 'end';
   FAIL_EVENT = 'fail';
   AV_CREATEAVPLAYER = 'createAVPlayer';
@@ -275,6 +276,22 @@ export default class MediaTestBase {
         }
         this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         this.closeFd(this.outputFdObject.fd);
+        break;
+      case this.PRESENTT_PICKER_EVENT:
+        steps.shift();
+        await avScreenCaptureRecorder?.presentPicker().then(() => {
+          console.info('avScreenCaptureRecorder presentPicker success');
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        }).catch((err: BusinessError) => {
+          console.error('avScreenCaptureRecorder presentPicker failed, error: ' + err.code);
+          if (err.code == 5400102) {
+            this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+          } else {
+            console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
+            expect().assertFail()
+          }
+        })
+
         break;
       case this.SET_MIC_ENABLE_EVENT:
         steps.shift();

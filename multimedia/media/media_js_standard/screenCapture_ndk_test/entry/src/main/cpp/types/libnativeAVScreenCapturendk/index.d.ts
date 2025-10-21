@@ -57,3 +57,4 @@ export const normalAVScreenCaptureSetPickerModeWindowOnly: () => number;
 export const normalAVScreenCaptureSetPickerModeScreenOnly: () => number;
 export const normalAVScreenCaptureSetPickerModeScreenAndWindow: () => number;
 export const normalAVScreenCaptureExcludePickerWindows: () => number;
+export const normalAVScreenCaptureStrategyForPresenPicker1: () => number;
