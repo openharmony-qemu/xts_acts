@@ -183,7 +183,7 @@ export default function cloudFileDownloadTest() {
         });
       } catch (error: BusinessError<void>) {
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_SyncState_static_005 failed, err = ' + error.code + ', message = ' + error.message);
-        expect(false).assertTrue();
+        expect(error.code == 201 && error.message == 'Permission verification failed').assertTrue();
       }
       done();
       hilog.info(domain, tag, '%{public}s', 'test_CloudSync_SyncState_static_005 end');

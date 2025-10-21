@@ -13,12 +13,13 @@
  * limitations under the License.
  */
 
-import { OnSslErrorEventReceiveEvent, OnPageVisibleEvent, FileSelectorParam, OnShowFileSelectorEvent, Entry, Component, Column, Row, Button, ClickEvent, Web } from "@ohos.arkui.component"
+import { OnSslErrorEventReceiveEvent, OnPageVisibleEvent, FileSelectorParam, OnShowFileSelectorEvent, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
 import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { Callback, RecordData } from '@ohos.base'
-import { State } from "@ohos.arkui.stateManagement" // should be insert by ui-plugins
+import { UIContext, Router } from '@ohos.arkui.UIContext'
+import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 
 @Entry
 @Component
@@ -39,10 +40,6 @@ struct WebViewJavaScriptProxyAndOnPageVisible {
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  onPageHide() {
-    events_emitter.off(10)
-  }
-
   private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
@@ -57,20 +54,29 @@ struct WebViewJavaScriptProxyAndOnPageVisible {
   build() {
     Column() {
       Row() {
-        Button("web clicks").key('buttonJavaScriptProxyAndPageVisible').onClick((e: ClickEvent) => {
+        Button('web clicks').key('buttonJavaScriptProxyAndPageVisible').onClick((e: ClickEvent) => {
           console.info('key==>' + this.str)
           switch (this.str) {
+
             case 'emitOnPageVisible': {
               this.onPageVisibleCalled = false
-              this.controller.loadUrl("resource://rawfile/icon.html")
+              this.controller.loadUrl('resource://rawfile/icon.html')
               break;
             }
+
+            case 'SwitchNextPageStatic' : {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/webOnHttpErrorReceive' })
+              console.log('push URL success')
+            }
+
           }
         })
       }
 
-      Web({ src: "resource://rawfile/indexThree.html", controller: this.controller })
-        .key("WebViewJavaScriptProxyAndOnPageVisibleWebView")
+      Web({ src: 'resource://rawfile/indexThree.html', controller: this.controller })
+        .key('WebViewJavaScriptProxyAndOnPageVisibleWebView')
         .defaultFontSize(this.fontSize)
         .onShowFileSelector((event: OnShowFileSelectorEvent): Boolean => {
           console.log('onShowFileSelector =====>')

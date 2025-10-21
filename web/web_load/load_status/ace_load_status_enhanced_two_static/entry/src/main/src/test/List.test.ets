@@ -14,6 +14,8 @@
  */
 
 import WebViewJavaScriptProxyAndOnPageVisible from "./WebViewJavaScriptProxyAndOnPageVisible.test";
+import webOnHttpErrorReceiveTest from './WebOnHttpErrorReceive.test'
 export default function testsuite() {
     WebViewJavaScriptProxyAndOnPageVisible();
+    webOnHttpErrorReceiveTest();
 }

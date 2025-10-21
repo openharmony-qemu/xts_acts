@@ -1084,12 +1084,13 @@ export default function settingUiJsunit() {
           })
         done();
       }catch (err) {
+        err = err as Error;
         // if(err.code == 201) {
         //   console.info('权限错误')
         //   expect(err.code == 201).assertTrue();
         // }
         console.error("[settings_set_value_static_117] error = " + String(err));
-        expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
+        expect(err.toString() == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
           .assertTrue();
       }
       done();
@@ -1112,8 +1113,9 @@ export default function settingUiJsunit() {
           done();
         })
       }catch (err) {
+        err = err as Error;
         console.error("[settings_set_value_static_118] error = " + err);
-        expect(err == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
+        expect(err.toString() == "Error: assertion (valueType == napi_object) failed: Wrong argument[0] type. Object expected.")
           .assertTrue();
       }
       done();
@@ -1139,8 +1141,9 @@ export default function settingUiJsunit() {
         expect(value2).assertEqual(true);
         done();
       }catch (err) {
+        err = err as Error;
         console.error("[settings_set_value_122] error = " + err);
-        expect(err == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected.")
+        expect(err.toString() == "Error: assertion (valueType == napi_string) failed: Wrong argument[2] type. String expected.")
           .assertTrue();
       }
       done();

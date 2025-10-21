@@ -66,6 +66,9 @@
       },
       {
         "name": "ohos.permission.GET_NETWORK_INFO"
+      },
+      {
+        "name": "SystemCapability.Telephony.CoreService"
       }
     ]
   }

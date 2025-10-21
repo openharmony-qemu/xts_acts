@@ -675,5 +675,40 @@ export default function HidebugJsTest() {
             }
             console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1400 Test end*************');
         });
+        /*
+         * @tc.number    : DFX_DFR_Hiprofiler_Interface_1800
+         * @tc.name      : startJsCpuProfiling/stopJsCpuProfiling with normal parameter
+         * @tc.desc      : startJsCpuProfiling/stopJsCpuProfiling
+         * @tc.number: test_1800
+         * @tc.level: Level 2
+         * @tc.size: MediumTest
+         * @tc.type: Function
+         */
+        it('DFX_DFR_Hiprofiler_Interface_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            console.log('************* DFX_DFR_Hiprofiler_Interface_1800 Test start*************');
+            try {
+                let timestamp = Date.now();
+                let filename = "cpuprofiler_" + timestamp.toString();
+                hidebug.startJsCpuProfiling(filename);
+                for (let i = 0; i < 3; i++) {
+                    hidebug.getSharedDirty();
+                }
+                hidebug.stopJsCpuProfiling();
+                let path = "/proc/self/root/data/storage/el2/base/files/" + filename + ".json";
+                let data = fileIo.readTextSync(path);
+                if (data.includes("napi")) {
+                    console.info('DFX_DFR_Hiprofiler_Interface_1800 xxx ' + data);
+                } else {
+                    expect(false).assertTrue();
+                }
+                done();
+            } catch (err: BusinessError) {
+                console.error('DFX_DFR_Hiprofiler_Interface_1800 has failed for ' + err);
+                expect(false).assertTrue();
+                done();
+            }
+            console.log('************* DFX_DFR_Hiprofiler_Interface_1800 Test end*************');
+            done();
+        });
     })
 }
