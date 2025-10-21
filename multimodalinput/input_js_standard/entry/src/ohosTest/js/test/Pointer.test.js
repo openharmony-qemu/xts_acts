@@ -118,44 +118,20 @@ export default function Pointer_test() {
         expect(false).assertTrue();
         done();
       }
-
       try {
         await pointer.isPointerVisible().then(data => {
-          console.info(`Pointer_PointerVisibleTest_001 Promise success, data=${JSON.stringify(data)}`);
+          console.info(`Pointer_PointerVisibleTest_001 success_2, data=${JSON.stringify(data)}`);
           expect(data == false).assertTrue();
           done();
-        })
-      } catch (error) {
-        console.info(`Pointer_SetPointerVisibleTest_001 Promise error`);
-        expect(false).assertTrue();
-        done();
-      }
-
-      try {
-        await pointer.isPointerVisible((err, data) => {
-          if (err) {
-            console.info(`Pointer_PointerVisibleTest_001 Callback failed, err=${JSON.stringify(err)}`);
-            expect(false).assertTrue();
-            done();
-          } else {
-            console.info(`Pointer_PointerVisibleTest_001 Callback success, data=${JSON.stringify(data)}`);
-            expect(data == true).assertTrue();
-            done();
-          }
+        }).catch((err) => {
+          console.info(`Pointer_PointerVisibleTest_001 failed, err=${JSON.stringify(err)}`);
+          expect(false).assertTrue();
+          done();
         });
       } catch (error) {
-        console.info(`Pointer_PointerVisibleTest_001 Callback error`);
+        console.info(`Pointer_SetPointerVisibleTest_001 error`);
         expect(false).assertTrue();
         done();
-      }
-
-      try {
-        let visible = pointer.isPointerVisibleSync();
-        expect(visible == true).assertTrue();
-        console.log(`Pointer_PointerVisibleTest_001 isPointerVisibleSync success, visible: ${JSON.stringify(visible)}`);
-      } catch (error) {
-        expect(false).assertTrue();
-        console.log(`Pointer_PointerVisibleTest_001 isPointerVisibleSync failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
       }
       console.info(`Pointer_PointerVisibleTest_001 exit`);
     })
@@ -231,6 +207,80 @@ export default function Pointer_test() {
         done();
       }
       console.info(`Pointer_PointerVisibleTest_002 exit`);
+    });
+
+    /**
+     * @tc.number Pointer_PointerVisibleTest_003
+     * @tc.name Pointer_PointerVisibleTest_003
+     * @tc.desc Pointer interface SetPointerVisible test
+     * @tc.level Level3
+     * @tc.size SmallTest
+     * @tc.type Function
+     */
+    it('Pointer_PointerVisibleTest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      console.info(`Pointer_PointerVisibleTest_003 enter`);
+      var result = canIUse("SystemCapability.MultimodalInput.Input.Pointer");
+      console.info('Pointer_PointerVisibleTest_003 segregate result=' + result);
+      if (result) {
+        try {
+          await pointer.setPointerVisible(false).then(data => {
+            console.info(`Pointer_PointerVisibleTest_003 success_1, data=${JSON.stringify(data)}`);
+            expect(true).assertTrue();
+            try {
+              pointer.isPointerVisible().then(data => {
+                console.info(`Pointer_PointerVisibleTest_003 Promise success, data=${JSON.stringify(data)}`);
+                expect(data == false).assertTrue();
+                done();
+              })
+            } catch (error) {
+              console.info(`Pointer_PointerVisibleTest_003 Promise error`);
+              expect(false).assertTrue();
+              done();
+            }
+
+            try {
+              pointer.isPointerVisible((err, data) => {
+                if (err) {
+                  console.info(`Pointer_PointerVisibleTest_003 Callback failed, err=${JSON.stringify(err)}`);
+                  expect(false).assertTrue();
+                  done();
+                } else {
+                  console.info(`Pointer_PointerVisibleTest_003 Callback success, data=${JSON.stringify(data)}`);
+                  expect(data == false).assertTrue();
+                  done();
+                }
+              });
+            } catch (error) {
+              console.info(`Pointer_PointerVisibleTest_003 Callback error`);
+              expect(false).assertTrue();
+              done();
+            }
+
+            try {
+              let visible = pointer.isPointerVisibleSync();
+              expect(visible == false).assertTrue();
+              console.log(`Pointer_PointerVisibleTest_003 isPointerVisibleSync success, visible: ${JSON.stringify(visible)}`);
+            } catch (error) {
+              expect(false).assertTrue();
+              console.log(`Pointer_PointerVisibleTest_003 isPointerVisibleSync failed, error: ${JSON.stringify(error,
+                [`code`, `message`])}`);
+            }
+          }).catch((err) => {
+            console.info(`Pointer_PointerVisibleTest_003 failed, err=${JSON.stringify(err)}`);
+            expect(err.code).assertEqual(errCode.DEVICE_NOT_SUPPORT);
+            done();
+          });
+        } catch (error) {
+          console.info(`Pointer_PointerVisibleTest_003 error`);
+          expect(false).assertTrue();
+          done();
+        }
+      } else {
+        expect(true).assertTrue();
+        console.info('Pointer_PointerVisibleTest_003 SystemCapability.MultimodalInput.Input.Pointer segregate');
+        done();
+      }
+      console.info(`Pointer_PointerVisibleTest_003 exit`);
     });
 
     /**
