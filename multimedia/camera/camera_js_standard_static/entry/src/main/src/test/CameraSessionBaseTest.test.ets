@@ -835,14 +835,14 @@ export default function cameraSessionTest() {
       console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_FOCUSSTATECHANGE_STATIC_0100--------------");
       try {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_FOCUSSTATECHANGE_STATIC_0100");
-        mCameraSession.on('focusStateChange', (err: BusinessError | null, focusState: cameraObj.FocusState | undefined) => {
+        mCameraSession.onFocusStateChange((err: BusinessError | null, focusState: cameraObj.FocusState | undefined) => {
           if (err !== undefined && err!.code !== 0) {
             console.info(TAG + `Callback Error, errorCode: ${err!.code}`);
             expect().assertFail();
           }
           console.info(TAG + `Focus state: ${focusState}`);
         })
-        mCameraSession.off('focusStateChange');
+        mCameraSession.offFocusStateChange();
         done();
       } catch (error) {
         let err = error as BusinessError;
@@ -865,7 +865,7 @@ export default function cameraSessionTest() {
       console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ERROR_STATIC_0100--------------");
       try {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ERROR_STATIC_0100 SUCCESS");
-        mCameraSession.on('error', (err: BusinessError) => {
+        mCameraSession.onError((err: BusinessError) => {
           if (!err){
             console.info(TAG + "Entering SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_CALLBACK_ON_ERROR_STATIC_0100 FAILED! error == null || undefined");
             expect().assertFail();
@@ -873,7 +873,7 @@ export default function cameraSessionTest() {
             console.info(`Video session error code: ${err.code}`);
           }
         })
-        mCameraSession.off('error');
+        mCameraSession.offError();
         done();
       } catch (error) {
         let err = error as BusinessError;
