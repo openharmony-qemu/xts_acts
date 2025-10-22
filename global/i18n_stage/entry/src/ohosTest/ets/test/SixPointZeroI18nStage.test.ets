@@ -4209,7 +4209,7 @@ export default function SixPointZeroI18nStageTest() {
     it('i18n_test_removePreferredLanguage_0100', Level.LEVEL2, () => {
       let removePreferred = i18n.removePreferredLanguage(1)
       console.log('i18n_test_removePreferredLanguage_0100' + removePreferred)
-      expect(removePreferred.length > 0).assertEqual(true)
+      expect(removePreferred).assertFalse()
     })
 
     /* *
