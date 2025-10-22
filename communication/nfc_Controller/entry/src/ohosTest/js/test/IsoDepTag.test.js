@@ -174,7 +174,7 @@ export default function nfcIsoDepTagTest() {
                         console.info("[NFC_test] Isodep4 isExtendedApduSupported data: " + data);
                         if (data == true) {
                             console.info("[NFC_test] Isodep3 is isExtendedApduSupported data: " + data);
-                            expect(data).asserTrue();
+                            expect(data).assertTrue();
                         } else {
                             console.info("[NFC_test] Isodep3 is isExtendedApduSupported data: " + data);
                             expect(data).assertFalse();
