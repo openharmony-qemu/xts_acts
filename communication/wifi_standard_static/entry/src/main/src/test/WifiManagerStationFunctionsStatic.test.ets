@@ -12,11 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll, afterEach} from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll} from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
+import CallbackMethods from './CallbackMethod.test';
 import wifiManager from '@ohos.wifiManager';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -37,12 +37,6 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.closeWifi();
             await Utils.openWifi();
             hilog.info(domain, tag, '%{public}s', 'afterAll end');
-        })
-
-        afterEach(() => {
-            hilog.info(domain, tag, '%{public}s', 'afterEach start');
-            await Utils.msSleep(2000);
-            hilog.info(domain, tag, '%{public}s', 'afterEach end');
         })
 
         /**
@@ -556,7 +550,9 @@ export default function actsWifiManagerFunctionsTest() {
         it("getScanInfoListTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
                 let infos: Array<wifiManager.WifiScanInfo> = wifiManager.getScanInfoList();
-                if (infos != null) {
+                hilog.info(domain, tag, "getScanInfoList result:" + JSON.stringify(infos));
+                hilog.info(domain, tag, "getScanInfoList result length:" + infos.length);
+                if (infos.length > 0) {
                     hilog.info(domain, tag, "bssid:" + infos[0]?.bssid);
                     hilog.info(domain, tag, "securityType:" + infos[0]?.securityType);
                     hilog.info(domain, tag, "rssi:" + infos[0]?.rssi);
@@ -569,11 +565,15 @@ export default function actsWifiManagerFunctionsTest() {
                     hilog.info(domain, tag, "channelWidth:" + infos[0]?.channelWidth);
                     hilog.info(domain, tag, "centerFrequency0:" + infos[0]?.centerFrequency0);
                     hilog.info(domain, tag, "centerFrequency1:" + infos[0]?.centerFrequency1);
-                    hilog.info(domain, tag, "infoElems:" + infos[0]?.infoElems);
+                    hilog.info(domain, tag, "infoElems:" + JSON.stringify(infos[0]?.infoElems[0]));
                     hilog.info(domain, tag, "infoElems eid:" + infos[0]?.infoElems[0]?.eid);
+                    hilog.info(domain, tag, "infoElems content:" + infos[0]?.infoElems[0]?.content);
                     hilog.info(domain, tag, "timestamp:" + infos[0]?.timestamp);
                     hilog.info(domain, tag, "isHiLinkNetwork:" + infos[0]?.isHiLinkNetwork);
-                    expect(true).assertEqual(infos != null);
+                    expect(true).assertEqual(infos.length > 0);
+                } else if (infos.length == 0) {
+                    hilog.info(domain, tag, "scan get info is null");
+                    expect(true).assertEqual(infos.length == 0);
                 } else {
                     expect().assertFail();
                 }
@@ -801,38 +801,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @tc.number getP2pLinkedInfoCallbackTest
-         * @tc.name getP2pLinkedInfoCallbackTest
-         * @tc.desc Test getP2pLinkedInfoCallbackTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
-         */
-        it("getP2pLinkedInfoCallbackTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            wifiManager.getP2pLinkedInfo((err: BusinessError | null, data: wifiManager.WifiP2pLinkedInfo | undefined) => {
-                try {
-                    if (err != null) {
-                        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                        hilog.info(domain, tag, "getP2pLinkedInfo callback get errCode:" + err?.code + ",errMessage:" + err?.message);
-                        if (err?.code == 801) {
-                            hilog.info(domain, tag, 'api is not support');
-                            expect(true).assertEqual(err?.code == 801);
-                            done();
-                        }
-                    } else {
-                        hilog.info(domain, tag, 'getP2pLinkedInfo callback success result:' + JSON.stringify(data));
-                        done();
-                    }
-                } catch (err: BusinessError) {
-                    hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
-                    expect().assertFail();
-                    done();
-                }
-            })
-            done();
-        })
-
-        /**
          * @tc.number getCurrentGroupPromiseTest
          * @tc.name getCurrentGroupPromiseTest
          * @tc.desc Test getCurrentGroupPromiseTest API functionality
@@ -866,38 +834,6 @@ export default function actsWifiManagerFunctionsTest() {
                     expect(true).assertEqual(err.code == 2801000);
                 }
             }
-            done();
-        })
-
-        /**
-         * @tc.number getCurrentGroupCallbackTest
-         * @tc.name getCurrentGroupCallbackTest
-         * @tc.desc Test getCurrentGroupCallbackTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
-         */
-        it("getCurrentGroupCallbackTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            wifiManager.getCurrentGroup((err: BusinessError | null, data: wifiManager.WifiP2pGroupInfo | undefined) => {
-                try {
-                    if (err != null) {
-                        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                        hilog.info(domain, tag, "getCurrentGroup callback get errCode:" + err?.code + ",errMessage:" + err?.message);
-                        if (err?.code == 801) {
-                            hilog.info(domain, tag, 'api is not support');
-                            expect(true).assertEqual(err?.code == 801);
-                            done();
-                        }
-                    } else {
-                        hilog.info(domain, tag, 'getCurrentGroup callback success result:' + JSON.stringify(data));
-                        done();
-                    }
-                } catch (err: BusinessError) {
-                    hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
-                    expect().assertFail();
-                    done();
-                }
-            })
             done();
         })
 
@@ -938,38 +874,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @tc.number getP2pPeerDevicesCallbackTest
-         * @tc.name getP2pPeerDevicesCallbackTest
-         * @tc.desc Test getP2pPeerDevicesCallbackTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
-         */
-        it("getP2pPeerDevicesCallbackTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            wifiManager.getP2pPeerDevices((err: BusinessError | null, data: wifiManager.WifiP2pDevice[] | undefined) => {
-                try {
-                    if (err != null) {
-                        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                        hilog.info(domain, tag, "getP2pPeerDevices callback get errCode:" + err?.code + ",errMessage:" + err?.message);
-                        if (err?.code == 801) {
-                            hilog.info(domain, tag, 'api is not support');
-                            expect(true).assertEqual(err?.code == 801);
-                            done();
-                        }
-                    } else {
-                        hilog.info(domain, tag, 'getP2pPeerDevices callback success result:' + JSON.stringify(data));
-                        done();
-                    }
-                } catch (err: BusinessError) {
-                    hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
-                    expect().assertFail();
-                    done();
-                }
-            })
-            done();
-        })
-
-        /**
          * @tc.number getP2pLocalDevicePromiseTest
          * @tc.name getP2pLocalDevicePromiseTest
          * @tc.desc Test getP2pLocalDevicePromiseTest API functionality
@@ -994,38 +898,6 @@ export default function actsWifiManagerFunctionsTest() {
                     expect().assertFail();
                 }
             }
-            done();
-        })
-
-        /**
-         * @tc.number getP2pLocalDeviceCallbackTest
-         * @tc.name getP2pLocalDeviceCallbackTest
-         * @tc.desc Test getP2pLocalDeviceCallbackTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
-         */
-        it("getP2pLocalDeviceCallbackTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            wifiManager.getP2pLocalDevice((err: BusinessError | null, data: wifiManager.WifiP2pDevice | undefined) => {
-                try {
-                    if (err != null) {
-                        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                        hilog.info(domain, tag, "getP2pLocalDevice callback get errCode:" + err?.code + ",errMessage:" + err?.message);
-                        if (err?.code == 801) {
-                            hilog.info(domain, tag, 'api is not support');
-                            expect(true).assertEqual(err?.code == 801);
-                            done();
-                        }
-                    } else {
-                        hilog.info(domain, tag, 'getP2pLocalDevice callback success result:' + JSON.stringify(data));
-                        done();
-                    }
-                } catch (err: BusinessError) {
-                    hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
-                    expect().assertFail();
-                    done();
-                }
-            })
             done();
         })
 
@@ -1123,85 +995,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @tc.number deviceConfigCallbackTest
-         * @tc.name deviceConfigCallbackTest
-         * @tc.desc Test deviceConfigCallbackTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
-         */
-        it("deviceConfigCallbackTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
-                "ssid": "publicTest",
-                "bssid": "00:11:22:33:44:55",
-                "bssidType": wifiManager.DeviceAddressType.RANDOM_DEVICE_ADDRESS,
-                "preSharedKey": "",
-                "isHiddenSsid": false,
-                "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_OPEN
-            };
-            let networkNum: int = -1;
-            wifiManager.addDeviceConfig(wifiDeviceConfig, (err: BusinessError | null, netWorkId?: int) => {
-                try {
-                    if (err != null) {
-                        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                        hilog.info(domain, tag, "addDeviceConfig callback get errCode:" + err?.code + ",errMessage:" + err?.message);
-                        if (err?.code == 801) {
-                            hilog.info(domain, tag, 'api is not support');
-                            expect(true).assertEqual(err?.code == 801);
-                            done();
-                        }
-                    } else {
-                        if (netWorkId != undefined) {
-                            hilog.info(domain, tag, 'addDeviceConfig callback success result:' + JSON.stringify(netWorkId));
-                            networkNum = netWorkId;
-                            done();
-                        } else {
-                            hilog.info(domain, tag, 'addDeviceConfig callback success result:' + JSON.stringify(netWorkId));
-                            done();
-                        }
-                    }
-                } catch (err :BusinessError) {
-                    hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
-                    expect().assertFail();
-                    done();
-                }
-            })
-            try {
-                await Utils.msSleep(3000);
-                expect(true).assertEqual(networkNum != -1);
-                let config: Array<wifiManager.WifiDeviceConfig> = wifiManager.getDeviceConfigs();
-                hilog.info(domain, tag, 'getDeviceConfigs success result:' + JSON.stringify(config));
-                if (config.length != 0) {
-                    expect(config[((config.length)-1)].ssid).assertEqual("publicTest");
-                } else {
-                    hilog.info(domain, tag, 'getDeviceConfigs failed');
-                    expect().assertFail();
-                }
-                hilog.info(domain, tag, 'removeDevice start');
-                wifiManager.removeDevice(networkNum);
-                await Utils.msSleep(2000);
-                let configs: Array<wifiManager.WifiDeviceConfig> = wifiManager.getDeviceConfigs();
-                hilog.info(domain, tag, 'getDeviceConfigs success result:' + JSON.stringify(configs));
-                if (configs.length != 0) {
-                    expect(true).assertEqual(configs[((configs.length)-1)].ssid != "publicTest");
-                } else {
-                    expect(true).assertEqual(configs.length == 0);
-                }
-                done();
-            } catch (err :BusinessError) {
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                hilog.info(domain, tag, "DeviceConfig callback get errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
-                    hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertEqual(err.code == 801);
-                } else {
-                    expect().assertFail();
-                }
-            }
-            done();
-        })
-
-        /**
          * @tc.number candidateConfigPromiseTest
          * @tc.name candidateConfigPromiseTest
          * @tc.desc Test candidateConfigPromiseTest API functionality
@@ -1258,73 +1051,6 @@ export default function actsWifiManagerFunctionsTest() {
                     expect(true).assertEqual(err.code == 801);
                 }
             }
-            done();
-        })
-
-        /**
-         * @tc.number candidateConfigCallbackTest
-         * @tc.name candidateConfigCallbackTest
-         * @tc.desc Test candidateConfigCallbackTest API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
-         */
-        it("candidateConfigCallbackTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
-                "ssid": "TEST_OPEN",
-                "bssid": "22:9b:e6:48:1f:5c",
-                "preSharedKey": "",
-                "isHiddenSsid": false,
-                "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_OPEN
-            };
-            let networkNum: int = -1;
-            wifiManager.addCandidateConfig(wifiDeviceConfig, (err: BusinessError | null, netWorkId?: int) => {
-                try {
-                    if (err != null) {
-                        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                        hilog.info(domain, tag, "addCandidateConfig callback get errCode:" + err?.code + ",errMessage:" + err?.message);
-                        if (err?.code == 801) {
-                            hilog.info(domain, tag, 'api is not support');
-                            expect(true).assertEqual(err?.code == 801);
-                            done();
-                        }
-                    } else {
-                        if (netWorkId != null) {
-                            hilog.info(domain, tag, 'addCandidateConfig callback success result:' + JSON.stringify(netWorkId));
-                            networkNum = netWorkId;
-                            done();
-                        } else {
-                            hilog.info(domain, tag, 'addCandidateConfig callback success result:' + JSON.stringify(netWorkId));
-                            done();
-                        }
-                    }
-                } catch (err :BusinessError) {
-                    hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
-                    expect().assertFail();
-                    done();
-                }
-            })
-            await Utils.msSleep(4000);
-            wifiManager.removeCandidateConfig(networkNum, (err: BusinessError | null) => {
-                try {
-                    if (err != null) {
-                        hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                        hilog.info(domain, tag, "removeCandidateConfig callback get errCode:" + err?.code + ",errMessage:" + err?.message);
-                        if (err?.code == 801) {
-                            hilog.info(domain, tag, 'api is not support');
-                            expect(true).assertEqual(err?.code == 801);
-                            done();
-                        }
-                    } else {
-                        hilog.info(domain, tag, 'removeCandidateConfig callback success');
-                        done();
-                    }
-                } catch (err :BusinessError) {
-                    hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
-                    expect().assertFail();
-                    done();
-                }
-            })
             done();
         })
 
@@ -2448,6 +2174,189 @@ export default function actsWifiManagerFunctionsTest() {
                 wifiManager.offWifiRssiChange(onReceiveEvent);
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "wifiRssiChange off get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number getCurrentGroupCallbackTest
+         * @tc.name getCurrentGroupCallbackTest
+         * @tc.desc Test getCurrentGroupCallbackTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("getCurrentGroupCallbackTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                await CallbackMethods.getCurrentGroupCallback().then((data: wifiManager.WifiP2pGroupInfo) => {
+                    hilog.info(domain, tag, 'getCurrentGroupCallback success result:' + JSON.stringify(data));
+                });
+                expect().assertFail();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(err.code).assertEqual(2801000);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number getP2pLinkedInfoCallbackTest
+         * @tc.name getP2pLinkedInfoCallbackTest
+         * @tc.desc Test getP2pLinkedInfoCallbackTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("getP2pLinkedInfoCallbackTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                await CallbackMethods.getP2pLinkedInfoCallback().then((data: wifiManager.WifiP2pLinkedInfo) => {
+                    hilog.info(domain, tag, 'getP2pLinkedInfoCallback success result:' + JSON.stringify(data));
+                });
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number getP2pPeerDevicesCallbackTest
+         * @tc.name getP2pPeerDevicesCallbackTest
+         * @tc.desc Test getP2pPeerDevicesCallbackTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("getP2pPeerDevicesCallbackTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                await CallbackMethods.getP2pPeerDevicesCallback().then((data: wifiManager.WifiP2pDevice[]) => {
+                    hilog.info(domain, tag, 'getP2pPeerDevicesCallback success result:' + JSON.stringify(data));
+                });
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number getP2pLocalDeviceCallbackTest
+         * @tc.name getP2pLocalDeviceCallbackTest
+         * @tc.desc Test getP2pLocalDeviceCallbackTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("getP2pLocalDeviceCallbackTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                await CallbackMethods.getP2pLocalDeviceCallback().then((data: wifiManager.WifiP2pDevice) => {
+                    hilog.info(domain, tag, 'getP2pLocalDeviceCallback success result:' + JSON.stringify(data));
+                });
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number deviceConfigCallbackTest
+         * @tc.name deviceConfigCallbackTest
+         * @tc.desc Test deviceConfigCallbackTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("deviceConfigCallbackTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let networkNum: int = -1;
+            try {
+                await CallbackMethods.addDeviceConfigCallback().then((data: int) => {
+                    hilog.info(domain, tag, 'addDeviceConfigCallback success result:' + JSON.stringify(data));
+                    networkNum = data;
+                    done();
+                });
+                hilog.info(domain, tag, 'addDeviceConfigCallback success networkNum result:' + JSON.stringify(networkNum));
+                expect(true).assertEqual(networkNum != -1);
+                let config: Array<wifiManager.WifiDeviceConfig> = wifiManager.getDeviceConfigs();
+                hilog.info(domain, tag, 'getDeviceConfigs success result:' + JSON.stringify(config));
+                if (config.length != 0) {
+                    expect(config[((config.length)-1)].ssid).assertEqual("publicTest");
+                } else {
+                    hilog.info(domain, tag, 'getDeviceConfigs failed');
+                    expect().assertFail();
+                }
+                hilog.info(domain, tag, 'removeDevice start');
+                wifiManager.removeDevice(networkNum);
+                await Utils.msSleep(2000);
+                let configs: Array<wifiManager.WifiDeviceConfig> = wifiManager.getDeviceConfigs();
+                hilog.info(domain, tag, 'getDeviceConfigs success result:' + JSON.stringify(configs));
+                if (configs.length != 0) {
+                    expect(true).assertEqual(configs[((configs.length)-1)].ssid != "publicTest");
+                } else {
+                    expect(true).assertEqual(configs.length == 0);
+                }
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, 'use api get err:' + JSON.stringify(err));
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect().assertFail();
+                }
+            }
+            done();
+        })
+        /**
+         * @tc.number candidateConfigCallbackTest
+         * @tc.name candidateConfigCallbackTest
+         * @tc.desc Test candidateConfigCallbackTest API functionality
+         * @tc.level Level 0
+         * @tc.type Function
+         * @tc.size MEDIUMTEST
+         */
+        it("candidateConfigCallbackTest", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let networkNum: int = -1;
+            try {
+                await CallbackMethods.addCandidateConfigCallback().then((data: int) => {
+                    hilog.info(domain, tag, 'addCandidateConfigCallback success result:' + JSON.stringify(data));
+                    networkNum = data;
+                    done();
+                });
+                hilog.info(domain, tag, 'addCandidateConfigCallback success networkNum result:' + JSON.stringify(networkNum));
+                expect(networkNum != -1).assertTrue();
+                await CallbackMethods.removeCandidateConfigCallback(networkNum).then((data: boolean) => {
+                    hilog.info(domain, tag, 'removeCandidateConfigCallback success');
+                    expect(data).assertTrue();
+                    done();
+                });
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, 'use api get err:' + JSON.stringify(err));
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
                     expect(true).assertEqual(err.code == 801);
