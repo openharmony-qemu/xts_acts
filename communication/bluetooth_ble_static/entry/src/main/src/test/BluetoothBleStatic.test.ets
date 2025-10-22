@@ -672,5 +672,89 @@ export default function bluetoothBleTest() {
             }
             done();
         })
+
+        /**
+         * @tc.number  startBLEScanTest_001
+         * @tc.name    startBLEScanTest_001
+         * @tc.desc    startBLEScanTest_001
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("startBLEScanTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let scanFilter: ble.ScanFilter = {
+                    deviceId: "00:11:22:33:44:55",
+                    name: "test",
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb"
+                };
+                ble.startBLEScan([scanFilter]);
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, "startBLEScanTest_001 errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  startAdvertisingTest_001
+         * @tc.name    startAdvertisingTest_001
+         * @tc.desc    startAdvertisingTest_001
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("startAdvertisingTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let manufactureValueBuffer = new Uint8Array(4);
+            manufactureValueBuffer[0] = 1;
+            manufactureValueBuffer[1] = 2;
+            manufactureValueBuffer[2] = 3;
+            manufactureValueBuffer[3] = 4;
+
+            let serviceValueBuffer = new Uint8Array(4);
+            serviceValueBuffer[0] = 4;
+            serviceValueBuffer[1] = 6;
+            serviceValueBuffer[2] = 7;
+            serviceValueBuffer[3] = 8;
+            hilog.info(domain, tag, 'manufactureValueBuffer = ' + JSON.stringify(manufactureValueBuffer));
+            hilog.info(domain, tag, 'serviceValueBuffer = ' + JSON.stringify(serviceValueBuffer));
+            try {
+                let setting: ble.AdvertiseSetting = {
+                    interval: 150,
+                    txPower: 0,
+                    connectable: true
+                };
+                let manufactureDataUnit: ble.ManufactureData = {
+                    manufactureId: 4567,
+                    manufactureValue: manufactureValueBuffer.buffer
+                };
+                let serviceDataUnit: ble.ServiceData = {
+                    serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                    serviceValue: serviceValueBuffer.buffer
+                };
+                let advData: ble.AdvertiseData = {
+                    serviceUuids: ["00001888-0000-1000-8000-00805f9b34fb"],
+                    manufactureData: [manufactureDataUnit],
+                    serviceData: [serviceDataUnit]
+                };
+                ble.startAdvertising(setting, advData);
+                hilog.info(domain, tag, "startAdvertising successful");
+                ble.stopAdvertising();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, "startAdvertisingTest_001 get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
     })
 }

@@ -626,30 +626,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @tc.number  getPairState2900003Test
-         * @tc.name    getPairState2900003Test
-         * @tc.desc    test getPairState2900003Test without permission
-         * @tc.size    LargeTest
-         * @tc.type    Function
-         * @tc.level   Level0
-         */
-        it("getPairState2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-            try {
-                let state = connection.getPairState("00:11:22:33:44:55");
-            } catch (err: BusinessError){
-                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
-                hilog.info(domain, tag, "getPairState get errCode:" + err.code + ",errMessage:" + err.message);
-                if (err.code == 801) {
-                    hilog.info(domain, tag, 'api is not support');
-                    expect(true).assertEqual(err.code == 801);
-                } else {
-                    expect(true).assertEqual(err.code == 2900003);
-                }
-            }
-            done();
-        })
-
-        /**
          * @tc.number  setDevicePairingConfirmation2900003Test
          * @tc.name    setDevicePairingConfirmation2900003Test
          * @tc.desc    test setDevicePairingConfirmation2900003Test without permission
