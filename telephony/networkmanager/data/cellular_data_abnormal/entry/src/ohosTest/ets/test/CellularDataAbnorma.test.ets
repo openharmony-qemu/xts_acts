@@ -130,6 +130,38 @@ export default function ActsCellularDataAbnormalTest() {
     })
 
     /*
+    * @tc.number: SUB_Telephony_CellularData_isCellularDataRoamingEnabled_Async_0100
+    * @tc.name  : testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0100
+    * @tc.desc  : verify that the isCellularDataRoamingEnabled takes effect
+    * @tc.size  : MediumTest
+    * @tc.type  : Function
+    * @tc.level : Level 0
+    */
+    it("testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0100';
+      console.info(`${caseName} test start `);
+      try{
+        cellular.isCellularDataRoamingEnabled(0,(err:BusinessError,contextData:boolean) => {
+          if(err){
+            console.info(`isCellularDataRoamingEnabled failed err is ${err.message}`);
+            ExpectFail();
+            done();
+          }
+          else{
+            console.info(`isCellularDataRoamingEnabled success contextData is ${contextData}`);
+            ExpectTrue(contextData == false);
+            done();
+          }
+        });
+      }catch (err) {
+        console.info(`${caseName} catch err is :` +JSON.stringify(err));
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+
+    /*
     * @tc.number: SUB_Telephony_CellularData_isCellularDataRoamingEnabled_Async_0200
     * @tc.name  : testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0200
     * @tc.desc  : verify that the isCellularDataRoamingEnabled takes effect
@@ -149,6 +181,35 @@ export default function ActsCellularDataAbnormalTest() {
             ExpectFail();
             console.info(`${caseName} isCellularDataRoamingEnabled success :`+ERR_SLOT_ID);
           }
+          done();
+        })
+      }catch (err) {
+        console.info(`${caseName} catch err is :` +JSON.stringify(err));
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+
+    /*
+    * @tc.number: SUB_Telephony_CellularData_isCellularDataRoamingEnabled_Async_0300
+    * @tc.name  : testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0300
+    * @tc.desc  : verify that the isCellularDataRoamingEnabled takes effect
+    * @tc.size  : MediumTest
+    * @tc.type  : Function
+    * @tc.level : Level 0
+    */
+    it("testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0300",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testTelephonyCellularDataisCellularDataRoamingEnabledAsync_0300';
+      console.info(`${caseName} test start `);
+      try{
+        cellular.isCellularDataRoamingEnabled(0).then((contextData:boolean) => {
+          console.info(`isCellularDataRoamingEnabled success contextData is ${contextData}`);
+          ExpectTrue(contextData == false);
+          done();
+        }).catch((err:BusinessError) => {
+          console.info(`isCellularDataRoamingEnabled failed err is ${err.message}`);
+          ExpectFail();
           done();
         })
       }catch (err) {
