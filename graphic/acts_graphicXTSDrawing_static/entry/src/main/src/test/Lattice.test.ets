@@ -20,7 +20,6 @@ import { BusinessError } from '@ohos.base';
 
 export default function latticeTest() {
   describe('DrawingTsLatticeTest', () => {
-    const DEFAULT = 0;
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async() => {
 
@@ -41,15 +40,15 @@ export default function latticeTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_0100
-     * @tc.name      : testLatticeCreateImageLatticeNormal
-     * @tc.desc      : Test for testLatticeCreateImageLatticeNormal.
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_STATIC_0100
+     * @tc.name      : testLatticeCreateImageLatticeNormalStatic
+     * @tc.desc      : Test for testLatticeCreateImageLatticeNormalStatic.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('testLatticeCreateImageLatticeNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
-      const msg = 'testLatticeCreateImageLatticeNormal';
+    it('testLatticeCreateImageLatticeNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
+      const msg = 'testLatticeCreateImageLatticeNormalStatic';
 
       try {
         drawing.Lattice.createImageLattice([ 80, 150 ], [ 80, 150 ], 2, 2, null, null, null);
@@ -180,15 +179,15 @@ export default function latticeTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_0101
-     * @tc.name      : testLatticeCreateImageLatticeAbnormal
-     * @tc.desc      : Test for testLatticeCreateImageLatticeAbnormal.
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_STATIC_0101
+     * @tc.name      : testLatticeCreateImageLatticeAbnormalStatic
+     * @tc.desc      : Test for testLatticeCreateImageLatticeAbnormalStatic.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testLatticeCreateImageLatticeAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testLatticeCreateImageLatticeAbnormal';
+    it('testLatticeCreateImageLatticeAbnormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testLatticeCreateImageLatticeAbnormalStatic';
 
       try {
         drawing.Lattice.createImageLattice([ 100, 200 ], [ 100, 200 ], 2, 2, null, null, null);
@@ -265,15 +264,15 @@ export default function latticeTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_0103
-     * @tc.name      : testLatticeCreateImageLatticeCalls
-     * @tc.desc      : Test for testLatticeCreateImageLatticeCalls.
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_STATIC_0103
+     * @tc.name      : testLatticeCreateImageLatticeCallsStatic
+     * @tc.desc      : Test for testLatticeCreateImageLatticeCallsStatic.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testLatticeCreateImageLatticeCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
-      const msg = 'testLatticeCreateImageLatticeCalls';
+    it('testLatticeCreateImageLatticeCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testLatticeCreateImageLatticeCallsStatic';
 
       for ( let i = 0 ; i < 1000 ; i ++ ) {
         try {
