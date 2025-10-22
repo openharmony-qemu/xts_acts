@@ -17,6 +17,9 @@ import { describe, beforeEach, it, expect, Level, TestType, Size, beforeAll } fr
 import nativeTest from 'libentry.so'
 import { GlobalContext } from '../test/global';
 import { ConfigurationConstant } from '@kit.AbilityKit';
+import { display } from '@kit.ArkUI';
+import { deviceInfo } from '@kit.BasicServicesKit';
+import Utils from './common/Utils';
 
 const SUCCESS = 0 // 成功
 const ERROR_CODE_INVALID_INPUT_PARAMETER = 401 // 参数无效
@@ -195,7 +198,8 @@ export default function NativeApiString3Test() {
         console.info("====>TestGetDirectionVertical0100 start====");
         let result: number = nativeTest.GetDirectionVertical0100();
         console.info(`====>TestGetDirectionVertical0100 result====${result}`);
-        expect(result).assertEqual(0);
+        let num: number = display.getDefaultDisplaySync().orientation;
+        expect(result).assertEqual(num % 2);
         done()
       } catch (err) {
         console.error("====>TestGetDirectionVertical0100 catch err: " + err);
@@ -510,7 +514,8 @@ export default function NativeApiString3Test() {
         console.info("====>TestGetConfigurations0100 start====");
         let result: number = nativeTest.GetConfigurations0100();
         console.info(`====>TestGetConfigurations0100 result====${result}`);
-        expect(result).assertEqual(0);
+        let num: number = display.getDefaultDisplaySync().orientation;
+        expect(result).assertEqual(num % 2);
         done()
       } catch (err) {
         console.error("====>TestGetConfigurations0100 catch err: " + err);
@@ -531,7 +536,8 @@ export default function NativeApiString3Test() {
         console.info("====>TestGetConfigurations0200 start====");
         let result: number = nativeTest.GetConfigurations0200();
         console.info(`====>TestGetConfigurations0200 result====${result}`);
-        expect(result).assertEqual(0);
+        let testString: number = Utils.str2DeviceType(deviceInfo.deviceType);
+        expect(result).assertEqual(testString);
         done()
       } catch (err) {
         console.error("====>TestGetConfigurations0200 catch err: " + err);
