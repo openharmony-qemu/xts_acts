@@ -4260,7 +4260,7 @@ export default function SetKeysTest() {
         testSetSizeJs010();
         expect(false).assertFail();
       } catch (err) {
-        expect(true).assertTrue();
+        expect(err !== undefined && err !== null).assertTrue();
       }
     });
 

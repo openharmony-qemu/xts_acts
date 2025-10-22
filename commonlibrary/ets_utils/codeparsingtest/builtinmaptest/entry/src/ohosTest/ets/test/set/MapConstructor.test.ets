@@ -1261,7 +1261,6 @@ export default function MapConstructorTest() {
         expect(map.get(Atomics)).assertEqual('atomics object');
       } else {
         // Skip if Atomics is not available
-        expect(true).assertEqual(true);
       }
     });
 
@@ -1279,7 +1278,6 @@ export default function MapConstructorTest() {
         expect(map.get(SharedArrayBuffer)).assertEqual('shared array buffer constructor');
       } else {
         // Skip if SharedArrayBuffer is not available
-        expect(true).assertEqual(true);
       }
     });
 
@@ -1349,7 +1347,6 @@ export default function MapConstructorTest() {
         expect(map.get(console)).assertEqual('console object');
       } else {
         // Skip if console is not available
-        expect(true).assertEqual(true);
       }
     });
 
