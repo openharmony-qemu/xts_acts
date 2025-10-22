@@ -1028,7 +1028,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
   }
 
   applyNormalAttribute(instance: SpanAttribute): void {
-    instance.radialGradient(this.mRadialGradient)
+	/* radialGradient not supported */
   }
 }
 

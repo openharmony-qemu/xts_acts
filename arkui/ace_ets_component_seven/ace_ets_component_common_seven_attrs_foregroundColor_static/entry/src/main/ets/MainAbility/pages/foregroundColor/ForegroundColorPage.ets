@@ -549,7 +549,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	mForegroundColor: ResourceColor | ColoringStrategy = '#FF123456'
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		instance.foregroundColor(this.mForegroundColor)
+    	/* foregroundColor not supported */
 	}
 }
 

@@ -1114,7 +1114,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
   }
 
   applyNormalAttribute(instance: SpanAttribute): void {
-    instance.shadow(this.mShadow)
+	/* shadow not supported */
   }
 }
 

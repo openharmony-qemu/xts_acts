@@ -776,7 +776,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
   options: OverlayOptions = { align: Alignment.Bottom, offset: { x: 1, y: 2 } }
 
   applyNormalAttribute(instance: SpanAttribute): void {
-    instance.overlay(this.mValue, this.options)
+	/* overlay not supported */
   }
 }
 

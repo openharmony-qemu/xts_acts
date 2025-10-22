@@ -1189,7 +1189,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	}
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		instance.border(this.border)
+    	/* border not supported */
 	}
 }
 

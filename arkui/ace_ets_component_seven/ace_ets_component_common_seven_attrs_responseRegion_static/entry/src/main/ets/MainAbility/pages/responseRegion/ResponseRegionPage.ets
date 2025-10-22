@@ -549,7 +549,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	mResponseRegion: Array<Rectangle> = [{ x: 13, y: 17, width: '19%', height: '23%' }]
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		instance.responseRegion(this.mResponseRegion)
+		/* responseRegion not supported */
 	}
 }
 

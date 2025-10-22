@@ -549,7 +549,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	mFocusOnTouch: boolean = false
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		instance.focusOnTouch(this.mFocusOnTouch)
+    	/* focusOnTouch not supported */
 	}
 }
 

@@ -549,7 +549,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	mObscured: Array<ObscuredReasons> = []
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		instance.obscured(this.mObscured)
+		/* obscured not supported */
 	}
 }
 

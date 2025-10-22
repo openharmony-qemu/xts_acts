@@ -1139,7 +1139,6 @@ function commonStyle(this: SliderAttribute, componentKey: string): this {
 }
 
 function commonStyle(this: SpanAttribute, componentKey: string): this {
-  this.restoreId(2)
   this.key(componentKey)
   return this
 }

@@ -549,7 +549,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	mEnabled: boolean = true
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		instance.enabled(this.mEnabled)
+		/* enabled not supported */
 	}
 }
 

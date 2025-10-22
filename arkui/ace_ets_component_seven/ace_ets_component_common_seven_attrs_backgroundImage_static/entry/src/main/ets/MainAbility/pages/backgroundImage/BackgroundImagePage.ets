@@ -548,7 +548,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	mBackgroundImage: ResourceStr = 'resources/media/icon.png'
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		instance.backgroundImage(this.mBackgroundImage)
+    	/* backgroundImage not supported */
 	}
 }
 

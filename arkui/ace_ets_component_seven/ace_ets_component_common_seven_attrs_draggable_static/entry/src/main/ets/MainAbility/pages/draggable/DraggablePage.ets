@@ -549,7 +549,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	draggable: boolean = false
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		instance.draggable(this.draggable)
+    	/* draggable not supported */
 	}
 }
 

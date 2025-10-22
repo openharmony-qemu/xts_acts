@@ -549,7 +549,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 	mHoverEffect: HoverEffect = HoverEffect.Auto
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		instance.hoverEffect(this.mHoverEffect)
+		/* hoverEffect not supported */
 	}
 }
 
