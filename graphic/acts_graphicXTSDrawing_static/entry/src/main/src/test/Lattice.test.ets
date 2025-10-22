@@ -284,5 +284,216 @@ export default function latticeTest() {
         }
       }
     });
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_STATIC_0200
+     * @tc.name      : testLatticecreateImageLatticeWithArrayIntNormalStatic
+     * @tc.desc      : Test for testLatticecreateImageLatticeWithArrayIntNormalStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testLatticecreateImageLatticeWithArrayIntNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testLatticecreateImageLatticeWithArrayIntNormalStatic';
+      try {
+        let lattice = drawing.Lattice.createImageLatticeWithArrayInt([ 80, 150 ], [ 80, 150 ], 2, 2, null, null, null);
+        console.info(msg + ' createImageLatticeWithArrayInt 1 successed lattice: ' + lattice );
+        expect(lattice != null || lattice != undefined).assertTrue();
+      } catch( e: BusinessError ) {
+        console.info(msg + ` createImageLatticeWithArrayInt 1 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+
+      try {
+        let lattice = drawing.Lattice.createImageLatticeWithArrayInt([ 310, 320, 340, 360, 400 ], [ 10, 20, 40, 60, 100 ], 5, 5, null, null, null);
+        console.info(msg + ' createImageLatticeWithArrayInt 2 successed lattice: ' + lattice);
+        expect(lattice != null || lattice != undefined).assertTrue();
+      } catch( e: BusinessError ) {
+        console.info(msg + ` createImageLatticeWithArrayInt 2 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+      try {
+        let lattice = drawing.Lattice.createImageLatticeWithArrayInt([ 200, 400 ], [ 200, 400 ], 2, 2, {
+          left : 200, top : 200, right : 200, bottom : 200
+        }, null, null);
+        console.info(msg + ' createImageLatticeWithArrayInt 6 successed lattice: ' + lattice);
+        expect(lattice != null || lattice != undefined).assertTrue();
+      } catch( e: BusinessError ) {
+        console.info(msg + ` createImageLatticeWithArrayInt 6 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+
+      try {
+        let lattice = drawing.Lattice.createImageLatticeWithArrayInt([ 200, 400 ], [ 200, 400 ], 2, 2, {
+          left : 1000, top : 1000, right : 1000, bottom : 1000
+        }, null, null);
+        console.info(msg + ' createImageLatticeWithArrayInt 7 successed lattice: ' + lattice);
+        expect(lattice != null || lattice != undefined).assertTrue();
+      } catch( e: BusinessError ) {
+        console.info(msg + ` createImageLatticeWithArrayInt 7 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+
+      try {
+        let lattice = drawing.Lattice.createImageLatticeWithArrayInt([ 200, 400 ], [ 200, 400 ], 2, 2, {
+          left : 2000, top : 2000, right : 2000, bottom : 2000
+        }, null, null);
+        console.info(msg + ' createImageLatticeWithArrayInt 8 successed lattice: ' + lattice);
+        expect(lattice != null || lattice != undefined).assertTrue();
+      } catch( e: BusinessError ) {
+        console.info(msg + ` createImageLatticeWithArrayInt 8 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+      try {
+        let xDivs : Array<int> = [1, 2, 4];
+        let yDivs : Array<int> = [1, 2, 4];
+        let colorArray :Array<int>=[0xffffffff,0x44444444,0x99999999,0xffffffff,0x44444444,0x99999999,0xffffffff,0x44444444,0x99999999,0x44444444,0x99999999,0xffffffff,0x44444444,0x99999999,0xffffffff,0x44444444];
+        let lattice = drawing.Lattice.createImageLatticeWithArrayInt(xDivs, yDivs, 3, 3,null,null,colorArray);
+        console.info(msg + ' createImageLatticeWithArrayInt 91 successed lattice: ' + lattice);
+        expect(lattice != null || lattice != undefined).assertTrue();
+      } catch( e: BusinessError ) {
+        console.info(msg + ` createImageLatticeWithArrayInt 91 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+      try {
+        let lattice = drawing.Lattice.createImageLatticeWithArrayInt([ 200, 400 ], [ 200, 400 ], 2, 2, null,
+          [ drawing.RectType.DEFAULT, drawing.RectType.TRANSPARENT, drawing.RectType.DEFAULT, drawing.RectType.TRANSPARENT,
+            drawing.RectType.DEFAULT, drawing.RectType.TRANSPARENT, drawing.RectType.DEFAULT, drawing.RectType.TRANSPARENT,
+            drawing.RectType.DEFAULT ], null);
+        console.info(msg + ' createImageLatticeWithArrayInt 10 successed lattice: ' + lattice);
+        expect(lattice != null || lattice != undefined).assertTrue();
+      } catch( e: BusinessError ) {
+        console.info(msg + ` createImageLatticeWithArrayInt 10 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+      try {
+        let lattice = drawing.Lattice.createImageLatticeWithArrayInt([ 200, 400 ], [ 200, 400 ], 2, 2, null, [
+          drawing.RectType.DEFAULT, drawing.RectType.DEFAULT, drawing.RectType.DEFAULT,
+          drawing.RectType.DEFAULT, drawing.RectType.DEFAULT, drawing.RectType.DEFAULT,
+          drawing.RectType.DEFAULT, drawing.RectType.DEFAULT, drawing.RectType.DEFAULT ], null);
+        console.info(msg + ' createImageLatticeWithArrayInt  11 successed lattice: ' + lattice);
+        expect(lattice != null || lattice != undefined).assertTrue();
+      } catch( e: BusinessError ) {
+        console.info(msg + ` createImageLatticeWithArrayInt 11 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+
+      try {
+        let lattice = drawing.Lattice.createImageLatticeWithArrayInt([ 200, 400 ], [ 200, 400 ], 2, 2, null, undefined, null);
+        console.info(msg + ' createImageLatticeWithArrayInt 12 successed lattice: ' + lattice);
+        expect(lattice != null || lattice != undefined).assertTrue();
+      } catch( e: BusinessError ) {
+        console.info(msg + ` createImageLatticeWithArrayInt 12 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+      try {
+        let lattice =  drawing.Lattice.createImageLatticeWithArrayInt([ 200, 400 ], [ 200, 400 ], 2, 2);
+        expect(lattice != null || lattice != undefined).assertTrue();
+        console.info(msg + ' createImageLatticeWithArrayInt 13 successed lattice: ' + lattice);
+      } catch( e: BusinessError ) {
+        console.info(msg + ` createImageLatticeWithArrayInt 13 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_STATIC_0201
+     * @tc.name      : testLatticecreateImageLatticeWithArrayIntAbnormalStatic
+     * @tc.desc      : Test for testLatticecreateImageLatticeWithArrayIntAbnormalStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testLatticecreateImageLatticeWithArrayIntAbnormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testLatticecreateImageLatticeWithArrayIntAbnormalStatic';
+
+      try {
+        drawing.Lattice.createImageLatticeWithArrayInt([ 10, 50, 90, 110, 150, 180 ], [ 10, 50, 90, 110, 150, 180 ], 6, 6, null, null, null);
+        console.info(msg + ' createImageLatticeWithArrayInt 1 succeeded');
+        expect().assertFail();
+      } catch( e: BusinessError ) {
+        console.info(msg + ` createImageLatticeWithArrayInt 1 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        drawing.Lattice.createImageLatticeWithArrayInt([ 0, 100, 200 ], [ 0, 100, 200 ], 2, 3, null, null, null);
+        console.info(msg + ' createImageLatticeWithArrayInt 2 succeeded');
+        expect().assertFail();
+      } catch( e: BusinessError ) {
+        console.info(msg + ` createImageLatticeWithArrayInt 2 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+
+      try {
+        drawing.Lattice.createImageLatticeWithArrayInt([ 10, 80, 150 ], [ 10, 80, 150 ], 3, 4, null, null, null);
+        console.info(msg + ' createImageLatticeWithArrayInt 3  succeeded');
+        expect().assertFail();
+      } catch( e: BusinessError ) {
+        console.info(msg + ` createImageLatticeWithArrayInt 3 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLatticeWithArrayInt([ 200, 400 ], [ 200, 400 ], 2, 2, null, [ drawing.RectType.FIXEDCOLOR ], null);
+        console.info(msg + ' createImageLatticeWithArrayInt 4 succeeded');
+        expect().assertFail();
+      } catch( e: BusinessError ) {
+        console.info(msg + ` createImageLattice 4 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLatticeWithArrayInt([ 200, 300 ], [ 200, 300 ], 0, 2, null, null, null);
+        console.info(msg + ' createImageLatticeWithArrayInt 5 succeeded');
+        expect().assertFail();
+      } catch( e: BusinessError ) {
+        console.info(msg + ` createImageLatticeWithArrayInt 5 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.Lattice.createImageLatticeWithArrayInt([ 0 ], [ 0 ], 0, 0, null, null, null);
+        console.info(msg + ' createImageLatticeWithArrayInt 6 succeeded');
+        expect().assertFail();
+      } catch( e: BusinessError ) {
+        console.info(msg + ` createImageLatticeWithArrayInt 6 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        let xDivs : Array<int> = [1, 2, 4];
+        let yDivs : Array<int> = [1, 2, 4];
+        let colorArray :Array<int>=[0xffffffff,0x44444444,0x99999999,0xffffffff,0x44444444,0x99999999,0xffffffff,0x44444444,0x99999999,0x44444444,0x99999999,0xffffffff,0x44444444,0x99999999,0xffffffff,0x44444444];
+        drawing.Lattice.createImageLatticeWithArrayInt([ 200, 400 ], [ 200, 400 ], 2, 2, {
+          left : 200, top : 400, right : 200, bottom : 400
+        }, [ drawing.RectType.FIXEDCOLOR, drawing.RectType.FIXEDCOLOR, drawing.RectType.FIXEDCOLOR,
+          drawing.RectType.FIXEDCOLOR, drawing.RectType.FIXEDCOLOR, drawing.RectType.FIXEDCOLOR,
+          drawing.RectType.FIXEDCOLOR, drawing.RectType.FIXEDCOLOR, drawing.RectType.FIXEDCOLOR ], colorArray);
+        console.info(msg + ' createImageLatticeWithArrayInt 7 successed');
+        expect().assertFail();
+      } catch( e: BusinessError ) {
+        console.info(msg + ` createImageLatticeWithArrayInt 7 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect(e.code).assertEqual(401);
+      }
+    });
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_LATTICE_STATIC_0203
+     * @tc.name      : testLatticeCreateImageLatticeWithArrayIntCallsStatic
+     * @tc.desc      : Test for testLatticeCreateImageLatticeWithArrayIntCallsStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testLatticeCreateImageLatticeWithArrayIntCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testLatticeCreateImageLatticeWithArrayIntCallsStatic';
+      for ( let i = 0 ; i < 1000 ; i ++ ) {
+        try {
+          let xDivs : Array<int> = [1, 2, 4];
+          let yDivs : Array<int> = [1, 2, 4];
+          let colorArray :Array<int>=[0xffffffff,0x44444444,0x99999999,0xffffffff,0x44444444,0x99999999,0xffffffff,0x44444444,0x99999999,0x44444444,0x99999999,0xffffffff,0x44444444,0x99999999,0xffffffff,0x44444444];
+          let lattice = drawing.Lattice.createImageLatticeWithArrayInt(xDivs, yDivs, 3, 3,null,null,colorArray);
+          console.info(msg + ' createImageLatticeWithArrayInt succeeded lattice: ' + lattice + 'step: ' + i);
+          expect(lattice != null || lattice != undefined).assertTrue();
+        } catch( e: BusinessError ) {
+          console.info(msg + ` createImageLatticeWithArrayInt errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+          expect().assertFail();
+        }
+      }
+    });
   });
 }
