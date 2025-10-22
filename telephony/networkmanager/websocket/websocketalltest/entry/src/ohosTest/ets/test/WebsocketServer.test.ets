@@ -722,14 +722,14 @@ export default function WebsocketServerTest() {
             await sleep(200)
             connections = await server.listAllConnections()
             if(connections){
-              console.info(`${caseName} connections2-->+ ${JSON.stringify(connections)}`)
+              console.info(`${caseName} connections2-->+ ${JSON.stringify(connections[0])}`)
               console.info(`${caseName} connections.length-->+ ${JSON.stringify(connections.length)}`)
               ExpectTrue(connections.length == 0, `${caseName}--> ${connections}`)
               done()
               server.stop()
               console.info(`${caseName} test end`)
             }else{
-              console.info(`${caseName} connections2-->+ ${JSON.stringify(connections[0])}`)
+              console.info(`${caseName} connections2-->+ ${JSON.stringify(connections)}`)
               expectFail(`${caseName}--> ${JSON.stringify(connections)}`)
               done()
               server.stop()
