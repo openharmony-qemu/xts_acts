@@ -52,8 +52,8 @@ export default function ActsCellularDataAbnormalTest() {
             ExpectFail();
             console.info(`${caseName} get err is `+JSON.stringify(err));
           }else{
-            ExpectTrue(data);
             console.info(`${caseName} get success data is `+JSON.stringify(data));
+            ExpectTrue(data == true);
           }
           done();
           console.info(`${caseName}---End`);
@@ -202,11 +202,17 @@ export default function ActsCellularDataAbnormalTest() {
       let caseName: string = 'testTelephonyCellularDataisCellularDataEnabledPromise_0100';
       console.info(`${caseName} test start `);
       try {
-        await cellular.isCellularDataEnabled();
-        console.log("Telephony_CellularData_isCellularDataEnabled_Promise_0100 finish");
-        ExpectTrue(true);
-        console.info(`${caseName}---End`);
-        done();
+        cellular.isCellularDataEnabled().then((contextData: boolean) => {
+          console.info(`isCellularDataEnabled success,contextData is ${contextData}`);
+          ExpectTrue(contextData == true);
+          console.info(`${caseName}---End`);
+          done();
+        }).catch((err:BusinessError) => {
+          console.info(`isCellularDataEnabled fail.err message is ${err.message}`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        });
       } catch (err) {
         console.info(`${caseName} catch err is :` +JSON.stringify(err));
         ExpectFail();
