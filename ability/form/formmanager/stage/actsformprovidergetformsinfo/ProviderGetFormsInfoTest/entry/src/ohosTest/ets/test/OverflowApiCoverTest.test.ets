@@ -36,13 +36,13 @@ export default function overflowApiCoverTest() {
       }, INTERVAL_TIME);
     })
 
-    /*
-     * @tc.number  SUB_ABILITY_FORM_FWK_REQUEST_OVERFLOW_COVER_0100
-     * @tc.name    SUB_ABILITY_FORM_FWK_REQUEST_OVERFLOW_COVER_0100
-     * @tc.desc    Function RequestOverflow covered test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_REQUEST_OVERFLOW_COVER_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_REQUEST_OVERFLOW_COVER_0100
+     * @tc.desc   Function RequestOverflow covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
     it(`SUB_ABILITY_FORM_FWK_REQUEST_OVERFLOW_COVER_0100`, 0, async (done:Function) => {
       let name: string = 'SUB_ABILITY_FORM_FWK_REQUEST_OVERFLOW_COVER_0100';
@@ -86,13 +86,13 @@ export default function overflowApiCoverTest() {
       done();
     });
  
-    /*
-     * @tc.number  SUB_ABILITY_FORM_FWK_CANCEL_OVERFLOW_COVER_0100
-     * @tc.name    SUB_ABILITY_FORM_FWK_CANCEL_OVERFLOW_COVER_0100
-     * @tc.desc    Function CancelOverflow covered test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_CANCEL_OVERFLOW_COVER_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_CANCEL_OVERFLOW_COVER_0100
+     * @tc.desc   Function CancelOverflow covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
     it(`SUB_ABILITY_FORM_FWK_CANCEL_OVERFLOW_COVER_0100`, 0, async (done:Function) => {
       let name: string = 'SUB_ABILITY_FORM_FWK_CANCEL_OVERFLOW_COVER_0100';
@@ -125,13 +125,13 @@ export default function overflowApiCoverTest() {
       done();
     });
  
-    /*
-     * @tc.number  SUB_ABILITY_FORM_FWK_ACTIVATE_SCENE_ANIMATION_COVER_0100
-     * @tc.name    SUB_ABILITY_FORM_FWK_ACTIVATE_SCENE_ANIMATION_COVER_0100
-     * @tc.desc    Function ActivateSceneAnimation covered test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_ACTIVATE_SCENE_ANIMATION_COVER_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_ACTIVATE_SCENE_ANIMATION_COVER_0100
+     * @tc.desc   Function ActivateSceneAnimation covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
     it(`SUB_ABILITY_FORM_FWK_ACTIVATE_SCENE_ANIMATION_COVER_0100`, 0, async (done:Function) => {
       let name: string = 'SUB_ABILITY_FORM_FWK_ACTIVATE_SCENE_ANIMATION_COVER_0100';
@@ -150,13 +150,13 @@ export default function overflowApiCoverTest() {
       done();
     });
  
-    /*
-     * @tc.number  SUB_ABILITY_FORM_FWK_DEACTIVATE_SCENE_ANIMATION_COVER_0100
-     * @tc.name    SUB_ABILITY_FORM_FWK_DEACTIVATE_SCENE_ANIMATION_COVER_0100
-     * @tc.desc    Function DeactivateSceneAnimation covered test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_DEACTIVATE_SCENE_ANIMATION_COVER_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_DEACTIVATE_SCENE_ANIMATION_COVER_0100
+     * @tc.desc   Function DeactivateSceneAnimation covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
     it(`SUB_ABILITY_FORM_FWK_DEACTIVATE_SCENE_ANIMATION_COVER_0100`, 0, async (done:Function) => {
       let name: string = 'SUB_ABILITY_FORM_FWK_DEACTIVATE_SCENE_ANIMATION_COVER_0100';
@@ -175,13 +175,13 @@ export default function overflowApiCoverTest() {
       done();
     });
 
-    /*
-     * @tc.number  SUB_ABILITY_FORM_FWK_GET_FORM_RECT_COVER_0100
-     * @tc.name    SUB_ABILITY_FORM_FWK_GET_FORM_RECT_COVER_0100
-     * @tc.desc    Function GetFormRect covered test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_GET_FORM_RECT_COVER_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_GET_FORM_RECT_COVER_0100
+     * @tc.desc   Function GetFormRect covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
     it(`SUB_ABILITY_FORM_FWK_GET_FORM_RECT_COVER_0100`, 0, async (done:Function) => {
       let name: string = 'SUB_ABILITY_FORM_FWK_GET_FORM_RECT_COVER_0100';

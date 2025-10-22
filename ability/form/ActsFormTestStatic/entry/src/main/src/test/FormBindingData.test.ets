@@ -27,9 +27,12 @@ export default function formBindingDataTest() {
         hilog.info(DOMAIN, TAG, 'formBindingDataTest describe start');
 
         /**
-         * @tc.number: FormBindingDataStaticTest001
-         * @tc.name: FormBindingDataStaticTest001
-         * @tc.desc: check formBindingData
+         * @tc.name   FormBindingDataStaticTest001
+         * @tc.number FormBindingDataStaticTest001
+         * @tc.desc   check formBindingData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("FormBindingDataStaticTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -64,10 +67,13 @@ export default function formBindingDataTest() {
             hilog.info(DOMAIN, TAG, 'FormBindingDataStaticTest001 end');
         })
 
-         /**
-         * @tc.number: FormBindingDataStaticTest002
-         * @tc.name: FormBindingDataStaticTest002
-         * @tc.desc: check formBindingData
+        /**
+         * @tc.name   FormBindingDataStaticTest002
+         * @tc.number FormBindingDataStaticTest002
+         * @tc.desc   check formBindingData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("FormBindingDataStaticTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);

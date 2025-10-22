@@ -104,10 +104,12 @@ export default function FmsUpdateRefreshTest() {
         })
 
         /**
-         * @tc.number: FMS_updateForm_0100
-         * @tc.name: formID id is error(formID < 0)
-         * @tc.desc: 1.The form provider A to invoke the intiative timed refresh interface.
-         *           2.Verify the result of the intiative timed refresh interface.
+         * @tc.name   FMS_updateForm_0100
+         * @tc.number FMS_updateForm_0100
+         * @tc.desc   1.The form provider A to invoke the intiative timed refresh interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_updateForm_0100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             console.log(`FMS_updateForm_0100 start`);
@@ -151,10 +153,12 @@ export default function FmsUpdateRefreshTest() {
         });
 
         /**
-         * @tc.number: FMS_updateForm_0200
-         * @tc.name: formID id is error(formID == 0)
-         * @tc.desc: 1.The form provider A to invoke the intiative timed refresh interface.
-         *           2.Verify the result of the intiative timed refresh interface.
+         * @tc.name   FMS_updateForm_0200
+         * @tc.number FMS_updateForm_0200
+         * @tc.desc   1.The form provider A to invoke the intiative timed refresh interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_updateForm_0200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             console.log(`FMS_updateForm_0200 start`);
@@ -197,10 +201,12 @@ export default function FmsUpdateRefreshTest() {
         });
 
         /**
-         * @tc.number: FMS_updateForm_0300
-         * @tc.name: formID id is error because formId is not self
-         * @tc.desc: 1.The form provider B to invoke the intiative timed refresh interface.
-         *           2.Verify the result of the intiative timed refresh interface.
+         * @tc.name   FMS_updateForm_0300
+         * @tc.number FMS_updateForm_0300
+         * @tc.desc   1.The form provider B to invoke the intiative timed refresh interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_updateForm_0300`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             console.log(`FMS_updateForm_0300 start`);
@@ -278,10 +284,12 @@ export default function FmsUpdateRefreshTest() {
         });
 
         /**
-         * @tc.number: FMS_updateForm_0400
-         * @tc.name: Form ID error (FormID does not exist)
-         * @tc.desc: 1.The form provider A to invoke the intiative timed refresh interface.
-         * 2.Verify the result of the intiative timed refresh interface.
+         * @tc.name   FMS_updateForm_0400
+         * @tc.number FMS_updateForm_0400
+         * @tc.desc   1.The form provider A to invoke the intiative timed refresh interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('FMS_updateForm_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             console.log('FMS_updateForm_0400 start');
@@ -362,9 +370,12 @@ export default function FmsUpdateRefreshTest() {
         });
 
         /**
-         * @tc.number: FMS_updateForm_0500
-         * @tc.name: The jsonData of form in the provider is empty.
-         * @tc.desc: 1.The form provider A to invoke the intiative timed refresh interface.
+         * @tc.name   FMS_updateForm_0500
+         * @tc.number FMS_updateForm_0500
+         * @tc.desc   1.The form provider A to invoke the intiative timed refresh interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_updateForm_0500`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             console.log(`FMS_updateForm_0500 start`);
@@ -411,10 +422,12 @@ export default function FmsUpdateRefreshTest() {
 
 
         /**
-         * @tc.number: FMS_hostRefresh_0100
-         * @tc.name: formID id is error(formID < 0)
-         * @tc.desc: 1.The form user A to invoke the intiative timed refresh interface.
-         *           2.Verify the result of the intiative timed refresh interface.
+         * @tc.name   FMS_hostRefresh_0100
+         * @tc.number FMS_hostRefresh_0100
+         * @tc.desc   1.The form user A to invoke the intiative timed refresh interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_hostRefresh_0100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             console.log(`FMS_hostRefresh_0100 start`);
@@ -458,10 +471,12 @@ export default function FmsUpdateRefreshTest() {
 
 
         /**
-         * @tc.number: FMS_hostRefresh_0200
-         * @tc.name: formID id is error(formID == 0)
-         * @tc.desc: 1.The form user A to invoke the intiative timed refresh interface.
-         *           2.Verify the result of the intiative timed refresh interface.
+         * @tc.name   FMS_hostRefresh_0200
+         * @tc.number FMS_hostRefresh_0200
+         * @tc.desc   1.The form user A to invoke the intiative timed refresh interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_hostRefresh_0200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             console.log(`FMS_hostRefresh_0200 start`);
@@ -505,10 +520,12 @@ export default function FmsUpdateRefreshTest() {
         });
 
         /**
-         * @tc.number: FMS_hostRefresh_0300
-         * @tc.name: formID id is error because formId is not self
-         * @tc.desc: 1.The form user B to invoke the intiative timed refresh interface.
-         * 2.Verify the result of the intiative timed refresh interface.
+         * @tc.name   FMS_hostRefresh_0300
+         * @tc.number FMS_hostRefresh_0300
+         * @tc.desc   1.The form user B to invoke the intiative timed refresh interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('FMS_hostRefresh_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             console.log('FMS_hostRefresh_0300 start');
@@ -587,10 +604,12 @@ export default function FmsUpdateRefreshTest() {
 
 
         /**
-         * @tc.number: FMS_hostRefresh_0400
-         * @tc.name: Form ID error (FormID does not exist)
-         * @tc.desc: 1.The form user A to invoke the intiative timed refresh interface.
-         *           2.Verify the result of the intiative timed refresh interface.
+         * @tc.name   FMS_hostRefresh_0400
+         * @tc.number FMS_hostRefresh_0400
+         * @tc.desc   1.The form user A to invoke the intiative timed refresh interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_hostRefresh_0400`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             console.log(`FMS_hostRefresh_0400 start`);
@@ -671,10 +690,12 @@ export default function FmsUpdateRefreshTest() {
 
 
         /**
-         * @tc.number: FMS_hostRefresh_0600
-         * @tc.name: The form user has no form permission.
-         * @tc.desc: 1.The form user A to invoke the intiative timed refresh interface.
-         *           2.Verify the result of the intiative timed refresh interface.
+         * @tc.name   FMS_hostRefresh_0600
+         * @tc.number FMS_hostRefresh_0600
+         * @tc.desc   1.The form user A to invoke the intiative timed refresh interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_hostRefresh_0600`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             console.log(`FMS_hostRefresh_0600 start`);
@@ -720,10 +741,12 @@ export default function FmsUpdateRefreshTest() {
         });
 
         /**
-         * @tc.number: FMS_hostRefresh_0700
-         * @tc.name: Refresh form successfully by the form user.
-         * @tc.desc: 1.The form user A to invoke the intiative timed refresh interface.
-         *           2.Verify that pulling up the form provider.
+         * @tc.name   FMS_hostRefresh_0700
+         * @tc.number FMS_hostRefresh_0700
+         * @tc.desc   1.The form user A to invoke the intiative timed refresh interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_hostRefresh_0700`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             console.log(`FMS_hostRefresh_0700 start`);

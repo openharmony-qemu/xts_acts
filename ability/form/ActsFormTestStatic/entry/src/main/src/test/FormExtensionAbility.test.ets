@@ -33,9 +33,12 @@ export default function formExtensionAbilityTest() {
         hilog.info(DOMAIN, TAG, 'formExtensionAbilityTest describe start');
 
         /**
-         * @tc.number: OnStopStaticTest001
-         * @tc.name: OnStopStaticTest001
-         * @tc.desc: check OnStop
+         * @tc.name   OnStopStaticTest001
+         * @tc.number OnStopStaticTest001
+         * @tc.desc   check OnStop
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("OnStopStaticTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             hilog.info(DOMAIN, TAG, 'OnStopStaticTest001 start');
@@ -67,9 +70,12 @@ export default function formExtensionAbilityTest() {
         })
 
         /**
-         * @tc.number: OnAcquireFormStateStaticTest001
-         * @tc.name: OnAcquireFormStateStaticTest001
-         * @tc.desc: check OnAcquireFormState
+         * @tc.name   OnAcquireFormStateStaticTest001
+         * @tc.number OnAcquireFormStateStaticTest001
+         * @tc.desc   check OnAcquireFormState
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("OnAcquireFormStateStaticTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             hilog.info(DOMAIN, TAG, 'OnAcquireFormStateStaticTest001 start');
@@ -94,9 +100,12 @@ export default function formExtensionAbilityTest() {
         })
 
         /**
-         * @tc.number: OnConfigurationUpdateStaticTest001
-         * @tc.name: OnConfigurationUpdateStaticTest001
-         * @tc.desc: check onConfigurationUpdate
+         * @tc.name   OnConfigurationUpdateStaticTest001
+         * @tc.number OnConfigurationUpdateStaticTest001
+         * @tc.desc   check onConfigurationUpdate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("OnConfigurationUpdateStaticTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             hilog.info(DOMAIN, TAG, 'onConfigurationUpdateStaticTest001 start');

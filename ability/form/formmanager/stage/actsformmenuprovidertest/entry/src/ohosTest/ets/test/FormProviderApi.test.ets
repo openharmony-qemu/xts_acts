@@ -64,12 +64,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0100
-     * @tc.name:   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0100
-     * @tc.desc:   Query the cards that the application has loaded on the desktop
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0100
+     * @tc.desc   Query the cards that the application has loaded on the desktop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let TAG:string = 'SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0100';
@@ -97,12 +97,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0200
-     * @tc.name:   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0200
-     * @tc.desc:   Query the cards that the application has loaded on the desktop by formId
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0200
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0200
+     * @tc.desc   Query the cards that the application has loaded on the desktop by formId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let TAG: string = 'SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0200';
@@ -150,12 +150,12 @@ export default function formProviderTest() {
     });
 
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0300
-     * @tc.name:   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0300
-     * @tc.desc:   Open the card management page
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0300
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0300
+     * @tc.desc   Open the card management page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0300';
@@ -192,12 +192,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0400
-     * @tc.name:   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0400
-     * @tc.desc:   Open the card management page belonging to the specified bundle
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0400
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0400
+     * @tc.desc   Open the card management page belonging to the specified bundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0400';
@@ -224,12 +224,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0700
-     * @tc.name:   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0700
-     * @tc.desc:   Query the cards that the application has loaded on the desktop
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0700
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0700
+     * @tc.desc   Query the cards that the application has loaded on the desktop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let TAG: string = 'SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0700';
@@ -256,12 +256,12 @@ export default function formProviderTest() {
     })
 
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0800
-     * @tc.name:   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0800
-     * @tc.desc:   Query the cards that the application has loaded on the desktop by formId
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0800
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0800
+     * @tc.desc   Query the cards that the application has loaded on the desktop by formId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let TAG: string = 'SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0800';
@@ -313,12 +313,12 @@ export default function formProviderTest() {
     });
 
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0900
-     * @tc.name:   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0900
-     * @tc.desc:   Open the card EditAbility page
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0900
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0900
+     * @tc.desc   Open the card EditAbility page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0900';
@@ -375,12 +375,12 @@ export default function formProviderTest() {
     });
 
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_1000
-     * @tc.name:   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_1000
-     * @tc.desc:   Open the card EditAbility page
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_1000
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_1000
+     * @tc.desc   Open the card EditAbility page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_1000';
@@ -445,12 +445,12 @@ export default function formProviderTest() {
     });
 
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_1100
-     * @tc.name:   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_1100
-     * @tc.desc:   Open the card EditAbility page
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_1100
+     * @tc.number SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_1100
+     * @tc.desc   Open the card EditAbility page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let TAG = 'SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_1100';

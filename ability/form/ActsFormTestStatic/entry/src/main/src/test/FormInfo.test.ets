@@ -30,9 +30,12 @@ export default function formInfoTest() {
         hilog.info(DOMAIN, TAG, 'formInfoTest describe start');
 
         /**
-         * @tc.number: FormInfoStaticTest001
-         * @tc.name: FormInfoStaticTest001
-         * @tc.desc: check formInfo
+         * @tc.name   FormInfoStaticTest001
+         * @tc.number FormInfoStaticTest001
+         * @tc.desc   check formInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("FormInfoStaticTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -110,9 +113,12 @@ export default function formInfoTest() {
         })
 
         /**
-         * @tc.number: FormInfoStaticTest002
-         * @tc.name: FormInfoStaticTest002
-         * @tc.desc: check formInfo
+         * @tc.name   FormInfoStaticTest002
+         * @tc.number FormInfoStaticTest002
+         * @tc.desc   check formInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("FormInfoStaticTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -180,9 +186,12 @@ export default function formInfoTest() {
         })
 
         /**
-         * @tc.number: FormInfoStaticTest003
-         * @tc.name: FormInfoStaticTest003
-         * @tc.desc: check formInfo
+         * @tc.name   FormInfoStaticTest003
+         * @tc.number FormInfoStaticTest003
+         * @tc.desc   check formInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("FormInfoStaticTest003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -263,9 +272,12 @@ export default function formInfoTest() {
         })
 
         /**
-         * @tc.number: FormInfoStaticTest004
-         * @tc.name: FormInfoStaticTest004
-         * @tc.desc: check formInfo
+         * @tc.name   FormInfoStaticTest004
+         * @tc.number FormInfoStaticTest004
+         * @tc.desc   check formInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("FormInfoStaticTest004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);

@@ -25,9 +25,12 @@ export const getAllFormsInfoTest = (describeName:string, filterParameter:number)
     const promiseName = `FMS_getFormsInfo_0200 promise`;
 
     /**
-     * @tc.name: getFormsInfo
-     * @tc.number: FMS_getFormsInfo_0200
-     * @tc.desc: Query all form configuration information without permission (by AsyncCallback)
+     * @tc.name   ${callbackName}
+     * @tc.number FMS_getFormsInfo_0200
+     * @tc.desc   Query all form configuration information without permission (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`${callbackName}`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(`==========${callbackName} ${describeName} start==========`);
@@ -48,9 +51,12 @@ export const getAllFormsInfoTest = (describeName:string, filterParameter:number)
     });
 
     /**
-     * @tc.name getFormsInfo
+     * @tc.name   ${promiseName}
      * @tc.number FMS_getFormsInfo_0200
-     * @tc.desc: Query all form configuration information without permission (by Promise)
+     * @tc.desc   Query all form configuration information without permission (by Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`${promiseName}`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(`==========${promiseName} ${describeName} start==========`);
