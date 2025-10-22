@@ -17,6 +17,8 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import testNapi from 'libentry.so';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import bundleManager from '@ohos.bundle.bundleManager';
+import { BusinessError } from '@ohos.base';
 
 const TAG = 'SUB_Ability_AbilityRuntime_StartSelfUIAbilityTest';
 let applicationContext = abilityDelegatorRegistry.getAbilityDelegator().getAppContext().getApplicationContext();
@@ -32,17 +34,26 @@ export default function NdkApplicationContextGetVersionCode() {
     /*
      * @tc.number : SUB_Ability_AbilityRuntime_ApplicationContextGetVersionCode_0100
      * @tc.name   : SUB_Ability_AbilityRuntime_ApplicationContextGetVersionCode_0100
-     * @tc.desc   : To verify  use ApplicationContextGetVersionCode get right VersionCode.
+     * @tc.desc   : To verify use ApplicationContextGetVersionCode get right VersionCode.
      * @tc.type   : Function
      * @tc.size   : MediumTest
      * @tc.level  : 3
      */
-    it('SUB_Ability_AbilityRuntime_ApplicationContextGetVersionCode_0100', Level.LEVEL3, (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_ApplicationContextGetVersionCode_0100', Level.LEVEL3, async (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_ApplicationContextGetVersionCode_0100';
       hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= START`);
       let result = testNapi.ndkApplicationContextGetVersionCode_0100();
+      let versionCodeJs = -1;
       hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} execute result:` + result);
-      expect(result).assertEqual(applicationContext.applicationInfo.versionCode);
+      let bundleFlags = bundleManager.BundleFlag.GET_BUNDLE_INFO_DEFAULT;
+      await bundleManager.getBundleInfoForSelf(bundleFlags).then((data)=>{
+        hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} execute getBundleInfoForSelf:` + data.versionCode);
+        versionCodeJs = data.versionCode;
+      }).catch((err:BusinessError)=>{
+        hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} execute getBundleInfoForSelf fail:` + err.message);
+      })
+      expect(result).assertEqual(versionCodeJs);
+      done();
     })
 
     /*
@@ -59,6 +70,7 @@ export default function NdkApplicationContextGetVersionCode() {
       let result = testNapi.ndkApplicationContextGetVersionCode_0200();
       hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} execute result:` + result);
       expect(result).assertEqual(401);
+      done();
     });
   })
 }
