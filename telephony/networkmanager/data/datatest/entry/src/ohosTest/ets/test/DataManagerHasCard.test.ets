@@ -119,14 +119,14 @@ export default function dataHasCardNoDataTest() {
       try {
         let hasSim: boolean = await sim.hasSimCard(0);
         if (hasSim) {
-          data.getCellularDataState((err: BusinessError, data: data.DataConnectState) => {
+          data.getCellularDataState((err: BusinessError, dat: data.DataConnectState) => {
             if (err) {
               console.info(`${caseName} err->${JSON.stringify(err)}`);
               ExpectTrue(false);
               done();
             } else {
-              console.info(`${caseName} data->${JSON.stringify(data)}`);
-              ExpectTrue(data !== null);
+              console.info(`${caseName} dat->${JSON.stringify(dat)}`);
+              ExpectTrue(dat == data.DataConnectState.DATA_STATE_DISCONNECTED);
               done();
             }
           });
@@ -196,9 +196,9 @@ export default function dataHasCardNoDataTest() {
       try {
         let hasSim: boolean = await sim.hasSimCard(0);
         if (hasSim) {
-          data.getCellularDataState().then((data: data.DataConnectState) => {
-            console.info(`${caseName} data->${JSON.stringify(data)}`);
-            ExpectTrue(true);
+          data.getCellularDataState().then((dat: data.DataConnectState) => {
+            console.info(`${caseName} dat->${JSON.stringify(dat)}`);
+            ExpectTrue(dat == data.DataConnectState.DATA_STATE_DISCONNECTED);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} err->${JSON.stringify(err)}`);
