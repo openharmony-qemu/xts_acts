@@ -4240,5 +4240,33 @@ export default function SixPointZeroI18nStageTest() {
       expect(result.length).assertEqual(1)
     })
 
+    /* *
+    * @tc.number    : SUB_GLOBAL_I18n_addPreferredLanguage_0100
+    * @tc.name      : test_addPreferredLanguage_0100
+    * @tc.desc      : addPreferredLanguage  with "zh-Hans-CN"
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_addPreferredLanguage_0100', Level.LEVEL2, () => {
+      let value = i18n.addPreferredLanguage('zh-Hans-CN', 1)
+      expect(value).assertFalse()
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_I18n_formatToParts_0100
+    * @tc.name      : test_formatToParts_0100
+    * @tc.desc      : formatToParts  with 100, 'second'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_formatToParts_0100', Level.LEVEL2, () => {
+      let relativetimefmt = new Intl.RelativeTimeFormat('en');
+      let value = relativetimefmt.formatToParts(100, 'second');
+      expect(value.length > 0).assertEqual(true)
+    })
+
+
   })
 }
