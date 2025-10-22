@@ -69,9 +69,9 @@ export default function webViewGetCertificate() {
     })
 
     /*
-     *@tc.number SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0200
-     *@tc.name testGetCertificateCallback
-     *@tc.desc test interface of getCertificate with callback
+     *@tc.number SUB_ACE_BASIC_ETS_TESTGETCERTIFICATECALLBACK_API_0100
+     *@tc.name   testGetCertificateCallback01
+     *@tc.desc   test interface of getCertificate with callback
      */
     it('testGetCertificateCallback01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
       Utils.emitEvent("emitGetCertificateCallback01", 161010)
@@ -91,9 +91,9 @@ export default function webViewGetCertificate() {
     })
 
     /*
-     *@tc.number SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0200
-     *@tc.name testGetCertificatePromise
-     *@tc.desc test interface of getCertificate with promise
+     *@tc.number SUB_ACE_BASIC_ETS_TESTGETCERTIFICATEPROMISE_API_0100
+     *@tc.name   testGetCertificatePromise01
+     *@tc.desc   test interface of getCertificate with promise
      */
     it('testGetCertificatePromise01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
       Utils.emitEvent("emitGetCertificatePromise01", 161010)
