@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import avSession from '@ohos.multimedia.avsession';
 import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll } from "../../../hypium/index";
 import wantAgent from '@ohos.app.ability.wantAgent';
@@ -91,7 +92,7 @@ export default function AVSessionErrorCode() {
 
             }catch(err: BusinessError) {
                 console.info(`TestLog: session destroy error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }
         }
 
@@ -104,12 +105,9 @@ export default function AVSessionErrorCode() {
         })
 
         beforeEach(async () => {
-            console.info(`TestLog: ghg, beforeEach in`);
-            console.info(`TestLog: ghg, createAVSession begin`);
             try{
                 console.info(`TestLog: createAVSession 1111`);
                 session = await avSession.createAVSession(context, tag, 'video_call');
-                console.info(`TestLog: ghg, avSession create success`);
             }catch(err: BusinessError){
                 console.info(`TestLog: Session create error: code: ${err.code}, message: ${err.message}`);
             };
@@ -158,13 +156,13 @@ export default function AVSessionErrorCode() {
             console.info('TestLog: End Testing avSession Interfaces');
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0100
-         * @tc.desc      : setAVMetadata(promise) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0100
+         * @tc.desc        setAVMetadata(promise) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -183,7 +181,7 @@ export default function AVSessionErrorCode() {
                 }
                 await session!.setAVMetadata(metadata)
                 console.info('TestLog: Set AVMetadata successfully');
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }catch(err: BusinessError){
                 console.info(`TestLog: Set AVMetadata error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
@@ -191,13 +189,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0300
-         * @tc.desc      : setAVMetadata(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0300
+         * @tc.desc        setAVMetadata(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -223,13 +221,13 @@ export default function AVSessionErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0100
-         * @tc.desc      : setAVPlaybackState(promise) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0100
+         * @tc.desc        setAVPlaybackState(promise) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -245,13 +243,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0300
-         * @tc.desc      : setAVPlaybackState(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0300
+         * @tc.desc        setAVPlaybackState(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -282,13 +280,13 @@ export default function AVSessionErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0400
-         * @tc.desc      : setAVPlaybackState(callback) with invalid params(errcode 401)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0400
+         * @tc.desc        setAVPlaybackState(callback) with invalid params(errcode 401)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_ERRORCODE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -307,25 +305,25 @@ export default function AVSessionErrorCode() {
                         expect(err?.code).assertEqual(401);
                     } else {
                         console.info('TestLog: Set playbackState successfully');
-                        expect(true).assertFalse(); 
+                        expect(true).assertFalse();
                     }
                     done();
                 })
             }catch(err: BusinessError){
                 console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             }
 
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_STATIC_0300
-         * @tc.desc      : setLaunchAbility(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_STATIC_0300
+         * @tc.desc        setLaunchAbility(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SETLAUNCHABILITY_ERRORCODE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -364,13 +362,13 @@ export default function AVSessionErrorCode() {
             await Utils.msSleep(800);
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0100
-         * @tc.desc      : session destroy(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0100
+         * @tc.desc        session destroy(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -393,13 +391,13 @@ export default function AVSessionErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0200
-         * @tc.desc      : session destroy(promise) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0200
+         * @tc.desc        session destroy(promise) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_ERRORCODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -415,13 +413,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0100
-         * @tc.desc      : activate(promise) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level1
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0100
+         * @tc.desc        activate(promise) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level1
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -437,13 +435,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0200
-         * @tc.desc      : activate(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0200
+         * @tc.desc        activate(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_ERRORCODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -466,13 +464,13 @@ export default function AVSessionErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0100
-         * @tc.desc      : deactivate(promise) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level1
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0100
+         * @tc.desc        deactivate(promise) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level1
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
             async (done: () => void): Promise<void> => {
@@ -488,13 +486,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0200
-         * @tc.desc      : deactivate(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0200
+         * @tc.desc        deactivate(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDEACTIVATE_ERRORCODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -517,19 +515,19 @@ export default function AVSessionErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('play') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_STATIC_0100
+         * @tc.desc        on('play') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAY_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('play', callback1);
+                session!.onPlay(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -537,19 +535,19 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSTOP_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONSTOP_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('stop') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSTOP_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSTOP_ERRORCODE_STATIC_0100
+         * @tc.desc        on('stop') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSTOP_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('stop', callback1);
+                session!.onStop(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -557,19 +555,19 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPAUSE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPAUSE_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('pause') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONPAUSE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONPAUSE_ERRORCODE_STATIC_0100
+         * @tc.desc        on('pause') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPAUSE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('pause', callback1);
+                session!.onPause(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -577,19 +575,19 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('playNext') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_STATIC_0100
+         * @tc.desc        on('playNext') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('playNext', callback1);
+                session!.onPlayNext(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -597,19 +595,19 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('playPrevious') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_STATIC_0100
+         * @tc.desc        on('playPrevious') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('playPrevious', callback1);
+                session!.onPlayPrevious(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -617,19 +615,19 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('fastForward') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_STATIC_0100
+         * @tc.desc        on('fastForward') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('fastForward', callback1);
+                session!.onFastForward(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -637,19 +635,19 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('rewind') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_STATIC_0100
+         * @tc.desc        on('rewind') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('rewind', callback1);
+                session!.onRewind(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -657,19 +655,19 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSEEK_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONSEEK_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('seek') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSEEK_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSEEK_ERRORCODE_STATIC_0100
+         * @tc.desc        on('seek') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSEEK_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('seek', callback1);
+                session!.onSeek(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -677,19 +675,19 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('setSpeed') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_ERRORCODE_STATIC_0100
+         * @tc.desc        on('setSpeed') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('setSpeed', callback1);
+                session!.onSetSpeed(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -697,19 +695,19 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('setLoopMode') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_ERRORCODE_STATIC_0100
+         * @tc.desc        on('setLoopMode') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('setLoopMode', callback1);
+                session!.onSetLoopMode(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -717,19 +715,19 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('toggleFavorite') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_ERRORCODE_STATIC_0100
+         * @tc.desc        on('toggleFavorite') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('toggleFavorite', callback1);
+                session!.onToggleFavorite(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -737,19 +735,19 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_ERRORCODE_STATIC_0100
-         * @tc.desc      : on('handleKeyEvent') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_ERRORCODE_STATIC_0100
+         * @tc.desc        on('handleKeyEvent') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONHANDLEKEYEVENT_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('handleKeyEvent', callback1);
+                session!.onHandleKeyEvent(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -757,76 +755,76 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('play') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_STATIC_0100
+         * @tc.desc        off('play') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAY_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('play')
+                session!.offPlay()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
             }
             done();
         })
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('pause') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_ERRORCODE_STATIC_0100
+         * @tc.desc        off('pause') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPAUSE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('pause')
+                session!.offPause()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
             }
             done();
         })
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSTOP_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSTOP_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('stop') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSTOP_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSTOP_ERRORCODE_STATIC_0100
+         * @tc.desc        off('stop') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSTOP_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('stop')
+                session!.offStop()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
             }
             done();
         })
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('playNext') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_STATIC_0100
+         * @tc.desc        off('playNext') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYNEXT_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('playNext')
+                session!.offPlayNext()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -834,19 +832,19 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('playPrevious') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_STATIC_0100
+         * @tc.desc        off('playPrevious') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFPLAYPREVIOUS_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('playPrevious')
+                session!.offPlayPrevious()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -854,19 +852,19 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('fastForward') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_STATIC_0100
+         * @tc.desc        off('fastForward') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFFASTFORWARD_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('fastForward')
+                session!.offFastForward()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -874,19 +872,19 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('rewind') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_STATIC_0100
+         * @tc.desc        off('rewind') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFREWIND_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('rewind')
+                session!.offRewind()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -894,38 +892,38 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSEEK_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSEEK_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('seek') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSEEK_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSEEK_ERRORCODE_STATIC_0100
+         * @tc.desc        off('seek') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSEEK_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('seek')
+                session!.offSeek()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
             }
             done();
         })
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('setSpeed') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_ERRORCODE_STATIC_0100
+         * @tc.desc        off('setSpeed') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('setSpeed')
+                session!.offSetSpeed()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -933,19 +931,19 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('setLoopMode') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_ERRORCODE_STATIC_0100
+         * @tc.desc        off('setLoopMode') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSETLOOPMODE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('setLoopMode')
+                session!.offSetLoopMode()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -953,51 +951,52 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('toggleFavorite') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_ERRORCODE_STATIC_0100
+         * @tc.desc        off('toggleFavorite') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFTOGGLEFAVORITE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('toggleFavorite')
+                session!.offToggleFavorite()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
             }
             done();
         })
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_ERRORCODE_STATIC_0100
-         * @tc.desc      : off('handleKeyEvent') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_ERRORCODE_STATIC_0100
+         * @tc.desc        off('handleKeyEvent') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFHANDLEKEYEVENT_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('handleKeyEvent')
+                session!.offHandleKeyEvent()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
             }
             done();
         })
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0100
-         * @tc.desc      : getOutputDevice(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0100
+         * @tc.desc        getOutputDevice(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1014,13 +1013,13 @@ export default function AVSessionErrorCode() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0200
-         * @tc.desc      : getOutputDevice(promise) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0200
+         * @tc.desc        getOutputDevice(promise) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETOUTPUTDEVICE_ERRORCODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1036,13 +1035,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0100
-         * @tc.desc      : getController(promise) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0100
+         * @tc.desc        getController(promise) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1058,13 +1057,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0200
-         * @tc.desc      : getController(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0200
+         * @tc.desc        getController(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCONTROLLER_ERRORCODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1081,13 +1080,13 @@ export default function AVSessionErrorCode() {
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0300
-         * @tc.desc      : dispatchSessionEvent(promise) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0300
+         * @tc.desc        dispatchSessionEvent(promise) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1102,13 +1101,14 @@ export default function AVSessionErrorCode() {
             };
             done();
         })
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0600
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0600
-         * @tc.desc      : dispatchSessionEvent(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0600
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0600
+         * @tc.desc        dispatchSessionEvent(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1131,13 +1131,13 @@ export default function AVSessionErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0300
-         * @tc.desc      : setExtras(promise) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0300
+         * @tc.desc        setExtras(promise) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1145,7 +1145,7 @@ export default function AVSessionErrorCode() {
                 try{
                     await session!.setExtras(CUSTOM_EXTRAS)
                     console.info(`TestLog: setExtras success.`);
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                 }catch(err: BusinessError) {
                     console.info(`TestLog: setExtras error: code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(6600102);
@@ -1154,13 +1154,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0600
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0600
-         * @tc.desc      : setExtras(callback) with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0600
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0600
+         * @tc.desc        setExtras(callback) with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETEXTRAS_ERRORCODE_STATIC_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1172,32 +1172,32 @@ export default function AVSessionErrorCode() {
                             expect(err?.code).assertEqual(6600102);
                         } else {
                             console.info(`TestLog: setExtras success.`);
-                            expect(true).assertFalse(); 
+                            expect(true).assertFalse();
                         }
                         done();
                     })
                 }catch(err: BusinessError) {
                     console.info(`TestLog: setExtras error: code: ${err.code}, message: ${err.message}`);
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 }
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_STATIC_0400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_STATIC_0400
-         * @tc.desc      : on('commonCommand') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_STATIC_0400
+         * @tc.desc        on('commonCommand') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONCOMMONCOMMAND_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
                 try {
-                    session!.on('commonCommand', callback1);
-                    expect(true).assertFalse(); 
+                    session!.onCommonCommand(callback1);
+                    expect(true).assertFalse();
                 }catch(err: BusinessError) {
                     expect(err.code).assertEqual(6600102);
                 }
@@ -1205,20 +1205,20 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_ERRORCODE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_ERRORCODE_STATIC_0200
-         * @tc.desc      : off('commonCommand') with avsession does not exit(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_ERRORCODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_ERRORCODE_STATIC_0200
+         * @tc.desc        off('commonCommand') with avsession does not exit(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_OFFCOMMONCOMMAND_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
                 try {
-                    session!.off('commonCommand')
-                    expect(true).assertFalse(); 
+                    session!.offCommonCommand()
+                    expect(true).assertFalse();
                 }catch(err: BusinessError) {
                     expect(err.code).assertEqual(6600102);
                 }
@@ -1226,13 +1226,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0100
-         * @tc.desc      : setAVQueueItems(promise) with invalid params(errcode 401)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0100
+         * @tc.desc        setAVQueueItems(promise) with invalid params(errcode 401)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1247,13 +1247,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0200
-         * @tc.desc      : setAVQueueItems(promise) with avsession does not exist(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0200
+         * @tc.desc        setAVQueueItems(promise) with avsession does not exist(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1261,7 +1261,7 @@ export default function AVSessionErrorCode() {
                 try{
                     await session!.setAVQueueItems(ITEMS_ARRAY)
                     console.info('setAVQueueItems Successfully');
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                 }catch(err: BusinessError) {
                     console.info(`TestLog: setAVQueueItems error: code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(6600102);
@@ -1270,13 +1270,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0300
-         * @tc.desc      : setAVQueueItems(callback) with invalid params(errcode 401)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0300
+         * @tc.desc        setAVQueueItems(callback) with invalid params(errcode 401)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1298,13 +1298,13 @@ export default function AVSessionErrorCode() {
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0400
-         * @tc.desc      : setAVQueueItems(callback) with avsession does not exist(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0400
+         * @tc.desc        setAVQueueItems(callback) with avsession does not exist(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUEITEMS_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1316,32 +1316,32 @@ export default function AVSessionErrorCode() {
                             expect(err?.code).assertEqual(6600102);
                         } else {
                             console.info('setAVQueueItems Successfully');
-                            expect(true).assertFalse(); 
+                            expect(true).assertFalse();
                         }
                         done();
                     })
                 }catch(err: BusinessError) {
                     console.info(`TestLog: setAVQueueItems error: code: ${err.code}, message: ${err.message}`);
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 }
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0100
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0100
-         * @tc.desc      : setAVQueueTitle(promise) with invalid params(errcode 401)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0100
+         * @tc.desc        setAVQueueTitle(promise) with invalid params(errcode 401)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             try{
                 await session!.setAVQueueTitle({})
                 console.info('setAVQueueTitle Successfully');
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
             }catch(err: BusinessError) {
                 console.info(`TestLog: setAVQueueTitle error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(401);
@@ -1349,13 +1349,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0200
-         * @tc.desc      : setAVQueueTitle(promise) with avsession does not exist(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0200
+         * @tc.desc        setAVQueueTitle(promise) with avsession does not exist(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1363,7 +1363,7 @@ export default function AVSessionErrorCode() {
                 try{
                     await session!.setAVQueueTitle(QUEUE_TITLE)
                     console.info('setAVQueueTitle Successfully');
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                 }catch(err: BusinessError) {
                     console.info(`TestLog: setAVQueueTitle error: code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(6600102);
@@ -1372,13 +1372,13 @@ export default function AVSessionErrorCode() {
             done();
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0300
-         * @tc.desc      : setAVQueueTitle(callback) with invalid params(errcode 401)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0300
+         * @tc.desc        setAVQueueTitle(callback) with invalid params(errcode 401)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1389,24 +1389,24 @@ export default function AVSessionErrorCode() {
                         expect(err?.code).assertEqual(401);
                     } else {
                         console.info('setAVQueueTitle Successfully');
-                        expect(true).assertFalse(); 
+                        expect(true).assertFalse();
                     }
                     done();
                 })
             }catch(err: BusinessError) {
                 console.info(`TestLog: setAVQueueTitle error: code: ${err.code}, message: ${err.message}`);
-                expect(true).assertFalse(); 
+                expect(true).assertFalse();
                 done();
             }
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0400
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0400
-         * @tc.desc      : setAVQueueTitle(callback) with session does not exist(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0400
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0400
+         * @tc.desc        setAVQueueTitle(callback) with session does not exist(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SETAVQUEUETITLE_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1418,32 +1418,32 @@ export default function AVSessionErrorCode() {
                             expect(err?.code).assertEqual(6600102);
                         } else {
                             console.info('setAVQueueTitle Successfully');
-                            expect(true).assertFalse(); 
+                            expect(true).assertFalse();
                         }
                         done();
                     })
                 }catch(err: BusinessError) {
                     console.info(`TestLog: setAVQueueTitle error: code: ${err.code}, message: ${err.message}`);
-                    expect(true).assertFalse(); 
+                    expect(true).assertFalse();
                     done();
                 }
             });
         })
 
-        /* *
-         * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_STATIC_0300
-         * @tc.name      : SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_STATIC_0300
-         * @tc.desc      : on('skipToQueueItem') with avsession does not exist(errcode 6600102)
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_STATIC_0300
+         * @tc.desc        on('skipToQueueItem') with avsession does not exist(errcode 6600102)
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ONSKIPTOQUEUEITEM_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
                 try {
-                    session!.on('skipToQueueItem', callback1);
-                    expect(true).assertFalse(); 
+                    session!.onSkipToQueueItem(callback1);
+                    expect(true).assertFalse();
                 }catch(err: BusinessError) {
                     expect(err.code).assertEqual(6600102);
                 }
