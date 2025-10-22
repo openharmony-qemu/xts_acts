@@ -72,7 +72,7 @@ export default function NdkStartSelfUIAbilityWithPidResultTest() {
      * @tc.size   : MediumTest
      * @tc.level  : 3
      */
-    it('SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithPidResult_0200', Level.LEVEL3, (done: Function) => {
+    it('SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithPidResult_0200', Level.LEVEL3, async (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithPidResult_0200';
       hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} ========= START`);
       commonEventManager.subscribe(subscriber, (err, data) => {
@@ -86,11 +86,11 @@ export default function NdkStartSelfUIAbilityWithPidResultTest() {
       let task1: taskpool.Task = new taskpool.Task(StartSelfUIAbilityWithPidResult, "StartSelfUIAbilityWithPidResult_0200");
       await taskpool.execute(task1).then((value: Object) => {
         hilog.info(0x0000, TAG, TEST_SUITE_NAME + 'taskpool result: %{public}s ', JSON.stringify(value));
-        if(result == 801){
+        if(value == 801){
           hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} current device not support.`);
-          expect(result).assertEqual(801);
+          expect(value).assertEqual(801);
         }else{
-          expect(result).assertEqual(0);
+          expect(value).assertEqual(0);
         }
       });
     })

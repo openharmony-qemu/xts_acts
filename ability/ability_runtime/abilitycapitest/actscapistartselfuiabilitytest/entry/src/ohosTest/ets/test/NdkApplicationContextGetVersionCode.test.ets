@@ -16,8 +16,10 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import testNapi from 'libentry.so';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
 const TAG = 'SUB_Ability_AbilityRuntime_StartSelfUIAbilityTest';
+let applicationContext = abilityDelegatorRegistry.getAbilityDelegator().getAppContext().getApplicationContext();
 
 export default function NdkApplicationContextGetVersionCode() {
   describe('NdkApplicationContextGetVersionCode', () => {
