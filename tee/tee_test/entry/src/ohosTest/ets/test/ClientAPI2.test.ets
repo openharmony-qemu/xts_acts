@@ -75,9 +75,10 @@ export default function ClientAPITest2() {
     })
 
     /**
-     * @testcase.name      : Opensession_WithoutContext
-     * @testcase.desc      : call TEEC_OpenSession Without Context,
-     * @testcase.expect    : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.number          : Opensession_WithoutContext
+     * @tc.name            : Opensession_WithoutContext
+     * @tc.desc            : call TEEC_OpenSession Without Context,
+     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
      */
     it('Opensession_WithoutContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: Array<number> = TEETEST.Opensession_WithoutContext();
@@ -87,9 +88,10 @@ export default function ClientAPITest2() {
     });
 
     /**
-     * @testcase.name      : Opensession_WithoutSession
-     * @testcase.desc      : call TEEC_OpenSession Without session,
-     * @testcase.expect    : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.number          : Opensession_WithoutSession
+     * @tc.name            : Opensession_WithoutSession
+     * @tc.desc            : call TEEC_OpenSession Without session,
+     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
      */
     it('Opensession_WithoutSession', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: Array<number> = TEETEST.Opensession_WithoutSession();
@@ -98,9 +100,10 @@ export default function ClientAPITest2() {
       done();
     });
     /**
-     * @testcase.name      : Opensession_WithoutDestination
-     * @testcase.desc      : call TEEC_OpenSession Without Destination,
-     * @testcase.expect    : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.number          : Opensession_WithoutDestination
+     * @tc.name            : Opensession_WithoutDestination
+     * @tc.desc            : call TEEC_OpenSession Without Destination,
+     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
      */
     it('Opensession_WithoutDestination', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: Array<number> = TEETEST.Opensession_WithoutDestination();
@@ -109,9 +112,10 @@ export default function ClientAPITest2() {
       done();
     });
     /**
-     * @testcase.name      : Opensession_WithoutConnectionMethod
-     * @testcase.desc      : call TEEC_OpenSession Without ConnectionMethod,
-     * @testcase.expect    : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.number          : Opensession_WithoutConnectionMethod
+     * @tc.name            : Opensession_WithoutConnectionMethod
+     * @tc.desc            : call TEEC_OpenSession Without ConnectionMethod,
+     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
      */
     it('Opensession_WithoutConnectionMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -121,9 +125,10 @@ export default function ClientAPITest2() {
         done();
       });
     /**
-     * @testcase.name      : Opensession_WithNotSupportConnectionMethod
-     * @testcase.desc      : call TEEC_OpenSession With Not Support ConnectionMethod,
-     * @testcase.expect    : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.number          : Opensession_WithNotSupportConnectionMethod
+     * @tc.name            : Opensession_WithNotSupportConnectionMethod
+     * @tc.desc            : call TEEC_OpenSession With Not Support ConnectionMethod,
+     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
      */
     it('Opensession_WithNotSupportConnectionMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -147,9 +152,10 @@ export default function ClientAPITest2() {
         done();
       });
     /**
-     * @testcase.name      : Opensession_ContextIsNotInit
-     * @testcase.desc      : call TEEC_OpenSession With Context is Not Init,
-     * @testcase.expect    : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.number          : Opensession_ContextIsNotInit
+     * @tc.name            : Opensession_ContextIsNotInit
+     * @tc.desc            : call TEEC_OpenSession With Context is Not Init,
+     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
      */
     it('Opensession_ContextIsNotInit', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -161,9 +167,10 @@ export default function ClientAPITest2() {
       });
 
     /**
-     * @testcase.name      : Opensession_ParamValueIsInvalid
-     * @testcase.desc      : call TEEC_OpenSession With Param value is invalid
-     * @testcase.expect    : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.number          : Opensession_ParamValueIsInvalid
+     * @tc.name            : Opensession_ParamValueIsInvalid
+     * @tc.desc            : call TEEC_OpenSession With Param value is invalid
+     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
      */
     it('Opensession_ParamValueIsInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -174,9 +181,10 @@ export default function ClientAPITest2() {
       });
 
     /**
-     * @testcase.name      : Opensession_WithoutOperation
-     * @testcase.desc      : call TEEC_OpenSession Without Operation,
-     * @testcase.expect    : return TEEC_SUCCESS
+     * @tc.number          : Opensession_WithoutOperation
+     * @tc.name            : Opensession_WithoutOperation
+     * @tc.desc            : call TEEC_OpenSession Without Operation,
+     * @tc.expect          : return TEEC_SUCCESS
      */
     it('Opensession_WithoutOperation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: Array<number> = TEETEST.Opensession_WithoutOperation();
@@ -186,9 +194,10 @@ export default function ClientAPITest2() {
     });
 
     /**
-     * @testcase.name      : Opensession_WithoutOrigin
-     * @testcase.desc      : call TEEC_OpenSession Without Origin,
-     * @testcase.expect    : return TEEC_SUCCESS
+     * @tc.number          : Opensession_WithoutOrigin
+     * @tc.name            : Opensession_WithoutOrigin
+     * @tc.desc            : call TEEC_OpenSession Without Origin,
+     * @tc.expect          : return TEEC_SUCCESS
      */
     it('Opensession_WithoutOrigin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = TEETEST.Opensession_WithoutOrigin();
@@ -197,9 +206,10 @@ export default function ClientAPITest2() {
     });
 
     /**
-     * @testcase.name      : Opensession_WithOperationIsNone
-     * @testcase.desc      : call TEEC_OpenSession With Operation is none
-     * @testcase.expect    : return TEEC_SUCCESS
+     * @tc.number          : Opensession_WithOperationIsNone
+     * @tc.name            : Opensession_WithOperationIsNone
+     * @tc.desc            : call TEEC_OpenSession With Operation is none
+     * @tc.expect          : return TEEC_SUCCESS
      */
     it('Opensession_WithOperationIsNone', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -209,9 +219,10 @@ export default function ClientAPITest2() {
         done();
       });
     /**
-     * @testcase.name      : Opensession_WithOperationIsValue
-     * @testcase.desc      : call TEEC_OpenSession With Operation paramtype is value
-     * @testcase.expect    : return TEEC_SUCCESS
+     * @tc.number          : Opensession_WithOperationIsValue
+     * @tc.name            : Opensession_WithOperationIsValue
+     * @tc.desc            : call TEEC_OpenSession With Operation paramtype is value
+     * @tc.expect          : return TEEC_SUCCESS
      */
     it('Opensession_WithOperationIsValue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -229,9 +240,10 @@ export default function ClientAPITest2() {
         done();
       });
     /**
-     * @testcase.name      : Opensession_WithOperationIsTempMem
-     * @testcase.desc      : call TEEC_OpenSession With Operation paramtype is tempmem
-     * @testcase.expect    : return TEEC_SUCCESS
+     * @tc.number          : Opensession_WithOperationIsTempMem
+     * @tc.name            : Opensession_WithOperationIsTempMem
+     * @tc.desc            : call TEEC_OpenSession With Operation paramtype is tempmem
+     * @tc.expect          : return TEEC_SUCCESS
      */
     it('Opensession_WithOperationIsTempMem', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -249,9 +261,10 @@ export default function ClientAPITest2() {
         done();
       });
     /**
-     * @testcase.name      : Opensession_WithNotExistUUID
-     * @testcase.desc      : call TEEC_OpenSession With uuid is not exist
-     * @testcase.expect    : return TEEC_ERROR_GENERIC
+     * @tc.number          : Opensession_WithNotExistUUID
+     * @tc.name            : Opensession_WithNotExistUUID
+     * @tc.desc            : call TEEC_OpenSession With uuid is not exist
+     * @tc.expect          : return TEEC_ERROR_GENERIC
      */
     it('Opensession_WithNotExistUUID', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -261,9 +274,10 @@ export default function ClientAPITest2() {
         done();
       });
     /**
-     * @testcase.name      : Opensession_ReturnErrorFromTA
-     * @testcase.desc      : call TEEC_OpenSession With TA return error
-     * @testcase.expect    : return TEEC_ERROR_GENERIC
+     * @tc.number          : Opensession_ReturnErrorFromTA
+     * @tc.name            : Opensession_ReturnErrorFromTA
+     * @tc.desc            : call TEEC_OpenSession With TA return error
+     * @tc.expect          : return TEEC_ERROR_GENERIC
      */
     it('Opensession_ReturnErrorFromTA', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -273,9 +287,10 @@ export default function ClientAPITest2() {
         done();
       });
     /**
-     * @testcase.name      : Opensession_WithParamTypesIsInvalid
-     * @testcase.desc      : call TEEC_OpenSession With paramtype is invalid
-     * @testcase.expect    : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.number          : Opensession_WithParamTypesIsInvalid
+     * @tc.name            : Opensession_WithParamTypesIsInvalid
+     * @tc.desc            : call TEEC_OpenSession With paramtype is invalid
+     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
      */
     it('Opensession_WithParamTypesIsInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -285,9 +300,10 @@ export default function ClientAPITest2() {
         done();
       });
     /**
-     * @testcase.name      : RequestCancellationTest
-     * @testcase.desc      : call TEEC_RequestCancellation after TEEC_InvokeCommand
-     * @testcase.expect    : no error occur,in log can see not support this api
+     * @tc.number          : RequestCancellationTest
+     * @tc.name            : RequestCancellationTest
+     * @tc.desc            : call TEEC_RequestCancellation after TEEC_InvokeCommand
+     * @tc.expect          : no error occur,in log can see not support this api
      */
     it('RequestCancellationTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -297,9 +313,10 @@ export default function ClientAPITest2() {
       });
     
     /**
-     * @testcase.name      : Closesession_WithCreatedSession
-     * @testcase.desc      : call TEEC_CloseSession With created session
-     * @testcase.expect    : session_id is 0
+     * @tc.number          : Closesession_WithCreatedSession
+     * @tc.name            : Closesession_WithCreatedSession
+     * @tc.desc            : call TEEC_CloseSession With created session
+     * @tc.expect          : session_id is 0
      */
     it('Closesession_WithCreatedSession', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -310,9 +327,10 @@ export default function ClientAPITest2() {
       });
 
     /**
-     * @testcase.name      : Closesession_WithoutSession
-     * @testcase.desc      : call TEEC_CloseSession WithoutSession
-     * @testcase.expect    : no error occur
+     * @tc.number          : Closesession_WithoutSession
+     * @tc.name            : Closesession_WithoutSession
+     * @tc.desc            : call TEEC_CloseSession WithoutSession
+     * @tc.expect          : no error occur
      */
     it('Closesession_WithoutSession', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -323,9 +341,10 @@ export default function ClientAPITest2() {
         done();
       });
     /**
-     * @testcase.name      : Closesession_WithNotOpenedSession
-     * @testcase.desc      : call TEEC_CloseSession with Not Opened Session
-     * @testcase.expect    : no error occur
+     * @tc.number          : Closesession_WithNotOpenedSession
+     * @tc.name            : Closesession_WithNotOpenedSession
+     * @tc.desc            : call TEEC_CloseSession with Not Opened Session
+     * @tc.expect          : no error occur
      */
     it('Closesession_WithNotOpenedSession', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -337,9 +356,10 @@ export default function ClientAPITest2() {
       });
 
     /**
-     * @testcase.name      : AllocateSharedMemory_WithAllocatedMem
-     * @testcase.desc      : call TEEC_AllocateSharedMemory normal test
-     * @testcase.expect    : return TEEC_SUCCESS
+     * @tc.number          : AllocateSharedMemory_WithAllocatedMem
+     * @tc.name            : AllocateSharedMemory_WithAllocatedMem
+     * @tc.desc            : call TEEC_AllocateSharedMemory normal test
+     * @tc.expect          : return TEEC_SUCCESS
      */
     it('AllocateSharedMemory_WithAllocatedMem', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -348,9 +368,10 @@ export default function ClientAPITest2() {
         done();
       });
     /**
-     * @testcase.name      : AllocateSharedMemory_WithoutContext
-     * @testcase.desc      : call TEEC_AllocateSharedMemory Without Context
-     * @testcase.expect    : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.number          : AllocateSharedMemory_WithoutContext
+     * @tc.name            : AllocateSharedMemory_WithoutContext
+     * @tc.desc            : call TEEC_AllocateSharedMemory Without Context
+     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
      */
     it('AllocateSharedMemory_WithoutContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -360,9 +381,10 @@ export default function ClientAPITest2() {
       });
 
     /**
-     * @testcase.name      : AllocateSharedMemory_WithoutSharedMem
-     * @testcase.desc      : call TEEC_AllocateSharedMemory Without SharedMem
-     * @testcase.expect    : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.number          : AllocateSharedMemory_WithoutSharedMem
+     * @tc.name            : AllocateSharedMemory_WithoutSharedMem
+     * @tc.desc            : call TEEC_AllocateSharedMemory Without SharedMem
+     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
      */
     it('AllocateSharedMemory_WithoutSharedMem', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -372,9 +394,10 @@ export default function ClientAPITest2() {
       });
 
     /**
-     * @testcase.name      : AllocateSharedMemory_WithSharedMemHasReleased
-     * @testcase.desc      : call TEEC_AllocateSharedMemory With SharedMem has Released
-     * @testcase.expect    : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.number          : AllocateSharedMemory_WithSharedMemHasReleased
+     * @tc.name            : AllocateSharedMemory_WithSharedMemHasReleased
+     * @tc.desc            : call TEEC_AllocateSharedMemory With SharedMem has Released
+     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
      */
     it('AllocateSharedMemory_WithSharedMemHasReleased', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -384,9 +407,10 @@ export default function ClientAPITest2() {
       });
 
     /**
-     * @testcase.name      : AllocateSharedMemory_WithSharedMemFlagIsZero
-     * @testcase.desc      : call TEEC_AllocateSharedMemory With SharedMem flag is 0
-     * @testcase.expect    : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.number          : AllocateSharedMemory_WithSharedMemFlagIsZero
+     * @tc.name            : AllocateSharedMemory_WithSharedMemFlagIsZero
+     * @tc.desc            : call TEEC_AllocateSharedMemory With SharedMem flag is 0
+     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
      */
     it('AllocateSharedMemory_WithSharedMemFlagIsZero', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -396,9 +420,10 @@ export default function ClientAPITest2() {
       });
 
     /**
-     * @testcase.name      : AllocateSharedMemory_WithSharedMemFlagIsInvalid
-     * @testcase.desc      : call TEEC_AllocateSharedMemory With SharedMem flag is invalid
-     * @testcase.expect    : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.number          : AllocateSharedMemory_WithSharedMemFlagIsInvalid
+     * @tc.name            : AllocateSharedMemory_WithSharedMemFlagIsInvalid
+     * @tc.desc            : call TEEC_AllocateSharedMemory With SharedMem flag is invalid
+     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
      */
     it('AllocateSharedMemory_WithSharedMemFlagIsInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -408,9 +433,10 @@ export default function ClientAPITest2() {
       });
 
     /**
-     * @testcase.name      : AllocateSharedMemory_WithSizeExceed
-     * @testcase.desc      : call TEEC_AllocateSharedMemory With SharedMem size exceed 4M
-     * @testcase.expect    : return TEEC_ERROR_OUT_OF_MEMORY
+     * @tc.number          : AllocateSharedMemory_WithSizeExceed
+     * @tc.name            : AllocateSharedMemory_WithSizeExceed
+     * @tc.desc            : call TEEC_AllocateSharedMemory With SharedMem size exceed 4M
+     * @tc.expect          : return TEEC_ERROR_OUT_OF_MEMORY
      */
     it('AllocateSharedMemory_WithSizeExceed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -420,12 +446,13 @@ export default function ClientAPITest2() {
       });
 
     /**
-     * @testcase.name      : AllocateSharedMemory_ReachSharememNumLimit
-     * @testcase.desc      : call TEEC_AllocateSharedMemory With same Context 65 times,
+     * @tc.number          : AllocateSharedMemory_ReachSharememNumLimit
+     * @tc.name            : AllocateSharedMemory_ReachSharememNumLimit
+     * @tc.desc            : call TEEC_AllocateSharedMemory With same Context 65 times,
      * This case will generate wild pointers, but these pointers are all hung on the same context.
      * The teardown function at the end of the use case will recycle the context to ensure the
      * recycling of these wild pointers.
-     * @testcase.expect    : alloc 65 times should return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.expect    : alloc 65 times should return TEEC_ERROR_BAD_PARAMETERS
      */
     it('AllocateSharedMemory_ReachSharememNumLimit', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -436,9 +463,10 @@ export default function ClientAPITest2() {
       });
 
     /**
-     * @testcase.name      : RegisterSharedMemory_WithRegisterMem
-     * @testcase.desc      : call TEEC_RegisterSharedMemory With RegisterMem
-     * @testcase.expect    : return TEEC_SUCCESS
+     * @tc.number          : RegisterSharedMemory_WithRegisterMem
+     * @tc.name            : RegisterSharedMemory_WithRegisterMem
+     * @tc.desc            : call TEEC_RegisterSharedMemory With RegisterMem
+     * @tc.expect          : return TEEC_SUCCESS
      */
     it('RegisterSharedMemory_WithRegisterMem', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -448,9 +476,10 @@ export default function ClientAPITest2() {
       });
 
     /**
-     * @testcase.name      : RegisterSharedMemory_WithoutContext
-     * @testcase.desc      : call TEEC_RegisterSharedMemory Without Context
-     * @testcase.expect    : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.number          : RegisterSharedMemory_WithoutContext
+     * @tc.name            : RegisterSharedMemory_WithoutContext
+     * @tc.desc            : call TEEC_RegisterSharedMemory Without Context
+     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
      */
     it('RegisterSharedMemory_WithoutContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -460,9 +489,10 @@ export default function ClientAPITest2() {
       });
 
     /**
-     * @testcase.name      : RegisterSharedMemory_WithoutSharedMem
-     * @testcase.desc      : call TEEC_RegisterSharedMemory Without SharedMem
-     * @testcase.expect    : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.number          : RegisterSharedMemory_WithoutSharedMem
+     * @tc.name            : RegisterSharedMemory_WithoutSharedMem
+     * @tc.desc            : call TEEC_RegisterSharedMemory Without SharedMem
+     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
      */
     it('RegisterSharedMemory_WithoutSharedMem', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -472,9 +502,10 @@ export default function ClientAPITest2() {
       });
 
     /**
-     * @testcase.name      : RegisterSharedMemory_WithSharedMemFlagIsZero
-     * @testcase.desc      : call TEEC_RegisterSharedMemory With SharedMem flag is 0
-     * @testcase.expect    : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.number          : RegisterSharedMemory_WithSharedMemFlagIsZero
+     * @tc.name            : RegisterSharedMemory_WithSharedMemFlagIsZero
+     * @tc.desc            : call TEEC_RegisterSharedMemory With SharedMem flag is 0
+     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
      */
     it('RegisterSharedMemory_WithSharedMemFlagIsZero', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -483,9 +514,10 @@ export default function ClientAPITest2() {
         done();
       });
     /**
-     * @testcase.name      : RegisterSharedMemory_WithSharedMemFlagIsInvalid
-     * @testcase.desc      : call TEEC_RegisterSharedMemory With SharedMem flag is invalid
-     * @testcase.expect    : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.number          : RegisterSharedMemory_WithSharedMemFlagIsInvalid
+     * @tc.name            : RegisterSharedMemory_WithSharedMemFlagIsInvalid
+     * @tc.desc            : call TEEC_RegisterSharedMemory With SharedMem flag is invalid
+     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
      */
     it('RegisterSharedMemory_WithSharedMemFlagIsInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -494,9 +526,10 @@ export default function ClientAPITest2() {
         done();
       });
     /**
-     * @testcase.name      : RegisterSharedMemory_WithSharedMemBufferIsNull
-     * @testcase.desc      : call TEEC_RegisterSharedMemory With SharedMem buffer is null
-     * @testcase.expect    : return TEEC_ERROR_BAD_PARAMETERS
+     * @tc.number          : RegisterSharedMemory_WithSharedMemBufferIsNull
+     * @tc.name            : RegisterSharedMemory_WithSharedMemBufferIsNull
+     * @tc.desc            : call TEEC_RegisterSharedMemory With SharedMem buffer is null
+     * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
      */
     it('RegisterSharedMemory_WithSharedMemBufferIsNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
