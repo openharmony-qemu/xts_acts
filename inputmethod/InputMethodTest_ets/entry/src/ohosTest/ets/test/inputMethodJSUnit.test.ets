@@ -76,17 +76,12 @@ export default function inputMethodJSUnit() {
       let inputMethodSetting = inputMethod.getInputMethodSetting();
       console.info("====>inputmethoh_test_002 result:" + JSON.stringify(inputMethodSetting));
       inputMethodSetting.listInputMethod().then(inputMethodProperty => {
-        if (inputMethodProperty.length > 0) {
-          console.info(`====> inputMethod_test_listCurrentInputMethodSubtype_002 success data: ${JSON.stringify(inputMethodProperty)}`);
-          expect(inputMethodProperty.length > 0).assertTrue();
-          let obj = inputMethodProperty[0]
-          console.info("====>inputmethoh_test_002 listInputMethod obj---" + JSON.stringify(obj));
-          expect(obj.packageName != null).assertTrue();
-          expect(obj.methodId != null).assertTrue();
-        } else {
-          console.info("====>inputmethoh_test_002 listInputMethod is null");
-          expect().assertFail()
-        }
+        console.info(`====> inputMethod_test_listCurrentInputMethodSubtype_002 success data: ${JSON.stringify(inputMethodProperty)}`);
+        expect(inputMethodProperty.length > 0).assertTrue();
+        let obj = inputMethodProperty[0]
+        console.info("====>inputmethoh_test_002 listInputMethod obj---" + JSON.stringify(obj));
+        expect(obj.packageName != null).assertTrue();
+        expect(obj.methodId != null).assertTrue();
         done();
       }).catch((err: BusinessError) => {
         console.info("====>inputmethoh_test_002 listInputMethod is err: " + JSON.stringify(err));

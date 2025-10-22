@@ -138,23 +138,15 @@ export default function inputMethodStageJSUnit() {
             console.info("====>inputMethod_test_listInputMethodSubtype_002  failed" + JSON.stringify(err));
             expect().assertFail();
             done()
-          }
-          ;
+          };
           console.info("====>inputMethod_test_listInputMethodSubtype_002 listInputMethodSubtype:" + JSON.stringify(data));
-          if (data.length >= 1) {
-            console.info(`====> inputMethod_test_listInputMethodSubtype_002 success data: ${JSON.stringify(data)}`);
-            expect(data.length > 0).assertTrue();
-            let inputMethodSubtype = data[0]
-            console.info("====>inputMethod_test_listInputMethodSubtype_002 inputMethodSubtype" + JSON.stringify(inputMethodSubtype));
-            expect(inputMethodSubtype.id != null).assertTrue();
-            expect(inputMethodSubtype.label != null).assertTrue();
-            done();
-          } else {
-            console.info("====>inputMethod_test_listInputMethodSubtype_002 listInputMethodSubtype length less 1");
-            expect().assertFail();
-            done();
-          }
-          ;
+          console.info(`====> inputMethod_test_listInputMethodSubtype_002 success data: ${JSON.stringify(data)}`);
+          expect(data.length > 0).assertTrue();
+          let inputMethodSubtype = data[0]
+          console.info("====>inputMethod_test_listInputMethodSubtype_002 inputMethodSubtype" + JSON.stringify(inputMethodSubtype));
+          expect(inputMethodSubtype.id != null).assertTrue();
+          expect(inputMethodSubtype.label != null).assertTrue();
+          done();
         } catch (error) {
           console.info("====>inputMethod_test_listInputMethodSubtype_002 listInputMethodSubtype catch error" + JSON.stringify(error));
           done();
@@ -236,19 +228,13 @@ export default function inputMethodStageJSUnit() {
       inputMethodSetting.listInputMethodSubtype(inputMethodProperty).then((data) => {
         try {
           console.info("====>inputMethod_test_listInputMethodSubtype_004 listInputMethodSubtype:" + JSON.stringify(data));
-          if (data.length >= 1) {
-            console.info(`====> inputMethod_test_listInputMethodSubtype_004 success data: ${JSON.stringify(data)}`);
-            expect(data.length > 0).assertTrue();
-            let inputMethodSubtype = data[0]
-            console.info("====>inputMethod_test_listInputMethodSubtype_004  inputMethodSubtype" + JSON.stringify(inputMethodSubtype));
-            expect(inputMethodSubtype.id != null).assertTrue();
-            expect(inputMethodSubtype.label != null).assertTrue();
-            done();
-          } else {
-            console.info("====>inputMethod_test_listInputMethodSubtype_004 listInputMethodSubtype length less 1");
-            expect().assertFail();
-            done();
-          }
+          console.info(`====> inputMethod_test_listInputMethodSubtype_004 success data: ${JSON.stringify(data)}`);
+          expect(data.length > 0).assertTrue();
+          let inputMethodSubtype = data[0]
+          console.info("====>inputMethod_test_listInputMethodSubtype_004  inputMethodSubtype" + JSON.stringify(inputMethodSubtype));
+          expect(inputMethodSubtype.id != null).assertTrue();
+          expect(inputMethodSubtype.label != null).assertTrue();
+          done();
         } catch (error) {
           console.info("====>inputMethod_test_listInputMethodSubtype_004 listInputMethodSubtype catch error" + JSON.stringify(error));
           expect().assertFail();
