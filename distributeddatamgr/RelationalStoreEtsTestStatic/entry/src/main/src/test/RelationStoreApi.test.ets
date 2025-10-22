@@ -41,7 +41,7 @@ let STORE_CONFIG :data_relationalStore.StoreConfig = {
   securityLevel: data_relationalStore.SecurityLevel.S1,
 }
 const CREATE_TABLE_TESTTRANS = "CREATE TABLE IF NOT EXISTS testTrans (" + "id INTEGER PRIMARY KEY, " +
-  "name TEXT NOT NULL, " + "age INTEGER, " + "salary REAL, " + "blobType BLOB)";
+  "name TEXT" + ")";
 
 const DROP_TABLE_TESTTRANS = "DROP TABLE IF EXISTS testTrans";
 
@@ -2705,6 +2705,159 @@ export default function RelationStoreRdbStoreTest() {
         done();
       }
       hilog.info(domain, tag, '%{public}s', '************* testTransaction0014 end *************');
+    })
+    /**
+     * @tc.name       testVersion001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_9200
+     * @tc.desc       rdbStore.version normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* testVersion001 start *************');
+      try{
+          rdbStore.version = 1;
+          hilog.info(domain, tag, '%{public}s', 'rdbStore.version' + rdbStore.version);
+          expect(rdbStore.version).assertEqual(1);
+          done();
+        }catch(err){
+          hilog.info(domain, tag, '%{public}s', '************* testVersion001 end *************' + err);
+          expect().assertFail();
+          done();
+        }
+      hilog.info(domain, tag, '%{public}s', '************* testVersion001 end *************');
+    })
+    /**
+     * @tc.name       testVersion002
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_9300
+     * @tc.desc       rdbStore.version normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* testVersion002 start *************');
+      try{
+        rdbStore.version = -1;
+        hilog.info(domain, tag, '%{public}s', 'rdbStore.version' + rdbStore.version);
+        expect(rdbStore.version).assertEqual(-1);
+        done();
+      }catch(err){
+        hilog.info(domain, tag, '%{public}s', '************* testVersion002 end *************' + err);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, '%{public}s', '************* testVersion002 end *************');
+    })
+    /**
+     * @tc.name       testGetRow001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_9400
+     * @tc.desc       getRow 14800012
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testGetRow001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* testGetRow001 start *************');
+      try{
+        await rdbStore.execute(CREATE_TABLE_TESTTRANS);
+        hilog.info(domain, tag, '%{public}s', '777777');
+      }catch(err){
+        hilog.info(domain, tag, '%{public}s', '7777777errrrrrrrr');
+      }
+      let resultSet = await rdbStore.querySql("SELECT * FROM testTrans");
+      try{
+        resultSet.getRow();
+        hilog.info(domain, tag, '%{public}s', '************* testGetRow001*************');
+        expect().assertFail();
+      }catch(err:BusinessError){
+        hilog.info(domain, tag, '%{public}s', '************* testGetRow001 end *************' + err + err.code);
+        expect(err.code == 14800012).assertTrue();
+      }
+      await rdbStore.execute(DROP_TABLE_TESTTRANS);
+      done();
+      hilog.info(domain, tag, '%{public}s', '************* testColumnNames001 end *************');
+    })
+    /**
+     * @tc.name       testRowIndex001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_9500
+     * @tc.desc       RowIndex normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testRowIndex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* testRowIndex001 start *************');
+      try{
+        await rdbStore.execute(CREATE_TABLE_TESTTRANS);
+        hilog.info(domain, tag, '%{public}s', '66666666');
+      }catch(err){
+        hilog.info(domain, tag, '%{public}s', '66666666errrrrrrrr');
+      }
+      const valueBucket :data_relationalStore.ValuesBucket = {
+       "name":"lisi"
+      }
+      try{
+        await rdbStore.insert("testTrans", valueBucket);
+        hilog.info(domain, tag, '%{public}s', '************* testRowIndex001 insert success*************');
+      }catch(err){
+        hilog.info(domain, tag, '%{public}s', '************* testRowIndex001 insert failed*************');
+      }
+      let resultSet = await rdbStore.querySql("SELECT * FROM testTrans");
+      resultSet.goToFirstRow();
+      try{
+        let res = resultSet.rowIndex;
+        hilog.info(domain, tag, '%{public}s', '************* testRowIndex001 resultSet.rowIndex *************' + res);
+        expect(res).assertEqual(0);
+      }catch(err){
+        hilog.info(domain, tag, '%{public}s', '************* testRowIndex001 end *************' + err);
+        expect().assertFail();
+      }
+      await rdbStore.execute(DROP_TABLE_TESTTRANS);
+      done();
+      hilog.info(domain, tag, '%{public}s', '************* testRowIndex001 end *************');
+    })
+    /**
+     * @tc.name       testColumnNames001
+     * @tc.number     SUB_DistributedData_RelationalStore_SDK_RdbAPITest_9600
+     * @tc.desc       columnNames normal test
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testColumnNames001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:()=>void) : Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', '************* testColumnNames001 start *************');
+      try{
+        await rdbStore.execute(CREATE_TABLE_TESTTRANS);
+        hilog.info(domain, tag, '%{public}s', '777777');
+      }catch(err){
+        hilog.info(domain, tag, '%{public}s', '7777777errrrrrrrr');
+      }
+      const valueBucket :data_relationalStore.ValuesBucket = {
+        "name":"lisi"
+      }
+      try{
+        await rdbStore.insert("testTrans", valueBucket);
+        hilog.info(domain, tag, '%{public}s', '************* testColumnNames001 insert success*************');
+      }catch(err){
+        hilog.info(domain, tag, '%{public}s', '************* testColumnNames001 insert failed*************');
+      }
+      let resultSet = await rdbStore.querySql("SELECT * FROM testTrans");
+      resultSet.goToFirstRow();
+      try{
+        let res = resultSet.columnNames;
+        hilog.info(domain, tag, '%{public}s', '************* testColumnNames001 resultSet.columnNames *************' + res);
+        expect(res.length).assertEqual(2);
+        expect(res[0]).assertEqual("id");
+        expect(res[1]).assertEqual("name");
+      }catch(err){
+        hilog.info(domain, tag, '%{public}s', '************* testColumnNames001 end *************' + err);
+        expect().assertFail();
+      }
+      await rdbStore.execute(DROP_TABLE_TESTTRANS);
+      done();
+      hilog.info(domain, tag, '%{public}s', '************* testColumnNames001 end *************');
     })
   })
 }
