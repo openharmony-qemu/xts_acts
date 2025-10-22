@@ -1484,7 +1484,7 @@ export default function WindowLifeCycleTest() {
             try {
                 const callback = () => {
                 };
-                windowStageStart.on("windowStageClose", callback);
+                windowStageStart.onWindowStageClose(callback);
                 hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling on windowStageClose.');
                 expect(false).assertTrue();
                 done()
@@ -1511,7 +1511,7 @@ export default function WindowLifeCycleTest() {
             try {
                 const callback = () => {
                 };
-                windowStageStart.off("windowStageClose", callback);
+                windowStageStart.offWindowStageClose(callback);
                 hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling off windowStageClose.');
                 expect(false).assertTrue();
                 done()
