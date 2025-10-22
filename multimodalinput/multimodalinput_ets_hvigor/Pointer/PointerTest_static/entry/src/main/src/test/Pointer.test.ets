@@ -238,6 +238,7 @@ export default function MultimodalInputPointerTest() {
           ExpectTrue(pointer.RightClickType.TOUCHPAD_RIGHT_BUTTON == 1);
           ExpectTrue(pointer.RightClickType.TOUCHPAD_LEFT_BUTTON == 2);
           ExpectTrue(pointer.RightClickType.TOUCHPAD_TWO_FINGER_TAP == 3);
+          ExpectTrue(pointer.RightClickType.TOUCHPAD_TWO_FINGER_TAP_OR_RIGHT_BUTTON == 4);
           ExpectTrue(pointer.RightClickType.TOUCHPAD_TWO_FINGER_TAP_OR_LEFT_BUTTON == 5);
           done();
         } catch (error: BusinessError) {
