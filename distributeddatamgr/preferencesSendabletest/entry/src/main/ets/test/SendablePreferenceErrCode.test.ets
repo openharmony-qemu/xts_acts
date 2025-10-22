@@ -844,7 +844,7 @@ export default function sendablePreferencesPromiseTest() {
     it('testSendablePreferencesHasSyncPromiseFalseTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + 'testSendablePreferencesHasSyncPromiseFalseTest0100 start' );
       try {
-        let ret: boolean = await mPreferences.has(KEY_STRING);
+        let ret: boolean = await mPreferences.hasSync(KEY_STRING);
         expect(ret).assertEqual(false);
         done();
       } catch (err) {
