@@ -13,12 +13,13 @@
  * limitations under the License.
  */
 
-import osAccount from '@ohos.account.osAccount'
-import bundle from '@ohos.bundle.bundleManager'
+import osAccount from '@ohos.account.osAccount';
+import dAccount from '@ohos.account.distributedAccount';
+import bundle from '@ohos.bundle.bundleManager';
 import { BusinessError } from '@ohos.base';
 import {describe, afterEach, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import Utils from './Util.test';
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 
 let tag: string = 'testTag';
 
@@ -563,8 +564,8 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
               }
             } catch (err) {
               hilog.info(0x0000, tag, '====>Assert Fail, err: ' + JSON.stringify(err));
+              done();
             }
-            done();
           });
           return new Promise<void>(() => {});
         }
@@ -578,21 +579,29 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
                 expect().assertFail();
               } else {
                 if (data) {
+                  if (data.localId != undefined) {
+                    localId = data.localId;
+                  }
                   expect(data?.localName).assertEqual("osAccountNameIdSerialA");
-                  expect(data?.domainInfo.accountName == "").assertEqual(true);
                   expect(data?.type).assertEqual(osAccount.OsAccountType.NORMAL);
                   expect(data?.constraints.length).assertLarger(0);
                   expect(data?.isUnlocked).assertEqual(false);
-                  expect(data?.distributedInfo.name != null).assertEqual(true);
-                  expect(data?.domainInfo.domain == "").assertEqual(true);
                   expect(data?.photo == "").assertEqual(true);
+                  expect(data?.createTime).assertLarger(0);
                   expect(data?.lastLoginTime).assertLargerOrEqual(0);
                   expect(data?.serialNumber.toString().length).assertEqual(16);
                   expect(data?.isActivated).assertEqual(false);
                   expect(data?.isCreateCompleted).assertEqual(true);
-                  if (data.localId != undefined) {
-                    localId = data.localId;
-                  }
+                  expect(data?.distributedInfo.name != null).assertEqual(true);
+                  expect(data?.distributedInfo.id != null).assertEqual(true);
+                  expect(data?.distributedInfo.event == "").assertEqual(true);
+                  expect(data?.distributedInfo.nickname == "").assertEqual(true);
+                  expect(data?.distributedInfo.avatar == "").assertEqual(true);
+                  expect(data?.distributedInfo.status).assertEqual(dAccount.DistributedAccountStatus.NOT_LOGGED_IN);
+                  expect(data?.distributedInfo.scalableData != null).assertEqual(true);
+                  expect(data?.domainInfo.domain == "").assertEqual(true);
+                  expect(data?.domainInfo.accountName == "").assertEqual(true);
+                  expect(data?.domainInfo.serverConfigId == "").assertEqual(true);
                 } else {
                   hilog.info(0x0000, tag, "====>run err");
                   expect().assertFail();
@@ -620,7 +629,6 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
                         } else {
                           if (getlocalId) {
                             expect(getlocalId).assertEqual(localId);
-                            hilog.info(0x0000, tag, "====>ActsOsAccountQueryLocalIdSerial_0500 end====");
                           } else {
                             hilog.info(0x0000, tag, "====>run err");
                             expect().assertFail();
@@ -642,8 +650,8 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
                 }
               } catch (err) {
                 hilog.info(0x0000, tag, '====>Assert Fail, err: ' + JSON.stringify(err));
+                done();
               }
-              done();
             });
           });
       });

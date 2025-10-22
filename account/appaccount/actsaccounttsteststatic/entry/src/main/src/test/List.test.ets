@@ -16,9 +16,11 @@
 import ActsAppAccountOptionalParameterTestStatic from "./ActsAppAccountOptionalParameterTestStatic.test";
 import AppAccountAuthenticatorStage2StageStatic from "./AppAccountAuthenticatorStage2StageStatic.test";
 import AppAccountErrCodeCheckStatic from "./AppAccountErrCodeCheckStatic.test";
+import AppAccountConstantsCheckStatic from "./AppAccountConstantsCheckStatic.test";
 
 export default function testsuite() {
   ActsAppAccountOptionalParameterTestStatic();
   AppAccountAuthenticatorStage2StageStatic();
   AppAccountErrCodeCheckStatic();
+  AppAccountConstantsCheckStatic()
 }
