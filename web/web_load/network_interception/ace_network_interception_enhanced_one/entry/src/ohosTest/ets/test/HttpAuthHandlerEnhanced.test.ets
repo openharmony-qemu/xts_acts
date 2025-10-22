@@ -66,7 +66,7 @@ export default function httpAuthHandlerEnhanced() {
     * @tc.type   Function
     * @tc.level  Level 0
     */
-    it('testHttpAuthHandlerConfirmFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testHttpAuthHandlerConfirmFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitHttpAuthHandlerConfirmFalse", 121)
       Utils.registerBaseEvent("testHttpAuthHandlerConfirmFalse", false, 2025102107,
         done, (backData: events_emitter.EventData, expected: Object) => {
