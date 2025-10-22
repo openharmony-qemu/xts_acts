@@ -735,13 +735,13 @@ describe("TreeSetTest1", (): void => {
     treeSet.add(2);
     treeSet.add(3);
     treeSet.add(4);
-    let arr = new Array<[Double, Double]>();
-    let res = treeSet.entries();
-    let temp: [Double, Double] | undefined = undefined;
-    do {
-      temp = res.next().value!;
+    let arr = new Array<Double>();
+    let res = treeSet.values();
+    let temp: Double | undefined = res.next().value;
+    while (temp != undefined) {
       arr.push(temp);
-    } while (temp != undefined);
+      temp = res.next().value;
+    }
     let arr1 = [0, 1, 2, 3, 4];
     for (let i = 0; i < arr1.length; i++) {
       expect(arr[i]).assertEqual(arr1[i]);
