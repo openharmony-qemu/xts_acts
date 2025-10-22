@@ -8,7 +8,6 @@
     "pages/drag",
     "pages/scroll",
     "pages/wearList",
-    "pages/five",
-    "pages/six"
+    "pages/five"
   ]
 }
