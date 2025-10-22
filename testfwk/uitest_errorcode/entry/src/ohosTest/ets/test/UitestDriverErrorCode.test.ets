@@ -2020,5 +2020,120 @@ export default function uitestDriverErrorTest() {
         expect(error.code).assertEqual(ErrorCode)
       }
     })
+
+    /**
+     * @tc.number uitestDriverErrorTest_084
+     * @tc.name testComponentEventOccurOptionsMonitor_17000007
+     * @tc.desc createUIEventObserver 17000007 test.
+     */
+    it('testComponentEventOccurOptionsMonitor_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testComponentEventOccurOptionsMonitor_17000007 start`);
+      let driver: Driver = Driver.create();
+      let observer = await driver.createUIEventObserver();
+      let callback = async (elementInfo : UIElementInfo) => {
+        try {
+          console.log(`${TestTag}, testComponentEventOccurOptionsMonitor_17000007 elementInfo,${JSON.stringify(elementInfo)}`);
+        } catch (err) {
+          console.log(`${TestTag}, testComponentEventOccurOptionsMonitor_17000007 callback error, ${JSON.stringify(err)}`);
+          expect().assertFail();
+        }
+      }
+      try {
+        observer.once('componentEventOccur',0, {
+          timeout: 5000
+        } , callback);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testComponentEventOccurOptionsMonitor_17000007 0 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(17000007);
+      }
+      try {
+        observer.once('componentEventOccur',-1, {
+          timeout: 5000
+        } , callback);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testComponentEventOccurOptionsMonitor_17000007 -1 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(17000007);
+      }
+      try {
+        observer.once('componentEventOccur',8 ,{
+          timeout: 5000
+        }, callback);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testComponentEventOccurOptionsMonitor_17000007 8 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(17000007);
+      }
+      try {
+        observer.once('componentEventOccur',1 ,{
+          timeout: -1
+        }, callback);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testComponentEventOccurOptionsMonitor_17000007 timeout -1 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(17000007);
+      }
+      await sleep(waitUiReadyMs);
+      console.log(`${TestTag}, testComponentEventOccurOptionsMonitor_17000007 end`);
+    })
+
+
+    /**
+     * @tc.number uitestDriverErrorTest_085
+     * @tc.name testWindowChangeOptionsMonitor_17000007
+     * @tc.desc WindowChange 17000007 test.
+     */
+    it('testWindowChangeOptionsMonitor_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007 start`);
+      let driver: Driver = Driver.create();
+      let observer = await driver.createUIEventObserver();
+      let callback = async (elementInfo : UIElementInfo) => {
+        try {
+          console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007 elementInfo,${JSON.stringify(elementInfo)}`);
+        } catch (err) {
+          console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007 callback error, ${JSON.stringify(err)}`);
+          expect().assertFail();
+        }
+      }
+      try {
+        observer.once('windowChange',0, {
+          timeout: 1000,
+        } , callback);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007 0 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(17000007);
+      }
+      try {
+        observer.once('windowChange',-1 ,{
+          timeout: 1000,
+        }, callback);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007 -1 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(17000007);
+      }
+      try {
+        observer.once('windowChange',4 ,{
+          timeout: 1000,
+        }, callback);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007 4 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(17000007);
+      }
+      try {
+        observer.once('windowChange',1 ,{
+          timeout: -1,
+        }, callback);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007 timeout -1 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(17000007);
+      }
+      await sleep(waitUiReadyMs);
+      console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007 end`);
+    })
   })
 }
