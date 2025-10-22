@@ -117,3 +117,4 @@ export const ndkStartSelfUIAbilityWithPidResult_0100: () => number;
 export const ndkStartSelfUIAbilityWithPidResult_0200: () => number;
 export const ndkApplicationContextGetVersionCode_0100: () => number;
 export const ndkApplicationContextGetVersionCode_0200: () => number;
+export const ndkSetIsolationUid_0100: () => number;

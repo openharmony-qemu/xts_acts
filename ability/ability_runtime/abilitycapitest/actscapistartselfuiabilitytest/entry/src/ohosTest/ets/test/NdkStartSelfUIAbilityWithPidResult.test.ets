@@ -79,7 +79,6 @@ export default function NdkStartSelfUIAbilityWithPidResultTest() {
         hilog.info(0x0000, TAG, '%{public}s',  ` ${TEST_SUITE_NAME} ========= subscribe ` + JSON.stringify(data));
         commonEventManager.unsubscribe(subscriber,()=>{
           hilog.info(0x0000, TAG, '%{public}s',  ` ${TEST_SUITE_NAME} ========= unsubscribe callback`);
-          taskpool.cancel(task1);
           done();
         });
       });
@@ -89,6 +88,7 @@ export default function NdkStartSelfUIAbilityWithPidResultTest() {
         if(value == 801){
           hilog.info(0x0000, TAG, '%{public}s', ` ${TEST_SUITE_NAME} current device not support.`);
           expect(value).assertEqual(801);
+          done();
         }else{
           expect(value).assertEqual(0);
         }

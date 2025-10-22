@@ -1554,6 +1554,17 @@ static napi_value NdkWantEx_2100(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value NdkSetIsolationUid_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_SetIsolationUid_0100 begins");
+    Ability_NativeChildProcess_ErrCode ret =
+        OH_Ability_ChildProcessConfigs_SetIsolationUid(nullptr, true);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_SetIsolationUid_0100 errCode=%{public}d", ret);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value StartNativeChildProcess_0100(napi_env env, napi_callback_info info)
 {
     int32_t pid = -1;
@@ -1697,6 +1708,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "ndkStartSelfUIAbilityWithPidResult_0200", nullptr, NdkStartSelfUIAbilityWithPidResult_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkApplicationContextGetVersionCode_0100", nullptr, NdkApplicationContextGetVersionCode_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkApplicationContextGetVersionCode_0200", nullptr, NdkApplicationContextGetVersionCode_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkSetIsolationUid_0100", nullptr, NdkSetIsolationUid_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
