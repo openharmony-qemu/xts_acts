@@ -27,7 +27,8 @@ import webview from '@ohos.web.webview'
 import events_emitter from '@ohos.events.emitter'
 import Utils from '../../src/test/Utils.test';
 import { BusinessError,Callback, RecordData } from '@ohos.base'
-import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import { State } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 class StringFields {
   public str: string = '';
 }
@@ -79,6 +80,12 @@ struct WebHttpBodyStream {
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
+              }
+              case 'emitonSwitchNextPage': {
+                let uiContext: UIContext = this.getUIContext();
+                let router: Router = uiContext.getRouter();
+                router.pushUrl({ url: 'pages/setAndClearServiceWorkerWebSchemeHandler' })
+                console.log('push URL success')
               }
           }
         })

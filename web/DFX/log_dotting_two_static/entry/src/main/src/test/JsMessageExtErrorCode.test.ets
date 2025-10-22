@@ -398,6 +398,14 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
+    /*
+    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0500
+    * @tc.name       : SwitchNextPageStatic
+    * @tc.desc       : test PAGE_REDIRECT
+    * @tc.size       : MEDIUM
+    * @tc.type       : Function
+    * @tc.level      : Level 3
+    */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);
@@ -407,6 +415,5 @@ export default function jsMessageExtErrorCode() {
         await Utils.msSleep(6000);
         done();
       })
-
   })
 }

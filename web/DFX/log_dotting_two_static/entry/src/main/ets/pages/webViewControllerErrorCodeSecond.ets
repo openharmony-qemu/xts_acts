@@ -26,7 +26,10 @@ import webview from '@ohos.web.webview'
 import events_emitter from '@ohos.events.emitter'
 import Utils from '../../src/test/Utils.test';
 import { BusinessError,Callback, RecordData } from '@ohos.base'
+import { WebNetErrorList } from '@kit.ArkWeb';
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import { buffer } from '@kit.ArkTS';
+
 class StringFields {
   public str: string = '';
 }
@@ -35,10 +38,13 @@ class StringFields {
 @Component
 struct webViewController {
   stringObj: StringFields  = new StringFields ();
+  schemeHandler: webview.WebSchemeHandler = new webview.WebSchemeHandler()
   controller: webview.WebviewController = new webview.WebviewController(undefined);
-  @State str: string = '';
+  @State test: boolean = true;
   @State javaScriptAccess: boolean = true;
   @State databaseAccess: boolean = true;
+  @State testRead: number = -1;
+  htmlData: string = '<html><body bgcolor=\"white\">Source:<pre>source</pre></body></html>';
 
   aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -82,6 +88,26 @@ struct webViewController {
               break;
             }
 
+            case 'emitWebView_WebHttpBodyStream_READ': {
+              let URL1: string = 'https://'
+              let URL2: string = 'www.example'
+              let URL: string = URL1 + URL2
+              this.controller.loadUrl("resource://rawfile/post_data.html")
+              setTimeout(() => {
+              try {
+                let postData = buffer.from(this.htmlData);
+                this.controller.postUrl(URL, postData.buffer);
+                if (postData !== undefined) {
+                  Utils.emitEvent(this.test, 1555);
+                }
+              } catch (error:BusinessError) {
+                console.error(`postUrl ErrorCode: ${error .code},
+                       postUrl Message: ${error.message}`);
+              }
+              }, 2000)
+              break;
+            }
+
           }
         })
       }
@@ -90,6 +116,79 @@ struct webViewController {
         .javaScriptAccess(this.javaScriptAccess)
         .zoomAccess(false)
         .databaseAccess(this.databaseAccess)
+        .onControllerAttached(() => {
+          try {
+            this.schemeHandler.onRequestStart(
+              (request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
+                console.log('[schemeHandler] onRequestStart');
+
+                try {
+                  console.log(request.getRequestUrl())
+                  console.log(request.getRequestMethod())
+                  if (request.getRequestMethod() == 'OPTIONS') {
+                    let response = new webview.WebSchemeHandlerResponse();
+                    let buf = buffer.from(this.htmlData)
+                    this.test = true;
+                    response.setNetErrorCode(WebNetErrorList.NET_OK);
+                    response.setStatus(200);
+                    response.setStatusText('OK');
+                    response.setMimeType('text/html');
+                    response.setEncoding('utf-8');
+                    response.setHeaderByName('Access-Control-Allow-Methods', 'POST, GET, OPTIONS', true);
+                    response.setHeaderByName('Access-Control-Allow-Origin', '*' ,true)
+                    response.setHeaderByName('Access-Control-Allow-Headers',
+                      'Content-Type, Authorization,X-Requested', true)
+
+                    resourceHandler.didReceiveResponse(response);
+                    resourceHandler.didReceiveResponseBody(buf.buffer);
+                    resourceHandler.didFinish();
+
+                    return true;
+                  }
+
+                  let stream = request.getHttpBodyStream();
+
+                  if (stream) {
+                    stream.initialize().then(() => {
+                      this.test = true;
+                      console.log('[schemeHandler] onRequestStart :' + this.test);
+                      console.log('[schemeHandler] onRequestStart postDataStream size:' + stream.getSize());
+                      console.log('[schemeHandler] onRequestStart postDataStream position:' + stream.getPosition());
+                      console.log('[schemeHandler] onRequestStart postDataStream isChunked:' + stream.isChunked());
+                      console.log('[schemeHandler] onRequestStart postDataStream isEof:' + stream.isEof());
+                      console.log('[schemeHandler] onRequestStart postDataStream isInMemory:' +
+                      stream.isInMemory());
+                      if (stream.getSize() !== 66) {
+                        stream.read(66).then(buff => {
+                          console.log('[schemeHandler] onRequestStart postDataStream read:' + buffer.byteLength);
+                          this.testRead = 0
+                          console.log('[schemeHandler] onRequestStart postDataStream readlength:' +
+                          buffer.byteLength);
+                          console.log('[schemeHandler] onRequestStart postDataStream isEof:' + stream.isEof());
+                          console.log('[schemeHandler] onRequestStart postDataStream position:' +
+                          stream.getPosition());
+                        })
+                    }
+                    })
+                  } else {
+                    console.log('[schemeHandler] onRequestStart has no http body stream');
+                  }
+                } catch (error:BusinessError) {
+                  console.error(`ErrorCode: ${error .code}`);
+                }
+
+                return false;
+
+              })
+
+            this.controller.setWebSchemeHandler('https', this.schemeHandler);
+            this.controller.setWebSchemeHandler('http', this.schemeHandler);
+            this.controller.setWebSchemeHandler('resource', this.schemeHandler);
+            webview.WebviewController.setServiceWorkerWebSchemeHandler('https', this.schemeHandler)
+          } catch (error:BusinessError) {
+            console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+          }
+        })
     }
   }
 }

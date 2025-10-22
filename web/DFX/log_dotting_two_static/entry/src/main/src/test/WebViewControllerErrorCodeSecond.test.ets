@@ -70,5 +70,23 @@ export default function webViewControllerErrorCodeSecond() {
         done();
       })
 
+    /*
+     *@tc.number  :SUB_ACE_WEB_WebHttpBodyStream_READ_0100
+     *@tc.name  :testWebView_WebHttpBodyStream_READ
+     *@tc.desc  :test WebView_WebHttpBodyStream_READ
+     *@tc.size  :MediumTest
+     *@tc.type  :Function
+     *@tc.level  :Level 3
+     */
+    it('testWebView_WebHttpBodyStream_READ', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+      Utils.emitEvent("emitWebView_WebHttpBodyStream_READ", 10);
+      await Utils.msSleep(2000);
+      Utils.registerEvent("testWebView_WebHttpBodyStream_READ", true, 1555, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('WebViewControllerErrorCodeSecondButton', 10, '');
+      await Utils.msSleep(5000);
+      done();
+    })
   })
 }
