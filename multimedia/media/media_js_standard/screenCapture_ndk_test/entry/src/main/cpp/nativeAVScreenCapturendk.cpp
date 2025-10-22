@@ -2238,6 +2238,28 @@ static napi_value normalAVScreenCaptureExcludePickerWindows(napi_env env, napi_c
     return res;
 }
 
+static napi_value normalAVScreenCaptureStrategyForPresenPicker1(napi_env env, napi_callback_info info)
+{
+    screenCaptureNormal = OH_AVScreenCapture_Create();
+    if (screenCaptureNormal == nullptr) {
+        napi_throw_error((env), nullptr, "error: expect screenCaptureNormal is not nullptr");
+    }
+    OH_AVSCREEN_CAPTURE_ErrCode result = OH_AVScreenCapture_PresentPicker(screenCaptureNormal);
+    if (result != AV_SCREEN_CAPTURE_ERR_OPERATE_NOT_PERMIT) {
+        napi_throw_error((env), nullptr, "error: expect not support present picker");
+    }
+    if (screenCaptureNormal) {
+        result = OH_AVScreenCapture_Release(screenCaptureNormal);
+    }
+    int resCapture = TEST_FAILED;
+    if (result == AV_SCREEN_CAPTURE_ERR_OK) {
+        resCapture = TEST_PASS;
+    }
+    napi_value res;
+    napi_create_int32(env, resCapture, &res);
+    return res;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -2331,6 +2353,8 @@ static napi_value Init(napi_env env, napi_value exports)
             normalAVScreenCaptureSetPickerModeScreenAndWindow, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"normalAVScreenCaptureExcludePickerWindows", nullptr,
             normalAVScreenCaptureExcludePickerWindows, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"normalAVScreenCaptureStrategyForPresenPicker1", nullptr,
+            normalAVScreenCaptureStrategyForPresenPicker1, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
