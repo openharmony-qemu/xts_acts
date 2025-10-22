@@ -87,12 +87,12 @@ export default function maxAmplitudeFor() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_AUDIO_RECORD_UV_VALUE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AUDIO_RECORD_UV_VALUE_STATIC_0200
-         * @tc.desc      : AudioRenderer - STATE_RUNNING
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
+         * @tc.number      SUB_MULTIMEDIA_AUDIO_RECORD_UV_VALUE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AUDIO_RECORD_UV_VALUE_STATIC_0200
+         * @tc.desc        AudioRenderer - STATE_RUNNING
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
          */
         it('SUB_MULTIMEDIA_AUDIO_RECORD_UV_VALUE_STATIC_0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ()=> {
             audioRoutingManager.getPreferredInputDeviceForCapturerInfo(capturerInfo).then((data: audio.AudioDeviceDescriptors) => {
@@ -110,12 +110,12 @@ export default function maxAmplitudeFor() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_AUDIO_PlAY_UV_VALUE_STATIC_0200
-         * @tc.name      : SUB_MULTIMEDIA_AUDIO_PlAY_UV_VALUE_STATIC_0200
-         * @tc.desc      : AudioRenderer - STATE_RUNNING
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
+         * @tc.number      SUB_MULTIMEDIA_AUDIO_PlAY_UV_VALUE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AUDIO_PlAY_UV_VALUE_STATIC_0200
+         * @tc.desc        AudioRenderer - STATE_RUNNING
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level0
          */
         it('SUB_MULTIMEDIA_AUDIO_PlAY_UV_VALUE_STATIC_0200',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ()=> {
             audioRoutingManager.getPreferOutputDeviceForRendererInfo(rendererInfo).then((data: audio.AudioDeviceDescriptors) => {

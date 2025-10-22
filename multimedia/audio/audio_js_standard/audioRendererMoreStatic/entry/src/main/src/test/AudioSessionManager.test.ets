@@ -117,26 +117,26 @@ export default function audioSessionManagerTest() {
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
       getSessionManager();
-      sessionManager.on('audioSessionDeactivated', sessionDeactivatedEvent);
+      sessionManager.onAudioSessionDeactivated(sessionDeactivatedEvent);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
-      sessionManager.off('audioSessionDeactivated', sessionDeactivatedEvent);
+      sessionManager.offAudioSessionDeactivated(sessionDeactivatedEvent);
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
 
-    /* *
-    * @tc.number    : SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_1
-    * @tc.name      : SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_1
-    * @tc.desc      : test AudioSessionManager operation:调用去激活预期结果是未激活,设置音频并发模式为默认模式,查询音频会话状态是否激活,预期结果是激活
-    * @tc.size      : AudioTest
-    * @tc.type      : Function
-    * @tc.level     : Level1
+    /**
+    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_1
+    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_1
+    * @tc.desc        test AudioSessionManager operation:调用去激活预期结果是未激活,设置音频并发模式为默认模式,查询音频会话状态是否激活,预期结果是激活
+    * @tc.size        AudioTest
+    * @tc.type        Function
+    * @tc.level       Level1
     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await deactivateAudioSession(done, !isDone);
@@ -148,13 +148,13 @@ export default function audioSessionManagerTest() {
       isAudioSessionActivatedTrue(done, isDone);
     })
 
-    /* *
-    * @tc.number    : SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_2
-    * @tc.name      : SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_2
-    * @tc.desc      : test AudioSessionManager operation:设置音频并发模式为混音模式,查询音频会话状态是否激活,预期结果是激活
-    * @tc.size      : AudioTest
-    * @tc.type      : Function
-    * @tc.level     : Level2
+    /**
+    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_2
+    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_2
+    * @tc.desc        test AudioSessionManager operation:设置音频并发模式为混音模式,查询音频会话状态是否激活,预期结果是激活
+    * @tc.size        AudioTest
+    * @tc.type        Function
+    * @tc.level       Level2
     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let strategy: audio.AudioSessionStrategy = {
@@ -166,13 +166,13 @@ export default function audioSessionManagerTest() {
       isAudioSessionActivatedFalse(done, isDone);
     })
 
-    /* *
-    * @tc.number    : SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_3
-    * @tc.name      : SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_3
-    * @tc.desc      : test AudioSessionManager operation:设置音频并发模式为混音降低音量模式,查询音频会话状态是否激活,预期结果是激活
-    * @tc.size      : AudioTest
-    * @tc.type      : Function
-    * @tc.level     : Level3
+    /**
+    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_3
+    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_3
+    * @tc.desc        test AudioSessionManager operation:设置音频并发模式为混音降低音量模式,查询音频会话状态是否激活,预期结果是激活
+    * @tc.size        AudioTest
+    * @tc.type        Function
+    * @tc.level       Level3
     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let strategy: audio.AudioSessionStrategy = {
@@ -182,13 +182,13 @@ export default function audioSessionManagerTest() {
       isAudioSessionActivatedTrue(done, isDone);
     })
 
-    /* *
-    * @tc.number    : SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_4
-    * @tc.name      : SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_4
-    * @tc.desc      : test AudioSessionManager operation:设置音频并发模式为暂停模式,查询音频会话状态是否激活,预期结果是激活
-    * @tc.size      : AudioTest
-    * @tc.type      : Function
-    * @tc.level     : Level4
+    /**
+    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_4
+    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_4
+    * @tc.desc        test AudioSessionManager operation:设置音频并发模式为暂停模式,查询音频会话状态是否激活,预期结果是激活
+    * @tc.size        AudioTest
+    * @tc.type        Function
+    * @tc.level       Level4
     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: () => void): Promise<void> => {
       let strategy: audio.AudioSessionStrategy = {
@@ -198,26 +198,26 @@ export default function audioSessionManagerTest() {
       isAudioSessionActivatedTrue(done, isDone);
     })
 
-    /* *
-    * @tc.number    : SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_6
-    * @tc.name      : SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_6
-    * @tc.desc      : test AudioSessionManager operation: 调用去激活,查询音频会话状态是否激活,预期结果是未激活
-    * @tc.size      : AudioTest
-    * @tc.type      : Function
-    * @tc.level     : Level3
+    /**
+    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_6
+    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_6
+    * @tc.desc        test AudioSessionManager operation: 调用去激活,查询音频会话状态是否激活,预期结果是未激活
+    * @tc.size        AudioTest
+    * @tc.type        Function
+    * @tc.level       Level3
     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await deactivateAudioSession(done, !isDone);
       isAudioSessionActivatedFalse(done, isDone);
     })
 
-    /* *
-    * @tc.number    : SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_7
-    * @tc.name      : SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_7
-    * @tc.desc      : test AudioSessionManager operation:调用激活-激活,查询音频会话状态是否激活,预期结果是激活
-    * @tc.size      : AudioTest
-    * @tc.type      : Function
-    * @tc.level     : Level3
+    /**
+    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_7
+    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_7
+    * @tc.desc        test AudioSessionManager operation:调用激活-激活,查询音频会话状态是否激活,预期结果是激活
+    * @tc.size        AudioTest
+    * @tc.type        Function
+    * @tc.level       Level3
     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let strategy: audio.AudioSessionStrategy = {
@@ -227,13 +227,13 @@ export default function audioSessionManagerTest() {
       isAudioSessionActivatedTrue(done, isDone);
     })
 
-    /* *
-    * @tc.number    : SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_8
-    * @tc.name      : SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_8
-    * @tc.desc      : test AudioSessionManager operation:调用激活-激活,查询音频会话状态是否激活,预期结果是激活
-    * @tc.size      : AudioTest
-    * @tc.type      : Function
-    * @tc.level     : Level3
+    /**
+    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_8
+    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_8
+    * @tc.desc        test AudioSessionManager operation:调用激活-激活,查询音频会话状态是否激活,预期结果是激活
+    * @tc.size        AudioTest
+    * @tc.type        Function
+    * @tc.level       Level3
     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let strategy: audio.AudioSessionStrategy = {
@@ -245,13 +245,13 @@ export default function audioSessionManagerTest() {
       isAudioSessionActivatedFalse(done, isDone);
     })
 
-    /* *
-    * @tc.number    : SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_9
-    * @tc.name      : SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_9
-    * @tc.desc      : test AudioSessionManager operation:调用未激活-激活,查询音频会话状态是否激活,预期结果是激活
-    * @tc.size      : AudioTest
-    * @tc.type      : Function
-    * @tc.level     : Level3
+    /**
+    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_9
+    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_9
+    * @tc.desc        test AudioSessionManager operation:调用未激活-激活,查询音频会话状态是否激活,预期结果是激活
+    * @tc.size        AudioTest
+    * @tc.type        Function
+    * @tc.level       Level3
     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await deactivateAudioSession(done, !isDone);
@@ -263,16 +263,16 @@ export default function audioSessionManagerTest() {
       isAudioSessionActivatedTrue(done, isDone);
     })
 
-    /* *
-    * @tc.number    : SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_10
-    * @tc.name      : SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_10
-    * @tc.desc      : test AudioSessionManager operation:调用AudioSessionManager注册事件和关闭注册事件覆盖参数
-    * @tc.size      : AudioTest
-    * @tc.type      : Function
-    * @tc.level     : Level3
+    /**
+    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_10
+    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_10
+    * @tc.desc        test AudioSessionManager operation:调用AudioSessionManager注册事件和关闭注册事件覆盖参数
+    * @tc.size        AudioTest
+    * @tc.type        Function
+    * @tc.level       Level3
     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      sessionManager.on('audioSessionDeactivated', (audioSessionDeactivatedEvent: audio.AudioSessionDeactivatedEvent) => {
+      sessionManager.onAudioSessionDeactivated((audioSessionDeactivatedEvent: audio.AudioSessionDeactivatedEvent) => {
         if(audioSessionDeactivatedEvent.reason === audio.AudioSessionDeactivatedReason.DEACTIVATED_LOWER_PRIORITY){
           console.info(`reason of audioSessionDeactivated: ${audioSessionDeactivatedEvent.reason} `);
         }else if(audioSessionDeactivatedEvent.reason === audio.AudioSessionDeactivatedReason.DEACTIVATED_TIMEOUT){
@@ -283,7 +283,7 @@ export default function audioSessionManagerTest() {
         concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
       }
       await activateAudioSession(strategy, done, !isDone);
-      sessionManager.off('audioSessionDeactivated', (audioSessionDeactivatedEvent: audio.AudioSessionDeactivatedEvent) => {
+      sessionManager.offAudioSessionDeactivated((audioSessionDeactivatedEvent: audio.AudioSessionDeactivatedEvent) => {
         if(audioSessionDeactivatedEvent.reason === audio.AudioSessionDeactivatedReason.DEACTIVATED_LOWER_PRIORITY){
           console.info(`reason of audioSessionDeactivated: ${audioSessionDeactivatedEvent.reason} `);
         }else if(audioSessionDeactivatedEvent.reason === audio.AudioSessionDeactivatedReason.DEACTIVATED_TIMEOUT){

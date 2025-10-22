@@ -162,12 +162,12 @@ export default function audioRendererTest() {
     }
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0100
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0100
-     * @tc.desc      : AudioRenderer - setChannelBlendMode-MDOE_INPUT_DEFAULT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0100
+     * @tc.desc        AudioRenderer - setChannelBlendMode-MDOE_INPUT_DEFAULT
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -183,12 +183,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0200
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0200
-     * @tc.desc      : AudioRenderer - setChannelBlendMode-MODE_LEFT_RIGHT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0200
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0200
+     * @tc.desc        AudioRenderer - setChannelBlendMode-MODE_LEFT_RIGHT
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -204,12 +204,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0300
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0300
-     * @tc.desc      : AudioRenderer - setChannelBlendMode-MODE_ALL_LEFT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0300
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0300
+     * @tc.desc        AudioRenderer - setChannelBlendMode-MODE_ALL_LEFT
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -225,12 +225,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0400
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0400
-     * @tc.desc      : AudioRenderer - setChannelBlendMode-MODE_ALL_RIGHT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0400
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0400
+     * @tc.desc        AudioRenderer - setChannelBlendMode-MODE_ALL_RIGHT
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -246,12 +246,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0800
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0800
-     * @tc.desc      : AudioRenderer - setChannelBlendMode - USE_ALL_STREAMTYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0800
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0800
+     * @tc.desc        AudioRenderer - setChannelBlendMode - USE_ALL_STREAMTYPE
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -312,19 +312,18 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0900
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0900
-     * @tc.desc      : AudioRenderer - setChannelBlendMode-RUNNING-STATE-MODE_LR
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0900
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0900
+     * @tc.desc        AudioRenderer - setChannelBlendMode-RUNNING-STATE-MODE_LR
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         audioRen.setChannelBlendMode(audio.ChannelBlendMode.MODE_BLEND_LR)
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
         await renderPlay();
-        expect(true).assertTrue();
         done();
       } catch (error: BusinessError) {
         console.info(`${Tag}:  setChannelBlendMode : error ${error.message}, ${error.code}`);

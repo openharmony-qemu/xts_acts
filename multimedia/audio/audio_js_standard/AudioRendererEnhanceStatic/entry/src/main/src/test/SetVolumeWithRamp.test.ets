@@ -158,12 +158,12 @@ export default function audioRendererEnhanceTest() {
     }
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0100
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0100
-     * @tc.desc      : AudioRenderer - setVolumeWithRamp - Volume(0->1)_Duration(1000 ms)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0100
+     * @tc.desc        AudioRenderer - setVolumeWithRamp - Volume(0->1)_Duration(1000 ms)
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -185,12 +185,12 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0200
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0200
-     * @tc.desc      : AudioRenderer - setVolumeWithRamp - Volume(1->0)_Duration(100 ms)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0200
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0200
+     * @tc.desc        AudioRenderer - setVolumeWithRamp - Volume(1->0)_Duration(100 ms)
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -212,12 +212,12 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0300
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0300
-     * @tc.desc      : AudioRenderer - setVolumeWithRamp - Volume(1->0.5)_Duration(10 ms)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0300
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0300
+     * @tc.desc        AudioRenderer - setVolumeWithRamp - Volume(1->0.5)_Duration(10 ms)
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -239,12 +239,12 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0400
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0400
-     * @tc.desc      : AudioRenderer - setVolumeWithRamp - Volume(0->0.5)_Duration(10 ms)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0400
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0400
+     * @tc.desc        AudioRenderer - setVolumeWithRamp - Volume(0->0.5)_Duration(10 ms)
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -266,12 +266,12 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0500
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0500
-     * @tc.desc      : AudioRenderer - setVolumeWithRamp - Volume(0->0)_Duration(10 ms)
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0500
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0500
+     * @tc.desc        AudioRenderer - setVolumeWithRamp - Volume(0->0)_Duration(10 ms)
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -293,12 +293,12 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0600
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0600
-     * @tc.desc      : AudioRenderer - setVolumeWithRamp - Volume(1->-1)_Duration(1000 ms)_Test 6800101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0600
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0600
+     * @tc.desc        AudioRenderer - setVolumeWithRamp - Volume(1->-1)_Duration(1000 ms)_Test 6800101
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -320,12 +320,12 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0700
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0700
-     * @tc.desc      : AudioRenderer - setVolumeWithRamp - Volume(1->1.2)_Duration(1000 ms)_Test 6800101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0700
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0700
+     * @tc.desc        AudioRenderer - setVolumeWithRamp - Volume(1->1.2)_Duration(1000 ms)_Test 6800101
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -347,12 +347,12 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1100
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1100
-     * @tc.desc      : AudioRenderer - setVolumeWithRamp - On Error State_Stopped Use - Test 6800103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1100
+     * @tc.desc        AudioRenderer - setVolumeWithRamp - On Error State_Stopped Use - Test 6800103
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -376,12 +376,12 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1200
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1200
-     * @tc.desc      : AudioRenderer - setVolumeWithRamp - On Error State_Released Use - Test 6800103
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1200
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1200
+     * @tc.desc        AudioRenderer - setVolumeWithRamp - On Error State_Released Use - Test 6800103
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -404,12 +404,12 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1300
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1300
-     * @tc.desc      : AudioRenderer - setVolumeWithRamp - ALL StreamUsage
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1300
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1300
+     * @tc.desc        AudioRenderer - setVolumeWithRamp - ALL StreamUsage
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -470,12 +470,12 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1400
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1400
-     * @tc.desc      : AudioRenderer - setVolumeWithRamp - Play a misic
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1400
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1400
+     * @tc.desc        AudioRenderer - setVolumeWithRamp - Play a misic
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -489,7 +489,6 @@ export default function audioRendererEnhanceTest() {
           }
           audioRen.setVolumeWithRamp(0, 1);
           console.info(`${Tag}: attachVolumeRamp renderPlay: SUCCESS`);
-          expect(true).assertTrue();
           done();
         } catch (err: BusinessError) {
           console.info(`${Tag}: attachVolumeRamp on renderPlay: error.code:${err.code}, error.message:${err.message}`);

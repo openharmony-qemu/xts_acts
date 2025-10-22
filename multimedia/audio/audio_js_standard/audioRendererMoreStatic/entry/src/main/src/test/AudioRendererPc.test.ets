@@ -37,12 +37,12 @@ export default function abilityTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : assertContainStatic
-     * @tc.name      : assertContainStatic
-     * @tc.desc      : assertContain
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number      assertContainStatic
+     * @tc.name        assertContainStatic
+     * @tc.desc        assertContain
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
      */
     it('assertContainStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -51,7 +51,7 @@ export default function abilityTest() {
       let b = 'b'
       // Defines a variety of assertion methods, which are used to declare expected boolean conditions.
       expect(a).assertContain(b)
-      expect(a).assertEqual(a)
+      expect(a).assertEqual('abc')
     })
   })
 }
