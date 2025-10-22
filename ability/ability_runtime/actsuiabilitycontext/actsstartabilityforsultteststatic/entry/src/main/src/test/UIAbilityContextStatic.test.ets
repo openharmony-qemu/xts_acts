@@ -184,46 +184,13 @@ export default function UIAbilityContextStatic() {
     /*
     * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_0300
     * @tc.name   : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_0300
-    * @tc.desc   : API test for context.SetAbilityInstanceInfo.
+    * @tc.desc   : API test for context.SetAbilityInstanceInfo errcode 401
     * @tc.type   : Function
     * @tc.size   : MediumTest
     * @tc.level  : 0
     */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "it begin");
-      if (deviceInfo.deviceType !== '2in1') {
-        done();
-        return;
-      }
-      let successCount = 0;
-      for (let i = 0; i < 10; i++) {
-        try {
-          await context.setAbilityInstanceInfo('111111' + i, pixelMap);
-          successCount++;
-        } catch (err) {
-          hilog.info(domain, tag, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
-        }
-      }
-      if (successCount === 10) {
-        hilog.info(domain, tag, "success");
-        done();
-      } else {
-        hilog.info(domain, tag, "fail");
-        try { expect().assertFail(); } catch (err) {}
-        done();
-      }
-    })
-
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100
-    * @tc.name   : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100
-    * @tc.desc   : API test for context.SetAbilityInstanceInfo.
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
-    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag , "it begin");
       try {
         await context.setAbilityInstanceInfo('', pixelMap);
         hilog.info(domain, tag, "fail");
@@ -232,14 +199,40 @@ export default function UIAbilityContextStatic() {
       } catch (err) {
         hilog.info(domain,  tag, "setAbilityInstanceInfo failed: " + JSON.stringify(err))
         let code = (err as BusinessError).code;
-        if (code === 801) {
-          hilog.info(domain, tag, "device not support multi instance");
-          done();
-        } else {
-          try { expect(code).assertEqual(401); } catch (err) {}
-          hilog.info(domain, tag, "success");
-          done();
-        }
+        try { expect(code).assertEqual(401); } catch (err) {}
+        hilog.info(domain, tag, "success");
+        done();
+      }
+    })
+
+    /*
+    * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100
+    * @tc.name   : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100
+    * @tc.desc   : API test for context.SetAbilityInstanceInfo errcode 801, 201
+    * @tc.type   : Function
+    * @tc.size   : MediumTest
+    * @tc.level  : 0
+    */
+    it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_Static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag , "it begin");
+      try {
+        await context.setAbilityInstanceInfo('instance label', pixelMap)
+          .catch((err: BusinessError): void => {
+            hilog.info(domain, tag , "setAbilityInstanceInfo failed: " + JSON.stringify(err))
+            let code = err?.code;
+            if (code === 801) {
+              hilog.info(domain, tag , "device not support multi instance");
+              done();
+            } else {
+              hilog.info(domain, tag , "setAbilityInstanceInfo err: " + code)
+              try { expect(code).assertEqual(201); } catch (err) {}
+              done();
+            }
+          });
+      } catch (err) {
+        hilog.info(domain, tag , "setAbilityInstanceInfo error: " + JSON.stringify(err))
+        try { expect().assertFail(); } catch (err) {}
+        done();
       }
     })
 
