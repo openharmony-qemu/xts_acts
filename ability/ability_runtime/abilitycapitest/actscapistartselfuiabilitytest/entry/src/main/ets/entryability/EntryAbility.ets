@@ -96,7 +96,7 @@ export default class EntryAbility extends UIAbility {
     return false;
   }
 
-  onDump(params) {
+  onDump(params:Array<string>) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'EntryAbility onDump');
     return [];
   }
