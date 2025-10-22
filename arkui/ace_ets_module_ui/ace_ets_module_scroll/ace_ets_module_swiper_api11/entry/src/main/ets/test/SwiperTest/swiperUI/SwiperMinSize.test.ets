@@ -17,9 +17,8 @@ import router from '@ohos.router';
 import {UiComponent, UiDriver, Component, Driver, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../MainAbility/common/Common';
 import {MessageManager,Callback} from '../../../MainAbility/utils/MessageManager';
-import display from '@ohos.display';
 
-let dpiValue: number;
+
 export default function SwiperMinSize() {
   describe('SwiperMinSize', () => {
     beforeEach(async (done: Function) => {
@@ -34,13 +33,12 @@ export default function SwiperMinSize() {
         if (!("SwiperMinSize" == pages.name)) {
           console.info("get SwiperMinSize state pages.name: " + JSON.stringify(pages.name));
           let result = await router.push(options);
-          dpiValue = display.getDefaultDisplaySync().densityDPI;
-          console.info('[SwiperMinSize] dpi getDefaultDisplay is : ' + JSON.stringify(dpiValue));
           await CommonFunc.sleep(2000);
           console.info("push SwiperMinSize page result: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push SwiperMinSize page error: " + err);
+        expect().assertFail();
       }
       done();
     });
@@ -58,11 +56,28 @@ export default function SwiperMinSize() {
 
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
-      console.info(`[SwiperMinSize_001] swiperText1.right - swiperText1.left=${swiperText1.right - swiperText1.left}`);
-      console.info(`[SwiperMinSize_001] vp2px(160)=${vp2px(160)}`);
-      expect(Math.floor(Math.abs(swiperText1.right - swiperText1.left - vp2px(160))) <= 1).assertTrue();
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(vp2px(160)));
 
       console.info('[SwiperMinSize_001] END');
+      done();
+    });
+
+    /* *
+      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_064
+      * @tc.name  : SwiperMinSize_101
+      * @tc.desc  : Don't set minSize
+      * @tc.level : Level 3
+      */
+    it('SwiperMinSize_101', Level.LEVEL1, async (done: Function) => {
+
+      console.info('[SwiperMinSize_101] START');
+      await CommonFunc.sleep(200);
+
+      let swiperText1 = CommonFunc.getComponentRect('swiperText1');
+      await CommonFunc.sleep(1000);
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(vp2px(160)));
+
+      console.info('[SwiperMinSize_101] END');
       done();
     });
 
@@ -82,22 +97,97 @@ export default function SwiperMinSize() {
 
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
-      let aWidth: number = Math.round(px2vp(swiperText1.right - swiperText1.left));
-      let ret = aWidth * (dpiValue / 160);
-      console.info(`[SwiperMinSize_002] aWidth=${aWidth}`);
-      console.info(`[SwiperMinSize_002] ret=${ret}`);
-      console.info(`[SwiperMinSize_002] swiperText1.right - swiperText1.left=${swiperText1.right - swiperText1.left}`);
-      console.info(`[SwiperMinSize_002] vp2px(40)=${vp2px(40)}`);
-      
-      let driver = Driver.create();
-      let text04 = await driver.findComponent(ON.id("swiperText4"))
-      if (text04) {
-        expect(Math.floor(Math.abs(swiperText1.right - swiperText1.left - vp2px(40))) <= 1).assertTrue();
-      } else {
-        expect(Math.floor(Math.abs(swiperText1.right - swiperText1.left - aWidth * (dpiValue / 160))) <= 1).assertTrue();
-      }
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(vp2px(40)));
 
       console.info('[SwiperMinSize_002] END');
+      done();
+    });
+
+    /* *
+     * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_062
+     * @tc.name  : SwiperMinSize_102
+     * @tc.desc  : set minSize to 20
+     * @tc.level : Level 3
+     */
+    it('SwiperMinSize_102', Level.LEVEL1, async (done: Function) => {
+
+      console.info('[SwiperMinSize_102] START');
+      await CommonFunc.sleep(200);
+      globalThis.value.message.notify({ name:'minSize', value: 20 });
+      globalThis.value.message.notify({ name:'itemSpace', value: 0 });
+      await CommonFunc.sleep(200);
+
+      let swiperText1 = CommonFunc.getComponentRect('swiperText1');
+      await CommonFunc.sleep(1000);
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(vp2px(40)));
+
+      console.info('[SwiperMinSize_102] END');
+      done();
+    });
+
+    /* *
+     * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_071
+     * @tc.name  : SwiperMinSize_202
+     * @tc.desc  : set minSize to 20
+     * @tc.level : Level 3
+     */
+    it('SwiperMinSize_202', Level.LEVEL1, async (done: Function) => {
+
+      console.info('[SwiperMinSize_202] START');
+      await CommonFunc.sleep(200);
+      globalThis.value.message.notify({ name:'minSize', value: 20 });
+      globalThis.value.message.notify({ name:'itemSpace', value: 0 });
+      await CommonFunc.sleep(200);
+
+      let swiperText1 = CommonFunc.getComponentRect('swiperText1');
+      await CommonFunc.sleep(1000);
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(vp2px(40)));
+
+      console.info('[SwiperMinSize_202] END');
+      done();
+    });
+
+    /* *
+     * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_069
+     * @tc.name  : SwiperMinSize_302
+     * @tc.desc  : set minSize to 20
+     * @tc.level : Level 3
+     */
+    it('SwiperMinSize_302', Level.LEVEL1, async (done: Function) => {
+
+      console.info('[SwiperMinSize_302] START');
+      await CommonFunc.sleep(200);
+      globalThis.value.message.notify({ name:'minSize', value: 20 });
+      globalThis.value.message.notify({ name:'itemSpace', value: 0 });
+      await CommonFunc.sleep(200);
+
+      let swiperText1 = CommonFunc.getComponentRect('swiperText1');
+      await CommonFunc.sleep(1000);
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(vp2px(40)));
+
+      console.info('[SwiperMinSize_302] END');
+      done();
+    });
+
+    /* *
+     * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_072
+     * @tc.name  : SwiperMinSize_402
+     * @tc.desc  : set minSize to 20
+     * @tc.level : Level 3
+     */
+    it('SwiperMinSize_402', Level.LEVEL1, async (done: Function) => {
+
+      console.info('[SwiperMinSize_402] START');
+      await CommonFunc.sleep(200);
+      globalThis.value.message.notify({ name:'minSize', value: 20 });
+      globalThis.value.message.notify({ name:'itemSpace', value: 0 });
+      await CommonFunc.sleep(200);
+
+      let swiperText1 = CommonFunc.getComponentRect('swiperText1');
+      await CommonFunc.sleep(1000);
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(vp2px(40)));
+
+      console.info('[SwiperMinSize_402] END');
       done();
     });
 
@@ -118,19 +208,7 @@ export default function SwiperMinSize() {
 
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
-      let aWidth: number = Math.round(px2vp(swiperText1.right - swiperText1.left));
-      console.info(`[SwiperMinSize_003] aWidth=${aWidth}`);
-      console.info(`[SwiperMinSize_003] swiperText1.right - swiperText1.left=${swiperText1.right - swiperText1.left}`);
-      console.info(`[SwiperMinSize_003] vp2px(40)=${vp2px(40)}`);
-      console.info(`[SwiperMinSize_003] aWidth * (dpiValue / 160)=${aWidth * (dpiValue / 160)}`);
-      
-      let driver = Driver.create();
-      let text04 = await driver.findComponent(ON.id("swiperText4"))
-      if (text04) {
-        expect(Math.floor(Math.abs(swiperText1.right - swiperText1.left - vp2px(40))) <= 1).assertTrue();
-      } else {
-        expect(Math.floor(Math.abs(swiperText1.right - swiperText1.left - aWidth * (dpiValue / 160))) <= 1).assertTrue();
-      }
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(vp2px(40)));
 
       console.info('[SwiperMinSize_003] END');
       done();
@@ -153,19 +231,7 @@ export default function SwiperMinSize() {
 
       let swiperText1 = CommonFunc.getComponentRect('swiperText1');
       await CommonFunc.sleep(1000);
-      let aWidth: number = Math.round(px2vp(swiperText1.right - swiperText1.left));
-      console.info(`[SwiperMinSize_004] aWidth=${aWidth}`);
-      console.info(`[SwiperMinSize_004] swiperText1.right - swiperText1.left=${swiperText1.right - swiperText1.left}`);
-      console.info(`[SwiperMinSize_004] vp2px(40)=${vp2px(40)}`);
-      console.info(`[SwiperMinSize_004] aWidth * (dpiValue / 160)=${aWidth * (dpiValue / 160)}`);
-      
-      let driver = Driver.create();
-      let text05 = await driver.findComponent(ON.id("swiperText5"))
-      if (text05) {
-        expect(Math.floor(Math.abs(swiperText1.right - swiperText1.left - vp2px(40))) <= 1).assertTrue();
-      } else {
-        expect(Math.floor(Math.abs(swiperText1.right - swiperText1.left - aWidth * (dpiValue / 160))) <= 1).assertTrue();
-      }
+      expect(Math.round(swiperText1.right - swiperText1.left)).assertEqual(Math.round(vp2px(40)));
 
       console.info('[SwiperMinSize_004] END');
       done();

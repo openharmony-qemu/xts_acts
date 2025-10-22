@@ -18,7 +18,7 @@
 #include <string>
 
 #define ON_SCROLLSTOP_EVENT_ID 6007
-#define SIZE_320 320
+#define SIZE_120 120
 
 namespace ArkUICapiTest {
 
@@ -28,12 +28,12 @@ static ArkUI_NodeHandle CreateChildNode(ArkUI_NativeNodeAPI_1 *nodeAPI)
     auto column = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     auto button = nodeAPI->createNode(ARKUI_NODE_BUTTON);
 
-    ArkUI_NumberValue width_value[] = {{.f32 = SIZE_300}};
+    ArkUI_NumberValue width_value[] = {{.f32 = SIZE_100}};
     ArkUI_AttributeItem width_item = {width_value, sizeof(width_value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(scroll, NODE_WIDTH, &width_item);
     nodeAPI->setAttribute(scroll, NODE_HEIGHT, &width_item);
 
-    ArkUI_NumberValue button_length_value[] = {{.f32 = SIZE_320}};
+    ArkUI_NumberValue button_length_value[] = {{.f32 = SIZE_120}};
     ArkUI_AttributeItem button_length_item = {button_length_value,
                                               sizeof(button_length_value) / sizeof(ArkUI_NumberValue)};
     nodeAPI->setAttribute(button, NODE_WIDTH, &button_length_item);
