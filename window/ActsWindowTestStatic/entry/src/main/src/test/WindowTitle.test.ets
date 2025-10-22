@@ -215,10 +215,10 @@ export default function WindowTitleTest() {
                 let windowClass: window.Window = await windowStage.getMainWindow();
                 windowClass.onWindowTitleButtonRectChange((titleButtonRect:window.TitleButtonRect) => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window title buttons area changes. Data: ' + JSON.stringify(titleButtonRect));
-                    // hilog.info(0x0000, '[ANI]',msgStr + 'titleButtonRect Data: right' + JSON.stringify(titleButtonRect.right));
-                    // hilog.info(0x0000, '[ANI]',msgStr + 'titleButtonRect Data: top' + JSON.stringify(titleButtonRect.top));
+                    hilog.info(0x0000, '[ANI]',msgStr + 'titleButtonRect Data: right' + JSON.stringify(titleButtonRect.right));
+                    hilog.info(0x0000, '[ANI]',msgStr + 'titleButtonRect Data: top' + JSON.stringify(titleButtonRect.top));
                     hilog.info(0x0000, '[ANI]',msgStr + 'titleButtonRect Data: width' + JSON.stringify(titleButtonRect.width));
-                    // hilog.info(0x0000, '[ANI]',msgStr + 'titleButtonRect Data: height' + JSON.stringify(titleButtonRect.height));
+                    hilog.info(0x0000, '[ANI]',msgStr + 'titleButtonRect Data: height' + JSON.stringify(titleButtonRect.height));
                     expect(true).assertTrue();
                     done();
                 });
@@ -413,7 +413,7 @@ export default function WindowTitleTest() {
                         }
                         subWin!.setDecorButtonStyle(param);
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setDecorButtonStyle.');
-                        expect().assertFail();
+                        expect(false).assertTrue();
                         done()
                     } catch (e: BusinessError) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setDecorButtonStyle. Cause:' + JSON.stringify(e));
@@ -423,7 +423,7 @@ export default function WindowTitleTest() {
                 })
                 .catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done()
                 });
         
@@ -464,7 +464,7 @@ export default function WindowTitleTest() {
                 (tempWnd as window.Window).setDecorButtonStyle(style);
                 hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setDecorButtonStyle.');
                 await (tempWnd! as window.Window).destroyWindow();
-                expect().assertFail();
+                expect(false).assertTrue();
                 done();
             } catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call setDecorButtonStyle. Cause:' + JSON.stringify(exception));
@@ -596,14 +596,14 @@ export default function WindowTitleTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             await (subWin! as window.Window).destroyWindow();
             try {
                 subWin!.setWindowTitleMoveEnabled(true);
                 console.error(msgStr + 'Succeeded in calling setWindowTitleMoveEnabled.');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             } catch (e: BusinessError) {
                 console.log(msgStr + 'Failed to call setWindowTitleMoveEnabled. Cause:' + JSON.stringify(e));
@@ -637,7 +637,7 @@ export default function WindowTitleTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(tempWnd));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             await tempWnd.setUIContent("pages/Index");
@@ -645,7 +645,7 @@ export default function WindowTitleTest() {
             try {
                 (tempWnd! as window.Window).setWindowTitleMoveEnabled(true);
                 console.error(msgStr + 'Succeeded in calling setWindowTitleMoveEnabled.');
-                expect().assertFail();
+                expect(false).assertTrue();
                 await (tempWnd! as window.Window).destroyWindow();
                 done();
             } catch (exception: BusinessError) {
@@ -682,14 +682,14 @@ export default function WindowTitleTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             await (subWin! as window.Window).destroyWindow();
             try {
                 await (subWin! as window.Window).setWindowTitle("titleName").then(async () => {
                     console.info(msgStr + 'Succeeded in calling setWindowTitle.');
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 }).catch(async (err: BusinessError) => {
                     console.error(msgStr + 'Failed to call setWindowTitle. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002);
@@ -697,7 +697,7 @@ export default function WindowTitleTest() {
                 done()
             } catch (exception) {
                 console.error(msgStr + 'Failed to set the call setWindowTitle. Cause:' + JSON.stringify(exception));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
         })
@@ -723,7 +723,7 @@ export default function WindowTitleTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             try {
@@ -736,7 +736,7 @@ export default function WindowTitleTest() {
                 done()
             } catch (exception) {
                 console.error(msgStr + 'Failed to set the call setWindowTitle. Cause:' + JSON.stringify(exception));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
         })
@@ -768,7 +768,7 @@ export default function WindowTitleTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(tempWnd));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             expect(!!tempWnd).assertTrue();
@@ -780,7 +780,7 @@ export default function WindowTitleTest() {
                 (tempWnd as window.Window).setDecorButtonStyle((tempWnd as window.Window).getDecorButtonStyle());
                 console.error(msgStr + 'Succeeded in calling setDecorButtonStyle.');
                 await (tempWnd! as window.Window).destroyWindow();
-                expect().assertFail();
+                expect(false).assertTrue();
                 done();
             } catch (exception: BusinessError) {
                 console.error(msgStr + 'Failed to set the call setDecorButtonStyle. Cause:' + JSON.stringify(exception));
@@ -814,14 +814,14 @@ export default function WindowTitleTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             await (subWin! as window.Window).destroyWindow();
             try {
                 subWin!.getDecorButtonStyle();
                 console.error(msgStr + 'Succeeded in calling getDecorButtonStyle.');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             } catch (e: BusinessError) {
                 console.log(msgStr + 'Failed to call getDecorButtonStyle. Cause:' + JSON.stringify(e));
@@ -855,7 +855,7 @@ export default function WindowTitleTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(tempWnd));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             tempWnd.setUIContent("pages/Index");
@@ -896,14 +896,14 @@ export default function WindowTitleTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             await (subWin! as window.Window).destroyWindow();
             try {
                 let res: window.TitleButtonRect = subWin!.getTitleButtonRect();
                 console.error(msgStr + 'Succeeded in calling getTitleButtonRect.' + JSON.stringify(res));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             } catch (e: BusinessError) {
                 console.log(msgStr + 'Failed to call getTitleButtonRect. Cause:' + JSON.stringify(e));
@@ -932,14 +932,14 @@ export default function WindowTitleTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             await (subWin! as window.Window).destroyWindow();
             try {
                 subWin!.setWindowTitleButtonVisible(true, true, true);
                 console.error(msgStr + 'Succeeded in calling setWindowTitleButtonVisible.');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             } catch (e: BusinessError) {
                 console.log(msgStr + 'Failed to call setWindowTitleButtonVisible. Cause:' + JSON.stringify(e));
@@ -968,7 +968,7 @@ export default function WindowTitleTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             expect(!!subWin).assertTrue();
@@ -977,7 +977,7 @@ export default function WindowTitleTest() {
             try {
                 (subWin! as window.Window).setWindowTitleButtonVisible(true, true, true);
                 console.error(msgStr + 'Succeeded in calling setWindowTitleButtonVisible.');
-                expect().assertFail();
+                expect(false).assertTrue();
                 await (subWin!! as window.Window).destroyWindow();
                 done();
             } catch (exception: BusinessError) {
@@ -1011,7 +1011,7 @@ export default function WindowTitleTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             await (subWin! as window.Window).destroyWindow();
@@ -1048,7 +1048,7 @@ export default function WindowTitleTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             await (subWin! as window.Window).destroyWindow();
@@ -1063,6 +1063,37 @@ export default function WindowTitleTest() {
                 console.error(msgStr + 'Failed to set the call startMoving. Cause:' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002);
                 done()
+            }
+        });
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_static_0100
+         * @tc.name      : testGetTitleButtonRect_static
+         * @tc.desc      : Test the function of getTitleButtonRect
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it('testGetTitleButtonRect_static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let msgStr: string = 'testGetTitleButtonRect_static';
+            hilog.info(domain, tag,msgStr + 'begin');
+            let windowClass: window.Window = windowStage.getMainWindowSync();
+            try {
+                let TitleButtonRect = windowClass.getTitleButtonRect();
+                hilog.info(domain, tag,msgStr + 'Succeeded in obtaining the area of title buttons. Data: ' + JSON.stringify(TitleButtonRect));
+                expect(TitleButtonRect.right !== null).assertTrue();
+                expect(TitleButtonRect.top !== null).assertTrue();
+                expect(TitleButtonRect.height !== null).assertTrue();
+                expect(TitleButtonRect.width !== null).assertTrue();
+                done();
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag,msgStr + 'Failed to get the area of title buttons. Cause: ' + JSON.stringify(error));
+                if (error.code == 801) {
+                    expect(true).assertTrue()
+                    done()
+                } else {
+                    expect(false).assertTrue();
+                    done();
+                }
             }
         });
 

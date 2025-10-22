@@ -214,23 +214,23 @@ export default function WindowPCTest() {
                                     return;
                                 }
                                 else{
-                                    expect().assertFail();
+                                    expect(false).assertTrue();
                                     done();
                                 }
                             }
                             hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling minimize.');
-                            expect().assertFail();
+                            expect(false).assertTrue();
                             done();
                         });
                     } catch (exception: BusinessError) {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call minimize. Cause:' + JSON.stringify(exception));
-                        expect().assertFail();
+                        expect(false).assertTrue();
                         done()
                     }
                 })
                 .catch((err: BusinessError) :PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done()
                 });
         
@@ -257,7 +257,7 @@ export default function WindowPCTest() {
                     try {
                         (subWin! as window.Window).minimize().then(() => {
                             hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling minimize.');
-                            expect().assertFail();
+                            expect(false).assertTrue();
                         }).catch((err: BusinessError) :PromiseLike<void>|undefined => {
                             hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call minimize. Cause: ' + JSON.stringify(err));
                             expect(err!.code).assertEqual(1300002);
@@ -265,13 +265,13 @@ export default function WindowPCTest() {
                         done()
                     } catch (exception: BusinessError) {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call minimize. Cause:' + JSON.stringify(exception));
-                        expect().assertFail();
+                        expect(false).assertTrue();
                         done()
                     }
                 })
                 .catch((err: BusinessError) :PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done()
                 });
         
@@ -343,7 +343,7 @@ export default function WindowPCTest() {
                 win!.maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling maximize.');
                     await (win! as window.Window).destroyWindow();
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done()
                 }).catch((err: BusinessError) :PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call maximize. Cause: ' + JSON.stringify(err));
@@ -354,7 +354,7 @@ export default function WindowPCTest() {
             } catch (err: BusinessError) {
                 hilog.info(0x0000, '[ANI]',msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
                 await (win! as window.Window).destroyWindow();
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
 
@@ -531,7 +531,7 @@ export default function WindowPCTest() {
                 };
                 windowStageStart.onWindowStageClose(callback);
                 console.error(msgStr + 'Succeeded in calling on windowStageClose.');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             } catch (e: BusinessError) {
                 console.log(msgStr + 'Failed to call on windowStageClose. Cause:' + JSON.stringify(e));
@@ -560,12 +560,17 @@ export default function WindowPCTest() {
                 };
                 windowStageStart.offWindowStageClose(callback);
                 console.error(msgStr + 'Succeeded in calling on windowStageClose.');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             } catch (e: BusinessError) {
                 console.log(msgStr + 'Failed to call on windowStageClose. Cause:' + JSON.stringify(e));
-                expect(e.code).assertEqual(1300002);
-                done()
+                if(e.code == 801){
+                    done()
+                }else{
+                    expect(e.code).assertEqual(1300002);
+                    done()
+                }
+                
             }
         })
 

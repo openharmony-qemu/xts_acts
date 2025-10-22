@@ -1308,14 +1308,14 @@ export default function WindowLayoutTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             await (subWin! as window.Window).destroyWindow();
             try {
                 await (subWin! as window.Window).startMoving().then(async () => {
                     console.info(msgStr + 'Succeeded in calling startMoving.');
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 }).catch(async (err: BusinessError) => {
                     console.error(msgStr + 'Failed to call startMoving. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002);
@@ -1323,7 +1323,7 @@ export default function WindowLayoutTest() {
                 done()
             } catch (exception: BusinessError) {
                 console.error(msgStr + 'Failed to set the call startMoving. Cause:' + JSON.stringify(exception));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
         })

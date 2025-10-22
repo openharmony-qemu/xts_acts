@@ -554,7 +554,7 @@ export default function WindowImmersiveTest() {
                     if (err.code == 801) {
                         expect(true).assertTrue();
                     } else {
-                        expect().assertFail()
+                        expect(false).assertTrue();
                     }
                     done();
                 })
@@ -743,7 +743,7 @@ export default function WindowImmersiveTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch(exception) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(exception));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
 
@@ -751,7 +751,7 @@ export default function WindowImmersiveTest() {
             try {
                 await (subWin! as window.Window).maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(async () => {
                     console.info(msgStr + 'Succeeded in calling maximize.');
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 }).catch(async (err: BusinessError) => {
                     console.error(msgStr + 'Failed to call maximize. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002);
@@ -760,7 +760,7 @@ export default function WindowImmersiveTest() {
                 done()
             } catch (exception: BusinessError) {
                 console.error(msgStr + 'Failed to set the call maximize. Cause:' + JSON.stringify(exception));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
         })
@@ -785,14 +785,14 @@ export default function WindowImmersiveTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             await (subWin! as window.Window).destroyWindow();
             try {
                 subWin!.getImmersiveModeEnabledState();
                 console.error(msgStr + 'Succeeded in calling getImmersiveModeEnabledState.');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             } catch (e: BusinessError) {
                 console.log(msgStr + 'Failed to call getImmersiveModeEnabledState. Cause:' + JSON.stringify(e));
@@ -824,13 +824,13 @@ export default function WindowImmersiveTest() {
                 expect(!!win).assertTrue();
             } catch (err) {
                 console.log(msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             try {
                 (win as window.Window).getImmersiveModeEnabledState();
                 console.error(msgStr + 'Succeeded in calling getImmersiveModeEnabledState.');
-                expect().assertFail();
+                expect(false).assertTrue();
                 await (win! as window.Window).destroyWindow();
                 done();
             } catch (exception: BusinessError) {
@@ -865,14 +865,14 @@ export default function WindowImmersiveTest() {
                 expect(!!win).assertTrue();
             } catch (err) {
                 console.log(msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             await (win! as window.Window).destroyWindow();
             try {
                 (win as window.Window).getWindowStatus();
                 console.error(msgStr + 'Succeeded in calling getImmersiveModeEnabledState.');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done();
             } catch (exception: BusinessError) {
                 console.error(msgStr + 'Failed to set the call getImmersiveModeEnabledState. Cause:' +
@@ -900,14 +900,14 @@ export default function WindowImmersiveTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             await (subWin! as window.Window).destroyWindow();
             try {
                 (subWin! as window.Window).setTitleAndDockHoverShown(true, true).then(async () => {
                     console.info(msgStr + 'Succeeded in calling setTitleAndDockHoverShown.');
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     done()
                 }).catch(async (err: BusinessError) => {
                     console.error(msgStr + 'Failed to call setTitleAndDockHoverShown. Cause: ' + JSON.stringify(err));
@@ -916,7 +916,7 @@ export default function WindowImmersiveTest() {
                 });
             } catch (exception) {
                 console.error(msgStr + 'Failed to set the call setTitleAndDockHoverShown. Cause:' + JSON.stringify(exception));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
         })
@@ -941,7 +941,7 @@ export default function WindowImmersiveTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             expect(!!subWin).assertTrue();
@@ -950,7 +950,7 @@ export default function WindowImmersiveTest() {
             try {
                 await (subWin! as window.Window).setTitleAndDockHoverShown(true, true).then(async () => {
                     console.info(msgStr + 'Succeeded in calling setTitleAndDockHoverShown.');
-                    expect().assertFail();
+                    expect(false).assertTrue();
                     await (subWin! as window.Window).destroyWindow();
                     done()
                 }).catch(async (err: BusinessError) => {
@@ -967,7 +967,7 @@ export default function WindowImmersiveTest() {
                 console.error(msgStr + 'Failed to set the call setTitleAndDockHoverShown. Cause:' +
                 JSON.stringify(exception));
                 await (subWin! as window.Window).destroyWindow();
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
         })

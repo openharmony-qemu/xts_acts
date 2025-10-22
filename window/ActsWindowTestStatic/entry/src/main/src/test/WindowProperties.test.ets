@@ -2452,7 +2452,7 @@ export default function WindowPropertiesTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             await (subWin! as window.Window).destroyWindow();
@@ -2551,14 +2551,14 @@ export default function WindowPropertiesTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             await (subWin! as window.Window).destroyWindow();
             try {
                 await (subWin! as window.Window).setWindowGrayScale(1).then(async () => {
                     console.info(msgStr + 'Succeeded in calling setWindowGrayScale.');
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 }).catch(async (err: BusinessError) => {
                     console.error(msgStr + 'Failed to call setWindowGrayScale. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(1300002);
@@ -2566,7 +2566,7 @@ export default function WindowPropertiesTest() {
                 done()
             } catch (exception) {
                 console.error(msgStr + 'Failed to set the call setWindowGrayScale. Cause:' + JSON.stringify(exception));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
         })
@@ -2590,13 +2590,13 @@ export default function WindowPropertiesTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             try {
                 await (subWin! as window.Window).setWindowGrayScale(1).then(async () => {
                     console.info(msgStr + 'Succeeded in calling setWindowGrayScale.');
-                    expect().assertFail();
+                    expect(false).assertTrue();
                 }).catch(async (err: BusinessError) => {
                     console.error(msgStr + 'Failed to call setWindowGrayScale. Cause: ' + JSON.stringify(err));
                     expect(err.code).assertEqual(801);
@@ -2604,7 +2604,7 @@ export default function WindowPropertiesTest() {
                 done()
             } catch (exception) {
                 console.error(msgStr + 'Failed to set the call setWindowGrayScale. Cause:' + JSON.stringify(exception));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
         })
@@ -2756,7 +2756,7 @@ export default function WindowPropertiesTest() {
                 };
                 windowStageStart.setDefaultDensityEnabled(true);
                 console.error(msgStr + 'Succeeded in calling on setDefaultDensityEnabled.');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             } catch (e: BusinessError) {
                 console.log(msgStr + 'Failed to call on setDefaultDensityEnabled. Cause:' + JSON.stringify(e));
