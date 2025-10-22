@@ -79,13 +79,13 @@ export default function ActsCellularDataAbnormalTest() {
       let caseName: string = 'testTelephonyCellularDataGetCellularDataStateAsync0100';
       console.info(`${caseName} test start `);
       try{
-        cellular.getCellularDataState((err, data) => {
+        cellular.getCellularDataState((err, dat:cellular.DataConnectState) => {
           if (err) {
             ExpectFail();
             console.info(`${caseName} get err is `+JSON.stringify(err));
           }else{
-            ExpectTrue(true);
-            console.info(`${caseName} get success data is `+JSON.stringify(data));
+            console.info(`${caseName} get success dat is `+JSON.stringify(dat));
+            ExpectTrue(dat == cellular.DataConnectState.DATA_STATE_CONNECTED);
           }
           done();
           console.info(`${caseName}---End`);
@@ -228,10 +228,9 @@ export default function ActsCellularDataAbnormalTest() {
       console.info(`${caseName} test start `);
       try {
         await cellular.getCellularDataState().then((contextData: cellular.DataConnectState)=>{
-          console.log(caseName + "Telephony_CellularData_getCellularDataState_Promise_0100 finish");
-          ExpectTrue(true);
+          console.log(caseName + "Telephony_CellularData_getCellularDataState_Promise_0100 finish contextData: " + JSON.stringify(contextData));
+          ExpectTrue(contextData == cellular.DataConnectState.DATA_STATE_CONNECTED);
         });
-
         console.info(`${caseName}---End`);
         done();
       } catch (err) {
