@@ -135,8 +135,13 @@ export default function LocalStorageReturnValue() {
       await CommonFunc.sleep(1000);
       let para: Record<string, number> = { 'LocalStorageReturnValue_004': 47 };
       let storage: LocalStorage = new LocalStorage(para);
+      let x = storage.link<number>('LocalStorageReturnValue_004');
+      let res_0040: boolean = storage.clear();
+      console.info("[LocalStorageReturnValue_004] component res_0040: " + JSON.stringify(res_0040) + " keys:" + storage.keys());
+      x.aboutToBeDeleted();
       let res_0041: boolean = storage.clear();
       console.info("[LocalStorageReturnValue_004] component res_0041: " + JSON.stringify(res_0041) + " keys:" + storage.keys());
+      expect(res_0040).assertFalse();
       expect(res_0041).assertTrue();
       storage.delete('LocalStorageReturnValue_004');
       console.info('[LocalStorageReturnValue_004] END');
