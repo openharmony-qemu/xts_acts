@@ -36,6 +36,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoRandCreate0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -57,6 +58,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoRandCreate0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -78,6 +80,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoRandGenerateRandom0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -99,6 +102,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoRandGenerateRandom0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -120,6 +124,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoRandSetSeed0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -141,6 +146,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoRandSetSeed0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -162,6 +168,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoVerifyCreate0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -183,6 +190,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoVerifyCreate0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -204,6 +212,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoVerifyInit0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -225,6 +234,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoVerifyInit0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -246,6 +256,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoVerifyUpdate0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -267,6 +278,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoVerifyUpdate0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -288,6 +300,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoVerifyRecover0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -309,6 +322,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoVerifyRecover0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -330,6 +344,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoVerifySetParam0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -351,6 +366,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoVerifySetParam0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -372,6 +388,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoVerifyGetParam0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -393,6 +410,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoVerifyGetParam0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -414,6 +432,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSignCreate0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -435,6 +454,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSignCreate0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -456,6 +476,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSignInit0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -477,6 +498,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSignInit0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -498,6 +520,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSignUpdate0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -519,6 +542,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSignUpdate0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -540,6 +564,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSignFinal0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -561,6 +586,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSignFinal0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -582,6 +608,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSignSetParam0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -603,6 +630,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSignSetParam0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -624,6 +652,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSignGetParam0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -645,6 +674,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSignGetParam0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -667,6 +697,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoEccSignatureSpecCreate0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -689,6 +720,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoEccSignatureSpecCreate0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -711,6 +743,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoEccSignatureSpecGetRAndS0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -733,6 +766,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoEccSignatureSpecGetRAndS0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -755,6 +789,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoEccSignatureSpecSetRAndS0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -777,6 +812,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoEccSignatureSpecSetRAndS0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -799,6 +835,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoEccSignatureSpecEncode0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -821,6 +858,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoEccSignatureSpecEncode0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -843,6 +881,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymCipherParamsCreate0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -865,6 +904,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymCipherParamsCreate0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -887,6 +927,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymCipherParamsSetParam0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -909,6 +950,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymCipherParamsSetParam0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -931,6 +973,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymCipherCreate0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -953,6 +996,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymCipherCreate0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -975,6 +1019,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymCipherInit0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -997,6 +1042,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymCipherInit0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -1019,6 +1065,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymCipherUpdate0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -1041,6 +1088,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymCipherUpdate0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -1063,6 +1111,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymCipherFinale0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -1085,6 +1134,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymCipherFinale0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -1107,6 +1157,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymKeyGeneratorCreate0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -1129,6 +1180,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymKeyGeneratorCreate0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -1151,6 +1203,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymKeyGeneratorGenerate0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -1173,6 +1226,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymKeyGeneratorGenerate0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -1195,6 +1249,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymKeyGeneratorConvert0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -1217,6 +1272,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymKeyGeneratorConvert0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -1239,6 +1295,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymKeyGetKeyData0100 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -1261,6 +1318,7 @@ export default function CryptoArchitecture2Test() {
         done()
       } catch (err) {
         console.error("====>testOHCryptoSymKeyGetKeyData0200 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })

@@ -36,6 +36,7 @@ export default function CryptoArchitecture3Test() {
         done()
       } catch (err) {
         console.error("====>OHCryptoVerifySetParam003 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -57,6 +58,7 @@ export default function CryptoArchitecture3Test() {
         done()
       } catch (err) {
         console.error("====>OHCryptoSignInit003 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -78,6 +80,7 @@ export default function CryptoArchitecture3Test() {
         done()
       } catch (err) {
         console.error("====>OHCryptoSignUpdate003 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -99,6 +102,7 @@ export default function CryptoArchitecture3Test() {
         done()
       } catch (err) {
         console.error("====>OHCryptoVerifyRecover003 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -120,6 +124,7 @@ export default function CryptoArchitecture3Test() {
         done()
       } catch (err) {
         console.error("====>OHCryptoSignFinal003 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -141,6 +146,7 @@ export default function CryptoArchitecture3Test() {
         done()
       } catch (err) {
         console.error("====>OHCryptoSignSetParam003 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -162,6 +168,7 @@ export default function CryptoArchitecture3Test() {
         done()
       } catch (err) {
         console.error("====>OHCryptoSignGetParam003 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -184,6 +191,7 @@ export default function CryptoArchitecture3Test() {
         done()
       } catch (err) {
         console.error("====>OHCryptoEccSignatureSpecCreate003 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -205,6 +213,7 @@ export default function CryptoArchitecture3Test() {
         done()
       } catch (err) {
         console.error("====>OHCryptoSymCipherCreate003 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
@@ -227,6 +236,7 @@ export default function CryptoArchitecture3Test() {
         done()
       } catch (err) {
         console.error("====>OHCryptoSymKeyGeneratorCreate003 catch err: " + err);
+        expect().assertFalse();
         done()
       }
     })
