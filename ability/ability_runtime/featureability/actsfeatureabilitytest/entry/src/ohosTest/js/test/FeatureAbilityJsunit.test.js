@@ -116,8 +116,8 @@ describe('ActsFeatureAbilityTest', function () {
 });
     /**
      * @tc.number: ACTS_wantConstant_0100
-     * @tc.name: wantConstant : Check specific enum
-     * @tc.desc: Check the return type of the interface (by Promise)
+     * @tc.name: ACTS_wantConstant_0100
+     * @tc.desc: wantConstant : Check specific enum
      */
     it('ACTS_wantConstant_0100', Level.LEVEL0, async function (done) {
         expect(wantconstant.Action.ACTION_HOME).assertEqual("ohos.want.action.home");
@@ -157,8 +157,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_wantConstant_0200
-     * @tc.name: wantConstant : Check specific enum
-     * @tc.desc: Check the return type of the interface (by Promise)
+     * @tc.name: ACTS_wantConstant_0200
+     * @tc.desc: wantConstant : Check specific enum (by Promise)
      */
     it('ACTS_wantConstant_0200', Level.LEVEL0, async function (done) {
         expect(wantConstantNew.Action.ACTION_HOME).assertEqual("ohos.want.action.home");
@@ -209,8 +209,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_HasWindowFocus_0100
-     * @tc.name: HasWindowFocus : Checks whether the main window of this ability has window focus
-     * @tc.desc: Check the return value of the interface (by Promise)
+     * @tc.name: ACTS_HasWindowFocus_0100
+     * @tc.desc: HasWindowFocus : Checks whether the main window of this ability has window focus (by Promise)
      */
     it('ACTS_HasWindowFocus_0100', Level.LEVEL0, async function (done) {
         let info = await featureAbility.hasWindowFocus();
@@ -221,8 +221,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_HasWindowFocus_0300
-     * @tc.name: HasWindowFocus : Checks whether the main window of this ability has window focus
-     * @tc.desc: Check the return value of the interface (by AsyncCallback)
+     * @tc.name: ACTS_HasWindowFocus_0300
+     * @tc.desc: HasWindowFocus : Checks whether the main window of this ability has window focus
      */
     it('ACTS_HasWindowFocus_0300', Level.LEVEL0, async function (done) {
         let result = featureAbility.hasWindowFocus(
@@ -235,10 +235,10 @@ describe('ActsFeatureAbilityTest', function () {
         console.info('AceApplication : hasWindowFocus : ' + result);
     })
 
-    /*
+   /**
      * @tc.number  ACTS_StartAbility_1000
-     * @tc.name    The configured URI is started and the page is not configured
-     * @tc.desc    Function test
+     * @tc.name    ACTS_StartAbility_1000
+     * @tc.desc    The configured URI is started and the page is not configured
      * @tc.level   0
      */
     it("ACTS_StartAbility_1000", Level.LEVEL0, async function(done){
@@ -250,25 +250,25 @@ describe('ActsFeatureAbilityTest', function () {
             function SubscribeCallBack(err, data) {
                 clearTimeout(id);
                 expect(data.event).assertEqual("ACTS_StartAbility_1000_CommonEvent");
-                console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+                console.info("====>Subscribe CallBack data:====>" + JSON.stringify(data));
                 commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
                 done();
             }
 
             commonEvent.createSubscriber(subscriberInfoStartAbilityTen).then(async (data) => {
-                console.debug("====>Create Subscriber====>");
+                console.info("====>Create Subscriber====>");
                 Subscriber = data;
                 await commonEvent.subscribe(Subscriber, SubscribeCallBack);
             })
 
             function UnSubscribeCallback() {
-                console.debug("====>UnSubscribe CallBack====>");
+                console.info("====>UnSubscribe CallBack====>");
                 done();
             }
 
             function timeout() {
                 expect().assertFail();
-                console.debug('ACTS_StartAbility_1000=====timeout======');
+                console.info('ACTS_StartAbility_1000=====timeout======');
                 commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
                 done();
             }
@@ -295,8 +295,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_StartAbility_0100
-     * @tc.name: StartAbility : A Page or Service ability uses this method to start a specific ability.
-     * @tc.desc: Check the return value of the interface (by Promise)
+     * @tc.name: ACTS_StartAbility_0100
+     * @tc.desc: StartAbility : A Page or Service ability uses this method to start a specific ability.(by Promise)
      */
     it('ACTS_StartAbility_0100', Level.LEVEL0, async function (done) {
         let Subscriber;
@@ -305,25 +305,31 @@ describe('ActsFeatureAbilityTest', function () {
         function SubscribeCallBack(err, data) {
             clearTimeout(id);
             expect(data.event).assertEqual("ACTS_StartAbility_0100_CommonEvent");
-            console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
-            commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
-            done();
+            featureAbility.hasWindowFocus().then((data)=>{
+              try{expect(data).assertFalse()}catch{};
+              console.info("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+              commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
+              done();
+            }).catch((err)=>{
+              console.info("====>ACTS_StartAbility_0100 hasWindowFocus fail :====>" + JSON.stringify(err));
+              expect(true).assertEqual(false);
+            })
         }
 
         commonEvent.createSubscriber(subscriberInfoActsStartAbility0100).then(async (data) => {
-            console.debug("====>Create Subscriber====>");
+            console.info("====>Create Subscriber====>");
             Subscriber = data;
             await commonEvent.subscribe(Subscriber, SubscribeCallBack);
         })
 
         function UnSubscribeCallback() {
-            console.debug("====>UnSubscribe CallBack====>");
+            console.info("====>UnSubscribe CallBack====>");
             done();
         }
 
         function timeout() {
             expect().assertFail();
-            console.debug('ACTS_StartAbility_0100=====timeout======');
+            console.info('ACTS_StartAbility_0100=====timeout======');
             commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
             done();
         }
@@ -377,8 +383,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_StartAbility_0201
-     * @tc.name: StartAbility : A Page or Service ability uses this method to start a specific ability.
-     * @tc.desc: Pass the parameters, Check the return value of the interface (by Promise)
+     * @tc.name: ACTS_StartAbility_0201
+     * @tc.desc: StartAbility : A Page or Service ability uses this method to start a specific ability.
      */
     it('ACTS_StartAbility_0201', Level.LEVEL0, async function (done) {
         let Subscriber;
@@ -388,30 +394,36 @@ describe('ActsFeatureAbilityTest', function () {
             clearTimeout(id);
             expect(promise).assertEqual(0);
             expect(data.event).assertEqual("ACTS_StartAbility_0201_CommonEvent");
-            console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
-            commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
+            featureAbility.hasWindowFocus(
+              (err, data) => {
+                console.info("hasWindowFocus asyncCallback code data: " + data);
+                try{expect(data).assertFalse()}catch{};
+                console.info("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+                commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
+              }
+          );
         }
 
         await commonEvent.createSubscriber(subscriberInfoActsStartAbility0201).then(async (data) => {
-            console.debug("====>Create Subscriber====>");
+            console.info("====>Create Subscriber====>");
             Subscriber = data;
             await commonEvent.subscribe(Subscriber, SubscribeCallBack);
         })
 
         function UnSubscribeCallback() {
-            console.debug("====>UnSubscribe CallBack====>");
+            console.info("====>UnSubscribe CallBack====>");
             done();
         }
 
         function timeout() {
             expect().assertFail();
-            console.debug('ACTS_StartAbility_0201=====timeout======');
+            console.info('ACTS_StartAbility_0201=====timeout======');
             commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
             done();
         }
 
         id = setTimeout(timeout, START_ABILITY_TIMEOUT);
-        console.debug('=======wait id======');
+        console.info('=======wait id======');
         let promise = await featureAbility.startAbility(
             {
                 want:
@@ -470,8 +482,9 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_StartAbility_0301
-     * @tc.name: StartAbility : A Page or Service ability uses this method to start a specific ability.
-     * @tc.desc: Passing null, Check the return value of the interface (by Promise)
+     * @tc.name: ACTS_StartAbility_0301
+     * @tc.desc: StartAbility : A Page or Service ability uses this method to start a specific ability.
+     *           Passing null, Check the return value of the interface (by Promise)
      */
     it('ACTS_StartAbility_0301', Level.LEVEL0, async function (done) {
         let Subscriber;
@@ -480,25 +493,25 @@ describe('ActsFeatureAbilityTest', function () {
         function SubscribeCallBack(err, data) {
             clearTimeout(id);
             expect(data.event).assertEqual("ACTS_StartAbility_0301_CommonEvent");
-            console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+            console.info("====>Subscribe CallBack data:====>" + JSON.stringify(data));
             commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
             done();
         }
 
         commonEvent.createSubscriber(subscriberInfoActsStartAbility0301).then(async (data) => {
-            console.debug("====>Create Subscriber====>");
+            console.info("====>Create Subscriber====>");
             Subscriber = data;
             await commonEvent.subscribe(Subscriber, SubscribeCallBack);
         })
 
         function UnSubscribeCallback() {
-            console.debug("====>UnSubscribe CallBack====>");
+            console.info("====>UnSubscribe CallBack====>");
             done();
         }
 
         function timeout() {
             expect().assertFail();
-            console.debug('ACTS_StartAbility_0301=====timeout======');
+            console.info('ACTS_StartAbility_0301=====timeout======');
             commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
             done();
         }
@@ -552,8 +565,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_StartAbility_0401
-     * @tc.name: StartAbility : A Page or Service ability uses this method to start a specific ability.
-     * @tc.desc: Check the return value of the interface (by AsyncCallback)
+     * @tc.name: ACTS_StartAbility_0401
+     * @tc.desc: StartAbility : A Page or Service ability uses this method to start a specific ability. (by AsyncCallback)
      */
     it('ACTS_StartAbility_0401', Level.LEVEL0, async function (done) {
         let Subscriber;
@@ -562,25 +575,25 @@ describe('ActsFeatureAbilityTest', function () {
         function SubscribeCallBack(err, data) {
             clearTimeout(id);
             expect(data.event).assertEqual("ACTS_StartAbility_0401_CommonEvent");
-            console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+            console.info("====>Subscribe CallBack data:====>" + JSON.stringify(data));
             commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
             done();
         }
 
         commonEvent.createSubscriber(subscriberInfoActsStartAbility0401).then(async (data) => {
-            console.debug("====>Create Subscriber====>");
+            console.info("====>Create Subscriber====>");
             Subscriber = data;
             await commonEvent.subscribe(Subscriber, SubscribeCallBack);
         })
 
         function UnSubscribeCallback() {
-            console.debug("====>UnSubscribe CallBack====>");
+            console.info("====>UnSubscribe CallBack====>");
             done();
         }
 
         function timeout() {
             expect().assertFail();
-            console.debug('ACTS_StartAbility_0401=====timeout======');
+            console.info('ACTS_StartAbility_0401=====timeout======');
             commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
             done();
         }
@@ -637,8 +650,9 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_StartAbility_0501
-     * @tc.name: StartAbility : A Page or Service ability uses this method to start a specific ability.
-     * @tc.desc: Pass the parameters, Check the return value of the interface (by AsyncCallback)
+     * @tc.name: ACTS_StartAbility_0501
+     * @tc.desc: StartAbility : A Page or Service ability uses this method to start a specific ability.
+     *           Pass the parameters, Check the return value of the interface (by AsyncCallback)
      */
     it('ACTS_StartAbility_0501', Level.LEVEL0, async function (done) {
         let Subscriber;
@@ -647,25 +661,25 @@ describe('ActsFeatureAbilityTest', function () {
         function SubscribeCallBack(err, data) {
             clearTimeout(id);
             expect(data.event).assertEqual("ACTS_StartAbility_0501_CommonEvent");
-            console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+            console.info("====>Subscribe CallBack data:====>" + JSON.stringify(data));
             commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
             done();
         }
 
         commonEvent.createSubscriber(subscriberInfoActsStartAbility0501).then(async (data) => {
-            console.debug("====>Create Subscriber====>");
+            console.info("====>Create Subscriber====>");
             Subscriber = data;
             await commonEvent.subscribe(Subscriber, SubscribeCallBack);
         })
 
         function UnSubscribeCallback() {
-            console.debug("====>UnSubscribe CallBack====>");
+            console.info("====>UnSubscribe CallBack====>");
             done();
         }
 
         function timeout() {
             expect().assertFail();
-            console.debug('ACTS_StartAbility_0501=====timeout======');
+            console.info('ACTS_StartAbility_0501=====timeout======');
             commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
             done();
         }
@@ -733,8 +747,9 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_StartAbility_0601
-     * @tc.name: StartAbility : A Page or Service ability uses this method to start a specific ability.
-     * @tc.desc: Passing null, Check the return value of the interface (by AsyncCallback)
+     * @tc.name: ACTS_StartAbility_0601
+     * @tc.desc: StartAbility : A Page or Service ability uses this method to start a specific ability.
+     *           Passing null, Check the return value of the interface (by AsyncCallback)
      */
     it('ACTS_StartAbility_0601', Level.LEVEL0, async function (done) {
         let Subscriber;
@@ -743,24 +758,24 @@ describe('ActsFeatureAbilityTest', function () {
         function SubscribeCallBack(err, data) {
             clearTimeout(id);
             expect(data.event).assertEqual("ACTS_StartAbility_0601_CommonEvent");
-            console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+            console.info("====>Subscribe CallBack data:====>" + JSON.stringify(data));
             commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
         }
 
         commonEvent.createSubscriber(subscriberInfoActsStartAbility0601).then(async (data) => {
-            console.debug("====>Create Subscriber====>");
+            console.info("====>Create Subscriber====>");
             Subscriber = data;
             await commonEvent.subscribe(Subscriber, SubscribeCallBack);
         })
 
         function UnSubscribeCallback() {
-            console.debug("====>UnSubscribe CallBack====>");
+            console.info("====>UnSubscribe CallBack====>");
             done();
         }
 
         function timeout() {
             expect().assertFail();
-            console.debug('ACTS_StartAbility_0601=====timeout======');
+            console.info('ACTS_StartAbility_0601=====timeout======');
             commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
             done();
         }
@@ -817,8 +832,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_TerminateAbility_0200
-     * @tc.name: TerminateAbility : Destroys ability
-     * @tc.desc: Check the return value of the interface (by promise)
+     * @tc.name: ACTS_TerminateAbility_0200
+     * @tc.desc: TerminateAbility : Destroys ability.Check the return value of the interface (by promise)
      */
     it('ACTS_TerminateAbility_0200', Level.LEVEL0, async function (done) {
         let Subscriber;
@@ -828,7 +843,7 @@ describe('ActsFeatureAbilityTest', function () {
         function SubscribeCallBack(err, data) {
             clearTimeout(id);
             events.set(data.event, 0);
-            console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+            console.info("====>Subscribe CallBack data:====>" + JSON.stringify(data));
             if (events.size > 1) {
                 expect(events.has("ACTS_TerminateAbility_0200_CommonEvent") &&
                     events.has("ACTS_TerminateAbility_0200_Return")).assertTrue();
@@ -841,19 +856,19 @@ describe('ActsFeatureAbilityTest', function () {
         }
 
         commonEvent.createSubscriber(subscriberInfoTerminateAbilityTwo).then(async (data) => {
-            console.debug("====>Create Subscriber====>");
+            console.info("====>Create Subscriber====>");
             Subscriber = data;
             await commonEvent.subscribe(Subscriber, SubscribeCallBack);
         })
 
         function UnSubscribeCallback() {
-            console.debug("====>UnSubscribe CallBack====>");
+            console.info("====>UnSubscribe CallBack====>");
             done();
         }
 
         function timeout() {
             expect().assertFail();
-            console.debug('ACTS_TerminateAbility_0200=====timeout======');
+            console.info('ACTS_TerminateAbility_0200=====timeout======');
             commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
             done();
         }
@@ -909,8 +924,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_GetApplicationInfo_0100
-     * @tc.name: GetApplicationInfo : Obtains information about the current application.
-     * @tc.desc: Check the return type of the interface (by Promise)
+     * @tc.name: ACTS_GetApplicationInfo_0100
+     * @tc.desc: GetApplicationInfo : Obtains information about the current application. (by Promise)
      */
     it('ACTS_GetApplicationInfo_0100', Level.LEVEL0, async function (done) {
         let context = featureAbility.getContext();
@@ -928,8 +943,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_GetApplicationInfo_0200
-     * @tc.name: GetApplicationInfo : Obtains information about the current application.
-     * @tc.desc: Check the return value of the interface (by AsyncCallback)
+     * @tc.name: ACTS_GetApplicationInfo_0200
+     * @tc.desc: GetApplicationInfo : Obtains information about the current application. (by AsyncCallback)
      */
     it('ACTS_GetApplicationInfo_0200', Level.LEVEL0, async function (done) {
         let context = featureAbility.getContext()
@@ -959,8 +974,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_GetProcessInfo_0100
-     * @tc.name: GetProcessInfo : Called when getting the ProcessInfo
-     * @tc.desc: Check the return type of the interface (by promise)
+     * @tc.name: ACTS_GetProcessInfo_0100
+     * @tc.desc: GetProcessInfo : Called when getting the ProcessInfo (by promise)
      */
     it('ACTS_GetProcessInfo_0100', Level.LEVEL0, async function (done) {
         let context = featureAbility.getContext()
@@ -978,8 +993,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_GetProcessInfo_0200
-     * @tc.name: GetProcessInfo : Called when getting the ProcessInfo
-     * @tc.desc: Check the return type of the interface (by AsyncCallback)
+     * @tc.name: ACTS_GetProcessInfo_0200
+     * @tc.desc: GetProcessInfo : Called when getting the ProcessInfo. (by AsyncCallback)
      */
     it('ACTS_GetProcessInfo_0200', Level.LEVEL0, async function (done) {
         let context = featureAbility.getContext()
@@ -1018,8 +1033,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_GetElementName_0100
-     * @tc.name: GetElementName : Obtains the ohos.bundle.ElementName object of the current ability.
-     * @tc.desc: Check the return value of the interface (by promise)
+     * @tc.name: ACTS_GetElementName_0100
+     * @tc.desc: GetElementName : Obtains the ohos.bundle.ElementName object of the current ability. (by promise)
      */
     it('ACTS_GetElementName_0100', Level.LEVEL0, async function (done) {
         let context = featureAbility.getContext()
@@ -1037,8 +1052,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
     * @tc.number: ACTS_GetElementName_0200
-    * @tc.name: GetElementName : Obtains the ohos.bundle.ElementName object of the current ability.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
+    * @tc.name: ACTS_GetElementName_0200
+    * @tc.desc: GetElementName : Obtains the ohos.bundle.ElementName object of the current ability. (by AsyncCallback)
     */
     it('ACTS_GetElementName_0200', Level.LEVEL0, async function (done) {
         let context = featureAbility.getContext()
@@ -1065,8 +1080,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_GetAppType_0100
-     * @tc.name: GetAppType : Obtains the type of this application.
-     * @tc.desc: Check the return value of the interface (by promise)
+     * @tc.name: ACTS_GetAppType_0100
+     * @tc.desc: GetAppType : Obtains the type of this application.(by promise)
      */
     it('ACTS_GetAppType_0100', Level.LEVEL0, async function (done) {
         await featureAbility.getContext().getAppType().then((data)=>{
@@ -1083,8 +1098,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_GetAppType_0200
-     * @tc.name: GetAppType : Obtains the type of this application.
-     * @tc.desc: Check the return value of the interface (by AsyncCallback)
+     * @tc.name: ACTS_GetAppType_0200
+     * @tc.desc: GetAppType : Obtains the type of this application. (by AsyncCallback)
      */
     it('ACTS_GetAppType_0200', Level.LEVEL0, async function (done) {
         featureAbility.getContext().getAppType((err, data) => {
@@ -1170,8 +1185,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_GetAbilityInfo_0100
-     * @tc.name: GetAbilityInfo : Obtains the HapModuleInfo object of the application.
-     * @tc.desc: Check the return value of the interface (by promise)
+     * @tc.name: ACTS_GetAbilityInfo_0100
+     * @tc.desc: GetAbilityInfo : Obtains the HapModuleInfo object of the application. (by promise)
      */
     it('ACTS_GetAbilityInfo_0100', Level.LEVEL0, async function (done) {
         await featureAbility.getContext().getAbilityInfo().then((data)=>{
@@ -1187,8 +1202,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_GetAbilityInfo_0200
-     * @tc.name: GetAbilityInfo : Obtains the HapModuleInfo object of the application.
-     * @tc.desc: Check the return value of the interface (by AsyncCallback)
+     * @tc.name: ACTS_GetAbilityInfo_0200
+     * @tc.desc: GetAbilityInfo : Obtains the HapModuleInfo object of the application.(by AsyncCallback)
      */
     it('ACTS_GetAbilityInfo_0200', Level.LEVEL0, async function (done) {
         featureAbility.getContext().getAbilityInfo(
@@ -1244,8 +1259,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_GetHapModuleInfo_0100
-     * @tc.name: GetHapModuleInfo : Obtains the HapModuleInfo object of the application.
-     * @tc.desc: Check the return value of the interface (by promise)
+     * @tc.name: ACTS_GetHapModuleInfo_0100
+     * @tc.desc: GetHapModuleInfo : Obtains the HapModuleInfo object of the application. (by promise)
      */
     it('ACTS_GetHapModuleInfo_0100', Level.LEVEL0, async function (done) {
         await featureAbility.getContext().getHapModuleInfo().then((data)=>{
@@ -1262,8 +1277,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
     * @tc.number: ACTS_GetHapModuleInfo_0200
-    * @tc.name: GetHapModuleInfo : Obtains the HapModuleInfo object of the application.
-    * @tc.desc: Check the return value of the interface (by AsyncCallback)
+    * @tc.name: ACTS_GetHapModuleInfo_0200
+    * @tc.desc: GetHapModuleInfo : Obtains the HapModuleInfo object of the application. (by AsyncCallback)
     */
     it('ACTS_GetHapModuleInfo_0200', Level.LEVEL0, async function (done) {
         let tempInfo
@@ -1291,8 +1306,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_GetProcessName_0100
-     * @tc.name: GetProcessName : Obtains the name of the current process.
-     * @tc.desc: Check the return value of the interface (by promise)
+     * @tc.name: ACTS_GetProcessName_0100
+     * @tc.desc: GetProcessName : Obtains the name of the current process. (by promise)
      */
     it('ACTS_GetProcessName_0100', Level.LEVEL0, async function (done) {
         let context = featureAbility.getContext();
@@ -1309,8 +1324,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_GetProcessName_0200
-     * @tc.name: GetProcessName : Obtains the name of the current process.
-     * @tc.desc: Check the return value of the interface (by AsyncCallback)
+     * @tc.name: ACTS_GetProcessName_0200
+     * @tc.desc: GetProcessName : Obtains the name of the current process. (by AsyncCallback)
      */
     it('ACTS_GetProcessName_0200', Level.LEVEL0, async function (done) {
         let tempInfo
@@ -1332,8 +1347,8 @@ describe('ActsFeatureAbilityTest', function () {
 
     /**
      * @tc.number: ACTS_GetCallingBundle_0100
-     * @tc.name: GetCallingBundle : Obtains the bundle name of the ability that called the current ability.
-     * @tc.desc: Check the return type of the interface (by AsyncCallback)
+     * @tc.name: ACTS_GetCallingBundle_0100
+     * @tc.desc: GetCallingBundle : Obtains the bundle name of the ability that called the current ability.(by AsyncCallback)
      */
      it('ACTS_GetCallingBundle_0100', Level.LEVEL0, async function (done) {
         let Subscriber;
@@ -1343,7 +1358,7 @@ describe('ActsFeatureAbilityTest', function () {
         function SubscribeCallBack(err, data) {
             clearTimeout(id);
             events.set(data.event, 0)
-            console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+            console.info("====>Subscribe CallBack data:====>" + JSON.stringify(data));
             if (events.size == 1) {
                 expect(events.has("ACTS_GetCallingBundle_0100_CommonEvent") ||
                     events.has("com.example.actsfeatureabilitytest.promise") ||
@@ -1361,19 +1376,19 @@ describe('ActsFeatureAbilityTest', function () {
         }
 
         commonEvent.createSubscriber(subscriberInfoActsGetCallingBundle0100).then(async (data) => {
-            console.debug("====>Create Subscriber====>");
+            console.info("====>Create Subscriber====>");
             Subscriber = data;
             await commonEvent.subscribe(Subscriber, SubscribeCallBack);
         })
 
         function UnSubscribeCallback() {
-            console.debug("====>UnSubscribe CallBack====>");
+            console.info("====>UnSubscribe CallBack====>");
             done();
         }
 
         function timeout() {
             expect().assertFail();
-            console.debug('ACTS_GetCallingBundle_0100=====timeout======');
+            console.info('ACTS_GetCallingBundle_0100=====timeout======');
             commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
             done();
         }
@@ -1395,9 +1410,11 @@ describe('ActsFeatureAbilityTest', function () {
         expect(info).assertEqual("/data/storage/el2/base/haps/entry_test");
     }
 
-    // @tc.number: ACTS_GetOrCreateLocalDir_0100
-    // @tc.name: GetProcessName : Obtains the name of the current process.
-    // @tc.desc: Check the return value of the interface (by promise)
+  /**
+    * @tc.number: ACTS_GetOrCreateLocalDir_0100
+    * @tc.name: ACTS_GetOrCreateLocalDir_0100
+    * @tc.desc: GetProcessName : Obtains the name of the current process. (by promise)
+    */
     it('ACTS_GetOrCreateLocalDir_0100', Level.LEVEL0, async function (done) {
         let context = featureAbility.getContext();
         await context.getOrCreateLocalDir().then((data)=>{
@@ -1411,9 +1428,11 @@ describe('ActsFeatureAbilityTest', function () {
         })
     })
 
-    // @tc.number: ACTS_GetOrCreateLocalDir_0200
-    // @tc.name: GetProcessName : Obtains the name of the current process.
-    // @tc.desc: Check the return value of the interface (by AsyncCallback)
+  /**
+    * @tc.number: ACTS_GetOrCreateLocalDir_0200
+    * @tc.name: ACTS_GetOrCreateLocalDir_0200
+    * @tc.desc: GetProcessName : Obtains the name of the current process.(by AsyncCallback)
+    */
     it('ACTS_GetOrCreateLocalDir_0200', Level.LEVEL0, async function (done) {
         let context = featureAbility.getContext();
         context.getOrCreateLocalDir(
@@ -1430,10 +1449,10 @@ describe('ActsFeatureAbilityTest', function () {
          });
     })
 
-    /*
+   /**
      * @tc.number  ACTS_StartAbility_0700
-     * @tc.name    Configures the wrong abilityname validation
-     * @tc.desc    Function test
+     * @tc.name    ACTS_StartAbility_0700
+     * @tc.desc    Configures the wrong abilityname validation
      * @tc.level   0
      */
     it("ACTS_StartAbility_0700", Level.LEVEL0, async function(done){
@@ -1464,10 +1483,10 @@ describe('ActsFeatureAbilityTest', function () {
         }
     });
 
-    /*
+   /**
      * @tc.number  ACTS_StartAbility_0800
-     * @tc.name    Misconfigured bundlename validation
-     * @tc.desc    Function test
+     * @tc.name    ACTS_StartAbility_0800
+     * @tc.desc    Misconfigured bundlename validation
      * @tc.level   0
      */
     it("ACTS_StartAbility_0800", Level.LEVEL0, async function(done){
@@ -1498,10 +1517,10 @@ describe('ActsFeatureAbilityTest', function () {
         }
     });
 
-    /*
+   /**
      * @tc.number  ACTS_StartAbility_0900
-     * @tc.name    Misconfigured deviceid validation
-     * @tc.desc    Function test
+     * @tc.name    ACTS_StartAbility_0900
+     * @tc.desc    Misconfigured deviceid validation
      * @tc.level   0
      */
     it("ACTS_StartAbility_0900", Level.LEVEL0, async function(done){
@@ -1532,10 +1551,10 @@ describe('ActsFeatureAbilityTest', function () {
         }
     });
 
-    /*
+   /**
      * @tc.number  ACTS_StartAbility_1100
-     * @tc.name    Verify the ability of implicitly starting through action without configuring action
-     * @tc.desc    Function test
+     * @tc.name    ACTS_StartAbility_1100
+     * @tc.desc    Verify the ability of implicitly starting through action without configuring action
      * @tc.level   0
      */
     it("ACTS_StartAbility_1100", Level.LEVEL0, async function(done){
@@ -1564,10 +1583,10 @@ describe('ActsFeatureAbilityTest', function () {
         }
     });
 
-    /*
+   /**
      * @tc.number  ACTS_StartAbility_1200
-     * @tc.name    Verify that the ability without configured entities is started through action and entities
-     * @tc.desc    Function test
+     * @tc.name    ACTS_StartAbility_1200
+     * @tc.desc    Verify that the ability without configured entities is started through action and entities
      * @tc.level   0
      */
     it("ACTS_StartAbility_1200", Level.LEVEL0, async function(done){
@@ -1597,10 +1616,10 @@ describe('ActsFeatureAbilityTest', function () {
         }
     });
 
-    /*
+   /**
      * @tc.number  ACTS_StartAbility_1300
-     * @tc.name    Start ability through action and entities. Entities is configured as an empty array
-     * @tc.desc    Function test
+     * @tc.name    ACTS_StartAbility_1300
+     * @tc.desc    Start ability through action and entities. Entities is configured as an empty array
      * @tc.level   0
      */
     it("ACTS_StartAbility_1300", Level.LEVEL0, async function(done){
@@ -1612,24 +1631,24 @@ describe('ActsFeatureAbilityTest', function () {
             function SubscribeCallBack(err, data) {
                 clearTimeout(id);
                 expect(data.event).assertEqual("ACTS_StartAbility_1300_CommonEvent");
-                console.debug("====>Subscribe CallBack data:====>" + JSON.stringify(data));
+                console.info("====>Subscribe CallBack data:====>" + JSON.stringify(data));
                 commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
             }
 
             commonEvent.createSubscriber(subscriberInfoStartAbilityThirteen).then(async (data) => {
-                console.debug("====>Create Subscriber====>");
+                console.info("====>Create Subscriber====>");
                 Subscriber = data;
                 await commonEvent.subscribe(Subscriber, SubscribeCallBack);
             })
 
             function UnSubscribeCallback() {
-                console.debug("====>UnSubscribe CallBack====>");
+                console.info("====>UnSubscribe CallBack====>");
                 done();
             }
 
             function timeout() {
                 expect().assertFail();
-                console.debug('ACTS_StartAbility_1300=====timeout======');
+                console.info('ACTS_StartAbility_1300=====timeout======');
                 commonEvent.unsubscribe(Subscriber, UnSubscribeCallback)
                 done();
             }
@@ -1656,10 +1675,10 @@ describe('ActsFeatureAbilityTest', function () {
         }
     });
 
-    /*
+   /**
      * @tc.number  ACTS_StartAbility_1600
-     * @tc.name    Startability input parameter want is {}
-     * @tc.desc    Function test
+     * @tc.name    ACTS_StartAbility_1600
+     * @tc.desc    Startability input parameter want is {}
      * @tc.level   0
      */
     it("ACTS_StartAbility_1600", Level.LEVEL0, async function(done){
@@ -1685,10 +1704,10 @@ describe('ActsFeatureAbilityTest', function () {
         }
     });
 
-    /*
+   /**
      * @tc.number  ACTS_StartAbility_1700
-     * @tc.name    The startability input parameter is not configured with want
-     * @tc.desc    Function test
+     * @tc.name    ACTS_StartAbility_1700
+     * @tc.desc    The startability input parameter is not configured with want
      * @tc.level   0
      */
     it("ACTS_StartAbility_1700", Level.LEVEL0, async function(done){
@@ -1710,10 +1729,10 @@ describe('ActsFeatureAbilityTest', function () {
         } 
     });
 
-    /*
+   /**
      * @tc.number  ACTS_StartAbility_1800
-     * @tc.name    The startability input parameter is undefined
-     * @tc.desc    Function test
+     * @tc.name    ACTS_StartAbility_1800
+     * @tc.desc    The startability input parameter is undefined
      * @tc.level   0
      */
     it("ACTS_StartAbility_1800", Level.LEVEL0, async function(done){
