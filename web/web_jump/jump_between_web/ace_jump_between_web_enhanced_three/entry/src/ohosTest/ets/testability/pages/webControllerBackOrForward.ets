@@ -64,7 +64,7 @@ struct webControllerBackOrForwardTest {
             case 'emitAccessBackwardFalse': {
               try {
                 let result = this.controller.accessBackward();
-                console.log('accessBackward result==>' + result);
+                console.log(this.str + ' accessBackward result==>' + result);
                 Utils.emitEvent(result, 2025102103)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -74,8 +74,18 @@ struct webControllerBackOrForwardTest {
             case 'emitAccessForwardFalse': {
               try {
                 let result = this.controller.accessForward();
-                console.log('accessBackward result==>' + result);
+                console.log(this.str + ' accessBackward result==>' + result);
                 Utils.emitEvent(result, 2025102104)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'emitAccessStepFalse': {
+              try {
+                let result = this.controller.accessStep(1);
+                console.log(this.str + ' accessStep result==>' + result);
+                Utils.emitEvent(result, 2025102111)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -91,7 +101,7 @@ struct webControllerBackOrForwardTest {
                 this.controller.loadUrl({url:'resource://rawfile/second.html'});
                 await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
                 let result = this.controller.accessBackward();
-                console.log('accessBackward result==>' + result);
+                console.log(this.str + ' accessBackward result==>' + result);
                 Utils.emitEvent(result, 2025102105)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -111,8 +121,28 @@ struct webControllerBackOrForwardTest {
                 this.controller.backward();
                 await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
                 let result = this.controller.accessForward();
-                console.log('accessBackward result==>' + result);
+                console.log(this.str + ' accessBackward result==>' + result);
                 Utils.emitEvent(result, 2025102106)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'emitAccessStepTrue': {
+              try {
+                this.controller.clearHistory();
+                this.isPageEnd = -1;
+                this.controller.loadUrl({url:'resource://rawfile/index.html'});
+                await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+                this.isPageEnd = -1;
+                this.controller.loadUrl({url:'resource://rawfile/second.html'});
+                await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+                this.isPageEnd = -1;
+                this.controller.backward();
+                await waitForExist(() => this.isPageEnd, this.str, 0, 1000);
+                let result = this.controller.accessStep(1);
+                console.log(this.str + ' accessStep result==>' + result);
+                Utils.emitEvent(result, 2025102112)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }

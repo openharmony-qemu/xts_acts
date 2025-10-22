@@ -17,7 +17,7 @@ import httpAuthHandler from './HttpAuthHandler.test'
 import httpAuthHandlerEnhanced from './HttpAuthHandlerEnhanced.test'
 
 export default function testsuite() {
+  httpAuthHandlerEnhanced()
   webController()
   httpAuthHandler()
-  httpAuthHandlerEnhanced()
 }

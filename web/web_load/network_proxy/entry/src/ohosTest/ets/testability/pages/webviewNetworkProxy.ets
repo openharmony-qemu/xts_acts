@@ -64,6 +64,7 @@ struct webviewNetworkProxy {
             case 'emitGetProxyRulesEmpty': {
               try {
                 let proxyRules = this.proxyConfig.getProxyRules();
+                console.log('proxyRules==>' + proxyRules.length);
                 if (proxyRules.length == 0) {
                   Utils.emitEvent(true, 2025102101);
                 } else {
@@ -78,6 +79,7 @@ struct webviewNetworkProxy {
             case 'emitGetBypassRulesEmpty': {
               try {
                 let bypassRules = this.proxyConfig.getBypassRules();
+                console.log('bypassRules==>' + bypassRules.length);
                 if (bypassRules.length == 0) {
                   Utils.emitEvent(true, 2025102102);
                 } else {

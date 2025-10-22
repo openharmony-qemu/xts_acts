@@ -90,6 +90,22 @@ export default function webControllerBackOrForwardTest() {
       sendEventByKey('webControllerBackOrForwardButton', 10, '');
     })
     /**
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_FALSE_0100
+     * @tc.name   testAccessStepFalse
+     * @tc.desc   test accessStep false
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testAccessStepFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent("emitAccessStepFalse", 121)
+      Utils.registerBaseEvent("testAccessStepFalse", false, 2025102111,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('webControllerBackOrForwardButton', 10, '');
+    })
+    /**
      * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ACCESSBACKWARD_TRUE_0100
      * @tc.name   testAccessBackwardTrue
      * @tc.desc   test accessBackward true
@@ -115,7 +131,23 @@ export default function webControllerBackOrForwardTest() {
      */
     it('testAccessForwardTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitAccessForwardTrue", 121)
-      Utils.registerBaseEvent("testAccessForwardTrue", true, 2025102105,
+      Utils.registerBaseEvent("testAccessForwardTrue", true, 2025102106,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('webControllerBackOrForwardButton', 10, '');
+    })
+    /**
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ACCESSSTEP_TRUE_0100
+     * @tc.name   testAccessStepTrue
+     * @tc.desc   test accessStep true
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testAccessStepTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent("emitAccessStepTrue", 121)
+      Utils.registerBaseEvent("testAccessStepTrue", true, 2025102112,
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
