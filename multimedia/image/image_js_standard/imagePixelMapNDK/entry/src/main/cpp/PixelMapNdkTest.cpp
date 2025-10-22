@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 #include "PixelMapNdkTest.h"
+#include <string>
 
 #undef LOG_DOMAIN
 #define LOG_DOMAIN 0x3200
@@ -193,6 +194,45 @@ namespace PixelMapNdk {
         return true;
     }
 
+    static bool GetImageSourceInfoMimeType(napi_env env, OH_ImageSourceNative *imageSource, napi_value &result)
+    {
+        OH_ImageSource_Info *imageSourceInfo = nullptr;
+        if (OH_ImageSourceInfo_Create(&imageSourceInfo) != IMAGE_SUCCESS) {
+            OH_LOG_ERROR(LOG_APP, "GetImageSourceInfoMimeType: Failed to create ImageSourceInfo");
+            return false;
+        }
+
+        int32_t index = NUM_0;
+        if (OH_ImageSourceNative_GetImageInfo(imageSource, index, imageSourceInfo) != IMAGE_SUCCESS) {
+            OH_LOG_ERROR(LOG_APP, "GetImageSourceInfoMimeType: Failed to get ImageInfo");
+            OH_ImageSourceInfo_Release(imageSourceInfo);
+            return false;
+        }
+
+        Image_MimeType mimeType;
+        if (OH_ImageSourceInfo_GetMimeType(imageSourceInfo, &mimeType) != IMAGE_SUCCESS) {
+            OH_LOG_ERROR(LOG_APP, "GetImageSourceInfoMimeType: Failed to get MimeType");
+            OH_ImageSourceInfo_Release(imageSourceInfo);
+            return false;
+        }
+
+        // 检查 mimeType 数据有效性
+        if (mimeType.data == nullptr || mimeType.size == 0) {
+            OH_LOG_ERROR(LOG_APP, "GetImageSourceInfoMimeType: Invalid mimeType data");
+            OH_ImageSourceInfo_Release(imageSourceInfo);
+            return false;
+        }
+
+        napi_value resultStr = nullptr;
+        std::string mimeTypeStr(mimeType.data, mimeType.size);
+        napi_create_string_utf8(env, mimeTypeStr.c_str(), NAPI_AUTO_LENGTH, &resultStr);
+        napi_set_named_property(env, result, "mimeType", resultStr);
+        OH_LOG_INFO(LOG_APP, "GetImageSourceInfoMimeType: mimeType: %{public}s", mimeTypeStr.c_str());
+
+        OH_ImageSourceInfo_Release(imageSourceInfo);
+        return true;
+    }
+
     static napi_value CreatePixelMapAndGetInfo(napi_env env, napi_callback_info info)
     {
         OH_LOG_INFO(LOG_APP, "CreatePixelMapAndGetInfo start!");
@@ -237,6 +277,13 @@ namespace PixelMapNdk {
             OH_ImageSourceNative_Release(imageSource);
             OH_DecodingOptions_Release(options);
             return ReturnError(env, IMAGE_BAD_PARAMETER, "Failed to get PixelMap ImageInfo.");
+        }
+
+        if (!GetImageSourceInfoMimeType(env, imageSource, imageInfoResult)) {
+            OH_PixelmapNative_Release(pixelMap);
+            OH_ImageSourceNative_Release(imageSource);
+            OH_DecodingOptions_Release(options);
+            return ReturnError(env, IMAGE_BAD_PARAMETER, "Failed to get ImageSource MimeType.");
         }
 
         OH_PixelmapNative_Release(pixelMap);
@@ -298,6 +345,13 @@ namespace PixelMapNdk {
             OH_ImageSourceNative_Release(imageSource);
             OH_DecodingOptions_Release(options);
             return ReturnError(env, IMAGE_BAD_PARAMETER, "Failed to get PixelMap ImageInfo.");
+        }
+
+        if (!GetImageSourceInfoMimeType(env, imageSource, imageInfoResult)) {
+            OH_PixelmapNative_Release(pixelMap);
+            OH_ImageSourceNative_Release(imageSource);
+            OH_DecodingOptions_Release(options);
+            return ReturnError(env, IMAGE_BAD_PARAMETER, "Failed to get ImageSource MimeType.");
         }
 
         OH_PixelmapNative_Release(pixelMap);
