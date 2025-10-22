@@ -4236,7 +4236,7 @@ export default function SixPointZeroI18nStageTest() {
     it('i18n_test_findEntityInfo_0100', Level.LEVEL2, () => {
       let entityRecognizer: i18n.EntityRecognizer = new i18n.EntityRecognizer("zh-CN");
       let text: string = '今天下午3点到5点有一个会议';
-      let result = entityRecognizer.findEntityInfo(test);
+      let result = entityRecognizer.findEntityInfo(text);
       expect(result.length).assertEqual(1)
     })
 
