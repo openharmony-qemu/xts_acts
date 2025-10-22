@@ -818,7 +818,7 @@ export default function globalStageTest() {
      * @tc.level     : Level 2
      */
     it('SUB_GLOBAL_GetLocales_0010', Level.LEVEL2, async (done: Function) => {
-      let value: string = res.getLocales();
+      let value: Array<string> = res.getLocales();
       console.log('SUB_GLOBAL_GetLocales_0010' + value);
       expect(value.length).assertLarger(0);
       expect(value.toString() == 'en-US,zh-CN').assertTrue();
