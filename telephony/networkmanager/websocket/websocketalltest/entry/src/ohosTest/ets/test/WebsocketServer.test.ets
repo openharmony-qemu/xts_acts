@@ -709,7 +709,7 @@ export default function WebsocketServerTest() {
             expectFail(`${caseName}`)
             done()
             console.info(`${caseName} test end2`)
-          }esle{
+          }else{
             console.info(`${caseName} connections1-->+ ${JSON.stringify(connections[0])}`)
             await server.close(connections[0]).then((success: boolean) => {
               if(!success){
@@ -722,7 +722,7 @@ export default function WebsocketServerTest() {
             await sleep(200)
             connections = await server.listAllConnections()
             if(connections){
-              console.info(`${caseName} connections2-->+ ${JSON.stringify(connections[0])}`)
+              console.info(`${caseName} connections2-->+ ${JSON.stringify(connections)}`)
               console.info(`${caseName} connections.length-->+ ${JSON.stringify(connections.length)}`)
               ExpectTrue(connections.length == 0, `${caseName}--> ${connections}`)
               done()
