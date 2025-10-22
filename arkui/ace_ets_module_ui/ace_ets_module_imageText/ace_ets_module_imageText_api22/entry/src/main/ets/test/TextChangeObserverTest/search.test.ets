@@ -49,7 +49,7 @@ export default function searchTest() {
     /**
      * @tc.number    searchTest_0010
      * @tc.name      searchTest_0010
-     * @tc.desc      Global observer enabled or disabled, text change of the search component, Expected: observed text is 'searchTest_0010'
+     * @tc.desc      Global observer enabled or disabled, text change of the search component, Expected: observed text is 'global:searchTest_0010'
      * @tc.level:    Level 1
      * @tc.type :
      * @tc.size :
@@ -63,23 +63,32 @@ export default function searchTest() {
       await globalObserverOpenButton.click();
 
       let search: Component = await driver.findComponent(ON.id('__SearchField__search'));
-      await search.inputText('searchTest_0010', { paste: true, addition: false });
+      await search.inputText('searchTest_0010');
 
-      let globalOutputSearch: Component = await driver.findComponent(ON.id('globalOutputSearch'));
-      let globalOutput = await globalOutputSearch.getText();
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
+      await CommonFunc.sleep(500);
+
+      let globalOutputSearch1: Component = await driver.findComponent(ON.id('globalOutputSearch'));
+      let globalOutput1 = await globalOutputSearch1.getText();
       
-      console.info('[searchTest_0010] textContent: ' + globalOutput);
-      expect(globalOutput).assertEqual('searchTest_0010');
+      console.info('[searchTest_0010] textContent: ' + globalOutput1);
+      expect(globalOutput1).assertEqual('global:searchTest_0010');
 
       let globalObserverCloseButton: Component = await driver.findComponent(ON.id('全局监听(关)'));
       await globalObserverCloseButton.click();
 
-      await search.inputText('Add', { paste: true, addition: true });
+      await search.inputText('Add');
 
-      let globalOutput2 = await globalOutputSearch.getText();
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
+      await CommonFunc.sleep(500);
+
+      let globalOutputSearch2: Component = await driver.findComponent(ON.id('globalOutputSearch'));
+      let globalOutput2 = await globalOutputSearch2.getText();
 
       console.info('[searchTest_0010] textContent: ' + globalOutput2);
-      expect(globalOutput2).assertEqual('searchTest_0010');
+      expect(globalOutput2).assertEqual('global:searchTest_0010');
 
       console.info('[searchTest_0010] END');
       done();
@@ -88,7 +97,7 @@ export default function searchTest() {
     /**
      * @tc.number    searchTest_0011
      * @tc.name      searchTest_0011
-     * @tc.desc      Local observer enabled or disabled, text change of the search component, Expected: observed text is 'searchTest_0011'
+     * @tc.desc      Local observer enabled or disabled, text change of the search component, Expected: observed text is 'local:searchTest_0011'
      * @tc.level:    Level 1
      * @tc.type :
      * @tc.size :
@@ -102,23 +111,32 @@ export default function searchTest() {
       await localObserverOpenButton.click();
 
       let search: Component = await driver.findComponent(ON.id('__SearchField__search'));
-      await search.inputText('searchTest_0011', { paste: true, addition: false });
+      await search.inputText('searchTest_0011');
 
-      let localOutputSearch: Component = await driver.findComponent(ON.id('localOutputSearch'));
-      let localOutput = await localOutputSearch.getText();
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
+      await CommonFunc.sleep(500);
 
-      console.info('[searchTest_0011] textContent: ' + localOutput);
-      expect(localOutput).assertEqual('searchTest_0011');
+      let localOutputSearch1: Component = await driver.findComponent(ON.id('localOutputSearch'));
+      let localOutput1 = await localOutputSearch1.getText();
+
+      console.info('[searchTest_0011] textContent: ' + localOutput1);
+      expect(localOutput1).assertEqual('local:searchTest_0011');
 
       let localObserverCloseButton: Component = await driver.findComponent(ON.id('局部Search(关)'));
       await localObserverCloseButton.click();
 
-      await search.inputText('Add', { paste: true, addition: true });
+      await search.inputText('Add');
 
-      let localOutput2 = await localOutputSearch.getText();
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
+      await CommonFunc.sleep(500);
+
+      let localOutputSearch2: Component = await driver.findComponent(ON.id('localOutputSearch'));
+      let localOutput2 = await localOutputSearch2.getText();
 
       console.info('[searchTest_0011] textContent: ' + localOutput2);
-      expect(localOutput2).assertEqual('searchTest_0011');
+      expect(localOutput2).assertEqual('local:searchTest_0011');
 
       console.info('[searchTest_0011] END');
       done();
