@@ -59,7 +59,7 @@ export default function PanRecognizerTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number : PanRecognizer_0100
      * @tc.name  : PanRecognizer_0100
      * @tc.desc  : To test whether PanRecognizer is effective.
      * @tc.level : Level 0
@@ -99,7 +99,7 @@ export default function PanRecognizerTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number : PanRecognizer_0200
      * @tc.name  : PanRecognizer_0200
      * @tc.desc  : To test for Horizontal
      * @tc.level : Level 0
@@ -119,7 +119,7 @@ export default function PanRecognizerTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number : PanRecognizer_0300
      * @tc.name  : PanRecognizer_0300
      * @tc.desc  : To test for Left
      * @tc.level : Level 0
@@ -139,7 +139,7 @@ export default function PanRecognizerTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number : PanRecognizer_0400
      * @tc.name  : PanRecognizer_0400
      * @tc.desc  : To test for Right
      * @tc.level : Level 0
@@ -159,7 +159,7 @@ export default function PanRecognizerTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number : PanRecognizer_0500
      * @tc.name  : PanRecognizer_0500
      * @tc.desc  : To test for Vertical
      * @tc.level : Level 0
@@ -179,7 +179,7 @@ export default function PanRecognizerTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number : PanRecognizer_0600
      * @tc.name  : PanRecognizer_0600
      * @tc.desc  : To test for Up
      * @tc.level : Level 0
@@ -199,7 +199,7 @@ export default function PanRecognizerTest() {
     });
 
     /**
-     * @tc.number
+     * @tc.number : PanRecognizer_0700
      * @tc.name  : PanRecognizer_0700
      * @tc.desc  : To test for Down
      * @tc.level : Level 0
