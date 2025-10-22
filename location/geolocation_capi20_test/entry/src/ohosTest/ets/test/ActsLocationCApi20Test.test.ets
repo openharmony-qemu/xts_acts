@@ -15,11 +15,17 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium'
 import locationcapi20 from 'liblocationcapi20.so'
+import { geolocation, geoLocationManager } from '@kit.LocationKit';
 
 const OS_LOCATION_ERR_OK = 0;
 
 export default function ActsLocationCApi20Test() {
   describe('ActsLocationCApi20Test', () => {
+    beforeAll(async (done: Function) => {
+      geoLocationManager.disableLocation()
+      done();
+    }
+    )
 
     /**
      * @tc.number  : SUB_LocationKit_OHLocationInfoGetAdditionalInfo_Test_0100
@@ -35,7 +41,7 @@ export default function ActsLocationCApi20Test() {
           console.info("====>SUB_LocationKit_OHLocationInfoGetAdditionalInfo_Test_0100 start====");
           let result = locationcapi20.OHLocationInfoGetAdditionalInfo();
           console.info("====>SUB_LocationKit_OHLocationInfoGetAdditionalInfo_Test_0100 result: " + result);
-          expect(401).assertEqual(result);
+          expect(0).assertEqual(result);
           done()
         } catch (err) {
           console.error("====>SUB_LocationKit_OHLocationInfoGetAdditionalInfo_Test_0100 catch err: " + err);
@@ -81,7 +87,7 @@ export default function ActsLocationCApi20Test() {
           console.info("====>SUB_LocationKit_OH_Location_IsLocatingEnabled_Test_0101 start====");
           let result = locationcapi20.OH_Location_IsLocatingEnabled2();
           console.info("====>SUB_LocationKit_OH_Location_IsLocatingEnabled_Test_0101 result: " + result);
-          expect(401).assertEqual(result);
+          expect(0).assertEqual(result);
           done()
         } catch (err) {
           console.error("====>SUB_LocationKit_OH_Location_IsLocatingEnabled_Test_0101 catch err: " + err);
@@ -104,7 +110,7 @@ export default function ActsLocationCApi20Test() {
           console.info("====>SUB_LocationKit_OH_Location_StartLocating_Test_0100 start====");
           let result = locationcapi20.OH_Location_StartLocating1();
           console.info("====>SUB_LocationKit_OH_Location_StartLocating_Test_0100 result: " + result);
-          expect(3301100).assertEqual(result);
+          expect(0).assertEqual(result);
           done()
         } catch (err) {
           console.error("====>SUB_LocationKit_OH_Location_StartLocating_Test_0100 catch err: " + err);
@@ -127,7 +133,7 @@ export default function ActsLocationCApi20Test() {
           console.info("====>SUB_LocationKit_OH_Location_StartLocating_Test_0101 start====");
           let result = locationcapi20.OH_Location_StartLocating2();
           console.info("====>SUB_LocationKit_OH_Location_StartLocating_Test_0101 result: " + result);
-          expect(401).assertEqual(result);
+          expect(0).assertEqual(result);
           done()
         } catch (err) {
           console.error("====>SUB_LocationKit_OH_Location_StartLocating_Test_0101 catch err: " + err);
@@ -150,7 +156,7 @@ export default function ActsLocationCApi20Test() {
           console.info("====>SUB_LocationKit_OH_Location_StopLocating_Test_0100 start====");
           let result = locationcapi20.OH_Location_StopLocating2();
           console.info("====>SUB_LocationKit_OH_Location_StopLocating_Test_0100 result: " + result);
-          expect(401).assertEqual(result);
+          expect(0).assertEqual(result);
           done()
         } catch (err) {
           console.error("====>SUB_LocationKit_OH_Location_StopLocating_Test_0100 catch err: " + err);
