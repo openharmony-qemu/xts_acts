@@ -622,10 +622,10 @@ export default function WebsocketServerTest() {
             }
           })
           await sleep(1000)
-          let connections = server.listAllConnections()
+          let connections = await server.listAllConnections()
           console.info(`${caseName} connections1-->+ ${JSON.stringify(connections)}`);
           if (connections) {
-            console.info(`${caseName} connections1-->+ ${JSON.stringify(connections[0])}`)
+            console.info(`${caseName} connections2-->+ ${JSON.stringify(connections[0])}`)
             console.info(`${caseName} connections.length-->+ ${JSON.stringify(connections.length)}`);
             ExpectTrue(connections.length > 0, `${caseName}--> ${connections[0]}`)
             done()
@@ -704,13 +704,13 @@ export default function WebsocketServerTest() {
             }
           })
           await sleep(500)
-          let connections = server.listAllConnections()
+          let connections = await server.listAllConnections()
           if(!connections){
             expectFail(`${caseName}`)
             done()
             console.info(`${caseName} test end2`)
           }esle{
-            console.info(`${caseName} connections1-->+ ${JSON.stringify(connection[0])}`)
+            console.info(`${caseName} connections1-->+ ${JSON.stringify(connections[0])}`)
             await server.close(connections[0]).then((success: boolean) => {
               if(!success){
                 expectFail(`${caseName} server close fail`)
@@ -722,14 +722,14 @@ export default function WebsocketServerTest() {
             await sleep(200)
             connections = await server.listAllConnections()
             if(connections){
-              console.info(`${caseName} connections2-->+ ${JSON.stringify(connection[0])}`)
-              console.info(`${caseName} connections.length-->+ ${JSON.stringify(connection.length)}`)
+              console.info(`${caseName} connections2-->+ ${JSON.stringify(connections[0])}`)
+              console.info(`${caseName} connections.length-->+ ${JSON.stringify(connections.length)}`)
               ExpectTrue(connections.length == 0, `${caseName}--> ${connections}`)
               done()
               server.stop()
               console.info(`${caseName} test end`)
             }else{
-              console.info(`${caseName} connections2-->+ ${JSON.stringify(connection[0])}`)
+              console.info(`${caseName} connections2-->+ ${JSON.stringify(connections[0])}`)
               expectFail(`${caseName}--> ${JSON.stringify(connections)}`)
               done()
               server.stop()
