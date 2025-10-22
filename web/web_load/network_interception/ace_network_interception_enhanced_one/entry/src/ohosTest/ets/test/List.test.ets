@@ -14,8 +14,10 @@
  */
 import webController from './WebController.test'
 import httpAuthHandler from './HttpAuthHandler.test'
+import httpAuthHandlerEnhanced from './HttpAuthHandlerEnhanced.test'
 
 export default function testsuite() {
   webController()
   httpAuthHandler()
+  httpAuthHandlerEnhanced()
 }

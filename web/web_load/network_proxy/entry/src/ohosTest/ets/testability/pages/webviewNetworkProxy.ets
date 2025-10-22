@@ -61,6 +61,34 @@ struct webviewNetworkProxy {
           console.info('key==>' + this.str);
           this.isReceive = -1;
           switch (this.str) {
+            case 'emitGetProxyRulesEmpty': {
+              try {
+                let proxyRules = this.proxyConfig.getProxyRules();
+                if (proxyRules.length == 0) {
+                  Utils.emitEvent(true, 2025102101);
+                } else {
+                  Utils.emitEvent(false, 2025102101);
+                }
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.message, 2025102101);
+              }
+              break;
+            }
+            case 'emitGetBypassRulesEmpty': {
+              try {
+                let bypassRules = this.proxyConfig.getBypassRules();
+                if (bypassRules.length == 0) {
+                  Utils.emitEvent(true, 2025102102);
+                } else {
+                  Utils.emitEvent(false, 2025102102);
+                }
+              } catch (error) {
+                console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.message, 2025102102);
+              }
+              break;
+            }
             case 'testNetworkProxySchemeFilterMatchAllSchemes': {
               try {
                 this.proxyConfig.insertProxyRule('algorithmmark.hwcloudtest.cn',

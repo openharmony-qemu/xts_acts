@@ -13,9 +13,10 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, expect, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
+import events_emitter from '@ohos.events.emitter';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON } from '@kit.TestKit';
 
@@ -56,6 +57,38 @@ export default function webviewNetworkProxy() {
       })
       console.info('webviewNetworkProxy beforeEach start');
       done();
+    })
+    /**
+    * @tc.number SUB_WEB_NETWORKPROXY_GETPROXYRULES_EMPTY_0100
+    * @tc.name   testGetProxyRulesEmpty
+    * @tc.desc   test getProxyRules empty
+    * @tc.size   MediumTest
+    * @tc.type   Function
+    * @tc.level  Level 0
+    */
+    it('testGetProxyRulesEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitGetProxyRulesEmpty', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testGetProxyRulesEmpty", true, 2025102101,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
+    })
+    /**
+     * @tc.number SUB_WEB_NETWORKPROXY_GETBYPASSRULES_EMPTY_0100
+     * @tc.name   testGetBypassRulesEmpty
+     * @tc.desc   test getBypassRules empty
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('testGetBypassRulesEmpty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitGetBypassRulesEmpty', EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testGetBypassRulesEmpty", true, 2025102102,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, "networkProxyButton");
     })
 
 
