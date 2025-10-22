@@ -20,7 +20,6 @@ import deviceManager from "@ohos.driver.deviceManager";
 const Success = 0
 const TAG: string = "[HidEmitEventTest]";
 export default function UsbDdkTest1() {
-  let dev: number = -1;
   let deviceId: number = -1;
   describe('UsbDdkTest1', () => {
     beforeAll(async () => {
@@ -28,7 +27,7 @@ export default function UsbDdkTest1() {
         let devices: Array<deviceManager.Device> = deviceManager.queryDevices(deviceManager.BusType.USB);
         for (let item of devices) {
           let device: deviceManager.USBDevice = item as deviceManager.USBDevice;
-          dev = device.deviceId;
+          deviceId = device.deviceId;
           console.info(`Device id is ${device.deviceId}`);
         }
       } catch (error) {
@@ -86,9 +85,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbDeviceDescriptor_0100', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbDeviceDescriptor_0100 start====");
-        let result:number = baskddkerror.UsbDeviceDescriptorTest_001(dev);
+        let result:number = baskddkerror.UsbDeviceDescriptorTest_001(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbDeviceDescriptor_0100 result: " + result);
         done();
@@ -107,9 +110,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbDeviceDescriptor_0200', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbDeviceDescriptor_0200 start====");
-        let result:number = baskddkerror.UsbDeviceDescriptorTest_002(dev);
+        let result:number = baskddkerror.UsbDeviceDescriptorTest_002(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbDeviceDescriptor_0200 result: " + result);
         done();
@@ -128,9 +135,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbDeviceDescriptor_0300', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbDeviceDescriptor_0300 start====");
-        let result:number = baskddkerror.UsbDeviceDescriptorTest_003(dev);
+        let result:number = baskddkerror.UsbDeviceDescriptorTest_003(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbDeviceDescriptor_0300 result: " + result);
         done();
@@ -149,9 +160,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbDeviceDescriptor_0400', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbDeviceDescriptor_0400 start====");
-        let result:number = baskddkerror.UsbDeviceDescriptorTest_004(dev);
+        let result:number = baskddkerror.UsbDeviceDescriptorTest_004(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbDeviceDescriptor_0400 result: " + result);
         done();
@@ -170,9 +185,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbDeviceDescriptor_0500', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbDeviceDescriptor_0500 start====");
-        let result:number = baskddkerror.UsbDeviceDescriptorTest_005(dev);
+        let result:number = baskddkerror.UsbDeviceDescriptorTest_005(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbDeviceDescriptor_0500 result: " + result);
         done();
@@ -191,9 +210,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbDeviceDescriptor_0600', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbDeviceDescriptor_0600 start====");
-        let result:number = baskddkerror.UsbDeviceDescriptorTest_006(dev);
+        let result:number = baskddkerror.UsbDeviceDescriptorTest_006(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbDeviceDescriptor_0600 result: " + result);
         done();
@@ -212,9 +235,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbDeviceDescriptor_0700', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbDeviceDescriptor_0700 start====");
-        let result:number = baskddkerror.UsbDeviceDescriptorTest_007(dev);
+        let result:number = baskddkerror.UsbDeviceDescriptorTest_007(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbDeviceDescriptor_0700 result: " + result);
         done();
@@ -233,9 +260,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbDeviceDescriptor_0800', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbDeviceDescriptor_0800 start====");
-        let result:number = baskddkerror.UsbDeviceDescriptorTest_008(dev);
+        let result:number = baskddkerror.UsbDeviceDescriptorTest_008(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbDeviceDescriptor_0800 result: " + result);
         done();
@@ -254,9 +285,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbDeviceDescriptor_0900', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbDeviceDescriptor_0900 start====");
-        let result:number = baskddkerror.UsbDeviceDescriptorTest_009(dev);
+        let result:number = baskddkerror.UsbDeviceDescriptorTest_009(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbDeviceDescriptor_0900 result: " + result);
         done();
@@ -275,9 +310,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbDeviceDescriptor_1000', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbDeviceDescriptor_1000 start====");
-        let result:number = baskddkerror.UsbDeviceDescriptorTest_010(dev);
+        let result:number = baskddkerror.UsbDeviceDescriptorTest_010(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbDeviceDescriptor_1000 result: " + result);
         done();
@@ -296,9 +335,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbDeviceDescriptor_1100', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbDeviceDescriptor_1100 start====");
-        let result:number = baskddkerror.UsbDeviceDescriptorTest_011(dev);
+        let result:number = baskddkerror.UsbDeviceDescriptorTest_011(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbDeviceDescriptor_1100 result: " + result);
         done();
@@ -317,9 +360,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbDeviceDescriptor_1200', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbDeviceDescriptor_1200 start====");
-        let result:number = baskddkerror.UsbDeviceDescriptorTest_012(dev);
+        let result:number = baskddkerror.UsbDeviceDescriptorTest_012(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbDeviceDescriptor_1200 result: " + result);
         done();
@@ -338,9 +385,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbDeviceDescriptor_1300', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbDeviceDescriptor_1300 start====");
-        let result:number = baskddkerror.UsbDeviceDescriptorTest_013(dev);
+        let result:number = baskddkerror.UsbDeviceDescriptorTest_013(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbDeviceDescriptor_1300 result: " + result);
         done();
@@ -359,9 +410,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbDeviceDescriptor_1400', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbDeviceDescriptor_1400 start====");
-        let result:number = baskddkerror.UsbDeviceDescriptorTest_014(dev);
+        let result:number = baskddkerror.UsbDeviceDescriptorTest_014(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbDeviceDescriptor_1400 result: " + result);
         done();
@@ -380,9 +435,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbConfigDescriptor_0100', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbConfigDescriptor_0100 start====");
-        let result:number = baskddkerror.UsbConfigDescriptorTest_001(dev);
+        let result:number = baskddkerror.UsbConfigDescriptorTest_001(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbConfigDescriptor_0100 result: " + result);
         done();
@@ -401,9 +460,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbConfigDescriptor_0200', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbConfigDescriptor_0200 start====");
-        let result:number = baskddkerror.UsbConfigDescriptorTest_002(dev);
+        let result:number = baskddkerror.UsbConfigDescriptorTest_002(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbConfigDescriptor_0200 result: " + result);
         done();
@@ -422,9 +485,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbConfigDescriptor_0300', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbConfigDescriptor_0300 start====");
-        let result:number = baskddkerror.UsbConfigDescriptorTest_003(dev);
+        let result:number = baskddkerror.UsbConfigDescriptorTest_003(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbConfigDescriptor_0300 result: " + result);
         done();
@@ -443,9 +510,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbConfigDescriptor_0400', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbConfigDescriptor_0400 start====");
-        let result:number = baskddkerror.UsbConfigDescriptorTest_004(dev);
+        let result:number = baskddkerror.UsbConfigDescriptorTest_004(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbConfigDescriptor_0400 result: " + result);
         done();
@@ -464,9 +535,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbConfigDescriptor_0500', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbConfigDescriptor_0500 start====");
-        let result:number = baskddkerror.UsbConfigDescriptorTest_005(dev);
+        let result:number = baskddkerror.UsbConfigDescriptorTest_005(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbConfigDescriptor_0500 result: " + result);
         done();
@@ -485,9 +560,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbConfigDescriptor_0600', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbConfigDescriptor_0600 start====");
-        let result:number = baskddkerror.UsbConfigDescriptorTest_006(dev);
+        let result:number = baskddkerror.UsbConfigDescriptorTest_006(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbConfigDescriptor_0600 result: " + result);
         done();
@@ -506,9 +585,13 @@ export default function UsbDdkTest1() {
      * @tc.type     Function
      */
     it('testUsbConfigDescriptor_0700', Level.LEVEL1, async (done: Function) => {
+      if (deviceId == -1) {
+        expect(deviceId).assertEqual(deviceId);
+        done();
+      }
       try {
         console.info("====>testUsbConfigDescriptor_0700 start====");
-        let result:number = baskddkerror.UsbConfigDescriptorTest_007(dev);
+        let result:number = baskddkerror.UsbConfigDescriptorTest_007(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsbConfigDescriptor_0700 result: " + result);
         done();
@@ -529,7 +612,7 @@ export default function UsbDdkTest1() {
     it('testUsb_DeviceArray_0100', Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>testUsb_DeviceArray_0100 start====");
-        let result:number = baskddkerror.DeviceArrayTest_001(dev);
+        let result:number = baskddkerror.DeviceArrayTest_001(deviceId);
         expect(result).assertEqual(Success);
         console.info("====>testUsb_DeviceArray_0100 result: " + result);
         done();
