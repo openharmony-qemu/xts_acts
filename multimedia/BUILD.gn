@@ -66,6 +66,7 @@ group("multimedia") {
       "avsession/avsession_ndk_standard/avsession_ndk_stage:avsession_ndk_ohosTest",
       "avsession/avsession_ndk_standard/avsessionkit:ActsAVSession20Test",
       "avsource:ActsAVCodecTest",
+      "avcodeNDK20:ActsAVCode20Test",
       "camera/camera_js_standard:camera_framework_ets_hap",
       "camera/camera_ndk_test:camera_framework_ndk_hap",
       "camera/camera_ndk_xts/OHCameraNdk:ActsMediaCameraNDKTest",
