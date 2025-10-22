@@ -28,14 +28,16 @@ char g_testData1[TEST_STR_LEN] = "abcdefgh";
 char g_testData2[TEST_STR_LEN] = "qwertyuiop";
 char g_testData3[TEST_STR_LEN] = "this is test string";
 
-static napi_value InitContext(napi_env env, napi_callback_info info) {
+static napi_value InitContext(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Result ret = TEEC_InitializeContext(nullptr, &g_client2_context);
     napi_create_uint32(env, ret, &result);
     return result;
 }
 
-static napi_value OpenSession(napi_env env, napi_callback_info info) {
+static napi_value OpenSession(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     uint32_t origin;
     TEEC_UUID uuid = CLIENTAPI_UUID_1;
@@ -57,7 +59,8 @@ static napi_value OpenSession(napi_env env, napi_callback_info info) {
     return result;
 }
 
-static napi_value AllocateSharedMemory(napi_env env, napi_callback_info info) {
+static napi_value AllocateSharedMemory(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     g_client2_SharedMem.size = TEST_STR_LEN;
     g_client2_SharedMem.flags = TEEC_MEM_INOUT;
@@ -66,22 +69,26 @@ static napi_value AllocateSharedMemory(napi_env env, napi_callback_info info) {
     return result;
 }
 
-static napi_value FinalizeContext(napi_env env, napi_callback_info info) {
+static napi_value FinalizeContext(napi_env env, napi_callback_info info)
+{
     TEEC_FinalizeContext(&g_client2_context);
     return nullptr;
 }
 
-static napi_value CloseSession(napi_env env, napi_callback_info info) {
+static napi_value CloseSession(napi_env env, napi_callback_info info)
+{
     TEEC_CloseSession(&g_client2_session);
     return nullptr;
 }
 
-static napi_value ReleaseSharedMemory(napi_env env, napi_callback_info info) {
+static napi_value ReleaseSharedMemory(napi_env env, napi_callback_info info)
+{
     TEEC_ReleaseSharedMemory(&g_client2_SharedMem);
     return nullptr;
 }
 
-static napi_value InvokeCommand_WithoutOperation(napi_env env, napi_callback_info info) {
+static napi_value InvokeCommand_WithoutOperation(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -99,7 +106,8 @@ static napi_value InvokeCommand_WithoutOperation(napi_env env, napi_callback_inf
     return array;
 }
 
-static napi_value InvokeCommand_WithoutSession(napi_env env, napi_callback_info info) {
+static napi_value InvokeCommand_WithoutSession(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -122,7 +130,8 @@ static napi_value InvokeCommand_WithoutSession(napi_env env, napi_callback_info 
     return array;
 }
 
-static napi_value InvokeCommand_WithOperationIsValue(napi_env env, napi_callback_info info) {
+static napi_value InvokeCommand_WithOperationIsValue(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
     napi_value result3 = nullptr;
@@ -175,7 +184,8 @@ static napi_value InvokeCommand_WithOperationIsValue(napi_env env, napi_callback
     return array;
 }
 
-static napi_value InvokeCommand_WithOperationIsTempMem(napi_env env, napi_callback_info info) {
+static napi_value InvokeCommand_WithOperationIsTempMem(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
     napi_value result3 = nullptr;
@@ -233,7 +243,8 @@ static napi_value InvokeCommand_WithOperationIsTempMem(napi_env env, napi_callba
     return array;
 }
 
-static void MemSharedFreeShmem(TEEC_SharedMemory *shmems, uint32_t count) {
+static void MemSharedFreeShmem(TEEC_SharedMemory *shmems, uint32_t count)
+{
     if (count == 0) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, 0, "tee_test", "input for free count is wrong!\n");
         return;
@@ -244,8 +255,9 @@ static void MemSharedFreeShmem(TEEC_SharedMemory *shmems, uint32_t count) {
     }
 }
 
-static TEEC_Result MemSharedAllocShmem(TEEC_Context *context, TEEC_SharedMemory *shmems, uint32_t count, uint32_t size,
-                                       uint32_t flag) {
+static TEEC_Result MemSharedAllocShmem(TEEC_Context *context, TEEC_SharedMemory *shmems,
+    uint32_t count, uint32_t size, uint32_t flag)
+{
     TEEC_Result result;
     if (count == 0) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, 0, "tee_test", "input for free count is wrong!\n");
@@ -268,7 +280,8 @@ static TEEC_Result MemSharedAllocShmem(TEEC_Context *context, TEEC_SharedMemory 
     return TEEC_SUCCESS;
 }
 
-static napi_value InvokeCommand_WithOperationIsPartialMem(napi_env env, napi_callback_info info) {
+static napi_value InvokeCommand_WithOperationIsPartialMem(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
     napi_value result3 = nullptr;
@@ -340,7 +353,8 @@ static napi_value InvokeCommand_WithOperationIsPartialMem(napi_env env, napi_cal
     return array;
 }
 
-static napi_value InvokeCommand_WithOperationIsTempMemIsNULL(napi_env env, napi_callback_info info) {
+static napi_value InvokeCommand_WithOperationIsTempMemIsNULL(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -363,7 +377,8 @@ static napi_value InvokeCommand_WithOperationIsTempMemIsNULL(napi_env env, napi_
     return array;
 }
 
-static napi_value InvokeCommand_WithOperationNotStart(napi_env env, napi_callback_info info) {
+static napi_value InvokeCommand_WithOperationNotStart(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -386,7 +401,8 @@ static napi_value InvokeCommand_WithOperationNotStart(napi_env env, napi_callbac
     return array;
 }
 
-static napi_value InvokeCommand_WithOperationTypePartialUseTemp(napi_env env, napi_callback_info info) {
+static napi_value InvokeCommand_WithOperationTypePartialUseTemp(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -409,7 +425,8 @@ static napi_value InvokeCommand_WithOperationTypePartialUseTemp(napi_env env, na
     return array;
 }
 
-static napi_value InvokeCommand_WithOperationTypePartialSizeIsExceed(napi_env env, napi_callback_info info) {
+static napi_value InvokeCommand_WithOperationTypePartialSizeIsExceed(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -433,7 +450,8 @@ static napi_value InvokeCommand_WithOperationTypePartialSizeIsExceed(napi_env en
     return array;
 }
 
-static napi_value InvokeCommand_WithOperationTypePartialSizeIsZero(napi_env env, napi_callback_info info) {
+static napi_value InvokeCommand_WithOperationTypePartialSizeIsZero(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -457,7 +475,8 @@ static napi_value InvokeCommand_WithOperationTypePartialSizeIsZero(napi_env env,
     return array;
 }
 #define SIZE_1024K 1024 * 1024
-static napi_value InvokeCommand_WithMemrefTempInoutExceed1024k(napi_env env, napi_callback_info info) {
+static napi_value InvokeCommand_WithMemrefTempInoutExceed1024k(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
     napi_value result3 = nullptr;
@@ -490,7 +509,8 @@ static napi_value InvokeCommand_WithMemrefTempInoutExceed1024k(napi_env env, nap
     return array;
 }
 
-static napi_value InvokeCommand_WithMemrefWholeExceed2048k(napi_env env, napi_callback_info info) {
+static napi_value InvokeCommand_WithMemrefWholeExceed2048k(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
     napi_value result3 = nullptr;
@@ -523,7 +543,8 @@ static napi_value InvokeCommand_WithMemrefWholeExceed2048k(napi_env env, napi_ca
 }
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         {"InitContext", nullptr, InitContext, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"FinalizeContext", nullptr, FinalizeContext, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -573,4 +594,7 @@ static napi_module demoModule = {
     .reserved = {0},
 };
 
-extern "C" __attribute__((constructor)) void RegisterEntryModule(void) { napi_module_register(&demoModule); }
+extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
+{
+    napi_module_register(&demoModule);
+}

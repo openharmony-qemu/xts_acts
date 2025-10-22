@@ -21,7 +21,7 @@
             "run-command": [
                 "power-shell wakeup",
                 "power-shell setmode 602",
-				"mkdir -p /data/app/el2/100/base/com.example.tee_test/haps/entry_test/files"
+				"mkdir -p /data/app/el2/100/base/com.example.tee_test/haps/entry_test/files",
                 "chmod 777 -R /data/app/el2/100/base/com.example.tee_test/haps/entry_test"
             ]
         },

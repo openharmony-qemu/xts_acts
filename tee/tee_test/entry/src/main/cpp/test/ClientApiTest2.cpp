@@ -22,29 +22,34 @@ static TEEC_Context g_client1_context = {0};
 static TEEC_Session g_client1_session = {0};
 static TEEC_SharedMemory g_client1_SharedMem = {0};
 
-static napi_value InitContext(napi_env env, napi_callback_info info) {
+static napi_value InitContext(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Result ret = TEEC_InitializeContext(nullptr, &g_client1_context);
     napi_create_uint32(env, ret, &result);
     return result;
 }
 
-static napi_value FinalizeContext(napi_env env, napi_callback_info info) {
+static napi_value FinalizeContext(napi_env env, napi_callback_info info)
+{
     TEEC_FinalizeContext(&g_client1_context);
     return nullptr;
 }
 
-static napi_value CloseSession(napi_env env, napi_callback_info info) {
+static napi_value CloseSession(napi_env env, napi_callback_info info)
+{
     TEEC_CloseSession(&g_client1_session);
     return nullptr;
 }
 
-static napi_value ReleaseSharedMemory(napi_env env, napi_callback_info info) {
+static napi_value ReleaseSharedMemory(napi_env env, napi_callback_info info)
+{
     TEEC_ReleaseSharedMemory(&g_client1_SharedMem);
     return nullptr;
 }
 
-static napi_value Opensession_WithoutContext(napi_env env, napi_callback_info info) {
+static napi_value Opensession_WithoutContext(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -67,7 +72,8 @@ static napi_value Opensession_WithoutContext(napi_env env, napi_callback_info in
     return array;
 }
 
-static napi_value Opensession_WithoutSession(napi_env env, napi_callback_info info) {
+static napi_value Opensession_WithoutSession(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -89,7 +95,8 @@ static napi_value Opensession_WithoutSession(napi_env env, napi_callback_info in
     return array;
 }
 
-static napi_value Opensession_WithoutDestination(napi_env env, napi_callback_info info) {
+static napi_value Opensession_WithoutDestination(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -111,7 +118,8 @@ static napi_value Opensession_WithoutDestination(napi_env env, napi_callback_inf
     return array;
 }
 
-static napi_value Opensession_WithoutConnectionMethod(napi_env env, napi_callback_info info) {
+static napi_value Opensession_WithoutConnectionMethod(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -134,7 +142,8 @@ static napi_value Opensession_WithoutConnectionMethod(napi_env env, napi_callbac
     return array;
 }
 
-static napi_value Opensession_WithNotSupportConnectionMethod(napi_env env, napi_callback_info info) {
+static napi_value Opensession_WithNotSupportConnectionMethod(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -204,7 +213,8 @@ static napi_value Opensession_WithNotSupportConnectionMethod(napi_env env, napi_
     return array;
 }
 
-static napi_value Opensession_ContextIsNotInit(napi_env env, napi_callback_info info) {
+static napi_value Opensession_ContextIsNotInit(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
     napi_value result3 = nullptr;
@@ -234,7 +244,8 @@ static napi_value Opensession_ContextIsNotInit(napi_env env, napi_callback_info 
     return array;
 }
 
-static napi_value Opensession_ParamValueIsInvalid(napi_env env, napi_callback_info info) {
+static napi_value Opensession_ParamValueIsInvalid(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -261,7 +272,8 @@ static napi_value Opensession_ParamValueIsInvalid(napi_env env, napi_callback_in
     return array;
 }
 
-static napi_value Opensession_WithoutOperation(napi_env env, napi_callback_info info) {
+static napi_value Opensession_WithoutOperation(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -287,7 +299,8 @@ static napi_value Opensession_WithoutOperation(napi_env env, napi_callback_info 
     return array;
 }
 
-static napi_value Opensession_WithoutOrigin(napi_env env, napi_callback_info info) {
+static napi_value Opensession_WithoutOrigin(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
 
     TEEC_Result ret = TEEC_SUCCESS;
@@ -308,7 +321,8 @@ static napi_value Opensession_WithoutOrigin(napi_env env, napi_callback_info inf
     return result;
 }
 
-static napi_value Opensession_WithOperationIsNone(napi_env env, napi_callback_info info) {
+static napi_value Opensession_WithOperationIsNone(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -337,7 +351,8 @@ static napi_value Opensession_WithOperationIsNone(napi_env env, napi_callback_in
     return array;
 }
 
-static napi_value Opensession_WithOperationIsValue(napi_env env, napi_callback_info info) {
+static napi_value Opensession_WithOperationIsValue(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
     napi_value result3 = nullptr;
@@ -399,7 +414,8 @@ static napi_value Opensession_WithOperationIsValue(napi_env env, napi_callback_i
     return array;
 }
 
-static napi_value Opensession_WithOperationIsTempMem(napi_env env, napi_callback_info info) {
+static napi_value Opensession_WithOperationIsTempMem(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
     napi_value result3 = nullptr;
@@ -477,7 +493,8 @@ static napi_value Opensession_WithOperationIsTempMem(napi_env env, napi_callback
     return array;
 }
 
-static napi_value Opensession_WithNotExistUUID(napi_env env, napi_callback_info info) {
+static napi_value Opensession_WithNotExistUUID(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -501,7 +518,8 @@ static napi_value Opensession_WithNotExistUUID(napi_env env, napi_callback_info 
     return array;
 }
 
-static napi_value Opensession_ReturnErrorFromTA(napi_env env, napi_callback_info info) {
+static napi_value Opensession_ReturnErrorFromTA(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -531,7 +549,8 @@ static napi_value Opensession_ReturnErrorFromTA(napi_env env, napi_callback_info
     return array;
 }
 
-static napi_value Opensession_WithParamTypesIsInvalid(napi_env env, napi_callback_info info) {
+static napi_value Opensession_WithParamTypesIsInvalid(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -555,7 +574,8 @@ static napi_value Opensession_WithParamTypesIsInvalid(napi_env env, napi_callbac
     return array;
 }
 
-static napi_value RequestCancellationTest(napi_env env, napi_callback_info info) {
+static napi_value RequestCancellationTest(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
 
     TEEC_Result ret = TEEC_SUCCESS;
@@ -579,7 +599,8 @@ static napi_value RequestCancellationTest(napi_env env, napi_callback_info info)
     return result;
 }
 
-static napi_value Closesession_WithCreatedSession(napi_env env, napi_callback_info info) {
+static napi_value Closesession_WithCreatedSession(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
 
@@ -615,7 +636,8 @@ static napi_value Closesession_WithCreatedSession(napi_env env, napi_callback_in
     return array;
 }
 
-static napi_value Closesession_WithoutSession(napi_env env, napi_callback_info info) {
+static napi_value Closesession_WithoutSession(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
     napi_value result3 = nullptr;
@@ -661,7 +683,8 @@ static napi_value Closesession_WithoutSession(napi_env env, napi_callback_info i
     return array;
 }
 
-static napi_value Closesession_WithNotOpenedSession(napi_env env, napi_callback_info info) {
+static napi_value Closesession_WithNotOpenedSession(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
     napi_value result3 = nullptr;
@@ -682,7 +705,8 @@ static napi_value Closesession_WithNotOpenedSession(napi_env env, napi_callback_
     return array;
 }
 
-static napi_value AllocateSharedMemory_WithAllocatedMem(napi_env env, napi_callback_info info) {
+static napi_value AllocateSharedMemory_WithAllocatedMem(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Result ret = TEEC_SUCCESS;
     g_client1_SharedMem.size = TEST_STR_LEN;
@@ -692,7 +716,8 @@ static napi_value AllocateSharedMemory_WithAllocatedMem(napi_env env, napi_callb
     return result;
 }
 
-static napi_value AllocateSharedMemory_WithoutContext(napi_env env, napi_callback_info info) {
+static napi_value AllocateSharedMemory_WithoutContext(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Result ret = TEEC_SUCCESS;
     g_client1_SharedMem.size = TEST_STR_LEN;
@@ -702,7 +727,8 @@ static napi_value AllocateSharedMemory_WithoutContext(napi_env env, napi_callbac
     return result;
 }
 
-static napi_value AllocateSharedMemory_WithNotInitContext(napi_env env, napi_callback_info info) {
+static napi_value AllocateSharedMemory_WithNotInitContext(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Result ret = TEEC_SUCCESS;
     g_client1_SharedMem.size = TEST_STR_LEN;
@@ -715,7 +741,8 @@ static napi_value AllocateSharedMemory_WithNotInitContext(napi_env env, napi_cal
     return result;
 }
 
-static napi_value AllocateSharedMemory_WithoutSharedMem(napi_env env, napi_callback_info info) {
+static napi_value AllocateSharedMemory_WithoutSharedMem(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Result ret = TEEC_SUCCESS;
     ret = TEEC_AllocateSharedMemory(&g_client1_context, NULL);
@@ -723,7 +750,8 @@ static napi_value AllocateSharedMemory_WithoutSharedMem(napi_env env, napi_callb
     return result;
 }
 
-static napi_value AllocateSharedMemory_WithSharedMemHasReleased(napi_env env, napi_callback_info info) {
+static napi_value AllocateSharedMemory_WithSharedMemHasReleased(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Result ret = TEEC_SUCCESS;
     g_client1_SharedMem.size = TEST_STR_LEN;
@@ -735,7 +763,8 @@ static napi_value AllocateSharedMemory_WithSharedMemHasReleased(napi_env env, na
     return result;
 }
 
-static napi_value AllocateSharedMemory_WithSharedMemFlagIsZero(napi_env env, napi_callback_info info) {
+static napi_value AllocateSharedMemory_WithSharedMemFlagIsZero(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Result ret = TEEC_SUCCESS;
     g_client1_SharedMem.size = TEST_STR_LEN;
@@ -745,7 +774,8 @@ static napi_value AllocateSharedMemory_WithSharedMemFlagIsZero(napi_env env, nap
     return result;
 }
 
-static napi_value AllocateSharedMemory_WithSharedMemFlagIsInvalid(napi_env env, napi_callback_info info) {
+static napi_value AllocateSharedMemory_WithSharedMemFlagIsInvalid(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Result ret = TEEC_SUCCESS;
     g_client1_SharedMem.size = TEST_STR_LEN;
@@ -756,7 +786,8 @@ static napi_value AllocateSharedMemory_WithSharedMemFlagIsInvalid(napi_env env, 
 }
 
 #define MAILBOXPOOL_MAX_SIZE 0x400000
-static napi_value AllocateSharedMemory_WithSizeExceed(napi_env env, napi_callback_info info) {
+static napi_value AllocateSharedMemory_WithSizeExceed(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Result ret = TEEC_SUCCESS;
     g_client1_SharedMem.size = MAILBOXPOOL_MAX_SIZE + 1; // 4M + 1
@@ -768,7 +799,8 @@ static napi_value AllocateSharedMemory_WithSizeExceed(napi_env env, napi_callbac
 }
 
 #define SHAREMEM_LIMIT_MAX 64
-static napi_value AllocateSharedMemory_ReachSharememNumLimit(napi_env env, napi_callback_info info) {
+static napi_value AllocateSharedMemory_ReachSharememNumLimit(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
     TEEC_Result ret = TEEC_SUCCESS;
@@ -811,7 +843,8 @@ static napi_value AllocateSharedMemory_ReachSharememNumLimit(napi_env env, napi_
     return array;
 }
 
-static napi_value RegisterSharedMemory_WithRegisterMem(napi_env env, napi_callback_info info) {
+static napi_value RegisterSharedMemory_WithRegisterMem(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Result ret = TEEC_SUCCESS;
     char testData0[TEST_STR_LEN] = {0};
@@ -823,7 +856,8 @@ static napi_value RegisterSharedMemory_WithRegisterMem(napi_env env, napi_callba
     return result;
 }
 
-static napi_value RegisterSharedMemory_WithoutContext(napi_env env, napi_callback_info info) {
+static napi_value RegisterSharedMemory_WithoutContext(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Result ret = TEEC_SUCCESS;
     char testData0[TEST_STR_LEN] = {0};
@@ -835,7 +869,8 @@ static napi_value RegisterSharedMemory_WithoutContext(napi_env env, napi_callbac
     return result;
 }
 
-static napi_value RegisterSharedMemory_WithoutSharedMem(napi_env env, napi_callback_info info) {
+static napi_value RegisterSharedMemory_WithoutSharedMem(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Result ret = TEEC_SUCCESS;
     char testData0[TEST_STR_LEN] = {0};
@@ -847,7 +882,8 @@ static napi_value RegisterSharedMemory_WithoutSharedMem(napi_env env, napi_callb
     return result;
 }
 
-static napi_value RegisterSharedMemory_WithSharedMemFlagIsZero(napi_env env, napi_callback_info info) {
+static napi_value RegisterSharedMemory_WithSharedMemFlagIsZero(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Result ret = TEEC_SUCCESS;
     char testData0[TEST_STR_LEN] = {0};
@@ -859,7 +895,8 @@ static napi_value RegisterSharedMemory_WithSharedMemFlagIsZero(napi_env env, nap
     return result;
 }
 
-static napi_value RegisterSharedMemory_WithSharedMemFlagIsInvalid(napi_env env, napi_callback_info info) {
+static napi_value RegisterSharedMemory_WithSharedMemFlagIsInvalid(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Result ret = TEEC_SUCCESS;
     char testData0[TEST_STR_LEN] = {0};
@@ -871,7 +908,8 @@ static napi_value RegisterSharedMemory_WithSharedMemFlagIsInvalid(napi_env env, 
     return result;
 }
 
-static napi_value RegisterSharedMemory_WithSharedMemBufferIsNull(napi_env env, napi_callback_info info) {
+static napi_value RegisterSharedMemory_WithSharedMemBufferIsNull(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Result ret = TEEC_SUCCESS;
     char testData0[TEST_STR_LEN] = {0};
@@ -883,7 +921,8 @@ static napi_value RegisterSharedMemory_WithSharedMemBufferIsNull(napi_env env, n
 }
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         {"InitContext", nullptr, InitContext, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"FinalizeContext", nullptr, FinalizeContext, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -973,4 +1012,7 @@ static napi_module demoModule = {
     .reserved = {0},
 };
 
-extern "C" __attribute__((constructor)) void RegisterEntryModule(void) { napi_module_register(&demoModule); }
+extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
+{
+    napi_module_register(&demoModule);
+}

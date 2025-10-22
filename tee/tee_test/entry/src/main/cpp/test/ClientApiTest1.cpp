@@ -18,7 +18,8 @@
 #include "tee/tee_client_api.h"
 #include "tee_client_constants.h"
 
-static napi_value InitContext_NameIsNotNULL(napi_env env, napi_callback_info info) {
+static napi_value InitContext_NameIsNotNULL(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Context context = {0};
     TEEC_Result ret = TEEC_SUCCESS;
@@ -30,7 +31,8 @@ static napi_value InitContext_NameIsNotNULL(napi_env env, napi_callback_info inf
     return result;
 }
 
-static napi_value InitContext_ContextIsNULL(napi_env env, napi_callback_info info) {
+static napi_value InitContext_ContextIsNULL(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Result ret = TEEC_SUCCESS;
 
@@ -39,7 +41,8 @@ static napi_value InitContext_ContextIsNULL(napi_env env, napi_callback_info inf
     return result;
 }
 
-static napi_value InitContext_AfterFinalizeContext(napi_env env, napi_callback_info info) {
+static napi_value InitContext_AfterFinalizeContext(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     TEEC_Context context = {0};
     TEEC_Result ret = TEEC_SUCCESS;
@@ -52,7 +55,8 @@ static napi_value InitContext_AfterFinalizeContext(napi_env env, napi_callback_i
     return result;
 }
 
-static napi_value InitContext_Use17Context(napi_env env, napi_callback_info info) {
+static napi_value InitContext_Use17Context(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
     TEEC_Result ret;
@@ -90,7 +94,8 @@ static napi_value InitContext_Use17Context(napi_env env, napi_callback_info info
     return array;
 }
 
-static napi_value Finalizecontext_WithCreatedContext(napi_env env, napi_callback_info info) {
+static napi_value Finalizecontext_WithCreatedContext(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
     TEEC_Context context = {0};
@@ -108,7 +113,8 @@ static napi_value Finalizecontext_WithCreatedContext(napi_env env, napi_callback
     return array;
 }
 
-static napi_value Finalizecontext_WithNotCreatedContext(napi_env env, napi_callback_info info) {
+static napi_value Finalizecontext_WithNotCreatedContext(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
 
     TEEC_Context context = {0};
@@ -118,7 +124,8 @@ static napi_value Finalizecontext_WithNotCreatedContext(napi_env env, napi_callb
     return result;
 }
 
-static napi_value Finalizecontext_WithoutContext(napi_env env, napi_callback_info info) {
+static napi_value Finalizecontext_WithoutContext(napi_env env, napi_callback_info info)
+{
     napi_value result = nullptr;
     napi_value result2 = nullptr;
     TEEC_Context context = {0};
@@ -141,7 +148,8 @@ static napi_value Finalizecontext_WithoutContext(napi_env env, napi_callback_inf
 }
 
 EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports) {
+static napi_value Init(napi_env env, napi_value exports)
+{
     napi_property_descriptor desc[] = {
         {"InitContext_NameIsNotNULL", nullptr, InitContext_NameIsNotNULL, nullptr, nullptr, nullptr, napi_default,
          nullptr},
@@ -175,4 +183,7 @@ static napi_module demoModule = {
     .reserved = {0},
 };
 
-extern "C" __attribute__((constructor)) void RegisterEntryModule(void) { napi_module_register(&demoModule); }
+extern "C" __attribute__((constructor)) void RegisterEntryModule(void)
+{
+    napi_module_register(&demoModule);
+}

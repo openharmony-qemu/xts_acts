@@ -225,7 +225,6 @@ export default function ClientAPITest3() {
       });
     /**
      * @tc.number          : InvokeCommand_WithOperationTypePartialSizeIsZero
-     * @tc.number          : InvokeCommand_WithOperationTypePartialSizeIsZero
      * @tc.name            : InvokeCommand_WithOperationTypePartialSizeIsZero
      * @tc.desc            : call TEEC_InvokeCommand With ParamType is partial while memref.size = 0
      * @tc.expect          : return TEEC_ERROR_BAD_PARAMETERS
