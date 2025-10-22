@@ -138,6 +138,7 @@ group("multimedia") {
       "photoAccess/photoAccessSendable:photoAccess_sendable_hap",
       "photoAccess/pickerView:TextPickerTest",
       "photoAccess/photoAccess_ets_standard/photoAccessXts:photoAccessXts_ets_hap",
+      "photoAccess/mediaLibraryTestApi20:ActsMediaLibraryApi20Test",
       "videoProcess/detail_enhancer_image_ndk:ActsDetailEnhancerImageNdkUnitTest",
       "videoProcess/detail_enhancer_video_ndk:ActsDetailEnhancerVideoNdkUnitTest",
       "videoProcess/moduletest/video:ActsVpeVideoNativModuleTest",
