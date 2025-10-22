@@ -3,7 +3,7 @@
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
-        "bundle-name": "com.example.ActsTelephonySimNoCardTest.static",
+        "bundle-name": "com.example.actstelephonysimnocardtest.static",
         "module-name": "entry",
         "shell-timeout": "600000",
         "testcase-timeout": 70000
