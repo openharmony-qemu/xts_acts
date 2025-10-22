@@ -20,7 +20,11 @@
             "type": "ShellKit",
             "run-command": [
                 "power-shell wakeup",
-                "power-shell setmode 602"
+                "power-shell setmode 602",
+                "hdc shell param set persist.sys.abilityms.support.ecologicalrulemgrservice false"
+            ],
+            "teardown-command": [
+                "hdc shell param set persist.sys.abilityms.support.ecologicalrulemgrservice true"
             ]
         }
     ]
