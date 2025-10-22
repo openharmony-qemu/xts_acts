@@ -286,7 +286,7 @@ export default function WindowTitleTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.on("windowTitleButtonRectChange", (res: window.TitleButtonRect) => {
+                        subWin!.onWindowTitleButtonRectChange((res: window.TitleButtonRect) => {
                         });
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowTitleButtonRectChange.');
                         expect(false).assertTrue();
