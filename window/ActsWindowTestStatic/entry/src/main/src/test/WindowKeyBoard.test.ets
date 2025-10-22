@@ -300,14 +300,14 @@ export default function WindowKeyBoardTest() {
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
             } catch (err: BusinessError) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             }
             await (subWin! as window.Window).destroyWindow();
             try {
                 subWin!.keepKeyboardOnFocus(true);
                 console.error(msgStr + 'Succeeded in calling keepKeyboardOnFocus.');
-                expect().assertFail();
+                expect(false).assertTrue();
                 done()
             } catch (e: BusinessError) {
                 console.log(msgStr + 'Failed to call keepKeyboardOnFocus. Cause:' + JSON.stringify(e));

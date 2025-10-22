@@ -876,7 +876,7 @@ export default function WindowZindexTest() {
                 await windowClass.destroyWindow();
                 windowClass.setWindowDelayRaiseOnDrag(true);
                 console.log(`${caseName} :setWindowDelayRaiseOnDrag success`);
-                expect().assertFail();
+                expect(false).assertTrue();
                 done();
             }catch(err: BusinessError){
                 console.log(`${caseName} :setWindowDelayRaiseOnDrag fail:`+err.code);

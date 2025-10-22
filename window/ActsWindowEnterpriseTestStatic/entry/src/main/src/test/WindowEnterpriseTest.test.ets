@@ -137,6 +137,7 @@ export default function WindowEnterpriseTest() {
                             hilog.info(domain, tag,caseName + `info.windowStatusType: ${info.windowStatusType}`);
                             hilog.info(domain, tag,caseName + `info.bundleName: ${info.bundleName}`);
                             hilog.info(domain, tag,caseName + `info.abilityName: ${info.abilityName}`);
+                            hilog.info(domain, tag,caseName + `info.globalDisplayRect: ${info.globalDisplayRect}`);
                             break;
                         }
                     }
