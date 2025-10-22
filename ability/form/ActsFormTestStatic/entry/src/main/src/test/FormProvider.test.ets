@@ -18,19 +18,23 @@ import hilog from '@ohos.hilog';
 import { BusinessError } from '@ohos.base';
 import formProvider from "@ohos.app.form.formProvider";
 import Utils from './Util.test';
+import Want from '@ohos.app.ability.Want';
 
-
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag formProviderTest';
+const ERROR_CODE4 = 202
 
 export default function formProviderTest() {
     describe("formProviderTest", (): void => {
         hilog.info(DOMAIN, TAG, 'formProviderTest describe start');
 
         /**
-         * @tc.number: FormProviderStaticTest001
-         * @tc.name: FormProviderStaticTest001
-         * @tc.desc: check FormProvider
+         * @tc.name   FormProviderStaticTest001
+         * @tc.number FormProviderStaticTest001
+         * @tc.desc   check FormProvider
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("FormProviderStaticTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -57,9 +61,12 @@ export default function formProviderTest() {
         })
 
         /**
-         * @tc.number: FormProviderStaticTest002
-         * @tc.name: FormProviderStaticTest002
-         * @tc.desc: check FormProvider
+         * @tc.name   FormProviderStaticTest002
+         * @tc.number FormProviderStaticTest002
+         * @tc.desc   check FormProvider
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("FormProviderStaticTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -81,6 +88,43 @@ export default function formProviderTest() {
             }
 
             hilog.info(DOMAIN, TAG, 'FormProviderStaticTest002 end');
+        })
+
+        /**
+         * @tc.name   Test_Form_Provider_Static_0400
+         * @tc.number Test_Form_Provider_Static_0400
+         * @tc.desc   Open the card management page belonging to the specified bundle
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('Test_Form_Provider_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let tag = 'Test_Form_Provider_Static_0400';
+            hilog.info(DOMAIN, TAG, '%{public}s', `${tag} start`);
+            let want: Want = {
+                bundleName: 'com.example.actsformtest.static',
+                abilityName: 'EntryAbility',
+                parameters: {
+                    'ohos.extra.param.key.form_dimension': 2,
+                    'ohos.extra.param.key.form_name': 'widget',
+                    'ohos.extra.param.key.module_name': 'entry'
+                } as Record<string, Object>
+            };
+            try {
+                formProvider.openFormManagerCrossBundle(want)
+                hilog.info(DOMAIN, TAG, '%{public}s', `${tag} formProvider openFormManagerCrossBundle success`);
+                done();
+            } catch (error: BusinessError) {
+                if (error.code == 801) {
+                    done();
+                }
+                else {
+                    hilog.info(DOMAIN, TAG, '%{public}s', `error: ${JSON.stringify(error)}`);
+                    expect(error.code).assertEqual(ERROR_CODE4);
+                    done();
+                }
+            }
+            hilog.info(DOMAIN, TAG, '%{public}s', `${tag} end`);
         })
     })
 }

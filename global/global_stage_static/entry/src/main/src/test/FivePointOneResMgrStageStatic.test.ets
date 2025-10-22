@@ -37,7 +37,7 @@ import { TextStyle, StyledString } from 'arkui.component.styledString'
 import { Color, FontStyle, FontWeight } from 'arkui.component.enums'
 
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function FivePointOne_resMgrStageTest() {
@@ -72,11 +72,10 @@ export default function FivePointOne_resMgrStageTest() {
      * @tc.level    : Level 2
      */
     it('resourceManager_test_getIntPluralStringValueSync_static_0100', Level.LEVEL2, async (): Promise<void> => {
-      let value = res.getIntPluralStringValueSync(0x0100000f, 2, 2, 'test');
+      let value = res.getIntPluralStringValueSync(0x01000036, 2, 2, 'test');
       console.log('resourceManager_test_getIntPluralStringValueSync_static_0100:' + value);
       expect(value).assertEqual('2 apples');
     })
-
 
     /**
      * @tc.number   : SUB_GLOBAL_ResourceManager_Plural_static_0310
@@ -106,7 +105,7 @@ export default function FivePointOne_resMgrStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('resourceManager_test_getIntPluralStringValueSync_static_0970 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001001').assertTrue();
+        expect(error.code).assertEqual(9001001);
       }
     })
 
@@ -124,10 +123,10 @@ export default function FivePointOne_resMgrStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('resourceManager_test_getDoublePluralStringValueSync_static_0990 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001001').assertTrue();
+        expect(error.code).assertEqual(9001001);
       }
     })
- 
+       
     /**
      * @tc.number   : resourceManager_test_getIntPluralStringByNameSync_static_0100
      * @tc.name     : resourceManager_test_getIntPluralStringByNameSync_static_0100
@@ -258,7 +257,7 @@ export default function FivePointOne_resMgrStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('resourceManager_test_getIntPluralStringByNameSync_static_1130 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001003').assertTrue();
+        expect(error.code).assertEqual(9001003);
       }
     })
 
@@ -276,7 +275,7 @@ export default function FivePointOne_resMgrStageTest() {
       } catch (err) {
         let error = err as BusinessError
         console.log('resourceManager_test_getDoublePluralStringByNameSync_static_1140 error code:' + error.code);
-        expect(JSON.stringify(error.code) == '9001003').assertTrue();
+        expect(error.code).assertEqual(9001003);
       }
     })
 

@@ -41,9 +41,9 @@ export default function HttpCertificatePinTest() {
      * @tc.desc  : test certificatePin with wrong baidu's PIN value
      * @tc.size  : SmallTest
      * @tc.type  : Function
-     * @tc.level : level 2
+     * @tc.level : level 0
      */
-    it('testHttpCertificatePin0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
+    it('testHttpCertificatePin0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
       const caseName: string = 'testHttpCertificatePin0100';
       console.info(`${caseName}---Start`);
       try {

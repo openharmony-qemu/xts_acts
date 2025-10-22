@@ -12,13 +12,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { huks } from '@kit.UniversalKeystoreKit';
-import { CheckSoftware, CheckWearable, GenParam, MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils';
-import { GetDataBySize, StringToUint8Array } from './utils/CommonUtils';
+import { CheckSoftware, CheckWearable, MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils';
+import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
 import { GetNoDigestNoPaddingSignOptions, GetNoDigestPkcs1SignOptions, SignVerify, SignVerifyData } from './utils/huks/SignVerifyUtils';
 import { GetRsaGenerateOptions } from './utils/huks/GenerateKeyUtils';
 import { GetSha256Options } from './utils/huks/DeriveAgreeUtils';
+import { Logger } from './utils/common/Logger';
 
 
 export default function SecurityHuksSignVerifyRSATest() {
@@ -28,39 +29,14 @@ export default function SecurityHuksSignVerifyRSATest() {
   let signVerifyOption: huks.HuksOptions;
 
   describe('SecurityHuksSignVerifyRSATest', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
       useSoftware = await CheckSoftware();
       isWearable = await CheckWearable();
     })
     beforeEach(() => {
-      genKeyOption = {
-        properties: [
-          GenParam(huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_RSA),
-          GenParam(huks.HuksTag.HUKS_TAG_KEY_SIZE, huks.HuksKeySize.HUKS_RSA_KEY_SIZE_1024),
-          GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY)
-        ]
-      };
-      signVerifyOption = {
-        properties: [
-          GenParam(huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_RSA),
-          GenParam(huks.HuksTag.HUKS_TAG_KEY_SIZE, huks.HuksKeySize.HUKS_RSA_KEY_SIZE_1024),
-          GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN),
-          GenParam(huks.HuksTag.HUKS_TAG_DIGEST, huks.HuksKeyDigest.HUKS_DIGEST_NONE),
-          GenParam(huks.HuksTag.HUKS_TAG_PADDING, huks.HuksKeyPadding.HUKS_PADDING_PKCS1_V1_5),
-        ]
-      }
-    })
-    afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
-    })
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
+      genKeyOption = GetRsaGenerateOptions(1024);
+      SetParam(genKeyOption, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY)
+      signVerifyOption = MergeOptions(GetRsaGenerateOptions(1024), GetNoDigestPkcs1SignOptions());
     })
 
     /**
@@ -85,7 +61,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -114,7 +90,7 @@ export default function SecurityHuksSignVerifyRSATest() {
           let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
           expect(res).assertEqual(true);
         } catch (err) {
-          console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.log(testNumber + `: catch error ${JSON.stringify(err)}`);
           expect(null).assertFail();
         }
       } else {
@@ -123,7 +99,7 @@ export default function SecurityHuksSignVerifyRSATest() {
           let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
           expect(null).assertFail();
         } catch (err) {
-          console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.log(testNumber + `: catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000001);
         }
       }
@@ -153,7 +129,7 @@ export default function SecurityHuksSignVerifyRSATest() {
           let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
           expect(res).assertEqual(true);
         } catch (err) {
-          console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.log(testNumber + `: catch error ${JSON.stringify(err)}`);
           expect(null).assertFail();
         }
       } else {
@@ -162,7 +138,7 @@ export default function SecurityHuksSignVerifyRSATest() {
           let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
           expect(null).assertFail();
         } catch (err) {
-          console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.log(testNumber + `: catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000001);
         }
       }
@@ -191,7 +167,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -220,7 +196,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -248,7 +224,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -277,7 +253,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -305,7 +281,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -334,7 +310,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -361,7 +337,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -390,7 +366,7 @@ export default function SecurityHuksSignVerifyRSATest() {
           let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
           expect(res).assertEqual(true);
         } catch (err) {
-          console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.log(testNumber + `: catch error ${JSON.stringify(err)}`);
           expect(null).assertFail();
         }
       } else {
@@ -399,7 +375,7 @@ export default function SecurityHuksSignVerifyRSATest() {
           let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
           expect(null).assertFail();
         } catch (err) {
-          console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.log(testNumber + `: catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000001);
         }
       }
@@ -429,7 +405,7 @@ export default function SecurityHuksSignVerifyRSATest() {
           let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
           expect(res).assertEqual(true);
         } catch (err) {
-          console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.log(testNumber + `: catch error ${JSON.stringify(err)}`);
           expect(null).assertFail();
         }
       } else {
@@ -438,7 +414,7 @@ export default function SecurityHuksSignVerifyRSATest() {
           let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
           expect(null).assertFail();
         } catch (err) {
-          console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+          Logger.log(testNumber + `: catch error ${JSON.stringify(err)}`);
           expect(err.code).assertEqual(12000001);
         }
       }
@@ -467,7 +443,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -496,7 +472,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -525,7 +501,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res: boolean = await SignVerify(testNumber, signVerifyOption, signVerifyData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -550,7 +526,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         await huks.generateKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(12000003);
       }
     })
@@ -575,7 +551,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         await huks.generateKeyItem(testNumber, genKeyOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(12000003);
       }
     })
@@ -603,7 +579,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         expect(isWearable).assertEqual(true);
         expect(res).assertEqual(true)
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         let expectErrCode = useSoftware ? 12000001 : 12000012;
         expect(err.code).assertEqual(expectErrCode);
       }
@@ -635,7 +611,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         expect(isWearable).assertEqual(true);
         expect(res).assertEqual(true)
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         let expectErrCode = useSoftware ? 12000001 : 12000012;
         expect(err.code).assertEqual(expectErrCode);
       }
@@ -667,7 +643,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         expect(isWearable).assertEqual(true);
         expect(res).assertEqual(true)
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         let expectErrCode = useSoftware ? 12000001 : 12000012;
         expect(err.code).assertEqual(expectErrCode);
       }
@@ -699,7 +675,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         expect(isWearable).assertEqual(true);
         expect(res).assertEqual(true)
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         let expectErrCode = useSoftware ? 12000001 : 12000012;
         expect(err.code).assertEqual(expectErrCode);
       }
@@ -728,7 +704,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res = await SignVerify(testNumber, signOptions, signData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(useSoftware).assertEqual(false);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT);
       }
@@ -757,7 +733,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res = await SignVerify(testNumber, signOptions, signData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(useSoftware).assertEqual(false);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT);
       }
@@ -786,7 +762,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res = await SignVerify(testNumber, signOptions, signData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -814,7 +790,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res = await SignVerify(testNumber, signOptions, signData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -842,7 +818,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res = await SignVerify(testNumber, signOptions, signData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -870,7 +846,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res = await SignVerify(testNumber, signOptions, signData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -898,7 +874,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res = await SignVerify(testNumber, signOptions, signData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -926,7 +902,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res = await SignVerify(testNumber, signOptions, signData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -954,7 +930,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res = await SignVerify(testNumber, signOptions, signData);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -982,7 +958,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res = await SignVerify(testNumber, signOptions, signData);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -1010,7 +986,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res = await SignVerify(testNumber, signOptions, signData);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -1038,7 +1014,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res = await SignVerify(testNumber, signOptions, signData);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -1067,7 +1043,7 @@ export default function SecurityHuksSignVerifyRSATest() {
         let res = await SignVerify(testNumber, signOptions, signData);
         expect(null).assertFail();
       } catch (err) {
-        console.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })

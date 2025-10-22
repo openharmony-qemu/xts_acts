@@ -12,11 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import { DeleteParam, GenParam, SetParam } from './utils/huks/HuksOptionsUtils';
-import { GetDataBySize, StringToUint8Array } from './utils/CommonUtils';
-import { Cipher, cipherAbortWithText, CipherData, cipherWithText, cipherWithTextCallback } from './utils/huks/CipherUtils';
+import { DeleteParam, MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils';
+import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
+import { Cipher, cipherAbortWithText, CipherData, cipherWithText, cipherWithTextCallback, GetCfbNoPaddingOptions } from './utils/huks/CipherUtils';
+import { Logger } from './utils/common/Logger';
+import { GetSm4GenerateOptions } from './utils/huks/GenerateKeyUtils';
 
 
 export default function SecurityHuksCipherSM4Test() {
@@ -24,38 +26,10 @@ export default function SecurityHuksCipherSM4Test() {
   let cipherOption: huks.HuksOptions;
 
   describe('SecurityHuksCipherSM4Test', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
-    })
+
     beforeEach(() => {
-      genKeyOption = {
-        properties: [
-          GenParam(huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_SM4),
-          GenParam(huks.HuksTag.HUKS_TAG_KEY_SIZE, huks.HuksKeySize.HUKS_SM4_KEY_SIZE_128),
-          GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT)
-        ]
-      };
-      cipherOption = {
-        properties: [
-          GenParam(huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_SM4),
-          GenParam(huks.HuksTag.HUKS_TAG_KEY_SIZE, huks.HuksKeySize.HUKS_SM4_KEY_SIZE_128),
-          GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT),
-          GenParam(huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_CFB),
-          GenParam(huks.HuksTag.HUKS_TAG_PADDING, huks.HuksKeyPadding.HUKS_PADDING_NONE),
-          GenParam(huks.HuksTag.HUKS_TAG_IV, StringToUint8Array("0000000000000000")),
-        ]
-      }
-    })
-    afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
-    })
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
+      genKeyOption = GetSm4GenerateOptions(128);
+      cipherOption = MergeOptions(GetSm4GenerateOptions(128), GetCfbNoPaddingOptions(16));
     })
 
     /**
@@ -77,7 +51,7 @@ export default function SecurityHuksCipherSM4Test() {
         let res: boolean = await cipherWithText(genKeyOption, cipherOption, preText);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -99,7 +73,7 @@ export default function SecurityHuksCipherSM4Test() {
         let res: boolean = await cipherAbortWithText(genKeyOption, cipherOption, preText);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -126,7 +100,7 @@ export default function SecurityHuksCipherSM4Test() {
         let res: boolean = await Cipher(testNumber, cipherOption, preData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -148,7 +122,7 @@ export default function SecurityHuksCipherSM4Test() {
         let res: boolean = await cipherWithText(genKeyOption, cipherOption, preText);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -170,7 +144,7 @@ export default function SecurityHuksCipherSM4Test() {
         let res: boolean = await cipherWithTextCallback(genKeyOption, cipherOption, preText);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -192,7 +166,7 @@ export default function SecurityHuksCipherSM4Test() {
         await huks.initSession(testNumber, cipherOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT);
       }
     })
@@ -215,7 +189,7 @@ export default function SecurityHuksCipherSM4Test() {
         await huks.initSession(testNumber, cipherOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -239,7 +213,7 @@ export default function SecurityHuksCipherSM4Test() {
         let res: boolean = await cipherWithText(genKeyOption, cipherOption, preText);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -261,7 +235,7 @@ export default function SecurityHuksCipherSM4Test() {
         let res: boolean = await cipherAbortWithText(genKeyOption, cipherOption, preText);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -289,7 +263,7 @@ export default function SecurityHuksCipherSM4Test() {
         let res: boolean = await Cipher(testNumber, cipherOption, preData);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -311,7 +285,7 @@ export default function SecurityHuksCipherSM4Test() {
         let res: boolean = await cipherWithText(genKeyOption, cipherOption, preText);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -333,7 +307,7 @@ export default function SecurityHuksCipherSM4Test() {
         let res: boolean = await cipherWithTextCallback(genKeyOption, cipherOption, preText);
         expect(res).assertEqual(true);
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -355,7 +329,7 @@ export default function SecurityHuksCipherSM4Test() {
         await huks.initSession(testNumber, cipherOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_CRYPTO_ALG_ARGUMENT);
       }
     })
@@ -378,7 +352,7 @@ export default function SecurityHuksCipherSM4Test() {
         await huks.initSession(testNumber, cipherOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -401,7 +375,7 @@ export default function SecurityHuksCipherSM4Test() {
         await huks.initSession(testNumber, cipherOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -424,7 +398,7 @@ export default function SecurityHuksCipherSM4Test() {
         await huks.initSession(testNumber, cipherOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -447,7 +421,7 @@ export default function SecurityHuksCipherSM4Test() {
         await huks.initSession(testNumber, cipherOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })
@@ -470,7 +444,7 @@ export default function SecurityHuksCipherSM4Test() {
         await huks.initSession(testNumber, cipherOption);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error ${JSON.stringify(err)}`);
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })

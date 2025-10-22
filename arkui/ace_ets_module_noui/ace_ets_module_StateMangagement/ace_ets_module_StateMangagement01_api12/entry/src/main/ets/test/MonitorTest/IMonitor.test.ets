@@ -65,6 +65,11 @@ export default function IMonitorTest() {
       console.info("[IMonitorTest_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.content).assertEqual('Tom');
       expect(obj1.$attrs.content).assertEqual('IMonitor succ');
+      let res2 = AppStorage.get<undefined>('IMonitorValue001');
+      console.info("[IMonitorTest_0100] component res2 is: " + JSON.stringify(res2));
+      expect(res2).assertEqual(undefined);
+      console.info("[IMonitorTest_0100] component res2 is: " + JSON.stringify(res2));
+      console.info("[IMonitorTest_0100] component appstorage.clear: " + JSON.stringify(AppStorage.clear()));
       console.info('[IMonitorTest_0100] END');
       done();
     });

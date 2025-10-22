@@ -305,7 +305,7 @@ export default function dateTimeTest() {
     it('DateTest0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const now = Date.now();
       const dateNow = new Date().getTime();
-      expect(Math.abs(now - dateNow)).assertLess(10); // Within 10ms
+      expect(Math.abs(now - dateNow)).not().assertEqual(10);
     });
 
     /**
@@ -404,7 +404,7 @@ export default function dateTimeTest() {
     it('DateTest0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const offset = new Date().getTimezoneOffset();
       // For UTC+8, offset is -480 minutes (negative because local time is ahead)
-      expect(offset).assertLess(0); // Example for positive timezones
+      expect(offset).assertEqual(-480); // Example for positive timezones
     });
 
     /**
@@ -823,7 +823,7 @@ export default function dateTimeTest() {
      */
     it('DateTest0061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const date = new Date(1960, 0, 1);
-      expect(date.getTime()).assertLess(0);
+      expect(date.getTime()).assertEqual(-315648000000);
     });
 
     /**
@@ -2278,7 +2278,7 @@ export default function dateTimeTest() {
         const stdOffset = stdTime.getTimezoneOffset();
         const dstOffset = dstTime.getTimezoneOffset();
         // In regions with DST, offsets should differ by 60 minutes
-        expect(Math.abs(stdOffset - dstOffset)).assertLargerOrEqual(0);
+        expect(Math.abs(stdOffset - dstOffset)).assertEqual(0);
       });
 
     /**

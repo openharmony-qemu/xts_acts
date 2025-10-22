@@ -17,6 +17,7 @@
 #include <BasicServicesKit/ohprint.h>
 #include <js_native_api_types.h>
 #include <napi/native_api.h>
+#include <string>
 #define SCANNER_ID "12"
 #define TEST_PRINTER "testPrinter"
 
@@ -37,8 +38,8 @@ static napi_value OH_Print_StartPrinterDiscovery1(napi_env env, napi_callback_in
 }
 static napi_value OH_Print_ConnectPrinter1(napi_env env, napi_callback_info info)
 {
-    char printerId = '001';
-    Print_ErrorCode errorCode = OH_Print_ConnectPrinter(&printerId);
+    std::string printerId = "001";
+    Print_ErrorCode errorCode = OH_Print_ConnectPrinter(printerId.c_str());
     napi_value result = nullptr;
     napi_create_int32(env, errorCode == PRINT_ERROR_NO_PERMISSION ? PRINT_ERROR_NO_PERMISSION : 0, &result);
     return result;

@@ -14,15 +14,18 @@
  */
 
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from '@ohos/hypium';
-import events_emitter from '@ohos.events.emitter';
+import { describe, beforeAll, beforeEach, it, TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
-// import router from '@system.router';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 200520;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let emitKey = "emitOnPageVisibleLoadUrl";
+let emitKey = "";
+
 export default function webViewOnWindowNewJsunit() {
   describe('ActsAceWebViewOnWindowNewJsunitTest',  () =>{
     beforeAll(async  (done: Function) => {
@@ -35,16 +38,17 @@ export default function webViewOnWindowNewJsunit() {
         console.info("get onWindowNew state success " + JSON.stringify(pages));
         if (!("onWindowNew" == pages.name)) {
           console.info("get onWindowNew state success " + JSON.stringify(pages.name));
-          let result = await router.push(options);
-          await Utils.sleep(2000);
-          console.info("push onWindowNew page success " + JSON.stringify(result));
+          await router.push(options);
+          console.info("push onWindowNew page success");
         }
       } catch (err) {
         console.error("push onWindowNew page error: " + err);
       }
-      await Utils.sleep(2000);
+      await driver.waitForComponent(ON.id("onWindowNew"), 10000);
+      console.log("waitForComponent onWindowNew");
       done()
     });
+
     beforeEach(async  (done: Function) =>{
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
@@ -54,47 +58,27 @@ export default function webViewOnWindowNewJsunit() {
       console.info("web beforeEach start");
       done();
     })
-    afterEach(async  (done: Function) =>{
-      console.info("ActsAceWebViewOnWindowNewJsunitTest afterEach start:"+emitKey);
-      try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent: events_emitter.InnerEvent = {
-                eventId:10,
-                priority:events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-      } catch (err) {
-            console.info("emit emitKey  err: " + JSON.stringify(err));
-      }
-      await Utils.sleep(2000);
-      console.info("ActsAceWebViewOnWindowNewJsunitTest afterEach end");
-      done();
-    })
+
     /*
-    *tc.number SUB_ACE_BASIC_ETS_API_ONPAGEVISBALE_0100
-    *tc.name testOnPageVisibleLoadUrl
-    *tc.desc test api onPageVisible by load new url
+    * @tc.number SUB_ACE_BASIC_ETS_API_ONPAGEVISBALE_0100
+    * @tc.name testOnPageVisibleLoadUrl
+    * @tc.desc test api onPageVisible by load new url
     */
     it('testOnPageVisibleLoadUrl',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-      emitKey="emitOnPageVisibleRefresh";
-      let url = 'resource://rawfile/index.html';
-      Utils.registerEvent("testOnPageVisibleLoadUrl", url, 7108, done);
+      emitKey="emitOnPageVisibleLoadUrl";
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testOnPageVisibleLoadUrl", 'success', 200530, done);
       sendEventByKey('onWindowNew', 10, '');
     })
     /*
-    *tc.number SUB_ACE_BASIC_ETS_API_ONPAGEVISBALE_0200
-    *tc.name testOnPageVisibleRefresh
-    *tc.desc test api onPageVisible by refresh
+    * @tc.number SUB_ACE_BASIC_ETS_API_ONPAGEVISBALE_0200
+    * @tc.name testOnPageVisibleRefresh
+    * @tc.desc test api onPageVisible by refresh
     */
     it('testOnPageVisibleRefresh',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey="emitOnPageVisibleRefresh";
-      let url = 'resource://rawfile/index.html';
-      Utils.registerEvent("testOnPageVisibleRefresh", url, 7110, done);
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testOnPageVisibleRefresh", 'success', 200540, done);
       sendEventByKey('onWindowNew', 10, '');
     })
   })

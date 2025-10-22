@@ -26,13 +26,13 @@ struct RichEditorOnWillChange006 {
   build() {
 
     Column() {
-
-      Text('onWillChange_callback:' + this.onWillChangeCallback).id('onWillChange_callback')
-      Text('replacedSpans_callback:' + this.replacedSpansCallback).id('replacedSpans_callback')
-      Text('onDidChange_callback:' + this.onDidChangeCallback).id('onDidChange_callback')
-      Text('range_text:' + this.rangeText).id('range_text')
-      Text('replace_text:' + this.replaceText).id('replace_text')
-
+      Row(){
+        Text('onWillChange_callback:' + this.onWillChangeCallback).id('onWillChange_callback').width('20%').clip(true)
+        Text('replacedSpans_callback:' + this.replacedSpansCallback).id('replacedSpans_callback').width('20%').clip(true)
+        Text('onDidChange_callback:' + this.onDidChangeCallback).id('onDidChange_callback').width('20%').clip(true)
+        Text('range_text:' + this.rangeText).id('range_text').width('20%').clip(true)
+        Text('replace_text:' + this.replaceText).id('replace_text').width('20%').clip(true)
+      }.height('5%')
       RichEditor({ controller: this.controller })
         .height(200)
         .borderWidth(1)

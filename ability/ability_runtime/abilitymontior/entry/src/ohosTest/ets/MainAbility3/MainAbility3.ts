@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2022 Huawei Device Co., Ltd.
+* Copyright (c) 2022-2025 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -15,7 +15,6 @@
 import Ability from '@ohos.app.ability.UIAbility'
 import commonEvent from '@ohos.commonEvent'
 
-let TERMINATE_SELF_TIME = 2000;
 let EVENT_TIME = 500;
 
 function PublishCallBack() {
@@ -43,7 +42,7 @@ export default class MainAbility3 extends Ability {
       globalThis.abilityContext.terminateSelf().then(() => {
         console.log("====>MainAbility3 in terminateSelf====>");
       })
-    }, TERMINATE_SELF_TIME);
+    }, EVENT_TIME);
   }
 
   onWindowStageDestroy() {

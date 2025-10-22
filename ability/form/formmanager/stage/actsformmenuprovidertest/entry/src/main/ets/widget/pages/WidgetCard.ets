@@ -26,6 +26,18 @@ struct WidgetCard {
         .fontSize($r('app.float.font_size'))
         .fontColor($r('app.color.item_title_font'))
         }
+
+      FormLink({
+        uri: '',
+        moduleName: '',
+        action: 'router',
+        abilityName: 'TestAbility',
+        params: {
+          'message': 'testForRouter' // 自定义要发送的message
+        }
+      }) {
+        Button('router event').width(120)
+      }.margin(10)  
       }
     .size({width:'100%',height:'100%'})
     .backgroundImage($r(this.image))

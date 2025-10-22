@@ -12,7 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import brightnessTest from "./Thermal.test";
+import ThermalTest from "./Thermal.test";
+
 export default function testsuite() {
-    brightnessTest();
+  ThermalTest();
 }

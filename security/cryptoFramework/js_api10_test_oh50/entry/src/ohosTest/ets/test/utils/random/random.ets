@@ -14,9 +14,8 @@
  */
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
-let stressTimeout: number = 1000 * 2;
+let stressTimeout: number = 1000 * 1;
 let intervalTime: number = 1000;
-let random: cryptoFramework.Random = cryptoFramework.createRandom();
 
 enum CallbackType {
   TYPE_IS_SYNC = 0,
@@ -24,9 +23,43 @@ enum CallbackType {
   TYPE_IS_CALLBACK = 2,
 }
 
+async function enableHardwareEntropyRandom(length: number, type: CallbackType): Promise<boolean> {
+  let ret: boolean = true;
+  let secret: cryptoFramework.DataBlob = {data: new Uint8Array()};
+  try {
+    let random: cryptoFramework.Random = cryptoFramework.createRandom();
+    random.enableHardwareEntropy();
+    switch (type) {
+      case CallbackType.TYPE_IS_PROMISE:
+        secret = await random.generateRandom(length);
+      case CallbackType.TYPE_IS_CALLBACK:
+        secret = await new Promise((resolve, reject) => {
+          random.generateRandom(length, (err, secret) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve(secret);
+            }
+          });
+        })
+      default:
+        secret = random.generateRandomSync(length);
+    }
+    if (secret.data.length !== length) {
+      console.info("################ :" + length + ":" + secret.data.length)
+      return false;
+    }
+    console.log("############### :" + secret.data)
+  } catch (error) {
+    console.error(`getRandom “${error}“, error code: ${error.code}`);
+    return false;
+  }
+  return ret;
+}
+
 export {
   stressTimeout,
   intervalTime,
-  random,
-  CallbackType
+  CallbackType,
+  enableHardwareEntropyRandom
 }

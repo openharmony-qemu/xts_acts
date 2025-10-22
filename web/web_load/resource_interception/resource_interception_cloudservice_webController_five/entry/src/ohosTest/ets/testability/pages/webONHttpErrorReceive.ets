@@ -14,11 +14,9 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
-import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
-import UIAbility from '@ohos.app.ability.UIAbility';
+
+const EVENT_ID_SET_EMIT_KEY = 201370;
 
 @Entry
 @Component
@@ -38,13 +36,19 @@ struct webONHttpErrorReceive {
   @State responseKey: string = "";
   @State responseValue: string = "";
   @State onlineResult: boolean = false;
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: ESObject) => {
@@ -53,6 +57,7 @@ struct webONHttpErrorReceive {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -61,13 +66,14 @@ struct webONHttpErrorReceive {
     Column() {
       Row() {
         Button("onHttpErrorTest").key('webONHttpErrorReceive').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, 'webONHttpErrorReceiveIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'webONHttpErrorReceiveIsReceive', 1, 1000);
           console.info("key==>" + this.str)
           switch (this.str) {
             case "emitOnHttpErrorReceiveFixedUserAgentWebc": {
               try {
                 this.onlineResult = true;
                 this.controller.loadUrl({ url: 'http://1.1.1.123/index.html' });
-                await Utils.sleep(1000);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -77,7 +83,7 @@ struct webONHttpErrorReceive {
         })
       }
 
-      Web({ src: 'http://1.1.1.123/index.html', controller: this.controller })
+      Web({ src: $rawfile('second.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
@@ -88,26 +94,26 @@ struct webONHttpErrorReceive {
         .onHttpErrorReceive((event) => {
           if(this.onlineResult){
             console.log('url:' + event.request.getRequestUrl());
-            Utils.emitEvent(event.request.getRequestUrl(), 462);
+            Utils.emitEvent(event.request.getRequestUrl(), 201380);
             console.log('isMainFrame:' + event.request.isMainFrame());
-            Utils.emitEvent(event.request.isMainFrame(), 464);
+            Utils.emitEvent(event.request.isMainFrame(), 201390);
             console.log('isRedirect:' + event.request.isRedirect());
-            Utils.emitEvent(event.request.isRedirect(), 466);
+            Utils.emitEvent(event.request.isRedirect(), 201400);
             console.log('isRequestGesture:' + event.request.isRequestGesture());
-            Utils.emitEvent(event.request.isRequestGesture(), 468);
+            Utils.emitEvent(event.request.isRequestGesture(), 201410);
             console.log('getRequestMethod:' + event.request.getRequestMethod());
-            Utils.emitEvent(event.request.getRequestMethod(), 470);
+            Utils.emitEvent(event.request.getRequestMethod(), 201420);
             console.log('getResponseData:' + JSON.stringify(event.response.getResponseData()));
-            Utils.emitEvent(JSON.stringify(event.response.getResponseData()), 472);
+            Utils.emitEvent(JSON.stringify(event.response.getResponseData()), 201430);
             console.log('getResponseEncoding:' + event.response.getResponseEncoding());
-            Utils.emitEvent(event.response.getResponseEncoding(), 474);
+            Utils.emitEvent(event.response.getResponseEncoding(), 201440);
             console.log('getResponseMimeType:' + event.response.getResponseMimeType());
-            Utils.emitEvent(event.response.getResponseMimeType(), 476);
+            Utils.emitEvent(event.response.getResponseMimeType(), 201450);
             console.log('getResponseCode:' + event.response.getResponseCode());
-            Utils.emitEvent(event.response.getResponseCode(), 478);
+            Utils.emitEvent(event.response.getResponseCode(), 201460);
             console.log("this.title result is :" + JSON.stringify(event.response.getResponseCode()) + event.request.getRequestUrl());
             console.log('getReasonMessage:' + event.response.getReasonMessage());
-            Utils.emitEvent(event.response.getReasonMessage(), 480);
+            Utils.emitEvent(event.response.getReasonMessage(), 201470);
             let result = event.request.getRequestHeader()
             console.log('The request header result size is ' + result.length)
             for (let i of result) {
@@ -116,8 +122,8 @@ struct webONHttpErrorReceive {
               this.requestValue = i.headerValue;
             }
             console.log('The request header last result is ' + this.requestKey + this.requestValue);
-            Utils.emitEvent(this.requestKey, 482);
-            Utils.emitEvent(this.requestValue, 484);
+            Utils.emitEvent(this.requestKey, 201480);
+            Utils.emitEvent(this.requestValue, 201490);
             let resph = event.response.getResponseHeader()
             console.log('The response header result size is ' + resph.length)
             for (let i of resph) {
@@ -126,11 +132,15 @@ struct webONHttpErrorReceive {
               this.responseValue = i.headerValue;
             }
             console.log('The response header last result is ' + this.responseKey + this.responseValue);
-            Utils.emitEvent(this.responseKey, 486);
-            Utils.emitEvent(this.responseValue, 488);
-            Utils.emitEvent(JSON.stringify(event.response.getResponseCode()) + event.request.getRequestUrl(), 490)
+            Utils.emitEvent(this.responseKey, 201500);
+            Utils.emitEvent(this.responseValue, 201510);
+            Utils.emitEvent(JSON.stringify(event.response.getResponseCode()) + event.request.getRequestUrl(), 201520)
             this.onlineResult = false;
           }
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd ==>' + event.url);
+          this.isPageEnd = 1;
         })
     }
   }

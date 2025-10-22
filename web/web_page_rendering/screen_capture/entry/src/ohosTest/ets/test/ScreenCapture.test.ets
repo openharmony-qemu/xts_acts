@@ -16,18 +16,24 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 152500;
+let driver = Driver.create();
+let emitKey = ""
+let tcName = ""
 export default function screenCapture() {
 
   describe('ScreenCapture', () => {
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("web beforeEach start");
       done();
     })
@@ -41,10 +47,14 @@ export default function screenCapture() {
     * @tc.level      : Level 0
     */
     it('testScreenCaptureConfigGetOrigin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("emitScreenCaptureConfigGetOrigin001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testScreenCaptureConfigGetOrigin001", true, 4202, done);
-      sendEventByKey('ScreenCaptureConfig', 10, '');
+      emitKey = 'emitScreenCaptureConfigGetOrigin001';
+      tcName = 'testScreenCaptureConfigGetOrigin001'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 152510, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "ScreenCaptureConfig", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -56,10 +66,14 @@ export default function screenCapture() {
     * @tc.level      : Level 1
     */
     it('testScreenCaptureConfigGrant001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitScreenCaptureConfigGrant001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testScreenCaptureConfigGrant001", true, 4203, done);
-      sendEventByKey('ScreenCaptureConfig', 10, '');
+      emitKey = 'emitScreenCaptureConfigGrant001';
+      tcName = 'testScreenCaptureConfigGrant001'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 152520, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "ScreenCaptureConfig", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -71,10 +85,14 @@ export default function screenCapture() {
     * @tc.level      : Level 1
     */
     it('testScreenCaptureConfigDeny001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitScreenCaptureConfigDeny001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testScreenCaptureConfigDeny001", true, 4201, done);
-      sendEventByKey('ScreenCaptureConfig', 10, '');
+      emitKey = 'emitScreenCaptureConfigDeny001';
+      tcName = 'testScreenCaptureConfigDeny001'
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(tcName, true, 152530, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "ScreenCaptureConfig", tcName);
+      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
+      done();
     })
   })
 }

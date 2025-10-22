@@ -82,10 +82,10 @@ struct InteractionEventBindingInfoExample {
         })
 
         Column().id("column2")
-      }
+      }.width('80%').height('10%')
 
       NodeContainer(this.myNodeControllerBindOnClick).focusable(true)
-        .width(300).height(500).borderWidth(1)
+        .width('80%').height('40%').borderWidth(1)
 
       Row() {
         Text(this.text1).key('value1')
@@ -96,15 +96,15 @@ struct InteractionEventBindingInfoExample {
         Text(this.text6).key('value6')
         Text(this.text7).key('value7')
         Text(this.text8).key('value8')
+      }.width('80%').height('10%')
+
+
+      Row() {
         Button(this.text8).id('undefined')
           .onClick(() => {
             this.text8 =
               String(this.getUIContext().getFrameNodeById("Radio1")?.getInteractionEventBindingInfo(undefined))
           })
-      }
-
-
-      Row() {
         Button(this.text1).id('baseTrue')
           .onClick(() => {
             this.text1 = String(this.getUIContext()
@@ -121,7 +121,7 @@ struct InteractionEventBindingInfoExample {
               .getFrameNodeById("radio1")?.getInteractionEventBindingInfo(EventQueryType.ON_CLICK)?.builtInEventRegistered)
           })
 
-      }
+      }.width('80%').height('10%')
 
       Row() {
         Button(this.text4).id('baseFalse')
@@ -145,7 +145,7 @@ struct InteractionEventBindingInfoExample {
               .getFrameNodeById("column1")?.getInteractionEventBindingInfo(EventQueryType.ON_CLICK)?.builtInEventRegistered)
           })
 
-      }
-    }
+      }.width('80%').height('10%')
+    }.width('100%').height('100%')
   }
 }

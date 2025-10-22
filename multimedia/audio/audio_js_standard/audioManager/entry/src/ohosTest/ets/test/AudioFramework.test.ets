@@ -49,6 +49,7 @@ let highVol: number = 14;
 let outOfRangeVol: number = 101;
 let longValue = '28374837458743875804735081439085918459801437584738967509184509813904850914375904790589104801843';
 let AudioVolumeType: ESObject = "123";
+const MaxVloume: number[] = [15,20,100];
 
 async function getAudioManager() {
   audioManager = audio.getAudioManager();
@@ -396,10 +397,7 @@ export default function audioFramework() {
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUMESYNC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         let data = audioVolumeGroupManager.getMaxVolumeSync(audio.AudioVolumeType.MEDIA);
-        if (data == maxVol) {
-          console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-          expect(true).assertTrue();
-        } else if (data == maxVolPc) {
+        if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
           expect(true).assertTrue();
         } else {
@@ -1533,10 +1531,7 @@ export default function audioFramework() {
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETMAXVOLUME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const PROMISE = audioManager.getMaxVolume(audioMedia);
       PROMISE.then((data) => {
-        if (data == maxVol) {
-          console.info(`${TagFrmwk}: Media getMaxVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
-        } else if (data == maxVolPc) {
+        if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Media getMaxVolume promise : PASS:${data}`);
           expect(true).assertTrue();
         } else {
@@ -1562,10 +1557,7 @@ export default function audioFramework() {
         if (err) {
           console.error(`${TagFrmwk}: callback : Media : failed to getMaxVolume ${err.message}`);
           expect(false).assertTrue();
-        } else if (value == maxVol) {
-          console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : PASS:${value}`);
-          expect(true).assertTrue();
-        } else if (value == maxVolPc) {
+        } else if (MaxVloume.includes(value)) {
           console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : PASS:${value}`);
           expect(true).assertTrue();
         } else {
@@ -1587,10 +1579,7 @@ export default function audioFramework() {
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETMAXVOLUME_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const PROMISE = audioManager.getMaxVolume(audioRingtone);
       PROMISE.then((data) => {
-        if (data == maxVol) {
-          console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
-        } else if (data == maxVolPc) {
+        if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : PASS:${data}`);
           expect(true).assertTrue();
         } else {
@@ -1619,11 +1608,7 @@ export default function audioFramework() {
           console.error(`${TagFrmwk}: callback : Ringtone : failed to getMaxVolume ${err.message}`);
           expect(false).assertTrue();
           done();
-        } else if (value == maxVol) {
-          console.info(`${TagFrmwk}: callback : Ringtone:  getMaxVolume : PASS:${value}`);
-          expect(true).assertTrue();
-          done();
-        } else if (value == maxVolPc) {
+        } else if (MaxVloume.includes(value)) {
           console.info(`${TagFrmwk}: callback : Ringtone:  getMaxVolume : PASS:${value}`);
           expect(true).assertTrue();
           done();
@@ -1649,10 +1634,7 @@ export default function audioFramework() {
       audioManager.setVolume(audioRingtone, lowVol);
       const PROMISE = audioManager.getMaxVolume(audioMedia);
       PROMISE.then((data) => {
-        if (data == maxVol) {
-          console.info(`${TagFrmwk}: Media getMaxVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
-        } else if (data == maxVolPc) {
+        if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Media getMaxVolume promise : PASS:${data}`);
           expect(true).assertTrue();
         } else {
@@ -1680,10 +1662,7 @@ export default function audioFramework() {
       try {
         await audioManager.setVolume(audioMedia, lowVol);
         let data = await audioManager.getMaxVolume(audioRingtone);
-        if (data == maxVol) {
-          console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
-        } else if (data == maxVolPc) {
+        if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : PASS:${data}`);
           expect(true).assertTrue();
         } else {
@@ -1711,10 +1690,7 @@ export default function audioFramework() {
         if (err) {
           console.error(`${TagFrmwk}: callback : Media : failed to getMaxVolume ${err.message}`);
           expect(false).assertTrue();
-        } else if (value == maxVol) {
-          console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : PASS:${value}`);
-          expect(true).assertTrue();
-        } else if (value == maxVolPc) {
+        } else if (MaxVloume.includes(value)) {
           console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : PASS:${value}`);
           expect(true).assertTrue();
         } else {
@@ -1739,10 +1715,7 @@ export default function audioFramework() {
         if (err) {
           console.error(`${TagFrmwk}: callback : Ringtone : failed to getMaxVolume ${err.message}`);
           expect(false).assertTrue();
-        } else if (value == maxVol) {
-          console.info(`${TagFrmwk}: callback : Ringtone:  getMaxVolume : PASS:${value}`);
-          expect(true).assertTrue();
-        } else if (value == maxVolPc) {
+        } else if (MaxVloume.includes(value)) {
           console.info(`${TagFrmwk}: callback : Ringtone:  getMaxVolume : PASS:${value}`);
           expect(true).assertTrue();
         } else {
@@ -1765,10 +1738,7 @@ export default function audioFramework() {
       try {
         await audioManager.setVolume(audioMedia, lowVol);
         let data = await audioManager.getMaxVolume(audioMedia);
-        if (data == maxVol) {
-          console.info(`${TagFrmwk}: Media getMaxVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
-        } else if (data == maxVolPc) {
+        if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Media getMaxVolume promise : PASS:${data}`);
           expect(true).assertTrue();
         } else {
@@ -1794,10 +1764,7 @@ export default function audioFramework() {
       try {
         await audioManager.setVolume(audioRingtone, lowVol);
         let data = await audioManager.getMaxVolume(audioRingtone);
-        if (data == maxVol) {
-          console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : PASS:${data}`);
-          expect(true).assertTrue();
-        } else if (data == maxVolPc) {
+        if (MaxVloume.includes(data)) {
           console.info(`${TagFrmwk}: Ringtone getMaxVolume promise : PASS:${data}`);
           expect(true).assertTrue();
         } else {
@@ -1825,10 +1792,7 @@ export default function audioFramework() {
         if (err) {
           console.error(`${TagFrmwk}: callback : Media : failed to getMaxVolume ${err.message}`);
           expect(false).assertTrue();
-        } else if (value == maxVol) {
-          console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : PASS:${value}`);
-          expect(true).assertTrue();
-        } else if (value == maxVolPc) {
+        } else if (MaxVloume.includes(value)) {
           console.info(`${TagFrmwk}: callback : Media:  getMaxVolume : PASS:${value}`);
           expect(true).assertTrue();
         } else {
@@ -1853,10 +1817,7 @@ export default function audioFramework() {
         if (err) {
           console.error(`${TagFrmwk}: callback : Ringtone : failed to getMaxVolume ${err.message}`);
           expect(false).assertTrue();
-        } else if (value == maxVol) {
-          console.info(`${TagFrmwk}: callback : Ringtone:  getMaxVolume : PASS:${value}`);
-          expect(true).assertTrue();
-        } else if (value == maxVolPc) {
+        } else if (MaxVloume.includes(value)) {
           console.info(`${TagFrmwk}: callback : Ringtone:  getMaxVolume : PASS:${value}`);
           expect(true).assertTrue();
         } else {
@@ -2571,6 +2532,296 @@ export default function audioFramework() {
         }
         done();
       });
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0001
+     * @tc.name      : getRingerMode - RINGER_MODE_NORMAL - Promise
+     * @tc.desc      : getRingerMode - RINGER_MODE_NORMAL - Promise
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        await audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_NORMAL);
+        let value = await audioManager.getRingerMode();
+        if (value == audio.AudioRingMode.RINGER_MODE_NORMAL) {
+          console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_NORMAL: FAIL :${value}`);
+          expect(false).assertTrue();
+        }
+      } catch (err) {
+        console.log('err :' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0002
+     * @tc.name      : getRingerMode - RINGER_MODE_SILENT - Promise
+     * @tc.desc      : getRingerMode - RINGER_MODE_SILENT - Promise
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        await audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_SILENT);
+        let value = await audioManager.getRingerMode();
+        if (value == audio.AudioRingMode.RINGER_MODE_SILENT) {
+          console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_SILENT: PASS :${value}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_SILENT: FAIL :${value}`);
+          expect(false).assertTrue();
+        }
+      } catch (err) {
+        console.log('err :' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0003
+     * @tc.name      : getRingerMode - RINGER_MODE_VIBRATE - Promise
+     * @tc.desc      : getRingerMode - RINGER_MODE_VIBRATE - Promise
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        await audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_VIBRATE);
+        let value = await audioManager.getRingerMode();
+        if (value == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
+          console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_VIBRATE: PASS :${value}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_VIBRATE: FAIL :${value}`);
+          expect(false).assertTrue();
+        }
+      } catch (err) {
+        console.log('err :' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0004
+     * @tc.name      : getRingerMode - RINGER_MODE_NORMAL - Callback
+     * @tc.desc      : getRingerMode - RINGER_MODE_NORMAL - Callback
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_NORMAL, (err) => {
+        console.info(`${TagFrmwk}: Callback : setRingerMode RINGER_MODE_NORMAL`);
+        if (err) {
+          console.error(`${TagFrmwk}: Callback : setRingerMode RINGER_MODE_NORMAL: Error: ${err.message}`);
+          expect().assertFail();
+          done();
+        } else {
+          audioManager.getRingerMode((err, value) => {
+            if (err) {
+              console.error(`${TagFrmwk}: Callback : RINGER_MODE_NORMAL: Error: ${err.message}`);
+              expect().assertFail();
+            } else if (value == audio.AudioRingMode.RINGER_MODE_NORMAL) {
+              console.info(`${TagFrmwk}: Callback: getRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
+              expect(true).assertTrue();
+            } else {
+              console.info(`${TagFrmwk}: Callback: getRingerMode RINGER_MODE_NORMAL: FAIL :${value}`);
+              expect(false).assertTrue();
+            }
+            done();
+          });
+        }
+      });
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0005
+     * @tc.name      : getRingerMode - RINGER_MODE_SILENT - Callback
+     * @tc.desc      : getRingerMode - RINGER_MODE_SILENT - Callback
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_SILENT, (err) => {
+        console.info(`${TagFrmwk}: Callback : setRingerMode RINGER_MODE_SILENT`);
+        if (err) {
+          console.error(`${TagFrmwk}: Callback : setRingerMode RINGER_MODE_SILENT: Error: ${err.message}`);
+          expect().assertFail();
+          done();
+        } else {
+          audioManager.getRingerMode((err, value) => {
+            if (err) {
+              console.error(`${TagFrmwk}: Callback : RINGER_MODE_SILENT: Error: ${err.message}`);
+              expect().assertFail();
+            } else if (value == audio.AudioRingMode.RINGER_MODE_SILENT) {
+              console.info(`${TagFrmwk}: Callback: getRingerMode RINGER_MODE_SILENT: PASS :${value}`);
+              expect(true).assertTrue();
+            } else {
+              console.info(`${TagFrmwk}: Callback: getRingerMode RINGER_MODE_SILENT: FAIL :${value}`);
+              expect(false).assertTrue();
+            }
+            done();
+          });
+        }
+      });
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0006
+     * @tc.name      : getRingerMode - RINGER_MODE_VIBRATE - Callback
+     * @tc.desc      : getRingerMode - RINGER_MODE_VIBRATE - Callback
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_VIBRATE, (err) => {
+        console.info(`${TagFrmwk}: Callback : setRingerMode RINGER_MODE_VIBRATE`);
+        if (err) {
+          console.error(`${TagFrmwk}: Callback : setRingerMode RINGER_MODE_VIBRATE: Error: ${err.message}`);
+          expect().assertFail();
+          done();
+        } else {
+          audioManager.getRingerMode((err, value) => {
+            if (err) {
+              console.error(`${TagFrmwk}: Callback : RINGER_MODE_VIBRATE: Error: ${err.message}`);
+              expect().assertFail();
+            } else if (value == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
+              console.info(`${TagFrmwk}: Callback: getRingerMode RINGER_MODE_VIBRATE: PASS :${value}`);
+              expect(true).assertTrue();
+            } else {
+              console.info(`${TagFrmwk}: Callback: getRingerMode RINGER_MODE_VIBRATE: FAIL :${value}`);
+              expect(false).assertTrue();
+            }
+            done();
+          });
+        }
+      });
+    })
+
+     /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0007
+     * @tc.name      : getRingerMode - ENUM - Promise
+     * @tc.desc      : getRingerMode - ENUM - Promise
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let data = await audioVolumeGroupManager.getRingerMode();
+        if (data == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
+          console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerMode : PASS :${data}`);
+          expect(true).assertTrue();
+          done();
+        } else if (data == audio.AudioRingMode.RINGER_MODE_NORMAL) {
+          console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerMode : PASS :${data}`);
+          expect(true).assertTrue();
+          done();
+        } else if (data == audio.AudioRingMode.RINGER_MODE_SILENT) {
+          console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerMode : PASS :${data}`);
+          expect(true).assertTrue();
+          done();
+        } else {
+          console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerMode : FAIL :${data}`);
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (err) {
+        console.log('err :' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0008
+     * @tc.name      : getRingerMode - ENUM - Callback
+     * @tc.desc      : getRingerMode - ENUM - Callback
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUPMANAGER_GETRINGERMODE_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_VIBRATE, (err) => {
+        console.info(`${TagFrmwk}: Callback : setRingerMode RINGER_MODE_VIBRATE`);
+        if (err) {
+          console.error(`${TagFrmwk}: Callback : setRingerMode RINGER_MODE_VIBRATE: Error: ${err.message}`);
+          expect().assertFail();
+          done();
+        } else {
+          audioVolumeGroupManager.getRingerMode((err, value) => {
+            if (err) {
+              console.error(`${TagFrmwk}: Callback : RINGER_MODE_VIBRATE: Error: ${err.message}`);
+              expect().assertFail();
+            } else if (value == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
+              console.info(`${TagFrmwk}: Callback: audioVolumeGroupManager.getRingerMode RINGER_MODE_VIBRATE: PASS :${value}`);
+              expect(true).assertTrue();
+              done();
+            } else if (value == audio.AudioRingMode.RINGER_MODE_NORMAL) {
+              console.info(`${TagFrmwk}: Callback: audioVolumeGroupManager.getRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
+              expect(true).assertTrue();
+              done();
+            } else if (value == audio.AudioRingMode.RINGER_MODE_SILENT) {
+              console.info(`${TagFrmwk}: Callback: audioVolumeGroupManager.getRingerMode RINGER_MODE_SILENT: PASS :${value}`);
+              expect(true).assertTrue();
+              done();
+            } else {
+              console.info(`${TagFrmwk}: Callback: audioVolumeGroupManager.getRingerMode : FAIL :${value}`);
+              expect(false).assertTrue();
+            }
+            done();
+          });
+        }
+      });
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_0001
+     * @tc.name      : getRingerModeSync - ENUM - MEDIA
+     * @tc.desc      : getRingerModeSync - ENUM - MEDIA
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let data = audioVolumeGroupManager.getRingerModeSync();
+        if (data == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
+        let data = audioVolumeGroupManager.getRingerModeSync();
+          console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerModeSync : PASS :${data}`);
+          expect(true).assertTrue();
+          done();
+        } else if (data == audio.AudioRingMode.RINGER_MODE_NORMAL) {
+          console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerModeSync : PASS :${data}`);
+          expect(true).assertTrue();
+          done();
+        } else if (data == audio.AudioRingMode.RINGER_MODE_SILENT) {
+          console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerModeSync : PASS :${data}`);
+          expect(true).assertTrue();
+          done();
+        } else {
+          console.info(`${TagFrmwk}: Media audioVolumeGroupManager.getRingerModeSync : FAIL :${data}`);
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (err) {
+        console.log('err :' + JSON.stringify(err.message));
+        expect(false).assertTrue();
+        done();
+      }
     })
 
     /**
@@ -3812,6 +4063,178 @@ export default function audioFramework() {
           });
         }
       });
+    })
+    
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0001
+     * @tc.name      : ismute - AudioVolumeType.Media - Promise - true
+     * @tc.desc      : ismute - AudioVolumeType.Media - Promise - true
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.setVolume(audio.AudioVolumeType.MEDIA, lowVol);
+        await audioManager.mute(audio.AudioVolumeType.MEDIA,true);
+        let data:boolean = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA);
+        if (data == true) {
+          console.log(`${TagFrmwk}: Promise: Is Stream Mute MEDIA: True: PASS:${data}`);
+          expect(true).assertTrue();
+          done();
+        } else {
+          console.log(`${TagFrmwk}: Promise: Is Stream Mute MEDIA: True: FAILED:${data}`);
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (err) {
+        console.info('err :' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0002
+     * @tc.name      : ismute - AudioVolumeType.Media - Promise - false
+     * @tc.desc      : ismute - AudioVolumeType.Media - Promise - false
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.setVolume(audio.AudioVolumeType.MEDIA, lowVol);
+        await audioManager.mute(audio.AudioVolumeType.MEDIA,false);
+        let data:boolean = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA);
+        if (data == false) {
+          console.log(`${TagFrmwk}: Promise: Is Stream Mute MEDIA: false: PASS:${data}`);
+          expect(true).assertTrue();
+          done();
+        } else {
+          console.log(`${TagFrmwk}: Promise: Is Stream Mute MEDIA: false: FAILED:${data}`);
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (err) {
+        console.info('err :' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0003
+     * @tc.name      : ismute - AudioVolumeType.Media - Callback - true
+     * @tc.desc      : ismute - AudioVolumeType.Media - Callback - true
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const muteValue = true;
+      await audioVolumeGroupManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
+      await audioVolumeGroupManager.mute(audio.AudioVolumeType.MEDIA, true);
+      console.log(`${TagFrmwk}: Set Stream Mute: MEDIA: Callback: TRUE`);
+      let data = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA,(err,data) => {
+        if (err) {
+          console.log(`${TagFrmwk}: Callback: Is Stream Mute MEDIA: SetVolume: FAIL:${data}`);
+          expect().assertFail();
+          done();
+        } else {
+          if (data === muteValue){
+            console.log(`${TagFrmwk}: isMute check PASS : expected=${muteValue}, actual=${data}`);
+            expect(true).assertTrue();
+            done();
+          } else {
+            console.log(`${TagFrmwk}: isMute check FAILED : expected=${muteValue}, actual=${data}`);
+            expect().assertFail();
+            done();
+          }
+         }
+      });
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0004
+     * @tc.name      : ismute - AudioVolumeType.Media - Callback - false
+     * @tc.desc      : ismute - AudioVolumeType.Media - Callback - false
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const muteValue = false;
+      await audioVolumeGroupManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
+      await audioVolumeGroupManager.mute(audio.AudioVolumeType.MEDIA, false);
+      console.log(`${TagFrmwk}: Set Stream Mute: MEDIA: Callback: TRUE`);
+      let data = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA,(err,data) => {
+        if (err) {
+          console.log(`${TagFrmwk}: Callback: Is Stream Mute MEDIA: SetVolume: FAIL:${data}`);
+          expect().assertFail();
+          done();
+        } else {
+          if (data === muteValue){
+            console.log(`${TagFrmwk}: isMute check PASS : expected=${muteValue}, actual=${data}`);
+            expect(true).assertTrue();
+            done();
+          } else {
+            console.log(`${TagFrmwk}: isMute check FAILED : expected=${muteValue}, actual=${data}`);
+            expect().assertFail();
+            done();
+          }
+         }
+      });
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTESYNC_0001
+     * @tc.name      : ismuteSync - AudioVolumeType.Media - true
+     * @tc.desc      : ismuteSync - AudioVolumeType.Media - true
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTESYNC_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
+        await audioManager.mute(audio.AudioVolumeType.MEDIA, true);
+        console.log(`${TagFrmwk}: Set Stream Mute: MEDIA: Promise: TRUE`);
+        let value = await audioVolumeGroupManager.getVolume(audio.AudioVolumeType.MEDIA);
+        let data:boolean = audioVolumeGroupManager.isMuteSync(audio.AudioVolumeType.MEDIA);
+        expect(data).assertEqual(true);
+        console.log(`${TagFrmwk}: indicate that the mute status of the stream is obtained : PASS:${data}`);
+        done();
+      } catch (err) {
+        console.info('err :' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTESYNC_0002
+     * @tc.name      : ismuteSync - AudioVolumeType.Media - false
+     * @tc.desc      : ismuteSync - AudioVolumeType.Media - false
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTESYNC_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
+        await audioManager.mute(audio.AudioVolumeType.MEDIA, false);
+        console.log(`${TagFrmwk}: Set Stream Mute: MEDIA: Promise: TRUE`);
+        let value = await audioVolumeGroupManager.getVolume(audio.AudioVolumeType.MEDIA);
+        let data:boolean = audioVolumeGroupManager.isMuteSync(audio.AudioVolumeType.MEDIA);
+        expect(data).assertEqual(false);
+        console.log(`${TagFrmwk}: indicate that the mute status of the stream is obtained : PASS:${data}`);
+        done();
+      } catch (err) {
+        console.info('err :' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+      done();
     })
 
     /**
@@ -6139,14 +6562,14 @@ export default function audioFramework() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_VOLUMECHANGE_0100
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ON_VOLUMECHANGE_0200
      * @tc.name      : AudioRendererChange - ON_AUDIOCAPTURERCHANGE 6800101
      * @tc.desc      : AudioRendererChange - ON_AUDIOCAPTURERCHANGE 6800101
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('SUB_MULTIMEDIA_AUDIO_ON_VOLUMECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+    it('SUB_MULTIMEDIA_AUDIO_ON_VOLUMECHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       let volumeManager = audio.getAudioManager().getVolumeManager();
       let flag: boolean = false;
       try {
@@ -6393,6 +6816,342 @@ export default function audioFramework() {
         expect(false).assertTrue();
       } catch (err) {
         expect(Number(err.code)).assertEqual(6800101);
+      }
+      done();
+    })
+
+    /**
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0100
+    * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0100
+    * @tc.desc      : isIntelligentNoiseReductionEnabledForCurrentDevice -
+    * @tc.size      : MEDIUM
+    * @tc.type      : Function
+    * @tc.level     : Level 0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        let flag: boolean = false;
+        try {
+            let isSupport: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(audio.SourceType.SOURCE_TYPE_LIVE);
+            console.info(`[Support] SourceType: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupport}`);
+            flag = true;
+        } catch (err) {
+            let error = err as BusinessError;
+            console.error(`isIntelligentNoiseReductionEnabledForCurrentDevice ERROR: ${error}`);
+        }
+        expect(flag).assertTrue();
+        done();
+    })
+
+    /**
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0200
+    * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0200
+    * @tc.desc      : isIntelligentNoiseReductionEnabledForCurrentDevice - 6800101
+    * @tc.size      : MEDIUM
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISINTELLIGENTNOISEREDUCTIONENABLEDFORCURRENTDEVICE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        try {
+            let param: ESObject = -100;
+            let isSupport: boolean = audioStreamManager.isIntelligentNoiseReductionEnabledForCurrentDevice(param);
+            console.info(`[Support] Status: ${isSupport}`);
+            expect(false).assertTrue();
+        } catch (err) {
+            let error = err as BusinessError;
+            console.error(`isIntelligentNoiseReductionEnabledForCurrentDevice ERROR: ${error}`);
+            expect(Number(err.code)).assertEqual(6800101);
+        }
+        done();
+    })
+    /**
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_AUDIOPRIVACYTYPE_0300
+    * @tc.name      : AudioPrivacyType - PRIVACY_TYPE_SHARED
+    * @tc.desc      : AudioPrivacyType - PRIVACY_TYPE_SHARED
+    * @tc.size      : MEDIUM
+    * @tc.type      : Function
+    * @tc.level     : Level 0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_AUDIOPRIVACYTYPE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      expect(audio.AudioPrivacyType.PRIVACY_TYPE_SHARED).assertEqual(2);
+      await sleep(50);
+      done();
+    })
+    /**
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTE_0100
+    * @tc.name      : isMute - Media - callback - SetVolume
+    * @tc.desc      : isMute - Media - callback - Enable mute - SetVolume
+    * @tc.size      : MEDIUM
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      await audioManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
+      audioManager.mute(audio.AudioVolumeType.MEDIA, true, (err) => {
+        if (err) {
+          console.error(`${TagFrmwk}: Set Stream Mute: Media: Callback: Error :  ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      });
+      audioManager.isMute(audio.AudioVolumeType.MEDIA, (err, value) =>{
+        if (err) {
+          console.error(`${TagFrmwk}: Callback : FALSE: Media : failed to get Mute Status ${err.message}`);
+          expect().assertFail();
+        } else if (value == true) {
+          console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: PASS: ${value}`);
+          expect(true).assertTrue();
+        } else {
+          console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: FAIL: ${value}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+      audioManager.mute(audio.AudioVolumeType.MEDIA, false, (err) =>{
+        if (err) {
+          console.error(`Failed to obtain the volume. ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        } else {
+          audioManager.isMute(audio.AudioVolumeType.MEDIA, (err, value) =>{
+            if (err) {
+              console.error(`${TagFrmwk}: Callback : FALSE: Media : failed to get Mute Status ${err.message}`);
+              expect().assertFail();
+            } else if (value == false) {
+              console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: PASS: ${value}`);
+              expect(true).assertTrue();
+            } else {
+              console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: FAIL: ${value}`);
+              expect(false).assertTrue();
+            }
+            done();
+          });
+        }
+      });
+    })
+    /**
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISACTIVE_0900
+    * @tc.name      : isActive - Ringtone - Callback - ENAME
+    * @tc.desc      : isActive - Ringtone - Callback - When stream is NOT playing
+    * @tc.size      : MEDIUM
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISACTIVE_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log(`${TagFrmwk}: Callback : isActive Ringtone: ENAME: NOTE: audio NOT PLAYING as MEDIA for the test case to PASS`);
+      audioManager.isActive(audio.AudioVolumeType.RINGTONE, (err, data) => {
+        if (err) {
+          console.error(`${TagFrmwk}: Callback : Ringtone : ENAME: isActive: failed  ${err.message}`);
+          expect().assertFail();
+        } else if (data == false) {
+          console.log(`${TagFrmwk}: Callback: isActive: Ringtone: ENAME: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else if (data == true){
+          console.log(`${TagFrmwk}: Callback: isActive: Ringtone: ENAME: TRUE: PASS: ${data}`);
+          expect(true).assertTrue();
+        } else{
+          console.log(`${TagFrmwk}: Callback: isActive: Ringtone: ENAME: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+        done();
+      });
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISACTIVE_1000
+     * @tc.name      : isActive - Ringtone - Promise - ENAME
+     * @tc.desc      : isActive - Ringtone - Promise - When stream is NOT playing
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISACTIVE_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.log(`${TagFrmwk}: Promise : isActive Ringtone: ENAME: NOTE: audio NOT PLAYING as MEDIA for the test case to PASS`);
+      const PROMISE = audioManager.isActive(audio.AudioVolumeType.RINGTONE);
+      PROMISE.then((data) => {
+        if (data == false) {
+          console.log(`${TagFrmwk}: Promise: isActive: Ringtone: ENAME: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else if (data == true){
+          console.log(`${TagFrmwk}: Callback: isActive: Ringtone: ENAME: TRUE: PASS: ${data}`);
+          expect(true).assertTrue();
+        } else{
+          console.log(`${TagFrmwk}: Callback: isActive: Ringtone: ENAME: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+      }).catch((err: BusinessError) => {
+        console.log('err :' + JSON.stringify(err));
+        expect().assertFail();
+      });
+      await PROMISE;
+      done();
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ISMICROPHONEMUTE_0200
+     * @tc.name      : setMicrophoneMute - true - Promise
+     * @tc.desc      : Enable mic mute
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ISMICROPHONEMUTE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ISMICROPHONEMUTE_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
+          done();
+          return;
+      }
+      try {
+        await audioManager.setMicrophoneMute(true);
+        let data = await audioManager.isMicrophoneMute();
+        if (data == true) {
+          console.log(`${TagFrmwk}: Promise: isMicrophoneMute: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else if (data == false){
+          console.log(`${TagFrmwk}: Promise: isMicrophoneMute: TRUE: PASS: ${data}`);
+          expect(true).assertTrue();
+        } else{
+          console.log(`${TagFrmwk}: Promise: isMicrophoneMute: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+      } catch (err) {
+        console.log('err :' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+      done();
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_GETRINGERMODE_0200
+     * @tc.name      : getRingerMode - Normal Mode - Promise - ENAME
+     * @tc.desc      : getRingerMode - Set Ring more to Normal Mode
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_GETRINGERMODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        await audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_NORMAL);
+        let value = await audioManager.getRingerMode();
+        if (value == audio.AudioRingMode.RINGER_MODE_NORMAL) {
+          console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
+          expect(true).assertTrue();
+        } else if (value == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
+          console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_VIBRATE: PASS :${value}`);
+          expect(true).assertTrue();
+        } else if (value == audio.AudioRingMode.RINGER_MODE_SILENT) {
+          console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_SILENT: PASS :${value}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Promise: getRingerMode RINGER_MODE_NORMAL: FAIL :${value}`);
+          expect(false).assertTrue();
+        }
+      } catch (err) {
+        console.log('err :' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+      done();
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISDEVICEACTIVE_0100
+     * @tc.name      : setDeviceActive - SPEAKER - deactivate - Callback
+     * @tc.desc      : Deactivate speaker - Callback
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISDEVICEACTIVE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let flag: boolean | null = null;
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG)
+      console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_ISDEVICEACTIVE_0100 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
+          done();
+          return;
+      }
+      console.info(`${TagFrmwk}: this is a default device`)
+      if (outputDeviceDescription.length == 1 && outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
+        flag = true;
+      }
+      if (outputDeviceDescription.length == 2 && outputDeviceDescription[0].deviceType == audio.DeviceType.EARPIECE &&
+        outputDeviceDescription[1].deviceType == audio.DeviceType.SPEAKER) {
+        flag = false;
+      }
+      await audioManager.setDeviceActive(audio.ActiveDeviceType.SPEAKER, false, (err) => {
+        if (err) {
+          console.error(`${TagFrmwk}: Device Test: Callback : isDeviceActive : SPEAKER: Deactivate: Error: ${err.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+       });
+       console.info(`${TagFrmwk}: Device Test: Callback : setDeviceActive : SPEAKER: Active`);
+       audioManager.isDeviceActive(2, (err, value) => {
+         if (err) {
+           console.error(`${TagFrmwk}: Device Test: Callback : isDeviceActive : SPEAKER: Deactivate: Error: ${err.message}`);
+           expect(false).assertTrue();
+         } else if (value == true) {
+           console.info(`${TagFrmwk}: Device Test: Callback : isDeviceActive : SPEAKER: Deactivate : PASS :${value}`);
+           expect(true).assertTrue();
+         } else if (value == false) {
+           console.info(`${TagFrmwk}: Device Test: Callback : isDeviceActive : SPEAKER: Deactivate : PASS :${value}`);
+           expect(true).assertTrue();
+         } else {
+           console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_ISDEVICEACTIVE_0100 ${TagFrmwk}: Device Test: Callback : isDeviceActive : SPEAKER: Deactivate : FAIL :${value} flag is ${flag}`);
+           expect(false).assertTrue();
+         }
+         done();
+      });
+    })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISDEVICEACTIVE_0200
+     * @tc.name      : isDeviceActive - SPEAKER - Activate - Promise
+     * @tc.desc      : Activate speaker - Promise
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISDEVICEACTIVE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let outputDeviceDescription = await audioManager.getDevices(audio.DeviceFlag.OUTPUT_DEVICES_FLAG);
+      console.info(`SUB_MULTIMEDIA_AUDIO_MANAGER_ISDEVICEACTIVE_0200 outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
+      console.info(`${TagFrmwk}: Determine if this is a default device`)
+      const detecteDevice = outputDeviceDescription.some(device =>
+            device.deviceType === audio.DeviceType.DISPLAY_PORT
+        );
+      if (detecteDevice) {
+          console.info(`${TagFrmwk}: this device has external device`)
+          expect(true).assertTrue();
+          done();
+          return;
+      }
+      console.info(`${TagFrmwk}: this is a default device`)
+      try {
+        await audioManager.setDeviceActive(audio.ActiveDeviceType.SPEAKER, true);
+        let value = await audioManager.isDeviceActive(2);
+        if (value == true) {
+          console.info(`${TagFrmwk}: Device Test: Promise : isDeviceActive : SPEAKER: Activate : PASS :${value}`);
+          expect(true).assertTrue();
+        } else if (value == false) {
+          console.info(`${TagFrmwk}: Device Test: Promise : isDeviceActive : SPEAKER: Activate : PASS :${value}`);
+          expect(true).assertTrue();
+        } else {
+          console.info(`${TagFrmwk}: Device Test: Promise : isDeviceActive : SPEAKER: Activate : FAIL :${value}`);
+          expect(false).assertTrue();
+        }
+      } catch (err) {
+        console.log('err :' + JSON.stringify(err));
+        expect(false).assertTrue();
       }
       done();
     })

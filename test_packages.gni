@@ -61,6 +61,8 @@ _all_test_packages = [
   "${ACTS_ROOT}/window:window",
   "${ACTS_ROOT}/print:print",
   "${ACTS_ROOT}/distributedhardware:distributedhardware",
+  "${ACTS_ROOT}/game:game",
+  "${ACTS_ROOT}/updater:update",
   "${ACTS_ROOT}/tee:tee",
 ]
 

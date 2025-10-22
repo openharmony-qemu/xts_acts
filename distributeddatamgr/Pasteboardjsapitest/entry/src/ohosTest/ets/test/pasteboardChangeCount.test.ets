@@ -375,7 +375,7 @@ export default function PasteboardChangeCountTest() {
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTestTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+    it('SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info(TAG + '************ SUB_Pasteboard_Local_Local_SDK_PasteboardChangeCountTest_0900 start ************')
       try {
         let  result1: number = systemPasteboard.getChangeCount();

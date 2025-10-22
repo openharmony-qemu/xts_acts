@@ -42,6 +42,8 @@ export default function BindControllerTest() {
       await TextErrorButton100021.click()
       await Utils.sleep(500)
       expect(''+AppStorage.get('TextErrorStr100021')).assertEqual('100021');
+      expect(AppStorage.get('getAttributeText')).assertEqual(undefined);
+      AppStorage.delete('getAttributeText');
       AppStorage.delete('TextErrorStr100021')
       done()
     })
@@ -61,6 +63,8 @@ export default function BindControllerTest() {
       await TextInputErrorButton100021.click()
       await Utils.sleep(500)
       expect(''+AppStorage.get('TextInputErrorStr100021')).assertEqual('100021');
+      expect(AppStorage.get('getAttributeTextInput')).assertEqual(undefined);
+      AppStorage.delete('getAttributeTextInput');
       AppStorage.delete('TextInputErrorStr100021')
       done()
     })
@@ -80,6 +84,8 @@ export default function BindControllerTest() {
       await TextAreaErrorButton100021.click()
       await Utils.sleep(500)
       expect(''+AppStorage.get('TextAreaErrorStr100021')).assertEqual('100021');
+      expect(AppStorage.get('getAttributeTextArea')).assertEqual(undefined);
+      AppStorage.delete('getAttributeTextArea');
       AppStorage.delete('TextAreaErrorStr100021')
       done()
     })

@@ -13,9 +13,13 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 200730;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -23,14 +27,12 @@ export default function webInitTest() {
 
   describe('WebInitTest', () => {
     beforeEach(async (done: Function) => {
-      console.info("web beforeEach start");
-      done();
-    })
-
-    afterEach(async (done: Function) => {
-      console.info("WebInitTest afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebInitTest afterEach end");
+      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+        console.info(`enable success`);
+      }).catch((err: object) => {
+        console.error(`failed to enable, ${err}`);
+      })
+      console.info("webController beforeEach start");
       done();
     })
 
@@ -43,10 +45,12 @@ export default function webInitTest() {
     * @tc.level       : Level 0
     */
     it('testCustomizeSchemesFetch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testCustomizeSchemesFetch001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testCustomizeSchemesFetch001", true, 202, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      Utils.emitEvent("testCustomizeSchemesFetch001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testCustomizeSchemesFetch001", true, 200740, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebInitTestButton");
+      await Utils.waitForExist(() => isReturn, 'testCustomizeSchemesFetch001' + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -58,10 +62,12 @@ export default function webInitTest() {
     * @tc.level       : Level 1
     */
     it('testCustomizeSchemesFetch002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testCustomizeSchemesFetch002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testCustomizeSchemesFetch002", true, 204, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      Utils.emitEvent("testCustomizeSchemesFetch002", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testCustomizeSchemesFetch002", true, 200750, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebInitTestButton");
+      await Utils.waitForExist(() => isReturn, 'testCustomizeSchemesFetch002' + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -73,10 +79,12 @@ export default function webInitTest() {
     * @tc.level       : Level 1
     */
     it('testCustomizeSchemesFetch003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testCustomizeSchemesFetch003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testCustomizeSchemesFetch003", true, 206, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      Utils.emitEvent("testCustomizeSchemesFetch003", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testCustomizeSchemesFetch003", true, 200760, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebInitTestButton");
+      await Utils.waitForExist(() => isReturn, 'testCustomizeSchemesFetch003' + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -88,10 +96,12 @@ export default function webInitTest() {
     * @tc.level       : Level 1
     */
     it('testCustomizeSchemesFetch004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testCustomizeSchemesFetch004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testCustomizeSchemesFetch004", true, 208, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      Utils.emitEvent("testCustomizeSchemesFetch004", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testCustomizeSchemesFetch004", true, 200770, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebInitTestButton");
+      await Utils.waitForExist(() => isReturn, 'testCustomizeSchemesFetch004' + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -103,10 +113,12 @@ export default function webInitTest() {
     * @tc.level       : Level 1
     */
     it('testCustomizeSchemesFetch005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testCustomizeSchemesFetch005", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testCustomizeSchemesFetch005", true, 210, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      Utils.emitEvent("testCustomizeSchemesFetch005", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testCustomizeSchemesFetch005", true, 200780, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebInitTestButton");
+      await Utils.waitForExist(() => isReturn, 'testCustomizeSchemesFetch005' + '_returnCheck', true, 1000);
+      done();
     })
 
     /*
@@ -118,10 +130,12 @@ export default function webInitTest() {
     * @tc.level       : Level 1
     */
     it('testCustomizeSchemesFetch006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testCustomizeSchemesFetch006", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testCustomizeSchemesFetch006", true, 212, done);
-      sendEventByKey('WebInitTestButton', 10, '');
+      Utils.emitEvent("testCustomizeSchemesFetch006", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = false;
+      Utils.registerEvent("testCustomizeSchemesFetch006", true, 200790, () => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebInitTestButton");
+      await Utils.waitForExist(() => isReturn, 'testCustomizeSchemesFetch006' + '_returnCheck', true, 1000);
+      done();
     })
   })
 }

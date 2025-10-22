@@ -56,7 +56,7 @@ struct SwiperExampleT3 {
       Swiper(this.swiperController) {
         LazyForEach(this.data, (item: string) => {
           Text(item.toString())
-            .width('90%')
+            .width('100%')
             .height(160)
             .key('item3S'+item.toString())
             .backgroundColor(0xAFEEEE)
@@ -64,6 +64,7 @@ struct SwiperExampleT3 {
             .fontSize(30)
         }, (item: string) => item)
       }
+      .width('80%')
       .cachedCount(2)
       .index(1)
       .autoPlay(false)

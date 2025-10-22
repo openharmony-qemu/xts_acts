@@ -17,9 +17,17 @@ import FileManagementEnvironment from './FileManagementEnvironment.test';
 import FileManagementFileIO from './FileManagementFileIO.test';
 import FileManagementFileShare from './FileManagementFileShare.test';
 import FileManagementFileUri from './FileManagementFileUri.test';
+import EmptyTest from './Empty.test';
 export default function testsuite() {
-  FileManagementEnvironment()
-  FileManagementFileIO()
-  FileManagementFileShare()
-  FileManagementFileUri()
+  if (canIUse("SystemCapability.FileManagement.AppFileService.FolderAuthorization")){
+    FileManagementEnvironment()
+    FileManagementFileIO()
+    FileManagementFileShare()
+    FileManagementFileUri()
+  }else{
+    FileManagementEnvironment()
+    FileManagementFileIO()
+    FileManagementFileUri()
+    EmptyTest()
+  }
 }

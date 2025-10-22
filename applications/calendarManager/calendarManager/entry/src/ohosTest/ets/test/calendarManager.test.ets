@@ -1793,6 +1793,11 @@ export default function CalendarManagerTest() {
           } else {
             console.info(CaseName + "Succeeded in getEvents" + JSON.stringify(Events));
             expect(Events[0] != '').assertTrue();
+            if (Events.length > 0) {
+              expect(Events.length > 0).assertTrue();
+            } else {
+              expect(Events.length).assertEqual(0);
+            }
             return;
           }
         }).catch((err: BusinessError) => {
@@ -1841,6 +1846,11 @@ export default function CalendarManagerTest() {
               } else {
                 console.info(CaseName + "Succeeded in getEvents" + JSON.stringify(Events));
                 expect(Events[0] != null).assertTrue();
+                if (Events.length > 0) {
+                  expect(Events.length > 0).assertTrue();
+                } else {
+                  expect(Events.length).assertEqual(0);
+                }
                 return;
               }
             });
@@ -1878,6 +1888,11 @@ export default function CalendarManagerTest() {
             console.info(CaseName + `Failed to getEvents, Code is ${err.code}, message is ${err.message}`);
             expect().assertFail();
           } else {
+            if (Events.length > 0) {
+              expect(Events.length > 0).assertTrue();
+            } else {
+              expect(Events.length).assertEqual(0);
+            }
             console.info(CaseName + "Succeeded in getEvents" + JSON.stringify(Events));
             expect(Events[0] != null).assertTrue();
             return;
@@ -1914,6 +1929,11 @@ export default function CalendarManagerTest() {
             console.info(CaseName + `Failed to getEvents, Code is ${err.code}, message is ${err.message}`);
             expect().assertFail();
           } else {
+            if (Events.length > 0) {
+              expect(Events.length > 0).assertTrue();
+            } else {
+              expect(Events.length).assertEqual(0);
+            }
             console.info(CaseName + "Succeeded in getEvents" + JSON.stringify(Events));
             expect(Events[0] != null).assertTrue();
             return;
@@ -1949,6 +1969,11 @@ export default function CalendarManagerTest() {
         Calendar.getEvents(filter, columns).then((data) => {
           console.info(CaseName + "Succeeded in getting events" + JSON.stringify(data));
           expect(data != null).assertTrue();
+          if (data.length > 0) {
+            expect(data.length > 0).assertTrue();
+          } else {
+            expect(data.length).assertEqual(0);
+          }
           return;
         }).catch((err: BusinessError) => {
           console.error(CaseName + `Failed to get events, Code is ${err.code}, message is ${err.message}`);
@@ -1984,6 +2009,11 @@ export default function CalendarManagerTest() {
         Calendar.getEvents(filter, columns).then((data) => {
           console.info(CaseName + "Succeeded in getting events" + JSON.stringify(data));
           expect(data != null).assertTrue();
+          if (data.length > 0) {
+            expect(data.length > 0).assertTrue();
+          } else {
+            expect(data.length).assertEqual(0);
+          }
           return;
         }).catch((err: BusinessError) => {
           console.error(CaseName + `Failed to get events, Code is ${err.code}, message is ${err.message}`);
@@ -2019,6 +2049,11 @@ export default function CalendarManagerTest() {
         Calendar.getEvents(filter, columns).then((data) => {
           console.info(CaseName + "Succeeded in getting events" + JSON.stringify(data));
           expect(data != null).assertTrue();
+          if (data.length > 0) {
+            expect(data.length > 0).assertTrue();
+          } else {
+            expect(data.length).assertEqual(0);
+          }
           return;
         }).catch((err: BusinessError) => {
           console.error(CaseName + `Failed to get events, Code is ${err.code}, message is ${err.message}`);
@@ -2056,6 +2091,11 @@ export default function CalendarManagerTest() {
           data1 = data;
           expect(data != null).assertTrue();
           expect(data1[0].id != 0).assertTrue();
+          if (data1.length > 0) {
+            expect(data1.length > 0).assertTrue();
+          } else {
+            expect(data1.length).assertEqual(0);
+          }
           return;
         }).catch((err: BusinessError) => {
           console.error(CaseName + `Failed to get events, Code is ${err.code}, message is ${err.message}`);
@@ -2089,6 +2129,11 @@ export default function CalendarManagerTest() {
         Calendar.getEvents().then((data) => {
           console.info(CaseName + "Succeeded in getting events" + JSON.stringify(data));
           expect(data != null).assertTrue();
+          if (data.length > 0) {
+            expect(data.length > 0).assertTrue();
+          } else {
+            expect(data.length).assertEqual(0);
+          }
           return;
         }).catch((err: BusinessError) => {
           console.error(CaseName + `Failed to get events, Code is ${err.code}, message is ${err.message}`);
@@ -2407,6 +2452,11 @@ export default function CalendarManagerTest() {
         Calendar.getEvents(filter, columns).then((data) => {
           console.info(CaseName + "Succeeded in getting events" + JSON.stringify(data));
           expect(data != null).assertTrue();
+          if (data.length > 0) {
+            expect(data.length > 0).assertTrue();
+          } else {
+            expect(data.length).assertEqual(0);
+          }
           return;
         }).catch((err: BusinessError) => {
           console.error(CaseName + `Failed to get events, Code is ${err.code}, message is ${err.message}`);
@@ -2482,6 +2532,11 @@ export default function CalendarManagerTest() {
         Calendar.getEvents(filter).then((data) => {
           console.info(CaseName + "Succeeded in getting events" + JSON.stringify(data));
           expect(data != null).assertTrue();
+          if (data.length > 0) {
+            expect(data.length > 0).assertTrue();
+          } else {
+            expect(data.length).assertEqual(0);
+          }
           return;
         }).catch((err: BusinessError) => {
           console.error(CaseName + `Failed to get events, Code is ${err.code}, message is ${err.message}`);
@@ -2517,6 +2572,11 @@ export default function CalendarManagerTest() {
         Calendar.getEvents(columns).then((data) => {
           console.info(CaseName + "Succeeded in getting events" + JSON.stringify(data));
           expect(data != null).assertTrue();
+          if (data.length > 0) {
+            expect(data.length > 0).assertTrue();
+          } else {
+            expect(data.length).assertEqual(0);
+          }
           return;
         }).catch((err: BusinessError) => {
           console.error(CaseName + `Failed to get events, Code is ${err.code}, message is ${err.message}`);
@@ -2552,6 +2612,11 @@ export default function CalendarManagerTest() {
         Calendar.getEvents().then((data) => {
           console.info(CaseName + "Succeeded in getting events" + JSON.stringify(data));
           expect(data != null).assertTrue();
+          if (data.length > 0) {
+            expect(data.length > 0).assertTrue();
+          } else {
+            expect(data.length).assertEqual(0);
+          }
           return;
         }).catch((err: BusinessError) => {
           console.error(CaseName + `Failed to get events, Code is ${err.code}, message is ${err.message}`);
@@ -2822,6 +2887,11 @@ export default function CalendarManagerTest() {
       calendarMgr?.getAllCalendars().then((data) => {
         console.info(CaseName + `Succeeded in deleting calendar, data: ${JSON.stringify(data)}`);
         expect(data != null).assertTrue();
+        if (data.length > 0) {
+          expect(data.length > 0).assertTrue();
+        } else {
+          expect(data.length).assertEqual(0);
+        }
         return;
       }).catch((err: BusinessError) => {
         if(err.code == 201) {
@@ -2859,6 +2929,11 @@ export default function CalendarManagerTest() {
           expect().assertFail();
         } else {
           console.info(CaseName + "Succeeded in get AllCalendars" + JSON.stringify(data));
+          if (data.length > 0) {
+            expect(data.length > 0).assertTrue();
+          } else {
+            expect(data.length).assertEqual(0);
+          }
           expect(data != null).assertTrue();
           return;
         }
@@ -2932,6 +3007,11 @@ export default function CalendarManagerTest() {
           undefined, columns).then((data) => {
           console.info(CaseName + "Succeeded in getting event instances" + JSON.stringify(data));
           expect(data != null).assertTrue();
+          if (data.length > 0) {
+            expect(data.length > 0).assertTrue();
+          } else {
+            expect(data.length).assertEqual(0);
+          }
           return;
         }).catch((err: BusinessError) => {
           console.error(CaseName + `Failed to get event instances, Code is ${err.code}, message is ${err.message}`);
@@ -3008,6 +3088,11 @@ export default function CalendarManagerTest() {
           undefined).then((data) => {
           console.info(CaseName + "Succeeded in getting event instances" + JSON.stringify(data));
           expect(data != null).assertTrue();
+          if (data.length > 0) {
+            expect(data.length > 0).assertTrue();
+          } else {
+            expect(data.length).assertEqual(0);
+          }
           return;
         }).catch((err: BusinessError) => {
           console.error(CaseName + `Failed to get event instances, Code is ${err.code}, message is ${err.message}`);
@@ -3083,6 +3168,11 @@ export default function CalendarManagerTest() {
         Calendar.queryEventInstances(new Date().getTime(), new Date().getTime() + 60 * 60 * 3000).then((data) => {
           console.info(CaseName + "Succeeded in getting event instances" + JSON.stringify(data));
           expect(data != null).assertTrue();
+          if (data.length > 0) {
+            expect(data.length > 0).assertTrue();
+          } else {
+            expect(data.length).assertEqual(0);
+          }
           return;
         }).catch((err: BusinessError) => {
           console.error(CaseName + `Failed to get event instances, Code is ${err.code}, message is ${err.message}`);

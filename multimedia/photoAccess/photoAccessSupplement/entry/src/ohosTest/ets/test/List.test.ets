@@ -3,6 +3,18 @@ import MediaAssetManagerRequestImageTest from './photoAccess/PhotoAccessHelperRe
 import MediaAssetManagerRequestImageDataTest from './photoAccess/PhotoAccessHelperRequestImageData.test.ets';
 import mediaAssetManagerGetAssetsTest from './photoAccess/PhotoAccessHelperGetAssetsTest.test.ets';
 import PhotoAccessHelperLoadMovingPhoto from './photoAccess/PhotoAccessHelperLoadMovingPhoto.test.ets';
+import PhotoCreateAssetSuppTest from './photoAccess/PhotoCreateAssetSupp.test.ets';
+import GetObjectByPositionTest from './photoAccess/GetObjectByPositionSupp.test.ets';
+import AddResourceChangeRequestSuppTest from './photoAccess/AddResourceSupp.test.ets';
+import GetAlbumsSuppTest from './photoAccess/GetAlbumsSuppTest.test.ets';
+import AddResourceChangeRequestUrlSuppTest from './photoAccess/AddResourceUrl.test.ets';
+import ApplyChangesSuppTest from './photoAccess/ApplyChangesSupp.test.ets';
+import getThumbnailTest from './photoAccess/PhotoAssetGetThumbnail.test.ets';
+import PhotoAccessHelperAssetsTest from './photoAccess/PhotoAccessHelperAssets.test';
+import DiscardCameraPhotoTest from './photoAccess/PhotoAccessHelperDiscardCameraPhoto.test';
+import SaveCameraPhoto from './photoAccess/PhotoAccessHelperSaveCameraPhoto.test';
+import CommitModifySuppTest from './photoAccess/CommitModifyTest.test';
+import DeleteAssetsChangeRequestSuppTest from './photoAccess/DeleteAssets.test';
 
 export default function testsuite() {
   PhotoAccessMediaAssetChangeRequestSuppTest();
@@ -10,4 +22,16 @@ export default function testsuite() {
   mediaAssetManagerGetAssetsTest();
   MediaAssetManagerRequestImageDataTest();
   PhotoAccessHelperLoadMovingPhoto();
+  PhotoCreateAssetSuppTest();
+  GetObjectByPositionTest();
+  AddResourceChangeRequestSuppTest();
+  AddResourceChangeRequestUrlSuppTest();
+  ApplyChangesSuppTest();
+  GetAlbumsSuppTest();
+  getThumbnailTest();
+  SaveCameraPhoto();
+  DiscardCameraPhotoTest();
+  PhotoAccessHelperAssetsTest();
+  CommitModifySuppTest();
+  DeleteAssetsChangeRequestSuppTest();
 }

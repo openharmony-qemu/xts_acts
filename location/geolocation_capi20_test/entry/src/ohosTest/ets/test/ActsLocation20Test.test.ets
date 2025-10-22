@@ -121,7 +121,7 @@ export default function ActsLocation20Test() {
       async (done: Function) => {
         try {
           console.info("====>testLocationKitOH_Location_StartLocatingTest0102 start====");
-          let result = locationcapi20.OH_Location_StartLocating1();
+          let result = locationcapi20.OH_Location_StartLocating3();
           console.info("====>testLocationKitOH_Location_StartLocatingTest0102 result: " + result);
           expect(0).assertEqual(result);
           done()
@@ -145,7 +145,7 @@ export default function ActsLocation20Test() {
       async (done: Function) => {
         try {
           console.info("====>testLocationKitOH_Location_StopLocatingTest0101 start====");
-          let result = locationcapi20.OH_Location_StopLocating1();
+          let result = locationcapi20.OH_Location_StopLocating3();
           console.info("====>testLocationKitOH_Location_StopLocatingTest0101 result: " + result);
           expect(0).assertEqual(result);
           done()

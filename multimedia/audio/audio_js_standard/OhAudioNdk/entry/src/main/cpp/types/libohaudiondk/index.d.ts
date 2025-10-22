@@ -79,3 +79,7 @@ export const OHAudioCapturerGetTimestamp: () => number;
 export const OHAudioCapturerGetFramePosition: () => number;
 export const OpenFileName: (file: string) => number;
 export const CloseCapturerPCMFile: () => number;
+export const DeInitOpenSlesTest: () => number;
+export const InitOpenSlesTest: () => number;
+export const TestOpenSlesRecorder: () => number;
+export const TestOpenSlesRecorderInValid: () => number;

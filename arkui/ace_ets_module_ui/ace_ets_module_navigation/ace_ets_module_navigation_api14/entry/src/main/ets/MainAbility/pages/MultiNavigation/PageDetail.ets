@@ -126,6 +126,16 @@ export struct PageDetail {
                 }
               })
               .id('getParamByNameId')
+            Button('getIndexByName')
+              .height('5%')
+              .onClick(() => {
+                if (this.pageStack !== undefined && this.pageStack !== null) {
+                  let result = this.pageStack.getIndexByName('PageDetail');
+                  console.log('multi test getIndexByName: ' + result?.length);
+                  AppStorage.setOrCreate('indexLength', result?.length);
+                }
+              })
+              .id('getIndexByNameId')
             Button('getSize')
               .height('5%')
               .onClick(() => {

@@ -177,7 +177,6 @@ struct WebViewEnumAndSetWebController {
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
               let button = await driver.findComponent(ON.id('WebViewEnumAndSetWebControllerWebView'));
               await button.longClick();
-              await Utils.waitForReleaseDriver(this.str,driver)
               break;
             }
             case "emitContextMenuSourceTypeMouse": {
@@ -189,7 +188,6 @@ struct WebViewEnumAndSetWebController {
               let downX = Math.round(globalThis.winLeft + webRect.left + (webRect.right - webRect.left) / 2);
               let downY = Math.round(globalThis.winTop + webRect.top + (webRect.bottom - webRect.top) / 2);
               await driver.mouseClick({ x: downX, y: downY }, MouseButton.MOUSE_BUTTON_RIGHT);
-              await Utils.waitForReleaseDriver(this.str,driver)
               break;
             }
           }

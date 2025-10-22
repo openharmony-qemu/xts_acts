@@ -1,4 +1,19 @@
+/*
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the 'License');
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an 'AS IS' BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 import { huks } from '@kit.UniversalKeystoreKit';
+import { GetDataBySize, StringToUint8Array } from '../common/CommonUtils';
 import { GenParam, SetParam } from './HuksOptionsUtils';
 
 export function GetSha256SignOptions(): huks.HuksOptions {
@@ -95,17 +110,6 @@ export function GetNoDigestPkcs1SignOptions(): huks.HuksOptions {
   return huksOptions;
 }
 
-export function GetNoDigestNoPaddingSignOptions(): huks.HuksOptions {
-  let huksOptions: huks.HuksOptions = {
-    properties: new Array(
-      GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN),
-      GenParam(huks.HuksTag.HUKS_TAG_PADDING, huks.HuksKeyPadding.HUKS_PADDING_NONE),
-      GenParam(huks.HuksTag.HUKS_TAG_DIGEST, huks.HuksKeyDigest.HUKS_DIGEST_NONE)
-    )
-  };
-  return huksOptions;
-}
-
 export function GetSha256PssSignOptions(): huks.HuksOptions {
   let huksOptions: huks.HuksOptions = {
     properties: new Array(
@@ -134,6 +138,17 @@ export function GetSha512PssSignOptions(): huks.HuksOptions {
       GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN),
       GenParam(huks.HuksTag.HUKS_TAG_PADDING, huks.HuksKeyPadding.HUKS_PADDING_PSS),
       GenParam(huks.HuksTag.HUKS_TAG_DIGEST, huks.HuksKeyDigest.HUKS_DIGEST_SHA512)
+    )
+  };
+  return huksOptions;
+}
+
+export function GetNoDigestNoPaddingSignOptions(): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN),
+      GenParam(huks.HuksTag.HUKS_TAG_PADDING, huks.HuksKeyPadding.HUKS_PADDING_NONE),
+      GenParam(huks.HuksTag.HUKS_TAG_DIGEST, huks.HuksKeyDigest.HUKS_DIGEST_NONE)
     )
   };
   return huksOptions;
@@ -179,4 +194,22 @@ export interface SignVerifyData {
   updateDataArr: Array<Uint8Array> | null,
   finishData: Uint8Array | null,
   signatureData: Uint8Array | null
+}
+
+export function BuildSignVerifyData(dataLenArr: Array<number>) {
+  let signVerifyData: SignVerifyData = {
+    updateDataArr: null,
+    finishData: null,
+    signatureData: null
+  }
+  if (dataLenArr.length == 0) {
+    return signVerifyData;
+  } else if (dataLenArr.length > 1) {
+    signVerifyData.updateDataArr = new Array();
+    for (let i = 0; i < dataLenArr.length - 1; i++) {
+      signVerifyData.updateDataArr.push(StringToUint8Array(GetDataBySize(dataLenArr[i])));
+    }
+  }
+  signVerifyData.finishData = StringToUint8Array(GetDataBySize(dataLenArr[dataLenArr.length-1]));
+  return signVerifyData;
 }

@@ -14,10 +14,9 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
-import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
+
+const EVENT_ID_SET_EMIT_KEY = 201640;
 
 @Entry
 @Component
@@ -26,7 +25,6 @@ struct webOnInterceptReqThree {
   responseweb: WebResourceResponse = new WebResourceResponse()
   heads: Header[] = new Array()
   @State str: string = "emitOnInterceptRequestThirdWebC";
-  @State firstId: number = 410;
   @State webdata: string = "<!DOCTYPE html>\n" +
     "<html>\n" +
     "<head>\n" +
@@ -36,14 +34,20 @@ struct webOnInterceptReqThree {
     "<h1>intercept test</h1>\n" +
     "</body>\n" +
     "</html>"
-  @State title: string = "test";
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
+  @State isStart: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: ESObject) => {
@@ -52,6 +56,7 @@ struct webOnInterceptReqThree {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -59,18 +64,18 @@ struct webOnInterceptReqThree {
   build() {
     Column() {
       Row() {
-        Button("web click").key('webOnInterceptReqThree').onClick(() => {
-          console.info("key==>" + this.str)
+        Button("web click").key('webOnInterceptReqThree').onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, 'webOnInterceptReqThreeIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'webOnInterceptReqThreeIsPageEnd', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitOnInterceptRequestThirdWebC": {
               try {
+                this.isPageEnd = -1;
+                this.isStart = 1;
                 this.controller.refresh();
-                this.controller.runJavaScript({
-                  script: "gettitle()", callback: (result) => {
-                    this.title = JSON.parse(result)
-                    console.log(`The gettitle() return value is: ${result}`);
-                  }
-                })
+                await Utils.waitForExist(()=>this.isPageEnd, 'refreshIsPageEnd', 1, 1000);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -99,12 +104,6 @@ struct webOnInterceptReqThree {
           this.responseweb.setResponseMimeType('text/html');
           this.responseweb.setResponseCode(404);
           this.responseweb.setReasonMessage('OK');
-          this.controller.runJavaScript({
-            script: "gettitle()", callback: (result) => {
-              this.title = JSON.parse(result);
-              console.log(`The gettitle() return value is: ${result}`);
-            }
-          })
           return this.responseweb;
         })
         .onHttpErrorReceive((event) => {
@@ -116,7 +115,10 @@ struct webOnInterceptReqThree {
           console.log('getResponseEncoding:' + event.response.getResponseEncoding());
           console.log('getResponseMimeType:' + event.response.getResponseMimeType());
           console.log('getResponseCode:' + event.response.getResponseCode());
-          Utils.emitEvent(event.response.getResponseCode(), this.firstId);
+          if(this.isStart === 1) {
+            Utils.emitEvent(event.response.getResponseCode(), 201650);
+          }
+
           console.log('getReasonMessage:' + event.response.getReasonMessage());
           let result = event.request.getRequestHeader();
           console.log('The request header result size is ' + result.length);
@@ -128,6 +130,10 @@ struct webOnInterceptReqThree {
           for (let i of resph) {
             console.log('The response header key is : ' + i.headerKey + ' , value is : ' + i.headerValue);
           }
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd ==>' + event.url);
+          this.isPageEnd = 1;
         })
     }
   }

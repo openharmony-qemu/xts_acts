@@ -38,7 +38,7 @@ export default function ActsUIExtensionContextMethodTest() {
       }
     });
     afterEach(async () => {
-      await sleep(1500);
+      await sleep(500);
     })
     /*
      * @tc.number: SUB_Ability_AbilityRuntime_UIExtensionContext_0100

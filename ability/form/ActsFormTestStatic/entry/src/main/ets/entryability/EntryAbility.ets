@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
 
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 const TAG: string = 'testTag EntryAbility';
 
 class EntryAbility extends UIAbility {
@@ -41,8 +41,8 @@ class EntryAbility extends UIAbility {
       try {
         let aRouter = this.uiContext?.getRouter();
         aRouter?.pushUrl({url: this.wantUri})
-      } catch (e: Error) {
-        hilog.error(DOMAIN, TAG, `pushUrl error: ${e?.message}`);
+      } catch (e) {
+        hilog.error(DOMAIN, TAG, `pushUrl error: ${(e as Error)?.message}`);
       }
     }
     this.wantUri = '';
@@ -60,16 +60,16 @@ class EntryAbility extends UIAbility {
         }
         hilog.info(DOMAIN, TAG, 'loadContent ok');
       });
-    } catch (e: Error) {
-      hilog.error(DOMAIN, TAG, `loadContent catch error: ${e?.message}`);
+    } catch (e) {
+      hilog.error(DOMAIN, TAG, `loadContent catch error: ${(e as Error)?.message}`);
     }
 
     try {
       let windowClass = windowStage.getMainWindowSync();
       this.uiContext = windowClass!.getUIContext();
       hilog.info(DOMAIN, TAG, 'getUIContext');
-    } catch (e: Error) {
-      hilog.error(DOMAIN, TAG, `getUIContext error: ${e?.message}`);
+    } catch (e) {
+      hilog.error(DOMAIN, TAG, `getUIContext error: ${(e as Error)?.message}`);
     }
   }
 

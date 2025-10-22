@@ -15,15 +15,12 @@
 
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from '@ohos/hypium';
-import { Driver } from '@kit.TestKit';
 import { webview } from '@kit.ArkWeb';
-import { LocalContext } from './GloablConfig';
-import { router } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { accessibility, config } from '@kit.AccessibilityKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let driver: Driver = Driver.create();
 let flg: boolean = false
 
 export default function webRequestHeaderList() {
@@ -34,6 +31,7 @@ export default function webRequestHeaderList() {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
     })
+
     beforeEach(() => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
@@ -45,6 +43,7 @@ export default function webRequestHeaderList() {
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
     })
+
     afterEach(() => {
       flg = false;
       // Presets a clear action, which is performed after each unit test case ends.
@@ -68,7 +67,6 @@ export default function webRequestHeaderList() {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_WarmupServiceWorker_0002 start')
       console.info('SUB_ACE_WEB_WarmupServiceWorker_0002 start')
-      await driver.delayMs(500)
 
       try {
         webview.WebviewController.warmupServiceWorker("https://");
@@ -76,9 +74,8 @@ export default function webRequestHeaderList() {
         flg = true
         console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
         expect(error.code).assertEqual("17100002")
-        expect(error.message).assertEqual("URL error. Possible causes:1.No valid cookie found for the specified URL. 2.The webpage corresponding to the URL is invalid, or the URL length exceeds 2048.")
+        expect(error.message).assertEqual("URL error. Possible causes:1.No valid cookie found for the specified URL. 2.The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.")
       }
-      await driver.delayMs(2000)
       expect(flg).assertTrue()
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_WarmupServiceWorker_0002 end')
       console.info('SUB_ACE_WEB_WarmupServiceWorker_0002 end')
@@ -96,7 +93,6 @@ export default function webRequestHeaderList() {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_WarmupServiceWorker_0003 start')
       console.info('SUB_ACE_WEB_WarmupServiceWorker_0003 start')
-      await driver.delayMs(500)
 
       try {
         webview.WebviewController.warmupServiceWorker(null);
@@ -104,13 +100,12 @@ export default function webRequestHeaderList() {
         flg = true
         console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
         expect(error.code).assertEqual("17100002")
-        expect(error.message).assertEqual("URL error. Possible causes:1.No valid cookie found for the specified URL. 2.The webpage corresponding to the URL is invalid, or the URL length exceeds 2048.")
+        expect(error.message).assertEqual("URL error. Possible causes:1.No valid cookie found for the specified URL. 2.The webpage corresponding to the URL is invalid, or the URL length exceeds 2*1024*1024.")
       }
-      await driver.delayMs(2000)
+
       expect(flg).assertTrue()
       hilog.info(0x0000, 'testTag', '%{public}s', 'SUB_ACE_WEB_WarmupServiceWorker_0003 end')
       console.info('SUB_ACE_WEB_WarmupServiceWorker_0003 end')
     })
-
   })
 }

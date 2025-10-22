@@ -39,7 +39,7 @@ interface ParametersObj  {
   acts_startupVisibility: number | undefined
   targetPid: string
 }
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let testTag: string = 'testTag';
 
 function getCount(str: string, substring: string): number {
@@ -121,8 +121,8 @@ let subscribeCallBack = async (err:BusinessError<void> | null, data: commonEvent
 
 let startAssistAbility = async (tag:string, done: ()=> void):Promise<void> => {
   let obj: Flag = { flag: false };
-  subscriber = await commonEvent.createSubscriber(subscribeInfo);
-  commonEvent.subscribe(subscriber, (err, data) => {
+  subscriber = await commonEvent.createSubscriber(subscribeInfo) as commonEvent.CommonEventSubscriber;
+  commonEvent.subscribe(subscriber, (err: BusinessError<void> | null, data: commonEvent.CommonEventData | undefined) => {
     subscribeCallBack(err, data, done, tag, obj);
   });
   let want: Want = {
@@ -167,11 +167,11 @@ export default function abilitystaticTest() {
           hilog.info(domain, testTag, '%{public}s', 'onAbilityCreate end');
 
         },
-      }, (err: BusinessError) : void => {
-        if (err != null ) {
+      }, (err: BusinessError | null) : void => {
+        if (err != null) {
           hilog.info(domain, testTag, '%{public}s', '-----'+ err.code);
         }
-        hilog.info(domain, testTag, '%{public}s', 'BusinessError  end');
+        hilog.info(domain, testTag, '%{public}s', 'BusinessError end');
       });
       hilog.info(domain, testTag, '%{public}s', 'abilityDelegator start');
       await Utils.msSleep(2000)
@@ -199,24 +199,6 @@ export default function abilitystaticTest() {
       };
       pids = new Array<string>();
     })
-    afterEach(async (): Promise<void> => {
-      let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_Static afterEach]';
-      try {
-        if (subscriber) {
-          commonEvent.unsubscribe(subscriber, (err: BusinessError<void> | null) => {
-            hilog.info(domain, testTag, '%{public}s', `${tag} unsubscribe success`);
-          })
-        }
-        let forcestop = 'aa force-stop com.example.startabilityinnewprocesstest.static';
-        abilityDelegator.executeShellCommand(forcestop).catch<void>((err:BusinessError): void => {
-          hilog.info(domain, testTag, '%{public}s', `${tag} executeShellCommand failed.`);
-        })
-        await Utils.msSleep(1000);
-      } catch (err: BusinessError) {
-        hilog.info(domain, testTag, '%{public}s', `${tag} err: ${JSON.stringify(err)}`);
-      }
-    })
-
 
     /**
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_Static_0400

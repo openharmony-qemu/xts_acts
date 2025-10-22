@@ -12,15 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// import { describe, beforeEach, afterEach, it, expect } from "@ohos/hypium";
-import { afterEach, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
-import events_emitter from '@ohos.events.emitter';
+
+import { beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-// import router from '@system.router';
+
 export default function webViewOnErrorReceive02Jsunit() {
     describe('ActsAceWebDevWebViewOnErrorReceive02Test',  () =>{
         beforeEach(async  (done: Function) =>{
@@ -38,19 +40,17 @@ export default function webViewOnErrorReceive02Jsunit() {
                 console.info("get onErrorReceive02 state success " + JSON.stringify(pages));
                 if (!("onErrorReceive02" == pages.name)) {
                     console.info("get onErrorReceive02 state success " + JSON.stringify(pages.name));
-                    let result = await router.push(options);
-                    await Utils.sleep(2000);
-                    console.info("push onErrorReceive02 page success " + JSON.stringify(result));
+                    await router.push(options);
+                    console.info("push onErrorReceive02 page success");
                 }
             } catch (err) {
                 console.error("push onErrorReceive02 page error: " + err);
             }
-            await Utils.sleep(2000);
+            await driver.waitForComponent(ON.id("onErrorReceive02"), 10000);
+            console.log("waitForComponent onErrorReceive02");
             done()
         })
-        afterEach(async  (done: Function) => {
-            done();
-        })
+
         /*
         *tc.number SUB_ACE_BASIC_ETS_API_ONERRORRECEIVE_0200
         *tc.name testOnErrorReceive02
@@ -58,9 +58,12 @@ export default function webViewOnErrorReceive02Jsunit() {
                  src="https://wrong.host.badssl.com"></iframe>"
         */
         it('testOnErrorReceive02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
-            let isMainFrame = false;
-            Utils.registerEvent("testOnErrorReceive02", isMainFrame, 7120, done);
-            sendEventByKey('onErrorReceive02',10,'');
+            let isReturn = 0;
+            Utils.registerEvent("testOnErrorReceive02", false, 201990, () => { isReturn = 1 });
+            await Utils.waitAndClickComponent(driver, "onErrorReceive02");
+            if (await Utils.waitForExist(() => isReturn, 'testOnErrorReceive02' + '_returnCheck', 1, 1000)) {
+                done();
+            }
         })
     })
 }

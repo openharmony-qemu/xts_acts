@@ -55,6 +55,12 @@ export default function WaterFlowSectionDemo33Jsunit() {
       let str8 = CommonFunc.getComponentRect('WaterFlowSectionDemo33_8');
       let str9 = CommonFunc.getComponentRect('WaterFlowSectionDemo33_9');
       let str15 = CommonFunc.getComponentRect('WaterFlowSectionDemo33_15');
+
+      let driver = await Driver.create();
+      let scrollBar: Component = await driver.findComponent(ON.type('WaterFlow'));
+      let wbutton = await scrollBar.scrollSearch(ON.id('WaterFlowSectionDemo33_25'));
+      await CommonFunc.sleep(2000);
+      console.info('WaterFlowSectionDemo33Jsunit_0100 N25 success');
       let str16 = CommonFunc.getComponentRect('WaterFlowSectionDemo33_16');
       let str19 = CommonFunc.getComponentRect('WaterFlowSectionDemo33_19');
       let str24 = CommonFunc.getComponentRect('WaterFlowSectionDemo33_24');

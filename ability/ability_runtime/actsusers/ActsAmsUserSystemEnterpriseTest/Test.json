@@ -18,7 +18,7 @@
                 "ActsAmsUserSystemEnterpriseTest.hap"
             ],
             "type": "AppInstallKit",
-            "cleanup-apps": false
+            "cleanup-apps": true
         },
         {
           "type": "ShellKit",

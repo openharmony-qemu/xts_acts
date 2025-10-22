@@ -781,7 +781,7 @@ export default function netWorkSecurityTest() {
       try {
         let resultSync: boolean = networkSecurity.isCleartextPermitted();
         console.info(`${caseName} is CleartextPermitted Result: ${JSON.stringify(resultSync)}`);
-        expectTrue(resultSync, caseName);
+        expectTrue(resultSync == true, caseName);
         done();
       } catch (err) {
         console.info(`${caseName}  err:${err}`);
@@ -805,7 +805,7 @@ export default function netWorkSecurityTest() {
       try {
         let resultSync: boolean = networkSecurity.isCleartextPermittedByHostName("passport.baidu.com");
         console.info(`${caseName} is cleartextPermittedByHostName Result:: ${JSON.stringify(resultSync)}`);
-        expectTrue(resultSync, caseName);
+        expectTrue(resultSync == true, caseName);
         done();
       } catch (err) {
         console.info(`${caseName}  err:${err}`);

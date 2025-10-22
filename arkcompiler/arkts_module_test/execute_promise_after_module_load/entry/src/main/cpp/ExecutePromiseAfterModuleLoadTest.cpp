@@ -82,7 +82,7 @@ static napi_value Add(napi_env env, napi_callback_info info)
 static void LogSoLoaded(napi_env env)
 {
     napi_value module;
-    napi_load_module_with_info(env, "entry/src/ohosTest/ets/utils/LogMap",
+    napi_load_module_with_info(env, "ets/utils/LogMap",
                                "com.example.execute_promise_after_module_load/entry_test", &module);
     napi_value logMap;
     napi_get_named_property(env, module, "LogMap", &logMap);

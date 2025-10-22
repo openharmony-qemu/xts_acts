@@ -1019,7 +1019,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
           CACert: rootCaCert0
         }],
         revocationCheckParam: {
-          options: [4, 5]
+          options: [10, 11]
         }
       }
 

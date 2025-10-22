@@ -17,7 +17,10 @@ import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestTy
 import { errorManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { ArkTSUtils, taskpool, worker } from '@kit.ArkTS';
-import { execute1 } from "./execute";
+import { execute1, TaskPoolTest1 } from "./execute";
+import appRecovery from "@ohos.app.ability.appRecovery";
+import AbilityConstant from "@ohos.app.ability.AbilityConstant";
+import Ability from "@ohos.app.ability.UIAbility";
 
 export function asyncSleep(time: number): Promise<Object> {
   return new Promise(resolve => setTimeout(resolve, time));
@@ -70,6 +73,23 @@ function unregisterErrorObserverCallback(err: BusinessError) {
   }
 }
 
+let observer01: errorManager.ErrorHandler;
+const handler1: errorManager.ErrorHandler = (reason: Error) => {
+  console.info('[Handler 1]  First uncaught exception handler invoked.');
+  if (observer01) {
+    observer01(reason);
+
+  }
+};
+
+let observer02: errorManager.ErrorHandler;
+const handler2: errorManager.ErrorHandler = (reason: Error) => {
+  console.info('[Handler 2] Second uncaught exception handler invoked.');
+  if (observer02) {
+    observer02(reason);
+  }
+};
+
 export default function ErrormangerTest() {
   describe('ErrormangerTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -106,6 +126,19 @@ export default function ErrormangerTest() {
      */
     it('testErrorManger_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info("====> testErrorManger_0100 globalErrorOccurred start");
+      let State1 = appRecovery.saveAppState(globalThis.abilityContext);
+      console.info("====> DFX_DFR_AppRecovery_Interface_24001  + " + State1);
+      expect(State1 == false).assertTrue();
+      let State2 = appRecovery.saveAppState();
+      console.info("====> DFX_DFR_AppRecovery_Interface_24002  + " + State2);
+      expect(State2 == false).assertTrue();
+      appRecovery.enableAppRecovery();
+      let State3 = appRecovery.saveAppState(globalThis.abilityContext);
+      console.info("====> DFX_DFR_AppRecovery_Interface_24003  + " + State3);
+      expect(State3 == true).assertTrue();
+      let State4 = appRecovery.saveAppState();
+      console.info("====> DFX_DFR_AppRecovery_Interface_24004  + " + State4);
+      expect(State4 == true).assertTrue();
       // promiseFunc
       errorManager.on("globalErrorOccurred", errorFunc);
       try {
@@ -587,6 +620,100 @@ export default function ErrormangerTest() {
       console.info("====> testErrorManger_1700 result instaceType " + JSON.stringify(instanceType2))
       expect(instanceType2==1).assertTrue();
       done();
+    })
+
+        /**
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_1800
+     * @tc.name testErrorManger_1800
+     * @tc.desc 验证errorManager.setDefaultErrorHandler(handler1&2链式调用)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it("testErrorManger_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      console.info("testErrorManger_1800 start");;
+      try{
+        observer01 = errorManager.setDefaultErrorHandler(handler1);
+        console.info('testErrorManger_1800 Registered Handler 1 (index 1)');
+        observer02 = errorManager.setDefaultErrorHandler(handler2);
+        console.info('testErrorManger_1800 Registered Handler 2 (index 2)');
+        done();
+      }catch(error){
+        console.info("testErrorManger_1800 err = " + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("testErrorManger_1800 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_1900
+     * @tc.name testErrorManger_1900
+     * @tc.desc 验证errorManager.setDefaultErrorHandler()
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it("testErrorManger_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      console.info("testErrorManger_1900 start");;
+      try{
+        observer01 = errorManager.setDefaultErrorHandler(handler1);
+        console.info('testErrorManger_1900 Registered Handler 1 (index 1)');
+        observer02 = errorManager.setDefaultErrorHandler();
+        console.info('testErrorManger_1900 Registered Handler 2 (index 2)');
+        done();
+      }catch(error){
+        console.info("testErrorManger_1900 err = " + error.code);
+        expect(false).assertTrue();
+        done();
+      }
+      console.info("testErrorManger_1900 end");
+    })
+
+    /**
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2000
+     * @tc.name testErrorManger_2000
+     * @tc.desc 验证errorManager.setDefaultErrorHandler(null) 抛出错误码 401
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it("testErrorManger_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      console.info("testErrorManger_2000 start");;
+      try{
+        observer01 = errorManager.setDefaultErrorHandler(null);
+        console.info('testErrorManger_2000 Registered Handler 1 (index 1)');
+        done();
+      }catch(error){
+        console.info("testErrorManger_2000 err = " + error.code);
+        expect(error.code == 401).assertTrue();
+        done();
+      }
+      console.info("testErrorManger_2000 end");
+    })
+
+
+    /**
+     * @tc.number SUB_DFX_DFR_Errormanger_Ets_2100
+     * @tc.name testErrorManger_2100
+     * @tc.desc 验证errorManager.setDefaultErrorHandler() 在taskpool线程抛出 16000205
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level3
+     */
+    it("testErrorManger_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+
+      console.info("testErrorManger_2100 start1");
+      taskpool.execute(TaskPoolTest1).then((code:Object) => {
+        console.log("testErrorManger_2100 TaskPoolTest begin");
+        expect(false).assertTrue();
+        done();
+      }).catch((error:Error)=>{
+        console.error("testErrorManger_2100 TaskPoolTest throw" + (error as Error).message);
+        expect(Number((error as Error).message) == 16000205)
+        done();
+      })
+      console.info("testErrorManger_2100 end");
     })
 
   })

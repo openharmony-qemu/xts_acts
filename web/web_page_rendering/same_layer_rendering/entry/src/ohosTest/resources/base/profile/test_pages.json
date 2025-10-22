@@ -11,6 +11,7 @@
         "testability/pages/webViewAvoidArea",
         "testability/pages/webViewObjectPositionReport",
 		"testability/pages/WebViewSupportCssDisplayChange",
-		"testability/pages/WebOnNativeEmbedMouseEvent"
+		"testability/pages/WebOnNativeEmbedMouseEvent",
+		"testability/pages/WebOnNativeEmbedObjectParamChange"
   ]
 }

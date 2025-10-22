@@ -13,7 +13,19 @@
  * limitations under the License.
  */
 import InvalidateAttributesTest from './InvalidateTest/InvalidateAttributesTest.test';
+import CacheMaxCountForHSPTest from './CacheMaxCountTest/CacheMaxCountForHSPTest.test';
+import ImageLoaderTest from './ImageLoaderTest/ImageLoader.test';
+import GetNodeByIdNullTest from './ContextTest/GetNodeByIdNullTest.test';
+import GetFrameNodeNullTest from './FrameNodeTest/GetFrameNodeNullTest.test';
+import UIContextUndefinedTest from './ContextTest/UIContextUndefinedTest.test';
+import GetFrameNodeMethodNullTest from './FrameNodeTest/GetFrameNodeMethodNullTest.test';
 
 export default function testsuite() {
   InvalidateAttributesTest();
+  CacheMaxCountForHSPTest();
+  ImageLoaderTest();
+  GetNodeByIdNullTest();
+  GetFrameNodeNullTest();
+  UIContextUndefinedTest();
+  GetFrameNodeMethodNullTest();
 }

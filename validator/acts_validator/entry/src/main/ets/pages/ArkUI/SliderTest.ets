@@ -65,12 +65,12 @@ struct SliderTest {
   @State stepTips: string = 
     '设备支持屏幕朗读时\n' + '操作步骤:\n' +
     '1、从上到下依次滑动观察屏幕朗读情况\n' + '\n' +
-    '预期结果：1、绿框绘制在滑动条前缀上，屏幕朗读依次朗读Text、Description中的内容\n' +
-    '2、绿框绘制在滑动条后缀上，屏幕朗读依次朗读Text、Description中的内容\n' +
-    '3、绿框绘制在滑动条前缀上，屏幕朗读依次朗读Text、Description中的内容\n' +
-    '4、绿框绘制在滑动条后缀上，不进行播报朗读\n' +
-    '5、绿框绘制在滑动条前缀上，不进行播报朗读\n' +
-    '6、绿框绘制在滑动条后缀上，朗读资源文件内容';
+    '预期结果：1、滑动第一个滑动条到最左侧时，屏幕朗读"prefixText"\n' +
+    '2、滑动第一个滑动条到最右侧时，屏幕朗读"suffixText"\n' +
+    '3、滑动第二个滑动条到最左侧时，屏幕朗读"😎😌👨‍👩‍👦‍👦👨👨‍👩‍👦‍👦👁‍🗨123"\n' +
+    '4、滑动第二个滑动条到最右侧时，屏幕朗读"100"\n' +
+    '5、滑动第三个滑动条到最左侧时，屏幕朗读"description"\n' +
+    '6、滑动第三个滑动条到最右侧时，屏幕朗读"description"\n'
   @State isOk: boolean = false;
   @State intervalNum: number = 0;
   @State uri: string = '';
@@ -175,6 +175,7 @@ struct SliderTest {
             step: 10,
             style: SliderStyle.OutSet,
             })
+            .showSteps(true)
             .prefix(this.prefixNode1,{
                 accessibilityText: 'prefixText',
                 accessibilityDescription: 'prefixDescription',
@@ -195,6 +196,7 @@ struct SliderTest {
             step: 10,
             style: SliderStyle.OutSet,
             })
+            .showSteps(true)
             .prefix(this.prefixNode2,{
                 accessibilityText: '😎😌👨‍👩‍👦‍👦👨👨‍👩‍👦‍👦👁‍🗨123',
                 accessibilityDescription: '😎😌👨‍👩‍👦‍👦👨👨‍👩‍👦‍👦👁‍🗨123',
@@ -215,6 +217,7 @@ struct SliderTest {
             step: 10,
             style: SliderStyle.OutSet,
             })
+            .showSteps(true)
             .prefix(this.prefixNode3,{
                 accessibilityText: $r('app.string.EntryAbility_desc'),
                 accessibilityDescription: $r('app.string.EntryAbility_desc'),

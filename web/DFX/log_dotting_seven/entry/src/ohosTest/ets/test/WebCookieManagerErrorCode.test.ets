@@ -17,8 +17,13 @@ import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level 
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+const EVENT_ID_SET_SUITE_KEY = 123201;
+const driver = Driver.create();
 
 export default function webCookieManagerErrorCode() {
 
@@ -34,9 +39,9 @@ export default function webCookieManagerErrorCode() {
         console.info("get webCookieManagerErrorCode state success " + JSON.stringify(pages));
         if (!("webCookieManagerErrorCode" == pages.name)) {
           console.info("get webCookieManagerErrorCode state success " + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
-          console.info("push webCookieManagerErrorCode page success " + JSON.stringify(result));
+          await router.pushUrl(options);
+          await driver.waitForComponent(ON.id("WebCookieManagerErrorCodeButton"), 10000);
+          console.info("push webCookieManagerErrorCode page success ");
         }
       } catch (err) {
         console.error("push webCookieManagerErrorCode page error: " + err);
@@ -54,13 +59,6 @@ export default function webCookieManagerErrorCode() {
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("WebCookieManagerErrorCodeTestSuite afterEach start");
-      await Utils.sleep(2000);
-      console.info("WebCookieManagerErrorCodeTestSuite afterEach end");
-      done();
-    })
-
 
 
     /*
@@ -72,10 +70,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 0
     */
     it('testFetchCookieSyncIncognitoError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testFetchCookieSyncIncognitoError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testFetchCookieSyncIncognitoError001", '17100002', 2025042201, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testFetchCookieSyncIncognitoError001", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testFetchCookieSyncIncognitoError001", '17100002', 123210, done);
+      Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -87,10 +84,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 0
     */
     it('testConfigCookieSyncIncognitoError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieSyncIncognitoError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieSyncIncognitoError001", '17100002', 2025042202, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testConfigCookieSyncIncognitoError001", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testConfigCookieSyncIncognitoError001", '17100002', 123220, done);
+      Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
     /*
@@ -102,10 +98,9 @@ export default function webCookieManagerErrorCode() {
     * @tc.level      : Level 0
     */
     it('testConfigCookieSyncIncognitoError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("testConfigCookieSyncIncognitoError002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testConfigCookieSyncIncognitoError002", '17100005', 2025042203, done);
-      sendEventByKey('WebCookieManagerErrorCodeButton', 10, '');
+      Utils.emitEvent("testConfigCookieSyncIncognitoError002", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testConfigCookieSyncIncognitoError002", '17100005', 123230, done);
+      Utils.waitAndClickComponent(driver, "WebCookieManagerErrorCodeButton");
     })
 
   })

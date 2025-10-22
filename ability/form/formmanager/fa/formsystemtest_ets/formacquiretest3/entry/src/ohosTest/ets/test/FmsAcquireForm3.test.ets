@@ -72,10 +72,12 @@ export default function test() {
         })
 
         /**
-         * @tc.number: FMS_acquireForm_1600
-         * @tc.name: A single form host (using a single thread) continuously creates 2 normal and 2 temporary forms.
-         * @tc.desc: Verify that a single host (using a single thread) can successfully create multiple normal
-         *           and temporary forms continuously.
+         * @tc.name   FMS_acquireForm_1600
+         * @tc.number FMS_acquireForm_1600
+         * @tc.desc   Verify that a single host (using a single thread) can successfully create multiple normal
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  请输入文本
          */
         it(`FMS_acquireForm_1600`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_1600 start`);
@@ -215,9 +217,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_acquireForm_1800
-         * @tc.name: Multiple form hosts create one normal form and one temporary form respectively.
-         * @tc.desc: Verify that multiple hosts can successfully create multiple normal and temporary forms respectively.
+         * @tc.name   FMS_acquireForm_1800
+         * @tc.number FMS_acquireForm_1800
+         * @tc.desc   Verify that multiple hosts can successfully create multiple normal and temporary forms respectively.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  请输入文本
          */
         it(`FMS_acquireForm_1800`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_1800 start`);
@@ -357,9 +362,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_acquireForm_1900
-         * @tc.name: Add a temporary form when the formId is set to 0.
-         * @tc.desc: When the verification formId is set to 0, the temporary form is created successfully.
+         * @tc.name   FMS_acquireForm_1900
+         * @tc.number FMS_acquireForm_1900
+         * @tc.desc   When the verification formId is set to 0, the temporary form is created successfully.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  请输入文本
          */
         it(`FMS_acquireForm_1900`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_1900 start`);
@@ -396,9 +404,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_acquireForm_2100
-         * @tc.name: When creating a temporary form, the formId is specified as the created normal formId.
-         * @tc.desc: Failed to create a temporary form when verifying that the formId is set to create a normal formId.
+         * @tc.name   FMS_acquireForm_2100
+         * @tc.number FMS_acquireForm_2100
+         * @tc.desc   Failed to create a temporary form when verifying that the formId is set to create a normal formId.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  请输入文本
          */
         it(`FMS_acquireForm_2100`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_2100 start`);
@@ -457,9 +468,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_acquireForm_2200
-         * @tc.name: Cast to normal form when the temporary formId is set to negative.
-         * @tc.desc: Failed to Cast to normal form when the temporary formId is set to negative
+         * @tc.name   FMS_acquireForm_2200
+         * @tc.number FMS_acquireForm_2200
+         * @tc.desc   Failed to Cast to normal form when the temporary formId is set to negative
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  请输入文本
          */
         it(`FMS_acquireForm_2200`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_2200 start`);
@@ -496,9 +510,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_acquireForm_2300
-         * @tc.name: Cast to normal form when the temporary formId is set to 0.
-         * @tc.desc: Failed to convert to normal form when verifying that the temporary formIdis set to 0
+         * @tc.name   FMS_acquireForm_2300
+         * @tc.number FMS_acquireForm_2300
+         * @tc.desc   Failed to convert to normal form when verifying that the temporary formIdis set to 0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  请输入文本
          */
         it(`FMS_acquireForm_2300`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_2300 start`);
@@ -532,9 +549,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_acquireForm_2400
-         * @tc.name: Non affiliated temporary form ID to normal form.
-         * @tc.desc: Failed to convert non affiliated temporary form ID to normal form.
+         * @tc.name   FMS_acquireForm_2400
+         * @tc.number FMS_acquireForm_2400
+         * @tc.desc   Failed to convert non affiliated temporary form ID to normal form.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  请输入文本
          */
         it(`FMS_acquireForm_2400`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_2400 start`);
@@ -594,9 +614,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_acquireForm_2500
-         * @tc.name: cast non-existent temporary formId to normal form.
-         * @tc.desc: Failed to verify that the temporary formId that does not exist is casted to normal form.
+         * @tc.name   FMS_acquireForm_2500
+         * @tc.number FMS_acquireForm_2500
+         * @tc.desc   Failed to verify that the temporary formId that does not exist is casted to normal form.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  请输入文本
          */
         it(`FMS_acquireForm_2500`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_2500 start`);
@@ -629,11 +652,13 @@ export default function test() {
             console.info(`FMS_acquireForm_2500 end`);
         });
 
-       /**
-         * @tc.number: FMS_acquireForm_2600
-         * @tc.name: When the normal form does not reach the maximum value created by the form, the temporary form changes to the normal form.
-         * @tc.desc: Verify that when the normal form does not reach the maximum value created by the form.
-         *           the temporary form can be successfully casted to the normal form.
+        /**
+         * @tc.name   FMS_acquireForm_2600
+         * @tc.number FMS_acquireForm_2600
+         * @tc.desc   Verify that when the normal form does not reach the maximum value created by the form.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  请输入文本
          */
         it(`FMS_acquireForm_2600`, 0, async (done: () => void) => {
             console.info(`FMS_acquireForm_2600 start`);

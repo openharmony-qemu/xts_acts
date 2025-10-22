@@ -6,7 +6,7 @@
 
 #### 2、 在自己工程如下图位置添加hypium
 
-hypium获取地址：https://gitee.com/openharmony/xts_tools/tree/OpenHarmony_feature_20250328/hypium_static
+hypium获取地址：https://gitcode.com/openharmony/xts_tools/tree/OpenHarmony_feature_20250328/hypium_static
 
 ![输入图片说明](/figures/images1.2/486C9F38-21EA-48D4-DD80-B537D39265B2.png)
 

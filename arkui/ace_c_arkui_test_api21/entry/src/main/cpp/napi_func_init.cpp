@@ -14,6 +14,9 @@
  */
 #include "common/common.h"
 #include "invalidate/InvalidateAttributesTest.cpp"
+#include "commonEvent/RegisterCommonEventTest.cpp"
+#include "allowForceDark/AllowForceDarkTest.cpp"
+#include "Image/ImageContentTransitionEffectTest.cpp"
 
 namespace ArkUICapiTest
 {
@@ -28,6 +31,18 @@ namespace ArkUICapiTest
 
         napi_property_descriptor desc[] = {
             {"TestInvalidateAttributes", nullptr, TestInvalidateAttributes, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestRegisterCommonEvent001", nullptr, TestRegisterCommonEvent001, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestRegisterCommonEvent002", nullptr, TestRegisterCommonEvent002, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestRegisterCommonEvent003", nullptr, TestRegisterCommonEvent003, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestAllowForceDark", nullptr, TestAllowForceDark, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestImageContentTransitionEffect001", nullptr, TestAllowForceDark, nullptr, nullptr, nullptr,
+                napi_default, nullptr},
+            {"TestImageContentTransitionEffect002", nullptr, TestAllowForceDark, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)

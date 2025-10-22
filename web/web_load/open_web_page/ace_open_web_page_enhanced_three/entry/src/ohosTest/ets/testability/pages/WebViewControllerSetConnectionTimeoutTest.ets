@@ -16,7 +16,8 @@
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
-import { JsProxyObject } from '../../test/Interfaces';
+
+const EVENT_ID_SET_EMIT_KEY = 201030;
 
 class testObj {
   constructor() {
@@ -41,18 +42,20 @@ struct WebViewControllerSetConnectionTimeoutTest {
   @State javaScriptAccess: boolean = true
   @State switchCase: number = 0
   @State testObjTest: testObj = new testObj();
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
   no_error: string = "no error happened"
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -61,19 +64,8 @@ struct WebViewControllerSetConnectionTimeoutTest {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
-    }
-  }
-  private jsObj: JsProxyObject = {
-    test: (res: object) => {
-      Utils.emitEvent(String(res), 102);
-    },
-    toString: (str: string) => {
-      console.info("ets toString:" + String(str));
-    },
-    register: (res: object) => {
-      Utils.emitEvent(String(res), 86);
-      return "web222"
     }
   }
 
@@ -82,17 +74,20 @@ struct WebViewControllerSetConnectionTimeoutTest {
       Row() {
         Button("WebViewControllerSetConnectionTimeoutTest click")
           .key('WebViewControllerSetConnectionTimeoutTestButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isReceive, 'WebViewControllerSetConnectionTimeoutTestButtonIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, 'WebViewControllerSetConnectionTimeoutTestButtonIsPageEnd', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
 
             case "testWebViewControllerSetConnectionTimeout001": {
               try {
                 this.switchCase = 1
+                this.isPageEnd = -1;
                 webView.WebviewController.setConnectionTimeout(1)
-                await Utils.sleep(2000)
                 this.controller.loadUrl('http://192.168.1.123/index.html');
-                await Utils.sleep(2000)
-                webView.WebviewController.setConnectionTimeout(30)
+                await Utils.waitForExist(()=>this.isPageEnd, 'loadUrlIsPageEnd', 1, 1000);
+                webView.WebviewController.setConnectionTimeout(30);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -102,11 +97,11 @@ struct WebViewControllerSetConnectionTimeoutTest {
             case "testWebViewControllerSetConnectionTimeout002": {
               try {
                 this.switchCase = 2
+                this.isPageEnd = -1;
                 webView.WebviewController.setConnectionTimeout(1)
-                await Utils.sleep(2000)
                 let postData = this.testObjTest.test("Name=test&Password=test");
                 this.controller.postUrl('http://192.168.1.123/index.html', postData);
-                await Utils.sleep(2000)
+                await Utils.waitForExist(()=>this.isPageEnd, 'postUrlIsPageEnd', 1, 1000);
                 webView.WebviewController.setConnectionTimeout(30)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -117,11 +112,11 @@ struct WebViewControllerSetConnectionTimeoutTest {
             case "testWebViewControllerSetConnectionTimeout003": {
               try {
                 this.switchCase = 3
+                this.isPageEnd = -1;
                 webView.WebviewController.setConnectionTimeout(1)
-                await Utils.sleep(2000)
                 let postData = this.testObjTest.test("");
                 this.controller.postUrl('http://192.168.1.123/index.html', postData);
-                await Utils.sleep(2000)
+                await Utils.waitForExist(()=>this.isPageEnd, 'postUrlIsPageEnd', 1, 1000);
                 webView.WebviewController.setConnectionTimeout(30)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -136,12 +131,6 @@ struct WebViewControllerSetConnectionTimeoutTest {
       Web({ src: $rawfile('index.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .key("onShowFileSelectorKey")
-        .javaScriptProxy({
-          object: this.jsObj,
-          name: "backToEts",
-          methodList: ["test", "toString"],
-          controller: this.controller
-        })
         .onErrorReceive((event) => {
           if (event) {
             let getErrorInfo = event.error.getErrorInfo()
@@ -149,15 +138,19 @@ struct WebViewControllerSetConnectionTimeoutTest {
             console.log('getErrorInfo:' + getErrorInfo)
             console.log('getErrorCode:' + getErrorCode)
             if (this.switchCase == 1) {
-              Utils.emitEvent(getErrorInfo, 4007);
+              Utils.emitEvent(getErrorInfo, 201040);
             }
             else if (this.switchCase == 2) {
-              Utils.emitEvent(getErrorInfo, 4008);
+              Utils.emitEvent(getErrorInfo, 201050);
             }
             else if (this.switchCase == 3) {
-              Utils.emitEvent(getErrorInfo, 4009);
+              Utils.emitEvent(getErrorInfo, 201060);
             }
           }
+        })
+        .onPageEnd((event) => {
+          console.log('onPageEnd url:' + event.url);
+          this.isPageEnd = 1;
         })
     }
   }

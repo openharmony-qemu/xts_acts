@@ -510,12 +510,24 @@ export default function drawingTsRegionTest() {
       try {
         const canvas = new drawing.Canvas(pixel);
         let region = new drawing.Region();
-        region.setRect(100, 100, 400, 400);
-        region.setRect(100.1, 100.1, 400.1, 400.1);
-        region.setRect(-100.1, -100.1, 400.1, 400.1);
-        region.setRect(100, 100, 100, 400);
-        region.setRect(100, 400, 400, 400);
-        region.setRect(Number.MIN_VALUE, Number.MIN_VALUE, Number.MAX_VALUE, Number.MAX_VALUE);
+        let result1: boolean = region.setRect(100, 100, 400, 400);
+        console.info(msg + " setRect -----result1:  "+ result1);
+        expect(result1).assertEqual(true);
+        let result2: boolean = region.setRect(100.1, 100.1, 400.1, 400.1);
+        console.info(msg + " setRect -----result2:  "+ result2);
+        expect(result2).assertEqual(true);
+        let result3: boolean = region.setRect(-100.1, -100.1, 400.1, 400.1);
+        console.info(msg + " setRect -----result3:  "+ result3);
+        expect(result3).assertEqual(true);
+        let result4: boolean = region.setRect(100, 100, 100, 400);
+        console.info(msg + " setRect -----result4:  "+ result4);
+        expect(result4).assertEqual(false);
+        let result5: boolean = region.setRect(100, 400, 400, 400);
+        console.info(msg + " setRect -----result5:  "+ result5);
+        expect(result5).assertEqual(false);
+        let result6: boolean = region.setRect(Number.MIN_VALUE, Number.MIN_VALUE, Number.MAX_VALUE, Number.MAX_VALUE);
+        console.info(msg + " setRect -----result6:  "+ result6);
+        expect(result6).assertEqual(false);
         canvas.drawRegion(region);
         console.info(msg + `setRect successed`);
       } catch (e) {

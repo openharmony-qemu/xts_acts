@@ -87,21 +87,19 @@ export default function UIExtensionContentSessionTest() {
             }
           }
           commonEventManager.subscribe(subscriber, subscribeCallBack);
-          setTimeout(async () => {
-            if (mpEnable == 'true') {
-              try {
-                router.pushUrl({
-                  url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
-                  params: new MyRouterParam(tag)
-                });
-                console.info(tag, 'push page UIExtensionPage success');
-              } catch (err) {
-                console.info(tag, 'push page err,err is :', err);
-              }
-            } else if (mpEnable == 'false') {
-              commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          if (mpEnable == 'true') {
+            try {
+              router.pushUrl({
+                url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
+                params: new MyRouterParam(tag)
+              });
+              console.info(tag, 'push page UIExtensionPage success');
+            } catch (err) {
+              console.info(tag, 'push page err,err is :', err);
             }
-          }, 1000);
+          } else if (mpEnable == 'false') {
+            commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          }
         })
     })
 
@@ -135,21 +133,19 @@ export default function UIExtensionContentSessionTest() {
             }
           }
           commonEventManager.subscribe(subscriber, subscribeCallBack);
-          setTimeout(async () => {
-            if (mpEnable == 'true') {
-              try {
-                router.pushUrl({
-                  url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
-                  params: new MyRouterParam(tag)
-                });
-                console.info(tag, 'push page UIExtensionPage success');
-              } catch (err) {
-                console.info(tag, 'push page err,err is :', err);
-              }
-            } else if (mpEnable == 'false') {
-              commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          if (mpEnable == 'true') {
+            try {
+              router.pushUrl({
+                url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
+                params: new MyRouterParam(tag)
+              });
+              console.info(tag, 'push page UIExtensionPage success');
+            } catch (err) {
+              console.info(tag, 'push page err,err is :', err);
             }
-          }, 1000);
+          } else if (mpEnable == 'false') {
+            commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          }
         })
     })
 
@@ -183,21 +179,19 @@ export default function UIExtensionContentSessionTest() {
             }
           }
           commonEventManager.subscribe(subscriber, subscribeCallBack);
-          setTimeout(async () => {
-            if (mpEnable == 'true') {
-              try {
-                router.pushUrl({
-                  url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
-                  params: new MyRouterParam(tag)
-                });
-                console.info(tag, 'push page UIExtensionPage success');
-              } catch (err) {
-                console.info(tag, 'push page err,err is :', err);
-              }
-            } else if (mpEnable == 'false') {
-              commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          if (mpEnable == 'true') {
+            try {
+              router.pushUrl({
+                url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
+                params: new MyRouterParam(tag)
+              });
+              console.info(tag, 'push page UIExtensionPage success');
+            } catch (err) {
+              console.info(tag, 'push page err,err is :', err);
             }
-          }, 1000);
+          } else if (mpEnable == 'false') {
+            commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          }
         })
     })
 
@@ -231,21 +225,19 @@ export default function UIExtensionContentSessionTest() {
             }
           }
           commonEventManager.subscribe(subscriber, subscribeCallBack);
-          setTimeout(async () => {
-            if (mpEnable == 'true') {
-              try {
-                router.pushUrl({
-                  url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
-                  params: new MyRouterParam(tag)
-                });
-                console.info(tag, 'push page UIExtensionPage success');
-              } catch (err) {
-                console.info(tag, 'push page err,err is :', err);
-              }
-            } else if (mpEnable == 'false') {
-              commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          if (mpEnable == 'true') {
+            try {
+              router.pushUrl({
+                url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
+                params: new MyRouterParam(tag)
+              });
+              console.info(tag, 'push page UIExtensionPage success');
+            } catch (err) {
+              console.info(tag, 'push page err,err is :', err);
             }
-          }, 1000);
+          } else if (mpEnable == 'false') {
+            commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          }
         })
     })
 
@@ -279,21 +271,19 @@ export default function UIExtensionContentSessionTest() {
             }
           }
           commonEventManager.subscribe(subscriber, subscribeCallBack);
-          setTimeout(async () => {
-            if (mpEnable == 'true') {
-              try {
-                router.pushUrl({
-                  url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
-                  params: new MyRouterParam(tag)
-                });
-                console.info(tag, 'push page UIExtensionPage success');
-              } catch (err) {
-                console.info(tag, 'push page err,err is :', err);
-              }
-            } else if (mpEnable == 'false') {
-              commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          if (mpEnable == 'true') {
+            try {
+              router.pushUrl({
+                url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
+                params: new MyRouterParam(tag)
+              });
+              console.info(tag, 'push page UIExtensionPage success');
+            } catch (err) {
+              console.info(tag, 'push page err,err is :', err);
             }
-          }, 1000);
+          } else if (mpEnable == 'false') {
+            commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          }
         })
     })
 
@@ -327,21 +317,19 @@ export default function UIExtensionContentSessionTest() {
             }
           }
           commonEventManager.subscribe(subscriber, subscribeCallBack);
-          setTimeout(async () => {
-            if (mpEnable == 'true') {
-              try {
-                router.pushUrl({
-                  url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
-                  params: new MyRouterParam(tag)
-                });
-                console.info(tag, 'push page UIExtensionPage success');
-              } catch (err) {
-                console.info(tag, 'push page err,err is :', err);
-              }
-            } else if (mpEnable == 'false') {
-              commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          if (mpEnable == 'true') {
+            try {
+              router.pushUrl({
+                url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
+                params: new MyRouterParam(tag)
+              });
+              console.info(tag, 'push page UIExtensionPage success');
+            } catch (err) {
+              console.info(tag, 'push page err,err is :', err);
             }
-          }, 1000);
+          } else if (mpEnable == 'false') {
+            commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          }
         })
     })
 
@@ -375,21 +363,19 @@ export default function UIExtensionContentSessionTest() {
             }
           }
           commonEventManager.subscribe(subscriber, subscribeCallBack);
-          setTimeout(async () => {
-            if (mpEnable == 'true') {
-              try {
-                router.pushUrl({
-                  url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
-                  params: new MyRouterParam(tag)
-                });
-                console.info(tag, 'push page UIExtensionPage success');
-              } catch (err) {
-                console.info(tag, 'push page err,err is :', err);
-              }
-            } else if (mpEnable == 'false') {
-              commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          if (mpEnable == 'true') {
+            try {
+              router.pushUrl({
+                url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
+                params: new MyRouterParam(tag)
+              });
+              console.info(tag, 'push page UIExtensionPage success');
+            } catch (err) {
+              console.info(tag, 'push page err,err is :', err);
             }
-          }, 1000);
+          } else if (mpEnable == 'false') {
+            commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          }
         })
     })
 
@@ -423,21 +409,19 @@ export default function UIExtensionContentSessionTest() {
             }
           }
           commonEventManager.subscribe(subscriber, subscribeCallBack);
-          setTimeout(async () => {
-            if (mpEnable == 'true') {
-              try {
-                router.pushUrl({
-                  url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
-                  params: new MyRouterParam(tag)
-                });
-                console.info(tag, 'push page UIExtensionPage success');
-              } catch (err) {
-                console.info(tag, 'push page err,err is :', err);
-              }
-            } else if (mpEnable == 'false') {
-              commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          if (mpEnable == 'true') {
+            try {
+              router.pushUrl({
+                url: 'testability/pages/UIExtensionContentSession/UIExtensionPage',
+                params: new MyRouterParam(tag)
+              });
+              console.info(tag, 'push page UIExtensionPage success');
+            } catch (err) {
+              console.info(tag, 'push page err,err is :', err);
             }
-          }, 1000);
+          } else if (mpEnable == 'false') {
+            commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+          }
         })
     })
   })

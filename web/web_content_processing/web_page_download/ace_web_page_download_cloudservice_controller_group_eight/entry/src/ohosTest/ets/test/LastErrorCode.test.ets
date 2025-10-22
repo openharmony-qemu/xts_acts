@@ -17,8 +17,14 @@ import Utils from './Util';
 import events_emitter from '@ohos.events.emitter';
 import { router } from '@kit.ArkUI';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { waitForComponents } from './WaitTest.test';
+import { Driver } from '@kit.TestKit';
+
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
+
+let driver: Driver = Driver.create();
+
 export default function lastErrorCode() {
   describe('lastErrorCode', () => {
     beforeAll(async (done: Function) => {
@@ -26,20 +32,18 @@ export default function lastErrorCode() {
         url: 'testability/pages/LastErrorCode',
       }
       try {
-        await Utils.sleep(500)
         router.clear();
         let pages = router.getState();
-        console.info('get webviewBFCacheSuspendPlayer state success ' + JSON.stringify(pages));
-        if (!('Download' == pages.name)) {
+        console.info('get lastErrorCode state success ' + JSON.stringify(pages));
+        if (!('LastErrorCode' == pages.name)) {
           console.info('get index state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(800);
           console.info('push index state success ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push index page error: ' + err);
       }
-      await Utils.sleep(1000)
+      await waitForComponents('startDownload');
       done()
     });
 
@@ -49,7 +53,6 @@ export default function lastErrorCode() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(300);
       done();
     });
 
@@ -68,14 +71,12 @@ export default function lastErrorCode() {
      * @tc.level Level 2
      */
     it("testWebViewGetPercentComplete", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('testWebViewGetPercentComplete', 2, 404, done,
+      Utils.emitEvent("FILE_FAILED", 130930);
+      Utils.registerBaseEvent("testWebViewGetPercentComplete", 2, 130940, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-
-      sendEventByKey('FILE_FAILED', 10, '');
-      await Utils.sleep(2000);
-      sendEventByKey('startDownload', 10, '');
+      await Utils.waitAndClickComponent(driver, "startDownload");
     })
 
     /**
@@ -87,14 +88,12 @@ export default function lastErrorCode() {
      * @tc.level Level 2
      */
     it("testWebView_getLastErrorCode1001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.registerBaseEvent('testWebView_getLastErrorCode1001', 33, 405, done,
+      Utils.emitEvent("startDownloadUrlFail", 130930);
+      Utils.registerBaseEvent("testWebView_getLastErrorCode1001", 33, 130950, done,
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-
-      sendEventByKey('111', 10, '');
-      await Utils.sleep(2000);
-      sendEventByKey('startDownloadUrlFail', 10, '');
+      await Utils.waitAndClickComponent(driver, "startDownload");
     })
 
   })

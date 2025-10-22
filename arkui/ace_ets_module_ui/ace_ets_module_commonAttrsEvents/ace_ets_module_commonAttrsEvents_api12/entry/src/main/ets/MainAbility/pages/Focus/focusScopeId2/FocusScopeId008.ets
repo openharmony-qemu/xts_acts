@@ -61,7 +61,6 @@ struct FocusScopeId008 {
             margin: new LengthMetrics(0),
             strokeColor: ColorMetrics.rgba(255, 0, 0)
           })
-
       }
     }.title('pageOne')
   }
@@ -70,10 +69,10 @@ struct FocusScopeId008 {
     Column() {
       Navigation(this.pageInfos) {
         Scroll() {
-          Column({ space: 5 }) {
-            Row({ space: 2 }) {
+          Column() {
+            Row({ space: 5 }) {
               Column({ space: 2 }) {
-                Text('焦点组1，可删除')
+                Text('焦点组1')
                 if (this.flag) {
                   Column({ space: 5 }) {
                     Button('btn1').focusOnTouch(true).id('FocusScopeId008_btn1_1')
@@ -88,7 +87,7 @@ struct FocusScopeId008 {
                   .onClick(() => {
                     this.flag = !this.flag
                   })
-              }
+              }.width('16%')
 
               Column({ space: 2 }) {
                 Text('焦点组2')
@@ -101,8 +100,7 @@ struct FocusScopeId008 {
                 .borderWidth(1)
 
                 Button('button1').focusOnTouch(true).id('FocusScopeId008_btn_btn')
-
-              }
+              }.width('16%')
 
               Column({ space: 2 }) {
                 Text('焦点组3')
@@ -111,11 +109,8 @@ struct FocusScopeId008 {
                 }
                 .focusScopeId('FocusScopeId008_focusGroup3', true).focusable(true).backgroundColor(Color.Pink)
                 .borderWidth(1)
+              }.width('16%')
 
-              }
-            }.width('100%')
-
-            Row({ space: 2 }) {
               Column({ space: 2 }) {
                 Text('焦点组4')
                 Column({ space: 5 }) {
@@ -133,7 +128,7 @@ struct FocusScopeId008 {
                     this.visibilityValue =
                       (this.visibilityValue == Visibility.Visible) ? Visibility.Hidden : Visibility.Visible
                   })
-              }
+              }.width('16%')
 
               Column({ space: 2 }) {
                 Text('焦点组5')
@@ -161,10 +156,9 @@ struct FocusScopeId008 {
                 }
                 .focusScopeId('FocusScopeId008_focusGroup5', true)
                 .borderWidth(1)
-              }
+              }.width('16%')
 
               Column({ space: 2 }) {
-
                 Text('焦点组6')
                 Column({ space: 5 }) {
                   Button('btn1').focusOnTouch(true)
@@ -176,27 +170,30 @@ struct FocusScopeId008 {
                 }
                 .focusScopeId('FocusScopeId008_focusGroup6', true)
                 .borderWidth(1)
-              }
-            }.width('100%')
+              }.width('16%')
+            }.height('65%').width('100%')
+            .id('FocusScopeId008_scroll')
 
-            Divider().strokeWidth(2)
+            Divider().strokeWidth(2).height('5%').width('100%')
 
             Column({ space: 2 }) {
-              Button('clearFocus')
-                .id('FocusScopeId008_clearFocus')
-                .onClick(() => {
-                  this.getUIContext().getFocusController().clearFocus()
-                })
+              Row() {
+                Button('clearFocus')
+                  .id('FocusScopeId008_clearFocus')
+                  .onClick(() => {
+                    this.getUIContext().getFocusController().clearFocus()
+                  })
 
-              Button('更改第一个焦点组的id:' + String(this.focusId[this.focusIdIndex]))
-                .id('FocusScopeId008_changFocusId')
-                .focusOnTouch(true)
-                .onClick(() => {
-                  this.focusIdIndex++
-                  if (this.focusIdIndex > this.focusId.length - 1) {
-                    this.focusIdIndex = 0
-                  }
-                })
+                Button('改第一组的id:' + String(this.focusId[this.focusIdIndex]))
+                  .id('FocusScopeId008_changFocusId')
+                  .focusOnTouch(true)
+                  .onClick(() => {
+                    this.focusIdIndex++
+                    if (this.focusIdIndex > this.focusId.length - 1) {
+                      this.focusIdIndex = 0
+                    }
+                  })
+              }
 
               Button('更改第一个焦点组的isGroup:' + this.isGroupValue)
                 .id('FocusScopeId008_changIsGroup')
@@ -204,11 +201,9 @@ struct FocusScopeId008 {
                 .onClick(() => {
                   this.isGroupValue = !this.isGroupValue
                 })
-
-            }
+            }.height('30%').width('100%')
           }
-        }
-        .id('FocusScopeId008_scroll')
+        }.id('FocusScopeId008_scroll')
       }
       .id('FocusScopeId008_nav')
       .mode(this.modeValue)
@@ -216,7 +211,7 @@ struct FocusScopeId008 {
       .navDestination(this.PageMap)
       .height('100%')
 
-    }.width('100%')
+    }.width('100%').height('90%').align(Alignment.Top)
     .id('FocusScopeId008_col')
   }
 }

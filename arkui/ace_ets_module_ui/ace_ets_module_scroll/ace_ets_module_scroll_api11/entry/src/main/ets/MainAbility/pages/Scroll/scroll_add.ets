@@ -37,6 +37,7 @@ struct ScrollExample {
           }, (item: string) => item)
         }.width('100%')
       }
+      .height('80%')
       .scrollable(ScrollDirection.Vertical)  // 滚动方向纵向
       .scrollBar(BarState.On)  // 滚动条常驻显示
       .scrollBarColor(Color.Gray)  // 滚动条颜色
@@ -92,14 +93,6 @@ struct ScrollExample {
         })
         .margin({ top: 210, left: 20 })
 
-
-      Button('back top')
-        .height('5%')
-        .onClick(() => { // 点击后回到顶部
-          this.scroller.scrollEdge(Edge.Top)
-
-        })
-        .margin({ top: 160, left: 20 })
       Button('isScrollEnd')
         .height('5%')
         .key('isScrollEnd')

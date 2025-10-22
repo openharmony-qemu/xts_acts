@@ -16,14 +16,20 @@ group("pageInteraction") {
   if (is_standard_system) {
     deps = [
       "JS_dialog_box:ActsWebJSDialogBoxTest",
+      "JS_dialog_box_static:ActsWebJSDialogBoxStaticTest",
       "focus_processing:ActsWebFocusProcessingTest",
+      "focus_processing_static:ActsWebFocusProcessingStaticTest",
       "gesture_operation:ActsWebGestureOperationTest",
+      "gesture_operation_static:ActsWebGestureOperationStaticTest",
       "keyboard_mouse_operations:ActsWebKeyboardMouseOperationsTest",
       "keyboard_mouse_operations_static:ActsWebKeyboardMouseOperationsStaticTest",
       "page_scrolling:ActsWebPageScrollingTest",
+      "page_scrolling_static:ActsWebPageScrollingStaticTest",
       "page_scrollingOne:ActsWebPageScrollingOneTest",
+      "page_scrollingOne_static:ActsWebPageScrollingOneStaticTest",
       "page_scrollingTwo:ActsWebPageScrollingTwoTest",
       "picture_text_selection:ActsWebPictureTextSelectionTest",
+      "picture_text_selection_static:ActsWebPictureTextSelectionStaticTest",
       "picture_text_selectionTwo:ActsWebPictureTextSelectionTwoTest",
       "soft_keyboard_avoidance:ActsWebSoftKeyboardAvoidanceTest",
     ]

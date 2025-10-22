@@ -942,6 +942,7 @@ void OnNativeChildProcessStarted(int errCode, OHIPCRemoteProxy *remoteProxy)
     if (g_promiseStartProcess != nullptr) {
         g_promiseStartProcess->set_value(errCode);
     }
+    g_promiseStartProcess = nullptr;
 }
 
 napi_value CreateNativeChildProcessNoError(napi_env env, napi_callback_info info)
@@ -1006,6 +1007,11 @@ napi_value CreateNativeChildProcessWithConfigsInvalidParam(napi_env env, napi_ca
 {
     Ability_ChildProcessConfigs* configs = OH_Ability_CreateChildProcessConfigs();
     int32_t ret = OH_Ability_CreateNativeChildProcessWithConfigs(nullptr, configs, OnNativeChildProcessStarted);
+    if (ret == NCP_ERR_INVALID_PARAM) {
+        napi_value napiRet;
+        napi_create_int32(env, ret, &napiRet);
+        return napiRet;
+    }
     napi_value napiRet;
     napi_create_int32(env, ret, &napiRet);
     return napiRet;
@@ -1040,6 +1046,11 @@ napi_value StartNativeChildProcessInvalidParam(napi_env env, napi_callback_info 
         .isolationMode = NCP_ISOLATION_MODE_ISOLATED
     };
     int32_t ret = OH_Ability_StartNativeChildProcess(nullptr, args, options, &pid);
+    if (ret == NCP_ERR_INVALID_PARAM) {
+        napi_value napiRet;
+        napi_create_int32(env, ret, &napiRet);
+        return napiRet;
+    }
     napi_value napiRet;
     napi_create_int32(env, ret, &napiRet);
     return napiRet;
@@ -1073,6 +1084,11 @@ napi_value StartNativeChildProcessWithConfigsInvalidParam(napi_env env, napi_cal
     };
     Ability_ChildProcessConfigs* configs = OH_Ability_CreateChildProcessConfigs();
     int32_t ret = OH_Ability_StartNativeChildProcessWithConfigs(nullptr, args, configs, &pid);
+    if (ret == NCP_ERR_INVALID_PARAM) {
+        napi_value napiRet;
+        napi_create_int32(env, ret, &napiRet);
+        return napiRet;
+    }
     napi_value napiRet;
     napi_create_int32(env, ret, &napiRet);
     return napiRet;
@@ -1081,8 +1097,12 @@ napi_value StartNativeChildProcessWithConfigsInvalidParam(napi_env env, napi_cal
 napi_value StartNativeChildProcessWithConfigsServiceError(napi_env env, napi_callback_info info)
 {
     int32_t pid = -1;
+    const size_t size = 200 * 1024;
     NativeChildProcess_Args args;
-    args.entryParams = NULL;
+    args.entryParams = (char *)malloc(sizeof(char) * size);
+    for(int i = 0; i < size; i++){
+        args.entryParams[i] = 'a';
+    }
     args.fdList.head = NULL;
     Ability_ChildProcessConfigs* configs = OH_Ability_CreateChildProcessConfigs();
     OH_Ability_DestroyChildProcessConfigs(configs);
@@ -1609,8 +1629,12 @@ napi_value NcpErrorInvalidParamCode(napi_env env, napi_callback_info info)
 napi_value NcpErrorServiceErrorCode(napi_env env, napi_callback_info info)
 {
     int32_t pid = -1;
+    const size_t size = 200 * 1024;
     NativeChildProcess_Args args;
-    args.entryParams = NULL;
+    args.entryParams = (char *)malloc(sizeof(char) * size);
+    for(int i = 0; i < size; i++){
+        args.entryParams[i] = 'a';
+    }
     args.fdList.head = NULL;
     Ability_ChildProcessConfigs* configs = OH_Ability_CreateChildProcessConfigs();
     OH_Ability_DestroyChildProcessConfigs(configs);

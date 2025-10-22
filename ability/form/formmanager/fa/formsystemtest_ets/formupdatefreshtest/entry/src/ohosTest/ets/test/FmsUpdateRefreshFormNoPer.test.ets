@@ -88,10 +88,12 @@ export default function FmsUpdateRefreshNoPerTest() {
         })
 
         /**
-         * @tc.number: FMS_hostRefreshNoPer_0100
-         * @tc.name: The form user has no form permission.
-         * @tc.desc: 1.The form user A to invoke the intiative timed refresh interface.
-         *           2.Verify the result of the intiative timed refresh interface.
+         * @tc.name   FMS_hostRefreshNoPer_0100
+         * @tc.number FMS_hostRefreshNoPer_0100
+         * @tc.desc   1.The form user A to invoke the intiative timed refresh interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_hostRefreshNoPer_0100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.log('FMS_hostRefreshNoPer_0100 start');

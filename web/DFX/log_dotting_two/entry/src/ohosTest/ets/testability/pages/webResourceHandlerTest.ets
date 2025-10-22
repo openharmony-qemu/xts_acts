@@ -15,12 +15,12 @@
 import events_emitter from '@ohos.events.emitter'
 import webview from '@ohos.web.webview'
 import Utils from '../../test/Utils'
-import { waitForAssert } from '../../test/WaitTest';
 import business_error, { BusinessError } from '@ohos.base'
 import { buffer } from '@kit.ArkTS';
 import { WebNetErrorList } from '@ohos.web.netErrorList';
 import { URL } from '../../test/Config';
 
+const EVENT_ID_SET_EMIT_KEY = 114990;
 
 @Entry
 @Component
@@ -39,21 +39,28 @@ struct webResourceHandlerTest {
   @State isMainFrameUrl: boolean = false;
   @State isLoadUrlFrameUrl: boolean = false;
   @State isSubFrameUrl: boolean = false;
+  @State isSkipFirstPageFlag: boolean = false;
   htmlData: string = '<html><body bgcolor=\"white\">Source:<pre>source</pre></body></html>';
 
   @State testDidReceiveResponse: number= -1;
   @State testDidReceiveResponseBody: number= -1;
   @State testDidFinish: number= -1;
   @State testDidFail: number= -1;
-  @State webNavigationType: number = 0;
-
+  @State isFirstPageEnd: number = -1;
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  @State isReadyToBackward: boolean = false;
 
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: EVENT_ID_SET_EMIT_KEY,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
   
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -61,62 +68,47 @@ struct webResourceHandlerTest {
           console.info('valueChangeCallBack:' + JSON.stringify(eventData));
           if (eventData.data != null && eventData.data.ACTION != null) {
               this.emitKey = eventData.data.ACTION;
+              this.isReceive = 1;
           }
       }
   }
-
-
   
   build() {
       Column() {
           Row() {
             Button('web click').key('webView').onClick(async () => {
-              this.controller.refresh()
-              await Utils.sleep(2000)
+              await Utils.waitForExist(()=>this.isFirstPageEnd, 'webViewIsPageEnd', 1, 1000);
+              await Utils.waitForExist(()=>this.isReceive, 'webViewIsReceive', 1, 1000);
               console.info('key==>' + this.emitKey)
+              this.isReceive = -1;
               switch (this.emitKey) {
                 case 'emitWebView_didReceiveResponse_INVAILD': {
-                  this.controller.loadUrl(URL);
-                  let check = (v1: number, v2: number): boolean => {
-                    return v1 == v2 ? true:false;
-                  }
-                  await waitForAssert(()=>this.testDidReceiveResponse, check, 17100021, 1550, this.emitKey);
+                  await Utils.waitForExist(()=>this.testDidReceiveResponse, 'didReceiveResponseCheck', 17100021, 500);
+                  Utils.emitEvent(this.testDidReceiveResponse, 115000);
+                  this.testDidReceiveResponse = -1;
                   break;
                 }
                 case 'emitWebView_didReceiveResponseBody_INVALID': {
-                  this.controller.loadUrl(URL);
-                  let check = (v1: number, v2: number): boolean => {
-                    return v1 == v2 ? true:false;
-                  }
-                  await waitForAssert(()=>this.testDidReceiveResponseBody, check, 17100021, 1551, this.emitKey);
+                  await Utils.waitForExist(()=>this.testDidReceiveResponseBody, 'testDidReceiveResponseBodyCheck', 17100021, 500);
+                  Utils.emitEvent(this.testDidReceiveResponseBody, 115010);
+                  this.testDidReceiveResponseBody = -1;
                   break;
                 }
                 case 'emitWebView_didFinish_INVALID': {
-                  this.controller.loadUrl(URL);
-                  let check = (v1: number, v2: number): boolean => {
-                    return v1 == v2 ? true:false;
-                  }
-                  await waitForAssert(()=>this.testDidFinish, check, 17100021, 1552, this.emitKey);
+                  await Utils.waitForExist(()=>this.testDidFinish, 'testDidFinishCheck', 17100021, 500);
+                  Utils.emitEvent(this.testDidFinish, 115020);
+                  this.testDidFinish = -1;
                   break;
                 }
                 case 'emitWebView_didFail_INVALID': {
-                  this.controller.loadUrl(URL);
-                  let check = (v1: number, v2: number): boolean => {
-                    return v1 == v2 ? true:false;
-                  }
-                  await waitForAssert(()=>this.testDidFail, check, 17100021, 1553, this.emitKey);
+                  await Utils.waitForExist(()=>this.testDidFail, 'testDidFailCheck', 17100021, 500);
+                  Utils.emitEvent(this.testDidFail, 115030);
+                  this.testDidFail = -1;
                   break;
                 }
                 case 'testWebNavigationType001': {
                   try {
-                    let result = false;
                     this.controller.loadUrl($rawfile('index.html'));
-                    await Utils.sleep(2000);
-                    let check = (v1: boolean, v2: boolean): boolean => {
-                      return v1 === v2 ? true: false;
-                    }
-                    result = this.webNavigationType === 1 ? true : false;
-                    await waitForAssert(()=>result, check, true, 202503212, this.emitKey);
                   } catch (error) {
                     let e: business_error.BusinessError = error as business_error.BusinessError;
                     console.error(`testWebNavigationType001 ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -125,16 +117,10 @@ struct webResourceHandlerTest {
                 }
                 case 'testWebNavigationType002': {
                   try {
-                    let result = false;
-                    this.controller.loadUrl(URL);
-                    await Utils.sleep(3000);
-                    this.controller.backward();
-                    await Utils.sleep(3000)
-                    let check = (v1: boolean, v2: boolean): boolean => {
-                      return v1 === v2 ? true: false;
-                    }
-                    result = this.webNavigationType === 2 ? true : false;
-                    await waitForAssert(()=>result, check, true, 202503213, this.emitKey);
+                    this.isPageEnd = -1;
+                    this.controller.loadUrl($rawfile('index.html'));
+                    await Utils.waitForExist(()=>this.isPageEnd, 'webViewIsPageEnd', 1, 500);
+                    this.controller.loadUrl($rawfile('index.html'));
                   } catch (error) {
                     let e: business_error.BusinessError = error as business_error.BusinessError;
                     console.error(`testWebNavigationType002 ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -143,14 +129,7 @@ struct webResourceHandlerTest {
                 }
                 case 'testWebNavigationType003': {
                   try {
-                    let result = false;
                     this.controller.loadUrl($rawfile('iframe1.html'));
-                    await Utils.sleep(6000);
-                    let check = (v1: boolean, v2: boolean): boolean => {
-                      return v1 === v2 ? true: false;
-                    }
-                    result = this.webNavigationType === 4 ? true : false;
-                    await waitForAssert(()=>result, check, true, 202503214, this.emitKey);
                   } catch (error) {
                     let e: business_error.BusinessError = error as business_error.BusinessError;
                     console.error(`testWebNavigationType003 ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -170,7 +149,35 @@ struct webResourceHandlerTest {
             .onNavigationEntryCommitted((details) => {
               console.log('Navigation url : ' + details.url)
               console.log('Navigation type: ' + details.navigationType);
-              this.webNavigationType = details.navigationType;
+              // 去除首页加载的影响，只关注用例里的页面加载
+              if (this.isFirstPageEnd === -1) {
+                return;
+              }
+              switch (this.emitKey) {
+                case 'testWebNavigationType001': {
+                  Utils.emitEvent(details.navigationType === 1 ? true : false, 115040);
+                  break;
+                }
+                case 'testWebNavigationType002': {
+                  if (!this.isSkipFirstPageFlag) {
+                    this.isSkipFirstPageFlag = true;
+                    break;
+                  }
+                  Utils.emitEvent(details.navigationType === 2 ? true : false, 115050);
+                  this.isSkipFirstPageFlag = false;
+                  break;
+                }
+                case 'testWebNavigationType003': {
+                  // 跳过iframe1的影响，仅关注iframe2
+                  if (!this.isSkipFirstPageFlag) {
+                    this.isSkipFirstPageFlag = true;
+                    break;
+                  }
+                  Utils.emitEvent(details.navigationType === 4 ? true : false, 115060);
+                  this.isSkipFirstPageFlag = false;
+                  break;
+                }
+              }
             })
             .onControllerAttached(() => {
               try {
@@ -218,7 +225,6 @@ struct webResourceHandlerTest {
                     } catch (error) {
                       console.error(`[schemeHandler] ErrorCode didReceiveResponseBody: ${(error as BusinessError).code}`);
                       this.testDidReceiveResponseBody = (error as BusinessError).code;
-
                     }
 
                     try {
@@ -246,6 +252,11 @@ struct webResourceHandlerTest {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }
+            })
+            .onPageEnd((event) => {
+              console.log('onPageEnd url:' + event.url);
+              this.isFirstPageEnd = 1;
+              this.isPageEnd = 1;
             })
       }
   }

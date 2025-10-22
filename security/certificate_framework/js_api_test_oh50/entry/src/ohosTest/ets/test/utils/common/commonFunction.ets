@@ -15,6 +15,7 @@
 import { reg } from './commonParam';
 import { DataUint8Array, IAnyObj } from './commonType';
 import { buffer } from '@kit.ArkTS';
+import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 function stringToArray(str: string) {
   let arr: number[] = [];
@@ -174,6 +175,57 @@ function compareString(a: string, b: string): boolean {
   }
 }
 
+function compareUint8Array(a: Uint8Array, b: Uint8Array): boolean {
+  let buf1 = buffer.from(a);
+  let buf2 = buffer.from(b);
+  if (buf1.compare(buf2, 0, b.length, 0, a.length) == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function decToHexString(data: Uint8Array) {
+  let arr: string[] = [];
+  for (let i = 0; i < data.length; ++i) {
+    let tmp: string = "";
+    let num: number = data[i];
+    tmp = num.toString(16);
+    if(tmp.length == 1) {
+      tmp = "0" + tmp;
+    }
+    arr.push("0x" + tmp + ",");
+    if (arr.length == 16) {
+      console.log("##################### :" + arr);
+      arr = []
+    }
+  }
+  console.log("##################### :" + arr);
+}
+
+async function createData(dataLen: number): Promise<cryptoFramework.DataBlob>{
+  try {
+    let rand: cryptoFramework.Random = cryptoFramework.createRandom();
+    let rawData: cryptoFramework.DataBlob = await rand.generateRandom(dataLen);
+
+    return rawData;
+  } catch (error) {
+    console.error('[XTS] create data ' + error.code + " errorMsg " + error.message);
+    throw error as Error;
+  }
+}
+
+async function createUint8Array(dataLen: number): Promise<Uint8Array>{
+  try {
+    let rand: cryptoFramework.Random = cryptoFramework.createRandom();
+    let rawData: cryptoFramework.DataBlob = await rand.generateRandom(dataLen);
+
+    return rawData.data;
+  } catch (error) {
+    console.error('[XTS] create data ' + error.code + " errorMsg " + error.message);
+    throw error as Error;
+  }
+}
 
 export {
   stringToArray,
@@ -185,5 +237,9 @@ export {
   genCcmParamsSpec,
   genKeyMaterialBlob,
   convertToUint8Array,
-  compareString
+  compareString,
+  compareUint8Array,
+  decToHexString,
+  createData,
+  createUint8Array
 };

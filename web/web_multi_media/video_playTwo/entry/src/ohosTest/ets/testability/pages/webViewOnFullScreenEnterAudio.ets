@@ -15,6 +15,8 @@
 import events_emitter from '@ohos.events.emitter';
 import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
+import { waitForExist } from '../../test/WaitTest.test';
+import { Driver, ON } from '@kit.TestKit';
 
 @Entry
 @Component
@@ -29,13 +31,20 @@ struct webViewOnFullScreenEnterInfoAudio {
   @State onlineImageAccess: boolean = true;
   @State databaseAccess: boolean = true;
   @State checkEleResult: string = '';
+  @State isReceive:number = -1;
+  @State isPageEnd:number = -1;
+  @State isEnd:number = -1;
   
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: 300420,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(300420)
   }
   
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -43,6 +52,7 @@ struct webViewOnFullScreenEnterInfoAudio {
           console.info('valueChangeCallBack:' + JSON.stringify(eventData));
           if (eventData.data != null && eventData.data.ACTION != null) {
               this.str = eventData.data.ACTION;
+              this.isReceive = 0;
           }
       }
   }
@@ -54,7 +64,9 @@ struct webViewOnFullScreenEnterInfoAudio {
               .key('webViewOnFullScreenEnterInfoAudio')
               .onClick(async () => {
                   console.info('key==>' + this.str)
-                  await Utils.sleep(2000);
+                  await waitForExist(()=>this.isReceive,  this.str + 'IsReceive', 0);
+                  await waitForExist(()=>this.isPageEnd, this.str + 'IsPageEnd', 0);
+                  this.isReceive = -1;
                   switch (this.str) {
                     case 'emitOnfullscreenenterAudioInfo': {
                         sendEventByKey('TestwebViewOnFullScreenEnterAudioInfo', 10, '');
@@ -94,8 +106,12 @@ struct webViewOnFullScreenEnterInfoAudio {
                     console.log('videoHeight: ' + event.videoHeight)
                     let isVideoWidth = event.videoWidth != null && event.videoWidth == 0
                     let isVideoHeight = event.videoHeight != null && event.videoHeight == 0
-                    Utils.emitEvent(isVideoWidth && isVideoHeight, 1540)
-                    Utils.emitEvent(true, 1540)
+                    Utils.emitEvent(isVideoWidth && isVideoHeight, 300430)
+                    Utils.emitEvent(true, 300430)
+                })
+                .onPageEnd(()=>{
+                    console.log('onpageEnd*******')
+                    this.isPageEnd = 0;
                 })
       }
   }

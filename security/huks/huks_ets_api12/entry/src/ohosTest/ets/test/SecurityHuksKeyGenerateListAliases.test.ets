@@ -12,10 +12,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import { DeleteParam, GenParam } from './utils/huks/HuksOptionsUtils';
-import { GetDataBySize } from './utils/CommonUtils';
+import { DeleteParam, SetParam } from './utils/huks/HuksOptionsUtils';
+import { HuksMaxAliasLength } from './utils/huks/HuksCommonUtils';
+import { GetDataBySize } from './utils/common/CommonUtils';
+import { Logger } from './utils/common/Logger';
+import { GetAesGenerateOptions } from './utils/huks/GenerateKeyUtils';
 
 export default function SecurityHUKSKeyGenerateListAliasesTest() {
   let DEOption: huks.HuksOptions;
@@ -23,60 +26,26 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
   let ECEOption: huks.HuksOptions;
 
   describe('SecurityHUKSKeyGenerateListAliasesTest', () => {
-    // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
-    })
+
     beforeEach(async () => {
-      DEOption = {
-        properties: [
-          GenParam(huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_AES),
-          GenParam(huks.HuksTag.HUKS_TAG_KEY_SIZE, huks.HuksKeySize.HUKS_AES_KEY_SIZE_128),
-          GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT),
-          GenParam(huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_DE),
-        ],
-        inData: new Uint8Array()
-      };
+      DEOption = GetAesGenerateOptions(128);
+      SetParam(DEOption, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_DE);
       let resArr: Array<string> = (await huks.listAliases(DEOption)).keyAliases;
       for (let i = 0; i < resArr.length; i++) {
         await huks.deleteKeyItem(resArr[i], DEOption);
       }
-      CEOption = {
-        properties: [
-          GenParam(huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_AES),
-          GenParam(huks.HuksTag.HUKS_TAG_KEY_SIZE, huks.HuksKeySize.HUKS_AES_KEY_SIZE_128),
-          GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT),
-          GenParam(huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_CE),
-        ],
-        inData: new Uint8Array()
-      };
+      CEOption = GetAesGenerateOptions(128);
+      SetParam(CEOption, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_CE);
       resArr = (await huks.listAliases(CEOption)).keyAliases;
       for (let i = 0; i < resArr.length; i++) {
         await huks.deleteKeyItem(resArr[i], CEOption);
       }
-      ECEOption = {
-        properties: [
-          GenParam(huks.HuksTag.HUKS_TAG_ALGORITHM, huks.HuksKeyAlg.HUKS_ALG_AES),
-          GenParam(huks.HuksTag.HUKS_TAG_KEY_SIZE, huks.HuksKeySize.HUKS_AES_KEY_SIZE_128),
-          GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT),
-          GenParam(huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_ECE),
-        ],
-        inData: new Uint8Array()
-      };
+      ECEOption = GetAesGenerateOptions(128);
+      SetParam(ECEOption, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_ECE);
       resArr = (await huks.listAliases(ECEOption)).keyAliases;
       for (let i = 0; i < resArr.length; i++) {
         await huks.deleteKeyItem(resArr[i], ECEOption);
       }
-    })
-    afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
-    })
-    afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     })
 
     /**
@@ -107,7 +76,7 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
           await huks.deleteKeyItem(ECEArr[i], ECEOption);
         }
       } catch (err) {
-        console.log(testNumber + `: catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -140,7 +109,7 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
           await huks.deleteKeyItem(ECEArr[i], ECEOption);
         }
       } catch (err) {
-        console.log(testNumber + `: catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -173,7 +142,7 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
           await huks.deleteKeyItem(ECEArr[i], ECEOption);
         }
       } catch (err) {
-        console.log(testNumber + `: catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -188,7 +157,7 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
      */
     it('SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_KeyGenerate_ListAliases_API12_Func_0400";
-      let CEArr = ["C", "C" + GetDataBySize(63)];
+      let CEArr = ["C", "C" + GetDataBySize(HuksMaxAliasLength - 1)];
       try {
         DeleteParam(CEOption, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL);
         for (let arrElement of CEArr) {
@@ -201,7 +170,7 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
           await huks.deleteKeyItem(CEArr[i], CEOption);
         }
       } catch (err) {
-        console.log(testNumber + `: catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -242,7 +211,7 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
           await huks.deleteKeyItem(ECEArr[i], ECEOption);
         }
       } catch (err) {
-        console.log(testNumber + `: catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -283,7 +252,7 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
           await huks.deleteKeyItem(ECEArr[i], ECEOption);
         }
       } catch (err) {
-        console.log(testNumber + `: catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -315,7 +284,7 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
           await huks.deleteKeyItem(CEArr[i], CEOption);
         }
       } catch (err) {
-        console.log(testNumber + `: catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -335,7 +304,7 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
         let resArr = (await huks.listAliases(DEOption)).keyAliases;
         expect(resArr.length).assertEqual(0);
       } catch (err) {
-        console.log(testNumber + `: catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(null).assertFail();
       }
     })
@@ -378,7 +347,7 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
       try {
         await huks.listAliases(DEOption);
       } catch (err) {
-        console.log(testNumber + `: catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
         for (let i = 0; i < DEArr.length; i++) {
           await huks.deleteKeyItem(DEArr[i], DEOption);
@@ -400,7 +369,7 @@ export default function SecurityHUKSKeyGenerateListAliasesTest() {
         await huks.listAliases(null);
         expect(null).assertFail();
       } catch (err) {
-        console.log(testNumber + `: catch error: ${JSON.stringify(err)}`);
+        Logger.error(testNumber + ` catch error: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ILLEGAL_ARGUMENT);
       }
     })

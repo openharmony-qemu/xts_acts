@@ -934,6 +934,8 @@ function testAddAllowedWifiList() {
       let ret: Array<wifiManager.WifiAccessInfo> = wifiManager.getAllowedWifiList(SELFWANT);
       expect(ret.length == wifiAccessInfos.length).assertTrue();
       wifiManager.removeAllowedWifiList(SELFWANT, ret);
+      let result: Array<wifiManager.WifiAccessInfo> = wifiManager.getAllowedWifiList(SELFWANT);
+      expect(result.length == 0).assertTrue();
     } catch (error) {
       expect(error == null).assertTrue();
     } finally {
@@ -1498,6 +1500,8 @@ function testAddDisallowedWifiList() {
       let ret: Array<wifiManager.WifiAccessInfo> = wifiManager.getDisallowedWifiList(SELFWANT);
       expect(ret.length == wifiAccessInfos.length).assertTrue();
       wifiManager.removeDisallowedWifiList(SELFWANT, ret);
+      let result: Array<wifiManager.WifiAccessInfo> = wifiManager.getDisallowedWifiList(SELFWANT);
+      expect(result.length == 0).assertTrue();
     } catch (error) {
       expect(error == null).assertTrue();
     } finally {
@@ -2047,6 +2051,8 @@ function testTurnOnWifiList() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       wifiManager.turnOnWifi(SELFWANT, true);
+      let result: boolean = wifiManager.isWifiActiveSync(SELFWANT);
+      expect(result == true).assertTrue();
     } catch (error) {
       expect(false).assertTrue();
     } finally {
@@ -2218,6 +2224,8 @@ function testTurnOffWifiList() {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       wifiManager.turnOffWifi(SELFWANT);
+      let result: boolean = wifiManager.isWifiActiveSync(SELFWANT);
+      expect(result == false).assertTrue();
     } catch (error) {
       expect(false).assertTrue();
     } finally {

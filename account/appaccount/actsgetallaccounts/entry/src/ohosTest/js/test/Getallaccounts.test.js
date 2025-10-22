@@ -20,10 +20,13 @@ const LENGTHLIMIT = 1024;
 export default function ActsGetAllAccounts() {
     describe('ActsGetAllAccounts', function () {
 
-        /*
-        * @tc.number    : ActsGetAllAccounts_0100
-        * @tc.name      : getAllAccounts callback
-        * @tc.desc      : This application gets its own application information after adding an account
+        /**
+        * @tc.number   ActsGetAllAccounts_0100
+        * @tc.name     ActsGetAllAccounts_0100
+        * @tc.desc     This application gets its own application information after adding an account
+        * @tc.level    Level0
+        * @tc.size     MediumTest
+        * @tc.type     Function
         */
         it('ActsGetAllAccounts_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsGetAllAccounts_0100 start====");
@@ -37,7 +40,9 @@ export default function ActsGetAllAccounts() {
                     console.info("====>getAllAccounts 0100 err:" + JSON.stringify(err));
                     console.info("====>getAllAccounts 0100 data:" + JSON.stringify(data));
                     expect(err).assertEqual(null);
+                    console.info("====>account list length: " + data.length);
                     try{
+                        expect(data.length > 0).assertTrue();   
                         expect(data[0].name).assertEqual("Account_this_application_callback");
                         expect(data[0].owner).assertEqual("com.example.actsgetallaccounts");
                     }
@@ -56,10 +61,13 @@ export default function ActsGetAllAccounts() {
             });
         });
 
-        /*
-        * @tc.number    : ActsGetAllAccounts_0200
-        * @tc.name      : getAllAccounts promise
-        * @tc.desc      : This application gets its own application information after adding an account
+        /**
+        * @tc.number   ActsGetAllAccounts_0200
+        * @tc.name     ActsGetAllAccounts_0200
+        * @tc.desc     This application gets its own application information after adding an account
+        * @tc.level    Level0
+        * @tc.size     MediumTest
+        * @tc.type     Function
         */
         it('ActsGetAllAccounts_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsGetAllAccounts_0200 start====");
@@ -69,12 +77,13 @@ export default function ActsGetAllAccounts() {
             var selfBundle = "com.example.actsgetallaccounts";
             try{
                 var acclist = await appAccountManager.getAllAccounts(selfBundle);
+                console.info("====>account list length: " + acclist.length);
+                expect(acclist.length).assertEqual(0);
             } catch(err) {
                 console.error("====>getAllAccounts err:" + JSON.stringify(err));
                 expect().assertFail();
                 done();
             }
-            console.info("====>account list length: " + acclist.length);
             if(acclist.length > 0){
                 for(var i = 0;i < acclist.length; i++){
                     await appAccountManager.deleteAccount(acclist[i].name);
@@ -85,11 +94,13 @@ export default function ActsGetAllAccounts() {
             console.info("====>getAllAccounts 0200 start====");
             try{
                 var data = await appAccountManager.getAllAccounts(selfBundle);
+                console.info("====>account list length: " + data.length);
+                expect(data.length > 0).assertTrue();   
             } catch(err) {
                 console.error("====>getAllAccounts 0200 fail err:" + JSON.stringify(err));
                 expect().assertFail();
                 done();
-            }       
+            }
             try{
                 expect(data[0].name).assertEqual("Account_this_application_promise");
                 expect(data[0].owner).assertEqual("com.example.actsgetallaccounts");

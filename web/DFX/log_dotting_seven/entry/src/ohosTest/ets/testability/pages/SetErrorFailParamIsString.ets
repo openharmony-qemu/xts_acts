@@ -22,11 +22,16 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 
+const EVENT_ID_SET_SUITE_KEY = 123001;
+
 @Entry
 @Component
 struct testWebResponseSetErrorFailParamIsString {
   controller: web_webview.WebviewController = new web_webview.WebviewController('scheme-handler');
   @State str: string = ''
+
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   aboutToAppear() {
     testNapi.registerCustomSchemes()
@@ -42,14 +47,14 @@ struct testWebResponseSetErrorFailParamIsString {
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_SUITE_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -58,6 +63,7 @@ struct testWebResponseSetErrorFailParamIsString {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -65,17 +71,19 @@ struct testWebResponseSetErrorFailParamIsString {
   build() {
     Column() {
       Button('SetError')
-        .key('SetError')
+        .key('SetErrorButton')
         .onClick(async () => {
+          await Utils.waitForExist(()=>this.isReceive, 'SetErrorButtonIsReceive', 1, 1000);
+          await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
           switch (this.str) {
             case 'testWebResponse_SetError_Fail_ParamIsString': {
               let result: number = testNapi.setError();
               if (result == 0) {
                 console.log('Succeed testWebResponse_SetError_Fail_ParamIsString');
-                Utils.emitEvent(result, 5109);
+                Utils.emitEvent(result, 123010);
               } else {
                 console.log('Faild OH_ArkWebResponse_SetError');
-                Utils.emitEvent(result, 5109);
+                Utils.emitEvent(result, 123010);
               }
               break;
             }
@@ -84,7 +92,11 @@ struct testWebResponseSetErrorFailParamIsString {
       Web({
         src: 'https:' +
           '//www.example.com', controller: this.controller
-      });
+      })
+      .onPageEnd((event) => {
+        console.log('onPageEnd url:' + event.url);
+        this.isPageEnd = 1;
+      })
     }
   }
 }

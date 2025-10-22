@@ -1,4 +1,4 @@
-/*
+/**
 * Copyright (c) 2023 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -35,8 +35,9 @@ import {
   PointerMatrix,
   DisplayRotation
 } from '@ohos.UiTest'
+import { AppStorage } from '@ohos.arkui.stateManagement'
 
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let bundle :string = 'com.example.actsnotificationmanagerrequestenablenotificationallowtest.static'
 let testAbilityContext: common.UIAbilityContext;
@@ -55,23 +56,12 @@ export default function ActsAllowTest() {
     const TAG = 'SUB_ACTS_ALLOW_TEST ===>';
     beforeAll(() => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
+      
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName:"entry",
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-          hilog.info(domain, tag, '%{public}s', 'onAbilityCreate end');
-        }
-      }, (err: BusinessError | null) : void => {
-        if (err != null ) {
-          hilog.info(domain, tag, '%{public}s', '-----'+ err.code);
-        }
-        hilog.info(domain, tag, '%{public}s', 'BusinessError  end');
-      });
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
       await Utils.msSleep(2000)
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
       let driver = Driver.create();
       await Utils.msSleep(500)
@@ -87,13 +77,13 @@ export default function ActsAllowTest() {
     })
 
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100
-     * @tc.name      : Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100
-     * @tc.desc      : requestEnableNotification allow button is clicked
+    /**
+     * @tc.number     Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100
+     * @tc.name       Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100
+     * @tc.desc       requestEnableNotification allow button is clicked
      */
     it('Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100'
         notificationManager.requestEnableNotification(testAbilityContext).then(() => {
@@ -105,7 +95,7 @@ export default function ActsAllowTest() {
         await Utils.msSleep(1500);
         let driver = Driver.create();
         await Utils.msSleep(1500);
-        let button = await driver.findComponent(ON.text('允许'));
+        let button = await driver.findComponent(ON.type('Button').text('允许'));
         console.info(`${TAG} button is ${JSON.stringify(button)}`);
         if (button !== null) {
           await Utils.msSleep(1500);
@@ -118,15 +108,15 @@ export default function ActsAllowTest() {
       })
 
 
-    /*
-    * @tc.number    : Sub_Notification_Ans_Publish_updateOnly_Static_0003
-    * @tc.name      : Sub_Notification_Ans_Publish_updateOnly_Static_0003
-    * @tc.desc      : updateOnly is true
-    * @tc.size      : Large-scaleTest
-    * @tc.type      : Function test
-    * @tc.level     : Level 0
+    /**
+    * @tc.number     Sub_Notification_Ans_Publish_updateOnly_Static_0003
+    * @tc.name       Sub_Notification_Ans_Publish_updateOnly_Static_0003
+    * @tc.desc       updateOnly is true
+    * @tc.size       Large-scaleTest
+    * @tc.type       Function test
+    * @tc.level      Level 0
     */
-    it('Sub_Notification_Ans_Publish_updateOnly_Static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('Sub_Notification_Ans_Publish_updateOnly_Static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG: string ='Sub_Notification_Ans_Publish_updateOnly_Static_0003'
           // 通知Request对象
@@ -175,6 +165,64 @@ export default function ActsAllowTest() {
       })
 
 
+    /**
+     * @tc.number     Sub_Notification_Ces_Subscriber_Subscribe_Static_08086
+     * @tc.name       Sub_Notification_Ces_Subscriber_Subscribe_Static_08086
+     * @tc.desc       调用 createSubscriber 接口，创建订阅者，调用 subscribe 接口，getSubscribeInfo获取订阅者信息，subscribeInfo.publisherBundleName为订阅者包名
+     * @tc.size       Large-scaleTest
+     * @tc.type       Function test
+     * @tc.level      Level 2
+     */
+    it('Sub_Notification_Ces_Subscriber_Subscribe_Static_08086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let TAG: string ='Sub_Notification_Ces_Subscriber_Subscribe_Static_08086'
+        // 创建订阅者
+        try {
+          commonEventManager.createSubscriber(subscribeInfo,
+            (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
+              if (!err) {
+                console.info(`Succeeded in creating subscriber.`);
+
+                if(commonEventSubscriber !== undefined){
+                  subscriber = commonEventSubscriber
+                }else{
+                  expect(false).assertTrue()
+                  done()
+                }
+                // 订阅公共事件
+                try {
+                  commonEventManager.subscribe(subscriber,
+                    (err: BusinessError| null, data: commonEventManager.CommonEventData|undefined) => {
+                      if (err) {
+                        console.error(`${TAG} Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
+                      } else {
+                        console.info(`${TAG} Succeeded in subscribing, data is ` + data);
+                      }
+                    });
+                } catch (error) {
+                  let err: BusinessError = error as BusinessError;
+                  console.error(`${TAG} Failed to subscribe. Code is ${err.code}, message is ${err.message}`);
+                }
+              } else {
+                console.error(`${TAG} Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
+              }
+            });
+        } catch (error) {
+          let err: BusinessError = error as BusinessError;
+          console.error(`${TAG} Failed to create subscriber. Code is ${err.code}, message is ${err.message}`);
+        }
+        await Utils.msSleep(1500)
+
+        subscriber.getSubscribeInfo().then((subscribeInfo: commonEventManager.CommonEventSubscribeInfo) => {
+          console.info(`${TAG} Succeeded in getting subscribe info, subscribe info is ` + JSON.stringify(subscribeInfo));
+          expect(subscribeInfo.publisherBundleName).assertEqual('com.example.myapplication')
+          done();
+        }).catch((err: BusinessError):void => {
+          console.error(`${TAG} Failed to get subscribe info. Code is ${err.code}, message is ${err.message}`);
+          expect(false).assertTrue()
+          done();
+        })
+      })
   })
 }
 

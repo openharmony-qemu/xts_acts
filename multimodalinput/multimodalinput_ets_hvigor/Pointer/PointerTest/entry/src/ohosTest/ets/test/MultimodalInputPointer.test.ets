@@ -225,34 +225,63 @@ export default function MultimodalInputPointerTest() {
      * @tc.type: Function
      * @tc.size: SmallTest
      */
-    it("SUB_MMI_Input_Api_Pointer_getPointerStyle_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
-      let caseName = "SUB_MMI_Input_Api_Pointer_getPointerStyle_0100";
-      let context = getContext();
-      window.getLastWindow(context, (error: BusinessError, win: window.Window) => {
-        let windowId = win.getWindowProperties().id;
-        if (error.code) {
-          console.info(`${caseName} Failed to obtain the top window. Cause: ${JSON.stringify(error)}`);
-          ExpectFalse(true);
-          done();
-        } else if (windowId < 0) {
-          console.info(`${caseName} Invalid windowId`);
-          ExpectFalse(true);
-          done();
-        } else {
-          try {
-            pointer.getPointerStyle(windowId, (error: Error, style: pointer.PointerStyle) => {
-              console.info(`${caseName} Get pointer style success, style: ${JSON.stringify(style)}`);
-              ExpectTrue(style>=0 && style<=44);
-              done();
-            });
-          } catch (error) {
-            console.info(`${caseName} Get pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
+    it("SUB_MMI_Input_Api_Pointer_getPointerStyle_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let caseName = "SUB_MMI_Input_Api_Pointer_getPointerStyle_0100";
+        let context = getContext();
+        window.getLastWindow(context, (error: BusinessError, win: window.Window) => {
+          let windowId = win.getWindowProperties().id;
+          if (error.code) {
+            console.info(`${caseName} Failed to obtain the top window. Cause: ${JSON.stringify(error)}`);
             ExpectFalse(true);
             done();
+          } else if (windowId < 0) {
+            console.info(`${caseName} Invalid windowId`);
+            ExpectFalse(true);
+            done();
+          } else {
+            try {
+              pointer.getPointerStyle(windowId, (error: Error, style: pointer.PointerStyle) => {
+                console.info(`${caseName} Get pointer style success, style: ${JSON.stringify(style)}`);
+                expect(style == pointer.PointerStyle.DEFAULT || style == pointer.PointerStyle.EAST ||
+                  style == pointer.PointerStyle.WEST || style == pointer.PointerStyle.SOUTH ||
+                  style == pointer.PointerStyle.NORTH || style == pointer.PointerStyle.WEST_EAST ||
+                  style == pointer.PointerStyle.NORTH_SOUTH || style == pointer.PointerStyle.NORTH_EAST ||
+                  style == pointer.PointerStyle.NORTH_WEST || style == pointer.PointerStyle.SOUTH_EAST ||
+                  style == pointer.PointerStyle.SOUTH_WEST || style == pointer.PointerStyle.NORTH_EAST_SOUTH_WEST ||
+                  style == pointer.PointerStyle.NORTH_WEST_SOUTH_EAST || style == pointer.PointerStyle.CROSS ||
+                  style == pointer.PointerStyle.CURSOR_COPY || style == pointer.PointerStyle.CURSOR_FORBID ||
+                  style == pointer.PointerStyle.COLOR_SUCKER || style == pointer.PointerStyle.HAND_GRABBING ||
+                  style == pointer.PointerStyle.HAND_OPEN || style == pointer.PointerStyle.HAND_POINTING ||
+                  style == pointer.PointerStyle.HELP || style == pointer.PointerStyle.MOVE ||
+                  style == pointer.PointerStyle.RESIZE_LEFT_RIGHT || style == pointer.PointerStyle.RESIZE_UP_DOWN ||
+                  style == pointer.PointerStyle.SCREENSHOT_CHOOSE || style == pointer.PointerStyle.SCREENSHOT_CURSOR ||
+                  style == pointer.PointerStyle.TEXT_CURSOR || style == pointer.PointerStyle.ZOOM_IN ||
+                  style == pointer.PointerStyle.ZOOM_OUT || style == pointer.PointerStyle.MIDDLE_BTN_EAST ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_WEST || style == pointer.PointerStyle.MIDDLE_BTN_SOUTH ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_NORTH ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_NORTH_SOUTH ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_NORTH_EAST ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_NORTH_WEST ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_SOUTH_EAST ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_SOUTH_WEST ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_NORTH_SOUTH_WEST_EAST ||
+                  style == pointer.PointerStyle.HORIZONTAL_TEXT_CURSOR ||
+                  style == pointer.PointerStyle.CURSOR_CROSS || style == pointer.PointerStyle.CURSOR_CIRCLE ||
+                  style == pointer.PointerStyle.LOADING || style == pointer.PointerStyle.RUNNING ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_EAST_WEST ||
+                  style == pointer.PointerStyle.SCREENRECORDER_CURSOR).assertTrue();
+                done();
+              });
+            } catch (error) {
+              console.info(`${caseName} Get pointer style failed, error: ${JSON.stringify(error,
+                [`code`, `message`])}`);
+              ExpectFalse(true);
+              done();
+            }
           }
-        }
+        });
       });
-    });
 
     /**
      * @tc.number: SUB_MMI_Input_Api_Pointer_getPointerStyle_0200
@@ -279,7 +308,34 @@ export default function MultimodalInputPointerTest() {
           try {
             pointer.getPointerStyle(windowId).then((style: pointer.PointerStyle) => {
               console.info(`${caseName} Get pointer style success, style: ${JSON.stringify(style)}`);
-              ExpectTrue(style>=0 && style<=44);
+                expect(style == pointer.PointerStyle.DEFAULT || style == pointer.PointerStyle.EAST ||
+                  style == pointer.PointerStyle.WEST || style == pointer.PointerStyle.SOUTH ||
+                  style == pointer.PointerStyle.NORTH || style == pointer.PointerStyle.WEST_EAST ||
+                  style == pointer.PointerStyle.NORTH_SOUTH || style == pointer.PointerStyle.NORTH_EAST ||
+                  style == pointer.PointerStyle.NORTH_WEST || style == pointer.PointerStyle.SOUTH_EAST ||
+                  style == pointer.PointerStyle.SOUTH_WEST || style == pointer.PointerStyle.NORTH_EAST_SOUTH_WEST ||
+                  style == pointer.PointerStyle.NORTH_WEST_SOUTH_EAST || style == pointer.PointerStyle.CROSS ||
+                  style == pointer.PointerStyle.CURSOR_COPY || style == pointer.PointerStyle.CURSOR_FORBID ||
+                  style == pointer.PointerStyle.COLOR_SUCKER || style == pointer.PointerStyle.HAND_GRABBING ||
+                  style == pointer.PointerStyle.HAND_OPEN || style == pointer.PointerStyle.HAND_POINTING ||
+                  style == pointer.PointerStyle.HELP || style == pointer.PointerStyle.MOVE ||
+                  style == pointer.PointerStyle.RESIZE_LEFT_RIGHT || style == pointer.PointerStyle.RESIZE_UP_DOWN ||
+                  style == pointer.PointerStyle.SCREENSHOT_CHOOSE || style == pointer.PointerStyle.SCREENSHOT_CURSOR ||
+                  style == pointer.PointerStyle.TEXT_CURSOR || style == pointer.PointerStyle.ZOOM_IN ||
+                  style == pointer.PointerStyle.ZOOM_OUT || style == pointer.PointerStyle.MIDDLE_BTN_EAST ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_WEST || style == pointer.PointerStyle.MIDDLE_BTN_SOUTH ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_NORTH ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_NORTH_SOUTH ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_NORTH_EAST ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_NORTH_WEST ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_SOUTH_EAST ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_SOUTH_WEST ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_NORTH_SOUTH_WEST_EAST ||
+                  style == pointer.PointerStyle.HORIZONTAL_TEXT_CURSOR ||
+                  style == pointer.PointerStyle.CURSOR_CROSS || style == pointer.PointerStyle.CURSOR_CIRCLE ||
+                  style == pointer.PointerStyle.LOADING || style == pointer.PointerStyle.RUNNING ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_EAST_WEST ||
+                  style == pointer.PointerStyle.SCREENRECORDER_CURSOR).assertTrue();
               done();
             });
           } catch (error) {
@@ -327,7 +383,34 @@ export default function MultimodalInputPointerTest() {
       try {
         let style: pointer.PointerStyle = pointer.getPointerStyleSync(-1);
         console.info(`${caseName} Get pointer style success, style: ${JSON.stringify(style)}`);
-        ExpectTrue(style>=0 && style<=44);
+                expect(style == pointer.PointerStyle.DEFAULT || style == pointer.PointerStyle.EAST ||
+                  style == pointer.PointerStyle.WEST || style == pointer.PointerStyle.SOUTH ||
+                  style == pointer.PointerStyle.NORTH || style == pointer.PointerStyle.WEST_EAST ||
+                  style == pointer.PointerStyle.NORTH_SOUTH || style == pointer.PointerStyle.NORTH_EAST ||
+                  style == pointer.PointerStyle.NORTH_WEST || style == pointer.PointerStyle.SOUTH_EAST ||
+                  style == pointer.PointerStyle.SOUTH_WEST || style == pointer.PointerStyle.NORTH_EAST_SOUTH_WEST ||
+                  style == pointer.PointerStyle.NORTH_WEST_SOUTH_EAST || style == pointer.PointerStyle.CROSS ||
+                  style == pointer.PointerStyle.CURSOR_COPY || style == pointer.PointerStyle.CURSOR_FORBID ||
+                  style == pointer.PointerStyle.COLOR_SUCKER || style == pointer.PointerStyle.HAND_GRABBING ||
+                  style == pointer.PointerStyle.HAND_OPEN || style == pointer.PointerStyle.HAND_POINTING ||
+                  style == pointer.PointerStyle.HELP || style == pointer.PointerStyle.MOVE ||
+                  style == pointer.PointerStyle.RESIZE_LEFT_RIGHT || style == pointer.PointerStyle.RESIZE_UP_DOWN ||
+                  style == pointer.PointerStyle.SCREENSHOT_CHOOSE || style == pointer.PointerStyle.SCREENSHOT_CURSOR ||
+                  style == pointer.PointerStyle.TEXT_CURSOR || style == pointer.PointerStyle.ZOOM_IN ||
+                  style == pointer.PointerStyle.ZOOM_OUT || style == pointer.PointerStyle.MIDDLE_BTN_EAST ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_WEST || style == pointer.PointerStyle.MIDDLE_BTN_SOUTH ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_NORTH ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_NORTH_SOUTH ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_NORTH_EAST ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_NORTH_WEST ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_SOUTH_EAST ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_SOUTH_WEST ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_NORTH_SOUTH_WEST_EAST ||
+                  style == pointer.PointerStyle.HORIZONTAL_TEXT_CURSOR ||
+                  style == pointer.PointerStyle.CURSOR_CROSS || style == pointer.PointerStyle.CURSOR_CIRCLE ||
+                  style == pointer.PointerStyle.LOADING || style == pointer.PointerStyle.RUNNING ||
+                  style == pointer.PointerStyle.MIDDLE_BTN_EAST_WEST ||
+                  style == pointer.PointerStyle.SCREENRECORDER_CURSOR).assertTrue();
         done();
       } catch (error) {
         console.info(`${caseName} Get pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);

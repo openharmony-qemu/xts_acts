@@ -26,6 +26,8 @@ struct WebComponent {
   controller2: webview.WebviewController = new webview.WebviewController();
   controller3: webview.WebviewController = new webview.WebviewController();
   controller4: webview.WebviewController = new webview.WebviewController();
+  controller5: webview.WebviewController = new webview.WebviewController();
+  controller6: webview.WebviewController = new webview.WebviewController();
   @State timeoutTime:number = 1000;
   @State isReceive: number = -1;
   @State str:string = 'emitWaitForAttached'
@@ -84,6 +86,21 @@ struct WebComponent {
         console.log('NEU controller4 is ATTACHED');
       }
     })
+
+    this.controller6.waitForAttached(this.timeoutTime).then((state: webview.ControllerAttachState)=>{
+      if (state == webview.ControllerAttachState.ATTACHED) {
+        console.log('NEU controller6 is ATTACHED.');
+      } else {
+        console.log('NEU controller6 is UNATTACHED');
+      }
+    })
+
+    const state = await this.controller5.waitForAttached(this.timeoutTime);
+    if (state == webview.ControllerAttachState.ATTACHED) {
+      console.info('Controller is attached.');
+    } else {
+      console.log('NEU controller4 is UNATTACHED.');
+    }
 
   }
 

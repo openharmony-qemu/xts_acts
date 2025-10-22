@@ -31,6 +31,8 @@ export default function JsLeakWatcherTest() {
     it('testJsLeakWatcher01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_0100 start");
       try {
+        let res =  jsLeakWatcher.dump("")
+        expect(res.length==0).assertTrue();
         jsLeakWatcher.enable(true);
         console.log('SUB_DFX_DFR_jsLeakWatcher_Interface_0100 enable success')
         jsLeakWatcher.enable(false);
@@ -97,6 +99,7 @@ export default function JsLeakWatcherTest() {
         let path = jsLeakWatcher.dump(context.filesDir);
         console.info("SUB_DFX_DFR_jsLeakWatcher_Interface_0300 dump success");
         console.log('jsleaklist: ' + path[0] + ', heapsnapshot: ' + path[1])
+        expect(path.length>0).assertTrue();
         expect(path[0]).assertContain(".jsleaklist");
         expect(path[1]).assertContain(".heapsnapshot");
         done();

@@ -46,6 +46,14 @@ function generateLargeString(length: number): string {
 }
 let TestAbilityContext:common.UIAbilityContext;
 let mpEnable="";
+let timeout = 3000;
+let monitor: AbilityDelegatorRegistry.AbilityMonitor = {
+  abilityName: "TestAbility",
+  onAbilityCreate: onAbilityCreateCallback
+};
+function onAbilityCreateCallback(data: UIAbility) {
+  console.info(`onAbilityCreateCallback, data: ${JSON.stringify(data)}`);
+}
 export default function UIAbilityContext() {
   describe('UIAbilityContext', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -71,7 +79,13 @@ export default function UIAbilityContext() {
       // This API supports only one parameter: clear action function.
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       await abilityDelegator.executeShellCommand("aa start -b com.acts.moveabilitytobgtest -a TestAbility");
-      await sleep(3000);
+      abilityDelegator.waitAbilityMonitor(monitor, timeout, (error: BusinessError, data: UIAbility) => {
+        if (error && error.code !== 0) {
+          console.info(`waitAbilityMonitor fail, error: ${JSON.stringify(error)}`);
+        } else {
+          console.info(`waitAbilityMonitor success, data: ${JSON.stringify(data)}`);
+        }
+      });
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.

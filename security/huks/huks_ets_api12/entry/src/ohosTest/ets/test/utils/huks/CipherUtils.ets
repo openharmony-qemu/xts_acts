@@ -1,7 +1,22 @@
+/*
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the 'License');
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an 'AS IS' BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 import { huks } from '@kit.UniversalKeystoreKit';
 import * as huksCallback from './HuksCallbackUtils';
-import { GetDataBySize, StringToUint8Array, Uint8ArrayToString } from '../CommonUtils';
+import { GetDataBySize, StringToUint8Array, Uint8ArrayToString } from '../common/CommonUtils';
 import { GenParam, SetParam } from './HuksOptionsUtils';
+import { Logger } from '../common/Logger';
 
 export function GetGcmNoPaddingOptions(): huks.HuksOptions {
   let huksOptions: huks.HuksOptions = {
@@ -52,13 +67,13 @@ export function GetCtrNoPaddingOptions(size: number): huks.HuksOptions {
   return huksOptions;
 }
 
-export function GetCfbNoPaddingOptions(size: number): huks.HuksOptions {
+export function GetCfbNoPaddingOptions(ivSize: number): huks.HuksOptions {
   let huksOptions: huks.HuksOptions = {
     properties: new Array(
       GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT),
       GenParam(huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_CFB),
       GenParam(huks.HuksTag.HUKS_TAG_PADDING, huks.HuksKeyPadding.HUKS_PADDING_NONE),
-      GenParam(huks.HuksTag.HUKS_TAG_IV, StringToUint8Array(GetDataBySize(size)))
+      GenParam(huks.HuksTag.HUKS_TAG_IV, StringToUint8Array(GetDataBySize(ivSize)))
     )
   };
   return huksOptions;
@@ -104,6 +119,17 @@ export function GetEcbPkcs1Options(): huks.HuksOptions {
       GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT),
       GenParam(huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_ECB),
       GenParam(huks.HuksTag.HUKS_TAG_PADDING, huks.HuksKeyPadding.HUKS_PADDING_PKCS1_V1_5),
+    )
+  };
+  return huksOptions;
+}
+
+export function GetEcbPkcs7Options(): huks.HuksOptions {
+  let huksOptions: huks.HuksOptions = {
+    properties: new Array(
+      GenParam(huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT),
+      GenParam(huks.HuksTag.HUKS_TAG_BLOCK_MODE, huks.HuksCipherMode.HUKS_MODE_ECB),
+      GenParam(huks.HuksTag.HUKS_TAG_PADDING, huks.HuksKeyPadding.HUKS_PADDING_PKCS7),
     )
   };
   return huksOptions;
@@ -163,6 +189,25 @@ export async function DoCipher(keyAlias: string, cipherOption: huks.HuksOptions,
     finishData: null
   };
   let handle = (await huks.initSession(keyAlias, cipherOption)).handle;
+  if (cipherData.updateDataArr != null) {
+    let updateData: Array<Uint8Array> = cipherData.updateDataArr;
+    cipherResult.updateDataArr = new Array;
+    for (let i = 0; i < updateData.length; i++) {
+      cipherOption.inData = updateData[i];
+      cipherResult.updateDataArr.push((await huks.updateSession(handle, cipherOption)).outData as Uint8Array);
+    }
+  }
+  cipherOption.inData = cipherData.finishData as Uint8Array;
+  cipherResult.finishData = (await huks.finishSession(handle, cipherOption)).outData as Uint8Array;
+  return cipherResult;
+}
+
+export async function DoCipherAsUser(userId: number, keyAlias: string, cipherOption: huks.HuksOptions, cipherData: CipherData): Promise<CipherData> {
+  let cipherResult: CipherData = {
+    updateDataArr: null,
+    finishData: null
+  };
+  let handle = (await huks.initSessionAsUser(userId, keyAlias, cipherOption)).handle;
   if (cipherData.updateDataArr != null) {
     let updateData: Array<Uint8Array> = cipherData.updateDataArr;
     cipherResult.updateDataArr = new Array;
@@ -270,27 +315,51 @@ export interface CipherData {
   finishData: Uint8Array | null,
 }
 
+export function BuildCipherData(dataLenArr: Array<number>) {
+  let cipherData: CipherData = {
+    updateDataArr: null,
+    finishData: null
+  }
+  if (dataLenArr.length == 0) {
+    return cipherData;
+  } else if (dataLenArr.length > 1) {
+    cipherData.updateDataArr = new Array();
+    for (let i = 0; i < dataLenArr.length - 1; i++) {
+      cipherData.updateDataArr.push(StringToUint8Array(GetDataBySize(dataLenArr[i])));
+    }
+  }
+  cipherData.finishData = StringToUint8Array(GetDataBySize(dataLenArr[dataLenArr.length - 1]));
+  return cipherData;
+}
+
 export function CompareCipherData(preData: CipherData, postData: CipherData) {
+  let preStr: string = "";
+  let postStr: string = "";
   if (preData.updateDataArr != null) {
     if (postData.updateDataArr == null) {
       return false;
     }
     for (let i = 0; i < preData.updateDataArr.length; i++) {
-      if (Uint8ArrayToString(postData.updateDataArr[i]) != Uint8ArrayToString(preData.updateDataArr[i])) {
-        return false;
-      }
+      preStr += Uint8ArrayToString(preData.updateDataArr[i]);
+      postStr += Uint8ArrayToString(postData.updateDataArr[i]);
+      // if (Uint8ArrayToString(postData.updateDataArr[i]) != Uint8ArrayToString(preData.updateDataArr[i])) {
+      //   return false;
+      // }
     }
   }
-  return Uint8ArrayToString(postData.finishData as Uint8Array) == Uint8ArrayToString(preData.finishData as Uint8Array);
+  preStr += Uint8ArrayToString(preData.finishData as Uint8Array);
+  postStr += Uint8ArrayToString(postData.finishData as Uint8Array);
+  return preStr == postStr;
+  // return Uint8ArrayToString(postData.finishData as Uint8Array) == Uint8ArrayToString(preData.finishData as Uint8Array);
 }
 
 export function PrintCipherData(cipherData: CipherData) {
   if (cipherData.updateDataArr != null) {
     for (let i = 0; i < cipherData.updateDataArr.length; i++) {
-      console.log(cipherData.updateDataArr[i].length + ":" + Uint8ArrayToString(cipherData.updateDataArr[i]));
+      Logger.log(cipherData.updateDataArr[i].length + ":" + Uint8ArrayToString(cipherData.updateDataArr[i]));
     }
   }
   if (cipherData.finishData != null) {
-    console.log(cipherData.finishData.length + ":" + Uint8ArrayToString(cipherData.finishData));
+    Logger.log(cipherData.finishData.length + ":" + Uint8ArrayToString(cipherData.finishData));
   }
 }

@@ -30,8 +30,9 @@ ani_boolean GetClassObject(ani_env *env, ani_object *objectResult, ani_class *ou
     }
 
     ani_static_method newMethod;
-    std::string strTmp = ":";
+    std::string strTmp = ":C{";
     strTmp += className;
+    strTmp += "}";
     if (env->Class_FindStaticMethod(cls, "new_Object", strTmp.c_str(), &newMethod) != ANI_OK) {
         OH_LOG_INFO(LOG_APP, " Class_FindStaticMethod Failed");
         return ANI_FALSE;
@@ -52,7 +53,7 @@ ani_int test_Object_SetProperty_Boolean([[maybe_unused]] ani_env *env, [[maybe_u
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_boolean value = ANI_TRUE;
     ASSERT_EQ(env->Object_SetPropertyByName_Boolean(obj, "booleanValue", value), ANI_OK);
@@ -63,7 +64,7 @@ ani_int test_Object_SetProperty_Char([[maybe_unused]] ani_env *env, [[maybe_unus
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_char value = 47;
     ASSERT_EQ(env->Object_SetPropertyByName_Char(obj, "charValue", value), ANI_OK);
@@ -74,7 +75,7 @@ ani_int test_Object_SetProperty_Byte([[maybe_unused]] ani_env *env, [[maybe_unus
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_byte value = 3;
     ASSERT_EQ(env->Object_SetPropertyByName_Byte(obj, "byteValue", value), ANI_OK);
@@ -85,7 +86,7 @@ ani_int test_Object_SetProperty_Short([[maybe_unused]] ani_env *env, [[maybe_unu
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_short value = 3;
     ASSERT_EQ(env->Object_SetPropertyByName_Short(obj, "shortValue", value), ANI_OK);
@@ -96,7 +97,7 @@ ani_int test_Object_SetProperty_Int([[maybe_unused]] ani_env *env, [[maybe_unuse
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_int value = 3;
     ASSERT_EQ(env->Object_SetPropertyByName_Int(obj, "intValue", value), ANI_OK);
@@ -107,7 +108,7 @@ ani_int test_Object_SetProperty_Long([[maybe_unused]] ani_env *env, [[maybe_unus
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_long value = 3;
     ASSERT_EQ(env->Object_SetPropertyByName_Long(obj, "longValue", value), ANI_OK);
@@ -118,7 +119,7 @@ ani_int test_Object_SetProperty_Float([[maybe_unused]] ani_env *env, [[maybe_unu
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_float value = 3.3;
     ASSERT_EQ(env->Object_SetPropertyByName_Float(obj, "floatValue", value), ANI_OK);
@@ -129,7 +130,7 @@ ani_int test_Object_SetProperty_Double([[maybe_unused]] ani_env *env, [[maybe_un
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_double value = 3.3;
     ASSERT_EQ(env->Object_SetPropertyByName_Double(obj, "doubleValue", value), ANI_OK);
@@ -140,7 +141,7 @@ ani_int test_Object_SetProperty_Ref([[maybe_unused]] ani_env *env, [[maybe_unuse
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_ref value = {};
     ani_string testField;
@@ -154,7 +155,7 @@ ani_int test_Object_GetPropertyByName_Boolean([[maybe_unused]] ani_env *env, [[m
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_boolean value;
     ASSERT_EQ(env->Object_GetPropertyByName_Boolean(obj, "booleanValue", &value), ANI_OK);
@@ -166,7 +167,7 @@ ani_int test_Object_GetPropertyByName_Char([[maybe_unused]] ani_env *env, [[mayb
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_char value;
     ASSERT_EQ(env->Object_GetPropertyByName_Char(obj, "charValue", &value), ANI_OK);
@@ -179,7 +180,7 @@ ani_int test_Object_GetPropertyByName_Byte([[maybe_unused]] ani_env *env, [[mayb
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_byte value;
     ASSERT_EQ(env->Object_GetPropertyByName_Byte(obj, "byteValue", &value), ANI_OK);
@@ -192,7 +193,7 @@ ani_int test_Object_GetPropertyByName_Short([[maybe_unused]] ani_env *env, [[may
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_short value;
     ASSERT_EQ(env->Object_GetPropertyByName_Short(obj, "shortValue", &value), ANI_OK);
@@ -205,7 +206,7 @@ ani_int test_Object_GetPropertyByName_Int([[maybe_unused]] ani_env *env, [[maybe
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_int value;
     ASSERT_EQ(env->Object_GetPropertyByName_Int(obj, "intValue", &value), ANI_OK);
@@ -218,7 +219,7 @@ ani_int test_Object_GetPropertyByName_Long([[maybe_unused]] ani_env *env, [[mayb
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_long value;
     ASSERT_EQ(env->Object_GetPropertyByName_Long(obj, "longValue", &value), ANI_OK);
@@ -231,7 +232,7 @@ ani_int test_Object_GetPropertyByName_Float([[maybe_unused]] ani_env *env, [[may
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_float value;
     ASSERT_EQ(env->Object_GetPropertyByName_Float(obj, "floatValue", &value), ANI_OK);
@@ -244,7 +245,7 @@ ani_int test_Object_GetPropertyByName_Double([[maybe_unused]] ani_env *env, [[ma
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_double value;
     ASSERT_EQ(env->Object_GetPropertyByName_Double(obj, "doubleValue", &value), ANI_OK);
@@ -257,7 +258,7 @@ ani_int test_Object_GetPropertyByName_Ref([[maybe_unused]] ani_env *env, [[maybe
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_ref value;
     ASSERT_EQ(env->Object_GetPropertyByName_Ref(obj, "stringValue", &value), ANI_OK);
@@ -269,7 +270,7 @@ ani_int test_Class_FindField([[maybe_unused]] ani_env *env, [[maybe_unused]] ani
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_field value;
     ASSERT_EQ(env->Class_FindField(cls, "stringValue", &value), ANI_OK);
@@ -281,7 +282,7 @@ ani_int test_Class_FindSetter([[maybe_unused]] ani_env *env, [[maybe_unused]] an
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_method value;
     ASSERT_EQ(env->Class_FindSetter(cls, "age", &value), ANI_OK);
@@ -293,7 +294,7 @@ ani_int test_Class_FindGetter([[maybe_unused]] ani_env *env, [[maybe_unused]] an
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_method value;
     ASSERT_EQ(env->Class_FindGetter(cls, "age", &value), ANI_OK);
@@ -305,7 +306,7 @@ ani_int test_Class_FindIndexableGetter([[maybe_unused]] ani_env *env, [[maybe_un
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_method value;
     ASSERT_EQ(
@@ -319,7 +320,7 @@ ani_int test_Class_FindIndexableSetter([[maybe_unused]] ani_env *env, [[maybe_un
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_method value;
     ASSERT_EQ(env->Class_FindIndexableSetter(cls, "DZ:V", &value), ANI_OK);
@@ -343,7 +344,7 @@ ani_int test_Object_GetField_Boolean([[maybe_unused]] ani_env *env, [[maybe_unus
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_field field;
     ASSERT_EQ(env->Class_FindField(cls, "booleanValue", &field), ANI_OK);
@@ -358,7 +359,7 @@ ani_int test_Object_GetField_Char([[maybe_unused]] ani_env *env, [[maybe_unused]
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_field field;
     ASSERT_EQ(env->Class_FindField(cls, "charValue", &field), ANI_OK);
@@ -374,7 +375,7 @@ ani_int test_Object_GetField_Byte([[maybe_unused]] ani_env *env, [[maybe_unused]
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_field field;
     ASSERT_EQ(env->Class_FindField(cls, "byteValue", &field), ANI_OK);
@@ -390,7 +391,7 @@ ani_int test_Object_GetField_Short([[maybe_unused]] ani_env *env, [[maybe_unused
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_field field;
     ASSERT_EQ(env->Class_FindField(cls, "shortValue", &field), ANI_OK);
@@ -406,7 +407,7 @@ ani_int test_Object_GetField_Int([[maybe_unused]] ani_env *env, [[maybe_unused]]
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_field field;
     ASSERT_EQ(env->Class_FindField(cls, "intValue", &field), ANI_OK);
@@ -422,7 +423,7 @@ ani_int test_Object_GetField_Long([[maybe_unused]] ani_env *env, [[maybe_unused]
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_field field;
     ASSERT_EQ(env->Class_FindField(cls, "longValue", &field), ANI_OK);
@@ -438,7 +439,7 @@ ani_int test_Object_GetField_Float([[maybe_unused]] ani_env *env, [[maybe_unused
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_field field;
     ASSERT_EQ(env->Class_FindField(cls, "floatValue", &field), ANI_OK);
@@ -454,7 +455,7 @@ ani_int test_Object_GetField_Double([[maybe_unused]] ani_env *env, [[maybe_unuse
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_field field;
     ASSERT_EQ(env->Class_FindField(cls, "doubleValue", &field), ANI_OK);
@@ -470,7 +471,7 @@ ani_int test_Object_GetField_Ref([[maybe_unused]] ani_env *env, [[maybe_unused]]
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_field field;
     ASSERT_EQ(env->Class_FindField(cls, "stringValue", &field), ANI_OK);
@@ -485,7 +486,7 @@ ani_int test_Object_SetField_Boolean([[maybe_unused]] ani_env *env, [[maybe_unus
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_field field;
     ASSERT_EQ(env->Class_FindField(cls, "booleanValue", &field), ANI_OK);
@@ -499,7 +500,7 @@ ani_int test_Object_SetField_Char([[maybe_unused]] ani_env *env, [[maybe_unused]
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_field field;
     ASSERT_EQ(env->Class_FindField(cls, "charValue", &field), ANI_OK);
@@ -513,7 +514,7 @@ ani_int test_Object_SetField_Byte([[maybe_unused]] ani_env *env, [[maybe_unused]
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_field field;
     ASSERT_EQ(env->Class_FindField(cls, "byteValue", &field), ANI_OK);
@@ -527,7 +528,7 @@ ani_int test_Object_SetField_Short([[maybe_unused]] ani_env *env, [[maybe_unused
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_field field;
     ASSERT_EQ(env->Class_FindField(cls, "shortValue", &field), ANI_OK);
@@ -541,7 +542,7 @@ ani_int test_Object_SetField_Int([[maybe_unused]] ani_env *env, [[maybe_unused]]
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_field field;
     ASSERT_EQ(env->Class_FindField(cls, "intValue", &field), ANI_OK);
@@ -555,7 +556,7 @@ ani_int test_Object_SetField_Long([[maybe_unused]] ani_env *env, [[maybe_unused]
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_field field;
     ASSERT_EQ(env->Class_FindField(cls, "longValue", &field), ANI_OK);
@@ -569,7 +570,7 @@ ani_int test_Object_SetField_Float([[maybe_unused]] ani_env *env, [[maybe_unused
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_field field;
     ASSERT_EQ(env->Class_FindField(cls, "floatValue", &field), ANI_OK);
@@ -583,7 +584,7 @@ ani_int test_Object_SetField_Double([[maybe_unused]] ani_env *env, [[maybe_unuse
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_field field;
     ASSERT_EQ(env->Class_FindField(cls, "doubleValue", &field), ANI_OK);
@@ -597,7 +598,7 @@ ani_int test_Object_SetField_Ref([[maybe_unused]] ani_env *env, [[maybe_unused]]
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
     ani_field field;
     ASSERT_EQ(env->Class_FindField(cls, "stringValue", &field), ANI_OK);
     ani_string testField;
@@ -611,7 +612,7 @@ ani_int test_Object_GetFieldByName_Boolean([[maybe_unused]] ani_env *env, [[mayb
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_boolean value;
     ASSERT_EQ(env->Object_GetFieldByName_Boolean(obj, "booleanValue", &value), ANI_OK);
@@ -623,7 +624,7 @@ ani_int test_Object_GetFieldByName_Char([[maybe_unused]] ani_env *env, [[maybe_u
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_char value;
     ASSERT_EQ(env->Object_GetFieldByName_Char(obj, "charValue", &value), ANI_OK);
@@ -636,7 +637,7 @@ ani_int test_Object_GetFieldByName_Byte([[maybe_unused]] ani_env *env, [[maybe_u
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_byte value;
     ASSERT_EQ(env->Object_GetFieldByName_Byte(obj, "byteValue", &value), ANI_OK);
@@ -649,7 +650,7 @@ ani_int test_Object_GetFieldByName_Short([[maybe_unused]] ani_env *env, [[maybe_
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_short value;
     ASSERT_EQ(env->Object_GetFieldByName_Short(obj, "shortValue", &value), ANI_OK);
@@ -662,7 +663,7 @@ ani_int test_Object_GetFieldByName_Int([[maybe_unused]] ani_env *env, [[maybe_un
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_int value;
     ASSERT_EQ(env->Object_GetFieldByName_Int(obj, "intValue", &value), ANI_OK);
@@ -675,7 +676,7 @@ ani_int test_Object_GetFieldByName_Long([[maybe_unused]] ani_env *env, [[maybe_u
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_long value;
     ASSERT_EQ(env->Object_GetFieldByName_Long(obj, "longValue", &value), ANI_OK);
@@ -688,7 +689,7 @@ ani_int test_Object_GetFieldByName_Float([[maybe_unused]] ani_env *env, [[maybe_
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_float value;
     ASSERT_EQ(env->Object_GetFieldByName_Float(obj, "floatValue", &value), ANI_OK);
@@ -701,7 +702,7 @@ ani_int test_Object_GetFieldByName_Double([[maybe_unused]] ani_env *env, [[maybe
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_double value;
     ASSERT_EQ(env->Object_GetFieldByName_Double(obj, "doubleValue", &value), ANI_OK);
@@ -714,7 +715,7 @@ ani_int test_Object_GetFieldByName_Ref([[maybe_unused]] ani_env *env, [[maybe_un
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_ref strRef{};
     ASSERT_EQ(env->Object_GetFieldByName_Ref(obj, "stringValue", &strRef), ANI_OK);
@@ -726,7 +727,7 @@ ani_int test_Object_SetFieldByName_Boolean([[maybe_unused]] ani_env *env, [[mayb
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_boolean value;
     ASSERT_EQ(env->Object_SetFieldByName_Boolean(obj, "booleanValue", value), ANI_OK);
@@ -737,7 +738,7 @@ ani_int test_Object_SetFieldByName_Char([[maybe_unused]] ani_env *env, [[maybe_u
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_char value;
     ASSERT_EQ(env->Object_SetFieldByName_Char(obj, "charValue", value), ANI_OK);
@@ -748,7 +749,7 @@ ani_int test_Object_SetFieldByName_Byte([[maybe_unused]] ani_env *env, [[maybe_u
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_byte value;
     ASSERT_EQ(env->Object_SetFieldByName_Byte(obj, "byteValue", value), ANI_OK);
@@ -759,7 +760,7 @@ ani_int test_Object_SetFieldByName_Short([[maybe_unused]] ani_env *env, [[maybe_
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_short value;
     ASSERT_EQ(env->Object_SetFieldByName_Short(obj, "shortValue", value), ANI_OK);
@@ -770,7 +771,7 @@ ani_int test_Object_SetFieldByName_Int([[maybe_unused]] ani_env *env, [[maybe_un
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_int value;
     ASSERT_EQ(env->Object_SetFieldByName_Int(obj, "intValue", value), ANI_OK);
@@ -781,7 +782,7 @@ ani_int test_Object_SetFieldByName_Long([[maybe_unused]] ani_env *env, [[maybe_u
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_long value;
     ASSERT_EQ(env->Object_SetFieldByName_Long(obj, "longValue", value), ANI_OK);
@@ -792,7 +793,7 @@ ani_int test_Object_SetFieldByName_Float([[maybe_unused]] ani_env *env, [[maybe_
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_float value;
     ASSERT_EQ(env->Object_SetFieldByName_Float(obj, "floatValue", value), ANI_OK);
@@ -803,7 +804,7 @@ ani_int test_Object_SetFieldByName_Double([[maybe_unused]] ani_env *env, [[maybe
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_double value;
     ASSERT_EQ(env->Object_SetFieldByName_Double(obj, "doubleValue", value), ANI_OK);
@@ -814,7 +815,7 @@ ani_int test_Object_SetFieldByName_Ref([[maybe_unused]] ani_env *env, [[maybe_un
 {
     ani_class cls = {};
     ani_object obj = {};
-    ASSERT_EQ(GetClassObject(env, &obj, &cls, "Lentry/src/main/src/ets/AccessingFiledsOfObjects/TestField;"), ANI_TRUE);
+    ASSERT_EQ(GetClassObject(env, &obj, &cls, "entry.src.main.src.ets.AccessingFiledsOfObjects.TestField"), ANI_TRUE);
 
     ani_ref strRef{};
     std::string example = "example";

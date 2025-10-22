@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 HiHope Open Source Organization.
+ * Copyright (C) 2024-2025 HiHope Open Source Organization.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -174,7 +174,6 @@ export default function actsterminateselfwithresulttest() {
       await abilityDelegator.executeShellCommand(cmda1).catch((error: BusinessError) => {
         console.log("====> executeShellCommand error : " + JSON.stringify(error));
       });
-      await sleep(1000);
     })
 
     /**
@@ -209,7 +208,7 @@ export default function actsterminateselfwithresulttest() {
           }
           // 执行正常业务
           hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} startAbility succeed`);
-          await sleep(3000);
+          await sleep(1000);
           await commonEvent.unsubscribe(subscriber)
           expect(onEntryCreateFlag).assertEqual(true);
           expect(onEntryOnDestroyFlag).assertEqual(false);
@@ -263,7 +262,7 @@ export default function actsterminateselfwithresulttest() {
           // 执行正常业务
           hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} startAbility succeed`);
 
-          await sleep(3000);
+          await sleep(1000);
           hilog.info(0x0000, TAG, '%{public}s',
             `${TEST_SUITE_NAME}#${TEST_CASE_NAME} onEntryCreateFlag===  ${onEntryCreateFlag}`);
           hilog.info(0x0000, TAG, '%{public}s',
@@ -338,7 +337,6 @@ export default function actsterminateselfwithresulttest() {
         if (i != 0) {
           onEntryCreateFlag = false;
           onEntryOnDestroyFlag = false;
-          await sleep(1000)
         }
         startAbilityAction();
         await sleep(2000);
@@ -399,7 +397,7 @@ export default function actsterminateselfwithresulttest() {
           expect().assertFail();
           done();
         }
-        await sleep(6000);
+        await sleep(4000);
         await commonEvent.unsubscribe(subscriber);
         hilog.info(0x0000, TAG, '%{public}s',
           `${TEST_SUITE_NAME}#${TEST_CASE_NAME} startAbilityForResult onFirstEntryCreateFlag is === ${onFirstEntryCreateFlag}`);
@@ -449,7 +447,7 @@ export default function actsterminateselfwithresulttest() {
           }
           // 执行正常业务
           hilog.info(0x0000, TAG, '%{public}s', `${TEST_SUITE_NAME}#${TEST_CASE_NAME} startAbilityForResult succeed`);
-          await sleep(3500);
+          await sleep(3000);
           hilog.info(0x0000, TAG, '%{public}s',
             `${TEST_SUITE_NAME}#${TEST_CASE_NAME} startAbilityForResult onEntryOnDestroyBeginFlag is === ${onEntryOnDestroyBeginFlag}`);
           hilog.info(0x0000, TAG, '%{public}s',
@@ -462,7 +460,7 @@ export default function actsterminateselfwithresulttest() {
           await commonEvent.unsubscribe(subscriber);
           expect(onEntryOnDestroyBeginFlag).assertTrue();
           expect(onEntryOnDestroyEndFlag).assertTrue();
-          expect(distanceTime).assertLarger(1000);
+          expect(distanceTime >= 1000).assertTrue();
           done();
         });
       } catch (err) {

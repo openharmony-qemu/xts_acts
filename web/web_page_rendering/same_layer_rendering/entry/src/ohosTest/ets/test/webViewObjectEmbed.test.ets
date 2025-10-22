@@ -16,9 +16,12 @@ import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
+import { Driver, ON } from '@kit.TestKit';
 import emitter from '@ohos.events.emitter';
+import { waitAndClickComponent, waitForComponent } from './WaitTest.test';
 // @ts-nocheck
 let emitKey = ""
+const driver = Driver.create();
 
 export default function ActsAceWebViewObjectEmbed() {
   describe('ActsAceWebViewObjectEmbed', () => {
@@ -29,24 +32,22 @@ export default function ActsAceWebViewObjectEmbed() {
       }
 
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
         console.info("get webViewObjectEmbed state success " + JSON.stringify(pages));
         if (!("webViewObjectEmbed" == pages.name)) {
           console.info("get webViewObjectEmbed state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(1000);
           console.info("push webViewObjectEmbed state success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webViewObjectEmbed page error:" + err);
       }
+      await waitForComponent("webViewObjectEmbedButton");
       done()
     });
 
     beforeEach(async (done: Function) => {
-      await Utils.sleep(1000);
       done();
     })
 
@@ -61,11 +62,10 @@ export default function ActsAceWebViewObjectEmbed() {
      */
     it('testWebViewObjectEmbed01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbed01"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbed01", 'success', 8014, done);
+      Utils.emitEvent(emitKey, 153970);
+      Utils.registerEvent("testWebViewObjectEmbed01", 'success', 153980, done);
       sendEventByKey('webViewObjectEmbedButton', 10, '');
     })
-
 
 
     /*
@@ -78,8 +78,8 @@ export default function ActsAceWebViewObjectEmbed() {
      */
     it('testWebViewObjectEmbed04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbed04"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbed04", 'success', 8017, done);
+      Utils.emitEvent(emitKey, 153970);
+      Utils.registerEvent("testWebViewObjectEmbed04", 'success', 153990, done);
       sendEventByKey('webViewObjectEmbedButton', 10, '');
     })
 
@@ -93,8 +93,8 @@ export default function ActsAceWebViewObjectEmbed() {
      */
     it('testWebViewObjectEmbedGesture01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedGesture01"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbedGesture01", 'success', 8000, done);
+      Utils.emitEvent(emitKey, 153970);
+      Utils.registerEvent("testWebViewObjectEmbedGesture01", 'success', 154000, done);
       sendEventByKey('webViewObjectEmbedButton', 10, '');
     })
     /*
@@ -107,8 +107,8 @@ export default function ActsAceWebViewObjectEmbed() {
      */
     it('testWebViewObjectEmbedGesture02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedGesture02"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbedGesture02", 'success', 8001, done);
+      Utils.emitEvent(emitKey, 153970);
+      Utils.registerEvent("testWebViewObjectEmbedGesture02", 'success', 154010, done);
       sendEventByKey('webViewObjectEmbedButton', 10, '');
     })
     /*
@@ -121,8 +121,8 @@ export default function ActsAceWebViewObjectEmbed() {
      */
     it('testWebViewObjectEmbedGesture03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedGesture03"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbedGesture03", 'success', 8002, done);
+      Utils.emitEvent(emitKey, 153970);
+      Utils.registerEvent("testWebViewObjectEmbedGesture03", 'success', 154020, done);
       sendEventByKey('webViewObjectEmbedButton', 10, '');
     })
 

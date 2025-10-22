@@ -19,7 +19,10 @@ group("data") {
     deps = [ 
     "cellular_data_abnormal:ActsCellularDataAbnormalTest",
     "cellular_data_abnormal_nop:ActsCellularDataAbnormalNopTest",
-    "datatest:ActsDataHasCardNoNetTest" 
+    "datatest:ActsDataHasCardNoNetTest",
+"ActsCellularDataAbnormalNopTestStatic:ActsCellularDataAbnormalNopStaticTest",
+"ActsTelephonyDataHasCardTestStatic:ActsTelephonyDataHasCardStaticTest",
+"ActsTelephonyDataNoCardTestStatic:ActsTelephonyDataNoCardStaticTest"
     ]
   }
 }

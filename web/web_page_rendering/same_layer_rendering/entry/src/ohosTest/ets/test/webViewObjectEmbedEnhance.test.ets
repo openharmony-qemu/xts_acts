@@ -16,9 +16,11 @@ import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size
 import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
-import emitter from '@ohos.events.emitter';
+import { waitAndClickComponent,waitForComponent } from './WaitTest.test';
+import { Driver, ON } from '@kit.TestKit';
+const driver = Driver.create();
 // @ts-nocheck
-let emitKey = ""
+let emitKey = '';
 
 export default function ActsAceWebViewObjectEmbedEnhance() {
   describe('ActsAceWebViewObjectEmbedEnhance', () => {
@@ -29,26 +31,20 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
       }
 
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
         console.info("get webViewObjectEmbedEnhance state success " + JSON.stringify(pages));
         if (!("webViewObjectEmbedEnhance" == pages.name)) {
           console.info("get webViewObjectEmbedEnhance state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(1000);
           console.info("push webViewObjectEmbedEnhance state success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webViewObjectEmbedEnhance page error:" + err);
       }
+      await waitForComponent("webViewObjectEmbedEnhanceButton");
       done()
     });
-
-    beforeEach(async (done: Function) => {
-      await Utils.sleep(1000);
-      done();
-    })
 
 
     /*
@@ -61,9 +57,9 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
      */
     it('testWebViewObjectEmbedAbc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedAbc"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbedAbc", 'success', 1014, done);
-      sendEventByKey('webViewObjectEmbedEnhanceButton', 10, '');
+      Utils.emitEvent(emitKey, 153680);
+      Utils.registerEvent("testWebViewObjectEmbedAbc", 'success', 153690, done);
+      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /*
@@ -76,9 +72,9 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
      */
     it('testWebViewObjectEmbedId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedId"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbedId", 'success', 1001, done);
-      sendEventByKey('webViewObjectEmbedEnhanceButton', 10, '');
+      Utils.emitEvent(emitKey, 153680);
+      Utils.registerEvent("testWebViewObjectEmbedId", 'success', 153700, done);
+      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /*
@@ -91,9 +87,9 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
      */
     it('testWebViewObjectEmbedType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedType"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbedType", 'success', 1002, done);
-      sendEventByKey('webViewObjectEmbedEnhanceButton', 10, '');
+      Utils.emitEvent(emitKey, 153680);
+      Utils.registerEvent("testWebViewObjectEmbedType", 'success', 153710, done);
+      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /*
@@ -106,9 +102,9 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
      */
     it('testWebViewObjectEmbedSrc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedSrc"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbedSrc", 'success', 1003, done);
-      sendEventByKey('webViewObjectEmbedEnhanceButton', 10, '');
+      Utils.emitEvent(emitKey, 153680);
+      Utils.registerEvent("testWebViewObjectEmbedSrc", 'success', 153720, done);
+      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /*
@@ -121,9 +117,9 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
      */
     it('testWebViewObjectEmbedWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedWidth"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbedWidth", 'success', 1004, done);
-      sendEventByKey('webViewObjectEmbedEnhanceButton', 10, '');
+      Utils.emitEvent(emitKey, 153680);
+      Utils.registerEvent("testWebViewObjectEmbedWidth", 'success', 153730, done);
+      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /*
@@ -136,9 +132,9 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
      */
     it('testWebViewObjectEmbedHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedHeight"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbedHeight", 'success', 1005, done);
-      sendEventByKey('webViewObjectEmbedEnhanceButton', 10, '');
+      Utils.emitEvent(emitKey, 153680);
+      Utils.registerEvent("testWebViewObjectEmbedHeight", 'success', 153740, done);
+      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /*
@@ -151,9 +147,9 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
      */
     it('testWebViewObjectEmbedTagEmbed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedTagEmbed"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbedTagEmbed", 'success', 1006, done);
-      sendEventByKey('webViewObjectEmbedEnhanceButton', 10, '');
+      Utils.emitEvent(emitKey, 153680);
+      Utils.registerEvent("testWebViewObjectEmbedTagEmbed", 'success', 153750, done);
+      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /*
@@ -166,9 +162,9 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
      */
     it('testWebViewObjectEmbedTagObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedTagObject"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbedTagObject", 'success', 1007, done);
-      sendEventByKey('webViewObjectEmbedEnhanceButton', 10, '');
+      Utils.emitEvent(emitKey, 153680);
+      Utils.registerEvent("testWebViewObjectEmbedTagObject", 'success', 153760, done);
+      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /*
@@ -181,9 +177,9 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
      */
     it('testWebViewObjectEmbedPosition', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedPosition"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbedPosition", 'success', 1008, done);
-      sendEventByKey('webViewObjectEmbedEnhanceButton', 10, '');
+      Utils.emitEvent(emitKey, 153680);
+      Utils.registerEvent("testWebViewObjectEmbedPosition", 'success', 153770, done);
+      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /*
@@ -196,9 +192,9 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
      */
     it('testWebViewObjectEmbedUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedUrl"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbedUrl", 'success', 1009, done);
-      sendEventByKey('webViewObjectEmbedEnhanceButton', 10, '');
+      Utils.emitEvent(emitKey, 153680);
+      Utils.registerEvent("testWebViewObjectEmbedUrl", 'success', 153780, done);
+      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /*
@@ -211,9 +207,9 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
      */
     it('testWebViewObjectEmbedParams', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedParams"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbedParams", 'success', 1010, done);
-      sendEventByKey('webViewObjectEmbedEnhanceButton', 10, '');
+      Utils.emitEvent(emitKey, 153680);
+      Utils.registerEvent("testWebViewObjectEmbedParams", 'success', 153790, done);
+      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /*
@@ -226,9 +222,9 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
      */
     it('testWebViewObjectEmbedHasParams', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedHasParams"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbedHasParams", 'success', 1011, done);
-      sendEventByKey('webViewObjectEmbedEnhanceButton', 10, '');
+      Utils.emitEvent(emitKey, 153680);
+      Utils.registerEvent("testWebViewObjectEmbedHasParams", 'success', 153800, done);
+      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
 
     /*
@@ -241,9 +237,9 @@ export default function ActsAceWebViewObjectEmbedEnhance() {
      */
     it('testWebViewObjectEmbedTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectEmbedTest"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectEmbedTest", 'success', 1012, done);
-      sendEventByKey('webViewObjectEmbedEnhanceButton', 10, '');
+      Utils.emitEvent(emitKey, 153680);
+      Utils.registerEvent("testWebViewObjectEmbedTest", 'success', 153810, done);
+      waitAndClickComponent("webViewObjectEmbedEnhanceButton",driver);
     })
   })
 }

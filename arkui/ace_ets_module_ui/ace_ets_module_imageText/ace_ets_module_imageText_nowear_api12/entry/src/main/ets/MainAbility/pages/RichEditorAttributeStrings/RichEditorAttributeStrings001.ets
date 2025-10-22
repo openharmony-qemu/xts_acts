@@ -37,43 +37,41 @@ struct RichEditorAttributeStrings001 {
 
   build() {
     Column() {
-
-      Button('get spans').onClick(() => {
-        this.controller1.getSpans({
-          start: 0,
-          end: 8
-        }).forEach(item => {
-          this.spans += (item as RichEditorTextSpanResult).value + '\n';
-        })
-      }).id('getSpans')
-
-      Button('get final Spans').onClick(() => {
-        this.finalSpans = '';
-        this.controller1.getSpans({
-          start: 0,
-          end: 16
-        }).forEach(item => {
-          this.finalSpans += (item as RichEditorTextSpanResult).value;
-        })
-      }).id('getFinalSpans')
-
-      Button('set center').onClick(() => {
-        this.controller1.setCaretOffset(1);
-      }).id('setCenter')
-
-      Button('set start').onClick(() => {
-        this.controller1.setCaretOffset(0);
-      }).id('setStart')
-
-
-      Text('Spans:' + this.spans).id('Spans')
-      Text('finalSpans:' + this.finalSpans).id('finalSpans')
+      Row(){
+        Button('get spans').onClick(() => {
+          this.controller1.getSpans({
+            start: 0,
+            end: 8
+          }).forEach(item => {
+            this.spans += (item as RichEditorTextSpanResult).value + '\n';
+          })
+        }).id('getSpans').width('25%')
+        Button('get final Spans').onClick(() => {
+          this.finalSpans = '';
+          this.controller1.getSpans({
+            start: 0,
+            end: 16
+          }).forEach(item => {
+            this.finalSpans += (item as RichEditorTextSpanResult).value;
+          })
+        }).id('getFinalSpans').width('25%')
+        Button('set center').onClick(() => {
+          this.controller1.setCaretOffset(1);
+        }).id('setCenter').width('25%')
+        Button('set start').onClick(() => {
+          this.controller1.setCaretOffset(0);
+        }).id('setStart').width('25%')
+      }.height('5%')
+      Row(){
+        Text('Spans:' + this.spans).id('Spans').width('50%')
+        Text('finalSpans:' + this.finalSpans).id('finalSpans').width('50%')
+      }.height('5%')
 
       RichEditor(this.options)
         .onReady(() => {
           this.controller.setStyledString(this.mutableStyledString);
         })
-        .height(100)
+        .height('20%')
         .width('100%')
         .borderWidth(1)
         .borderColor(Color.Black)
@@ -91,11 +89,11 @@ struct RichEditorAttributeStrings001 {
               }
             })
         })
-        .height(100)
+        .height('20%')
         .width('100%')
         .borderWidth(1)
         .borderColor(Color.Black)
         .id('RichEditorAttributeStrings001_1')
-    }
+    }.height('90%')
   }
 }

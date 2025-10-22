@@ -138,7 +138,7 @@ struct patternLock {
           .fontColor(Color.Red)
 
         PatternLock(this.patternLockController)
-          .sideLength(100)
+          .sideLength('50%')
           .circleRadius(9)
           .pathStrokeWidth(18)
           .regularColor('#ff182431')

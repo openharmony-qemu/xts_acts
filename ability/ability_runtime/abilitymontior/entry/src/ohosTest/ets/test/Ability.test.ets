@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -49,7 +49,7 @@ export default function abilityTest() {
       }
       if (globalThis.abilityContext) {
         console.info(TAG + " wait abiltiy terminateSelf");
-        await sleep(2500);
+        await sleep(1500);
         done();
       } else {
         done();
@@ -133,21 +133,11 @@ export default function abilityTest() {
     it('ACTS_AddAbilityMonitor_Callback_0300', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_AddAbilityMonitor_Callback_0300";
       console.log(TAG + " start");
-
       let onAbilityBackgroundPromise = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityBackgroundPromise ====>");
         expect(ability != null).assertTrue();
         done();
       }
-
-      let UnSubscribeCallback = () => {
-        console.log(TAG + "====>commonEvent_foreground UnSubscribeCallback====>");
-      }
-
-      let subscriber: Subscriber.CommonEventSubscriber;
-      let commonEvent_Foreground: Subscriber.CommonEventSubscribeInfo = {
-        events: ["commonEvent_foreground"]
-      };
       monitor = {
         abilityName: 'MainAbility3',
         onAbilityBackground: onAbilityBackgroundPromise
@@ -155,27 +145,6 @@ export default function abilityTest() {
       console.log(TAG + " addAbilityMonitor start");
       delegator.addAbilityMonitor(monitor, (async (err) => {
         console.log(TAG + "====> addAbilityMonitor====>" + err.code);
-      }))
-      console.log(TAG + " createSubscriber start");
-      Subscriber.createSubscriber(commonEvent_Foreground, async (err, data) => {
-        console.log(TAG + "====>Create Subscriber====>");
-        subscriber = data;
-        Subscriber.subscribe(subscriber, (err,data)=>{
-          console.log(TAG + "====>Subscribe CallBack data:====>" + JSON.stringify(data));
-          Subscriber.unsubscribe(subscriber, UnSubscribeCallback);
-          delegator.getCurrentTopAbility().then((ability) => {
-            console.info(TAG + "===ability " + JSON.stringify(ability).length);
-            delegator.doAbilityBackground(ability).then(async (data) => {
-              console.info(TAG + "===data succeed.");
-              expect(true).assertTrue();
-            }).catch((err: BusinessError) => {
-              console.info(TAG + "===data failed.");
-              expect(false).assertTrue();
-              done();
-            });
-          })
-        });
-        console.log(TAG + " startAbility start");
         delegator.startAbility(
           {
             bundleName: 'com.example.abilitymonitortest',
@@ -183,7 +152,7 @@ export default function abilityTest() {
           }).then(async () => {
           console.log(TAG + "====>0300startAbility success====>");
         })
-      })
+      }))
     })
 
     /**
@@ -395,23 +364,17 @@ export default function abilityTest() {
     /**
      * @tc.number: ACTS_AddAbilityMonitor_Promise_0300
      * @tc.name: Verify that the addAbilityMonitor interface functions normally.
-     * @tc.desc: Use addAbilityMonitor to add a monitor then use startAbility
-     * to trigger onAbilityBackground (promise).
+     * @tc.desc: Use addAbilityMonitor to add a monitor with onAbilityBackground callback,
+     * then use startAbility to start the target ability and verify the monitor is triggered (promise).
      */
     it('ACTS_AddAbilityMonitor_Promise_0300', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_AddAbilityMonitor_Promise_0300";
       console.log(TAG + " start");
-
       let onAbilityBackgroundPromise = (ability: UIAbility) => {
         console.log(TAG + "====>onAbilityBackgroundPromise ====>");
         expect(ability != null).assertTrue();
         done();
       }
-
-      let subscriber: Subscriber.CommonEventSubscriber
-      let commonEvent_Foreground: Subscriber.CommonEventSubscribeInfo = {
-        events: ["commonEvent_foreground"]
-      };
       monitor = {
         abilityName: 'MainAbility3',
         onAbilityBackground: onAbilityBackgroundPromise
@@ -419,31 +382,12 @@ export default function abilityTest() {
       console.log(TAG + " addAbilityMonitor start");
       delegator.addAbilityMonitor(monitor).then(async () => {
         console.log(TAG + "====>ACTS_AddAbilityMonitor_1000 success====>");
-      })
-      console.log(TAG + " createSubscriber start");
-      Subscriber.createSubscriber(commonEvent_Foreground, async (err, data) => {
-        console.log(TAG + "====>Create Subscriber====>");
-        subscriber = data;
-        Subscriber.subscribe(subscriber, (err, data)=>{
-          console.log(TAG + "====>Subscribe CallBack data:====>" + JSON.stringify(data));
-          delegator.getCurrentTopAbility().then((ability) => {
-            console.info(TAG + "===ACTS_AddAbilityMonitor_1000===ability" + JSON.stringify(ability).length);
-            delegator.doAbilityBackground(ability).then(async () => {
-              console.info(TAG + "===ACTS_AddAbilityMonitor_1000===data succeed.");
-              expect(true).assertTrue();
-            }).catch(() => {
-              console.info(TAG + "===ACTS_AddAbilityMonitor_1000===data succeed.");
-              expect(false).assertTrue();
-            });
-          })
-        });
-        console.log(TAG + " startAbility start");
-        await delegator.startAbility(
+        delegator.startAbility(
           {
             bundleName: 'com.example.abilitymonitortest',
             abilityName: 'MainAbility3'
           }).then(async () => {
-          console.log(TAG + "====>1000startAbility success====>");
+          console.log(TAG + "====>0900startAbility success====>");
         })
       })
     })
@@ -622,7 +566,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0100 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 2500)
+            }, 2000)
           })
         })
       }))
@@ -662,7 +606,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0200 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 2500)
+            }, 2000)
           })
         })
       }))
@@ -702,7 +646,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0300 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 2500)
+            }, 2000)
           })
         })
       }))
@@ -742,7 +686,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0400 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 2500)
+            }, 2000)
           })
         })
       }))
@@ -782,7 +726,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0500 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 2500)
+            }, 2000)
           })
         })
       }))
@@ -822,7 +766,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0600 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 2500)
+            }, 2000)
           })
         })
       }))
@@ -892,7 +836,7 @@ export default function abilityTest() {
           console.log(TAG + "====>remove0800 startAbility end====>");
           setTimeout(() => {
             done();
-          }, 2500)
+          }, 2000)
         })
       })
     })
@@ -931,7 +875,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0100 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 2500)
+            }, 2000)
           })
         })
       }))
@@ -971,7 +915,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0200 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 2500)
+            }, 2000)
           })
         })
       }))
@@ -1011,7 +955,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0300 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 2500)
+            }, 2000)
           })
         })
       }))
@@ -1051,7 +995,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0400 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 2500)
+            }, 2000)
           })
         })
       }))
@@ -1091,7 +1035,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0500 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 2500)
+            }, 2000)
           })
         })
       }))
@@ -1131,7 +1075,7 @@ export default function abilityTest() {
             console.log(TAG + "====>remove0600 startAbility end====>");
             setTimeout(() => {
               done();
-            }, 2500)
+            }, 2000)
           })
         })
       }))
@@ -1161,7 +1105,7 @@ export default function abilityTest() {
         console.log(TAG + "====>0700 removeAbilityMonitorPromise====>")
         setTimeout(() => {
           done();
-        }, 2500)
+        }, 2000)
       }).catch((err: BusinessError) => {
         console.log(TAG + "====>0700removeAbilityMonitorPromise success====>" + err);
         expect().assertFail()
@@ -1206,7 +1150,7 @@ export default function abilityTest() {
           console.log(TAG + "====>remove0800 startAbility end====>");
           setTimeout(() => {
             done();
-          }, 2500)
+          }, 2000)
         })
       })
     })
@@ -1280,7 +1224,7 @@ export default function abilityTest() {
           }).then(() => {
           console.log(TAG + "====>ACTS_WaitAbilityMonitor_Callback_0200 startAbility end====>");
         })
-      }, 5500)
+      }, 5010)
     })
 
     /**
@@ -1355,7 +1299,7 @@ export default function abilityTest() {
           }).then(() => {
           console.log(TAG + "====>ACTS_WaitAbilityMonitor_Callback_0400 startAbility end====>");
         })
-      }, 1500)
+      }, 1010)
     })
 
     /**
@@ -1501,9 +1445,9 @@ export default function abilityTest() {
           }).then(() => {
           setTimeout(() => {
             done();
-          }, 2500)
+          }, 500)
         })
-      }, 5500)
+      }, 5010)
     })
 
     /**
@@ -1578,7 +1522,7 @@ export default function abilityTest() {
             done();
           }, 2500)
         })
-      }, 1500)
+      }, 1010)
     })
 
     /**

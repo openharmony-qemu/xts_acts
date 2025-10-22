@@ -89,5 +89,21 @@ export default function webViewSrollableJsunit() {
       done();
     })
 
+    /** 
+     * @tc.number SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_003
+     * @tc.name   bindSelectionMenuType03
+     * @tc.desc  test bindSelectionMenuType03 interface when choose callback mode.
+     */
+    it('bindSelectionMenuType03',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
+      Utils.emitEvent("bindSelectionMenuType03", EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent("bindSelectionMenuType03", true, 20250919, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "webcomponentSelectionMenu", "bindSelectionMenuType03");
+      await Utils.waitForExist(() => isReturn, "bindSelectionMenuType03" + '_returnCheck', true, 1000);
+      done();
+    })
+
+
+
   })
 }

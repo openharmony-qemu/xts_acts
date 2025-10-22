@@ -21,6 +21,8 @@ group("huks") {
       "huks_js_api9:ActsHuksJsApi9FuncTest",
       "huks_napi_BasicTest:ActsHuksNAPITest",
       "huks_ndk_Test:ActsHuksNdkTest",
+      "ActsHuksApi20NdkTest:ActsHuksApi20NdkTest",
+      "ActsHuksApi20Ndk1Test:ActsHuksApi20Ndk1Test",
     ]
   }
 }

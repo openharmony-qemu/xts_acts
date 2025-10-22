@@ -46,7 +46,7 @@ export default function stageContextPropertiesTestUpdateConfiguration(applicatio
         applicationContext.off('environment', environmentId);
         expect(resultTag).assertEqual(0)
         done()
-      }, 2000)
+      }, 1000)
     });
 
     /**
@@ -75,7 +75,7 @@ export default function stageContextPropertiesTestUpdateConfiguration(applicatio
         applicationContext.off('environment', environmentId);
         expect(resultTag).assertEqual(0)
         done()
-      }, 2000)
+      }, 1000)
     });
 
     /**
@@ -121,7 +121,7 @@ export default function stageContextPropertiesTestUpdateConfiguration(applicatio
         applicationContext.off('environment', environmentId);
         expect(resultTag).assertEqual(0)
         done()
-      }, 2000)
+      }, 1000)
     });
 
     /**

@@ -21,11 +21,9 @@ import { WebNetErrorList } from '@ohos.web.netErrorList'
 import common from '@ohos.app.ability.common';
 import abilityAccessCtrl, { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
 import business_error, { BusinessError } from '@ohos.base';
-import { Driver, ON } from '@kit.TestKit';
 import { waitForExist } from '../../test/WaitTest.test';
 
 let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-let driver = Driver.create();
 try {
   let context: Context = getContext(this) as common.UIAbilityContext;
   atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA'], (err: BusinessError, data: PermissionRequestResult) => {
@@ -81,8 +79,6 @@ struct WebCameraApiNoCrash {
           switch (this.str) {
             case "WebCameraApiNoCrash0100": {
               try {
-                let startModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-                await startModel.click();
                 this.controller.startCamera();
                 await Utils.sleep(1000);
                 Utils.emitEvent(true, 300410)
@@ -95,8 +91,6 @@ struct WebCameraApiNoCrash {
             }
             case "WebCameraApiNoCrash0200": {
               try {
-                let startModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-                await startModel.click();
                 this.controller.stopCamera();
                 await Utils.sleep(1000);
                 Utils.emitEvent(true, 300420)
@@ -109,8 +103,6 @@ struct WebCameraApiNoCrash {
             }
             case "WebCameraApiNoCrash0300": {
               try {
-                let startModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-                await startModel.click();
                 this.controller.closeCamera();
                 await Utils.sleep(1000);
                 Utils.emitEvent(true, 300430)
@@ -123,8 +115,6 @@ struct WebCameraApiNoCrash {
             }
             case "WebCameraApiNoCrash0400": {
               try {
-                let startModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-                await startModel.click();
                 this.controller.startCamera();
                 await Utils.sleep(1000);
                 this.controller.closeCamera();
@@ -139,8 +129,6 @@ struct WebCameraApiNoCrash {
             }
             case "WebCameraApiNoCrash0500": {
               try {
-                let startModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-                await startModel.click();
                 this.controller.startCamera();
                 await Utils.sleep(1000);
                 this.controller.stopCamera();
@@ -155,8 +143,6 @@ struct WebCameraApiNoCrash {
             }
             case "WebCameraApiNoCrash0600": {
               try {
-                let startModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-                await startModel.click();
                 this.controller.startCamera();
                 await Utils.sleep(1000);
                 this.controller.stopCamera();
@@ -173,8 +159,6 @@ struct WebCameraApiNoCrash {
             }
             case "WebCameraApiNoCrash0700": {
               try {
-                let startModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-                await startModel.click();
                 this.controller.startCamera();
                 await Utils.sleep(1000);
                 this.controller.closeCamera();
@@ -191,8 +175,6 @@ struct WebCameraApiNoCrash {
             }
             case "WebCameraApiNoCrash0800": {
               try {
-                let startModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-                await startModel.click();
                 this.controller.startCamera();
                 await Utils.sleep(1000);
                 this.controllerTwo.startCamera();
@@ -207,8 +189,6 @@ struct WebCameraApiNoCrash {
             }
             case "WebCameraApiNoCrash0900": {
               try {
-                let startModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-                await startModel.click();
                 this.controller.startCamera();
                 this.controller.stopCamera();
                 await Utils.sleep(1000);
@@ -225,8 +205,6 @@ struct WebCameraApiNoCrash {
             }
             case "WebCameraApiNoCrash1000": {
               try {
-                let startModel = await driver.findComponent(ON.id("WebCameraApiNoCrash"));
-                await startModel.click();
                 this.controller.startCamera();
                 this.controller.closeCamera();
                 await Utils.sleep(1000);

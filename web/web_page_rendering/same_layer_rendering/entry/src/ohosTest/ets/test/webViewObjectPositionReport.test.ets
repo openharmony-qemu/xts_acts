@@ -17,8 +17,11 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
+import { waitAndClickComponent,waitForComponent } from './WaitTest.test';
+import { Driver, ON } from '@kit.TestKit';
+const driver = Driver.create();
 // @ts-nocheck
-let emitKey = ""
+let emitKey = '';
 
 export default function ActsAceWebViewObjectPositionReport() {
   describe('ActsAceWebViewObjectPositionReport', () => {
@@ -29,27 +32,20 @@ export default function ActsAceWebViewObjectPositionReport() {
       }
 
       try {
-        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
         console.info("get webViewObjectPositionReport state success " + JSON.stringify(pages));
         if (!("webViewObjectEmbed" == pages.name)) {
           console.info("get webViewObjectPositionReport state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(1000);
           console.info("push webViewObjectPositionReport state success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push webViewObjectPositionReport page error:" + err);
       }
+      await waitForComponent("webViewObjectPositionReportButton");
       done()
     });
-
-    beforeEach(async (done: Function) => {
-      await Utils.sleep(1000);
-      done();
-    })
-
 
     /*
      *@tc.number SUB_ACE_WEB_OBJECTPOSITIONREPORT_API_0001
@@ -61,9 +57,9 @@ export default function ActsAceWebViewObjectPositionReport() {
      */
     it('testWebViewObjectPositionReport', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewObjectPositionReport"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerEvent("testWebViewObjectPositionReport", 'success', 8018, done);
-      sendEventByKey('webViewObjectPositionReportButton', 10, '');
+      Utils.emitEvent(emitKey, 153820);
+      Utils.registerEvent("testWebViewObjectPositionReport", 'success', 153830, done);
+      await waitAndClickComponent("webViewObjectPositionReportButton",driver);
     })
 
   })

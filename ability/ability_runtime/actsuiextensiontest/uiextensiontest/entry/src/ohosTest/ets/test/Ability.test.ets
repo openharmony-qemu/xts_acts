@@ -44,7 +44,7 @@ export default function abilityTest() {
 
       try {
         let result = await router.pushUrl(options);
-        await Utils.sleep(500);
+        await Utils.sleep(300);
         console.info("ACTS_UIExtension push page result: " + JSON.stringify(result));
       } catch (err) {
         console.error("ACTS_UIExtension push page error: " + err);
@@ -70,7 +70,7 @@ export default function abilityTest() {
       console.log("done globalId="+globalId);
       Utils.unsubscribe(globalscribe)
       router.back()
-      await Utils.sleep(500);
+      await Utils.sleep(300);
       done()
     })
     afterAll(() => {

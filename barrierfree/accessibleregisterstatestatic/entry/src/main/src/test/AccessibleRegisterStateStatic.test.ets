@@ -2,7 +2,7 @@ import { describe, it, expect, TestType, Size, Level } from "../../../hypium/ind
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import accessibility from '@ohos.accessibility'
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function abilityTest() {

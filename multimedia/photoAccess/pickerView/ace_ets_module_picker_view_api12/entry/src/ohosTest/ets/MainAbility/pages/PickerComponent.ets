@@ -17,7 +17,8 @@ import {
   ExceedMaxSelectedCallback,
   CurrentAlbumDeletedCallback,
   videoPlayStateChangedCallback,
-  VideoPlayerState
+  VideoPlayerState,
+  PreselectedInfo
 } from '@ohos.file.PhotoPickerComponent';
 import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo } from '@ohos.file.AlbumPickerComponent';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
@@ -33,6 +34,7 @@ struct PickerComponent {
   @State pickerOptions: PickerOptions = new PickerOptions();
   albumOptions: AlbumPickerOptions = new AlbumPickerOptions();
   @State selectedUris: string[] = [];
+  @State selectedUrisWithPickerIndex: PreselectedInfo[] = [];
   @State allBackGroundColor: number = 0xf1f3f5;
   @State videoBackGroundColor: number = 0xffffff;
   @State photoBackGroundColor: number = 0xffffff;
@@ -41,6 +43,7 @@ struct PickerComponent {
   @State isShowPhoto: boolean = false;
   @State isShowAlbum: boolean = false;
   private isBlock: boolean = false;
+  private isPickerIndexSet: boolean = false;
   @State isPhotoPickerShow: boolean = true;
   @State fontColor: string = '#182431222';
   @State selectedFontColor: string = '#007DFF';
@@ -85,6 +88,8 @@ struct PickerComponent {
     result.maxSelectCount = this.pickerOptions.maxSelectNumber ?? 500;
     result.maxPhotoSelectNumber = this.pickerOptions.maxPhotoSelectNumber ?? 500;
     result.maxVideoSelectNumber = this.pickerOptions.maxVideoSelectNumber ?? 500;
+    result.pickerIndex = this.pickerOptions.pickerIndex ?? -1;
+    result.preselectedInfos = this.pickerOptions.preselectedInfos ?? [];
     return result;
   }
 
@@ -142,21 +147,35 @@ struct PickerComponent {
     return true;
   }
 
-  private onSelect(uri: string): void {
+  private onSelect(uri?: string): void {
     if (uri) {
       this.selectedUris.push(uri);
+      if (this.isPickerIndexSet) {
+        this.selectedUrisWithPickerIndex.push({
+          uri,
+          preselectablePickerIndex: this.pickerOptions.pickerIndex
+        });
+      }
     }
     this.pickerOptions.preselectedUris = [...this.selectedUris];
+    this.pickerOptions.preselectedInfos = [...this.selectedUrisWithPickerIndex];
     console.info('onSelect' + JSON.stringify(this.selectedUris));
   }
 
-  private onDeselect(uri: string): void {
+  private onDeselect(uri?: string): void {
     if (uri) {
       this.selectedUris = this.selectedUris.filter((item: string) => {
         return item !== uri;
       })
+
+      if (this.isPickerIndexSet) {
+        this.selectedUrisWithPickerIndex = this.selectedUrisWithPickerIndex.filter((item: PreselectedInfo) => {
+          return item.uri !== uri || item.preselectablePickerIndex !== this.pickerOptions.pickerIndex;
+        })
+      }
     }
     this.pickerOptions.preselectedUris = [...this.selectedUris];
+    this.pickerOptions.preselectedInfos = [...this.selectedUrisWithPickerIndex];
     console.info('onDeselect' + JSON.stringify(this.selectedUris));
   }
 
@@ -179,18 +198,10 @@ struct PickerComponent {
         if (this.isBlock) {
           return false;
         }
-        if (uri) {
-          this.selectedUris.push(uri);
-          this.pickerOptions.preselectedUris = [...this.selectedUris];
-        }
+        this.onSelect(uri);
       }
     } else {
-      if (uri) {
-        this.selectedUris = this.selectedUris.filter((item: String) => {
-          return item !== uri;
-        })
-        this.pickerOptions.preselectedUris = [...this.selectedUris];
-      }
+      this.onDeselect(uri);
     }
     console.info('onItemClicked' + JSON.stringify(itemInfo));
     return true;
@@ -207,6 +218,8 @@ struct PickerComponent {
     }
     if (parameter['pickerOptions'] != undefined) {
       this.pickerOptions = parameter['pickerOptions'];
+      this.isPickerIndexSet = !!this.pickerOptions.pickerIndex && this.pickerOptions.pickerIndex !== -1;
+      this.selectedUrisWithPickerIndex = this.pickerOptions.preselectedInfos ?? [];
     }
     if (parameter['albumOptions'] != undefined) {
       this.albumOptions = parameter['albumOptions'];

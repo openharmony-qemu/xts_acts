@@ -2414,7 +2414,7 @@ export default function requestConfigSavesTest() {
       }
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'http://222.111.222.111',
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/BigFile.txt',
         title: 'reeateTest',
         overwrite: true,
         description: 'XTS download test!',
@@ -2439,6 +2439,441 @@ export default function requestConfigSavesTest() {
       console.info("====>SUB_Request_Download_timeOut_0600 create task success");
       task.on('faultOccur', faultsCallBack);
       task.start();
+    });
+
+    /**
+     * @tc.number SUB_Request_Download_visibility_1200
+     * @tc.name: SUB_Request_Download_visibility_1200
+     * @tc.desc visibility is three
+     * @tc.size      MEDIUMTEST
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_Request_Download_visibility_1200', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_1200 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        visibility: request.agent.VISIBILITY_COMPLETION | request.agent.VISIBILITY_PROGRESS
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_visibility_1200.txt',
+        network: request.agent.Network.ANY,
+      };
+      let task: request.agent.Task | null = null;
+      try {
+        console.info("====>SUB_Request_Download_visibility_1200 notification: " + JSON.stringify(notification));
+        task = await request.agent.create(baseContext, config);
+        console.info("====>SUB_Request_Download_visibility_1200 create task success");
+        expect(task !== null).assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_1200 err: " + JSON.stringify(err));
+        expect().assertFail();
+        if (task !== null){
+          await request.agent.remove(task.tid);
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_Download_visibility_1300
+     * @tc.name: SUB_Request_Download_visibility_1300
+     * @tc.desc visibility is undefined
+     * @tc.size      MEDIUMTEST
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_Request_Download_visibility_1300', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_1300 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        visibility: undefined
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_visibility_1300.txt',
+        network: request.agent.Network.ANY,
+      };
+      let task: request.agent.Task | null = null;
+      try {
+        console.info("====>SUB_Request_Download_visibility_1300 notification: " + JSON.stringify(notification));
+        task = await request.agent.create(baseContext, config);
+        console.info("====>SUB_Request_Download_visibility_1300 create task success");
+        expect(task !== null).assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_1300 err: " + JSON.stringify(err));
+        expect().assertFail();
+        if (task !== null){
+          await request.agent.remove(task.tid);
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_Download_visibility_1400
+     * @tc.name: SUB_Request_Download_visibility_1400
+     * @tc.desc visibility is 0
+     * @tc.size      MEDIUMTEST
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_Request_Download_visibility_1400', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_1400 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        visibility: 0
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_visibility_1400.txt',
+        network: request.agent.Network.ANY,
+      };
+      try {
+        console.info("====>SUB_Request_Download_visibility_1400 notification: " + JSON.stringify(notification));
+        let task: request.agent.Task = await request.agent.create(baseContext, config);
+        console.info("====>SUB_Request_Download_visibility_1400 create task success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_1400 err: " + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_Download_visibility_1500
+     * @tc.name   SUB_Request_Download_visibility_1500
+     * @tc.desc   request group visibility is 3
+     * @tc.size      MEDIUMTEST
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_Request_Download_visibility_1500', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_1500 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        visibility: request.agent.VISIBILITY_COMPLETION | request.agent.VISIBILITY_PROGRESS
+      }
+      let groupConfig: request.agent.GroupConfig = {
+        notification: notification
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_visibility_1500.txt',
+        network: request.agent.Network.ANY,
+      };
+
+      try {
+        let onCompletedCallback = (pro: request.agent.Progress) => {
+          try {
+            task.off('completed', onCompletedCallback);
+            console.info("====>SUB_Request_Download_visibility_1500 completed pro: " + JSON.stringify(pro));
+            expect(pro.state).assertEqual(64);
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_Download_visibility_1500 completed err: " + JSON.stringify(err));
+            done();
+          }
+        }
+
+        let task = await request.agent.create(baseContext, config);
+        console.info("====>SUB_Request_Download_visibility_1500 config: " + JSON.stringify(config));
+        let gid: string = await request.agent.createGroup(groupConfig);
+        console.info("====>SUB_Request_Download_visibility_1500 createGroup success"+ JSON.stringify(groupConfig));
+        expect(gid !== '').assertTrue();
+        expect(typeof gid === 'string').assertTrue();
+        await request.agent.attachGroup(gid, [task.tid]);
+        console.info("====>SUB_Request_Download_visibility_1500 attachGroup success");
+        task.on('completed', onCompletedCallback)
+        await task.start();
+        console.info("====>SUB_Request_Download_visibility_1500 start success");
+        await request.agent.deleteGroup(gid);
+        console.info("====>SUB_Request_Download_visibility_1500 deleteGroup success");
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_1500 err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_Download_visibility_1600
+     * @tc.name   SUB_Request_Download_visibility_1600
+     * @tc.desc   request group visibility is undefined
+     * @tc.size      MEDIUMTEST
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_Request_Download_visibility_1600', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_1600 is starting-----------------------");
+      try {
+        let notification: request.agent.Notification = {
+          visibility: undefined
+        }
+        let groupConfig: request.agent.GroupConfig = {
+          notification: notification
+        }
+        console.info("====>SUB_Request_Download_visibility_1600 notification: " + JSON.stringify(notification));
+        let gid: string = await request.agent.createGroup(groupConfig);
+        console.info("====>SUB_Request_Download_visibility_1600 createGroup success");
+        expect(gid !== '').assertTrue();
+        expect(typeof gid === 'string').assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_1600 err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_Download_visibility_1700
+     * @tc.name   SUB_Request_Download_visibility_1700
+     * @tc.desc   request group visibility is undefined
+     * @tc.size      MEDIUMTEST
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_Request_Download_visibility_1700', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_1700 is starting-----------------------");
+      try {
+        let notification: request.agent.Notification = {
+          visibility: 0
+        }
+        let groupConfig: request.agent.GroupConfig = {
+          notification: notification
+        }
+        console.info("====>SUB_Request_Download_visibility_1700 notification: " + JSON.stringify(notification));
+        await request.agent.createGroup(groupConfig);
+        console.info("====>SUB_Request_Download_visibility_1700 createGroup success");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_1700 err: " + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_Download_visibility_1800
+     * @tc.name: SUB_Request_Download_visibility_1800
+     * @tc.desc visibility is one
+     * @tc.size      MEDIUMTEST
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_Request_Download_visibility_1800', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_1800 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        visibility: request.agent.VISIBILITY_COMPLETION
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_visibility_1800.txt',
+        network: request.agent.Network.ANY,
+      };
+      let task: request.agent.Task | null = null;
+      try {
+        console.info("====>SUB_Request_Download_visibility_1800 notification: " + JSON.stringify(notification));
+        task = await request.agent.create(baseContext, config);
+        console.info("====>SUB_Request_Download_visibility_1800 create task success");
+        expect(task !== null).assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_1800 err: " + JSON.stringify(err));
+        expect().assertFail();
+        if (task !== null){
+          await request.agent.remove(task.tid);
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_Download_visibility_1900
+     * @tc.name: SUB_Request_Download_visibility_1900
+     * @tc.desc visibility is two
+     * @tc.size      MEDIUMTEST
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_Request_Download_visibility_1900', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_1900 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        visibility: request.agent.VISIBILITY_PROGRESS
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_visibility_1900.txt',
+        network: request.agent.Network.ANY,
+      };
+      let task: request.agent.Task | null = null;
+      try {
+        console.info("====>SUB_Request_Download_visibility_1900 notification: " + JSON.stringify(notification));
+        task = await request.agent.create(baseContext, config);
+        console.info("====>SUB_Request_Download_visibility_1900 create task success");
+        expect(task !== null).assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_1900 err: " + JSON.stringify(err));
+        expect().assertFail();
+        if (task !== null){
+          await request.agent.remove(task.tid);
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_Download_visibility_2000
+     * @tc.name   SUB_Request_Download_visibility_2000
+     * @tc.desc   request group visibility is one
+     * @tc.size      MEDIUMTEST
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_Request_Download_visibility_2000', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_2000 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        visibility: request.agent.VISIBILITY_COMPLETION
+      }
+      let groupConfig: request.agent.GroupConfig = {
+        notification: notification
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_visibility_2000.txt',
+        network: request.agent.Network.ANY,
+      };
+
+      try {
+        let onCompletedCallback = (pro: request.agent.Progress) => {
+          try {
+            task.off('completed', onCompletedCallback);
+            console.info("====>SUB_Request_Download_visibility_2000 completed pro: " + JSON.stringify(pro));
+            expect(pro.state).assertEqual(64);
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_Download_visibility_2000 completed err: " + JSON.stringify(err));
+            done();
+          }
+        }
+
+        let task = await request.agent.create(baseContext, config);
+        console.info("====>SUB_Request_Download_visibility_2000 config: " + JSON.stringify(config));
+        let gid: string = await request.agent.createGroup(groupConfig);
+        console.info("====>SUB_Request_Download_visibility_2000 createGroup success"+ JSON.stringify(groupConfig));
+        expect(gid !== '').assertTrue();
+        expect(typeof gid === 'string').assertTrue();
+        await request.agent.attachGroup(gid, [task.tid]);
+        console.info("====>SUB_Request_Download_visibility_2000 attachGroup success");
+        task.on('completed', onCompletedCallback)
+        await task.start();
+        console.info("====>SUB_Request_Download_visibility_2000 start success");
+        await request.agent.deleteGroup(gid);
+        console.info("====>SUB_Request_Download_visibility_2000 deleteGroup success");
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_2000 err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_Download_visibility_2100
+     * @tc.name   SUB_Request_Download_visibility_2100
+     * @tc.desc   request group visibility is two
+     * @tc.size      MEDIUMTEST
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_Request_Download_visibility_2100', Level.LEVEL2, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_Download_visibility_2100 is starting-----------------------");
+      let notification: request.agent.Notification = {
+        visibility: request.agent.VISIBILITY_PROGRESS
+      }
+      let groupConfig: request.agent.GroupConfig = {
+        notification: notification
+      }
+      let config: request.agent.Config = {
+        action: request.agent.Action.DOWNLOAD,
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/test.hap',
+        title: 'reeateTest',
+        mode: request.agent.Mode.BACKGROUND,
+        notification: notification,
+        description: 'XTS download test!',
+        saveas: './SUB_Request_Download_visibility_2100.txt',
+        network: request.agent.Network.ANY,
+      };
+
+      try {
+        let onCompletedCallback = (pro: request.agent.Progress) => {
+          try {
+            task.off('completed', onCompletedCallback);
+            console.info("====>SUB_Request_Download_visibility_2100 completed pro: " + JSON.stringify(pro));
+            expect(pro.state).assertEqual(64);
+            done();
+          } catch (err) {
+            console.info("====>SUB_Request_Download_visibility_2100 completed err: " + JSON.stringify(err));
+            done();
+          }
+        }
+
+        let task = await request.agent.create(baseContext, config);
+        console.info("====>SUB_Request_Download_visibility_2100 config: " + JSON.stringify(config));
+        let gid: string = await request.agent.createGroup(groupConfig);
+        console.info("====>SUB_Request_Download_visibility_2100 createGroup success"+ JSON.stringify(groupConfig));
+        expect(gid !== '').assertTrue();
+        expect(typeof gid === 'string').assertTrue();
+        await request.agent.attachGroup(gid, [task.tid]);
+        console.info("====>SUB_Request_Download_visibility_2100 attachGroup success");
+        task.on('completed', onCompletedCallback)
+        await task.start();
+        console.info("====>SUB_Request_Download_visibility_2100 start success");
+        await request.agent.deleteGroup(gid);
+        console.info("====>SUB_Request_Download_visibility_2100 deleteGroup success");
+      } catch (err) {
+        console.info("====>SUB_Request_Download_visibility_2100 err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
     });
 
   });

@@ -95,6 +95,8 @@ function sleep(delay : number) : Promise<void> {
     
     function onReceiveEvent00(data : Array<bluetooth.ScanResult>) {   
             console.info('BLE scan device find result = '+ JSON.stringify(data));
+            if (data.length > 0) {expect(data.length > 0).assertTrue();}
+            if (data.length == 0) {expect(data.length == 0).assertTrue();}
         }
     function onReceiveEvent(data : Array<bluetooth.ScanResult>) {   
             console.info('bluetooth device find = '+ JSON.stringify(data));
@@ -792,6 +794,79 @@ describe('bluetoothBleTest', () => {
         let BATCH = bluetooth.ScanReportMode.BATCH;
         console.info("[bluetooth_js]ScanReportMode BATCH: " + JSON.stringify(BATCH));
         expect(BATCH).assertEqual(2);
+        done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_0100
+     * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_0100
+     * @tc.desc Test getConnectedBLEDevices api21
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.level Level 0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_GETCONNECTEDBLEDEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
+        try {
+            let devices = bluetooth.getConnectedBLEDevices(bluetooth.BleProfile.GATT);
+            console.info("[bluetooth_js]getConnectedBLEDevices GATT: " + JSON.stringify(devices));
+        } catch (err) {
+            console.error("getConnectedBLEDevices GATT errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) == 801) {
+                console.info("[bluetooth_js]getConnectedBLEDevices is not support");
+                expect(Number(err.code) == 801).assertTrue();
+            } else {
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+        }
+
+        try {
+            let devices = bluetooth.getConnectedBLEDevices(bluetooth.BleProfile.GATT_CLIENT);
+            console.info("[bluetooth_js]getConnectedBLEDevices GATT_CLIENT: " + JSON.stringify(devices));
+        } catch (err) {
+            console.error("getConnectedBLEDevices GATT_CLIENT errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) == 801) {
+                console.info("[bluetooth_js]getConnectedBLEDevices is not support");
+                expect(Number(err.code) == 801).assertTrue();
+            } else {
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+        }
+
+        try {
+            let devices = bluetooth.getConnectedBLEDevices(bluetooth.BleProfile.GATT_SERVER);
+            console.info("[bluetooth_js]getConnectedBLEDevices GATT_SERVER: " + JSON.stringify(devices));
+        } catch (err) {
+            console.error("getConnectedBLEDevices GATT_SERVER errCode:" + err.code + ",errMessage:" + err.message);
+            if (Number(err.code) == 801) {
+                console.info("[bluetooth_js]getConnectedBLEDevices is not support");
+                expect(Number(err.code) == 801).assertTrue();
+            } else {
+                expect(Number(err.code)).assertEqual(2900099);
+            }
+        }
+        done();
+    })
+
+    /**
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_BLEPROFILE_0100
+     * @tc.name SUB_COMMUNICATION_BLUETOOTHBLE_BLEPROFILE_0100
+     * @tc.desc Test BleProfile api21
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     * @tc.level Level 0
+     */
+    it('SUB_COMMUNICATION_BLUETOOTHBLE_BLEPROFILE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
+        let BleProfileGATT = bluetooth.BleProfile.GATT;
+        console.info("[bluetooth_js]GATT: " + JSON.stringify(BleProfileGATT));
+        expect(BleProfileGATT).assertEqual(1);
+
+        let BleProfileGATT_CLIENT = bluetooth.BleProfile.GATT_CLIENT;
+        console.info("[bluetooth_js]GATT_CLIENT: " + JSON.stringify(BleProfileGATT_CLIENT));
+        expect(BleProfileGATT_CLIENT).assertEqual(2);
+
+        let BleProfileGATT_SERVER = bluetooth.BleProfile.GATT_SERVER;
+        console.info("[bluetooth_js]GATT_SERVER: " + JSON.stringify(BleProfileGATT_SERVER));
+        expect(BleProfileGATT_SERVER).assertEqual(3);
         done();
     })
 })

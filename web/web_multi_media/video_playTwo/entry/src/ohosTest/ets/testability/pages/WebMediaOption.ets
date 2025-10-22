@@ -16,6 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -34,19 +35,21 @@ struct WebMediaOption {
   @State playing: boolean = false
   @State checkResult: string = "";
   @State checkResultTwo: string = "";
-  @State firstId: number = 415;
+  @State firstId: number = 300610;
   @State options: WebMediaOptions = { resumeInterval: 2, audioExclusive: true }
+  @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 300600,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(300600)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -55,6 +58,7 @@ struct WebMediaOption {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -63,28 +67,37 @@ struct WebMediaOption {
     Column() {
       Row() {
         Button("mediaOptionTest").key('webViewMediaOptionTestButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str)
+          await waitForExist(()=>this.isReceive,  this.str + 'IsReceive', 0);
+          await waitForExist(()=>this.isPageEnd, this.str + 'IsPageEnd', 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitMediaOptions001": {
               try {
+                let flag = '';
                 this.controller.requestFocus();
                 this.controller.runJavaScript("play()", (error, result) => {
                   if (error) {
                     console.log(`The controller.play() return error is: ${error}`);
                   }
                   if (result) {
+                    flag = result;
                     console.log(`The controller.play() return value is: ${result}`);
                   }
                 })
-                await Utils.sleep(3000);
+                await waitForExist(()=>flag, this.str, 'false');
+                flag = '';
                 this.controllerTwo.requestFocus();
                 this.controllerTwo.runJavaScript("play()", (error, result) => {
                   if (error) {
-                    console.log(`The controller.play() return error is: ${error}`);
+                    console.log(`The controllerTwo.play() return error is: ${error}`);
                   }
-                  console.log(`The controllerTwo.play() return value is: ${result}`);
+                  if (result) {
+                    flag = result;
+                    console.log(`The controllerTwo.play() return value is: ${result}`);
+                  }
                 })
-                await Utils.sleep(3000);
+                await waitForExist(()=>flag, this.str, 'true');
                 this.controller.runJavaScript("checkState()", (error, result) => {
                   if (error) {
                     console.log(`The controller.checkState() return error is: ${error}`);
@@ -96,7 +109,7 @@ struct WebMediaOption {
                 })
                 this.controllerTwo.runJavaScript("checkState()", (error, result) => {
                   if (error) {
-                    console.log(`The controller.checkState() return error is: ${error}`);
+                    console.log(`The controllerTwo.checkState() return error is: ${error}`);
                   }
                   if (result) {
                     this.checkResultTwo = result
@@ -130,6 +143,10 @@ struct WebMediaOption {
           this.playing = event.playing
           console.log('onAudioStateChanged playing: ' + this.playing + this.firstId);
         })
+        .onPageEnd(()=>{
+          console.log("onPageEnd1******")
+          this.isPageEnd = 0;
+        })
       Web({ src: $rawfile('audioTest.html'), controller: this.controllerTwo })
         .height('30%')
         .javaScriptAccess(this.javaScriptAccess)
@@ -144,6 +161,10 @@ struct WebMediaOption {
         .onAudioStateChanged(event => {
           this.playing = event.playing
           console.log('onAudioStateChangedTwo playing: ' + this.playing + this.firstId);
+        })
+        .onPageEnd(()=>{
+          console.log("onPageEnd2******")
+          this.isPageEnd = 0;
         })
     }
   }

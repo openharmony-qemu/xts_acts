@@ -61,6 +61,6 @@ export default class MainAbility extends Ability {
   }
 
   onBackPressed() {
-    return false;
+    return true;
   }
 }

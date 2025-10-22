@@ -43,8 +43,13 @@ import expressionTest6 from './expression/ExpressionTest6.test';
 import looper1Test from './looper/Looper1.test';
 import looper2Test from './looper/Looper2.test';
 import looper3Test from './looper/Looper3.test';
+import looper4Test from './looper/Looper4.test';
+import looper5Test from './looper/Looper5.test';
 
 import typeArrayBigInt64ArrayTest from "./typearray/TypeArrayBigInt64Array.test";
+import typeArrayInt8ArrayTest from "./typearray/TypeArrayInt8Array.test";
+import typeArrayUint32ArrayTest from "./typearray/TypeArrayUint32Array.test";
+
 export default function testsuite() {
   builtinsStatementBlockTest();
   builtinsStatementForOfTest();
@@ -66,6 +71,8 @@ export default function testsuite() {
   functionTest2();
   functionTest3();
   typeArrayBigInt64ArrayTest();
+  typeArrayInt8ArrayTest();
+  typeArrayUint32ArrayTest();
   expressionTest1();
   expressionTest2();
   expressionTest3();
@@ -75,6 +82,8 @@ export default function testsuite() {
   looper1Test();
   looper2Test();
   looper3Test();
+  looper4Test();
+  looper5Test();
   RegExpTest();
   KeyCollectionTest();
 }

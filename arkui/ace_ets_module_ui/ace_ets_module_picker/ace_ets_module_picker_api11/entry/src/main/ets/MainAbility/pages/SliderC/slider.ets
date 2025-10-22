@@ -32,7 +32,7 @@ struct SliderExample {
   @State vInSetValueOne1: number = 40
   @State vOutSetValueTwo: number = 40
   @State vInSetValueTwo: number = 40
-  @State blockColor: string = "#191970"
+  @State blockColor: LinearGradient | string = "#191970"
   @State trackColor: string = "#ADD8E6"
   @State selectedColor: string = "#191970"
   @State showSteps: boolean = true

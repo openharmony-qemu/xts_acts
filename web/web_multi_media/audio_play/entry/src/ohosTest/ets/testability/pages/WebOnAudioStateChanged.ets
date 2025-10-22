@@ -16,6 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
+import { waitForExist } from '../../test/WaitTest.test';
 
 @Entry
 @Component
@@ -30,17 +31,19 @@ struct WebOnAudioStateChanged {
   @State databaseAccess: boolean = true;
   @State mediaPlayGestureAccess: boolean = false;
   @State statusResult: string = '';
+  @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: 132650,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
   onPageHide() {
-    events_emitter.off(10)
+    events_emitter.off(132650)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -49,6 +52,7 @@ struct WebOnAudioStateChanged {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data != null && eventData.data.ACTION != null) {
         this.str = eventData.data.ACTION;
+        this.isReceive = 0;
       }
     }
   }
@@ -57,43 +61,47 @@ struct WebOnAudioStateChanged {
     Column() {
       Row() {
         Button("audioStateTest").key('WebOnAudioStateChangedTestButton').onClick(async () => {
-          console.info("key==>" + this.str)
+          console.info('key==>' + this.str)
+          await waitForExist(() => this.isPageEnd, this.str, 0);
+          await waitForExist(() => this.isReceive, this.str, 0);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitAudioStatePlay": {
               try {
                 this.statusResult = ''
                 this.controller.runJavaScript("play()", (error, result) => {
                   if (error) {
-                    console.log(`The controller.play() return error is: ${error}`);
+                    console.log(`The controller.play1() return error is: ${error}`);
                   }
                   if (result) {
-                    console.log(`The controller.play() emitAudioStatePlay return value is: ${result}`);
+                    console.log(`The controller.play1() emitAudioStatePlay return value is: ${result}`);
                   }
                 })
-                await Utils.sleep(2000)
+                await waitForExist(() => this.statusResult, this.str, 'true_');
                 this.controller.runJavaScript("isPlaying()", (error, result) => {
                   if (error) {
                     console.log(`The controller.isPlaying1() return error is: ${error}`);
                   }
                   if (result) {
                     this.statusResult += (result + '_')
-                    console.log(`The controller.isPlaying1() return value is: ${result}`);
+                    console.log(`The controller.isPlaying1() emitAudioStatePlay return value is: ${result}`);
                   }
                 })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
-              await Utils.sleep(2000)
-              Utils.emitEvent(this.statusResult, 60501)
+              await waitForExist(() => this.statusResult, this.str, 'true_true_');
+              let flag = this.statusResult;
               this.controller.runJavaScript("pause()", (error, result) => {
                 if (error) {
                   console.log(`The controller.pause1() return error is: ${error}`);
                 }
                 if (result) {
-                  console.log(`The controller.pause1() emitAudioStatePause2 return value is: ${result}`);
+                  console.log(`The controller.pause1() emitAudioStatePlay return value is: ${result}`);
                 }
               })
-              await Utils.sleep(2000)
+              await waitForExist(() => this.statusResult, this.str, 'true_true_false_');
+              Utils.emitEvent(flag, 132660)
               break;
             }
             case "emitAudioStatePause": {
@@ -107,30 +115,30 @@ struct WebOnAudioStateChanged {
                     console.log(`The controller.play() emitAudioStatePause return value is: ${result}`);
                   }
                 })
-                await Utils.sleep(2000)
+                await waitForExist(() => this.statusResult, this.str, 'true_');
                 this.controller.runJavaScript("pause()", (error, result) => {
                   if (error) {
                     console.log(`The controller.pause() return error is: ${error}`);
                   }
                   if (result) {
-                    console.log(`The controller.pause() emitAudioStatePause2 return value is: ${result}`);
+                    console.log(`The controller.pause() emitAudioStatePause return value is: ${result}`);
                   }
                 })
-                await Utils.sleep(2000)
+                await waitForExist(() => this.statusResult, this.str, 'true_false_');
                 this.controller.runJavaScript("isPlaying()", (error, result) => {
                   if (error) {
                     console.log(`The controller.isPlaying() return error is: ${error}`);
                   }
                   if (result) {
                     this.statusResult += (result + '_')
-                    console.log(`The controller.isPlaying() return value is: ${result}`);
+                    console.log(`The controller.isPlaying() emitAudioStatePause return value is: ${result}`);
                   }
                 })
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
-              await Utils.sleep(2000)
-              Utils.emitEvent(this.statusResult, 60503)
+              await waitForExist(() => this.statusResult, this.str, 'true_false_false_');
+              Utils.emitEvent(this.statusResult, 132670)
               break;
             }
           }
@@ -149,6 +157,10 @@ struct WebOnAudioStateChanged {
         .onAudioStateChanged(event => {
           this.statusResult += (event.playing + "_")
           console.log('onAudioStateChanged playing: ' + event.playing);
+        })
+        .onPageEnd((event) => {
+          console.log('web pageEnd==>' + event.url);
+          this.isPageEnd = 0;
         })
     }
   }

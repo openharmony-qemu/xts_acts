@@ -19,6 +19,8 @@ import { ComponentInfo, RectInfo } from './Interfaces';
 import systemDateTime from '@ohos.systemDateTime';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import fs from '@ohos.file.fs';
+import { waitForComponents } from './WaitTest.test';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 export default class Utils {
   static sleep(time: number) {
@@ -123,8 +125,7 @@ export default class Utils {
   }
 
   static async clickComponent(id: string) {
-    let driver = Driver.create();
-    let component = await driver.findComponent(ON.id(id));
+    let component = await waitForComponents(id);
     await component.click();
   }
 
@@ -180,7 +181,7 @@ export default class Utils {
         eventId: eventId,
         priority: events_emitter.EventPriority.LOW
       }
-      events_emitter.on(innerEvent, callBack)
+      events_emitter.once(innerEvent, callBack)
     } catch (err) {
       console.info(`[${testCaseName}] err:` + JSON.stringify(err));
     }
@@ -242,5 +243,34 @@ export default class Utils {
 
   static getRectVerticalCenterY(rect: RectInfo): number {
     return Number.parseInt(Number((rect.bottom - rect.top) / 2 + rect.top).toFixed(0));
+  }
+
+  static async waitAndClickComponent(driver: Driver, componentId: string): Promise<void> {
+    let retryTimes: number = 0;
+    let retry: boolean = true;
+    while (retry && retryTimes <= 3) {
+      retry = false;
+      try {
+        const buttonComponent = await driver.waitForComponent(ON.id(componentId), 10000);
+        if (!buttonComponent) {
+          console.error(`error: buttonConmponent is null.`);
+          retry = true;
+          await Utils.sleep(500);
+          retryTimes++;
+          console.log('retryTimes = ' + retryTimes);
+          continue;
+        }
+        await buttonComponent.click();
+      } catch (e) {
+        const error = e as BusinessError;
+        console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+        if (error.code === 17000002) {
+          retry = true;
+          await Utils.sleep(500);
+          retryTimes++;
+          console.log('retryTimes = ' + retryTimes);
+        }
+      }
+    }
   }
 }

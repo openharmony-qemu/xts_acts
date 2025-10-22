@@ -12,22 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { KeyCode } from '@ohos.multimodalInput.keyCode';
-
 @Entry
 @Component
 struct getModifierKeyState1 {
   @State baseEventState: boolean = false;
   @State DragEventState: boolean = true;
+  @State KeyEventState: boolean = false;
+
   build() {
     Column() {
       Button("" + this.baseEventState).id("getModifierKeyState_BaseEvent")
-        .onClick((event:BaseEvent)=>{
-          this.baseEventState = event.getModifierKeyState?.(["getModifierKeyState_BaseEvent"]) || false
-        })
-      Button("" + this.DragEventState).id("getModifierKeyState_DragEvent")
-        .onDragStart((event:DragEvent)=>{
-          this.DragEventState = event.getModifierKeyState?.(["getModifierKeyState_DragEvent"]) || false
+        .onClick((event: BaseEvent) => {
+          AppStorage.setOrCreate('BaseEventCtrl', event.getModifierKeyState?.(["ctrl"]))
+          AppStorage.setOrCreate('BaseEventShift', event.getModifierKeyState?.(["shift"]))
         })
     }
   }

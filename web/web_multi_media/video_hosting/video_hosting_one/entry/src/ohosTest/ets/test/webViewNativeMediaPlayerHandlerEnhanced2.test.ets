@@ -17,17 +17,18 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
+import { Driver, ON } from '@kit.TestKit';
 // @ts-nocheck
+const driver = Driver.create();
 let emitKey = ""
+const EVENT_ID_SET_EMIT_KEY = 362000;
 
 export default function webViewNativeMediaPlayerHandlerEnhanced2() {
   describe('ActsAceWebViewMediaPlayerHandlerEnhanced2', () => {
-
     beforeAll(async (done: Function) => {
         let options : router.RouterOptions = {
             url: 'testability/pages/webViewNativeMediaPlayerHandlerEnhanced',
         }
-
         try {
             await Utils.sleep(1000)
             router.clear();
@@ -42,37 +43,15 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
         } catch (err) {
             console.error("push webViewNativeMediaPlayerHandlerEnhanced page error:" + err);
         }
+        await driver.waitForComponent(ON.id("webViewNativeMediaPlayerHandlerEnhanced"), 10000);
+        console.log("waitForComponent webViewNativeMediaPlayerHandlerEnhanced");
         done()
     });
 
     beforeEach(async (done: Function) => {
-        await Utils.sleep(2000);
         done();
     })
-
-      afterEach(async (done: Function) => {
-        try {
-            let backData: events_emitter.EventData = {
-                data: {
-                    "ACTION": emitKey
-                }
-            }
-            let backEvent : events_emitter.InnerEvent = {
-                eventId: 10,
-                priority: events_emitter.EventPriority.LOW
-            }
-            console.info("start send emitKey");
-            events_emitter.emit(backEvent, backData);
-        } catch (err) {
-            console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
-      done();
-    })
-
-
-
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0400
      *@tc.name testWebViewNativeMediaPlayerEnableTrueShouldOverlayTrue
      *@tc.desc test NativeMediaPlayerEnableTrueShouldOverlayTrue
@@ -82,14 +61,11 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
      */
     it('testWebViewNativeMediaPlayerEnableTrueShouldOverlayTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerEnableTrueShouldOverlayTrue"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebViewNativeMediaPlayerEnableTrueShouldOverlayTrue", true, 1561,
-        done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebViewNativeMediaPlayerEnableTrueShouldOverlayTrue", true, 362070, done);
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0600
      *@tc.name testWebViewNativeMediaPlayerAudio
      *@tc.desc test NativeMediaPlayerAudio
@@ -99,14 +75,11 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
      */
     it('testWebViewNativeMediaPlayerAudio', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerAudio"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebViewNativeMediaPlayerAudio", true, 1562,
-        done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebViewNativeMediaPlayerAudio", true, 362080, done);
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_0700
      *@tc.name testWebViewNativeMediaPlayerMediaSrcUrl
      *@tc.desc test NativeMediaPlayerMediaSrcUrl
@@ -116,14 +89,11 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
      */
     it('testWebViewNativeMediaPlayerMediaSrcUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerMediaSrcUrl"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebViewNativeMediaPlayerMediaSrcUrl", true, 1563,
-        done, (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebViewNativeMediaPlayerMediaSrcUrl", true, 362090, done);
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_2600
      *@tc.name testWebViewNativeMediaPlayerHandleStatusChangedPause
      *@tc.desc test NativeMediaPlayerMediaSrcUrl
@@ -133,13 +103,11 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
      */
     it('testWebViewNativeMediaPlayerHandleStatusChangedPause', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaPlayerHandleStatusChangedPause"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebViewNativeMediaPlayerHandleStatusChangedPause", true, 15642, done, (backData: events_emitter.EventData, expected: Object) => {
-        expect(backData?.data?.ACTION).assertEqual(expected);
-      });
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebViewNativeMediaPlayerHandleStatusChangedPause", true, 362100, done);
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
-    /*
+    /**
      *@tc.number SUB_ACE_WEB_NATIVEVIDEO_INTERFACE_2700
      *@tc.name testWebViewNativeMediaPlayerHandleStatusChangedPlaying
      *@tc.desc test NativeMediaPlayerMediaSrcUrl
@@ -148,11 +116,9 @@ export default function webViewNativeMediaPlayerHandlerEnhanced2() {
      *@tc.level Level 1
      */
     it('testWebViewNativeMediaPlayerHandleStatusChangedPlaying', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      emitKey = "emitWebViewNativeMediaPlayerHandleStatusChangedPause"
-      Utils.emitEvent(emitKey, 10);
-      Utils.registerBaseEvent("testWebViewNativeMediaPlayerHandleStatusChangedPlaying", true, 15643, done, (backData: events_emitter.EventData, expected: Object) => {
-        expect(backData?.data?.ACTION).assertEqual(expected);
-      });
+      emitKey = "emitWebViewNativeMediaPlayerHandleStatusChangedPlaying"
+      Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testWebViewNativeMediaPlayerHandleStatusChangedPlaying", true, 362110, done);
       sendEventByKey('webViewNativeMediaPlayerHandlerEnhanced', 10, '');
     })
   })

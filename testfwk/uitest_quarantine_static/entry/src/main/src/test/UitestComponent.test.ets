@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
-import { Component, Driver, ON, On, MatchPattern,Point, Rect, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@ohos.UiTest'
+import { Component, Driver, ON, On, MatchPattern,Point, Rect, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@kit.TestKit'
 import  hilog  from '@ohos.hilog'
 import { Utils, startAbility, stopApplication } from './Util.test';
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-const waitUiReadyMs : number = 1000;
+const waitUiReadyMs = 1000;
 const DeviceErrorCode = 17000005;
 
 async function exitInputMethod() {
@@ -74,15 +74,15 @@ export default function uitestComponentTest() {
         expect(scrollBar != null).assertTrue();
         if (scrollBar != null) {
           await driver.delayMs(waitUiReadyMs);
-          let text1 = await scrollBar.scrollSearch(ON.text('8'), false, Math.floor(coverWidth * 0.5));
+          let text1 = await scrollBar.scrollSearch(ON.text('8'), false, (Math.floor(coverWidth * 0.5)).toInt());
           await driver.delayMs(waitUiReadyMs);
           expect(text1 == null).assertTrue();
           await driver.delayMs(waitUiReadyMs);
-          let text2 = await scrollBar.scrollSearch(ON.text('11'), false, Math.floor(coverWidth * 1.2));
+          let text2 = await scrollBar.scrollSearch(ON.text('11'), false, (Math.floor(coverWidth * 1.2)).toInt());
           await driver.delayMs(waitUiReadyMs);
           expect(text2 == null).assertTrue();
           await driver.delayMs(waitUiReadyMs);
-          let text3 = await scrollBar.scrollSearch(ON.text('2'), false, Math.floor(coverWidth * 1.2));
+          let text3 = await scrollBar.scrollSearch(ON.text('2'), false, (Math.floor(coverWidth * 1.2)).toInt());
           await driver.delayMs(waitUiReadyMs);
           expect(text3 != null).assertTrue();
           if (text3 != null) {
@@ -90,7 +90,7 @@ export default function uitestComponentTest() {
             expect(msg3).assertEqual('2');
           }
           await driver.delayMs(waitUiReadyMs);
-          let text4 = await scrollBar.scrollSearch(ON.text('8'), false, Math.floor(coverWidth * 1.2));
+          let text4 = await scrollBar.scrollSearch(ON.text('8'), false, (Math.floor(coverWidth * 1.2)).toInt());
           await driver.delayMs(waitUiReadyMs);
           expect(text4 != null).assertTrue();
           if (text4 != null) {

@@ -23,6 +23,7 @@ import RouterRecoverable from './Navigation/RouterRecoverable.test'
 import RouterRecoverable2 from './Navigation/RouterRecoverable2.test'
 import SystemTransition2 from './Navigation/SystemTransition2.test'
 import MultiEntry from './MultiNavigation/MultiEntry.test'
+import MultiEntryUndefined from './MultiNavigation/MultiEntryUndefined.test'
 
 export default function testsuite() {
   SafeAreaPadding();
@@ -35,4 +36,5 @@ export default function testsuite() {
   RouterRecoverable();
   SystemTransition2();
   MultiEntry();
+  MultiEntryUndefined();
 }

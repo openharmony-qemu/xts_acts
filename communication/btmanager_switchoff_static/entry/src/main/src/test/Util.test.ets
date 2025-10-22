@@ -20,7 +20,7 @@ import access from '@ohos.bluetooth.access';
 import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@ohos.UiTest';
 
 const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'bt003UtilsTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 // class Utils{
   export default class Utils{
@@ -37,7 +37,12 @@ let tag: string = 'bt003UtilsTag'; //日志标识字符串,作为tag标识当前
     hilog.info(domain, tag, 'clickRequestPermission start');
     try {
       let driver = Driver.create();
-      let permissionButton = await driver.waitForComponent(ON.text(mess, MatchPattern.EQUALS), 1000);
+      hilog.info(domain, tag, 'C03100,1');
+      let text = ON.text(mess);
+      hilog.info(domain, tag, 'C03100,2');
+      hilog.info(domain, tag, 'uitest StdProcess.tid():' + StdProcess.tid());
+      let permissionButton = await driver.waitForComponent(text, 1000);
+      hilog.info(domain, tag, 'C03100,3');
       if (permissionButton != null) {
         await permissionButton.click();
         hilog.info(domain, tag, 'clickRequestPermission end');

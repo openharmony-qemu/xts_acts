@@ -13,10 +13,14 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, afterEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '@ohos/hypium';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 113340;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -35,12 +39,13 @@ export default function jsMessageExtErrorCode() {
         if (!("jsMessageExtErrorCode" == pages.name)) {
           console.info("get jsMessageExtErrorCode state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push jsMessageExtErrorCode page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push jsMessageExtErrorCode page error: " + err);
       }
+      await driver.waitForComponent(ON.id("JsMessageExtErrorCodeButton"), 10000);
+      console.log("waitForComponent JsMessageExtErrorCodeButton");
       done()
     });
 
@@ -54,13 +59,6 @@ export default function jsMessageExtErrorCode() {
       done();
     })
 
-    afterEach(async (done: Function) => {
-      console.info("JsMessageExtErrorCodeTestSuite afterEach start");
-      await Utils.sleep(2000);
-      console.info("JsMessageExtErrorCodeTestSuite afterEach end");
-      done();
-    })
-
     /*
      * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETSTRING_0100
      * @tc.name       : testJsMessageExtGetStringError001
@@ -70,10 +68,9 @@ export default function jsMessageExtErrorCode() {
      * @tc.level      : Level 2
      */
     it('testJsMessageExtGetStringError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetStringError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetStringError001", '17100014', 30400, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetStringError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetStringError001", '17100014', 113350, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -85,10 +82,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetStringError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetStringError002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetStringError002", '17100014', 30401, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetStringError002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetStringError002", '17100014', 113360, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -100,10 +96,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetStringError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetStringError003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetStringError003", '17100014', 30402, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetStringError003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetStringError003", '17100014', 113370, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -115,10 +110,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetStringError004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetStringError004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetStringError004", '17100014', 30403, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetStringError004", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetStringError004", '17100014', 113380, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -130,10 +124,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetNumberError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetNumberError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetNumberError001", '17100014', 30410, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetNumberError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetNumberError001", '17100014', 113390, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -145,10 +138,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetNumberError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetNumberError002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetNumberError002", '17100014', 30411, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetNumberError002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetNumberError002", '17100014', 113400, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -160,10 +152,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetNumberError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetNumberError003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetNumberError003", '17100014', 30412, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetNumberError003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetNumberError003", '17100014', 113410, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -175,10 +166,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetNumberError004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetNumberError004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetNumberError004", '17100014', 30413, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetNumberError004", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetNumberError004", '17100014', 113420, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -190,10 +180,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetBooleanError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetBooleanError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetBooleanError001", '17100014', 30420, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetBooleanError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetBooleanError001", '17100014', 113430, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -205,10 +194,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetBooleanError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetBooleanError002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetBooleanError002", '17100014', 30421, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetBooleanError002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetBooleanError002", '17100014', 113440, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -220,10 +208,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetBooleanError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetBooleanError003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetBooleanError003", '17100014', 30422, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetBooleanError003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetBooleanError003", '17100014', 113450, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -235,10 +222,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetBooleanError004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetBooleanError004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetBooleanError004", '17100014', 30423, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetBooleanError004", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetBooleanError004", '17100014', 113460, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -250,10 +236,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetArrayBufferError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetArrayBufferError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetArrayBufferError001", '17100014', 30430, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetArrayBufferError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetArrayBufferError001", '17100014', 113470, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -265,10 +250,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetArrayBufferError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetArrayBufferError002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetArrayBufferError002", '17100014', 30431, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetArrayBufferError002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetArrayBufferError002", '17100014', 113480, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -280,10 +264,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetArrayBufferError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetArrayBufferError003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetArrayBufferError003", '17100014', 30432, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetArrayBufferError003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetArrayBufferError003", '17100014', 113490, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -295,10 +278,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetArrayBufferError004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetArrayBufferError004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetArrayBufferError004", '17100014', 30433, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetArrayBufferError004", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetArrayBufferError004", '17100014', 113500, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -310,10 +292,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetArrayError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetArrayError001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetArrayError001", '17100014', 30440, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetArrayError001", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetArrayError001", '17100014', 113510, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -325,10 +306,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetArrayError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetArrayError002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetArrayError002", '17100014', 30441, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetArrayError002", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetArrayError002", '17100014', 113520, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -340,10 +320,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetArrayError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetArrayError003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetArrayError003", '17100014', 30442, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetArrayError003", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetArrayError003", '17100014', 113530, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
 
     /*
@@ -355,11 +334,9 @@ export default function jsMessageExtErrorCode() {
     * @tc.level      : Level 2
     */
     it('testJsMessageExtGetArrayError004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testJsMessageExtGetArrayError004", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testJsMessageExtGetArrayError004", '17100014', 30443, done);
-      sendEventByKey('JsMessageExtErrorCodeButton', 10, '');
+      Utils.emitEvent("testJsMessageExtGetArrayError004", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerEvent("testJsMessageExtGetArrayError004", '17100014', 113540, done);
+      await Utils.waitAndClickComponent(driver, "JsMessageExtErrorCodeButton");
     })
-
   })
 }

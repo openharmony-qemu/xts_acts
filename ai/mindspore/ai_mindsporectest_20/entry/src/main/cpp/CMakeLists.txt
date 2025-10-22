@@ -13,7 +13,12 @@ include_directories(${NATIVERENDER_ROOT_PATH}
 
 add_library(mindsporendk SHARED mindspore/NapiRenderInitTest.cpp
 common/CommonTest.cpp
+mindspore/MindSporeContextTest.cpp
+mindspore/MindSporeDataTypeTest.cpp
 mindspore/MindSporeFormatTest.cpp
+mindspore/MindSporeModelTest.cpp
+mindspore/MindSporeStatusTest.cpp
+mindspore/MindSporeTypesTest.cpp
 )
 
 target_link_libraries(mindsporendk PUBLIC libace_napi.z.so libhilog_ndk.z.so libmindspore_lite_ndk.so)

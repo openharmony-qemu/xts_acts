@@ -33,7 +33,7 @@
         ],
         "orientation": "unspecified",
         "formsEnabled": false,
-        "name": "com.example.startability.MainAbility",
+        "name": ".MainAbility",
         "srcLanguage": "js",
         "srcPath": "MainAbility",
         "icon": "$media:icon",
@@ -49,7 +49,7 @@
         "pages": [
           "pages/index/index"
         ],
-        "name": "com.example.startability.MainAbility",
+        "name": ".MainAbility",
         "window": {
           "designWidth": 720,
           "autoDesignWidth": false

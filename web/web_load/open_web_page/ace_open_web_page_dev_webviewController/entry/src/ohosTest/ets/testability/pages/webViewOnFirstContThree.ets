@@ -14,18 +14,16 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import AbilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { Hypium } from '@ohos/hypium';
-import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
-import { waitForExist } from '../../test/WaitTest.test';
 import web_webview from '@ohos.web.webview';
+
+const EVENT_ID_SET_EMIT_KEY = 200420;
 
 @Entry
 @Component
 struct webViewOnFirstContThree {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
-  @State str: string = "emitLoadUrlOnfirstcontentfulpaint";
+  @State str: string = "";
   @State firstId: number = 326;
   @State firstcontentfulpaint: boolean = false;
   @State javaScriptAccess: boolean = true;
@@ -37,13 +35,19 @@ struct webViewOnFirstContThree {
   @State userAgent: string = "Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" +
     " CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27";
   @State isPageEnd: number = -1;
+  @State isReceive: number = -1;
+  @State isReadyToLoadUrl: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
+      eventId: EVENT_ID_SET_EMIT_KEY,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -52,6 +56,7 @@ struct webViewOnFirstContThree {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       if (eventData.data?.ACTION != null) {
         this.str = eventData.data?.ACTION;
+        this.isReceive = 1;
       }
     }
   }
@@ -60,19 +65,25 @@ struct webViewOnFirstContThree {
     Column() {
       Row() {
         Button("web click").key('webViewOnFirstContThree').onClick(async () => {
-          console.info("key==>" + this.str)
+          await Utils.waitForExist(()=>this.isPageEnd, 'webViewOnFirstContThreeIsPageEnd', 1, 1000);
+          await Utils.waitForExist(()=>this.isReceive, 'webViewOnFirstContThreeIsReceive', 1, 1000);
+          console.info("key==>" + this.str);
+          this.isReceive = -1;
           switch (this.str) {
             case "emitLoadUrlOnfirstcontentfulpaint": {
-              await waitForExist(()=>this.isPageEnd, 'emitLoadUrlOnfirstcontentfulpaint_isPageEnd', 1, 1000)
-              this.isPageEnd = -1
-              Utils.emitEvent(this.firstcontentfulpaint, this.firstId)
+              try {
+                this.isReadyToLoadUrl = 1;
+                this.controller.loadUrl('www' + '.example.' + 'com');
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
               break;
             }
           }
         })
       }
 
-      Web({ src: 'www.baidu.com', controller: this.controller })
+      Web({ src: 'www.example.com', controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
@@ -84,8 +95,9 @@ struct webViewOnFirstContThree {
           console.log("onFirstContentfulPaint:" + "[navigationStartTick]:" +
           event.navigationStartTick + ", [firstContentfulPaintMs]:" + event.firstContentfulPaintMs + this.firstId)
           if (event.firstContentfulPaintMs > 0) {
-            this.firstcontentfulpaint = true;
-            console.error("result of onFirstContentfulPaint is: " + this.firstcontentfulpaint + this.firstId);
+            if (this.isReadyToLoadUrl === 1) {
+              Utils.emitEvent('success', 200430);
+            }
           }
         })
         .onPageBegin((event) => {

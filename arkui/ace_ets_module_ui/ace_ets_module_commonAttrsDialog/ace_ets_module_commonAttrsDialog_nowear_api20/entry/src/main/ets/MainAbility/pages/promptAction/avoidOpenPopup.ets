@@ -61,8 +61,7 @@ struct OpenPopup {
     showPo1: ESObject
     @State maxW: number = 365
     @State maxH: number = 365
-    @State message: string = 'This is a popup with PopupOptions This is a popup with PopupOptions This is a' +
-        ' popup with PopupOptions This is a popup with PopupOptions This is a popup with PopupOptions';
+    @State message: string = 'This is a popup with PopupOptions';
 
     onPageShow(): void {
         window.getLastWindow(getContext()).then(windowObj => {

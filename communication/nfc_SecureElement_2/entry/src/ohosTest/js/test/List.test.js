@@ -16,13 +16,15 @@
 import newSEServicetest from './newSEService.test.js';
 import openSessionTest from './openSession.test.js';
 import channelCallbacktest from './channelCallback.test.js';
-import parameter from '@ohos.systemparameter';
-let info = parameter.getSync("const.SystemCapability.Communication.NFC.Core" ,"false");
+import EmptyTest from './Empty.test.js'	
+let info = canIUse("SystemCapability.Communication.NFC.Core");
 export default function testsuite() {
-if (info != "false")
+if (info)
 {
     newSEServicetest();
     openSessionTest();
     channelCallbacktest();
+} else {
+    EmptyTest();
 }
 }

@@ -75,11 +75,19 @@ import imageBorderStyleTest from './image/ImageBorderStyleTest.test'
 import imageBorderWidthTest from './image/ImageBorderWidthTest.test'
 import imageBrightnessTest from './image/ImageBrightnessTest.test'
 import imageClipTest from './image/ImageClipTest.test'
+import imageDynamicRangeModeTest from './image/ImageDynamicRangeModeTest.test'
+import imageHdrBrightnessTest from './image/ImageHdrBrightnessTest.test'
+import imageOrientationTest from './image/ImageOrientationTest.test'
 import imageColorFilterTest from './image/ImageColorFilterTest.test'
 import imageInterpolationTest from './image/ImageInterpolationTest.test'
 import imageLinearGradientTest from './image/ImageLinearGradientTest.test'
 import imageObjectFitTest from './image/ImageObjectFitTest.test'
 import imageObjectRepeatTest from './image/ImageObjectRepeatTest.test'
+import imageSourceSizeTest from './image/ImageSourceSizeTest.test'
+import imageMatchTextDirectionTest from './image/ImageMatchTextDirectionTest.test'
+import imageMatrixTest from './image/ImageMatrixTest.test'
+import imageCopyOptionTest from './image/ImageCopyOptionTest.test'
+import imageEnableAnalyzerTest from './image/ImageEnableAnalyzerTest.test'
 import imageOpacityTest from './image/ImageOpacityTest.test'
 import imageRadialGradientTest from './image/ImageRadialGradientTest.test'
 import imageRotateTest from './image/ImageRotateTest.test'
@@ -894,6 +902,7 @@ export default function testsuite() {
   stackShadowTest()
   scrollShadowTest()
   textShadowTest()
+  listScrollBarColorTest()
   inputEvent()
   testGesture()
   gestureGestureInfoTest()
@@ -1184,8 +1193,16 @@ export default function testsuite() {
   imageColorFilterTest()
   imageInterpolationTest()
   imageLinearGradientTest()
+  imageDynamicRangeModeTest()
+  imageHdrBrightnessTest()
+  imageOrientationTest()
   imageObjectFitTest()
   imageObjectRepeatTest()
+  imageSourceSizeTest()
+  imageMatchTextDirectionTest()
+  imageMatrixTest()
+  imageCopyOptionTest()
+  imageEnableAnalyzerTest()
   imageOpacityTest()
   imageRadialGradientTest()
   imageRotateTest()
@@ -1731,7 +1748,6 @@ export default function testsuite() {
   customDialogShowTest()
   progressTypeTest()
   xComponentIdTest()
-  listScrollBarColorTest()
   listScrollBarWidthTest()
   listSpaceTest()
   listAlignListItemTest()

@@ -25,17 +25,29 @@ struct getRectsForRange {
         .border({ width: 1, radius: 5 })
         .draggable(false)
 
-      Button(this.str)
-        .key("getRectsForRange_Key")
-        .onClick(() => {
-          let layoutManager: LayoutManager = this.controller.getLayoutManager()
-          if(layoutManager){
-            let boxes = layoutManager.getRectsForRange({start:0,end:4}, 0, 0)
-            if (boxes) {
-              this.str = "getRectsForRange successful"
+      Row(){
+        Button(this.str)
+          .key("getRectsForRange_Key")
+          .onClick(() => {
+            let layoutManager: LayoutManager = this.controller.getLayoutManager()
+            if(layoutManager){
+              let boxes = layoutManager.getRectsForRange({start:0,end:4}, 0, 0)
+              AppStorage.setOrCreate('rectsForRangeList1',boxes)
+              if (boxes) {
+                this.str = "getRectsForRange successful"
+              }
             }
-          }
-        })
+          })
+        Button('getRectsForRangeList2')
+          .key("getRectsForRange_Key2")
+          .onClick(() => {
+            let layoutManager: LayoutManager = this.controller.getLayoutManager()
+            if(layoutManager){
+              let boxes = layoutManager.getRectsForRange({start:0,end:0}, 0, 0)
+              AppStorage.setOrCreate('rectsForRangeList2',boxes)
+            }
+          })
+      }
     }
   }
 }

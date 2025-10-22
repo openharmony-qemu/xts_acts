@@ -18,7 +18,7 @@ import { describe, beforeAll, it, expect, afterEach, beforeEach, Level } from '@
 import { common } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import commonEvent from '@ohos.commonEventManager';
-import { Driver, MatchPattern, ON } from '@ohos.UiTest';
+import { Driver, MatchPattern, ON, Component } from '@ohos.UiTest';
 
 let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 const TAG = 'AbilityRuntime';
@@ -123,6 +123,17 @@ export default function actsStartAppCloneAppTest() {
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
       await checkAppSelectorExist();
       console.info("isAppSelectorExist " + isAppSelectorExist);
+      
+      let allowed: Component | undefined;
+      try {
+        allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+      } catch (e) {
+        hilog.info(0x0000, TAG, 'advanced_dialog_button_0 not found: %{public}s', JSON.stringify(e));
+      }
+      if (allowed) {
+        await allowed.click();
+      }
+
       done();
     })
 

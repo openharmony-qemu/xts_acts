@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
-import { Component, Driver, ON, On, MatchPattern,Point, Rect, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@ohos.UiTest'
+import { Component, Driver, ON, On, MatchPattern,Point, Rect, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation } from '@kit.TestKit'
 import  hilog  from '@ohos.hilog'
 import { Utils, startAbility, stopApplication } from './Util.test';
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 const waitUiReadyMs : number = 1000;
 const DeviceErrorCode = 17000005;
@@ -604,6 +604,276 @@ export default function uitestComponentTest() {
       }
       hilog.info(domain, tag, `testUiComponentClick_static end`);
       await stopApplication('com.uitestScene.acts');
+    })
+
+    /*
+     * @tc.number: uitestComponentTest_0017
+     * @tc.name: testComponentInputText_static
+     * @tc.desc: enter '123',the values of both paste and addition are false
+     */
+    it('testComponentInputText_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `testComponentInputText_static start`);
+      try {
+        let driver: Driver = Driver.create();
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.type('TextInput'))
+        if (text == null) {
+          let scorll = await driver.findComponent(ON.type('Scroll'))
+          if (scorll != null) {
+            text = await scorll.scrollSearch(ON.type('TextInput'))
+          }
+        }
+        hilog.info(domain, tag, `testComponentInputText_static text, ${JSON.stringify(text)}`);
+        expect(text != null).assertTrue()
+        if (text != null) {
+          await text.inputText('123', {paste:false, addition:false})
+        }
+        await driver.delayMs(2000)
+        await exitInputMethod()
+        await driver.delayMs(2000)
+        let text1 = await driver.findComponent(ON.type('TextInput'))
+        if (text1 == null) {
+          let scorll = await driver.findComponent(ON.type('Scroll'))
+          if (scorll != null) {
+            text1 = await scorll.scrollSearch(ON.type('TextInput'))
+          }
+        }
+        hilog.info(domain, tag, `testComponentInputText_static text1, ${JSON.stringify(text1)}`);
+        expect(text1 != null).assertTrue()
+        if (text1 != null) {
+          let msg = await text1.getText();
+          hilog.info(domain, tag, `testComponentInputText_static msg, ${JSON.stringify(msg)}`);
+          expect(msg == '123').assertTrue()
+        }
+      } catch(error) {
+        hilog.info(domain, tag, `testComponentInputText_static error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      await stopApplication('com.uitestScene.acts')
+      hilog.info(domain, tag, `testComponentInputText_static end`);
+    })
+
+    /*
+     * @tc.number: uitestComponentTest_0018
+     * @tc.name: testComponentInputText1_static
+     * @tc.desc: enter '长贵儿',the values of both paste and addition are false
+     */
+    it('testComponentInputText1_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `testComponentInputText1_static start`);
+      try {
+        let driver: Driver = Driver.create();
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.type('TextInput'))
+        if (text == null) {
+          let scorll = await driver.findComponent(ON.type('Scroll'))
+          if (scorll != null) {
+            text = await scorll.scrollSearch(ON.type('TextInput'))
+          }
+        }
+        hilog.info(domain, tag, `testComponentInputText1_static text, ${JSON.stringify(text)}`);
+        expect(text != null).assertTrue()
+        if (text != null) {
+          await text.clearText()
+        }
+        await driver.delayMs(2000)
+        await exitInputMethod()
+        await driver.delayMs(2000)
+        text = await driver.findComponent(ON.type('TextInput'))
+        if (text == null) {
+          let scorll = await driver.findComponent(ON.type('Scroll'))
+          if (scorll != null) {
+            text = await scorll.scrollSearch(ON.type('TextInput'))
+          }
+        }
+        hilog.info(domain, tag, `testComponentInputText1_static text, ${JSON.stringify(text)}`);
+        expect(text != null).assertTrue()
+        if (text != null) {
+          await text.inputText('长贵儿', {paste:false, addition:false})
+        }
+        await driver.delayMs(2000)
+        await exitInputMethod()
+        await driver.delayMs(2000)
+        let text1 = await driver.findComponent(ON.type('TextInput'))
+        if (text1 == null) {
+          let scorll = await driver.findComponent(ON.type('Scroll'))
+          if (scorll != null) {
+            text1 = await scorll.scrollSearch(ON.type('TextInput'))
+          }
+        }
+        hilog.info(domain, tag, `testComponentInputText1_static text1, ${JSON.stringify(text1)}`);
+        expect(text1 != null).assertTrue()
+        if (text1 != null) {
+          let msg = await text1.getText();
+          hilog.info(domain, tag, `testComponentInputText1_static msg, ${JSON.stringify(msg)}`);
+          expect(msg == '长贵儿').assertTrue()
+        }
+      } catch(error) {
+        hilog.info(domain, tag, `testComponentInputText1_static error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      await stopApplication('com.uitestScene.acts')
+      hilog.info(domain, tag, `testComponentInputText1_static end`);
+    })
+
+    /*
+     * @tc.number: uitestComponentTest_0019
+     * @tc.name: testComponentInputText2_static
+     * @tc.desc: enter '123',the values of paste is true,the values of addition is false
+     */
+    it('testComponentInputText2_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `testComponentInputText2_static start`);
+      try {
+        let driver: Driver = Driver.create();
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.type('TextInput'))
+        if (text == null) {
+          let scorll = await driver.findComponent(ON.type('Scroll'))
+          if (scorll != null) {
+            text = await scorll.scrollSearch(ON.type('TextInput'))
+          }
+        }
+        hilog.info(domain, tag, `testComponentInputText2_static text, ${JSON.stringify(text)}`);
+        expect(text != null).assertTrue()
+        if (text != null) {
+          await text.clearText()
+        }
+        await driver.delayMs(2000)
+        await exitInputMethod()
+        await driver.delayMs(2000)
+        text = await driver.findComponent(ON.type('TextInput'))
+        if (text == null) {
+          let scorll = await driver.findComponent(ON.type('Scroll'))
+          if (scorll != null) {
+            text = await scorll.scrollSearch(ON.type('TextInput'))
+          }
+        }
+        hilog.info(domain, tag, `testComponentInputText2_static text, ${JSON.stringify(text)}`);
+        expect(text != null).assertTrue()
+        if (text != null) {
+          await text.inputText('123', {paste:true, addition:false})
+          await driver.delayMs(2000)
+        }
+        await exitInputMethod()
+        await driver.delayMs(2000)
+        let text1 = await driver.findComponent(ON.type('TextInput'))
+        if (text1 == null) {
+          let scorll = await driver.findComponent(ON.type('Scroll'))
+          if (scorll != null) {
+            text1 = await scorll.scrollSearch(ON.type('TextInput'))
+          }
+        }
+        hilog.info(domain, tag, `testComponentInputText2_static text1, ${JSON.stringify(text1)}`);
+        expect(text1 != null).assertTrue()
+        if (text1 != null) {
+          let msg = await text1.getText();
+          hilog.info(domain, tag, `testComponentInputText2_static msg, ${JSON.stringify(msg)}`);
+          expect(msg == '123').assertTrue()
+        }
+      } catch(error) {
+        hilog.info(domain, tag, `testComponentInputText2_static error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      await stopApplication('com.uitestScene.acts')
+      hilog.info(domain, tag, `testComponentInputText2_static end`);
+    })
+
+    /*
+     * @tc.number: uitestComponentTest_0020
+     * @tc.name: testComponentInputText3_static
+     * @tc.desc: enter '123',the values of paste is false,the values of addition is true
+     */
+    it('testComponentInputText3_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `testComponentInputText3_static start`);
+      try {
+        let driver: Driver = Driver.create();
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.type('TextInput'))
+        if (text == null) {
+          let scorll = await driver.findComponent(ON.type('Scroll'))
+          if (scorll != null) {
+            text = await scorll.scrollSearch(ON.type('TextInput'))
+          }
+        }
+        hilog.info(domain, tag, `testComponentInputText3_static text, ${JSON.stringify(text)}`);
+        expect(text != null).assertTrue()
+        if (text != null) {
+          await text.inputText('123', {paste:false, addition:true})
+        }
+        await driver.delayMs(2000)
+        await exitInputMethod()
+        await driver.delayMs(2000)
+        let text1 = await driver.findComponent(ON.type('TextInput'))
+        if (text1 == null) {
+          let scorll = await driver.findComponent(ON.type('Scroll'))
+          if (scorll != null) {
+            text1 = await scorll.scrollSearch(ON.type('TextInput'))
+          }
+        }
+        hilog.info(domain, tag, `testComponentInputText3_static text1, ${JSON.stringify(text1)}`);
+        expect(text1 != null).assertTrue()
+        if (text1 != null) {
+          let msg = await text1.getText();
+          hilog.info(domain, tag, `testComponentInputText3_static msg, ${JSON.stringify(msg)}`);
+          expect(msg == 'Hello World123').assertTrue()
+        }
+      } catch(error) {
+        hilog.info(domain, tag, `testComponentInputText3_static error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      await stopApplication('com.uitestScene.acts')
+      hilog.info(domain, tag, `testComponentInputText3_static end`);
+    })
+
+    /*
+     * @tc.number: uitestComponentTest_0021
+     * @tc.name: testComponentInputText4_static
+     * @tc.desc: enter '123',the values of paste is true,the values of addition is true
+     */
+    it('testComponentInputText4_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(domain, tag, `testComponentInputText4_static start`);
+      try {
+        let driver: Driver = Driver.create();
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+        await driver.delayMs(2000)
+        let text = await driver.findComponent(ON.type('TextInput'))
+        if (text == null) {
+          let scorll = await driver.findComponent(ON.type('Scroll'))
+          if (scorll != null) {
+            text = await scorll.scrollSearch(ON.type('TextInput'))
+          }
+        }
+        hilog.info(domain, tag, `testComponentInputText4_static text, ${JSON.stringify(text)}`);
+        expect(text != null).assertTrue()
+        if (text != null) {
+          await text.inputText('123', {paste:true, addition:true})
+        }
+        await driver.delayMs(2000)
+        await exitInputMethod()
+        await driver.delayMs(2000)
+        let text1 = await driver.findComponent(ON.type('TextInput'))
+        if (text1 == null) {
+          let scorll = await driver.findComponent(ON.type('Scroll'))
+          if (scorll != null) {
+            text1 = await scorll.scrollSearch(ON.type('TextInput'))
+          }
+        }
+        hilog.info(domain, tag, `testComponentInputText4_static text1, ${JSON.stringify(text1)}`);
+        expect(text1 != null).assertTrue()
+        if (text1 != null) {
+          let msg = await text1.getText();
+          hilog.info(domain, tag, `testComponentInputText4_static msg, ${JSON.stringify(msg)}`);
+          expect(msg == 'Hello World123').assertTrue()
+        }
+      } catch(error) {
+        hilog.info(domain, tag, `testComponentInputText4_static error, ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      await stopApplication('com.uitestScene.acts')
+      hilog.info(domain, tag, `testComponentInputText4_static end`);
     })
   })
 }

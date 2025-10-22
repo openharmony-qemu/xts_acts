@@ -41,17 +41,19 @@ struct sceneTypeFrame {
             .backgroundColor(backgroundColor)
         })
       }
-      .width('100%')
-      .height('60%')
-      .id("dynamicSwiper")
+      .width('90%')
+      .height('40%')
+      .id('dynamicSwiper')
       .backgroundColor(Color.Blue)
       .autoPlay(true)
       .onAppear(()=>{
         this.scenes = this.getUIContext().requireDynamicSyncScene('dynamicSwiper') as SwiperDynamicSyncScene[]
+        AppStorage.SetOrCreate('requireDynamicSyncScene', this.scenes);
+        console.log('scenes length: ' + this.scenes.length)
       })
 
       Text(this.text1).id('sceneType_swiper')
-      Button("set frame").id('sceneType_set')
+      Button('set frame').id('sceneType_set')
         .onClick(()=>{
           this.scenes.forEach((scenes: SwiperDynamicSyncScene) => {
             if (scenes.type == SwiperDynamicSyncSceneType.GESTURE) {

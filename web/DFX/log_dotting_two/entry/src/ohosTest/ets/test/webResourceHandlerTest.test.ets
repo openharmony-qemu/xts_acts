@@ -12,37 +12,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, it, TestType, Size, Level  } from '@ohos/hypium';
-import events_emitter from '@ohos.events.emitter';
+import { beforeAll, beforeEach, describe, it, TestType, Size, Level  } from '@ohos/hypium';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 114990;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 let emitKey = ''
 
 export default function webResourceHandlerTest() {
   describe('webResourceHandlerTest', () => {
-
       beforeAll(async (done: Function) => {
         let options: router.RouterOptions = {
           url: 'testability/pages/webResourceHandlerTest',
         }
 
         try {
-          await Utils.sleep(1000)
           router.clear();
           let pages = router.getState();
           console.info("get webResourceHandlerTest state success " + JSON.stringify(pages));
           if (!("webResourceHandlerTest" == pages.name)) {
             console.info("get webResourceHandlerTest state success " + JSON.stringify(pages.name));
             let result = await router.pushUrl(options);
-            await Utils.sleep(1000);
             console.info("push webResourceHandlerTest state success " + JSON.stringify(result));
           }
         } catch (err) {
           console.error("push webResourceHandlerTest page error:" + err);
         }
+        await driver.waitForComponent(ON.id("webView"), 10000);
+        console.log("waitForComponent webView");
         done()
       });
 
@@ -50,29 +52,8 @@ export default function webResourceHandlerTest() {
         config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
         }).catch((err: object) => {
-        console.error(`failed to enable, ${err}`);
-      })
-        await Utils.sleep(2000);
-        done();
-      })
-
-      afterEach(async (done: Function) => {
-        try {
-          let backData: events_emitter.EventData = {
-            data: {
-              "ACTION": emitKey
-            }
-          }
-          let backEvent: events_emitter.InnerEvent = {
-            eventId: 10,
-            priority: events_emitter.EventPriority.LOW
-          }
-          console.info("start send emitKey");
-          events_emitter.emit(backEvent, backData);
-        } catch (err) {
-          console.error("emit emitKey error:" + JSON.stringify(err));
-        }
-        await Utils.sleep(1000);
+          console.error(`failed to enable, ${err}`);
+        })
         done();
       })
 
@@ -86,9 +67,9 @@ export default function webResourceHandlerTest() {
        */
       it('testWebView_didReceiveResponse_INVAILD', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         emitKey = "emitWebView_didReceiveResponse_INVAILD"
-        Utils.emitEvent(emitKey, 10);
-        Utils.registerEvent("testWebView_didReceiveResponse_INVAILD", 17100021, 1550, done);
-        sendEventByKey('webView', 10, '');
+        Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+        Utils.registerEvent("testWebView_didReceiveResponse_INVAILD", "17100021", 115000, done);
+        await Utils.waitAndClickComponent(driver, "webView");
       })
       /*
        *@tc.number  :SUB_ACE_WEB_didReceiveResponseBody_INVALID_0100
@@ -100,9 +81,9 @@ export default function webResourceHandlerTest() {
        */
       it('testWebView_didReceiveResponseBody_INVALID', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         emitKey = "emitWebView_didReceiveResponseBody_INVALID"
-        Utils.emitEvent(emitKey, 10);
-        Utils.registerEvent("testWebView_didReceiveResponseBody_INVALID", 17100021, 1551, done);
-        sendEventByKey('webView', 10, '');
+        Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+        Utils.registerEvent("testWebView_didReceiveResponseBody_INVALID", "17100021", 115010, done);
+        await Utils.waitAndClickComponent(driver, "webView");
       })
 
       /*
@@ -115,9 +96,9 @@ export default function webResourceHandlerTest() {
        */
       it('testWebView_didFinish_INVALID', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         emitKey = "emitWebView_didFinish_INVALID"
-        Utils.emitEvent(emitKey, 10);
-        Utils.registerEvent("testWebView_didFinish_INVALID", 17100021, 1552, done);
-        sendEventByKey('webView', 10, '');
+        Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+        Utils.registerEvent("testWebView_didFinish_INVALID", "17100021", 115020, done);
+        await Utils.waitAndClickComponent(driver, "webView");
       })
 
       /*
@@ -130,9 +111,9 @@ export default function webResourceHandlerTest() {
      */
       it('testWebView_didFail_INVALID', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         emitKey = "emitWebView_didFail_INVALID"
-        Utils.emitEvent(emitKey, 10);
-        Utils.registerEvent("testWebView_didFail_INVALID", 17100021, 1553, done);
-        sendEventByKey('webView', 10, '');
+        Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
+        Utils.registerEvent("testWebView_didFail_INVALID", "17100021", 115030, done);
+        await Utils.waitAndClickComponent(driver, "webView");
       })
     /*
     * @tc.number     : SUB_WEB_WEBNAVIGATIONTYPE_0100
@@ -143,10 +124,9 @@ export default function webResourceHandlerTest() {
     * @tc.level      : Level 1
     */
     it('testWebNavigationType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebNavigationType001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebNavigationType001", true, 202503212, done);
-      sendEventByKey('webView', 10, '');
+      Utils.emitEvent("testWebNavigationType001", EVENT_ID_SET_EMIT_KEY)
+      Utils.registerEvent("testWebNavigationType001", true, 115040, done);
+      await Utils.waitAndClickComponent(driver, "webView");
     })
 
     /*
@@ -158,10 +138,9 @@ export default function webResourceHandlerTest() {
     * @tc.level      : Level 1
     */
     it('testWebNavigationType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebNavigationType002", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebNavigationType002", true, 202503213, done);
-      sendEventByKey('webView', 10, '');
+      Utils.emitEvent("testWebNavigationType002", EVENT_ID_SET_EMIT_KEY)
+      Utils.registerEvent("testWebNavigationType002", true, 115050, done);
+      await Utils.waitAndClickComponent(driver, "webView");
     })
 
     /*
@@ -173,11 +152,9 @@ export default function webResourceHandlerTest() {
     * @tc.level      : Level 1
     */
     it('testWebNavigationType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebNavigationType003", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testWebNavigationType003", true, 202503214, done);
-      sendEventByKey('webView', 10, '');
+      Utils.emitEvent("testWebNavigationType003", EVENT_ID_SET_EMIT_KEY)
+      Utils.registerEvent("testWebNavigationType003", true, 115060, done);
+      await Utils.waitAndClickComponent(driver, "webView");
     })
-
  })
 }

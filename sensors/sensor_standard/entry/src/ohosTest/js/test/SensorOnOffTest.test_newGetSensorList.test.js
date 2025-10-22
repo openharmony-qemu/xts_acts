@@ -75,6 +75,7 @@ describe("SensorJsTest_sensor_35", function () {
             for (let i = 0; i < data.length; i++) {
                 console.info(TAG + ' Callback in!' + JSON.stringify(data[i]));
             }
+            expect(data.length > 0).assertTrue();
             done();
             }, (error)=>{
                 console.info(TAG + ' error:' + error);
@@ -82,7 +83,7 @@ describe("SensorJsTest_sensor_35", function () {
             });
         } catch (error) {
             console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
-            expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
+            expect(false).assertTrue();
             done();
         }
     })
@@ -106,12 +107,13 @@ describe("SensorJsTest_sensor_35", function () {
                 for (let i =0; i < data.length; i++) {
                     console.info(TAG + ' Callback in!' + JSON.stringify(data[i]));
                 }
+                expect(data.length > 0).assertTrue();
                 done();
             }
             });
         } catch (error) {
             console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
-            expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
+            expect(false).assertTrue();
             done();
         }
     })

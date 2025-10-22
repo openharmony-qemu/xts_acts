@@ -1,4 +1,4 @@
-/*
+/**
 * Copyright (c) 2023 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -22,44 +22,37 @@ import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../..
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
+import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let testAbilityContext: common.UIAbilityContext
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let TAG: string = 'testTEST_CASE_NAME'; //日志标识字符串,作为TEST_CASE_NAME标识当前runner类下的测试行为
 let bundle :string = 'com.example.actsnotificationrequesttest.static'
+let count: int = 0;
+
 export default function ActsNotificationRequestTest() {
   describe('SUB_NOTIFICATION_ANS_REQUEST_TEST', () => {
     const TAG = 'SUB_NOTIFICATION_ANS_REQUEST_TEST ===>';
     beforeAll(() => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
+      
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-      abilityDelegator.addAbilityMonitor({
-        abilityName: "EntryAbility",
-        moduleName:"entry",
-        onAbilityCreate: (abilitys : UIAbility) : void => {
-          testAbilityContext = abilitys.context
-          hilog.info(domain, TAG, '%{public}s', 'onAbilityCreate end');
-        },
-      }, (err : BusinessError | null) : void => {
-        if (err != null ) {
-          hilog.info(domain, TAG, '%{public}s', '-----'+ err.code);
-        }
-        hilog.info(domain, TAG, '%{public}s', 'BusinessError  end');
-      });
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
       await Utils.msSleep(2000)
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Publish_Static_0900
-     * @tc.name      : Sub_Notification_Ans_Publish_Publish_Static_0900
-     * @tc.desc      : requestEnableNotification click allowed
+    /**
+     * @tc.number     Sub_Notification_Ans_Publish_Publish_Static_0900
+     * @tc.name       Sub_Notification_Ans_Publish_Publish_Static_0900
+     * @tc.desc       requestEnableNotification click allowed
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         let TEST_CASE_NAME = 'Sub_Notification_Ans_Publish_Publish_Static_0900'
+        count = 0;
         console.info(`${TEST_CASE_NAME} START requestEnableNotification`)
         notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
           console.info(`${TEST_CASE_NAME} requestEnableNotification about ctx is ${testAbilityContext}`)
@@ -70,7 +63,8 @@ export default function ActsNotificationRequestTest() {
             done()
           }else {
             console.info(`${TEST_CASE_NAME} requestEnableNotification success`)
-            expect(true).assertTrue()
+            count++;
+            expect(count).assertEqual(1);
             await Utils.msSleep(1000)
             done()
           }
@@ -111,6 +105,7 @@ export default function ActsNotificationRequestTest() {
         }
         hilog.info(0x000, `${TEST_CASE_NAME}`, `${TEST_CASE_NAME} test case start`);
         await Utils.msSleep(3000)
+        count = 0;
         try {
           notificationManager.publish(notificationRequest, (err: BusinessError | null) => {
             hilog.info(0x000, `${TEST_CASE_NAME}`, `${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(err));
@@ -120,7 +115,8 @@ export default function ActsNotificationRequestTest() {
               done()
             }else {
               console.info(`${TEST_CASE_NAME} publish success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               await Utils.msSleep(1000)
               done()
             }

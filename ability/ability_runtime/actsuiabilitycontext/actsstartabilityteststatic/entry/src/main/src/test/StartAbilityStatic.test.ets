@@ -24,8 +24,9 @@ import Want from '@ohos.app.ability.Want';
 import StartOptions from '@ohos.app.ability.StartOptions'
 import contextConstant from "@ohos.app.ability.contextConstant";
 import bundleManager from '@ohos.bundle.bundleManager';
+import fileIo from '@ohos.file.fs';
 
-let domain: number = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 let context: common.UIAbilityContext
 
@@ -119,12 +120,10 @@ export default function startAbilityTestStatic() {
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0300`;
       hilog.info(domain, tag, `it begin`);
-      let parameters: Record<String,Object>= {
-        'key': 'parameters key'
-      }
-      let fds: Record<String,Double> = {
-        'key': 1
-      }
+      let filePath = "/data/storage/el2/base/haps/entry/files/test.pdf";
+      let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+      const fd: number = file.fd;
+      console.log('testTag: fd : ' + fd);
       let want: Want = {
         deviceId: '',
         bundleName: 'com.acts.startabilitytest.static',
@@ -134,8 +133,9 @@ export default function startAbilityTestStatic() {
         entities: ['abc'],
         uri: 'example://www.example.com',
         type: '',
-        parameters: parameters,
-        fds: fds
+        parameters: {
+          'keyFd': { 'type': 'FD', 'value': fd } as Record<string, Object>
+        } as Record<string, Object>,
       };
 
       let options: StartOptions = {

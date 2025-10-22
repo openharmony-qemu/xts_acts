@@ -4,6 +4,7 @@ import bmsZlibChecksumAdler32CombineTest from  './BmsZlibChecksumAdler32Combine.
 import bmsZlibChecksumCrc32Test from  './BmsZlibChecksumCrc32.test';
 import bmsZlibChecksumCrc32CombineTest from  './BmsZlibChecksumCrc32Combine.test';
 import bmsZlibChecksumCrc64Test from  './BmsZlibChecksumCrc64.test';
+import decompressFileTest from './DecompressFile.test';
 
 export default function testsuite() {
   bmsZlibChecksumTest();
@@ -12,4 +13,5 @@ export default function testsuite() {
   bmsZlibChecksumCrc32Test();
   bmsZlibChecksumCrc32CombineTest();
   bmsZlibChecksumCrc64Test();
+  decompressFileTest();
 }

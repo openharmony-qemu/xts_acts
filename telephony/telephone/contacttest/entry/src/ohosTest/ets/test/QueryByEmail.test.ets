@@ -21,6 +21,13 @@ import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
 import { Driver } from '@ohos.UiTest';
 
+function sleep (time:number):Promise<string>{
+  return new Promise<string>((resolve)=>{
+    setTimeout(()=>{
+      resolve('ok')},time)
+  });
+}
+
 const ExpectTrue = (n: boolean) => {
   try {
     expect(n).assertTrue();
@@ -69,7 +76,7 @@ export default function QueryByEmailTest() {
         let context: Context = AppStorage.get('context') as Context;
         let contactList: contact.Contact[] = [];
         try {
-          contactList = await contact.queryContacts(context);
+          contactList = await contact.queryContactsByPhoneNumber(context,"13800000000");
         } catch (queryErr) {
           console.info(`afterEach queryContacts catch err: ${JSON.stringify(queryErr)}`);
           done();
@@ -205,6 +212,7 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
           if (err) {
             console.info(`${caseName} addContact: err->${JSON.stringify(err)}`);
@@ -247,6 +255,7 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.queryContactsByEmail(context, '13811111111@email.com', (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -279,6 +288,7 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.queryContactsByEmail(context, '12!@#895@email.com', (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -311,7 +321,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} addContact: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -362,6 +374,7 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.queryContactsByEmail(context, 'local_part_max_length64_characters@domain_part_max_length255_characters.com', (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -393,7 +406,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} addContact: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -434,7 +449,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -479,7 +496,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -524,7 +543,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.queryContactsByEmail(context, '123!@#456@email.com', holder, (err: BusinessError, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectTrue(err.code === 401);
@@ -555,6 +576,7 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.queryContactsByEmail(context, '123456', holder, (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -587,6 +609,7 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.queryContactsByEmail(context, '123456', {
           holderId: 0,
           bundleName: "",
@@ -622,6 +645,7 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.queryContactsByEmail(context, '000000@email.com', holder, (err: BusinessError, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -653,7 +677,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -694,7 +720,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -737,7 +765,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -784,7 +814,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -832,7 +864,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -880,7 +914,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -928,7 +964,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -976,6 +1014,7 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -1023,7 +1062,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -1070,7 +1111,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -1116,7 +1159,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -1162,7 +1207,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -1208,7 +1255,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -1254,6 +1303,7 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -1300,7 +1350,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -1347,7 +1399,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       try {
         let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -1394,7 +1448,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -1438,7 +1494,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -1480,7 +1538,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -1530,7 +1590,9 @@ export default function QueryByEmailTest() {
       console.info(`${caseName} test start `);
       let context: Context = AppStorage.get('context') as Context;
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err, data) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -1586,7 +1648,9 @@ export default function QueryByEmailTest() {
             displayName: "emailDisplayName"
           }],
         };
+        sleep(500);
         contact.addContact(context, phoneNumContact, (err: BusinessError, addData: number) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -1643,7 +1707,9 @@ export default function QueryByEmailTest() {
             displayName: "emailDisplayName"
           }],
         };
+        sleep(500);
         contact.addContact(context, phoneNumContact, (err: BusinessError, addData: number) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -1700,6 +1766,7 @@ export default function QueryByEmailTest() {
             displayName: "emailDisplayName"
           }],
         };
+        sleep(500);
         contact.addContact(context, phoneNumContact, (err: BusinessError, addData: number) => {
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
@@ -1764,7 +1831,9 @@ export default function QueryByEmailTest() {
         labelId: contact.PostalAddress.ADDR_OTHER
       }];
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err: BusinessError, addData: number) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -1839,7 +1908,9 @@ export default function QueryByEmailTest() {
         labelId: contact.PostalAddress.ADDR_OTHER
       }];
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err: BusinessError, addData: number) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -1914,7 +1985,9 @@ export default function QueryByEmailTest() {
         labelId: contact.PostalAddress.ADDR_OTHER
       }];
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err: BusinessError, addData: number) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -1989,7 +2062,9 @@ export default function QueryByEmailTest() {
         labelId: contact.PostalAddress.ADDR_OTHER
       }];
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err: BusinessError, addData: number) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -2064,7 +2139,9 @@ export default function QueryByEmailTest() {
         labelId: contact.PostalAddress.ADDR_OTHER
       }];
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err: BusinessError, addData: number) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -2139,7 +2216,9 @@ export default function QueryByEmailTest() {
         labelId: contact.PostalAddress.ADDR_OTHER
       }];
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err: BusinessError, addData: number) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -2214,7 +2293,9 @@ export default function QueryByEmailTest() {
         labelId: contact.PostalAddress.ADDR_OTHER
       }];
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err: BusinessError, addData: number) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -2297,7 +2378,9 @@ export default function QueryByEmailTest() {
             displayName: "emailDisplayName"
           }],
         };
+        sleep(500);
         contact.addContact(context, phoneNumContact, (err: BusinessError, addData: number) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -2356,7 +2439,9 @@ export default function QueryByEmailTest() {
         labelId: contact.PostalAddress.ADDR_OTHER
       }];
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err: BusinessError, addData: number) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();
@@ -2422,7 +2507,9 @@ export default function QueryByEmailTest() {
         sipAddress: "sipAddress", labelName: "自定义sipAddress", labelId: contact.PostalAddress.ADDR_HOME
       }];
       try {
+        sleep(500);
         contact.addContact(context, contactData, (err: BusinessError, addData: number) => {
+          sleep(500);
           if (err) {
             console.info(`${caseName} callback: err->${JSON.stringify(err)}`);
             ExpectFail();

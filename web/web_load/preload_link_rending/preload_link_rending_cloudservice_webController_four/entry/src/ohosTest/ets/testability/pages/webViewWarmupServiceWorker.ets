@@ -15,7 +15,8 @@
 import events_emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
-import business_error from '@ohos.base';
+
+const EVENT_ID_SET_EMIT_KEY = 201270;
 
 @Entry
 @Component
@@ -30,13 +31,18 @@ struct webViewWarmupServiceWorker {
   @State databaseAccess: boolean = true;
   @State userAgent: string = 'Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)' +
          'Chrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27';
+  @State isReceive: number = -1;
 
   onPageShow() {
       let valueChangeEvent: events_emitter.InnerEvent = {
-          eventId: 10,
+          eventId: EVENT_ID_SET_EMIT_KEY,
           priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
+  }
+
+  onPageHide() {
+    events_emitter.off(EVENT_ID_SET_EMIT_KEY)
   }
   
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -44,6 +50,7 @@ struct webViewWarmupServiceWorker {
           console.info('valueChangeCallBack:' + JSON.stringify(eventData));
           if (eventData.data != null && eventData.data.ACTION != null) {
               this.emitKey = eventData.data.ACTION;
+              this.isReceive = 1;
           }
       }
   }
@@ -54,16 +61,18 @@ struct webViewWarmupServiceWorker {
               Button('web click')
               .key('webViewWarmupServiceWorker')
               .onClick(async () => {
-                  console.info('key==>' + this.emitKey)
-                  await Utils.sleep(2000)
+                  await Utils.waitForExist(()=>this.isReceive, 'webViewWarmupServiceWorkerIsReceive', 1, 1000);
+                  console.info('key==>' + this.emitKey);
+                  this.isReceive = -1;
                   switch (this.emitKey) {
                     case 'emitWebViewWarmupServiceWorker': {
-                          this.controller.loadUrl('https://www.baidu.com')
+                          this.controller.loadUrl('https://' + 'www' + '.example.' + 'com')
                           try{
-                            webview.WebviewController.warmupServiceWorker('https://www.baidu.com')
-                            Utils.emitEvent(true,1342)
+                            webview.WebviewController.warmupServiceWorker('https://' + 'www' + '.example.' + 'com')
+                            Utils.emitEvent(true,201280)
                           }  catch (error) {
-                            Utils.emitEvent(false,1342)
+                            console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                            Utils.emitEvent(false,201280)
                           }
                         break;
                       }

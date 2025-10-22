@@ -12,19 +12,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import UIAbility from '@ohos.app.ability.UIAbility';
 import Want from '@ohos.app.ability.Want';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import common from '@ohos.app.ability.common';
 
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onCreate');
-    AppStorage.setOrCreate<common.UIAbilityContext>("abilityContextEntryAbility", this.context)
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -36,7 +34,7 @@ class EntryAbility extends UIAbility {
           hilog.info(0x0000, 'testTag EntryAbility', 'loadContent error');
           return;
         }
-        hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok'+JSON.stringify(this.context));
+        hilog.info(0x0000, 'testTag EntryAbility', 'loadContent ok');
         hilog.info(0x0000, 'testTag EntryAbility', 'onWindowStageCreate ok');
       });
     } catch (e: Error) {
@@ -55,6 +53,17 @@ class EntryAbility extends UIAbility {
 
   onForeground() {
     hilog.info(0x0000, 'testTag EntryAbility', 'EntryAbility onForeground');
+    try {
+      this.context.startAbility({}, (err: BusinessError | null) => {
+        if (err?.code !== 0) {
+          hilog.info(0x0000, 'testTag EntryAbility', `startAbility failed, code is ${err?.code}, message is ${err?.message}`);
+        } else {
+          hilog.info(0x0000, 'testTag EntryAbility',  `startAbility success`);
+        }
+      });
+    } catch (err: BusinessError) {
+      hilog.info(0x0000, 'testTag EntryAbility',  `startAbility fail: ` + JSON.stringify(err));
+    }
   }
 
   onBackground() {

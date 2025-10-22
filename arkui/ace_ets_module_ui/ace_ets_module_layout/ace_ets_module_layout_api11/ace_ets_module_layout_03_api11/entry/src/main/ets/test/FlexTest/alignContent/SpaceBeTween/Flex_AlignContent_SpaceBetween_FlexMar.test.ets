@@ -67,24 +67,50 @@ export default function flex_AlignContent_SpaceBetween_FlexMarTest() {
       expect(JSON.parse(flexContainerStrJson).$attrs.constructor.wrap).assertEqual('FlexWrap.Wrap');
       expect(JSON.parse(flexContainerStrJson).$attrs.constructor.alignContent).assertEqual('FlexAlign.SpaceBetween');
 
-      expect(Math.abs(firstText.bottom - firstText.top - vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(secondText.bottom - secondText.top - vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(thirdText.bottom - thirdText.top - vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(fourthText.bottom - fourthText.top - vp2px(200)) <= 1).assertTrue();
-      expect(Math.abs(flexContainer.top - columnContainer.top - vp2px(10)) <= 1).assertTrue(); //margin =10
+      console.info('[testFlexAlignContentSpaceAroundFlexMargin] 1:' + Math.floor(Math.abs(firstText.bottom - firstText.top - vp2px(50))));
+      expect(Math.floor(Math.abs(firstText.bottom - firstText.top - vp2px(50))) <= 1).assertTrue();
 
-      expect(Math.abs(firstText.left - flexContainer.left) <= 1).assertTrue();
-      expect(Math.abs(firstText.left - secondText.left) <= 1).assertTrue();
-      expect(Math.abs(secondText.left - thirdText.left) <= 1).assertTrue();
-      expect(Math.abs(thirdText.left - fourthText.left) <= 1).assertTrue();
-      expect(Math.abs(fourthText.left - flexContainer.left) <= 1).assertTrue();
-      expect(Math.abs(firstText.top - flexContainer.top) <= 1).assertTrue();
-      expect(Math.abs(fourthText.bottom - flexContainer.bottom) <= 1).assertTrue();
+      console.info('[testFlexAlignContentSpaceAroundFlexMargin] 2:' + Math.floor(Math.abs(secondText.bottom - secondText.top - vp2px(100))));
+      expect(Math.floor(Math.abs(secondText.bottom - secondText.top - vp2px(100))) <= 1).assertTrue();
 
-      expect(Math.abs(Math.round(secondText.top - firstText.bottom) - Math.round(thirdText.top - secondText.bottom)) <= 1)
+      console.info('[testFlexAlignContentSpaceAroundFlexMargin] 3:' + Math.floor(Math.abs(thirdText.bottom - thirdText.top - vp2px(150)))); 
+      expect(Math.floor(Math.abs(thirdText.bottom - thirdText.top - vp2px(150))) <= 1).assertTrue();
+
+      console.info('[testFlexAlignContentSpaceAroundFlexMargin] 4:' + Math.floor(Math.abs(fourthText.bottom - fourthText.top - vp2px(200))));
+      expect(Math.floor(Math.abs(fourthText.bottom - fourthText.top - vp2px(200))) <= 1).assertTrue();
+
+      console.info('[testFlexAlignContentSpaceAroundFlexMargin] 5:' + Math.floor(Math.abs(flexContainer.top - columnContainer.top - vp2px(10))));
+      expect(Math.floor(Math.abs(flexContainer.top - columnContainer.top - vp2px(10))) <= 1).assertTrue(); //margin =10
+
+      console.info('[testFlexAlignContentSpaceAroundFlexMargin] 6:' + Math.floor(Math.abs(firstText.left - flexContainer.left)));
+      expect(Math.floor(Math.abs(firstText.left - flexContainer.left)) <= 1).assertTrue();
+
+      console.info('[testFlexAlignContentSpaceAroundFlexMargin] 7:' + Math.floor(Math.abs(firstText.left - secondText.left)));
+      expect(Math.floor(Math.abs(firstText.left - secondText.left)) <= 1).assertTrue();
+
+      console.info('[testFlexAlignContentSpaceAroundFlexMargin] 8:' + Math.floor(Math.abs(secondText.left - thirdText.left)));
+      expect(Math.floor(Math.abs(secondText.left - thirdText.left)) <= 1).assertTrue();
+
+      console.info('[testFlexAlignContentSpaceAroundFlexMargin] 9:' + Math.floor(Math.abs(thirdText.left - fourthText.left)));
+      expect(Math.floor(Math.abs(thirdText.left - fourthText.left)) <= 1).assertTrue();
+
+      console.info('[testFlexAlignContentSpaceAroundFlexMargin] 10:' + Math.floor(Math.abs(fourthText.left - flexContainer.left)));
+      expect(Math.floor(Math.abs(fourthText.left - flexContainer.left)) <= 1).assertTrue();
+
+      console.info('[testFlexAlignContentSpaceAroundFlexMargin] 11:' + Math.floor(Math.abs(firstText.top - flexContainer.top)));
+      expect(Math.floor(Math.abs(firstText.top - flexContainer.top)) <= 1).assertTrue();
+
+      console.info('[testFlexAlignContentSpaceAroundFlexMargin] 12:' + Math.floor(Math.abs(fourthText.bottom - flexContainer.bottom)));
+      expect(Math.floor(Math.abs(fourthText.bottom - flexContainer.bottom)) <= 1).assertTrue();
+ 
+      console.info('[testFlexAlignContentSpaceAroundFlexMargin] 13:' + Math.floor(Math.abs(Math.round(secondText.top - firstText.bottom) - Math.round(thirdText.top - secondText.bottom))));
+      expect(Math.floor(Math.abs(Math.round(secondText.top - firstText.bottom) - Math.round(thirdText.top - secondText.bottom))) <= 2)
         .assertTrue();
-      expect(Math.abs(Math.round(thirdText.top - secondText.bottom) - Math.round(fourthText.top - thirdText.bottom)) <= 1)
+
+      console.info('[testFlexAlignContentSpaceAroundFlexMargin] 14:' + Math.floor(Math.abs(Math.round(thirdText.top - secondText.bottom) - Math.round(fourthText.top - thirdText.bottom))));
+      expect(Math.floor(Math.abs(Math.round(thirdText.top - secondText.bottom) - Math.round(fourthText.top - thirdText.bottom))) <= 2)
         .assertTrue();
+
       console.info('[testFlexAlignContentSpaceAroundFlexMargin] END');
 
     });

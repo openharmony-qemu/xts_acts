@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { beforeAll, beforeEach, describe, it, expect,TestType, Size, Level } from "../../../hypium/index"
-import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@ohos.UiTest'
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver } from '@kit.TestKit'
 import { BusinessError } from '@ohos.base';
 import  hilog  from '@ohos.hilog'
 import { Utils, startAbility, stopApplication } from './Util.test';
@@ -24,7 +24,7 @@ const AsyncErrorCode = 17000002;
 const InvisibleErrorCode = 17000004;
 const ErrorCode = 401;
 const CapabilityCode = 801;
-let domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 export default function uitestComponentErrorTest() {
@@ -718,5 +718,70 @@ export default function uitestComponentErrorTest() {
       console.log(`${TestTag}, test_getHint_17000004_static end`);
     })
 
+    /*
+    * @tc.number: UitestComponentErrorTest_026
+    * @tc.name: test_inputTextMode_801_static
+    * @tc.desc: inputText 801 test.
+    */
+    it('test_inputTextMode_801_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, test_inputTextMode_801_static start`);
+      try {
+        const driver = Driver.create();
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver.delayMs(waitUiReadyMs);
+        let button = await driver.findComponent(ON.type('TextInput'));
+        if (button == null) {
+          let scorll = await driver.findComponent(ON.type('Scroll'))
+          if (scorll != null) {
+            button = await scorll.scrollSearch(ON.type('TextInput'))
+          }
+        }
+        await driver.delayMs(waitUiReadyMs);
+        console.log(`${TestTag}, test_inputTextMode_801_static button: ${JSON.stringify(button)}`);
+        expect(button != null).assertTrue();
+        if (button != null) {
+          await button.inputText('123456', {
+            paste: true
+          });
+        }
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_inputTextMode_801_static error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(CapabilityCode);
+      } finally {
+        await stopApplication('com.uitestScene.acts');
+      }
+      console.log(`${TestTag}, test_inputTextMode_801_static end`);
+    })
+
+    /*
+     * @tc.number: UitestComponentErrorTest_027
+     * @tc.name: test_inputTextMode_17000004_static
+     * @tc.desc: inputText 17000004 test.
+     */
+    it('test_inputTextMode_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.log(`${TestTag}, test_inputTextMode_17000004_static start`);
+      try {
+        let driver: Driver = Driver.create();
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver.delayMs(waitUiReadyMs);
+        let button = await driver.findComponent(ON.text('MainPage'));
+        await driver.delayMs(waitUiReadyMs);
+        await stopApplication('com.uitestScene.acts');
+        await driver.delayMs(waitUiReadyMs * 2);
+        console.log(`${TestTag}, test_inputTextMode_17000004_static button: ${JSON.stringify(button)}`);
+        expect(button != null).assertTrue();
+        if (button != null) {
+          await button.inputText('123456', {
+            paste: true
+          });
+        }
+        await driver.delayMs(waitUiReadyMs);
+        expect().assertFail();
+      }catch (e: BusinessError) {
+        console.log(`${TestTag}, test_inputTextMode_17000004_static error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(InvisibleErrorCode);
+      }
+      console.log(`${TestTag}, test_inputTextMode_17000004_static end`);
+    })
   })
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -71,6 +71,7 @@ float g_minDelta = 0.001;
 int32_t g_duration = PARAM_DURATION_10000;
 static napi_env screenCaptureEnv;
 static OH_AVPlayer *g_player;
+bool g_flag = false;
 
 static napi_value OH_AVPlayer_SetURLSource0100(napi_env env, napi_callback_info info)
 {
@@ -310,11 +311,11 @@ static napi_value OH_AVPlayer_SetLooping0100(napi_env env, napi_callback_info in
     return retValue;
 }
 
-static void AVPlayerOnError(OH_AVPlayer *player, int32_t errorCode, const char *errorMsg) {}
-static void AVPlayerOnInfo(OH_AVPlayer *player, AVPlayerOnInfoType Type, int32_t extra) {}
+void AVPlayerOnError(OH_AVPlayer *player, int32_t errorCode, const char *errorMsg) {}
+void AVPlayerOnInfo(OH_AVPlayer *player, AVPlayerOnInfoType Type, int32_t extra) {}
 static napi_value OH_AVPlayer_SetPlayerCallback0100(napi_env env, napi_callback_info info)
 {
-    AVPlayerCallback callback = {&AVPlayerOnInfo, &AVPlayerOnError};
+    AVPlayerCallback callback = {AVPlayerOnInfo, AVPlayerOnError};
     OH_AVErrCode errcode = OH_AVPlayer_SetPlayerCallback(nullptr, callback);
     int32_t res = 1;
     if (errcode == AV_ERR_INVALID_VAL) {
@@ -414,58 +415,167 @@ static napi_value OH_AVPlayer_SetVolumeMode0100(napi_env env, napi_callback_info
     return retValue;
 }
 
+static napi_value AVPlaybackSpeed0100(napi_env env, napi_callback_info info)
+{
+    int32_t *videoHeight;
+    OH_AVPlayer *AVPlayer = OH_AVPlayer_Create();
+    OH_AVPlayer_SetURLSource(AVPlayer, "internal://app/rawfile/H264_AAC.mp4");
+    OH_AVPlayer_Prepare(AVPlayer);
+    OH_AVErrCode errcode = OH_AVPlayer_SetPlaybackSpeed(AVPlayer, AV_SPEED_FORWARD_0_50_X);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_AVPlayer_ReleaseSync(AVPlayer);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value AVPlaybackSpeed0101(napi_env env, napi_callback_info info)
+{
+    int32_t *videoHeight;
+    OH_AVPlayer *AVPlayer = OH_AVPlayer_Create();
+    OH_AVPlayer_SetURLSource(AVPlayer, "internal://app/rawfile/H264_AAC.mp4");
+    OH_AVPlayer_Prepare(AVPlayer);
+    OH_AVErrCode errcode = OH_AVPlayer_SetPlaybackSpeed(AVPlayer, AV_SPEED_FORWARD_1_50_X);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_AVPlayer_ReleaseSync(AVPlayer);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value AVPlaybackSpeed0102(napi_env env, napi_callback_info info)
+{
+    int32_t *videoHeight;
+    OH_AVPlayer *AVPlayer = OH_AVPlayer_Create();
+    OH_AVPlayer_SetURLSource(AVPlayer, "internal://app/rawfile/H264_AAC.mp4");
+    OH_AVPlayer_Prepare(AVPlayer);
+    OH_AVErrCode errcode = OH_AVPlayer_SetPlaybackSpeed(AVPlayer, AV_SPEED_FORWARD_0_25_X);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_AVPlayer_ReleaseSync(AVPlayer);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value AVPlaybackSpeed0103(napi_env env, napi_callback_info info)
+{
+    int32_t *videoHeight;
+    OH_AVPlayer *AVPlayer = OH_AVPlayer_Create();
+    OH_AVPlayer_SetURLSource(AVPlayer, "internal://app/rawfile/H264_AAC.mp4");
+    OH_AVPlayer_Prepare(AVPlayer);
+    OH_AVErrCode errcode = OH_AVPlayer_SetPlaybackSpeed(AVPlayer, AV_SPEED_FORWARD_0_125_X);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_AVPlayer_ReleaseSync(AVPlayer);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+void AVPlayerOnInfoCallback(OH_AVPlayer *player, AVPlayerOnInfoType type, OH_AVFormat *infoBody, void *userData)
+{
+    int32_t bufferingType = {0};
+    OH_AVFormat_GetIntValue(infoBody, OH_PLAYER_BUFFERING_TYPE, &bufferingType);
+
+    AVPlayerBufferingType getType = static_cast<AVPlayerBufferingType>(bufferingType);
+    switch (getType) {
+        case AVPLAYER_BUFFERING_END:
+            OH_LOG_INFO(LOG_APP, "==DEMO== AVPLAYER_BUFFERING_END");
+            break;
+        case AVPLAYER_BUFFERING_PERCENT:
+            OH_LOG_INFO(LOG_APP, "==DEMO== AVPLAYER_BUFFERING_PERCENT");
+            break;
+        case AVPLAYER_BUFFERING_CACHED_DURATION:
+            OH_LOG_INFO(LOG_APP, "==DEMO== AVPLAYER_BUFFERING_CACHED_DURATION");
+            break;
+        default:
+            OH_LOG_INFO(LOG_APP, "==DEMO== Unknown state: %d", getType);
+            break;
+    }
+};
+static napi_value AVPlayerBufferingType0100(napi_env env, napi_callback_info info)
+{
+    void *userData;
+    OH_AVPlayer *AVPlayer = OH_AVPlayer_Create();
+    OH_AVErrCode errcode = OH_AVPlayer_SetOnInfoCallback(AVPlayer, AVPlayerOnInfoCallback, userData);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_AVPlayer_ReleaseSync(AVPlayer);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+
 napi_property_descriptor desc[] = {
     {"OH_AVPlayer_SetURLSource0100", nullptr, OH_AVPlayer_SetURLSource0100, nullptr, nullptr, nullptr, napi_default,
-        nullptr},
+     nullptr},
     {"OH_AVPlayer_Reset0100", nullptr, OH_AVPlayer_Reset0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_AVPlayer_Release0100", nullptr, OH_AVPlayer_Release0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_AVPlayer_ReleaseSync0100", nullptr, OH_AVPlayer_ReleaseSync0100, nullptr, nullptr, nullptr, napi_default,
-        nullptr},
-    {"OH_AVPlayer_SetVolume0100", nullptr, OH_AVPlayer_SetVolume0100, nullptr, nullptr, nullptr, napi_default,
-        nullptr},
+     nullptr},
+    {"OH_AVPlayer_SetVolume0100", nullptr, OH_AVPlayer_SetVolume0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_AVPlayer_Seek0100", nullptr, OH_AVPlayer_Seek0100, nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"OH_AVPlayer_GetCurrentTime0100", nullptr, OH_AVPlayer_GetCurrentTime0100, nullptr, nullptr, nullptr,
-        napi_default, nullptr},
-    {"OH_AVPlayer_GetVideoWidth0100", nullptr, OH_AVPlayer_GetVideoWidth0100, nullptr, nullptr, nullptr,
-        napi_default, nullptr},
-    {"OH_AVPlayer_GetVideoHeight0100", nullptr, OH_AVPlayer_GetVideoHeight0100, nullptr, nullptr, nullptr,
-        napi_default, nullptr},
+    {"OH_AVPlayer_GetCurrentTime0100", nullptr, OH_AVPlayer_GetCurrentTime0100, nullptr, nullptr, nullptr, napi_default,
+     nullptr},
+    {"OH_AVPlayer_GetVideoWidth0100", nullptr, OH_AVPlayer_GetVideoWidth0100, nullptr, nullptr, nullptr, napi_default,
+     nullptr},
+    {"OH_AVPlayer_GetVideoHeight0100", nullptr, OH_AVPlayer_GetVideoHeight0100, nullptr, nullptr, nullptr, napi_default,
+     nullptr},
     {"OH_AVPlayer_SetPlaybackSpeed0100", nullptr, OH_AVPlayer_SetPlaybackSpeed0100, nullptr, nullptr, nullptr,
-        napi_default, nullptr},
+     napi_default, nullptr},
     {"OH_AVPlayer_SetPlaybackRate0100", nullptr, OH_AVPlayer_SetPlaybackRate0100, nullptr, nullptr, nullptr,
-        napi_default, nullptr},
+     napi_default, nullptr},
     {"OH_AVPlayer_GetPlaybackSpeed0100", nullptr, OH_AVPlayer_GetPlaybackSpeed0100, nullptr, nullptr, nullptr,
-        napi_default, nullptr},
-    {"OH_AVPlayer_SetAudioRendererInfo0100", nullptr, OH_AVPlayer_SetAudioRendererInfo0100, nullptr, nullptr,
-        nullptr, napi_default, nullptr},
-    {"OH_AVPlayer_SetAudioInterruptMode0100", nullptr, OH_AVPlayer_SetAudioInterruptMode0100, nullptr, nullptr,
-        nullptr, napi_default, nullptr},
+     napi_default, nullptr},
+    {"OH_AVPlayer_SetAudioRendererInfo0100", nullptr, OH_AVPlayer_SetAudioRendererInfo0100, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVPlayer_SetAudioInterruptMode0100", nullptr, OH_AVPlayer_SetAudioInterruptMode0100, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
     {"OH_AVPlayer_SetAudioEffectMode0100", nullptr, OH_AVPlayer_SetAudioEffectMode0100, nullptr, nullptr, nullptr,
-        napi_default, nullptr},
+     napi_default, nullptr},
     {"OH_AVPlayer_SetVideoSurface0100", nullptr, OH_AVPlayer_SetVideoSurface0100, nullptr, nullptr, nullptr,
-        napi_default, nullptr},
+     napi_default, nullptr},
     {"OH_AVPlayer_GetDuration0100", nullptr, OH_AVPlayer_GetDuration0100, nullptr, nullptr, nullptr, napi_default,
-        nullptr},
-    {"OH_AVPlayer_GetState0100", nullptr, OH_AVPlayer_GetState0100, nullptr, nullptr, nullptr, napi_default,
-        nullptr},
+     nullptr},
+    {"OH_AVPlayer_GetState0100", nullptr, OH_AVPlayer_GetState0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"OH_AVPlayer_SetLooping0100", nullptr, OH_AVPlayer_SetLooping0100, nullptr, nullptr, nullptr, napi_default,
-        nullptr},
+     nullptr},
     {"OH_AVPlayer_SetPlayerCallback0100", nullptr, OH_AVPlayer_SetPlayerCallback0100, nullptr, nullptr, nullptr,
-        napi_default, nullptr},
+     napi_default, nullptr},
     {"OH_AVPlayer_GetCurrentTrack0100", nullptr, OH_AVPlayer_GetCurrentTrack0100, nullptr, nullptr, nullptr,
-        napi_default, nullptr},
-    {"OH_AVPlayer_SetMediaKeySystemInfoCallback0100", nullptr, OH_AVPlayer_SetMediaKeySystemInfoCallback0100,
-        nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"OH_AVPlayer_GetMediaKeySystemInfo0100", nullptr, OH_AVPlayer_GetMediaKeySystemInfo0100, nullptr, nullptr,
-        nullptr, napi_default, nullptr},
-    {"OH_AVPlayer_SetDecryptionConfig0100", nullptr, OH_AVPlayer_SetDecryptionConfig0100, nullptr, nullptr,
-        nullptr, napi_default, nullptr},
-    {"OH_AVPlayer_SetOnInfoCallback0100", nullptr, OH_AVPlayer_SetOnInfoCallback0100, nullptr, nullptr,
-        nullptr, napi_default, nullptr},
-    {"OH_AVPlayer_SetOnErrorCallback0100", nullptr, OH_AVPlayer_SetOnErrorCallback0100, nullptr, nullptr,
-        nullptr, napi_default, nullptr},
-    {"OH_AVPlayer_SetVolumeMode0100", nullptr, OH_AVPlayer_SetVolumeMode0100, nullptr, nullptr,
-        nullptr, napi_default, nullptr},
+     napi_default, nullptr},
+    {"OH_AVPlayer_SetMediaKeySystemInfoCallback0100", nullptr, OH_AVPlayer_SetMediaKeySystemInfoCallback0100, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_AVPlayer_GetMediaKeySystemInfo0100", nullptr, OH_AVPlayer_GetMediaKeySystemInfo0100, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVPlayer_SetDecryptionConfig0100", nullptr, OH_AVPlayer_SetDecryptionConfig0100, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVPlayer_SetOnInfoCallback0100", nullptr, OH_AVPlayer_SetOnInfoCallback0100, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVPlayer_SetOnErrorCallback0100", nullptr, OH_AVPlayer_SetOnErrorCallback0100, nullptr, nullptr, nullptr,
+     napi_default, nullptr},
+    {"OH_AVPlayer_SetVolumeMode0100", nullptr, OH_AVPlayer_SetVolumeMode0100, nullptr, nullptr, nullptr, napi_default,
+     nullptr},
+    {"AVPlaybackSpeed0100", nullptr, AVPlaybackSpeed0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AVPlaybackSpeed0101", nullptr, AVPlaybackSpeed0101, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AVPlaybackSpeed0102", nullptr, AVPlaybackSpeed0102, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AVPlaybackSpeed0103", nullptr, AVPlaybackSpeed0103, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"AVPlayerBufferingType0100", nullptr, AVPlayerBufferingType0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+
 };
 
 EXTERN_C_START

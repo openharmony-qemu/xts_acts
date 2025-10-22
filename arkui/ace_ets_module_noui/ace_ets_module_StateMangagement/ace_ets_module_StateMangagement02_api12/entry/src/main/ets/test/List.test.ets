@@ -14,12 +14,16 @@
  */
 
 import appStorageRefJsunit from './StorageTest/appStorageRefJsunit.test';
+import AppStorageReturnValue from './StorageTest/AppStorageReturnValue.test';
+import PersistentStorageReturnValue from './StorageTest/PersistentStorageReturnValue.test';
+import LocalStorageReturnValue from './StorageTest/LocalStorageReturnValue.test';
 import localStorageRefJsunit from './StorageTest/localStorageRefJsunit.test';
 import appStorageV2 from './StorageTest/appStorageV2.test';
 import persistenceV2 from './StorageTest/persistenceV2.test';
 import AbstractPropertyRefTest from './StorageTest/AbstractPropertyRefTest.test';
 import SubAbstractPropertyLinkTest from './StorageTest/SubAbstractPropertyLinkTest.test';
 import EnvironmentTest0040 from './StorageTest/EnvironmentTest0040.test';
+import EnvironmentReturnValue from './StorageTest/EnvironmentReturnValue.test';
 import LocalStorageDeleteTest0120 from './StorageTest/LocalStorageDeleteTest0120.test';
 import Local1Jsunit from './ComponentV2Test/Local1Jsunit.test';
 import Local2Jsunit from './ComponentV2Test/Local2Jsunit.test';
@@ -76,13 +80,6 @@ import ParamChangeTest from './ParamTest/ParamChange.test';
 import ParamTest0020 from './ParamTest/ParamTest0020.test';
 import ParamTest0010 from './ParamTest/ParamTest0010.test';
 import twoWayBindTest from './twoWayBindTest/twoWayBind.test';
-import IfElse001Test from './IfElseTest/IfElse001.test';
-import IfElse002Test from './IfElseTest/IfElse002.test';
-import IfElse003Test from './IfElseTest/IfElse003.test';
-import IfElse004Test from './IfElseTest/IfElse004.test';
-import IfElse005Test from './IfElseTest/IfElse005.test';
-import IfElseTest0100 from './IfElseTest/IfElseTest0100.test';
-import IfElse006 from './IfElseTest/IfElse006.test';
 import LifeCycle0120TestJsunit from './lifecycle/LifeCycle0120TestJsunit.test';
 import LifeCycle0050TestJsunit from './lifecycle/LifeCycle0050TestJsunit.test';
 import WrapBuilder0010TestJsunit from './wrap_builder/WrapBuilder0010TestJsunit.test';
@@ -95,7 +92,11 @@ import LocalBuilder0040TestJsunit from './local_builder/LocalBuilder0040TestJsun
 
 export default function testsuite() {
     appStorageRefJsunit();
+    AppStorageReturnValue();
+    PersistentStorageReturnValue();
+    LocalStorageReturnValue();
     localStorageRefJsunit();
+    EnvironmentReturnValue();
     appStorageV2();
     persistenceV2();
     AbstractPropertyRefTest();
@@ -157,13 +158,6 @@ export default function testsuite() {
     ParamTest0020();
     ParamTest0010();
     twoWayBindTest();
-    IfElse001Test();
-    IfElse002Test();
-    IfElse003Test();
-    IfElse004Test();
-    IfElse005Test();
-    IfElseTest0100();
-    IfElse006();
     LifeCycle0050TestJsunit();
     WrapBuilder0010TestJsunit();
     WrapBuilder0020Test();

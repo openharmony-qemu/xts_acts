@@ -49,6 +49,20 @@ let audioConfig: media.AudioRecorderConfig = {
   fileFormat: media.ContainerFormatType.CFT_MPEG_4A,
 }
 
+let avProfile: media.AVRecorderProfile = {
+  audioBitrate: 64000, // set audioBitrate according to device ability
+  audioChannels: 1, // set audioChannels, valid value 1-8
+  audioCodec: media.CodecMimeType.AUDIO_AAC, // set audioCodec, AUDIO_AAC is the only choice
+  aacProfile: media.AacProfile.AAC_LC,
+  audioSampleRate: 8000, // set audioSampleRate according to device ability
+  fileFormat: media.ContainerFormatType.CFT_MPEG_4A, // set fileFormat, for video is m4a
+}
+let avConfig: media.AVRecorderConfig = {
+  audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
+  profile: avProfile,
+  url: 'fd://'
+}
+
 function initAudioRecorder() {
   if (audioRecorder != null) {
     audioRecorder.release();
@@ -1011,6 +1025,25 @@ export default function RecorderLocalTestAudioAPI() {
       let mySteps = new Array(PRE_STATE, START_STATE, RESET_STATE, RELEASE_STATE, END_STATE);
       setCallback(mySteps, done);
       audioRecorder?.prepare(audioConfig);
+    });
+    /* *
+        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001
+        * @tc.name      : 01.reset->set
+        * @tc.desc      : Reliability Test
+        * @tc.size      : MediumTest
+        * @tc.type      : Reliability
+        * @tc.level     : Level2
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001', Level.LEVEL0,async (done: Function) => {
+      let AVRecorder = await media.createAVRecorder();
+      if(AVRecorder) {
+        AVRecorder?.prepare(avConfig);
+        AVRecorder?.start();
+        AVRecorder?.stop();
+        expect(media.AacProfile.AAC_HE).assertEqual(1);
+        expect(media.AacProfile.AAC_HE_V2).assertEqual(2);
+        done();
+      }
     });
   })
 }

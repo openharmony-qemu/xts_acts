@@ -17,6 +17,10 @@ import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@oh
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver, ON } from '@kit.TestKit';
+
+const EVENT_ID_SET_EMIT_KEY = 202540;
+const driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -35,22 +39,22 @@ export default function sslErrorHandler() {
         if (!("sslErrorHandler" == pages.name)) {
           console.info("get sslErrorHandler state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await Utils.sleep(2000);
           console.info("push sslErrorHandler page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push sslErrorHandler page error: " + err);
       }
+      await driver.waitForComponent(ON.id("SslErrorHandlerButton"), 10000);
+      console.log("waitForComponent SslErrorHandlerButton");
       done()
     });
 
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      await Utils.sleep(2000);
       console.info("sslErrorHandler beforeEach start");
       done();
     })
@@ -64,10 +68,13 @@ export default function sslErrorHandler() {
     * @tc.level      : Level 1
     */
     it('testOnSslErrorEventReceive001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testOnSslErrorEventReceive001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testOnSslErrorEventReceive001", true, 30272, done);
-      sendEventByKey('SslErrorHandlerButton', 10, '');
+      Utils.emitEvent("testOnSslErrorEventReceive001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testOnSslErrorEventReceive001", true, 202550, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "SslErrorHandlerButton");
+      if (await Utils.waitForExist(() => isReturn, 'testOnSslErrorEventReceive001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -79,10 +86,13 @@ export default function sslErrorHandler() {
     * @tc.level      : Level 1
     */
     it('testSslErrorHandlerHandleCancel001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testSslErrorHandlerHandleCancel001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSslErrorHandlerHandleCancel001", 0, 30271, done);
-      sendEventByKey('SslErrorHandlerButton', 10, '');
+      Utils.emitEvent("testSslErrorHandlerHandleCancel001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testSslErrorHandlerHandleCancel001", 0, 202560, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "SslErrorHandlerButton");
+      if (await Utils.waitForExist(() => isReturn, 'testSslErrorHandlerHandleCancel001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -94,10 +104,13 @@ export default function sslErrorHandler() {
     * @tc.level      : Level 1
     */
     it('testSslErrorHandlerHandleConfirm001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testSslErrorHandlerHandleConfirm001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testSslErrorHandlerHandleConfirm001", true, 30270, done);
-      sendEventByKey('SslErrorHandlerButton', 10, '');
+      Utils.emitEvent("testSslErrorHandlerHandleConfirm001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testSslErrorHandlerHandleConfirm001", true, 202570, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "SslErrorHandlerButton");
+      if (await Utils.waitForExist(() => isReturn, 'testSslErrorHandlerHandleConfirm001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
 
     /*
@@ -109,11 +122,13 @@ export default function sslErrorHandler() {
     * @tc.level      : Level 1
     */
     it('testClearSslCache001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testClearSslCache001", 10)
-      await Utils.sleep(2000);
-      Utils.registerEvent("testClearSslCache001", true, 100073, done);
-      sendEventByKey('SslErrorHandlerButton', 10, '');
+      Utils.emitEvent("testClearSslCache001", EVENT_ID_SET_EMIT_KEY);
+      let isReturn = 0;
+      Utils.registerEvent("testClearSslCache001", true, 202580, () => { isReturn = 1 });
+      await Utils.waitAndClickComponent(driver, "SslErrorHandlerButton");
+      if (await Utils.waitForExist(() => isReturn, 'testClearSslCache001' + '_returnCheck', 1, 1000)) {
+        done();
+      }
     })
-
   })
 }

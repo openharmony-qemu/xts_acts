@@ -1,5 +1,5 @@
-/*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+/**
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,6 +14,7 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
+import { Driver, ON } from '@ohos.UiTest';
 
 function sleep(time: number) {
   return new Promise<string>((resolve, reject) => {
@@ -22,19 +23,19 @@ function sleep(time: number) {
     }, time)
   }).then(() => {
     console.info(`debug wait for sleep ${time} over...`)
-  } )
+  })
 }
 
 function emitEvent<T>(actualValue: T, eventId: number) {
   try {
     let backData: events_emitter.EventData = {
       data: {
-        'ACTION': actualValue
-      }
+        'ACTION': actualValue,
+      },
     }
     let backEvent: events_emitter.InnerEvent = {
       eventId: eventId,
-      priority: events_emitter.EventPriority.LOW
+      priority: events_emitter.EventPriority.LOW,
     }
     console.info('webFlag start to emit action state debug wait for');
     events_emitter.emit(backEvent, backData);
@@ -43,20 +44,19 @@ function emitEvent<T>(actualValue: T, eventId: number) {
   }
 }
 
-export async function waitForAssert<T,U>(
-  stateGetter:() => T,
-  check:(v1: T, v2: U) => boolean,
+export async function waitForAssert<T, U>(
+  stateGetter: () => T,
+  check: (v1: T, v2: U) => boolean,
   expectValue: U,
   eventId: number,
   testsuite: string,
-  interval=3000,
-  tryTime=20): Promise<T>{
+  interval = 3000,
+  tryTime = 20): Promise<T> {
   let nums = 0;
   let isSuccess = false;
-  while(nums < tryTime) {
-    await sleep(interval);
+  while (nums < tryTime) {
     const currentValue = await new Promise<T>((done) => {
-      setTimeout(()=>done(stateGetter()), 0);
+      setTimeout(() => done(stateGetter()), 0);
     });
     console.log(testsuite + ' debug wait for ' + nums + ' times, currentValue:' + currentValue
       + ', expectValue:' + expectValue);
@@ -68,31 +68,31 @@ export async function waitForAssert<T,U>(
       return currentValue;
     }
     nums++;
+    await sleep(interval);
   }
   if (!isSuccess) {
     console.log(testsuite + ' debug wait for failed');
   }
-  const currentValue = await new Promise<T>((result)=>{
-    setTimeout(()=> result(stateGetter()), 0);
+  const currentValue = await new Promise<T>((result) => {
+    setTimeout(() => result(stateGetter()), 0);
   });
   console.log(testsuite + ' debug wait for failed, currentValue:' + currentValue + ', expectValue:' + expectValue);
   emitEvent(currentValue, eventId);
   return currentValue;
 }
 
-export async function waitForExist<T> (
+export async function waitForExist<T>(
   stateGetter: () => T,
   testsuite: string,
   expectValue: string | number | null = null,
-  interval=3000,
-  tryTime=20
-):Promise<T>{
+  interval = 3000,
+  tryTime = 20,
+): Promise<T> {
   let nums = 0;
   let isSuccess = false;
   while (nums < tryTime) {
-    await sleep(interval);
     const currentValue = await new Promise<T>((done) => {
-      setTimeout(()=>done(stateGetter()), 0);
+      setTimeout(() => done(stateGetter()), 0);
     })
     console.log(testsuite + ' debug wait for exist' + nums + ' times, currentValue: ' + currentValue
       + ',expectValue ' + expectValue)
@@ -111,6 +111,7 @@ export async function waitForExist<T> (
       }
     }
     nums++;
+    await sleep(interval);
   }
   if (!isSuccess) {
     console.log(testsuite + ' debug wait for failed')
@@ -120,4 +121,10 @@ export async function waitForExist<T> (
   });
   console.log(testsuite + ' debug wait for failed exist ' + currentValue);
   return currentValue;
+}
+
+export async function waitForComponent(componentName: string) {
+  let driver = Driver.create();
+  await driver.waitForComponent(ON.id(componentName), 10000);
+  console.info('waitForComponent', componentName, '==>');
 }

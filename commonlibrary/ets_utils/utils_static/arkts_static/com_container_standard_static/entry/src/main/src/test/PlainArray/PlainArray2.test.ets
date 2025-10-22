@@ -209,10 +209,10 @@ export default function PlainArrayTest2() {
         plainArray.add(-1, "zhang san");
         expect(String(plainArray.has(-1))).assertEqual('true');
 
-        let num: number = 2147483647;
+        let num: int = 2147483647;
         plainArray.add(num, "li si");
         expect(String(plainArray.has(num))).assertEqual('true');
-        let num1: number = -2147483648;
+        let num1: int = -2147483648;
         plainArray.add(num1, "li si");
         expect(String(plainArray.has(num1))).assertEqual('true');
       } catch (err: BusinessError) {
@@ -323,10 +323,10 @@ export default function PlainArrayTest2() {
         plainArray.add(-1, "zhang san");
         expect(String(plainArray.get(-1))).assertEqual("zhang san");
 
-        let num: number = 2147483647;
+        let num: int = 2147483647;
         plainArray.add(num, "li si");
         expect(String(plainArray.get(num))).assertEqual("li si");
-        let num1: number = -2147483648;
+        let num1: int = -2147483648;
         plainArray.add(num1, "li si");
         expect(String(plainArray.get(num1))).assertEqual("li si");
       } catch (err: BusinessError) {
@@ -1032,10 +1032,10 @@ export default function PlainArrayTest2() {
         let plainArray: PlainArray<string> = new PlainArray<string>();
         plainArray.add(1, "zhang san");
         plainArray.add(2, "zhang san1");
-        let num: number = 2147483647;
+        let num: int = 2147483647;
         plainArray.add(num, "li si");
         expect(String(plainArray.remove(num))).assertEqual("li si");
-        let num1: number = -2147483648;
+        let num1: int = -2147483648;
         plainArray.add(num1, "li si");
         expect(String(plainArray.remove(num1))).assertEqual("li si");
       } catch (err: BusinessError) {
@@ -1187,7 +1187,7 @@ export default function PlainArrayTest2() {
         let plainArray: PlainArray<string> = new PlainArray<string>();
         plainArray.add(1, "squirrel");
         plainArray.add(2, "sparrow");
-        let result = plainArray.removeRangeFrom(1, Math.floor(7.5));
+        let result = plainArray.removeRangeFrom(1, Math.floor(7.5) as int);
         expect(String(result)).assertEqual('1');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.code}`);
@@ -1592,7 +1592,7 @@ export default function PlainArrayTest2() {
         let plainArray: PlainArray<string> = new PlainArray<string>();
         plainArray.add(1, "squirrel");
         plainArray.add(2, "sparrow");
-        plainArray.forEach((value: string, index: number) => {
+        plainArray.forEach((value: string, index: int) => {
           console.log(`${TAG} value: ${value}, index: ${index}`);
           expect(String(plainArray.get(index))).assertEqual(String(value));
         });
@@ -1617,7 +1617,7 @@ export default function PlainArrayTest2() {
         plainArray.add(1, "squirrel");
         plainArray.add(2, "sparrow");
         plainArray.add(3, "sparrow");
-        plainArray.forEach((value: string, index: number) => {
+        plainArray.forEach((value: string, index: int) => {
           console.log(`${TAG} value: ${value}, index: ${index}`);
           expect(String(plainArray.get(index))).assertEqual(String(value));
         });
@@ -1639,7 +1639,7 @@ export default function PlainArrayTest2() {
       const TAG = 'testPlainArrayForEach0003';
       try {
         let plainArray: PlainArray<string> = new PlainArray<string>();
-        plainArray.forEach((value: string, index: number) => {
+        plainArray.forEach((value: string, index: int) => {
           console.log(`${TAG} value: ${value}, index: ${index}`);
           expect(String(plainArray.get(index))).assertEqual(String(value));
         });
@@ -1757,7 +1757,7 @@ export default function PlainArrayTest2() {
         let iter = plainArray.$_iterator();
         let temp = iter.next();
         while (!temp.done) {
-          let key = temp.value?.[0] as number;
+          let key = temp.value?.[0] as int;
           let value = temp.value?.[1] as string;
           console.log(`${TAG} key: ${key}, value: ${value}`);
           expect(String(plainArray.get(key))).assertEqual(String(value));
@@ -1787,7 +1787,7 @@ export default function PlainArrayTest2() {
         let iter = plainArray.$_iterator();
         let temp = iter.next();
         while (!temp.done) {
-          let key = temp.value?.[0] as number;
+          let key = temp.value?.[0] as int;
           let value = temp.value?.[1] as string;
           console.log(`${TAG} key: ${key}, value: ${value}`);
           expect(String(plainArray.get(key))).assertEqual(String(value));
@@ -1814,7 +1814,7 @@ export default function PlainArrayTest2() {
         let iter = plainArray.$_iterator();
         let temp = iter.next();
         while (!temp.done) {
-          let key = temp.value?.[0] as number;
+          let key = temp.value?.[0] as int;
           let value = temp.value?.[1] as string;
           console.log(`${TAG} key: ${key}, value: ${value}`);
           expect(String(plainArray.get(key))).assertEqual(String(value));

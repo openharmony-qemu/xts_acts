@@ -20,7 +20,6 @@ group("telephonyjstest") {
     "netmanager_socket:ActsNetManagerSocketEtsTest",
     "netmanager_tlssocket:netmanager_tlssocket",
     "netmanager_websocket:netmanager_websocket",
-    "netmanagerhttp:netmanagerhttp_test",
     "network_search:network_search",
     "observer:ActsObserverEtsTest",
     "observer_nop:ActsObserverEtsNopTest",
@@ -28,5 +27,9 @@ group("telephonyjstest") {
     "sim:sim",
     "sms_mms:sms_mms",
     "telephony_base:telephony_base",
+    "ActsSimManagerFunctionTestStatic:ActsSimManagerFunctionStaticTest",
+    "ActsNetworkSearchTestStatic:ActsNetworkSearchStaticTest",
+    "ActsRadiostatisticEtsTestStatic:ActsRadiostatisticEtsStaticTest",
+    "ActsObserverEtsTestStatic:ActsObserverEtsStaticTest",
   ]
 }

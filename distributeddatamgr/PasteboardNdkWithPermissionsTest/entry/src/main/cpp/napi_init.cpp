@@ -799,7 +799,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress017(napi_env env, napi_callba
     int num = strlen(uri1);
     OH_Pasteboard_GetDataParams_SetDestUri(params, uri1, num);
     int status = -1;
-    
+
     OH_UdmfData* getData = OH_Pasteboard_GetDataWithProgress(pasteboard, g_params, &status);
     NAPI_ASSERT(env, status == ERR_INVALID_PARAMETER, "OH_Pasteboard_GetDataWithProgress is fail.");
     OH_Pasteboard_ClearData(pasteboard);
@@ -899,6 +899,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress019(napi_env env, napi_callba
     OH_UdmfData_Destroy(unifiedData);
     OH_UdsFileUri_Destroy(fileUri);
     OH_Pasteboard_GetDataParams_Destroy(g_params);
+    g_params = nullptr;
     return result;
 }
 
@@ -948,6 +949,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress020(napi_env env, napi_callba
     OH_UdsFileUri_Destroy(fileUri);
     OH_UdsFileUri_Destroy(getfileUri);
     OH_Pasteboard_GetDataParams_Destroy(g_params);
+    g_params = nullptr;
     return result;
 }
 
@@ -972,6 +974,7 @@ static napi_value OH_Pasteboard_GetDataWithProgress021(napi_env env, napi_callba
     napi_create_int32(env, recode, &result);
     OH_Pasteboard_Destroy(pasteboard);
     OH_Pasteboard_GetDataParams_Destroy(g_params);
+    g_params = nullptr;
     return result;
 }
 

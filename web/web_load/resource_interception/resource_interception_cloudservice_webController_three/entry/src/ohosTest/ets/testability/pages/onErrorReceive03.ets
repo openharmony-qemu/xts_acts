@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
 
@@ -30,24 +29,6 @@ struct onErrorReceive03 {
   @State imageAccess: boolean = true;
   @State onlineImageAccess: boolean = true;
   @State databaseAccess: boolean = true;
-
-  onPageShow() {
-    let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
-  }
-
-  private valueChangeCallBack = (eventData: events_emitter.EventData) => {
-    console.info("onErrorReceive03 page valueChangeCallBack");
-    if (eventData != null) {
-      console.info("valueChangeCallBack:" + JSON.stringify(eventData));
-      if (eventData.data?.ACTION != null) {
-        this.str = eventData.data?.ACTION;
-      }
-    }
-  }
 
   build() {
     Column() {
@@ -75,25 +56,25 @@ struct onErrorReceive03 {
           if (event) {
             let errorInfo = event.error.getErrorInfo();
             console.log(`errorInfo is: ${errorInfo}`);
-            Utils.emitEvent(errorInfo, 7122)
+            Utils.emitEvent(errorInfo, 202000)
             let errorCode = event.error.getErrorCode();
             console.log(`errorCode is: ${errorCode}`);
-            Utils.emitEvent(errorCode, 7124);
+            Utils.emitEvent(errorCode, 202010);
             let url = event.request.getRequestUrl();
             console.log(`url is: ${url}`);
-            Utils.emitEvent(url, 7126);
+            Utils.emitEvent(url, 202020);
             let mainFrame = event.request.isMainFrame();
             console.log(`mainFrame is: ${mainFrame}`);
-            Utils.emitEvent(mainFrame, 7128);
+            Utils.emitEvent(mainFrame, 202030);
             let redirect = event.request.isRedirect();
             console.log(`redirect is: ${redirect}`);
-            Utils.emitEvent(redirect, 7130);
+            Utils.emitEvent(redirect, 202040);
             let requestGesture = event.request.isRequestGesture();
             console.log(`requestGesture is: ${requestGesture}`);
-            Utils.emitEvent(requestGesture, 7132);
+            Utils.emitEvent(requestGesture, 202050);
             let requestHeader = event.request.getRequestHeader()
             console.log(`requestHeader is: ${JSON.stringify(requestHeader)}`);
-            Utils.emitEvent(JSON.stringify(requestHeader), 7134);
+            Utils.emitEvent(JSON.stringify(requestHeader), 202060);
           }
         })
         .javaScriptAccess(this.javaScriptAccess)
