@@ -1355,6 +1355,7 @@ export default function ActsZipTest() {
             })
             await zip.deflateCopy(zip).then((data) => {
                 console.info('deflateCopy success')
+                expect(data).assertEqual(zlib.ReturnStatus.OK);
             }).catch((errData: base.BusinessError) => {
                 console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
                 expect(errData).assertFail()

@@ -292,6 +292,62 @@ export default function PublicApiEightTest() {
       });
 
 
+
+    /*
+     * @tc.number: Sub_Bms_Framework_Query_bundleInfo_9110
+     * @tc.name:   Sub_Bms_Framework_Query_bundleInfo_9110
+     * @tc.desc:   est getAllBundleInfo of API8 in version9 normal project callback
+     * @tc.size:   MediumTest
+     * @tc.type:   Function
+     * @tc.level:  Level 3
+     */
+
+    it('Sub_Bms_Framework_Query_bundleInfo_9110', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
+      try {
+        bundle.getAllBundleInfo(bundle.BundleFlag.GET_BUNDLE_DEFAULT,100,(err,data) => {
+          console.info("Sub_Bms_Framework_Query_bundleInfo_9110 success:" + JSON.stringify(data));
+          console.info("Sub_Bms_Framework_Query_bundleInfo_9110 err" + JSON.stringify(err));
+          expect(data.length).assertEqual(0);
+          expect(err).assertEqual(0);
+        })
+
+      } catch (err) {
+        console.info("Sub_Bms_Framework_Query_bundleInfo_9110 catch" + JSON.stringify(err));
+        expect().assertFail();
+      }
+      done();
+
+    })
+
+
+    /*
+     * @tc.number: Sub_Bms_Framework_Query_applicationInfo_9110
+     * @tc.name:   Sub_Bms_Framework_Query_applicationInfo_9110
+     * @tc.desc:   est getAllBundleInfo of API8 in version9 normal project callback
+     * @tc.size:   MediumTest
+     * @tc.type:   Function
+     * @tc.level:  Level 3
+     */
+
+    it('Sub_Bms_Framework_Query_applicationInfo_9110', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
+      try {
+        bundle.getAllApplicationInfo(bundle.BundleFlag.GET_BUNDLE_DEFAULT,100, (err,data) => {
+          console.info("Sub_Bms_Framework_Query_applicationInfo_9110 success:" + JSON.stringify(data));
+          console.info("Sub_Bms_Framework_Query_applicationInfo_9110 err" + JSON.stringify(err));
+          expect(data.length).assertEqual(0);
+          expect(err.code).assertEqual(0);
+        })
+      } catch (err) {
+        console.info("Sub_Bms_Framework_Query_applicationInfo_9110 catch" + JSON.stringify(err));
+        expect().assertFail();
+      }
+      done();
+
+    })
+
+
+
+
     })
   })
 }
