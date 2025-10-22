@@ -942,6 +942,7 @@ void OnNativeChildProcessStarted(int errCode, OHIPCRemoteProxy *remoteProxy)
     if (g_promiseStartProcess != nullptr) {
         g_promiseStartProcess->set_value(errCode);
     }
+    g_promiseStartProcess = nullptr;
 }
 
 napi_value CreateNativeChildProcessNoError(napi_env env, napi_callback_info info)
@@ -1096,8 +1097,12 @@ napi_value StartNativeChildProcessWithConfigsInvalidParam(napi_env env, napi_cal
 napi_value StartNativeChildProcessWithConfigsServiceError(napi_env env, napi_callback_info info)
 {
     int32_t pid = -1;
+    const size_t size = 200 * 1024;
     NativeChildProcess_Args args;
-    args.entryParams = NULL;
+    args.entryParams = (char *)malloc(sizeof(char) * size);
+    for(int i = 0; i < size; i++){
+        args.entryParams[i] = 'a';
+    }
     args.fdList.head = NULL;
     Ability_ChildProcessConfigs* configs = OH_Ability_CreateChildProcessConfigs();
     OH_Ability_DestroyChildProcessConfigs(configs);
@@ -1624,8 +1629,12 @@ napi_value NcpErrorInvalidParamCode(napi_env env, napi_callback_info info)
 napi_value NcpErrorServiceErrorCode(napi_env env, napi_callback_info info)
 {
     int32_t pid = -1;
+    const size_t size = 200 * 1024;
     NativeChildProcess_Args args;
-    args.entryParams = NULL;
+    args.entryParams = (char *)malloc(sizeof(char) * size);
+    for(int i = 0; i < size; i++){
+        args.entryParams[i] = 'a';
+    }
     args.fdList.head = NULL;
     Ability_ChildProcessConfigs* configs = OH_Ability_CreateChildProcessConfigs();
     OH_Ability_DestroyChildProcessConfigs(configs);

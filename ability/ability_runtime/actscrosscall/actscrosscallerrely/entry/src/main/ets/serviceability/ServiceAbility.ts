@@ -282,6 +282,6 @@ export default class ServiceAbility extends ServiceExtensionAbility {
 
   onDump(params) {
     console.info('ServiceAbility onDump');
-    return params;
+    return [];
   }
 };
