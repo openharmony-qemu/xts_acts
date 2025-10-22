@@ -15,7 +15,7 @@
 
 import { loadModuleWithInfo } from "libentry.so"
 
-loadModuleWithInfo("entry/src/ohosTest/ets/test/executePromiseAfterModuleLoad/napiImport/NapiImportedEntryModule",
+loadModuleWithInfo("ets/test/executePromiseAfterModuleLoad/napiImport/NapiImportedEntryModule",
   "com.example.execute_promise_after_module_load/entry_test")
 
 export let testNapiImportModuleDone = true;

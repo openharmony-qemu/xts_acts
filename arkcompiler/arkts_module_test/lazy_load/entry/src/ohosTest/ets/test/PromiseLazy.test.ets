@@ -158,7 +158,7 @@ export default function promiseLazyTest() {
      * @tc.level: Level 3
      */
     it('testPromiseLazyInNapiLoad', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      let module:ESObject = loadModuleWithInfo("entry/src/ohosTest/ets/utils/promise/PromiseLazyInNapiLoad", "com.example.lazy_load/entry_test");
+      let module:ESObject = loadModuleWithInfo("ets/utils/promise/PromiseLazyInNapiLoad", "com.example.lazy_load/entry_test");
       await module.promiseLazyInNapiLoad();
       await myAsyncSleep(1);
       expect(module.msgInNapiLoad.length).assertEqual(4);
