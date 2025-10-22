@@ -67,6 +67,18 @@ export default function webViewGetCertificate() {
       Utils.registerEvent("testGetCertificateCallback",true,161020,done);
       await Utils.waitAndClickComponent(driver, "webViewGetCertificate");
     })
+
+    /*
+     *@tc.number SUB_ACE_BASIC_ETS_TESTGETCERTIFICATECALLBACK_API_0100
+     *@tc.name   testGetCertificateCallback01
+     *@tc.desc   test interface of getCertificate with callback
+     */
+    it('testGetCertificateCallback01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
+      Utils.emitEvent("emitGetCertificateCallback01", 161010)
+      Utils.registerEvent("testGetCertificateCallback01",true,20251028,done);
+      await Utils.waitAndClickComponent(driver, "webViewGetCertificate");
+    })
+
     /*
      *tc.number SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0200
      *tc.name testGetCertificatePromise
@@ -75,6 +87,17 @@ export default function webViewGetCertificate() {
     it('testGetCertificatePromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
       Utils.emitEvent("emitGetCertificatePromise", 161010)
       Utils.registerEvent("testGetCertificatePromise",true,161030,done);
+      await Utils.waitAndClickComponent(driver, "webViewGetCertificate");
+    })
+
+    /*
+     *@tc.number SUB_ACE_BASIC_ETS_TESTGETCERTIFICATEPROMISE_API_0100
+     *@tc.name   testGetCertificatePromise01
+     *@tc.desc   test interface of getCertificate with promise
+     */
+    it('testGetCertificatePromise01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
+      Utils.emitEvent("emitGetCertificatePromise01", 161010)
+      Utils.registerEvent("testGetCertificatePromise01",true,20251029,done);
       await Utils.waitAndClickComponent(driver, "webViewGetCertificate");
     })
   })

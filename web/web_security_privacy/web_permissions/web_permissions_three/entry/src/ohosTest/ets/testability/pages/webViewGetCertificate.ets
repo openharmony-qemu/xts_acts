@@ -119,6 +119,37 @@ struct webViewGetCertificate {
               })
               break;
             }
+
+            case "emitGetCertificateCallback01": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl('https://www.baidu.com');
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+                this.controller.getCertificate((error, x509CertArray) => {
+                  if (error) {
+                    this.outputStr = 'getCertificate failed: ' + error.code + ", errMsg: " + error.message;
+                  } else {
+                    console.log('emitGetCertificateCallback01getCertificate' + x509CertArray)
+                    if(!x509CertArray) {
+                      this.outputStr = ParseX509CertInfo(x509CertArray);
+                    }
+                  }
+                })
+              } catch (error) {
+                this.outputStr = 'getCertificate failed: ' + error.code + ", errMsg: " + error.message;
+              }
+              console.log("getCertificate result of this page: " + this.outputStr);
+              if ((this.outputStr).includes("failed")) {
+                this.certificateResult = false
+              }
+              else {
+                this.certificateResult = true
+              }
+              this.controller.runJavaScript("test()", (res) => {
+                Utils.emitEvent(this.certificateResult, 20251028)
+              })
+              break;
+            }
             case "emitGetCertificatePromise": {
               try {
                 this.controller.clearHistory();
@@ -140,6 +171,34 @@ struct webViewGetCertificate {
               }
               this.controller.runJavaScript("test()", (res) => {
                 Utils.emitEvent(this.certificateResult, 161030 )
+              })
+              break;
+            }
+
+            case "emitGetCertificatePromise01": {
+              try {
+                this.controller.clearHistory();
+                this.isPageEnd = -1;
+                this.controller.loadUrl('https://www.baidu.com');
+                await waitForExist(() => this.isPageEnd, this.str, 0);
+                this.controller.getCertificate().then(x509CertArray => {
+                  if(!x509CertArray) {
+                    this.outputStr = ParseX509CertInfo(x509CertArray);
+                    console.log('emitGetCertificatePromise01ParseX509CertInfo' + this.outputStr)
+                  }
+                })
+              } catch (error) {
+                this.outputStr = 'getCertificate failed: ' + error.code + ", errMsg: " + error.message;
+              }
+              console.log("getCertificate result of this page: " + this.outputStr);
+              if ((this.outputStr).includes("failed")) {
+                this.certificateResult = false
+              }
+              else {
+                this.certificateResult = true
+              }
+              this.controller.runJavaScript("test()", (res) => {
+                Utils.emitEvent(this.certificateResult, 20251029)
               })
               break;
             }
