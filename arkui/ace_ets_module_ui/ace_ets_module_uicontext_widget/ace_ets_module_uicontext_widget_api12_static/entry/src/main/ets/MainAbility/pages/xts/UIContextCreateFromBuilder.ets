@@ -49,9 +49,8 @@ struct UIContextCreateFromBuilder {
         Column({ space: 5 } as ColumnOptions) {
           Button('新增Builder：Gauge图片')
             .onClick((e:ClickEvent) => {
-              this.uiContext.getComponentSnapshot().createFromBuilder(() => {
-                this.GaugeBuilder()
-              },
+              this.uiContext.getComponentSnapshot().createFromBuilder(
+                this.GaugeBuilder,
                 (err: BusinessError<void>|null, pixmap: image.PixelMap|undefined):void => {
                   if (err) {
                     hilog.error(0x0000, 'testTag', 'getComponentSnapshot pixmap_text_3 error %{public}s', JSON.stringify(err) ?? '');
@@ -76,16 +75,15 @@ struct UIContextCreateFromBuilder {
           Button('新增：Gauge图片')
             .onClick((e:ClickEvent) => {
               this.uiContext.getComponentSnapshot()
-                .createFromBuilder(() => {
-                  this.GaugeBuilder()
-                }, undefined, false, {
-                  scale: 1, waitUntilRenderFinished: true,
-                  region: {
-                    left: 100,
-                    right: 200,
-                    top: 100,
-                    bottom: 200
-                  }})
+                .createFromBuilder(this.GaugeBuilder, undefined,false,  {
+                scale: 1, waitUntilRenderFinished: true,
+                region: {
+                  left: 100,
+                  right: 200,
+                  top: 100,
+                  bottom: 200
+                }
+              })!
                 .then((pixmap: image.PixelMap) => {
                   this.pixmap_2 = pixmap!
                   console.info('UIContextComponentSnapshot pixmap_text_4 start')

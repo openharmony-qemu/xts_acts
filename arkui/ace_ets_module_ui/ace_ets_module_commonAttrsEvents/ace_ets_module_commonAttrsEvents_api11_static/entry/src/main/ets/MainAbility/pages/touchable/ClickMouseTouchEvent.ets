@@ -70,10 +70,10 @@ struct ClickExample {
             this.windowY = "onClick: " + event.windowY
           })
           .onTouch((event: TouchEvent) => {
-            this.displayX = "onTouch: " + event.getHistoricalPoints()[0].touchObject.displayX
-            this.displayY = "onTouch: " + event.getHistoricalPoints()[0].touchObject.displayY
-            this.windowX = "onTouch: " + event.getHistoricalPoints()[0].touchObject.windowX
-            this.windowY = "onTouch: " + event.getHistoricalPoints()[0].touchObject.windowY
+            this.displayX = "onTouch: " + event.getHistoricalPoints()![0].touchObject.displayX
+            this.displayY = "onTouch: " + event.getHistoricalPoints()![0].touchObject.displayY
+            this.windowX = "onTouch: " + event.getHistoricalPoints()![0].touchObject.windowX
+            this.windowY = "onTouch: " + event.getHistoricalPoints()![0].touchObject.windowY
           })
           .onKeyEvent((event: KeyEvent) => {
             this.intentionCode = "KeyEvent: " + event.intentionCode

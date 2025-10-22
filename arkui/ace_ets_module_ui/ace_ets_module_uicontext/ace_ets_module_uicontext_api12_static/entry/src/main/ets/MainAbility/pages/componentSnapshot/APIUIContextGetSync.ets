@@ -42,10 +42,12 @@ struct APIUIContextGetSync {
           .onClick((e:ClickEvent) => {
             try {
               let pixelmap = this.getUIContext().getComponentSnapshot().getSync("APIUIContextGetSync_root", {scale : 2, waitUntilRenderFinished : true})
-              this.pixmap = pixelmap
-              if(this.pixmap !== undefined){
-                this.text = 'end'
-              }
+              if(pixelmap) {
+                    this.pixmap = pixelmap
+                    if(this.pixmap !== undefined) {
+                    this.text = 'end'
+                    }
+                }
             } catch (error:Error) {
               console.error("getSync errorCode: " + error!.code + " message: " + error!.message)
             }

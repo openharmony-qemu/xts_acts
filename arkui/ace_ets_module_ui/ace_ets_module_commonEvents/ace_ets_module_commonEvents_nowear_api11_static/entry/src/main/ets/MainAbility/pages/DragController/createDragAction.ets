@@ -112,7 +112,7 @@ struct DragControllerPage {
                     this.dragAction?.offStatusChange()
                   }
                 })
-                this.dragAction?.startDrag().then(() => {
+                this.dragAction?.startDrag()!.then(() => {
                 }).catch((err: Error) => {
                   console.log("start drag Error:" + err.message);
                 })

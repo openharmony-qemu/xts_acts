@@ -93,7 +93,7 @@ struct PanGestureExampleTemplate {
           if (event.type == TouchType.Up && this.endTime == 0) {
             this.endTime = Date.now();
           }
-          this.cnt += event.getHistoricalPoints().length
+          this.cnt += event.getHistoricalPoints()!.length
         })
 
 

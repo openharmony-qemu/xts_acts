@@ -47,7 +47,9 @@ struct UIContextComponentSnapshot{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap = this.getUIContext().getComponentSnapshot().getSync('-0.1',{scale:4,waitUntilRenderFinished:true});
-                this.pixmap = pixelmap
+                if(pixelmap) {
+                    this.pixmap = pixelmap
+                }
               } catch (error:Error) {
                 this.code = error!.code.toString()
               }
@@ -57,7 +59,9 @@ struct UIContextComponentSnapshot{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap = this.getUIContext().getComponentSnapshot().getSync('1',{scale:1,waitUntilRenderFinished:true});
-                this.pixmap = pixelmap
+                if(pixelmap) {
+                    this.pixmap = pixelmap
+                }
               } catch (error:Error) {
                 this.code1 = error!.code.toString()
               }
@@ -67,7 +71,9 @@ struct UIContextComponentSnapshot{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap = this.getUIContext().getComponentSnapshot().getSync('-2',{scale:4,waitUntilRenderFinished:false});
-                this.pixmap = pixelmap
+                if(pixelmap) {
+                    this.pixmap = pixelmap
+                }
               } catch (error:Error) {
                 this.code2 = error!.code.toString()
               }
@@ -77,7 +83,9 @@ struct UIContextComponentSnapshot{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap = this.getUIContext().getComponentSnapshot().getSync('ab',{scale:0.5,waitUntilRenderFinished:true});
-                this.pixmap = pixelmap
+                if(pixelmap) {
+                    this.pixmap = pixelmap
+                }
               } catch (error:Error) {
                 this.code3 = error!.code.toString()
               }
