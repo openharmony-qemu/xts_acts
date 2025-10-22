@@ -15,16 +15,9 @@
 
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import taskpool from '@ohos.taskpool';
 import testNapi from 'libentry.so';
-import { commonEventManager } from '@kit.BasicServicesKit';
 
 const TAG = 'SUB_Ability_AbilityRuntime_StartSelfUIAbilityTest';
-
-let subscriber = commonEventManager.createSubscriberSync({
-  events: ['OH_AbilityRuntime_StartSelfUIAbility_Result']
-});
-
 
 export default function NdkApplicationContextGetVersionCode() {
   describe('NdkApplicationContextGetVersionCode', () => {
