@@ -46,13 +46,13 @@ static napi_value OpenSession(napi_env env, napi_callback_info info)
     operation.started = 1;
     operation.paramTypes = TEEC_PARAM_TYPES(TEEC_NONE, TEEC_NONE, TEEC_NONE, TEEC_NONE);
     g_client2_context.ta_path = (uint8_t *)TA_PATH;
-    TEEC_Result ret =
-        TEEC_OpenSession(&g_client2_context, &g_client2_session, &uuid, TEEC_LOGIN_IDENTIFY, NULL, &operation, &origin);
+    TEEC_Result ret = TEEC_OpenSession(&g_client2_context, &g_client2_session,
+        &uuid, TEEC_LOGIN_IDENTIFY, NULL, &operation, &origin);
 
     if (ret != TEEC_SUCCESS) {
         g_client2_context.ta_path = (uint8_t *)TA_PATH2;
-        ret = TEEC_OpenSession(&g_client2_context, &g_client2_session, &uuid2, TEEC_LOGIN_IDENTIFY, NULL, &operation,
-                               &origin);
+        ret = TEEC_OpenSession(&g_client2_context, &g_client2_session, &uuid2, 
+            TEEC_LOGIN_IDENTIFY, NULL, &operation, &origin);
     }
 
     napi_create_uint32(env, ret, &result);
@@ -474,7 +474,7 @@ static napi_value InvokeCommand_WithOperationTypePartialSizeIsZero(napi_env env,
     napi_set_element(env, array, 1, result2);
     return array;
 }
-#define SIZE_1024K 1024 * 1024
+#define SIZE_1024K  (1024 * 1024)
 static napi_value InvokeCommand_WithMemrefTempInoutExceed1024k(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;

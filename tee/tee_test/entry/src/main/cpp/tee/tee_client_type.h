@@ -151,7 +151,7 @@ typedef struct {
     uint32_t flags;
     /** 操作计数器，跟踪在该共享内存上执行的操作次数。 */
     uint32_t ops_cnt;
-    /** 指示共享内存是否通过 `TEEC_AllocateSharedMemory` 分配。 */ //TODO
+    /** 指示共享内存是否通过 `TEEC_AllocateSharedMemory` 分配。 */
     bool is_allocated;
     /** 记录共享内存链表头节点或实现特定数据的联合体。 */
     union {

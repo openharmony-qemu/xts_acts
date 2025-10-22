@@ -40,6 +40,6 @@
                 "power-shell setmode 602",
                 "chmod 777 /data/app/el2/100/base/com.example.tee_test/haps/entry_test/files/*"
             ]
-        },
+        }
     ]
 }

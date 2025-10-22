@@ -488,8 +488,6 @@ static napi_value Opensession_WithOperationIsTempMem(napi_env env, napi_callback
     napi_set_element(env, array, 7, result8);
     napi_set_element(env, array, 8, result9);
     napi_set_element(env, array, 9, result10);
-
-
     return array;
 }
 
