@@ -54,12 +54,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_FORM_MENU_ITEM_0100
-     * @tc.name: SUB_ABILITY_FORM_FWK_FORM_MENU_ITEM_0100
-     * @tc.desc: add form component to desktop, judge the FormId is not null. Zh-CN OS only;
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+     * @tc.name   SUB_ABILITY_FORM_FWK_FORM_MENU_ITEM_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_FORM_MENU_ITEM_0100
+     * @tc.desc   add form component to desktop, judge the FormId is not null. Zh-CN OS only;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_MENU_ITEM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.log("SUB_ABILITY_FORM_FWK_FORM_MENU_ITEM_0100 start");

@@ -29,9 +29,12 @@ export default function formProviderTest() {
         hilog.info(DOMAIN, TAG, 'formProviderTest describe start');
 
         /**
-         * @tc.number: FormProviderStaticTest001
-         * @tc.name: FormProviderStaticTest001
-         * @tc.desc: check FormProvider
+         * @tc.name   FormProviderStaticTest001
+         * @tc.number FormProviderStaticTest001
+         * @tc.desc   check FormProvider
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("FormProviderStaticTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -58,9 +61,12 @@ export default function formProviderTest() {
         })
 
         /**
-         * @tc.number: FormProviderStaticTest002
-         * @tc.name: FormProviderStaticTest002
-         * @tc.desc: check FormProvider
+         * @tc.name   FormProviderStaticTest002
+         * @tc.number FormProviderStaticTest002
+         * @tc.desc   check FormProvider
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("FormProviderStaticTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -85,10 +91,12 @@ export default function formProviderTest() {
         })
 
         /**
+         * @tc.name   Test_Form_Provider_Static_0400
          * @tc.number Test_Form_Provider_Static_0400
-         * @tc.name Test_Form_Provider_Static_0400
-         * @tc.desc  Open the card management page belonging to the specified bundle
-         * @tc.level   3
+         * @tc.desc   Open the card management page belonging to the specified bundle
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Test_Form_Provider_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let tag = 'Test_Form_Provider_Static_0400';

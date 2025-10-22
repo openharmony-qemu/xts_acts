@@ -28,12 +28,12 @@ const formName: string = 'widget';
 export default function ReloadFormsTest() {
   describe('ProviderReloadFormsTest', () => {
     /**
-     * @tc.number    : SUB_AA_OpenHarmony_ProviderReloadAllForms_0100
-     * @tc.name      : testProviderReloadAllForms0100
-     * @tc.desc      : reloadAllForms()
-     * @tc.level     : Level 1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_AA_OpenHarmony_ProviderReloadAllForms_0100
+     * @tc.number SUB_AA_OpenHarmony_ProviderReloadAllForms_0100
+     * @tc.desc   reloadAllForms()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadAllForms_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let name: string = 'SUB_AA_OpenHarmony_ProviderReloadAllForms_0100';
@@ -55,12 +55,12 @@ export default function ReloadFormsTest() {
     });
 
     /**
-     * @tc.number    : SUB_AA_OpenHarmony_ProviderReloadAllForms_0200
-     * @tc.name      : testProviderReloadAllForms0200
-     * @tc.desc      : reloadAllForms()
-     * @tc.level     : Level 1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_AA_OpenHarmony_ProviderReloadAllForms_0200
+     * @tc.number SUB_AA_OpenHarmony_ProviderReloadAllForms_0200
+     * @tc.desc   reloadAllForms()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadAllForms_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let name: string = 'SUB_AA_OpenHarmony_ProviderReloadAllForms_0200';
@@ -77,12 +77,12 @@ export default function ReloadFormsTest() {
     });
 
     /**
-     * @tc.number    : SUB_AA_OpenHarmony_ProviderReloadForms_0100
-     * @tc.name      : testProviderReloadForms0100
-     * @tc.desc      : reloadForms()
-     * @tc.level     : Level 1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_AA_OpenHarmony_ProviderReloadForms_0100
+     * @tc.number SUB_AA_OpenHarmony_ProviderReloadForms_0100
+     * @tc.desc   reloadForms()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadForms_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0100';
@@ -104,12 +104,12 @@ export default function ReloadFormsTest() {
     });
 
     /**
-     * @tc.number    : SUB_AA_OpenHarmony_ProviderReloadForms_0200
-     * @tc.name      : testProviderReloadForms0200
-     * @tc.desc      : reloadForms()
-     * @tc.level     : Level 1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_AA_OpenHarmony_ProviderReloadForms_0200
+     * @tc.number SUB_AA_OpenHarmony_ProviderReloadForms_0200
+     * @tc.desc   reloadForms()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadForms_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0200';
@@ -128,12 +128,12 @@ export default function ReloadFormsTest() {
     });
 
     /**
-     * @tc.number    : SUB_AA_OpenHarmony_ProviderReloadForms_0300
-     * @tc.name      : testProviderReloadForms0300
-     * @tc.desc      : reloadForms()
-     * @tc.level     : Level 1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_AA_OpenHarmony_ProviderReloadForms_0300
+     * @tc.number SUB_AA_OpenHarmony_ProviderReloadForms_0300
+     * @tc.desc   reloadForms()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadForms_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0300';
@@ -153,12 +153,12 @@ export default function ReloadFormsTest() {
     });
 
     /**
-     * @tc.number    : SUB_AA_OpenHarmony_ProviderReloadForms_0400
-     * @tc.name      : testProviderReloadForms0400
-     * @tc.desc      : reloadForms()
-     * @tc.level     : Level 1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_AA_OpenHarmony_ProviderReloadForms_0400
+     * @tc.number SUB_AA_OpenHarmony_ProviderReloadForms_0400
+     * @tc.desc   reloadForms()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadForms_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0400';
@@ -178,12 +178,12 @@ export default function ReloadFormsTest() {
     });
 
     /**
-     * @tc.number    : SUB_AA_OpenHarmony_ProviderReloadForms_0500
-     * @tc.name      : testProviderReloadForms0500
-     * @tc.desc      : reloadForms()
-     * @tc.level     : Level 1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_AA_OpenHarmony_ProviderReloadForms_0500
+     * @tc.number SUB_AA_OpenHarmony_ProviderReloadForms_0500
+     * @tc.desc   reloadForms()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadForms_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0500';
@@ -203,12 +203,12 @@ export default function ReloadFormsTest() {
     });
 
     /**
-     * @tc.number    : SUB_AA_OpenHarmony_ProviderReloadForms_0600
-     * @tc.name      : testProviderReloadForms0600
-     * @tc.desc      : reloadForms()
-     * @tc.level     : Level 1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_AA_OpenHarmony_ProviderReloadForms_0600
+     * @tc.number SUB_AA_OpenHarmony_ProviderReloadForms_0600
+     * @tc.desc   reloadForms()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadForms_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0600';
@@ -228,12 +228,12 @@ export default function ReloadFormsTest() {
     });
 
     /**
-     * @tc.number    : SUB_AA_OpenHarmony_ProviderReloadForms_0700
-     * @tc.name      : testProviderReloadForms0700
-     * @tc.desc      : reloadForms()
-     * @tc.level     : Level 1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_AA_OpenHarmony_ProviderReloadForms_0700
+     * @tc.number SUB_AA_OpenHarmony_ProviderReloadForms_0700
+     * @tc.desc   reloadForms()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadForms_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0700';
@@ -253,12 +253,12 @@ export default function ReloadFormsTest() {
     });
 
     /**
-     * @tc.number    : SUB_AA_OpenHarmony_ProviderReloadForms_0800
-     * @tc.name      : testProviderReloadForms0800
-     * @tc.desc      : reloadForms()
-     * @tc.level     : Level 1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_AA_OpenHarmony_ProviderReloadForms_0800
+     * @tc.number SUB_AA_OpenHarmony_ProviderReloadForms_0800
+     * @tc.desc   reloadForms()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_ProviderReloadForms_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let name: string = 'SUB_AA_OpenHarmony_ProviderReloadForms_0800';

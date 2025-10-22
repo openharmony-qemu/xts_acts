@@ -82,9 +82,12 @@ export default function test() {
         })
 
         /**
-         * @tc.number: FMS_acquireForm_0200
-         * @tc.name: The form host does not have permission to use the form
-         * @tc.desc: Failed to create a form when verifying that the form host does not have form permission.
+         * @tc.name   FMS_acquireForm_0200
+         * @tc.number FMS_acquireForm_0200
+         * @tc.desc   Failed to create a form when verifying that the form host does not have form permission.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_acquireForm_0200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.info(`FMS_acquireForm_0200 start`);
@@ -127,9 +130,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_acquireForm_0300
-         * @tc.name: Failed to add form when parameter formId is wrong.
-         * @tc.desc: Failed to create form when verifying that the parameter (formId) of creating form is wrong.
+         * @tc.name   FMS_acquireForm_0300
+         * @tc.number FMS_acquireForm_0300
+         * @tc.desc   Failed to create form when verifying that the parameter (formId) of creating form is wrong.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_acquireForm_0300`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.info(`FMS_acquireForm_0300 start`);
@@ -172,10 +178,13 @@ export default function test() {
         });
 
         /**
-        * @tc.number: FMS_acquireForm_0400
-        * @tc.name: Failed to add form when parameter bundlename is wrong.
-        * @tc.desc: Form creation failed when verifying the wrong parameter (bundlename) of form creation.
-        */
+         * @tc.name   FMS_acquireForm_0400
+         * @tc.number FMS_acquireForm_0400
+         * @tc.desc   Form creation failed when verifying the wrong parameter (bundlename) of form creation.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(`FMS_acquireForm_0400`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.info(`FMS_acquireForm_0400 start`);
             let onErrorCallBack = (_:BusinessError, data: CommonEventManager.CommonEventData) => {
@@ -217,9 +226,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_acquireForm_0500
-         * @tc.name: Failed to add form when parameter moduleName is wrong.
-         * @tc.desc: Form creation failed when verifying the wrong parameter (moduleName) of form creation.
+         * @tc.name   FMS_acquireForm_0500
+         * @tc.number FMS_acquireForm_0500
+         * @tc.desc   Form creation failed when verifying the wrong parameter (moduleName) of form creation.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_acquireForm_0500`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.info(`FMS_acquireForm_0500 start`);
@@ -262,10 +274,13 @@ export default function test() {
         });
 
         /**
-        * @tc.number: FMS_acquireForm_0600
-        * @tc.name: Failed to add form when parameter formName is wrong.
-        * @tc.desc: Form creation failed when verifying the wrong parameter (formName) of form creation.
-        */
+         * @tc.name   FMS_acquireForm_0600
+         * @tc.number FMS_acquireForm_0600
+         * @tc.desc   Form creation failed when verifying the wrong parameter (formName) of form creation.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(`FMS_acquireForm_0600`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.info(`FMS_acquireForm_0600 start`);
             let onErrorCallBack = (_:BusinessError, data: CommonEventManager.CommonEventData) => {
@@ -307,10 +322,13 @@ export default function test() {
         });
 
         /**
-        * @tc.number: FMS_acquireForm_0700
-        * @tc.name: Failed to add form when parameter abilityName is wrong.
-        * @tc.desc: Form creation failed when verifying the wrong parameter (abilityName) of form creation.
-        */
+         * @tc.name   FMS_acquireForm_0700
+         * @tc.number FMS_acquireForm_0700
+         * @tc.desc   Form creation failed when verifying the wrong parameter (abilityName) of form creation.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(`FMS_acquireForm_0700`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.info(`FMS_acquireForm_0700 start`);
             let onErrorCallBack = (_:BusinessError, data: CommonEventManager.CommonEventData) => {
@@ -352,10 +370,13 @@ export default function test() {
         });
 
         /**
-        * @tc.number: FMS_acquireForm_1000
-        * @tc.name: Failed to add form when parameter form dimension is wrong.
-        * @tc.desc: Form creation failed when verifying the wrong parameter (form dimension) of form creation.
-        */
+         * @tc.name   FMS_acquireForm_1000
+         * @tc.number FMS_acquireForm_1000
+         * @tc.desc   Form creation failed when verifying the wrong parameter (form dimension) of form creation.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(`FMS_acquireForm_1000`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.info(`FMS_acquireForm_1000 start`);
             let onErrorCallBack = (_:BusinessError, data: CommonEventManager.CommonEventData) => {
@@ -398,10 +419,13 @@ export default function test() {
         });
 
         /**
-        * @tc.number: FMS_acquireForm_1100
-        * @tc.name: When the formId is set to 0, a non cached form is added.
-        * @tc.desc: Verify that the non cache form can be successfully created.
-        */
+         * @tc.name   FMS_acquireForm_1100
+         * @tc.number FMS_acquireForm_1100
+         * @tc.desc   Verify that the non cache form can be successfully created.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(`FMS_acquireForm_1100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.info(`FMS_acquireForm_1100 start`);
 
@@ -465,10 +489,13 @@ export default function test() {
         });
 
         /**
-        * @tc.number: FMS_acquireForm_1200
-        * @tc.name: When the formId is set to 0, a non cached form is added.
-        * @tc.desc: Verify that the non cache form can be successfully created.
-        */
+         * @tc.name   FMS_acquireForm_1200
+         * @tc.number FMS_acquireForm_1200
+         * @tc.desc   Verify that the non cache form can be successfully created.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(`FMS_acquireForm_1200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.info(`FMS_acquireForm_1200 start`);
 
@@ -530,10 +557,13 @@ export default function test() {
         });
 
         /**
-        * @tc.number: FMS_acquireForm_1400
-        * @tc.name: FormId does not match other parameters when adding a cached form.
-        * @tc.desc: Failed to create a cached form when verifying that FormId does not match other parameters.
-        */
+         * @tc.name   FMS_acquireForm_1400
+         * @tc.number FMS_acquireForm_1400
+         * @tc.desc   Failed to create a cached form when verifying that FormId does not match other parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(`FMS_acquireForm_1400`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.info(`FMS_acquireForm_1400 start`);
             let formId: string = '';
@@ -620,10 +650,13 @@ export default function test() {
         });
 
         /**
-        * @tc.number: FMS_acquireForm_1500
-        * @tc.name: Add a cached form.
-        * @tc.desc: Verify that the cached form can be successfully created.
-        */
+         * @tc.name   FMS_acquireForm_1500
+         * @tc.number FMS_acquireForm_1500
+         * @tc.desc   Verify that the cached form can be successfully created.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(`FMS_acquireForm_1500`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             console.info(`FMS_acquireForm_1500 start`);
             let formId1: string = '';

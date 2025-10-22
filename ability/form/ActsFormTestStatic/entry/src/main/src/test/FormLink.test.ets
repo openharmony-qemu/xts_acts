@@ -34,9 +34,12 @@ export default function formLinkTest() {
         hilog.info(DOMAIN, TAG, 'formLinkTest describe start');
 
         /**
-         * @tc.number: FormLinkStaticTest001
-         * @tc.name: FormLinkStaticTest001
-         * @tc.desc: check FormLink
+         * @tc.name   FormLinkStaticTest001
+         * @tc.number FormLinkStaticTest001
+         * @tc.desc   check FormLink
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("FormLinkStaticTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             hilog.info(DOMAIN, TAG, 'FormLinkStaticTest001 start');
@@ -71,9 +74,12 @@ export default function formLinkTest() {
         })
 
         /**
-         * @tc.number: FormLinkOptionsStaticTest001
-         * @tc.name: FormLinkOptionsStaticTest001
-         * @tc.desc: check FormLinkOptions
+         * @tc.name   FormLinkOptionsStaticTest001
+         * @tc.number FormLinkOptionsStaticTest001
+         * @tc.desc   check FormLinkOptions
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("FormLinkOptionsStaticTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             hilog.info(DOMAIN, TAG, 'FormLinkOptionsStaticTest001 start');

@@ -108,12 +108,12 @@ export default function formApiCoverTest() {
     })
 
     /**
-     * @tc.number  SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0100
-     * @tc.name    SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0100
-     * @tc.desc    Function startSecondPage covered test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0100
+     * @tc.desc   Function startSecondPage covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let name: string = 'SUB_ABILITY_FORM_FWK_START_SECOND_PAGE_COVER_0100';
@@ -139,12 +139,12 @@ export default function formApiCoverTest() {
     });
 
     /**
-     * @tc.number  SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0100
-     * @tc.name    SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0100
-     * @tc.desc    Function setFormNextRefreshTime covered test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0100
+     * @tc.desc   Function setFormNextRefreshTime covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let name: string = 'SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0100';
@@ -179,12 +179,12 @@ export default function formApiCoverTest() {
     });
 
     /**
-     * @tc.number  SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0200
-     * @tc.name    SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0200
-     * @tc.desc    Function setFormNextRefreshTime covered test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0200
+     * @tc.number SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0200
+     * @tc.desc   Function setFormNextRefreshTime covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let name: string = 'SUB_ABILITY_FORM_FWK_SET_FORM_NEXT_REFRESH_TIME_COVER_0200';
@@ -219,12 +219,12 @@ export default function formApiCoverTest() {
     });
 
     /**
-     * @tc.number  SUB_ABILITY_FORM_FWK_PROVIDER_TEST_FORM_ERR_0100
-     * @tc.name    SUB_ABILITY_FORM_FWK_PROVIDER_TEST_FORM_ERR_0100
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_TEST_FORM_ERR_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_TEST_FORM_ERR_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_PROVIDER_TEST_FORM_ERR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info("SUB_ABILITY_FORM_FWK_PROVIDER_TEST_FORM_ERR_0100");
@@ -254,12 +254,12 @@ export default function formApiCoverTest() {
     });
 
     /**
-     * @tc.number    : SUB_ABILITY_FORM_FWK_FORM_INFO_0100
-     * @tc.name      : SUB_ABILITY_FORM_FWK_FORM_INFO_0100
-     * @tc.desc      : formInfo.FormStateInfo Coverage test.
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_ABILITY_FORM_FWK_FORM_INFO_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_FORM_INFO_0100
+     * @tc.desc   formInfo.FormStateInfo Coverage test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_INFO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let name: string = 'SUB_ABILITY_FORM_FWK_FORM_INFO_0100';
@@ -274,12 +274,12 @@ export default function formApiCoverTest() {
     });
 
     /**
-     * @tc.number    : SUB_ABILITY_FORM_FWK_FORM_INFO_0200
-     * @tc.name      : SUB_ABILITY_FORM_FWK_FORM_INFO_0200
-     * @tc.desc      : formInfo.FormInfo Coverage test.
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_ABILITY_FORM_FWK_FORM_INFO_0200
+     * @tc.number SUB_ABILITY_FORM_FWK_FORM_INFO_0200
+     * @tc.desc   formInfo.FormInfo Coverage test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_INFO_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let name: string = 'SUB_ABILITY_FORM_FWK_FORM_INFO_0200';
@@ -292,12 +292,12 @@ export default function formApiCoverTest() {
     });
 
     /**
-     * @tc.number    : SUB_ABILITY_FORM_FWK_FORM_INFO_0300
-     * @tc.name      : SUB_ABILITY_FORM_FWK_FORM_INFO_0300
-     * @tc.desc      : cover EnumValue IDENTITY_KEY.
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_ABILITY_FORM_FWK_FORM_INFO_0300
+     * @tc.number SUB_ABILITY_FORM_FWK_FORM_INFO_0300
+     * @tc.desc   cover EnumValue IDENTITY_KEY.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_INFO_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info("SUB_ABILITY_FORM_FWK_FORM_INFO_0300 start");
@@ -307,12 +307,12 @@ export default function formApiCoverTest() {
     });
 
     /**
-     * @tc.number    : SUB_ABILITY_FORM_FWK_FORM_BINDING_DATA_0100
-     * @tc.name      : SUB_ABILITY_FORM_FWK_FORM_BINDING_DATA_0100
-     * @tc.desc      : FormBindingData Coverage test.
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_ABILITY_FORM_FWK_FORM_BINDING_DATA_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_FORM_BINDING_DATA_0100
+     * @tc.desc   FormBindingData Coverage test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_BINDING_DATA_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info("SUB_ABILITY_FORM_FWK_FORM_BINDING_DATA_0100 start");
@@ -351,12 +351,12 @@ export default function formApiCoverTest() {
     };
 
     /**
-     * @tc.number    : SUB_ABILITY_FORM_FWK_CREATE_FROM_BINDING_DATA_0100
-     * @tc.name      : SUB_ABILITY_FORM_FWK_CREATE_FROM_BINDING_DATA_0100
-     * @tc.desc      : createFormBindingData test.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_ABILITY_FORM_FWK_CREATE_FROM_BINDING_DATA_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_CREATE_FROM_BINDING_DATA_0100
+     * @tc.desc   createFormBindingData test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_CREATE_FROM_BINDING_DATA_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       const itName = 'SUB_ABILITY_FORM_FWK_CREATE_FROM_BINDING_DATA_0100';

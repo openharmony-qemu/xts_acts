@@ -106,12 +106,12 @@ const ERROR_CODE4 = 16501000;
 export default function abilityTest() {
     describe('ProviderGetFormsInfoTest', () => {
         /**
-         * @tc.number    : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0100
-         * @tc.name      : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0100
-         * @tc.desc      : getFormsInfo(callback).
-         * @tc.level     : Level 1
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0100
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0100
+         * @tc.desc   getFormsInfo(callback).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0100';
@@ -139,12 +139,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0200
-         * @tc.name      : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0200
-         * @tc.desc      : getFormsInfo(filter, undefined) # Have no idea how to test it.
-         * @tc.level     : Level 1
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0200
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0200
+         * @tc.desc   getFormsInfo(filter, undefined) # Have no idea how to test it.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0200';
@@ -163,12 +163,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0300
-         * @tc.name      : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0300
-         * @tc.desc      : getFormsInfo().
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0300
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0300
+         * @tc.desc   getFormsInfo().
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0300';
@@ -197,12 +197,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0500
-         * @tc.name      : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0500
-         * @tc.desc      : getFormsInfo(filter, callback) where filter = {}.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0500
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0500
+         * @tc.desc   getFormsInfo(filter, callback) where filter = {}.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0500';
@@ -221,12 +221,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0600
-         * @tc.name      : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0600
-         * @tc.desc      : getFormsInfo(filter, callback) where moduleName = "".
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0600
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0600
+         * @tc.desc   getFormsInfo(filter, callback) where moduleName = "".
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0600';
@@ -247,12 +247,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0700
-         * @tc.name      : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0700
-         * @tc.desc      : getFormsInfo(filter, callback) where moduleName = undefined.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0700
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0700
+         * @tc.desc   getFormsInfo(filter, callback) where moduleName = undefined.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0700';
@@ -273,12 +273,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0800
-         * @tc.name      : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0800
-         * @tc.desc      : getFormsInfo(filter, callback) where moduleName = "HelloWorld" which doesn't exist.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0800
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0800
+         * @tc.desc   getFormsInfo(filter, callback) where moduleName = "HelloWorld" which doesn't exist.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0800';
@@ -297,12 +297,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0900
-         * @tc.name      : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0900
-         * @tc.desc      : getFormsInfo(filter, callback) where moduleName = "module1" which does exist.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0900
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0900
+         * @tc.desc   getFormsInfo(filter, callback) where moduleName = "module1" which does exist.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0900';
@@ -321,12 +321,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1000
-         * @tc.name      : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1000
-         * @tc.desc      : getFormsInfo(filter, callback) where moduleName = "entry" exists but has no forms.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1000
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1000
+         * @tc.desc   getFormsInfo(filter, callback) where moduleName = "entry" exists but has no forms.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1000';
@@ -348,12 +348,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1200
-         * @tc.name      : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1200
-         * @tc.desc      : getFormsInfo(filter) where filter = {}.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1200
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1200
+         * @tc.desc   getFormsInfo(filter) where filter = {}.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1200';
@@ -378,12 +378,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1300
-         * @tc.name      : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1300
-         * @tc.desc      : getFormsInfo(filter) where moduleName = "".
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1300
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1300
+         * @tc.desc   getFormsInfo(filter) where moduleName = "".
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1300';
@@ -413,12 +413,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1400
-         * @tc.name      : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1400
-         * @tc.desc      : getFormsInfo(filter) where moduleName = undefined.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1400
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1400
+         * @tc.desc   getFormsInfo(filter) where moduleName = undefined.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1400';
@@ -441,12 +441,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1500
-         * @tc.name      : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1500
-         * @tc.desc      : getFormsInfo(filter) where moduleName = "HelloWorld" which doesn't exist.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1500
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1500
+         * @tc.desc   getFormsInfo(filter) where moduleName = "HelloWorld" which doesn't exist.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1500';
@@ -470,13 +470,13 @@ export default function abilityTest() {
             
         });
 
-        /**checkResult 
-         * @tc.number    : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1600
-         * @tc.name      : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1600
-         * @tc.desc      : getFormsInfo(filter) where moduleName = "module1" which does exist.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+        /**
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1600
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1600
+         * @tc.desc   getFormsInfo(filter) where moduleName = "module1" which does exist.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1600';
@@ -500,12 +500,12 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1700
-         * @tc.name      : SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1700
-         * @tc.desc      : getFormsInfo(filter) where moduleName = "entry" which exists but has no forms.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1700
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1700
+         * @tc.desc   getFormsInfo(filter) where moduleName = "entry" which exists but has no forms.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1700';
@@ -527,13 +527,13 @@ export default function abilityTest() {
             console.info(`${name} end`);
         });
 		
-		    /**
-         * @tc.number    : SUB_ABILITY_FORM_FWK_FORM_STATE_INFO_0100
-         * @tc.name      : SUB_ABILITY_FORM_FWK_FORM_STATE_INFO_0100
-         * @tc.desc      : formInfo.FormStateInfo covered test.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+        /**
+         * @tc.name   SUB_ABILITY_FORM_FWK_FORM_STATE_INFO_0100
+         * @tc.number SUB_ABILITY_FORM_FWK_FORM_STATE_INFO_0100
+         * @tc.desc   formInfo.FormStateInfo covered test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_ABILITY_FORM_FWK_FORM_STATE_INFO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let name: string = 'SUB_ABILITY_FORM_FWK_FORM_STATE_INFO_0100';

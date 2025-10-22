@@ -66,12 +66,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number : SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100
-     * @tc.name   : SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100
-     * @tc.desc   : Start the LiveFormExtensionAbility, and the test is successful.
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 0
-     * @tc.type   : Function
+     * @tc.name   SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100
+     * @tc.number SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100
+     * @tc.desc   Start the LiveFormExtensionAbility, and the test is successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_LIVE_FORM_EXTENSION_TEST_0100', Level.LEVEL0, async () => {
       // Defines a test case. This API supports three parameters:

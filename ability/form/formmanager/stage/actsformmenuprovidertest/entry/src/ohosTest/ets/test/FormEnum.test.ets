@@ -24,12 +24,12 @@ const domain: number = 0xF811;
 export default function formEnumTest() {
   describe('formEnumTest', () => {
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_FORM_LOCATION_0100
-     * @tc.name:   SUB_ABILITY_FORM_FWK_FORM_LOCATION_0100
-     * @tc.desc:   form FormLocation enum.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 0
+     * @tc.name   SUB_ABILITY_FORM_FWK_FORM_LOCATION_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_FORM_LOCATION_0100
+     * @tc.desc   form FormLocation enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_LOCATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const itName: string = 'SUB_ABILITY_FORM_FWK_FORM_LOCATION_0100';
@@ -46,12 +46,12 @@ export default function formEnumTest() {
     })
 
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_LAUNCH_REASON_0100
-     * @tc.name:   SUB_ABILITY_FORM_FWK_LAUNCH_REASON_0100
-     * @tc.desc:   form LaunchReason enum.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 0
+     * @tc.name   SUB_ABILITY_FORM_FWK_LAUNCH_REASON_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_LAUNCH_REASON_0100
+     * @tc.desc   form LaunchReason enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_LAUNCH_REASON_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const itName: string = 'SUB_ABILITY_FORM_FWK_LAUNCH_REASON_0100';
@@ -62,12 +62,12 @@ export default function formEnumTest() {
     })
 
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_FORM_PARAM_0100
-     * @tc.name:   SUB_ABILITY_FORM_FWK_FORM_PARAM_0100
-     * @tc.desc:   form FormParam enum.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 0
+     * @tc.name   SUB_ABILITY_FORM_FWK_FORM_PARAM_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_FORM_PARAM_0100
+     * @tc.desc   form FormParam enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const itName: string = 'SUB_ABILITY_FORM_FWK_FORM_PARAM_0100';
@@ -90,12 +90,12 @@ export default function formEnumTest() {
     })
 
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_FORM_ERROR_0100
-     * @tc.name:   SUB_ABILITY_FORM_FWK_FORM_ERROR_0100
-     * @tc.desc:   form FormError enum.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 0
+     * @tc.name   SUB_ABILITY_FORM_FWK_FORM_ERROR_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_FORM_ERROR_0100
+     * @tc.desc   form FormError enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const itName: string = 'SUB_ABILITY_FORM_FWK_FORM_ERROR_0100';
@@ -105,12 +105,12 @@ export default function formEnumTest() {
     })
 
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_VISIBILITY_TYPE_0100
-     * @tc.name:   SUB_ABILITY_FORM_FWK_VISIBILITY_TYPE_0100
-     * @tc.desc:   form VisibilityType enum.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 0
+     * @tc.name   SUB_ABILITY_FORM_FWK_VISIBILITY_TYPE_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_VISIBILITY_TYPE_0100
+     * @tc.desc   form VisibilityType enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_VISIBILITY_TYPE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const itName: string = 'SUB_ABILITY_FORM_FWK_VISIBILITY_TYPE_0100';
@@ -122,12 +122,12 @@ export default function formEnumTest() {
     })
 
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_FORM_SHAPE_0100
-     * @tc.name:   SUB_ABILITY_FORM_FWK_FORM_SHAPE_0100
-     * @tc.desc:   form FormShape enum.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 0
+     * @tc.name   SUB_ABILITY_FORM_FWK_FORM_SHAPE_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_FORM_SHAPE_0100
+     * @tc.desc   form FormShape enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_SHAPE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const itName: string = 'SUB_ABILITY_FORM_FWK_FORM_SHAPE_0100';
@@ -138,12 +138,12 @@ export default function formEnumTest() {
     })
 
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_FORM_DIMENSION_0100
-     * @tc.name:   SUB_ABILITY_FORM_FWK_FORM_DIMENSION_0100
-     * @tc.desc:   form FormDimension enum.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 0
+     * @tc.name   SUB_ABILITY_FORM_FWK_FORM_DIMENSION_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_FORM_DIMENSION_0100
+     * @tc.desc   form FormDimension enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_DIMENSION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const itName: string = 'SUB_ABILITY_FORM_FWK_FORM_DIMENSION_0100';
@@ -158,12 +158,12 @@ export default function formEnumTest() {
     })
 
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_FORM_STATE_0100
-     * @tc.name:   SUB_ABILITY_FORM_FWK_FORM_STATE_0100
-     * @tc.desc:   form FormState enum.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 0
+     * @tc.name   SUB_ABILITY_FORM_FWK_FORM_STATE_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_FORM_STATE_0100
+     * @tc.desc   form FormState enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_STATE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const itName: string = 'SUB_ABILITY_FORM_FWK_FORM_STATE_0100';
@@ -175,12 +175,12 @@ export default function formEnumTest() {
     })
 
     /**
-     * @tc.number: SUB_ABILITY_FORM_FWK_FORM_TYPE_0100
-     * @tc.name:   SUB_ABILITY_FORM_FWK_FORM_TYPE_0100
-     * @tc.desc:   form FormType enum.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 0
+     * @tc.name   SUB_ABILITY_FORM_FWK_FORM_TYPE_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_FORM_TYPE_0100
+     * @tc.desc   form FormType enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ABILITY_FORM_FWK_FORM_TYPE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const itName: string = 'SUB_ABILITY_FORM_FWK_FORM_TYPE_0100';

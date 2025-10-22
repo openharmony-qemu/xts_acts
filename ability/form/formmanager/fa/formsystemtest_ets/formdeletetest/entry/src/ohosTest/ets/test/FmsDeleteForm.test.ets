@@ -86,10 +86,12 @@ export default function test() {
         })
 
         /**
-         * @tc.number: FMS_deleteForm_0200
-         * @tc.name: host does not have permission
-         * @tc.desc: 1.delete the form that formID is 1
-         *           2.Verify the result is false
+         * @tc.name   FMS_deleteForm_0200
+         * @tc.number FMS_deleteForm_0200
+         * @tc.desc   1.delete the form that formID is 1
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_deleteForm_0200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
             const tcNumber = `FMS_deleteForm_0200`;
@@ -174,10 +176,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_deleteForm_0300
-         * @tc.name: formID id is error(formID < 0)
-         * @tc.desc: 1.delete the form
-         *           2.Verify the result is false
+         * @tc.name   FMS_deleteForm_0300
+         * @tc.number FMS_deleteForm_0300
+         * @tc.desc   1.delete the form
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_deleteForm_0300`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
             const tcNumber = `FMS_deleteForm_0300`;
@@ -225,10 +229,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_deleteForm_0400
-         * @tc.name: formID id is error(formID = 0)
-         * @tc.desc: 1.delete the form
-         *           2.Verify the result is false
+         * @tc.name   FMS_deleteForm_0400
+         * @tc.number FMS_deleteForm_0400
+         * @tc.desc   1.delete the form
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_deleteForm_0400`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
             const tcNumber = `FMS_deleteForm_0400`;
@@ -274,11 +280,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_deleteForm_0500
-         * @tc.name: formID id is error because formId is not self
-         * @tc.desc: 1.host A create a formA
-         *           2.host B delete the formA
-         *           2.Verify the result is false
+         * @tc.name   FMS_deleteForm_0500
+         * @tc.number FMS_deleteForm_0500
+         * @tc.desc   1.host A create a formA
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_deleteForm_0500`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
             const tcNumber = `FMS_deleteForm_0500`;
@@ -360,11 +367,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_deleteForm_0600
-         * @tc.name: Delete a normal form and the form reference is not 0 after deletion
-         * @tc.desc: 1.host A create a normal formA
-         *           2.host B create a form with formA's ID
-         *           3.delete formA, and verify the result is true
+         * @tc.name   FMS_deleteForm_0600
+         * @tc.number FMS_deleteForm_0600
+         * @tc.desc   1.host A create a normal formA
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_deleteForm_0600`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
             const tcNumber = `FMS_deleteForm_0600`;
@@ -483,11 +491,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_deleteForm_0700
-         * @tc.name: After deleting a normal form, the form reference is 0.
-         *     After deleting a form, there are still created normal forms in FMS.
-         * @tc.desc: 1.host A an host B create one normal card respectively
-         *           2.host A delete the form and verify the result is true
+         * @tc.name   FMS_deleteForm_0700
+         * @tc.number FMS_deleteForm_0700
+         * @tc.desc   1.host A an host B create one normal card respectively
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_deleteForm_0700`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
             const tcNumber = `FMS_deleteForm_0700`;
@@ -603,11 +612,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_deleteForm_0700_1
-         * @tc.name: After deleting a normal form, the form reference is 0.
-         *     After deleting a form, there are still created normal forms in FMS.
-         * @tc.desc: 1.host A an host B create one normal card respectively
-         *           2.host A delete the form and verify the result is true
+         * @tc.name   FMS_deleteForm_0700_1
+         * @tc.number FMS_deleteForm_0700_1
+         * @tc.desc   1.host A an host B create one normal card respectively
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_deleteForm_0700_1`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
             const tcNumber = `FMS_deleteForm_0700_1`;
@@ -760,11 +770,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_deleteForm_1000
-         * @tc.name: You can delete a card after releasing it
-         * @tc.desc: 1.host create one normal card
-         *           2.host release the form
-         *           3.host delete the form and verify the result is true
+         * @tc.name   FMS_deleteForm_1000
+         * @tc.number FMS_deleteForm_1000
+         * @tc.desc   1.host create one normal card
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_deleteForm_1000`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
             const tcNumber = `FMS_deleteForm_1000`;
@@ -850,10 +861,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_deleteForm_1100
-         * @tc.name: When deleting a temporary form, cache data is deleted.
-         * @tc.desc: 1.host a and b create one temporary card respectively
-         *           2.host a delete the form and verify the result is true
+         * @tc.name   FMS_deleteForm_1100
+         * @tc.number FMS_deleteForm_1100
+         * @tc.desc   1.host a and b create one temporary card respectively
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_deleteForm_1100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
             const tcNumber = `FMS_deleteForm_1100`;
@@ -970,11 +983,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_deleteForm_0900
-         * @tc.name: Form ID error (FormID does not exist)
-         * @tc.desc: 1.host create one normal card
-         *           2.host delete the form
-         *           3.host delete the form again and verify the result is false
+         * @tc.name   FMS_deleteForm_0900
+         * @tc.number FMS_deleteForm_0900
+         * @tc.desc   1.host create one normal card
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_deleteForm_0900`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
             const tcNumber = `FMS_deleteForm_0900`;

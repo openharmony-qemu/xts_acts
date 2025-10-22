@@ -70,13 +70,13 @@ export default function updateFormSizeTest() {
         commonEvent.unsubscribe(subscriberonFormLocationChanged, () => unsubscribeCallback("afterEach unsubscribe subscriberonFormLocationChanged"));
     })
 
-    /*
-     * @tc.number  SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100
-     * @tc.name    SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100
-     * @tc.desc    Function UpdateFormSize test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100
+     * @tc.desc   Function UpdateFormSize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100`, 0, async (done:Function) => {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100 start`);
@@ -115,13 +115,13 @@ export default function updateFormSizeTest() {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100 startAbility end`);
     });
 
-    /*
-     * @tc.number  SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200
-     * @tc.name    SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200
-     * @tc.desc    Function UpdateFormSize test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200
+     * @tc.number SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200
+     * @tc.desc   Function UpdateFormSize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200`, 0, async (done:Function) => {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200 start`);
@@ -159,13 +159,13 @@ export default function updateFormSizeTest() {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200 startAbility end`);
     });
 
-    /*
-     * @tc.number  SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300
-     * @tc.name    SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300
-     * @tc.desc    Function UpdateFormSize test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300
+     * @tc.number SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300
+     * @tc.desc   Function UpdateFormSize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300`, 0, async (done:Function) => {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300 start`);
@@ -203,13 +203,13 @@ export default function updateFormSizeTest() {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300 startAbility end`);
     });
 
-    /*
-     * @tc.number  SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400
-     * @tc.name    SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400
-     * @tc.desc    Function UpdateFormSize test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400
+     * @tc.number SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400
+     * @tc.desc   Function UpdateFormSize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400`, 0, async (done:Function) => {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400 start`);
@@ -247,13 +247,13 @@ export default function updateFormSizeTest() {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400 startAbility end`);
     });
 
-    /*
-     * @tc.number  SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500
-     * @tc.name    SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500
-     * @tc.desc    Function UpdateFormSize test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500
+     * @tc.number SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500
+     * @tc.desc   Function UpdateFormSize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500`, 0, async (done:Function) => {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500 start`);
@@ -290,13 +290,13 @@ export default function updateFormSizeTest() {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500 startAbility end`);
     });
 
-    /*
-     * @tc.number  SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600
-     * @tc.name    SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600
-     * @tc.desc    Function UpdateFormSize test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600
+     * @tc.number SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600
+     * @tc.desc   Function UpdateFormSize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600`, 0, async (done:Function) => {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600 start`);
@@ -333,13 +333,13 @@ export default function updateFormSizeTest() {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600 startAbility end`);
     });
 
-    /*
-     * @tc.number  SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700
-     * @tc.name    SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700
-     * @tc.desc    Function UpdateFormSize test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700
+     * @tc.number SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700
+     * @tc.desc   Function UpdateFormSize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700`, 0, async (done:Function) => {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700 start`);
@@ -376,13 +376,13 @@ export default function updateFormSizeTest() {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700 startAbility end`);
     });
 
-    /*
-     * @tc.number  SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800
-     * @tc.name    SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800
-     * @tc.desc    Function UpdateFormSize test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800
+     * @tc.number SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800
+     * @tc.desc   Function UpdateFormSize test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800`, 0, async (done:Function) => {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800 start`);
@@ -420,13 +420,13 @@ export default function updateFormSizeTest() {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800 startAbility end`);
     });
 
-    /*
-     * @tc.number  SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100
-     * @tc.name    SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100
-     * @tc.desc    Function FormLocationChanged test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100
+     * @tc.number SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100
+     * @tc.desc   Function FormLocationChanged test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  请输入文本
      */
     it(`SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100`, 0, async (done:Function) => {
         console.log(`SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100 start`);

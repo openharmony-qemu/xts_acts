@@ -66,10 +66,12 @@ export default function test() {
         })
 
         /**
-         * @tc.number: FMS_timedRefresh_0100
-         * @tc.name: formID id is error(formID < 0)
-         * @tc.desc: 1.The form provider A to invoke the dynamic timed refresh interface.
-         *           2.Verify the result of the dynamic timed refresh interface.
+         * @tc.name   FMS_timedRefresh_0100
+         * @tc.number FMS_timedRefresh_0100
+         * @tc.desc   1.The form provider A to invoke the dynamic timed refresh interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_timedRefresh_0100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             const tcNumber = `FMS_timedRefresh_0100`;
@@ -115,10 +117,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_timedRefresh_0200
-         * @tc.name: formID id is error(formID == 0)
-         * @tc.desc: 1.The form provider A to invoke the dynamic timed refresh interface.
-         *           2.Verify the result of the dynamic timed refresh interface.
+         * @tc.name   FMS_timedRefresh_0200
+         * @tc.number FMS_timedRefresh_0200
+         * @tc.desc   1.The form provider A to invoke the dynamic timed refresh interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_timedRefresh_0200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             const tcNumber = `FMS_timedRefresh_0200`;
@@ -164,11 +168,13 @@ export default function test() {
         });
 
         /**
-        * @tc.number: FMS_timedRefresh_0300
-        * @tc.name: formID id is error because formId is not self
-        * @tc.desc: 1.The form provider B to invoke the dynamic timed refresh interface.
-        *           2.Verify the result of the dynamic timed refresh interface.
-        */
+         * @tc.name   FMS_timedRefresh_0300
+         * @tc.number FMS_timedRefresh_0300
+         * @tc.desc   1.The form provider B to invoke the dynamic timed refresh interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(`FMS_timedRefresh_0300`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             const tcNumber = `FMS_timedRefresh_0300`;
 
@@ -243,11 +249,13 @@ export default function test() {
         });
 
         /**
-        * @tc.number: FMS_timedRefresh_0400
-        * @tc.name: Form ID error (FormID does not exist)
-        * @tc.desc: 1.The form provider A to invoke the dynamic timed refresh interface.
-        *           2.Verify the result of the dynamic timed refresh interface.
-        */
+         * @tc.name   FMS_timedRefresh_0400
+         * @tc.number FMS_timedRefresh_0400
+         * @tc.desc   1.The form provider A to invoke the dynamic timed refresh interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(`FMS_timedRefresh_0400`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             const tcNumber = `FMS_timedRefresh_0400`;
             let formId: string | undefined = '';
@@ -327,11 +335,13 @@ export default function test() {
         });
 
         /**
-        * @tc.number: FMS_timedRefresh_0500
-        * @tc.name: Incorrect interval for the next refresh (time < 5)
-        * @tc.desc: 1.The form provider A to invoke the dynamic timed refresh interface.
-        *           2.Verify the result of the dynamic timed refresh interface.
-        */
+         * @tc.name   FMS_timedRefresh_0500
+         * @tc.number FMS_timedRefresh_0500
+         * @tc.desc   1.The form provider A to invoke the dynamic timed refresh interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(`FMS_timedRefresh_0500`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             const tcNumber = `FMS_timedRefresh_0500`;
 
@@ -376,11 +386,13 @@ export default function test() {
         });
 
         /**
-        * @tc.number: FMS_timedRefresh_0600
-        * @tc.name: correct interval for the next refresh (time == 5)
-        * @tc.desc: 1.The form provider A to invoke the dynamic timed refresh interface.
-        *           2.Verify the result of the dynamic timed refresh interface.
-        */
+         * @tc.name   FMS_timedRefresh_0600
+         * @tc.number FMS_timedRefresh_0600
+         * @tc.desc   1.The form provider A to invoke the dynamic timed refresh interface.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(`FMS_timedRefresh_0600`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             const tcNumber = `FMS_timedRefresh_0600`;
 

@@ -29,9 +29,12 @@ export default function formObserverTest() {
         hilog.info(DOMAIN, TAG, 'formObserverTest describe start');
 
         /**
+         * @tc.name   formObserverStaticTest001
          * @tc.number formObserverStaticTest001
-         * @tc.name formObserverStaticTest001
-         * @tc.desc check FormObserver getRunningFormInfoById callback
+         * @tc.desc   check FormObserver getRunningFormInfoById callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -58,9 +61,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest002
          * @tc.number formObserverStaticTest002
-         * @tc.name formObserverStaticTest002
-         * @tc.desc check FormObserver getRunningFormInfoById promise
+         * @tc.desc   check FormObserver getRunningFormInfoById promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -88,9 +94,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest003
          * @tc.number formObserverStaticTest003
-         * @tc.name formObserverStaticTest003
-         * @tc.desc check FormObserver getRunningFormInfoById with isUnusedIncluded callback
+         * @tc.desc   check FormObserver getRunningFormInfoById with isUnusedIncluded callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -118,9 +127,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest004
          * @tc.number formObserverStaticTest004
-         * @tc.name formObserverStaticTest004
-         * @tc.desc check FormObserver getRunningFormInfoById with isUnusedIncluded promise
+         * @tc.desc   check FormObserver getRunningFormInfoById with isUnusedIncluded promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -148,9 +160,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest005
          * @tc.number formObserverStaticTest005
-         * @tc.name formObserverStaticTest005
-         * @tc.desc check FormObserver getRunningFormInfos with isUnusedIncluded callback
+         * @tc.desc   check FormObserver getRunningFormInfos with isUnusedIncluded callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -178,9 +193,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest006
          * @tc.number formObserverStaticTest006
-         * @tc.name formObserverStaticTest006
-         * @tc.desc check FormObserver getRunningFormInfos with isUnusedIncluded promise
+         * @tc.desc   check FormObserver getRunningFormInfos with isUnusedIncluded promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -208,9 +226,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest007
          * @tc.number formObserverStaticTest007
-         * @tc.name formObserverStaticTest007
-         * @tc.desc check FormObserver getRunningFormInfos callback
+         * @tc.desc   check FormObserver getRunningFormInfos callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest007", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -238,9 +259,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest008
          * @tc.number formObserverStaticTest008
-         * @tc.name formObserverStaticTest008
-         * @tc.desc check FormObserver getRunningFormInfos promise
+         * @tc.desc   check FormObserver getRunningFormInfos promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest008", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -268,9 +292,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest009
          * @tc.number formObserverStaticTest009
-         * @tc.name formObserverStaticTest009
-         * @tc.desc check FormObserver getRunningFormInfosByFilter promise
+         * @tc.desc   check FormObserver getRunningFormInfosByFilter promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest009", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -303,9 +330,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest010
          * @tc.number formObserverStaticTest010
-         * @tc.name formObserverStaticTest010
-         * @tc.desc check FormObserver getRunningFormInfosByFilter callback
+         * @tc.desc   check FormObserver getRunningFormInfosByFilter callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest010", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -338,9 +368,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest011
          * @tc.number formObserverStaticTest011
-         * @tc.name formObserverStaticTest011
-         * @tc.desc check FormObserver off call with hostBundleName
+         * @tc.desc   check FormObserver off call with hostBundleName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest011", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -367,9 +400,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest012
          * @tc.number formObserverStaticTest012
-         * @tc.name formObserverStaticTest012
-         * @tc.desc check FormObserver on call with hostBundleName
+         * @tc.desc   check FormObserver on call with hostBundleName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest012", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -396,9 +432,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest013
          * @tc.number formObserverStaticTest013
-         * @tc.name formObserverStaticTest013
-         * @tc.desc check FormObserver on call
+         * @tc.desc   check FormObserver on call
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest013", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -424,9 +463,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest014
          * @tc.number formObserverStaticTest014
-         * @tc.name formObserverStaticTest014
-         * @tc.desc check FormObserver off message with hostBundleName
+         * @tc.desc   check FormObserver off message with hostBundleName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest014", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -453,9 +495,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest015
          * @tc.number formObserverStaticTest015
-         * @tc.name formObserverStaticTest015
-         * @tc.desc check FormObserver on message with hostBundleName
+         * @tc.desc   check FormObserver on message with hostBundleName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest015", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -482,9 +527,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest016
          * @tc.number formObserverStaticTest016
-         * @tc.name formObserverStaticTest016
-         * @tc.desc check FormObserver on message
+         * @tc.desc   check FormObserver on message
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest016", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -511,9 +559,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest017
          * @tc.number formObserverStaticTest017
-         * @tc.name formObserverStaticTest017
-         * @tc.desc check FormObserver off router with hostBundleName
+         * @tc.desc   check FormObserver off router with hostBundleName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest017", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -540,9 +591,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest018
          * @tc.number formObserverStaticTest018
-         * @tc.name formObserverStaticTest018
-         * @tc.desc check FormObserver on router with hostBundleName
+         * @tc.desc   check FormObserver on router with hostBundleName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest018", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -569,9 +623,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest019
          * @tc.number formObserverStaticTest019
-         * @tc.name formObserverStaticTest019
-         * @tc.desc check FormObserver on router
+         * @tc.desc   check FormObserver on router
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest019", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -598,9 +655,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest020
          * @tc.number formObserverStaticTest020
-         * @tc.name formObserverStaticTest020
-         * @tc.desc check FormObserver off notifyInvisible with hostBundleName
+         * @tc.desc   check FormObserver off notifyInvisible with hostBundleName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest020", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -627,9 +687,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest021
          * @tc.number formObserverStaticTest021
-         * @tc.name formObserverStaticTest021
-         * @tc.desc check FormObserver off notifyVisible with hostBundleName
+         * @tc.desc   check FormObserver off notifyVisible with hostBundleName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest021", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -656,9 +719,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest022
          * @tc.number formObserverStaticTest022
-         * @tc.name formObserverStaticTest022
-         * @tc.desc check FormObserver on notifyInvisible with hostBundleName
+         * @tc.desc   check FormObserver on notifyInvisible with hostBundleName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest022", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -685,9 +751,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest023
          * @tc.number formObserverStaticTest023
-         * @tc.name formObserverStaticTest023
-         * @tc.desc check FormObserver on notifyVisible with hostBundleName
+         * @tc.desc   check FormObserver on notifyVisible with hostBundleName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest023", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -714,9 +783,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest024
          * @tc.number formObserverStaticTest024
-         * @tc.name formObserverStaticTest024
-         * @tc.desc check FormObserver on notifyInvisible
+         * @tc.desc   check FormObserver on notifyInvisible
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest024", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -743,9 +815,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest025
          * @tc.number formObserverStaticTest025
-         * @tc.name formObserverStaticTest025
-         * @tc.desc check FormObserver on notifyVisible
+         * @tc.desc   check FormObserver on notifyVisible
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest025", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -772,9 +847,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest026
          * @tc.number formObserverStaticTest026
-         * @tc.name formObserverStaticTest026
-         * @tc.desc check FormObserver off formRemove
+         * @tc.desc   check FormObserver off formRemove
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest026", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -801,9 +879,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest027
          * @tc.number formObserverStaticTest027
-         * @tc.name formObserverStaticTest027
-         * @tc.desc check FormObserver on formRemove with hostBundleName
+         * @tc.desc   check FormObserver on formRemove with hostBundleName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest027", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -830,9 +911,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest028
          * @tc.number formObserverStaticTest028
-         * @tc.name formObserverStaticTest028
-         * @tc.desc check FormObserver on formRemove with hostBundleName
+         * @tc.desc   check FormObserver on formRemove with hostBundleName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest028", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -859,9 +943,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest029
          * @tc.number formObserverStaticTest029
-         * @tc.name formObserverStaticTest029
-         * @tc.desc check FormObserver off formAdd with hostBundleName
+         * @tc.desc   check FormObserver off formAdd with hostBundleName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest029", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -888,9 +975,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest030
          * @tc.number formObserverStaticTest030
-         * @tc.name formObserverStaticTest030
-         * @tc.desc check FormObserver on formAdd with hostBundleName
+         * @tc.desc   check FormObserver on formAdd with hostBundleName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest030", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
@@ -917,9 +1007,12 @@ export default function formObserverTest() {
         })
 
         /**
+         * @tc.name   formObserverStaticTest031
          * @tc.number formObserverStaticTest031
-         * @tc.name formObserverStaticTest031
-         * @tc.desc check FormObserver on formAdd
+         * @tc.desc   check FormObserver on formAdd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("formObserverStaticTest031", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
             await Utils.msSleep(1000);
