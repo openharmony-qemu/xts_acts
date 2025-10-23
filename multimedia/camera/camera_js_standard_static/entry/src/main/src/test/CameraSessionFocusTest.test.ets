@@ -1463,7 +1463,7 @@ export default function cameraSessionFocusTest() {
         expect().assertFail();
       } else {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_ON_FOCUSSTATECHANGE_STATIC_0100 to operate");
-        mCameraSession.on('focusStateChange', (err: BusinessError | null, data: cameraObj.FocusState | undefined) => {
+        mCameraSession.onFocusStateChange((err: BusinessError | null, data: cameraObj.FocusState | undefined) => {
           if (!err) {
             expect(true).assertTrue();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_ON_FOCUSSTATECHANGE_STATIC_0100 success");
@@ -1474,7 +1474,7 @@ export default function cameraSessionFocusTest() {
           await Utils.msSleep(1000);
           done();
         })
-        mCameraSession.off('focusStateChange')
+        mCameraSession.offFocusStateChange()
       }
       await Utils.msSleep(1000);
       done();
@@ -1497,7 +1497,7 @@ export default function cameraSessionFocusTest() {
         expect().assertFail();
       } else {
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_SESSION_ON_ERROR_STATIC_0100 to operate");
-        mCameraSession.on('error', (err: BusinessError) => {
+        mCameraSession.onError((err: BusinessError) => {
           if (!err) {
             expect(true).assertTrue();
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_SESSION_ON_ERROR_STATIC_0100 success");
@@ -1508,7 +1508,7 @@ export default function cameraSessionFocusTest() {
           await Utils.msSleep(1000);
           done();
         })
-        mCameraSession.off('error')
+        mCameraSession.offError()
       }
       await Utils.msSleep(1000);
       done();

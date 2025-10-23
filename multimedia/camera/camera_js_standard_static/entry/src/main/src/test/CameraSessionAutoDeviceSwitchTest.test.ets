@@ -386,7 +386,7 @@ export default function cameraSessionAutoDeviceSwitchTest() {
             } catch (error:BusinessError) {
               expect().assertFail();
             }
-            mCameraSession.on('autoDeviceSwitchStatusChange', (error: BusinessError | null, autoDeviceSwitchStatus: cameraObj.AutoDeviceSwitchStatus | undefined) => {
+            mCameraSession.onAutoDeviceSwitchStatusChange((error: BusinessError | null, autoDeviceSwitchStatus: cameraObj.AutoDeviceSwitchStatus | undefined) => {
               if (error !== undefined && error!.code !== 0) {
                 expect().assertFail();
               }
@@ -460,8 +460,8 @@ export default function cameraSessionAutoDeviceSwitchTest() {
             let callback = (error: BusinessError | null, autoDeviceSwitchStatus: cameraObj.AutoDeviceSwitchStatus | undefined) => {
               expect().assertFail();
             }
-            mCameraSession.on('autoDeviceSwitchStatusChange', callback);
-            mCameraSession.off('autoDeviceSwitchStatusChange', callback);
+            mCameraSession.onAutoDeviceSwitchStatusChange(callback);
+            mCameraSession.offAutoDeviceSwitchStatusChange(callback);
           }
           await mCameraSession.start();
           await mCameraSession.stop();
