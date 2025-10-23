@@ -61,9 +61,9 @@ export default function DisplayTest() {
         beforeAll(async (): Promise<void> => {
             try{
                 let atManager:abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-                let context : common.UIAbilityContext =  AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
+                context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
                 let permissions: Array<Permissions> =
-                    ["ohos.permission.ACCESS_BLUETOOTH"];
+                    ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
                 atManager.requestPermissionsFromUser(context,permissions,(err:BusinessError<void>|null,data:PermissionRequestResult|undefined):void=>{
                     let errCode = err!.code;
                     if(errCode){
@@ -88,7 +88,7 @@ export default function DisplayTest() {
             hilog.info(domain, tag, 'jsUnittest beforeAll getFoldStatus =' + displayFoldStatus);
             windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
             win = AppStorage.get<window.Window>('mainWindow') as window.Window;
-            context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
+            // context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
             // let win = windowStage.getMainWindowSync();
             try{
                 let data:string = displayClass.getDisplayCapability();
