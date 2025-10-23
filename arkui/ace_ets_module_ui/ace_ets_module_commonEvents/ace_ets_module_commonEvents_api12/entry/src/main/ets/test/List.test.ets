@@ -94,8 +94,6 @@ export default function testsuite() {
   clearGestureTest();
   
   getModifierKeyStateTest();
-  getModifierKeyState2Test();
-  getModifierKeyState3Test();
   TapGestureBasicClickTest();
   TapGestureBasicDoubleClickTest();
   LongPressGestureLongClickTest();
@@ -126,6 +124,8 @@ export default function testsuite() {
   gestureDefine3();
   gestureDefine4();
   gestureDefine10();
+  getModifierKeyState2Test();
+  getModifierKeyState3Test();
   
   
 
