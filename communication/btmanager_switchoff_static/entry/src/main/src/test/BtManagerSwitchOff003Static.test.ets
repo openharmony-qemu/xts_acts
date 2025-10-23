@@ -1095,5 +1095,258 @@ export default function btManagerError003Test() {
             }
             done();
         })
+
+        /**
+         * @tc.number  stopScan2900003Test
+         * @tc.name    stopScan2900003Test
+         * @tc.desc    test stopScan2900003Test without permission
+         * @tc.size    LargeTest
+         * @tc.type    Function
+         * @tc.level   Level0
+         */
+        it("stopScan2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let bleScanner: ble.BleScanner = ble.createBleScanner();
+                hilog.info(domain, tag, 'createBleScanner result:' + JSON.stringify(bleScanner));
+                expect(true).assertEqual(bleScanner != null);
+                await bleScanner.stopScan().then(() => {
+                    hilog.info(domain, tag, 'bleScanner stopScan success');
+                });
+                expect(true).assertFalse();
+            } catch (err: BusinessError){
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "stopScan get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(true).assertEqual(err.code == 2900003);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  startScan2900003Test
+         * @tc.name    startScan2900003Test
+         * @tc.desc    test startScan2900003Test without permission
+         * @tc.size    LargeTest
+         * @tc.type    Function
+         * @tc.level   Level0
+         */
+        it("startScan2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let arrayBuffer = new ArrayBuffer(8);
+            let scanFilter: ble.ScanFilter = {
+                deviceId: "00:11:22:33:44:55",
+                name: "bleStartScanTest",
+                serviceUuid: "00001888-0000-1000-8000-00805f9b34fb",
+                serviceUuidMask: "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+                serviceSolicitationUuid: "00001888-0000-1000-8000-00805F9B34FB",
+                serviceSolicitationUuidMask: "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+                serviceData: arrayBuffer,
+                serviceDataMask: arrayBuffer,
+                manufactureId: 4567,
+                manufactureData: arrayBuffer,
+                manufactureDataMask: arrayBuffer
+            };
+            try {
+                let bleScanner: ble.BleScanner = ble.createBleScanner();
+                hilog.info(domain, tag, 'createBleScanner result:' + JSON.stringify(bleScanner));
+                expect(true).assertEqual(bleScanner != null);
+                await bleScanner.startScan([scanFilter]).then(() => {
+                    hilog.info(domain, tag, 'bleScanner startScan success');
+                });
+                expect(true).assertFalse();
+            } catch (err: BusinessError){
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "startScan get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else {
+                    expect(true).assertEqual(err.code == 2900003);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  notifyCharacteristicChangedCallback2900003Test
+         * @tc.name    notifyCharacteristicChangedCallback2900003Test
+         * @tc.desc    test notifyCharacteristicChangedCallback2900003Test without permission
+         * @tc.size    LargeTest
+         * @tc.type    Function
+         * @tc.level   Level0
+         */
+        it("notifyCharacteristicChangedCallback2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let arrayBufferCCC = new ArrayBuffer(8);
+            let cccValue = new Uint8Array(arrayBufferCCC);
+            cccValue[0] = 1123;
+            let notifyCharacter: ble.NotifyCharacteristic = {
+                serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                characteristicValue: arrayBufferCCC,
+                confirm: true,
+            };
+            let gattServer: ble.GattServer = ble.createGattServer();
+            let notifyCharacteristicChangedCallback = () => {
+                return new Promise<void>((resolve,reject) => {
+                    gattServer.notifyCharacteristicChanged('00:11:22:33:44:55', notifyCharacter, (err: BusinessError|null, data)=> {
+                        try {
+                            if (err) {
+                                hilog.info(domain, tag, 'notifyCharacteristicChanged callback failed' + JSON.stringify(err));
+                                reject(err);
+                            } else {
+                                hilog.info(domain, tag, 'notifyCharacteristicChanged callback value:'+JSON.stringify(data));
+                                if (data != undefined) {
+                                    resolve(data);
+                                }
+                            }
+                        } catch (err: BusinessError) {
+                            hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                        }
+                    });
+                });
+            }
+            try {
+                await notifyCharacteristicChangedCallback().then(() => {
+                    hilog.info(domain, tag, "notifyCharacteristicChanged callback successful");
+                });
+            } catch (err: BusinessError){
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "notifyCharacteristicChanged callback get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else if (err.code == 2900003) {
+                    expect(true).assertEqual(err.code == 2900003);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  notifyCharacteristicChangedPromise2900003Test
+         * @tc.name    notifyCharacteristicChangedPromise2900003Test
+         * @tc.desc    test notifyCharacteristicChangedPromise2900003Test without permission
+         * @tc.size    LargeTest
+         * @tc.type    Function
+         * @tc.level   Level0
+         */
+        it("notifyCharacteristicChangedPromise2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let arrayBufferCCC = new ArrayBuffer(8);
+                let cccValue = new Uint8Array(arrayBufferCCC);
+                cccValue[0] = 1123;
+                let notifyCharacter: ble.NotifyCharacteristic = {
+                    serviceUuid: '00001810-0000-1000-8000-00805F9B34FB',
+                    characteristicUuid: '00001820-0000-1000-8000-00805F9B34FB',
+                    characteristicValue: arrayBufferCCC,
+                    confirm: true,
+                };
+                let gattServer: ble.GattServer = ble.createGattServer();
+                await gattServer.notifyCharacteristicChanged('3e:45:7f:cc:45:3f', notifyCharacter).then(() => {
+                    hilog.info(domain, tag, "notifyCharacteristicChanged successful");
+                }).catch((err: Error) => {
+                    hilog.info(domain, tag, "notifyCharacteristicChanged failed: " + JSON.stringify(err));
+                });
+            } catch (err: BusinessError){
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "notifyCharacteristicChanged promise get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else if (err.code == 2900003) {
+                    expect(true).assertEqual(err.code == 2900003);
+                } else {
+                    expect(Number(err.code)).assertEqual(2900099);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  disableAdvertisingCallback2900003Test
+         * @tc.name    disableAdvertisingCallback2900003Test
+         * @tc.desc    test disableAdvertisingCallback2900003Test without permission
+         * @tc.size    LargeTest
+         * @tc.type    Function
+         * @tc.level   Level0
+         */
+        it("disableAdvertisingCallback2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let advertisingDisableParams: ble.AdvertisingDisableParams = {
+                advertisingId: 0XFF
+            };
+            let disableAdvertisingCallback = () => {
+                return new Promise<void>((resolve,reject) => {
+                    ble.disableAdvertising(advertisingDisableParams, (err: BusinessError|null, data)=> {
+                        try {
+                            if (err) {
+                                hilog.info(domain, tag, 'disableAdvertising callback failed' + JSON.stringify(err));
+                                reject(err);
+                            } else {
+                                hilog.info(domain, tag, 'disableAdvertising callback value:'+JSON.stringify(data));
+                                if (data != undefined) {
+                                    resolve(data);
+                                }
+                            }
+                        } catch (err: BusinessError) {
+                            hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
+                        }
+                    });
+                });
+            }
+            try {
+                await disableAdvertisingCallback().then(() => {
+                    hilog.info(domain, tag, "disableAdvertising callback successful");
+                });
+            } catch (err: BusinessError){
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "disableAdvertising callback get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else if (err.code == 2900003) {
+                    expect(true).assertEqual(err.code == 2900003);
+                } else {
+                    expect(Number(err.code)).assertEqual(2902055);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  disableAdvertisingPromise2900003Test
+         * @tc.name    disableAdvertisingPromise2900003Test
+         * @tc.desc    test disableAdvertisingPromise2900003Test without permission
+         * @tc.size    LargeTest
+         * @tc.type    Function
+         * @tc.level   Level0
+         */
+        it("disableAdvertisingPromise2900003Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let advertisingDisableParams: ble.AdvertisingDisableParams = {
+                advertisingId: 0XFF
+            };
+            try {
+                await ble.disableAdvertising(advertisingDisableParams).then(() => {
+                    hilog.info(domain, tag, 'disableAdvertising promise success');
+                });
+                expect(true).assertFalse();
+            } catch (err: BusinessError){
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "disableAdvertising promise get errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                } else if (err.code == 2900003) {
+                    expect(true).assertEqual(err.code == 2900003);
+                } else {
+                    expect(Number(err.code)).assertEqual(2902055);
+                }
+            }
+            done();
+        })
     })
 }
