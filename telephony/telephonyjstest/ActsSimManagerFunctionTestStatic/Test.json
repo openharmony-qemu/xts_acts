@@ -3,7 +3,7 @@
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
-        "bundle-name": "com.example.ActsSimManagerFunctionTest.static",
+        "bundle-name": "com.example.actsimmanagerfunctiontest.static",
         "module-name": "entry",
         "shell-timeout": "600000",
         "testcase-timeout": 70000
