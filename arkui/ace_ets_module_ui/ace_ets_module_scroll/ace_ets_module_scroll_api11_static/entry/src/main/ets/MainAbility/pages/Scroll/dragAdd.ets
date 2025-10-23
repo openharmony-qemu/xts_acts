@@ -53,7 +53,7 @@ struct Index {
   @State textContent: string = "";
 
   getDataFromUdmfRetry(event: DragEvent, callback: (data: DragEvent) => void) {
-    let records: Array<udmf.UnifiedRecord> = event.getData().getRecords();
+    let records: Array<udmf.UnifiedRecord> = event.getData()!.getRecords();
     if (records.length !== 0) {
       callback(event);
       return;
@@ -146,7 +146,7 @@ struct Index {
           .allowDrop([udmfType.UniformDataType.IMAGE])
           .onDrop((dragEvent: DragEvent): void => {
             this.getDataFromUdmfRetry(dragEvent, (event) => {
-              let records: Array<udmf.UnifiedRecord> = event.getData().getRecords();
+              let records: Array<udmf.UnifiedRecord> = event.getData()!.getRecords();
               let rect: Rectangle = event.getPreviewRect();
               this.imageWidth = rect.width as number;
               this.imageHeight = rect.height as number;
@@ -177,7 +177,7 @@ struct Index {
             console.info("the getVelocityY " + dragEvent.getVelocityY());
             console.info("the getVelocity " + dragEvent.getVelocity());
             this.getDataFromUdmfRetry(dragEvent, event => {
-              let records: Array<udmf.UnifiedRecord> = event.getData().getRecords();
+              let records: Array<udmf.UnifiedRecord> = event.getData()!.getRecords();
               if (records[0]) {
                 
                 
@@ -204,7 +204,7 @@ struct Index {
         .allowDrop([udmfType.UniformDataType.PLAIN_TEXT])
         .onDrop((dragEvent: DragEvent): void => {
           this.getDataFromUdmfRetry(dragEvent, event => {
-            let records: Array<udmf.UnifiedRecord> = event.getData().getRecords();
+            let records: Array<udmf.UnifiedRecord> = event.getData()!.getRecords();
             
             
             

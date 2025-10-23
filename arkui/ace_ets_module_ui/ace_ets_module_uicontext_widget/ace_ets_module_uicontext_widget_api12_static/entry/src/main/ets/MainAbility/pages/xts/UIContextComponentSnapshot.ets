@@ -95,7 +95,7 @@ struct UIContextComponentSnapshot {
                   top: 100,
                   bottom: 200
                 }
-              })
+              })!
               .then((pixmap: image.PixelMap) => {
                 this.pixmap_2 = pixmap
                 console.info('UIContextComponentSnapshot pixmap_text_2 start')

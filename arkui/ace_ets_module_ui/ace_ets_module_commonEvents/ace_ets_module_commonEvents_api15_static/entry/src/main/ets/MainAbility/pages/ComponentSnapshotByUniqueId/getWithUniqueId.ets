@@ -93,7 +93,7 @@ struct SnapshotExample {
                 {
                   scale: this.snapshotScale,
                   waitUntilRenderFinished: this.snapshotWait
-                } as componentSnapshot.SnapshotOptions)
+                } as componentSnapshot.SnapshotOptions)!
               .then((pixmap: image.PixelMap) => {
                 this.pixmap = pixmap
                 this.text = 'UniqueId_getSnapshot_success'
