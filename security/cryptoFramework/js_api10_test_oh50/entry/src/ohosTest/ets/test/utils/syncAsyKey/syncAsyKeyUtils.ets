@@ -1421,7 +1421,7 @@ function compareRsaPubKeyBySpec(rsaKeySpec: cryptoFramework.RSAPubKeySpec, n: bi
     console.error('type is string');
     return false;
   }
-  if (typeof n === 'number' || typeof e === 'number') {
+  if (['bigint', 'number'].includes(typeof n) || ['bigint', 'number'].includes(typeof e)) {
     console.error('type is number');
     return false;
   }
@@ -1476,7 +1476,7 @@ function showBigIntInfo(bnName: string, bnValue: bigint | string | number) {
     console.error('type is string');
     return;
   }
-  if (typeof bnValue === 'number') {
+  if (['bigint', 'number'].includes(typeof bnValue)) {
     console.error('type is number');
     return;
   }
