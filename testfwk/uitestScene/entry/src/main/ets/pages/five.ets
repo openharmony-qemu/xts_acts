@@ -25,6 +25,8 @@ struct Five {
   @State backGroundColor: Color = Color.Transparent;
   @State inSetValueOne: number = 0;
   @State inSetValueTwo: number = 40;
+  private arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  scroller: Scroller = new Scroller()
 
   build() {
     Column() {
@@ -100,8 +102,29 @@ struct Five {
 
       }
       .margin({top: 20})
+      Text('HorizontalScroll')
+        .fontSize(25)
+        .fontWeight(FontWeight.Bold)
+      Scroll(this.scroller) {
+          Row() {
+            ForEach(this.arr, (item: number) => {
+              Text(item + '_hor')
+                .backgroundColor(0xDCDCDC)
+                .fontSize(40)
+                .padding(20)
+                .textAlign(TextAlign.Center)
+                .margin({ top: 10 })
+            }, (item: string) => item)
+          }
+        }
+        .id('horizontalScroll')
+      .width('80%')
+      .height('40%')
+        .scrollable(ScrollDirection.Horizontal)
+        .scrollBar(BarState.On)
+        .scrollBarColor(Color.Gray)
+        .scrollBarWidth(30)
     }
-    .height('100%')
-    .width('100%')
+    .justifyContent(FlexAlign.Center)
   }
 }

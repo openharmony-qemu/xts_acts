@@ -2476,5 +2476,218 @@ export default function uitestDriverErrorTest() {
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007 end`);
     })
+
+    /**
+     * @tc.number uitestDriverErrorTest_092
+     * @tc.name testKnuckleKnock_17000002
+     * @tc.desc knuckleKnock 17000002 test.
+     */
+    it('testKnuckleKnock_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testKnuckleKnock_17000002 start`);
+      try {
+        let driver: Driver = Driver.create();
+        driver.delayMs(waitUiReadyMs * 3);
+        await sleep(100);
+        await driver.knuckleKnock([{x: 100, y: 100}], 2);
+        console.log(`${TestTag}, testKnuckleKnock_17000002 knuckleKnock end`);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testKnuckleKnock_17000002 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(AsyncErrorCode);
+      }
+      await sleep(waitUiReadyMs * 8);
+      console.log(`${TestTag}, testKnuckleKnock_17000002 end`);
+    })
+
+    /**
+     * @tc.number uitestDriverErrorTest_093
+     * @tc.name testKnuckleKnock_17000007
+     * @tc.desc knuckleKnock 17000007 test.
+     */
+    it('testKnuckleKnock_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testKnuckleKnock_17000007 start`);
+      let driver: Driver = Driver.create();
+      try {
+        await driver.knuckleKnock([{x: -1, y: 100}],  2)
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testKnuckleKnock_17000007 error x = -1: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == ParameterErrorCode).assertTrue();
+      }
+      try {
+        await driver.knuckleKnock([{x: 100, y: -1}],  2)
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testKnuckleKnock_17000007 y = -1: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == ParameterErrorCode).assertTrue();
+      }
+      try {
+        await driver.knuckleKnock([{x: 100, y: 100, displayId: -1}],  2)
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testKnuckleKnock_17000007 displayId = -1: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == ParameterErrorCode).assertTrue();
+      }
+      try {
+        await driver.knuckleKnock([{x: 100, y: 100, displayId: 0}, {x: 100, y: 100, displayId: 2}],  2)
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testKnuckleKnock_17000007 error displayId = 2: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == ParameterErrorCode).assertTrue();
+      }
+      try {
+        await driver.knuckleKnock([{x: 100, y: 100, displayId: 0}],  0)
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testKnuckleKnock_17000007 error times = 0: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == ParameterErrorCode).assertTrue();
+      }
+      try {
+        await driver.knuckleKnock([{x: 100, y: 100, displayId: 0}],  3)
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testKnuckleKnock_17000007 error times = 3: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == ParameterErrorCode).assertTrue();
+      }
+      try {
+        await driver.knuckleKnock([{x: 100, y: 100, displayId: 0}],  -1)
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testKnuckleKnock_17000007 error times = -1: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == ParameterErrorCode).assertTrue();
+      }
+      console.log(`${TestTag}, testKnuckleKnock_17000007 end`);
+    })
+
+    /**
+     * @tc.number uitestDriverErrorTest_094
+     * @tc.name testInjectKnucklePointerAction_17000002
+     * @tc.desc injectKnucklePointerAction 17000002 test.
+     */
+    it('testInjectKnucklePointerAction_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testInjectKnucklePointerAction_17000002 start`);
+      try {
+        let driver: Driver = Driver.create();
+        let pointers = PointerMatrix.create(1,1);
+        pointers.setPoint(0, 0 ,{x: 100, y: 100})
+        driver.delayMs(waitUiReadyMs * 3);
+        await sleep(100);
+        await driver.injectKnucklePointerAction(pointers);
+        console.log(`${TestTag}, testInjectKnucklePointerAction_17000002 knuckleKnock end`);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testInjectKnucklePointerAction_17000002 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(AsyncErrorCode);
+      }
+      await sleep(waitUiReadyMs * 8);
+      console.log(`${TestTag}, testInjectKnucklePointerAction_17000002 end`);
+    })
+
+    /**
+     * @tc.number uitestDriverErrorTest_095
+     * @tc.name testInjectKnucklePointerAction_17000004
+     * @tc.desc injectKnucklePointerAction 17000007 test.
+     */
+    it('testInjectKnucklePointerAction_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testInjectKnucklePointerAction_17000007 start`);
+      let driver: Driver = Driver.create();
+      try {
+        await driver.injectKnucklePointerAction(null);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testInjectKnucklePointerAction_17000007 pointers = null: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == ParameterErrorCode).assertTrue();
+      }
+      try {
+        await driver.injectKnucklePointerAction(undefined);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testInjectKnucklePointerAction_17000007 pointers = undefined: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == ParameterErrorCode).assertTrue();
+      }
+      console.log(`${TestTag}, testInjectKnucklePointerAction_17000007 end`);
+    })
+
+    /**
+     * @tc.number uitestDriverErrorTest_096
+     * @tc.name teTouchPadTwoFingersScroll_17000002
+     * @tc.desc touchPadTwoFingersScroll 17000002 test.
+     */
+    it('teTouchPadTwoFingersScroll_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000002 start`);
+      try {
+        let driver: Driver = Driver.create();
+        driver.delayMs(waitUiReadyMs * 3);
+        await sleep(100);
+        await driver.touchPadTwoFingersScroll({x: 100, y: 100}, UiDirection.UP, 2);
+        console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000002 knuckleKnock end`);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000002 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(AsyncErrorCode);
+      }
+      await sleep(waitUiReadyMs * 8);
+      console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000002 end`);
+    })
+
+    /**
+     * @tc.number uitestDriverErrorTest_097
+     * @tc.name teTouchPadTwoFingersScroll_17000007
+     * @tc.desc touchPadTwoFingersScroll 17000007 test.
+     */
+    it('teTouchPadTwoFingersScroll_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007 start`);
+      let driver: Driver = Driver.create();
+      try {
+        await driver.touchPadTwoFingersScroll({x: -1, y: 100}, UiDirection.UP, 2);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007 error x = -1: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == ParameterErrorCode).assertTrue();
+      }
+      try {
+        await driver.touchPadTwoFingersScroll({x: 100, y: -1}, UiDirection.UP, 2);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007 y = -1: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == ParameterErrorCode).assertTrue();
+      }
+      try {
+        await driver.touchPadTwoFingersScroll({x: 100, y: 100, displayId: -1}, UiDirection.UP, 2);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007 displayId = -1: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == ParameterErrorCode).assertTrue();
+      }
+      try {
+        await driver.touchPadTwoFingersScroll({x: 100, y: 100,}, -1, 2);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007 error direction = -1: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == ParameterErrorCode).assertTrue();
+      }
+      try {
+        await driver.touchPadTwoFingersScroll({x: 100, y: 100,}, 4, 2);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007 error direction = 4: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == ParameterErrorCode).assertTrue();
+      }
+      try {
+        await driver.touchPadTwoFingersScroll({x: 100, y: 100,}, 1, -1);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007 error d = -1: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == ParameterErrorCode).assertTrue();
+      }
+      try {
+        await driver.touchPadTwoFingersScroll({x: 100, y: 100,}, 1, 10. -1);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007 error speed = -1: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == ParameterErrorCode).assertTrue();
+      }
+      console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007 end`);
+    })
   })
 }

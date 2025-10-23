@@ -561,6 +561,230 @@ export default function UiTest() {
             console.log(`${TestTag}, tesIsComponentPresentWhenSwipeFalse end`);
         })
 
+        /**
+         * @tc.number UiTest_API22_018
+         * @tc.name tesKnuckleKnockSingle
+         * @tc.desc isComponentPresentWhenLongClick test.
+         */
+        it('tesKnuckleKnockSingle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.log(`${TestTag}, tesKnuckleKnockSingle start`);
+            try {
+                let play = display.getDefaultDisplaySync();
+                console.log(`${TestTag}, tesKnuckleKnockSingle play, ${JSON.stringify(play)}`);
+                let points: Array<Point> = []
+                let point: Point = {
+                    x: play.width /2,
+                    y: play.height / 2,
+                    displayId: play.id
+                }
+                points.push(point)
+                await driver.delayMs(waitUiReadyMs)
+                await driver.knuckleKnock(points, 2)
+                await driver.delayMs(waitUiReadyMs * 2)
+                let screenPng = await driver.findComponent(ON.id('SCREENSHOT_PICTURE_PREVIEWER_IMAGE'));
+                expect(screenPng != null).assertTrue();
+            } catch (error) {
+                console.log(`${TestTag}, tesKnuckleKnockSingle error, ${JSON.stringify(error)}`);
+                expect(error.code).assertEqual(17000005);
+            }
+            await driver.delayMs(waitUiReadyMs * 2);
+            console.log(`${TestTag}, tesKnuckleKnockSingle end`);
+        })
+
+        /**
+         * @tc.number UiTest_API22_019
+         * @tc.name tesKnuckleKnockDouble
+         * @tc.desc isComponentPresentWhenLongClick test.
+         */
+        it('tesKnuckleKnockDouble', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.log(`${TestTag}, tesKnuckleKnockDouble start`);
+            try {
+                let play = display.getDefaultDisplaySync();
+                let points: Array<Point> = []
+                let point: Point = {
+                    x: play.width /2,
+                    y: play.height / 2,
+                    displayId: play.id
+                }
+                points.push(point)
+                points.push(point)
+                await driver.knuckleKnock(points, 2);
+                await driver.delayMs(waitUiReadyMs * 2)
+                let screenPng = await driver.findComponent(ON.id('.hmos.screenrecorder__1000', MatchPattern.ENDS_WITH));
+                expect(screenPng != null).assertTrue();
+                await driver.knuckleKnock(points, 2);
+                await driver.delayMs(waitUiReadyMs);
+            } catch (error) {
+                console.log(`${TestTag}, tesKnuckleKnockDouble error, ${JSON.stringify(error)}`);
+                expect(error.code).assertEqual(17000005);
+            }
+            await driver.delayMs(waitUiReadyMs * 2);
+            console.log(`${TestTag}, tesKnuckleKnockDouble end`);
+        })
+
+        /**
+         * @tc.number UiTest_API22_020
+         * @tc.name tesKnuckleKnockS
+         * @tc.desc isComponentPresentWhenLongClick test.
+         */
+        it('tesKnuckleKnockS', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.log(`${TestTag}, tesKnuckleKnockS start`);
+            try {
+                let play = display.getDefaultDisplaySync();
+                let centerX = play.width / 2;
+                let centY = play.height / 2;
+                let fivePoint: Point = {x: centerX - 40, y: centY - 80};
+                let sixPoint: Point = {x: centerX - 40, y: centY - 60};
+                let sevPoint: Point = {x: centerX - 40, y: centY - 40};
+                let eigPoint: Point = {x: centerX -40, y: centY - 20};
+                let niePoint: Point = {x: centerX - 40, y: centY };
+                let tenPoint: Point = {x: centerX - 20, y: centY};
+                let ten1Point: Point = {x: centerX, y: centY};
+                let ten2Point: Point = {x: centerX + 20, y: centY };
+                let ten3Point: Point = {x: centerX + 40, y: centY };
+                let ten4Point: Point = {x: centerX + 40, y: centY + 20};
+                let ten5Point: Point = {x: centerX + 40, y: centY + 40};
+                let ten6Point: Point = {x: centerX + 40, y: centY + 60};
+                let ten7Point: Point = {x: centerX + 40, y: centY + 80};
+                let pointers = PointerMatrix.create(1,13);
+                pointers.setPoint(0,0, fivePoint);
+                pointers.setPoint(0,1, sixPoint);
+                pointers.setPoint(0,2, sevPoint);
+                pointers.setPoint(0,3, eigPoint);
+                pointers.setPoint(0,4, niePoint);
+                pointers.setPoint(0,5, tenPoint);
+                pointers.setPoint(0,6, ten1Point);
+                pointers.setPoint(0,7, ten2Point);
+                pointers.setPoint(0,8, ten3Point);
+                pointers.setPoint(0,9, ten4Point);
+                pointers.setPoint(0,10, ten5Point);
+                pointers.setPoint(0,11, ten6Point);
+                pointers.setPoint(0,12, ten7Point);
+                await driver.injectKnucklePointerAction(pointers);
+                await driver.delayMs(waitUiReadyMs * 2)
+                let screenPng = await driver.findComponent(ON.id('ScrollHandWriteBoxStack'));
+                expect(screenPng != null).assertTrue();
+                await driver.pressBack();
+                await driver.delayMs(waitUiReadyMs * 2);
+            } catch (error) {
+                console.log(`${TestTag}, tesKnuckleKnockS error, ${JSON.stringify(error)}`);
+                expect(error.code).assertEqual(17000005);
+            }
+            await driver.delayMs(waitUiReadyMs * 2);
+            console.log(`${TestTag}, tesKnuckleKnockS end`);
+        })
+
+        /**
+         * @tc.number UiTest_API22_021
+         * @tc.name tesKnuckleKnockRect
+         * @tc.desc isComponentPresentWhenLongClick test.
+         */
+        it('tesKnuckleKnockRect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.log(`${TestTag}, tesKnuckleKnockRect start`);
+            try {
+                let play = display.getDefaultDisplaySync();
+                let centerX = play.width / 2;
+                let centY = play.height / 2;
+                let onePoint: Point = {x: centerX - 100, y: centY - 100};
+                let twoPoint: Point = {x: centerX -100, y: centY};
+                let threePoint: Point = {x: centerX - 100, y: centY + 100 };
+                let fourPoint: Point = {x: centerX, y: centY + 100};
+                let fivePoint: Point = {x: centerX + 100, y: centY + 100};
+                let sixPoint: Point = {x: centerX + 100, y: centY};
+                let sevPoint: Point = {x: centerX  + 100, y: centY - 100};
+                let eigPoint: Point = {x: centerX, y: centY - 100};
+                let ninePoint: Point = {x: centerX - 100, y: centY - 100};
+                let pointers = PointerMatrix.create(1,9);
+                pointers.setPoint(0,0, onePoint);
+                pointers.setPoint(0,1, twoPoint);
+                pointers.setPoint(0,2, threePoint);
+                pointers.setPoint(0,3, fourPoint);
+                pointers.setPoint(0,4, fivePoint);
+                pointers.setPoint(0,5, sixPoint);
+                pointers.setPoint(0,6, sevPoint);
+                pointers.setPoint(0,7, eigPoint);
+                pointers.setPoint(0,8, ninePoint);
+                await driver.injectKnucklePointerAction(pointers);
+                await driver.delayMs(waitUiReadyMs * 2)
+                let screenPng = await driver.findComponent(ON.text('保存'));
+                expect(screenPng != null).assertTrue();
+                await driver.pressBack();
+            } catch (error) {
+                console.log(`${TestTag}, tesKnuckleKnockRect error, ${JSON.stringify(error)}`);
+                expect(error.code).assertEqual(17000005);
+            }
+            await driver.delayMs(waitUiReadyMs * 2);
+            console.log(`${TestTag}, tesKnuckleKnockRect end`);
+        })
+
+        /**
+         * @tc.number UiTest_API22_022
+         * @tc.name teTouchPadTwoFingersScrollVer
+         * @tc.desc isComponentPresentWhenLongClick test.
+         */
+        it('teTouchPadTwoFingersScrollVer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.log(`${TestTag}, teTouchPadTwoFingersScrollVer start`);
+            try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+                await driver.delayMs(waitUiReadyMs);
+                let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'));
+                await driver.delayMs(waitUiReadyMs);
+                let center = await scrollBar.getBoundsCenter();
+                await driver.delayMs(waitUiReadyMs);
+                await driver.touchPadTwoFingersScroll({x: center.x, y: center.y}, UiDirection.UP, 300);
+                await driver.delayMs(waitUiReadyMs);
+                let text = await driver.findComponent(ON.text('toast'));
+                await driver.delayMs(waitUiReadyMs);
+                expect(text == null).assertTrue()
+                await driver.touchPadTwoFingersScroll({x: center.x, y: center.y}, UiDirection.DOWN, 400);
+                let text1 = await driver.findComponent(ON.text('toast'));
+                await driver.delayMs(waitUiReadyMs);
+                expect(text1 != null).assertTrue()
+            } catch (error) {
+                console.log(`${TestTag}, teTouchPadTwoFingersScrollVer error, ${JSON.stringify(error)}`);
+                expect(error.code).assertEqual(17000005);
+            }
+            await stopApplication('com.uitestScene.acts');
+            console.log(`${TestTag}, teTouchPadTwoFingersScrollVer end`);
+        })
+
+        /**
+         * @tc.number UiTest_API22_023
+         * @tc.name teTouchPadTwoFingersScrollHor
+         * @tc.desc isComponentPresentWhenLongClick test.
+         */
+        it('teTouchPadTwoFingersScrollHor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.log(`${TestTag}, teTouchPadTwoFingersScrollHor start`);
+            try {
+                await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+                await driver.delayMs(waitUiReadyMs);
+                let to5Btn = await driver.findComponent(ON.id('to5'));
+                await to5Btn.click();
+                await driver.delayMs(waitUiReadyMs);
+                let scrollBar = await driver.findComponent(ON.type('Scroll').id('horizontalScroll'))
+                await driver.delayMs(waitUiReadyMs);
+                let center = await scrollBar.getBoundsCenter();
+                await driver.delayMs(waitUiReadyMs);
+                await driver.touchPadTwoFingersScroll({x: center.x, y: center.y},
+                    UiDirection.LEFT, 300);
+                await driver.delayMs(waitUiReadyMs);
+                let scroll11 = await driver.findComponent(ON.text('1_hor'));
+                await driver.delayMs(waitUiReadyMs);
+                expect(scroll11 == null).assertTrue();
+                await driver.delayMs(waitUiReadyMs);
+                await driver.touchPadTwoFingersScroll({x: center.x, y: center.y},
+                    UiDirection.RIGHT, 400);
+                let scroll22 = await driver.findComponent(ON.text('1_hor'));
+                await driver.delayMs(waitUiReadyMs);
+                expect(scroll22 != null).assertTrue();
+            } catch (error) {
+                console.log(`${TestTag}, teTouchPadTwoFingersScrollHor error, ${JSON.stringify(error)}`);
+                expect(error.code).assertEqual(17000005);
+            }
+            await stopApplication('com.uitestScene.acts')
+            console.log(`${TestTag}, teTouchPadTwoFingersScrollHor end`);
+        })
+
     })
     describe('UiTest_API20', () => {
         let driver: Driver
