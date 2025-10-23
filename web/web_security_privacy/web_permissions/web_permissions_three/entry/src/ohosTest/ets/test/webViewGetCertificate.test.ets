@@ -100,5 +100,72 @@ export default function webViewGetCertificate() {
       Utils.registerEvent("testGetCertificatePromise01",true,20251029,done);
       await Utils.waitAndClickComponent(driver, "webViewGetCertificate");
     })
+
+/*
+     *@tc.number  : SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0300
+     *@tc.name    : testGetCertificateCallbackReturnArrayEqual0
+     *@tc.desc    : test interface of getCertificate with callback return array length equal 0
+     *@tc.size    : MediumTest
+     *@tc.type    : Function
+     *@tc.level   : Level 2
+     */
+    it('testGetCertificateCallbackReturnArrayEqual0',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done:Function) =>{
+      Utils.emitEvent("testGetCertificateCallbackReturnArrayEqual0", 161010)
+      Utils.registerBaseEvent('testGetCertificateCallbackReturnArrayEqual0', 0, 25102122, done, (backData: events_emitter.EventData, expected: Object) => {
+            expect(backData?.data?.ACTION).assertEqual(0)
+        })
+      await Utils.waitAndClickComponent(driver, "webViewGetCertificate");
+    })
+
+    /*
+     *@tc.number  : SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0400
+     *@tc.name    : testGetCertificateCallbackReturnArrayLarger0
+     *@tc.desc    : test interface of getCertificate with callback return array length larger 0
+     *@tc.size    : MediumTest
+     *@tc.type    : Function
+     *@tc.level   : Level 2
+     */
+    it('testGetCertificateCallbackReturnArrayLarger0',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done:Function) =>{
+      Utils.emitEvent("testGetCertificateCallbackReturnArrayLarger0", 161010)
+      Utils.registerBaseEvent('testGetCertificateCallbackReturnArrayLarger0', 0, 25102121, done, (backData: events_emitter.EventData, expected: Object) => {
+            expect(backData?.data?.ACTION).assertLarger(0)
+        })
+      await Utils.waitAndClickComponent(driver, "webViewGetCertificate");
+    })
+
+    /*
+     *@tc.number  : SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0500
+     *@tc.name    : testGetCertificatePromiseReturnArrayEqual0
+     *@tc.desc    : test interface of getCertificate with promise return array length equal 0
+     *@tc.size    : MediumTest
+     *@tc.type    : Function
+     *@tc.level   : Level 2
+     */
+    it('testGetCertificatePromiseReturnArrayEqual0',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done:Function) =>{
+      Utils.emitEvent("testGetCertificatePromiseReturnArrayEqual0", 161010)
+      Utils.registerBaseEvent('testGetCertificatePromiseReturnArrayEqual0', 0, 2510219, done, (backData: events_emitter.EventData, expected: Object) => {
+            expect(backData?.data?.ACTION).assertEqual(0)
+        })
+      await Utils.waitAndClickComponent(driver, "webViewGetCertificate");
+    })
+
+    /*
+     *@tc.number  : SUB_ACE_BASIC_ETS_WEBVIEWCERTIFICATE_API_0600
+     *@tc.name    : testGetCertificatePromiseReturnArrayLarger0
+     *@tc.desc    : test interface of getCertificate with promise return array length larger 0
+     *@tc.size    : MediumTest
+     *@tc.type    : Function
+     *@tc.level   : Level 2
+     */
+    it('testGetCertificatePromiseReturnArrayLarger0',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done:Function) =>{
+      Utils.emitEvent("testGetCertificatePromiseReturnArrayLarger0", 161010)
+      Utils.registerBaseEvent('testGetCertificatePromiseReturnArrayLarger0', 0, 25102118, done, (backData: events_emitter.EventData, expected: Object) => {
+            expect(backData?.data?.ACTION).assertLarger(0)
+        })
+      await Utils.waitAndClickComponent(driver, "webViewGetCertificate");
+    })
+
+
+
   })
 }

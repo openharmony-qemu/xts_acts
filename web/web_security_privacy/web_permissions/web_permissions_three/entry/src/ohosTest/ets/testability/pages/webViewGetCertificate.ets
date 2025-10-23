@@ -22,6 +22,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import web_webview from '@ohos.web.webview';
 import cert from '@ohos.security.cert';
 import {waitForExist} from '../../test/WaitTest';
+import { CommonConstants } from '../../test/Constants.test';
 
 function Uint8ArrayToString(dataArray: Uint8Array) {
   let dataString = ''
@@ -200,6 +201,78 @@ struct webViewGetCertificate {
               this.controller.runJavaScript("test()", (res) => {
                 Utils.emitEvent(this.certificateResult, 20251029)
               })
+              break;
+            }
+            case "testGetCertificateCallbackReturnArrayEqual0": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl(CommonConstants.URL_HTTP_EXAMPLE);
+                await waitForExist(() => this.isPageEnd, 'testGetCertificateCallbackReturnArrayEqual0_isPageEnd', 0, 1000);
+                 this.controller.getCertificate((error: BusinessError, x509CertArray: Array<cert.X509Cert>) => {
+                  if (error) {
+                    console.error('getCertificate failed: ' + error.code + ', errMsg: ' + error.message)
+                  } else {
+                    console.log('getCertificate callback x509CertArray length: ' + x509CertArray.length)
+                    console.log('getCertificate callback x509CertArray result: ' + ParseX509CertInfo(x509CertArray))
+                    Utils.emitEvent(x509CertArray.length, 25102122)
+                  }
+                })
+              } catch (error) {
+                console.error(`getCertificate ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`)
+                Utils.emitEvent(error.code, 25102122)
+              }
+              break;
+            }
+            case "testGetCertificateCallbackReturnArrayLarger0": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl(CommonConstants.URL_HTTPS_EXAMPLE);
+                await waitForExist(() => this.isPageEnd, 'testGetCertificateCallbackReturnArrayLarger0_isPageEnd', 0, 1000);
+                 this.controller.getCertificate((error: BusinessError, x509CertArray: Array<cert.X509Cert>) => {
+                  if (error) {
+                    console.error('getCertificate failed: ' + error.code + ', errMsg: ' + error.message)
+                  } else {
+                    console.log('getCertificate callback x509CertArray length: ' + x509CertArray.length)
+                    console.log('getCertificate callback x509CertArray result: ' + ParseX509CertInfo(x509CertArray))
+                    Utils.emitEvent(x509CertArray.length, 25102121)
+                  }
+                })
+              } catch (error) {
+                console.error(`getCertificate ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`)
+                Utils.emitEvent(error.code, 25102121)
+              }
+              break;
+            }
+            case "testGetCertificatePromiseReturnArrayEqual0": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl(CommonConstants.URL_HTTP_EXAMPLE);
+                await waitForExist(() => this.isPageEnd, 'testGetCertificatePromiseReturnArrayEqual0_isPageEnd', 0, 1000);
+                this.controller.getCertificate().then((x509CertArray: Array<cert.X509Cert>) => {
+                    console.log('getCertificate promise x509CertArray length: ' + x509CertArray.length)
+                    console.log('getCertificate promise x509CertArray result: ' + ParseX509CertInfo(x509CertArray))
+                    Utils.emitEvent(x509CertArray.length, 2510219)
+                 })
+              } catch (error) {
+                console.error(`getCertificate ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`)
+                Utils.emitEvent(error.code, 2510219)
+              }
+              break;
+            }
+            case "testGetCertificatePromiseReturnArrayLarger0": {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl(CommonConstants.URL_HTTPS_EXAMPLE);
+                await waitForExist(() => this.isPageEnd, 'testGetCertificatePromiseReturnArrayLarger0_isPageEnd', 0, 1000);
+                this.controller.getCertificate().then((x509CertArray: Array<cert.X509Cert>) => {
+                    console.log('getCertificate promise x509CertArray length: ' + x509CertArray.length)
+                    console.log('getCertificate promise x509CertArray result: ' + ParseX509CertInfo(x509CertArray))
+                    Utils.emitEvent(x509CertArray.length, 25102118)
+                 })
+              } catch (error) {
+                console.error(`getCertificate ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`)
+                Utils.emitEvent(error.code, 25102118)
+              }
               break;
             }
           }
