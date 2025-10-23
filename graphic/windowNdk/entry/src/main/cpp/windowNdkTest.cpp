@@ -1188,7 +1188,7 @@ napi_value Test_OH_WindowManager_GetAllMainWindowInfo_0100(napi_env env, napi_ca
         napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_NO_PERMISSION, &retValue);
         return retValue;
     }
-    napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+    napi_create_int32(env, -1, &retValue);
     return retValue;
 }
 
