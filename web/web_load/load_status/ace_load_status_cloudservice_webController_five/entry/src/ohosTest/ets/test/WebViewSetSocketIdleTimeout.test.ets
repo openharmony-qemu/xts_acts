@@ -45,7 +45,7 @@ export default function WebViewSetSocketIdleTimeout() {
         try {
             webView.WebviewController.setSocketIdleTimeout(200);
             console.log('setSocketIdleTimeout 200');
-            expect(true).assertEqual(true)
+            expect(true).toEqual(true)
         } catch(error) {
             console.error('testSetSocketIdleTimeout001 error: ' + JSON.stringify(error))
             expect(0).assertEqual(1)
@@ -67,7 +67,7 @@ export default function WebViewSetSocketIdleTimeout() {
         try {
             webView.WebviewController.setSocketIdleTimeout(30);
             console.log('setSocketIdleTimeout 30');
-            expect(true).assertEqual(true)
+            expect(true).toEqual(true)
         } catch(error) {
             console.error('testSetSocketIdleTimeout002 error: ' + JSON.stringify(error))
             expect(0).assertEqual(1)
@@ -89,7 +89,7 @@ export default function WebViewSetSocketIdleTimeout() {
         try {
             webView.WebviewController.setSocketIdleTimeout(300);
             console.log('setSocketIdleTimeout 300');
-            expect(true).assertEqual(true)
+            expect(true).toEqual(true)
         } catch(error) {
             console.error('testSetSocketIdleTimeout003 error: ' + JSON.stringify(error))
             expect(0).assertEqual(1)
@@ -111,7 +111,7 @@ export default function WebViewSetSocketIdleTimeout() {
         try {
             webView.WebviewController.setSocketIdleTimeout(0);
             console.log('testSetSocketIdleTimeout004 0');
-            expect(true).assertEqual(true)
+            expect(true).toEqual(true)
         } catch(error) {
             console.error('testSetSocketIdleTimeout004 error: ' + JSON.stringify(error))
             expect(0).assertEqual(1)
@@ -133,7 +133,7 @@ export default function WebViewSetSocketIdleTimeout() {
         try {
             webView.WebviewController.setSocketIdleTimeout(99999999);
             console.log('setSocketIdleTimeout 99999999');
-            expect(true).assertEqual(true)
+            expect(true).toEqual(true)
         } catch(error) {
             console.error('testSetSocketIdleTimeout005 error: ' + JSON.stringify(error))
             expect(0).assertEqual(1)

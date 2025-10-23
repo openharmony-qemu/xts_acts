@@ -85,7 +85,7 @@ struct webViewGetSecurityLevel {
                 }
                 break;
               }
-               case 'testWebViewGetSecurityLevelSecure': {
+              case 'testWebViewGetSecurityLevelSecure': {
                   try {
                     this.isPageEnd = -1;
                     this.controller.loadUrl(CommonConstants.URL_HTTPS_EXAMPLE);
@@ -99,8 +99,8 @@ struct webViewGetSecurityLevel {
                     Utils.emitEvent('fail', 25102202);
                   }
                   break;
-               }
-               case 'testWebViewGetSecurityLevelWarning': {
+              }
+              case 'testWebViewGetSecurityLevelWarning': {
                   try {
                     this.isPageEnd = -1;
                     this.controller.loadUrl(CommonConstants.URL_HTTP_BAIDU);
@@ -114,8 +114,8 @@ struct webViewGetSecurityLevel {
                     Utils.emitEvent('fail', 25102203);
                   }
                   break;
-               }
-                case 'testWebViewGetSecurityLevelDangerous': {
+              }
+              case 'testWebViewGetSecurityLevelDangerous': {
                   try {
                     this.isPageEnd = -1;
                     this.controller.loadUrl(CommonConstants.URL_HTTPS_EXPIREDBADSSL);
@@ -129,7 +129,7 @@ struct webViewGetSecurityLevel {
                     Utils.emitEvent('fail', 25102204);
                   }
                   break;
-               }
+              }
             }
           })
       }

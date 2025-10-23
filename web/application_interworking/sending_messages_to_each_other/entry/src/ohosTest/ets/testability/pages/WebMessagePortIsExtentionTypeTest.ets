@@ -96,7 +96,7 @@ struct WebMessagePortIsExtentionTypeTest {
             }
             case 'testCreateWebMessagePortsReturnArrayLengthEqual0': {
               try {
-                let webMessagePorts: Array<webView.WebMessagePort> = this.controller.createWebMessagePorts();
+                let webMessagePorts:webView.WebMessagePort[] = this.controller.createWebMessagePorts();
                 webMessagePorts.splice(0)
                 console.log('[createWebMessagePorts] WebMessagePort length:' + webMessagePorts.length)
                 Utils.emitEvent(webMessagePorts.length, 2510228)
@@ -108,7 +108,7 @@ struct WebMessagePortIsExtentionTypeTest {
             }
            case 'testCreateWebMessagePortsReturnArrayLengthLarger0': {
               try {
-                let webMessagePorts: Array<webView.WebMessagePort> = this.controller.createWebMessagePorts(true);
+                let webMessagePorts:webView.WebMessagePort[] = this.controller.createWebMessagePorts(true);
                 console.log('[createWebMessagePorts] WebMessagePort length:' + webMessagePorts.length)
                 Utils.emitEvent(webMessagePorts.length, 25102209)
               } catch (error) {

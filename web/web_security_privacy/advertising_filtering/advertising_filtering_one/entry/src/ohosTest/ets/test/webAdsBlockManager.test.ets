@@ -274,7 +274,7 @@ export default function ActsAceWebAdsBlockManager() {
     it('testIsAdsBlockEnabledCheck', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitIsAdsBlockEnabledCheck"
       Utils.emitEvent(emitKey, 161050);
-      Utils.registerEvent("testIsAdsBlockEnabledCheck", true, 161190, done);
+      Utils.registerEvent("testIsAdsBlockEnabledCheck", false, 161190, done);
       sendEventByKey('webViewSdkSchemeHandler', 10, '');
     })
 
