@@ -63,7 +63,7 @@ export default function TransitionEdgeTest() {
     /**
      * @tc.number TransitionEdgeTest_001
      * @tc.name TransitionEdgeTest_001
-     * @tc.desc test sweepGradient repeating
+     * @tc.desc test TransitionEdge
      * @tc.level Level 0
      * @tc.type
      * @tc.size
