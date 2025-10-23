@@ -48,7 +48,6 @@ static napi_value OpenSession(napi_env env, napi_callback_info info)
     g_client2_context.ta_path = (uint8_t *)TA_PATH;
     TEEC_Result ret = TEEC_OpenSession(&g_client2_context, &g_client2_session,
         &uuid, TEEC_LOGIN_IDENTIFY, NULL, &operation, &origin);
-
     if (ret != TEEC_SUCCESS) {
         g_client2_context.ta_path = (uint8_t *)TA_PATH2;
         ret = TEEC_OpenSession(&g_client2_context, &g_client2_session, &uuid2, 

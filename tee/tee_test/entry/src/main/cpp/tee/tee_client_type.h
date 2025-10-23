@@ -21,7 +21,7 @@
  * @{
  *
  * @brief TEE(Trusted Excution Environment) 可信执行环境 API.
- * 
+ *
  * 提供安全能力API，例如可信存储、加解密及可信时间等，用于可信应用程序开发。
  *
  * @since 20
