@@ -108,7 +108,7 @@ export default function flagstartwithouttipstest() {
         console.log("====>aa force stop executeShellCommand error : " + JSON.stringify(error));
         selectorBundleName = '';
       });
-      await driver.delayMs(1000);
+      await driver.delayMs(500);
     })
 
     /**
@@ -138,7 +138,7 @@ export default function flagstartwithouttipstest() {
         hilog.info(0x0000, TAG, '%{public}s startAbility error', JSON.stringify(error));
       }
       // Wait for the popup to open
-      await driver.delayMs(2000);
+      await driver.delayMs(1000);
       if (!isAppSelectorExist) {
         done();
         return;
@@ -166,7 +166,7 @@ export default function flagstartwithouttipstest() {
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s startAbility error', JSON.stringify(error));
       }
-      await driver.delayMs(2000);
+      await driver.delayMs(1000);
       let textComponent = await driver.findComponent(ON.id('TEST_PAGE_TEXT'));
       expect(!!textComponent).assertTrue();
       done();
@@ -188,14 +188,13 @@ export default function flagstartwithouttipstest() {
       };
       try {
         await context.startAbility(wantInfo);
-        await driver.delayMs(2000);
+        await driver.delayMs(1000);
         let textComponent = await driver.findComponent(ON.text('允许'));
         await textComponent?.click();
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s startAbility error', JSON.stringify(error));
       }
       // Wait for the popup to open
-      await driver.delayMs(3000);
       if (!isAppSelectorExist) {
         done();
         return;
@@ -220,14 +219,13 @@ export default function flagstartwithouttipstest() {
       };
       try {
         await context.startAbility(wantInfo);
-        await driver.delayMs(2000);
+        await driver.delayMs(1000);
         let textComponent = await driver.findComponent(ON.text('允许'));
         await textComponent?.click();
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s startAbility error', JSON.stringify(error));
       }
       // Wait for the popup to open
-      await driver.delayMs(3000);
       if (!isAppSelectorExist) {
         done();
         return;
@@ -247,7 +245,6 @@ export default function flagstartwithouttipstest() {
       let TAG = 'SUB_Ability_AbilityRuntime_startAbility_FLAG_0700';
       hilog.info(0x0000, TAG, '%{public}s', '--start');
       await abilityDelegator.executeShellCommand('aa start -b com.acts.flagstartwithouttipstest -a TestAbility');
-      await driver.delayMs(2000);
       try {
         let wantInfo: Want = {
           action: 'ohos.want.onlyforwithouttips.onlyforwithouttips',
@@ -256,7 +253,7 @@ export default function flagstartwithouttipstest() {
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s startAbility error', JSON.stringify(error));
       }
-      await driver.delayMs(2000);
+      await driver.delayMs(1000);
       let openViewData = false;
       try {
         await driver.findComponent(ON.text('ohos.want.action.viewData ability')).then(async (data) => {
@@ -288,7 +285,6 @@ export default function flagstartwithouttipstest() {
       let TAG = 'SUB_Ability_AbilityRuntime_startAbility_FLAG_0800';
       hilog.info(0x0000, TAG, '%{public}s', '--start');
       await abilityDelegator.executeShellCommand('aa start -b com.acts.flagstartwithouttipstest -a TestAbility');
-      await driver.delayMs(2000);
       try {
         let wantInfo: Want = {
           action: 'ohos.want.onlyforwithouttips.onlyforwithouttips',
@@ -298,7 +294,7 @@ export default function flagstartwithouttipstest() {
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s startAbility error', JSON.stringify(error));
       }
-      await driver.delayMs(2000);
+      await driver.delayMs(1000);
       let openViewData = false;
       try {
         await driver.findComponent(ON.text('ohos.want.action.viewData ability')).then(async (data) => {
