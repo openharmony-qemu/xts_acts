@@ -86,7 +86,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbDeviceDescriptor_0100', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -111,7 +111,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbDeviceDescriptor_0200', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -136,7 +136,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbDeviceDescriptor_0300', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -161,7 +161,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbDeviceDescriptor_0400', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -186,7 +186,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbDeviceDescriptor_0500', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -211,7 +211,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbDeviceDescriptor_0600', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -236,7 +236,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbDeviceDescriptor_0700', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -261,7 +261,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbDeviceDescriptor_0800', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -286,7 +286,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbDeviceDescriptor_0900', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -311,7 +311,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbDeviceDescriptor_1000', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -336,7 +336,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbDeviceDescriptor_1100', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -361,7 +361,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbDeviceDescriptor_1200', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -386,7 +386,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbDeviceDescriptor_1300', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -411,7 +411,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbDeviceDescriptor_1400', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -436,7 +436,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbConfigDescriptor_0100', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -461,7 +461,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbConfigDescriptor_0200', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -486,7 +486,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbConfigDescriptor_0300', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -511,7 +511,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbConfigDescriptor_0400', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -536,7 +536,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbConfigDescriptor_0500', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -561,7 +561,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbConfigDescriptor_0600', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {
@@ -586,7 +586,7 @@ export default function UsbDdkTest1() {
      */
     it('testUsbConfigDescriptor_0700', Level.LEVEL1, async (done: Function) => {
       if (deviceId == -1) {
-        expect(deviceId).assertEqual(deviceId);
+        expect(deviceId).assertEqual(-1);
         done();
       }
       try {

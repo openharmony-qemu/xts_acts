@@ -43,21 +43,21 @@ export default function UsbTest() {
      */
     it('TestUsbDdkConfigDescriptor0100', Level.LEVEL0,
       async (done: Function) => {
-      if (dev == -1) {
-        expect(dev).assertEqual(dev);
-        done();
-      }
-      try {
-        console.info("====>TestUsbDdkConfigDescriptor0100 start====");
-        let result: number = baskddkerror.UsbDdkConfigDescriptor0100(dev);
-        expect(result).assertEqual(0);
-        console.info("====>TestUsbDdkConfigDescriptor0100 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>TestUsbDdkConfigDescriptor0100 catch err: " + err);
-        expect().assertFail();
-      }
-    })
+        if (dev == -1) {
+          expect(dev).assertEqual(-1);
+          done();
+        }
+        try {
+          console.info("====>TestUsbDdkConfigDescriptor0100 start====");
+          let result: number = baskddkerror.UsbDdkConfigDescriptor0100(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbDdkConfigDescriptor0100 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbDdkConfigDescriptor0100 catch err: " + err);
+          expect().assertFail();
+        }
+      })
 
     /**
      * @tc.number   SUB_DRIVER_EXT_USBDDKCONFIGDESCRIPTOR_EXTRALENGTH_0200
@@ -70,20 +70,20 @@ export default function UsbTest() {
     it('TestUsbDdkConfigDescriptor0200', Level.LEVEL0,
       async (done: Function) => {
         if (dev == -1) {
-          expect(dev).assertEqual(dev);
+          expect(dev).assertEqual(-1);
           done();
         }
-      try {
-        console.info("====>TestUsbDdkConfigDescriptor0200 start====");
-        let result: number = baskddkerror.UsbDdkConfigDescriptor0200(dev);
-        expect(result).assertEqual(0);
-        console.info("====>TestUsbDdkConfigDescriptor0200 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>TestUsbDdkConfigDescriptor0200 catch err: " + err);
-        expect().assertFail();
-      }
-    })
+        try {
+          console.info("====>TestUsbDdkConfigDescriptor0200 start====");
+          let result: number = baskddkerror.UsbDdkConfigDescriptor0200(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbDdkConfigDescriptor0200 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbDdkConfigDescriptor0200 catch err: " + err);
+          expect().assertFail();
+        }
+      })
 
     /**
      * @tc.number   SUB_DRIVER_EXT_USBDDKINTERFACEDESCRIPTOR_EXTRA_0100
@@ -95,21 +95,21 @@ export default function UsbTest() {
      */
     it('TestUsbDdkInterfaceDescriptor0100', Level.LEVEL0,
       async (done: Function) => {
-      if (dev == -1) {
-        expect(dev).assertEqual(dev);
-        done();
-      }
-      try {
-        console.info("====>TestUsbDdkInterfaceDescriptor0100 start====");
-        let result: number = baskddkerror.UsbDdkInterfaceDescriptor0100(dev);
-        expect(result).assertEqual(0);
-        console.info("====>TestUsbDdkInterfaceDescriptor0100 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>TestUsbDdkInterfaceDescriptor0100 catch err: " + err);
-        expect().assertFail();
-      }
-    })
+        if (dev == -1) {
+          expect(dev).assertEqual(-1);
+          done();
+        }
+        try {
+          console.info("====>TestUsbDdkInterfaceDescriptor0100 start====");
+          let result: number = baskddkerror.UsbDdkInterfaceDescriptor0100(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbDdkInterfaceDescriptor0100 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbDdkInterfaceDescriptor0100 catch err: " + err);
+          expect().assertFail();
+        }
+      })
 
     /**
      * @tc.number   SUB_DRIVER_EXT_USBDDKINTERFACEDESCRIPTOR_EXTRALENGTH_0200
@@ -121,21 +121,21 @@ export default function UsbTest() {
      */
     it('TestUsbDdkInterfaceDescriptor0200', Level.LEVEL0,
       async (done: Function) => {
-      if (dev == -1) {
-        expect(dev).assertEqual(dev);
-        done();
-      }
-      try {
-        console.info("====>TestUsbDdkInterfaceDescriptor0200 start====");
-        let result: number = baskddkerror.UsbDdkInterfaceDescriptor0200(dev);
-        expect(result).assertEqual(0);
-        console.info("====>TestUsbDdkInterfaceDescriptor0200 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>TestUsbDdkInterfaceDescriptor0200 catch err: " + err);
-        expect().assertFail();
-      }
-    })
+        if (dev == -1) {
+          expect(dev).assertEqual(-1);
+          done();
+        }
+        try {
+          console.info("====>TestUsbDdkInterfaceDescriptor0200 start====");
+          let result: number = baskddkerror.UsbDdkInterfaceDescriptor0200(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbDdkInterfaceDescriptor0200 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbDdkInterfaceDescriptor0200 catch err: " + err);
+          expect().assertFail();
+        }
+      })
 
     /**
      * @tc.number   SUB_DRIVER_EXT_UsbDdkEndpointDescriptor_EXTRA_0100
@@ -147,21 +147,21 @@ export default function UsbTest() {
      */
     it('TestUsbDdkEndpointDescriptor0100', Level.LEVEL0,
       async (done: Function) => {
-      if (dev == -1) {
-        expect(dev).assertEqual(dev);
-        done();
-      }
-      try {
-        console.info("====>TestUsbDdkEndpointDescriptor0100 start====");
-        let result: number = baskddkerror.UsbDdkEndpointDescriptor0100(dev);
-        expect(result).assertEqual(0);
-        console.info("====>TestUsbDdkEndpointDescriptor0100 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>TestUsbDdkEndpointDescriptor0100 catch err: " + err);
-        expect().assertFail();
-      }
-    })
+        if (dev == -1) {
+          expect(dev).assertEqual(-1);
+          done();
+        }
+        try {
+          console.info("====>TestUsbDdkEndpointDescriptor0100 start====");
+          let result: number = baskddkerror.UsbDdkEndpointDescriptor0100(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbDdkEndpointDescriptor0100 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbDdkEndpointDescriptor0100 catch err: " + err);
+          expect().assertFail();
+        }
+      })
 
     /**
      * @tc.number   SUB_DRIVER_EXT_USBDDKENDPOINTDESCRIPTOR_EXTRALENGTH_0200
@@ -173,21 +173,21 @@ export default function UsbTest() {
      */
     it('TestUsbDdkEndpointDescriptor0200', Level.LEVEL0,
       async (done: Function) => {
-      if (dev == -1) {
-        expect(dev).assertEqual(dev);
-        done();
-      }
-      try {
-        console.info("====>TestUsbDdkEndpointDescriptor0200 start====");
-        let result: number = baskddkerror.UsbDdkEndpointDescriptor0200(dev);
-        expect(result).assertEqual(0);
-        console.info("====>TestUsbDdkEndpointDescriptor0200 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>TestUsbDdkEndpointDescriptor0200 catch err: " + err);
-        expect().assertFail();
-      }
-    })
+        if (dev == -1) {
+          expect(dev).assertEqual(-1);
+          done();
+        }
+        try {
+          console.info("====>TestUsbDdkEndpointDescriptor0200 start====");
+          let result: number = baskddkerror.UsbDdkEndpointDescriptor0200(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbDdkEndpointDescriptor0200 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbDdkEndpointDescriptor0200 catch err: " + err);
+          expect().assertFail();
+        }
+      })
 
     /**
      * @tc.number   SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BLENGTH_0100
@@ -199,21 +199,21 @@ export default function UsbTest() {
      */
     it('TestUsbEndpointDescriptor0100', Level.LEVEL0,
       async (done: Function) => {
-      if (dev == -1) {
-        expect(dev).assertEqual(dev);
-        done();
-      }
-      try {
-        console.info("====>TestUsbEndpointDescriptor0100 start====");
-        let result: number = baskddkerror.UsbEndpointDescriptor0100(dev);
-        expect(result).assertEqual(0);
-        console.info("====>TestUsbEndpointDescriptor0100 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>TestUsbEndpointDescriptor0100 catch err: " + err);
-        expect().assertFail();
-      }
-    })
+        if (dev == -1) {
+          expect(dev).assertEqual(-1);
+          done();
+        }
+        try {
+          console.info("====>TestUsbEndpointDescriptor0100 start====");
+          let result: number = baskddkerror.UsbEndpointDescriptor0100(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbEndpointDescriptor0100 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbEndpointDescriptor0100 catch err: " + err);
+          expect().assertFail();
+        }
+      })
 
     /**
      * @tc.number   SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BDESCRIPTORTYPE_0200
@@ -225,21 +225,21 @@ export default function UsbTest() {
      */
     it('TestUsbEndpointDescriptor0200', Level.LEVEL0,
       async (done: Function) => {
-      if (dev == -1) {
-        expect(dev).assertEqual(dev);
-        done();
-      }
-      try {
-        console.info("====>TestUsbEndpointDescriptor0200 start====");
-        let result: number = baskddkerror.UsbEndpointDescriptor0200(dev);
-        expect(result).assertEqual(0);
-        console.info("====>TestUsbEndpointDescriptor0200 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>TestUsbEndpointDescriptor0200 catch err: " + err);
-        expect().assertFail();
-      }
-    })
+        if (dev == -1) {
+          expect(dev).assertEqual(-1);
+          done();
+        }
+        try {
+          console.info("====>TestUsbEndpointDescriptor0200 start====");
+          let result: number = baskddkerror.UsbEndpointDescriptor0200(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbEndpointDescriptor0200 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbEndpointDescriptor0200 catch err: " + err);
+          expect().assertFail();
+        }
+      })
 
     /**
      * @tc.number   SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BINTERVAL_0300
@@ -251,21 +251,21 @@ export default function UsbTest() {
      */
     it('TestUsbEndpointDescriptor0300', Level.LEVEL0,
       async (done: Function) => {
-      if (dev == -1) {
-        expect(dev).assertEqual(dev);
-        done();
-      }
-      try {
-        console.info("====>TestUsbEndpointDescriptor0300 start====");
-        let result: number = baskddkerror.UsbEndpointDescriptor0300(dev);
-        expect(result).assertEqual(0);
-        console.info("====>TestUsbEndpointDescriptor0300 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>TestUsbEndpointDescriptor0300 catch err: " + err);
-        expect().assertFail();
-      }
-    })
+        if (dev == -1) {
+          expect(dev).assertEqual(-1);
+          done();
+        }
+        try {
+          console.info("====>TestUsbEndpointDescriptor0300 start====");
+          let result: number = baskddkerror.UsbEndpointDescriptor0300(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbEndpointDescriptor0300 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbEndpointDescriptor0300 catch err: " + err);
+          expect().assertFail();
+        }
+      })
 
     /**
      * @tc.number   SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BREFRESH_0400
@@ -277,21 +277,21 @@ export default function UsbTest() {
      */
     it('TestUsbEndpointDescriptor0400', Level.LEVEL0,
       async (done: Function) => {
-      if (dev == -1) {
-        expect(dev).assertEqual(dev);
-        done();
-      }
-      try {
-        console.info("====>TestUsbEndpointDescriptor0400 start====");
-        let result: number = baskddkerror.UsbEndpointDescriptor0400(dev);
-        expect(result).assertEqual(0);
-        console.info("====>TestUsbEndpointDescriptor0400 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>TestUsbEndpointDescriptor0400 catch err: " + err);
-        expect().assertFail();
-      }
-    })
+        if (dev == -1) {
+          expect(dev).assertEqual(-1);
+          done();
+        }
+        try {
+          console.info("====>TestUsbEndpointDescriptor0400 start====");
+          let result: number = baskddkerror.UsbEndpointDescriptor0400(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbEndpointDescriptor0400 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbEndpointDescriptor0400 catch err: " + err);
+          expect().assertFail();
+        }
+      })
 
     /**
      * @tc.number   SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BSYNCHADDRESS_0500
@@ -303,21 +303,21 @@ export default function UsbTest() {
      */
     it('TestUsbEndpointDescriptor0500', Level.LEVEL0,
       async (done: Function) => {
-      if (dev == -1) {
-        expect(dev).assertEqual(dev);
-        done();
-      }
-      try {
-        console.info("====>TestUsbEndpointDescriptor0500 start====");
-        let result: number = baskddkerror.UsbEndpointDescriptor0500(dev);
-        expect(result).assertEqual(0);
-        console.info("====>TestUsbEndpointDescriptor0500 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>TestUsbEndpointDescriptor0500 catch err: " + err);
-        expect().assertFail();
-      }
-    })
+        if (dev == -1) {
+          expect(dev).assertEqual(-1);
+          done();
+        }
+        try {
+          console.info("====>TestUsbEndpointDescriptor0500 start====");
+          let result: number = baskddkerror.UsbEndpointDescriptor0500(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbEndpointDescriptor0500 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbEndpointDescriptor0500 catch err: " + err);
+          expect().assertFail();
+        }
+      })
 
     /**
      * @tc.number   SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BLENGTH_0100
@@ -329,21 +329,21 @@ export default function UsbTest() {
      */
     it('TestUsbInterfaceDescriptor0100', Level.LEVEL0,
       async (done: Function) => {
-      if (dev == -1) {
-        expect(dev).assertEqual(dev);
-        done();
-      }
-      try {
-        console.info("====>TestUsbInterfaceDescriptor0100 start====");
-        let result: number = baskddkerror.UsbInterfaceDescriptor0100(dev);
-        expect(result).assertEqual(0);
-        console.info("====>TestUsbInterfaceDescriptor0100 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>TestUsbInterfaceDescriptor0100 catch err: " + err);
-        expect().assertFail();
-      }
-    })
+        if (dev == -1) {
+          expect(dev).assertEqual(-1);
+          done();
+        }
+        try {
+          console.info("====>TestUsbInterfaceDescriptor0100 start====");
+          let result: number = baskddkerror.UsbInterfaceDescriptor0100(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbInterfaceDescriptor0100 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbInterfaceDescriptor0100 catch err: " + err);
+          expect().assertFail();
+        }
+      })
 
     /**
      * @tc.number   SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BDESCRIPTORTYPE_0200
@@ -355,21 +355,21 @@ export default function UsbTest() {
      */
     it('TestUsbInterfaceDescriptor0200', Level.LEVEL0,
       async (done: Function) => {
-      if (dev == -1) {
-        expect(dev).assertEqual(dev);
-        done();
-      }
-      try {
-        console.info("====>TestUsbInterfaceDescriptor0200 start====");
-        let result: number = baskddkerror.UsbInterfaceDescriptor0200(dev);
-        expect(result).assertEqual(0);
-        console.info("====>TestUsbInterfaceDescriptor0200 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>TestUsbInterfaceDescriptor0200 catch err: " + err);
-        expect().assertFail();
-      }
-    })
+        if (dev == -1) {
+          expect(dev).assertEqual(-1);
+          done();
+        }
+        try {
+          console.info("====>TestUsbInterfaceDescriptor0200 start====");
+          let result: number = baskddkerror.UsbInterfaceDescriptor0200(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbInterfaceDescriptor0200 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbInterfaceDescriptor0200 catch err: " + err);
+          expect().assertFail();
+        }
+      })
 
     /**
      * @tc.number   SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BALTERNATESETTING_0300
@@ -381,21 +381,21 @@ export default function UsbTest() {
      */
     it('TestUsbInterfaceDescriptor0300', Level.LEVEL0,
       async (done: Function) => {
-      if (dev == -1) {
-        expect(dev).assertEqual(dev);
-        done();
-      }
-      try {
-        console.info("====>TestUsbInterfaceDescriptor0300 start====");
-        let result: number = baskddkerror.UsbInterfaceDescriptor0300(dev);
-        expect(result).assertEqual(0);
-        console.info("====>TestUsbInterfaceDescriptor0300 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>TestUsbInterfaceDescriptor0300 catch err: " + err);
-        expect().assertFail();
-      }
-    })
+        if (dev == -1) {
+          expect(dev).assertEqual(-1);
+          done();
+        }
+        try {
+          console.info("====>TestUsbInterfaceDescriptor0300 start====");
+          let result: number = baskddkerror.UsbInterfaceDescriptor0300(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbInterfaceDescriptor0300 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbInterfaceDescriptor0300 catch err: " + err);
+          expect().assertFail();
+        }
+      })
 
     /**
      * @tc.number   SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BINTERFACECLASS_0400
@@ -407,21 +407,21 @@ export default function UsbTest() {
      */
     it('TestUsbInterfaceDescriptor0400', Level.LEVEL0,
       async (done: Function) => {
-      if (dev == -1) {
-        expect(dev).assertEqual(dev);
-        done();
-      }
-      try {
-        console.info("====>TestUsbInterfaceDescriptor0400 start====");
-        let result: number = baskddkerror.UsbInterfaceDescriptor0400(dev);
-        expect(result).assertEqual(0);
-        console.info("====>TestUsbInterfaceDescriptor0400 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>TestUsbInterfaceDescriptor0400 catch err: " + err);
-        expect().assertFail();
-      }
-    })
+        if (dev == -1) {
+          expect(dev).assertEqual(-1);
+          done();
+        }
+        try {
+          console.info("====>TestUsbInterfaceDescriptor0400 start====");
+          let result: number = baskddkerror.UsbInterfaceDescriptor0400(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbInterfaceDescriptor0400 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbInterfaceDescriptor0400 catch err: " + err);
+          expect().assertFail();
+        }
+      })
 
     /**
      * @tc.number   SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BINTERFACESUBCLASS_0500
@@ -433,21 +433,21 @@ export default function UsbTest() {
      */
     it('TestUsbInterfaceDescriptor0500', Level.LEVEL0,
       async (done: Function) => {
-      if (dev == -1) {
-        expect(dev).assertEqual(dev);
-        done();
-      }
-      try {
-        console.info("====>TestUsbInterfaceDescriptor0500 start====");
-        let result: number = baskddkerror.UsbInterfaceDescriptor0500(dev);
-        expect(result).assertEqual(0);
-        console.info("====>TestUsbInterfaceDescriptor0500 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>TestUsbInterfaceDescriptor0500 catch err: " + err);
-        expect().assertFail();
-      }
-    })
+        if (dev == -1) {
+          expect(dev).assertEqual(-1);
+          done();
+        }
+        try {
+          console.info("====>TestUsbInterfaceDescriptor0500 start====");
+          let result: number = baskddkerror.UsbInterfaceDescriptor0500(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbInterfaceDescriptor0500 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbInterfaceDescriptor0500 catch err: " + err);
+          expect().assertFail();
+        }
+      })
 
     /**
      * @tc.number   SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BINTERFACEPROTOCOL_0600
@@ -459,21 +459,21 @@ export default function UsbTest() {
      */
     it('TestUsbInterfaceDescriptor0600', Level.LEVEL0,
       async (done: Function) => {
-      if (dev == -1) {
-        expect(dev).assertEqual(dev);
-        done();
-      }
-      try {
-        console.info("====>TestUsbInterfaceDescriptor0600 start====");
-        let result: number = baskddkerror.UsbInterfaceDescriptor0600(dev);
-        expect(result).assertEqual(0);
-        console.info("====>TestUsbInterfaceDescriptor0600 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>TestUsbInterfaceDescriptor0600 catch err: " + err);
-        expect().assertFail();
-      }
-    })
+        if (dev == -1) {
+          expect(dev).assertEqual(-1);
+          done();
+        }
+        try {
+          console.info("====>TestUsbInterfaceDescriptor0600 start====");
+          let result: number = baskddkerror.UsbInterfaceDescriptor0600(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbInterfaceDescriptor0600 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbInterfaceDescriptor0600 catch err: " + err);
+          expect().assertFail();
+        }
+      })
 
     /**
      * @tc.number   SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_IINTERFACE_0700
@@ -485,21 +485,21 @@ export default function UsbTest() {
      */
     it('TestUsbInterfaceDescriptor0700', Level.LEVEL0,
       async (done: Function) => {
-      if (dev == -1) {
-        expect(dev).assertEqual(dev);
-        done();
-      }
-      try {
-        console.info("====>TestUsbInterfaceDescriptor0700 start====");
-        let result: number = baskddkerror.UsbInterfaceDescriptor0700(dev);
-        expect(result).assertEqual(0);
-        console.info("====>TestUsbInterfaceDescriptor0700 result: " + result);
-        done()
-      } catch (err) {
-        console.error("====>TestUsbInterfaceDescriptor0700 catch err: " + err);
-        expect().assertFail();
-      }
-    })
+        if (dev == -1) {
+          expect(dev).assertEqual(-1);
+          done();
+        }
+        try {
+          console.info("====>TestUsbInterfaceDescriptor0700 start====");
+          let result: number = baskddkerror.UsbInterfaceDescriptor0700(dev);
+          expect(result).assertEqual(0);
+          console.info("====>TestUsbInterfaceDescriptor0700 result: " + result);
+          done()
+        } catch (err) {
+          console.error("====>TestUsbInterfaceDescriptor0700 catch err: " + err);
+          expect().assertFail();
+        }
+      })
 
     /**
      * @tc.number   TestUsbAddress0800
