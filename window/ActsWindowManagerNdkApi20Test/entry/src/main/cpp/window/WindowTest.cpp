@@ -21,10 +21,8 @@ int32_t g_windowId = PARAM_NEGATIVE_1;
 int32_t g_mainWindowId = PARAM_NEGATIVE_1;
 int32_t g_displayId = PARAM_NEGATIVE_1;
 int32_t g_result = 0;
-
 size_t g_snapshotListSize = 0;
 OH_PixelmapNative **g_snapshotPixelMapList = nullptr;
-
 
 napi_value GetWindowId(napi_env env, napi_callback_info info)
 {
@@ -702,7 +700,6 @@ napi_value Test_OH_WindowManager_GetAllMainWindowInfo_0200(napi_env env, napi_ca
     }
     int32_t windowId;
     napi_get_value_int32(env, args[0], &windowId);
-    
     napi_value retValue;
     WindowManager_MainWindowInfo *infoList = NULL;
     size_t mainWindowInfoSize = 0;
@@ -713,20 +710,17 @@ napi_value Test_OH_WindowManager_GetAllMainWindowInfo_0200(napi_env env, napi_ca
         napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
         return retValue;
     }
-    
     // 断言 windowInfoArray.长度 >= 1
     if (mainWindowInfoSize < 1) {
-         napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
-         return retValue;
+        napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+        return retValue;
     }
-    
     // 3、断言displayId ==0；windowId == 步骤1中的窗口id；showing == true;label == 'label'"
     if (infoList->displayId != 0 || infoList->windowId != windowId ||
         infoList->showing == false || infoList->label != "label") {
             napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
             return retValue;
     }
-    
     napi_create_int32(env, 0, &retValue);
     return retValue;
 }
@@ -758,14 +752,12 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0100(napi_env env, napi_c
     }
     int32_t windowId;
     napi_get_value_int32(env, args[0], &windowId);
-    
     std::vector<int32_t> windowIdList;
     windowIdList.push_back(windowId);
     WindowManager_WindowSnapshotConfig config;
     config.useCache = false;
     int32_t result = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(), windowIdList.size(),
         config, OnWindowSnapshotCallback);
-    
     napi_value retValue;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "Test_OH_WindowManager_GetMainWindowSnapshot_0100: %{public}d", result);
@@ -785,7 +777,6 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0200(napi_env env, napi_c
     WindowManager_WindowSnapshotConfig config;
     config.useCache = false;
     int32_t result = OH_WindowManager_GetMainWindowSnapshot(nullptr, 1, config, OnWindowSnapshotCallback);
-    
     napi_value retValue;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "Test_OH_WindowManager_GetMainWindowSnapshot_0200: %{public}d", result);
@@ -817,7 +808,6 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0300(napi_env env, napi_c
     }
     int32_t windowId;
     napi_get_value_int32(env, args[0], &windowId);
-    
     std::vector<int32_t> windowIdList;
     windowIdList.push_back(0);
     windowIdList.push_back(windowId);
@@ -825,7 +815,6 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0300(napi_env env, napi_c
     config.useCache = false;
     int32_t result = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
         windowIdList.size(), config, OnWindowSnapshotCallback);
-    
     napi_value retValue;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "test_OH_WindowManager_GetMainWindowSnapshot_0300: %{public}d", result);
@@ -859,7 +848,6 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0400(napi_env env, napi_c
     }
     int32_t windowId;
     napi_get_value_int32(env, args[0], &windowId);
-    
     std::vector<int32_t> windowIdList;
     windowIdList.push_back(-1);
     windowIdList.push_back(windowId);
@@ -867,7 +855,6 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0400(napi_env env, napi_c
     config.useCache = false;
     int32_t result = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
         windowIdList.size(), config, OnWindowSnapshotCallback);
-    
     napi_value retValue;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "Test_OH_WindowManager_GetMainWindowSnapshot_0400: %{public}d", result);
@@ -885,12 +872,11 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0400(napi_env env, napi_c
 napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0500(napi_env env, napi_callback_info info)
 {
     std::vector<int32_t> windowIdList;
-    windowIdList.push_back(1000);
+    windowIdList.push_back(PARAM_1000);
     WindowManager_WindowSnapshotConfig config;
     config.useCache = false;
     int32_t result = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
         windowIdList.size(), config, OnWindowSnapshotCallback);
-    
     napi_value retValue;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "Test_OH_WindowManager_GetMainWindowSnapshot_0500: %{public}d", result);
@@ -898,7 +884,6 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0500(napi_env env, napi_c
         napi_create_int32(env, 0, &retValue);
         return retValue;
     }
-    
     napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
@@ -922,14 +907,12 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0600(napi_env env, napi_c
     }
     int32_t windowId;
     napi_get_value_int32(env, args[0], &windowId);
-    
     std::vector<int32_t> windowIdList;
     windowIdList.push_back(windowId);
     WindowManager_WindowSnapshotConfig config;
     config.useCache = false;
     int32_t result = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
         NULL, config, OnWindowSnapshotCallback);
-    
     napi_value retValue;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "Test_OH_WindowManager_GetMainWindowSnapshot_0600: %{public}d", result);
@@ -942,7 +925,7 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0600(napi_env env, napi_c
     }
     napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
     return retValue;
-} 
+}
 
 napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0700(napi_env env, napi_callback_info info)
 {
@@ -963,14 +946,12 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0700(napi_env env, napi_c
     }
     int32_t windowId;
     napi_get_value_int32(env, args[0], &windowId);
-    
     std::vector<int32_t> windowIdList;
     windowIdList.push_back(windowId);
     WindowManager_WindowSnapshotConfig config;
     config.useCache = false;
     int32_t result = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
         windowIdList.size(), config, OnWindowSnapshotCallback);
-    
     napi_value retValue;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "Test_OH_WindowManager_GetMainWindowSnapshot_0700: %{public}d", result);
@@ -978,7 +959,6 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0700(napi_env env, napi_c
         napi_create_int32(env, 0, &retValue);
         return retValue;
     }
-    
     napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
@@ -1002,14 +982,12 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0800(napi_env env, napi_c
     }
     int32_t windowId;
     napi_get_value_int32(env, args[0], &windowId);
-    
     std::vector<int32_t> windowIdList;
     windowIdList.push_back(windowId);
     WindowManager_WindowSnapshotConfig config;
     config.useCache = true;
     int32_t result = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
         windowIdList.size(), config, OnWindowSnapshotCallback);
-    
     napi_value retValue;
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
                  "Test_OH_WindowManager_GetMainWindowSnapshot_0800: %{public}d", result);
@@ -1017,9 +995,7 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0800(napi_env env, napi_c
         napi_create_int32(env, 0, &retValue);
         return retValue;
     }
-    
     napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
-
 }

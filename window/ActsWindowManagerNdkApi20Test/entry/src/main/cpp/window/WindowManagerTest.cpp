@@ -210,16 +210,26 @@ static void InitPushDisplay(napi_property_descriptor* desc)
 static void InitPushWindow2(napi_property_descriptor* desc)
 {
     napi_property_descriptor descTemp[] = {
-        XL("test_OH_WindowManager_GetAllMainWindowInfo_0100", Window::Test_OH_WindowManager_GetAllMainWindowInfo_0100),
-        XL("test_OH_WindowManager_GetAllMainWindowInfo_0200", Window::Test_OH_WindowManager_GetAllMainWindowInfo_0200),
-        XL("test_OH_WindowManager_GetMainWindowSnapshot_0100", Window::Test_OH_WindowManager_GetMainWindowSnapshot_0100),
-        XL("test_OH_WindowManager_GetMainWindowSnapshot_0200", Window::Test_OH_WindowManager_GetMainWindowSnapshot_0200),
-        XL("test_OH_WindowManager_GetMainWindowSnapshot_0300", Window::Test_OH_WindowManager_GetMainWindowSnapshot_0300),
-        XL("test_OH_WindowManager_GetMainWindowSnapshot_0400", Window::Test_OH_WindowManager_GetMainWindowSnapshot_0400),
-        XL("test_OH_WindowManager_GetMainWindowSnapshot_0500", Window::Test_OH_WindowManager_GetMainWindowSnapshot_0500),
-        XL("test_OH_WindowManager_GetMainWindowSnapshot_0600", Window::Test_OH_WindowManager_GetMainWindowSnapshot_0600),
-        XL("test_OH_WindowManager_GetMainWindowSnapshot_0700", Window::Test_OH_WindowManager_GetMainWindowSnapshot_0700),
-        XL("test_OH_WindowManager_GetMainWindowSnapshot_0800", Window::Test_OH_WindowManager_GetMainWindowSnapshot_0800),
+        XL("test_OH_WindowManager_GetAllMainWindowInfo_0100",
+            Window::Test_OH_WindowManager_GetAllMainWindowInfo_0100),
+        XL("test_OH_WindowManager_GetAllMainWindowInfo_0200",
+            Window::Test_OH_WindowManager_GetAllMainWindowInfo_0200),
+        XL("test_OH_WindowManager_GetMainWindowSnapshot_0100",
+            Window::Test_OH_WindowManager_GetMainWindowSnapshot_0100),
+        XL("test_OH_WindowManager_GetMainWindowSnapshot_0200",
+            Window::Test_OH_WindowManager_GetMainWindowSnapshot_0200),
+        XL("test_OH_WindowManager_GetMainWindowSnapshot_0300",
+            Window::Test_OH_WindowManager_GetMainWindowSnapshot_0300),
+        XL("test_OH_WindowManager_GetMainWindowSnapshot_0400",
+            Window::Test_OH_WindowManager_GetMainWindowSnapshot_0400),
+        XL("test_OH_WindowManager_GetMainWindowSnapshot_0500",
+            Window::Test_OH_WindowManager_GetMainWindowSnapshot_0500),
+        XL("test_OH_WindowManager_GetMainWindowSnapshot_0600",
+            Window::Test_OH_WindowManager_GetMainWindowSnapshot_0600),
+        XL("test_OH_WindowManager_GetMainWindowSnapshot_0700",
+            Window::Test_OH_WindowManager_GetMainWindowSnapshot_0700),
+        XL("test_OH_WindowManager_GetMainWindowSnapshot_0800",
+            Window::Test_OH_WindowManager_GetMainWindowSnapshot_0800),
     };
     for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
         desc[index] = descTemp[index];

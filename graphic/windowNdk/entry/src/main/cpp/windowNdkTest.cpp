@@ -1181,7 +1181,6 @@ napi_value Test_OH_WindowManager_GetAllMainWindowInfo_0100(napi_env env, napi_ca
     WindowManager_MainWindowInfo *infoList = NULL;
     size_t mainWindowInfoSize = 0;
     int32_t result = OH_WindowManager_GetAllMainWindowInfo(&infoList, &mainWindowInfoSize);
-    
     if (result == WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED) {
         napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED, &retValue);
         return retValue;
@@ -1210,14 +1209,12 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0100(napi_env env, napi_c
     }
     int32_t windowId = 0;
     napi_get_value_int32(env, args[0], &windowId);
-    
     std::vector<int32_t> windowIdList;
     windowIdList.push_back(windowId);
     WindowManager_WindowSnapshotConfig config;
     config.useCache = false;
     int32_t result = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(), windowIdList.size(),
         config, OnWindowSnapshotCallback);
-    
     napi_value retValue;
     if (result == WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED) {
         napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED, &retValue);
