@@ -2135,5 +2135,346 @@ export default function uitestDriverErrorTest() {
       await sleep(waitUiReadyMs);
       console.log(`${TestTag}, testWindowChangeOptionsMonitor_17000007 end`);
     })
+
+    /**
+     * @tc.number uitestDriverErrorTest_086
+     * @tc.name testIsComponentPresentWhenLongClick_17000002
+     * @tc.desc isComponentPresentWhenLongClick 17000007 test.
+     */
+    it('testIsComponentPresentWhenLongClick_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000002 start`);
+      try {
+        let driver: Driver = Driver.create();
+        let on  = ON.enabled(true);
+        driver.delayMs(waitUiReadyMs * 3);
+        await sleep(100);
+        await driver.isComponentPresentWhenLongClick(on, {x: 100, y: 100});
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000002 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(AsyncErrorCode);
+      }
+      await sleep(waitUiReadyMs * 8);
+      console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000002 end`);
+    })
+
+    /**
+     * @tc.number uitestDriverErrorTest_087
+     * @tc.name testIsComponentPresentWhenLongClick_17000007
+     * @tc.desc isComponentPresentWhenLongClick 17000007 test.
+     */
+    it('testIsComponentPresentWhenLongClick_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000007 start`);
+      try {
+        await driver.isComponentPresentWhenLongClick(null, {
+          x: 100,
+          y: 100
+        })
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000007 error on = null: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenLongClick(undefined, {
+          x: 100,
+          y: 100
+        })
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000007 error on = undefined: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenLongClick(ON.enabled(true), null)
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000007 error point = undefined: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenLongClick(ON.enabled(true), undefined)
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000007 error point = undefined: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenLongClick(ON.enabled(true), {
+          x: -1,
+          y: 100
+        })
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000007 error point.x = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenLongClick(ON.enabled(true), {
+          x: 100,
+          y: -1
+        })
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000007 error point.y = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenLongClick(ON.enabled(true), {
+          x: 100,
+          y: 100
+        }, 1499)
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000007 error duration = 1499: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      await sleep(waitUiReadyMs);
+      console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000007 end`);
+    })
+
+    /**
+     * @tc.number uitestDriverErrorTest_088
+     * @tc.name testIsComponentPresentWhenDrag_17000002
+     * @tc.desc isComponentPresentWhenLongClick 17000007 test.
+     */
+    it('testIsComponentPresentWhenDrag_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000002 start`);
+      try {
+        let driver: Driver = Driver.create();
+        let on  = ON.enabled(true);
+        driver.delayMs(waitUiReadyMs * 3);
+        await sleep(100);
+        await driver.isComponentPresentWhenDrag(on, {x: 100, y: 100}, {x: 100, y: 100});
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000002 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(AsyncErrorCode);
+      }
+      await sleep(waitUiReadyMs * 8);
+      console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000002 end`);
+    })
+
+    /**
+     * @tc.number uitestDriverErrorTest_089
+     * @tc.name testIsComponentPresentWhenDrag_17000007
+     * @tc.desc isComponentPresentWhenLongClick 17000007 test.
+     */
+    it('testIsComponentPresentWhenDrag_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007 start`);
+      try {
+        await driver.isComponentPresentWhenDrag(null, {
+          x: 100,
+          y: 100
+        }, {x:100, y: 100})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007 error on = null: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenDrag(undefined, {
+          x: 100,
+          y: 100
+        }, {x:100, y: 100})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007 error on = undefined: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenDrag(ON.enabled(true), null, {x: 100, y: 100})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007 error from = null: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenDrag(ON.enabled(true), undefined, {x: 100, y: 100})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007 error from = undefined: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenDrag(ON.enabled(true), {
+          x: -1,
+          y: 100
+        }, {x: 100, y: 100})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007 error from.x = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenDrag(ON.enabled(true), {
+          x: 100,
+          y: -1
+        }, {x: 100, y: 100})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007 error from.y = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenDrag(ON.enabled(true), {
+          x: 100,
+          y: 100
+        }, {x: -1, y: 100})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007 error to.x = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenDrag(ON.enabled(true), {
+          x: 100,
+          y: 100
+        }, {x: 100, y: -1})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007 error to.y = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenDrag(ON.enabled(true), {
+          x: 100,
+          y: 100
+        }, {x: 100, y: 100}, -1)
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007 error speed = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenDrag(ON.enabled(true), {
+          x: 100,
+          y: 100
+        }, {x: 100, y: 100}, 3000, 1499)
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007 error duration = 1499: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      await sleep(waitUiReadyMs);
+      console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007 end`);
+    })
+
+    /**
+     * @tc.number uitestDriverErrorTest_090
+     * @tc.name testIsComponentPresentWhenSwipe_17000002
+     * @tc.desc isComponentPresentWhenLongClick 17000007 test.
+     */
+    it('testIsComponentPresentWhenSwipe_17000002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000002 start`);
+      try {
+        let driver: Driver = Driver.create();
+        let on  = ON.enabled(true);
+        driver.delayMs(waitUiReadyMs * 3);
+        await sleep(100);
+        await driver.isComponentPresentWhenSwipe(on, {x: 100, y: 100}, {x:100, y: 100});
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000002 error is: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(AsyncErrorCode);
+      }
+      await sleep(waitUiReadyMs * 8);
+      console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000002 end`);
+    })
+
+    /**
+     * @tc.number uitestDriverErrorTest_091
+     * @tc.name testIsComponentPresentWhenSwipe_17000007
+     * @tc.desc isComponentPresentWhenLongClick 17000007 test.
+     */
+    it('testIsComponentPresentWhenSwipe_17000007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007 start`);
+      try {
+        await driver.isComponentPresentWhenSwipe(null, {
+          x: 100,
+          y: 100
+        }, {x:100, y: 100})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007 error on = null: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenSwipe(undefined, {
+          x: 100,
+          y: 100
+        }, {x:100, y: 100})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007 error on = undefined: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenSwipe(ON.enabled(true), null, {x: 100, y: 100})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007 error from = null: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenSwipe(ON.enabled(true), undefined, {x: 100, y: 100})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007 error from = undefined: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenSwipe(ON.enabled(true), {
+          x: -1,
+          y: 100
+        }, {x: 100, y: 100})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007 error from.x = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenSwipe(ON.enabled(true), {
+          x: 100,
+          y: -1
+        }, {x: 100, y: 100})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007 error from.y = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenSwipe(ON.enabled(true), {
+          x: 100,
+          y: 100
+        }, {x: -1, y: 100})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007 error to.x = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenSwipe(ON.enabled(true), {
+          x: 100,
+          y: 100
+        }, {x: 100, y: -1})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007 error to.y = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenSwipe(ON.enabled(true), {
+          x: 100,
+          y: 100
+        }, {x: 100, y: 100}, -1)
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007 error speed = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      await sleep(waitUiReadyMs);
+      console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007 end`);
+    })
   })
 }

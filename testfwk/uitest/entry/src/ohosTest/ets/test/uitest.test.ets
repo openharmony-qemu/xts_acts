@@ -387,6 +387,180 @@ export default function UiTest() {
             console.log(`${TestTag}, testWindowChangeAddOptionsTimeoutMonitor end`);
         })
 
+
+        /**
+         * @tc.number UiTest_API22_012
+         * @tc.name tesIsComponentPresentWhenLongClickTrue
+         * @tc.desc isComponentPresentWhenLongClick test.
+         */
+        it('tesIsComponentPresentWhenLongClickTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.log(`${TestTag}, tesIsComponentPresentWhenLongClickTrue start`);
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+            await driver.delayMs(waitUiReadyMs);
+            let to5Btn = await driver.findComponent(ON.id('to5'));
+            await to5Btn.click();
+            await driver.delayMs(waitUiReadyMs);
+            let longClickBtn = await driver.findComponent(ON.id('longClickBtn'));
+            await driver.delayMs(waitUiReadyMs);
+            let center = await longClickBtn.getBoundsCenter();
+            await driver.delayMs(waitUiReadyMs);
+            let result =  await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center)
+            expect(result).assertTrue();
+            await driver.delayMs(waitUiReadyMs);
+            let longClickTextResultBtn = await driver.findComponent(ON.id('longClickTextResult'));
+            let longClickText = await longClickTextResultBtn.getText();
+            expect(longClickText == 'longClickEvent').assertTrue();
+            await driver.delayMs(waitUiReadyMs);
+            await stopApplication('com.uitestScene.acts')
+            console.log(`${TestTag}, tesIsComponentPresentWhenLongClickTrue end`);
+        })
+
+        /**
+         * @tc.number UiTest_API22_013
+         * @tc.name tesIsComponentPresentWhenLongClickFalse
+         * @tc.desc isComponentPresentWhenLongClick test.
+         */
+        it('tesIsComponentPresentWhenLongClickFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.log(`${TestTag}, tesIsComponentPresentWhenLongClickNotCom start`);
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+            await driver.delayMs(waitUiReadyMs);
+            let to5Btn = await driver.findComponent(ON.id('to5'));
+            await to5Btn.click();
+            await driver.delayMs(waitUiReadyMs);
+            let longClickBtn = await driver.findComponent(ON.id('longClickBtn'));
+            await driver.delayMs(waitUiReadyMs);
+            let center = await longClickBtn.getBoundsCenter();
+            await driver.delayMs(waitUiReadyMs);
+            let disPlay = display.getDefaultDisplaySync();
+            console.log(`${TestTag}, tesIsComponentPresentWhenLongClickNotCom disPlay is: ${JSON.stringify(disPlay)}`);
+            let result =  await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventTextNot'), {
+                x: center.x,
+                y: center.y,
+                displayId: disPlay.id
+            }, 3000)
+            expect(result).assertFalse();
+            await driver.delayMs(waitUiReadyMs);
+            let longClickTextResultBtn = await driver.findComponent(ON.id('longClickTextResult'));
+            let longClickText = await longClickTextResultBtn.getText();
+            expect(longClickText == 'longClickEvent').assertTrue();
+            await driver.delayMs(waitUiReadyMs);
+            await stopApplication('com.uitestScene.acts')
+            console.log(`${TestTag}, tesIsComponentPresentWhenLongClickNotCom end`);
+        })
+
+        /**
+         * @tc.number UiTest_API22_014
+         * @tc.name tesIsComponentPresentWhenDragTrue
+         * @tc.desc isComponentPresentWhenDrag test.
+         */
+        it('tesIsComponentPresentWhenDragTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue start`);
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+            await driver.delayMs(waitUiReadyMs);
+            let to5Btn = await driver.findComponent(ON.id('to5'));
+            await to5Btn.click();
+            await driver.delayMs(waitUiReadyMs);
+            let dragColCom = await driver.findComponent(ON.id('dragCol'));
+            await driver.delayMs(waitUiReadyMs);
+            let center1 = await dragColCom.getBoundsCenter();
+            let dragResultTextCom = await driver.findComponent(ON.id('dragResultText'));
+            await driver.delayMs(waitUiReadyMs);
+            let center2 = await dragResultTextCom.getBoundsCenter();
+            let result =  await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2)
+            console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue result, ${JSON.stringify(result)}`);
+            expect(result).assertTrue();
+            let text = await driver.findComponent(ON.text('drag end'));
+            expect(text != null).assertTrue()
+            await stopApplication('com.uitestScene.acts')
+            console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue end`);
+        })
+
+        /**
+         * @tc.number UiTest_API22_015
+         * @tc.name tesIsComponentPresentWhenDragFalse
+         * @tc.desc isComponentPresentWhenDrag test.
+         */
+        it('tesIsComponentPresentWhenDragFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.log(`${TestTag}, tesIsComponentPresentWhenDragFalse start`);
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+            await driver.delayMs(waitUiReadyMs);
+            let to5Btn = await driver.findComponent(ON.id('to5'));
+            await to5Btn.click();
+            await driver.delayMs(waitUiReadyMs);
+            let dragColCom = await driver.findComponent(ON.id('dragCol'));
+            await driver.delayMs(waitUiReadyMs);
+            let center1 = await dragColCom.getBoundsCenter();
+            let dragResultTextCom = await driver.findComponent(ON.id('dragResultText'));
+            await driver.delayMs(waitUiReadyMs);
+            let center2 = await dragResultTextCom.getBoundsCenter();
+            let disPlay = display.getDefaultDisplaySync();
+            console.log(`${TestTag}, tesIsComponentPresentWhenDragFalse disPlay is: ${JSON.stringify(disPlay)}`);
+            let result =  await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventTextNot'), {
+                x: center1.x,
+                y: center1.y,
+                displayId: disPlay.id
+            }, {
+                x: center2.x,
+                y: center2.y,
+                displayId: disPlay.id
+            }, 2000)
+            console.log(`${TestTag}, tesIsComponentPresentWhenDragFalse result, ${JSON.stringify(result)}`);
+            expect(result).assertFalse();
+            let text = await driver.findComponent(ON.text('drag end'));
+            expect(text != null).assertTrue()
+            await stopApplication('com.uitestScene.acts')
+            console.log(`${TestTag}, tesIsComponentPresentWhenDragFalse end`);
+        })
+
+        /**
+         * @tc.number UiTest_API22_016
+         * @tc.name tesIsComponentPresentWhenSwipeTrue
+         * @tc.desc isComponentPresentWhenSwipe test.
+         */
+        it('tesIsComponentPresentWhenSwipeTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue start`);
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+            await driver.delayMs(waitUiReadyMs)
+            let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
+            let rect = await scrollBar.getBounds()
+            let center = await scrollBar.getBoundsCenter()
+            let result =  await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
+                {x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)},
+                {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4)})
+            console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue result, ${JSON.stringify(result)}`);
+            expect(result).assertTrue();
+            let text = await driver.findComponent(ON.text('toast'))
+            expect(text == null).assertTrue()
+            await stopApplication('com.uitestScene.acts')
+            console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue end`);
+        })
+
+
+        /**
+         * @tc.number UiTest_API22_017
+         * @tc.name tesIsComponentPresentWhenSwipeFalse
+         * @tc.desc isComponentPresentWhenSwipe test.
+         */
+        it('tesIsComponentPresentWhenSwipeFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            console.log(`${TestTag}, tesIsComponentPresentWhenSwipeFalse start`);
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+            await driver.delayMs(waitUiReadyMs)
+            let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
+            let rect = await scrollBar.getBounds()
+            let center = await scrollBar.getBoundsCenter()
+            let disPlay = display.getDefaultDisplaySync();
+            console.log(`${TestTag}, tesIsComponentPresentWhenSwipeFalse disPlay is: ${JSON.stringify(disPlay)}`);
+            let result =  await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventComNot'),
+                {x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4), displayId: disPlay.id},
+                {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlay.id}, 5000)
+            console.log(`${TestTag}, tesIsComponentPresentWhenSwipeFalse result, ${JSON.stringify(result)}`);
+            expect(result).assertFalse();
+            let text = await driver.findComponent(ON.text('toast'))
+            expect(text == null).assertTrue()
+            await stopApplication('com.uitestScene.acts')
+            console.log(`${TestTag}, tesIsComponentPresentWhenSwipeFalse end`);
+        })
+
     })
     describe('UiTest_API20', () => {
         let driver: Driver
