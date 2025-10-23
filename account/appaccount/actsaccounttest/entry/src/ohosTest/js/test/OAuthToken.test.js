@@ -786,23 +786,23 @@ export default function ActsAccountOAuthToken() {
         */
         it('ActsAccountOAuthToken_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsAccountOAuthToken_0200 start====");
-            var appAccountManager = account.createAppAccountManager();
+            let appAccountManager = account.createAppAccountManager();
             console.info("====>ActsAccountOAuthToken_0200 addAccount start====");
             await appAccountManager.addAccount("account_promise_normal");
             console.info("====>ActsAccountOAuthToken_0200 setOAuthToken start====");
             await appAccountManager.setOAuthToken("account_promise_normal","authType","promise_normal_token");
             console.info("====>ActsAccountOAuthToken_0200 getOAuthToken start====");
-            var data1 = await appAccountManager.getOAuthToken("account_promise_normal",OWNERSELF,"authType");
+            let data1 = await appAccountManager.getOAuthToken("account_promise_normal",OWNERSELF,"authType");
             console.info("====>getOAuthToken ActsAccountOAuthToken_0200 data:" + data1);
             expect(data1).assertEqual("promise_normal_token");
             console.info("====>ActsAccountOAuthToken_0200 checkOAuthTokenVisibility1 start====");
-            var state0 = await appAccountManager.checkOAuthTokenVisibility("account_promise_normal","authType","test_bundleName");
+            let state0 = await appAccountManager.checkOAuthTokenVisibility("account_promise_normal","authType","test_bundleName");
             console.info("====>checkOAuthTokenVisibility ActsAccountOAuthToken_0200 state: " + state0);
-            expect(state0).assertEqual(false);
+            expect(state0).assertFalse();
             console.info("====>ActsAccountOAuthToken_0200 checkOAuthTokenVisibility2 start====");
-            var state = await appAccountManager.checkOAuthTokenVisibility("account_promise_normal","authType",OWNERSELF);
+            let state = await appAccountManager.checkOAuthTokenVisibility("account_promise_normal","authType",OWNERSELF);
             console.info("====>checkOAuthTokenVisibility ActsAccountOAuthToken_0200 state:" + state);
-            expect(state).assertEqual(true);
+            expect(state).assertTrue();
             console.info("====>ActsAccountOAuthToken_0200 deleteOAuthToken start====");
             await appAccountManager.deleteOAuthToken("account_promise_normal",OWNERSELF,"authType","promise_normal_token");
             console.info("====>ActsAccountOAuthToken_0200 deleteAccount start====");
@@ -3464,6 +3464,7 @@ export default function ActsAccountOAuthToken() {
                                         expect(stateBack).assertEqual(true);
                                         let dataArray1 = await appAccountManager.getOAuthList("account_tokenTest_name","authType");
                                         console.info("====>ActsAccountOAuthToken_13101 getOAuthList dataArray1:" + JSON.stringify(dataArray1));
+                                        expect(dataArray1.length > 0).assertTrue();
                                         expect(dataArray1.length).assertEqual(1);
                                         expect(dataArray1[0]).assertEqual("test_bundleName");
                                         appAccountManager.deleteAccount("account_tokenTest_name",(err)=>{
