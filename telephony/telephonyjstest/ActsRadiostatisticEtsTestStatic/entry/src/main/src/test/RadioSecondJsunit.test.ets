@@ -124,6 +124,7 @@ export default function radioSecondJsunit() {
           expect(data?.shortOperatorName === "shortOperatorName").assertFalse();
           expect(data?.plmnNumeric === "plmnNumeric").assertFalse();
           expect(data?.isRoaming === true || data?.isRoaming === false).assertTrue();
+          expect(data?.isCaActive === true || data?.isCaActive === false).assertTrue();
           expect(data?.isEmergency === true || data?.isEmergency === false).assertTrue();
           expect(data?.cfgTech.toString() == "-1").assertFalse();
           expect(data?.nsaState.toString() == "-1").assertFalse();
@@ -146,6 +147,7 @@ export default function radioSecondJsunit() {
         expect(result.shortOperatorName === "shortOperatorName").assertFalse();
         expect(result.plmnNumeric === "plmnNumeric").assertFalse();
         expect(result.isRoaming === true || result.isRoaming === false).assertTrue();
+        expect(result.isCaActive === true || result.isCaActive === false).assertTrue();
         expect(result.isEmergency === true || result.isEmergency === false).assertTrue();
         expect(result.cfgTech.toString() == "-1").assertFalse();
         expect(result.nsaState.toString() == "-1").assertFalse();
@@ -176,6 +178,7 @@ export default function radioSecondJsunit() {
           expect(data?.shortOperatorName === "shortOperatorName").assertFalse();
           expect(data?.plmnNumeric === "plmnNumeric").assertFalse();
           expect(data?.isRoaming === true || data?.isRoaming === false).assertTrue();
+          expect(data?.isCaActive === true || data?.isCaActive === false).assertTrue();
           expect(data?.isEmergency === true || data?.isEmergency === false).assertTrue();
           expect(data?.cfgTech.toString() == "-1").assertFalse();
           expect(data?.nsaState.toString() == "-1").assertFalse();
@@ -198,6 +201,7 @@ export default function radioSecondJsunit() {
         expect(result.shortOperatorName === "shortOperatorName").assertFalse();
         expect(result.plmnNumeric === "plmnNumeric").assertFalse();
         expect(result.isRoaming === true || result.isRoaming === false).assertTrue();
+        expect(result.isCaActive === true || result.isCaActive === false).assertTrue();
         expect(result.isEmergency === true || result.isEmergency === false).assertTrue();
         expect(result.cfgTech.toString() == "-1").assertFalse();
         expect(result.nsaState.toString() == "-1").assertFalse();
