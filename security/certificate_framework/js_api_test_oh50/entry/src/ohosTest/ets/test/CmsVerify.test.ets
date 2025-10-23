@@ -1253,5 +1253,64 @@ export default function certFrameworkCmsVerifyTestUnit() {
         done();
       });
 
+    /**
+     * @tc.number SUB_Security_Cert_Framework_Cms_Verify_Func_3300
+     * @tc.name SUB_Security_Cert_Framework_Cms_Verify_Func_3300
+     * @tc.desc The CMS Verify, ECC, Promise Type
+     * @tc.size MediumTest
+     * @tc.level Level1
+     * @tc.type Function
+     */
+    it("SUB_Security_Cert_Framework_Cms_Verify_Func_3300",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          let plainText: Uint8Array = new Uint8Array([0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07]);
+          let x509CertEntry: cert.X509Cert = await createX509Cert(ECC_256_PUB_ENTRY_CERT);
+          let x509CertInter: cert.X509Cert = await createX509Cert(ECC_256_PUB_INTER_CERT);
+          let x509CertRoot: cert.X509Cert = await createX509Cert(ECC_256_PUB_ROOT_CERT);
+          let cms: cert.CmsGenerator = cert.createCmsGenerator(cert.CmsContentType.SIGNED_DATA);
+          let signerConfig: cert.CmsSignerConfig = {
+            mdName: "SHA256",
+          };
+          let keyInfo: cert.PrivateKeyInfo = {
+            key: ECC_256_PRI_ENTRY_KEY
+          }
+          let option: cert.CmsGeneratorOptions = {
+            outFormat: cert.CmsFormat.PEM
+          }
+          cms.addSigner(x509CertEntry, keyInfo, signerConfig);
+          let signData = cms.doFinalSync(plainText, option);
+          if (signData instanceof Uint8Array) {
+            expect(null).assertFalse();
+          }
+          ;
+          let config: cert.CmsVerificationConfig = {
+            trustCerts: [x509CertRoot, x509CertInter],
+            contentDataFormat: 3
+          };
+          let verify: cert.CmsParser = cert.createCmsParser();
+          await verify.setRawData(signData, cert.CmsFormat.PEM);
+          try {
+            await verify.verifySignedData(config);
+            expect(null).assertFail();
+          } catch (error) {
+            console.error(`[XTS] verifySignedData 1 “${error}“, error code: ${error.code}`);
+            expect(error.code).assertFail(cert.CertResult.INVALID_PARAMS);
+          }
+          try {
+            config.contentDataFormat = undefined;
+            await verify.verifySignedData(config);
+            expect(null).assertFail();
+          } catch (error) {
+            console.error(`[XTS] verifySignedData 2 “${error}“, error code: ${error.code}`);
+            expect(error.code).assertFail(cert.CertResult.INVALID_PARAMS);
+          }
+        } catch (error) {
+          console.error(`[XTS] Cms_Verify_Func_3300 “${error}“, error code: ${error.code}`);
+          expect(null).assertFail();
+        }
+        done();
+      });
+
   })
 }

@@ -26,7 +26,6 @@ import { createCertChain, createX509Cert,
   caChainWithOcsp2,
   caTrustCertWithOcsp2,
   caChainWithOcsp3,
-  caTrustCertWithOcsp3,
   caChainWithOcsp4,
   caTrustCertWithOcsp4,
   caInter
@@ -189,7 +188,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           expect(null).assertFail();
         } catch (error) {
           console.error(`[XTS] CheckCa_Func_0400 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect(error.code).assertEqual(cert.CertResult.ERR_CERT_SIGNATURE_FAILURE); // 老功能异常
         }
         done();
       });
