@@ -47,7 +47,9 @@ napi_value StartSelfUIAbilityWithStartOptionsMultiAppNotSupport(napi_env env, na
         napi_create_int32(env, ret, &napiRet);
         return napiRet;
     }
-    return nullptr;
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
 }
 
 napi_value AbilityRuntimeErrorCodeMultiAppNotSupportCode(napi_env env, napi_callback_info info)
@@ -73,5 +75,7 @@ napi_value AbilityRuntimeErrorCodeMultiAppNotSupportCode(napi_env env, napi_call
         napi_create_int32(env, ret, &napiRet);
         return napiRet;
     }
-    return nullptr;
+    napi_value napiRet;
+    napi_create_int32(env, ret, &napiRet);
+    return napiRet;
 }
