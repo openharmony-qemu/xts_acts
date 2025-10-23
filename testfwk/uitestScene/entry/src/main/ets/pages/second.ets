@@ -18,6 +18,7 @@ import router from '@system.router';
 @Component
 struct Second {
   private content: string = "Second Page"
+  @State test: string = 'test'
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
@@ -36,6 +37,14 @@ struct Second {
       .onClick(() => {
         router.back()
       })
+      TextInput({ placeholder: 'welcome', text: this.test })
+        .type(InputType.Normal)
+        .width(300)
+        .height(50)
+        .enabled(true)
+        .fontSize(25)
+        .id('changContext')
+        .margin({ top: 20 })
     }
     .width('100%')
     .height('100%')
