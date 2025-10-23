@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import imageAltTest  from "./image/imageAltTest.test";
+import textMinLinesTest from './textMinLines/TextMinLinesTest.test'
 
 export default function testsuite() {
   imageAltTest()
+  textMinLinesTest();
 }

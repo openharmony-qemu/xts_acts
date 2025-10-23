@@ -13,3 +13,5 @@
  * limitations under the License.
  */
 export const imageAltTest: (a: string) => void;
+
+export const textMinLinesTest: (a: string) => void;

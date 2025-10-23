@@ -14,6 +14,7 @@ add_library(nativerender SHARED
     manager/PluginManagerTest.cpp
     NapiRenderInitTest.cpp
     image/ImageAltTest.cpp
+    textMinLines/MinLinesTest.cpp
 )
 
 add_library(nativefunc SHARED
