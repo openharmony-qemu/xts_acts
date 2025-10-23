@@ -53,8 +53,8 @@ export default function webInitTest() {
     it('ContextMenuMediaTypeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       Utils.emitEvent('emitContextMenuMediaType', 10)
       await Utils.sleep(2000);
-      Utils.registerEvent('ContextMenuMediaType', ContextMenuMediaType.None, 333, done);
-      Utils.registerEvent('ContextMenuMediaType', ContextMenuMediaType.Image, 33, done);
+      Utils.registerEvent('ContextMenuMediaType', ContextMenuMediaType.NONE, 333, done);
+      Utils.registerEvent('ContextMenuMediaType', ContextMenuMediaType.IMAGE, 33, done);
       inspector.sendEventByKey('WebInitTestButton', 10, '');
       await Utils.sleep(3000)
       done()
@@ -68,12 +68,12 @@ export default function webInitTest() {
     it('ContextMenuInputFieldTypeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       Utils.emitEvent('emitContextMenuInputFieldType', 10)
       await Utils.sleep(2000);
-      Utils.registerEvent('ContextMenuInputFieldType', ContextMenuInputFieldType.None, 344, done);
-      Utils.registerEvent('ContextMenuInputFieldType', ContextMenuInputFieldType.PlainText, 34, done);
-      Utils.registerEvent('ContextMenuInputFieldType', ContextMenuInputFieldType.Password, 355, done);
-      Utils.registerEvent('ContextMenuInputFieldType', ContextMenuInputFieldType.Telephone, 35, done);
-      Utils.registerEvent('ContextMenuInputFieldType', ContextMenuInputFieldType.Number, 366, done);
-      Utils.registerEvent('ContextMenuInputFieldType', ContextMenuInputFieldType.Other, 36, done);
+      Utils.registerEvent('ContextMenuInputFieldType', ContextMenuInputFieldType.NONE, 344, done);
+      Utils.registerEvent('ContextMenuInputFieldType', ContextMenuInputFieldType.PLAIN_TEXT, 34, done);
+      Utils.registerEvent('ContextMenuInputFieldType', ContextMenuInputFieldType.PASSWORD, 355, done);
+      Utils.registerEvent('ContextMenuInputFieldType', ContextMenuInputFieldType.TELEPHONE, 35, done);
+      Utils.registerEvent('ContextMenuInputFieldType', ContextMenuInputFieldType.NUMBER, 366, done);
+      Utils.registerEvent('ContextMenuInputFieldType', ContextMenuInputFieldType.OTHER, 36, done);
       inspector.sendEventByKey('WebInitTestButton', 10, '');
       await Utils.sleep(3000)
       done()
@@ -87,9 +87,9 @@ export default function webInitTest() {
     it('ContextMenuSourceTypeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       Utils.emitEvent('ContextMenuSourceType', 10)
       await Utils.sleep(2000);
-      Utils.registerEvent('ContextMenuSourceType', ContextMenuSourceType.None, 37, done);
-      Utils.registerEvent('ContextMenuSourceType', ContextMenuSourceType.Mouse, 38, done);
-      Utils.registerEvent('ContextMenuSourceType', ContextMenuSourceType.LongPress, 39, done);
+      Utils.registerEvent('ContextMenuSourceType', ContextMenuSourceType.NONE, 37, done);
+      Utils.registerEvent('ContextMenuSourceType', ContextMenuSourceType.MOUSE, 38, done);
+      Utils.registerEvent('ContextMenuSourceType', ContextMenuSourceType.LONG_PRESS, 39, done);
       inspector.sendEventByKey('WebInitTestButton', 10, '');
       await Utils.sleep(3000)
       done()

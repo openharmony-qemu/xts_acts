@@ -37,7 +37,7 @@ struct webController {
   @State onlineImageAccess: boolean = true
   @State databaseAccess: boolean = true
   @State initialScale: number = 100
-  @State cacheMode: CacheMode = CacheMode.Default
+  @State cacheMode: CacheMode = CacheMode.DEFAULT
   @State webVisibility: Visibility = Visibility.Visible
   @State registerJavaScriptProxyFlag: boolean = false
 

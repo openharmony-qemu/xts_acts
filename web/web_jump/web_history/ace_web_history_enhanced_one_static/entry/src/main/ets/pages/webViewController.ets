@@ -40,7 +40,7 @@ struct webViewController {
   @State str: string = ''
   @State javaScriptAccess: boolean = true
   @State icon: image.PixelMap | undefined = undefined;
-  @State darkMode: WebDarkMode = WebDarkMode.Off
+  @State darkMode: WebDarkMode = WebDarkMode.OFF
   @State forceDarkAccess: boolean = false
 
   aboutToAppear() {
