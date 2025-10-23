@@ -34,7 +34,7 @@ const SHA512_MD_SIZE = 64;
 const SM3_MD_SIZE    = 32;
 const MD5_MD_SIZE    = 16;
 
-function getMdSize(algName: string): number {
+function getMdSize(algName: string): int {
   switch (algName) {
     case "SHA1":
       return SHA1_MD_SIZE;
