@@ -18,6 +18,7 @@ import ImageAttachmentTest from './ImageAttachmentTest/ImageAttachment.test';
 import RichEditorScrollBarColorTest from './RichEditorTest/ScrollBarColor.test';
 import ImageContentTransitionEffectTest from './ImageContentTransitionEffectTest/ImageContentTransitionEffect.test';
 import ImageAnalyzerControllerTest from './ImageAnalyzerControllerTest/ImageAnalyzerController.test';
+import ImageAnimationControllerTest from './ImageAnimationControllerTest/ImageAnimationController.test';
 
 export default function testsuite() {
   textAreaInputTest();
@@ -26,4 +27,5 @@ export default function testsuite() {
   RichEditorScrollBarColorTest();
   ImageContentTransitionEffectTest();
   ImageAnalyzerControllerTest();
+  ImageAnimationControllerTest();
 }
