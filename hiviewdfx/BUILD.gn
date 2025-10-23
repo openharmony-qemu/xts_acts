@@ -15,6 +15,7 @@ group("hiviewdfxtestacts") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "hiappeventtest/hiappevent:ActsPerformanceAnalysis20Test",
       "abilityconstanttest:ActsAbilityConstantTest",
       "apprecoverytest:ActsAppRecoveryTest",
       "bytracetest:ActsBytraceJsTest",

@@ -37,7 +37,7 @@ static napi_value GetTimezone_0100(napi_env env, napi_callback_info info)
     }
     //异常
     napi_value result = nullptr;
-    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    NAPI_CALL(env, napi_create_int32(env, returnValue == TIMESERVICE_ERR_INVALID_PARAMETER ? 0 : 1, &result));
     return result;
 }
 

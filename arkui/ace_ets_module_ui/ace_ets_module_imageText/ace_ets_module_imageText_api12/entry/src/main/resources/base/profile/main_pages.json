@@ -260,6 +260,7 @@
     "MainAbility/pages/StyledString/getStyles",
     "MainAbility/pages/StyledString/replaceString",
     "MainAbility/pages/TextArea/TextAreaType",
-    "MainAbility/pages/TextInput/TextInputType"
+    "MainAbility/pages/TextInput/TextInputType",
+    "MainAbility/pages/RichEditor/RichEditorFromStyledString"
   ]
 }

@@ -73,20 +73,21 @@ struct WebDefaultTextEncodingFormat {
             case "defaultTextEncodingFormat0100": {
               let value: string;
               try {
-                this.encoding = "UTF-8";
-                this.isPageEnd = -1;
-                this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.controller.runJavaScript("getEncoding()", (err, res) => {
-                  console.info("key==>getEncoding res 1:" + res)
-                  value = res.substring(1, res.length - 1);
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent("UTF-8", 153330)
-                  }else{
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent("UTF-8", 153330)
+                }else{
+                  this.encoding = "UTF-8";
+                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  this.controller.runJavaScript("getEncoding()", (err, res) => {
+                    console.info("key==>getEncoding res 1:" + res)
+                    value = res.substring(1, res.length - 1);
                     Utils.emitEvent(value, 153330)
-                  }
-                })
+                  })
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -95,20 +96,21 @@ struct WebDefaultTextEncodingFormat {
             case "defaultTextEncodingFormat0200": {
               let value: string;
               try {
-                this.encoding = "gb18030";
-                this.isPageEnd = -1;
-                this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.controller.runJavaScript("getEncoding()", (err, res) => {
-                  console.info("key==>getEncoding res 2:" + res)
-                  value = res.substring(1, res.length - 1);
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent("gb18030", 153340)
-                  }else{
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent("gb18030", 153340)
+                }else{
+                  this.encoding = "gb18030";
+                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  this.controller.runJavaScript("getEncoding()", (err, res) => {
+                    console.info("key==>getEncoding res 2:" + res)
+                    value = res.substring(1, res.length - 1);
                     Utils.emitEvent(value, 153340)
-                  }
-                })
+                  })
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -117,20 +119,21 @@ struct WebDefaultTextEncodingFormat {
             case "defaultTextEncodingFormat0300": {
               let value: string;
               try {
-                this.encoding = "GBK";
-                this.isPageEnd = -1;
-                this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.controller.runJavaScript("getEncoding()", (err, res) => {
-                  console.info("key==>getEncoding res 3:" + res)
-                  value = res.substring(1, res.length - 1);
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent("GBK", 153350)
-                  }else{
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent("GBK", 153350)
+                }else{
+                  this.encoding = "GBK";
+                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  this.controller.runJavaScript("getEncoding()", (err, res) => {
+                    console.info("key==>getEncoding res 3:" + res)
+                    value = res.substring(1, res.length - 1);
                     Utils.emitEvent(value, 153350)
-                  }
-                })
+                  })
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -139,20 +142,21 @@ struct WebDefaultTextEncodingFormat {
             case "defaultTextEncodingFormat0400": {
               let value: string;
               try {
-                this.encoding = "Big5";
-                this.isPageEnd = -1;
-                this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.controller.runJavaScript("getEncoding()", (err, res) => {
-                  console.info("key==>getEncoding res 4:" + res)
-                  value = res.substring(1, res.length - 1);
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent("Big5", 153360)
-                  }else{
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent("Big5", 153360)
+                }else{
+                  this.encoding = "Big5";
+                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  this.controller.runJavaScript("getEncoding()", (err, res) => {
+                    console.info("key==>getEncoding res 4:" + res)
+                    value = res.substring(1, res.length - 1);
                     Utils.emitEvent(value, 153360)
-                  }
-                })
+                  })
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -161,20 +165,21 @@ struct WebDefaultTextEncodingFormat {
             case "defaultTextEncodingFormat0500": {
               let value: string;
               try {
-                this.encoding = "windows-1252";
-                this.isPageEnd = -1;
-                this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.controller.runJavaScript("getEncoding()", (err, res) => {
-                  console.info("key==>getEncoding res 5:" + res)
-                  value = res.substring(1, res.length - 1);
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent("windows-1252", 153370)
-                  }else{
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent("windows-1252", 153370)
+                }else{
+                  this.encoding = "windows-1252";
+                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  this.controller.runJavaScript("getEncoding()", (err, res) => {
+                    console.info("key==>getEncoding res 5:" + res)
+                    value = res.substring(1, res.length - 1);
                     Utils.emitEvent(value, 153370)
-                  }
-                })
+                  })
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -183,20 +188,21 @@ struct WebDefaultTextEncodingFormat {
             case "defaultTextEncodingFormat0600": {
               let value: string;
               try {
-                this.encoding = "macintosh";
-                this.isPageEnd = -1;
-                this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.controller.runJavaScript("getEncoding()", (err, res) => {
-                  console.info("key==>getEncoding res 6:" + res)
-                  value = res.substring(1, res.length - 1);
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent("macintosh", 153380)
-                  }else{
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent("macintosh", 153380)
+                }else{
+                  this.encoding = "macintosh";
+                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  this.controller.runJavaScript("getEncoding()", (err, res) => {
+                    console.info("key==>getEncoding res 6:" + res)
+                    value = res.substring(1, res.length - 1);
                     Utils.emitEvent(value, 153380)
-                  }
-                })
+                  })
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -205,20 +211,21 @@ struct WebDefaultTextEncodingFormat {
             case "defaultTextEncodingFormat0700": {
               let value: string;
               try {
-                this.encoding = "EUC-KR";
-                this.isPageEnd = -1;
-                this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.controller.runJavaScript("getEncoding()", (err, res) => {
-                  console.info("key==>getEncoding res 7:" + res)
-                  value = res.substring(1, res.length - 1);
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent("EUC-KR", 153390)
-                  }else{
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent("EUC-KR", 153390)
+                }else{
+                  this.encoding = "EUC-KR";
+                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  this.controller.runJavaScript("getEncoding()", (err, res) => {
+                    console.info("key==>getEncoding res 7:" + res)
+                    value = res.substring(1, res.length - 1);
                     Utils.emitEvent(value, 153390)
-                  }
-                })
+                  })
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -227,20 +234,21 @@ struct WebDefaultTextEncodingFormat {
             case "defaultTextEncodingFormat0800": {
               let value: string;
               try {
-                this.encoding = "ISO-2022-JP";
-                this.isPageEnd = -1;
-                this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.controller.runJavaScript("getEncoding()", (err, res) => {
-                  console.info("key==>getEncoding res 8:" + res)
-                  value = res.substring(1, res.length - 1);
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent("ISO-2022-JP", 153400)
-                  }else{
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent("ISO-2022-JP", 153400)
+                }else{
+                  this.encoding = "ISO-2022-JP";
+                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  this.controller.runJavaScript("getEncoding()", (err, res) => {
+                    console.info("key==>getEncoding res 8:" + res)
+                    value = res.substring(1, res.length - 1);
                     Utils.emitEvent(value, 153400)
-                  }
-                })
+                  })
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -249,20 +257,21 @@ struct WebDefaultTextEncodingFormat {
             case "defaultTextEncodingFormat0900": {
               let value: string;
               try {
-                this.encoding = "EUC-JP";
-                this.isPageEnd = -1;
-                this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.controller.runJavaScript("getEncoding()", (err, res) => {
-                  console.info("key==>getEncoding res 9:" + res)
-                  value = res.substring(1, res.length - 1);
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent("EUC-JP", 153410)
-                  }else{
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent("EUC-JP", 153410)
+                }else{
+                  this.encoding = "EUC-JP";
+                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  this.controller.runJavaScript("getEncoding()", (err, res) => {
+                    console.info("key==>getEncoding res 9:" + res)
+                    value = res.substring(1, res.length - 1);
                     Utils.emitEvent(value, 153410)
-                  }
-                })
+                  })
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -271,20 +280,21 @@ struct WebDefaultTextEncodingFormat {
             case "defaultTextEncodingFormat1000": {
               let value: string;
               try {
-                this.encoding = "Shift_JIS";
-                this.isPageEnd = -1;
-                this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.controller.runJavaScript("getEncoding()", (err, res) => {
-                  console.info("key==>getEncoding res 10:" + res)
-                  value = res.substring(1, res.length - 1);
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent("Shift_JIS", 153420)
-                  }else{
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent("Shift_JIS", 153420)
+                }else{
+                  this.encoding = "Shift_JIS";
+                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  this.controller.runJavaScript("getEncoding()", (err, res) => {
+                    console.info("key==>getEncoding res 10:" + res)
+                    value = res.substring(1, res.length - 1);
                     Utils.emitEvent(value, 153420)
-                  }
-                })
+                  })
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -293,20 +303,21 @@ struct WebDefaultTextEncodingFormat {
             case "defaultTextEncodingFormat1100": {
               let value: string;
               try {
-                this.encoding = "";
-                this.isPageEnd = -1;
-                this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.controller.runJavaScript("getEncoding()", (err, res) => {
-                  console.info("key==>getEncoding res 11:" + res)
-                  value = res.substring(1, res.length - 1);
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent("UTF-8", 153430)
-                  }else{
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent("UTF-8", 153430)
+                }else{
+                  this.encoding = "";
+                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  this.controller.runJavaScript("getEncoding()", (err, res) => {
+                    console.info("key==>getEncoding res 11:" + res)
+                    value = res.substring(1, res.length - 1);
                     Utils.emitEvent(value, 153430)
-                  }
-                })
+                  })
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -315,21 +326,22 @@ struct WebDefaultTextEncodingFormat {
             case "defaultTextEncodingFormat1200": {
               let value: string;
               try {
-                this.encoding = " ";
-                this.isPageEnd = -1;
-                this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                console.info("zbr1" + this.encoding);
-                this.controller.runJavaScript("getEncoding()", (err, res) => {
-                  console.info("zbr-key==>getEncoding res 12:" + res)
-                  value = res.substring(1, res.length - 1);
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent("UTF-8", 153440)
-                  }else{
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent("UTF-8", 153440)
+                }else{
+                  this.encoding = " ";
+                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  console.info("zbr1" + this.encoding);
+                  this.controller.runJavaScript("getEncoding()", (err, res) => {
+                    console.info("zbr-key==>getEncoding res 12:" + res)
+                    value = res.substring(1, res.length - 1);
                     Utils.emitEvent(value, 153440)
-                  }
-                })
+                  })
+                }
               } catch (error) {
                 console.error(`zbr-ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -338,20 +350,21 @@ struct WebDefaultTextEncodingFormat {
             case "defaultTextEncodingFormat1300": {
               let value: string;
               try {
-                this.encoding = "qwer123.";
-                this.isPageEnd = -1;
-                this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.controller.runJavaScript("getEncoding()", (err, res) => {
-                  console.info("key==>getEncoding res 13:" + res)
-                  value = res.substring(1, res.length - 1);
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent("UTF-8", 153450)
-                  }else{
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent("UTF-8", 153450)
+                }else{
+                  this.encoding = "qwer123.";
+                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  this.controller.runJavaScript("getEncoding()", (err, res) => {
+                    console.info("key==>getEncoding res 13:" + res)
+                    value = res.substring(1, res.length - 1);
                     Utils.emitEvent(value, 153450)
-                  }
-                })
+                  })
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -360,20 +373,21 @@ struct WebDefaultTextEncodingFormat {
             case "defaultTextEncodingFormat1400": {
               let value: string;
               try {
-                this.encoding = null;
-                this.isPageEnd = -1;
-                this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.controller.runJavaScript("getEncoding()", (err, res) => {
-                  console.info("key==>getEncoding res 14:" + res)
-                  value = res.substring(1, res.length - 1);
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent("UTF-8", 153460)
-                  }else{
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent("UTF-8", 153460)
+                }else{
+                  this.encoding = null;
+                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  this.controller.runJavaScript("getEncoding()", (err, res) => {
+                    console.info("key==>getEncoding res 14:" + res)
+                    value = res.substring(1, res.length - 1);
                     Utils.emitEvent(value, 153460)
-                  }
-                })
+                  })
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -382,20 +396,21 @@ struct WebDefaultTextEncodingFormat {
             case "defaultTextEncodingFormat1500": {
               let value: string;
               try {
-                this.encoding = undefined;
-                this.isPageEnd = -1;
-                this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.controller.runJavaScript("getEncoding()", (err, res) => {
-                  console.info("key==>getEncoding res 15:" + res)
-                  value = res.substring(1, res.length - 1);
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent("UTF-8", 153470)
-                  }else{
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent("UTF-8", 153470)
+                }else{
+                  this.encoding = undefined;
+                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  this.controller.runJavaScript("getEncoding()", (err, res) => {
+                    console.info("key==>getEncoding res 15:" + res)
+                    value = res.substring(1, res.length - 1);
                     Utils.emitEvent(value, 153470)
-                  }
-                })
+                  })
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -404,20 +419,21 @@ struct WebDefaultTextEncodingFormat {
             case "defaultTextEncodingFormat1600": {
               let value: string;
               try {
-                this.encoding = "ASCII";
-                this.isPageEnd = -1;
-                this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.controller.runJavaScript("getEncoding()", (err, res) => {
-                  console.info("key==>getEncoding res 16:" + res)
-                  value = res.substring(1, res.length - 1);
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent("UTF-8", 153480)
-                  }else{
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent("UTF-8", 153480)
+                }else{
+                  this.encoding = "ASCII";
+                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  this.controller.runJavaScript("getEncoding()", (err, res) => {
+                    console.info("key==>getEncoding res 16:" + res)
+                    value = res.substring(1, res.length - 1);
                     Utils.emitEvent(value, 153480)
-                  }
-                })
+                  })
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -426,20 +442,21 @@ struct WebDefaultTextEncodingFormat {
             case "defaultTextEncodingFormat1700": {
               let value: string;
               try {
-                this.encoding = "ANSI";
-                this.isPageEnd = -1;
-                this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.controller.runJavaScript("getEncoding()", (err, res) => {
-                  console.info("key==>getEncoding res 17:" + res)
-                  value = res.substring(1, res.length - 1);
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent("UTF-8", 153490)
-                  }else{
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent("UTF-8", 153490)
+                }else{
+                  this.encoding = "ANSI";
+                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  this.controller.runJavaScript("getEncoding()", (err, res) => {
+                    console.info("key==>getEncoding res 17:" + res)
+                    value = res.substring(1, res.length - 1);
                     Utils.emitEvent(value, 153490)
-                  }
-                })
+                  })
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
@@ -448,20 +465,21 @@ struct WebDefaultTextEncodingFormat {
             case "defaultTextEncodingFormat1800": {
               let value: string;
               try {
-                this.encoding = "utf-8";
-                this.isPageEnd = -1;
-                this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
-                this.controller.runJavaScript("getEncoding()", (err, res) => {
-                  console.info("key==>getEncoding res 18:" + res)
-                  value = res.substring(1, res.length - 1);
-                  this.userAgentPC = this.controller.getUserAgent();
-                  if ((this.userAgentPC).includes("PC")) {
-                    Utils.emitEvent("UTF-8", 153500)
-                  }else{
+                this.userAgentPC = this.controller.getUserAgent();
+                if ((this.userAgentPC).includes("PC")) {
+                  Utils.emitEvent("UTF-8", 153500)
+                }else{
+                  this.encoding = "utf-8";
+                  await Utils.sleep(2000);
+                  this.isPageEnd = -1;
+                  this.controller.refresh();
+                  await waitForExist(()=>this.isPageEnd, this.str, 0);
+                  this.controller.runJavaScript("getEncoding()", (err, res) => {
+                    console.info("key==>getEncoding res 18:" + res)
+                    value = res.substring(1, res.length - 1);
                     Utils.emitEvent(value, 153500)
-                  }
-                })
+                  })
+                }
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }

@@ -48,7 +48,7 @@
   | 电量信息         | 获取设备当前的充电状态及剩余电量                             |
   | NFC卡片          | 操作及管理NFC卡模拟                                          |
 
-  参考[运动表应用开发](https://e.gitee.com/kunyuan-hongke/repos/cooperation-team-L0UI/doc/tree/master/%E8%BF%90%E5%8A%A8%E8%A1%A8%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91)
+  参考[运动表应用开发](https://e.gitcode.com/kunyuan-hongke/repos/cooperation-team-L0UI/doc/tree/master/%E8%BF%90%E5%8A%A8%E8%A1%A8%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91)
 
 - ## 编译说明
 

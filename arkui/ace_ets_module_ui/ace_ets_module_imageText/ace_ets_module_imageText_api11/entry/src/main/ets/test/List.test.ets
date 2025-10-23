@@ -115,6 +115,7 @@ import ContainerSpanModifierTest from './ContainerSpanTest/ContainerSpanModifier
 import SearchModifierTest from "./SearchTest/SearchModifier.test";
 import SymbolGlyphFontWeightTest from "./SymbolGlyphTest/fontWeight.test";
 import SpanTextShadowTest from './textTest/SpanTextShadowTest.test';
+import RichEditorReturnValuesTest from './RichEditorTest/RichEditorReturnValues.test';
 
 
 export default function testsuite() {
@@ -221,4 +222,5 @@ export default function testsuite() {
   SearchModifierTest();
   SymbolGlyphFontWeightTest();
   SpanTextShadowTest();
+  RichEditorReturnValuesTest();
 }

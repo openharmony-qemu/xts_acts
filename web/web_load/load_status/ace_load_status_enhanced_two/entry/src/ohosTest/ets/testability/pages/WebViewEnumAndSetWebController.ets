@@ -104,7 +104,7 @@ struct WebViewEnumAndSetWebController {
               this.cacheError = true
               this.CacheMode = CacheMode.Only
               this.isPageEnd = -1;
-              this.controller.loadUrl("https://www.openharmony.cn/mainPlay")
+              this.controller.loadUrl("https://www.openharmony.cn")
               await waitForExist(() => this.isPageEnd, this.str, 0);
               break;
             }

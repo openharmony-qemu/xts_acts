@@ -180,7 +180,7 @@ struct Index {
             case "emitCacheModeOnly": {
               this.cacheError = true;
               this.cacheMode = CacheMode.Only;
-              this.controller.loadUrl({ url: "https://www.openharmony.cn/mainPlay" });
+              this.controller.loadUrl({ url: "https://www.openharmony.cn" });
               break;
             }
             case "emitCacheModeDefault": {

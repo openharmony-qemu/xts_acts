@@ -13,18 +13,20 @@
 * limitations under the License.
 */
 
-import builtinsStatementBlockTest from "./statement/BuiltinsStatementBlockTest.test";
-import BuiltinsStatementBreakTest from "./statement/BuiltinsStatementBreakTest.test";
-import BuiltinsStatementContinueTest from "./statement/BuiltinsStatementContinueTest.test";
-import builtinsStatementForOfTest from "./statement/BuiltinsStatementForOfTest.test";
-import builtinsStatementForTest from "./statement/BuiltinsStatementForTest.test";
-import builtinsStatementIfTest from "./statement/BuiltinsStatementIfTest.test";
-import builtinsStatementThrowTest from "./statement/BuiltinsStatementThrowTest.test";
-import builtinsStatementTry from "./statement/BuiltinsStatementTryTest.test";
-import builtinsStatementWhileTest from "./statement/BuiltinsStatementWhile.test";
-import builtinsStatementReturnTest from "./statement/StatementReturnTest.test";
-import builtinsStatementSwitchTest from "./statement/StatementSwitchTest.test";
-
+import builtinsStatementBlockTest from './statement/BuiltinsStatementBlockTest.test';
+import BuiltinsStatementBreakTest from './statement/BuiltinsStatementBreakTest.test';
+import BuiltinsStatementContinueTest from './statement/BuiltinsStatementContinueTest.test';
+import builtinsStatementForOfTest from './statement/BuiltinsStatementForOfTest.test';
+import builtinsStatementForTest from './statement/BuiltinsStatementForTest.test';
+import builtinsStatementIfTest from './statement/BuiltinsStatementIfTest.test';
+import builtinsStatementThrowTest from './statement/BuiltinsStatementThrowTest.test';
+import builtinsStatementTry from './statement/BuiltinsStatementTryTest.test';
+import builtinsStatementWhileTest from './statement/BuiltinsStatementWhile.test';
+import builtinsStatementReturnTest from './statement/StatementReturnTest.test';
+import builtinsStatementSwitchTest from './statement/StatementSwitchTest.test';
+import numberTest from './numberstring/NumberTest.test';
+import stringTest from './numberstring/StringTest.test';
+import dateTimeTest from './datetime/DateTimeTest.test';
 
 export default function testsuite() {
   builtinsStatementBlockTest();
@@ -38,4 +40,7 @@ export default function testsuite() {
   builtinsStatementReturnTest();
   builtinsStatementSwitchTest();
   builtinsStatementWhileTest();
+  numberTest();
+  stringTest();
+  dateTimeTest();
 }

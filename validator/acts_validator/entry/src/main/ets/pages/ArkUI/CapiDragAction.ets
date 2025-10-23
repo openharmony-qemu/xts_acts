@@ -169,6 +169,8 @@ struct CapiKeyEvent {
           })
             .onAppear(() => {
               nativeDragAction.nativeDragAction("dragStart", this.getUIContext());
+              this.text1 = '0';
+              this.text2 = '0';
             })
             .width(`${this.width1}`)
             .height(700)

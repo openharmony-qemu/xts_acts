@@ -123,8 +123,8 @@ struct WebViewControllerDownloadTest {
         Button('WebViewControllerDownloadTestButton')
           .key('WebViewControllerDownloadTestButton').onClick(async () => {
           console.info('key==>' + this.str)
-          await waitForExist(() => this.isPageEnd, this.str, 0);
-          await waitForExist(() => this.isReceive, this.str, 0);
+          await waitForExist(() => this.isPageEnd, this.str + ' isPageEnd', 0);
+          await waitForExist(() => this.isReceive, this.str + ' isReceive', 0);
           this.isReceive = -1;
           switch (this.str) {
             case 'testSetDownloadDelegate001': {
@@ -143,9 +143,13 @@ struct WebViewControllerDownloadTest {
             case 'testStartDownload001': {
               try {
                 this.controller.startDownload(this.downloadUrl);
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
                 console.info(this.str + ' guids:' + this.guids)
-
+                
+                await waitForExist(()=>this.downloadingItem, this.str)
+                if (this.downloadingItem && this.currentDownloadState == webView.WebDownloadState.IN_PROGRESS) {
+                  this.downloadingItem.cancel()
+                  await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.CANCELED);
+                }
                 Utils.emitEvent(true, 131760)
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -156,6 +160,7 @@ struct WebViewControllerDownloadTest {
             case 'testWebDownloadState001': {
               try {
                 this.controller.startDownload(this.downloadUrl);
+                console.info(this.str + ' guids:' + this.guids)
                 let flag = -1;
                 await waitForExist(()=> {
                   if (this.currentDownloadState == webView.WebDownloadState.IN_PROGRESS) {
@@ -163,7 +168,12 @@ struct WebViewControllerDownloadTest {
                   }
                   return flag;
                 }, this.str, webView.WebDownloadState.IN_PROGRESS);
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
+
+                await waitForExist(()=>this.downloadingItem, this.str)
+                if (this.downloadingItem) {
+                  this.downloadingItem.cancel()
+                  await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.CANCELED);
+                }
                 Utils.emitEvent(flag, 131770);
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -226,14 +236,13 @@ struct WebViewControllerDownloadTest {
               try {
                 this.start = false
                 this.controller.startDownload(this.downloadUrl);
-                let flag = -1;
-                await waitForExist(()=> {
-                  if (this.currentDownloadState == webView.WebDownloadState.PENDING) {
-                    flag = webView.WebDownloadState.PENDING;
-                  }
-                  return flag;
-                }, this.str, webView.WebDownloadState.PENDING);
-                Utils.emitEvent(flag, 131810);
+
+                let check = (v1: number, v2: number): boolean => {
+                  return v1 == v2 ? true: false;
+                }
+                await waitForAssert(()=>this.currentDownloadState, check, webView.WebDownloadState.PENDING,
+                  131810, this.str);
+
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -258,10 +267,10 @@ struct WebViewControllerDownloadTest {
                 if (this.currentDownloadState == webView.WebDownloadState.PAUSED) {
                   await waitForExist(() => this.downloadingItem, this.str)
                   if (this.downloadingItem) {
-                    this.downloadingItem.resume()
+                    this.downloadingItem.cancel()
+                    await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.CANCELED);
                   }
                 }
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
                 Utils.emitEvent(flag, 131820);
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -289,7 +298,11 @@ struct WebViewControllerDownloadTest {
                     }
                     return flag;
                   }, this.str, webView.WebDownloadState.IN_PROGRESS);
-                  await waitForExist(() => this.currentDownloadState, this.str, 1);
+                  await waitForExist(()=>this.downloadingItem, this.str)
+                  if (this.downloadingItem) {
+                    this.downloadingItem.cancel()
+                    await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.CANCELED);
+                  }
                   Utils.emitEvent(flag, 131830);
                 }
               } catch (error) {
@@ -304,7 +317,11 @@ struct WebViewControllerDownloadTest {
 
                 await waitForExist(() => this.onBeforeDownloadCalled ? 1 : 0, this.str, 1);
                 let flag = this.onBeforeDownloadCalled;
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
+                await waitForExist(()=>this.downloadingItem, this.str)
+                if (this.downloadingItem) {
+                  this.downloadingItem.cancel()
+                  await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.CANCELED);
+                }
                 Utils.emitEvent(flag, 131840);
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -318,7 +335,11 @@ struct WebViewControllerDownloadTest {
 
                 await waitForExist(() => this.onDownloadUpdatedCalled ? 1 : 0, this.str, 1);
                 let flag = this.onDownloadUpdatedCalled;
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
+                await waitForExist(()=>this.downloadingItem, this.str)
+                if (this.downloadingItem) {
+                  this.downloadingItem.cancel()
+                  await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.CANCELED);
+                }
                 Utils.emitEvent(flag, 131850);
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
@@ -330,10 +351,10 @@ struct WebViewControllerDownloadTest {
               try {
                 this.controller.startDownload(this.downloadUrlImg);
 
-                await waitForExist(() => this.onDownloadFinishCalled ? 1 : 0, this.str, 1);
-                let flag = this.onDownloadFinishCalled;
-                await waitForExist(() => this.currentDownloadState, this.str, 1);
-                Utils.emitEvent(flag, 131860);
+                let check = (v1: boolean, v2: boolean): boolean => {
+                  return v1 ? true: false;
+                }
+                await waitForAssert(()=>this.onDownloadFinishCalled, check, true, 131860, this.str);
               } catch (error) {
                 let e: business_error.BusinessError = error as business_error.BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -373,7 +394,11 @@ struct WebViewControllerDownloadTest {
                     }
                     return flag;
                   }, this.str, webView.WebDownloadState.IN_PROGRESS);
-                  await waitForExist(() => this.currentDownloadState, this.str, 1);
+                  await waitForExist(()=>this.downloadingItem, this.str)
+                  if (this.downloadingItem) {
+                    this.downloadingItem.cancel()
+                    await waitForExist(() => this.currentDownloadState, this.str, webView.WebDownloadState.CANCELED);
+                  }
                   Utils.emitEvent(flag, 131880);
                 }
               } catch (error) {
