@@ -23,7 +23,7 @@ struct EntryAbilityB {
   build() {
     Row() {
       Column({space: 20}) {
-        Text("EntryAbility1").fontColor(Color.Red).fontSize(16)
+        Text('EntryAbility1').fontColor(Color.Red).fontSize(16)
         Text(this.result).fontSize(16)
         Button(this.message1)
           .fontSize(50)
@@ -33,7 +33,7 @@ struct EntryAbilityB {
             if (this.result == "") {
               this.result =  "error"
             } else {
-              this.result = "EntryAbility1 getLaunchParameter: \n" + this.result;
+              this.result = 'EntryAbility1 getLaunchParameter: \n' + this.result;
             }
           })
         Button(this.message2)
@@ -44,7 +44,7 @@ struct EntryAbilityB {
             if (this.result == "") {
               this.result =  "error"
             } else {
-              this.result = "EntryAbility1 getLatestParameter: \n" + this.result;
+              this.result = 'EntryAbility1 getLatestParameter: \n' + this.result;
             }
           })
       }
