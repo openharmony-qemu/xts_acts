@@ -2340,6 +2340,460 @@ export default function WindowLifecycle() {
         done();
       }
     });
+    
+    /** @tc.number : SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200
+     * @tc.name : testGetAllMainWindowInfo_0200
+     * @tc.desc : 北向getAllMainWindowInfo测试返回值覆盖
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
+     */
+    it("testGetAllMainWindowInfo_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetAllMainWindowInfo_0200";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowInfoArray = await window.getAllMainWindowInfo();
+          console.info(caseName + ' windowInfoArray.length: ' + JSON.stringify(windowInfoArray.length));
+          console.info(caseName + ' windowInfoArray: ' + JSON.stringify(windowInfoArray));
+          expect(windowInfoArray.length).assertLargerOrEqual(1);
+          for (let i = 0; i < windowInfoArray.length; i++) {
+            if (windowInfoArray[i].windowId == windowId) {
+              let mainWindowInfo = windowInfoArray[i];
+              console.info(caseName + ' mainWindowInfo: ' + JSON.stringify(mainWindowInfo));
+              expect(mainWindowInfo.windowId).assertEqual(windowId);
+              expect(mainWindowInfo.displayId).assertEqual(0);
+              expect(mainWindowInfo.showing).assertEqual(true);
+              expect(mainWindowInfo.label).assertEqual('label');
+              break;
+            }
+          }
+          await windowClass.minimize();
+          let windowInfoArray2 = await window.getAllMainWindowInfo();
+          console.info(caseName + ' windowInfoArray2: ' + JSON.stringify(windowInfoArray2));
+          for (let i = 0; i < windowInfoArray2.length; i++) {
+            if (windowInfoArray2[i].windowId == windowId) {
+              let mainWindowInfo2 = windowInfoArray2[i];
+              console.info(caseName + ' mainWindowInfo2: ' + JSON.stringify(mainWindowInfo2));
+              expect(mainWindowInfo2.showing).assertEqual(false);
+              break;
+            }
+          }
+          context.setMissionLabel('label2');
+          let windowInfoArray3 = await window.getAllMainWindowInfo();
+          console.info(caseName + ' windowInfoArray3: ' + JSON.stringify(windowInfoArray3));
+          for (let i = 0; i < windowInfoArray3.length; i++) {
+            if (windowInfoArray3[i].windowId == windowId) {
+              let mainWindowInfo3 = windowInfoArray3[i];
+              console.info(caseName + ' mainWindowInfo3: ' + JSON.stringify(mainWindowInfo3));
+              expect(mainWindowInfo3.label).assertEqual('label2');
+              break;
+            }
+          }
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err))
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done();
+      }
+    });
+
+    /** @tc.number : SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0200
+     * @tc.name : testGetMainWindowSnapshot_0200
+     * @tc.desc : 北向getMainWindowSnapshot测试windowId入参是null
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
+     */
+    it("testGetMainWindowSnapshot_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_0200";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let configs: window.WindowSnapshotConfiguration = {
+              useCache: false
+          }
+          await window.getMainWindowSnapshot(null, configs)
+          expect().assertFail();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          if (err.code == 401) {
+            expect(true).assertTrue()
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } else {
+        done();
+      }
+    });
+
+    /** @tc.number : SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0300
+     * @tc.name : testGetMainWindowSnapshot_0300
+     * @tc.desc : 北向getMainWindowSnapshot测试windowId入参是undefined
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
+     */
+    it("testGetMainWindowSnapshot_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_0300";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let configs: window.WindowSnapshotConfiguration = {
+            useCache: false
+          }
+          await window.getMainWindowSnapshot(undefined, configs)
+          expect().assertFail();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          if (err.code == 401) {
+            expect(true).assertTrue()
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } else {
+        done();
+      }
+    });
+
+    /** @tc.number : SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0400
+     * @tc.name : testGetMainWindowSnapshot_0400
+     * @tc.desc : 北向getMainWindowSnapshot测试windowId入参包含0
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
+     */
+    it("testGetMainWindowSnapshot_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_0400";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray = [0, windowId];
+          let configs: window.WindowSnapshotConfiguration = {
+            useCache: false
+          }
+          await window.getMainWindowSnapshot(windowIdArray, configs)
+          expect().assertFail();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          if (err.code == 401) {
+            expect(true).assertTrue()
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } else {
+        done();
+      }
+    });
+
+    /** @tc.number : SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0500
+     * @tc.name : testGetMainWindowSnapshot_0500
+     * @tc.desc : 北向getMainWindowSnapshot测试windowId入参包含-1
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
+     */
+    it("testGetMainWindowSnapshot_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_0500";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray = [-1, windowId];
+          let configs: window.WindowSnapshotConfiguration = {
+            useCache: false
+          }
+          await window.getMainWindowSnapshot(windowIdArray, configs)
+          expect().assertFail();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          if (err.code == 401) {
+            expect(true).assertTrue()
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } else {
+        done();
+      }
+    });
+
+    /** @tc.number : SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0600
+     * @tc.name : testGetMainWindowSnapshot_0600
+     * @tc.desc : 北向getMainWindowSnapshot测试windowId入参包含重复Id
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
+     */
+    it("testGetMainWindowSnapshot_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_0600";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray = [windowId, windowId];
+          let configs: window.WindowSnapshotConfiguration = {
+            useCache: false
+          }
+          await window.getMainWindowSnapshot(windowIdArray, configs)
+          expect().assertFail();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          if (err.code == 401) {
+            expect(true).assertTrue()
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } else {
+        done();
+      }
+    });
+
+    /** @tc.number : SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0700
+     * @tc.name : testGetMainWindowSnapshot_0700
+     * @tc.desc : 北向getMainWindowSnapshot测试windowId数组长度大于512
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
+     */
+    it("testGetMainWindowSnapshot_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_0700";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray: number[] = new Array(520).fill(windowId);
+          let configs: window.WindowSnapshotConfiguration = {
+            useCache: false
+          }
+          await window.getMainWindowSnapshot(windowIdArray, configs)
+          expect().assertFail();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          if (err.code == 401) {
+            expect(true).assertTrue()
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } else {
+        done();
+      }
+    });
+
+    /** @tc.number : SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800
+     * @tc.name : testGetMainWindowSnapshot_0800
+     * @tc.desc : 北向getMainWindowSnapshot测试windowId入参正整数，但是不存在的windowId
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
+     */
+    it("testGetMainWindowSnapshot_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_0800";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray = [1000];
+          let configs: window.WindowSnapshotConfiguration = {
+            useCache: false
+          }
+          let pixelMapArray = await window.getMainWindowSnapshot(windowIdArray, configs);
+          console.info(caseName + ' pixelMapArray: ' + pixelMapArray);
+          console.info(caseName + ' pixelMapArray.length: ' + pixelMapArray.length);
+          expect(pixelMapArray.length).assertEqual(1);
+          expect(pixelMapArray[0]).assertEqual(undefined);
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done();
+      }
+    });
+
+    /** @tc.number : SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0900
+     * @tc.name : testGetMainWindowSnapshot_0900
+     * @tc.desc : 北向getMainWindowSnapshot测试windowId入参正常，WindowSnapshotConfiguration入参 null
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
+     */
+    it("testGetMainWindowSnapshot_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_0900";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray = [windowId];
+          await window.getMainWindowSnapshot(windowIdArray, null);
+          expect().assertFail();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          if (err.code == 401) {
+            expect(true).assertTrue()
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } else {
+        done();
+      }
+    });
+
+    /** @tc.number : SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_1000
+     * @tc.name : testGetMainWindowSnapshot_1000
+     * @tc.desc : 北向getMainWindowSnapshot测试windowId入参正常，WindowSnapshotConfiguration入参 undefined
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
+     */
+    it("testGetMainWindowSnapshot_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_1000";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray = [windowId];
+          await window.getMainWindowSnapshot(windowIdArray, undefined);
+          expect().assertFail();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          if (err.code == 401) {
+            expect(true).assertTrue()
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } else {
+        done();
+      }
+    });
+
+    /** @tc.number : SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_1100
+     * @tc.name : testGetMainWindowSnapshot_1100
+     * @tc.desc : 北向getMainWindowSnapshot测试windowId入参正常，WindowSnapshotConfiguration设置useCache=false
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
+     */
+    it("testGetMainWindowSnapshot_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_1100";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray = [windowId];
+          let configs: window.WindowSnapshotConfiguration = {
+            useCache: false
+          }
+          let pixelMapArray = await window.getMainWindowSnapshot(windowIdArray, configs);
+          console.info(caseName + ' pixelMapArray: ' + pixelMapArray);
+          console.info(caseName + ' pixelMapArray.length: ' + pixelMapArray.length);
+          expect(pixelMapArray.length).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done();
+      }
+    });
+
+    /** @tc.number : SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_1200
+     * @tc.name : testGetMainWindowSnapshot_1200
+     * @tc.desc : 北向getMainWindowSnapshot测试windowId入参正常，WindowSnapshotConfiguration设置useCache=true
+     * @tc.size : MediumTest
+     * @tc.type : Function
+     * @tc.level : Level 0
+     */
+    it("testGetMainWindowSnapshot_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_1200";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray = [windowId];
+          let configs: window.WindowSnapshotConfiguration = {
+            useCache: true
+          }
+          let pixelMapArray = await window.getMainWindowSnapshot(windowIdArray, configs);
+          console.info(caseName + ' pixelMapArray: ' + pixelMapArray);
+          console.info(caseName + ' pixelMapArray.length: ' + pixelMapArray.length);
+          expect(pixelMapArray.length).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done();
+      }
+    });
 
   })
 

@@ -1693,5 +1693,68 @@ export default function windowFocusTest() {
       }
     });
 
+    /**
+     * @tc.number    : SUB_BASIC_WMS_ACTIVE_ORDER_0100
+     * @tc.name      : testWindowHighlightChange_Order_0100
+     * @tc.desc      : 焦点切换激活态通知保序
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testWindowHighlightChange_Order_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testWindowHighlightChange_Order_0100 ';
+      console.log(caseName + 'begin');
+      let a = 0;
+      let b = 0;
+      let subWindowClass: undefined | window.Window;
+      let subWindowClass2: undefined | window.Window;
+      try {
+        subWindowClass = await windowStage.createSubWindow('testWindowHighlightChange_Order_0100_1');
+        console.info(`${caseName} Succeeded in creating the sub window.`);
+        await subWindowClass.setUIContent('testability/pages/First/index2');
+        await subWindowClass.showWindow();
+        let callback1 = (res: Boolean) => {
+          console.info(`${caseName} callback1 res: ${res}`);
+          console.info(`${caseName} callback1 a : ${a}`);
+        }
+        subWindowClass.on('windowHighlightChange', callback1);
+        // 如何判断是否失去激活态
+        subWindowClass2 = await windowStage.createSubWindow('testWindowHighlightChange_Order_0100_2');
+        let callback2 = async (res: Boolean) => {
+          console.info(`${caseName} callback2 res: ${res}`);
+          console.info(`${caseName} callback2 a : ${a}`);
+          b++;
+          console.info(`${caseName} callback2 b:  ${b}`);
+          if (b == 2) {
+            expect(a).assertEqual(1);
+            a--;
+            await subWindowClass?.destroyWindow();
+            await subWindowClass2?.destroyWindow();
+            done();
+          }
+        }
+        subWindowClass.on('windowHighlightChange', callback2);
+        // 如何判断是否获得激活态
+        await subWindowClass.setUIContent('testability/pages/First/index2');
+        await subWindowClass2.showWindow()
+        expect(a).assertEqual(0);
+        a++;
+        console.info(`${caseName} a (1) : ${a}`);
+        await subWindowClass.showWindow();
+        await subWindowClass2.showWindow();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        await subWindowClass?.destroyWindow();
+        await subWindowClass2?.destroyWindow();
+        if (e.code === 801) {
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+
   })
 }

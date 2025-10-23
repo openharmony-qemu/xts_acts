@@ -1628,5 +1628,63 @@ export default function windowNdk() {
       
     })
 
+    /**
+     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0100
+     * @tc.name    : test_OH_WindowManager_GetAllMainWindowInfo_0100
+     * @tc.desc    : OH_WindowManager_GetAllMainWindowInfo测试错误码校验201
+     * @tc.level   : LEVEL0
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('test_OH_WindowManager_GetAllMainWindowInfo_0100', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'test_OH_WindowManager_GetAllMainWindowInfo_0100 ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = windowNdkTest.test_OH_WindowManager_GetAllMainWindowInfo_0100();
+        if (isPCStatus != '') {
+          expect(Result).assertEqual(201);
+        } else {
+          expect(Result).assertEqual(801);
+        }
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_SNAPSHOT_TEST_0100
+     * @tc.name    : test_OH_WindowManager_GetMainWindowSnapshot_0100
+     * @tc.desc    : OH_WindowManager_GetMainWindowSnapshot测试错误码校验801、201
+     * @tc.level   : LEVEL0
+     * @tc.size    : MediumTest
+     * @tc.type    : Function
+     */
+    it('test_OH_WindowManager_GetMainWindowSnapshot_0100', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'test_OH_WindowManager_GetMainWindowSnapshot_0100 ';
+      try {
+        console.info(`${caseName} start`);
+        let windowClass = windowStage.getMainWindowSync();
+        let windowId = windowClass.getWindowProperties().id;
+        console.info(`${caseName} windowId: ${windowId}`);
+        let Result: number = windowNdkTest.test_OH_WindowManager_GetMainWindowSnapshot_0100(windowId);
+        console.info(`${caseName} Result: ${Result}`);
+        if (isPCStatus != '') {
+          expect(Result).assertEqual(201);
+        } else {
+          expect(Result).assertEqual(801);
+        }
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
   })
 }
