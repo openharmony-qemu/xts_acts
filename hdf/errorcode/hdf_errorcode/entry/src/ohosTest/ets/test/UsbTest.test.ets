@@ -44,7 +44,7 @@ export default function UsbTest() {
     it('TestUsbDdkConfigDescriptor0100', Level.LEVEL0,
       async (done: Function) => {
       if (dev == -1) {
-        expect(dev).assertEqual(dev);
+        expect(dev).assertEqual(-1);
         done();
       }
       try {
@@ -70,7 +70,7 @@ export default function UsbTest() {
     it('TestUsbDdkConfigDescriptor0200', Level.LEVEL0,
       async (done: Function) => {
         if (dev == -1) {
-          expect(dev).assertEqual(dev);
+          expect(dev).assertEqual(-1);
           done();
         }
       try {
@@ -96,7 +96,7 @@ export default function UsbTest() {
     it('TestUsbDdkInterfaceDescriptor0100', Level.LEVEL0,
       async (done: Function) => {
       if (dev == -1) {
-        expect(dev).assertEqual(dev);
+        expect(dev).assertEqual(-1);
         done();
       }
       try {
@@ -122,7 +122,7 @@ export default function UsbTest() {
     it('TestUsbDdkInterfaceDescriptor0200', Level.LEVEL0,
       async (done: Function) => {
       if (dev == -1) {
-        expect(dev).assertEqual(dev);
+        expect(dev).assertEqual(-1);
         done();
       }
       try {
@@ -148,7 +148,7 @@ export default function UsbTest() {
     it('TestUsbDdkEndpointDescriptor0100', Level.LEVEL0,
       async (done: Function) => {
       if (dev == -1) {
-        expect(dev).assertEqual(dev);
+        expect(dev).assertEqual(-1);
         done();
       }
       try {
@@ -174,7 +174,7 @@ export default function UsbTest() {
     it('TestUsbDdkEndpointDescriptor0200', Level.LEVEL0,
       async (done: Function) => {
       if (dev == -1) {
-        expect(dev).assertEqual(dev);
+        expect(dev).assertEqual(-1);
         done();
       }
       try {
@@ -200,7 +200,7 @@ export default function UsbTest() {
     it('TestUsbEndpointDescriptor0100', Level.LEVEL0,
       async (done: Function) => {
       if (dev == -1) {
-        expect(dev).assertEqual(dev);
+        expect(dev).assertEqual(-1);
         done();
       }
       try {
@@ -226,7 +226,7 @@ export default function UsbTest() {
     it('TestUsbEndpointDescriptor0200', Level.LEVEL0,
       async (done: Function) => {
       if (dev == -1) {
-        expect(dev).assertEqual(dev);
+        expect(dev).assertEqual(-1);
         done();
       }
       try {
@@ -252,7 +252,7 @@ export default function UsbTest() {
     it('TestUsbEndpointDescriptor0300', Level.LEVEL0,
       async (done: Function) => {
       if (dev == -1) {
-        expect(dev).assertEqual(dev);
+        expect(dev).assertEqual(-1);
         done();
       }
       try {
@@ -278,7 +278,7 @@ export default function UsbTest() {
     it('TestUsbEndpointDescriptor0400', Level.LEVEL0,
       async (done: Function) => {
       if (dev == -1) {
-        expect(dev).assertEqual(dev);
+        expect(dev).assertEqual(-1);
         done();
       }
       try {
@@ -304,7 +304,7 @@ export default function UsbTest() {
     it('TestUsbEndpointDescriptor0500', Level.LEVEL0,
       async (done: Function) => {
       if (dev == -1) {
-        expect(dev).assertEqual(dev);
+        expect(dev).assertEqual(-1);
         done();
       }
       try {
@@ -330,7 +330,7 @@ export default function UsbTest() {
     it('TestUsbInterfaceDescriptor0100', Level.LEVEL0,
       async (done: Function) => {
       if (dev == -1) {
-        expect(dev).assertEqual(dev);
+        expect(dev).assertEqual(-1);
         done();
       }
       try {
@@ -356,7 +356,7 @@ export default function UsbTest() {
     it('TestUsbInterfaceDescriptor0200', Level.LEVEL0,
       async (done: Function) => {
       if (dev == -1) {
-        expect(dev).assertEqual(dev);
+        expect(dev).assertEqual(-1);
         done();
       }
       try {
@@ -382,7 +382,7 @@ export default function UsbTest() {
     it('TestUsbInterfaceDescriptor0300', Level.LEVEL0,
       async (done: Function) => {
       if (dev == -1) {
-        expect(dev).assertEqual(dev);
+        expect(dev).assertEqual(-1);
         done();
       }
       try {
@@ -408,7 +408,7 @@ export default function UsbTest() {
     it('TestUsbInterfaceDescriptor0400', Level.LEVEL0,
       async (done: Function) => {
       if (dev == -1) {
-        expect(dev).assertEqual(dev);
+        expect(dev).assertEqual(-1);
         done();
       }
       try {
@@ -434,7 +434,7 @@ export default function UsbTest() {
     it('TestUsbInterfaceDescriptor0500', Level.LEVEL0,
       async (done: Function) => {
       if (dev == -1) {
-        expect(dev).assertEqual(dev);
+        expect(dev).assertEqual(-1);
         done();
       }
       try {
@@ -460,7 +460,7 @@ export default function UsbTest() {
     it('TestUsbInterfaceDescriptor0600', Level.LEVEL0,
       async (done: Function) => {
       if (dev == -1) {
-        expect(dev).assertEqual(dev);
+        expect(dev).assertEqual(-1);
         done();
       }
       try {
@@ -486,7 +486,7 @@ export default function UsbTest() {
     it('TestUsbInterfaceDescriptor0700', Level.LEVEL0,
       async (done: Function) => {
       if (dev == -1) {
-        expect(dev).assertEqual(dev);
+        expect(dev).assertEqual(-1);
         done();
       }
       try {
