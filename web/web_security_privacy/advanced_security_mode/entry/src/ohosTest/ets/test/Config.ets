@@ -16,3 +16,12 @@
 export let URL1: string = "https://"
 export let URL2: string = "www.example.com"
 export let URL: string = URL1 + URL2
+
+export class CommonConstants {
+  static readonly URL_HTTPS_EXAMPLE: string = 'https://www.example.com';
+
+  static readonly URL_HTTP_BAIDU: string = 'http://www.baidu.com';
+
+  static readonly URL_HTTPS_EXPIREDBADSSL: string = 'https://expired.badssl.com/';
+
+}

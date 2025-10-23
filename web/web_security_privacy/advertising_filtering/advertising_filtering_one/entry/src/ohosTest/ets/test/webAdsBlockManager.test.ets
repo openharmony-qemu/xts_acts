@@ -53,6 +53,22 @@ export default function ActsAceWebAdsBlockManager() {
     })
 
     /*
+     *@tc.number SUB_ACE_WEB_IsAdsBlockEnableForCurPage_return_false
+     *@tc.name testIsAdsBlockEnableForCurPageFalse
+     *@tc.desc test isAdsBlockEnableForCurPage return false
+     *@tc.size MediumTest
+     *@tc.type Function
+     *@tc.level Level 2
+     */
+    it('testIsAdsBlockEnableForCurPageFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testIsAdsBlockEnableForCurPageFalse", 161050);
+      Utils.registerBaseEvent('testIsAdsBlockEnableForCurPageFalse', false, 25102201, done, (backData: events_emitter.EventData, expected: Object) => {
+            expect(backData?.data?.ACTION).assertEqual(expected)
+        })
+      sendEventByKey('webViewSdkSchemeHandler', 10, '');
+    })
+
+    /*
      *@tc.number SUB_ACE_WEB_AdsBlockManager_API_0001
      *@tc.name testEnableAdsBlock
      *@tc.desc test EnableAdsBlock

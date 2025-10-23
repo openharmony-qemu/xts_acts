@@ -100,7 +100,7 @@ struct webAdsBlockManager {
                         let isBlocked: boolean = this.controller.isAdsBlockEnabled();
                         console.log(' isAdsBlockEnabled:  ', isBlocked);
 
-                        Utils.emitEvent(true, 161070)
+                        Utils.emitEvent(isBlocked, 161070)
                       } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -120,7 +120,7 @@ struct webAdsBlockManager {
                         let isBlockedCurPage: boolean = this.controller.isAdsBlockEnabledForCurPage();
                         console.log(' isAdsBlockEnabledForCurPage:  ', isBlockedCurPage);
 
-                        Utils.emitEvent(true, 161080)
+                        Utils.emitEvent(isBlockedCurPage, 161080)
                       } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -508,7 +508,7 @@ struct webAdsBlockManager {
                         let isBlocked: boolean = this.controller.isAdsBlockEnabled();
                         console.log(' isAdsBlockEnabled:  ', isBlocked);
 
-                        Utils.emitEvent(!isBlocked, 161190)
+                        Utils.emitEvent(isBlocked, 161190)
                       } catch (error) {
                         let e:business_error.BusinessError = error as business_error.BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
@@ -586,6 +586,29 @@ struct webAdsBlockManager {
                       }
 
                       break;
+                    }
+                    case 'testIsAdsBlockEnableForCurPageFalse': {
+                        try {
+                            this.isPageEnd = -1;
+                            this.controller.loadUrl(CommonConstants.EXAMPLE_URL)
+                            await waitForExist(() => this.isPageEnd, 'testIsAdsBlockEnableForCurPageFalse_isPageEnd', 0, 1000);
+                            let isAdsBlockEnabledForCurPage: boolean = this.controller.isAdsBlockEnabledForCurPage();
+                            console.log('[testIsAdsBlockEnableForCurPageFalse] isAdsBlockEnabledForCurPage:' + isAdsBlockEnabledForCurPage);
+                            this.controller.loadUrl(this.src_url)
+                            await waitForExist(() => this.isPageEnd, 'testIsAdsBlockEnableForCurPageFalse2_isPageEnd', 0, 1000);
+                            Utils.emitEvent(isAdsBlockEnabledForCurPage, 25102201)
+                        } catch (error) {
+                            let e:business_error.BusinessError = error as business_error.BusinessError;
+                            console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                            if(e.code == 801) {
+                              console.log(`emitEnableAdsBlockFalse The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
+                              this.errorCode = 801
+                              Utils.emitEvent(true, 25102201)
+                            } else {
+                              Utils.emitEvent(false, 25102201)
+                            }
+                        }
+                        break;
                     }
                   }
               })
