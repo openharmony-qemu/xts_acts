@@ -48,6 +48,17 @@ export const RegisterTouchEventFilterInvaildWindowId: () => number;
 export const UnregisterTouchEventFilterOkOrServiceError: () => number;
 export const UnregisterTouchEventFilterInvaildWindowId: () => number;
 
+export const test_OH_WindowManager_GetAllMainWindowInfo_0100: () => number;
+export const test_OH_WindowManager_GetAllMainWindowInfo_0200: (windowId: number) => number;
+export const test_OH_WindowManager_GetMainWindowSnapshot_0100: (windowId: number) => number;
+export const test_OH_WindowManager_GetMainWindowSnapshot_0200: () => number;
+export const test_OH_WindowManager_GetMainWindowSnapshot_0300: (windowId: number) => number;
+export const test_OH_WindowManager_GetMainWindowSnapshot_0400: (windowId: number) => number;
+export const test_OH_WindowManager_GetMainWindowSnapshot_0500: () => number;
+export const test_OH_WindowManager_GetMainWindowSnapshot_0600: (windowId: number) => number;
+export const test_OH_WindowManager_GetMainWindowSnapshot_0700: (windowId: number) => number;
+export const test_OH_WindowManager_GetMainWindowSnapshot_0800: (windowId: number) => number;
+
 export const CreatePipConfigOk: () => number;
 export const CreatePipConfigIncorrectParam: () => number;
 export const SetPipMainWindowIdOkOrDeviceNotSupported: () => number;

@@ -61,6 +61,17 @@ napi_value RegisterTouchEventFilterOkOrServiceError(napi_env env, napi_callback_
 napi_value RegisterTouchEventFilterInvaildWindowId(napi_env env, napi_callback_info info);
 napi_value UnregisterTouchEventFilterOkOrServiceError(napi_env env, napi_callback_info info);
 napi_value UnregisterTouchEventFilterInvaildWindowId(napi_env env, napi_callback_info info);
+
+napi_value Test_OH_WindowManager_GetAllMainWindowInfo_0100(napi_env env, napi_callback_info info);
+napi_value Test_OH_WindowManager_GetAllMainWindowInfo_0200(napi_env env, napi_callback_info info);
+napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0100(napi_env env, napi_callback_info info);
+napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0200(napi_env env, napi_callback_info info);
+napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0300(napi_env env, napi_callback_info info);
+napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0400(napi_env env, napi_callback_info info);
+napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0500(napi_env env, napi_callback_info info);
+napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0600(napi_env env, napi_callback_info info);
+napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0700(napi_env env, napi_callback_info info);
+napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0800(napi_env env, napi_callback_info info);
 };
 
 #endif //ACE_C_ARKUI_KEY_CODE_TEST_API20_WINDOW_H
