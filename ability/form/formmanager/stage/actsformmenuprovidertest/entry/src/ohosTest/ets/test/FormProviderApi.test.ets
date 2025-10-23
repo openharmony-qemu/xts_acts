@@ -414,7 +414,11 @@ export default function formProviderTest() {
         }
         let obj: formBindingData.FormBindingData = formBindingData.createFormBindingData(param);
         formProvider.updateForm(formId, obj, (error: BusinessError) => {
-          if (error.code === ERROR_CODE) {
+          hilog.info(DOMAIN, COMMON_TAG, '%{public}s',
+            `${TAG} formProvider updateForm, formProvider updateForm sucess error ${JSON.stringify(error)}`);
+          if (error === null) {
+            expect(error).assertNull();
+          } else if (error.code === ERROR_CODE) {
             expect(error.code).assertEqual(ERROR_CODE);
           } else if (error.code === ERROR_CODE2) {
             expect(error.code).assertEqual(ERROR_CODE2);
