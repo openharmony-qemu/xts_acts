@@ -74,8 +74,8 @@ export default function TransitionEdgeTest() {
       let driver = Driver.create();
       await driver.delayMs(1000);
 
+      expect(TransitionEdge.END).assertEqual(3);
       await driver.assertComponentExist(ON.id('imageId'));
-
       let btn1 = await driver.findComponent(ON.id('clickId'));
       await btn1.click();
       await driver.delayMs(1000);
