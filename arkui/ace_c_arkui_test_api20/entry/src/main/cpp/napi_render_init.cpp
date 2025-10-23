@@ -26,6 +26,11 @@
 #include "scope/RunTaskInScopeTest.h"
 #include "list/ListCrossLanguageTest.h"
 #include "BindController/BindControllerTest.h"
+#include "row/RowCrossLanguageTest.h"
+#include "Column/ColumnCrossLanguageTest.h"
+#include "Flex/FlexCrossLanguageTest.h"
+#include "Stack/StackCrossLanguageTest.h"
+#include "RelativeContainer/RelativeContainerCrossLanguageTest.h"
 
 namespace ArkUICapiTest
 {
@@ -62,6 +67,16 @@ namespace ArkUICapiTest
              nullptr, nullptr, nullptr, napi_default, nullptr},
             {"testBindController001", nullptr, NodeBindControllerTest::testBindController001, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
+            {"createCrossLanguageRowNode", nullptr, RowCrossLanguageTest::createCrossLanguageRowNode,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"createCrossLanguageColumnNode", nullptr, ColumnCrossLanguageTest::createCrossLanguageColumnNode,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"createCrossLanguageFlexNode", nullptr, FlexCrossLanguageTest::createCrossLanguageFlexNode,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"createCrossLanguageStackNode", nullptr, StackCrossLanguageTest::createCrossLanguageStackNode,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
+            {"createCrossLanguageRelativeContainerNode", nullptr, RelativeContainerCrossLanguageTest::createCrossLanguageRelativeContainerNode,
+             nullptr, nullptr, nullptr, napi_default, nullptr},
         };
         if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok)
         {
