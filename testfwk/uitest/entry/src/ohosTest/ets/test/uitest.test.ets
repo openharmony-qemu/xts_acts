@@ -705,7 +705,7 @@ export default function UiTest() {
                 pointers.setPoint(0,7, eigPoint);
                 pointers.setPoint(0,8, ninePoint);
                 await driver.injectKnucklePointerAction(pointers);
-                await driver.delayMs(waitUiReadyMs * 2)
+                await driver.delayMs(waitUiReadyMs * 5);
                 let screenPng = await driver.findComponent(ON.text('保存'));
                 expect(screenPng != null).assertTrue();
                 await driver.pressBack();
