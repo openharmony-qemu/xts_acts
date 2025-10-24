@@ -16,7 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import {UiComponent, Driver, Component, UiWindow, ON, BY, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/utils/Common';
-import {MessageManager,Callback} from '../../MainAbility/utils/MessageManager';
+import { SwiperDynamicSyncScene } from '@ohos.arkui.UIContext'
 export default function swiperSyncType() {
   describe('swiperSyncType', () => {
     beforeEach(async (done: Function) => {
@@ -66,6 +66,25 @@ export default function swiperSyncType() {
       console.info("[swiperSyncType_0100] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.content).assertEqual('setFrameRateRangeSwiper1: 60Swiper11: 30');
       console.info('[swiperSyncType_0100] END');
+      done();
+    });
+
+    /**
+     * @tc.number    swiperSyncType_002
+     * @tc.name      swiperSyncType_0200
+     * @tc.desc      Set SwinperDynamicSyncSceneType.
+     * @tc.level     Level 2
+     * @tc.type
+     * @tc.size
+     */
+    it('swiperSyncType_0200', Level.LEVEL2, async (done: Function) => {
+      console.info('[swiperSyncType_0200] START');
+      await CommonFunc.sleep(1000);
+      console.info("[swiperSyncType_0200] requireDynamicSyncScene: " + AppStorage.get('requireDynamicSyncScene'));
+      let result: SwiperDynamicSyncScene[] | undefined = AppStorage.get('requireDynamicSyncScene')
+      expect(result && result.length > 0).assertTrue();
+      AppStorage.delete('requireDynamicSyncScene')
+      console.info('[swiperSyncType_0200] END');
       done();
     });
   })
