@@ -48,11 +48,8 @@ export default function abilityTest() {
         })
 
         beforeEach(async () => {
-            console.info(`${TAG}: ghg, beforeEach in`);
-            console.info(`${TAG}: ghg, createAVSession begin`);
             try{
                 session = await avSession.createAVSession(context, tag, 'audio');
-                console.info(`${TAG}: ghg, avSession create success`);
                 console.info(`${session!.sessionType}`);
             }catch(err: BusinessError){
                 console.info(`${TAG}: Session create error: code: ${err?.code}, message: ${err?.message}`);
@@ -453,6 +450,45 @@ export default function abilityTest() {
                 }
             }
             done();
+        })
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1000
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1000
+         * @tc.desc        Testing call setAVMetadata(callback) set publishDate
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_SETMETADATA_CALLBACK_STATIC_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let time0: double = 2021;
+            let metadata9: avSession.AVMetadata = {
+                assetId: '121278',
+                publishDate: new Date(time0),
+            };
+            session!.setAVMetadata(metadata9, (err: BusinessError | null) => {
+                if (err) {
+                    console.info(`TestLog: Set publishDate error: code: ${err.code}, message: ${err.message}`);
+                    expect(false).assertTrue();
+                } else {
+                    console.info('TestLog: Set publishDate : successfully');
+                }
+            })
+            await Utils.msSleep(500);
+            controller.getAVMetadata((err: BusinessError | null, value: avSession.AVMetadata | undefined) => {
+                if (err?.code) {
+                    console.info(`TestLog: Get publishDate error: code: ${err?.code}, message: ${err?.message}`);
+                    expect(false).assertTrue();
+                } else if (value?.publishDate?.getTime() === metadata9?.publishDate?.getTime()) {
+                    console.info('TestLog: Get publishDate Successfully');
+                    expect(true).assertTrue();
+                } else {
+                    console.info(`TestLog: Get publishDate failed:${value}`);
+                    expect(false).assertTrue();
+                }
+                done();
+            })
+            await Utils.msSleep(500);
         })
 
         /**
@@ -1002,7 +1038,6 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 }else if (value?.loopMode === avSession.LoopMode.LOOP_MODE_SEQUENCE) {
                     console.info('TestLog: Get loopMode successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('TestLog: Get loopMode failed');
                     expect(false).assertTrue();
@@ -1525,7 +1560,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_SESSIONDESTROY_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             let flag = false;
-            controller.on('sessionDestroy', () => {
+            controller.onSessionDestroy(() => {
                 console.info('TestLog: Session destroyed successfully');
                 flag = true;
             });
