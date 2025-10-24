@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import webViewSdkSchemeHandlerEnhanced from './webViewSdkSchemeHandlerEnhanced.test'
+import webViewSdkSchemeHandlerEnhancedThree from './WebViewSdkSchemeHandlerThree.test'
 
 export default function testsuite() {
   webViewSdkSchemeHandlerEnhanced()
+  webViewSdkSchemeHandlerEnhancedThree()
 }
