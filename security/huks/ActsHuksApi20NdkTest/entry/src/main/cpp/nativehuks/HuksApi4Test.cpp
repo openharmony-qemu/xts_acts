@@ -633,7 +633,7 @@ napi_value TagTest_022(napi_env env, napi_callback_info info)
     // OH_HUKS_TAG_ATTESTATION_APPLICATION_ID
     const char *alias = "test_generate_invalid_param1";
     struct OH_Huks_Blob aliasBlob = { .size = (uint32_t)strlen(alias), .data = (uint8_t *)alias };
-    const char *appId = "com.acts.ActsHuksApi20NdkTest";
+    const char *appId = "com.acts.actshuksapi20ndktest";
     struct OH_Huks_Blob applicationIdBlob = {
         .size = (uint32_t)strlen(appId),
         .data = (uint8_t *)appId
