@@ -100,7 +100,7 @@ struct AnimatedDrawableDescriptorTestLoader {
             }
           }).catch((error: BusinessError<void>) => {
             console.error(`load failed, error = ${JSON.stringify(error)}`)
-            this.errorCode = error.code
+            this.errorCode = String(error.code)
           })
         })
     }.width('100%').margin({ top:30 })
