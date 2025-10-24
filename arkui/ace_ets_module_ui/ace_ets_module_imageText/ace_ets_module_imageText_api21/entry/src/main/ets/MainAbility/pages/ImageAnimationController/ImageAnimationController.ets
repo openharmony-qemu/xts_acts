@@ -63,7 +63,7 @@ struct AnimationControllerPage {
     }
   }
 
-  convertToAnimationStatus(status: AnimationStatus): string {
+  convertToAnimationStatus(status: AnimationStatus | undefined): string {
     switch (status) {
       case AnimationStatus.Initial:
         return 'Initial';
