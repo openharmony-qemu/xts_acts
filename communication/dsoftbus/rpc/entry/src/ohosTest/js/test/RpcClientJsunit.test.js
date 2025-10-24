@@ -15017,6 +15017,132 @@ export default function ActsRpcClientJsTest() {
         })
 
         /*
+        * @tc.number  : SUB_DSoftbus_IPC_API_Ashmem_0530
+        * @tc.name    : test readAshmem return value not null
+        * @tc.desc    : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+        * @tc.level   : Level 3
+        * @tc.type    : Compatibility
+        * @tc.size    : MediumTest
+        */
+        it("SUB_DSoftbus_IPC_API_Ashmem_0530", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_Ashmem_0530---------------------------");
+            try {
+                let ashmem = rpc.Ashmem.create("ashmem", 1024);
+                ashmem.mapReadWriteAshmem();
+                let ByteArraylet = [1, 2, 3, 4, 5];
+                ashmem.writeAshmem(ByteArraylet, 5, 0);
+                let readResult = ashmem.readAshmem(5, 0);
+                console.info("SUB_DSoftbus_IPC_API_Ashmem_0530 readResult is:" + readResult);
+                expect(readResult.length > 0).assertTrue();
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_Ashmem_0530 error is:" + error);
+                expect(error == null).assertTrue();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_Ashmem_0530---------------------------");
+        })
+
+        /*
+        * @tc.number  : SUB_DSoftbus_IPC_API_Ashmem_0540
+        * @tc.name    : test readAshmem return value is null
+        * @tc.desc    : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+        * @tc.level   : Level 3
+        * @tc.type    : Compatibility
+        * @tc.size    : MediumTest
+        */
+        it("SUB_DSoftbus_IPC_API_Ashmem_0540", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_Ashmem_0540---------------------------");
+            try {
+                let ashmem = rpc.Ashmem.create("ashmem", 1024);
+                ashmem.mapReadWriteAshmem();
+                let ByteArraylet = [];
+                ashmem.writeAshmem(ByteArraylet, 0, 0);
+                let readResult = ashmem.readAshmem(0, 0);
+                console.info("SUB_DSoftbus_IPC_API_Ashmem_0540 readResult is:" + readResult);
+                expect(readResult.length == 0).assertTrue();
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_Ashmem_0540 error is:" + error);
+                expect(error == null).assertTrue();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_Ashmem_0540---------------------------");
+        })
+
+        /*
+        * @tc.number  : SUB_DSoftbus_IPC_API_Ashmem_0550
+        * @tc.name    : test readFromAshmem return value not null
+        * @tc.desc    : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+        * @tc.level   : Level 3
+        * @tc.type    : Compatibility
+        * @tc.size    : MediumTest
+        */
+        it("SUB_DSoftbus_IPC_API_Ashmem_0550", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_Ashmem_0550---------------------------");
+            try {
+                let ashmem = rpc.Ashmem.create("ashmem", 1024);
+                ashmem.mapReadWriteAshmem();
+                let ByteArraylet = [1, 2, 3, 4, 5];
+                ashmem.writeToAshmem(ByteArraylet, 5, 0);
+                let readResult = ashmem.readFromAshmem(5, 0);
+                console.info("SUB_DSoftbus_IPC_API_Ashmem_0550 readResult is:" + readResult);
+                expect(readResult.length > 0).assertTrue();
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_Ashmem_0550 error is:" + error);
+                expect(error == null).assertTrue();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_Ashmem_0550---------------------------");
+        })
+
+        /*
+        * @tc.number  : SUB_DSoftbus_IPC_API_Ashmem_0560
+        * @tc.name    : test readFromAshmem return value is null
+        * @tc.desc    : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+        * @tc.level   : Level 3
+        * @tc.type    : Compatibility
+        * @tc.size    : MediumTest
+        */
+        it("SUB_DSoftbus_IPC_API_Ashmem_0560", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_Ashmem_0560---------------------------");
+            try {
+                let ashmem = rpc.Ashmem.create("ashmem", 1024);
+                ashmem.mapReadWriteAshmem();
+                let ByteArraylet = [];
+                ashmem.writeToAshmem(ByteArraylet, 0, 0);
+                let readResult = ashmem.readFromAshmem(0, 0);
+                console.info("SUB_DSoftbus_IPC_API_Ashmem_0560 readResult is:" + readResult);
+                expect(readResult.length == 0).assertTrue();
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_Ashmem_0560 error is:" + error);
+                expect(error == null).assertTrue();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_Ashmem_0560---------------------------");
+        })
+
+        /*
+        * @tc.number  : SUB_DSoftbus_IPC_API_Ashmem_0570
+        * @tc.name    : test Mapashmem return FALSE
+        * @tc.desc    : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+        * @tc.level   : Level 3
+        * @tc.type    : Compatibility
+        * @tc.size    : MediumTest
+        */
+        it("SUB_DSoftbus_IPC_API_Ashmem_0570", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function () {
+            console.info("---------------------start SUB_DSoftbus_IPC_API_Ashmem_0570---------------------------");
+            try {
+                let ashmem = rpc.Ashmem.create("JsAshmemTest", 1024*1024)
+                let res = ashmem.mapReadOnlyAshmem();
+                console.info("SUB_DSoftbus_IPC_API_Ashmem_0570 mapReadOnlyAshmem res is:" + res);
+                ashmem.unmapAshmem();
+                ashmem.closeAshmem();
+                let result = ashmem.mapAshmem(rpc.Ashmem.PROT_WRITE);
+                console.info("SUB_DSoftbus_IPC_API_Ashmem_0570 mapAshmem Result is:" + result);
+                expect(result).assertFalse();
+            } catch (error) {
+                console.info("SUB_DSoftbus_IPC_API_Ashmem_0570 error is:" + error);
+                expect(error == null).assertTrue();
+            }
+            console.info("---------------------end SUB_DSoftbus_IPC_API_Ashmem_0570---------------------------");
+        })
+
+        /*
         * @tc.number  : SUB_DSoftbus_IPC_API_IRemoteObject_0010
         * @tc.name    : test Call sendrequestresult interface to send data
         * @tc.desc    : [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
