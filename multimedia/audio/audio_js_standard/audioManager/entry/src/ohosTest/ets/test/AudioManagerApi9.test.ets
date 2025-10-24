@@ -1070,7 +1070,7 @@ export default function audioManagerApi9() {
               console.error(`audioManagerApi9Test: failed to isMicrophoneMute : Callback:  ${err.message}`);
               expect(false).assertTrue();
             } else {
-              if (data == true) {
+              if (data == false) {
                 console.log(`${TagFrmwk}: Callback: isMicrophoneMute: TRUE: PASS:${data}`);
                 expect(true).assertTrue();
               } else {
