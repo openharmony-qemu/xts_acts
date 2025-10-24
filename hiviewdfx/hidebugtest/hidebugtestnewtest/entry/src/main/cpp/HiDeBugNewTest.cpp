@@ -33,8 +33,8 @@ uint64_t GetTimeMilliSeconds(void)
 {
     struct timespec ts;
     (void)clock_gettime(CLOCK_REALTIME, &ts);
-    return ((uint64_t)ts.tv_sec * 1000) + // 1000 : second to millisecond convert ratio
-        (((uint64_t)ts.tv_nsec) / 1000000); // 1000000 : nanosecond to millisecond convert ratio
+    return (static_cast<uint64_t>(ts.tv_sec) * 1000) + // 1000 : second to millisecond convert ratio
+        ((static_cast<uint64_t>(ts.tv_sec)) / 1000000); // 1000000 : nanosecond to millisecond convert ratio
 }
 
 
@@ -45,7 +45,8 @@ __attribute__((noinline)) void TestMyFunc(int i) {
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestTag", "OH_HiDebug_GetSystemCpuUsage");
         auto start = GetTimeMilliSeconds();
-        while (GetTimeMilliSeconds() - start < 10000000);
+        const int WAIT_TIME = 1000;
+        while (GetTimeMilliSeconds() - start < 10000 * WAIT_TIME);
     }
     i--;
     return TestMyFunc(i);
@@ -356,7 +357,8 @@ static  napi_value AddThread(napi_env env, napi_callback_info info) {
     std::thread ([value0]{
         TestMyFunc(value0);
     }).detach();
-    napi_create_double(env, 100, &sum);
+    const int BACK_STACK = 100;
+    napi_create_double(env, BACK_STACK, &sum);
     return sum;
 }
 
