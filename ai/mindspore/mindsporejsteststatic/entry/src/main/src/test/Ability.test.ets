@@ -810,7 +810,7 @@ export default function abilityTest() {
             } catch (error: BusinessError) {
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
-                expect(error.code).assertEqual(1000001);
+                expect(error.code).assertEqual(1000007);
                 done();
             }
         });
@@ -825,7 +825,7 @@ export default function abilityTest() {
         */
         it('Test_load_model_from_fd_error_code_static_005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "MSLITE testcase: Test_load_model_from_fd_error_code_static_005");
-            let model_file = abilityContext.filesDir + '/' + 'ml_face_isface_0.inputt';
+            let model_file = abilityContext.filesDir + '/' + 'ml_face_isface_0.input';
             let file = fs.openSync(model_file, fs.OpenMode.READ_ONLY);
             try {
                 mindSporeLite.loadModelFromFd(file.fd, (msliteModel: mindSporeLite.Model) => {
