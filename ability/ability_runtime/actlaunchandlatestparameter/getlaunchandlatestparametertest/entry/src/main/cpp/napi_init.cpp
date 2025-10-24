@@ -177,7 +177,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "getLatestParameter", nullptr, GetLatestParameter, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "Error_GetLaunchParameter_buffer_null", nullptr, Error_GetLaunchParameter_buffer_null, nullptr, nullptr,
             nullptr, napi_default, nullptr },
-        { "Error_GetLaunchParameter_writelength_null", nullptr, Error_GetLaunchParameter_writelength_null, nullptr, 
+        { "Error_GetLaunchParameter_writelength_null", nullptr, Error_GetLaunchParameter_writelength_null, nullptr,
             nullptr, nullptr, napi_default, nullptr },
         { "Error_GetLaunchParameter_buffersize_less", nullptr, Error_GetLaunchParameter_buffersize_less, nullptr,
             nullptr, nullptr, napi_default, nullptr },
