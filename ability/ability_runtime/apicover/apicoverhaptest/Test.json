@@ -24,6 +24,10 @@
           "type": "ShellKit",
           "run-command": [
               "uitest dumpLayout",
+              "power-shell wakeup",
+              "power-shell setmode 602",
+              "uinput -T -m 300 2700 280 200",
+              "power-shell timeout -o 864000000",
               "param set persist.sys.abilityms.support.ecologicalrulemgrservice false"
           ],
           "teardown-command": [
