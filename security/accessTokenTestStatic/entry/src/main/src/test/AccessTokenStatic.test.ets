@@ -900,11 +900,17 @@ export default function AccessTokenStaticTest() {
       hilog.info(domain, 'testTag', '----------------------Test_Off_001---------------------------');
       await Utils.msSleep(1000);
       try {
+        let testpermissionName: Permissions = "ohos.permission.DISTRIBUTED_DATASYNC" as Permissions;
         let fn: (data: abilityAccessCtrl.PermissionStateChangeInfo) => void =
           (data: abilityAccessCtrl.PermissionStateChangeInfo) => {
             hilog.info(domain, 'testTag', 'Test_Off_001 Callback received: %{public}s', JSON.stringify(data));
+            let PermissionStateChangeInfo: abilityAccessCtrl.PermissionStateChangeInfo = data;
+            expect(abilityAccessCtrl.PermissionStateChangeType.PERMISSION_REVOKED_OPER).assertEqual(PermissionStateChangeInfo.change);
+            expect(tokenID).assertEqual(PermissionStateChangeInfo.tokenID);
+            expect(testpermissionName).assertEqual(PermissionStateChangeInfo.permissionName);
+            done();
           }
-        let testpermissionName: Permissions = "ohos.permission.DISTRIBUTED_DATASYNC" as Permissions;
+        
         let permissionList: Array<Permissions> = [testpermissionName];
         atManager.off('selfPermissionStateChange', permissionList, fn);
         hilog.info(domain, 'testTag', 'Test_Off_001 success');
