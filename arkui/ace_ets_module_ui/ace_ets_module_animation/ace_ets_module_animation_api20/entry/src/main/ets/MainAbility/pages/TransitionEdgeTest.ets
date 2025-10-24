@@ -35,7 +35,6 @@ struct TransitionEdgeTest {
         })
       if (this.flag) {
         Image($r('app.media.icon')).width('50%').height('50%').margin({ top: 10 }).id('imageId')
-          .id('testTransitionEdgeId')
           .transition(
             TransitionEffect.asymmetric(
               TransitionEffect.move(TransitionEdge.END),
