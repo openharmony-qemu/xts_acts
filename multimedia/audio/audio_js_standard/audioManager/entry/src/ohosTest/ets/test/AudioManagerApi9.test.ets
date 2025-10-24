@@ -920,7 +920,7 @@ export default function audioManagerApi9() {
       try {
         let audioVolumeManager = audioManager.getVolumeManager();
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
-        audiomanager.setRingerMode(audio.AudioRingMode.RINGER_MODE_NORMAL);
+        audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_NORMAL);
         groupManager.on('ringerModeChange', (ringerMode: audio.AudioRingMode) => {
           console.info(`Updated ringermode: ${ringerMode}`)
         });
@@ -945,7 +945,7 @@ export default function audioManagerApi9() {
       try {
         let audioVolumeManager = audioManager.getVolumeManager();
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
-        audiomanager.setRingerMode(audio.AudioRingMode.RINGER_MODE_SILENT);
+        audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_SILENT);
         groupManager.on('ringerModeChange', (ringerMode: audio.AudioRingMode) => {
           console.info(`Updated ringermode: ${ringerMode}`)
         });
@@ -970,7 +970,7 @@ export default function audioManagerApi9() {
       try {
         let audioVolumeManager = audioManager.getVolumeManager();
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
-        audiomanager.setRingerMode(audio.AudioRingMode.RINGER_MODE_VIBRATE);
+        audioManager.setRingerMode(audio.AudioRingMode.RINGER_MODE_VIBRATE);
         groupManager.on('ringerModeChange', (ringerMode: audio.AudioRingMode) => {
           console.info(`Updated ringermode: ${ringerMode}`)
         });
