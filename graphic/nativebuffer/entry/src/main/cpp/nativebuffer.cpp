@@ -1901,7 +1901,7 @@ napi_value OHNativeBufferSetMetadataValueEnumTraversal(napi_env env, napi_callba
         uint8_t *metadata;
         uint8_t type = hdr_type[i];
         int32_t errorCode = OH_NativeBuffer_SetMetadataValue(
-            nativeBuffer,OH_HDR_METADATA_TYPE, sizeof(OH_NativeBuffer_MetadataType), &type);
+            nativeBuffer, OH_HDR_METADATA_TYPE, sizeof(OH_NativeBuffer_MetadataType), &type);
         if (errorCode != SUCCESS) {
             napi_create_int32(env, FAIL, &result);
             return result;
