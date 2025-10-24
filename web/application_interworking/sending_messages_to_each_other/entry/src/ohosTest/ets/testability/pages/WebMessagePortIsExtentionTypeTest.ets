@@ -106,7 +106,7 @@ struct WebMessagePortIsExtentionTypeTest {
               }
               break;
             }
-           case 'testCreateWebMessagePortsReturnArrayLengthLarger0': {
+            case 'testCreateWebMessagePortsReturnArrayLengthLarger0': {
               try {
                 let webMessagePorts:webView.WebMessagePort[] = this.controller.createWebMessagePorts(true);
                 console.log('[createWebMessagePorts] WebMessagePort length:' + webMessagePorts.length)
