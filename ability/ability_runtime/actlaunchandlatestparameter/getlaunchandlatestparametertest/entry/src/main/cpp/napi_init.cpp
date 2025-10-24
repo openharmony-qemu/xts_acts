@@ -23,7 +23,6 @@ static napi_value GetLaunchParameter(napi_env env, napi_callback_info info)
     char buffer[bufferSize] = {0};
     int32_t writeLength = 0;
     int32_t ret = OH_AbilityRuntime_ApplicationContextGetLaunchParameter(buffer, bufferSize, &writeLength);
-    
     if (ret != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         // 失败处理
     }
@@ -40,7 +39,6 @@ static napi_value GetLatestParameter(napi_env env, napi_callback_info info)
     char buffer[bufferSize] = {0};
     int32_t writeLength = 0;
     int32_t ret = OH_AbilityRuntime_ApplicationContextGetLatestParameter(buffer, bufferSize, &writeLength);
-    
     if (ret != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         // 失败处理
     }
@@ -57,7 +55,6 @@ static napi_value Error_GetLaunchParameter_buffer_null(napi_env env, napi_callba
     const int32_t bufferSize = 2048;
     int32_t writeLength = 0;
     int32_t ret = OH_AbilityRuntime_ApplicationContextGetLaunchParameter(nullptr, bufferSize, &writeLength);
-    
     if (ret != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         // 如果调用失败或者没有数据，返回空字符串
         std::string errStr = "errcode:" + std::to_string(ret);
@@ -78,7 +75,6 @@ static napi_value Error_GetLaunchParameter_writelength_null(napi_env env, napi_c
     char buffer[bufferSize] = {0};
     int32_t writeLength = 0;
     int32_t ret = OH_AbilityRuntime_ApplicationContextGetLaunchParameter(buffer, bufferSize, nullptr);
-    
     if (ret != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         // 如果调用失败或者没有数据，返回空字符串
         std::string errStr = "errcode:" + std::to_string(ret);
@@ -99,7 +95,6 @@ static napi_value Error_GetLaunchParameter_buffersize_less(napi_env env, napi_ca
     char buffer[bufferSize] = {0};
     int32_t writeLength = 0;
     int32_t ret = OH_AbilityRuntime_ApplicationContextGetLaunchParameter(buffer, bufferSize, &writeLength);
-    
     if (ret != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         // 如果调用失败或者没有数据，返回空字符串
         std::string errStr = "errcode:" + std::to_string(ret);
@@ -119,7 +114,6 @@ static napi_value Error_GetLatestParameter_buffer_null(napi_env env, napi_callba
     const int32_t bufferSize = 2048;
     int32_t writeLength = 0;
     int32_t ret = OH_AbilityRuntime_ApplicationContextGetLatestParameter(nullptr, bufferSize, &writeLength);
-    
     if (ret != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         // 如果调用失败或者没有数据，返回空字符串
         std::string errStr = "errcode:" + std::to_string(ret);
@@ -140,7 +134,6 @@ static napi_value Error_GetLatestParameter_writelength_null(napi_env env, napi_c
     char buffer[bufferSize] = {0};
     int32_t writeLength = 0;
     int32_t ret = OH_AbilityRuntime_ApplicationContextGetLatestParameter(buffer, bufferSize, nullptr);
-    
     if (ret != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         // 如果调用失败或者没有数据，返回空字符串
         std::string errStr = "errcode:" + std::to_string(ret);
@@ -161,7 +154,6 @@ static napi_value Error_GetLatestParameter_buffersize_less(napi_env env, napi_ca
     char buffer[bufferSize] = {0};
     int32_t writeLength = 0;
     int32_t ret = OH_AbilityRuntime_ApplicationContextGetLatestParameter(buffer, bufferSize, &writeLength);
-    
     if (ret != ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
         // 如果调用失败或者没有数据，返回空字符串
         std::string errStr = "errcode:" + std::to_string(ret);
@@ -193,8 +185,8 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, napi_default, nullptr },
         { "Error_GetLatestParameter_writelength_null", nullptr, Error_GetLatestParameter_writelength_null, nullptr,
             nullptr, nullptr, napi_default, nullptr },
-        { "Error_GetLatestParameter_buffersize_less", nullptr, Error_GetLatestParameter_buffersize_less, 
-        nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "Error_GetLatestParameter_buffersize_less", nullptr, Error_GetLatestParameter_buffersize_less,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
