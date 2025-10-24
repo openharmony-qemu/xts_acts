@@ -2310,7 +2310,6 @@ export default function avRecorderTest() {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0300 end')
       done();
     })
-  })
 
   /* *
         * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001
