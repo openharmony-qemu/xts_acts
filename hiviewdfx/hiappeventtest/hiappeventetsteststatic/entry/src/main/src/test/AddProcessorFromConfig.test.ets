@@ -49,7 +49,6 @@ export default function addProcessorTestFromConfigTest() {
           });
       }else {
         hilog.info(logDomain, tag, 'file not exists,skip testcase');
-        expect(true).assertTrue();
         done();
       }
     });
@@ -77,7 +76,6 @@ export default function addProcessorTestFromConfigTest() {
         });
       }else {
         hilog.info(logDomain, tag, 'file not exists,skip testcase');
-        expect(true).assertTrue();
         done();
       }
     });
@@ -238,15 +236,15 @@ export default function addProcessorTestFromConfigTest() {
      * @tc.type Function
      * @tc.level Level3
      */
-    it('SUB_DFX_DFT_HiAppEvent_Static_Js_3010', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      hilog.info(logDomain, tag, 'SUB_DFX_DFT_HiAppEvent_Static_Js_3010 start');
+    it('SUB_DFX_DFT_HiAppEvent_Static_Js_3011', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(logDomain, tag, 'SUB_DFX_DFT_HiAppEvent_Static_Js_3011 start');
       let processorName = 'a'.repeat(256 +1);
       hiAppEvent.addProcessorFromConfig(processorName).then((processorId) => {
         expect(processorId > 0).assertTrue();
         done();
       }).catch((err: Error) => {
         const bErr = err as BusinessError;
-        hilog.error(logDomain, tag, `SUB_DFX_DFT_HiAppEvent_Static_Js_3010 > error code: ${bErr.code}, error msg: ${bErr.message}`);
+        hilog.error(logDomain, tag, `SUB_DFX_DFT_HiAppEvent_Static_Js_3011 > error code: ${bErr.code}, error msg: ${bErr.message}`);
         expect(bErr.code == 11105001).assertTrue();
         done();
       });
