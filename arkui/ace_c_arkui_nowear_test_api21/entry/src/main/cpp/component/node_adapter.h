@@ -30,7 +30,7 @@ using AllItemCallBack = std::function<void(std::shared_ptr<Component>, uint32_t)
 template<typename SubComponent>
 class ItemAdapter {
 public:
-    explicit ItemAdapter(std::vector<std::shared_ptr<Component>>& dataSource);
+    explicit ItemAdapter(std::vector<std::shared_ptr<Component>>& dataSource, bool reusable = true);
     virtual ~ItemAdapter();
     ArkUI_NodeAdapterHandle GetAdapter() const
     {
@@ -59,6 +59,10 @@ public:
     {
         return OH_ArkUI_NodeAdapter_GetTotalNodeCount(_adapter);
     }
+    void RegisterItemSetCallback(std::function<void(std::shared_ptr<SubComponent>)> callback)
+    {
+        _itemSetCallback = std::move(callback);
+    }
 
 protected:
     static void OnStaticAdapterEvent(ArkUI_NodeAdapterEvent* event);
@@ -79,11 +83,13 @@ protected:
     std::stack<std::shared_ptr<SubComponent>> _cachedItems;
     std::function<void(ArkUI_NodeAdapterEvent*)> _eventCallBack;
     std::function<void(std::shared_ptr<Component>)> _removedNodeCallback;
+    std::function<void(std::shared_ptr<SubComponent>)> _itemSetCallback;
+    bool _reusable = true;
 };
 
 template<typename SubComponent>
-ItemAdapter<SubComponent>::ItemAdapter(std::vector<std::shared_ptr<Component>>& dataSource)
-    : _adapter(OH_ArkUI_NodeAdapter_Create())
+ItemAdapter<SubComponent>::ItemAdapter(std::vector<std::shared_ptr<Component>>& dataSource, bool reusable)
+    : _adapter(OH_ArkUI_NodeAdapter_Create()), _reusable(reusable)
 {
     // 使用NodeAdapter创建函数。
     OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, _nodeAPI);
@@ -287,6 +293,9 @@ void ItemAdapter<SubComponent>::OnNewItemAttached(ArkUI_NodeAdapterEvent* event)
         auto flowItem = std::make_shared<SubComponent>();
         flowItem->RemoveAll();
         flowItem->AddChild(showNode);
+        if (_itemSetCallback) {
+            _itemSetCallback(flowItem);
+        }
         handle = flowItem->GetComponent();
         // 保持文本列表项的引用。
         _items.emplace(handle, flowItem);
@@ -304,7 +313,9 @@ void ItemAdapter<SubComponent>::OnItemDetached(ArkUI_NodeAdapterEvent* event)
         _removedNodeCallback(std::make_shared<Component>(item));
     }
     // 放置到缓存池中进行回收复用。
-    _cachedItems.emplace(_items[item]);
+    if (_reusable) {
+        _cachedItems.emplace(_items[item]);
+    }
 }
 } // namespace ArkUICApiDemo
 #endif // ARKUI_CAPI_DEMO_NODE_ADAPTER_H
