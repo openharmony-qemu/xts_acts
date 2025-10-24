@@ -485,7 +485,7 @@ napi_value OHNativeImageGetColorSpaceMultipleCalls(napi_env env, napi_callback_i
         }
     }
     napi_create_int32(env, SUCCESS, &result);
-    return result;      
+    return result;
 }
 
 napi_value OHNativeImageGetColorSpaceDestoryImage(napi_env env, napi_callback_info info)
