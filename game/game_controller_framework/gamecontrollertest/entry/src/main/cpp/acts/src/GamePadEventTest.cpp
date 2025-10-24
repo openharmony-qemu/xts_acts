@@ -131,7 +131,7 @@ int32_t ActsGameControllerGamePadButtonEventGetButtonAction01()
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
         DestroyButtonEvent(buttonEvent);
         return static_cast<int32_t>(code);
-    } 
+    }
     DestroyButtonEvent(buttonEvent);
     
     GamePad_ButtonEvent *buttonEventNew = CreateButtonEvent(UP);
@@ -411,7 +411,8 @@ int32_t ActsGameControllerGamePadAxisEventGetDeviceId03()
     return static_cast<int32_t>(code);
 }
 
-bool CheckGetAxisSourceType(GamePad_AxisSourceType type) {
+bool CheckGetAxisSourceType(GamePad_AxisSourceType type)
+{
     GamePad_AxisEvent *axisEvent = CreateAxisEvent(type);
     GamePad_AxisSourceType axisSourceType;
     GameController_ErrorCode code = OH_GamePad_AxisEvent_GetAxisSourceType(axisEvent, &axisSourceType);
@@ -430,7 +431,7 @@ int32_t ActsGameControllerGamePadAxisEventGetAxisSourceType01()
         && GamePad_AxisSourceType::RIGHT_THUMBSTICK
         && GamePad_AxisSourceType::LEFT_TRIGGER
         && GamePad_AxisSourceType::RIGHT_TRIGGER) {
-          code = GameController_ErrorCode::GAME_CONTROLLER_SUCCESS;
+        code = GameController_ErrorCode::GAME_CONTROLLER_SUCCESS;
     } else {
         code = GameController_ErrorCode::GAME_CONTROLLER_PARAM_ERROR;
     }
