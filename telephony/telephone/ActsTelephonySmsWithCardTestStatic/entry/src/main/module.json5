@@ -47,6 +47,19 @@
     ],
     "requestPermissions": [
       {
+        "name": "ohos.permission.GET_SENSITIVE_PERMISSIONS"
+      },
+      {
+        "name": "ohos.permission.GRANT_SENSITIVE_PERMISSIONS"
+      },
+      {
+        "name": "ohos.permission.SEND_MESSAGES",
+        "reason": "$string:module_desc",
+        "usedScene": {
+          "when": "always"
+        }
+      },
+      {
         "name": "ohos.permission.CLEAN_BACKGROUND_PROCESSES"
       }
     ]

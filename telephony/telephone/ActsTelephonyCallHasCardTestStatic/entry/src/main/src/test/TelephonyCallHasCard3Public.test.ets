@@ -258,5 +258,118 @@ export default function HasCard2PublicNeedCardTest() {
         hilog.info(domain, tag, `${caseName} test end`);
         done();
       });
+
+    /*
+     * @tc.number: SUB_Telephony_SmsMms_NoPermission_0200
+     * @tc.name: testTelephonySmsNoPermissionStatic0200
+     * @tc.desc: Send a text message. Use Promise asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsNoPermissionStatic0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonySmsNoPermissionStatic0200';
+        hilog.info(domain, tag, `${caseName} test start`);
+        try {
+          let hasSim: boolean = sim.hasSimCardSync(0);
+          expect(hasSim).assertTrue();
+          if (hasSim) {
+
+            let sendOptions: sms.SendMessageOptions = {
+              slotId: 1,
+              content: '',
+              destinationHost: '+861xxxxxxxxxxx',
+              serviceCenter: '+8617692630498',
+              destinationPort: 1000,
+              sendCallback: (err:BusinessError<void>|null)=>{
+                if (err) {
+                  hilog.info(domain, tag, `${caseName}: sendCallback error->${JSON.stringify(err)}`);
+                }
+              },
+              deliveryCallback: (err:BusinessError<void>|null)=>{
+                if (err) {
+                  hilog.info(domain, tag, `${caseName}: deliveryCallback error->${JSON.stringify(err)}`);
+                }
+              }
+            };
+            sms.sendShortMessage(sendOptions).then(() => {
+              hilog.info(domain, tag, `${caseName} success`);
+              ExpectFail();
+              done();
+            }).catch((err: Error) => {
+              hilog.info(domain, tag, `${caseName} sendShortMessage err: ${JSON.stringify(err as BusinessError)}`);
+              ExpectTrue((err as BusinessError)?.code === 201);
+              done();
+            });
+          } else {
+            hilog.info(domain, tag, `${caseName} no sim`);
+            ExpectFail();
+            done();
+          }
+        } catch (err) {
+          hilog.info(domain, tag, `${caseName} err:${err}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, `${caseName} test end`);
+      });
+
+    /*
+     * @tc.number: testTelephonySmsNoPermissionStatic0300
+     * @tc.name: testTelephonySmsNoPermissionStatic0300
+     * @tc.desc: testTelephonySmsNoPermissionStatic0300
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsNoPermissionStatic0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testTelephonySmsNoPermissionStatic0300';
+        hilog.info(domain, tag, `${caseName} test start`);
+        try {
+          let hasSim: boolean = sim.hasSimCardSync(0);
+          expect(hasSim).assertTrue();
+          if (hasSim) {
+            let sendOptions: sms.SendMessageOptions = {
+              slotId: 0,
+              content: "SMS message content",
+              destinationHost: telphoneErr,
+              serviceCenter: '+8617692630498',
+              destinationPort: 1000,
+              sendCallback: (err:BusinessError<void>|null)=>{
+                if (err) {
+                  hilog.info(domain, tag, `${caseName}: sendCallback error->${JSON.stringify(err)}`);
+                }
+              },
+              deliveryCallback: (err:BusinessError<void>|null)=>{
+                if (err) {
+                  hilog.info(domain, tag, `${caseName}: deliveryCallback error->${JSON.stringify(err)}`);
+                }
+              }
+            };
+            sms.sendShortMessage(sendOptions, (err: BusinessError<void> | null) => {
+              if (err) {
+                hilog.info(domain, tag, `${caseName}: sendShortMessage error->${JSON.stringify(err)}`);
+                ExpectTrue(err?.code === 201);
+                done();
+              } else {
+                hilog.info(domain, tag, `${caseName}: success`);
+                ExpectFail();
+                done();
+              }
+            });
+          } else {
+            hilog.info(domain, tag, `${caseName} no sim`);
+            ExpectFail();
+            done();
+          }
+        } catch (err) {
+          hilog.info(domain, tag, `${caseName} err:${err}`);
+          ExpectFail();
+          done();
+        }
+        hilog.info(domain, tag, `${caseName} test end`);
+      });
   });
 }
