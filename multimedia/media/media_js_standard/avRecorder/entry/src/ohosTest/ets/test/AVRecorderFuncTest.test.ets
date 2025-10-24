@@ -86,6 +86,20 @@ export default function avRecorderTest() {
       }
     }
 
+    let aacAvProfile: media.AVRecorderProfile = {
+      audioBitrate: 64000, // set audioBitrate according to device ability
+      audioChannels: 1, // set audioChannels, valid value 1-8
+      audioCodec: media.CodecMimeType.AUDIO_AAC, // set audioCodec, AUDIO_AAC is the only choice
+      aacProfile: media.AacProfile.AAC_LC,
+      audioSampleRate: 8000, // set audioSampleRate according to device ability
+      fileFormat: media.ContainerFormatType.CFT_MPEG_4A, // set fileFormat, for video is m4a
+    }
+    let aacAudioConfig: media.AVRecorderConfig = {
+      audioSourceType: media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC,
+      profile: aacAvProfile,
+      url: 'fd://'
+    }
+
     let execTimes: Array<number>;
 
     beforeAll(async () => {
@@ -2294,6 +2308,29 @@ export default function avRecorderTest() {
       avConfig.url = fdPath;
       commonFun.avRecorderSetMetadataTest03(avConfig, avRecorder, RECORDER_TIME, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_SETMETADATA_0300 end')
+      done();
+    })
+  })
+
+  /* *
+        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001
+        * @tc.name      : 003.test recording mp3 3 seconds to stop
+        * @tc.desc      : Local Video recording mp3 3 seconds to stop
+        * @tc.size      : MediumTest
+        * @tc.type      : Function test
+        * @tc.level     : Level2
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001 start')
+      let timestamp = Date.now();
+      let filename = `avRecorder_${timestamp}.mp3`;
+      fdObject = await commonFun.getFd(filename);
+      fdPath = "fd://" + fdObject.fdNumber;
+      console.info('case fdPath is: ' + fdPath);
+      aacAudioConfig.url = fdPath;
+      console.info('avConfig.profile ' + JSON.stringify(avConfig.profile));
+      commonFun.avRecorderWithCallBack3(avConfig, avRecorder, RECORDER_TIME, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001 end');
       done();
     })
   })
