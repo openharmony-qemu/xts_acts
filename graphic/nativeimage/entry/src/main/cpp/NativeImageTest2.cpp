@@ -310,7 +310,7 @@ napi_value OHConsumerSurfaceCreateWithSingleBufferModeUnusingTextImageMultipleCa
         }
     }
     napi_create_int32(env, SUCCESS, &result);
-    return result;    
+    return result;
 }
 
 napi_value OHNativeImageReleaseTextImageNormal(napi_env env, napi_callback_info info)
@@ -397,7 +397,7 @@ napi_value OHNativeImageReleaseTextImageMultipleCalls(napi_env env, napi_callbac
         }
     }
     napi_create_int32(env, SUCCESS, &result);
-    return result;   
+    return result;
 }
 
 napi_value OHNativeImageReleaseTextImageDestroyImage(napi_env env, napi_callback_info info)
@@ -472,7 +472,7 @@ napi_value OHNativeImageGetColorSpaceMultipleCalls(napi_env env, napi_callback_i
         int32_t ret = OH_NativeImage_GetColorSpace(imageArray[i], &colorSpace);
         if (ret != 0) {
             napi_create_int32(env, FAIL, &result);
-            return result;       
+            return result; 
         }
     }
     for (int i = 0; i < count; ++i) {
@@ -718,5 +718,3 @@ napi_value OHConsumerSurfaceCreateWithSingleBufferModeTest3(napi_env env, napi_c
     OH_NativeImage_Destroy(&image);
     return result;
 }
-
-
