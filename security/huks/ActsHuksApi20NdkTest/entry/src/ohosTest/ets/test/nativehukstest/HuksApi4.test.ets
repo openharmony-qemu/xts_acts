@@ -19,10 +19,10 @@ import nativehuksndk from 'libnativehuksndk.so'
 const ARKUI_ERROR_CODE_NO_ERROR = 0;
 const ARKUI_ERROR_CODE_ERROR = 1;
 
-export default function HuksApiTest() {
-  describe('HuksApiTest', () => {
+export default function HuksApiTest4() {
+  describe('HuksApiTest4', () => {
     beforeAll(async () => {
-      console.info("====>testHuksApiTest start====");
+      console.info("====>testHuksApiTest4 start====");
     });
 
     /**

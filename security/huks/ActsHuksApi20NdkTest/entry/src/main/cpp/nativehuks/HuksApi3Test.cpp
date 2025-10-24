@@ -16,7 +16,7 @@
 #include "HuksApiTest.h"
 
 namespace HuksApiTest {
-OH_Huks_Result InitParamSet1(
+OH_Huks_Result InitParamSet3(
     struct OH_Huks_ParamSet **paramSet,
     const struct OH_Huks_Param *params,
     uint32_t paramCount)
@@ -53,7 +53,7 @@ napi_value UserAuthTypeTest_001(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_USER_AUTH_TYPE, .uint32Param = OH_HUKS_USER_AUTH_TYPE_FINGERPRINT},
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
+    InitParamSet3(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     OH_Huks_Result ohResult = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
                  "InitParamSet failed: %{public}d", ohResult.errorCode);
@@ -79,7 +79,7 @@ napi_value UserAuthTypeTest_002(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_USER_AUTH_TYPE, .uint32Param = OH_HUKS_USER_AUTH_TYPE_FACE},
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
+    InitParamSet3(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     OH_Huks_Result ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
                  "InitParamSet failed: %{public}d", ohResult1.errorCode);
@@ -105,7 +105,7 @@ napi_value UserAuthTypeTest_003(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_USER_AUTH_TYPE, .uint32Param = OH_HUKS_USER_AUTH_TYPE_PIN},
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
+    InitParamSet3(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     OH_Huks_Result ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
                  "InitParamSet failed: %{public}d", ohResult1.errorCode);
@@ -132,7 +132,7 @@ napi_value UserAuthTypeTest_004(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_KEY_AUTH_ACCESS_TYPE, .uint32Param = OH_HUKS_AUTH_ACCESS_ALWAYS_VALID},
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
+    InitParamSet3(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     OH_Huks_Result ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
                  "InitParamSet failed: %{public}d", ohResult1.errorCode);
@@ -163,7 +163,7 @@ napi_value AuthAccessTypeTest_001(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_KEY_AUTH_ACCESS_TYPE, .uint32Param = OH_HUKS_AUTH_ACCESS_INVALID_CLEAR_PASSWORD},
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
+    InitParamSet3(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     OH_Huks_Result ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
                  "InitParamSet failed: %{public}d", ohResult1.errorCode);
@@ -190,7 +190,7 @@ napi_value AuthAccessTypeTest_002(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_KEY_AUTH_ACCESS_TYPE, .uint32Param = OH_HUKS_AUTH_ACCESS_INVALID_NEW_BIO_ENROLL},
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
+    InitParamSet3(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     OH_Huks_Result ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
                  "InitParamSet failed: %{public}d", ohResult1.errorCode);
@@ -217,7 +217,7 @@ napi_value AuthAccessTypeTest_003(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_KEY_AUTH_ACCESS_TYPE, .uint32Param = OH_HUKS_AUTH_ACCESS_ALWAYS_VALID},
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
+    InitParamSet3(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     OH_Huks_Result ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
                  "InitParamSet failed: %{public}d", ohResult1.errorCode);
@@ -244,7 +244,7 @@ napi_value UserAuthModeTest_001(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_USER_AUTH_MODE, .uint32Param = OH_HUKS_USER_AUTH_MODE_LOCAL}
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
+    InitParamSet3(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     OH_Huks_Result ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
                  "InitParamSet failed: %{public}d", ohResult1.errorCode);
@@ -271,7 +271,7 @@ napi_value UserAuthModeTest_002(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_USER_AUTH_TYPE, .uint32Param = OH_HUKS_USER_AUTH_TYPE_FINGERPRINT},
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
+    InitParamSet3(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     OH_Huks_Result ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
                  "InitParamSet failed: %{public}d", ohResult1.errorCode);
@@ -297,7 +297,7 @@ napi_value TagTest_012(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_USER_AUTH_TYPE, .uint32Param = OH_HUKS_USER_AUTH_TYPE_PIN},
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
+    InitParamSet3(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
                  "InitParamSet failed: %{public}d", ohResult1.errorCode);
@@ -323,7 +323,7 @@ napi_value TagTest_013(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_USER_AUTH_TYPE, .uint32Param = OH_HUKS_USER_AUTH_TYPE_FINGERPRINT},
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
+    InitParamSet3(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
                  "InitParamSet failed: %{public}d", ohResult1.errorCode);
@@ -350,7 +350,7 @@ napi_value TagTest_014(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_AUTH_TIMEOUT, .uint32Param = 0},
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
+    InitParamSet3(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
                  "InitParamSet failed: %{public}d", ohResult1.errorCode);
@@ -379,7 +379,7 @@ napi_value TagTest_015(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_AUTH_TOKEN, .blob  = tokenBlob},
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
+    InitParamSet3(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
                  "InitParamSet failed: %{public}d", ohResult1.errorCode);
@@ -405,7 +405,7 @@ napi_value TagTest_016(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_KEY_AUTH_ACCESS_TYPE, .uint32Param = OH_HUKS_AUTH_ACCESS_ALWAYS_VALID},
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
+    InitParamSet3(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
                  "InitParamSet failed: %{public}d", ohResult1.errorCode);
@@ -432,7 +432,7 @@ napi_value TagTest_021(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_USER_AUTH_MODE, .uint32Param = OH_HUKS_USER_AUTH_MODE_LOCAL}
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
+    InitParamSet3(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
                  "InitParamSet failed: %{public}d", ohResult1.errorCode);
@@ -465,7 +465,7 @@ napi_value TagTest_026(napi_env env, napi_callback_info info)
         {.tag = OH_HUKS_TAG_KEY_AUTH_ID, .blob = authIdBlob},
     };
     struct OH_Huks_ParamSet *paramSet = nullptr;
-    InitParamSet1(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
+    InitParamSet3(&paramSet, testParams, sizeof(testParams) / sizeof(OH_Huks_Param));
     auto ohResult1 = OH_Huks_GenerateKeyItem(&aliasBlob, paramSet, nullptr);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "1111111111111111111111111",
                  "InitParamSet failed: %{public}d", ohResult1.errorCode);

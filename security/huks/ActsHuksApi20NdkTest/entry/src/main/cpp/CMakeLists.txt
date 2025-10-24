@@ -14,7 +14,8 @@ include_directories(${NATIVERENDER_ROOT_PATH}
 add_library(nativehuksndk SHARED nativehuks/NapiRenderInitTest.cpp
 nativehuks/HuksApiTest.cpp
 nativehuks/HuksApi1Test.cpp
-nativehuks/HuksApi2Test.cpp
+nativehuks/HuksApi3Test.cpp
+nativehuks/HuksApi4Test.cpp
 common/CommonTest.cpp
 nativehuks/OHHuksStructTest.cpp)
 

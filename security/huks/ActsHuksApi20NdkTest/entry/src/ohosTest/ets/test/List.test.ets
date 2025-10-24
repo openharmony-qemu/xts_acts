@@ -16,11 +16,15 @@
 import HuksApiTest from './nativehukstest/HuksApi.test'
 import HuksApiTest3 from './nativehukstest/HuksApi3.test'
 import HuksApiTest1 from './nativehukstest/HuksApi1.test'
+import HuksApiTest4 from './nativehukstest/HuksApi4.test'
+import HuksApiTest5 from './nativehukstest/HuksApi5.test'
 import OHHuksStructTest from './ohhuksTest/OHHuksStructTest.test'
 
 export default function testsuite() {
   HuksApiTest()
   HuksApiTest1()
   HuksApiTest3()
+  HuksApiTest4()
+  HuksApiTest5()
   OHHuksStructTest()
 }
