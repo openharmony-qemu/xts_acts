@@ -2329,7 +2329,7 @@ export default function avRecorderTest() {
       aacAudioConfig.url = fdPath;
       console.info('avConfig.profile ' + JSON.stringify(avConfig.profile));
       try{
-        commonFun.avRecorderWithCallBack3(avConfig, avRecorder, RECORDER_TIME, done);
+        commonFun.avRecorderWithCallBack3(aacAudioConfig, avRecorder, RECORDER_TIME, done);
       } catch (error) {
         console.error(`test aacProfile erro, error message: ${error.message}`);
         expect().assertFail();
