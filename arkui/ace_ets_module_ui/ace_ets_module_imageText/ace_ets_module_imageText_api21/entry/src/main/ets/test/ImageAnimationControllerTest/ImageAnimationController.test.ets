@@ -29,7 +29,7 @@ export default function ImageAnimationControllerTest() {
         router.clear();
         const pages = router.getState();
         console.info('get ImageAnimationControllerTest state success ' + JSON.stringify(pages));
-        if (!pages.name.includes('ImageAnalyzerController')) {
+        if (!pages.name.includes('ImageAnimationController')) {
           const result = await router.replaceUrl(options);
           console.info('push ImageAnimationControllerTest page success ' + JSON.stringify(result));
         }
