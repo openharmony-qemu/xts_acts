@@ -181,7 +181,7 @@ struct showDialogMode {
             })
             MyComponent({
               title: 'uniqId: Abnormal value', func: () :void => {
-                this.levelUniqueId = 1237
+                this.levelUniqueId = 1237 as Int
               }
             })
           }
