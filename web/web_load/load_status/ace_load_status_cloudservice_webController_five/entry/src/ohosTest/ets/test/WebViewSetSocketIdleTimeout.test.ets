@@ -42,14 +42,16 @@ export default function WebViewSetSocketIdleTimeout() {
      */
     it('testSetSocketIdleTimeout001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         console.log('testSetSocketIdleTimeout001 start')
+        let result = false
         try {
             webView.WebviewController.setSocketIdleTimeout(200);
             console.log('setSocketIdleTimeout 200');
-            expect(true).toEqual(true)
+            result = true
         } catch(error) {
             console.error('testSetSocketIdleTimeout001 error: ' + JSON.stringify(error))
-            expect(0).assertEqual(1)
+            result = false
         }
+        expect(result).assertEqual(true)
         console.log('testSetSocketIdleTimeout001 end')
         done()
     })
@@ -64,14 +66,16 @@ export default function WebViewSetSocketIdleTimeout() {
      */
     it('testSetSocketIdleTimeout002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         console.log('testSetSocketIdleTimeout002 start')
+        let result = false
         try {
             webView.WebviewController.setSocketIdleTimeout(30);
             console.log('setSocketIdleTimeout 30');
-            expect(true).toEqual(true)
+            result = true
         } catch(error) {
             console.error('testSetSocketIdleTimeout002 error: ' + JSON.stringify(error))
-            expect(0).assertEqual(1)
+            result = false
         }
+        expect(result).assertEqual(true)
         console.log('testSetSocketIdleTimeout002 end')
         done()
     })
@@ -86,14 +90,16 @@ export default function WebViewSetSocketIdleTimeout() {
      */
     it('testSetSocketIdleTimeout003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         console.log('testSetSocketIdleTimeout003 start')
+        let result = false
         try {
             webView.WebviewController.setSocketIdleTimeout(300);
             console.log('setSocketIdleTimeout 300');
-            expect(true).toEqual(true)
+            result = true
         } catch(error) {
             console.error('testSetSocketIdleTimeout003 error: ' + JSON.stringify(error))
-            expect(0).assertEqual(1)
+            result = false
         }
+        expect(result).assertEqual(true)
         console.log('testSetSocketIdleTimeout003 end')
         done()
     })
@@ -108,14 +114,16 @@ export default function WebViewSetSocketIdleTimeout() {
      */
     it('testSetSocketIdleTimeout004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testSetSocketIdleTimeout004 start')
+        let result = false
         try {
             webView.WebviewController.setSocketIdleTimeout(0);
             console.log('testSetSocketIdleTimeout004 0');
-            expect(true).toEqual(true)
+            result = true
         } catch(error) {
             console.error('testSetSocketIdleTimeout004 error: ' + JSON.stringify(error))
-            expect(0).assertEqual(1)
+            result = false
         }
+        expect(result).assertEqual(true)
         console.log('testSetSocketIdleTimeout004 end')
         done()
     })
@@ -130,14 +138,16 @@ export default function WebViewSetSocketIdleTimeout() {
      */
     it('testSetSocketIdleTimeout005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.log('testSetSocketIdleTimeout005 start')
+        let result = false
         try {
             webView.WebviewController.setSocketIdleTimeout(99999999);
             console.log('setSocketIdleTimeout 99999999');
-            expect(true).toEqual(true)
+            result = true
         } catch(error) {
             console.error('testSetSocketIdleTimeout005 error: ' + JSON.stringify(error))
-            expect(0).assertEqual(1)
+            result = false
         }
+        expect(result).assertEqual(true)
         console.log('testSetSocketIdleTimeout005 end')
         done()
     })
