@@ -4,7 +4,6 @@
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
         "shell-timeout": "180000",
-        "testcase-timeout": "7000",
         "bundle-name": "com.acts.abilitydelegatortest",
         "module-name": "entry_test"
     },

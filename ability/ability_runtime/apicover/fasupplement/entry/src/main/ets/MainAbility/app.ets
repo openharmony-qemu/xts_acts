@@ -55,16 +55,9 @@ class Test {
   onInactive() {
     console.info(printLog1 + 'onInactive');
     console.info(printLog1 + 'start send event message');
-    setTimeout(()=>{
-      ability_featureAbility.hasWindowFocus().then((data) => {
-        console.info(printLog1 + "onInactive hasWindowFocus data = " + data);
-      }).catch((err: Base.BusinessError) => {
-        console.info(printLog1 + "onInactive hasWindowFocus err = " + JSON.stringify(err));
-      });
-      commonEvent.publish("Fa_MainAbility_onDestroy", (err) => {
-        console.info(printLog1 + listPush1 + "onDestroy" + JSON.stringify(err));
-      });
-    },2000)
+    commonEvent.publish("Fa_MainAbility_onDestroy", (err) => {
+      console.info(printLog1 + listPush1 + "onDestroy" + JSON.stringify(err));
+    });
   }
   onShow() {
     console.info(printLog1 + 'onShow');
