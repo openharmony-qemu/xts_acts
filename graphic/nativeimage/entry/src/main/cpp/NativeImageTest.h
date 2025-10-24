@@ -13,6 +13,9 @@
  * limitations under the License.
  */
 
+#ifndef NATIVEIMAGE_TEST_H
+#define NATIVEIMAGE_TEST_H
+
 #include "napi/native_api.h"
 #include <EGL/egl.h>
 #include <EGL/eglext.h>
@@ -198,3 +201,4 @@ napi_value OHNativeImageCreateWithSingleBufferModeTest3(napi_env env, napi_callb
 napi_value OHConsumerSurfaceCreateWithSingleBufferModeTest1(napi_env env, napi_callback_info info);
 napi_value OHConsumerSurfaceCreateWithSingleBufferModeTest2(napi_env env, napi_callback_info info);
 napi_value OHConsumerSurfaceCreateWithSingleBufferModeTest3(napi_env env, napi_callback_info info);
+#endif // NATIVEIMAGE_TEST_H
