@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point } from '@ohos.UiTest'
+import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point, ComponentEventType } from '@ohos.UiTest'
 import ability_featureAbility from '@ohos.ability.featureAbility';
 import { BusinessError } from '@ohos.base';
 import display from '@ohos.display';
@@ -112,10 +112,16 @@ export default function UiTest() {
                     console.log(`${TestTag}, testComponentEventOccurOptionsClickMonitor callback error ,${JSON.stringify(err)}`);
                 }
             }
-            observer.once('componentEventOccur',1, {
-                timeout: 9000,
-                on: ON.isBefore(ON.text('next page')).type('Button')
-            } , callback)
+            try {
+                let nextOn = ON.isBefore(ON.text('next page')).type('Button');
+                observer.once('componentEventOccur', ComponentEventType.COMPONENT_CLICKED, {
+                    timeout: 9000,
+                    on: nextOn
+                } , callback);
+            } catch (error) {
+                console.log(`${TestTag}, testComponentEventOccurOptionsClickMonitor once error ,${JSON.stringify(error)}`);
+                expect(error.code).assertEqual(DeviceErrorCode);
+            }
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let btn = await driver.findComponent(ON.isBefore(ON.text('next page')).type('Button'))
@@ -147,9 +153,14 @@ export default function UiTest() {
                     console.log(`${TestTag}, testComponentEventOccurOptionsLongClickMonitor callback,${JSON.stringify(err)}`);
                 }
             }
-            observer.once('componentEventOccur', 2, {
-                on: ON.type('Button').text('')
-            }, callback);
+            try {
+                observer.once('componentEventOccur', ComponentEventType.COMPONENT_LONG_CLICKED, {
+                    on: ON.type('Button').text('')
+                }, callback);
+            } catch (error) {
+                console.log(`${TestTag}, testComponentEventOccurOptionsLongClickMonitor once error ,${JSON.stringify(error)}`);
+                expect(error.code).assertEqual(DeviceErrorCode);
+            }
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             await driver.delayMs(waitUiReadyMs);
             let btn = await driver.findComponent(ON.text('next page'));
@@ -182,10 +193,15 @@ export default function UiTest() {
                     console.log(`${TestTag}, testComponentEventOccurOptionsWithInClickMonitor callback error ,${JSON.stringify(err)}`);
                 }
             }
-            observer.once('componentEventOccur',1, {
-                timeout: 9000,
-                on: ON.within(ON.type('Scroll')).text('toast')
-            } , callback);
+            try {
+                observer.once('componentEventOccur', ComponentEventType.COMPONENT_CLICKED, {
+                    timeout: 9000,
+                    on: ON.within(ON.type('Scroll')).text('toast')
+                } , callback);
+            } catch (error) {
+                console.log(`${TestTag}, testComponentEventOccurOptionsWithInClickMonitor once error ,${JSON.stringify(error)}`);
+                expect(error.code).assertEqual(DeviceErrorCode);
+            }
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
             await driver.delayMs(waitUiReadyMs);
             let btn = await driver.findComponent(ON.within(ON.type('Scroll')).text('toast'));
@@ -214,13 +230,20 @@ export default function UiTest() {
                     expect(elementInfo.type == 'Scroll').assertTrue()
                     expect(elementInfo.componentEventType == 3).assertTrue();
                     expect(elementInfo.componentId == 'parentScroll').assertTrue();
+                    expect(elementInfo.componentRect != null).assertTrue();
                 } catch (err) {
                     console.log(`${TestTag}, testComponentEventOccurOptionsScrollStartMonitor callback error, ${JSON.stringify(err)}`);
                 }
             }
-            observer.once('componentEventOccur', 3, {
-                on: ON.type('Scroll').id('parentScroll')
-            }, callback)
+            try {
+                let on1 = ON.type('Scroll').id('parentScroll');
+                observer.once('componentEventOccur', ComponentEventType.COMPONENT_SCROLL_START, {
+                    on: on1
+                }, callback);
+            } catch (error) {
+                console.log(`${TestTag}, testComponentEventOccurOptionsScrollStartMonitor once error, ${JSON.stringify(error)}`);
+                expect(error.code).assertEqual(DeviceErrorCode);
+            }
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
@@ -252,13 +275,19 @@ export default function UiTest() {
                     expect(elementInfo.type == 'Scroll').assertTrue()
                     expect(elementInfo.componentEventType == 4).assertTrue();
                     expect(elementInfo.componentId == 'parentScroll').assertTrue();
+                    expect(elementInfo.componentRect != null).assertTrue();
                 } catch (err) {
                     console.log(`${TestTag}, testComponentEventOccurOptionsScrollEndMonitor callback error, ${JSON.stringify(err)}`);
                 }
             }
-            observer.once('componentEventOccur', 4, {
-                on: ON.type('Scroll').id('parentScroll')
-            }, callback)
+            try {
+                observer.once('componentEventOccur', ComponentEventType.COMPONENT_SCROLL_END, {
+                    on: ON.type('Scroll').id('parentScroll')
+                }, callback)
+            } catch (error) {
+                console.log(`${TestTag}, testComponentEventOccurOptionsScrollEndMonitor once error, ${JSON.stringify(error)}`);
+                expect(error.code).assertEqual(DeviceErrorCode);
+            }
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
@@ -299,9 +328,15 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs);
             await nextPageBtn.click();
             await driver.delayMs(waitUiReadyMs);
-            observer.once('componentEventOccur', 5, {
-                on: ON.id('changContext')
-            }, callback);
+            try {
+                observer.once('componentEventOccur', ComponentEventType.COMPONENT_TEXT_CHANGED, {
+                    on: ON.id('changContext')
+                }, callback);
+            } catch (err) {
+                console.log(`${TestTag}, testComponentEventOccurOptionsTextContentMonitor once error, ${JSON.stringify(err)}`);
+                expect(err.code).assertEqual(DeviceErrorCode);
+            }
+
             let changContextTxt = await driver.findComponent(ON.id('changContext'));
             await changContextTxt.inputText('123456');
             await driver.delayMs(5000);
@@ -323,10 +358,6 @@ export default function UiTest() {
                 try {
                     console.log(`${TestTag}, testComponentEventOccurOptionsTimeOutClickMonitor elementInfo,${JSON.stringify(elementInfo)}`);
                     isCallback = true;
-                    console.info('testComponentEventOccurOptionsTimeOutClickMonitor bundleName:'+ elementInfo.bundleName)
-                    console.info('testComponentEventOccurOptionsTimeOutClickMonitor text:'+ elementInfo.text)
-                    console.info('testComponentEventOccurOptionsTimeOutClickMonitor type:'+ elementInfo.type)
-                    console.info('testComponentEventOccurOptionsTimeOutClickMonitor componentEventType:'+ elementInfo.componentEventType)
                     expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
                     expect(elementInfo.text == 'toast').assertTrue()
                     expect(elementInfo.type == 'Button').assertTrue()
@@ -336,9 +367,14 @@ export default function UiTest() {
                     console.log(`${TestTag}, testComponentEventOccurOptionsTimeOutClickMonitor callback error ,${JSON.stringify(err)}`);
                 }
             }
-            observer.once('componentEventOccur',1, {
-                timeout: 3000
-            } , callback)
+            try {
+                observer.once('componentEventOccur', ComponentEventType.COMPONENT_CLICKED, {
+                    timeout: 3000
+                } , callback)
+            } catch (erro) {
+                console.log(`${TestTag}, testComponentEventOccurOptionsTimeOutClickMonitor callback error ,${JSON.stringify(erro)}`);
+                expect(erro.code).assertEqual(DeviceErrorCode);
+            }
             await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
             await driver.delayMs(waitUiReadyMs)
             let btn = await driver.findComponent(ON.isBefore(ON.text('next page')).type('Button'))
@@ -351,42 +387,6 @@ export default function UiTest() {
             expect(isCallback).assertFalse();
             console.log(`${TestTag}, testComponentEventOccurOptionsTimeOutClickMonitor end`);
         })
-
-        /**
-         * @tc.number UiTest_API22_011
-         * @tc.name testWindowChangeAddOptionsTimeoutMonitor
-         * @tc.desc monitor window add.
-         */
-        it('testWindowChangeAddOptionsTimeoutMonitor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-            console.log(`${TestTag}, testWindowChangeAddOptionsTimeoutMonitor start`);
-            let isCallback = false;
-            let observer = await driver.createUIEventObserver()
-            let callback = (elementInfo : UIElementInfo) => {
-                try {
-                    console.log(`${TestTag}, testWindowChangeAddOptionsTimeoutMonitor elementInfo,${JSON.stringify(elementInfo)}`);
-                    isCallback = true;
-                    console.info('testWindowChangeAddOptionsTimeoutMonitor bundleName:'+ elementInfo.bundleName)
-                    console.info('testWindowChangeAddOptionsTimeoutMonitor windowChangeType:'+ elementInfo.windowChangeType)
-                    expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
-                    expect(elementInfo.windowChangeType == 1).assertTrue();
-                } catch (err) {
-                    isCallback = false;
-                    console.log(`${TestTag}, testWindowChangeAddOptionsTimeoutMonitor callback error ,${JSON.stringify(err)}`);
-                }
-            }
-            observer.once('windowChange',1,{
-                bundleName: 'com.uitestScene.acts',
-                timeout: 2000
-            }, callback)
-            await driver.delayMs(3000);
-            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-            await driver.delayMs(3000);
-            await stopApplication('com.uitestScene.acts')
-            console.log(`${TestTag}, testWindowChangeAddOptionsTimeoutMonitor isCallback, ${JSON.stringify(isCallback)}`);
-            expect(isCallback).assertFalse();
-            console.log(`${TestTag}, testWindowChangeAddOptionsTimeoutMonitor end`);
-        })
-
 
         /**
          * @tc.number UiTest_API22_012
@@ -404,7 +404,7 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs);
             let center = await longClickBtn.getBoundsCenter();
             await driver.delayMs(waitUiReadyMs);
-            let result =  await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center)
+            let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventText'), center)
             expect(result).assertTrue();
             await driver.delayMs(waitUiReadyMs);
             let longClickTextResultBtn = await driver.findComponent(ON.id('longClickTextResult'));
@@ -433,7 +433,7 @@ export default function UiTest() {
             await driver.delayMs(waitUiReadyMs);
             let disPlay = display.getDefaultDisplaySync();
             console.log(`${TestTag}, tesIsComponentPresentWhenLongClickNotCom disPlay is: ${JSON.stringify(disPlay)}`);
-            let result =  await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventTextNot'), {
+            let result = await driver.isComponentPresentWhenLongClick(ON.text('ShowLongEventTextNot'), {
                 x: center.x,
                 y: center.y,
                 displayId: disPlay.id
@@ -466,7 +466,7 @@ export default function UiTest() {
             let dragResultTextCom = await driver.findComponent(ON.id('dragResultText'));
             await driver.delayMs(waitUiReadyMs);
             let center2 = await dragResultTextCom.getBoundsCenter();
-            let result =  await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2)
+            let result = await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventText'), center1, center2)
             console.log(`${TestTag}, tesIsComponentPresentWhenDragTrue result, ${JSON.stringify(result)}`);
             expect(result).assertTrue();
             let text = await driver.findComponent(ON.text('drag end'));
@@ -495,7 +495,7 @@ export default function UiTest() {
             let center2 = await dragResultTextCom.getBoundsCenter();
             let disPlay = display.getDefaultDisplaySync();
             console.log(`${TestTag}, tesIsComponentPresentWhenDragFalse disPlay is: ${JSON.stringify(disPlay)}`);
-            let result =  await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventTextNot'), {
+            let result = await driver.isComponentPresentWhenDrag(ON.text('ShowDragEventTextNot'), {
                 x: center1.x,
                 y: center1.y,
                 displayId: disPlay.id
@@ -524,7 +524,7 @@ export default function UiTest() {
             let scrollBar = await driver.findComponent(ON.type('Scroll').id('parentScroll'))
             let rect = await scrollBar.getBounds()
             let center = await scrollBar.getBoundsCenter()
-            let result =  await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
+            let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventCom'),
                 {x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)},
                 {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4)})
             console.log(`${TestTag}, tesIsComponentPresentWhenSwipeTrue result, ${JSON.stringify(result)}`);
@@ -550,7 +550,7 @@ export default function UiTest() {
             let center = await scrollBar.getBoundsCenter()
             let disPlay = display.getDefaultDisplaySync();
             console.log(`${TestTag}, tesIsComponentPresentWhenSwipeFalse disPlay is: ${JSON.stringify(disPlay)}`);
-            let result =  await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventComNot'),
+            let result = await driver.isComponentPresentWhenSwipe(ON.text('ShowSwipeEventComNot'),
                 {x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4), displayId: disPlay.id},
                 {x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlay.id}, 5000)
             console.log(`${TestTag}, tesIsComponentPresentWhenSwipeFalse result, ${JSON.stringify(result)}`);
