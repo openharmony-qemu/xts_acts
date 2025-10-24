@@ -27,6 +27,11 @@ add_library(nativerender SHARED
     swiper/SwiperCrossLanguageTest.cpp
     waterFlow/WaterFlowCrossLanguageTest.cpp
     BindController/BindControllerTest.cpp
+    row/RowCrossLanguageTest.cpp
+    Column/ColumnCrossLanguageTest.cpp
+    Flex/FlexCrossLanguageTest.cpp
+    Stack/StackCrossLanguageTest.cpp
+    RelativeContainer/RelativeContainerCrossLanguageTest.cpp
 )
 
 add_library(nativefunc SHARED

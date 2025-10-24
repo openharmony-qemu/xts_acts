@@ -45,6 +45,8 @@ import RectRadiusTest from './RectTest/RectRadiusTest.test';
 import RectCommonShapeMethodTest from './RectTest/RectCommonShapeMethodTest.test';
 import Matrix2DTest from './Matrix2D/Matrix2DTest.test';
 
+import CanvasGetLineDashTest from './CanvasReturnTest/CanvasGetLineDashTest';
+
 export default function testsuite() {
   ellipseJsunit();
   CanvasAPIUnitTest();
@@ -75,5 +77,7 @@ export default function testsuite() {
   RectRadiusTest()
   RectCommonShapeMethodTest()
   Matrix2DTest()
+  CanvasGetLineDashTest()
   circleNewJsunit()
+
 }

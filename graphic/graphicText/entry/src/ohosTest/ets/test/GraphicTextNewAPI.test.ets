@@ -348,13 +348,18 @@ export default function graphicTextNewAPI() {
             let font = runs[j].getFont();
             try {
               let textDirection = runs[0].getTextDirection();
-              expect(textDirection).assertEqual(1);
+              expect(textDirection).assertEqual(text.TextDirection.LTR);
             } catch (err) {
               console.info(msg + JSON.stringify(err));
               expect().assertFail();
             }
             try {
-              let advancesRange = runs[0].getAdvances({start:1, end:2});
+              let advancesRange1 = runs[0].getAdvances({start:0, end:10});
+              expect(advancesRange1.length > 0).assertTrue();
+              let advancesRange2 = runs[0].getAdvances({start:10, end:10});
+              expect(advancesRange2.length == 0).assertTrue();
+              let advancesRange3 = runs[0].getAdvances({start:0, end:-10});
+              expect(advancesRange3).assertEqual(undefined);
             } catch (err) {
               console.info(msg + JSON.stringify(err));
               expect().assertFail();
@@ -402,9 +407,10 @@ export default function graphicTextNewAPI() {
         let myParagraphStyle: text.ParagraphStyle = {
           textStyle: myTextStyle,
           verticalAlign: text.TextVerticalAlign.BOTTOM,
+          textDirection: text.TextDirection.RTL
         }
         let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
-        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        let textData = "سىناق تېكىستى";
         paragraphBuilder.addText(textData);
         let paragraph: text.Paragraph = paragraphBuilder.build();
         try {
@@ -425,7 +431,7 @@ export default function graphicTextNewAPI() {
             let font = runs[j].getFont();
             try {
               let textDirection = runs[0].getTextDirection();
-              expect(textDirection).assertEqual(1);
+              expect(textDirection).assertEqual(text.TextDirection.RTL);
             } catch (err) {
               console.info(msg + JSON.stringify(err));
               expect().assertFail();
@@ -507,6 +513,343 @@ export default function graphicTextNewAPI() {
         done();
       }
     })
+
+    /**
+     * @tc.number     testTextReturnValue_0100
+     * @tc.name       testTextReturnValue_0100
+     * @tc.desc       testTextReturnValue
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('testTextReturnValue_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+      let msg  = "====testTextReturnValue_0100===="
+      let fontCollection: text.FontCollection = new text.FontCollection();
+      try {
+        let fontFamilies: Array<string> = ["Clock_01"]
+        let myTextStyle: text.TextStyle = {
+          fontFamilies: fontFamilies
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let range1: text.Range = { start: 0, end: 1};
+        let rects1 = paragraph.getRectsForRange(range1, text.RectWidthStyle.TIGHT, text.RectHeightStyle.TIGHT);
+        console.info('www data rects 111 ', JSON.stringify(rects1))
+        expect(rects1.length > 0).assertTrue();
+        let range2: text.Range = { start: 0, end: 0};
+        let rects2 = paragraph.getRectsForRange(range2, text.RectWidthStyle.TIGHT, text.RectHeightStyle.TIGHT);
+        console.info('www data rects 222 ', JSON.stringify(rects2))
+        expect(rects2.length == 0).assertTrue();
+        let placeholderRects = paragraph.getRectsForPlaceholders();
+        expect(placeholderRects.length == 0).assertTrue();
+        let didExceed = paragraph.didExceedMaxLines();
+        expect(didExceed == false).assertTrue();
+        let lines = paragraph.getTextLines();
+        expect(lines.length > 0).assertTrue();
+        let arrLineMetric =  paragraph.getLineMetrics();
+        expect(arrLineMetric.length > 0).assertTrue();
+        let lineMetrics =  paragraph.getLineMetrics(0);
+        expect(lineMetrics != undefined).assertTrue();
+        let runs = lines[0].getGlyphRuns();
+        expect(runs.length > 0).assertTrue();
+        done();
+      } catch(err){
+        console.info(msg + 'test error' + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     testTextReturnValue_0200
+     * @tc.name       testTextReturnValue_0200
+     * @tc.desc       testTextReturnValue
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('testTextReturnValue_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+      let msg  = "====testTextReturnValue_0200===="
+      let fontCollection: text.FontCollection = new text.FontCollection();
+      try {
+        let fontFamilies: Array<string> = ["Clock_01"]
+        let myTextStyle: text.TextStyle = {
+          fontFamilies: fontFamilies
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let lines = paragraph.getTextLines();
+        expect(lines.length == 0).assertTrue();
+        expect(lines[0] == undefined).assertTrue();
+        let arrLineMetric =  paragraph.getLineMetrics();
+        expect(arrLineMetric.length == 0).assertTrue();
+        let lineMetrics =  paragraph.getLineMetrics(0);
+        expect(lineMetrics == undefined).assertTrue();
+        done();
+      } catch(err){
+        console.info(msg + 'test error' + err);
+        expect().assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     testTextReturnValue_0300
+     * @tc.name       testTextReturnValue_0300
+     * @tc.desc       testTextReturnValue
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('testTextReturnValue_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+      let msg  = "====testTextReturnValue_0300===="
+      let fontCollection: text.FontCollection = new text.FontCollection();
+      try {
+        let fontFamilies: Array<string> = ["Clock_01"]
+        let myTextStyle: text.TextStyle = {
+          fontFamilies: fontFamilies,
+          fontSize: 50,
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+          maxLines: 1,
+        }
+        let myPlaceholderSpan: text.PlaceholderSpan = {
+          width: 100,
+          height: 100,
+          align: text.PlaceholderAlignment.FOLLOW_PARAGRAPH,
+          baseline: text.TextBaseline.ALPHABETIC,
+          baselineOffset: 100
+        };
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        paragraphBuilder.addPlaceholder(myPlaceholderSpan);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf_测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let placeholderRects = paragraph.getRectsForPlaceholders();
+        expect(placeholderRects.length > 0).assertTrue();
+        let didExceed = paragraph.didExceedMaxLines();
+        expect(didExceed == true).assertTrue();
+        done();
+      } catch(err){
+        console.info(msg + 'test error' + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     testTextReturnValue_0400
+     * @tc.name       testTextReturnValue_0400
+     * @tc.desc       testTextReturnValue
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('testTextReturnValue_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+      let msg  = "====testTextReturnValue_0400====";
+      let fontType:text.SystemFontType = text.SystemFontType.GENERIC;
+      let fontTypeNums = await text.getSystemFontFullNamesByType(fontType);
+      console.info(msg + fontTypeNums);
+      console.info(msg + fontTypeNums.length);
+      expect(fontTypeNums.length > 0).assertTrue();
+      let fontTypeNums1 = await text.getSystemFontFullNamesByType(text.SystemFontType.CUSTOMIZED);
+      expect(fontTypeNums1.length == 0).assertTrue();
+      let fontDescriptor1 = await text.matchFontDescriptors({
+        weight: text.FontWeight.W400,
+      })
+      console.info(msg + fontDescriptor1.length);
+      expect(fontDescriptor1.length > 0).assertTrue();
+      let fontDescriptor2 = await text.matchFontDescriptors({
+        path: '/test_xts',
+        postScriptName: 'AaAa'
+      })
+      console.info(msg + JSON.stringify(fontDescriptor2));
+      expect(fontDescriptor2.length == 0).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number     testTextReturnValue_0500
+     * @tc.name       testTextReturnValue_0500
+     * @tc.desc       testTextReturnValue
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('testTextReturnValue_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+      let msg  = "====testTextReturnValue_0500====";
+      let fontCollection: text.FontCollection = new text.FontCollection();
+      try {
+        let fontFamilies: Array<string> = ["Clock_01"]
+        let myTextStyle: text.TextStyle = {
+          fontFamilies: fontFamilies,
+          fontSize: 50,
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+          maxLines: 1,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let lines =  paragraph.getTextLines();
+        let runs = lines[0].getGlyphRuns();
+        console.info('www data runs ' + JSON.stringify(runs));
+        expect(runs.length > 0).assertTrue();
+        let glphy1 = runs[0].getGlyphs();
+        console.info('www data glphy1 ' + JSON.stringify(glphy1));
+        expect(glphy1.length > 0).assertTrue();
+        let glphy2 = runs[0].getGlyphs({start: 0, end: 1});
+        console.info('www data glphy2 ' + JSON.stringify(glphy2));
+        expect(glphy2.length > 0).assertTrue();
+        let glphy3 = runs[0].getGlyphs({start: 0, end: 0});
+        console.info('www data glphy3 ' + JSON.stringify(glphy3));
+        expect(glphy3.length > 0).assertTrue();
+        let glphy4 = runs[0].getGlyphs({start: 0, end: -1});
+        console.info('www data glphy4 ' + JSON.stringify(glphy4));
+        expect(glphy4 == undefined).assertTrue();
+        let glphy5 = runs[0].getGlyphs(null);
+        console.info('www data glphy5 ' + JSON.stringify(glphy5));
+        expect(glphy5 == undefined).assertTrue();
+        let glphy6 = runs[0].getGlyphs(undefined);
+        console.info('www data glphy6 ' + JSON.stringify(glphy6));
+        expect(glphy6 == undefined).assertTrue();
+        done();
+      } catch(err){
+        console.info(msg + 'test error' + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     testTextReturnValue_0600
+     * @tc.name       testTextReturnValue_0600
+     * @tc.desc       testTextReturnValue
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('testTextReturnValue_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+      let msg  = "====testTextReturnValue_0600====";
+      let fontCollection: text.FontCollection = new text.FontCollection();
+      try {
+        let fontFamilies: Array<string> = ["Clock_01"]
+        let myTextStyle: text.TextStyle = {
+          fontFamilies: fontFamilies,
+          fontSize: 50,
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+          maxLines: 1,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let lines =  paragraph.getTextLines();
+        let runs = lines[0].getGlyphRuns();
+        console.info('www data runs ' + JSON.stringify(runs));
+        expect(runs.length > 0).assertTrue();
+        let position1 = runs[0].getPositions();
+        console.info('www data position1 ' + JSON.stringify(position1));
+        expect(position1.length > 0).assertTrue();
+        let position2 = runs[0].getPositions({start: 0, end: 1});
+        console.info('www data position2 ' + JSON.stringify(position2));
+        expect(position2.length > 0).assertTrue();
+        let position3 = runs[0].getPositions({start: 0, end: 0});
+        console.info('www data position3 ' + JSON.stringify(position3));
+        expect(position3.length > 0).assertTrue();
+        let position4 = runs[0].getPositions({start: 0, end: -1});
+        console.info('www data position4 ' + JSON.stringify(position4));
+        expect(position4 == undefined).assertTrue();
+        let position5 = runs[0].getPositions(null);
+        console.info('www data position5 ' + JSON.stringify(position5));
+        expect(position5 == undefined).assertTrue();
+        let position6 = runs[0].getPositions(undefined);
+        console.info('www data position6 ' + JSON.stringify(position6));
+        expect(position6 == undefined).assertTrue();
+        done();
+      } catch(err){
+        console.info(msg + 'test error' + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     testTextReturnValue_0700
+     * @tc.name       testTextReturnValue_0700
+     * @tc.desc       testTextReturnValue
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level1
+     */
+    it('testTextReturnValue_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+      let msg  = "====testTextReturnValue_0700====";
+      let fontCollection: text.FontCollection = new text.FontCollection();
+      try {
+        let fontFamilies: Array<string> = ["Clock_01"]
+        let myTextStyle: text.TextStyle = {
+          fontFamilies: fontFamilies,
+          fontSize: 50,
+        };
+        let myParagraphStyle: text.ParagraphStyle = {
+          textStyle: myTextStyle,
+          maxLines: 1,
+        }
+        let paragraphBuilder: text.ParagraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection);
+        let textData = "测试 loadFontSync 加载字体HarmonyClock_01.ttf";
+        paragraphBuilder.addText(textData);
+        let paragraph: text.Paragraph = paragraphBuilder.build();
+        paragraph.layoutSync(600);
+        let lines =  paragraph.getTextLines();
+        let runs = lines[0].getGlyphRuns();
+        console.info('www data runs ' + JSON.stringify(runs));
+        expect(runs.length > 0).assertTrue();
+        let offset = runs[0].getOffsets();
+        console.info('www data offset ' + JSON.stringify(offset));
+        expect(offset.length > 0).assertTrue();
+        let indices = runs[0].getStringIndices(); // 获取渲染块全部字符索引
+        console.info('www data indices ' + JSON.stringify(indices));
+        expect(indices.length > 0).assertTrue();
+        let indicesRange1 = runs[0].getStringIndices({start:1, end:2}); // 获取渲染块从起始位置1开始, 长度为2范围内的字符索引
+        console.info('www data indicesRange1 ' + JSON.stringify(indicesRange1));
+        expect(indicesRange1.length > 0).assertTrue();
+        let indicesRange2 = runs[0].getStringIndices({start:-1, end:2}); // -1是非法参数，将返回undefined
+        console.info('www data indicesRange2 ' + JSON.stringify(indicesRange2));
+        expect(indicesRange2 == undefined).assertTrue();
+        let indicesRange3 = runs[0].getStringIndices({start:0, end:-10}); // -10是非法参数，将返回undefined
+        console.info('www data indicesRange3 ' + JSON.stringify(indicesRange3));
+        expect(indicesRange3 == undefined).assertTrue();
+        let indicesNull = runs[0].getStringIndices(null); // null是非法参数，将返回undefined
+        console.info('www data indicesNull ' + JSON.stringify(indicesNull));
+        expect(indicesNull == undefined).assertTrue();
+        let indicesUndefined = runs[0].getStringIndices(undefined); // undefined是非法参数，将返回undefined
+        console.info('www data indicesUndefined ' + JSON.stringify(indicesUndefined));
+        expect(indicesUndefined == undefined).assertTrue();
+        done();
+      } catch(err){
+        console.info(msg + 'test error' + err);
+        expect().assertFail();
+        done();
+      }
+    })
+
+
 
   })
 }
