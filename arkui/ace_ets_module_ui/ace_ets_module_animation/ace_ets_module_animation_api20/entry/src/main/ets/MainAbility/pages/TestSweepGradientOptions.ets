@@ -34,8 +34,8 @@ struct TestSweepGradientOptions {
           end: 359,
           rotation: 45,
           repeating: this.repeatingFlg,
-          colors: [[0xff0000, 0.0], [0x0000ff, 0.3], [0xffff00, 0.5]], // 数组末尾元素占比小于1时满足重复着色效果
-          metricsColors: [[this.p3Red, 0.0], [this.p3Green, 0.5], [this.p3Blue, 1.0]]  // 设置metricsColors时colors设置的颜色失效，metricsColors的颜色生效
+          colors: [[0xff0000, 0.0], [0x0000ff, 0.3], [0xffff00, 0.5]], 
+          metricsColors: [[this.p3Red, 0.0], [this.p3Green, 0.5], [this.p3Blue, 1.0]]  
         })
       Button('change').id('changeId').onClick(() => {
         this.repeatingFlg = !this.repeatingFlg;
