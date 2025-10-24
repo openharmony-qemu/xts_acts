@@ -47,15 +47,15 @@ export default function WindowTest() {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
-      //isAutoWindow == '' ·ÇPADÉè±¸
-      //isAutoWindow == 'true' PADÉè±¸×ÔÓÉ¶à´°Ä£Ê½
-      //isAutoWindow == 'false' PADÉè±¸·Ç×ÔÓÉ¶à´°Ä£Ê½
+      //isAutoWindow == '' 非PAD设备
+      //isAutoWindow == 'true' PAD设备自由多窗模式
+      //isAutoWindow == 'false' PAD设备非自由多窗模式
       isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.USER_PROPERTY);
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
       isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
-      //isPCStatus == '' ·ÇPCÉè±¸
-      //isPCStatus == '1' PCÉè±¸×´Ì¬À¸dockÎ´ÈÚºÏ
-      //isPCStatus == '0' PCÉè±¸×´Ì¬À¸dockÈÚºÏ
+      //isPCStatus == '' 非PC设备
+      //isPCStatus == '1' PC设备状态栏dock未融合
+      //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
       await Utils.pushPageNoClear("Window/Window", done);
     })
@@ -753,7 +753,7 @@ export default function WindowTest() {
     /**
      * @tc.number  : SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200
      * @tc.name    : test_OH_WindowManager_GetAllMainWindowInfo_0200
-     * @tc.desc    : OH_WindowManager_GetAllMainWindowInfo²âÊÔ·µ»ØÖµ¸²¸Ç
+     * @tc.desc    : OH_WindowManager_GetAllMainWindowInfo测试返回值覆盖
      * @tc.level   : LEVEL0
      * @tc.size    : MediumTest
      * @tc.type    : Function

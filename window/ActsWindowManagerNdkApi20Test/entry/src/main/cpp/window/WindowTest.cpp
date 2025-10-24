@@ -733,45 +733,6 @@ void OnWindowSnapshotCallback(const OH_PixelmapNative** snapshotPixelMapList, si
     g_snapshotListSize = snapshotListSize;
 }
 
-napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0100(napi_env env, napi_callback_info info)
-{
-    if ((env == nullptr) || (info == nullptr)) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
-            "CreateNativeNode env or info is null");
-            return nullptr;
-    }
-    size_t argCnt = 1;
-    napi_value args[1] = { nullptr };
-    if (napi_get_cb_info(env, info, &argCnt, args, nullptr, nullptr) != napi_ok) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
-            "CreateNativeNode napi_get_cb_info failed");
-    }
-    if (argCnt != PARAM_1) {
-        napi_throw_type_error(env, NULL, "Wrong number of arguments");
-        return nullptr;
-    }
-    int32_t windowId;
-    napi_get_value_int32(env, args[0], &windowId);
-    std::vector<int32_t> windowIdList;
-    windowIdList.push_back(windowId);
-    WindowManager_WindowSnapshotConfig config;
-    config.useCache = false;
-    int32_t result = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(), windowIdList.size(),
-        config, OnWindowSnapshotCallback);
-    napi_value retValue;
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
-                 "Test_OH_WindowManager_GetMainWindowSnapshot_0100: %{public}d", result);
-    if (result == WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED) {
-        napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED, &retValue);
-        return retValue;
-    } else if (result == WINDOW_MANAGER_ERRORCODE_NO_PERMISSION) {
-        napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_NO_PERMISSION, &retValue);
-        return retValue;
-    }
-    napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
-    return retValue;
-}
-
 napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0200(napi_env env, napi_callback_info info)
 {
     WindowManager_WindowSnapshotConfig config;

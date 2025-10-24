@@ -210,12 +210,8 @@ static void InitPushDisplay(napi_property_descriptor* desc)
 static void InitPushWindow2(napi_property_descriptor* desc)
 {
     napi_property_descriptor descTemp[] = {
-        XL("test_OH_WindowManager_GetAllMainWindowInfo_0100",
-            Window::Test_OH_WindowManager_GetAllMainWindowInfo_0100),
         XL("test_OH_WindowManager_GetAllMainWindowInfo_0200",
             Window::Test_OH_WindowManager_GetAllMainWindowInfo_0200),
-        XL("test_OH_WindowManager_GetMainWindowSnapshot_0100",
-            Window::Test_OH_WindowManager_GetMainWindowSnapshot_0100),
         XL("test_OH_WindowManager_GetMainWindowSnapshot_0200",
             Window::Test_OH_WindowManager_GetMainWindowSnapshot_0200),
         XL("test_OH_WindowManager_GetMainWindowSnapshot_0300",

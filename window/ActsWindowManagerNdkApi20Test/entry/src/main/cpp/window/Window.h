@@ -62,9 +62,7 @@ napi_value RegisterTouchEventFilterInvaildWindowId(napi_env env, napi_callback_i
 napi_value UnregisterTouchEventFilterOkOrServiceError(napi_env env, napi_callback_info info);
 napi_value UnregisterTouchEventFilterInvaildWindowId(napi_env env, napi_callback_info info);
 
-napi_value Test_OH_WindowManager_GetAllMainWindowInfo_0100(napi_env env, napi_callback_info info);
 napi_value Test_OH_WindowManager_GetAllMainWindowInfo_0200(napi_env env, napi_callback_info info);
-napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0100(napi_env env, napi_callback_info info);
 napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0200(napi_env env, napi_callback_info info);
 napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0300(napi_env env, napi_callback_info info);
 napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0400(napi_env env, napi_callback_info info);
