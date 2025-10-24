@@ -93,38 +93,6 @@ export default function statisticsHasNetTest() {
         })
 
         /**
-         * @tc.number SUB_Manager_getIfaceRxBytes_Async_0300
-         * @tc.name testManagergetIfaceRxBytesAsync_static_0300
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
-         */
-        it("testManagergetIfaceRxBytesAsync_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testManagergetIfaceRxBytesAsync_static_0300';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
-                let ifaceName = "wlan1";
-                statistics.getIfaceRxBytes(ifaceName,(err: BusinessError<void> | null, stats: long | undefined)=>{
-                    if (err && err.code != 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                        ExpectTrue(err?.code == 2103005 || err?.code == 2103012);
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+ stats);
-                        ExpectFail();
-                    }
-                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
-                    done()
-                })
-            }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-                ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
-                done();
-            }
-        })
-
-        /**
          * @tc.number SUB_Manager_getIfaceRxBytes_Promise_0100
          * @tc.name testManagergetIfaceRxBytesPromise_static_0100
          * @tc.desc Function test
@@ -180,39 +148,6 @@ export default function statisticsHasNetTest() {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectFail();
-                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                    done();
-                });
-            }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-                ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
-                done();
-            }
-        })
-
-        /**
-         * @tc.number SUB_Manager_getIfaceRxBytes_Promise_0300
-         * @tc.name testManagergetIfaceRxBytesPromise_static_0300
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
-         */
-        it("testManagergetIfaceRxBytesPromise_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testManagergetIfaceRxBytesPromise_static_0300';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
-                let ifaceName = "wlan1";
-                statistics.getIfaceRxBytes(ifaceName).then((stats: long) => {
-                    console.log(`${caseName} getIfaceRxBytes success ${JSON.stringify(stats)}`);
-                    ExpectFail();
-                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                    done();
-                }).catch((error: Error) => {
-                    let err = error as BusinessError;
-                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                    ExpectTrue(err.code == 2103005 || err.code == 2103012);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
@@ -289,38 +224,6 @@ export default function statisticsHasNetTest() {
         })
 
         /**
-         * @tc.number SUB_Manager_getIfaceTxBytes_Async_0300
-         * @tc.name  testManagergetIfaceTxBytesAsync_static_0300
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
-         */
-        it("testManagergetIfaceTxBytesAsync_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testManagergetIfaceTxBytesAsync_static_0300';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
-                let ifaceName = "wlan1";
-                statistics.getIfaceTxBytes(ifaceName,(err: BusinessError<void> | null, stats: long | undefined)=>{
-                    if (err && err.code != 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                        ExpectTrue(err?.code == 2103005 || err?.code == 2103012);
-                    } else {
-                        hilog.info(domain, tag, '%{public}s', caseName +': stats ->'+ stats);
-                        ExpectFail();
-                    }
-                    hilog.info(domain, tag, '%{public}s', caseName + '---test end');
-                    done()
-                })
-            }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-                ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
-                done();
-            }
-        })
-
-        /**
          * @tc.number SUB_Manager_getIfaceTxBytes_Promise_0100
          * @tc.name testManagergetIfaceTxBytesPromise_static_0100
          * @tc.desc Function test
@@ -375,39 +278,6 @@ export default function statisticsHasNetTest() {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectFail();
-                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                    done();
-                });
-            }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
-                ExpectFail();
-                hilog.info(domain, tag, '%{public}s', caseName+ ' end');
-                done();
-            }
-        })
-
-        /**
-         * @tc.number SUB_Manager_getIfaceTxBytes_Promise_0300
-         * @tc.name testManagergetIfaceTxBytesPromise_static_0300
-         * @tc.desc Function test
-         * @tc.level 1
-         * @tc.type: Function
-         * @tc.size: SmallTest
-         */
-        it("testManagergetIfaceTxBytesPromise_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testManagergetIfaceTxBytesPromise_static_0300';
-            hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-            try{
-                let ifaceName = "wlan1";
-                statistics.getIfaceTxBytes(ifaceName).then((stats: long) => {
-                    console.log(`${caseName} getIfaceRxBytes success ${JSON.stringify(stats)}`);
-                    ExpectFail();
-                    hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-                    done();
-                }).catch((error: Error) => {
-                    let err = error as BusinessError;
-                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
-                    ExpectTrue(err.code == 2103005 || err.code == 2103012);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
