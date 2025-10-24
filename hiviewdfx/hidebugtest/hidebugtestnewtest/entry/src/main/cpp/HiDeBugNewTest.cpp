@@ -46,7 +46,7 @@ __attribute__((noinline)) void TestMyFunc(int i) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestTag", "OH_HiDebug_GetSystemCpuUsage");
         auto start = GetTimeMilliSeconds();
         const int WAIT_TIME = 1000;
-        while (GetTimeMilliSeconds() - start < 10000 * WAIT_TIME);
+        while (GetTimeMilliSeconds() - start < WAIT_TIME * 10000 );// 10000 : wait time 10s
     }
     i--;
     return TestMyFunc(i);
