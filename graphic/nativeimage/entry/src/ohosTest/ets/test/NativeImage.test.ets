@@ -1256,7 +1256,7 @@ export default function nativeImageTest() {
       it('testNativeImageCreateWithSingleBufferModeTest1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
         async (done: Function) => {
           if (deviceTypeInfo == "default") {
-            expect(0).assertEqual(0);
+            console.log("This testcase does not support rk");
             done();
           } else {
             let result: number = nativeimage.oHNativeImageCreateWithSingleBufferModeTest1();
