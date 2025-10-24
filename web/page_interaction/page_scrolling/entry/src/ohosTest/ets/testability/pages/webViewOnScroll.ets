@@ -252,6 +252,7 @@ struct webViewOnScroll {
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.controller.pageDown(true);
                 await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
+				
                 if (this.isWebBottom) {
                   console.log("页面已经滑动到底部");
                   Utils.emitEvent(true, 179970)
