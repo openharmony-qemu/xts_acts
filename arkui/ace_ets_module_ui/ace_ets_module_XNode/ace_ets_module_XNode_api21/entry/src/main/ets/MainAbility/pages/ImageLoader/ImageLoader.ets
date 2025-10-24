@@ -97,10 +97,10 @@ struct AnimatedDrawableDescriptorTestLoader {
               this.imageHeight = result.imageHeight
             } catch (error) {
               console.error('load failed')
-              this.errorCode = error.code
             }
           }).catch((error: BusinessError<void>) => {
             console.error(`load failed, error = ${JSON.stringify(error)}`)
+            this.errorCode = error.code
           })
         })
     }.width('100%').margin({ top:30 })
