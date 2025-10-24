@@ -672,6 +672,37 @@ export default function audioFramework() {
 
     })
 
+        /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMICROPHONEMUTESYNC_0700
+     * @tc.name      : isMuteSync - Media - Sync
+     * @tc.desc      : isMuteSync - Media - Sync
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMICROPHONEMUTESYNC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        await audioVolumeGroupManager.setMicrophoneMute(false).then(() => {
+          console.info('Promise returned to indicate that the microphone is muted.');
+        });
+        let data = audioVolumeGroupManager.isMicrophoneMuteSync();
+        if (data == false) {
+          console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
+          expect(true).assertTrue();
+          done();
+        } else {
+          console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (err) {
+        console.log('err :' + JSON.stringify(err.message));
+        expect(false).assertTrue();
+        done();
+      }
+
+    })
+
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOMANAGER_0200
      * @tc.name      : getAudioManger - Multiple instance

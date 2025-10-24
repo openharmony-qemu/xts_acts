@@ -909,6 +909,81 @@ export default function audioManagerApi9() {
     })
 
     /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_0400
+     * @tc.name      : OnRingModeChange - RINGER_MODE_NORMAL
+     * @tc.desc      : OnRingModeChange - RINGER_MODE_NORMAL
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let audioVolumeManager = audioManager.getVolumeManager();
+        let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+        audio.manager.setRingerMode(audio.AudioRingMode.RINGER_MODE_NORMAL);
+        groupManager.on('ringerModeChange', (ringerMode: audio.AudioRingMode) => {
+          console.info(`Updated ringermode: ${ringerMode}`)
+        });
+        expect(true).assertTrue();
+        done();
+      } catch (err) {
+        console.log('err :' + err.message)
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_0500
+     * @tc.name      : OnRingModeChange - RINGER_MODE_SILENT
+     * @tc.desc      : OnRingModeChange - RINGER_MODE_SILENT
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let audioVolumeManager = audioManager.getVolumeManager();
+        let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+        audio.manager.setRingerMode(audio.AudioRingMode.RINGER_MODE_SILENT);
+        groupManager.on('ringerModeChange', (ringerMode: audio.AudioRingMode) => {
+          console.info(`Updated ringermode: ${ringerMode}`)
+        });
+        expect(true).assertTrue();
+        done();
+      } catch (err) {
+        console.log('err :' + err.message)
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+        /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_0600
+     * @tc.name      : OnRingModeChange - RINGER_MODE_VIBRATE
+     * @tc.desc      : OnRingModeChange - RINGER_MODE_VIBRATE
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        let audioVolumeManager = audioManager.getVolumeManager();
+        let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+        audio.manager.setRingerMode(audio.AudioRingMode.RINGER_MODE_VIBRATE);
+        groupManager.on('ringerModeChange', (ringerMode: audio.AudioRingMode) => {
+          console.info(`Updated ringermode: ${ringerMode}`)
+        });
+        expect(true).assertTrue();
+        done();
+      } catch (err) {
+        console.log('err :' + err.message)
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETMICROPHONEMUTE_0100
      * @tc.name      : setMicrophoneMute - true - Callback
      * @tc.desc      : Enable mic mute
@@ -959,6 +1034,71 @@ export default function audioManagerApi9() {
         await groupManager.setMicrophoneMute(true);
         let data = await groupManager.isMicrophoneMute();
         if (data == true) {
+          console.log(`${TagFrmwk}: Promise: isMicrophoneMute: TRUE: PASS:${data}`);
+          expect(true).assertTrue();
+        } else {
+          console.log(`${TagFrmwk}: Promise: isMicrophoneMute: TRUE: FAIL: ${data}`);
+          expect(false).assertTrue();
+        }
+        done();
+      } catch (err) {
+        console.log('err :' + err.message);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETMICROPHONEMUTE_0300
+     * @tc.name      : setMicrophoneMute - false - Callback
+     * @tc.desc      : Enable mic mute
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETMICROPHONEMUTE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let audioVolumeManager = audioManager.getVolumeManager();
+      let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+      groupManager.setMicrophoneMute(false, (err, data) => {
+        if (err) {
+          console.error(`audioManagerApi9Test: failed to setMicrophoneMute : Callback:  ${err.message}`);
+          expect(true).assertTrue();
+          done();
+        } else {
+          groupManager.isMicrophoneMute((err, data) => {
+            if (err) {
+              console.error(`audioManagerApi9Test: failed to isMicrophoneMute : Callback:  ${err.message}`);
+              expect(false).assertTrue();
+            } else {
+              if (data == true) {
+                console.log(`${TagFrmwk}: Callback: isMicrophoneMute: TRUE: PASS:${data}`);
+                expect(true).assertTrue();
+              } else {
+                console.log(`${TagFrmwk}: Callback: isMicrophoneMute: TRUE: FAIL: ${data}`);
+                expect(false).assertTrue();
+              }
+            }
+            done();
+          })
+        }
+      });
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETMICROPHONEMUTE_0400
+     * @tc.name      : setMicrophoneMute - false - Promise
+     * @tc.desc      : Enable mic mute
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETMICROPHONEMUTE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let audioVolumeManager = audioManager.getVolumeManager();
+        let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
+        await groupManager.setMicrophoneMute(false);
+        let data = await groupManager.isMicrophoneMute();
+        if (data == false) {
           console.log(`${TagFrmwk}: Promise: isMicrophoneMute: TRUE: PASS:${data}`);
           expect(true).assertTrue();
         } else {
