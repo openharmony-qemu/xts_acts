@@ -282,7 +282,6 @@ export default function cameraIsControlCenterSupported() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
 
     beforeEach(() => {

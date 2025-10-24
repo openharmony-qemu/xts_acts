@@ -279,7 +279,6 @@ export default function CameraGetExposureBiasRange() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
 
     beforeEach(() => {

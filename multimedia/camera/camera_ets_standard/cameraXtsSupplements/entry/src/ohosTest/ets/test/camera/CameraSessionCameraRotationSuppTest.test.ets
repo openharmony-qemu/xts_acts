@@ -311,7 +311,6 @@ export default function CameraSessionCameraRotationSuppTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
     beforeEach(() => {
       console.info('afterEach case');

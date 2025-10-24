@@ -288,7 +288,6 @@ export default function cameraGetSupportedFrameRateTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
 
     beforeEach(() => {

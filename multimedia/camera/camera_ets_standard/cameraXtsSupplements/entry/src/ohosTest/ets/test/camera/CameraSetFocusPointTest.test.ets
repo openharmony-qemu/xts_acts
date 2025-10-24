@@ -293,7 +293,6 @@ export default function cameraSetFocusTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
 
     beforeEach(() => {

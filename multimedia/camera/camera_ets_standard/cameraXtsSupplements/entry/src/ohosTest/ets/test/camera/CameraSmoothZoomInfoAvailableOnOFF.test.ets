@@ -284,13 +284,16 @@ async function videoSetSmoothZoomTest(testName: string, done: Function, targetZo
       console.info(TAG + " setSmoothZoom on success");
       if (offCallback) {
         mVideoSession.off('smoothZoomInfoAvailable',offCallback);
+        await releaseVideoSession();
       }
     } else {
+      await releaseVideoSession();
       done();
     }
   } catch (err) {
     console.info(TAG ,testName + err,err.code);
     expect(err.code).assertFail();
+    await releaseVideoSession();
     done();
   }
 }
@@ -308,13 +311,16 @@ async function photoSetSmoothZoomTest(testName: string, done: Function, targetZo
       console.info(TAG + " setSmoothZoom on success");
       if (offCallback) {
         mPhotoSession.off('smoothZoomInfoAvailable',offCallback);
+        await releasePhotoSession();
       }
-    }else {
+    } else {
+      await releasePhotoSession();
       done();
     }
   } catch (err) {
     console.info(TAG , testName + err,err.code);
     expect(err.code).assertFail();
+    await releasePhotoSession();
     done();
   }
 }
@@ -328,7 +334,6 @@ export default function CameraVideoSessionOnOffTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
 
     beforeEach(() => {

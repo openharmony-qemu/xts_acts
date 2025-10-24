@@ -298,7 +298,6 @@ export default function cameraSessionIsFocusModeSupported() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
 
     beforeEach(() => {

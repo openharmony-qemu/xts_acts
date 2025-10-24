@@ -222,7 +222,6 @@ export default function cameraCaptureSessionTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
       AppStorage.setOrCreate('test', [])
     });
 

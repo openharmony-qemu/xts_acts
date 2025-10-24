@@ -452,7 +452,6 @@ export default function CameraSessionFlashSuppTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
 
     beforeEach(() => {
