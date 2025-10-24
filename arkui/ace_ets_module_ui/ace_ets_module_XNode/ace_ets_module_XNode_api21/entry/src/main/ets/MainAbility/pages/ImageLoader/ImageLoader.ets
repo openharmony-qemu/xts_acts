@@ -86,6 +86,23 @@ struct AnimatedDrawableDescriptorTestLoader {
             console.error(`load failed, error = ${JSON.stringify(error)}`)
           })
         })
+
+      Button('异步加载drawable-错误码场景')
+        .height('6%')
+        .id('btnLoadErr')
+        .onClick(() => {
+          this.drawable2.load().then((result: DrawableDescriptorLoadedResult) => {
+            try {
+              this.imageWidth = result.imageWidth
+              this.imageHeight = result.imageHeight
+            } catch (error) {
+              console.error('load failed')
+              this.errorCode = error.code
+            }
+          }).catch((error: BusinessError<void>) => {
+            console.error(`load failed, error = ${JSON.stringify(error)}`)
+          })
+        })
     }.width('100%').margin({ top:30 })
   }
 }
