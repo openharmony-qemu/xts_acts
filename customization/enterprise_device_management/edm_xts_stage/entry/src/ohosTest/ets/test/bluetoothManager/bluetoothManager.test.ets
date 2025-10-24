@@ -32,7 +32,7 @@ export default function bluetoothManagerTest() {
      * @tc.size      : MediumTest
      */
     it('test_get_bluetooth_info_0100', Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         let result: bluetoothManager.BluetoothInfo = bluetoothManager.getBluetoothInfo(SELFWANT);
         expect(false).assertTrue();
@@ -112,7 +112,7 @@ export default function bluetoothManagerTest() {
      * @tc.size      : MediumTest
      */
     it('test_add_allowed_bluetooth_devices_0100', Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         let deviceIds: Array<string>  = ["00:1A:2B:3C:4D:5E","AA:BB:CC:DD:EE:FF"];
         bluetoothManager.addAllowedBluetoothDevices(SELFWANT,deviceIds);
@@ -242,7 +242,7 @@ export default function bluetoothManagerTest() {
      * @tc.size      : MediumTest
      */
     it('test_get_allowed_bluetooth_devices_0100', Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         bluetoothManager.getAllowedBluetoothDevices(SELFWANT);
       } catch(error) {
@@ -343,7 +343,7 @@ export default function bluetoothManagerTest() {
      * @tc.size      : MediumTest
      */
     it('test_remove_allowed_bluetooth_devices_0100', Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         let deviceIds: Array<string>  = ["00:1A:2B:3C:4D:5E","AA:BB:CC:DD:EE:FF"];
         bluetoothManager.removeAllowedBluetoothDevices(SELFWANT,deviceIds);
@@ -424,7 +424,7 @@ export default function bluetoothManagerTest() {
      * @tc.size      : MediumTest
      */
     it('test_add_disallowed_bluetooth_devices_0100', Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         let deviceIds: Array<string>  = ["00:1A:2B:3C:4D:5E","AA:BB:CC:DD:EE:FF"];
         bluetoothManager.addDisallowedBluetoothDevices(SELFWANT,deviceIds);
@@ -630,7 +630,7 @@ export default function bluetoothManagerTest() {
      * @tc.size      : MediumTest
      */
     it('test_get_disallowed_bluetooth_devices_0100', Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         bluetoothManager.getDisallowedBluetoothDevices(SELFWANT);
       } catch(error) {
@@ -733,7 +733,7 @@ export default function bluetoothManagerTest() {
      * @tc.size      : MediumTest
      */
     it('test_remove_disallowed_bluetooth_devices_0100', Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         let deviceIds: Array<string>  = ["00:1A:2B:3C:4D:5E","AA:BB:CC:DD:EE:FF"];
         bluetoothManager.removeDisallowedBluetoothDevices(SELFWANT,deviceIds);
@@ -846,7 +846,7 @@ export default function bluetoothManagerTest() {
      * @tc.size      : MediumTest
      */
     it('test_turnon_bluetooth_0200', Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         bluetoothManager.turnOnBluetooth(SELFWANT);
         expect(false).assertTrue();
@@ -951,7 +951,7 @@ export default function bluetoothManagerTest() {
      * @tc.size      : MediumTest
      */
     it('test_turnoff_bluetooth_0200', Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         bluetoothManager.turnOffBluetooth(SELFWANT);
         expect(false).assertTrue();
@@ -1060,7 +1060,7 @@ export default function bluetoothManagerTest() {
      * @tc.size      : MediumTest
      */
     it('test_add_disallowed_bluetooth_protocols_0200', Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         let accountId: number = 100;
         let protocols: Array<bluetoothManager.Protocol> = [bluetoothManager.Protocol.GATT,
@@ -1155,7 +1155,7 @@ export default function bluetoothManagerTest() {
      * @tc.size      : MediumTest
      */
     it('test_remove_disallowed_bluetooth_protocols_0200', Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         let accountId: number = 100;
         let protocols: Array<bluetoothManager.Protocol> = [bluetoothManager.Protocol.GATT,
@@ -1219,7 +1219,7 @@ export default function bluetoothManagerTest() {
      * @tc.size      : MediumTest
      */
     it('test_get_disallowed_bluetooth_protocols_0200', Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         let accountId: number = 100;
         bluetoothManager.getDisallowedBluetoothProtocols(SELFWANT, accountId);

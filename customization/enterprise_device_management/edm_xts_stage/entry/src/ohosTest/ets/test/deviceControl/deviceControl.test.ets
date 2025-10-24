@@ -56,7 +56,7 @@ function testOperateDevice() {
    * @tc.size      : MediumTest
    */
   it("test_operate_device_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       deviceControl.operateDevice(SELFWANT, LOCK_SCREEN);
       expect(false).assertTrue();
@@ -137,7 +137,7 @@ function testOperateDevice() {
    * @tc.size      : MediumTest
    */
   it("test_operate_device_0006", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       deviceControl.operateDevice(SELFWANT, LOCK_SCREEN, OPERATE_DEVICE);
       expect(false).assertTrue();

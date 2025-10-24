@@ -59,7 +59,7 @@ export default function afterAllTest() {
      */
     it("test_clearUpApplicationData_002", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         applicationManager.clearUpApplicationData(SELFWANT, TEST_BUNDLENAME, DEFAULT_APP_INDEX, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
