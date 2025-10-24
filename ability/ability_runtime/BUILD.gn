@@ -144,6 +144,7 @@ group("ability_runtime") {
       "want:want",
       "wantagent:wantagent",
       "workercontextcover:workercontextcover",
+      "actlaunchandlatestparameter:getlaunchandlatestparameteracttest",
     ]
   }
 }
