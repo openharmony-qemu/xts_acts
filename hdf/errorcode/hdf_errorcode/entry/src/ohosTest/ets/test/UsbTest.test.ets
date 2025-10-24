@@ -451,13 +451,12 @@ export default function UsbTest() {
      */
     it('TestUsbInterfaceDescriptor0700', Level.LEVEL0,
       async (done: Function) => {
-        if (dev == -1) {
-          done();
-        }
         try {
           console.info("====>TestUsbInterfaceDescriptor0700 start====");
           let result: number = baskddkerror.UsbInterfaceDescriptor0700(dev);
-          expect(result).assertEqual(0);
+          if (dev == -1) {
+            expect(result).assertEqual(0);
+          }
           console.info("====>TestUsbInterfaceDescriptor0700 result: " + result);
           done()
         } catch (err) {
