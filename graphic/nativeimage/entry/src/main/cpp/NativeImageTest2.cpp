@@ -472,7 +472,7 @@ napi_value OHNativeImageGetColorSpaceMultipleCalls(napi_env env, napi_callback_i
         int32_t ret = OH_NativeImage_GetColorSpace(imageArray[i], &colorSpace);
         if (ret != 0) {
             napi_create_int32(env, FAIL, &result);
-            return result; 
+            return result;
         }
     }
     for (int i = 0; i < count; ++i) {
