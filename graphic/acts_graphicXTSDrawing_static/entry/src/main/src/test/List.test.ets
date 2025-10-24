@@ -33,6 +33,11 @@ import textBlobTest from './TextBlob.test';
 import textBlob2Test from './TextBlob2.test';
 import toolTest from './Tool.test'
 import typefaceArguments from './TypefaceArguments.test'
+import BrushPart2 from './BrushPart2.test';
+import FontPart4 from './FontPart4.test';
+import PathEffect2 from './PathEffect2.test';
+import PathIterator from './PathIterator.test';
+import PenPart3 from './PenPart3.test';
 export default function testsuite() {
   samplingOptionsTest();
   colorFilterTest();
@@ -69,4 +74,9 @@ export default function testsuite() {
   toolTest();
   typefaceArguments();
   // rectUtils();
+  BrushPart2();
+  FontPart4();
+  PathEffect2();
+  PathIterator();
+  PenPart3();
 }
