@@ -78,7 +78,7 @@ export default function TestSweepGradientOptions() {
       console.info("TestSweepGradientOptions_001 obj is: " + strJson);
       console.info("TestSweepGradientOptions_001 obj repeating is: " + JSON.parse(strJson)?.$attrs?.sweepGradient?.repeating);
       console.info("TestSweepGradientOptions_001 obj rotation is : " +JSON.parse(strJson)?.$attrs?.sweepGradient?.rotation);
-      expect(JSON.parse(strJson)?.$attrs?.sweepGradient?.repeating).assertFalse();
+      expect(JSON.parse(strJson)?.$attrs?.sweepGradient?.repeating).assertEqual('false');
 
       let btn = await driver.findComponent(ON.id('changeId'));
       await btn.click();
@@ -86,7 +86,7 @@ export default function TestSweepGradientOptions() {
       console.log("[TestSweepGradientOptions_001] click btn");
       await driver.delayMs(1000);
       let strJson2: string = getInspectorByKey('testSweepGradientOptionsId');
-      expect(JSON.parse(strJson2)?.$attrs?.sweepGradient?.repeating).assertTrue()
+      expect(JSON.parse(strJson2)?.$attrs?.sweepGradient?.repeating).assertEqual('true');
       done();
     });
   })
