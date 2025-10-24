@@ -18,6 +18,8 @@ add_library(nativerender SHARED
     component/ListComponentTest.cpp
     component/TextComponentTest.cpp
     list/SwipeActionTest.cpp
+    list/SwipeErrorTest.cpp
+
 )
 
 # add_library(nativefunc SHARED

@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import listActionTest from './ListTest/listAction.test';
+import listActionWithErrorTest from './ListTest/listActionWithError.test';
 
 export default function testsuite() {
   listActionTest();
+  listActionWithErrorTest();
 }
