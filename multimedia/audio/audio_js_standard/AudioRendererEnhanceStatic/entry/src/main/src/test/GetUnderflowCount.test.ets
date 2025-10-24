@@ -419,7 +419,6 @@ export default function audioRendererTest() {
           await audioRen.drain();
           try {
             await audioRen.stop();
-            expect(true).assertTrue();
             done();
           } catch (err: BusinessError) {
             console.info(`${TagFrmwkRender}:  Renderer stop:ERROR : ${err.message}`);

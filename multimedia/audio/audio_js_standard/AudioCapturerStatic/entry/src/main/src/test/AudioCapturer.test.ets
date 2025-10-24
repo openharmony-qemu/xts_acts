@@ -294,7 +294,7 @@ export default function audioCapturer() {
           fs.writeSync(fd, buffer, options);
           bufferSize += buffer.byteLength;
         };
-        audioCap.on('readData', readDataCallback);
+        audioCap.onReadData(readDataCallback);
 
         if (audioCap === undefined) {
           console.info(`${Tag} recCapturerPromise4: audioCap is undefined`);
@@ -367,7 +367,7 @@ export default function audioCapturer() {
           }
         };
 
-        audioRen.on('writeData', writeDataCallback);
+        audioRen.onWriteData(writeDataCallback);
         console.info(`${Tag}: resRendererPromise5 on function : SUCCESS`);
 
         try {

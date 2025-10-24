@@ -138,8 +138,8 @@ export default function onOffAudioCapturerChangeTest() {
       flag1 = false;
       flag2 = false;
       try {
-        audioCap.on('audioCapturerChange', callback1);
-        audioCap.on('audioCapturerChange', callback2);
+        audioCap.onAudioCapturerChange(callback1);
+        audioCap.onAudioCapturerChange(callback2);
         await audioCap.start();
         await Utils.msSleep(1000);
         console.log(`flag1: ${flag1}, flag2: ${flag2}`)
@@ -192,11 +192,11 @@ export default function onOffAudioCapturerChangeTest() {
         done();
       }
       try {
-        audioCap.on('audioCapturerChange', callback1);
-        audioCap.on('audioCapturerChange', callback2);
+        audioCap.onAudioCapturerChange(callback1);
+        audioCap.onAudioCapturerChange(callback2);
         await audioCap.start();
         await Utils.msSleep(1000);
-        audioCap.off('audioCapturerChange', callback1);
+        audioCap.offAudioCapturerChange(callback1);
         flag1 = false;
         flag2 = false;
         await audioCap.stop();
@@ -250,11 +250,11 @@ export default function onOffAudioCapturerChangeTest() {
         done();
       }
       try {
-        audioCap.on('audioCapturerChange', callback1);
-        audioCap.on('audioCapturerChange', callback2);
+        audioCap.onAudioCapturerChange(callback1);
+        audioCap.onAudioCapturerChange(callback2);
         await audioCap.start();
         await Utils.msSleep(1000);
-        audioCap.off('audioCapturerChange');
+        audioCap.offAudioCapturerChange();
         flag1 = false;
         flag2 = false;
         await audioCap.stop();

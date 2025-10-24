@@ -223,7 +223,7 @@ export default function audioRendererTest() {
         } catch (error: BusinessError) {
           console.log("${TagFrmwkRender}: getCurrentOutputDevices : error = " + error);
           if (error.code === 6800301) {
-            expect(true).assertTrue();
+            console.log("${TagFrmwkRender}: getCurrentOutputDevices : error.code = " + error.code);
             done();
           } else {
             expect(false).assertTrue();

@@ -250,10 +250,10 @@ export default function AudioRoutingManagerTest() {
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
       try {
-        audioRoutingManager.on('availableDeviceChange', audio.DeviceUsage.MEDIA_OUTPUT_DEVICES, (data: audio.DeviceChangeAction) => {
+        audioRoutingManager.onAvailableDeviceChange(audio.DeviceUsage.MEDIA_OUTPUT_DEVICES, (data: audio.DeviceChangeAction) => {
           console.info(`${Tag}:  on_availableDeviceChange: SUCCESS`);
         });
-        audioRoutingManager.off('availableDeviceChange', (data: audio.DeviceChangeAction) => {
+        audioRoutingManager.offAvailableDeviceChange((data: audio.DeviceChangeAction) => {
           console.info(`${Tag}:  off_availableDeviceChange 'availableDeviceChange': SUCCESS`);
         });
         expect(true).assertTrue();
@@ -276,7 +276,7 @@ export default function AudioRoutingManagerTest() {
       try {
         let blockMic: boolean = await audioRoutingManager.isMicBlockDetectionSupported()
         if (blockMic == true) {
-          audioRoutingManager.on('micBlockStatusChanged', (deviceBlockStatusInfo: audio.DeviceBlockStatusInfo) =>{
+          audioRoutingManager.onMicBlockStatusChanged((deviceBlockStatusInfo: audio.DeviceBlockStatusInfo) =>{
             if (deviceBlockStatusInfo.blockStatus == audio.DeviceBlockStatus.BLOCKED ||
               deviceBlockStatusInfo.blockStatus == audio.DeviceBlockStatus.UNBLOCKED) {
               console.info(`${Tag}:  on_micBlockStatusChanged: SUCCESS`);
@@ -286,7 +286,7 @@ export default function AudioRoutingManagerTest() {
               expect(false).assertTrue();
             }
           })
-          audioRoutingManager.off('micBlockStatusChanged')
+          audioRoutingManager.offMicBlockStatusChanged()
         }
         expect(true).assertTrue();
       } catch (error: BusinessError) {

@@ -494,7 +494,7 @@ export default class MediaTestBase {
     let stat = await fs.stat(filePath)
     let file: fs.File = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
 
-    this.audioRen!!.on('writeData', (buffer: ArrayBuffer) => {
+    this.audioRen!!.onWriteData((buffer: ArrayBuffer) => {
       // console.info(`${this.TAG}: writeDataCallback : ${buffer.byteLength}`);
       if (buffer.byteLength <= 0) {
         return audio.AudioDataCallbackResult.INVALID;

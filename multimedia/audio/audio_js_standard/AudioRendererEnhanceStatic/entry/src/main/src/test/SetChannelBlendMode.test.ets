@@ -324,7 +324,6 @@ export default function audioRendererTest() {
         audioRen.setChannelBlendMode(audio.ChannelBlendMode.MODE_BLEND_LR)
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
         await renderPlay();
-        expect(true).assertTrue();
         done();
       } catch (error: BusinessError) {
         console.info(`${Tag}:  setChannelBlendMode : error ${error.message}, ${error.code}`);

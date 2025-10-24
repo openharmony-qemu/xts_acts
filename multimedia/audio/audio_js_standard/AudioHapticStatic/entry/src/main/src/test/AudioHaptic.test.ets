@@ -1433,7 +1433,7 @@ export default function AudioHapticTest() {
         let AudioHapticPlayer = await AudioHapticManager.createPlayer(sourceId_Ringtone, AudioHapticPlayerOptions);
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
         try {
-          AudioHapticPlayer.on('endOfStream', () => {
+          AudioHapticPlayer.onEndOfStream(() => {
             console.info(`${tag} on endOfStream called `);
           });
           await AudioHapticPlayer.start();
@@ -1441,7 +1441,7 @@ export default function AudioHapticTest() {
           await sleep(100);
           await AudioHapticPlayer.stop();
           console.log(`${tag} AudioHapticPlayer stop success`);
-          AudioHapticPlayer.off('endOfStream');
+          AudioHapticPlayer.offEndOfStream();
           await AudioHapticPlayer.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
@@ -1484,11 +1484,11 @@ export default function AudioHapticTest() {
         let AudioHapticPlayer = await AudioHapticManager.createPlayer(sourceId_Notification, AudioHapticPlayerOptions);
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
         try {
-          AudioHapticPlayer.on('endOfStream', () => {
+          AudioHapticPlayer.onEndOfStream(() => {
             console.info(`${tag} on endOfStream called `);
             console.log(`${tag} AudioHapticPlayer release success`);
           });
-          AudioHapticPlayer.off('endOfStream');
+          AudioHapticPlayer.offEndOfStream();
           await AudioHapticPlayer.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
@@ -1536,13 +1536,13 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
         await sleep(100);
         try {
-          AudioHapticPlayer.on('audioInterrupt', (InterruptEvent) => {
+          AudioHapticPlayer.onAudioInterrupt((InterruptEvent) => {
             console.info(`${tag} on audioInterrupt called `);
           });
           await AudioHapticPlayer.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          AudioHapticPlayer.off('audioInterrupt');
+          AudioHapticPlayer.offAudioInterrupt();
           await AudioHapticPlayer.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
@@ -1555,7 +1555,6 @@ export default function AudioHapticTest() {
       } catch(err: BusinessError) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
-          expect(true).assertTrue();
           done();
         } else {
           expect(false).assertTrue();
