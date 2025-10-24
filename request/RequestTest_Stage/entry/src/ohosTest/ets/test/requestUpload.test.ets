@@ -414,6 +414,7 @@ export default function requestUploadJSUnit() {
             try {
               uploadTask.off('complete', completeCallback);
               expect(true).assertEqual(uploadTask != undefined);
+              expect(taskStates.length).assertEqual(1);
               console.info('====>SUB_REQUEST_FileUpload_other_0100 into completeCallback: ' + JSON.stringify(taskStates));
               await deleteTask(uploadTask);
               done();
@@ -743,6 +744,7 @@ export default function requestUploadJSUnit() {
               expect(typeof (taskStates[0].path) == "string").assertEqual(true);
               expect(typeof (taskStates[0].responseCode) == "number").assertEqual(true);
               expect(typeof (taskStates[0].message) == "string").assertEqual(true);
+              expect(taskStates.length).assertEqual(1);
               console.info("====>SUB_REQUEST_FileUpload_OnFail_0100 TaskState is correct");
               done();
             } catch (err) {
@@ -1636,6 +1638,7 @@ export default function requestUploadJSUnit() {
                 done();
               }
               expect(typeof data == "boolean").assertTrue();
+              expect(data === true).assertTrue();
               console.info('====>SUB_REQUEST_UPLOAD_API_DELETE_0001 uploadTask task delete success.');
               done();
               console.info("====>-----------------------SUB_REQUEST_UPLOAD_API_DELETE_0001 end-----------------------");
