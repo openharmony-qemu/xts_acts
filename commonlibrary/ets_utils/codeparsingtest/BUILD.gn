@@ -19,8 +19,8 @@ group("codeparsingtest") {
     deps = [
       "actscodeparsingtest:ActsCodeParsingTest",
       "baselibtest:ActsBaseLibTest",
-      "maptest:ActsBuiltinMapTest",
-      "builtinsettest:ActsBuiltinSetTest",
+      "maptest:ActsMapTest",
+      "settest:ActsSetTest",
       "builtinweaktest:ActsBuiltinWeakTest",
       "builtinsarraytest:ActsBuiltinsArrayTest",
       "builtinstest:ActsBuiltinsTest",
