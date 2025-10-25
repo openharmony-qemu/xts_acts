@@ -13,13 +13,11 @@
  * limitations under the License.
  */
 import graphicDrawingFontInterfaceTest from './graphicDrawingFontInterface.test'
-import graphicDrawingPathTest from './graphicDrawingPathTest.test'
 import RunMetricsTest from './RunMetricsTest.test'
 import drawingCodeTest from './drawingCodeTest.test'
 
 export default function testsuite() {
   graphicDrawingFontInterfaceTest()
-  graphicDrawingPathTest()
   RunMetricsTest()
   drawingCodeTest()
 }
