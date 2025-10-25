@@ -25,7 +25,7 @@ import { Entry, Component, Builder, NavPathStack, Button, Column, Scroller, Menu
   TimePicker, Toggle, Badge, Counter, Flex, ForEach, RelativeContainer, ColumnSplit, RowSplit, Refresh, Scroll,
   SideBarContainer, Stack, Swiper, Circle, Ellipse, BadgeStyle, BadgeParamWithString, ProgressType, BarState,
   SliderStyle, ToggleType, Line, DataPanelType, $r, Polyline, SideBarContainerType, FlexAlign, MenuItemOptions,
-  Polygon, Path, Rect, VerticalAlign, HorizontalAlign, ListItemGroupOptions, CustomBuilder } from '@ohos.arkui.component'
+  Polygon, Path, Rect, VerticalAlign, HorizontalAlign, ListItemGroupOptions, CustomBuilder, AlignRuleOption } from '@ohos.arkui.component'
 
 /**
  * Test page of common attribute: enabled
@@ -273,7 +273,7 @@ struct EnabledPage {
                 .alignRules({
                   top: { anchor: '__container__', align: VerticalAlign.Top },
                   left: { anchor: '__container__', align: HorizontalAlign.Start }
-                })
+                } as AlignRuleOption)
                 .id('EnabledPageRelativeContainerRow')
             }.backgroundColor(Color.Green)
           } else if (this.targetView == 'Row') {

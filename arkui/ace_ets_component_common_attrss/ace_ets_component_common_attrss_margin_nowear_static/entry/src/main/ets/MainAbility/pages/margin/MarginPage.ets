@@ -507,7 +507,7 @@ struct MarginPage {
                 .alignRules({
                   top: { anchor: '__container__', align: VerticalAlign.Top },
                   left: { anchor: '__container__', align: HorizontalAlign.Start }
-                })
+                } as AlignRuleOption)
                 .id('margin')
             }.applyStyles(this.commonStyle)
           } else if (this.targetView == 'Row') {

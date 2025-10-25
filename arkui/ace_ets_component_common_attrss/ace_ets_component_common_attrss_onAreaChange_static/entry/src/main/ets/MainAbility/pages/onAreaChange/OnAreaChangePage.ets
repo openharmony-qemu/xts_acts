@@ -28,7 +28,7 @@ import { Entry, Component, ItemAlign, Position, Builder, AlphabetIndexer, Button
   BadgeParamWithString, TextAlign, FlexAlign, TabContent, FlowItem, ColumnOptions, PolylineOptions,
   RectOptions, GridColColumnOption, FlexWrap, GutterOption, NavPathStack, BreakPoints, ForEach,
   ImageFit, BreakpointsReference, TextTimerController, MenuItemOptions, MenuItemGroup, ListItemGroup, PatternLock,
-  RichText, VerticalAlign, HorizontalAlign } from '@ohos.arkui.component'
+  RichText, VerticalAlign, HorizontalAlign, AlignRuleOption } from '@ohos.arkui.component'
 
 @Entry
 @Component
@@ -478,7 +478,7 @@ struct OnAreaChangePage {
                 .alignRules({
                   top: { anchor: '__container__', align: VerticalAlign.Top },
                   left: { anchor: '__container__', align: HorizontalAlign.Start }
-                })
+                } as AlignRuleOption)
                 .id('OnAreaChange')
             }
             .backgroundColor(Color.Pink)

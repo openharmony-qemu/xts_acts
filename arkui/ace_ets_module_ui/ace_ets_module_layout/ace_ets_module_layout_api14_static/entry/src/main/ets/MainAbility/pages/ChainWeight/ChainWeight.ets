@@ -33,7 +33,8 @@ import {
   HorizontalAlign,
   Axis,
   ChainStyle,
-  FlexAlign
+  FlexAlign,
+  AlignRuleOption
 } from '@ohos.arkui.component';
 
 @Entry
@@ -53,7 +54,7 @@ struct ChainWeight {
         .alignRules({
           left: { anchor: '__container__', align: HorizontalAlign.Start },
           right: { anchor: 'row2', align: HorizontalAlign.Start }
-        })
+        } as AlignRuleOption)
         .chainMode(Axis.Horizontal, ChainStyle.PACKED)
         .chainWeight({ horizontal: 2 })
 
@@ -68,7 +69,7 @@ struct ChainWeight {
         .alignRules({
           left: { anchor: 'row1', align: HorizontalAlign.End },
           right: { anchor: '__container__', align: HorizontalAlign.End }
-        })
+        } as AlignRuleOption)
         .chainWeight({ horizontal: 1 })
       }
       .width(300).height(300)

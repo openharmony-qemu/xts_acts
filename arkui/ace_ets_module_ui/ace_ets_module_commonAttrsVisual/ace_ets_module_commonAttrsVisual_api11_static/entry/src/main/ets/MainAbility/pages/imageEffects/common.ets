@@ -54,7 +54,8 @@ import {
   TextAlign,
   TextOverflow,
   TouchEvent,
-  VerticalAlign
+  VerticalAlign,
+  AlignRuleOption
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -153,7 +154,7 @@ struct CommonColorMode {
         .key("middleText")
         .alignRules({
           middle: { anchor: 'string', align: HorizontalAlign.Center }
-        })
+        } as AlignRuleOption)
 
       Text("common-Area")
         .width(320)

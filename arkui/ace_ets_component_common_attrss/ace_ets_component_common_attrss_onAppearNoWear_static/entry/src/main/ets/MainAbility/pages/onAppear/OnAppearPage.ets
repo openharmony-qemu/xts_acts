@@ -20,7 +20,7 @@ import {
   TimePicker,TextPicker,StepperItem,Stepper,Slider,Select,Swiper,Tabs,TabContent,SideBarContainer,Scroll,RowSplit,GridCol,ForEach,Row,GridRow,Flex,Color,
   FlexAlign,ColumnOptions,Scroller,Margin,TextAlign,MenuItemOptions,Radio,ToggleType,GridRowDirection,Axis,ListItemGroup,SideBarContainerType,Stack,BreakPoints,GridRowOptions,GutterOption,BreakpointsReference,
   GridColColumnOption,TextTimerController,Blank,DataPanel,Divider,Gauge,LoadingProgress,Marquee,Navigation,PatternLock,Progress,QRCode,RichText,ScrollBar,TextClock,TextTimer,Badge,
-  WaterFlow,Refresh,RelativeContainer,BarState,Circle,Ellipse,applyStyles,Line,Polyline,Polygon,Path,Rect,Shape,BadgeParamWithNumber,FlowItem,VerticalAlign,HorizontalAlign
+  WaterFlow,Refresh,RelativeContainer,BarState,Circle,Ellipse,applyStyles,Line,Polyline,Polygon,Path,Rect,Shape,BadgeParamWithNumber,FlowItem,VerticalAlign,HorizontalAlign,AlignRuleOption
 } from '@ohos.arkui.component'
 import Utils, { SetValue } from '../../common/Utils';
 import { attrsManager } from '../../common/AttrsManager';
@@ -318,7 +318,7 @@ struct OnAppearPage {
             .alignRules({
               top: { anchor: '__container__', align: VerticalAlign.Top },
               left: { anchor: '__container__', align: HorizontalAlign.Start }
-            })
+            } as AlignRuleOption)
             .id('OnAppear')
         }
         .backgroundColor(Color.Pink)

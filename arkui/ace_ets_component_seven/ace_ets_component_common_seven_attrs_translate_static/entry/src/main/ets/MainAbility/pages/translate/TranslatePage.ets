@@ -36,7 +36,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,TranslateOptions,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, TranslateOptions } from '@ohos.arkui.component'
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, TranslateOptions, AlignRuleOption } from '@ohos.arkui.component'
 import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
@@ -1624,7 +1624,7 @@ struct TranslatePage {
 						.alignRules({
 							top: { anchor: '__container__', align: VerticalAlign.Top },
 							left: { anchor: '__container__', align: HorizontalAlign.Start }
-						})
+						} as AlignRuleOption)
 						.id('constraintSize')
 				}
 					.commonStyle(this.componentKey)

@@ -109,6 +109,7 @@ import {
   NavPathStack,
   RectOptions,
   GridColColumnOption,
+  AlignRuleOption
   // AlignRuleParam
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
@@ -324,7 +325,7 @@ struct AlignSelfPage {
           .alignRules({
             top: { anchor: '__container__', align: VerticalAlign.Top },
             left: { anchor: '__container__', align: HorizontalAlign.Start }
-          })
+          } as AlignRuleOption)
       } //.commonStyle()
     } else if (this.targetView == 'Row') {
       Row() //.commonStyle()

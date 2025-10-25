@@ -14,7 +14,7 @@
  */
 
 import { MessageManager, Callback, Message } from './../../../common/MessageManager';
-import { Entry, Component, Column, HorizontalAlign, Row, RelativeContainer, Button, Text, Color, VerticalAlign,Padding } from '@ohos.arkui.component'
+import { Entry, Component, Column, HorizontalAlign, Row, RelativeContainer, Button, Text, Color, VerticalAlign,Padding, AlignRuleOption } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
@@ -32,7 +32,7 @@ struct RelativeContainer_AnchorPoint_Padding {
           .alignRules({
             top: { anchor: "__container__", align: VerticalAlign.Top },
             middle: { anchor: "__container__", align: HorizontalAlign.Center }
-          })
+          } as AlignRuleOption)
           .key("RelativeContainer_AnchorPoint_Padding_bt1")
           .id("RelativeContainer_AnchorPoint_Padding_bt1")
           .borderWidth(5)
@@ -45,7 +45,7 @@ struct RelativeContainer_AnchorPoint_Padding {
             right: { anchor: "RelativeContainer_AnchorPoint_Padding_bt1", align: HorizontalAlign.Center },
             top: { anchor: "RelativeContainer_AnchorPoint_Padding_bt1", align: VerticalAlign.Bottom },
             bottom: { anchor: "__container__", align: VerticalAlign.Bottom },
-          })
+          } as AlignRuleOption)
           .key("RelativeContainer_AnchorPoint_Padding_tx2")
           .id("RelativeContainer_AnchorPoint_Padding_tx2")
           .borderWidth(2)

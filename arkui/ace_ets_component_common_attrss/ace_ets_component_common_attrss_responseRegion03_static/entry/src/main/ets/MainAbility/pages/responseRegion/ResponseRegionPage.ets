@@ -116,7 +116,8 @@ import {
   BadgeParamWithNumber,
   HorizontalAlign,
   VerticalAlign,
-  GridColOptions
+  GridColOptions,
+  AlignRuleOption
 } from '@ohos.arkui.component'
 import { SetValue } from '../../common/Utils'
 import { attrsManager } from '../../common/AttrsManager';
@@ -455,7 +456,7 @@ struct ResponseRegionPage {
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              })
+              } as AlignRuleOption)
               .id('responseRegion')
           }
         } else if (this.targetView == 'Row') {

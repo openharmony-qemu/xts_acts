@@ -21,7 +21,7 @@ import {
   Row,GridRow,Flex,Color,FlexAlign,ColumnOptions,Scroller,Margin,TextAlign,MenuItemOptions,Radio,ToggleType,GridRowDirection,Axis,ListItemGroup,SideBarContainerType,
   Stack,BreakPoints,GridRowOptions,GutterOption,BreakpointsReference,GridColColumnOption,TextTimerController,Blank,DataPanel,Divider,Gauge,LoadingProgress,Marquee,Navigation,PatternLock,Progress,QRCode,RichText,ScrollBar,
   TextClock,TextTimer,Badge,WaterFlow,Refresh,RelativeContainer,BarState,Circle,Ellipse,Line,Polyline,Polygon,CommonMethod,Path,Rect,Shape,BadgeParamWithNumber,FlowItem,VerticalAlign,
-  HorizontalAlign,applyStyles,NavDestination,Builder
+  HorizontalAlign,applyStyles,NavDestination,Builder,AlignRuleOption
 } from '@ohos.arkui.component'
 import Utils, { SetValue } from '../../common/Utils';
 import { attrsManager } from '../../common/AttrsManager';
@@ -348,7 +348,7 @@ struct OnDisAppearPage {
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              })
+              } as AlignRuleOption)
               .id('OnDisAppear')
           }
           .backgroundColor(Color.Pink)

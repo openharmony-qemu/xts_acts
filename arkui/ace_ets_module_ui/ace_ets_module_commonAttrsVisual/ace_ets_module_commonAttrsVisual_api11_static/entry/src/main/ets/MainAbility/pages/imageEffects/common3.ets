@@ -50,7 +50,8 @@ import {
   Text,
   TextAlign,
   TextOverflow,
-  VerticalAlign
+  VerticalAlign,
+  AlignRuleOption
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
@@ -282,7 +283,7 @@ struct CommonBackgroundBlurStyle {
         .alignRules({
           top: { anchor: 'target', align: VerticalAlign.Bottom },
           right: { anchor: "target", align: HorizontalAlign.Center }
-        })
+        } as AlignRuleOption)
 
       Text("common-StateStyles")
         .width(320)

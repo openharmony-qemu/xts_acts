@@ -200,7 +200,8 @@ import {
   WebAttribute,
   WebviewController,
   WindowSceneAttribute,
-  XComponentAttribute
+  XComponentAttribute,
+  AlignRuleOption
 } from '@ohos.arkui.component'
 import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { RouterParams, SetValue } from '../../common/Utils';
@@ -1719,7 +1720,7 @@ struct sphericalEffectPage {
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              })
+              } as AlignRuleOption)
               .id('constraintSize')
           }.commonStyle(this.componentKey).attributeModifier(this._sphericalEffectRelativeContainerMod)
         } else if (this.targetView == 'Row') {

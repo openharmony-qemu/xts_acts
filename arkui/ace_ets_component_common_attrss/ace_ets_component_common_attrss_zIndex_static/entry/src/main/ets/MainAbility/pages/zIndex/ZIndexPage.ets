@@ -452,7 +452,7 @@ struct ZIndexPage {
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              })
+              } as AlignRuleOption)
               .id('responseRegion')
           }/* .commonStyle() */
         } else if (this.targetView == 'Row') {

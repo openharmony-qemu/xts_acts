@@ -504,7 +504,7 @@ struct sizePage {
             .alignRules({
               center: { anchor: '__container__', align: VerticalAlign.Center},
               middle: { anchor: '__container__', align: HorizontalAlign.Center}
-            })
+            } as AlignRuleOption)
         }.backgroundColor(Color.Green)//.commonStyle()()
       } else if (this.targetView == 'Navigator') {
         //Navigator()//.commonStyle()()

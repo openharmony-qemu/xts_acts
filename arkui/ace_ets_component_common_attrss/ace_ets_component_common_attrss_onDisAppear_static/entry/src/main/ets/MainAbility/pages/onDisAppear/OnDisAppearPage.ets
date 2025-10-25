@@ -114,7 +114,8 @@ import {
   BadgeParamWithNumber,
   FlowItem,
   VerticalAlign,
-  HorizontalAlign
+  HorizontalAlign,
+  AlignRuleOption
 } from '@ohos.arkui.component'
 import Utils, { SetValue } from '../../common/Utils';
 import { attrsManager } from '../../common/AttrsManager';
@@ -417,7 +418,7 @@ struct OnDisAppearPage {
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              })
+              } as AlignRuleOption)
               .id('OnDisAppear')
           }
           .backgroundColor(Color.Pink)
