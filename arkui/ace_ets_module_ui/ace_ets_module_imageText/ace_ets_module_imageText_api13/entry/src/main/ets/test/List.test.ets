@@ -22,6 +22,7 @@ import EnableHapticFeedbackTest from './TextTest/enableHapticFeedback.test';
 import BarStateTest from './RichEditorTest/barState.test';
 import UnmarshallingErrorCodeTest from './StyledStringTest/unmarshalling.test';
 import CustomSpan from './StyledStringTest/CustomSpan.test';
+import BarStateModifierTest from './RichEditorTest/barStateModifier.test';
 
 export default function testsuite() {
   textAreaInputTest();
@@ -33,4 +34,5 @@ export default function testsuite() {
   BarStateTest();
   UnmarshallingErrorCodeTest();
   CustomSpan();
+  BarStateModifierTest();
 }
