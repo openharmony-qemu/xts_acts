@@ -470,7 +470,7 @@ struct MarkAnchor {
             .alignRules({
               top: { anchor: '__container__', align: VerticalAlign.Top },
               left: { anchor: '__container__', align: HorizontalAlign.Start }
-            })
+            } as AlignRuleOption)
             .id('markAnchor')
         }
         .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)

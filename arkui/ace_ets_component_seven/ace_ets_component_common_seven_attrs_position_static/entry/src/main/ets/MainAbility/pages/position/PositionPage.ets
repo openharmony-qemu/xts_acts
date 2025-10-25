@@ -46,7 +46,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
-  ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, Position } from '@ohos.arkui.component'
+  ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, Position, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { RouterParams } from '../../common/Utils';
 
@@ -1022,7 +1022,7 @@ struct PositionPage {
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              })
+              } as AlignRuleOption)
               .id('constraintSize')
           }.attributeModifier(this._positionRelativeContainerMod)
         } else if (this.targetView == 'Row') {

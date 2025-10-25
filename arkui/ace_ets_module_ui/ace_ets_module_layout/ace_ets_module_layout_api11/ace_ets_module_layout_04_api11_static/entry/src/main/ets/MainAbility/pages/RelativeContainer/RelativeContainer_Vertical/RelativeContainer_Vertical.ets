@@ -16,7 +16,7 @@
 
 
 import { MessageManager, Callback, Message } from './../../../common/MessageManager';
-import { Entry, Component, Column, HorizontalAlign, Row, RelativeContainer, Button, Text, Color, VerticalAlign } from '@ohos.arkui.component'
+import { Entry, Component, Column, HorizontalAlign, Row, RelativeContainer, Button, Text, Color, VerticalAlign, AlignRuleOption } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -49,7 +49,7 @@ struct RelativeContainer_Vertical {
           .height(30)
           .alignRules({
             center: { anchor: "__container__", align: VerticalAlign.Center }
-          })
+          } as AlignRuleOption)
           .key("RelativeContainer_Vertical_bt1")
           .id("RelativeContainer_Vertical_bt1")
           .borderWidth(5)
@@ -62,7 +62,7 @@ struct RelativeContainer_Vertical {
             bottom: { anchor: "__container__", align: VerticalAlign.Bottom },
             top: { anchor: "RelativeContainer_Vertical_bt1", align: this.addalign },
             left: { anchor: "RelativeContainer_Vertical_bt1", align: HorizontalAlign.End }
-          })
+          } as AlignRuleOption)
           .key("RelativeContainer_Vertical_tx2")
           .id("RelativeContainer_Vertical_tx2")
           .borderWidth(2)

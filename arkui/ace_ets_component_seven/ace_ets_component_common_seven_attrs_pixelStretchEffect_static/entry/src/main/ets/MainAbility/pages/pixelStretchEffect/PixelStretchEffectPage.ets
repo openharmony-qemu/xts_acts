@@ -37,7 +37,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
-  ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, PixelStretchEffectOptions } from '@ohos.arkui.component'
+  ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, PixelStretchEffectOptions, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
@@ -988,7 +988,7 @@ struct pixelStretchEffectPage {
               .alignRules({
                 top: { anchor: '__container__', align: VerticalAlign.Top },
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
-              })
+              } as AlignRuleOption)
               .id('constraintSize')
           }.attributeModifier(this._pixelStretchEffectRelativeContainerMod)
         } else if (this.targetView == 'Row') {

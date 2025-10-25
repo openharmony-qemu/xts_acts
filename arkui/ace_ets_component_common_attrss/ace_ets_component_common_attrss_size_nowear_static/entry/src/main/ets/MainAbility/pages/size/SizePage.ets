@@ -432,7 +432,7 @@ struct sizePage {
             .alignRules({
               center: { anchor: '__container__', align: VerticalAlign.Center},
               middle: { anchor: '__container__', align: HorizontalAlign.Center}
-            })
+            } as AlignRuleOption)
         }.backgroundColor(Color.Green).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Menu') {
         Menu() {

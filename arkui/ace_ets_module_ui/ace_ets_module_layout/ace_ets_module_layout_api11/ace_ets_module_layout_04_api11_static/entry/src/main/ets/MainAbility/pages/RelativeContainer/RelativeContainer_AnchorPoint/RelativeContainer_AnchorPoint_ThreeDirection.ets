@@ -15,7 +15,7 @@
 
 
 import { MessageManager, Callback, Message } from './../../../common/MessageManager';
-import { Entry, Component, Column, HorizontalAlign, Row, RelativeContainer, Button, Text, Color, VerticalAlign } from '@ohos.arkui.component'
+import { Entry, Component, Column, HorizontalAlign, Row, RelativeContainer, Button, Text, Color, VerticalAlign, AlignRuleOption } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
@@ -34,7 +34,7 @@ struct RelativeContainer_AnchorPoint_ThreeDirection {
           .alignRules({
             top: { anchor: "__container__", align: VerticalAlign.Top },
             middle: { anchor: "__container__", align: HorizontalAlign.Center }
-          })
+          } as AlignRuleOption)
           .key("RelativeContainer_AnchorPoint_ThreeDirection_bt1")
           .id("RelativeContainer_AnchorPoint_ThreeDirection_bt1")
           .borderWidth(5)
@@ -48,7 +48,7 @@ struct RelativeContainer_AnchorPoint_ThreeDirection {
             top: { anchor: "__container__", align: VerticalAlign.Top },
             bottom: { anchor: "__container__", align: VerticalAlign.Bottom },
             center: { anchor: "__container__", align: VerticalAlign.Center },
-          })
+          } as AlignRuleOption)
           .key("RelativeContainer_AnchorPoint_ThreeDirection_tx2")
           .id("RelativeContainer_AnchorPoint_ThreeDirection_tx2")
           .borderWidth(2)

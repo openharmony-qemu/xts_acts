@@ -516,7 +516,7 @@ struct MarginPageString {
                 .alignRules({
                   top: { anchor: '__container__', align: VerticalAlign.Top },
                   left: { anchor: '__container__', align: HorizontalAlign.Start }
-                })
+                } as AlignRuleOption)
                 .id('marginString')
             }/* .commonStyle() */
           } else if (this.targetView == 'Row') {
@@ -583,7 +583,7 @@ struct MarginPageString {
             .alignRules({
               top: { anchor: this.componentKey, align: VerticalAlign.Bottom },
               middle: { anchor: '__container__', align: HorizontalAlign.Center } ,
-            })
+            } as AlignRuleOption)
             .id(this.referenceComponentKeyBottom)
           Row()
             .width(20)
@@ -592,7 +592,7 @@ struct MarginPageString {
             .alignRules({
               bottom: { anchor: this.componentKey, align: VerticalAlign.Top },
               middle: { anchor: '__container__', align: HorizontalAlign.Center },
-            })
+            } as AlignRuleOption)
             .id(this.referenceComponentKeyTop)
           Row()
             .width(20)
@@ -601,7 +601,7 @@ struct MarginPageString {
             .alignRules({
               left: { anchor: this.componentKey, align: HorizontalAlign.End } ,
               center: { anchor: '__container__', align: VerticalAlign.Center } ,
-            })
+            } as AlignRuleOption)
             .id(this.referenceComponentKeyRight)
           Row()
             .width(20)
@@ -610,7 +610,7 @@ struct MarginPageString {
             .alignRules({
               right: { anchor: this.componentKey, align: HorizontalAlign.Start } ,
               center: { anchor: '__container__', align: VerticalAlign.Center } ,
-            })
+            } as AlignRuleOption)
             .id(this.referenceComponentKeyLeft)
         }
         .width(this.parentWidth).height(this.parentHeight).backgroundColor(Color.Green).key(this.parentComponentKey)

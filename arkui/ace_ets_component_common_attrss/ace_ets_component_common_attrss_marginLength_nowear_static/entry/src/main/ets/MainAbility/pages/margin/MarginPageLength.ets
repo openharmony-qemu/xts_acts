@@ -480,7 +480,7 @@ struct MarginPageLength {
                 .alignRules({
                   top: { anchor: '__container__', align: VerticalAlign.Top },
                   left: { anchor: '__container__', align: HorizontalAlign.Start }
-                })
+                } as AlignRuleOption)
                 .id('marginLength')
             }
             .applyStyles(this.commonStyle)

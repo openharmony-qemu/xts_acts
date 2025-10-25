@@ -37,7 +37,7 @@ import {
 	StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
 	TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
 	TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-	BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, BorderOptions, HitTestMode
+	BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, BorderOptions, HitTestMode, AlignRuleOption
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
@@ -1322,7 +1322,7 @@ struct HitTestBehaviorPage {
 						.alignRules({
 							top: { anchor: '__container__', align: VerticalAlign.Top },
 							left: { anchor: '__container__', align: HorizontalAlign.Start }
-						})
+						} as AlignRuleOption)
 						.id('constraintSize')
 				}
 					

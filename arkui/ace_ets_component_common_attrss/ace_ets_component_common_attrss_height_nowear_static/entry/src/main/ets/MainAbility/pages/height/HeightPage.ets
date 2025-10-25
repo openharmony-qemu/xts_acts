@@ -558,7 +558,7 @@ struct heightPage {
             .alignRules({
               center: { anchor: '__container__', align: VerticalAlign.Center },
               middle: { anchor: '__container__', align: HorizontalAlign.Center }
-            })
+            } as AlignRuleOption)
         }.backgroundColor(Color.Green)
         
         .width(100)

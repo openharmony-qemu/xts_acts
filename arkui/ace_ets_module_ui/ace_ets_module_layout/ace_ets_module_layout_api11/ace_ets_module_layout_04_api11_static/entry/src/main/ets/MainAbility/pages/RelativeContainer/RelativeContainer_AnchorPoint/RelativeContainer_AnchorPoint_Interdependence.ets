@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { MessageManager, Callback, Message } from './../../../common/MessageManager';
-import { Entry, Component, Column, HorizontalAlign, Row, RelativeContainer, Button, Text, Color, VerticalAlign } from '@ohos.arkui.component'
+import { Entry, Component, Column, HorizontalAlign, Row, RelativeContainer, Button, Text, Color, VerticalAlign, AlignRuleOption} from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
@@ -32,7 +32,7 @@ struct RelativeContainer_AnchorPoint_Interdependence {
           .alignRules({
             right: { anchor: "RelativeContainer_AnchorPoint_Interdependence_row2", align: HorizontalAlign.Start },
             bottom: { anchor: "RelativeContainer_AnchorPoint_Interdependence_row2", align: VerticalAlign.Top }
-          })
+          } as AlignRuleOption)
           .key("RelativeContainer_AnchorPoint_Interdependence_row1")
           .id("RelativeContainer_AnchorPoint_Interdependence_row1")
 
@@ -43,7 +43,7 @@ struct RelativeContainer_AnchorPoint_Interdependence {
           .alignRules({
             top: { anchor: "RelativeContainer_AnchorPoint_Interdependence_row1", align: VerticalAlign.Bottom },
             left: { anchor: "RelativeContainer_AnchorPoint_Interdependence_row1", align: HorizontalAlign.End }
-          })
+          } as AlignRuleOption)
           .key("RelativeContainer_AnchorPoint_Interdependence_row2")
           .id("RelativeContainer_AnchorPoint_Interdependence_row2")
 
@@ -56,7 +56,7 @@ struct RelativeContainer_AnchorPoint_Interdependence {
             top: { anchor: "__container__", align: VerticalAlign.Top },
             bottom: { anchor: "__container__", align: VerticalAlign.Bottom },
             left: { anchor: "__container__", align: HorizontalAlign.Start },
-          })
+          } as AlignRuleOption)
           .key("RelativeContainer_AnchorPoint_Interdependence_row3")
           .id("RelativeContainer_AnchorPoint_Interdependence_row3")
 

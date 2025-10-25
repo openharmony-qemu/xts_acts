@@ -571,7 +571,7 @@ struct Offset {
                   .alignRules({
                     top: { anchor: '__container__', align: VerticalAlign.Top },
                     left: { anchor: '__container__', align: HorizontalAlign.Start }
-                  })
+                  } as AlignRuleOption)
                   .id('offset')
               }
               .backgroundColor(Color.Blue).width(this.subassemblyWidth).height(this.subassemblyHeight)

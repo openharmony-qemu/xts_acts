@@ -47,7 +47,7 @@ struct RelativeContainerLocalizedDirectionStartPage {
           .alignRules({
             top: { anchor: "__container__", align: VerticalAlign.Top },
             right: { anchor: "__container__", align: HorizontalAlign.End }
-          })
+          } as AlignRuleOption)
 
         Button('B')
           .height(100)
@@ -56,7 +56,7 @@ struct RelativeContainerLocalizedDirectionStartPage {
           .alignRules({
             top: { anchor: "RelativeBarrierStartButton1", align: VerticalAlign.Top },
             right: { anchor: "__container__", align: HorizontalAlign.End }
-          })
+          } as AlignRuleOption)
 
         Button('C')
           .height(100)
@@ -65,7 +65,7 @@ struct RelativeContainerLocalizedDirectionStartPage {
           .alignRules({
             top: { anchor: "__container__", align: VerticalAlign.Top },
             right: { anchor: "barrier1", align: HorizontalAlign.Start }
-          })
+          } as AlignRuleOption)
 
 
       }
