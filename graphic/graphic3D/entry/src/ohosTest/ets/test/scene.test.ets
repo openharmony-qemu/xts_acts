@@ -765,7 +765,7 @@ export default function sceneTest() {
           if (renderContext != null) {
             let loadFail = await renderContext.loadPlugin("NonExistentPlugin");
             console.info(msg + ' plugin "NonExistentPlugin" load result:', loadFail);
-            expect(loadFail).assertFail();
+            expect(loadFail).assertFalse();
             let plugin = await renderContext.loadPlugin("1450021d-c57f-d9ff-7770-c24fb3f3321c");
             expect(plugin).assertTrue();
           }
