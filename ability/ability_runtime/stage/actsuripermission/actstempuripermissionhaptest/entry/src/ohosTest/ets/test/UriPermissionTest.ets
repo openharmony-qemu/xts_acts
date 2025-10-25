@@ -38,7 +38,7 @@ export default function UriPermissionTest() {
     console.info("-----------------UriPermissionTest is start----------------")
     beforeEach(async (done: Function) => {
       console.info('UriPermissionTest before each called');
-      await sleep(1000);
+      await sleep(300);
       done()
     });
 
