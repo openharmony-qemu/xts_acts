@@ -99,14 +99,13 @@ export default function PathIterator() {
      * @tc.level      Level1
      */
     it('SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_STATIC_0300',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         let msg = " ====testPathIteratorPeek==== "
         try {
           let path: drawing.Path = new drawing.Path();
           let iter: drawing.PathIterator = new drawing.PathIterator(path);
           let res = iter.peek();
           console.info(msg + ' iter.peek(): ' + res);
-          expect(true).assertTrue()
           done()
         } catch (err) {
           console.log(msg + " Failed in PathIterator.peek " + JSON.stringify(err))
@@ -125,14 +124,13 @@ export default function PathIterator() {
      * @tc.level      Level1
      */
     it('SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_STATIC_0400',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         let msg = " ====testPathIteratorHasNext==== "
         try {
           let path: drawing.Path = new drawing.Path();
           let iter: drawing.PathIterator = new drawing.PathIterator(path);
           let res = iter.hasNext();
           console.info(msg + ' iter.hasNext(): ' + res);
-          expect(true).assertTrue()
           done()
         } catch (err) {
           console.log(msg + " Faild in PathIterator.hasNext " + JSON.stringify(err))
@@ -151,14 +149,13 @@ export default function PathIterator() {
      * @tc.level      Level1
      */
     it('SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_STATIC_0500',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         let msg = " ====testPathGetPathIterator==== "
         try {
           let path: drawing.Path = new drawing.Path();
           let iter = path.getPathIterator();
           console.info(msg + ' iter.getPathIterator(): ' + iter);
           console.info(msg + ' iter.getPathIterator(): ' + JSON.stringify(iter));
-          expect(true).assertTrue()
           done()
         } catch (err) {
           console.log(msg + " Faild in Path.getPathIterator " + JSON.stringify(err))
