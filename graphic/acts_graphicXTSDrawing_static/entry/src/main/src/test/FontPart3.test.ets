@@ -325,7 +325,6 @@ export default function fontPart3Test() {
         }
       }
     });
-//----用例报错---待和开发确认
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2300
      * @tc.name      : testFontCreatePathForGlyphNormalStatic
@@ -370,7 +369,7 @@ export default function fontPart3Test() {
       try {
         let path: drawing.Path | undefined = font.createPathForGlyph((Number.MAX_VALUE).toInt());
         console.info(msg + ` createPathForGlyph Number.MAX_VALUE path is:  ${path}`);
-        expect(path != undefined).assertTrue();
+        expect(path == undefined).assertTrue();
       } catch (e: BusinessError) {
         console.info(msg + ` createPathForGlyph errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();

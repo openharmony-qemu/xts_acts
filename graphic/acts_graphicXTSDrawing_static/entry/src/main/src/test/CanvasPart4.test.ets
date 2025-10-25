@@ -92,6 +92,13 @@ export default function drawingTsCanvasPart4Test() {
         console.info(msg + `saveLayer 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
+      try {
+        canvas.saveLayer(rect)
+        console.info(msg + 'saveLayer 4 successed');
+      } catch (e: BusinessError) {
+        console.info(msg + `saveLayer 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
     })
     //----用例报错---待和开发确认
     /**

@@ -16,7 +16,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from "../../../hypium/index";
 import image from '@ohos.multimedia.image';
 import drawing from '@ohos.graphics.drawing';
-import uiEffect from '@ohos.graphics.uiEffect';
 import { getEnumCount, getRandomNumber } from './Util.test';
 import common2D from '@ohos.graphics.common2D';
 import { BusinessError } from '@ohos.base';

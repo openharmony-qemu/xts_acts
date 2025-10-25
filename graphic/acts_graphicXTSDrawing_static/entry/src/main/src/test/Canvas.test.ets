@@ -337,6 +337,55 @@ export default function drawingTsCanvasTest() {
         console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
+      try{
+        canvas.drawColor(100, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor 2 successed');
+      } catch (e: BusinessError) {
+        console.info(msg + `drawColor 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try{
+        canvas.drawColor(2, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor 3 successed');
+      } catch (e: BusinessError) {
+        console.info(msg + `drawColor 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try{
+        canvas.drawColor(60000, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor 4 successed');
+      } catch (e: BusinessError) {
+        console.info(msg + `drawColor 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try{
+        canvas.drawColor(100);
+        console.info(msg + 'drawColor 5 successed');
+      } catch (e: BusinessError) {
+        console.info(msg + `drawColor 5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try{
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF});
+        console.info(msg + 'drawColor 6 successed');
+      } catch (e: BusinessError) {
+        console.info(msg + `drawColor 6 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try{
+        canvas.drawColor(255, 0, 10, 10);
+        console.info(msg + 'drawColor 7 successed');
+      } catch (e: BusinessError) {
+        console.info(msg + `drawColor 7 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try{
+        canvas.drawColor(255, 0, 10, 10, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor 8 successed');
+      } catch (e: BusinessError) {
+        console.info(msg + `drawColor 8 is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
     })
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0501
