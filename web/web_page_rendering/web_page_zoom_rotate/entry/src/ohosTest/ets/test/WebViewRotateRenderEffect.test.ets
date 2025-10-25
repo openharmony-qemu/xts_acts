@@ -64,8 +64,8 @@ export default function WebViewRotateRenderEffect() {
     })
 
     /*
-    * @tc.number     : SUB_WEB_ZOOMRATIO_0100
-    * @tc.name       : textZoomRatio001
+    * @tc.number     : SUB_WEB_TESTROTATERENDEREFFECT_0100
+    * @tc.name       : testRotateRenderEffect01
     * @tc.desc       : test ZoomRatio
     * @tc.size       : MediumTest
     * @tc.type       : Function
@@ -78,8 +78,8 @@ export default function WebViewRotateRenderEffect() {
     })
 
     /*
-    * @tc.number     : SUB_WEB_ZOOMATIO_0100
-    * @tc.name       : testZoomAtio001
+    * @tc.number     : SUB_WEB_TESTROTATERENDEREFFECT_0200
+    * @tc.name       : testRotateRenderEffect02
     * @tc.desc       : test ZoomAtio
     * @tc.size       : MediumTest
     * @tc.type       : Function
