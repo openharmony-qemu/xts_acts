@@ -21,7 +21,7 @@ group("codeparsingtest") {
       "baselibtest:ActsBaseLibTest",
       "maptest:ActsMapTest",
       "settest:ActsSetTest",
-      "builtinweaktest:ActsBuiltinWeakTest",
+      "weaktest:ActsWeakTest",
       "builtinsarraytest:ActsBuiltinsArrayTest",
       "builtinstest:ActsBuiltinsTest",
       "builtinsupplytest:ActsBuiltinSupplyTest",
