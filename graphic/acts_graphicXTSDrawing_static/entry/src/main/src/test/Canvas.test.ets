@@ -337,6 +337,27 @@ export default function drawingTsCanvasTest() {
         console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
+      try{
+        canvas.drawColor(100, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor 2 successed');
+      } catch (e: BusinessError) {
+        console.info(msg + `drawColor 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try{
+        canvas.drawColor(2, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor 3 successed');
+      } catch (e: BusinessError) {
+        console.info(msg + `drawColor 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try{
+        canvas.drawColor(60000, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor 4 successed');
+      } catch (e: BusinessError) {
+        console.info(msg + `drawColor 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
     })
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0501

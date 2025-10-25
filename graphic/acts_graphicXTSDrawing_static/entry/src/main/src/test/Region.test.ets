@@ -453,7 +453,6 @@ export default function drawingTsRegionTest() {
         expect().assertFail();
       }
     });
-    //---用例执行报错---待和开发确认
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_STATIC_0603
      * @tc.name      : testRegionOpMultipleCallsStatic
@@ -474,18 +473,18 @@ export default function drawingTsRegionTest() {
       ];
       try {
         const canvas = new drawing.Canvas(pixel);
-        let region = new drawing.Region();
-        region.setRect(200, 200, 400, 400);
-        let othregion = new drawing.Region();
-        othregion.setRect(110, 110, 240, 240);
         for (let index = 0; index < 20; index++) {
+          let region = new drawing.Region();
+          region.setRect(200, 200, 400, 400);
+          let othregion = new drawing.Region();
+          othregion.setRect(110, 110, 240, 240);
           const randomEnum = Math.floor(6 * Math.random()).toInt();
           let flag: boolean = region.op(othregion, itemList[randomEnum]);
           console.info(msg + `op successed itemList[randomEnum]: ${itemList[randomEnum]} step: ${index}`);
           console.info(msg + `op successed flag: ${flag} step: ${index}`);
           expect(flag).assertTrue();
+          canvas.drawRegion(region);
         }
-        canvas.drawRegion(region);
         console.info(msg + `op successed`);
       } catch (e: BusinessError) {
         console.info(msg + `op failed. Error code is: ${e.code}. Error message is: ${e.message}`);

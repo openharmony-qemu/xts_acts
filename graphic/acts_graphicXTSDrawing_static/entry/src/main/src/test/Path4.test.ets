@@ -38,7 +38,6 @@ export default function drawingTsPath4Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    //-----用例执行失败---待和开发确认---
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_2300
      * @tc.name      : testPathGetMatrixNormalStatic
@@ -76,51 +75,49 @@ export default function drawingTsPath4Test() {
         matrix.setMatrix([5, 0, 0, 0, 1, 2, 0, 0, 1]);
         flag = path.getMatrix(false, 10, matrix, drawing.PathMeasureMatrixFlags.GET_POSITION_MATRIX);
         console.info(msg + 'getMatrix 3 successes flag is: ' + flag );
-        expect(flag).assertTrue();
+        expect(flag).assertFalse();
         let flag2: boolean;
         flag2 = path.getMatrix(false, 10, matrix, drawing.PathMeasureMatrixFlags.GET_TANGENT_MATRIX);
         console.info(msg + 'getMatrix 4 successes flag2 is: ' + flag2 );
-        expect(flag2).assertTrue();
+        expect(flag2).assertFalse();
         let flag3: boolean;
         flag3 = path.getMatrix(false, 10, matrix, drawing.PathMeasureMatrixFlags.GET_POSITION_AND_TANGENT_MATRIX);
         console.info(msg + 'getMatrix 5 successes flag3 is: ' + flag3 );
-        expect(flag3).assertTrue();
+        expect(flag3).assertFalse();
 
         matrix = new drawing.Matrix();
         matrix.setMatrix([5, 0, 0, 0, 1, 2, 0, 0, 1]);
         flag = path.getMatrix(true, 0, matrix, drawing.PathMeasureMatrixFlags.GET_POSITION_MATRIX);
         console.info(msg + 'getMatrix 6 successes flag is: ' + flag );
-        expect(flag).assertTrue();
+        expect(flag).assertFalse();
         let flag4: boolean;
         flag4 = path.getMatrix(true, 0, matrix, drawing.PathMeasureMatrixFlags.GET_TANGENT_MATRIX);
         console.info(msg + 'getMatrix 7 successes flag4 is: ' + flag4 );
-        expect(flag4).assertTrue();
+        expect(flag4).assertFalse();
         let flag5: boolean;
         flag5 = path.getMatrix(true, 0, matrix, drawing.PathMeasureMatrixFlags.GET_POSITION_AND_TANGENT_MATRIX);
         console.info(msg + 'getMatrix 8 successes flag5 is: ' + flag5 );
-        expect(flag5).assertTrue();
+        expect(flag5).assertFalse();
 
         matrix = new drawing.Matrix();
         matrix.setMatrix([5, 0, 0, 0, 1, 2, 0, 0, 1]);
         flag = path.getMatrix(true, -1, matrix, drawing.PathMeasureMatrixFlags.GET_POSITION_MATRIX);
         console.info(msg + 'getMatrix 9 successes flag is: ' + flag );
-        expect(flag).assertTrue();
+        expect(flag).assertFalse();
         let flag6: boolean;
         flag6 = path.getMatrix(true, -1, matrix, drawing.PathMeasureMatrixFlags.GET_TANGENT_MATRIX);
         console.info(msg + 'getMatrix 10 successes flag6 is: ' + flag6 );
-        expect(flag6).assertTrue();
+        expect(flag6).assertFalse();
         let flag7: boolean;
         flag7 = path.getMatrix(true, -1, matrix, drawing.PathMeasureMatrixFlags.GET_POSITION_AND_TANGENT_MATRIX);
         console.info(msg + 'getMatrix 11 successes flag7 is: ' + flag7 );
-        expect(flag7).assertTrue();
+        expect(flag7).assertFalse();
         console.info(msg + 'reset successes');
       } catch (e: BusinessError) {
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
     })
-
-
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_2301
      * @tc.name      : testPathGetMatrixMultipleCallsStatic

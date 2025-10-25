@@ -310,156 +310,107 @@ export default function drawingTsMatrixTest() {
         expect().assertFail()
       }
     })
-//-----编译报错---待和开发确认
-//     /**
-//      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0400
-//      * @tc.name      : testMatrixSetTranslationNormalStatic
-//      * @tc.desc      : testMatrixSetTranslationNormalStatic
-//      * @tc.size      : MediumTest
-//      * @tc.type      : Function
-//      * @tc.level     : Level0
-//      */
-//     it('testMatrixSetTranslationNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-//       const msg = 'testMatrixSetTranslationNormalStatic';
-//       try {
-//         let matrix = new drawing.Matrix();
-//         matrix.setTranslation(100, 100);
-//         let widths: number[] | undefined = matrix.getAll();
-//         if (widths) {
-//           expect(widths.length == 9).assertTrue();
-//           expect(matrix != null).assertTrue();
-//           console.info(msg + ' setTranslation successed,width:' + widths.length + JSON.stringify(matrix));
-//         }
-//       } catch (e: BusinessError) {
-//         console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-//         expect().assertFail()
-//       }
-//
-//       try {
-//         let matrix = new drawing.Matrix();
-//         matrix.setTranslation(100.1, 100.1);
-//         let widths: number[] | undefined = matrix.getAll();
-//         if (widths) {
-//           expect(widths.length == 9).assertTrue();
-//           expect(matrix != null).assertTrue();
-//           console.info(msg + ' setTranslation successed,width:' + widths.length + JSON.stringify(matrix));
-//         }
-//       } catch (e: BusinessError) {
-//         console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-//         expect().assertFail()
-//       }
-//
-//       try {
-//         let matrix = new drawing.Matrix();
-//         matrix.setTranslation(-100, 100);
-//         let widths: number[] | undefined = matrix.getAll();
-//         if (widths) {
-//           expect(widths.length == 9).assertTrue();
-//           expect(matrix != null).assertTrue();
-//           console.info(msg + ' setTranslation successed,width:' + widths.length + JSON.stringify(matrix));
-//         }
-//       } catch (e: BusinessError) {
-//         console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-//         expect().assertFail()
-//       }
-//
-//       try {
-//         let matrix = new drawing.Matrix();
-//         matrix.setTranslation(100, -150);
-//         let widths: number[] | undefined = matrix.getAll();
-//         if (widths) {
-//           expect(widths.length == 9).assertTrue();
-//           expect(matrix != null).assertTrue();
-//           console.info(msg + ' setTranslation successed,width:' + widths.length + JSON.stringify(matrix));
-//         }
-//       } catch (e: BusinessError) {
-//         console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-//         expect().assertFail()
-//       }
-//
-//       try {
-//         let matrix = new drawing.Matrix();
-//         matrix.setTranslation(Number.MAX_VALUE, Number.MAX_VALUE);
-//         let widths: number[] | undefined = matrix.getAll();
-//         if (widths) {
-//           expect(widths.length == 9).assertTrue();
-//           expect(matrix != null).assertTrue();
-//           console.info(msg + ' setTranslation successed,width:' + widths.length + JSON.stringify(matrix));
-//         }
-//       } catch (e: BusinessError) {
-//         console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-//         expect().assertFail()
-//       }
-//     })
-//
-//     /**
-//      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0401
-//      * @tc.name      : testMatrixSetTranslationNull
-//      * @tc.desc      : testMatrixSetTranslationNull
-//      * @tc.size      : MediumTest
-//      * @tc.type      : Function
-//      * @tc.level     : Level3
-//      */
-//     it('testMatrixSetTranslationNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-//       const msg = 'testMatrixSetTranslationNull';
-//       try {
-//         let matrix = new drawing.Matrix();
-//         matrix.setTranslation(null, 100,);
-//         console.info(msg + ' setTranslation successed');
-//       } catch (e: BusinessError) {
-//         console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-//         expect(e.code).assertEqual(401);
-//       }
-//
-//       try {
-//         let matrix = new drawing.Matrix();
-//         matrix.setTranslation(100, null);
-//         console.info(msg + ' setTranslation successed');
-//       } catch (e: BusinessError) {
-//         console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-//         expect(e.code).assertEqual(401);
-//       }
-//
-//       try {
-//         let matrix = new drawing.Matrix();
-//         matrix.setTranslation(undefined, 100,);
-//         console.info(msg + ' setTranslation successed');
-//       } catch (e: BusinessError) {
-//         console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-//         expect(e.code).assertEqual(401);
-//       }
-//
-//       try {
-//         let matrix = new drawing.Matrix();
-//         matrix.setTranslation(100, undefined);
-//         console.info(msg + ' setTranslation successed');
-//       } catch (e: BusinessError) {
-//         console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-//         expect(e.code).assertEqual(401);
-//       }
-//     })
-//
-//     /**
-//      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0403
-//      * @tc.name      : testMatrixSetTranslationMultipleCallsStatic
-//      * @tc.desc      : testMatrixSetTranslationMultipleCallsStatic
-//      * @tc.size      : MediumTest
-//      * @tc.type      : Function
-//      * @tc.level     : Level3
-//      */
-//     it('testMatrixSetTranslationMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-//       const msg = 'testMatrixSetTranslationMultipleCallsStatic';
-//       try {
-//         let matrix = new drawing.Matrix();
-//         for (let i = 0; i < loop_times; i++) {
-//           matrix.setTranslation(Math.random() * Number.MAX_VALUE, Math.random() * Number.MAX_VALUE);
-//         }
-//         console.info(msg + ' setTranslation successed');
-//       } catch (e: BusinessError) {
-//         console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-//         expect().assertFail()
-//       }
-//     })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0400
+     * @tc.name      : testMatrixSetTranslationNormalStatic
+     * @tc.desc      : testMatrixSetTranslationNormalStatic
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testMatrixSetTranslationNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const msg = 'testMatrixSetTranslationNormalStatic';
+      try {
+        let matrix = new drawing.Matrix();
+        matrix.setTranslation(100, 100);
+        let widths: number[] | undefined = matrix.getAll();
+        if (widths) {
+          expect(widths.length == 9).assertTrue();
+          expect(matrix != null).assertTrue();
+          console.info(msg + ' setTranslation successed,width:' + widths.length + JSON.stringify(matrix));
+        }
+      } catch (e: BusinessError) {
+        console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+
+      try {
+        let matrix = new drawing.Matrix();
+        matrix.setTranslation(100.1, 100.1);
+        let widths: number[] | undefined = matrix.getAll();
+        if (widths) {
+          expect(widths.length == 9).assertTrue();
+          expect(matrix != null).assertTrue();
+          console.info(msg + ' setTranslation successed,width:' + widths.length + JSON.stringify(matrix));
+        }
+      } catch (e: BusinessError) {
+        console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+
+      try {
+        let matrix = new drawing.Matrix();
+        matrix.setTranslation(-100, 100);
+        let widths: number[] | undefined = matrix.getAll();
+        if (widths) {
+          expect(widths.length == 9).assertTrue();
+          expect(matrix != null).assertTrue();
+          console.info(msg + ' setTranslation successed,width:' + widths.length + JSON.stringify(matrix));
+        }
+      } catch (e: BusinessError) {
+        console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+
+      try {
+        let matrix = new drawing.Matrix();
+        matrix.setTranslation(100, -150);
+        let widths: number[] | undefined = matrix.getAll();
+        if (widths) {
+          expect(widths.length == 9).assertTrue();
+          expect(matrix != null).assertTrue();
+          console.info(msg + ' setTranslation successed,width:' + widths.length + JSON.stringify(matrix));
+        }
+      } catch (e: BusinessError) {
+        console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+
+      try {
+        let matrix = new drawing.Matrix();
+        matrix.setTranslation(Number.MAX_VALUE, Number.MAX_VALUE);
+        let widths: number[] | undefined = matrix.getAll();
+        if (widths) {
+          expect(widths.length == 9).assertTrue();
+          expect(matrix != null).assertTrue();
+          console.info(msg + ' setTranslation successed,width:' + widths.length + JSON.stringify(matrix));
+        }
+      } catch (e: BusinessError) {
+        console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0403
+     * @tc.name      : testMatrixSetTranslationMultipleCallsStatic
+     * @tc.desc      : testMatrixSetTranslationMultipleCallsStatic
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testMatrixSetTranslationMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testMatrixSetTranslationMultipleCallsStatic';
+      try {
+        let matrix = new drawing.Matrix();
+        for (let i = 0; i < loop_times; i++) {
+          matrix.setTranslation(Math.random() * Number.MAX_VALUE, Math.random() * Number.MAX_VALUE);
+        }
+        console.info(msg + ' setTranslation successed');
+      } catch (e: BusinessError) {
+        console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+    })
 
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0500

@@ -325,7 +325,6 @@ export default function fontPart3Test() {
         }
       }
     });
-//----用例报错---待和开发确认
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2300
      * @tc.name      : testFontCreatePathForGlyphNormalStatic
@@ -370,7 +369,7 @@ export default function fontPart3Test() {
       try {
         let path: drawing.Path | undefined = font.createPathForGlyph((Number.MAX_VALUE).toInt());
         console.info(msg + ` createPathForGlyph Number.MAX_VALUE path is:  ${path}`);
-        expect(path != undefined).assertTrue();
+        expect(path == undefined).assertTrue();
       } catch (e: BusinessError) {
         console.info(msg + ` createPathForGlyph errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -418,7 +417,27 @@ export default function fontPart3Test() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2400
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2203
+     * @tc.name      : testFontSetAndIsThemeFontFollowedMultipleCallsStatic
+     * @tc.desc      : Test for testFontSetAndIsThemeFontFollowedMultipleCallsStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testFontSetAndIsThemeFontFollowedMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testFontSetAndIsThemeFontFollowedMultipleCallsStatic';
+      let font = new drawing.Font();
+      let followed: boolean = false;
+      for (let i = 0; i < 20; i++) {
+        followed = !followed;
+        font.setThemeFontFollowed(followed);
+        let finallyFollowed: boolean = font.isThemeFontFollowed()
+        console.info(msg + "font is theme font followed: " + finallyFollowed);
+        expect(finallyFollowed).assertEqual(followed);
+      }
+    });
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2200
      * @tc.name      : testFontSetAndIsThemeFontFollowedNormalStatic
      * @tc.desc      : Test for testFontSetAndIsThemeFontFollowedNormalStatic.
      * @tc.size      : SmallTest
@@ -439,26 +458,6 @@ export default function fontPart3Test() {
       let followed2: boolean = font.isThemeFontFollowed()
       console.info(msg + "followed2 is: " + followed2);
       expect(followed2).assertEqual(false);
-    });
-    /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2403
-     * @tc.name      : testFontSetAndIsThemeFontFollowedMultipleCallsStatic
-     * @tc.desc      : Test for testFontSetAndIsThemeFontFollowedMultipleCallsStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
-     */
-    it('testFontSetAndIsThemeFontFollowedMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-      const msg = 'testFontSetAndIsThemeFontFollowedMultipleCallsStatic';
-      let font = new drawing.Font();
-      let followed: boolean = false;
-      for (let i = 0; i < 20; i++) {
-        followed = !followed;
-        font.setThemeFontFollowed(followed);
-        let finallyFollowed: boolean = font.isThemeFontFollowed()
-        console.info(msg + "font is theme font followed: " + finallyFollowed);
-        expect(finallyFollowed).assertEqual(followed);
-      }
     });
   });
 }

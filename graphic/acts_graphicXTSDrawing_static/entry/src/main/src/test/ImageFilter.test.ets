@@ -62,7 +62,6 @@ export default function imageFilterTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    // -----用例报错---待和开发确认
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_IMAGEFILTER_STATIC_0100
      * @tc.name      : testImageFilterCreateBlurImageFilterNormalStatic
@@ -89,10 +88,12 @@ export default function imageFilterTest() {
       }
 
       try {
-        let imgFilter: drawing.ImageFilter = {};
-        let imgFilter1 = drawing.ImageFilter.createBlurImageFilter(5.1, 10.1, drawing.TileMode.REPEAT, imgFilter)
-        console.info(msg + ' createBlurImageFilter REPEAT successed');
-        console.info(msg + ' imgFilter:' + imgFilter + ' imgFilter1:' + imgFilter1);
+        let imgFilter: drawing.ImageFilter | undefined= drawing.ImageFilter.createBlurImageFilter(5, 10, drawing.TileMode.CLAMP);
+        if(imgFilter){
+          let imgFilter1 = drawing.ImageFilter.createBlurImageFilter(5.1, 10.1, drawing.TileMode.REPEAT, imgFilter)
+          console.info(msg + ' createBlurImageFilter REPEAT successed');
+          console.info(msg + ' imgFilter:' + imgFilter + ' imgFilter1:' + imgFilter1);
+        }
       } catch (e: BusinessError) {
         console.info(msg + ` createBlurImageFilter REPEAT create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
