@@ -24,8 +24,8 @@ const TAG = "[RDB_REKEY_TEST]";
 const CREATE_TABLE_TEST = "CREATE TABLE IF NOT EXISTS test (" + "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
   "name TEXT NOT NULL, " + "age INTEGER, " + "salary REAL, " + "blobType BLOB)";
 
-export default function rdbstoreRekeyExEtsTest() {
-  describe('rdbstoreRekeyExEtsTest', () => {
+export default function rdbStoreRekeyExEtsTest() {
+  describe('rdbStoreRekeyExEtsTest', () => {
     beforeAll(async () => {
       console.info(TAG + 'beforeAll');
     });
