@@ -73,8 +73,8 @@ struct WebInitTest {
             case 'emitContextMenuMediaType': {
               try {
                 // await Utils.sleep(1000)
-                Utils.emitEvent(ContextMenuMediaType.None, 333);
-                Utils.emitEvent(ContextMenuMediaType.Image, 33);
+                Utils.emitEvent(ContextMenuMediaType.NONE, 333);
+                Utils.emitEvent(ContextMenuMediaType.IMAGE, 33);
               } catch (error: BusinessError) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -82,12 +82,12 @@ struct WebInitTest {
             }
             case 'emitContextMenuInputFieldType': {
               try {
-                Utils.emitEvent(ContextMenuInputFieldType.None, 344);
-                Utils.emitEvent(ContextMenuInputFieldType.PlainText, 34);
-                Utils.emitEvent(ContextMenuInputFieldType.Password, 355);
-                Utils.emitEvent(ContextMenuInputFieldType.Telephone, 35);
-                Utils.emitEvent(ContextMenuInputFieldType.Number, 366);
-                Utils.emitEvent(ContextMenuInputFieldType.Other, 36);
+                Utils.emitEvent(ContextMenuInputFieldType.NONE, 344);
+                Utils.emitEvent(ContextMenuInputFieldType.PLAIN_TEXT, 34);
+                Utils.emitEvent(ContextMenuInputFieldType.PASSWORD, 355);
+                Utils.emitEvent(ContextMenuInputFieldType.TELEPHONE, 35);
+                Utils.emitEvent(ContextMenuInputFieldType.NUMBER, 366);
+                Utils.emitEvent(ContextMenuInputFieldType.OTHER, 36);
               } catch (error: BusinessError) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -95,10 +95,10 @@ struct WebInitTest {
             }
             case 'ContextMenuSourceType': {
               try {
-                Utils.emitEvent(ContextMenuSourceType.None, 37);
-                Utils.emitEvent(ContextMenuSourceType.Mouse, 38);
-                Utils.emitEvent(ContextMenuSourceType.LongPress, 39);
-                console.log('result: ' + ContextMenuSourceType.LongPress);
+                Utils.emitEvent(ContextMenuSourceType.NONE, 37);
+                Utils.emitEvent(ContextMenuSourceType.MOUSE, 38);
+                Utils.emitEvent(ContextMenuSourceType.LONG_PRESS, 39);
+                console.log('result: ' + ContextMenuSourceType.LONG_PRESS);
               } catch (error: BusinessError) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }

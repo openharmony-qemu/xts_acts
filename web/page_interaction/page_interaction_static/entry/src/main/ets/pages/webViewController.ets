@@ -121,10 +121,10 @@ struct webViewController {
                 // await Utils.sleep(2000);
                 setTimeout(() => {
                   Utils.emitEvent(this.FileSelectorParamGetGetMode, 31031)
-                  Utils.emitEvent(FileSelectorMode.FileOpenMode, 310311)
-                  Utils.emitEvent(FileSelectorMode.FileOpenMultipleMode, 310312)
-                  Utils.emitEvent(FileSelectorMode.FileOpenFolderMode, 310313)
-                  Utils.emitEvent(FileSelectorMode.FileSaveMode, 310314)
+                  Utils.emitEvent(FileSelectorMode.FILE_OPEN_MODE, 310311)
+                  Utils.emitEvent(FileSelectorMode.FILE_OPEN_MULTIPLE_MODE, 310312)
+                  Utils.emitEvent(FileSelectorMode.FILE_OPEN_FOLDER_MODE, 310313)
+                  Utils.emitEvent(FileSelectorMode.FILE_SAVE_MODE, 310314)
                 }, 2000)
               } catch (error: BusinessError) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);

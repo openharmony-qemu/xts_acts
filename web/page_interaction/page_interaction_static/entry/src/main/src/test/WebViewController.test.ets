@@ -94,10 +94,10 @@ export default function webViewController() {
         Utils.emitEvent('testFileSelectorParamGetMode001', 10)
         await Utils.sleep(2000);
         Utils.registerEvent('testFileSelectorParamGetMode001', 0, 31031, done);
-        Utils.registerEvent('testFileSelectorParamGetMode001', FileSelectorMode.FileOpenMode, 310311, done);
-        Utils.registerEvent('testFileSelectorParamGetMode001', FileSelectorMode.FileOpenMultipleMode, 310312, done);
-        Utils.registerEvent('testFileSelectorParamGetMode001', FileSelectorMode.FileOpenFolderMode, 310313, done);
-        Utils.registerEvent('testFileSelectorParamGetMode001', FileSelectorMode.FileSaveMode, 310314, done);
+        Utils.registerEvent('testFileSelectorParamGetMode001', FileSelectorMode.FILE_OPEN_MODE, 310311, done);
+        Utils.registerEvent('testFileSelectorParamGetMode001', FileSelectorMode.FILE_OPEN_MULTIPLE_MODE, 310312, done);
+        Utils.registerEvent('testFileSelectorParamGetMode001', FileSelectorMode.FILE_OPEN_FOLDER_MODE, 310313, done);
+        Utils.registerEvent('testFileSelectorParamGetMode001', FileSelectorMode.FILE_SAVE_MODE, 310314, done);
         inspector.sendEventByKey('WebViewControllerButton', 10, '');
         await Utils.sleep(3000)
         done()

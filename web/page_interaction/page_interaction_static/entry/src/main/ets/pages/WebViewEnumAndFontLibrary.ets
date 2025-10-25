@@ -37,18 +37,19 @@ struct WebViewEnumAndFontLibrary {
   @State menuY: Number = 0
   @State LinkUrl: String = ''
   @State ImageContent: boolean = false
-  @State MediaType: ContextMenuMediaType = ContextMenuMediaType.None
-  @State SourceType: ContextMenuSourceType = ContextMenuSourceType.None
-  @State InputFieldType: ContextMenuInputFieldType = ContextMenuInputFieldType.None
+  @State MediaType: ContextMenuMediaType = ContextMenuMediaType.NONE
+  @State SourceType: ContextMenuSourceType = ContextMenuSourceType.NONE
+  @State InputFieldType: ContextMenuInputFieldType = ContextMenuInputFieldType.NONE
   @State isEditable: boolean = false
   @State EditStateFlags: Number = 0
   @State SourceUrl: String | null = null
   @State SelectionText: String = ''
   @State onContextMenuShowState: Boolean = false
   @State result: WebContextMenuResult | null = null
-  @State SourceTypeArr:ContextMenuSourceType[] = [ContextMenuSourceType.None,ContextMenuSourceType.Mouse,ContextMenuSourceType.LongPress]
-  @State MediaTypeArr:ContextMenuMediaType[] = [ContextMenuMediaType.None,ContextMenuMediaType.Image]
-  @State FieldTypeArr:ContextMenuInputFieldType[] = [ContextMenuInputFieldType.None,ContextMenuInputFieldType.PlainText,ContextMenuInputFieldType.Password,ContextMenuInputFieldType.Number,ContextMenuInputFieldType.Telephone,ContextMenuInputFieldType.Other	]
+  @State SourceTypeArr:ContextMenuSourceType[] = [ContextMenuSourceType.NONE,ContextMenuSourceType.MOUSE,ContextMenuSourceType.LONG_PRESS]
+  @State MediaTypeArr:ContextMenuMediaType[] = [ContextMenuMediaType.NONE,ContextMenuMediaType.IMAGE]
+  @State FieldTypeArr:ContextMenuInputFieldType[] =
+  [ContextMenuInputFieldType.NONE,ContextMenuInputFieldType.PLAIN_TEXT,ContextMenuInputFieldType.PASSWORD,ContextMenuInputFieldType.NUMBER,ContextMenuInputFieldType.TELEPHONE,ContextMenuInputFieldType.OTHER	]
 
   private valueChangeCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
@@ -87,7 +88,7 @@ struct WebViewEnumAndFontLibrary {
             }
             case 'emitWebContextMenuParamGetSourceType': {
               if (this.controller.getUserAgent().includes('PC')) {
-                Utils.emitEvent(this.SourceTypeArr[ContextMenuSourceType.LongPress], 809)
+                Utils.emitEvent(this.SourceTypeArr[ContextMenuSourceType.LONG_PRESS], 809)
                 break;
               }
               Utils.longClickComponent('webCenter')

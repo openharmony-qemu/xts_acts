@@ -69,7 +69,7 @@ struct WebOnDataResubmitted {
   @State onDataResubmittedCalled: boolean = false;
   @State resend: boolean = true;
   @State title: string = '';
-  @State mixedMode: MixedMode = MixedMode.All;
+  @State mixedMode: MixedMode = MixedMode.ALL;
   @State precomposedResult:boolean =  false;
   @State mixedSwitch: boolean = false;
   aboutToAppear() {

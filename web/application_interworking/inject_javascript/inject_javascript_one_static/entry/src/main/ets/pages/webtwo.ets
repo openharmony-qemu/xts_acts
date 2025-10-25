@@ -45,7 +45,7 @@ struct Index {
   controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
   @State text: boolean = false;
   @State num: number = 0;
-  @State mode: WebDarkMode = WebDarkMode.Off;
+  @State mode: WebDarkMode = WebDarkMode.OFF;
   @State getString: boolean = false;
   @State getNum: boolean = false;
   @State getBoo: boolean = false;
