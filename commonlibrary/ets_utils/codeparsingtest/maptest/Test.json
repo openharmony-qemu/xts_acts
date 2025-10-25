@@ -11,7 +11,7 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsDateTest.hap"
+                "ActsMapTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
