@@ -9,6 +9,14 @@ import builtinsSwitchTest from './BuiltinsSwitchTest.test.ets'
 import builtinsThrowTest from './BuiltinsThrowTest.test.ets'
 import builtinsTryTest from './BuiltinsTryTest.test.ets'
 import builtinsWhileTest from './BuiltinsWhileTest.test.ets'
+
+import expressionTest1 from './expression/ExpressionTest1.test';
+import expressionTest2 from './expression/ExpressionTest2.test';
+import expressionTest3 from './expression/ExpressionTest3.test';
+import expressionTest4 from './expression/ExpressionTest4.test';
+import expressionTest5 from './expression/ExpressionTest5.test';
+import expressionTest6 from './expression/ExpressionTest6.test';
+
 export default function testsuite() {
   builtinsBlockTest();
   builtinsBreakTest();
@@ -21,4 +29,11 @@ export default function testsuite() {
   builtinsThrowTest();
   builtinsTryTest();
   builtinsWhileTest();
+
+  expressionTest1();
+  expressionTest2();
+  expressionTest3();
+  expressionTest4();
+  expressionTest5();
+  expressionTest6();
 }
