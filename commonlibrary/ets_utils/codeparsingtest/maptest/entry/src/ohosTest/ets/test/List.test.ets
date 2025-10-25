@@ -1,13 +1,13 @@
-import MapClearTest from './set/MapClear.test';
-import MapConstructorTest from './set/MapConstructor.test';
-import MapDeleteTest from './set/MapDelete.test';
-import MapEntriesTest from '/set./MapEntries.test';
-import MapForeachTest from '/set./MapForeach.test';
-import MapGetTest from './set/MapGet.test';
-import MapHasTest from './set/MapHas.test';
-import MapKeyTest from './set/MapKey.test';
-import MapSymbolSpeciesTest from './set/MapSymbolSpecies.test';
-import MapValueTest from './set/MapValue.test';
+import MapClearTest from './map/MapClear.test';
+import MapConstructorTest from './map/MapConstructor.test';
+import MapDeleteTest from './map/MapDelete.test';
+import MapEntriesTest from '/map/MapEntries.test';
+import MapForeachTest from '/map/MapForeach.test';
+import MapGetTest from './map/MapGet.test';
+import MapHasTest from './map/MapHas.test';
+import MapKeyTest from './map/MapKey.test';
+import MapSymbolSpeciesTest from './map/MapSymbolSpecies.test';
+import MapValueTest from './map/MapValue.test';
 
 export default function testsuite() {
   MapClearTest();
