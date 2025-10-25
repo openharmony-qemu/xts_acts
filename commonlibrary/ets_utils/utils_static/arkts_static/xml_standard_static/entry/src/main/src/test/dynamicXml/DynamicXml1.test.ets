@@ -1148,6 +1148,33 @@ export default function XmlDynamicSerializerTest() {
     //   expect(m).assertEqual(max);
     // })
 
+
+    /**
+     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04800
+     * @tc.name: testXMLBoundaryValue003
+     * @tc.desc:set xml length over max length then check error code.
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 1
+     */
+    it('testXMLBoundaryValue003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let thatSer = new xml.XmlDynamicSerializer();
+      let max = 100000;
+      let value = 10200062;
+      let result = 0;
+      for (let i = 0; i < max / 25; ++i) {
+        thatSer.setNamespace("h", "aaa");
+        thatSer.startElement("note");
+        thatSer.endElement();
+      }
+      try {
+        thatSer.startElement("note1");
+      } catch (e : BusinessError) {
+        expect(value).assertEqual(e.code);
+      }
+
+    })
+
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04900
      * @tc.name: testXmlBusinessError001
@@ -1221,31 +1248,6 @@ export default function XmlDynamicSerializerTest() {
       try {
         let thatSer = new xml.XmlDynamicSerializer('utf-16');
       } catch (e: BusinessError) {
-        expect(value).assertEqual(e.code);
-      }
-    })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04800
-     * @tc.name: testXMLBoundaryValue003
-     * @tc.desc:set xml length over max length then check error code.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testXMLBoundaryValue003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let thatSer = new xml.XmlDynamicSerializer();
-      let max = 100000;
-      let value = 10200062;
-      let result = 0;
-      for (let i = 0; i < max / 25; ++i) {
-        thatSer.setNamespace("h", "aaa");
-        thatSer.startElement("note");
-        thatSer.endElement();
-      }
-      try {
-        thatSer.startElement("note1");
-      } catch (e : BusinessError) {
         expect(value).assertEqual(e.code);
       }
     })
