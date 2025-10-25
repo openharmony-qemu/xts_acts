@@ -47,6 +47,14 @@ export default function VideoContentTransitionEffectTest() {
       console.info("VideoContentTransitionEffectTest after each called");
     });
 
+    /**
+     * @tc.number     VideoContentTransitionEffectTest_0100
+     * @tc.name       VideoContentTransitionEffectTest_0100
+     * @tc.desc       Test Video ContentTransitionEffect
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
     it('VideoContentTransitionEffectTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[VideoContentTransitionEffectTest_0100] START');
       let driver = await Driver.create()
