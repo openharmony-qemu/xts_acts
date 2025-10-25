@@ -346,15 +346,10 @@ export default function rdbStoreRekeyExEtsTest() {
      */
     it('testRekeyEx0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log(TAG + "************* testRekeyEx0008 start *************");
-      let cryptoParam: data_relationalStore.CryptoParam = {
-        encryptionKey: new Uint8Array([1, 2, 3, 4, 5, 6]),
-      };
-
       let storeConfig: data_relationalStore.StoreConfig = {
         name: "testRekeyEx.db",
         securityLevel: data_relationalStore.SecurityLevel.S2,
         encrypt: true,
-        cryptoParam: cryptoParam,
       }
       let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
       await rdbStore.executeSql(CREATE_TABLE_TEST);
@@ -1274,7 +1269,7 @@ export default function rdbStoreRekeyExEtsTest() {
       let cryptoParam: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array([3, 2, 6, 3, 5, 6]),
         iterationCount: 500,
-        encryptionAlgo: 2,
+        encryptionAlgo: 1,
         hmacAlgo: data_relationalStore.HmacAlgo.SHA256,
         kdfAlgo: data_relationalStore.KdfAlgo.KDF_SHA512,
         cryptoPageSize:2048
@@ -1325,7 +1320,7 @@ export default function rdbStoreRekeyExEtsTest() {
 
       let cryptoParam: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array(),
-        encryptionAlgo: 2
+        encryptionAlgo: 1
       };
 
       try {
@@ -1340,8 +1335,9 @@ export default function rdbStoreRekeyExEtsTest() {
         console.log(TAG + "insert success" )
         await rdbStore.rekeyEx(cryptoParam);
         console.log(TAG + "rekeyEx success" )
-        storeConfig.encrypt = true;
         rdbStore.close();
+        storeConfig.encrypt = true;
+        storeConfig.cryptoParam = cryptoParam;
         rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
         let resultSet = await rdbStore.querySql("SELECT * FROM test");
         expect(1).assertEqual(resultSet.rowCount);
@@ -2398,7 +2394,7 @@ export default function rdbStoreRekeyExEtsTest() {
       let cryptoParam: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array([6, 5, 4, 3, 2, 1]),
         iterationCount: 1000,
-        encryptionAlgo: data_relationalStore.EncryptionAlgo.PLAIN_TEXT,
+        encryptionAlgo: data_relationalStore.EncryptionAlgo.AES_256_CBC,
         hmacAlgo: data_relationalStore.HmacAlgo.SHA256,
         kdfAlgo: data_relationalStore.KdfAlgo.KDF_SHA512 + 1,
         cryptoPageSize: 2048
@@ -2473,7 +2469,7 @@ export default function rdbStoreRekeyExEtsTest() {
       let cryptoParam: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array([6, 5, 4, 3, 2, 1]),
         iterationCount: 1000,
-        encryptionAlgo: data_relationalStore.EncryptionAlgo.PLAIN_TEXT,
+        encryptionAlgo: data_relationalStore.EncryptionAlgo.AES_256_CBC,
         hmacAlgo: data_relationalStore.HmacAlgo.SHA512 + 1,
         kdfAlgo: data_relationalStore.KdfAlgo.KDF_SHA512,
         cryptoPageSize: 2048
