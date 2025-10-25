@@ -22,8 +22,13 @@
 #include <climits>
 #include <native_image/native_image.h>
 #include <sys/types.h>
+#include <thread>
+#include <chrono>
+#include <unistd.h>
 #include <vector>
 #include <hilog/log.h>
+#include "common/log_common.h"
+
 const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 
 #define SUCCESS 0
@@ -53,6 +58,8 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 #define NUMBER_32 32
 #define NUMBER_50 50
 #define NUMBER_60 60
+#define NUMBER_100 100
+#define NUMBER_200 200
 #define NUMBER_500 500
 #define NUMBER_1000 1000
 #define NUMBER_1001 1001
@@ -67,6 +74,7 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 #define NUMBER_4001 4001
 #define NUMBER_4002 4002
 #define NUMBER_4003 4003
+#define NUMBER_5000 5000
 #define NUMBER_5001 5001
 #define NUMBER_5002 5002
 #define NUMBER_5003 5003
@@ -84,6 +92,7 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 #define NUMBER_50002000 50002000
 #define NUMBER_50007000 50007000
 #define NUMBER_50102000 50102000
+
 static OH_NativeBuffer *getBuffer()
 {
     OH_NativeBuffer_Config config = {
@@ -1641,6 +1650,273 @@ static napi_value OHNativeBufferY8Y16USAGEandAlloc(napi_env env, napi_callback_i
     OH_NativeBuffer_Unreference(nativeBuffer);
     return result;
 }
+
+static napi_value OHNativeBufferMapWaitFence0ms(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeBuffer *nativeBuffer = getBuffer();
+    if (nativeBuffer == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int pipefds[2];
+    if (pipe(pipefds) == -1) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int fenceFd = pipefds[0];
+    if (fenceFd < 0) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int pipeWriteFd = pipefds[1];
+    std::thread signalThread([pipeWriteFd]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(0));
+        char signal = '1';
+        write(pipeWriteFd, &signal, 1);
+        close(pipeWriteFd);
+    });
+    void *virAddr = nullptr;
+    auto start = std::chrono::steady_clock::now();
+    int32_t errorCode = OH_NativeBuffer_MapWaitFence(nativeBuffer, fenceFd, &virAddr);
+    auto end = std::chrono::steady_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    if (virAddr == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    if (errorCode != SUCCESS) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    signalThread.join();
+    close(fenceFd);
+    OH_NativeBuffer_Unmap(nativeBuffer);
+    OH_NativeBuffer_Unreference(nativeBuffer);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+static napi_value OHNativeBufferMapWaitFence100ms(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeBuffer *nativeBuffer = getBuffer();
+    if (nativeBuffer == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int pipefds[2];
+    if (pipe(pipefds) == -1) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int fenceFd = pipefds[0];
+    if (fenceFd < 0) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int pipeWriteFd = pipefds[1];
+    std::thread signalThread([pipeWriteFd]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(NUMBER_100));
+        char signal = '1';
+        write(pipeWriteFd, &signal, 1);
+        close(pipeWriteFd);
+    });
+    void *virAddr = nullptr;
+    auto start = std::chrono::steady_clock::now();
+    int32_t errorCode = OH_NativeBuffer_MapWaitFence(nativeBuffer, fenceFd, &virAddr);
+    auto end = std::chrono::steady_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    if (virAddr == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    if (errorCode != SUCCESS) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    if (duration < NUMBER_100 || duration > NUMBER_200) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    signalThread.join();
+    close(fenceFd);
+    OH_NativeBuffer_Unmap(nativeBuffer);
+    OH_NativeBuffer_Unreference(nativeBuffer);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+static napi_value OHNativeBufferMapWaitFence5000ms(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeBuffer *nativeBuffer = getBuffer();
+    if (nativeBuffer == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int pipefds[2];
+    if (pipe(pipefds) == -1) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int fenceFd = pipefds[0];
+    if (fenceFd < 0) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int pipeWriteFd = pipefds[1];
+    std::thread signalThread([pipeWriteFd]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(NUMBER_5000));
+        char signal = '1';
+        write(pipeWriteFd, &signal, 1);
+        close(pipeWriteFd);
+    });
+    void *virAddr = nullptr;
+    auto start = std::chrono::steady_clock::now();
+    int32_t errorCode = OH_NativeBuffer_MapWaitFence(nativeBuffer, fenceFd, &virAddr);
+    auto end = std::chrono::steady_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    if (virAddr == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    if (errorCode != SUCCESS) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    signalThread.join();
+    close(fenceFd);
+    OH_NativeBuffer_Unmap(nativeBuffer);
+    OH_NativeBuffer_Unreference(nativeBuffer);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+static napi_value OHNativeBufferMapWaitFenceNullptr(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeBuffer *nativeBuffer = getBuffer();
+    if (nativeBuffer == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int pipefds[2];
+    if (pipe(pipefds) == -1) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int fenceFd = pipefds[0];
+    if (fenceFd < 0) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int pipeWriteFd = pipefds[1];
+    std::thread signalThread([pipeWriteFd]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(NUMBER_100));
+        char signal = '1';
+        write(pipeWriteFd, &signal, 1);
+        close(pipeWriteFd);
+    });
+    void *virAddr = nullptr;
+    int32_t errorCode1 = OH_NativeBuffer_MapWaitFence(nullptr, fenceFd, &virAddr);
+    if (errorCode1 != NUMBER_40001000) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int32_t errorCode2 = OH_NativeBuffer_MapWaitFence(nativeBuffer, fenceFd, nullptr);
+    if (errorCode2 != NUMBER_40001000) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    signalThread.join();
+    close(fenceFd);
+    OH_NativeBuffer_Unmap(nativeBuffer);
+    OH_NativeBuffer_Unreference(nativeBuffer);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+static napi_value OHNativeBufferMapWaitFenceAbnormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeBuffer *nativeBuffer = getBuffer();
+    if (nativeBuffer == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int pipefds[2];
+    if (pipe(pipefds) == -1) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int fenceFd = pipefds[0];
+    if (fenceFd < 0) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int pipeWriteFd = pipefds[1];
+    std::thread signalThread([pipeWriteFd]() {
+        std::this_thread::sleep_for(std::chrono::milliseconds(NUMBER_100));
+        char signal = '1';
+        write(pipeWriteFd, &signal, 1);
+        close(pipeWriteFd);
+    });
+    void *virAddr = nullptr;
+    int32_t errorCode1 = OH_NativeBuffer_MapWaitFence(nativeBuffer, -1, &virAddr);
+    if (errorCode1 != NUMBER_40001000) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int32_t errorCode2 = OH_NativeBuffer_MapWaitFence(nativeBuffer, 0xFFFFFFFF+1, nullptr);
+    if (errorCode2 != NUMBER_40001000) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    signalThread.join();
+    close(fenceFd);
+    OH_NativeBuffer_Unmap(nativeBuffer);
+    OH_NativeBuffer_Unreference(nativeBuffer);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value OHNativeBufferSetMetadataValueEnumTraversal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_NativeBuffer *nativeBuffer = getBuffer();
+    if (nativeBuffer == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    OH_NativeBuffer_MetadataType hdr_type[] = {
+        OH_VIDEO_HDR_HLG,
+        OH_VIDEO_HDR_HDR10,
+        OH_VIDEO_HDR_VIVID,
+        OH_IMAGE_HDR_VIVID_DUAL,
+        OH_IMAGE_HDR_VIVID_SINGLE
+    };
+    for (int i = 0; i <= sizeof(hdr_type) / sizeof(hdr_type[0]) - 1; i++) {
+        int32_t bufferSize;
+        uint8_t *metadata;
+        uint8_t type = hdr_type[i];
+        int32_t errorCode = OH_NativeBuffer_SetMetadataValue(
+            nativeBuffer, OH_HDR_METADATA_TYPE, sizeof(OH_NativeBuffer_MetadataType), &type);
+        if (errorCode != SUCCESS) {
+            napi_create_int32(env, FAIL, &result);
+            return result;
+        }
+        OH_NativeBuffer_GetMetadataValue(nativeBuffer, OH_HDR_METADATA_TYPE, &bufferSize, &metadata);
+        if (*metadata != type) {
+            napi_create_int32(env, FAIL, &result);
+            return result;
+        }
+    }
+    
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
 napi_value NativeBufferInit(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
@@ -1668,6 +1944,18 @@ napi_value NativeBufferInit(napi_env env, napi_value exports)
          nullptr},
         {"oHNativeBufferAllocNormal", nullptr, OHNativeBufferAllocNormal, nullptr, nullptr, nullptr, napi_default,
          nullptr},
+        {"oHNativeBufferMapWaitFence0ms", nullptr, OHNativeBufferMapWaitFence0ms, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"oHNativeBufferMapWaitFence100ms", nullptr, OHNativeBufferMapWaitFence100ms, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"oHNativeBufferMapWaitFence5000ms", nullptr, OHNativeBufferMapWaitFence5000ms, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"oHNativeBufferMapWaitFenceNullptr", nullptr, OHNativeBufferMapWaitFenceNullptr, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"oHNativeBufferMapWaitFenceAbnormal", nullptr, OHNativeBufferMapWaitFenceAbnormal,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHNativeBufferSetMetadataValueEnumTraversal", nullptr, OHNativeBufferSetMetadataValueEnumTraversal,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(napi_property_descriptor), desc);
     return exports;
