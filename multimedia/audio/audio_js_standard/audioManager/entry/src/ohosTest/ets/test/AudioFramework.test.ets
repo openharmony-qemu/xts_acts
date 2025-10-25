@@ -6313,14 +6313,14 @@ export default function audioFramework() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0200
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0200
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0300
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0300
      * @tc.desc      : Verify isStreamAtive return false
      * @tc.size      : MEDIUM
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
+    it("SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
     async (done: Function) => {
       try {
         let isActive = audio.getAudioManager().getStreamManager().isStreamActive(audio.StreamUsage.STREAM_USAGE_MUSIC);
