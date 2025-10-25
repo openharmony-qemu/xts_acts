@@ -6314,7 +6314,7 @@ export default function audioFramework() {
     })
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0200
-     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0300
+     * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0200
      * @tc.desc      : Verify isStreamAtive return false
      * @tc.size      : MEDIUM
      * @tc.type      : Function
