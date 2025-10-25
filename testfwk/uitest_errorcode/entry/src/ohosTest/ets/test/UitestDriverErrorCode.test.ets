@@ -2154,6 +2154,17 @@ export default function uitestDriverErrorTest() {
       try {
         await driver.isComponentPresentWhenLongClick(ON.enabled(true), {
           x: 100,
+          y: 100,
+          displayId: -1
+        })
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenLongClick_17000007 error point.displayId = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenLongClick(ON.enabled(true), {
+          x: 100,
           y: 100
         }, 1499)
         expect().assertFail();
@@ -2250,6 +2261,17 @@ export default function uitestDriverErrorTest() {
       try {
         await driver.isComponentPresentWhenDrag(ON.enabled(true), {
           x: 100,
+          y: 100,
+          displayId: -1
+        }, {x: 100, y: 100})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007 error from.displayId = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenDrag(ON.enabled(true), {
+          x: 100,
           y: 100
         }, {x: -1, y: 100})
         expect().assertFail();
@@ -2265,6 +2287,27 @@ export default function uitestDriverErrorTest() {
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007 error to.y = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenDrag(ON.enabled(true), {
+          x: 100,
+          y: 100
+        }, {x: 100, y: 100, displayId: -1})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007 error to.displayId = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenDrag(ON.enabled(true), {
+          x: 100,
+          y: 100,
+          displayId: 0
+        }, {x: 100, y: 100, displayId: 1})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenDrag_17000007 error diff.displayId: ${JSON.stringify(e)}`);
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       try {
@@ -2376,6 +2419,17 @@ export default function uitestDriverErrorTest() {
       try {
         await driver.isComponentPresentWhenSwipe(ON.enabled(true), {
           x: 100,
+          y: 100,
+          displayId: -1
+        }, {x: 100, y: 100})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007 error from.displayId = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenSwipe(ON.enabled(true), {
+          x: 100,
           y: 100
         }, {x: -1, y: 100})
         expect().assertFail();
@@ -2391,6 +2445,27 @@ export default function uitestDriverErrorTest() {
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007 error to.y = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenSwipe(ON.enabled(true), {
+          x: 100,
+          y: 100
+        }, {x: 100, y: 100, displayId: -1})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007 error to.displayId = -1: ${JSON.stringify(e)}`);
+        expect(e.code).assertEqual(ParameterErrorCode);
+      }
+      try {
+        await driver.isComponentPresentWhenSwipe(ON.enabled(true), {
+          x: 100,
+          y: 100,
+          displayId: 0
+        }, {x: 100, y: 100, displayId: 1})
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testIsComponentPresentWhenSwipe_17000007 error diff.displayId: ${JSON.stringify(e)}`);
         expect(e.code).assertEqual(ParameterErrorCode);
       }
       try {
