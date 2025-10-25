@@ -83,7 +83,7 @@ export default function displaySyncTest() {
                         console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
                     }
-                    backDisplaySync?.on("frame", callback)
+                    backDisplaySync?.onFrame(callback)
                     console.info(msg + 'Succeeded in on.');
                     expect(true).assertTrue()
                     done()
@@ -112,7 +112,7 @@ export default function displaySyncTest() {
                         console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
                     }
-                    backDisplaySync?.off("frame", callback)
+                    backDisplaySync?.offFrame(callback)
                     console.info(msg + 'Succeeded in off.');
                     expect(true).assertTrue()
                     done()
@@ -141,8 +141,8 @@ export default function displaySyncTest() {
                         console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
                     }
-                    backDisplaySync?.on("frame", callback)
-                    backDisplaySync?.off("frame", callback)
+                    backDisplaySync?.onFrame(callback)
+                    backDisplaySync?.offFrame(callback)
                     console.info(msg + 'Succeeded in onoff.');
                     expect(true).assertTrue()
                     done()
@@ -178,7 +178,7 @@ export default function displaySyncTest() {
                         console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
                     }
-                    backDisplaySync?.on("frame", callback)
+                    backDisplaySync?.onFrame(callback)
                     // 开始每帧回调
                     backDisplaySync?.start()
                     console.info(msg + 'Succeeded in onoff.');
@@ -216,7 +216,7 @@ export default function displaySyncTest() {
                         console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
                     }
-                    backDisplaySync?.on("frame", callback)
+                    backDisplaySync?.onFrame(callback)
                     // 停止每帧回调
                     backDisplaySync?.stop()
                     console.info(msg + 'Succeeded in onoff.');
@@ -254,7 +254,7 @@ export default function displaySyncTest() {
                         console.info("DisplaySync", 'TimeStamp:' + frameInfo.timestamp +
                             ' TargetTimeStamp: ' + frameInfo.targetTimestamp);
                     }
-                    backDisplaySync?.on("frame", callback)
+                    backDisplaySync?.onFrame(callback)
                     backDisplaySync?.start()
                     // 停止每帧回调
                     backDisplaySync?.stop()
