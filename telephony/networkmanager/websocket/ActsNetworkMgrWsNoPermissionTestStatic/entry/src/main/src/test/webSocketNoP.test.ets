@@ -170,6 +170,64 @@ export default function webSocketNoPTest() {
     });
 
     /**
+     * @tc.number: SUB_NetworkMgr_WebSocket_CloseCode201Callback_0100
+     * @tc.name  : testNetworkMgrWebSocketCloseCode201Callback_static_0100
+     * @tc.desc  : Test code 201 of connect api with callback type
+     * @tc.size  : MediumTest
+     * @tc.type  : Function
+     * @tc.level : level 3
+     */
+    it('testNetworkMgrWebSocketCloseCode201Callback_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let caseName: string = 'testNetworkMgrWebSocketCloseCode201Callback_static_0100';
+        hilog.info(domain, tag, `${caseName} test start`);
+        try {
+          ws.close((error: BusinessError<void> | null, value: boolean | undefined) => {
+            hilog.info(domain, tag, `${caseName} test result error ${JSON.stringify(error)} and value is ${value}`);
+            ExpectTrue(error !== undefined && error?.code === 201);
+            done();
+            hilog.info(domain, tag, `${caseName} test end`);
+          });
+        } catch (err) {
+          hilog.info(domain, tag, `${caseName} catch error ${JSON.stringify(err)}`);
+          ExpectTrue(false);
+          done();
+          hilog.info(domain, tag, `${caseName} test end`);
+        }
+      });
+
+    /**
+     * @tc.number: SUB_NetworkMgr_WebSocket_CloseOptionsCode201Callback_0200
+     * @tc.name  : testNetworkMgrWebSocketCloseOptionsCode201Callback_static_0200
+     * @tc.desc  : Test code 201 of connect api with callback type
+     * @tc.size  : MediumTest
+     * @tc.type  : Function
+     * @tc.level : level 3
+     */
+    it('testNetworkMgrWebSocketCloseOptionsCode201Callback_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+      let caseName: string = 'testNetworkMgrWebSocketCloseOptionsCode201Callback_static_0200';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let options: webSocket.WebSocketCloseOptions = {
+          code: 10000011,
+          reason: 'permission denied'
+        };
+        ws.close(options, (error: BusinessError<void> | null, value: boolean | undefined) => {
+          hilog.info(domain, tag, `${caseName} test result error ${JSON.stringify(error)} and value is ${value}`);
+          ExpectTrue(error !== undefined && error?.code === 201);
+          done();
+          hilog.info(domain, tag, `${caseName} test end`);
+        });
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} catch error ${JSON.stringify(err)}`);
+        ExpectTrue(false);
+        done();
+        hilog.info(domain, tag, `${caseName} test end`);
+      }
+    });
+
+    /**
      * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerClose201Error_0100
      * @tc.name  : testNetworkMgrWebSocketWebSocketServerClose201Error_static_0100
      * @tc.desc  : WebSocketServer close a connection(201)
@@ -235,6 +293,81 @@ export default function webSocketNoPTest() {
         ExpectTrue(err.code == 201)
         done();
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
+      }
+    });
+
+    /**
+     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerSend201Error_0100
+     * @tc.name  : testNetworkMgrWebSocketWebSocketServerSend201Error_static_0100
+     * @tc.desc  : WebSocketServer send a massage(201)
+     * @tc.size  : MediumTest
+     * @tc.type  : Function
+     * @tc.level : level 3
+     */
+    it('testNetworkMgrWebSocketWebSocketServerSend201Error_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+      let caseName: string = 'testNetworkMgrWebSocketWebSocketServerSend201Error_static_0100';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let server: webSocket.WebSocketServer= webSocket.createWebSocketServer()
+        let serverConfig: webSocket.WebSocketServerConfig = {
+          serverIP: "0.0.0.0",
+          serverPort: 8088,
+          maxConcurrentClientsNumber: 10,
+          maxConnectionsForOneClient: 4,
+        }
+        if(!server) {
+          hilog.info(domain, tag, `${caseName} Server is nullptr`);
+          ExpectTrue(true);
+          done();
+          hilog.info(domain, tag, `${caseName} test end`);
+        }else {
+          server.start(serverConfig).then((success: boolean | undefined) => {
+            if (success){
+              hilog.info(domain, tag, `${caseName} webSocketServer start success`)
+            }else {
+              ExpectFail();
+              done()
+              hilog.info(domain, tag, `${caseName} test end`);
+            }
+          }).catch((error: Error) => {
+            let err = error as BusinessError;
+            hilog.info(domain, tag, `${caseName} test result error ${JSON.stringify(err)}`);
+            ExpectTrue(err?.code === 201)
+            done()
+            hilog.info(domain, tag, `${caseName} test end`);
+          })
+          let client: webSocket.WebSocket = webSocket.createWebSocket()
+          hilog.info(domain, tag, `${caseName}client-- >${client}`)
+          await Utils.msSleep(20);
+          let connections = server.listAllConnections()
+          server.send("hello client", connections[0]).then((success: boolean | undefined) => {
+            if (success){
+              hilog.info(domain, tag, `${caseName} send success`)
+              ExpectTrue(success)
+              done()
+              hilog.info(domain, tag, `${caseName} test end`);
+            }else{
+              hilog.info(domain, tag, `${caseName} send fail`);
+              ExpectFail();
+              done()
+              hilog.info(domain, tag, `${caseName} test end`);
+            }
+          }).catch((error: Error) => {
+            let err = error as BusinessError;
+            hilog.info(domain, tag, `${caseName} test send fail ${JSON.stringify(err)}`);
+            ExpectTrue(err?.code == 201)
+            server.stop()
+            done();
+            hilog.info(domain, tag, `${caseName} test end`);
+          })
+        }
+      } catch (error: Error) {
+        let err = error as BusinessError;
+        hilog.info(domain, tag, `${caseName} catch error ${JSON.stringify(err)}`);
+        ExpectTrue(err?.code == 201)
+        done();
+        hilog.info(domain, tag, `${caseName} test end`);
       }
     });
 

@@ -3086,12 +3086,163 @@ export default function WebsocketTestStatic() {
             }
             hilog.info(domain, tag, `${caseName} test end`);
           })
-        } catch (err) {
+       } catch (err) {
           hilog.error(domain, tag, `${caseName} catchError ${JSON.stringify(err)}`);
           expect().assertFail();
           done();
           hilog.error(domain, tag, `${caseName} test end`);
+       }
+    })
+
+    /**
+     * @tc.number SUB_NetworkMgr_WebSocket_OnOffCallback_0100
+     * @tc.name   testNetworkMgrWebSocketOnOffCallback_static_0100
+     * @tc.desc   Subscribe to the headerReceive event of WebSocket(on-->off)
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  level 3
+     */
+    it('testNetworkMgrWebSocketOnOffCallback_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+      let caseName: string = 'testNetworkMgrWebSocketOnOffCallback_static_0100';
+      let isOnEvent = 0;
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        const ws : webSocket.WebSocket = webSocket.createWebSocket();
+        ws.onWebSocketError((err: BusinessError<void> | null) => {
+          hilog.info(domain, tag, `${caseName} findError" + ${JSON.stringify(err)}`);
+        });
+        let onOpenCallback01 = (data: webSocket.OpenResult | undefined) => {
+          hilog.info(domain, tag, `${caseName} onOpenCallback01 data is: `+ JSON.stringify(data));
+          expectFail()
+          hilog.info(domain, tag, `${caseName}---end`);
         }
-      })
+        let onOpenCallback02 = (data: webSocket.OpenResult | undefined) => {
+          isOnEvent+=1;
+          hilog.info(domain, tag, `${caseName} onOpenCallback01 data is: `+ JSON.stringify(data));
+          const status: int|undefined = data?.status;
+          expectTrue(status == 101);
+          ws.send('haha', (err: BusinessError<void> | null, value: boolean | undefined) => {
+            if (err?.code) {
+              console.error(`${caseName} get err is `+JSON.stringify(err));
+              expectFail();
+              done();
+              hilog.info(domain, tag, `${caseName}---end`);
+            }else{
+              hilog.info(domain, tag, `${caseName} send success and calue is: `+value)
+            }
+          })
+        }
+        let onMessageCallback01 = (err: BusinessError<void>|null, value: undefined|String|ArrayBuffer) => {
+          hilog.info(domain, tag, `${caseName} onMessageCallback01 err is ${JSON.stringify(err)} and value is ${value}`);
+          expectFail();
+          hilog.info(domain, tag, `${caseName}---end`);
+          done();
+        }
+        let onMessageCallback02 = (err: BusinessError<void>|null, value: undefined|String|ArrayBuffer) => {
+          isOnEvent+=1;
+          hilog.info(domain, tag, `${caseName} onMessageCallback02 err is ${JSON.stringify(err)} and value is ${value}`);
+        }
+        let onHeaderReceiveCallback01 = (data: webSocket.ResponseHeaders) => {
+          hilog.info(domain, tag, `${caseName} onHeaderReceiveCallback01 `+JSON.stringify(data));
+          expectFail()
+          hilog.info(domain, tag, `${caseName}---end`);
+          done();
+        }
+        let onHeaderReceiveCallback02 = (data: webSocket.ResponseHeaders) => {
+          isOnEvent += 1;
+          hilog.info(domain, tag, `${caseName} onHeaderReceiveCallback02 `+JSON.stringify(data));
+        }
+        let onDataEndCallback01 = () => {
+          hilog.info(domain, tag, `${caseName} onDataEndCallback01 dataEnd `);
+          expectFail();
+          hilog.info(domain, tag, `${caseName}---end`);
+          done();
+        }
+        let onDataEndCallback02 = () => {
+          isOnEvent +=1;
+          hilog.info(domain, tag, `${caseName} onDataEndCallback02 dataEnd `);
+          ws.close()
+        }
+        let onCloseCallback01 = (err: BusinessError<void>|null, data: webSocket.CloseResult|undefined) => {
+          hilog.info(domain, tag, `${caseName} onCloseCallback01 close ,closeResult is `+JSON.stringify(data));
+          expectFail();
+          hilog.info(domain, tag, `${caseName}---end`);
+          done();
+        }
+        let onCloseCallback02 = (err: BusinessError<void>|null, data: webSocket.CloseResult|undefined) => {
+          isOnEvent += 1;
+          hilog.info(domain, tag, `${caseName} onCloseCallback02 close ,closeResult is `+JSON.stringify(data));
+          hilog.info(domain, tag, `${caseName}  isOnEvent is `+ isOnEvent);
+          expectTrue(isOnEvent >=5);
+          hilog.info(domain, tag, `${caseName}---end`);
+          done();
+        }
+        ws.onOpen(onOpenCallback01);
+        ws.onOpen(onOpenCallback01);
+        ws.onOpen(onOpenCallback02);
+        ws.offOpen(onOpenCallback01);
+        ws.onMessage(onMessageCallback01);
+        ws.onMessage(onMessageCallback02);
+        ws.offMessage(onMessageCallback01);
+        ws.onDataEnd(onDataEndCallback01);
+        ws.onDataEnd(onDataEndCallback02);
+        ws.offDataEnd(onDataEndCallback01);
+        ws.onHeaderReceive(onHeaderReceiveCallback01);
+        ws.onHeaderReceive(onHeaderReceiveCallback02);
+        ws.offHeaderReceive(onHeaderReceiveCallback01);
+        ws.onWebSocketClose(onCloseCallback01);
+        ws.onWebSocketClose(onCloseCallback02);
+        ws.offWebSocketClose(onCloseCallback01);
+        ws.connect(availableWebSocketAddress, (error: BusinessError<void> | null, value: boolean | undefined) => {
+          hilog.info(domain, tag, `${caseName} test result error ${JSON.stringify(error)} and value is ${value}`);
+        })
+      } catch (err: Error) {
+        hilog.info(domain, tag, `${caseName} catch Error ${JSON.stringify(err)}`);
+        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        done();
+        hilog.info(domain, tag, `${caseName} test end`);
+      }
+    })
+
+    /**
+     * @tc.number SUB_NetworkMgr_WebSocket_OnOffCallback_0200
+     * @tc.name   testNetworkMgrWebSocketOnOffCallback_static_0200
+     * @tc.desc   Subscribe to the headerReceive event of WebSocket(on-->off)
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  level 3
+     */
+    it('testNetworkMgrWebSocketOnOffCallback_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+      let caseName: string = 'testNetworkMgrWebSocketOnOffCallback_static_0200';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        const ws : webSocket.WebSocket = webSocket.createWebSocket();
+        let onErrorCallback01 = (err: BusinessError<void> | null) => {
+          hilog.info(domain, tag, `${caseName} onErrorCallback01 get err is `+JSON.stringify(err))
+          expectFail();
+          done();
+          hilog.info(domain, tag, `${caseName}---end`);
+        }
+        let onErrorCallback02 = (err: BusinessError<void> | null) => {
+          hilog.info(domain, tag, `${caseName} onErrorCallback02 get err is `+JSON.stringify(err))
+          expectTrue(true)
+          done();
+          hilog.info(domain, tag, `${caseName}---end`);
+        }
+        ws.onWebSocketError(onErrorCallback01);
+        ws.onWebSocketError(onErrorCallback02);
+        ws.offWebSocketError(onErrorCallback01);
+        ws.connect('ws://124.222.6.66:12423', (error: BusinessError<void> | null, value: boolean | undefined) => {
+          hilog.info(domain, tag, `${caseName} test result error ${JSON.stringify(error)} and value is ${value}`);
+        })
+      } catch (err: Error) {
+        hilog.info(domain, tag, `${caseName} catch Error ${JSON.stringify(err)}`);
+        expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
+        done();
+        hilog.info(domain, tag, `${caseName} test end`);
+      }
+    })
   })
 }
