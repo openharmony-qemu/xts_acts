@@ -18,7 +18,7 @@ import graphicImageInterfaceTest from './graphicImageInterface.test'
 import imagePixelMapTest from './pixelMap'
 import imagePixelMapTestErrorCode from './pixelMapErrorCode'
 import pixelMapNewAPI from './PixelMapNewAPI.test'
-import graphicImagePixelMapAPI22 from './graphicImagePixelMap.test'
+import graphicImagePixelMapAPI22 from './GraphicImagePixelMapAPI22.test'
 
 export default function testsuite() {
   imagePixelMapTest()
