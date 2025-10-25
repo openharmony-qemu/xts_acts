@@ -234,6 +234,13 @@ export function delay(): Promise<number> {
   });
 }
 
+export function delaySync(): void {
+  let t = Date.now();
+  while ((Date.now() - t) < 1000) {
+    continue;
+  }
+}
+
 export async function randomTest(): Promise<number> {
 
   let t = Date.now();
