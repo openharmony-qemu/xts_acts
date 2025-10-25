@@ -1385,5 +1385,37 @@ export default function ActsOsAccountTest() {
         done();
       }
     });
+
+    /**
+    * @tc.number    ActsOsAccountGetOsAccountDomainInfo_0900
+    * @tc.name      ActsOsAccountGetOsAccountDomainInfo_0900
+    * @tc.desc      getAllServerConfigs promise
+    * @tc.level     Level3
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    */
+    it('ActsOsAccountGetOsAccountDomainInfo_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let tag = "====>ActsOsAccountGetOsAccountDomainInfo_0900 ";
+      console.info(tag + "start====");
+      try {
+        console.info(tag + "start getAllServerConfigs");
+        let data: Array<osAccount.DomainServerConfig> = await osAccount.DomainServerConfigManager.getAllServerConfigs();
+        console.info(tag + "getAllServerConfigs data: " + JSON.stringify(data));
+        if (data.length == 0) {
+          expect(data.length).assertEqual(0);
+        } else {
+          expect(data.length > 0).assertTrue();
+        }
+        done();
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        if (err.code == 801) {
+          console.info(tag + "Current device not support API: getAllServerConfigs");
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    });
   });
 }
