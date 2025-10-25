@@ -533,7 +533,7 @@ export default function PlainArrayTest2() {
         plainArray.add(1, "squirrel");
         plainArray.add(2, "sparrow");
         let result = plainArray.getKeyAt(3);
-        expect(String(result)).assertEqual('undefined');
+        expect(String(result)).assertEqual('-1');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
@@ -1211,7 +1211,7 @@ export default function PlainArrayTest2() {
         expect(false).assertFail();
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.code}`);
-        expect(err.code).assertEqual(10200001);
+        expect(err.code).assertEqual(10200010);
       }
     });
 
@@ -1253,7 +1253,7 @@ export default function PlainArrayTest2() {
         expect(false).assertFail();
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err.code}`);
-        expect(err.code).assertEqual(10200001);
+        expect(err.code).assertEqual(10200010);
       }
     });
 

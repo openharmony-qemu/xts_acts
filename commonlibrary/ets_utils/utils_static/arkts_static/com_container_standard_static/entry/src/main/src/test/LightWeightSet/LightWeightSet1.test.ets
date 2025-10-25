@@ -869,13 +869,13 @@ export default function LightWeightSetTest1() {
       lightWeightSet.add(3);
       lightWeightSet.add(4);
       lightWeightSet.add(5);
-      let arr = new Array<[Double, Double]>();
-      let res = lightWeightSet.entries();
-      let temp: [Double, Double] | undefined = undefined;
-      do {
+      let arr = new Array<Double>();
+      let res = lightWeightSet.values();
+      let temp: Double | undefined = res.next().value;
+      while (temp != undefined) {
+        arr.push(temp);
         temp = res.next().value;
-        arr.push(temp!);
-      } while (temp != undefined);
+      }
       let arr1 = [1, 2, 3, 4, 5];
       for (let i = 0; i < arr1.length; i++) {
         expect(arr[i]).assertEqual(arr1[i]);

@@ -200,11 +200,11 @@ export default function StackTest1() {
       try {
         let stack: Stack<number | string | object> = new Stack<number | string | object>();
         let result = stack.pop()
-        expect(result).assertEqual(undefined);
+        console.error(`${TAG} failed, error`);
+        expect(false).assertFail()
       } catch (err) {
         err = err as BusinessError;
-        console.error(`${TAG} failed, error: ${err}`);
-        expect(false).assertFail()
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -221,11 +221,11 @@ export default function StackTest1() {
       try {
         let stack: Stack<number | string | object> = new Stack<number | string | object>();
         let result = stack.pop();
-        expect(result).assertEqual(undefined);
+        console.error(`${TAG} failed, error`);
+        expect(false).assertFail()
       } catch (err) {
         err = err as BusinessError;
-        console.error(`${TAG} failed, error: ${err}`);
-        expect(false).assertFail()
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 
@@ -272,11 +272,11 @@ export default function StackTest1() {
       try {
         let stack: Stack<number | string | object> = new Stack<number | string | object>();
         let result = stack.peek();
-        expect(result).assertEqual(undefined);
+        console.error(`${TAG} failed, error`);
+        expect(false).assertFail()
       } catch (err) {
         err = err as BusinessError;
-        console.error(`${TAG} failed, error: ${err}`);
-        expect(false).assertFail()
+        expect(err.message).assertEqual("Container is empty");
       }
     });
 

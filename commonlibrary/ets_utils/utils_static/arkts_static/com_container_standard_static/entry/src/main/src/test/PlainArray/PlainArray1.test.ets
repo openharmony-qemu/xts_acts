@@ -655,7 +655,7 @@ export default function PlainArrayTest1() {
       plainArray.add(4, "D");
       plainArray.add(5, "E");
       let res = plainArray.getKeyAt(50);
-      expect(String(res)).assertEqual('undefined');
+      expect(String(res)).assertEqual('-1');
     });
 
     /**
