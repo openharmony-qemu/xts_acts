@@ -196,7 +196,7 @@ export struct CustomSelectionPage {
   aboutToAppear(): void {
     try {
       this.updateDisplay();
-      this.listener.on('change', (mediaQueryResult: mediaquery.MediaQueryResult) => {
+      this.listener.onChange((mediaQueryResult: mediaquery.MediaQueryResult) => {
         this.updateDisplay();
       })
     } catch (e) {

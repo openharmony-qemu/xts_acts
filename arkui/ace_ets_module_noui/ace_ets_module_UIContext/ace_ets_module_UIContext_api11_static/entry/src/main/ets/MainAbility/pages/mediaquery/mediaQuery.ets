@@ -35,7 +35,7 @@ struct MediaQueryOff {
 
   aboutToAppear() {
     Log.showInfo(TAG, `aboutToAppear MediaQueryOff start`)
-    this.listener.on('change', (mediaQueryResult) => {
+    this.listener.onChange((mediaQueryResult) => {
       if (mediaQueryResult.matches) {
         this.color = '#FFD700'
         this.text = 'Landscape'
@@ -68,7 +68,7 @@ struct MediaQueryOff {
         .textOverflow({ overflow: TextOverflow.None })
         .key("offText")
         .onClick((e:ClickEvent) => {
-          this.listener.off('change', (mediaQueryResult) => {
+          this.listener.offChange((mediaQueryResult) => {
             console.log(JSON.stringify(mediaQueryResult))
             let result = true
             try {
