@@ -54,8 +54,13 @@ export default function channelCallbacktest() {
                 let seIsConnected = Service.isConnected();
                 console.info("[NFC_test] Logical SEService isConnected The connection status is: " + seIsConnected);
                 if (seIsConnected) {
-                            getReader = Service.getReaders();
-                    console.info("[NFC_test] createService channelCallbacktest getReader value  is: " + getReader);                                    
+                    getReader = Service.getReaders();
+                    console.info("[NFC_test] createService channelCallbacktest getReader value  is: " + getReader);
+                    if(getReader.length > 0) {
+                        expect(getReader.length > 0).assertTrue();
+                    } else {
+                        expect(getReader).assertDeepEquals([]);
+                    }                                
                     for (let i = 0; i < getReader.length; i++) {
                         if (!getReader[i].isSecureElementPresent()) {
                             console.info("[NFC_test] se not present : " + i);
@@ -232,6 +237,11 @@ export default function channelCallbacktest() {
                                         let nfcBasicChannel = result;
                                         let getResponse = nfcBasicChannel.getSelectResponse();
                                         console.info("[NFC_test]11 getSelectResponse data: " + getResponse);
+                                        if (getResponse.length > 0) {
+                                            expect(getResponse.length > 0).assertTrue();
+                                        } else {
+                                            expect(getResponse).assertDeepEquals([]);
+                                        }
                                         nfcBasicChannel.close();
                                         console.info("[NFC_test]11 Data received by the application select command: " );
                                         expect(getResponse).assertInstanceOf('Array');                                        

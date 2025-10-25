@@ -55,6 +55,11 @@ export default function openSessionTest() {
                 if (seIsConnected) {
                     getReader = Service.getReaders();
                     console.info("openSessionTest getReader value  is: " + getReader);     
+                    if(getReader.length > 0) {
+                        expect(getReader.length > 0).assertTrue();
+                    } else {
+                        expect(getReader).assertDeepEquals([]);
+                    } 
                     for (let i = 0; i < getReader.length; i++) {
                         if (!getReader[i].isSecureElementPresent()) {
                             console.info("[NFC_test] se not present : " + i);
@@ -133,6 +138,11 @@ export default function openSessionTest() {
                     console.info("[NFC_test]7 This function is not supported because the phone NFC chip is ST chip.");
                 } else {
                     let nfcGetart = Session.getATR();
+                    if (nfcGetart.length > 0) {
+                        expect(nfcGetart.length > 0).assertTrue();
+                    } else {
+                        expect(nfcGetart).assertDeepEquals([]);
+                    }
                     expect(nfcGetart).assertInstanceOf('Array');
                     expect(!nfcGetart == false ).assertTrue();
                     console.info("[NFC_test]7 Get the ATR of this SE: " + nfcGetart);

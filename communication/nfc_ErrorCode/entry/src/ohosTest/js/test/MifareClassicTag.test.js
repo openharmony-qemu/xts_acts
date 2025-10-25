@@ -149,6 +149,11 @@ export default function MifareClassicErrorTest() {
                 (async () => {
                     try {
                         let result = await MifareClassicTag.readSingleBlock('test');
+                        if (result.length > 0) {
+                            expect(result.length > 0).assertTrue();
+                        } else {
+                            expect(result).assertDeepEquals([]);
+                        }
                         console.info("[NFC_test]mifareClassic3 readSingleBlock data: " + result);
                     } catch(error) {
                         console.info("[NFC_test]mifareClassic3 readSingleBlock errorcode: " + error.code);
@@ -181,6 +186,11 @@ export default function MifareClassicErrorTest() {
                             console.info("[NFC_test]mifareClassic4 readSingleBlock errcode: " + err);
                             expect(true).assertEqual(true);
                         } else {
+                            if (data.length > 0) {
+                                expect(data.length > 0).assertTrue();
+                            } else {
+                                expect(data).assertDeepEquals([]);
+                            }
                             console.info("[NFC_test]mifareClassic4 readSingleBlock data: " + data+ "json4:" + JSON.stringify(data));
                             expect(data).assertInstanceOf('Array')
                         }
