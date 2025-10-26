@@ -2294,10 +2294,10 @@ function testSetExternalSourceExtensionsPolicy() {
       securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.FORCE_OPEN);
       expect(false).assertTrue();
     } catch (error) {
-      console.info("test_set_external_source_extensions_policy_0100 error.code = " + error.code);
+      console.info('test_set_external_source_extensions_policy_0100 error.code = ' + error.code);
       expect(error.code == 9200001 || error.code == 801).assertTrue();
     } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
+      await adminManager.disableSuperAdmin(SELFWANT);
     }
     done();
   });
@@ -2316,10 +2316,10 @@ function testSetExternalSourceExtensionsPolicy() {
       securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.FORCE_OPEN);
       expect(false).assertTrue();
     } catch (error) {
-      console.info("test_set_external_source_extensions_policy_0200 error.code = " + error.code);
+      console.info('test_set_external_source_extensions_policy_0200 error.code = ' + error.code);
       expect(error.code == 9200002 || error.code == 801).assertTrue();
     } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
+      await adminManager.disableSuperAdmin(SELFWANT);
     }
     done();
   });
@@ -2338,10 +2338,10 @@ function testSetExternalSourceExtensionsPolicy() {
       securityManager.setExternalSourceExtensionsPolicy(INVALID_WANT, common.ManagedPolicy.FORCE_OPEN);
       expect(false).assertTrue();
     } catch (error) {
-      console.info("test_set_external_source_extensions_policy_0300 error.code = " + error.code);
+      console.info('test_set_external_source_extensions_policy_0300 error.code = ' + error.code);
       expect(error.code == 9200002 || error.code == 801).assertTrue();
     } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
+      await adminManager.disableSuperAdmin(SELFWANT);
     }
     done();
   });
@@ -2361,7 +2361,7 @@ function testSetExternalSourceExtensionsPolicy() {
       let managedPolicy: common.ManagedPolicy = securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
       expect(managedPolicy == common.ManagedPolicy.FORCE_OPEN).assertTrue();
     } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
+      await adminManager.disableSuperAdmin(SELFWANT);
     }
     done();
   });
@@ -2381,10 +2381,10 @@ function testGetExternalSourceExtensionsPolicy() {
       securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      console.info("test_get_external_source_extensions_policy_0100 error.code = " + error.code);
+      console.info('test_get_external_source_extensions_policy_0100 error.code = ' + error.code);
       expect(error.code == 9200001).assertTrue();
     } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
+      await adminManager.disableSuperAdmin(SELFWANT);
     }
     done();
   });
@@ -2403,10 +2403,10 @@ function testGetExternalSourceExtensionsPolicy() {
       securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      console.info("test_get_external_source_extensions_policy_0200 error.code = " + error.code);
+      console.info('test_get_external_source_extensions_policy_0200 error.code = ' + error.code);
       expect(error.code == 9200002).assertTrue();
     } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
+      await adminManager.disableSuperAdmin(SELFWANT);
     }
     done();
   });
@@ -2425,10 +2425,10 @@ function testGetExternalSourceExtensionsPolicy() {
       securityManager.getExternalSourceExtensionsPolicy(INVALID_WANT);
       expect(false).assertTrue();
     } catch (error) {
-      console.info("test_get_external_source_extensions_policy_0300 error.code = " + error.code);
+      console.info('test_get_external_source_extensions_policy_0300 error.code = ' + error.code);
       expect(error.code == 401).assertTrue();
     } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
+      await adminManager.disableSuperAdmin(SELFWANT);
     }
     done();
   });
@@ -2447,7 +2447,7 @@ function testGetExternalSourceExtensionsPolicy() {
       securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
       expect(true).assertTrue();
     } finally {
-      await adminManager.disableSuperAdmin(SELFHAPNAME);
+      await adminManager.disableSuperAdmin(SELFWANT);
     }
     done();
   });
