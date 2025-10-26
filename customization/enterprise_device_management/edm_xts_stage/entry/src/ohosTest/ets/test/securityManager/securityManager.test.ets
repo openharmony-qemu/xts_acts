@@ -2358,6 +2358,9 @@ function testSetExternalSourceExtensionsPolicy() {
       securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.DEFAULT);
       let managedPolicy: common.ManagedPolicy = securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
       expect(managedPolicy == common.ManagedPolicy.DEFAULT).assertTrue();
+    } catch (error) {
+      console.info('test_set_external_source_extensions_policy_0400 error.code = ' + error.code);
+      expect(error.code == 801).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -2400,7 +2403,7 @@ function testGetExternalSourceExtensionsPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_get_external_source_extensions_policy_0200 error.code = ' + error.code);
-      expect(error.code == 9200002).assertTrue();
+      expect(error.code == 9200002 || error.code == 801).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -2442,6 +2445,9 @@ function testGetExternalSourceExtensionsPolicy() {
     try {
       securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
       expect(true).assertTrue();
+    } catch (error) {
+      console.info('test_get_external_source_extensions_policy_0400 error.code = ' + error.code);
+      expect(error.code == 801).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }

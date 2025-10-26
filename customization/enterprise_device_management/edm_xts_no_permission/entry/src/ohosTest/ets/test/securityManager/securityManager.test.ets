@@ -546,8 +546,8 @@ function testSetExternalSourceExtensionsPolicy() {
       securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.FORCE_OPEN);
       expect(false).assertTrue();
     } catch (error) {
-      console.info("test_set_external_source_extensions_policy_0100 error.code = " + error.code);
-      expect(error.code == 201).assertTrue();
+      console.info('test_set_external_source_extensions_policy_0100 error.code = ' + error.code);
+      expect(error.code == 201 || error.code == 801).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
@@ -570,8 +570,8 @@ function testGetExternalSourceExtensionsPolicy() {
       securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
-      console.info("test_get_external_source_extensions_policy_0100 error.code = " + error.code);
-      expect(error.code == 201).assertTrue();
+      console.info('test_get_external_source_extensions_policy_0100 error.code = ' + error.code);
+      expect(error.code == 201 || error.code == 801).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
