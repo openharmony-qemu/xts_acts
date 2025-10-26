@@ -2355,9 +2355,9 @@ function testSetExternalSourceExtensionsPolicy() {
   it("test_set_external_source_extensions_policy_0400", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      securityManager.setExternalSourceExtensionsPolicy(INVALID_WANT, common.ManagedPolicy.FORCE_OPEN);
+      securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.DEFAULT);
       let managedPolicy: common.ManagedPolicy = securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
-      expect(managedPolicy == common.ManagedPolicy.FORCE_OPEN).assertTrue();
+      expect(managedPolicy == common.ManagedPolicy.DEFAULT).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
     }
