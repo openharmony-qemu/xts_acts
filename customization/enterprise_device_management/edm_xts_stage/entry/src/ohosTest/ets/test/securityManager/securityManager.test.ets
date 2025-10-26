@@ -23,6 +23,7 @@ import { ENTINFO1, INVALID_WANT, SELFHAPNAME, SELFWANT, TEST_TOKEN_ID, TEST_CLIP
 import adminManager from '@ohos.enterprise.adminManager';
 import securityManager from '@ohos.enterprise.securityManager';
 import sysDeviceInfo from '@ohos.deviceInfo';
+import common from '@ohos.enterprise.commom'
 
 const PATCH = 'patch';
 const ENCRYPTION = 'encryption';
@@ -148,6 +149,9 @@ export default function securityManagerTest() {
     
     testSetPermissionManagedState();
     testGetPermissionManagedState();
+
+    testSetExternalSourceExtensionsPolicy();
+    testGetExternalSourceExtensionsPolicy();
   })
 }
 
@@ -2269,6 +2273,179 @@ function testGetPermissionManagedState() {
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testSetExternalSourceExtensionsPolicy() {
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0100
+   * @tc.name      : test_set_external_source_extensions_policy_0100
+   * @tc.desc      : test securityManager setExternalSourceExtensionsPolicy without activated admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_external_source_extensions_policy_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.FORCE_OPEN);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info("test_set_external_source_extensions_policy_0100 error.code = " + error.code);
+      expect(error.code == 9200001 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0200
+   * @tc.name      : test_set_external_source_extensions_policy_0200
+   * @tc.desc      : test securityManager setExternalSourceExtensionsPolicy without normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_external_source_extensions_policy_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.FORCE_OPEN);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info("test_set_external_source_extensions_policy_0200 error.code = " + error.code);
+      expect(error.code == 9200002 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0300
+   * @tc.name      : test_set_external_source_extensions_policy_0300
+   * @tc.desc      : test securityManager setExternalSourceExtensionsPolicy without empty admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_external_source_extensions_policy_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.setExternalSourceExtensionsPolicy(INVALID_WANT, common.ManagedPolicy.FORCE_OPEN);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info("test_set_external_source_extensions_policy_0300 error.code = " + error.code);
+      expect(error.code == 9200002 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0400
+   * @tc.name      : test_set_external_source_extensions_policy_0400
+   * @tc.desc      : test securityManager setExternalSourceExtensionsPolicy with super admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_external_source_extensions_policy_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setExternalSourceExtensionsPolicy(INVALID_WANT, common.ManagedPolicy.FORCE_OPEN);
+      let managedPolicy: common.ManagedPolicy = securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
+      expect(managedPolicy == common.ManagedPolicy.FORCE_OPEN).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+}
+
+function testGetExternalSourceExtensionsPolicy() {
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0100
+   * @tc.name      : test_get_external_source_extensions_policy_0100
+   * @tc.desc      : test securityManager getExternalSourceExtensionsPolicy without activated admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_external_source_extensions_policy_0100", Level.LEVEL2, async (done: Function) => {
+    try {
+      securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info("test_get_external_source_extensions_policy_0100 error.code = " + error.code);
+      expect(error.code == 9200001).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0200
+   * @tc.name      : test_get_external_source_extensions_policy_0200
+   * @tc.desc      : test securityManager getExternalSourceExtensionsPolicy with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_external_source_extensions_policy_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info("test_get_external_source_extensions_policy_0200 error.code = " + error.code);
+      expect(error.code == 9200002).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0300
+   * @tc.name      : test_get_external_source_extensions_policy_0300
+   * @tc.desc      : test securityManager getExternalSourceExtensionsPolicy with empty admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_external_source_extensions_policy_0300", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getExternalSourceExtensionsPolicy(INVALID_WANT);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info("test_get_external_source_extensions_policy_0300 error.code = " + error.code);
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_EXTERNAL_SOURCE_EXTENSIONS_POLICY_JS_0400
+   * @tc.name      : test_get_external_source_extensions_policy_0400
+   * @tc.desc      : test securityManager getExternalSourceExtensionsPolicy with super admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_external_source_extensions_policy_0400", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
+      expect(true).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
