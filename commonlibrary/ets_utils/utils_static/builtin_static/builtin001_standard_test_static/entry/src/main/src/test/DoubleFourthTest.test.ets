@@ -886,7 +886,7 @@ export default function builtinsDoubleFourthPrototypebTest() {
         console.info(`${caseName}, test start`);
         const val = 123.456;
         const longVal = Double.bitCastToLong(val);
-        expect(typeof longVal).assertEqual('number');
+        expect(typeof longVal).assertEqual('long');
         expect(Double.bitCastFromLong(longVal)).assertEqual(val);
         console.info(`${caseName}, test end`);
         Done();
@@ -906,7 +906,7 @@ export default function builtinsDoubleFourthPrototypebTest() {
         console.info(`${caseName}, test start`);
         const val = -789.123;
         const longVal = Double.bitCastToLong(val);
-        expect(typeof longVal).assertEqual('number');
+        expect(typeof longVal).assertEqual('long');
         expect(Double.bitCastFromLong(longVal)).assertEqual(val);
         console.info(`${caseName}, test end`);
         Done();
@@ -926,7 +926,7 @@ export default function builtinsDoubleFourthPrototypebTest() {
         console.info(`${caseName}, test start`);
         const val = Number.MAX_VALUE;
         const longVal = Double.bitCastToLong(val);
-        expect(typeof longVal).assertEqual('number');
+        expect(typeof longVal).assertEqual('long');
         expect(Double.bitCastFromLong(longVal)).assertEqual(val);
         console.info(`${caseName}, test end`);
         Done();
@@ -946,7 +946,7 @@ export default function builtinsDoubleFourthPrototypebTest() {
         console.info(`${caseName}, test start`);
         const val = Number.MIN_VALUE;
         const longVal = Double.bitCastToLong(val);
-        expect(typeof longVal).assertEqual('number');
+        expect(typeof longVal).assertEqual('long');
         expect(Double.bitCastFromLong(longVal)).assertEqual(val);
         console.info(`${caseName}, test end`);
         Done();
@@ -966,7 +966,7 @@ export default function builtinsDoubleFourthPrototypebTest() {
         console.info(`${caseName}, test start`);
         const val = 0.1;
         const longVal = Double.bitCastToLong(val);
-        expect(typeof longVal).assertEqual('number');
+        expect(typeof longVal).assertEqual('long');
         expect(Double.bitCastFromLong(longVal)).assertEqual(val);
         console.info(`${caseName}, test end`);
         Done();
@@ -986,7 +986,7 @@ export default function builtinsDoubleFourthPrototypebTest() {
         console.info(`${caseName}, test start`);
         const val = -0.1;
         const longVal = Double.bitCastToLong(val);
-        expect(typeof longVal).assertEqual('number');
+        expect(typeof longVal).assertEqual('long');
         expect(Double.bitCastFromLong(longVal)).assertEqual(val);
         console.info(`${caseName}, test end`);
         Done();
@@ -1006,7 +1006,7 @@ export default function builtinsDoubleFourthPrototypebTest() {
         console.info(`${caseName}, test start`);
         const val = 1234567890123456;
         const longVal = Double.bitCastToLong(val);
-        expect(typeof longVal).assertEqual('number');
+        expect(typeof longVal).assertEqual('long');
         expect(Double.bitCastFromLong(longVal)).assertEqual(val);
         console.info(`${caseName}, test end`);
         Done();
@@ -1026,7 +1026,7 @@ export default function builtinsDoubleFourthPrototypebTest() {
         console.info(`${caseName}, test start`);
         const val = -1234567890123456;
         const longVal = Double.bitCastToLong(val);
-        expect(typeof longVal).assertEqual('number');
+        expect(typeof longVal).assertEqual('long');
         expect(Double.bitCastFromLong(longVal)).assertEqual(val);
         console.info(`${caseName}, test end`);
         Done();
