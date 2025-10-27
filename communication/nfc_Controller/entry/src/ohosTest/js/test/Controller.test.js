@@ -91,7 +91,7 @@ export default function nfcControllerTest() {
         */
         it('SUB_COMMUNICATION_NFC_Cont_0300', Level.LEVEL0, function ()  {
             let nfcswitchis = controller.isNfcOpen();
-            if (isNfcOpen == true) {
+            if (nfcswitchis == true) {
                 console.info('[NFC_test] controller3 Nfc isopen state is ->' + JSON.stringify(nfcswitchis));
                 expect(nfcswitchis).assertTrue();
             } else {
