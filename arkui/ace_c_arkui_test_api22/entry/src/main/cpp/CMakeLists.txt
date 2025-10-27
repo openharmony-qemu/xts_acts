@@ -17,6 +17,11 @@ add_library(nativerender SHARED
     textMinLines/MinLinesTest.cpp
     hasAxisTest/HasAxisTest.cpp
     list/CoastingAxisTest.cpp
+    component/ButtonComponentTest.cpp
+    component/ComponentTest.cpp
+    component/ListComponentTest.cpp
+    component/TextComponentTest.cpp
+    list/SnapSpeedTest.cpp
 )
 
 add_library(nativefunc SHARED

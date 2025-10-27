@@ -26,6 +26,8 @@
 namespace ArkUICapiTest {
 
 #define PARAM_0_POINT_5 0.5
+#define PARAM_0_POINT_3 0.3
+#define PARAM_0_POINT_2 0.2
 #define PARAM_1_POINT_5 1.5
 #define PARAM_0_POINT_6 0.6
 #define PARAM_1_POINT_1 1.1

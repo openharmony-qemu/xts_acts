@@ -14,7 +14,11 @@
  */
 
 import ContentOffset from './ListTest/ContentOffset.test';
+import scrollSnapAnimationSpeedModifier from './ListTest/scrollSnapAnimationSpeedModifier.test'; 
+import scrollSnapAnimationSpeed from './ListTest/scrollSnapAnimationSpeed.test'; 
 
 export default function testsuite() {
-  ContentOffset()
+  ContentOffset();
+  scrollSnapAnimationSpeedModifier();
+  scrollSnapAnimationSpeed();
 }
