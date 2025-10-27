@@ -314,10 +314,12 @@ export default function UiTest() {
                 console.log(`${TestTag}, testComponentEventOccurOptionsTextContentMonitor elementInfo,${JSON.stringify(elementInfo)}`);
                 isCallBack = true;
                 try {
-                    expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
-                    expect(elementInfo.text == '123456').assertTrue()
-                    expect(elementInfo.type == 'TextInput').assertTrue()
-                    expect(elementInfo.componentEventType == 5).assertTrue();
+
+                    expect(elementInfo.bundleName).assertEqual('com.uitestScene.acts');
+                    expect(elementInfo.text).assertEqual('Second Page');
+                    expect(elementInfo.type).assertEqual('TextInput');
+                    expect(elementInfo.componentEventType).assertEqual(5);
+                    expect(elementInfo.componentId).assertEqual('changContext');
                 } catch (err) {
                     console.log(`${TestTag}, testComponentEventOccurOptionsTextContentMonitor callback error, ${JSON.stringify(err)}`);
                 }
@@ -336,9 +338,24 @@ export default function UiTest() {
                 console.log(`${TestTag}, testComponentEventOccurOptionsTextContentMonitor once error, ${JSON.stringify(err)}`);
                 expect(err.code).assertEqual(DeviceErrorCode);
             }
-
+            let changTest = await driver.findComponent(ON.id('changTest'));
+            await driver.delayMs(1000);
+            let center = await changTest.getBoundsCenter();
+            await driver.click(center.x, center.y);
+            await driver.delayMs(waitUiReadyMs);
+            await driver.triggerCombineKeys(2072, 2017);
+            await driver.delayMs(waitUiReadyMs);
+            await driver.triggerCombineKeys(2072, 2019);
+            await driver.delayMs(waitUiReadyMs);
+            await exitInputMethod();
+            await driver.delayMs(1000);
             let changContextTxt = await driver.findComponent(ON.id('changContext'));
-            await changContextTxt.inputText('123456');
+            let changCenter = await changContextTxt.getBoundsCenter();
+            await driver.click(changCenter.x, changCenter.y);
+            await driver.delayMs(waitUiReadyMs);
+            await driver.triggerCombineKeys(2072, 2038);
+            await driver.delayMs(1000);
+            await exitInputMethod();
             await driver.delayMs(5000);
             await stopApplication('com.uitestScene.acts');
             expect(isCallBack).assertTrue();
