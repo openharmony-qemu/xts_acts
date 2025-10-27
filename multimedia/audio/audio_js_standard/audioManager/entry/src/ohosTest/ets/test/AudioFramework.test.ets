@@ -6270,7 +6270,7 @@ export default function audioFramework() {
         }
         expect(flag).assertTrue();
         done();
-    }) 
+    })
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0100
      * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0100
