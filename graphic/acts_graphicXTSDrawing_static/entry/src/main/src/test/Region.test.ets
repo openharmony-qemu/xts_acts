@@ -186,10 +186,10 @@ export default function drawingTsRegionTest() {
       try {
         region.setEmpty();
       } catch (e: BusinessError) {
-        console.info(msg + `RegionEmpty errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
+        console.info(msg + `RegionEmpty errorCode is: ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
-    })
+    });
 
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_STATIC_1001
@@ -206,10 +206,10 @@ export default function drawingTsRegionTest() {
         try {
           region.setEmpty();
         } catch (e: BusinessError) {
-          console.info(msg + `RegionEmpty errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
+          console.info(msg + `RegionEmpty errorCode is: ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail()
         }
       }
-    })
+    });
   });
 }
