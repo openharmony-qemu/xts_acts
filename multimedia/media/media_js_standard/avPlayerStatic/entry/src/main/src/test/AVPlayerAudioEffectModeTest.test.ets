@@ -105,7 +105,7 @@ export default function AVPlayerAudioEffectModeTest() {
         }
       }).catch(mediaTestBase.catchCallback);
       console.log("SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_FUNCTION_0100_555")
-      avPlayer?.on('stateChange', (state, reason) => {
+      avPlayer?.onStateChange((state, reason) => {
         switch (state) {
           case IDLE:
             console.log("SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_FUNCTION_0100_11")
@@ -225,7 +225,7 @@ export default function AVPlayerAudioEffectModeTest() {
             break;
         }
       });
-      avPlayer?.on('error', (err) => {
+      avPlayer?.onError((err) => {
         console.error(`error occurred, message is ${err.message}`);
         expect().assertFail();
         avPlayer?.release();
@@ -252,7 +252,7 @@ export default function AVPlayerAudioEffectModeTest() {
           done();
         }
       }).catch(mediaTestBase.catchCallback);
-      avPlayer?.on('stateChange', (state, reason) => {
+      avPlayer?.onStateChange((state, reason) => {
         switch (state) {
           case INITIALIZED:
               if (!avPlayer) {
@@ -281,11 +281,11 @@ export default function AVPlayerAudioEffectModeTest() {
             break;
         }
       });
-      avPlayer?.on('amplitudeUpdate', (value) => {
+      avPlayer?.onAmplitudeUpdate((value) => {
         console.info(`get max amplitude ${value}`);
         expect(value.length).assertEqual(5);
       });
-      avPlayer?.on('error', (err) => {
+      avPlayer?.onError((err) => {
         console.error(`error occurred, message is ${err.message}`);
         expect().assertFail();
         avPlayer?.release();

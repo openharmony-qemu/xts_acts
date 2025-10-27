@@ -56,7 +56,7 @@ function setAVPlayerTrackCb(avPlayer: media.AVPlayer | null, descriptionKey: Arr
   descriptionValue: Array<Array<number>>, done: () => void) {
   let arrayDescription: Array<media.MediaDescription> | undefined = undefined;
   let surfaceID: string = globalThis.value;
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     switch (state) {
       case INITIALIZED:
         if (!avPlayer) {
@@ -144,7 +144,7 @@ function setPlaybackInfoCb(avPlayer: media.AVPlayer | null, descriptionKey: Arra
   descriptionValue: Array<string>, done: () => void) {
   let arrayDescription: media.PlaybackInfo | undefined = undefined;
   let surfaceID: string = globalThis.value;
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     switch (state) {
       case INITIALIZED:
         if (!avPlayer) {
@@ -226,7 +226,7 @@ async function testCheckPlaybackInfo(src: string | media.AVFileDescriptor, avPla
 async function setAVPlayerScaleCb(avPlayer: media.AVPlayer | null, done: () => void) {
   let surfaceID: string = globalThis.value;
   let count = 0;
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     switch (state) {
       case INITIALIZED:
         if (!avPlayer) {
@@ -332,13 +332,13 @@ async function setOnCallback(avPlayer: media.AVPlayer | null, done: () => void) 
   let surfaceID: string = globalThis.value;
   let count = 0;
   let playCount = 0;
-  avPlayer?.on('endOfStream', () => {
+  avPlayer?.onEndOfStream(() => {
     count++;
     console.info(TAG + 'endOfStream success')
     avPlayer?.off('endOfStream');
   })
 
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     switch (state) {
       case INITIALIZED:
         if (!avPlayer) {
@@ -480,7 +480,7 @@ function setPlaybackStrategyDASH(avPlayer: media.AVPlayer | null, done: () => vo
         break;
     }
   }
-  avPlayer?.on('stateChange', stateChangeCallback)
+  avPlayer?.onStateChange(stateChangeCallback)
 }
 
 function setPlaybackStrategy(avPlayer: media.AVPlayer | null, done: () => void,
@@ -526,7 +526,7 @@ function setPlaybackStrategy(avPlayer: media.AVPlayer | null, done: () => void,
         break;
     }
   }
-  avPlayer?.on('stateChange', stateChangeCallback)
+  avPlayer?.onStateChange(stateChangeCallback)
 }
 
 function setPlayerMediaMuted(avPlayer: media.AVPlayer | undefined) {
@@ -582,7 +582,7 @@ function setMediaMuted(avPlayer: media.AVPlayer | null, done: () => void) {
         break;
     }
   }
-  avPlayer?.on('stateChange', stateChangeCallback)
+  avPlayer?.onStateChange(stateChangeCallback)
 }
 
 async function testOffCallback(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined, done: () => void) {
@@ -723,7 +723,7 @@ function getPlaybackPosition(avPlayer: media.AVPlayer | null, done: () => void) 
         break;
     }
   }
-  avPlayer?.on('stateChange', stateChangeCallback)
+  avPlayer?.onStateChange(stateChangeCallback)
 }
 
 async function testGetPlaybackPosition(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
@@ -749,7 +749,7 @@ function setAVPlayerSeekContinuousCb(src: string | media.AVFileDescriptor, avPla
   let isSeekContinuousSupported: boolean  = false;
   let unsupportedSeekContinuousErr = false;
   let firstPlay = true;
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     if (reason == media.StateChangeReason.BACKGROUND) {
       avPlayer?.release().then(() => {
@@ -812,7 +812,7 @@ function setAVPlayerSeekContinuousCb(src: string | media.AVFileDescriptor, avPla
     }
   });
 
-  avPlayer?.on('error', (err: BusinessError) => {
+  avPlayer?.onError((err: BusinessError) => {
     console.log("wwwwww-----")
     console.error(`case error called, errMessage is ${err!!.message}`);
     console.log("averrorcode = ",err!!.code)
@@ -846,7 +846,7 @@ function openFileFailed() {
 function setPlaybackRange(avPlayer: media.AVPlayer | null, done: () => void) {
   let surfaceID: string = globalThis.value;
   let pauseCount = 0
-  avPlayer!.on('subtitleUpdate', (info: media.SubtitleInfo) => {
+  avPlayer!.onSubtitleUpdate((info: media.SubtitleInfo) => {
     if (info) {
       let text = (!info.text) ? '' : info.text
       let startTime = (!info.startTime) ? 0 : info.startTime
@@ -856,7 +856,7 @@ function setPlaybackRange(avPlayer: media.AVPlayer | null, done: () => void) {
       console.info('subtitleUpdate info is null');
     }
   });
-  avPlayer!.off('subtitleUpdate');
+  avPlayer!.offSubtitleUpdate();
   const stateChangeCallback = (state: media.AVPlayerState) => {
     switch (state) {
       case INITIALIZED:
@@ -900,7 +900,7 @@ function setPlaybackRange(avPlayer: media.AVPlayer | null, done: () => void) {
         break;
     }
   }
-  avPlayer?.on('stateChange', stateChangeCallback)
+  avPlayer?.onStateChange(stateChangeCallback)
 }
 
 async function testSetPlaybackRange(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
@@ -924,7 +924,7 @@ async function testSetPlaybackRange(src: string | media.AVFileDescriptor, avPlay
 function OnOffSubtitleUpdate(avPlayer: media.AVPlayer | null, done: () => void) {
   let surfaceID: string = globalThis.value;
   let pauseCount = 0
-  avPlayer!.on('subtitleUpdate', (info: media.SubtitleInfo) => {
+  avPlayer!.onSubtitleUpdate((info: media.SubtitleInfo) => {
     if (info) {
       let text = (!info.text) ? '' : info.text
       let startTime = (!info.startTime) ? 0 : info.startTime
@@ -934,7 +934,7 @@ function OnOffSubtitleUpdate(avPlayer: media.AVPlayer | null, done: () => void) 
       console.info('subtitleUpdate info is null');
     }
   });
-  avPlayer!.off('subtitleUpdate');
+  avPlayer!.offSubtitleUpdate();
   const stateChangeCallback = (state: media.AVPlayerState) => {
     switch (state) {
       case INITIALIZED:
@@ -973,7 +973,7 @@ function OnOffSubtitleUpdate(avPlayer: media.AVPlayer | null, done: () => void) 
         break;
     }
   }
-  avPlayer?.on('stateChange', stateChangeCallback)
+  avPlayer?.onStateChange(stateChangeCallback)
 }
 async function testOnOffSubtitleUpdate(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
   done: () => void) {
@@ -996,10 +996,10 @@ async function testOnOffSubtitleUpdate(src: string | media.AVFileDescriptor, avP
 function OffSeiMessageReceived(avPlayer: media.AVPlayer | null, done: () => void) {
   let surfaceID: string = globalThis.value;
   let pauseCount = 0
-  avPlayer!.on('seiMessageReceived', [5], (messages: Array<media.SeiMessage>, playbackPosition?: number) => {
+  avPlayer!.onSeiMessageReceived([5], (messages: Array<media.SeiMessage>, playbackPosition?: number) => {
     console.info('seiMessageReceived playbackPosition ' + playbackPosition);
   });
-  avPlayer!.off('seiMessageReceived');
+  avPlayer!.offSeiMessageReceived();
   done();
 }
 
@@ -1024,10 +1024,10 @@ async function testOffSeiMessageReceived(src: string | media.AVFileDescriptor, a
 function OnOffAudioOutputDeviceChangeWithInfo(avPlayer: media.AVPlayer | null, done: () => void) {
   let surfaceID: string = globalThis.value;
   let pauseCount = 0
-  avPlayer!.on('audioOutputDeviceChangeWithInfo', (data: audio.AudioStreamDeviceChangeInfo) => {
+  avPlayer!.onAudioOutputDeviceChangeWithInfo((data: audio.AudioStreamDeviceChangeInfo) => {
     console.info(`${JSON.stringify(data)}`);
   });
-  avPlayer!.off('audioOutputDeviceChangeWithInfo');
+  avPlayer!.offAudioOutputDeviceChangeWithInfo();
   done();
 }
 
@@ -1050,9 +1050,9 @@ async function testOnOffAudioOutputDeviceChangeWithInfo(src: string | media.AVFi
   });
 }
 function OnOffMediaKeySystemInfoUpdate(avPlayer: media.AVPlayer | null, done: () => void) {
-  avPlayer!.on('mediaKeySystemInfoUpdate', (mediaKeySystemInfo: Array<drm.MediaKeySystemInfo>) => {
+  avPlayer!.onMediaKeySystemInfoUpdate((mediaKeySystemInfo: Array<drm.MediaKeySystemInfo>) => {
   });
-  avPlayer!.off('mediaKeySystemInfoUpdate');
+  avPlayer!.offMediaKeySystemInfoUpdate();
   done();
 }
 async function testOnOffmediaKeySystemInfoUpdate(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
@@ -1074,9 +1074,9 @@ async function testOnOffmediaKeySystemInfoUpdate(src: string | media.AVFileDescr
   });
 }
 function OnOffAudioInterrupt(avPlayer: media.AVPlayer | null, done: () => void) {
-  avPlayer!.on('audioInterrupt', (data: audio.InterruptEvent) => {
+  avPlayer!.onAudioInterrupt((data: audio.InterruptEvent) => {
   });
-  avPlayer!.off('audioInterrupt');
+  avPlayer!.offAudioInterrupt();
   done();
 }
 async function testOnOffAudioInterrupt(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
@@ -1098,9 +1098,9 @@ async function testOnOffAudioInterrupt(src: string | media.AVFileDescriptor, avP
   });
 }
 function OnOffBitrateDone(avPlayer: media.AVPlayer | null, done: () => void) {
-  avPlayer!.on('bitrateDone', (data: int) => {
+  avPlayer!.onBitrateDone((data: int) => {
   });
-  avPlayer!.off('bitrateDone');
+  avPlayer!.offBitrateDone();
   done();
 }
 async function testOnOffBitrateDone(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
@@ -1150,7 +1150,7 @@ function setAvPlayerDataSrc(avPlayer: media.AVPlayer | null, dataSrc: media.AVDa
         break;
     }
   }
-  avPlayer?.on('stateChange', stateChangeCallback)
+  avPlayer?.onStateChange(stateChangeCallback)
   avPlayer!.dataSrc = dataSrc;
 }
 async function testAvPlayerDataSrc(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
@@ -1194,7 +1194,7 @@ async function testAvPlayerDataSrc(src: string | media.AVFileDescriptor, avPlaye
 function OnOffTrackInfoUpdate(avPlayer: media.AVPlayer | null, done: () => void) {
   let surfaceID: string = globalThis.value;
   let pauseCount = 0
-  avPlayer!.on('trackInfoUpdate', (info: Array<media.MediaDescription>) => {
+  avPlayer!.onTrackInfoUpdate((info: Array<media.MediaDescription>) => {
     if (info) {
       for (let i = 0; i < info.length; i++) {
         let propertyIndex: Object | undefined = info[i][media.MediaDescriptionKey.MD_KEY_TRACK_INDEX];
@@ -1205,7 +1205,7 @@ function OnOffTrackInfoUpdate(avPlayer: media.AVPlayer | null, done: () => void)
       console.info('track info is null');
     }
   });
-  avPlayer!.off('trackInfoUpdate');
+  avPlayer!.offTrackInfoUpdate();
   const stateChangeCallback = (state: media.AVPlayerState) => {
     switch (state) {
       case INITIALIZED:
@@ -1244,7 +1244,7 @@ function OnOffTrackInfoUpdate(avPlayer: media.AVPlayer | null, done: () => void)
         break;
     }
   }
-  avPlayer?.on('stateChange', stateChangeCallback)
+  avPlayer?.onStateChange(stateChangeCallback)
 }
 
 async function testOnOffTrackInfoUpdate(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
