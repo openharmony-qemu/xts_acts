@@ -55,6 +55,8 @@ export default function nfcCardEmulationTest() {
     it('SUB_COMMUNICATION_NFC_Card_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0100 PAYMENT is  ' + cardEmulation.CardType.PAYMENT);
       expect(cardEmulation.CardType.PAYMENT).assertEqual('payment');
+      hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Card_static_0100 OTHER is  ' + cardEmulation.CardType.OTHER);
+      expect(cardEmulation.CardType.OTHER).assertEqual('other');
       done();
     })
 
