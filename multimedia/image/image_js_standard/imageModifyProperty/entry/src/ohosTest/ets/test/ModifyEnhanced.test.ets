@@ -61,8 +61,8 @@ function generateModifyRecords(
   logger: Logger,
   propertyKeys: Array<image.PropertyKey>,
   errorKeys: Array<image.PropertyKey> | undefined
-): Record<image.PropertyKey, string | null> {
-  const modifyRecords: Record<image.PropertyKey, string | null> = {} as Record<image.PropertyKey, string | null>;
+): Record<string, string | null> {
+  const modifyRecords: Record<string, string | null> = {} as Record<string, string | null>;
 
   propertyKeys.forEach((key) => {
     const rule = readAndWritePropertyKeyRules.get(key);
@@ -75,7 +75,7 @@ function generateModifyRecords(
     if (errorKeys && errorKeys.includes(key)) {
       const errRule = errorKeyRules.get(key);
       if (errRule) {
-        modifyRecords[key] = errRule.modifyValue;
+        modifyRecords[String(key)] = errRule.modifyValue;
         logger.log(`Setting error value for key ${key}`);
       } else {
         logger.log(`No errRule found for key ${key}. Skipping.`);
@@ -83,7 +83,7 @@ function generateModifyRecords(
       return;
     }
 
-    modifyRecords[key] = rule.modifyValue;
+    modifyRecords[String(key)] = rule.modifyValue;
   });
 
   return modifyRecords;
@@ -187,7 +187,7 @@ export default function imageModifyPropertiesEnhanced() {
      * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_0100
      * @tc.desc        test modifyImagePropertiesEnhanced
      *                 1.create imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<PropertyKey, string | null>)
+     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
      *                   Set normal values for all readable and writable property keys
      * @tc.size        MEDIUM
      * @tc.type        Functional
@@ -205,7 +205,7 @@ export default function imageModifyPropertiesEnhanced() {
      * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_HEIC_0100
      * @tc.desc        test modifyImagePropertiesEnhanced
      *                 1.create imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<PropertyKey, string | null>)
+     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
      *                   Set normal values for all readable and writable property keys
      * @tc.size        MEDIUM
      * @tc.type        Functional
@@ -228,7 +228,7 @@ export default function imageModifyPropertiesEnhanced() {
      * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_PNG_0100
      * @tc.desc        test modifyImagePropertiesEnhanced
      *                 1.create imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<PropertyKey, string | null>)
+     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
      *                   Set normal values for all readable and writable property keys
      * @tc.size        MEDIUM
      * @tc.type        Functional
@@ -246,7 +246,7 @@ export default function imageModifyPropertiesEnhanced() {
      * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WEBP_0100
      * @tc.desc        test modifyImagePropertiesEnhanced
      *                 1.create imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<PropertyKey, string | null>)
+     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
      *                   Set normal values for all readable and writable property keys
      * @tc.size        MEDIUM
      * @tc.type        Functional
@@ -264,7 +264,7 @@ export default function imageModifyPropertiesEnhanced() {
      * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_JPEG_0100
      * @tc.desc        test modifyImagePropertiesEnhanced
      *                 1.create imageSource using jpeg images without exif
-     *                 2.modifyImagePropertiesEnhanced(records: Record<PropertyKey, string | null>)
+     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
      *                   Set normal values for all readable and writable property keys
      * @tc.size        MEDIUM
      * @tc.type        Functional
@@ -282,7 +282,7 @@ export default function imageModifyPropertiesEnhanced() {
      * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_HEIC_0100
      * @tc.desc        test modifyImagePropertiesEnhanced
      *                 1.create imageSource using jpeg images without exif
-     *                 2.modifyImagePropertiesEnhanced(records: Record<PropertyKey, string | null>)
+     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
      *                   Set normal values for all readable and writable property keys
      * @tc.size        MEDIUM
      * @tc.type        Functional
@@ -305,7 +305,7 @@ export default function imageModifyPropertiesEnhanced() {
      * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_PNG_0100
      * @tc.desc        test modifyImagePropertiesEnhanced
      *                 1.create imageSource using jpeg images without exif
-     *                 2.modifyImagePropertiesEnhanced(records: Record<PropertyKey, string | null>)
+     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
      *                   Set normal values for all readable and writable property keys
      * @tc.size        MEDIUM
      * @tc.type        Functional
@@ -323,7 +323,7 @@ export default function imageModifyPropertiesEnhanced() {
      * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_WEBP_0100
      * @tc.desc        test modifyImagePropertiesEnhanced
      *                 1.create imageSource using jpeg images without exif
-     *                 2.modifyImagePropertiesEnhanced(records: Record<PropertyKey, string | null>)
+     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
      *                   Set normal values for all readable and writable property keys
      * @tc.size        MEDIUM
      * @tc.type        Functional
@@ -341,7 +341,7 @@ export default function imageModifyPropertiesEnhanced() {
      * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0100
      * @tc.desc        test modifyImagePropertiesEnhanced error
      *                 1.create imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<PropertyKey, string | null>)
+     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
      *                   Set outliers for some property keys
      * @tc.size        MEDIUM
      * @tc.type        Functional
@@ -365,7 +365,7 @@ export default function imageModifyPropertiesEnhanced() {
      * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0200
      * @tc.desc        test modifyImagePropertiesEnhanced error
      *                 1.create imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<PropertyKey, string | null>)
+     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
      *                   set unsupported property key
      * @tc.size        MEDIUM
      * @tc.type        Functional
@@ -376,14 +376,14 @@ export default function imageModifyPropertiesEnhanced() {
       let filePath = filesDir + "/" + TEST_ERROR_CASE2;
       let beforeImageSource = image.createImageSource(filePath);
       try {
-        let modifyRecords: Record<PropertyKey, string | null> = {
+        let modifyRecords: Record<string, string | null> = {
           "ImageWidth": "1024",
           "xyz": "2025",
           "ImageLength": "2048",
           "Orientation": "Top-left",
           "RowsPerStrip": "10",
           "error": "xxx"
-        } as Record<PropertyKey, string | null>;
+        } as Record<string, string | null>;
         await beforeImageSource.modifyImagePropertiesEnhanced(modifyRecords);
         logger.log("modifyImagePropertiesEnhanced end!!!");
         beforeImageSource?.release();
@@ -401,10 +401,10 @@ export default function imageModifyPropertiesEnhanced() {
           image.PropertyKey.ROWS_PER_STRIP
         ]);
         imageSource?.release();
-        let ret = dstRecords["ImageWidth"]  == '1024' &&
-                  dstRecords["ImageLength"] == '2048' &&
-                  dstRecords["Orientation"]  == 'Top-left' &&
-                  dstRecords["RowsPerStrip"] == '10';
+        let ret = dstRecords[image.PropertyKey.IMAGE_WIDTH]  == '1024' &&
+                  dstRecords[image.PropertyKey.IMAGE_LENGTH] == '2048' &&
+                  dstRecords[image.PropertyKey.ORIENTATION]  == 'Top-left' &&
+                  dstRecords[image.PropertyKey.ROWS_PER_STRIP] == '10';
         logger.log(`Partial modification result verification: ${ret}`);
         expect(ret).assertTrue();
         done();
@@ -416,7 +416,7 @@ export default function imageModifyPropertiesEnhanced() {
      * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0300
      * @tc.desc        test modifyImagePropertiesEnhanced error
      *                 1.create imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<PropertyKey, string | null>)
+     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
      *                   set unsupported property key
      * @tc.size        MEDIUM
      * @tc.type        Functional
@@ -427,9 +427,9 @@ export default function imageModifyPropertiesEnhanced() {
       let filePath = filesDir + "/" + TEST_ERROR_CASE3;
       let beforeImageSource = image.createImageSource(filePath);
       try {
-        let modifyRecords: Record<PropertyKey, string | null> = {
+        let modifyRecords: Record<string, string | null> = {
           "xyz": "2025"
-        } as Record<PropertyKey, string | null>;
+        } as Record<string, string | null>;
         await beforeImageSource.modifyImagePropertiesEnhanced(modifyRecords);
         logger.log("modifyImagePropertiesEnhanced end!!!");
         beforeImageSource?.release();
@@ -448,7 +448,7 @@ export default function imageModifyPropertiesEnhanced() {
      * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0400
      * @tc.desc        test modifyImagePropertiesEnhanced error
      *                 1.create imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<PropertyKey, string | null>)
+     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
      *                   Modify the read-only key
      * @tc.size        MEDIUM
      * @tc.type        Functional
@@ -459,8 +459,8 @@ export default function imageModifyPropertiesEnhanced() {
       let filePath = filesDir + "/" + TEST_ERROR_CASE4;
       let beforeImageSource = image.createImageSource(filePath);
       try {
-        let modifyRecords: Record<image.PropertyKey, string | null> = {} as Record<image.PropertyKey, string | null>;
-        modifyRecords[image.PropertyKey.GIF_LOOP_COUNT] = "1024";
+        let modifyRecords: Record<string, string | null> = {} as Record<string, string | null>;
+        modifyRecords[String(image.PropertyKey.GIF_LOOP_COUNT)] = "1024";
         await beforeImageSource.modifyImagePropertiesEnhanced(modifyRecords);
         logger.log("modifyImagePropertiesEnhanced end!!!");
         beforeImageSource?.release();
@@ -479,7 +479,7 @@ export default function imageModifyPropertiesEnhanced() {
      * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0500
      * @tc.desc        test modifyImagePropertiesEnhanced error
      *                 1.create imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<PropertyKey, string | null>)
+     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
      *                   set unsupported mime type image
      * @tc.size        MEDIUM
      * @tc.type        Functional
@@ -490,9 +490,9 @@ export default function imageModifyPropertiesEnhanced() {
       let filePath = filesDir + "/" + TEST_UNSUPPORTED_MIMETYPE;
       let beforeImageSource = image.createImageSource(filePath);
       try {
-        let modifyRecords: Record<image.PropertyKey, string | null> = {} as Record<image.PropertyKey, string | null>;
-        modifyRecords[image.PropertyKey.IMAGE_WIDTH]  = '1024';
-        modifyRecords[image.PropertyKey.IMAGE_LENGTH] = '1024';
+        let modifyRecords: Record<string, string | null> = {} as Record<string, string | null>;
+        modifyRecords[String(image.PropertyKey.IMAGE_WIDTH)]  = '1024';
+        modifyRecords[String(image.PropertyKey.IMAGE_LENGTH)] = '1024';
         await beforeImageSource.modifyImagePropertiesEnhanced(modifyRecords);
         logger.log("modifyImagePropertiesEnhanced end!!!");
         beforeImageSource?.release();
@@ -512,7 +512,7 @@ export default function imageModifyPropertiesEnhanced() {
      * @tc.desc        test modifyImagePropertiesEnhanced error
      *                 1.create imageSource
      *                   release imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<PropertyKey, string | null>)
+     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
      * @tc.size        MEDIUM
      * @tc.type        Functional
      * @tc.level       Level 1
@@ -522,9 +522,9 @@ export default function imageModifyPropertiesEnhanced() {
       let filePath = filesDir + "/" + TEST_ERROR_CASE6;
       let imageSource = image.createImageSource(filePath);
       try {
-        let modifyRecords: Record<image.PropertyKey, string | null> = {} as Record<image.PropertyKey, string | null>;
-        modifyRecords[image.PropertyKey.IMAGE_WIDTH]  = '1024';
-        modifyRecords[image.PropertyKey.IMAGE_LENGTH] = '1024';
+        let modifyRecords: Record<string, string | null> = {} as Record<string, string | null>;
+        modifyRecords[String(image.PropertyKey.IMAGE_WIDTH)]  = '1024';
+        modifyRecords[String(image.PropertyKey.IMAGE_LENGTH)] = '1024';
         imageSource?.release();
         await imageSource.modifyImagePropertiesEnhanced(modifyRecords);
         logger.log("modifyImagePropertiesEnhanced end!!!");
