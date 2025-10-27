@@ -24,7 +24,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 export default function TextAreaSelectTest() {
 
   const SUITE: string = 'TextAreaSelect'
-  const waitUiReadyMs: number = 500;
+  const waitUiReadyMs = 500;
 
 
   describe('TextAreaSelectTest', () => {

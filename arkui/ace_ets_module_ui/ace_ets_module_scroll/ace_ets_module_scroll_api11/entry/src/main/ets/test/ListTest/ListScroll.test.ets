@@ -22,7 +22,7 @@ import Utils from '../../MainAbility/common/MyUtils';
 export default function ListScrollTest() {
 
   const SUITE: string = 'ListScroll'
-  const waitUiReadyMs: number = 500;
+  const waitUiReadyMs = 500;
   describe('ListScrollTest', () => {
 
     beforeEach(async (done: Function) => {

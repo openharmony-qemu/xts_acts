@@ -17,7 +17,7 @@ import hilog from '@ohos.hilog';
 import Want from '@ohos.app.ability.Want'
 import PrintExtensionAbility from '@ohos.app.ability.PrintExtensionAbility';
 
-const DOMAIN: number = 0x0023
+const DOMAIN = 0x0023
 const TAG: string = 'printExtension';
 
 export default class PrintExtension extends PrintExtensionAbility {
