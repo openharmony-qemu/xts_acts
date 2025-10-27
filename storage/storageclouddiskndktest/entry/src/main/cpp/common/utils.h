@@ -20,7 +20,7 @@
 #include <napi/native_api.h>
 #include "common/logger_common.h"
 
-char* GetStringParam(napi_env env, api_callback_info info, int32_t index = 0) 
+char* GetStringParam(napi_env env, api_callback_info info, int32_t index = 0)
 {
     size_t argc = index + 1;
     napi_value args[10] = { nullptr };
