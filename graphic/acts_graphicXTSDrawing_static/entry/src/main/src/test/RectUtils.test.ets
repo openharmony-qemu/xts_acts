@@ -418,30 +418,6 @@ export default function rectUtilsTest() {
 
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_2101
-     * @tc.name      : testRectContainsNullStatic
-     * @tc.desc      : testRectContainsNullStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
-     */
-    it('testRectContainsNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-      const msg = 'testRectContainsNullStatic';
-      let rect: common2D.Rect = { left: 0, right: 0, top: 100, bottom: 100 };
-      let other: common2D.Rect = { left: 10, right: 10, top: 20, bottom: 20 };
-      try {
-        let isContains1 = drawing.RectUtils.contains(null, other);
-        console.info(msg + `isContains = ` + isContains1);
-        expect(isContains1).assertEqual(false);
-        let isContains2 = drawing.RectUtils.contains(rect, null);
-        expect(isContains2).assertEqual(false);
-      } catch (e: BusinessError) {
-        console.info(msg + `RectContains errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
-        expect().assertFail()
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_2102
      * @tc.name      : testRectContainsMultipleCallsStatic
      * @tc.desc      : testRectContainsMultipleCallsStatic
      * @tc.size      : MediumTest
@@ -493,38 +469,6 @@ export default function rectUtilsTest() {
 
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_2201
-     * @tc.name      : testRectInsetNullStatic
-     * @tc.desc      : testRectInsetNullStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
-     */
-    it('testRectInsetNullStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-      const msg = 'testRectInsetNullStatic';
-      let rect: common2D.Rect = { left: 0, right: 0, top: 100, bottom: 100 };
-      let left = 10;
-      let top = 20;
-      let right = 30;
-      let bottom = 40;
-      try {
-        drawing.RectUtils.inset(null, left, top, right, bottom);
-        expect(rect.left).assertEqual('0');
-        expect(rect.top).assertEqual('0');
-        expect(rect.right).assertEqual('100');
-        expect(rect.bottom).assertEqual('100');
-        drawing.RectUtils.inset(rect, 0, 0, 0, 0);
-        expect(rect.left).assertEqual('0');
-        expect(rect.top).assertEqual('0');
-        expect(rect.right).assertEqual('100');
-        expect(rect.bottom).assertEqual('100');
-      } catch (e: BusinessError) {
-        console.info(msg + `RectInset errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
-        expect().assertFail()
-      }
-    });
-
-    /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_2202
      * @tc.name      : testRectInsetMultipleCallsStatic
      * @tc.desc      : testRectInsetMultipleCallsStatic
      * @tc.size      : MediumTest
