@@ -78,5 +78,139 @@ export default function drawingTsMatrixTest() {
         expect().assertFail()
       }
     })
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0200
+     * @tc.name      : testMatrixPreConcatNormalStatic
+     * @tc.desc      : testMatrixPreConcatNormalStatic
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testMatrixPreConcatNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, (): void => {
+      const msg = 'testMatrixPreConcatNormalStatic';
+      let matrix : drawing.Matrix = new drawing.Matrix();
+      let other : drawing.Matrix = new drawing.Matrix();
+      console.info(msg + ' matrix successed');
+      console.info(msg + ' other successed');
+      matrix.setMatrix([1, 0, 1, 0, -2, 0, 0, 3, 1]);
+      other.setMatrix([1, 1, 1, 0, -1, 0, -1, 0, 1]);
+      try {
+        matrix.preConcat(other);
+        expect(matrix.getValue(0) + '').assertEqual('0');
+        expect(matrix.getValue(1) + '').assertEqual('1');
+        expect(matrix.getValue(2) + '').assertEqual('2');
+        expect(matrix.getValue(3) + '').assertEqual('0');
+        expect(matrix.getValue(4) + '').assertEqual('2');
+        expect(matrix.getValue(5) + '').assertEqual('0');
+        expect(matrix.getValue(6) + '').assertEqual('-1');
+        expect(matrix.getValue(7) + '').assertEqual('-3');
+        expect(matrix.getValue(8) + '').assertEqual('1');
+      } catch (e: BusinessError) {
+        console.info(msg + ` MatrixPreConcat errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0201
+     * @tc.name      : testMatrixPreConcatNullStatic
+     * @tc.desc      : testMatrixPreConcatNullStatic
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testMatrixPreConcatNullStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, (): void => {
+      const msg = 'testMatrixPreConcatNullStatic';
+      let matrix : drawing.Matrix = new drawing.Matrix();
+      let other : drawing.Matrix = new drawing.Matrix();
+      console.info(msg + ' matrix successed');
+      console.info(msg + ' other successed');
+      matrix.setMatrix([1, 0, 1, 0, -2, 0, 0, 3, 1]);
+      other.setMatrix([1, 1, 1, 0, -1, 0, -1, 0, 1]);
+      try {
+        matrix.preConcat(null);
+        expect(matrix.getValue(0) + '').assertEqual('0');
+        expect(matrix.getValue(1) + '').assertEqual('1');
+        expect(matrix.getValue(2) + '').assertEqual('2');
+        expect(matrix.getValue(3) + '').assertEqual('0');
+        expect(matrix.getValue(4) + '').assertEqual('2');
+        expect(matrix.getValue(5) + '').assertEqual('0');
+        expect(matrix.getValue(6) + '').assertEqual('-1');
+        expect(matrix.getValue(7) + '').assertEqual('-3');
+        expect(matrix.getValue(8) + '').assertEqual('1');
+      } catch (e: BusinessError) {
+        console.info(msg + ` MatrixPreConcat errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0202
+     * @tc.name      : testMatrixPreConcatUndefinedStatic
+     * @tc.desc      : testMatrixPreConcatUndefinedStatic
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testMatrixPreConcatUndefinedStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, (): void => {
+      const msg = 'testMatrixPreConcatUndefinedStatic';
+      let matrix : drawing.Matrix = new drawing.Matrix();
+      let other : drawing.Matrix = new drawing.Matrix();
+      console.info(msg + ' matrix successed');
+      console.info(msg + ' other successed');
+      matrix.setMatrix([1, 0, 1, 0, -2, 0, 0, 3, 1]);
+      other.setMatrix([1, 1, 1, 0, -1, 0, -1, 0, 1]);
+      try {
+        matrix.preConcat(undefined);
+        expect(matrix.getValue(0) + '').assertEqual('0');
+        expect(matrix.getValue(1) + '').assertEqual('1');
+        expect(matrix.getValue(2) + '').assertEqual('2');
+        expect(matrix.getValue(3) + '').assertEqual('0');
+        expect(matrix.getValue(4) + '').assertEqual('2');
+        expect(matrix.getValue(5) + '').assertEqual('0');
+        expect(matrix.getValue(6) + '').assertEqual('-1');
+        expect(matrix.getValue(7) + '').assertEqual('-3');
+        expect(matrix.getValue(8) + '').assertEqual('1');
+      } catch (e: BusinessError) {
+        console.info(msg + ` MatrixPreConcat errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0203
+     * @tc.name      : testMatrixPreConcatMultipleCallsStatic
+     * @tc.desc      : testMatrixPreConcatMultipleCallsStatic
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testMatrixPreConcatMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, (): void => {
+      const msg = 'testMatrixPreConcatMultipleCallsStatic';
+      let matrix : drawing.Matrix = new drawing.Matrix();
+      let other : drawing.Matrix = new drawing.Matrix();
+      console.info(msg + ' matrix successed');
+      console.info(msg + ' other successed');
+      matrix.setMatrix([1, 0, 1, 0, -2, 0, 0, 3, 1]);
+      other.setMatrix([1, 1, 1, 0, -1, 0, -1, 0, 1]);
+      for (let i = 0; i < 20; i++) {
+        try {
+          matrix.preConcat(other);
+          expect(matrix.getValue(0) + '').assertEqual('0');
+          expect(matrix.getValue(1) + '').assertEqual('1');
+          expect(matrix.getValue(2) + '').assertEqual('2');
+          expect(matrix.getValue(3) + '').assertEqual('0');
+          expect(matrix.getValue(4) + '').assertEqual('2');
+          expect(matrix.getValue(5) + '').assertEqual('0');
+          expect(matrix.getValue(6) + '').assertEqual('-1');
+          expect(matrix.getValue(7) + '').assertEqual('-3');
+          expect(matrix.getValue(8) + '').assertEqual('1');
+        } catch (e: BusinessError) {
+          console.info(msg + ` MatrixPreConcat errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+          expect().assertFail()
+        }
+      }
+    })
   })
 }

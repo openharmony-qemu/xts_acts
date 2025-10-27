@@ -171,5 +171,24 @@ export default function drawingTsRegionTest() {
         }
       }
     })
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_STATIC_1000
+     * @tc.name      : testRegionEmptyNormalStatic
+     * @tc.desc      : testRegionEmptyNormalStatic
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testRegionEmptyNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const msg = 'testRegionEmptyNormalStatic';
+      let region = new drawing.Region();
+      try {
+        region.setEmpty();
+      } catch (e: BusinessError) {
+        console.info(msg + `RegionEmpty errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
+        expect().assertFail()
+      }
+    })
   });
 }
