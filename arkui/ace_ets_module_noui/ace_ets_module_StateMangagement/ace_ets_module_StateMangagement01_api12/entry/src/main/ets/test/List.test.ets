@@ -43,6 +43,8 @@ import Monitor0260Test from './MonitorTest/Monitor0260Test.test';
 import Monitor0280Test from './MonitorTest/Monitor0280Test.test';
 import Monitor0290Test from './MonitorTest/Monitor0290Test.test';
 import Monitor0300Test from './MonitorTest/Monitor0300Test.test';
+import Monitor_NullTest from './MonitorTest/Monitor_Null.test';
+
 export default function testsuite() {
     BuilderParam001();
     ExtendTrackTest();
@@ -75,4 +77,5 @@ export default function testsuite() {
     Monitor0280Test();
     Monitor0290Test();
     Monitor0300Test();
+    Monitor_NullTest();
 }
