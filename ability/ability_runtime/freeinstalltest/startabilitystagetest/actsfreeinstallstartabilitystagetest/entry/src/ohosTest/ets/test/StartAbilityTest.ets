@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -88,8 +88,8 @@ export default function startAbilityTest() {
         abilityDelegator.executeShellCommand(cmd5, (err: base.BusinessError, d: ESObject) => {
           console.info("executeShellCommand5 : err : " + JSON.stringify(err), " data : " + JSON.stringify(d));
         })
+        await sleep(500);
       }
-      await sleep(2000);
       done();
     });
 
@@ -112,14 +112,13 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_0100-------------");
       done();
     });
@@ -143,14 +142,13 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_0200-------------");
       done();
     });
@@ -178,13 +176,12 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == SYSTEM_INNER_ERROR).assertTrue();
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_0300-------------");
       done();
     });
@@ -213,14 +210,13 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_0400-------------");
       done();
     });
@@ -243,14 +239,13 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_0500-------------");
       done();
     });
@@ -279,14 +274,13 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_0600-------------");
       done();
     });
@@ -305,10 +299,9 @@ export default function startAbilityTest() {
       let deviceId = "";
       abilityForeground(TAG);
       await sleep(1000);
-      abilityDelegator.getCurrentTopAbility((err, data) => {
+      await abilityDelegator.getCurrentTopAbility((err, data) => {
         console.log(TAG + 'getCurrentTopAbility result: ' + JSON.stringify(data) + " , err: " + JSON.stringify(err));
       })
-      await sleep(2000);
       let str:Want = {
         "deviceId": deviceId,
         "bundleName": "com.example.qianyiyingyong.hmservice",
@@ -316,14 +309,13 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_0700-------------");
       done();
     });
@@ -357,14 +349,13 @@ export default function startAbilityTest() {
         "moduleName": "hnm2",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_0800-------------");
       done();
     });
@@ -392,14 +383,13 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": 1717,
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_1200-------------");
       done();
     });
@@ -420,13 +410,12 @@ export default function startAbilityTest() {
         "abilityName": "com.example.qianyiyingyong.MainAbility",
         "moduleName": "entry",
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == ERR_COMPONENT_NOF_FOUND).assertTrue();
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_1700-------------");
       done();
     });
@@ -453,14 +442,13 @@ export default function startAbilityTest() {
         "abilityName": "com.example.qianyiyingyong.MainAbility",
         "moduleName": "entry",
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_1800-------------");
       done();
     });
@@ -489,14 +477,13 @@ export default function startAbilityTest() {
           "site": "很开心看到你！"
         }
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_2100-------------");
       done();
     });
@@ -525,14 +512,13 @@ export default function startAbilityTest() {
           "site": "很开心看到你！"
         }
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_2200-------------");
       done();
     });
@@ -562,13 +548,12 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == ERR_NOT_TOP).assertTrue();
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_2300-------------");
       done();
     });
@@ -597,13 +582,12 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == ERR_NOT_TOP).assertTrue();
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_2400-------------");
       done();
     });
@@ -645,13 +629,12 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == SYSTEM_INNER_ERROR).assertTrue();
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_2500-------------");
       done();
     });
@@ -700,14 +683,13 @@ export default function startAbilityTest() {
         "moduleName": "hm4",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_3000-------------");
       done();
     });
@@ -741,13 +723,12 @@ export default function startAbilityTest() {
         "moduleName": "hm4",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == SYSTEM_INNER_ERROR).assertTrue();
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_3100-------------");
       done();
     });
@@ -780,13 +761,12 @@ export default function startAbilityTest() {
         "moduleName": "hnm",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == SYSTEM_INNER_ERROR).assertTrue();
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_3200-------------");
       done();
     });
@@ -808,13 +788,12 @@ export default function startAbilityTest() {
         "abilityName": "com.example.qianyiyingyong.MainAbility",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == SYSTEM_INNER_ERROR).assertTrue();
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_3300-------------");
       done();
     });
@@ -842,14 +821,13 @@ export default function startAbilityTest() {
         "abilityName": "com.example.qianyiyingyong.MainAbility",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
         flag = 1;
         expect(flag == 1).assertTrue();
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_3400-------------");
       done();
     });
@@ -871,12 +849,11 @@ export default function startAbilityTest() {
         "abilityName": "MainAbility1",
         "moduleName": "entry",
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": Mainability2 startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": Mainability2 startAbility fail. err: " + JSON.stringify(error));
       });
-      await sleep(2000);
       abilityBackground(TAG);
       await sleep(1000);
       let str2:Want = {
@@ -885,13 +862,12 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      globalThis.abilityContext.startAbility(str2).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str2).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == ERR_NOT_TOP).assertTrue();
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_1900-------------");
       done();
     });
@@ -918,12 +894,11 @@ export default function startAbilityTest() {
         "abilityName": "MainAbility1",
         "moduleName": "entry",
       }
-      globalThis.abilityContext.startAbility(str).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str).then((data:number) => {
         console.log(TAG + ": Mainability2 startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": Mainability2 startAbility fail. err: " + JSON.stringify(error));
       });
-      await sleep(2000);
       abilityBackground(TAG);
       await sleep(1000);
       let str2:Want = {
@@ -932,13 +907,12 @@ export default function startAbilityTest() {
         "moduleName": "entry",
         "flags": wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
       }
-      globalThis.abilityContext.startAbility(str2).then((data:number) => {
+      await globalThis.abilityContext.startAbility(str2).then((data:number) => {
         console.log(TAG + ": startAbility success. data: " + JSON.stringify(data));
       }).catch((error:base.BusinessError) => {
         console.log(TAG + ": startAbility fail. err: " + JSON.stringify(error));
         expect(error.code == ERR_NOT_TOP).assertTrue();
       });
-      await sleep(2000);
       console.info("------------end FreeInstall_Stage_Local_StartAbility_2000-------------");
       done();
     });
