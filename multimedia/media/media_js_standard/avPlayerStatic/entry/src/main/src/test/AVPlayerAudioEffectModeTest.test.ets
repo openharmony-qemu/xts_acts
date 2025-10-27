@@ -273,7 +273,7 @@ export default function AVPlayerAudioEffectModeTest() {
             avPlayer?.release();
             break;
           case RELEASED:
-            avPlayer?.off('amplitudeUpdate')
+            avPlayer?.offAmplitudeUpdate()
             avPlayer = null;
             done();
             break;
