@@ -309,5 +309,35 @@ export default function callManagerAllTestStatic() {
       }
       done();
     });
+
+    /*
+     * @tc.number : Telephony_CallManager_isEmergencyPhoneNumber_Async_1300
+     * @tc.name   : Telephony_CallManager_isEmergencyPhoneNumber_Async_static_1300
+     * @tc.desc   : PhoneNumber: 110, options -1. Call isEmergencyPhoneNumber() to check whether it is an emergency
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+    */
+    it("Telephony_CallManager_isEmergencyPhoneNumber_Async_static_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = "Telephony_CallManager_isEmergencyPhoneNumber_Async_static_1300";
+      try {
+        let options: call.EmergencyNumberOptions = {slotId: ERR_SLOT_ID};
+        call.isEmergencyPhoneNumber('110', options, (err: BusinessError<void>|null, data: boolean|undefined) => {
+          if (err?.code) {
+            ExpectTrue(true);
+            hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber finish, err = ${JSON.stringify(err)}`);
+            done();
+          } else {
+            hilog.info(domain, tag, `${caseName} isEmergencyPhoneNumber success, data = ${JSON.stringify(data)}`);
+            expect().assertFail();
+            done();
+          }
+        });
+      } catch(error) {
+        hilog.error(domain, tag, `${caseName} fail, error: ${JSON.stringify(error)}`);
+        expect().assertFail();
+      }
+      done();
+    });
   });
 }

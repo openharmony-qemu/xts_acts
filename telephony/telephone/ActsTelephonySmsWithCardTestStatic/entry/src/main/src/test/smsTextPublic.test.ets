@@ -43,7 +43,7 @@ const ExpectTrue = (n: boolean) => {
 
 async function getPermissions() {
   console.info('getPermission start');
-  let list: Array<string> = ['ohos.permission.ANSWER_CALL', 'ohos.permission.WRITE_CALL_LOG', 'ohos.permission.READ_CALL_LOG'];
+  let list: Array<string> = ['ohos.permission.SEND_MESSAGES', 'ohos.permission.RECEIVE_SMS', 'ohos.permission.RECEIVE_MMS'];
   try {
     let userId: int = await account.getAccountManager().getOsAccountLocalId();
     let applicationFlags: int = bundleManager.ApplicationFlag.GET_APPLICATION_INFO_DEFAULT;
@@ -454,6 +454,1045 @@ export default function smsTextPublic() {
         done();
       }
       hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_0300
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic0300
+     * @tc.desc Send a text message. Use callback for asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic0300';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            content: '短信内容',
+            destinationHost: '',
+          };
+          sms.sendShortMessage(sendOptions, (err: BusinessError<void>|null) => {
+            if (err) {
+              hilog.info(domain, tag, `${caseName}: sendShortMessage error->${JSON.stringify(err)}`);
+              expect(err?.code).assertEqual(8300001);
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName}: success`);
+              expect().assertFail();
+              done();
+            }
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_0400
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic0400
+     * @tc.desc Send a text message. Use Promise asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic0400';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            content: '短信内容',
+            destinationHost: '',
+          };
+          sms.sendShortMessage(sendOptions).then(() => {
+            hilog.info(domain, tag, `${caseName} success`);
+            expect().assertFail();
+            done();
+          }).catch((err: Error) => {
+            hilog.info(domain, tag, `${caseName} sendShortMessage err: ${JSON.stringify(err)}`);
+            expect((err as BusinessError)?.code).assertEqual(8300001);
+            done();
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_0500
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic0500
+     * @tc.desc testTelephonySmsMmsSendShortMessageStatic0500
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic0500';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            content: '',
+            destinationHost: '',
+          };
+          sms.sendShortMessage(sendOptions, (err: BusinessError<void>|null) => {
+            if (err) {
+              hilog.info(domain, tag, `${caseName}: sendShortMessage error->${JSON.stringify(err)}`);
+              expect(err?.code).assertEqual(8300001);
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName}: success`);
+              expect().assertFail();
+              done();
+            }
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_0600
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic0600
+     * @tc.desc  Send a text message. Use Promise asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic0600';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            content: '',
+            destinationHost: '',
+          };
+          sms.sendShortMessage(sendOptions).then(() => {
+            hilog.info(domain, tag, `${caseName} success`);
+            expect().assertFail();
+            done();
+          }).catch((err: Error) => {
+            hilog.info(domain, tag, `${caseName} sendShortMessage err: ${JSON.stringify(err)}`);
+            expect((err as BusinessError)?.code).assertEqual(8300001);
+            done();
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_1100
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic1100
+     * @tc.desc Send a text message. Use callback for asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic1100';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            content: '短信内容',
+            destinationHost: '+8619986914542',
+            serviceCenter: '短信中心地址',
+          };
+          sms.sendShortMessage(sendOptions, (err: BusinessError<void>|null) => {
+            if (err) {
+              hilog.info(domain, tag, `${caseName}: sendShortMessage error->${JSON.stringify(err)}`);
+              expect(err?.code).assertEqual(8300001);
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName}: success`);
+              ExpectTrue(true);
+              done();
+            }
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_1200
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic1200
+     * @tc.desc Send a text message. Use Promise asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic1200';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            content: '短信内容',
+            destinationHost: '+8619986914542',
+            serviceCenter: '短信中心地址',
+          };
+          sms.sendShortMessage(sendOptions).then(() => {
+            hilog.info(domain, tag, `${caseName} success`);
+            ExpectTrue(true);
+            done();
+          }).catch((err: Error) => {
+            hilog.info(domain, tag, `${caseName} sendShortMessage err: ${JSON.stringify(err)}`);
+            expect((err as BusinessError)?.code).assertEqual(8300001);
+            done();
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_1300
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic1300
+     * @tc.desc Send a text message. Use callback for asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic1300';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            content: '短信内容',
+            destinationHost: telphoneErr,
+          };
+          sms.sendShortMessage(sendOptions, (err: BusinessError<void>|null) => {
+            if (err) {
+              hilog.info(domain, tag, `${caseName}: sendShortMessage error->${JSON.stringify(err)}`);
+              expect(err?.code).assertEqual(8300001);
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName}: success`);
+              expect().assertFail();
+              done();
+            }
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_1400
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic1400
+     * @tc.desc Send a text message. Use Promise asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic1400';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            content: '短信内容',
+            destinationHost: telphoneErr,
+          };
+          sms.sendShortMessage(sendOptions).then(() => {
+            hilog.info(domain, tag, `${caseName} success`);
+            expect().assertFail();
+            done();
+          }).catch((err: Error) => {
+            hilog.info(domain, tag, `${caseName} sendShortMessage err: ${JSON.stringify(err)}`);
+            expect((err as BusinessError)?.code).assertEqual(8300001);
+            done();
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_1500
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic1500
+     * @tc.desc Send a text message. Use callback for asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic1500';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            content: '',
+            destinationHost: telphoneErr,
+          };
+          sms.sendShortMessage(sendOptions, (err: BusinessError<void>|null) => {
+            if (err) {
+              hilog.info(domain, tag, `${caseName}: sendShortMessage error->${JSON.stringify(err)}`);
+              expect(err?.code).assertEqual(8300001);
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName}: success`);
+              expect().assertFail();
+              done();
+            }
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_1600
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic1600
+     * @tc.desc Send a text message. Use Promise asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic1600';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            content: '',
+            destinationHost: telphoneErr,
+          };
+          sms.sendShortMessage(sendOptions).then(() => {
+            hilog.info(domain, tag, `${caseName} success`);
+            expect().assertFail();
+            done();
+          }).catch((err: Error) => {
+            hilog.info(domain, tag, `${caseName} sendShortMessage err: ${JSON.stringify(err)}`);
+            expect((err as BusinessError)?.code).assertEqual(8300001);
+            done();
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_1700
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic1700
+     * @tc.desc Send a text message. Use callback for asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic1700';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          const contentArray: Array<int> = [1, 2, 3];
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            destinationHost: telphoneErr,
+            serviceCenter: telphone,
+            content: contentArray,
+            destinationPort: 1000,
+            sendCallback: (err:BusinessError<void>|null)=>{
+              if (err) {
+                hilog.info(domain, tag, `${caseName}: sendCallback error->${JSON.stringify(err)}`);
+              }
+            },
+            deliveryCallback: (err:BusinessError<void>|null)=>{
+              if (err) {
+                hilog.info(domain, tag, `${caseName}: deliveryCallback error->${JSON.stringify(err)}`);
+              }
+            }
+          };
+          sms.sendShortMessage(sendOptions, (err: BusinessError<void>|null) => {
+            if (err) {
+              hilog.info(domain, tag, `${caseName}: sendShortMessage error->${JSON.stringify(err)}`);
+              expect(err?.code).assertEqual(8300001);
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName}: success`);
+              expect().assertFail();
+              done();
+            }
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_1800
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic1800
+     * @tc.desc Send a text message. Use Promise asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic1800';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          const contentArray: Array<int> = [1, 2, 3];
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            destinationHost: telphoneErr,
+            serviceCenter: telphone,
+            content: contentArray,
+            destinationPort: 1000,
+            sendCallback: (err:BusinessError<void>|null)=>{
+              if (err) {
+                hilog.info(domain, tag, `${caseName}: sendCallback error->${JSON.stringify(err)}`);
+              }
+            },
+            deliveryCallback: (err:BusinessError<void>|null)=>{
+              if (err) {
+                hilog.info(domain, tag, `${caseName}: deliveryCallback error->${JSON.stringify(err)}`);
+              }
+            }
+          };
+          sms.sendShortMessage(sendOptions).then(() => {
+            hilog.info(domain, tag, `${caseName} success`);
+            expect().assertFail();
+            done();
+          }).catch((err: Error) => {
+            hilog.info(domain, tag, `${caseName} sendShortMessage err: ${JSON.stringify(err)}`);
+            expect((err as BusinessError)?.code).assertEqual(8300001);
+            done();
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_1900
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic1900
+     * @tc.desc Send a text message. Use callback for asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic1900';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          const contentArray: Array<int> = [1, 2, 3];
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            destinationHost: telphoneErr,
+            content: contentArray,
+            destinationPort: 1000,
+            sendCallback: (err:BusinessError<void>|null)=>{
+              if (err) {
+                hilog.info(domain, tag, `${caseName}: sendCallback error->${JSON.stringify(err)}`);
+              }
+            },
+            deliveryCallback: (err:BusinessError<void>|null)=>{
+              if (err) {
+                hilog.info(domain, tag, `${caseName}: deliveryCallback error->${JSON.stringify(err)}`);
+              }
+            }
+          };
+          sms.sendShortMessage(sendOptions, (err: BusinessError<void>|null) => {
+            if (err) {
+              hilog.info(domain, tag, `${caseName}: sendShortMessage error->${JSON.stringify(err)}`);
+              expect(err?.code).assertEqual(8300001);
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName}: success`);
+              expect().assertFail();
+              done();
+            }
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_2000
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic2000
+     * @tc.desc Send a text message. Use Promise asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic2000';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          const contentArray: Array<int> = [1, 2, 3];
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            destinationHost: telphoneErr,
+            content: contentArray,
+            destinationPort: 1000,
+            sendCallback: (err:BusinessError<void>|null)=>{
+              if (err) {
+                hilog.info(domain, tag, `${caseName}: sendCallback error->${JSON.stringify(err)}`);
+              }
+            },
+            deliveryCallback: (err:BusinessError<void>|null)=>{
+              if (err) {
+                hilog.info(domain, tag, `${caseName}: deliveryCallback error->${JSON.stringify(err)}`);
+              }
+            }
+          };
+          sms.sendShortMessage(sendOptions).then(() => {
+            hilog.info(domain, tag, `${caseName} success`);
+            expect().assertFail();
+            done();
+          }).catch((err: Error) => {
+            hilog.info(domain, tag, `${caseName} sendShortMessage err: ${JSON.stringify(err)}`);
+            expect((err as BusinessError)?.code).assertEqual(8300001);
+            done();
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_2300
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic2300
+     * @tc.desc Send a text message. Use callback for asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic2300';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          let contentMms: string = '短信正文'
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 2,
+            content: contentMms,
+            destinationHost: telphone,
+          };
+          sms.sendShortMessage(sendOptions, (err: BusinessError<void>|null) => {
+            if (err) {
+              hilog.info(domain, tag, `${caseName}: sendShortMessage error->${JSON.stringify(err)}`);
+              expect(err?.code).assertEqual(8300001);
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName}: success`);
+              expect().assertFail();
+              done();
+            }
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_2400
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic2400
+     * @tc.desc Send a text message. Use Promise asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic2400';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 2,
+            content: '短信正文',
+            destinationHost: telphone,
+          };
+          sms.sendShortMessage(sendOptions).then(() => {
+            hilog.info(domain, tag, `${caseName} success`);
+            expect().assertFail();
+            done();
+          }).catch((err: Error) => {
+            hilog.info(domain, tag, `${caseName} sendShortMessage err: ${JSON.stringify(err)}`);
+            expect((err as BusinessError)?.code).assertEqual(8300001);
+            done();
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_2700
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic2700
+     * @tc.desc Send a text message. Use callback for asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic2700';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          const contentArray: Array<int> = [];
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            destinationHost: telphone,
+            content: contentArray,
+            destinationPort: 1000,
+          };
+          sms.sendShortMessage(sendOptions, (err: BusinessError<void>|null) => {
+            if (err) {
+              hilog.info(domain, tag, `${caseName}: sendShortMessage error->${JSON.stringify(err)}`);
+              expect(err?.code).assertEqual(8300001);
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName}: success`);
+              expect().assertFail();
+              done();
+            }
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_2800
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic2800
+     * @tc.desc Send a text message. Use Promise asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic2800';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          const contentArray: Array<int>= [];
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            destinationHost: telphone,
+            content: contentArray,
+            destinationPort: 1000,
+          };
+          sms.sendShortMessage(sendOptions).then(() => {
+            hilog.info(domain, tag, `${caseName} success`);
+            expect().assertFail();
+            done();
+          }).catch((err: Error) => {
+            hilog.info(domain, tag, `${caseName} sendShortMessage err=> ${JSON.stringify(err)}`);
+            expect((err as BusinessError)?.code).assertEqual(8300001);
+            done();
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_2900
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic2900
+     * @tc.desc Send a text message. Use callback for asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic2900';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          const contentArray: Array<int> = [];
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            destinationHost: telphoneErr,
+            content: contentArray,
+            destinationPort: 1000,
+          };
+          sms.sendShortMessage(sendOptions, (err: BusinessError<void>|null) => {
+            if (err) {
+              hilog.info(domain, tag, `${caseName}: sendShortMessage error->${JSON.stringify(err)}`);
+              expect(err?.code).assertEqual(8300001);
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName}: success`);
+              expect().assertFail();
+              done();
+            }
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    
+    /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_3000
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic3000
+     * @tc.desc Send a text message. Use Promise asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic3000';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          const contentArray: Array<int>= [];
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            destinationHost: telphoneErr,
+            content: contentArray,
+            destinationPort: 1000,
+          };
+          sms.sendShortMessage(sendOptions).then(() => {
+            hilog.info(domain, tag, `${caseName} success`);
+            expect().assertFail();
+            done();
+          }).catch((err: Error) => {
+            hilog.info(domain, tag, `${caseName} sendShortMessage err: ${JSON.stringify(err)}`);
+            expect((err as BusinessError)?.code).assertEqual(8300001);
+            done();
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+     /**
+     * @tc.number SUB_Telephony_SmsMms_SendShortMessage_3100
+     * @tc.name testTelephonySmsMmsSendShortMessageStatic3100
+     * @tc.desc Send a text message. Use Promise asynchronous callback. version 10
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size: MEDIUMTEST
+     */
+    it("testTelephonySmsMmsSendShortMessageStatic3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName: string = 'testTelephonySmsMmsSendShortMessageStatic3100';
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        let hasSim: boolean = sim.hasSimCardSync(0);
+        expect(hasSim).assertTrue();
+        if (hasSim) {
+          const contentArray: Array<int> = [1, 2, 3];
+          let IsendCallback: AsyncCallback<sms.ISendShortMessageCallback> = (err: BusinessError<void> | null, data: sms.ISendShortMessageCallback | undefined) => {
+            if (err?.code !== 0) {
+              hilog.info(domain, tag, `${caseName} sendCallback: err->${JSON.stringify(err)}`);
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName} sendCallback: data->${JSON.stringify(data)}`);
+              ExpectTrue(data?.result === sms.SendSmsResult.SEND_SMS_FAILURE_UNKNOWN);
+              ExpectTrue(data?.url !== undefined);
+              ExpectTrue(data?.isLastPart !== undefined);
+              done();
+            }
+          };
+          let IdeliveryCallback: AsyncCallback<sms.IDeliveryShortMessageCallback> = (err: BusinessError<void> | null, data: sms.IDeliveryShortMessageCallback | undefined) => {
+            if (err?.code !== 0) {
+              hilog.info(domain, tag, `${caseName} sendCallback: err->${JSON.stringify(err)}`);
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(domain, tag, `${caseName} sendCallback: data->${JSON.stringify(data)}`);
+              ExpectTrue(data?.pdu !== undefined);
+              done();
+            }
+          };
+          let sendOptions: sms.SendMessageOptions = {
+            slotId: 0,
+            destinationHost: telphoneErr,
+            content: contentArray,
+            destinationPort: 1000,
+            sendCallback: IsendCallback,
+            deliveryCallback: IdeliveryCallback,
+          };
+		      sms.sendShortMessage(sendOptions).then(() => {
+            hilog.info(domain, tag, `${caseName} success`);
+            expect().assertFail();
+            done();
+          }).catch((err: Error) => {
+            hilog.info(domain, tag, `${caseName} sendShortMessage err: ${JSON.stringify(err)}`);
+            expect((err as BusinessError)?.code).assertEqual(8300001);
+            done();
+          });
+        } else {
+          hilog.info(domain, tag, `${caseName} no sim`);
+          expect().assertFail();
+          done();
+        }
+      } catch (err) {
+        hilog.info(domain, tag, `${caseName} err:${err}`);
+        expect().assertFail();
+        done();
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+    /*
+     * @tc.number  Telephony_SmsMms_getSendSmsResult_Async_0100
+     * @tc.name    Telephony_SmsMms_getSendSmsResult_Async_0100
+     * @tc.desc    Function test
+     */
+    it('Telephony_SmsMms_getSendSmsResult_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      expect(sms.SendSmsResult.SEND_SMS_SUCCESS == 0).assertTrue();
+      expect(sms.SendSmsResult.SEND_SMS_FAILURE_UNKNOWN == 1).assertTrue();
+      expect(sms.SendSmsResult.SEND_SMS_FAILURE_RADIO_OFF == 2).assertTrue();
+      expect(sms.SendSmsResult.SEND_SMS_FAILURE_SERVICE_UNAVAILABLE == 3).assertTrue();
+      done();
+    });
+
+    /*
+     * @tc.number  Telephony_SmsMms_ShortMessageClass_Async_0100
+     * @tc.name    Telephony_SmsMms_ShortMessageClass_Async_0100
+     * @tc.desc    Function test
+     */
+    it('Telephony_SmsMms_ShortMessageClass_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      expect(sms.ShortMessageClass.UNKNOWN == 0).assertTrue();
+      expect(sms.ShortMessageClass.INSTANT_MESSAGE == 1).assertTrue();
+      expect(sms.ShortMessageClass.OPTIONAL_MESSAGE == 2).assertTrue();
+      expect(sms.ShortMessageClass.SIM_MESSAGE == 3).assertTrue();
+      expect(sms.ShortMessageClass.FORWARD_MESSAGE == 4).assertTrue();
       done();
     });
   });
