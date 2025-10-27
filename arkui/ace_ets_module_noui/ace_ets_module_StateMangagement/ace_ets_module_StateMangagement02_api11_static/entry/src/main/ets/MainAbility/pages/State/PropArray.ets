@@ -79,7 +79,7 @@ struct propArray {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('PropArray', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

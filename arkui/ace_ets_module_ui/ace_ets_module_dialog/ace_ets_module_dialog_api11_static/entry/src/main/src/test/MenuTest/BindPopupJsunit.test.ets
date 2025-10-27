@@ -82,7 +82,7 @@ export default function bindPopupTest() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push bindPopup page error: " + err);
       }
 
@@ -116,7 +116,7 @@ export default function bindPopupTest() {
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("bindPopupTest_static_0100 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("bindPopupTest_static_0100 click result is: " +
@@ -153,7 +153,7 @@ export default function bindPopupTest() {
         }
         console.info("bindPopupTest_static_0200 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("bindPopupTest_static_0200 change component data error: " + err.message);
       }
       await CommonFunc.sleep(1500);
@@ -168,7 +168,7 @@ export default function bindPopupTest() {
       }
       try {
         events_emitter.on(indexEventOne, callbackOne);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("bindPopupTest_static_0200 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("bindPopupTest_static_0200 click result is: " +
@@ -201,7 +201,7 @@ export default function bindPopupTest() {
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("bindPopupTest_static_0300 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("bindPopupTest_static_0300 click result is: " +

@@ -95,7 +95,7 @@ export default function gestureSetDirectionJsunit() {
         }
         inspector.sendEventByKey('setDirectionPanGesture', 10, "")
         events_emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("onClick_0001 on events_emitter err : " + JSON.stringify(err));
       }
       console.info('gestureSetDirection testgestureSetDirection0002 END')
@@ -123,7 +123,7 @@ export default function gestureSetDirectionJsunit() {
         }
         inspector.sendEventByKey('setDistancePanGesture', 10, "")
         events_emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("onClick_0002 on events_emitter err : " + JSON.stringify(err));
       }
       console.info('gestureSetDistance testgestureSetDistance0002 END');
@@ -151,7 +151,7 @@ export default function gestureSetDirectionJsunit() {
         }
         inspector.sendEventByKey('setFingersPanGesture', 10, "")
         events_emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("onClick_0003 on events_emitter err : " + JSON.stringify(err));
       }
       console.info('gestureSetFingers testgestureSetFingers0003 END');

@@ -68,7 +68,7 @@ export default function symbolGlyphApi3() {
           await CommonFunc.sleep(2000);
          
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push symbolGlyphApi3 page error:" + err);
       }
       console.info("symbolGlyphApi3 beforeEach end");

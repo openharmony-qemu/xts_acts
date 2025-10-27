@@ -141,7 +141,7 @@ export default function Sim3Public() {
           hilog.info(domain, tag, `${caseName} test end `);
           done();
         }
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         if (err?.code === 8300001) {
           hilog.info(domain, tag,`${caseName}	Invalid parameter value: err->${JSON.stringify(err)}`);

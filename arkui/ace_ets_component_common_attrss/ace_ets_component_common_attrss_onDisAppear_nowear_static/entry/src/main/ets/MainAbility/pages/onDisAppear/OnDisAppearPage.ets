@@ -80,7 +80,7 @@ struct OnDisAppearPage {
     this.targetWidth = routerParamOptions.view.targetWidth
     this.targetHeight = routerParamOptions.view.targetHeight
 
-  } catch (error: Error) {
+  } catch (error) {
     console.log(' routerParamOptions error ' + error);
   }
   }

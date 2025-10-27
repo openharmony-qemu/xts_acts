@@ -83,7 +83,7 @@ export default function bindMenuTesttt() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push bindMenu page error:" + err);
       }
 
@@ -118,7 +118,7 @@ export default function bindMenuTesttt() {
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("bindMenuTest_static_0100 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("bindMenuTest_static_0100 button click result is: " +

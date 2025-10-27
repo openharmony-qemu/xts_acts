@@ -144,7 +144,7 @@ it('textFlexAlignSpaceEvenlyTextVisibilityNone_static', Level.LEVEL0, async () :
           .assertTrue();
 
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[textFlexAlignSpaceEvenlyTextVisibilityNone] failed' + JSON.stringify(err));
         expect().assertFail();
       }
@@ -222,7 +222,7 @@ it('textFlexAlignSpaceEvenlyTextVisibilityHidden_static', Level.LEVEL0, async ()
         expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.bottom - SpaceEvenly_AddVisibility_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
           .assertTrue();
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[textFlexAlignSpaceEvenlyTextVisibilityHidden] failed' + JSON.stringify(err));
         expect().assertFail();
       }
@@ -299,7 +299,7 @@ it('textFlexAlignSpaceEvenlyTextVisibilityVisible_static', Level.LEVEL0, async (
         expect(Math.abs(Math.round(SpaceEvenly_AddVisibility_013.bottom - SpaceEvenly_AddVisibility_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 2)
           .assertTrue();
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[textFlexAlignSpaceEvenlyTextVisibilityVisible] failed' + JSON.stringify(err));
         expect().assertFail();
       }

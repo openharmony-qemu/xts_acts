@@ -84,7 +84,7 @@ class MyAbility extends UIAbility {
           hilog.info(0x0000, 'testTag', 'loadContent error');
         }
       });
-    } catch (e: Error) {
+    } catch (e) {
       hilog.info(0x0000, 'testTag', 'loadContent catch error：-----------' + e.message);
     }
   }

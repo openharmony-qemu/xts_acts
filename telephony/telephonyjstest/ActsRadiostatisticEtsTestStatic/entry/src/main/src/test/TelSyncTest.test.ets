@@ -102,7 +102,7 @@ export default function telSyncTest() {
                 hilog.info(domain, tag, "SUB_Telephony_sim_getOpNameSync_static_0100 " + sim.getOpKeySync(slotId));
                 expect(sim.getOpNameSync(slotId)).assertEqual("");
                 done();
-              } catch (error: Error) {
+              } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, "SUB_Telephony_sim_getOpNameSync_static_0100 err " + JSON.stringify(err));
                 expect(false).assertTrue();
@@ -115,7 +115,7 @@ export default function telSyncTest() {
             }
           })
         }
-      }catch(err:Error){
+      } catch (err) {
         let error = err as BusinessError;
         hilog.info(domain, tag, caseName +'  catch error is '+JSON.stringify(error));
         ExpectFail();
@@ -145,7 +145,7 @@ export default function telSyncTest() {
                 hilog.info(domain, tag, "SUB_Telephony_sim_getOpKeySync_static_0100 " + sim.getOpKeySync(slotId));
                 expect(sim.getOpKeySync(slotId)).assertEqual("");
                 done();
-              } catch (error: Error) {
+              } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, "SUB_Telephony_sim_getOpKeySync_static_0100 err " + JSON.stringify(err));
                 expect(false).assertTrue();
@@ -158,7 +158,7 @@ export default function telSyncTest() {
             }
           })
         }
-      }catch(err:Error){
+      } catch (err) {
         let error = err as BusinessError;
         hilog.info(domain, tag, caseName +'  catch error is '+JSON.stringify(error));
         ExpectFail();
@@ -186,14 +186,14 @@ export default function telSyncTest() {
             hilog.info(domain, tag, "SUB_Telephony_sim_getCardTypeSync_static_0100 " + sim.getCardTypeSync(slotId));
             expect(sim.getCardTypeSync(slotId) >= -1).assertTrue();
             done();
-          } catch (error: Error) {
+          } catch (error) {
             let err = error as  BusinessError;
             hilog.info(domain, tag, "SUB_Telephony_sim_getCardTypeSync_static_0100 err " + JSON.stringify(err));
             expect(err?.code == 8300004).assertTrue();
             done();
           }
         }
-      }catch(err:Error){
+      } catch (err) {
         let error = err as BusinessError;
         hilog.info(domain, tag, caseName +'  catch error is '+JSON.stringify(error));
         ExpectFail();
@@ -224,7 +224,7 @@ export default function telSyncTest() {
                 hilog.info(domain, tag, "SUB_Telephony_sim_getSimSpnSync_static_0100 " + sim.getSimSpnSync(slotId));
                 expect(sim.getSimSpnSync(slotId) != "").assertTrue();
                 done();
-              } catch (error: Error) {
+              } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, "SUB_Telephony_sim_getSimSpnSync_static_0100 err " + JSON.stringify(err));
                 expect(err?.code == 8300004).assertTrue();
@@ -236,7 +236,7 @@ export default function telSyncTest() {
                 hilog.info(domain, tag, "SUB_Telephony_sim_getSimSpnSync_static_0100 " + sim.getSimSpnSync(slotId));
                 expect(sim.getSimSpnSync(slotId) == "").assertTrue();
                 done();
-              } catch (error: Error) {
+              } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, "SUB_Telephony_sim_getSimSpnSync_static_0100 err " + JSON.stringify(err));
                 expect(err?.code == 8300004).assertTrue();
@@ -245,7 +245,7 @@ export default function telSyncTest() {
             }
           });
         }
-      }catch(err:Error){
+      } catch (err) {
         let error = err as BusinessError;
         hilog.info(domain, tag, caseName +'  catch error is '+JSON.stringify(error));
         ExpectFail();
@@ -276,7 +276,7 @@ export default function telSyncTest() {
                 sim.getSimOperatorNumericSync(slotId));
                 expect(sim.getSimOperatorNumericSync(slotId) != "").assertTrue();
                 done();
-              } catch (error: Error) {
+              } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, "SUB_Telephony_sim_getSimOperatorNumericSync_static_0100 err " + JSON.stringify(err));
                 expect(err?.code == 8300004).assertTrue();
@@ -289,7 +289,7 @@ export default function telSyncTest() {
                 sim.getSimOperatorNumericSync(slotId));
                 expect(sim.getSimOperatorNumericSync(slotId) == "").assertTrue();
                 done();
-              } catch (error: Error) {
+              } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, "SUB_Telephony_sim_getSimOperatorNumericSync_static_0100 err " + JSON.stringify(err));
                 expect(err?.code == 8300004).assertTrue();
@@ -298,7 +298,7 @@ export default function telSyncTest() {
             }
           });
         }
-      }catch(err:Error){
+      } catch (err) {
         let error = err as BusinessError;
         hilog.info(domain, tag, caseName +'  catch error is '+JSON.stringify(error));
         ExpectFail();
@@ -329,7 +329,7 @@ export default function telSyncTest() {
                 hilog.info(domain, tag, "SUB_Telephony_sim_hasSimCardSync_static_0100 " + sim.hasSimCardSync(slotId));
                 expect(sim.hasSimCardSync(slotId)).assertTrue();
                 done();
-              } catch (error: Error) {
+              } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, "SUB_Telephony_sim_hasSimCardSync_static_0100 err " + JSON.stringify(err));
                 expect(false).assertTrue();
@@ -340,7 +340,7 @@ export default function telSyncTest() {
                 hilog.info(domain, tag, "SUB_Telephony_sim_hasSimCardSync_static_0100 " + sim.hasSimCardSync(slotId));
                 expect(sim.hasSimCardSync(slotId)).assertFalse();
                 done();
-              } catch (error: Error) {
+              } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, "SUB_Telephony_sim_hasSimCardSync_static_0100 err " + JSON.stringify(err));
                 expect(false).assertTrue();
@@ -349,7 +349,7 @@ export default function telSyncTest() {
             }
           });
         }
-      }catch(err:Error){
+      } catch (err) {
         let error = err as BusinessError;
         hilog.info(domain, tag, caseName +'  catch error is '+JSON.stringify(error));
         ExpectFail();
@@ -380,7 +380,7 @@ export default function telSyncTest() {
                 sim.getISOCountryCodeForSimSync(slotId));
                 expect(sim.getISOCountryCodeForSimSync(slotId) != "").assertTrue();
                 done();
-              } catch (error: Error) {
+              } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, "SUB_Telephony_sim_getISOCountryCodeForSimSync_static_0100 err " + JSON.stringify(err));
                 expect(err?.code == 8300004).assertTrue();
@@ -393,7 +393,7 @@ export default function telSyncTest() {
                 sim.getISOCountryCodeForSimSync(slotId));
                 expect(sim.getISOCountryCodeForSimSync(slotId) == "").assertTrue();
                 done();
-              } catch (error: Error) {
+              } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, "SUB_Telephony_sim_getISOCountryCodeForSimSync_static_0100 err " + JSON.stringify(err));
                 expect(err?.code == 8300004).assertTrue();
@@ -402,7 +402,7 @@ export default function telSyncTest() {
             }
           });
         }
-      }catch(err:Error){
+      } catch (err) {
         let error = err as BusinessError;
         hilog.info(domain, tag, caseName +'  catch error is '+JSON.stringify(error));
         ExpectFail();
@@ -431,7 +431,7 @@ export default function telSyncTest() {
               radio.getISOCountryCodeForNetworkSync(slotId));
               expect(radio.getISOCountryCodeForNetworkSync(slotId) !== "").assertTrue();
               done();
-            } catch (error: Error) {
+            } catch (error) {
               let err = error as BusinessError;
               hilog.info(domain, tag,"SUB_Telephony_radio_getISOCountryCodeForNetworkSync_0100 err " + JSON.stringify(err));
               expect(true).assertFalse();
@@ -442,7 +442,7 @@ export default function telSyncTest() {
               hilog.info(domain, tag,"SUB_Telephony_radio_getISOCountryCodeForNetworkSync_0100 " +
               radio.getISOCountryCodeForNetworkSync(slotId));
               done();
-            } catch (error: Error) {
+            } catch (error) {
               let err = error as BusinessError;
               hilog.info(domain, tag, "SUB_Telephony_radio_getISOCountryCodeForNetworkSync_0100 err " + JSON.stringify(err));
               expect(true).assertFalse();
@@ -474,7 +474,7 @@ export default function telSyncTest() {
               radio.getSignalInformationSync(slotId));
               expect(radio.getSignalInformationSync(slotId).length).assertEqual(0);
               done();
-            } catch (error: Error) {
+            } catch (error) {
               let err = error as BusinessError;
               hilog.info(domain, tag,"SUB_Telephony_radio_getSignalInformationSync_0100 err " + JSON.stringify(err));
               expect(true).assertFalse();
@@ -486,7 +486,7 @@ export default function telSyncTest() {
               radio.getSignalInformationSync(slotId));
               expect(radio.getSignalInformationSync(slotId).length >= 0).assertTrue();
               done();
-            } catch (error: Error) {
+            } catch (error) {
               let err = error as BusinessError;
               hilog.info(domain, tag,"SUB_Telephony_radio_getSignalInformationSync_0100 err " + JSON.stringify(err));
               expect(true).assertFalse();
@@ -517,7 +517,7 @@ export default function telSyncTest() {
               hilog.info(domain, tag, "SUB_Telephony_radio_getOperatorNameSync_0100 " + radio.getOperatorNameSync(slotId));
               expect(radio.getOperatorNameSync(slotId) !== "").assertTrue();
               done();
-            } catch (error: Error) {
+            } catch (error) {
               let err = error as BusinessError;
               hilog.info(domain, tag, "SUB_Telephony_radio_getOperatorNameSync_0100 err " + JSON.stringify(err));
               expect(true).assertFalse();
@@ -528,7 +528,7 @@ export default function telSyncTest() {
               hilog.info(domain, tag, "SUB_Telephony_radio_getOperatorNameSync_0100 " + radio.getOperatorNameSync(slotId));
               expect(true).assertTrue();
               done();
-            } catch (error: Error) {
+            } catch (error) {
               let err = error as BusinessError;
               hilog.info(domain, tag, "SUB_Telephony_radio_getOperatorNameSync_0100 err " + JSON.stringify(err));
               expect(true).assertFalse();
@@ -550,7 +550,7 @@ export default function telSyncTest() {
         hilog.info(domain, tag, "SUB_Telephony_radio_getRadioTechSync_static_0100 " + radio.getRadioTechSync(slotId));
         expect(radio.getRadioTechSync(slotId).psRadioTech >= -1).assertTrue();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, "SUB_Telephony_radio_getRadioTechSync_static_0100 err " + JSON.stringify(err));
         expect(err != "").assertTrue();
@@ -569,7 +569,7 @@ export default function telSyncTest() {
         hilog.info(domain, tag, "SUB_Telephony_radio_getRadioTechSync__static_0200 " + radio.getRadioTechSync(slotId));
         expect(radio.getRadioTechSync(slotId).csRadioTech >= -1).assertTrue();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, "SUB_Telephony_radio_getRadioTechSync__static_0200 err " + JSON.stringify(err));
         expect(err != "").assertTrue();

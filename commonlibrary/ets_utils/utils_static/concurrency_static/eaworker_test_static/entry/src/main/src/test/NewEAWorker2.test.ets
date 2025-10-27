@@ -79,13 +79,13 @@ export default function NewEAWorkerTes2() {
           }
           await Utils.msSleep(1000);
           expect(count <= 10).assertEqual(true);
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -117,13 +117,13 @@ export default function NewEAWorkerTes2() {
           await Utils.msSleep(200);
           worker.quitSafely();
           expect(doneFlag).assertTrue();
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -160,13 +160,13 @@ export default function NewEAWorkerTes2() {
           await Utils.msSleep(1000);
           expect(doneFlag).assertTrue();
           expect(doneFlag2).assertTrue();
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} end`);
@@ -209,20 +209,20 @@ export default function NewEAWorkerTes2() {
             });
             job1.Await();
             job2.Await();
-          } catch (error: Error) {
+          } catch (error) {
             console.error(`${TAG} catch run error: code =>  message => ${error.message}`);
             expect(error.message).assertContain('Can not run task when worker is not started');
           }
           expect(doneFlag).assertTrue();
           expect(doneFlag2).assertTrue();
           expect(doneFlag3).assertFalse();
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} end`);
@@ -260,7 +260,7 @@ export default function NewEAWorkerTes2() {
           let secondQuitThrows = false;
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             secondQuitThrows = true;
           }
           console.info(`${TAG} isAlive：${worker.isAlive()}`);
@@ -268,13 +268,13 @@ export default function NewEAWorkerTes2() {
           if (!worker.isAlive()) {
             expect(secondQuitThrows).assertFalse();
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} catch error: ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -304,13 +304,13 @@ export default function NewEAWorkerTes2() {
           await Utils.msSleep(1000);
           expect(safelyQuitInside).assertTrue();
           expect(worker.isAlive()).assertFalse();
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -343,7 +343,7 @@ export default function NewEAWorkerTes2() {
           console.info(`${TAG} isAlive: ${worker.isAlive()}`);
           console.info(`${TAG} caught: ${caught}`);
           expect(caught).assertTrue();
-        } catch (error: Error) {
+        } catch (error) {
           console.info(`${TAG} test28`);
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
@@ -387,13 +387,13 @@ export default function NewEAWorkerTes2() {
           expect(worker.isAlive()).assertFalse();
           expect(doneFlag).assertTrue();
           expect(count).assertEqual(10);
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -433,13 +433,13 @@ export default function NewEAWorkerTes2() {
           expect(worker.isAlive()).assertFalse();
           expect(doneFlag).assertTrue();
           expect(count).assertEqual(10);
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -476,13 +476,13 @@ export default function NewEAWorkerTes2() {
           expect(worker.isAlive()).assertFalse();
           expect(executed).assertTrue();
           expect(doneFlag).assertTrue();
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -520,14 +520,14 @@ export default function NewEAWorkerTes2() {
           expect(worker.isAlive()).assertFalse();
           console.info(`${TAG} count: ${count}`);
           expect(count).assertEqual(10);
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} catch error: ${error.message}`);
           expect(false).assertFail();
         } finally {
           if (worker.isAlive()) {
             try {
               worker.quit();
-            } catch (error: Error) {
+            } catch (error) {
               console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
             }
           }
@@ -567,13 +567,13 @@ export default function NewEAWorkerTes2() {
               await Sleep(10);
           }
           expect(worker.isAlive()).assertFalse();
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} catch error: ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -628,7 +628,7 @@ export default function NewEAWorkerTes2() {
           while (Date.now() < end) {
           }
           expect(result.length).assertEqual(10);
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
@@ -663,7 +663,7 @@ export default function NewEAWorkerTes2() {
             }
             expect(worker.isAlive()).assertFalse();
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
@@ -686,7 +686,7 @@ export default function NewEAWorkerTes2() {
           EAWorker.main().setUncaughtExceptionHandler((e: Error) => {
           });
           expect(false).assertFail();
-        } catch (error: Error) {
+        } catch (error) {
           expect(error.message).assertContain('Main worker cannot have uncaught exception handler');
         } finally {
           console.info('test end');
@@ -713,7 +713,7 @@ export default function NewEAWorkerTes2() {
           }
           )
           expect(false).assertFail();
-        } catch (error: Error) {
+        } catch (error) {
           expect(error.message).assertContain('Main worker cannot have uncaught exception handler');
         } finally {
           console.info('test end');
@@ -745,12 +745,12 @@ export default function NewEAWorkerTes2() {
           });
           await Utils.msSleep(2500);
           expect(errMessage).assertContain('This is an uncaught exception!')
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail();
         } finally {
           try {
             eaw1.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`setUncaughtExceptionHandlerTest003 catch quit error: code =>  message => ${error.message}`);
           }
           console.info('test end');
@@ -780,12 +780,12 @@ export default function NewEAWorkerTes2() {
           });
           await Utils.msSleep(2000);
           expect(errMessage).assertContain('This is an uncaught exception!')
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail();
         } finally {
           try {
             eaw2.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`setUncaughtExceptionHandlerTest004 catch quit error: code =>  message => ${error.message}`);
           }
           console.info('test end');
@@ -810,12 +810,12 @@ export default function NewEAWorkerTes2() {
             throw new Error('This is an uncaught exception!');
           }).Await();
           expect(false).assertFail();
-        } catch (error: Error) {
+        } catch (error) {
           expect(error.message).assertContain('This is an uncaught exception!');
         } finally {
           try {
             eaw3.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`setUncaughtExceptionHandlerTest005 catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`test end`);
@@ -847,16 +847,16 @@ export default function NewEAWorkerTes2() {
               })
               // 加个resolve
               resolve(undefined);
-            } catch (error: Error) {
+            } catch (error) {
               reject(error);
             }
           })
-        } catch (error: Error) {
+        } catch (error) {
           expect(error.message).assertContain('Worker function exception');
         } finally {
           try {
             eaw4.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`setUncaughtExceptionHandlerTest006 catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`test end`);
@@ -883,17 +883,17 @@ export default function NewEAWorkerTes2() {
             setTimeout(() => {
               try {
                 throw new Error('This is an uncaught exception!');
-              } catch (error: Error) {
+              } catch (error) {
                 console.log('setUncaughtExceptionHandler_007--set-err', error.message)
               }
             }, 500)
           });
-        } catch (error: Error) {
+        } catch (error) {
           expect(error.message).assertContain('Worker function exception');
         } finally {
           try {
             eaw5.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`setUncaughtExceptionHandlerTest007 catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`test end`);
@@ -922,12 +922,12 @@ export default function NewEAWorkerTes2() {
           getValue = getUnCaught1.getUncaughtExceptionHandler();
           getValue!.unsafeCall();
           expect(doneFlag).assertTrue();
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail();
         } finally {
           try {
             getUnCaught1.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`getUncaughtExceptionHandlerTest001 catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`test end`);
@@ -951,7 +951,7 @@ export default function NewEAWorkerTes2() {
           })
           let getValue2 = EAWorker.main().getUncaughtExceptionHandler();
           expect(getValue2).assertUndefined();
-        } catch (error: Error) {
+        } catch (error) {
           expect(error.message).assertContain('Main worker cannot have uncaught exception handler');
           expect(false).assertFail();
         } finally {
@@ -980,13 +980,13 @@ export default function NewEAWorkerTes2() {
             throw new Error("Uncaught exception in main thread");
           });
           expect(typeof getValue3).assertEqual('function');
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`catch error: code =>  message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             getUnCaught3.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`getUncaughtExceptionHandlerTest003 catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`test end`);
@@ -1006,7 +1006,7 @@ export default function NewEAWorkerTes2() {
       try {
         EAWorker.main().start();
         expect(false).assertFail();
-      } catch (error: Error) {
+      } catch (error) {
         expect(error.message).assertContain('Main worker cannot be started');
       } finally {
         console.info(`test end`);
@@ -1029,7 +1029,7 @@ export default function NewEAWorkerTes2() {
           flag = true;
         }).Await();
         expect(flag).assertTrue()
-      } catch (error: Error) {
+      } catch (error) {
         expect(false).assertFail();
       } finally {
         console.info(`test end`);
@@ -1049,7 +1049,7 @@ export default function NewEAWorkerTes2() {
       try {
         let getValue = EAWorker.main().getName()
         expect(getValue).assertEqual('main')
-      } catch (error: Error) {
+      } catch (error) {
         expect(false).assertFail();
       } finally {
         console.info(`test end`);
@@ -1069,7 +1069,7 @@ export default function NewEAWorkerTes2() {
       try {
         let getValue = EAWorker.main().getWorkerId()
         expect(getValue).assertEqual(0)
-      } catch (error: Error) {
+      } catch (error) {
         expect(false).assertFail();
       } finally {
         console.info(`test end`);
@@ -1089,7 +1089,7 @@ export default function NewEAWorkerTes2() {
       try {
         let getValue = EAWorker.main().getPriority()
         expect(getValue).assertEqual(WorkerPriority.PRIORITY_DEFAULT)
-      } catch (error: Error) {
+      } catch (error) {
         expect(false).assertFail();
       } finally {
         console.info(`test end`);
@@ -1109,7 +1109,7 @@ export default function NewEAWorkerTes2() {
       try {
         EAWorker.main().setUncaughtExceptionHandler((error: Error) => {
         });
-      } catch (error: Error) {
+      } catch (error) {
         expect(error.message).assertContain('Main worker cannot have uncaught exception handler');
       } finally {
         console.info(`test end`);
@@ -1132,7 +1132,7 @@ export default function NewEAWorkerTes2() {
           getValue = EAWorker.main().getPriority()
         })
         expect(getValue).assertEqual(WorkerPriority.PRIORITY_DEFAULT)
-      } catch (error: Error) {
+      } catch (error) {
         expect(false).assertFail()
       } finally {
         console.info(`test end`);
@@ -1158,7 +1158,7 @@ export default function NewEAWorkerTes2() {
           });
         })
         expect(false).assertFail();
-      } catch (error: Error) {
+      } catch (error) {
         expect(error.message).assertContain('Main worker cannot have uncaught exception handler');
       } finally {
         console.info(`test end`);
@@ -1186,7 +1186,7 @@ export default function NewEAWorkerTes2() {
           let currentId = current!.getWorkerId()
           expect(typeof currentId).assertEqual('number')
           current!.join();
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail();
         } finally {
           console.info(`test end`);
@@ -1215,7 +1215,7 @@ export default function NewEAWorkerTes2() {
           console.info(`CurrentTest002 currentValue: ${currentValue}`);
           expect(currentValue).assertEqual('EAWorker');
           current!.join();
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`CurrentTest002 error.message => ${error.message}`);
           expect(false).assertFail()
         } finally {
@@ -1245,7 +1245,7 @@ export default function NewEAWorkerTes2() {
           let workerValue = worker!.getWorkerId();
           expect(currentValue == workerValue).assertTrue();
           current!.join();
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`catch error: code =>  message => ${error.message}`);
           expect(false).assertFail()
         } finally {
@@ -1276,7 +1276,7 @@ export default function NewEAWorkerTes2() {
           let currentValue = current!.getPriority()
           expect(currentValue).assertEqual(WorkerPriority.PRIORITY_DEFAULT)
           current!.join();
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`catch error: code =>  message => ${error.message}`);
           expect(false).assertFail()
         } finally {
@@ -1306,7 +1306,7 @@ export default function NewEAWorkerTes2() {
           let priority = current!.getPriority();
           expect(priority).assertEqual(WorkerPriority.PRIORITY_HIGH)
           current!.join();
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           console.info(`test end`);
@@ -1334,7 +1334,7 @@ export default function NewEAWorkerTes2() {
           let currentValue = current!.isAlive()
           expect(currentValue).assertTrue();
           current!.join();
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`catch error: code =>  message => ${error.message}`);
           expect(false).assertFail()
         } finally {
@@ -1370,7 +1370,7 @@ export default function NewEAWorkerTes2() {
           await Utils.msSleep(1000);
           expect(errMessage).assertContain('This is an uncaught exception!')
           current!.join();
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           console.info(`test end`);
@@ -1398,7 +1398,7 @@ export default function NewEAWorkerTes2() {
           let getValue = current!.getPriority()
           expect(getValue).assertEqual(WorkerPriority.PRIORITY_DEFAULT)
           current!.join();
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           console.info(`test end`);
@@ -1428,7 +1428,7 @@ export default function NewEAWorkerTes2() {
           }).Await()
           expect(false).assertFail();
           current!.join();
-        } catch (error: Error) {
+        } catch (error) {
           expect(error.message).assertContain('Worker already started');
         } finally {
           console.info(`test end`);
@@ -1451,12 +1451,12 @@ export default function NewEAWorkerTes2() {
           await taskpool.execute(() => {
             try {
               EAWorker.current()
-            } catch (error: Error) {
+            } catch (error) {
               errMessage = error.message;
             }
           })
           expect(errMessage).assertContain('Can not get current worker in taskpool');
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           console.info(`test end`);
@@ -1480,13 +1480,13 @@ export default function NewEAWorkerTes2() {
           EAWorker.main().postTask(() => {
             try {
               throw new Error("Worker function exception")
-            } catch (error: Error) {
+            } catch (error) {
               errMessage = error.message;
             }
           })
           await Utils.msSleep(1000);
           expect(errMessage).assertContain('Worker function exception')
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           done();
@@ -1515,7 +1515,7 @@ export default function NewEAWorkerTes2() {
           });
           await Utils.msSleep(1000);
           expect(errMessage).assertContain('Worker function exception')
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           done();
@@ -1542,12 +1542,12 @@ export default function NewEAWorkerTes2() {
                 .then(() => {
                   flag = true;
                 })
-            } catch (error: Error) {
+            } catch (error) {
             }
           });
           await Utils.msSleep(1000);
           expect(flag).assertTrue()
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           done();
@@ -1581,11 +1581,11 @@ export default function NewEAWorkerTes2() {
                 })
               await Utils.msSleep(1000);
               expect(errMessage).assertContain('Worker function exception')
-            } catch (error: Error) {
+            } catch (error) {
               expect(false).assertFail()
             }
           });
-        } catch (error: Error) {
+        } catch (error) {
         } finally {
           done();
         }
@@ -1616,7 +1616,7 @@ export default function NewEAWorkerTes2() {
           })
           await Utils.msSleep(1000);
           expect(errMessage).assertContain('Worker function exception')
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           done();
@@ -1651,7 +1651,7 @@ export default function NewEAWorkerTes2() {
           })
           await Utils.msSleep(1000);
           expect(errMessage).assertContain('Worker function exception')
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           done();
@@ -1681,7 +1681,7 @@ export default function NewEAWorkerTes2() {
           })
           await Utils.msSleep(1000);
           expect(flag).assertTrue()
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           done();
@@ -1714,12 +1714,12 @@ export default function NewEAWorkerTes2() {
             expect(errMessage).assertContain('Worker function exception')
             worker.join();
           })
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`PostTaskTest008 catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -1748,12 +1748,12 @@ export default function NewEAWorkerTes2() {
             expect(flag).assertTrue();
             worker.join();
           })
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`PostTaskTest009 catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -1779,7 +1779,7 @@ export default function NewEAWorkerTes2() {
           })
           await Utils.msSleep(3000);
           expect(flag).assertTrue()
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail();
         } finally {
           done();
@@ -1804,18 +1804,18 @@ export default function NewEAWorkerTes2() {
           worker.postTask(() => {
             try {
               throw new Error("Worker function exception")
-            } catch (error: Error) {
+            } catch (error) {
               errMessage = error.message;
             }
           })
           await Utils.msSleep(1000);
           expect(errMessage).assertContain('Worker function exception')
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`PostTaskTest012 catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -1847,12 +1847,12 @@ export default function NewEAWorkerTes2() {
           await Utils.msSleep(1000);
           expect(errMessage).assertContain('Worker function exception')
           worker.join();
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`PostTaskTest013 catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -1884,12 +1884,12 @@ export default function NewEAWorkerTes2() {
           await Utils.msSleep(1000);
           expect(flag).assertTrue()
           worker.join();
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`PostTaskTest014 catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -1923,19 +1923,19 @@ export default function NewEAWorkerTes2() {
                     errMessage = error.message;
                   })
                 })
-            } catch (error: Error) {
+            } catch (error) {
               expect(false).assertFail()
             }
           });
           await Utils.msSleep(1000);
           expect(errMessage).assertContain('Worker function exception')
           worker.join();
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`PostTaskTest015 catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -1968,12 +1968,12 @@ export default function NewEAWorkerTes2() {
           await Utils.msSleep(1000);
           expect(errMessage).assertContain('Worker function exception')
           worker.join();
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`PostTaskTest016 catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2011,12 +2011,12 @@ export default function NewEAWorkerTes2() {
           await Utils.msSleep(1000);
           expect(errMessage).assertContain('Worker function exception')
           worker.join();
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`PostTaskTest017 catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2050,12 +2050,12 @@ export default function NewEAWorkerTes2() {
           await Utils.msSleep(1000);
           expect(flag).assertTrue();
           worker.join();
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`PostTaskTest018 catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2093,12 +2093,12 @@ export default function NewEAWorkerTes2() {
             await Utils.msSleep(100);
           }
           expect(value).assertContain('Worker function exception') //assertCon
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`PostTaskTest019 catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2134,12 +2134,12 @@ export default function NewEAWorkerTes2() {
               }
             })
           })
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail()
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`PostTaskTest020 catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2169,12 +2169,12 @@ export default function NewEAWorkerTes2() {
           await Utils.msSleep(2000);
           expect(flag).assertTrue();
           worker.join();
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`PostTaskTest022 catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2204,7 +2204,7 @@ export default function NewEAWorkerTes2() {
           })
           await Utils.msSleep(1000);
           expect(flag).assertTrue()
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail();
         } finally {
           done();
@@ -2237,12 +2237,12 @@ export default function NewEAWorkerTes2() {
           })
           await Utils.msSleep(1000);
           expect(flag).assertTrue();
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`PostTaskTest024 catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2276,12 +2276,12 @@ export default function NewEAWorkerTes2() {
           await Utils.msSleep(1000);
           expect(flag).assertTrue()
           worker.join();
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`PostTaskTest025 catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2335,12 +2335,12 @@ export default function NewEAWorkerTes2() {
           })
           await Utils.msSleep(1000);
           expect(flag == '0123456789').assertTrue();
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`PostTaskTest026 catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2371,12 +2371,12 @@ export default function NewEAWorkerTes2() {
           })
           await Utils.msSleep(1000);
           expect(flag).assertTrue();
-        } catch (error: Error) {
+        } catch (error) {
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`PostTaskTest026 catch quit error: code =>  message => ${error.message}`);
           }
           done();

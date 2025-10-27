@@ -42,7 +42,7 @@ struct TabsExampleApi12I11 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('tabs_onContentWillChangeIndex11', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

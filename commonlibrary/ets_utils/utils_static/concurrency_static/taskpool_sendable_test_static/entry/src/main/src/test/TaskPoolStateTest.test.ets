@@ -74,7 +74,7 @@ export default function TaskPoolStateTest() {
     //     console.info(`${caseName}: state3: ${state3}`);
     //     expect(String(state3)).assertEqual('6');
     //     done();
-    //   } catch(error: Error) {
+    //   } catch(error) {
     //     console.info(`${caseName}: catch error: code =>   message => ${error.message}`);
     //     expect(false).assertFail();
     //     done();
@@ -103,7 +103,7 @@ export default function TaskPoolStateTest() {
     //     console.info(`${caseName}: state: ${state}`);
     //     expect(state == 1 || state == 2).assertTrue();
     //     done();
-    //   } catch(error: Error) {
+    //   } catch(error) {
     //     console.info(`${caseName}: catch error: code =>   message => ${error.message}`);
     //     expect(false).assertFail();
     //     done();

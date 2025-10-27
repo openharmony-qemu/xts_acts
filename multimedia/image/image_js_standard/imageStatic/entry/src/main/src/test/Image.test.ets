@@ -248,7 +248,7 @@ export default function imageJsTest() {
           expect(true).assertTrue();
           done();
         }
-      } catch(error: Error) {
+      } catch (error) {
         console.log('SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_PROMISE_STATIC_0100 error: ' + error);
         expect().assertFail();
         done();
@@ -310,7 +310,7 @@ export default function imageJsTest() {
           expect(false).assertTrue();
           done();
         }
-      } catch (error: Error) {
+      } catch (error) {
         console.log('SUB_MULTIMEDIA_IMAGE_WRITEBUFFERTOPIXELS_CALLBACK_STATIC_0100 error: ' + error);
         expect().assertFail();
         done();
@@ -1325,10 +1325,12 @@ export default function imageJsTest() {
                       console.info('imageInfo.size.width:' + imageInfo!.size.width);
                       done();
                     }
-                } catch(error: BusinessError) {
-                    console.log('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0200 error: ' + error);
-                    expect().assertFail();
-                    done();
+                } catch(error) {
+                    if (error instanceof BusinessError) {
+                      console.log('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0200 error: ' + error);
+                      expect().assertFail();
+                      done();
+                    }
                 };
             }
         } catch (error) {
@@ -1372,10 +1374,12 @@ export default function imageJsTest() {
                       console.info('imageInfo.size.width:' + imageInfo!.size.width);
                       done();
                     }
-                } catch(error: BusinessError) {
-                    console.log('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0300 error: ' + error);
-                    expect().assertFail();
-                    done();
+                } catch(error) {
+                    if (error instanceof BusinessError) {
+                      console.log('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0300 error: ' + error);
+                      expect().assertFail();
+                      done();
+                    }
                 };
             }
         } catch (error) {
@@ -1420,10 +1424,12 @@ export default function imageJsTest() {
                         console.info('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0400 failed');
                         done();
                     }
-                } catch(error: BusinessError) {
-                    console.log('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0400 error: ' + error);
-                    expect().assertFail();
-                    done();
+                } catch(error) {
+                    if (error instanceof BusinessError) {
+                      console.log('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0400 error: ' + error);
+                      expect().assertFail();
+                      done();
+                    }
                 };
             }
         } catch (error) {
@@ -1760,10 +1766,12 @@ export default function imageJsTest() {
                     console.info('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0100 success');
                     expect(true).assertTrue();
                     done();
-                } catch(error: BusinessError) {
-                    console.log('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0100 error: ' + error);
-                    expect().assertFail();
-                    done();
+                } catch(error) {
+                    if (error instanceof BusinessError) {
+                      console.log('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0100 error: ' + error);
+                      expect().assertFail();
+                      done();
+                    }
                 };
             }
         } catch (error) {
@@ -1840,10 +1848,12 @@ export default function imageJsTest() {
                     console.info('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0200 success');
                     expect(true).assertTrue();
                     done();
-                } catch(error: BusinessError) {
-                    console.log('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0200 error: ' + error);
-                    expect().assertFail();
-                    done();
+                } catch(error) {
+                    if (error instanceof BusinessError) {
+                      console.log('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0200 error: ' + error);
+                      expect().assertFail();
+                      done();
+                    }
                 };
             }
         } catch (error) {
@@ -1913,10 +1923,12 @@ export default function imageJsTest() {
                     console.info('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0300 success');
                     expect(true).assertTrue();
                     done();
-                } catch(error: BusinessError) {
-                    console.log('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0300 error: ' + error);
-                    expect().assertFail();
-                    done();
+                } catch(error) {
+                    if (error instanceof BusinessError) {
+                      console.log('SUB_MULTIMEDIA_IMAGE_RELEASE_IMAGESOURCE_PROMISE_STATIC_0300 error: ' + error);
+                      expect().assertFail();
+                      done();
+                    }
                 };
             }
         } catch (error) {

@@ -53,7 +53,7 @@ export default function getAsset() {
             expect(false).assertTrue();
           }
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${testNum} failed; error: ${err}`);
           expect(false).assertTrue();
           done();

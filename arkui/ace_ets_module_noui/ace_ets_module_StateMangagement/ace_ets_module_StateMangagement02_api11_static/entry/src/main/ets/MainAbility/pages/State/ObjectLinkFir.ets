@@ -82,7 +82,7 @@ struct ViewAFir {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('ObjectLinkFir', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

@@ -56,7 +56,7 @@ export default function getItemError() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push getItemError page error:" + err);
       }
       console.info("getItemError beforeEach end");

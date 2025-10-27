@@ -87,7 +87,7 @@ struct stageAlertDialog {
               }
               console.info("showDialog start to emit action state")
               events_emitter.emit(backEvent, backData)
-            } catch (error: Error) {
+            } catch (error) {
               console.error("showToast emit action state err:" + JSON.stringify(error.message));
             }
             ;
@@ -139,7 +139,7 @@ struct stageAlertDialog {
               }
               console.info("showActionMenu start to emit action state")
               events_emitter.emit(backEvent1, backData1)
-            } catch (error: Error) {
+            } catch (error) {
 
             }
             ;
@@ -191,7 +191,7 @@ struct stageAlertDialog {
               }
               console.info("showActionMenu start to emit action state")
               events_emitter.emit(backEvent2, backData2)
-            } catch (error: Error) {
+            } catch (error) {
               console.error(`showActionMenu args error code is ${error.code}, message is ${error.message}`);
             }
           })

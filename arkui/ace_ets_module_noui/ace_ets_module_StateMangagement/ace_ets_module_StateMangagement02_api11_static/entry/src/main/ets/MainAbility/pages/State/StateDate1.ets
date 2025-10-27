@@ -64,7 +64,7 @@ struct StateDatePicker1 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('StateDate1', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

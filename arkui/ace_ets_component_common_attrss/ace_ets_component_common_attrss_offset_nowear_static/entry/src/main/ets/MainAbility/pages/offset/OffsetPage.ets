@@ -73,7 +73,7 @@ struct Offset {
       this.subassemblyHeight= routerParamOptions.view.subassemblyHeight
       this.parentComponentKey= routerParamOptions.view.parentComponentKey
       this.referenceComponentKey= routerParamOptions.view.referenceComponentKey
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }

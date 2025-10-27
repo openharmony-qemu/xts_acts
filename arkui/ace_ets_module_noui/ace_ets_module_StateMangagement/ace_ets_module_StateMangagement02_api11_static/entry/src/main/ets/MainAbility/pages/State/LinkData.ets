@@ -69,7 +69,7 @@ struct parData_Link {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('LinkData', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

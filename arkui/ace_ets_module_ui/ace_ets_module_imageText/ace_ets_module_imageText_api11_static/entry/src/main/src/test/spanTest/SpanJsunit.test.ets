@@ -62,7 +62,7 @@ export default function spanJsunit() {
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push Span page error " + JSON.stringify(err));
       }
       await sleep(2);

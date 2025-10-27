@@ -57,7 +57,7 @@ struct sizePage {
       this.parentHeight = routerParamOptions.view.parentHeight
       this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
       this.BackGroundColor = routerParamOptions.view.BackGroundColor
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }

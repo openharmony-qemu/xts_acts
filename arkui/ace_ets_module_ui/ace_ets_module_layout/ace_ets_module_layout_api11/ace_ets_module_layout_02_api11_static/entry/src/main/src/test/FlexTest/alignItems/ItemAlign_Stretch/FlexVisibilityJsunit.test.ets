@@ -123,7 +123,7 @@ it('testFlexItemAlignStretchSubSetVisibilityNone_static', Level.LEVEL0, async ()
 
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Stretch')
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexItemAlignBaselineSubSetVisibilityNone_static] failed');
         expect().assertFail();
       }
@@ -182,7 +182,7 @@ it('testFlexItemAlignStretchSubSetVisibilityHidden_static', Level.LEVEL0, async 
         expect(Math.abs((textVisible03.right - textVisible03.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Stretch')
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexItemAlignBaselineSubSetVisibilityHidden_static] failed');
         expect().assertFail();
       }

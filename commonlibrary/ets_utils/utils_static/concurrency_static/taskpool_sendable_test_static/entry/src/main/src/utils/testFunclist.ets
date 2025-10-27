@@ -108,7 +108,7 @@ export function testTaskPool(): void {
     for (let i: number = 1; i <= 10; i++) {
       taskpool.cancel(task1);
     }
-  } catch (e: Error) {
+  } catch (e) {
     console.info('taskpool catch error: ' + e);
   }
 }

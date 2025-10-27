@@ -68,7 +68,7 @@ export default function refreshResource() {
           await Utils.sleep(2000);
           console.info("push refresh page result:");
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push refresh page error:" + err);
       }
     });
@@ -112,7 +112,7 @@ export default function refreshResource() {
         }
         console.info("[refreshResource_static_0200] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[refreshResource_static_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -146,7 +146,7 @@ export default function refreshResource() {
         }
         console.info("[refreshResource_static_0300] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[refreshResource_static_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -180,7 +180,7 @@ export default function refreshResource() {
         }
         console.info("[refreshResource_static_0400] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[refreshResource_static_0400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -214,7 +214,7 @@ export default function refreshResource() {
         }
         console.info("[refreshResource_static_0500] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[refreshResource_static_0500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -249,7 +249,7 @@ export default function refreshResource() {
         }
         console.info("[refreshResource_static_0600] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[refreshResource_static_0600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -283,7 +283,7 @@ export default function refreshResource() {
         }
         console.info("[refreshResource_static_0700] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[refreshResource_static_0700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

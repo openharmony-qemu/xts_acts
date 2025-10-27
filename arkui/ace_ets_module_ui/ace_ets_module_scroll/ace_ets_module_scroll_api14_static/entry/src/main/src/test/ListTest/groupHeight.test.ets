@@ -56,7 +56,7 @@ export default function groupHeight() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push groupHeight page error:" + err);
       }
       console.info("groupHeight beforeEach end");

@@ -78,14 +78,14 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100)
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
           try {
             eaw.quitSafely();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
 
@@ -144,14 +144,14 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100)
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
           try {
             eaw.quitSafely();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -209,14 +209,14 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100)
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
           try {
             eaw.quitSafely();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -250,14 +250,14 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100)
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
           try {
             eaw.quitSafely();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -291,14 +291,14 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100)
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
           try {
             eaw.quitSafely();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -332,14 +332,14 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100)
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
           try {
             eaw.quitSafely();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -376,14 +376,14 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100)
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
           try {
             eaw.quitSafely();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -418,14 +418,14 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100)
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
           try {
             eaw.quitSafely();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -459,14 +459,14 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100)
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
           try {
             eaw.quitSafely();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -500,14 +500,14 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100)
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
           try {
             eaw.quitSafely();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -542,14 +542,14 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100)
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
           try {
             eaw.quitSafely();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -618,14 +618,14 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
           try {
             eaw.quitSafely();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -678,14 +678,14 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
           try {
             eaw.quitSafely();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -746,14 +746,14 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           while (workNum > 0) {
             try {
               works[--workNum].quitSafely();
-            } catch (error: Error) {
+            } catch (error) {
               console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
             }
           }
@@ -809,7 +809,7 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
@@ -853,14 +853,14 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
           try {
             eaw.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -885,14 +885,14 @@ export default function MessageTest2() {
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
           }, eaw);
           expect(handler.getWorker()).assertEqual(eaw);
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`)
           try {
             eaw.quitSafely();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -919,7 +919,7 @@ export default function MessageTest2() {
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
           }, eaw1);
           expect(handler.getWorker() != eaw2).assertTrue();
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
@@ -927,7 +927,7 @@ export default function MessageTest2() {
           try {
             eaw1.quitSafely();
             eaw2.quitSafely();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -965,13 +965,13 @@ export default function MessageTest2() {
           }
           console.info(`${TAG} Messages in queue 2: ${handler.hasMessages(1)}`);
           expect(doneFlag).assertTrue();
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -1011,14 +1011,14 @@ export default function MessageTest2() {
           console.info(`${TAG} receivedWhat: ${receivedWhat}`);
           expect(doneFlag).assertTrue();
           expect(receivedWhat).assertEqual(1);
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quitSafely();
             worker.join();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -1057,14 +1057,14 @@ export default function MessageTest2() {
           expect(sendOk).assertFalse();
           expect(h1Received).assertFalse();
           expect(h2Received).assertFalse();
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker1.join();
             worker2.join();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -1098,13 +1098,13 @@ export default function MessageTest2() {
           while (!received) {
             await Utils.msSleep(100)
           }
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -1145,14 +1145,14 @@ export default function MessageTest2() {
           expect(sendOk).assertFalse();
           expect(h1Received).assertFalse();
           expect(h2Received).assertFalse();
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker1.join();
             worker2.join();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -1192,13 +1192,13 @@ export default function MessageTest2() {
           while (!received) {
             await Utils.msSleep(100)
           }
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -1239,13 +1239,13 @@ export default function MessageTest2() {
           while (!received) {
             await Utils.msSleep(100)
           }
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -1284,14 +1284,14 @@ export default function MessageTest2() {
           expect(sendOk).assertFalse();
           expect(h1Received).assertFalse();
           expect(h2Received).assertFalse();
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker1.join();
             worker2.join();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -1327,13 +1327,13 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100)
           }
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quitSafely();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -1374,14 +1374,14 @@ export default function MessageTest2() {
           expect(sendOk).assertFalse();
           expect(h1Received).assertFalse();
           expect(h2Received).assertFalse();
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker1.join();
             worker2.join();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -1419,13 +1419,13 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100)
           }
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -1469,14 +1469,14 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100)
           }
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
           ;
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -1516,14 +1516,14 @@ export default function MessageTest2() {
           expect(sendOk).assertFalse();
           expect(h1Received).assertFalse();
           expect(h2Received).assertFalse();
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker1.join();
             worker2.join();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           console.info(`${TAG} test end`);
@@ -1559,13 +1559,13 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} catch error: message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker1.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -1609,13 +1609,13 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -1649,13 +1649,13 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -1689,13 +1689,13 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -1729,13 +1729,13 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -1769,13 +1769,13 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -1809,13 +1809,13 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -1849,13 +1849,13 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -1889,13 +1889,13 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -1928,13 +1928,13 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
           expect(false).assertFail();
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -1974,12 +1974,12 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2020,12 +2020,12 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2068,12 +2068,12 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2123,12 +2123,12 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2178,12 +2178,12 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2233,12 +2233,12 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2292,12 +2292,12 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2351,12 +2351,12 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2400,12 +2400,12 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2441,12 +2441,12 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2483,12 +2483,12 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2520,12 +2520,12 @@ export default function MessageTest2() {
           await Utils.msSleep(1300);
           expect(handler.removeCallbacks(p)).assertEqual(true);
           expect(handler.removeCallbacks(p)).assertEqual(false);
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2563,12 +2563,12 @@ export default function MessageTest2() {
           while (!flag) {
             await Utils.msSleep(100);
           }
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2606,12 +2606,12 @@ export default function MessageTest2() {
           handler.sendMessage(msg);
           handler.hasCallbacks(p);
           expect(handler.removeCallbacks(p)).assertEqual(false);
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2645,12 +2645,12 @@ export default function MessageTest2() {
           handler.sendMessage(headMsg);
           removeFlag = handler.removeCallbacks(p)
           expect(removeFlag).assertEqual(true);
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();
@@ -2681,12 +2681,12 @@ export default function MessageTest2() {
           await Utils.msSleep(1300);
           expect(handler.removeCallbacks(p)).assertEqual(true);
           expect(handler.removeCallbacks(p)).assertEqual(false);
-        } catch (error: Error) {
+        } catch (error) {
           console.error(`${TAG} error.message => ${error.message}`);
         } finally {
           try {
             worker.quit();
-          } catch (error: Error) {
+          } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
           done();

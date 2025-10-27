@@ -69,7 +69,7 @@ export default function listJsunit() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push list page error:" + err);
       }
     });
@@ -130,7 +130,7 @@ export default function listJsunit() {
         }
         console.info("[testList_static_02] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testList_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -164,7 +164,7 @@ export default function listJsunit() {
         }
         console.info("[testList_static_03] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testList_static_03] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -197,7 +197,7 @@ export default function listJsunit() {
         }
         console.info("[testList_static_04] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testList_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -231,7 +231,7 @@ export default function listJsunit() {
         }
         console.info("[testList_static_05] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testList_static_05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -264,7 +264,7 @@ export default function listJsunit() {
         }
         console.info("[testList_static_06] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testList_static_06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -298,7 +298,7 @@ export default function listJsunit() {
         }
         console.info("[testList_static_07] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testList_static_07] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -332,7 +332,7 @@ export default function listJsunit() {
         }
         console.info("[testList_static_08] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testList_static_08] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -366,7 +366,7 @@ export default function listJsunit() {
         }
         console.info("[testList_static_09] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testList_static_09] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -400,7 +400,7 @@ export default function listJsunit() {
         }
         console.info("[testList_static_10] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testList_static_10] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -433,7 +433,7 @@ export default function listJsunit() {
         }
         console.info("[testList_static_11] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testList_static_11] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -466,7 +466,7 @@ export default function listJsunit() {
         }
         console.info("[testList_static_12] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testList_static_12] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);

@@ -116,7 +116,7 @@ struct DragControllerPage {
                 }).catch((err: Error) => {
                   console.log("start drag Error:" + err.message);
                 })
-              } catch (err: Error) {
+              } catch (err) {
                 console.log("create dragAction Error:" + err.message);
               }
             }

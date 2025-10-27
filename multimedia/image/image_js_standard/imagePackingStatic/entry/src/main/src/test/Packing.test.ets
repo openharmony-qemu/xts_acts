@@ -233,7 +233,7 @@ export default function imagePacking() {
           expect().assertFail();
           done();
         }
-      } catch (error: Error) {
+      } catch (error) {
         console.info(`${testNum} error: ` + JSON.stringify(error));
         expect().assertFail();
         done();

@@ -944,7 +944,7 @@ struct ZIndexPage {
       this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
       this.parentComponentKey = routerParamOptions.view.parentComponentKey
       console.log('aboutToAppear routerParamOptions success' + this.targetView)
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
     attrsManager.registerDataChange((value: number) => {

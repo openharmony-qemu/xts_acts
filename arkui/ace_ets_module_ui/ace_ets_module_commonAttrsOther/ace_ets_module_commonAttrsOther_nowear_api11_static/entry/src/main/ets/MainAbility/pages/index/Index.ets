@@ -43,7 +43,7 @@ struct Index {
       console.info("start run testcase333!!!!")
       AppStorage.setOrCreate<Router>('router', router1);
       console.info("start run testcase444!!!!")
-    } catch (error: Error) {
+    } catch (error) {
       console.info("------------------------------ ")
       console.info(error)
       console.log('error ' + error);

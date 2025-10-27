@@ -68,7 +68,7 @@ export default function ListReboundTest() {
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
       }
     });
@@ -95,7 +95,7 @@ export default function ListReboundTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('edgeEffect'))
             .assertEqual('EdgeEffect.Spring')
           console.info(`${SUITE} ${CASE} END`);
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info(`${SUITE} ${CASE} ERROR:` + JSON.stringify(err));
         }
@@ -126,7 +126,7 @@ export default function ListReboundTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('edgeEffect'))
             .assertEqual('EdgeEffect.Fade')
           console.info(`${SUITE} ${CASE} END`);
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info(`${SUITE} ${CASE} ERROR:` + JSON.stringify(err));
         }
@@ -155,7 +155,7 @@ export default function ListReboundTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('edgeEffect'))
             .assertEqual('EdgeEffect.None')
           console.info(`${SUITE} ${CASE} END`);
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info(`${SUITE} ${CASE} ERROR:` + JSON.stringify(err));
         }

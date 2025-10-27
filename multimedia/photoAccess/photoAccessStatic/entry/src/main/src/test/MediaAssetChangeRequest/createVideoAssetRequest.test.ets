@@ -47,7 +47,7 @@ export default function createVideoAssetRequest() {
           console.error(`${testNum} failed; error: succeed to create video asset with invalid fileUri`);
           expect(false).assertTrue();
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.info(`${testNum} succeed to detect invalid fileUri`);
           done();
         }

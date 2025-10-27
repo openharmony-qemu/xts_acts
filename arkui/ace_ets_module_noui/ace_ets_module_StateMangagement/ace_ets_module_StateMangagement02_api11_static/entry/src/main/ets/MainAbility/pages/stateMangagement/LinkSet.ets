@@ -105,7 +105,7 @@ struct LinkSetSample1 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('LinkSet', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

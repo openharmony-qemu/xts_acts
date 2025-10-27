@@ -54,7 +54,7 @@ struct OnAppearPage {
       this.compareTextKey = routerParamOptions.view.compareTextKey
       this.targetWidth = routerParamOptions.view.targetWidth
       this.targetHeight = routerParamOptions.view.targetHeight
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }

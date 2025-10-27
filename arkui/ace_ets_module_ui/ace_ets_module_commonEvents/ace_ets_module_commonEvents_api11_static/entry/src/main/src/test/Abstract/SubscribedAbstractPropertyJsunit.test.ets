@@ -46,7 +46,7 @@ export default function subscribedAbstractPropertyJsunit() {
           done();
 
         }
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
       /*

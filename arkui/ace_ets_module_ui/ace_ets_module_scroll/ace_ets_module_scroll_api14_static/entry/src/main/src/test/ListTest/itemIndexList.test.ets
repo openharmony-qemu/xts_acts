@@ -56,7 +56,7 @@ export default function itemIndexList() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push itemIndexList page error:" + err);
       }
       console.info("itemIndexList beforeEach end");

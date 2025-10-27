@@ -33,7 +33,7 @@ class Utils{
           Utils.isloadAndSetUpUiTest = true;
         }
         resolve(true)
-      } catch(error: Error) {
+      } catch(error) {
         hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${JSON.stringify(error)}`);
         reject(error)
       }

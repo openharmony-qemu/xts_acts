@@ -81,7 +81,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.900000');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_0100 ERR ' + JSON.stringify(err));
           done();
@@ -108,7 +108,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.950000');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_0200 ERR ' + JSON.stringify(err));
           done();
@@ -135,7 +135,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.950000');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_0300 ERR ' + JSON.stringify(err));
           done();
@@ -162,7 +162,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.000000');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_0400 ERR ' + JSON.stringify(err));
           done();
@@ -189,7 +189,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('1.000000');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_0500 ERR ' + JSON.stringify(err));
           done();
@@ -216,7 +216,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.500000');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_0600 ERR ' + JSON.stringify(err));
           done();
@@ -243,7 +243,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.800000');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_0700 ERR ' + JSON.stringify(err));
           done();
@@ -270,7 +270,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.900000');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_0800 ERR ' + JSON.stringify(err));
           done();
@@ -297,7 +297,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.100000');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_0900 ERR ' + JSON.stringify(err));
           done();
@@ -324,7 +324,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.000000');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_1000 ERR ' + JSON.stringify(err));
           done();
@@ -351,7 +351,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.100000');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_1100 ERR ' + JSON.stringify(err));
           done();
@@ -378,7 +378,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.900000');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_1200 ERR ' + JSON.stringify(err));
           done();
@@ -404,7 +404,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.950000');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_1300 ERR ' + JSON.stringify(err));
           done();
@@ -431,7 +431,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.950000');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_1400 ERR ' + JSON.stringify(err));
           done();
@@ -458,7 +458,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.950000');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_1500 ERR ' + JSON.stringify(err));
           done();
@@ -485,7 +485,7 @@ export default function clickeffectTest() {
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('clickEffect').getString('scale'))
             .assertEqual('0.900000');
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
           console.info('ArkUXII_Stage_ClickEffect_Toggle_1600 ERR ' + JSON.stringify(err));
           done();

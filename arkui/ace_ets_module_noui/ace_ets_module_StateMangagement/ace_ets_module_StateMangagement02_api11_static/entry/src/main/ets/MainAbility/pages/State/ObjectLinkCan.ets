@@ -80,7 +80,7 @@ struct ObjectLinkFar2 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('ObjectLinkCan', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

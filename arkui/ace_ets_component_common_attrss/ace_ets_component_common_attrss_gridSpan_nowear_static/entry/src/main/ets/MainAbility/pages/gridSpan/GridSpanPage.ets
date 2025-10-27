@@ -53,7 +53,7 @@ struct GridSpanPage {
       this.parentHeight = routerParamOptions.view.parentHeight
       this.columns = routerParamOptions.view.columns as int
       this.gutter = routerParamOptions.view.gutter as int
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
 

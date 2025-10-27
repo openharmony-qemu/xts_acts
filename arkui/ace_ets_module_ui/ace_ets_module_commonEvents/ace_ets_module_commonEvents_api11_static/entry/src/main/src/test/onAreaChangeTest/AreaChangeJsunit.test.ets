@@ -91,7 +91,7 @@ export default function areaChangeJsunit() {
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("areaChangeTest_0300 on events_emitter err : " + JSON.stringify(err));
       }
 
@@ -107,7 +107,7 @@ export default function areaChangeJsunit() {
       }
       try {
         events_emitter.on(indexEvent1, callback1);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("areaChangeTest_0400 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("areaChangeTest_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('text1', 10, "")));

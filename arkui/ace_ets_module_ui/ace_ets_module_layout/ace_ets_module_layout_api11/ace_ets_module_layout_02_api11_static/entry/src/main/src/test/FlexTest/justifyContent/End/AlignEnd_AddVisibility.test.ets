@@ -127,7 +127,7 @@ it('testFlexAlignEndVisibilityNone_static', Level.LEVEL0, async () : Promise<voi
           .assertTrue();
         expect(Math.abs((Math.round(End_AddVisibility_013.bottom - End_AddVisibility_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
           .assertTrue();
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexAlignEndVisibilityNone] failed');
         expect().assertFail();
       }
@@ -200,7 +200,7 @@ it('testFlexAlignEndVisibilityHidden_static', Level.LEVEL0, async () : Promise<v
           .assertTrue();
         expect(Math.abs((Math.round(End_AddVisibility_013.bottom - End_AddVisibility_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
           .assertTrue();
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexAlignEndVisibilityHidden] failed');
         expect().assertFail();
       }
@@ -266,7 +266,7 @@ it('testFlexAlignEndVisibilityVisible_static', Level.LEVEL0, async () : Promise<
           .assertTrue();
         expect(Math.abs((Math.round(End_AddVisibility_013.bottom - End_AddVisibility_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
           .assertTrue();
-      } catch (err:Error) {
+      } catch (err) {
         console.error('[testFlexAlignEndVisibilityVisible] failed');
         expect().assertFail();
       }

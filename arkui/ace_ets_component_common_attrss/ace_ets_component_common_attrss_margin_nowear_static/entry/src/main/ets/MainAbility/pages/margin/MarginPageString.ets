@@ -190,7 +190,7 @@ struct MarginPageString {
       this.referenceComponentKeyBottom = routerParamOptions.view.referenceComponentKeyBottom
       this.referenceComponentKeyLeft = routerParamOptions.view.referenceComponentKeyLeft
       this.referenceComponentKeyRight = routerParamOptions.view.referenceComponentKeyRight
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }

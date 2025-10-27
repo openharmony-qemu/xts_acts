@@ -529,7 +529,7 @@ export default function networkSecurityTest() {
                     hilog.info(domain, tag, `${caseName}: Sync Certificate verification result: ${resultSync}`);
                     ExpectTrue(resultSync === 0);
                     done();
-                } catch (error: Error) {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, `${caseName} Sync Certificate verification failed: ${JSON.stringify(err)}`);
                     ExpectFail();
@@ -572,7 +572,7 @@ export default function networkSecurityTest() {
                     hilog.info(domain, tag, `${caseName}: Sync lastCA verification result: ${resultSync}`);
                     ExpectTrue(resultSync === 2305010);
                     done();
-                } catch (error: Error) {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, `${caseName} Sync lastCA verification failed: ${JSON.stringify(err)}`);
                     ExpectFail();
@@ -653,7 +653,7 @@ export default function networkSecurityTest() {
                     hilog.info(domain, tag, `${caseName}: Sync mycert verification result: ${resultSync}`);
                     ExpectTrue(resultSync === 2305009);
                     done();
-                } catch (error: Error) {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, `${caseName} Sync mycert verification failed: ${JSON.stringify(err)}`);
                     ExpectFail();

@@ -56,7 +56,7 @@ export default function groupAnVisible() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push groupAnVisible page error:" + err);
       }
       console.info("groupAnVisible beforeEach end");

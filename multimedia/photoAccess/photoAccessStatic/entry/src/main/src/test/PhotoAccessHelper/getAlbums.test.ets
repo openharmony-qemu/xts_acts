@@ -70,7 +70,7 @@ export default function getAlbumsTest() {
                   checkSystemAlbum(testNum, album, subTypes[i]);
                   count++;
                 }
-              } catch (error: Error) {
+              } catch (error) {
                 hilog.info(domain, tag,
                   testNum + ' getAlbums Failed!' + ", error.name:" + error.name + ", error.message:" + error.message);
               }
@@ -81,7 +81,7 @@ export default function getAlbumsTest() {
             });
             await Utils.msSleep(50)
           }
-        } catch (error: Error) {
+        } catch (error) {
           hilog.info(domain, tag,
             testNum + ' PhotoAccessHelperTest failed' + ", error.name:" + error.name + ", error.message:" +
             error.message);

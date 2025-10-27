@@ -56,7 +56,7 @@ export default function listAnVisible() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push listAnVisible page error:" + err);
       }
       console.info("listAnVisible beforeEach end");

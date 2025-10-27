@@ -62,7 +62,7 @@ struct getItemError {
           .onClick((e: ClickEvent) => {
             try {
               
-            } catch (error: Error) {
+            } catch (error) {
               this.textResult = (error as BusinessError).code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }
@@ -73,7 +73,7 @@ struct getItemError {
           .onClick((e: ClickEvent) => {
             try {
               this.scroller2.getItemRect(1)
-            } catch (error: Error) {
+            } catch (error) {
               this.textResult = (error as BusinessError).code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }
@@ -90,7 +90,7 @@ struct getItemError {
           .onClick((e: ClickEvent) => {
             try {
               
-            } catch (error: Error) {
+            } catch (error) {
               this.textResult2 = error.code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }
@@ -101,7 +101,7 @@ struct getItemError {
           .onClick((e: ClickEvent) => {
             try {
               this.scroller2.getItemIndex(1, 2);
-            } catch (error: Error) {
+            } catch (error) {
               this.textResult2 = (error as BusinessError).code + '';
               console.info('Get error code: %{public}s', JSON.stringify(error.code));
             }

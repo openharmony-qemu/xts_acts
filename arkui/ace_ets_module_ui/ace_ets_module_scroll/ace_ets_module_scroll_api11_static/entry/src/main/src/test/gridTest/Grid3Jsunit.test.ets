@@ -84,7 +84,7 @@ export default function gridJsunit() {
         }
         console.info('gridTest01 start to publish emit')
         events_emitter.emit(innerEvent, eventData)
-      } catch (err: Error) {
+      } catch (err) {
         console.log('gridTest01 change component data error: ' + err.message)
       }
       await CommonFunc.sleep(1000)
@@ -126,7 +126,7 @@ export default function gridJsunit() {
         }
         console.info('[ gridTest02 ] start to publish emit')
         events_emitter.emit(innerEvent, eventData)
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[ gridTest02 ] change component data error: ' + err.message)
       }
       await CommonFunc.sleep(1000)
@@ -169,7 +169,7 @@ export default function gridJsunit() {
         }
         console.info('[ gridTest03 ] start to publish emit')
         events_emitter.emit(innerEvent, eventData)
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[ gridTest03 ] change component data error: ' + err.message)
       }
       await CommonFunc.sleep(1000)
@@ -213,7 +213,7 @@ export default function gridJsunit() {
         }
         console.info('[ gridTest04 ] start to publish emit')
         events_emitter.emit(innerEvent, eventData)
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[ gridTest04 ] change component data error: ' + err.message)
       }
       await CommonFunc.sleep(1000)

@@ -666,7 +666,7 @@ export function avVideoRecorderTestOne() {
       try {
         setOffAvRecorderCallback(avRecorder, done)
         toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
-      } catch (error: Error) {
+      } catch (error) {
         console.info('SETOFFCALLBACK_EVENT setOffAvRecorderCallback failed and catch error is ' + error.message);
       }
     } as Callback<eventEmitter.EventData>);
@@ -683,7 +683,7 @@ export function avVideoRecorderTestOne() {
       try {
         setOffPhotoAssetAvailableCallback(avRecorder, done)
         toNextStep(avRecorder, avConfig, recorderTime, mySteps, done);
-      } catch (error:  Error) {
+      } catch (error) {
         console.info('setOffAvRecorderCallback failed and catch error is ' + error.message);
       }
     } as Callback<eventEmitter.EventData>);

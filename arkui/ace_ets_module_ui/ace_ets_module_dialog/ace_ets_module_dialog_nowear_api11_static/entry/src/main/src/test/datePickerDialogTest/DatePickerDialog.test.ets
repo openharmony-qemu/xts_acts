@@ -68,7 +68,7 @@ export default function DatePickerDialog() {
         }
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push DatePickerDialog page error: " + err);
         expect().assertFail();
       }

@@ -120,7 +120,7 @@ async function respondData(uuid: Long, offset: Long, length: Long) {
       console.info(`case in respondData ArrayBuffer: ${bufArr}`);
       try {
         request.respondData(uuid, offset, buf);
-      } catch(e: Error) {
+      } catch (e) {
         console.error(`Failed to respondData, error message:${JSON.stringify(e)}`);
       }
       

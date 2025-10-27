@@ -134,7 +134,7 @@ export default function overLayJsunit() {
         }
         console.info("[overLayJsunit_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -168,7 +168,7 @@ export default function overLayJsunit() {
         }
         console.info("[overLayJsunit_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -212,7 +212,7 @@ export default function overLayJsunit() {
         }
         console.info("[overLayJsunit_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_0400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -245,7 +245,7 @@ export default function overLayJsunit() {
         }
         console.info("[overLayJsunit_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_0500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -279,7 +279,7 @@ export default function overLayJsunit() {
         }
         console.info("[overLayJsunit_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_0600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -320,7 +320,7 @@ export default function overLayJsunit() {
         }
         console.info("[overLayJsunit_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_0700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -356,7 +356,7 @@ export default function overLayJsunit() {
         }
         console.info("[overLayJsunit_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_0800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -393,7 +393,7 @@ export default function overLayJsunit() {
         }
         console.info("[overLayJsunit_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_0900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -427,7 +427,7 @@ export default function overLayJsunit() {
         }
         console.info("[overLayJsunit_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_1000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -461,7 +461,7 @@ export default function overLayJsunit() {
         }
         console.info("[overLayJsunit_1100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_1100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -495,7 +495,7 @@ export default function overLayJsunit() {
         }
         console.info("[overLayJsunit_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_1200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -529,7 +529,7 @@ export default function overLayJsunit() {
         }
         console.info("[overLayJsunit_1300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_1300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -563,7 +563,7 @@ export default function overLayJsunit() {
         }
         console.info("[overLayJsunit_1400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[overLayJsunit_1400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

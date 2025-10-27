@@ -99,7 +99,7 @@ it('testRichEditorCopyOptions_static_01', Level.LEVEL0, async (done: ()=>void) =
         console.info('[' + tagName + '] start to publish emit');
 
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -136,7 +136,7 @@ it('testRichEditorCopyOptions_static_02', Level.LEVEL0, async (done: ()=>void) =
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -172,7 +172,7 @@ it('testRichEditorCopyOptions_static_03', Level.LEVEL0, async (done: ()=>void) =
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -209,7 +209,7 @@ it('testRichEditorCopyOptions_static_04', Level.LEVEL0, async (done: ()=>void) =
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);

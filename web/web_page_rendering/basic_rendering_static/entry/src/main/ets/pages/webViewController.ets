@@ -71,7 +71,7 @@ struct Index {
                 this.webId3 = this.controllerThree.getWebId();
                 console.log('id1:%d, id2:%d, id3:%d', this.webId, this.webId2, this.webId3);
                 this.webIdTol = this.webId + this.webId2 + this.webId3;
-              } catch (error: Error) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               Utils.emitEvent(this.webIdTol, 100)

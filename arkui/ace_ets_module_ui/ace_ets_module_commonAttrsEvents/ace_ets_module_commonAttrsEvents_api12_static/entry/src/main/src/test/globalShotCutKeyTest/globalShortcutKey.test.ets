@@ -249,7 +249,7 @@ export default function globalShortcutKeyTest() {
           }
           console.info("SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0230 end");
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
         }
       });
@@ -271,7 +271,7 @@ export default function globalShortcutKeyTest() {
           }
           console.info("SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0280 end");
           done();
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail();
         }
       });

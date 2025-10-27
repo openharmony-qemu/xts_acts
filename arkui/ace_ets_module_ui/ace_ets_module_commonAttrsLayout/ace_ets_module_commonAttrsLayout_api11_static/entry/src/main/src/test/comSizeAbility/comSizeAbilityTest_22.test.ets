@@ -85,7 +85,7 @@ export default function comSizeAbilityTest_22() {
         console.info('[comSizeAbilityTestJsunit_static_55] END')
         await CommonFunc.sleep(1000);
         done()
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     })

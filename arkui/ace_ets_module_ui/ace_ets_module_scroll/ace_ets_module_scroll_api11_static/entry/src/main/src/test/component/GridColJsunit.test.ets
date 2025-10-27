@@ -67,7 +67,7 @@ export default function GridColJsunit() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push gridCol page error: " + err);
       }
     });
@@ -106,7 +106,7 @@ export default function GridColJsunit() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -129,7 +129,7 @@ export default function GridColJsunit() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent3, eventData3);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -173,7 +173,7 @@ export default function GridColJsunit() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -196,7 +196,7 @@ export default function GridColJsunit() {
         }
         console.info('[' + tagName + '] start to publish emit3');
         events_emitter.emit(innerEvent3, eventData3);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -246,7 +246,7 @@ export default function GridColJsunit() {
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await CommonFunc.sleep(2000);

@@ -68,7 +68,7 @@ export default function symbolGlyphApi4() {
           await CommonFunc.sleep(2000);
          
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push symbolGlyphApi4 page error:" + err);
       }
       console.info("symbolGlyphApi4 beforeEach end");

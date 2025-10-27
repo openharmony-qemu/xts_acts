@@ -215,7 +215,7 @@ function sendDataCatch(num: number): number | (number | string)[] {
   console.info(`concurrentF: res1 ${res}`);
   try {
     taskpool.Task.sendData(res);
-  } catch (error:Error) {
+  } catch (error) {
     console.info(`sendDataCatch: catch error: err1 code => ${error.code} message => ${error.message}`);
     let errorArray: (number | string)[] = [error.code, error.message];
     console.info(`sendDataCatch: err2 ${JSON.stringify(errorArray)}`);
@@ -234,7 +234,7 @@ function sendDataFun(num: number): Promise<number | (number | string)[]> {
     try {
       taskpool.Task.sendData(res1);
       resolve(errorArray);
-    } catch (error:Error) {
+    } catch (error) {
       console.info(`sendDataFun: catch error: err1 code => ${error.code} message => ${error.message}`);
       errorArray = [error.code, error.message];
       console.info(`sendDataFun: err2 ${JSON.stringify(errorArray)}`);

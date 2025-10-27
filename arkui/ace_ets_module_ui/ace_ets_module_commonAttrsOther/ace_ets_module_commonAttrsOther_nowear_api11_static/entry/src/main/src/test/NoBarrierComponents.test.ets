@@ -58,7 +58,7 @@ export default function noBarrierComponentsTest() {
           routerInstance.pushUrl(options);
 
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push noBarrierComponents page error: " + err);
       }
 
@@ -87,7 +87,7 @@ export default function noBarrierComponentsTest() {
           console.info(' START  :' + JSON.stringify(strJson));
           expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Select");
           console.info('noBarrierComponents025 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('noBarrierComponents025 ERR  ' + JSON.stringify(err));
         }
@@ -109,7 +109,7 @@ export default function noBarrierComponentsTest() {
           console.info(' START  :' + JSON.stringify(strJson));
           expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Web");
           console.info('noBarrierComponents029 END ');
-        } catch (err: Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('noBarrierComponents029 ERR  ' + JSON.stringify(err));
         }

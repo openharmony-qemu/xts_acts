@@ -93,7 +93,7 @@ struct ParentLinkAC {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('LinkClassArr', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

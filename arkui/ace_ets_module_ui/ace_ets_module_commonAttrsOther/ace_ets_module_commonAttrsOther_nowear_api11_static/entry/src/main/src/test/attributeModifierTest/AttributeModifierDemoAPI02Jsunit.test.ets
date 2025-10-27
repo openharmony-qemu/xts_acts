@@ -56,7 +56,7 @@ export default function AttributeModifierDemoAPI02Jsunit() {
           routerInstance.pushUrl(options);
 
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push AttributeModifierDemoAPI02Jsunit page error:" + err);
         expect().assertFail();
       }

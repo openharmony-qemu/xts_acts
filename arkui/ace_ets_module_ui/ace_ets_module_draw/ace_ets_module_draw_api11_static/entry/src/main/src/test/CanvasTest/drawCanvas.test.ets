@@ -95,7 +95,7 @@ export default function drawCanvas() {
 
         console.info('[drawCanvas_static_0100] END');
         done();
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
       }
     });

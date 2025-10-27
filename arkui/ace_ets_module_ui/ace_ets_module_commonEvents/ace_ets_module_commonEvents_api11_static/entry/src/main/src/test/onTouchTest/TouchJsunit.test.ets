@@ -93,7 +93,7 @@ export default function touchJsunit() {
           priority: events_emitter.EventPriority.LOW
         }
         events_emitter.on(backEvent, callBackTouch);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testTouch01 on touchEvent err : " + JSON.stringify(err));
       }
       console.info("testTouch01 click result is: " + JSON.stringify(inspector.sendEventByKey('touch', 10, "")));

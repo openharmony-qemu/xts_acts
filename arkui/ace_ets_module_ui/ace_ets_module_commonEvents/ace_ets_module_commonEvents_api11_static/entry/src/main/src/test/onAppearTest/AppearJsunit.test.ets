@@ -91,7 +91,7 @@ export default function appearJsunit() {
           priority: events_emitter.EventPriority.LOW
         }
         events_emitter.on(appearEvent1, callBackAppear1);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testAppear01 on appearEvent err : " + JSON.stringify(err));
       }
       console.info("testAppear01 click result is: " + JSON.stringify(inspector.sendEventByKey('appear', 10, "")));
@@ -112,7 +112,7 @@ export default function appearJsunit() {
           priority: events_emitter.EventPriority.LOW
         }
         events_emitter.on(disAppearEvent, callBackDisAppear);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testAppear02 on disAppearEvent err : " + JSON.stringify(err));
       }
 
@@ -132,7 +132,7 @@ export default function appearJsunit() {
         console.info("testAppear03 appearEvent click result is: " +
         JSON.stringify(inspector.sendEventByKey('appear', 10, "")));
         events_emitter.on(appearEvent2, callBackAppear2);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testAppear03 on appearEvent err : " + JSON.stringify(err));
       }
 

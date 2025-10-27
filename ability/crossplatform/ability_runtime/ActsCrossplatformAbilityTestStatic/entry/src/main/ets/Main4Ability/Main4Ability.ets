@@ -35,7 +35,7 @@ class Main4Ability extends UIAbility {
         }
         hilog.info(0x0000, 'testTag EntryAbility', 'onWindowStageCreate ok');
       });
-    } catch (e: Error) {
+    } catch (e) {
       hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent catch error:-----------' + e.message);
     }
   }

@@ -121,7 +121,7 @@ export default function Sim1Public() {
               done();
             }
           });
-        } catch (error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName} error, case failed,errCode:  ${err?.code}`);
           if (err?.code === PERMISSION_DENIED_CODE) {
@@ -192,7 +192,7 @@ export default function Sim1Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -238,7 +238,7 @@ export default function Sim1Public() {
               done();
             }
           });
-        } catch (error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           if (err?.code === 8300001) {
             hilog.info(domain, tag, `${caseName} successfully  : Parameter error and return 8300001`);
@@ -299,7 +299,7 @@ export default function Sim1Public() {
             hilog.info(domain, tag, `${caseName} test end`);
             done();
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -355,7 +355,7 @@ export default function Sim1Public() {
             hilog.info(domain, tag, `${caseName} test end`);
             done();
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -407,7 +407,7 @@ export default function Sim1Public() {
             hilog.info(domain, tag, `${caseName} test end`);
             done();
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -458,7 +458,7 @@ export default function Sim1Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -512,7 +512,7 @@ export default function Sim1Public() {
               }
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -571,7 +571,7 @@ export default function Sim1Public() {
               }
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -622,7 +622,7 @@ export default function Sim1Public() {
               }
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -672,7 +672,7 @@ export default function Sim1Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -724,7 +724,7 @@ export default function Sim1Public() {
               done();
             }
           });
-        } catch (error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           if (err?.code === 8300001) {
             hilog.info(domain, tag, `${caseName} successfully  : Parameter error and return 8300001`);
@@ -772,7 +772,7 @@ export default function Sim1Public() {
         	hilog.info(domain, tag, `${caseName} test end`);
         	done();
       	  }
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -817,7 +817,7 @@ export default function Sim1Public() {
         	hilog.info(domain, tag, `${caseName} test end`);
         	done();
       	  }
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {

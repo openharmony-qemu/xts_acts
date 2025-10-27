@@ -55,7 +55,7 @@ export default function ListSwipeTest() {
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));
       }
     });

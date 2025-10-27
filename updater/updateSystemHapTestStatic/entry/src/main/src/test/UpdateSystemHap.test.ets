@@ -783,7 +783,7 @@ export default function updateSystemHapTest() {
       try {
         updater = update.getOnlineUpdater(upgradeInfo);
         let result = await updater.terminateUpgrade()
-      } catch (err : Error) {
+      } catch (err) {
         console.error("updateSystemHapTest031 catch " + JSON.stringify(err));
         console.error("updateSystemHapTest031 message " + err);
         try {
@@ -872,7 +872,7 @@ export default function updateSystemHapTest() {
       try {
         restorer = update.getRestorer();
         let result = await restorer.factoryReset();
-      } catch (err : Error) {
+      } catch (err) {
         console.error("updateSystemHapTest035 catch " + JSON.stringify(err));
         console.error("updateSystemHapTest035 message " + err);
         try {

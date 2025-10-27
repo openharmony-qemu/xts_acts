@@ -56,7 +56,7 @@ export default function groupAnimation() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push groupAnimation page error:" + err);
       }
       console.info("groupAnimation beforeEach end");

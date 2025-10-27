@@ -56,7 +56,7 @@ export default function listAniDel() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push listAniDel page error:" + err);
       }
       console.info("listAniDel beforeEach end");

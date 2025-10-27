@@ -151,7 +151,7 @@ export default function actsStageContextTestStatic() {
           expect(error.code).assertEqual(401);
           done()
         })
-      } catch (paramError: Error) {
+      } catch (paramError) {
         let code: number = (paramError as BusinessError).code;
         hilog.info(domain, tag, 'createContext fail');
         expect().assertFail();
@@ -186,8 +186,10 @@ export default function actsStageContextTestStatic() {
         expect(`${count1}`).assertEqual('2');
         expect(`${count2}`).assertEqual('1');
         expect(`${count3}`).assertEqual('2');
-      } catch(err: BusinessError) {
-        hilog.info(domain, tag, `${itName} error code: ${err.code}, msg: ${err.message}`);
+      } catch(err) {
+        if (err instanceof BusinessError) {
+          hilog.info(domain, tag, `${itName} error code: ${err.code}, msg: ${err.message}`);
+        }
       }
       done();
       hilog.info(domain, tag, `${itName} end`);

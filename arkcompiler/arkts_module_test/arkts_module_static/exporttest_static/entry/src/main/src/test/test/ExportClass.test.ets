@@ -73,7 +73,7 @@ export default function exportClassTest() {
         let cla = new ClassA('test01');
         expect(cla.name).assertEqual('ClassA');
         expect(cla.value).assertEqual('test01');
-      } catch (err:Error) {
+      } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
       }
@@ -96,7 +96,7 @@ export default function exportClassTest() {
         cla.value = caseName;
         expect(cla.name).assertEqual('ClassB');
         expect(cla.value).assertEqual(caseName);
-      } catch (err:Error) {
+      } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
       }
@@ -118,7 +118,7 @@ export default function exportClassTest() {
         let cla = new ClassC('test03');
         expect(cla.name).assertEqual('ClassC');
         expect(cla.value).assertEqual('test03');
-      } catch (err:Error) {
+      } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
       }
@@ -159,7 +159,7 @@ export default function exportClassTest() {
         expect(c1.name).assertEqual(c4.name);
         expect(c3.name).assertEqual(c4.name);
         expect(c5.name).assertEqual(c6.name);
-      } catch (err:Error) {
+      } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
       }
@@ -181,7 +181,7 @@ export default function exportClassTest() {
         let cla = new ClassD('test05');
         expect(cla.name).assertEqual('ClassD');
         expect(cla.value).assertEqual('test05');
-      } catch (err:Error) {
+      } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
       }
@@ -203,7 +203,7 @@ export default function exportClassTest() {
         let cla = new ClassE('test06');
         expect(cla.name).assertEqual('ClassE');
         expect(cla.value).assertEqual('test06');
-      } catch (err:Error) {
+      } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
       }
@@ -225,7 +225,7 @@ export default function exportClassTest() {
         let cla = new ClassF('test07');
         expect(cla.tag).assertEqual('ClassF');
         expect(cla.value).assertEqual('test07');
-      } catch (err:Error) {
+      } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
       }
@@ -251,7 +251,7 @@ export default function exportClassTest() {
         // expect(cl2.name).assertEqual('ClassTest');
         // expect(cl2.value).assertEqual('test0801');
         // expect(cla.name).assertEqual(cl2.name);
-      } catch (err:Error) {
+      } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
       }
@@ -273,7 +273,7 @@ export default function exportClassTest() {
         let cla: ClassTest2 = new ClsTest2.ClassTest2('test09');
         expect(cla.name).assertEqual('ClassTest2');
         expect(cla.value).assertEqual('test09');
-      } catch (err:Error) {
+      } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
       }

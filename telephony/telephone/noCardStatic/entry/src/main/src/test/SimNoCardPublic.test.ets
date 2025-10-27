@@ -410,7 +410,7 @@ export default function SimNoCardPublic() {
           ExpectTrue(false);
           done();
         });
-      } catch (err: Error) {
+      } catch (err) {
         let error = err as BusinessError;
         hilog.info(domain, tag, `${caseName} catchError ${JSON.stringify(error)}`);
         ExpectTrue(error?.code == 8300004);

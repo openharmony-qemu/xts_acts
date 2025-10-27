@@ -111,7 +111,7 @@ it('testTextStyle_static_007', Level.LEVEL1, async () => {
         }
         console.info("[testTextStyle_static_007] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_007] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -146,7 +146,7 @@ it('testTextStyle_static_008', Level.LEVEL1, async () => {
         }
         console.info("[testTextStyle_static_008] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_008] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -182,7 +182,7 @@ it('testTextStyle_static_009', Level.LEVEL1, async () => {
         }
         console.info("[testTextStyle_static_009] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_009] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -219,7 +219,7 @@ it('testTextStyle_static_010', Level.LEVEL1, async () => {
         }
         console.info("[testTextStyle_static_010] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_010] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -274,7 +274,7 @@ it('testTextStyle_static_012', Level.LEVEL1, async () => {
         }
         console.info("[testTextStyle_static_012] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_012] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -307,7 +307,7 @@ it('testTextStyle_static_013', Level.LEVEL1, async () => {
         }
         console.info("[testTextStyle_static_013] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_013] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -340,7 +340,7 @@ it('testTextStyle_static_014', Level.LEVEL1, async () => {
         }
         console.info("[testTextStyle_static_014] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_014] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -373,7 +373,7 @@ it('testTextStyle_static_015', Level.LEVEL1, async () => {
         }
         console.info("[testTextStyle_static_015] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_015] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -424,7 +424,7 @@ it('testTextStyle_static_017', Level.LEVEL1, async () => {
         }
         console.info("[testTextStyle_static_017] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_017] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -457,7 +457,7 @@ it('testTextStyle_static_018', Level.LEVEL1, async () => {
         }
         console.info("[testTextStyle_static_018] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_018] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -490,7 +490,7 @@ it('testTextStyle_static_019', Level.LEVEL1, async () => {
         }
         console.info("[testTextStyle_static_019] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_019] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -523,7 +523,7 @@ it('testTextStyle_static_020', Level.LEVEL1, async () => {
         }
         console.info("[testTextStyle_static_020] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_020] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -574,7 +574,7 @@ it('testTextStyle_static_022', Level.LEVEL1, async () => {
         }
         console.info("[testTextStyle_static_022] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_022] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -607,7 +607,7 @@ it('testTextStyle_static_023', Level.LEVEL1, async () => {
         }
         console.info("[testTextStyle_static_023] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testTextStyle_static_023] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);

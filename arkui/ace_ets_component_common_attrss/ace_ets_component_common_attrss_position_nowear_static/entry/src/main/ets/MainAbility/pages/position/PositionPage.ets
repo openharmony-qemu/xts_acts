@@ -88,7 +88,7 @@ struct PositionPage {
       this.referenceComponentKey = routerParamOptions.view.referenceComponentKey
 
       console.info('wj============= '+routerParamOptions.view.componentKey)
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }

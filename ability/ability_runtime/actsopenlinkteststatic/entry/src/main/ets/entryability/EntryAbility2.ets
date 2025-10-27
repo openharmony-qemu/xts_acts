@@ -37,7 +37,7 @@ class EntryAbility2 extends UIAbility {
         }
         hilog.info(0x0000, 'testTag EntryAbility2', 'loadContent2 ok');
       });
-    } catch (e: Error) {
+    } catch (e) {
       hilog.info(0x0000, 'testTag EntryAbility2', 'loadContent2 catch error：-----------' + e.message);
     }
   }

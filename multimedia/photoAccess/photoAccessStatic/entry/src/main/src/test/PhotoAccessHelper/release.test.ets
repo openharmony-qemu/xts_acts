@@ -53,7 +53,7 @@ export default function releaseTest() {
             }
             done();
           });
-        } catch (error: Error) {
+        } catch (error) {
           hilog.info(domain, tag,
             testNum + ' release failed' + ", error.name:" + error.name + ", error.message:" + error.message);
           expect(false).assertTrue()
@@ -77,7 +77,7 @@ export default function releaseTest() {
           let helper = photoAccessHelper.getPhotoAccessHelper(appContext);
           await helper.release()
           done();
-        } catch (error: Error) {
+        } catch (error) {
           hilog.info(domain, tag,
             testNum + ' release failed' + ", error.name:" + error.name + ", error.message:" + error.message);
           expect(false).assertTrue()

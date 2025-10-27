@@ -130,7 +130,7 @@ it('testText_static_0300', Level.LEVEL2, async (done: () => void) => {
         }
         console.info("testText_static_0300 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err : Error) {
+      } catch (err) {
         console.log("testText_static_0300 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -182,7 +182,7 @@ it('testText_static_0500', Level.LEVEL2, async (done: () => void) => {
         }
         console.info("testText_static_0500 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testText_static_0500 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -234,7 +234,7 @@ it('testText_static_0700', Level.LEVEL2, async (done: () => void) => {
         }
         console.info("testText_static_0700 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testText_static_0700 change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -287,7 +287,7 @@ it('testText_static_0900', Level.LEVEL2, async (done: () => void) => {
         }
         console.info("testText_static_0900 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testText_static_0900 change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -343,7 +343,7 @@ it('testText_static_1200', Level.LEVEL2, async (done: () => void) => {
         }
         console.info("testText_static_1200 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("testText_static_1200 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -378,7 +378,7 @@ it('testText_static_1300', Level.LEVEL2, async (done: () => void) => {
         }
         console.info("testText_static_1300 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
         console.log("testText_static_1300 change component data error: " + err.message);
       }
@@ -413,7 +413,7 @@ it('testText_static_1400', Level.LEVEL2, async (done: () => void) => {
         }
         console.info("testText_static_1400 start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         expect().assertFail();
         console.log("testText_static_1400 change component data error: " + err.message);
       }

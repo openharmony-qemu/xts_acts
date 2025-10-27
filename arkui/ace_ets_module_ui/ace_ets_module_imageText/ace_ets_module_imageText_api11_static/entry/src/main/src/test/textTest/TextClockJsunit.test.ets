@@ -110,7 +110,7 @@ it('textClockTest_static_02', Level.LEVEL2, async (done: ()=>void) => {
         }
         console.info("[textClockTest_static_02] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[textClockTest_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -159,7 +159,7 @@ it('textClockTest_static_04', Level.LEVEL2, async (done: ()=>void) => {
         }
         console.info("[textClockTest_static_04] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[textClockTest_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -210,7 +210,7 @@ it('textClockTest_static_06', Level.LEVEL2, async (done: ()=>void) => {
         }
         console.info("[textClockTest_static_06] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[textClockTest_static_06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

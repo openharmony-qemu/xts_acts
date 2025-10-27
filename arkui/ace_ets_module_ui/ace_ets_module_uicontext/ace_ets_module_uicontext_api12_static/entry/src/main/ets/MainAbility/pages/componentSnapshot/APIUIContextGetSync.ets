@@ -48,7 +48,7 @@ struct APIUIContextGetSync {
                     this.text = 'end'
                     }
                 }
-            } catch (error:Error) {
+            } catch (error) {
               console.error("getSync errorCode: " + error!.code + " message: " + error!.message)
             }
           }).margin(10)

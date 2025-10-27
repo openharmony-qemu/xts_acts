@@ -58,7 +58,7 @@ export default function addResource() {
           expect(resultTwo.getCount()).assertEqual(count + 1);
           console.info(`${testNum} succeed to add resource by ArrayBuffer`);
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${testNum} failed; error: ${err}`);
           expect(false).assertTrue();
           done();
@@ -90,7 +90,7 @@ export default function addResource() {
           console.error(`${testNum} failed; error: succeed to add resource with invalid fileUri`);
           expect(false).assertTrue();
           done();
-        } catch (err: Error) {
+        } catch (err) {
           console.info(`${testNum} succeed to detect invalid fileUri`);
           done();
         }

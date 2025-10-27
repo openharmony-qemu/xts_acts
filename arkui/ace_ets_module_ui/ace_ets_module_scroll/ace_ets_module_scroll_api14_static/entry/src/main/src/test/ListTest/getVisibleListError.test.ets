@@ -56,7 +56,7 @@ export default function getVisibleListError() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push getVisibleListError page error:" + err);
       }
       console.info("getVisibleListError beforeEach end");

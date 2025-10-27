@@ -2243,7 +2243,7 @@ export default function httpRequestOptionsTest() {
                         });
                     }
                 });
-            } catch (error:Error) {
+            } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
                 ExpectFail();
@@ -2287,7 +2287,7 @@ export default function httpRequestOptionsTest() {
                         });
                     }
                 });
-            } catch (error:Error) {
+            } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
                 ExpectFail();
@@ -2334,7 +2334,7 @@ export default function httpRequestOptionsTest() {
                         });
                     }
                 });
-            } catch (error:Error) {
+            } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
                 ExpectFail();
@@ -2379,7 +2379,7 @@ export default function httpRequestOptionsTest() {
                         });
                     }
                 });
-            } catch (error:Error) {
+            } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
                 ExpectFail();
@@ -2426,7 +2426,7 @@ export default function httpRequestOptionsTest() {
                         });
                     }
                 });
-            } catch (error:Error) {
+            } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
                 ExpectFail();
@@ -2471,7 +2471,7 @@ export default function httpRequestOptionsTest() {
                         });
                     }
                 });
-            } catch (error:Error) {
+            } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
                 ExpectFail();
@@ -2519,7 +2519,7 @@ export default function httpRequestOptionsTest() {
                         });
                     }
                 });
-            } catch (error:Error) {
+            } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
                 ExpectFail();
@@ -2565,7 +2565,7 @@ export default function httpRequestOptionsTest() {
                         });
                     }
                 });
-            } catch (error:Error) {
+            } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
                 ExpectFail();
@@ -2613,7 +2613,7 @@ export default function httpRequestOptionsTest() {
                         });
                     }
                 });
-            } catch (error:Error) {
+            } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
                 ExpectFail();
@@ -2660,7 +2660,7 @@ export default function httpRequestOptionsTest() {
                         });
                     }
                 });
-            } catch (error:Error) {
+            } catch (error) {
                 let err = error as  BusinessError;
                 hilog.info(domain, tag, `${caseName} trycatch err: ${JSON.stringify(err)}`);
                 ExpectFail();

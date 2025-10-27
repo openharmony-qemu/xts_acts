@@ -278,7 +278,7 @@ export default function RegExpTest() {
           const str = "hello world!";
           const regex = new RegExp('^hello');
           expect(String(regex.test(str))).assertEqual('true');
-        } catch (err: Error) {
+        } catch (err) {
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }

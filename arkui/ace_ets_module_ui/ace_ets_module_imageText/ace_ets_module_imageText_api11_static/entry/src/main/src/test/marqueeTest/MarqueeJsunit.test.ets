@@ -58,7 +58,7 @@ export default function marqueeJsunit() {
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push marquee page error " + JSON.stringify(err));
       }
     });
@@ -88,7 +88,7 @@ it('testMarquee_static_0100', Level.LEVEL1, async (done: () => void): Promise<vo
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testMarquee_static_0100 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("testMarquee_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
@@ -104,7 +104,7 @@ it('testMarquee_static_0100', Level.LEVEL1, async (done: () => void): Promise<vo
       }
       try {
         events_emitter.on(innerEventOne, callback1);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testMarquee_static_0100 on events_emitter err : " + JSON.stringify(err));
       }
       console.info('testMarquee_static_0100 END');
@@ -131,7 +131,7 @@ it('testMarquee_static_0200', Level.LEVEL1, async (done: () => void): Promise<vo
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testMarquee_static_0200 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("testMarquee_static_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
@@ -147,7 +147,7 @@ it('testMarquee_static_0200', Level.LEVEL1, async (done: () => void): Promise<vo
       }
       try {
         events_emitter.on(innerEventOne, callback1)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testMarquee_static_0200 on events_emitter err : " + JSON.stringify(err));
       }
       console.info('testMarquee_static_0200 END');
@@ -173,7 +173,7 @@ it('testMarquee_static_0300', Level.LEVEL1, async (done: () => void): Promise<vo
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testMarquee_static_0300 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("testMarquee_static_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
@@ -189,7 +189,7 @@ it('testMarquee_static_0300', Level.LEVEL1, async (done: () => void): Promise<vo
       }
       try {
         events_emitter.on(innerEventOne, callback1)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("testMarquee_static_0300 on events_emitter err : " + JSON.stringify(err));
       }
       console.info('testMarquee_static_0300 END');

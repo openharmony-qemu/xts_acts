@@ -818,7 +818,7 @@ export default function WebsocketServerTestStatic() {
               hilog.error(domain, tag, `${caseName} test end`);
             })
           }
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as  BusinessError;
           hilog.error(domain, tag, `${caseName} catch error ${JSON.stringify(error)}`);
           expect(true).assertEqual(error?.code === 2302006);
@@ -987,7 +987,7 @@ export default function WebsocketServerTestStatic() {
               hilog.error(domain, tag, `${caseName} test end`);
             })
           }
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.error(domain, tag, `${caseName} test close catch fail ${JSON.stringify(error)}`);
           expect(true).assertEqual(error?.code === 2302006);
@@ -1629,7 +1629,7 @@ export default function WebsocketServerTestStatic() {
             done();
             hilog.info(domain, tag, `${caseName} test end2`);
           }
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as  BusinessError;
           hilog.error(domain, tag, `${caseName} catch error ${JSON.stringify(error)}`);
           expect(true).assertEqual(error?.code === 2302006);
@@ -1701,7 +1701,7 @@ export default function WebsocketServerTestStatic() {
             done();
             hilog.info(domain, tag, `${caseName} test end2`);
           }
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as  BusinessError;
           hilog.error(domain, tag, `${caseName} catch error ${JSON.stringify(error)}`);
           expect(true).assertEqual(error?.code === 2302006);
@@ -1772,7 +1772,7 @@ export default function WebsocketServerTestStatic() {
             done();
             hilog.info(domain, tag, `${caseName} test end2`);
           }
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as  BusinessError;
           hilog.error(domain, tag, `${caseName} catch error ${JSON.stringify(error)}`);
           expect(true).assertEqual(error?.code === 2302006);

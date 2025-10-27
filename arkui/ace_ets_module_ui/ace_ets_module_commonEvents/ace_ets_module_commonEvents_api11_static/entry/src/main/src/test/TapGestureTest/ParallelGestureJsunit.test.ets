@@ -109,7 +109,7 @@ export default function parallelGestureJsunit() {
       }
       try {
         events_emitter.on(innerEvent, callback)
-      } catch (err: Error) {
+      } catch (err) {
         console.info("parallelGestureTest_0100 on events_emitter err : " + JSON.stringify(err));
       }
       console.info('parallelGestureTest_0100 sendTouchEvent result:' + sendTouchEvent(point));

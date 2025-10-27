@@ -65,7 +65,7 @@ struct PropEnum {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('PropEnum', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

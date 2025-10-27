@@ -109,7 +109,7 @@ struct LinkMapSample2 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('LinkMap', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

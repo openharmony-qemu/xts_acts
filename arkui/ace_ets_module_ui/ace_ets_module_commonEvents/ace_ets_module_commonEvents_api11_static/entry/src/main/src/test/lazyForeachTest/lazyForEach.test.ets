@@ -95,7 +95,7 @@ export default function lazyForEachOnDataAddJsunit() {
           ((eventData.data) as ESObject).getProperty('result1'));
           expect(((eventData.data) as ESObject).getProperty('result1')).assertEqual(true);
           console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0001 END');
-        } catch (err: Error) {
+        } catch (err) {
           console.info("Lazy_101 on events_emitter err : " + JSON.stringify(err));
         }
 
@@ -103,7 +103,7 @@ export default function lazyForEachOnDataAddJsunit() {
       try {
         console.info("Lazy_101 click result is:" + JSON.stringify(inspector.sendEventByKey('listItemOne', 10, "")));
         events_emitter.on(innerEvent1, callback1);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("Lazy_101 on events_emitter err : " + JSON.stringify(err));
       }
     });
@@ -130,7 +130,7 @@ export default function lazyForEachOnDataAddJsunit() {
           ((eventData.data) as ESObject).getProperty('result2'));
           expect(((eventData.data) as ESObject).getProperty('result2')).assertEqual(true);
           console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0002 END');
-        } catch (err: Error) {
+        } catch (err) {
           console.info("Lazy_102 on events_emitter err : " + JSON.stringify(err));
         }
 
@@ -138,7 +138,7 @@ export default function lazyForEachOnDataAddJsunit() {
       try {
         console.info("Lazy_102 click result is:" + JSON.stringify(inspector.sendEventByKey('listItemTwo', 10, "")));
         events_emitter.on(innerEvent2, callback2);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("Lazy_102 on events_emitter err : " + JSON.stringify(err));
       }
     });
@@ -165,7 +165,7 @@ export default function lazyForEachOnDataAddJsunit() {
           ((eventData.data) as ESObject).getProperty('result3'));
           expect(((eventData.data) as ESObject).getProperty('result3')).assertEqual(true);
           console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0003 END');
-        } catch (err: Error) {
+        } catch (err) {
           console.info("Lazy_103 on events_emitter err : " + JSON.stringify(err));
         }
 
@@ -173,7 +173,7 @@ export default function lazyForEachOnDataAddJsunit() {
       try {
         console.info("Lazy_103 click result is:" + JSON.stringify(inspector.sendEventByKey('listItemThree', 10, "")));
         events_emitter.on(innerEvent3, callback3);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("Lazy_103 on events_emitter err : " + JSON.stringify(err));
       }
     });
@@ -200,7 +200,7 @@ export default function lazyForEachOnDataAddJsunit() {
           ((eventData.data) as ESObject).getProperty('result4'));
           expect(((eventData.data) as ESObject).getProperty('result4')).assertEqual(true);
           console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0004 END');
-        } catch (err: Error) {
+        } catch (err) {
           console.info("Lazy_104 on events_emitter err : " + JSON.stringify(err));
         }
 
@@ -208,7 +208,7 @@ export default function lazyForEachOnDataAddJsunit() {
       try {
         console.info("Lazy_104 click result is:" + JSON.stringify(inspector.sendEventByKey('listItemFour', 10, "")));
         events_emitter.on(innerEvent4, callback4);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("Lazy_104 on events_emitter err : " + JSON.stringify(err));
       }
     });

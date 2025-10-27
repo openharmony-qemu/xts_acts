@@ -70,7 +70,7 @@ export default function search() {
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push SearchTest page error:" + err);
       }
       console.info("SearchTest beforeEach end");
@@ -160,7 +160,7 @@ export default function search() {
         }
         console.info("search afterEach start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.info("search afterEach start to publish change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -213,7 +213,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_0200', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -255,7 +255,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_0300', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -297,7 +297,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_0400', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_0400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -339,7 +339,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_0500', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_0500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -411,7 +411,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_0700', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_0700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -453,7 +453,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_0800', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_0800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -495,7 +495,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_0900', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_0900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -537,7 +537,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_1000', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_1000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -579,7 +579,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_1100', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_1100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_1100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -646,7 +646,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_1300', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_1300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_1300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -688,7 +688,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_1400', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_1400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_1400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -730,7 +730,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_1500', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_1500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_1500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -806,7 +806,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_1700', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_1700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_1700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -851,7 +851,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_1800', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_1800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_1800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -896,7 +896,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_1900', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_1900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_1900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -943,7 +943,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_2000', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_2000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_2000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -990,7 +990,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_2100', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_2100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_2100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1032,7 +1032,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_2200', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_2200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_2200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1157,7 +1157,7 @@ it('ArkUI_Stage_Search_CaretStyle_static_2700', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_CaretStyle_static_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CaretStyle_static_2700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1231,7 +1231,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_0200', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1277,7 +1277,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_0300', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1322,7 +1322,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_0400', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_0400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1368,7 +1368,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_0500', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_0500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1416,7 +1416,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_0600', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_0600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1462,7 +1462,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_0700', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_0700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(5000);
@@ -1508,7 +1508,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_0800', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_0800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1554,7 +1554,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_0900', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_0900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1599,7 +1599,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_1000', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_1000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1645,7 +1645,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_1100', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_1100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_1100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1690,7 +1690,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_1200', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_1200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1760,7 +1760,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_1400', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_1400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_1400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1802,7 +1802,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_1500', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_1500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_1500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1844,7 +1844,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_1600', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_1600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_1600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1920,7 +1920,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_1800', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_1800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_1800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -1965,7 +1965,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_1900', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_1900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_1900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -2010,7 +2010,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_2000', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_2000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_2000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -2057,7 +2057,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_2100', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_2100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_2100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2100);
@@ -2130,7 +2130,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_2300', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_2300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_2300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -2172,7 +2172,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_2400', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_2400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_2400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -2214,7 +2214,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_2500', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_2500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_2500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -2288,7 +2288,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_2700', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_2700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -2330,7 +2330,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_2800', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_2800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_2800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -2373,7 +2373,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_2900', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_2900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_2900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -2416,7 +2416,7 @@ it('ArkUI_Stage_Search_SearchIcon_static_3000', Level.LEVEL1, async (done: () =>
         }
         console.info("[ArkUI_Stage_Search_SearchIcon_3000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchIcon_3000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -2482,7 +2482,7 @@ it('ArkUI_Stage_Search_CancelButton_static_0200', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -2525,7 +2525,7 @@ it('ArkUI_Stage_Search_CancelButton_static_0300', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -2568,7 +2568,7 @@ it('ArkUI_Stage_Search_CancelButton_static_0400', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_0400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -2611,7 +2611,7 @@ it('ArkUI_Stage_Search_CancelButton_static_0500', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_0500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -2681,7 +2681,7 @@ it('ArkUI_Stage_Search_CancelButton_static_0700', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_0700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -2729,7 +2729,7 @@ it('ArkUI_Stage_Search_CancelButton_static_0800', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_0800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -2777,7 +2777,7 @@ it('ArkUI_Stage_Search_CancelButton_static_0900', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_0900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -2825,7 +2825,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1000', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_1000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -2878,7 +2878,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1100', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_1100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_1100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -2926,7 +2926,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1200', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_1200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(5000);
@@ -2974,7 +2974,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1300', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_1300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_1300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -3021,7 +3021,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1400', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_1400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_1400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -3068,7 +3068,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1500', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_1500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_1500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -3116,7 +3116,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1600', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_1600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_1600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -3163,7 +3163,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1700', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_1700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_1700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -3237,7 +3237,7 @@ it('ArkUI_Stage_Search_CancelButton_static_1900', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_1900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_1900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -3282,7 +3282,7 @@ it('ArkUI_Stage_Search_CancelButton_static_2000', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_2000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_2000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -3327,7 +3327,7 @@ it('ArkUI_Stage_Search_CancelButton_static_2100', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_2100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_2100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -3408,7 +3408,7 @@ it('ArkUI_Stage_Search_CancelButton_static_2300', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_2300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_2300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -3455,7 +3455,7 @@ it('ArkUI_Stage_Search_CancelButton_static_2400', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_2400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_2400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -3502,7 +3502,7 @@ it('ArkUI_Stage_Search_CancelButton_static_2500', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_2500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_2500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -3551,7 +3551,7 @@ it('ArkUI_Stage_Search_CancelButton_static_2600', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_2600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_2600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2700);
@@ -3632,7 +3632,7 @@ it('ArkUI_Stage_Search_CancelButton_static_2800', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_2800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_2800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -3677,7 +3677,7 @@ it('ArkUI_Stage_Search_CancelButton_static_2900', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_2900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_2900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -3722,7 +3722,7 @@ it('ArkUI_Stage_Search_CancelButton_static_3000', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_3000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_3000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -3801,7 +3801,7 @@ it('ArkUI_Stage_Search_CancelButton_static_3200', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_3200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_3200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -3846,7 +3846,7 @@ it('ArkUI_Stage_Search_CancelButton_static_3300', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_3300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_3300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -3891,7 +3891,7 @@ it('ArkUI_Stage_Search_CancelButton_static_3400', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_3400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_3400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -3936,7 +3936,7 @@ it('ArkUI_Stage_Search_CancelButton_static_3500', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_CancelButton_3500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_CancelButton_3500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4006,7 +4006,7 @@ it('ArkUI_Stage_Search_SearchButton_static_0200', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_SearchButton_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4048,7 +4048,7 @@ it('ArkUI_Stage_Search_SearchButton_static_0300', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_SearchButton_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4090,7 +4090,7 @@ it('ArkUI_Stage_Search_SearchButton_static_0400', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_SearchButton_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_0400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4132,7 +4132,7 @@ it('ArkUI_Stage_Search_SearchButton_static_0500', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_SearchButton_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_0500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4174,7 +4174,7 @@ it('ArkUI_Stage_Search_SearchButton_static_0600', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_SearchButton_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_0600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4247,7 +4247,7 @@ it('ArkUI_Stage_Search_SearchButton_static_0800', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_SearchButton_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_0800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4289,7 +4289,7 @@ it('ArkUI_Stage_Search_SearchButton_static_0900', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_SearchButton_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_0900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4331,7 +4331,7 @@ it('ArkUI_Stage_Search_SearchButton_static_1000', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_SearchButton_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_1000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4381,7 +4381,7 @@ it('ArkUI_Stage_Search_SearchButton_static_1100', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_SearchButton_1100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_1100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4432,7 +4432,7 @@ it('ArkUI_Stage_Search_SearchButton_static_1200', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_SearchButton_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_1200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4507,7 +4507,7 @@ it('ArkUI_Stage_Search_SearchButton_static_1400', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_SearchButton_1400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_1400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4550,7 +4550,7 @@ it('ArkUI_Stage_Search_SearchButton_static_1500', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_SearchButton_1500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_1500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4593,7 +4593,7 @@ it('ArkUI_Stage_Search_SearchButton_static_1600', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_SearchButton_1600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_1600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4670,7 +4670,7 @@ it('ArkUI_Stage_Search_SearchButton_static_1800', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_SearchButton_1800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_1800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4715,7 +4715,7 @@ it('ArkUI_Stage_Search_SearchButton_static_1900', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_SearchButton_1900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_1900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4760,7 +4760,7 @@ it('ArkUI_Stage_Search_SearchButton_static_2000', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_SearchButton_2000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_2000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4807,7 +4807,7 @@ it('ArkUI_Stage_Search_SearchButton_static_2100', Level.LEVEL1, async (done: () 
         }
         console.info("[ArkUI_Stage_Search_SearchButton_2100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_SearchButton_2100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2100);
@@ -4878,7 +4878,7 @@ it('ArkUI_Stage_Search_FontColor_static_0200', Level.LEVEL1, async (done: () => 
         }
         console.info("[ArkUI_Stage_Search_FontColor_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_FontColor_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4918,7 +4918,7 @@ it('ArkUI_Stage_Search_FontColor_static_0300', Level.LEVEL1, async (done: () => 
         }
         console.info("[ArkUI_Stage_Search_FontColor_0300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_FontColor_0300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -4958,7 +4958,7 @@ it('ArkUI_Stage_Search_FontColor_static_0400', Level.LEVEL1, async (done: () => 
         }
         console.info("[ArkUI_Stage_Search_FontColor_0400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_FontColor_0400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -5030,7 +5030,7 @@ it('ArkUI_Stage_Search_FontColor_static_0600', Level.LEVEL1, async (done: () => 
         }
         console.info("[ArkUI_Stage_Search_FontColor_0600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_FontColor_0600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -5073,7 +5073,7 @@ it('ArkUI_Stage_Search_FontColor_static_0700', Level.LEVEL1, async (done: () => 
         }
         console.info("[ArkUI_Stage_Search_FontColor_0700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_FontColor_0700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -5116,7 +5116,7 @@ it('ArkUI_Stage_Search_FontColor_static_0800', Level.LEVEL1, async (done: () => 
         }
         console.info("[ArkUI_Stage_Search_FontColor_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[ArkUI_Stage_Search_FontColor_0800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

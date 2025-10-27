@@ -75,7 +75,7 @@ struct LongPressGestureExample {
             }
             console.info("start to emit action state");
             events_emitter.emit(backEvent, backData);
-          } catch (err: Error) {
+          } catch (err) {
             console.info("emit action state err: " + JSON.stringify((err as Error)?.message));
           }
         })
@@ -95,7 +95,7 @@ struct LongPressGestureExample {
             }
             console.info("start to emit action state");
             events_emitter.emit(backEvent, backData);
-          } catch (err: Error) {
+          } catch (err) {
             console.info("emit action state err: " + JSON.stringify((err as Error)?.message));
           }
         })

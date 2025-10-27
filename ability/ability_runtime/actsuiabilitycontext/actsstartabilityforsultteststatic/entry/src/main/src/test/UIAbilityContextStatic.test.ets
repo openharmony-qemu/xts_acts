@@ -279,7 +279,7 @@ export default function UIAbilityContextStatic() {
             expect(err.code).assertEqual(401);
             done();
           });
-      } catch (err: Error) {
+      } catch (err) {
         hilog.info(domain,  tag , 'createPluginModuleContext Failed: ' + JSON.stringify(err));
         expect(err.code).assertEqual(401);
         done();

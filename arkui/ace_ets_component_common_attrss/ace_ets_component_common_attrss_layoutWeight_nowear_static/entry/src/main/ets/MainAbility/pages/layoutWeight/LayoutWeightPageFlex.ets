@@ -124,7 +124,7 @@ struct LayoutWeightPageFlex {
       this.childHeight = routerParamOptions.view.childHeight
       this.parentWidth = routerParamOptions.view.parentWidth
       this.parentHeight = routerParamOptions.view.parentHeight
-    } catch (error: Error) {
+    } catch (error) {
       console.log(' routerParamOptions error ' + error);
     }
   }

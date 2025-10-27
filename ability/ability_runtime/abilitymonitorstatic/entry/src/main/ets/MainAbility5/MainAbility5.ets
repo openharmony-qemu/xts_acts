@@ -42,7 +42,7 @@ class MainAbility5 extends UIAbility {
         }
         hilog.info(0x0000, 'testTag MainAbility5', 'loadContent ok');
       });
-    } catch (e: Error) {
+    } catch (e) {
       hilog.info(0x0000, 'testTag MainAbility5', 'loadContent catch error：-----------' + e.message);
     }
     setTimeout(() => {

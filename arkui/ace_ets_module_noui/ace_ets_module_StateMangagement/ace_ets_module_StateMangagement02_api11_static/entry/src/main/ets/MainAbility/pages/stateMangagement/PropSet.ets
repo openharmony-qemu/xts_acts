@@ -105,7 +105,7 @@ struct PropSetSample11 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('PropSet', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

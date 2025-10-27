@@ -67,7 +67,7 @@ export default function search_bottom() {
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push search_bottom page error: " + err);
         expect().assertFail();
       }

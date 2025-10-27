@@ -111,7 +111,7 @@ it('textAreaTest_static_02', Level.LEVEL1, async (done: () => void) => {
         }
         console.info("[textAreaTest_static_02] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[textAreaTest_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -164,7 +164,7 @@ it('textAreaTest_static_04', Level.LEVEL1, async (done: () => void) => {
         }
         console.info("[textAreaTest_static_04] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[textAreaTest_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -218,7 +218,7 @@ it('textAreaTest_static_06', Level.LEVEL1, async (done: () => void) => {
         }
         console.info("[textAreaTest_static_06] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[textAreaTest_static_06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -275,7 +275,7 @@ it('textAreaTest_static_08', Level.LEVEL1, async (done: () => void) => {
         }
         console.info("[textAreaTest_static_08] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[textAreaTest_static_08] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -331,7 +331,7 @@ it('textAreaTest_static_10', Level.LEVEL1, async (done: () => void) => {
         }
         console.info("[textAreaTest_static_10] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[textAreaTest_static_10] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -387,7 +387,7 @@ it('textAreaTest_static_12', Level.LEVEL1, async (done: () => void) => {
         }
         console.info("[textAreaTest_static_12] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[textAreaTest_static_12] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -424,7 +424,7 @@ it('textAreaTest_static_13', Level.LEVEL1, async (done: () => void) => {
         }
         console.info("[textAreaTest_static_13] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[textAreaTest_static_13] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

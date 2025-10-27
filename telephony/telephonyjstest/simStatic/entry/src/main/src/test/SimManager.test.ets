@@ -141,7 +141,7 @@ export default function SimManagerTest() {
         console.info(`${CASE_NAME} ， data ->` + data);
         expect().assertFail();
         done
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         console.info(`${CASE_NAME} expect err: ${err?.message}`);
         console.info(`${CASE_NAME} finish`);
@@ -181,7 +181,7 @@ export default function SimManagerTest() {
         console.info(`${CASE_NAME} fail, data = ${JSON.stringify(data)}`);
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         console.info(`${CASE_NAME} expect err: ${err.message}`);
         console.info(`${CASE_NAME} finish`);
@@ -382,7 +382,7 @@ export default function SimManagerTest() {
             done();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, "Telephony_Sim_getOpName_try_catch_static_0100 err = " + JSON.stringify(err));
         expect().assertFail();
@@ -412,7 +412,7 @@ export default function SimManagerTest() {
           expect(err?.code).assertEqual(-1);
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, CASE_NAME + " err = " + JSON.stringify(err));
         expect().assertFail();
@@ -442,7 +442,7 @@ export default function SimManagerTest() {
             done();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, "Telephony_Sim_getOpKey_try_catch_0100 err = " + JSON.stringify(err));
         expect().assertFail();
@@ -472,7 +472,7 @@ export default function SimManagerTest() {
           expect(err?.code).assertEqual(-1);
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, CASE_NAME + " err = " + JSON.stringify(err));
         expect().assertFail();
@@ -502,7 +502,7 @@ export default function SimManagerTest() {
             done();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, "Telephony_Sim_GetCardType_try_catch_static_0400 err = " + JSON.stringify(err));
         expect().assertFail();
@@ -525,7 +525,7 @@ export default function SimManagerTest() {
         hilog.info(domain, tag, CASE_NAME + ' finish');
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, CASE_NAME + ' GetCardType error: ' + JSON.stringify(err));
         expect(err?.code).assertEqual(8300001);
@@ -555,7 +555,7 @@ export default function SimManagerTest() {
             done();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, CASE_NAME + ' Telephony_Sim_getSimSpn_try_catch_error_0200: ' + JSON.stringify(err));
         expect().assertFail();
@@ -578,7 +578,7 @@ export default function SimManagerTest() {
         hilog.info(domain, tag, CASE_NAME + ' finish' + JSON.stringify(data));
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, `${CASE_NAME} expect err: ${err?.message}`);
         hilog.error(domain, tag, `${CASE_NAME} finish`);
@@ -608,7 +608,7 @@ export default function SimManagerTest() {
             done();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, "Telephony_Sim_getSimOperatorNumeric_try_catch_static_0200 err = " + JSON.stringify(err));
         expect().assertFail();
@@ -631,7 +631,7 @@ export default function SimManagerTest() {
         hilog.info(domain, tag, CASE_NAME + ' finish' + JSON.stringify(data));
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, `${CASE_NAME} expect err: ${err?.message}`);
         done();
@@ -660,7 +660,7 @@ export default function SimManagerTest() {
             done();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, "Telephony_Sim_hasOperatorPrivileges_try_catch_static_0400 err = " + JSON.stringify(err));
         expect().assertFail();
@@ -683,7 +683,7 @@ export default function SimManagerTest() {
         hilog.info(domain, tag, CASE_NAME + ' finish' + JSON.stringify(result));
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, CASE_NAME + 'hasOperatorPrivileges error: ' + JSON.stringify(err));
         expect(err?.code).assertEqual(8300001);
@@ -722,7 +722,7 @@ export default function SimManagerTest() {
             });
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, CASE_NAME + " err = " + JSON.stringify(err));
         expect().assertFail();
@@ -760,7 +760,7 @@ export default function SimManagerTest() {
           expect(false).assertTrue();
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, CASE_NAME + " err = " + JSON.stringify(err));
         expect().assertFail();

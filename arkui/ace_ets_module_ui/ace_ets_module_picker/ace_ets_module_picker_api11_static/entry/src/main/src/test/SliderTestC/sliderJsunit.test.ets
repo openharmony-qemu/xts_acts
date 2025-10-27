@@ -64,7 +64,7 @@ export default function sliderJsunitSliderTest() {
 
                     router.pushUrl(options);
                 }
-            } catch (err:Error) {
+            } catch (err) {
                 console.info("push sliderJsunitSliderTest page page error " + JSON.stringify(err));
             }
             await sleep(2);

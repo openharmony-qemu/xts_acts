@@ -83,7 +83,7 @@ struct MediaQueryOff {
               }
               console.info("onSelect start to emit action state")
               emitter.emit(backEvent, backData)
-            } catch (err:Error) {
+            } catch (err) {
               console.info("onSelect emit action state err: " + JSON.stringify(err.message))
             }
           })
@@ -117,7 +117,7 @@ struct MediaQueryOff {
             }
             console.info("onSelect start to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err:Error) {
+          } catch (err) {
             console.info("onSelect emit action state err: " + JSON.stringify(err.message))
           }
 

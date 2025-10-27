@@ -97,7 +97,7 @@ export default function scrollBarJsunitt() {
         }
         console.info("[testScrollBar002_static_02] start to publish emit:" + JSON.stringify(eventData.data));
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testScrollBar002_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -146,7 +146,7 @@ export default function scrollBarJsunitt() {
         }
         console.info("[testScrollBar004_static_04] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testScrollBar004_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);
@@ -178,7 +178,7 @@ export default function scrollBarJsunitt() {
         }
         console.info("[testScrollBar005_static_05] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: Error) {
+      } catch (err) {
         console.log("[testScrollBar005_static_05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(4000);

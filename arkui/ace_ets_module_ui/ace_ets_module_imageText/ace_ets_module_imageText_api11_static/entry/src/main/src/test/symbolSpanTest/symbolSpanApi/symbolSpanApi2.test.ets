@@ -58,7 +58,7 @@ export default function symbolSpanApi2Test() {
           await CommonFunc.sleep(2000);
          
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push symbolSpanApi2 page error:" + err);
       }
       console.info("symbolSpanApi2 beforeEach end");

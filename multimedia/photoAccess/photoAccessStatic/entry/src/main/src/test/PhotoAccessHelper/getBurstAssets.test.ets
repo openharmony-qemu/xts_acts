@@ -73,7 +73,7 @@ export default function getBurstAssetsTest() {
             done();
           }
           done();
-        } catch (error: Error) {
+        } catch (error) {
           hilog.info(domain, tag,
             testNum + ' getBurstAssets failed' + ", error.name:" + error.name + ", error.message:" + error.message);
           expect(false).assertTrue();

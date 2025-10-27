@@ -52,7 +52,7 @@ export default function DataUriUtilsStNewStaticTest() {
           hilog.info(DOMAIN, TAG, 'dataUriUtils getId URI : ' + result);
           expect().assertFail();
           done();
-        } catch (err: Error) {
+        } catch (err) {
           hilog.info(DOMAIN, TAG, 'dataUriUtils getId URI catch: ' + err?.code);
           expect(err?.code).assertEqual(401);
           done();
@@ -88,7 +88,7 @@ export default function DataUriUtilsStNewStaticTest() {
           hilog.info(DOMAIN, TAG, 'dataUriUtils getId URI : ' + result);
           expect().assertFail();
           done();
-        } catch (err: Error) {
+        } catch (err) {
           hilog.info(DOMAIN, TAG, 'dataUriUtils getId URI catch: ' + err?.code);
           expect(err?.code).assertEqual(401);
           done();
@@ -222,7 +222,7 @@ export default function DataUriUtilsStNewStaticTest() {
           hilog.info(DOMAIN, TAG, 'dataUriUtils deleteId URI : ' + result);
           expect().assertFail();
           done();
-        } catch (err: Error) {
+        } catch (err) {
           hilog.info(DOMAIN, TAG, 'dataUriUtils deleteId URI catch: ' + err?.code);
           expect(err?.code).assertEqual(401);
           done();
@@ -260,7 +260,7 @@ export default function DataUriUtilsStNewStaticTest() {
           hilog.info(DOMAIN, TAG, 'dataUriUtils deleteId URI : ' + result);
           expect().assertFail();
           done();
-        } catch (err: Error) {
+        } catch (err) {
           hilog.info(DOMAIN, TAG, 'dataUriUtils deleteId URI catch: ' + err?.code);
           expect(`${err?.code}`).assertEqual('401');
           done();
@@ -317,7 +317,7 @@ export default function DataUriUtilsStNewStaticTest() {
           hilog.info(DOMAIN, TAG, 'updateId updateId URI : ' + result);
           expect().assertFail();
           done();
-        } catch (err: Error) {
+        } catch (err) {
           hilog.info(DOMAIN, TAG, 'updateId updateId URI catch: ' + err?.code);
           expect(`${err?.code}`).assertEqual('401');
           done();
@@ -338,7 +338,7 @@ export default function DataUriUtilsStNewStaticTest() {
           hilog.info(DOMAIN, TAG, 'updateId updateId URI : ' + result);
           expect().assertFail();
           done();
-        } catch (err: Error) {
+        } catch (err) {
           hilog.info(DOMAIN, TAG, 'updateId updateId URI catch: ' + err?.code);
           expect(`${err?.code}`).assertEqual('401');
           done();

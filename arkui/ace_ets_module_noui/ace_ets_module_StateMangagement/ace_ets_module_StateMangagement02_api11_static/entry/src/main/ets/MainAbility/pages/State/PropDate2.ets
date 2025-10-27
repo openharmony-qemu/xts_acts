@@ -126,7 +126,7 @@ struct PropDate2 {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('PropDate2', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

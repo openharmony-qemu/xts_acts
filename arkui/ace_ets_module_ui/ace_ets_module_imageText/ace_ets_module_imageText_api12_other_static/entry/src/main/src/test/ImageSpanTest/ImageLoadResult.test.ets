@@ -42,7 +42,7 @@ export default function ImageLoadResultTest() {
             }, 4000);
           })
         await p
-      } catch (e: Error) {
+      } catch (e) {
         console.log("ImageLoadResultTest beforeAll start error " + e)
       }
       

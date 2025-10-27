@@ -112,7 +112,7 @@ struct ProvideArrayNumber {
     try {
       let router = uiContext.getRouter();
       AppStorage.setOrCreate<Router>('ProvideArrayNumber', router);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

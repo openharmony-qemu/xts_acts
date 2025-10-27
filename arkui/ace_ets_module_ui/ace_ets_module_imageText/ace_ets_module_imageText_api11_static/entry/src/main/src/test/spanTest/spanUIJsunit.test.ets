@@ -71,7 +71,7 @@ export default function spanUIJsunit() {
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push spanUIJsunit page error:" + err);
         expect().assertFail();
       }

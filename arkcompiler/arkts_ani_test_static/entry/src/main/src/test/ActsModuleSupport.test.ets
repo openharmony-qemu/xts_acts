@@ -26,7 +26,7 @@ export default function moduleSupportTest() {
   describe("ActsModuleSupportTest", (): void => {
     try {
       loadLibrary("entry")
-    } catch(e: Error) {
+    } catch (e) {
       console.log('loadFailed', e.message);
     }
 
