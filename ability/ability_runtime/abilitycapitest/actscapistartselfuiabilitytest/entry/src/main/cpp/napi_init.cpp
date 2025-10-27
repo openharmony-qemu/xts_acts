@@ -635,6 +635,74 @@ static napi_value WantNdk_2500(napi_env env, napi_callback_info info)
     return sum;
 }
 
+
+static napi_value NdkStartSelfUIAbilityWithPidResult_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "NdkStartSelfUIAbilityWithPidResult_0100 begins");
+    AbilityBase_Element element;
+    int32_t pid = -1;
+    element.abilityName = const_cast<char *>("EntryAbility");
+    element.bundleName = const_cast<char *>("com.acts.example.startselfuiabilitytest");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    OH_LOG_INFO(LOG_APP, "NdkStartSelfUIAbilityWithPidResult_0100 errCode=%{public}d", errCode);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkStartSelfUIAbilityWithPidResult_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "NdkStartSelfUIAbilityWithPidResult_0200 begins");
+    AbilityBase_Element element;
+    element.abilityName = const_cast<char *>("EntryAbility2");
+    element.bundleName = const_cast<char *>("com.acts.example.startselfuiabilitytest");
+    element.moduleName = const_cast<char *>("entry");
+    AbilityBase_Want* want = OH_AbilityBase_CreateWant(element);
+    AbilityRuntime_StartOptions *options = OH_AbilityRuntime_CreateStartOptions();
+    int32_t pid = -1;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_StartSelfUIAbilityWithPidResult(want, options, &pid);
+    OH_LOG_INFO(LOG_APP, "NdkStartSelfUIAbilityWithPidResult_0200 errCode=%{public}d", errCode);
+    OH_AbilityRuntime_DestroyStartOptions(&options);
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkApplicationContextGetVersionCode_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "NdkApplicationContextGetVersionCode_0100 begins");
+    int64_t versionCode;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextGetVersionCode(&versionCode);
+    OH_LOG_INFO(LOG_APP, "NdkApplicationContextGetVersionCode_0100 errCode=%{public}d", errCode);
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+        napi_value napiRet;
+        napi_create_int32(env, versionCode, &napiRet);
+        return napiRet;
+    }
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
+static napi_value NdkApplicationContextGetVersionCode_0200(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "NdkApplicationContextGetVersionCode_0200 begins");
+    int64_t versionCode;
+    AbilityRuntime_ErrorCode errCode = OH_AbilityRuntime_ApplicationContextGetVersionCode(nullptr);
+    OH_LOG_INFO(LOG_APP, "NdkApplicationContextGetVersionCode_0200 errCode=%{public}d", errCode);
+    if (errCode == ABILITY_RUNTIME_ERROR_CODE_NO_ERROR) {
+        napi_value napiRet;
+        napi_create_int32(env, versionCode, &napiRet);
+        return napiRet;
+    }
+    napi_value result;
+    napi_create_int32(env, errCode, &result);
+    return result;
+}
+
 static napi_value NdkStartAbilityWithOptions_0100(napi_env env, napi_callback_info info)
 {
     OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithStartOptions_0100 begins");
@@ -1486,6 +1554,17 @@ static napi_value NdkWantEx_2100(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value NdkSetIsolationUid_0100(napi_env env, napi_callback_info info)
+{
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_SetIsolationUid_0100 begins");
+    Ability_NativeChildProcess_ErrCode ret =
+        OH_Ability_ChildProcessConfigs_SetIsolationUid(nullptr, true);
+    OH_LOG_INFO(LOG_APP, "SUB_Ability_AbilityRuntime_SetIsolationUid_0100 errCode=%{public}d", ret);
+    napi_value result;
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value StartNativeChildProcess_0100(napi_env env, napi_callback_info info)
 {
     int32_t pid = -1;
@@ -1625,6 +1704,11 @@ static napi_value Init(napi_env env, napi_value exports)
         { "startNativeChildProcess_0700", nullptr, StartNativeChildProcess_0700, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkStartVisibility_0100", nullptr, NdkStartVisibility_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ndkStartVisibility_0200", nullptr, NdkStartVisibility_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkStartSelfUIAbilityWithPidResult_0100", nullptr, NdkStartSelfUIAbilityWithPidResult_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkStartSelfUIAbilityWithPidResult_0200", nullptr, NdkStartSelfUIAbilityWithPidResult_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkApplicationContextGetVersionCode_0100", nullptr, NdkApplicationContextGetVersionCode_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkApplicationContextGetVersionCode_0200", nullptr, NdkApplicationContextGetVersionCode_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ndkSetIsolationUid_0100", nullptr, NdkSetIsolationUid_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

@@ -341,7 +341,6 @@ export default function abilityTest() {
      * @tc.desc    : Starting mainability3 with startAbilityForResult succeeded.(promise)
      */
     it('ACTS_ThirdPartyStartAbilityForResult_0100', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
       TAG = "ACTS_ThirdPartyStartAbilityForResult_0100";
       console.info(TAG + " start");
       console.info(TAG + "====>start startAbilityForResult====>");
@@ -390,7 +389,6 @@ export default function abilityTest() {
     it('ACTS_ThirdPartyStartAbilityForResult_0300', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ThirdPartyStartAbilityForResult_0300";
       console.info(TAG + "====>start startAbilityForResult====>");
-      await sleep(2000);
       console.info("====>start startAbilityForResult====>");
       await globalThis.abilityContext.startAbilityForResult(
         {
@@ -441,7 +439,6 @@ export default function abilityTest() {
     it('ACTS_ThirdPartyStartAbilityForResult_0500', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ThirdPartyStartAbilityForResult_0500";
       console.info(TAG + "====>start startAbilityForResult====>");
-      await sleep(2000);
       await globalThis.abilityContext.startAbilityForResult(
         {
           bundleName: 'com.acts.actsinterfacemultiusersthirdtest',
@@ -484,7 +481,6 @@ export default function abilityTest() {
     it('ACTS_ThirdPartyStartAbilityForResult_0700', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ThirdPartyStartAbilityForResult_0700";
       console.info(TAG + "====>start startAbilityForResult====>");
-      await sleep(2000);
       await globalThis.abilityContext.startAbilityForResult(
         {
           bundleName: 'com.acts.actsinterfacemultiusersthirdtest',
@@ -627,7 +623,6 @@ export default function abilityTest() {
     it('ACTS_TerminateSelfWithResult_0100', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_TerminateSelfWithResult_0100";
       console.info(TAG + "====>start startAbilityForResult====>");
-      await sleep(2000);
       await globalThis.abilityContext.startAbilityForResult(
         {
           bundleName: 'com.acts.actsinterfacemultiusersthirdtest',
@@ -650,7 +645,6 @@ export default function abilityTest() {
     it('ACTS_TerminateSelfWithResult_0300', Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_TerminateSelfWithResult_0300";
       console.info(TAG + "====>start startAbilityForResult====>");
-      await sleep(2000)
       await globalThis.abilityContext.startAbilityForResult(
         {
           bundleName: 'com.acts.actsinterfacemultiusersthirdtest',

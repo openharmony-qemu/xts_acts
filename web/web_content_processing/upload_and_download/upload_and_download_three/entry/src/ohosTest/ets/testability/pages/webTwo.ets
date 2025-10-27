@@ -76,9 +76,10 @@ export enum WebNavigationType {
 }
 
 export enum SecurityLevel {
-  SECURE = 0,
-  WARNING = 1,
-  DANGEROUS = 2
+  NONE = 0,
+  SECURE = 1,
+  WARNING = 2,
+  DANGEROUS = 3
 }
 
 function Uint8ArrayToString(dataArray: Uint8Array) {

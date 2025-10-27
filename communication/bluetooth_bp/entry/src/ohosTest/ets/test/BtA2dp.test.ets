@@ -377,6 +377,14 @@ describe('btA2dpTest', () => {
             let CODEC_BIT_RATE_ABR = bluetooth.CodecBitRate.CODEC_BIT_RATE_ABR;
             console.info("[bluetooth_js]CODEC_BIT_RATE_ABR: " + CODEC_BIT_RATE_ABR);
             expect(CODEC_BIT_RATE_ABR).assertEqual(8);
+
+            let CODEC_BIT_RATE_1500000 = bluetooth.CodecBitRate.CODEC_BIT_RATE_1500000;
+            console.info("[bluetooth_js]CODEC_BIT_RATE_1500000: " + CODEC_BIT_RATE_1500000);
+            expect(CODEC_BIT_RATE_1500000).assertEqual(9);
+
+            let CODEC_BIT_RATE_2300000 = bluetooth.CodecBitRate.CODEC_BIT_RATE_2300000;
+            console.info("[bluetooth_js]CODEC_BIT_RATE_2300000: " + CODEC_BIT_RATE_2300000);
+            expect(CODEC_BIT_RATE_2300000).assertEqual(10);
         } catch (err) {
             console.info("bluetooth a2dp CodecBitRate errCode:" + err.code + ",bluetooth a2dp CodecBitRate errMessage:" + err.message);
             expect().assertFail();

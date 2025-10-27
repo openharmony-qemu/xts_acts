@@ -21,6 +21,7 @@ import TestAllowForceDark from './allowForceDark/TestAllowForceDark.test'
 import ColumnMatchParentTest from './Column/ColumnMatchParentTest'
 import ColumnWrapContentTest from './Column/ColumnWrapContentTest'
 import ColumnFixAtiDealSizeTest from './Column/ColumnFixAtiDealSizeTest'
+import ImageContentTransitionEffectTest from './Image/ImageContentTransitionEffect.test'
 
 export default function testsuite() {
   TestInvalidateAttributes();
@@ -32,4 +33,5 @@ export default function testsuite() {
   ColumnMatchParentTest();
   ColumnWrapContentTest();
   ColumnFixAtiDealSizeTest();
+  ImageContentTransitionEffectTest();
 }

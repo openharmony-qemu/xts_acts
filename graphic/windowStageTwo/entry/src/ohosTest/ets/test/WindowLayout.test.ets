@@ -57,6 +57,40 @@ async function terminateAbility(caseName: string) {
   await sleep(1000)
 }
 
+
+async function startAbility4(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility4',
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest4') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility4(caseName: string) {
+  let pageContext = AppStorage.get('contextTest4') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
+
 export default function windowLayoutTest() {
   describe('windowLayoutTest', async () => {
     let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
@@ -3902,5 +3936,332 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       }
     })
 
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SET_CONTENT_ASPECTRATIO_0100
+     * @tc.name      : testSetContentAspectRatio_0100
+     * @tc.desc      : loadcontent前设置宽高比，标题栏按照默认37vp生效
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testSetContentAspectRatio_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSetContentAspectRatio_0100';
+      console.log(caseName + 'begin.');
+      let windowStageStart = await startAbility4(caseName, context);
+      try {
+        let windowClass = windowStageStart.getMainWindowSync();
+        let windowStatus = windowClass.getWindowStatus();
+        console.log(caseName + ' windowStatus: ' + JSON.stringify(windowStatus));
+        if(windowStatus != window.WindowStatusType.FLOATING){
+          await windowClass.recover();
+        }
+        await windowClass.setContentAspectRatio(1.0, false, true);
+        await sleep(200);
+        let storage: LocalStorage = new LocalStorage();
+        await windowClass.loadContent('testability/pages/First/index2', storage);
+        await sleep(200);
+        let drawableRect = windowClass.getWindowProperties().drawableRect;
+        console.log(caseName + ' drawableRect: ' + JSON.stringify(drawableRect));
+        if (isPCStatus != '' || isAutoWindow == 'true') {
+          expect(Math.abs(drawableRect.width - drawableRect.height)).assertEqual(0)
+          let windowDecHeight = windowClass.getWindowDecorHeight();
+          console.log(caseName + ' windowDecHeight: ' + JSON.stringify(windowDecHeight));
+          expect(windowDecHeight).assertEqual(37)
+          await terminateAbility4(caseName);
+          done();
+        } else {
+          expect(Math.abs(drawableRect.width - drawableRect.height)).assertLarger(0)
+          await terminateAbility4(caseName);
+          done();
+        }
+
+      } catch (err) {
+        console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+        await terminateAbility4(caseName)
+        if (err.code == 801) {
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SET_CONTENT_ASPECTRATIO_0200
+     * @tc.name      : testSetContentAspectRatio_0200
+     * @tc.desc      : 应用退后台后设置新的比例
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testSetContentAspectRatio_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSetContentAspectRatio_0200';
+      console.log(caseName + 'begin.');
+      if (isPCStatus != '') {
+        let windowStageStart = await startAbility(caseName, context);
+        try {
+          let windowClass = windowStageStart.getMainWindowSync();
+          await windowClass.setContentAspectRatio(1.2, false, true);
+          await sleep(200);
+          let drawableRect1 = windowClass.getWindowProperties().drawableRect;
+          console.log(caseName + ' drawableRect1: ' + JSON.stringify(drawableRect1));
+          let ratio1 = drawableRect1.width / drawableRect1.height;
+          console.log(caseName + ' ratio1: ' + ratio1);
+          expect(Math.abs(ratio1-1.2)).assertLessOrEqual(0.001);
+          await windowClass.minimize();
+          await sleep(200);
+          await windowClass.setContentAspectRatio(1.5, true, false);
+          await sleep(200);
+          let drawableRect2 = windowClass.getWindowProperties().drawableRect;
+          console.log(caseName + ' drawableRect2: ' + JSON.stringify(drawableRect2));
+          await windowClass.restore();
+          await sleep(200);
+          let drawableRect3 = windowClass.getWindowProperties().drawableRect;
+          console.log(caseName + ' drawableRect3: ' + JSON.stringify(drawableRect3));
+          let ratio3 = drawableRect3.width / drawableRect3.height;
+          console.log(caseName + ' ratio3: ' + ratio3);
+          expect(Math.abs(ratio3-1.2)).assertLessOrEqual(0.001);
+          let driver = await Driver.create();
+          await sleep(200)
+          let windowPoint = await windowClass.getWindowProperties().windowRect
+          console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint)}`)
+          await driver.mouseMoveTo({x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top})
+          await sleep(2000)
+          await driver.mouseDrag({x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top}, {x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 100},2000)
+          await sleep(1000)
+          let drawableRect4 = windowClass.getWindowProperties().drawableRect;
+          console.log(caseName + ' drawableRect4: ' + JSON.stringify(drawableRect4));
+          let ratio4 = drawableRect4.width / drawableRect4.height;
+          console.log(caseName + ' ratio4: ' + ratio4);
+          expect(Math.abs(ratio4-1.5)).assertLessOrEqual(0.001);
+          await windowClass.resetAspectRatio();
+          await sleep(200)
+          await terminateAbility(caseName);
+          done();
+        } catch (err) {
+          console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+          await terminateAbility(caseName)
+          expect().assertFail();
+          done()
+        }
+      } else {
+        done()
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SET_CONTENT_ASPECTRATIO_0300
+     * @tc.name      : testSetContentAspectRatio_0300
+     * @tc.desc      : setContentAspetRatio接口参数取值类型覆盖
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testSetContentAspectRatio_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testSetContentAspectRatio_0300';
+      console.log(caseName + 'begin.');
+      if (isPCStatus != '') {
+        let windowStageStart = await startAbility(caseName + '_1', context);
+        try {
+          let windowClass = windowStageStart.getMainWindowSync();
+          await windowClass.setContentAspectRatio(1.2, true, true);
+          await sleep(200);
+          let driver = await Driver.create();
+          await sleep(200)
+          let windowPoint = await windowClass.getWindowProperties().windowRect
+          console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint)}`)
+          await driver.mouseMoveTo({x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top})
+          await sleep(2000)
+          await driver.mouseDrag({x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top},
+            {x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 100},2000)
+          await sleep(1000)
+          let drawableRect1 = windowClass.getWindowProperties().drawableRect;
+          console.log(caseName + ' drawableRect1: ' + JSON.stringify(drawableRect1));
+          let ratio1 = drawableRect1.width / drawableRect1.height;
+          console.log(caseName + ' ratio1: ' + ratio1);
+          expect(Math.abs(ratio1-1.2)).assertLessOrEqual(0.001);
+          await windowClass.minimize();
+          await sleep(200);
+          await windowClass.setContentAspectRatio(1.5, true, false);
+          await sleep(200);
+          let drawableRect2 = windowClass.getWindowProperties().drawableRect;
+          console.log(caseName + ' drawableRect2: ' + JSON.stringify(drawableRect2));
+          await windowClass.restore();
+          await sleep(200);
+          let drawableRect3 = windowClass.getWindowProperties().drawableRect;
+          console.log(caseName + ' drawableRect3: ' + JSON.stringify(drawableRect3));
+          let ratio3 = drawableRect3.width / drawableRect3.height;
+          console.log(caseName + ' ratio3: ' + ratio3);
+          expect(Math.abs(ratio3-1.2)).assertLessOrEqual(0.001);
+          let windowPoint2 = await windowClass.getWindowProperties().windowRect
+          console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint2)}`)
+          await driver.mouseMoveTo({x: windowPoint2.left + Math.ceil(windowPoint2.width / 2), y: windowPoint2.top})
+          await sleep(2000)
+          await driver.mouseDrag({x: windowPoint2.left + Math.ceil(windowPoint2.width / 2), y: windowPoint2.top},
+            {x: windowPoint2.left + Math.ceil(windowPoint2.width / 2), y: windowPoint2.top + 100},2000)
+          await sleep(1000)
+
+          let drawableRect4 = windowClass.getWindowProperties().drawableRect;
+          console.log(caseName + ' drawableRect4: ' + JSON.stringify(drawableRect4));
+          let ratio4 = drawableRect4.width / drawableRect4.height;
+          console.log(caseName + ' ratio4: ' + ratio4);
+          expect(Math.abs(ratio4-1.5)).assertLessOrEqual(0.001);
+          await windowClass.resetAspectRatio();
+          await sleep(200)
+          await terminateAbility(caseName);
+          done();
+        } catch (err) {
+          console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+          await terminateAbility(caseName)
+          expect().assertFail();
+          done()
+        }
+      } else {
+        done()
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SET_CONTENT_ASPECTRATIO_0500
+     * @tc.name      : testSetContentAspectRatio_0400
+     * @tc.desc      : setContentAspectRatio错误码校验1300004
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level2
+     */
+    it('testSetContentAspectRatio_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName = 'testSetContentAspectRatio_0400';
+      console.log(caseName + 'begin.');
+      let subWindowClass: window.Window | undefined;
+      try {
+        subWindowClass = await windowStage.createSubWindow('testSetContentAspectRatio_0400');
+        await sleep(200);
+        await subWindowClass.setUIContent('testability/pages/First/index2');
+        await subWindowClass.showWindow();
+        await subWindowClass.setContentAspectRatio(1.0, false, false);
+        console.log(`${caseName} sub window setContentAspectRatio succeed. `);
+        await subWindowClass?.destroyWindow()
+        expect().assertFail();
+        done()
+      } catch (err) {
+        console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+        await subWindowClass?.destroyWindow()
+        if (err.code == 801) {
+          done()
+        } else {
+          expect(err.code).assertEqual(1300004);
+        }
+      }
+
+      let dialogWindowClass: window.Window | undefined;
+      let config: window.Configuration = {
+        name: "testSetContentAspectRatio_0400_dialog_window",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context
+      };
+      try {
+        dialogWindowClass = await window.createWindow(config);
+        await sleep(200);
+        await dialogWindowClass.setUIContent('testability/pages/First/index2');
+        await dialogWindowClass.showWindow();
+        await dialogWindowClass.setContentAspectRatio(1.0, false, false);
+        console.log(`${caseName} dialog window setContentAspectRatio succeed. `);
+        await dialogWindowClass?.destroyWindow()
+        expect().assertFail();
+        done()
+      } catch (err) {
+        console.error(`${caseName} failed2, err: ${JSON.stringify(err)}`);
+        await dialogWindowClass?.destroyWindow()
+        if (err.code == 801) {
+          done()
+        } else {
+          expect(err.code).assertEqual(1300004);
+          done()
+        }
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SET_CONTENT_ASPECTRATIO_0600
+     * @tc.name      : testSetContentAspectRatio_0500
+     * @tc.desc      : setContentAspectRatio错误码校验1300016
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testSetContentAspectRatio_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName = 'testSetContentAspectRatio_0500';
+      console.log(caseName + 'begin.');
+      let windowStageStart = await startAbility(caseName, context);
+      try {
+        let windowClass = windowStageStart.getMainWindowSync();
+        let windowLimits = windowClass.getWindowLimits();
+        console.log(caseName + ' windowLimits: ' + JSON.stringify(windowLimits));
+        let decorHeight = windowClass.getWindowDecorHeight();
+        console.log(caseName + ' decorHeight: ' + JSON.stringify(decorHeight));
+        let minRatio = windowLimits.minWidth as number  / (windowLimits.maxHeight as number - decorHeight);
+        console.log(caseName + ' minRatio: ' + JSON.stringify(minRatio));
+        let maxRatio = windowLimits.maxWidth as number  / (windowLimits.minWidth as number - decorHeight);
+        console.log(caseName + ' maxRatio: ' + JSON.stringify(maxRatio));
+        await windowClass.setContentAspectRatio(maxRatio + 0.1);
+        await windowClass.setContentAspectRatio(-1);
+        await windowClass.setContentAspectRatio(0);
+        await terminateAbility(caseName);
+        expect().assertFail();
+        done()
+      } catch (err) {
+        console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+        await terminateAbility(caseName);
+        if (err.code == 801) {
+          done()
+        } else {
+          expect(err.code).assertEqual(1300016);
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SET_CONTENT_ASPECTRATIO_0700
+     * @tc.name      : testSetContentAspectRatio_0600
+     * @tc.desc      : setContentAspectRatio全屏调用
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level1
+     */
+    it('testSetContentAspectRatio_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      const caseName = 'testSetContentAspectRatio_0600';
+      console.log(caseName + 'begin.');
+      if (isPCStatus != '' || isAutoWindow == 'true') {
+        let windowStageStart = await startAbility(caseName, context);
+        try {
+          let windowClass = windowStageStart.getMainWindowSync();
+          let windowLimits = windowClass.getWindowLimits();
+          console.log(caseName + ' windowLimits: ' + JSON.stringify(windowLimits));
+          await windowClass.maximize();
+          await sleep(200);
+          let drawableRect = windowClass.getWindowProperties().drawableRect;
+          console.log(caseName + ' drawableRect: ' + JSON.stringify(drawableRect));
+          let ratio = drawableRect.width / drawableRect.height;
+          console.log(caseName + ' ratio: ' + JSON.stringify(ratio));
+          await windowClass.setContentAspectRatio(1.0);
+          let drawableRect2 = windowClass.getWindowProperties().drawableRect;
+          console.log(caseName + ' drawableRect2: ' + JSON.stringify(drawableRect2));
+          let ratio2 = drawableRect2.width / drawableRect2.height;
+          console.log(caseName + ' ratio2: ' + JSON.stringify(ratio2));
+          expect(ratio).assertEqual(ratio2)
+          await terminateAbility(caseName);
+          done()
+        } catch (err) {
+          console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+          await terminateAbility(caseName);
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done()
+      }
+    })
   })
 }

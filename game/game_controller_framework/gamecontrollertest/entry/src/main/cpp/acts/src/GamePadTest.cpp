@@ -144,7 +144,7 @@ int32_t ActsGamePadRightTriggerRegisterAxisInputMonitor01()
 {
     GameController_ErrorCode code = OH_GamePad_RightTrigger_RegisterAxisInputMonitor(AxisInputMonitorCallbackTest01);
 
-    OH_GamePad_RightTrigger_UnregisterButtonInputMonitor();
+    OH_GamePad_RightTrigger_UnregisterAxisInputMonitor();
     return static_cast<int32_t>(code);
 }
 
@@ -165,7 +165,7 @@ int32_t ActsGamePadButtonMenuRegisterButtonInputMonitor01()
 {
     GameController_ErrorCode code = OH_GamePad_ButtonMenu_RegisterButtonInputMonitor(ButtonInputMonitorCallbackTest01);
 
-    OH_GamePad_RightTrigger_UnregisterButtonInputMonitor();
+    OH_GamePad_ButtonMenu_UnregisterButtonInputMonitor();
     return static_cast<int32_t>(code);
 }
 
@@ -179,7 +179,7 @@ int32_t ActsGamePadButtonMenuUnregisterButtonInputMonitor01()
 {
     OH_GamePad_ButtonMenu_RegisterButtonInputMonitor(ButtonInputMonitorCallbackTest01);
 
-    GameController_ErrorCode code = OH_GamePad_RightTrigger_UnregisterButtonInputMonitor();
+    GameController_ErrorCode code = OH_GamePad_ButtonMenu_UnregisterButtonInputMonitor();
     return static_cast<int32_t>(code);
 }
 

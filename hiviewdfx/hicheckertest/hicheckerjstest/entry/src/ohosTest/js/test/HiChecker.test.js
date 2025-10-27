@@ -274,5 +274,27 @@ describe('HiCheckerTest', function () {
         }
     })
 
+    /**
+     * @tc.number DFX_DFR_Hichecker_Interface_2900
+     * @tc.name DFX_DFR_Hichecker_Interface_2900
+     * @tc.desc 验证containsCheckRule传入false返回值正常
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level2
+     */
+     it('DFX_DFR_Hichecker_Interface_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
+        console.info('DFX_DFR_Hichecker_Interface_2900 start');
+        try {
+            hichecker.removeCheckRule(hichecker.RULE_THREAD_CHECK_SLOW_PROCESS);
+            let ret = hichecker.containsCheckRule(hichecker.RULE_THREAD_CHECK_SLOW_PROCESS);
+            console.info('DFX_DFR_Hichecker_Interface_2900 contain result' + ret);
+            expect(ret == false).assertTrue();
+        } catch (error) {
+            console.info(error.code);
+            console.info(error.message);
+            expect(false).assertTrue();
+        }
+    })
+
 })
 }

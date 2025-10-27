@@ -21,11 +21,13 @@ let formState: FormInfo.FormState;
 export default function ApiCoverTest() {
   describe('ApiCoverTestTest', () => {
 
-    /*
-     * @tc.number  FMS_apiCoverTest_001
-     * @tc.name    Get all FormError types.
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   FMS_apiCoverTest_001
+     * @tc.number FMS_apiCoverTest_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`FMS_apiCoverTest_001`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info("FMS_apiCoverTest_001 start");

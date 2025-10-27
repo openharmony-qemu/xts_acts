@@ -1158,20 +1158,20 @@ export default function ReminderAgentManagerTest() {
          */
         it("reminderRequestAttribute_0036", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0036---------------------------');
-            reminderAgent.cancelAllReminders().then((err, data) => {
+            reminderAgent.cancelAllReminders().then((err) => {
                 console.info('reminderRequestAttribute_0036 cancelAllReminders success');
+                try {
+                    reminderAgent.getValidReminders().then((reminders) => {
+                        console.info('reminderRequestAttribute_0036 promise reminders.length = ' + reminders.length);
+                        expect(reminders.length).assertEqual(0);
+                        done();
+                    }).catch((err) => {
+                        console.info('reminderRequestAttribute_0036 promise err.code is :' + err.code);
+                    })
+                } catch (error) {
+                    console.info("reminderRequestAttribute_0036 getValidReminders error.code:" + error.code);
+                }
             });
-            try {
-                reminderAgent.getValidReminders().then((reminders) => {
-                    console.info('reminderRequestAttribute_0036 promise reminders.length = ' + reminders.length);
-                    expect(reminders.length).assertEqual(0);
-                    done();
-                }).catch((err) => {
-                    console.info('reminderRequestAttribute_0036 promise err.code is :' + err.code);
-                })
-            } catch (error) {
-                console.info("reminderRequestAttribute_0036 getValidReminders error.code:" + error.code);
-            }
         })
 
         /**

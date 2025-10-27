@@ -105,12 +105,9 @@ export default function AVSessionErrorCode() {
         })
 
         beforeEach(async () => {
-            console.info(`TestLog: ghg, beforeEach in`);
-            console.info(`TestLog: ghg, createAVSession begin`);
             try{
                 console.info(`TestLog: createAVSession 1111`);
                 session = await avSession.createAVSession(context, tag, 'video_call');
-                console.info(`TestLog: ghg, avSession create success`);
             }catch(err: BusinessError){
                 console.info(`TestLog: Session create error: code: ${err.code}, message: ${err.message}`);
             };
@@ -566,7 +563,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('play', callback1);
+                session!.onPlay(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -586,7 +583,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('stop', callback1);
+                session!.onStop(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -606,7 +603,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('pause', callback1);
+                session!.onPause(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -626,7 +623,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('playNext', callback1);
+                session!.onPlayNext(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -646,7 +643,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('playPrevious', callback1);
+                session!.onPlayPrevious(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -666,7 +663,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('fastForward', callback1);
+                session!.onFastForward(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -686,7 +683,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('rewind', callback1);
+                session!.onRewind(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -706,7 +703,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('seek', callback1);
+                session!.onSeek(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -726,7 +723,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('setSpeed', callback1);
+                session!.onSetSpeed(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -746,7 +743,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('setLoopMode', callback1);
+                session!.onSetLoopMode(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -766,7 +763,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('toggleFavorite', callback1);
+                session!.onToggleFavorite(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -786,7 +783,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.on('handleKeyEvent', callback1);
+                session!.onHandleKeyEvent(callback1);
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -806,7 +803,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('play')
+                session!.offPlay()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -825,7 +822,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('pause')
+                session!.offPause()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -844,7 +841,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('stop')
+                session!.offStop()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -863,7 +860,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('playNext')
+                session!.offPlayNext()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -883,7 +880,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('playPrevious')
+                session!.offPlayPrevious()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -903,7 +900,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('fastForward')
+                session!.offFastForward()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -923,7 +920,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('rewind')
+                session!.offRewind()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -943,7 +940,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('seek')
+                session!.offSeek()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -962,7 +959,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('setSpeed')
+                session!.offSetSpeed()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -982,7 +979,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('setLoopMode')
+                session!.offSetLoopMode()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -1002,7 +999,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('toggleFavorite')
+                session!.offToggleFavorite()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -1022,7 +1019,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await session!.destroy()
             try {
-                session!.off('handleKeyEvent')
+                session!.offHandleKeyEvent()
                 expect(true).assertFalse();
             }catch(err: BusinessError) {
                 expect(err.code).assertEqual(6600102);
@@ -1140,6 +1137,7 @@ export default function AVSessionErrorCode() {
             };
             done();
         })
+
         /**
          * @tc.number      SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0600
          * @tc.name        SUB_MULTIMEDIA_AVSESSION_DISPATCHSESSIONEVENT_ERRORCODE_STATIC_0600
@@ -1234,7 +1232,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
                 try {
-                    session!.on('commonCommand', callback1);
+                    session!.onCommonCommand(callback1);
                     expect(true).assertFalse();
                 }catch(err: BusinessError) {
                     expect(err.code).assertEqual(6600102);
@@ -1255,7 +1253,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
                 try {
-                    session!.off('commonCommand')
+                    session!.offCommonCommand()
                     expect(true).assertFalse();
                 }catch(err: BusinessError) {
                     expect(err.code).assertEqual(6600102);
@@ -1480,7 +1478,7 @@ export default function AVSessionErrorCode() {
             async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
                 try {
-                    session!.on('skipToQueueItem', callback1);
+                    session!.onSkipToQueueItem(callback1);
                     expect(true).assertFalse();
                 }catch(err: BusinessError) {
                     expect(err.code).assertEqual(6600102);

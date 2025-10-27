@@ -31,9 +31,12 @@ export default function formAgentTest() {
     hilog.info(DOMAIN, TAG, 'formAgentTest describe start');
 
     /**
+     * @tc.name   formAgentTest001
      * @tc.number formAgentTest001
-     * @tc.name formAgentTest001
-     * @tc.desc check requestPublishForm callback
+     * @tc.desc   check requestPublishForm callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("formAgentTest001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000);
@@ -65,9 +68,12 @@ export default function formAgentTest() {
     })
 
     /**
+     * @tc.name   formAgentTest002
      * @tc.number formAgentTest002
-     * @tc.name formAgentTest002
-     * @tc.desc check requestPublishForm promise
+     * @tc.desc   check requestPublishForm promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("formAgentTest002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000);

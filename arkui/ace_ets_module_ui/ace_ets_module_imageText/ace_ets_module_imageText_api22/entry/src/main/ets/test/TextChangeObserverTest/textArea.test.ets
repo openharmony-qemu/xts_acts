@@ -49,7 +49,7 @@ export default function textAreaTest() {
     /**
      * @tc.number    textAreaTest_0010
      * @tc.name      textAreaTest_0010
-     * @tc.desc      Global observer enabled or disabled, text change of the textArea component, Expected: observed text is 'textAreaTest_0010'
+     * @tc.desc      Global observer enabled or disabled, text change of the textArea component, Expected: observed text is 'global:textAreaTest_0010'
      * @tc.level:    Level 1
      * @tc.type :
      * @tc.size :
@@ -63,23 +63,32 @@ export default function textAreaTest() {
       await globalObserverOpenButton.click();
 
       let textArea: Component = await driver.findComponent(ON.id('textArea'));
-      await textArea.inputText('textAreaTest_0010', { paste: true, addition: false });
+      await textArea.inputText('textAreaTest_0010');
 
-      let globalOutputTextArea: Component = await driver.findComponent(ON.id('globalOutputTextArea'));
-      let globalOutput = await globalOutputTextArea.getText();
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
+      await CommonFunc.sleep(500);
+
+      let globalOutputTextArea1: Component = await driver.findComponent(ON.id('globalOutputTextArea'));
+      let globalOutput1 = await globalOutputTextArea1.getText();
       
-      console.info('[textAreaTest_0010] textContent: ' + globalOutput);
-      expect(globalOutput).assertEqual('textAreaTest_0010');
+      console.info('[textAreaTest_0010] textContent: ' + globalOutput1);
+      expect(globalOutput1).assertEqual('global:textAreaTest_0010');
 
       let globalObserverCloseButton: Component = await driver.findComponent(ON.id('全局监听(关)'));
       await globalObserverCloseButton.click();
 
-      await textArea.inputText('Add', { paste: true, addition: true });
+      await textArea.inputText('Add');
 
-      let globalOutput2 = await globalOutputTextArea.getText();
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
+      await CommonFunc.sleep(500);
+
+      let globalOutputTextArea2: Component = await driver.findComponent(ON.id('globalOutputTextArea'));
+      let globalOutput2 = await globalOutputTextArea2.getText();
 
       console.info('[textAreaTest_0010] textContent: ' + globalOutput2);
-      expect(globalOutput2).assertEqual('textAreaTest_0010');
+      expect(globalOutput2).assertEqual('global:textAreaTest_0010');
 
       console.info('[textAreaTest_0010] END');
       done();
@@ -88,7 +97,7 @@ export default function textAreaTest() {
     /**
      * @tc.number    textAreaTest_0011
      * @tc.name      textAreaTest_0011
-     * @tc.desc      Local observer enabled or disabled, text change of the textArea component, Expected: observed text is 'textAreaTest_0011'
+     * @tc.desc      Local observer enabled or disabled, text change of the textArea component, Expected: observed text is 'local:textAreaTest_0011'
      * @tc.level:    Level 1
      * @tc.type :
      * @tc.size :
@@ -102,23 +111,32 @@ export default function textAreaTest() {
       await localObserverOpenButton.click();
 
       let textArea: Component = await driver.findComponent(ON.id('textArea'));
-      await textArea.inputText('textAreaTest_0011', { paste: true, addition: false });
+      await textArea.inputText('textAreaTest_0011');
 
-      let localOutputTextArea: Component = await driver.findComponent(ON.id('localOutputTextArea'));
-      let localOutput = await localOutputTextArea.getText();
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
+      await CommonFunc.sleep(500);
 
-      console.info('[textAreaTest_0011] textContent: ' + localOutput);
-      expect(localOutput).assertEqual('textAreaTest_0011');
+      let localOutputTextArea1: Component = await driver.findComponent(ON.id('localOutputTextArea'));
+      let localOutput1 = await localOutputTextArea1.getText();
+
+      console.info('[textAreaTest_0011] textContent: ' + localOutput1);
+      expect(localOutput1).assertEqual('local:textAreaTest_0011');
 
       let localObserverCloseButton: Component = await driver.findComponent(ON.id('局部textArea(关)'));
       await localObserverCloseButton.click();
 
-      await textArea.inputText('Add', { paste: true, addition: true });
+      await textArea.inputText('Add');
 
-      let localOutput2 = await localOutputTextArea.getText();
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
+      await CommonFunc.sleep(500);
+
+      let localOutputTextArea2: Component = await driver.findComponent(ON.id('localOutputTextArea'));
+      let localOutput2 = await localOutputTextArea2.getText();
 
       console.info('[textAreaTest_0011] textContent: ' + localOutput2);
-      expect(localOutput2).assertEqual('textAreaTest_0011');
+      expect(localOutput2).assertEqual('local:textAreaTest_0011');
 
       console.info('[textAreaTest_0011] END');
       done();

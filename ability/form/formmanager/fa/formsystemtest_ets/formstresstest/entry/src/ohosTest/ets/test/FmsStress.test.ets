@@ -137,9 +137,12 @@ export default function test() {
         }
 
         /**
-         * @tc.number: FMS_stressTest_0100
-         * @tc.name: Create form test.
-         * @tc.desc: OnCreate form interface working well.
+         * @tc.name   FMS_stressTest_0100
+         * @tc.number FMS_stressTest_0100
+         * @tc.desc   OnCreate form interface working well.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_stressTest_0100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             const tcNumber = `FMS_stressTest_0100`;
@@ -198,9 +201,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_stressTest_0200
-         * @tc.name: Host release form test.
-         * @tc.desc: releaseForm method working well.
+         * @tc.name   FMS_stressTest_0200
+         * @tc.number FMS_stressTest_0200
+         * @tc.desc   releaseForm method working well.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_stressTest_0200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             const tcNumber = `FMS_stressTest_0200`;
@@ -274,9 +280,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_stressTest_0300
-         * @tc.name: Host cast temp form test.
-         * @tc.desc: castTempForm method working well.
+         * @tc.name   FMS_stressTest_0300
+         * @tc.number FMS_stressTest_0300
+         * @tc.desc   castTempForm method working well.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_stressTest_0300`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             const tcNumber = `FMS_stressTest_0300`;
@@ -349,9 +358,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_stressTest_0700
-         * @tc.name: Host request form test.
-         * @tc.desc: requestForm method working well.
+         * @tc.name   FMS_stressTest_0700
+         * @tc.number FMS_stressTest_0700
+         * @tc.desc   requestForm method working well.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_stressTest_0700`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             const tcNumber = `FMS_stressTest_0700`;
@@ -414,9 +426,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_stressTest_1700
-         * @tc.name: Get forms info test.
-         * @tc.desc: getAllFormsInfo and getFormsInfo method working well.
+         * @tc.name   FMS_stressTest_1700
+         * @tc.number FMS_stressTest_1700
+         * @tc.desc   getAllFormsInfo and getFormsInfo method working well.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_stressTest_1700`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             const tcNumber: string = `FMS_stressTest_1700`;
@@ -459,9 +474,12 @@ export default function test() {
         });
 
         /**
-         * @tc.number: FMS_stressTest_1800
-         * @tc.name: Form system ready test.
-         * @tc.desc: isSystemReady method working well.
+         * @tc.name   FMS_stressTest_1800
+         * @tc.number FMS_stressTest_1800
+         * @tc.desc   isSystemReady method working well.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(`FMS_stressTest_1800`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
             const tcNumber = `FMS_stressTest_1800`;

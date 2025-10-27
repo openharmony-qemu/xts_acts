@@ -13,7 +13,12 @@
  * limitations under the License.
  */
 import { Vec2, Rotation3, SceneResourceParameters, SceneNodeParameters, Scene, SceneResourceType,
-  NodeType } from '@ohos.graphics.scene'
+  NodeType,
+  RenderingPipelineType,
+  CameraParameters,
+  EffectParameters,
+  Effect,
+  Camera} from '@ohos.graphics.scene'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import * as scene3d from '@ohos.graphics.scene'
 
@@ -66,6 +71,8 @@ export default function sceneTest() {
         expect(node1 != null).assertTrue();
         console.info(msg + " node1 != null ");
         expect(node1?.nodeType).assertEqual(scene3d.NodeType.GEOMETRY);
+        let node2 = scene.getNodeByPath('rootNode_/Scene/node_123');
+        expect(node2).assertNull();
         done();
       } catch (err) {
         console.info(msg + " Failed in scene.getNodeByPath('rootNode_/Scene/node_damagedHelmet_-6514') " +
@@ -207,6 +214,8 @@ export default function sceneTest() {
         scene?.renderFrame({ alwaysRender: true });
         expect(scene?.renderFrame()).assertTrue();
         console.info(msg + " Succeed in scene?.renderFrame() ");
+        scene.destroy();
+        expect(scene.renderFrame()).assertFalse();
         done();
       } catch (err) {
         console.info(msg + " Failed in scene?.renderFrame() " + JSON.stringify(err));
@@ -608,8 +617,7 @@ export default function sceneTest() {
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testRenderResourceFactory_createSampler', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done:Function)=> {
+    it('testRenderResourceFactory_createSampler', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "============================testRenderResourceFactory_createSampler";
       console.info(msg + ' begin ');
       try {
@@ -757,7 +765,9 @@ export default function sceneTest() {
           if (renderContext != null) {
             let loadFail = await renderContext.loadPlugin("NonExistentPlugin");
             console.info(msg + ' plugin "NonExistentPlugin" load result:', loadFail);
-            expect(loadFail).assertEqual(undefined);
+            expect(loadFail).assertFalse();
+            let plugin = await renderContext.loadPlugin("1450021d-c57f-d9ff-7770-c24fb3f3321c");
+            expect(plugin).assertTrue();
           }
           console.info(msg + " test completed successfully");
           done();
@@ -767,7 +777,6 @@ export default function sceneTest() {
           done();
         }
       })
-
     /**
      * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0720
      * @tc.name      : testCreateComponent
@@ -838,9 +847,9 @@ export default function sceneTest() {
           expect(component != null).assertTrue();
           expect(component === createdComponent).assertTrue();
 
-          let missingComponent: scene3d.SceneComponent | null = scene.getComponent(rootNode, "NonExistentComponent");
+          let missingComponent = scene.getComponent(rootNode, "NonExistentComponent");
           console.info(msg +"Attempted to retrieve missing component 'NonExistentComponent':", missingComponent);
-          expect(missingComponent == null).assertTrue();
+          expect(missingComponent).assertNull();
 
           console.info(msg + " test completed successfully");
           done();
@@ -893,6 +902,89 @@ export default function sceneTest() {
           done();
         } catch (err) {
           console.info(msg + " Failed in testRenderContext_registerResourcePath " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+    /**
+     * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0910
+     * @tc.name        testCreateCamera
+     * @tc.desc        create a camera renderingPipeline
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
+     */
+    it('testCreateCamera', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+        let msg = "============================testCreateCamera";
+        console.info(msg + ' begin ');
+        try {
+          let scene = await Scene.load();
+          let rf =  scene.getResourceFactory();
+          let LightCameraParams: CameraParameters = {renderingPipeline: RenderingPipelineType.FORWARD_LIGHTWEIGHT};
+          expect(LightCameraParams.renderingPipeline).assertEqual(RenderingPipelineType.FORWARD_LIGHTWEIGHT);
+          let cam: Camera = await rf.createCamera({ name: "Camera1", path:"//Camera1" }, LightCameraParams);
+          console.info(msg + " create cam:", JSON.stringify(cam));
+          expect(cam != null).assertTrue();
+          console.info(msg + " cam.renderingPipeline:", JSON.stringify(cam.renderingPipeline));
+          expect(cam.renderingPipeline).assertEqual(RenderingPipelineType.FORWARD_LIGHTWEIGHT);
+
+          let forWardCameraParams: CameraParameters = {renderingPipeline: RenderingPipelineType.FORWARD}
+          expect(forWardCameraParams.renderingPipeline).assertEqual(RenderingPipelineType.FORWARD);
+          let cam1: Camera = await rf.createCamera({ name: "Camera2", path:"//Camera2" }, forWardCameraParams);
+          console.info(msg + " create cam1:", JSON.stringify(cam1));
+          expect(cam1 != null).assertTrue();
+          expect(cam1.renderingPipeline).assertEqual(RenderingPipelineType.FORWARD);
+
+          expect(RenderingPipelineType.FORWARD_LIGHTWEIGHT).assertEqual(0);
+          expect(RenderingPipelineType.FORWARD).assertEqual(1);
+          console.info(msg + " test completed successfully");
+          done();
+        } catch (err) {
+          console.info(msg + " Failed in testCreateCamera " + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      })
+    /**
+     * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0920
+     * @tc.name        testCreateEffect
+     * @tc.desc        create a camera effect
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 3
+     */
+    it('testCreateEffect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+        let msg = "============================testCreateEffect";
+        console.info(msg + ' begin ');
+        try {
+          let scene = await Scene.load();
+          let rf =  scene.getResourceFactory();
+          await Scene.getDefaultRenderContext()?.loadPlugin("1450021d-c57f-d9ff-7770-c24fb3f3321c");
+          let effectParameters: EffectParameters = {effectId: "e68a7f45-2d21-4a0d-9aef-7d9c825d3f12"};
+          let cam = await rf.createCamera({ name: "Camera", path:"//Camera" }, { renderingPipeline: RenderingPipelineType.FORWARD });
+          expect(effectParameters.effectId).assertEqual("e68a7f45-2d21-4a0d-9aef-7d9c825d3f12");
+          let effect: Effect = await rf.createEffect(effectParameters);
+          cam.effects.append(effect);
+          console.info(msg + " create effect: ", JSON.stringify(effect));
+          expect(effect != null).assertTrue();
+          console.info(msg + " create effect is not null ");
+          expect(cam.effects.get(0)).assertEqual(effect);
+          console.info(msg + " cam.effects: ", JSON.stringify(effect));
+          expect(effect.effectId).assertEqual("e68a7f45-2d21-4a0d-9aef-7d9c825d3f12");
+          console.info(msg + " effect.enabled: ", JSON.stringify(effect.effectId));
+          expect(effect.enabled).assertTrue();
+          console.info(msg + " effect.enabled: ", JSON.stringify(effect.enabled));
+          effect.enabled = false;
+          expect(cam.effects.get(0)?.enabled).assertFalse();
+
+          expect(NodeType.CUSTOM).assertEqual(255);
+          console.info(msg + " NodeType.CUSTOM: ", JSON.stringify(NodeType.CUSTOM));
+          expect(SceneResourceType.EFFECT).assertEqual(9)
+          console.info(msg + " SceneResourceType.EFFECT: ", JSON.stringify(SceneResourceType.EFFECT));
+          console.info(msg + " test completed successfully");
+          done();
+        } catch (err) {
+          console.info(msg + " Failed in testCreateEffect " + JSON.stringify(err));
           expect().assertFail();
           done();
         }

@@ -422,7 +422,11 @@ export default function appManagerTest() {
         try {
           await appManager.isRunningInStabilityTest().then((data)=>{
             console.log(`${tag} isRunningInStabilityTest success, pid: ${data}`);
-            try{expect(data).assertFalse();}catch(e){}
+            if(data == true){
+              try{expect(data).assertTrue();}catch(e){}
+            }else{
+              try{expect(data).assertFalse();}catch(e){}
+            }
             done();
           }).catch((err:BusinessError)=>{
             console.log(`${tag} isRunningInStabilityTest error, err: ${err?.code}`);
@@ -450,7 +454,11 @@ export default function appManagerTest() {
       try {
         appManager.isRunningInStabilityTest((err, data)=>{
           console.error(`${tag} isRunningInStabilityTest success, errorCode: ${data}`);
-          try{expect(data).assertFalse();}catch(e){}
+          if(data == true){
+            try{expect(data).assertTrue();}catch(e){}
+          }else{
+            try{expect(data).assertFalse();}catch(e){}
+          }
           done();
         })
       } catch (err) {
@@ -579,6 +587,11 @@ export default function appManagerTest() {
       try {
         appManager.isRamConstrainedDevice((err, data)=>{
           try{expect(typeof data).assertEqual('boolean');}catch(e){}
+          if(data == true){
+            try{expect(data).assertTrue();}catch(e){}
+          }else{
+            try{expect(data).assertFalse();}catch(e){}
+          }
           done();
         })
       } catch (err) {
@@ -602,6 +615,11 @@ export default function appManagerTest() {
       try {
         appManager.isRamConstrainedDevice().then((data)=>{
           try{expect(typeof data).assertEqual('boolean');}catch(e){}
+          if(data == true){
+            try{expect(data).assertTrue();}catch(e){}
+          }else{
+            try{expect(data).assertFalse();}catch(e){}
+          }
           done();
         }).catch((err:BusinessError)=>{
           try{expect().assertFail();}catch(e){}

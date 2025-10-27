@@ -89,6 +89,9 @@ export default function TCPSocketConnectionTest() {
           let tcpSendOption: socket.TCPSendOptions = {
             data: 'Hello, client!'
           };
+          client.on('error',(err:BusinessError) => {
+            console.error("on error,err:" + JSON.stringify(err));
+          });
           client.send(tcpSendOption, (err: BusinessError) => {
             if (err) {
               console.info(`${caseName} fail err:${JSON.stringify(err)}`);
@@ -99,6 +102,9 @@ export default function TCPSocketConnectionTest() {
               expectSuccess();
               done();
             };
+            client.off('error',(err:BusinessError) => {
+              console.error("off error,err:" + JSON.stringify(err));
+            });
             tcpServer.off('connect');
             console.info(`${caseName} test end`);
             done();

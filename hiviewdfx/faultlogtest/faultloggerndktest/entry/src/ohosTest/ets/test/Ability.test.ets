@@ -211,7 +211,7 @@ export default function abilityTest() {
       const callback = queryFaultLogCallback;
       try {
         // 使用变量传递回调函数
-        await FaultLogger.query(FaultLogger.FaultType.JS_CRASH).then(
+        await FaultLogger.querySelfFaultLog(FaultLogger.FaultType.JS_CRASH).then(
           list =>{
             console.info("=====",JSON.stringify(list))
             expect(list.length==0).assertTrue();
@@ -237,7 +237,7 @@ export default function abilityTest() {
       try {
         await asyncSleep(2000)
         // 使用变量传递回调函数
-        await FaultLogger.query(FaultLogger.FaultType.CPP_CRASH).then(
+        await FaultLogger.querySelfFaultLog(FaultLogger.FaultType.CPP_CRASH).then(
           list =>{
             console.info("=====",JSON.stringify(list))
             expect(list.length>0).assertTrue();
@@ -263,7 +263,7 @@ export default function abilityTest() {
       try {
         await asyncSleep(2000)
         // 使用变量传递回调函数
-        FaultLogger.query(FaultLogger.FaultType.CPP_CRASH,(error: BusinessError, list: Array<FaultLogger.FaultLogInfo>) => {
+        FaultLogger.querySelfFaultLog(FaultLogger.FaultType.CPP_CRASH,(error: BusinessError, list: Array<FaultLogger.FaultLogInfo>) => {
           if (error) {
             console.error(`error code:${error.code}, error msg:${error.message}`);
           } else {
@@ -292,7 +292,7 @@ export default function abilityTest() {
       try {
         await asyncSleep(2000)
         // 使用变量传递回调函数
-        FaultLogger.query(FaultLogger.FaultType.JS_CRASH,(error: BusinessError, list: Array<FaultLogger.FaultLogInfo>) => {
+        FaultLogger.querySelfFaultLog(FaultLogger.FaultType.JS_CRASH,(error: BusinessError, list: Array<FaultLogger.FaultLogInfo>) => {
           if (error) {
             console.error(`error code:${error.code}, error msg:${error.message}`);
           } else {

@@ -24,6 +24,7 @@ import { waitForExist} from '../../test/WaitTest.test';
 struct WebComponent {
   controller1: webview.WebviewController = new webview.WebviewController();
   controller2: webview.WebviewController = new webview.WebviewController();
+  controller3: webview.WebviewController = new webview.WebviewController();
   @State flagOne:Boolean = false;
   @State flagTwo:Boolean = false;
   @State flagThree:Boolean = false;
@@ -89,6 +90,20 @@ struct WebComponent {
     } catch (error) {
       console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
     }
+
+    try {
+      // 注册回调以接收controller绑定状态更改通知
+      this.controller3.on('controllerAttachStateChange', (state: webview.ControllerAttachState)=>{
+        if (state == webview.ControllerAttachState.ATTACHED) {
+          console.log('NEU Controller is ATTACHED.');
+        } else {
+          console.log('NEU Controller is attached.===2');
+        }
+      })
+    } catch (error) {
+      console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+    }
+
     try {
       // 注册回调以接收controller绑定状态更改通知
       this.controller1.on('controllerAttachStateChange', handleControllerAttachStateChange);

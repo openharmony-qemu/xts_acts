@@ -63,11 +63,8 @@ export default function abilityTest() {
         })
 
         beforeEach(async () => {
-            console.info(`TestLog: ghg, beforeEach in`);
-            console.info(`TestLog: ghg, createAVSession begin`);
             try {
                 session = await avSession.createAVSession(context, tag, 'audio');
-                console.info(`TestLog: ghg, avSession create success`);
                 console.info(`${session!.sessionType}`);
             } catch (err: BusinessError) {
                 console.info(`TestLog: Session create error: code: ${err.code}, message: ${err.message}`);
@@ -490,6 +487,42 @@ export default function abilityTest() {
                     expect(true).assertTrue();
                 }
             }
+            done();
+        });
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1000
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1000
+         * @tc.desc        Testing call setAVMetadata(promise) set publishDate
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_PROMISE_STATIC_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let metadata9: avSession.AVMetadata = {
+                assetId: '121278',
+                publishDate: new Date(1994, 1, 1, 1),
+            };
+            try {
+                await session!.setAVMetadata(metadata9);
+                console.info('TestLog: Set subtitle successfully');
+            } catch (err: BusinessError) {
+                console.info(`TestLog: Set subtitle error: code: ${err.code}, message: ${err.message}`);
+                expect(false).assertTrue();
+            };
+            let data: avSession.AVMetadata;
+            try {
+                data = await controller.getAVMetadata();
+                if (data.publishDate?.getTime() === metadata9.publishDate?.getTime()) {
+                    expect(true).assertTrue();
+                } else {
+                    console.info('TestLog: Get description failed');
+                    expect(false).assertTrue();
+                }
+            } catch (err: BusinessError) {
+                console.info(`TestLog: Get description error: code: ${err.code}, message: ${err.message}`);
+                expect(false).assertTrue();
+            };
             done();
         });
 
@@ -1894,7 +1927,7 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAY_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            session!.on('play', () => {
+            session!.onPlay(() => {
                 console.info('TestLog: Play command callback registration successful');
                 expect(true).assertTrue();
             });
@@ -1921,7 +1954,7 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPAUSE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            session!.on('pause', () => {
+            session!.onPause(() => {
                 console.info('TestLog: Pause command callback registration successful');
                 expect(true).assertTrue();
             });
@@ -1948,7 +1981,7 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSTOP_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            session!.on('stop', () => {
+            session!.onStop(() => {
                 console.info('TestLog: Stop command callback registration successful');
                 expect(true).assertTrue();
             });
@@ -1975,7 +2008,7 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAYNEXT_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            session!.on('playNext', () => {
+            session!.onPlayNext(() => {
                 console.info('TestLog: PlayNext command callback registration successful');
                 expect(true).assertTrue();
             });
@@ -2002,7 +2035,7 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONPLAYPREVIOUS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            session!.on('playPrevious', () => {
+            session!.onPlayPrevious(() => {
                 console.info('TestLog: PlayPrevious command callback registration successful');
                 expect(true).assertTrue();
             });
@@ -2030,7 +2063,7 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            session!.on('fastForward', () => {
+            session!.onFastForward(() => {
                 console.info('TestLog: FastForward command callback registration successful');
                 expect(true).assertTrue();
             });
@@ -2058,7 +2091,7 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            session!.on('fastForward', (time?: long) => {
+            session!.onFastForward((time?: long) => {
                 if (time! == avSession.SkipIntervals.SECONDS_10) {
                     console.info('TestLog: FastForward command callback registration successful');
                     expect(true).assertTrue();
@@ -2090,7 +2123,7 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            session!.on('fastForward', (time?: long) => {
+            session!.onFastForward((time?: long) => {
                 if (time! == avSession.SkipIntervals.SECONDS_15) {
                     console.info('TestLog: FastForward command callback registration successful');
                     expect(true).assertTrue();
@@ -2121,7 +2154,7 @@ export default function abilityTest() {
          * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONFASTFORWARD_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            session!.on('fastForward', (time?: long) => {
+            session!.onFastForward((time?: long) => {
                 if (time! == avSession.SkipIntervals.SECONDS_30) {
                     console.info('TestLog: FastForward command callback registration successful');
                     expect(true).assertTrue();
@@ -2152,7 +2185,7 @@ export default function abilityTest() {
          * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            session!.on('rewind', () => {
+            session!.onRewind(() => {
                 console.info('TestLog: Rewind command callback registration successful');
                 expect(true).assertTrue();
             });
@@ -2179,7 +2212,7 @@ export default function abilityTest() {
          * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            session!.on('rewind', (time?: long) => {
+            session!.onRewind((time?: long) => {
                 if (time! == avSession.SkipIntervals.SECONDS_10) {
                     console.info('TestLog: Rewind command callback registration successful');
                     expect(true).assertTrue();
@@ -2210,7 +2243,7 @@ export default function abilityTest() {
          * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            session!.on('rewind', (time?: long) => {
+            session!.onRewind((time?: long) => {
                 if (time! == avSession.SkipIntervals.SECONDS_15) {
                     console.info('TestLog: Rewind command callback registration successful');
                     expect(true).assertTrue();
@@ -2241,7 +2274,7 @@ export default function abilityTest() {
          * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONREWIND_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            session!.on('rewind', (time?: long) => {
+            session!.onRewind((time?: long) => {
                 if (time! == avSession.SkipIntervals.SECONDS_30) {
                     console.info('TestLog: Rewind command callback registration successful');
                     expect(true).assertTrue();
@@ -2273,7 +2306,7 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSEEK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            session!.on('seek', (callback) => {
+            session!.onSeek((callback) => {
                 if (callback === 10) {
                     console.info('TestLog: Seek command callback registration successful');
                     expect(true).assertTrue();
@@ -2305,7 +2338,7 @@ export default function abilityTest() {
          * @tc.level       Level2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSETSPEED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            session!.on('setSpeed', (callback) => {
+            session!.onSetSpeed((callback) => {
                 if (callback === 2.6) {
                     console.info('TestLog: SetSpeed command callback registration successful');
                     expect(true).assertTrue();
@@ -2338,7 +2371,7 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONSETLOOPMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            session!.on('setLoopMode', (callback) => {
+            session!.onSetLoopMode((callback) => {
                 if (callback === 1) {
                     console.info('TestLog: Set LoopMode command callback registration successful');
                     expect(true).assertTrue();
@@ -2372,7 +2405,7 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_ONTOGGLEFAVORITE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            session!.on('toggleFavorite', (callback) => {
+            session!.onToggleFavorite((callback) => {
                 if (callback === 'false') {
                     console.info('TestLog: Set toggleFavorite command callback registration successful');
                     expect(true).assertTrue();
@@ -2414,11 +2447,11 @@ export default function abilityTest() {
                 expect(false).assertTrue();
             }
 
-            session!.on('play', callback1);
+            session!.onPlay(callback1);
 
-            session!.on('play', callback2);
+            session!.onPlay(callback2);
 
-            session!.off('play');
+            session!.offPlay();
 
             try {
                 await controller.sendControlCommand({
@@ -2452,11 +2485,11 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             }
 
-            session!.on('play', callback1);
+            session!.onPlay(callback1);
 
-            session!.on('play', callback2);
+            session!.onPlay(callback2);
 
-            session!.off('play', callback1);
+            session!.offPlay(callback1);
 
             try {
                 await controller.sendControlCommand({
@@ -2490,11 +2523,11 @@ export default function abilityTest() {
                 expect(false).assertTrue();
             }
 
-            session!.on('pause', callback1);
+            session!.onPause(callback1);
 
-            session!.on('pause', callback2);
+            session!.onPause(callback2);
 
-            session!.off('pause');
+            session!.offPause();
 
             try {
                 await controller.sendControlCommand({
@@ -2528,11 +2561,11 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             }
 
-            session!.on('pause', callback1);
+            session!.onPause(callback1);
 
-            session!.on('pause', callback2);
+            session!.onPause(callback2);
 
-            session!.off('pause', callback1);
+            session!.offPause(callback1);
 
             try {
                 await controller.sendControlCommand({
@@ -2566,11 +2599,11 @@ export default function abilityTest() {
                 expect(false).assertTrue();
             }
 
-            session!.on('stop', callback1);
+            session!.onStop(callback1);
 
-            session!.on('stop', callback2);
+            session!.onStop(callback2);
 
-            session!.off('stop');
+            session!.offStop();
 
             try {
                 await controller.sendControlCommand({
@@ -2604,11 +2637,11 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             }
 
-            session!.on('stop', callback1)
+            session!.onStop(callback1)
 
-            session!.on('stop', callback2)
+            session!.onStop(callback2)
 
-            session!.off('stop', callback1)
+            session!.offStop(callback1)
             try {
                 await controller.sendControlCommand({
                     command: 'stop'
@@ -2641,11 +2674,11 @@ export default function abilityTest() {
                 expect(false).assertTrue();
             }
 
-            session!.on('playNext', callback1);
+            session!.onPlayNext(callback1);
 
-            session!.on('playNext', callback2);
+            session!.onPlayNext(callback2);
 
-            session!.off('playNext');
+            session!.offPlayNext();
             try {
                 await controller.sendControlCommand({
                     command: 'playNext'
@@ -2679,9 +2712,9 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             }
 
-            session!.on('playNext', callback1);
-            session!.on('playNext', callback2);
-            session!.off('playNext', callback1);
+            session!.onPlayNext(callback1);
+            session!.onPlayNext(callback2);
+            session!.offPlayNext(callback1);
 
             try {
                 await controller.sendControlCommand({
@@ -2716,9 +2749,9 @@ export default function abilityTest() {
                 expect(false).assertTrue();
             }
 
-            session!.on('playPrevious', callback1);
-            session!.on('playPrevious', callback2);
-            session!.off('playPrevious');
+            session!.onPlayPrevious(callback1);
+            session!.onPlayPrevious(callback2);
+            session!.offPlayPrevious();
 
             try {
                 await controller.sendControlCommand({
@@ -2753,9 +2786,9 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             }
 
-            session!.on('playPrevious', callback1);
-            session!.on('playPrevious', callback2);
-            session!.off('playPrevious', callback1);
+            session!.onPlayPrevious(callback1);
+            session!.onPlayPrevious(callback2);
+            session!.offPlayPrevious(callback1);
 
             try {
                 await controller.sendControlCommand({
@@ -2790,9 +2823,9 @@ export default function abilityTest() {
                 expect(false).assertTrue();
             }
 
-            session!.on('fastForward', callback1);
-            session!.on('fastForward', callback2);
-            session!.off('fastForward');
+            session!.onFastForward(callback1);
+            session!.onFastForward(callback2);
+            session!.offFastForward();
 
             try {
                 await controller.sendControlCommand({
@@ -2827,9 +2860,9 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             }
 
-            session!.on('fastForward', callback1);
-            session!.on('fastForward', callback2);
-            session!.off('fastForward', callback1);
+            session!.onFastForward(callback1);
+            session!.onFastForward(callback2);
+            session!.offFastForward(callback1);
 
             try {
                 await controller.sendControlCommand({
@@ -2863,9 +2896,9 @@ export default function abilityTest() {
                 expect(false).assertTrue();
             }
 
-            session!.on('rewind', callback1);
-            session!.on('rewind', callback2);
-            session!.off('rewind');
+            session!.onRewind(callback1);
+            session!.onRewind(callback2);
+            session!.offRewind();
 
             try {
                 await controller.sendControlCommand({
@@ -2899,9 +2932,9 @@ export default function abilityTest() {
                 expect(true).assertTrue();
             }
 
-            session!.on('rewind', callback1);
-            session!.on('rewind', callback2);
-            session!.off('rewind', callback1);
+            session!.onRewind(callback1);
+            session!.onRewind(callback2);
+            session!.offRewind(callback1);
 
             try {
                 await controller.sendControlCommand({
@@ -2939,9 +2972,9 @@ export default function abilityTest() {
                 }
             }
 
-            session!.on('seek', callback1);
-            session!.on('seek', callback2);
-            session!.off('seek');
+            session!.onSeek(callback1);
+            session!.onSeek(callback2);
+            session!.offSeek();
 
             try {
                 await controller.sendControlCommand({
@@ -2979,9 +3012,9 @@ export default function abilityTest() {
                 }
             }
 
-            session!.on('seek', callback1);
-            session!.on('seek', callback2);
-            session!.off('seek', callback1);
+            session!.onSeek(callback1);
+            session!.onSeek(callback2);
+            session!.offSeek(callback1);
 
             try {
                 await controller.sendControlCommand({
@@ -3006,23 +3039,23 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            let callback1 = (data: number) => {
+            let callback1 = (data: double) => {
                 if (data === 1.0) {
                     console.info('TestLog: SetSpend command registration1 success');
                     expect(false).assertTrue();
                 }
             }
 
-            let callback2 = (data: number) => {
+            let callback2 = (data: double) => {
                 if (data === 2.0) {
                     console.info('TestLog: SetSpend command registration2 success');
                     expect(false).assertTrue();
                 }
             }
 
-            session!.on('setSpeed', callback1);
-            session!.on('setSpeed', callback2);
-            session!.off('setSpeed');
+            session!.onSetSpeed(callback1);
+            session!.onSetSpeed(callback2);
+            session!.offSetSpeed();
 
             try {
                 await controller.sendControlCommand({
@@ -3047,23 +3080,23 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_OFFSETSPEED_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            let callback1 = (data: number) => {
+            let callback1 = (data: double) => {
                 if (data === 1.0) {
                     console.info('TestLog: SetSpend command registration1 success');
                     expect(false).assertTrue();
                 }
             }
 
-            let callback2 = (data: number) => {
+            let callback2 = (data: double) => {
                 if (data === 2.0) {
                     console.info('TestLog: SetSpend command registration2 success');
                     expect(true).assertTrue();
                 }
             }
 
-            session!.on('setSpeed', callback1);
-            session!.on('setSpeed', callback2);
-            session!.off('setSpeed', callback1);
+            session!.onSetSpeed(callback1);
+            session!.onSetSpeed(callback2);
+            session!.offSetSpeed(callback1);
 
             try {
                 await controller.sendControlCommand({
@@ -3102,9 +3135,9 @@ export default function abilityTest() {
                 }
             }
 
-            session!.on('setLoopMode', callback1);
-            session!.on('setLoopMode', callback2);
-            session!.off('setLoopMode');
+            session!.onSetLoopMode(callback1);
+            session!.onSetLoopMode(callback2);
+            session!.offSetLoopMode();
 
             try {
                 await controller.sendControlCommand({
@@ -3144,9 +3177,9 @@ export default function abilityTest() {
                 }
             }
 
-            session!.on('setLoopMode', callback1);
-            session!.on('setLoopMode', callback2);
-            session!.off('setLoopMode', callback1);
+            session!.onSetLoopMode(callback1);
+            session!.onSetLoopMode(callback2);
+            session!.offSetLoopMode(callback1);
 
             try {
                 await controller.sendControlCommand({
@@ -3186,9 +3219,9 @@ export default function abilityTest() {
                 }
             }
 
-            session!.on('toggleFavorite', callback1);
-            session!.on('toggleFavorite', callback2);
-            session!.off('toggleFavorite');
+            session!.onToggleFavorite(callback1);
+            session!.onToggleFavorite(callback2);
+            session!.offToggleFavorite();
 
             try {
                 await controller.sendControlCommand({
@@ -3227,9 +3260,9 @@ export default function abilityTest() {
                 }
             }
 
-            session!.on('toggleFavorite', callback1);
-            session!.on('toggleFavorite', callback2);
-            session!.off('toggleFavorite', callback1);
+            session!.onToggleFavorite(callback1);
+            session!.onToggleFavorite(callback2);
+            session!.offToggleFavorite(callback1);
 
             try {
                 await controller.sendControlCommand({
@@ -3269,9 +3302,9 @@ export default function abilityTest() {
                 }
             }
 
-            session!.on('handleKeyEvent', callback1);
-            session!.on('handleKeyEvent', callback2);
-            session!.off('handleKeyEvent');
+            session!.onHandleKeyEvent(callback1);
+            session!.onHandleKeyEvent(callback2);
+            session!.offHandleKeyEvent();
 
             try {
                 await controller.sendAVKeyEvent(event);
@@ -3316,9 +3349,9 @@ export default function abilityTest() {
                 }
             }
 
-            session!.on('handleKeyEvent', callback1);
-            session!.on('handleKeyEvent', callback2);
-            session!.off('handleKeyEvent', callback1);
+            session!.onHandleKeyEvent(callback1);
+            session!.onHandleKeyEvent(callback2);
+            session!.offHandleKeyEvent(callback1);
 
             try {
                 await controller.sendAVKeyEvent(event);
@@ -3532,7 +3565,7 @@ export default function abilityTest() {
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
-            session!.on('play', () => {
+            session!.onPlay(() => {
             });
             await Utils.msSleep(500);
             try {
@@ -3557,7 +3590,7 @@ export default function abilityTest() {
         it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
                 try {
-                    session!.on('play', () => {
+                    session!.onPlay(() => {
                     });
                     await Utils.msSleep(500);
                     controller.getValidCommands((err, data) => {

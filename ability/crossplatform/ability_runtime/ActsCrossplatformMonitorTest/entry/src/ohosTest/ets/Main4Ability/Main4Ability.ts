@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,12 +18,14 @@ import window from '@ohos.window';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import Want from '@ohos.app.ability.Want';
 import { BusinessError } from '@ohos.base';
+import { commonEventManager } from '@kit.BasicServicesKit';
 
 export default class Main4Ability extends UIAbility {
     onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
         console.log('testTag', '%{public}s', 'Ability onCreate');
         globalThis.want = want;
         globalThis.main4AbilityContext = this.context;
+        commonEventManager.publish('Main4Ability.onAbilityCreate', () => {});
     }
 
     onDestroy() {

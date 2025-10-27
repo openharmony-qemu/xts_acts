@@ -108,7 +108,7 @@ export default function accountManagerTest() {
      */
     it("disallowOsAccountAddition_test_003", Level.LEVEL2, async (done: Function) => {
       console.info(' --- disallowOsAccountAddition_test_003  -------- START --------');
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         accountManager.disallowOsAccountAddition(SELFWANT, true);
         console.info(' --- disallowOsAccountAddition_test_003 error is expected, but it done.');
@@ -133,7 +133,7 @@ export default function accountManagerTest() {
      */
     it("disallowOsAccountAddition_test_004", Level.LEVEL2, async (done: Function) => {
       console.info(' --- disallowOsAccountAddition_test_004  -------- START --------');
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         accountManager.disallowOsAccountAddition(SELFWANT, true, DEFAULT_USER_ID);
         console.info(' --- disallowOsAccountAddition_test_004 error is expected, but it done.');
@@ -421,7 +421,7 @@ export default function accountManagerTest() {
      */
     it("isOsAccountAdditionDisallowed_test_003", Level.LEVEL2, async (done: Function) => {
       console.info(' --- isOsAccountAdditionDisallowed_test_003  -------- START --------');
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         accountManager.isOsAccountAdditionDisallowed(SELFWANT);
         console.info(' --- isOsAccountAdditionDisallowed_test_003 error is expected, but it done.');
@@ -446,7 +446,7 @@ export default function accountManagerTest() {
      */
     it("isOsAccountAdditionDisallowed_test_004", Level.LEVEL2, async (done: Function) => {
       console.info(' --- isOsAccountAdditionDisallowed_test_004  -------- START --------');
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         accountManager.isOsAccountAdditionDisallowed(SELFWANT, DEFAULT_USER_ID);
         console.info(' --- isOsAccountAdditionDisallowed_test_004 error is expected, but it done.');
@@ -537,7 +537,7 @@ export default function accountManagerTest() {
      */
     it("addOsAccountAsync_test_002", Level.LEVEL2, async (done: Function) => {
       console.info(' --- addOsAccountAsync_test_002  -------- START --------');
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         await accountManager.addOsAccountAsync(SELFWANT, "test_name", osAccount.OsAccountType.ADMIN);
         console.info(' --- addOsAccountAsync_test_002 error is expected, but it done.');
@@ -767,7 +767,7 @@ export default function accountManagerTest() {
     it("setDomainAccountPolicy_test_002", Level.LEVEL2, async (done: Function) => {
       try {
         console.info(' --- setDomainAccountPolicy_test_002  -------- START --------');
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         await accountManager.setDomainAccountPolicy(SELFWANT, DOMAIN_ACCOUNT_INFO1, DOMAIN_ACCOUNT_POLICY1);
         console.info(' --- setDomainAccountPolicy_test_002 error is expected, but it done.');
         expect(false).assertTrue();
@@ -1041,7 +1041,7 @@ export default function accountManagerTest() {
     it("getDomainAccountPolicy_test_002", Level.LEVEL2, async (done: Function) => {
       try {
         console.info(' --- getDomainAccountPolicy_test_002  -------- START --------');
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         await accountManager.getDomainAccountPolicy(SELFWANT, DOMAIN_ACCOUNT_INFO1);
         console.info(' --- getDomainAccountPolicy_test_002 error is expected, but it done.');
         expect(false).assertTrue();

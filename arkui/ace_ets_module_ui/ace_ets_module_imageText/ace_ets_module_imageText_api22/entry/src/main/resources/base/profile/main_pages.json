@@ -4,6 +4,7 @@
     "MainAbility/pages/TextChangeObserver/search",
     "MainAbility/pages/TextChangeObserver/textArea",
     "MainAbility/pages/TextChangeObserver/textInput",
-    "MainAbility/pages/TextChangeObserver/richEditor"
+    "MainAbility/pages/TextChangeObserver/richEditor",
+    "MainAbility/pages/Image/imageAltTest"
   ]
 }

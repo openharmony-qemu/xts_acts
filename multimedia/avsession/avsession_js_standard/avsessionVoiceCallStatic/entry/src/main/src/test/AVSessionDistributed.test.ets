@@ -174,7 +174,6 @@ export default function abilityTest() {
             try{
                 extras = await controller.getExtrasWithEvent(COMMON_COMMAND_STRING);
                 console.info(` AUDIO_GET_PREFERRED_OUTPUT_DEVICE_FOR_RENDERER_INFO ${extras[COMMON_COMMAND_STRING]}`);
-                expect(true).assertTrue();
             }catch(err: BusinessError){
                 console.info(`${TAG}: getExtrasWithEvent failed with err: ${err.code}, ${err.message}`);
                 expect(false).assertTrue();

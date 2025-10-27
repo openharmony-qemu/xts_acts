@@ -22,12 +22,12 @@ export default function OverflowApiCoverTest() {
   describe('OverflowApiCoverTest', () => {
 
     /**
-     * @tc.number  RequestOverflow_Cover_Static_0100
-     * @tc.name    RequestOverflow_Cover_Static_0100
-     * @tc.desc    Function RequestOverflow covered test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+     * @tc.name   RequestOverflow_Cover_Static_0100
+     * @tc.number RequestOverflow_Cover_Static_0100
+     * @tc.desc   Function RequestOverflow covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("RequestOverflow_Cover_Static_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let name: string = 'RequestOverflow_Cover_Static_0100';
@@ -65,12 +65,12 @@ export default function OverflowApiCoverTest() {
     });
 
     /**
-     * @tc.number  RequestOverflow_Cover_Static_0200
-     * @tc.name    RequestOverflow_Cover_Static_0200
-     * @tc.desc    Function RequestOverflow covered test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+     * @tc.name   RequestOverflow_Cover_Static_0200
+     * @tc.number RequestOverflow_Cover_Static_0200
+     * @tc.desc   Function RequestOverflow covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("RequestOverflow_Cover_Static_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let name: string = 'RequestOverflow_Cover_Static_0200';
@@ -107,12 +107,12 @@ export default function OverflowApiCoverTest() {
     });
  
     /**
-     * @tc.number  CancelOverflow_Cover_Static_0100
-     * @tc.name    CancelOverflow_Cover_Static_0100
-     * @tc.desc    Function CancelOverflow covered test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+     * @tc.name   CancelOverflow_Cover_Static_0100
+     * @tc.number CancelOverflow_Cover_Static_0100
+     * @tc.desc   Function CancelOverflow covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("CancelOverflow_Cover_Static_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let name: string = 'CancelOverflow_Cover_Static_0100';
@@ -139,12 +139,12 @@ export default function OverflowApiCoverTest() {
     });
  
     /**
-     * @tc.number  ActivateSceneAnimation_Cover_Static_0100
-     * @tc.name    ActivateSceneAnimation_Cover_Static_0100
-     * @tc.desc    Function ActivateSceneAnimation covered test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+     * @tc.name   ActivateSceneAnimation_Cover_Static_0100
+     * @tc.number ActivateSceneAnimation_Cover_Static_0100
+     * @tc.desc   Function ActivateSceneAnimation covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("ActivateSceneAnimation_Cover_Static_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let name: string = 'ActivateSceneAnimation_Cover_Static_0100';
@@ -170,12 +170,12 @@ export default function OverflowApiCoverTest() {
     });
  
     /**
-     * @tc.number  DeactivateSceneAnimation_Cover_Static_0100
-     * @tc.name    DeactivateSceneAnimation_Cover_Static_0100
-     * @tc.desc    Function DeactivateSceneAnimation covered test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+     * @tc.name   DeactivateSceneAnimation_Cover_Static_0100
+     * @tc.number DeactivateSceneAnimation_Cover_Static_0100
+     * @tc.desc   Function DeactivateSceneAnimation covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("DeactivateSceneAnimation_Cover_Static_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let name: string = 'DeactivateSceneAnimation_Cover_Static_0100';
@@ -201,12 +201,12 @@ export default function OverflowApiCoverTest() {
     });
 
     /**
-     * @tc.number  GetFormRect_Cover_Static_0100
-     * @tc.name    GetFormRect_Cover_Static_0100
-     * @tc.desc    Function GetFormRect covered test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   Level 1
+     * @tc.name   GetFormRect_Cover_Static_0100
+     * @tc.number GetFormRect_Cover_Static_0100
+     * @tc.desc   Function GetFormRect covered test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("GetFormRect_Cover_Static_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let name: string = 'GetFormRect_Cover_Static_0100';

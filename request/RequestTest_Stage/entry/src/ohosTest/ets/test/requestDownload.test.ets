@@ -204,6 +204,7 @@ export default function requestDownloadJSUnit() {
                 expect().assertFail();
               }
               expect(typeof data == "boolean").assertTrue();
+              expect(data === true).assertTrue();
               console.info('====>SUB_REQUEST_DOWNLOAD_API_DELETE_0001 Download task delete success.');
             }catch(err){
               await downloadTask.delete();

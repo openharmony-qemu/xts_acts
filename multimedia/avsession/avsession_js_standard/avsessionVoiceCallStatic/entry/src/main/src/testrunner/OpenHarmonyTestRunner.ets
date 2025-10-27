@@ -47,25 +47,17 @@ export class OpenHarmonyTestRunner implements TestRunner {
       cmd += ' -D'
     }
 
-    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun---2');
     setTimeout(() => {
-      hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun---7');
       hilog.info(domain, tag, 'hypiumTest start');
       Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
       hilog.info(domain, tag, 'hypiumTest end');
-      hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun---8');
     }, 5000);
 
-    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun---3');
     abilityDelegator.executeShellCommand(cmd, (err: BusinessError<void> | null, d: ShellCmdResult | undefined) => {
-      hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun---5');
       hilog.info(domain, tag, 'executeShellCommand : err : %{public}s', JSON.stringify(err) ?? '');
       hilog.info(domain, tag, 'executeShellCommand : data : %{public}s', d?.stdResult ?? '');
       hilog.info(domain, tag, 'executeShellCommand : data : %{public}s', d?.exitCode ?? '');
-      hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun---6');
     })
-    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun---4');
 
-    hilog.info(domain, tag, '%{public}s', 'OpenHarmonyTestRunner onRun end');
   }
 }

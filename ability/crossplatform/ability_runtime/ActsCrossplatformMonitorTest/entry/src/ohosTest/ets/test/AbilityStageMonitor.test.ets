@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,24 +14,12 @@
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry";
-import Want from '@ohos.app.ability.Want';
 import { BusinessError } from '@ohos.base';
 
 
 let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
 export default function AbilityStageMonitorTest() {
-  const factoryWant = (
-    bundleName: string,
-    abilityName: string,
-    moduleName: string
-  ): Want => {
-    return {
-      bundleName: bundleName,
-      abilityName: abilityName,
-      moduleName: moduleName,
-    };
-  };
 
   describe("AbilityStageMonitorTest", () => {
     /**
@@ -89,11 +77,6 @@ export default function AbilityStageMonitorTest() {
       "ACTS_ADD_ABILITY_STAGE_MONITOR_CALLBACK_0200",
       0,
       async (done: Function) => {
-        const want = factoryWant(
-          "com.example.delegatortest",
-          "MainAbility",
-          "featureassist"
-        );
         console.log("ACTS_ADD_ABILITY_STAGE_MONITOR_CALLBACK_0200 :start");
         abilityDelegator.addAbilityStageMonitor({
           moduleName: "featureassist",
@@ -172,11 +155,6 @@ export default function AbilityStageMonitorTest() {
      * @tc.level     : Level 2
      */
     it("ACTS_ADD_ABILITY_STAGE_MONITOR_PROMISE_0200", Level.LEVEL0, async (done: Function) => {
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "MainAbility",
-        "featureassist"
-      );
       console.log("ACTS_ADD_ABILITY_STAGE_MONITOR_PROMISE_0200 :start");
       abilityDelegator
         .addAbilityStageMonitor({
@@ -292,11 +270,6 @@ export default function AbilityStageMonitorTest() {
       "ACTS_REMOVE_ABILITY_STAGE_MONITOR_CALLBACK_0200",
       0,
       async (done: Function) => {
-        const want = factoryWant(
-          "com.example.delegatortest",
-          "MainAbility",
-          "featureassist"
-        );
         console.log("ACTS_REMOVE_ABILITY_STAGE_MONITOR_CALLBACK_0200 :start");
         abilityDelegator.waitAbilityStageMonitor({
           moduleName: "featureassist",
@@ -333,11 +306,6 @@ export default function AbilityStageMonitorTest() {
       "ACTS_REMOVE_ABILITY_STAGE_MONITOR_CALLBACK_0300",
       0,
       async (done: Function) => {
-        const want = factoryWant(
-          "com.example.delegatortest",
-          "MainAbility",
-          "featureassist"
-        );
         console.log("ACTS_REMOVE_ABILITY_STAGE_MONITOR_CALLBACK_0300 :start");
         abilityDelegator.waitAbilityStageMonitor({
           moduleName: "featureassist",
@@ -416,11 +384,6 @@ export default function AbilityStageMonitorTest() {
       "ACTS_REMOVE_ABILITY_STAGE_MONITOR_PROMISE_0200",
       0,
       async (done: Function) => {
-        const want = factoryWant(
-          "com.example.delegatortest",
-          "MainAbility",
-          "featureassist"
-        );
         console.log("ACTS_REMOVE_ABILITY_STAGE_MONITOR_PROMISE_0200 :start 1");
         abilityDelegator
           .waitAbilityStageMonitor({
@@ -561,16 +524,11 @@ export default function AbilityStageMonitorTest() {
       "ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0300",
       0,
       async (done: Function) => {
-        const want = factoryWant(
-          "com.example.delegatortest",
-          "MainAbility",
-          "featureassist"
-        );
         console.log("ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0300 :start");
         abilityDelegator.waitAbilityStageMonitor({
           moduleName: "featureassist",
           srcEntrance: "./ets/Application/AbilityStage.ts",
-        }, (err, data) => {
+        }, 100, (err, data) => {
           abilityDelegator.printSync(
             "ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0300 err code: " +
             err.code
@@ -596,16 +554,11 @@ export default function AbilityStageMonitorTest() {
       "ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0400",
       0,
       async (done: Function) => {
-        const want = factoryWant(
-          "com.example.delegatortest",
-          "MainAbility",
-          "featureassist"
-        );
         console.log("ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0400 :start");
         abilityDelegator.waitAbilityStageMonitor({
           moduleName: "featureassist",
           srcEntrance: "./ets/Application/AbilityStage.ts",
-        }, 6000, (err, data) => {
+        }, 100, (err, data) => {
           abilityDelegator.printSync(
             "ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0400 err code: " +
             err.code
@@ -668,17 +621,12 @@ export default function AbilityStageMonitorTest() {
       "ACTS_WAIT_ABILITY_STAGE_MONITOR_PROMISE_0200",
       0,
       async (done: Function) => {
-        const want = factoryWant(
-          "com.example.delegatortest",
-          "MainAbility",
-          "featureassist"
-        );
         console.log("ACTS_WAIT_ABILITY_STAGE_MONITOR_PROMISE_0200 :start");
         abilityDelegator
           .waitAbilityStageMonitor({
             moduleName: "featureassist",
             srcEntrance: "./ets/Application/AbilityStage.ts",
-          })
+          }, 100)
           .then((data) => {
             abilityDelegator.printSync(
               "ACTS_WAIT_ABILITY_STAGE_MONITOR_PROMISE_0200 pass data: " + data

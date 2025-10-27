@@ -572,10 +572,10 @@ export default function contextMonitoringTest() {
             }
             if (data.event == 'ACTS_TEST_DESTROY') {
               globalThis.stageContext02.eventHub.off('event01');
-              globalThis.stageContext02.terminateSelf()
-
-              globalThis.stageContext03.eventHub.off('event01');
-              globalThis.stageContext03.terminateSelf()
+              globalThis.stageContext02.terminateSelf().then(() => {
+                globalThis.stageContext03.eventHub.off('event01');
+                globalThis.stageContext03.terminateSelf()
+              })
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);

@@ -61,7 +61,7 @@ function testSetPolicySync() {
    * @tc.size      : MediumTest
    */
   it("test_setpolicysync_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       browser.setPolicySync(SELFWANT, TEST_APP_ID_1, TEST_POLICY_NAME, TEST_POLICY_VALUE);
       expect(false).assertTrue();
@@ -268,7 +268,7 @@ function testSetManagedBrowserPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_setManagedBrowserPolicy_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       browser.setManagedBrowserPolicy(SELFWANT, SELFHAPNAME, TEST_POLICY_NAME, TEST_POLICY_VALUE);
       expect(false).assertTrue();

@@ -1835,6 +1835,60 @@ export default function windowTitleBarTest() {
       }
     })
     /**
+     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_getWindowDecorVisible_0200
+     * @tc.name      : test_getWindowDecorVisible_subWindow
+     * @tc.desc      :  test_getWindowDecorVisible_subWindow
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it("test_getWindowDecorVisible_subWindow", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let msgStr = "test_getWindowDecorVisible_subWindow";
+      console.log(msgStr + "begin");
+      let subWindowClass: window.Window;
+      let options: window.SubWindowOptions = {
+        title: 'testDialogTargetTouch_OnSubWindowWithOps',
+        decorEnabled: true
+      };
+      let isVisible:boolean = false;
+      try {
+        let promise = windowStage.createSubWindowWithOptions('test_getWindowDecorVisible_subWindow',options);
+        promise.then(async (data) => {
+          subWindowClass = data;
+          console.info(msgStr + 'Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
+          await subWindowClass.setUIContent('testability/pages/Index2');
+          await subWindowClass.showWindow();
+          await sleep(300);
+          isVisible =  subWindowClass.getWindowDecorVisible();
+          console.info(msgStr + 'Succeeded in getWindowDecorVisible. Data: ' + isVisible);
+          expect(isVisible).assertEqual(true);
+          subWindowClass.setWindowDecorVisible(false);
+          isVisible =  subWindowClass.getWindowDecorVisible();
+          console.info(msgStr + 'Succeeded in getWindowDecorVisible. Data: ' + isVisible);
+          expect(isVisible).assertEqual(false);
+          await subWindowClass.destroyWindow();
+          done();
+        }).catch(async (err: BusinessError) => {
+          console.error(msgStr + `Failed to getWindowDecorVisible. Cause code: ${err.code}, message: ${err.message}`);
+          if (err.code == 801) {
+            console.log(msgStr + '此设备不支持');
+            done();
+          } else if(err.code == 1300002){
+            done();
+          }else {
+            console.log(msgStr + 'Failed to setWindowMask');
+            expect(false).assertTrue();
+            done();
+          }
+
+        });
+      } catch (error) {
+        console.log(msgStr + 'Failed. Cause code:' + JSON.stringify(error.code) + error.message);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
      * @tc.number    : SUB_BASIC_WMS_SET_DECORBUTTON_STYLE_3500
      * @tc.name      : testSetDecorButtonStyle_buttonIconSize_0100
      * @tc.desc      : testSetDecorButtonStyle_buttonIconSize_0100

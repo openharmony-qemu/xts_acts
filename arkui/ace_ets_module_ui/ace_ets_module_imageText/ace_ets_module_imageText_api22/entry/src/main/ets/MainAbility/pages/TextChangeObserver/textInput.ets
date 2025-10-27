@@ -25,11 +25,11 @@ struct Page {
   build() {
     Row(){
       Column(){
-        Text(this.globalOutput).id('globalOutputTextInput').fontSize(24).width('80%').margin({ bottom: 10 })
+        Text('global:' + this.globalOutput).id('globalOutputTextInput').fontSize(24).width('80%').height('5%')
 
-        Text(this.localOutput).id('localOutputTextInput').fontSize(24).width('80%').margin({ bottom: 10 })
+        Text('local:' + this.localOutput).id('localOutputTextInput').fontSize(24).width('80%').height('5%')
 
-        Text('监听textChange开关按钮').fontSize(18).fontWeight(FontWeight.Bold).margin({ bottom: 10 })
+        Text('监听textChange开关按钮').fontSize(18).fontWeight(FontWeight.Bold).height('6%')
 
         Row(){
           Button('全局监听(开)')
@@ -51,7 +51,7 @@ struct Page {
             .onClick(()=>{
               this.observer.off('textChange');
             })
-        }.margin({ bottom: 10 })
+        }.height('7%')
 
         Row(){
           Button('局部Input(开)')
@@ -73,12 +73,13 @@ struct Page {
             .onClick(()=>{
               this.observer.off('textChange', { id: 'textInput' });
             })
-        }.margin({ bottom: 10 })
+        }.height('7%')
 
-        Text('TextInput').margin({ bottom: 5 })
-        TextInput({ text: 'TextInput默认输入文本' })
+        Text('TextInput').height('5%')
+        TextInput({ text: '' })
           .id('textInput')
           .width('80%')
+          .height('15%')
           .draggable(true)
           .onDragStart(()=>{})
           .cancelButton({ style: CancelButtonStyle.CONSTANT })

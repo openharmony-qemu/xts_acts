@@ -806,5 +806,54 @@ export default function sendablePreferencesPromiseTest() {
       done();
     })
 
+
+
+
+    /**
+     * @tc.name testSendablePreferencesHasPromiseFalseTest0100
+     * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsHasApiPromiseTest_5400
+     * @tc.desc put PutNumber promise interface test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    
+    it('testSendablePreferencesHasPromiseFalseTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(TAG + 'testSendablePreferencesHasPromiseFalseTest0100 start' );
+      try {
+        let ret: boolean = await mPreferences.has(KEY_STRING);
+        expect(ret).assertEqual(false);
+        done();
+      } catch (err) {
+        console.info(TAG +"testSendablePreferencesHasPromiseFalseTest0100 catch: " + err.code + err.messagr);
+        expect().assertFail();
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name testSendablePreferencesHasSyncPromiseFalseTest0100
+     * @tc.number SUB_DistributedData_SendablePreference_SDK_PreferenceEtsHasSyncApiPromiseTest_5400
+     * @tc.desc put PutNumber promise interface test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    
+    it('testSendablePreferencesHasSyncPromiseFalseTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      console.info(TAG + 'testSendablePreferencesHasSyncPromiseFalseTest0100 start' );
+      try {
+        let ret: boolean = await mPreferences.hasSync(KEY_STRING);
+        expect(ret).assertEqual(false);
+        done();
+      } catch (err) {
+        console.info(TAG +"testSendablePreferencesHasSyncPromiseFalseTest0100 catch: " + err.code + err.messagr);
+        expect().assertFail();
+        done();
+      }
+    })
+
+
   })
 }

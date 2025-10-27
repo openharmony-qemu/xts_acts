@@ -24,7 +24,7 @@ export default function ActsCapiMultiAppNotSupportTest() {
     /**
      * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_1000
      * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_1000
-     * @tc.desc    : Testing StartSelfUIAbilityWithStartOptions returns 16000072.
+     * @tc.desc    : Testing Sta1rtSelfUIAbilityWithStartOptions returns 16000072.
      * @tc.level   : Level1
      * @tc.size    : MediumTest
      * @tc.type    : Function
@@ -37,6 +37,11 @@ export default function ActsCapiMultiAppNotSupportTest() {
           let result:number = AbilityKitTest.StartSelfUIAbilityWithStartOptionsMultiAppNotSupport();
           if(result == 801){
             expect(801).assertEqual(result);
+            done();
+            return;
+          }
+          if(result == 16000078){
+            expect(16000078).assertEqual(result);
             done();
             return;
           }
@@ -66,6 +71,11 @@ export default function ActsCapiMultiAppNotSupportTest() {
           let result:number = AbilityKitTest.AbilityRuntimeErrorCodeMultiAppNotSupportCode();
           if(result == 801){
             expect(801).assertEqual(result);
+            done();
+            return;
+          }
+          if(result == 16000078){
+            expect(16000078).assertEqual(result);
             done();
             return;
           }

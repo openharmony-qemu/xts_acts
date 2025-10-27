@@ -78,5 +78,22 @@ export default function webResourceResponseGet() {
       await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 1000);
       done();
     })
+    /*
+    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SCROLLBYWITHRESULT_0200
+    * @tc.name       : testscrollByWithResult002
+    * @tc.desc       : test ScrollByWithResult
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 1
+    */
+    it('testscrollByWithResult002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      emitKey = 'testscrollByWithResult002';
+      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
+      let isReturn = false;
+      Utils.registerEvent(emitKey, true, 20251026, () => { isReturn = true });
+      Utils.waitAndClickComponent(driver, "WebResourceResponseGetButton", emitKey);
+      await Utils.waitForExist(() => isReturn, emitKey + '_returnCheck', true, 1000);
+      done();
+    })
   })
 }

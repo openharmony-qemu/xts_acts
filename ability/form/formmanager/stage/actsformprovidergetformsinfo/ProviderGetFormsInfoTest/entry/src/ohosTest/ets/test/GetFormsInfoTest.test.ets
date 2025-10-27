@@ -12,10 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
+import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import formProvider from '@ohos.app.form.formProvider';
 import formInfo from '@ohos.app.form.formInfo';
-import formError from '@ohos.application.formError';
 import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 
@@ -99,41 +98,56 @@ function sleep(time: number): Promise<void> {
     return new Promise((resolve)=>setTimeout(resolve,time));
 }
 
+const ERROR_CODE1 = 401;
+const ERROR_CODE2 = 16500050;
+const ERROR_CODE3 = 16500100;
+const ERROR_CODE4 = 16501000;
+
 export default function abilityTest() {
     describe('ProviderGetFormsInfoTest', () => {
         /**
-         * @tc.number    : SUB_AA_OpenHarmony_ProviderGetForsInfo_0100
-         * @tc.name      : testProviderGetForsInfo0100
-         * @tc.desc      : getFormsInfo(callback).
-         * @tc.level     : Level 1
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0100
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0100
+         * @tc.desc   getFormsInfo(callback).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
-        it('SUB_AA_OpenHarmony_ProviderGetForsInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_AA_OpenHarmony_ProviderGetForsInfo_0100';
+        it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0100';
             console.info(`${name} start`);
             formProvider.getFormsInfo(async (err, value) => {
                 console.info(`${name}` + "formProvider::GetFormsInfoTest err: " + JSON.stringify(err));
                 console.info(`${name}` + "formProvider::GetFormsInfoTest value: " + JSON.stringify(value));
-                expect(err).assertEqual(null);
-                expect(value.length).assertEqual(2);
-                checkResultArray(name, expectResult, value)
+                if (err === null) {
+                    expect(err).assertEqual(null);
+                    expect(value.length).assertEqual(2);
+                    checkResultArray(name, expectResult, value);
+                } else if (err.code === ERROR_CODE1) {
+                    expect(err.code).assertEqual(ERROR_CODE1);
+                } else if (err.code === ERROR_CODE2) {
+                    expect(err.code).assertEqual(ERROR_CODE2);
+                } else if (err.code === ERROR_CODE3) {
+                    expect(err.code).assertEqual(ERROR_CODE3);
+                } else if (err.code === ERROR_CODE4) {
+                    expect(err.code).assertEqual(ERROR_CODE4);
+                }
                 await sleep(2000);
                 done();
             });
-            console.info("SUB_AA_OpenHarmony_ProviderGetForsInfo_0100 end");
+            console.info("SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0100 end");
         });
 
         /**
-         * @tc.number    : SUB_AA_OpenHarmony_ProviderGetForsInfo_0200
-         * @tc.name      : testProviderGetForsInfo0200
-         * @tc.desc      : getFormsInfo(filter, undefined) # Have no idea how to test it.
-         * @tc.level     : Level 1
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0200
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0200
+         * @tc.desc   getFormsInfo(filter, undefined) # Have no idea how to test it.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
-        it('SUB_AA_OpenHarmony_ProviderGetForsInfo_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_AA_OpenHarmony_ProviderGetForsInfo_0200';
+        it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0200';
             console.info(`${name} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName : "module1"
@@ -149,15 +163,15 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_AA_OpenHarmony_ProviderGetForsInfo_0300
-         * @tc.name      : testProviderGetForsInfo0300
-         * @tc.desc      : getFormsInfo().
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0300
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0300
+         * @tc.desc   getFormsInfo().
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
-        it('SUB_AA_OpenHarmony_ProviderGetForsInfo_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_AA_OpenHarmony_ProviderGetForsInfo_0300';
+        it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0300';
             console.info(`${name} start`);
             formProvider.getFormsInfo().then( async (value) => {
                 console.info(`${name}` + "formProvider::GetFormsInfoTest value: " + JSON.stringify(value));
@@ -167,6 +181,15 @@ export default function abilityTest() {
                 done();
             }).catch((err: BusinessError) => {
                 console.error(`${name}  formProvider::GetFormsInfoTest failed err:${JSON.stringify(err)}`);
+                if (err.code === ERROR_CODE1) {
+                    expect(err.code).assertEqual(ERROR_CODE1);
+                } else if (err.code === ERROR_CODE2) {
+                    expect(err.code).assertEqual(ERROR_CODE2);
+                } else if (err.code === ERROR_CODE3) {
+                    expect(err.code).assertEqual(ERROR_CODE3);
+                } else if (err.code === ERROR_CODE4) {
+                    expect(err.code).assertEqual(ERROR_CODE4);
+                }
                 expect().assertFail();
                 done();
             })
@@ -174,15 +197,15 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_AA_OpenHarmony_ProviderGetForsInfo_0500
-         * @tc.name      : testProviderGetForsInfo0500
-         * @tc.desc      : getFormsInfo(filter, callback) where filter = {}.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0500
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0500
+         * @tc.desc   getFormsInfo(filter, callback) where filter = {}.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
-        it('SUB_AA_OpenHarmony_ProviderGetForsInfo_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_AA_OpenHarmony_ProviderGetForsInfo_0500';
+        it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0500';
             console.info(`${name} start`);;
             const filter : formInfo.FormInfoFilter = {};
             formProvider.getFormsInfo(filter, async (err, value) =>  {
@@ -198,15 +221,15 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_AA_OpenHarmony_ProviderGetForsInfo_0600
-         * @tc.name      : testProviderGetForsInfo0600
-         * @tc.desc      : getFormsInfo(filter, callback) where moduleName = "".
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0600
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0600
+         * @tc.desc   getFormsInfo(filter, callback) where moduleName = "".
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
-        it('SUB_AA_OpenHarmony_ProviderGetForsInfo_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_AA_OpenHarmony_ProviderGetForsInfo_0600';
+        it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0600';
             console.info(`${name} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: ""
@@ -224,15 +247,15 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_AA_OpenHarmony_ProviderGetForsInfo_0700
-         * @tc.name      : testProviderGetForsInfo0700
-         * @tc.desc      : getFormsInfo(filter, callback) where moduleName = undefined.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0700
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0700
+         * @tc.desc   getFormsInfo(filter, callback) where moduleName = undefined.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
-        it('SUB_AA_OpenHarmony_ProviderGetForsInfo_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_AA_OpenHarmony_ProviderGetForsInfo_0700';
+        it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0700';
             console.info(`${name} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: undefined
@@ -250,15 +273,15 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_AA_OpenHarmony_ProviderGetForsInfo_0800
-         * @tc.name      : testProviderGetForsInfo0800
-         * @tc.desc      : getFormsInfo(filter, callback) where moduleName = "HelloWorld" which doesn't exist.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0800
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0800
+         * @tc.desc   getFormsInfo(filter, callback) where moduleName = "HelloWorld" which doesn't exist.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
-        it('SUB_AA_OpenHarmony_ProviderGetForsInfo_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_AA_OpenHarmony_ProviderGetForsInfo_0800';
+        it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0800';
             console.info(`${name} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: "HelloWorld"
@@ -274,15 +297,15 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_AA_OpenHarmony_ProviderGetForsInfo_0900
-         * @tc.name      : testProviderGetForsInfo0900
-         * @tc.desc      : getFormsInfo(filter, callback) where moduleName = "module1" which does exist.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0900
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0900
+         * @tc.desc   getFormsInfo(filter, callback) where moduleName = "module1" which does exist.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
-        it('SUB_AA_OpenHarmony_ProviderGetForsInfo_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_AA_OpenHarmony_ProviderGetForsInfo_0900';
+        it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_0900';
             console.info(`${name} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: "module1"
@@ -298,15 +321,15 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_AA_OpenHarmony_ProviderGetForsInfo_1000
-         * @tc.name      : testProviderGetForsInfo1000
-         * @tc.desc      : getFormsInfo(filter, callback) where moduleName = "entry" exists but has no forms.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1000
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1000
+         * @tc.desc   getFormsInfo(filter, callback) where moduleName = "entry" exists but has no forms.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
-        it('SUB_AA_OpenHarmony_ProviderGetForsInfo_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_AA_OpenHarmony_ProviderGetForsInfo_1000';
+        it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1000';
             console.info(`${name} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: "entry"
@@ -325,15 +348,15 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_AA_OpenHarmony_ProviderGetForsInfo_1200
-         * @tc.name      : testProviderGetForsInfo1200
-         * @tc.desc      : getFormsInfo(filter) where filter = {}.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1200
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1200
+         * @tc.desc   getFormsInfo(filter) where filter = {}.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
-        it('SUB_AA_OpenHarmony_ProviderGetForsInfo_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_AA_OpenHarmony_ProviderGetForsInfo_1200';
+        it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1200';
             console.info(`${name} start`);
             const filter : formInfo.FormInfoFilter = {};
             let formProviderGetFormsInfo = async () => {
@@ -355,15 +378,15 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_AA_OpenHarmony_ProviderGetForsInfo_1300
-         * @tc.name      : testProviderGetForsInfo1300
-         * @tc.desc      : getFormsInfo(filter) where moduleName = "".
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1300
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1300
+         * @tc.desc   getFormsInfo(filter) where moduleName = "".
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
-        it('SUB_AA_OpenHarmony_ProviderGetForsInfo_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_AA_OpenHarmony_ProviderGetForsInfo_1300';
+        it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1300';
             console.info(`${name} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: ""
@@ -390,15 +413,15 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_AA_OpenHarmony_ProviderGetForsInfo_1400
-         * @tc.name      : testProviderGetForsInfo1400
-         * @tc.desc      : getFormsInfo(filter) where moduleName = undefined.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1400
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1400
+         * @tc.desc   getFormsInfo(filter) where moduleName = undefined.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
-        it('SUB_AA_OpenHarmony_ProviderGetForsInfo_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_AA_OpenHarmony_ProviderGetForsInfo_1400';
+        it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1400';
             console.info(`${name} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: undefined
@@ -418,15 +441,15 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_AA_OpenHarmony_ProviderGetForsInfo_1500
-         * @tc.name      : testProviderGetForsInfo1500
-         * @tc.desc      : getFormsInfo(filter) where moduleName = "HelloWorld" which doesn't exist.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1500
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1500
+         * @tc.desc   getFormsInfo(filter) where moduleName = "HelloWorld" which doesn't exist.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
-        it('SUB_AA_OpenHarmony_ProviderGetForsInfo_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_AA_OpenHarmony_ProviderGetForsInfo_1500';
+        it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1500';
             console.info(`${name} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: "HelloWorld"
@@ -447,16 +470,16 @@ export default function abilityTest() {
             
         });
 
-        /**checkResult 
-         * @tc.number    : SUB_AA_OpenHarmony_ProviderGetForsInfo_1600
-         * @tc.name      : testProviderGetForsInfo1600
-         * @tc.desc      : getFormsInfo(filter) where moduleName = "module1" which does exist.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+        /**
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1600
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1600
+         * @tc.desc   getFormsInfo(filter) where moduleName = "module1" which does exist.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
-        it('SUB_AA_OpenHarmony_ProviderGetForsInfo_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_AA_OpenHarmony_ProviderGetForsInfo_1600';
+        it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1600';
             console.info(`${name} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: "module1"
@@ -477,15 +500,15 @@ export default function abilityTest() {
         });
 
         /**
-         * @tc.number    : SUB_AA_OpenHarmony_ProviderGetForsInfo_1700
-         * @tc.name      : testProviderGetForsInfo1700
-         * @tc.desc      : getFormsInfo(filter) where moduleName = "entry" which exists but has no forms.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+         * @tc.name   SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1700
+         * @tc.number SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1700
+         * @tc.desc   getFormsInfo(filter) where moduleName = "entry" which exists but has no forms.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
-        it('SUB_AA_OpenHarmony_ProviderGetForsInfo_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_AA_OpenHarmony_ProviderGetForsInfo_1700';
+        it('SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let name: string = 'SUB_ABILITY_FORM_FWK_PROVIDER_GET_FORMS_INFO_1700';
             console.info(`${name} start`);
             const filter : formInfo.FormInfoFilter = {
                 moduleName: "entry"
@@ -504,16 +527,16 @@ export default function abilityTest() {
             console.info(`${name} end`);
         });
 		
-		/**
-         * @tc.number    : SUB_AA_OpenHarmony_FormStateInfo_0100
-         * @tc.name      : SUB_AA_OpenHarmony_FormStateInfo_0100
-         * @tc.desc      : formInfo.FormStateInfo covered test.
-         * @tc.level     : Level 3
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
+        /**
+         * @tc.name   SUB_ABILITY_FORM_FWK_FORM_STATE_INFO_0100
+         * @tc.number SUB_ABILITY_FORM_FWK_FORM_STATE_INFO_0100
+         * @tc.desc   formInfo.FormStateInfo covered test.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
-        it('SUB_AA_OpenHarmony_FormStateInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
-            let name: string = 'SUB_AA_OpenHarmony_FormStateInfo_0100';
+        it('SUB_ABILITY_FORM_FWK_FORM_STATE_INFO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            let name: string = 'SUB_ABILITY_FORM_FWK_FORM_STATE_INFO_0100';
             console.info(`${name} start`);
             let stateInfo: formInfo.FormStateInfo = module1FormStateInfo;
             expect(0).assertEqual(stateInfo.formState);
