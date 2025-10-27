@@ -5494,4 +5494,1989 @@ ani_int test_Object_Call_Method_Double_By_Name_25([[maybe_unused]] ani_env *env,
     ASSERT_EQ(env->Object_CallMethodByName_Double_A(object, "doubleMethod", "dd:d", nullptr, args), ANI_INVALID_ARGS);
     return ANI_TRUE;
 }
+
+ani_int test_Object_Call_Method_Double_By_Name_26([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object1)
+{
+    constexpr ani_double VAL1 = 2.0;
+    constexpr ani_double VAL2 = 3.0;
+    ani_object object {};
+    GetMethodDataDouble(env, &object);
+
+    ani_value args[2U];
+    args[0U].d = VAL1;
+    args[1U].d = VAL2;
+
+    ani_double res = 0.0;
+    const std::array<std::string_view, 4U> invalidMethodNames = {{"", "测试emoji🙂🙂", "\n\r\t", "\x01\x02\x03"}};
+
+    for (const auto &methodName : invalidMethodNames) {
+        ASSERT_EQ(env->Object_CallMethodByName_Double(object, methodName.data(), "dd:d", &res, VAL1, VAL2),
+                  ANI_NOT_FOUND);
+        ASSERT_EQ(env->Object_CallMethodByName_Double_A(object, methodName.data(), "dd:d", &res, args), ANI_NOT_FOUND);
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Double_By_Name_27([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object1)
+{
+    constexpr ani_double VAL1 = 2.0;
+    constexpr ani_double VAL2 = 3.0;
+    ani_object object {};
+    GetMethodDataDouble(env, &object);
+
+    ani_value args[2U];
+    args[0U].d = VAL1;
+    args[1U].d = VAL2;
+
+    ani_double res = 0.0;
+    const std::array<std::string_view, 4U> invalidMethodNames = {{"", "测试emoji🙂🙂", "\n\r\t", "\x01\x02\x03"}};
+
+    for (const auto &methodName : invalidMethodNames) {
+        ASSERT_EQ(env->Object_CallMethodByName_Double(object, methodName.data(), "", &res, VAL1, VAL2), ANI_NOT_FOUND);
+        ASSERT_EQ(env->Object_CallMethodByName_Double_A(object, methodName.data(), "", &res, args), ANI_NOT_FOUND);
+    }
+    return ANI_TRUE;
+}
+
+ani_int GetMethodDataFloat(ani_env *env, ani_object *objectResult)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameFloat.A", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_static_method newMethod {};
+    ASSERT_EQ(env->Class_FindStaticMethod(cls,
+                  "new_A", ":C{entry.src.main.src.ets.ObjectOperationsMethodByNameFloat.A}", &newMethod),
+        ANI_OK);
+    ani_ref ref {};
+    ASSERT_EQ(env->Class_CallStaticMethod_Ref(cls, newMethod, &ref), ANI_OK);
+
+    *objectResult = static_cast<ani_object>(ref);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_float VAL1 = 2.0F;
+    constexpr ani_float VAL2 = 3.0F;
+    ani_object object {};
+    GetMethodDataFloat(env, &object);
+
+    ani_value args[2U];
+    args[0U].f = VAL1;
+    args[1U].f = VAL2;
+    ani_float sum = 0.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(object, "floatMethod", "ff:f", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_float VAL1 = 2.0F;
+    constexpr ani_float VAL2 = 3.0F;
+    ani_object object {};
+    GetMethodDataFloat(env, &object);
+
+    ani_value args[2U];
+    args[0U].f = VAL1;
+    args[1U].f = VAL2;
+    ani_float sum = 0.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(object, "floatMethod", nullptr, &sum, args), ANI_OK);
+    ASSERT_EQ(sum, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_float VAL1 = 2.0F;
+    constexpr ani_float VAL2 = 3.0F;
+    ani_object object {};
+    GetMethodDataFloat(env, &object);
+
+    ani_value args[2U];
+    args[0U].f = VAL1;
+    args[1U].f = VAL2;
+    ani_float sum = 0.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(object, "xxxxxxxxx", "ff:f", &sum, args), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(object, "floatMethod", "ff:i", &sum, args), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_float VAL1 = 2.0F;
+    constexpr ani_float VAL2 = 3.0F;
+    ani_value args[2U];
+    args[0U].f = VAL1;
+    args[1U].f = VAL2;
+    ani_float sum = 0.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(nullptr, "floatMethod", "ff:f", &sum, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_float VAL1 = 2.0F;
+    constexpr ani_float VAL2 = 3.0F;
+    ani_object object {};
+    GetMethodDataFloat(env, &object);
+
+    ani_value args[2U];
+    args[0U].f = VAL1;
+    args[1U].f = VAL2;
+    ani_float sum = 0.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(object, nullptr, "ff:f", &sum, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_float VAL1 = 2.0F;
+    constexpr ani_float VAL2 = 3.0F;
+    ani_object object {};
+    GetMethodDataFloat(env, &object);
+
+    ani_value args[2U];
+    args[0U].f = VAL1;
+    args[1U].f = VAL2;
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(object, "floatMethod", "ff:f", nullptr, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    ani_object object {};
+    GetMethodDataFloat(env, &object);
+
+    ani_float sum = 0.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(object, "floatMethod", "ff:f", &sum, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_float VAL1 = 2.0F;
+    constexpr ani_float VAL2 = 3.0F;
+    ani_object object {};
+    GetMethodDataFloat(env, &object);
+
+    ani_float sum = 0.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(object, "floatMethod", "ff:f", &sum, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(sum, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_float VAL1 = 2.0F;
+    constexpr ani_float VAL2 = 3.0F;
+    ani_object object {};
+    GetMethodDataFloat(env, &object);
+
+    ani_float sum = 0.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(object, "floatMethod", nullptr, &sum, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(sum, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_float VAL1 = 2.0F;
+    constexpr ani_float VAL2 = 3.0F;
+    ani_object object {};
+    GetMethodDataFloat(env, &object);
+
+    ani_float sum = 0.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(object, "xxxxxxxxxx", "ff:f", &sum, VAL1, VAL2), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Object_CallMethodByName_Float(object, "floatMethod", "ff:i", &sum, VAL1, VAL2), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_float VAL1 = 2.0F;
+    constexpr ani_float VAL2 = 3.0F;
+    ani_float sum = 0.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(nullptr, "floatMethod", "ff:f", &sum, VAL1, VAL2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_float VAL1 = 2.0F;
+    constexpr ani_float VAL2 = 3.0F;
+    ani_object object {};
+    GetMethodDataFloat(env, &object);
+
+    ani_float sum = 0.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(object, nullptr, "ff:f", &sum, VAL1, VAL2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_13([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_float VAL1 = 2.0F;
+    constexpr ani_float VAL2 = 3.0F;
+    ani_object object {};
+    GetMethodDataFloat(env, &object);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Float(object, "floatMethod", "ff:f", nullptr, VAL1, VAL2),
+              ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_14([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    constexpr ani_float VAL1 = 2.0F;
+    constexpr ani_float VAL2 = 3.0F;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameFloat.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "f:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_float arg = 100.0F;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_float sum = 0.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "floatMethod", "ff:f", &sum, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(sum, arg);
+
+    ani_value args[2U];
+    args[0U].f = VAL1;
+    args[1U].f = VAL2;
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(obj, "floatMethod", "ff:f", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, arg);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_15([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameFloat.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "f:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_float arg = 100.0F;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_float sum = 0.0F;
+    const ani_float value = 5.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "floatMethod", "f:f", &sum, value), ANI_OK);
+    ASSERT_EQ(sum, arg);
+
+    ani_value args[1U];
+    args[0U].f = value;
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(obj, "floatMethod", "f:f", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, arg);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_16([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameFloat.C", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "f:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_float arg = 100.0F;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_float sum = 0.0F;
+    const ani_float value1 = 5.0F;
+    const ani_float value2 = 8.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "floatAddMethod", "ff:f", &sum, value1, value2), ANI_OK);
+    ASSERT_EQ(sum, arg + value1 + value2);
+
+    ani_value args[2U];
+    args[0U].f = value1;
+    args[1U].f = value2;
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(obj, "floatAddMethod", "ff:f", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, arg + value1 + value2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_17([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameFloat.C", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "f:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_float arg = 100.0F;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_float sum = 0.0F;
+    const ani_float value1 = 5.0F;
+    const ani_float value2 = 8.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "floatMethod", "ff:f", &sum, value1, value2), ANI_OK);
+    ASSERT_EQ(sum, arg - value1 - value2);
+
+    ani_value args[2U];
+    args[0U].f = value1;
+    args[1U].f = value2;
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(obj, "floatMethod", "ff:f", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, arg - value1 - value2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_18([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameFloat.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "f:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_float arg = 100.0F;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_float num = 0.0F;
+    const ani_float value = 5.0F;
+    ani_value args[1U];
+    args[0U].f = value;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "protectedMethod", "f:f", &num, value), ANI_OK);
+    ASSERT_EQ(num, arg + value);
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(obj, "protectedMethod", "f:f", &num, args), ANI_OK);
+    ASSERT_EQ(num, arg + value);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "privateMethod", "f:f", &num, value), ANI_OK);
+    ASSERT_EQ(num, arg - value);
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(obj, "privateMethod", "f:f", &num, args), ANI_OK);
+    ASSERT_EQ(num, arg - value);
+
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameFloat.C", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "f:", &method), ANI_OK);
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "callProtected", "f:f", &num, value), ANI_OK);
+    ASSERT_EQ(num, arg + value);
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(obj, "callProtected", "f:f", &num, args), ANI_OK);
+    ASSERT_EQ(num, arg + value);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_19([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameFloat.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "f:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_float arg = 6.0F;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_float sum = 0.0F;
+    const ani_float value = 5.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "nestedMethod", "f:f", &sum, value), ANI_OK);
+    ASSERT_EQ(sum, arg + value);
+
+    ani_value args[1U];
+    args[0U].f = value;
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(obj, "nestedMethod", "f:f", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, arg + value);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_20([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameFloat.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "f:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_float arg = 6.0F;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_float sum = 0.0F;
+    const ani_int value1 = 5;
+    const ani_float result = 120.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "recursiveMethod", "i:f", &sum, value1), ANI_OK);
+    ASSERT_EQ(sum, result);
+
+    ani_value args[1U];
+    args[0U].i = value1;
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(obj, "recursiveMethod", "i:f", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, result);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_21([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameFloat.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "f:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_float arg = 60.0F;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_float sum = 0.0F;
+    const ani_float value1 = 10.0F;
+    const ani_char value2 = 'A';
+    const ani_int value3 = 1;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "calculateSum", "fci:f", &sum, value1, value2, value3), ANI_OK);
+    ASSERT_EQ(sum, arg - value1);
+
+    const ani_char value4 = 'B';
+    ani_value args[3U];
+    args[0U].f = value1;
+    args[1U].c = value4;
+    args[2U].i = value3;
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(obj, "calculateSum", "fci:f", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, value1);
+
+    const ani_int value5 = 2U;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "calculateSum", "fci:f", &sum, value1, value4, value5), ANI_OK);
+    ASSERT_EQ(sum, arg + value1);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_22([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameFloat.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "f:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_float arg = 15.0F;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_float sum = 0.0F;
+    const ani_float value1 = 5.0F;
+    const ani_float value2 = 6.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "floatMethod", "ff:f", &sum, value1, value2), ANI_OK);
+    ASSERT_EQ(sum, arg);
+
+    const ani_float value3 = 7.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "floatMethod", "ff:f", &sum, value1, value3), ANI_OK);
+    ASSERT_EQ(sum, arg);
+
+    const ani_float value4 = 3.0F;
+    ani_value args[2U];
+    args[0U].f = value1;
+    args[1U].f = value4;
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(obj, "floatMethod", "ff:f", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, arg);
+
+    const ani_float value5 = 10.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "floatMethod", "ff:f", &sum, value1, value5), ANI_OK);
+    ASSERT_EQ(sum, value1 + value5);
+
+    const ani_float value6 = 12.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "floatMethod", "ff:f", &sum, value1, value6), ANI_OK);
+    ASSERT_EQ(sum, value1 + value6);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_23([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameFloat.C", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "f:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_float arg = 10.0F;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_float sum = 0.0F;
+    const ani_float value = 2.0F;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "jf", "f:f", &sum, value), ANI_OK);
+    ASSERT_EQ(sum, arg + value);
+
+    ani_value args[1U];
+    args[0U].f = value;
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(obj, "jf", "f:f", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, arg + value);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_24([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object obj {};
+    GetMethodDataFloat(env, &obj);
+
+    ani_float sum = 0.0F;
+    const ani_float value1 = std::numeric_limits<ani_float>::max();
+    const ani_float value2 = 0.0F;
+    ani_value args1[2U];
+    args1[0U].f = value1;
+    args1[1U].f = value2;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "floatMethod", "ff:f", &sum, value1, value2), ANI_OK);
+    ASSERT_EQ(sum, value1 + value2);
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(obj, "floatMethod", "ff:f", &sum, args1), ANI_OK);
+    ASSERT_EQ(sum, value1 + value2);
+
+    const ani_float value3 = std::numeric_limits<ani_float>::min();
+    ani_value args2[2U];
+    args2[0U].f = value3;
+    args2[1U].f = value2;
+    ASSERT_EQ(env->Object_CallMethodByName_Float(obj, "floatMethod", "ff:f", &sum, value3, value2), ANI_OK);
+    ASSERT_EQ(sum, value3 + value2);
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(obj, "floatMethod", "ff:f", &sum, args2), ANI_OK);
+    ASSERT_EQ(sum, value3 + value2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_25([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_float VAL1 = 2.0F;
+    constexpr ani_float VAL2 = 3.0F;
+    ani_object object {};
+    GetMethodDataFloat(env, &object);
+
+    ani_value args[2U];
+    args[0U].f = VAL1;
+    args[1U].f = VAL2;
+
+    ani_float res = 0.0F;
+    ASSERT_EQ(env->c_api->Object_CallMethodByName_Float(nullptr, object, "floatMethod", "ff:f", &res, VAL1, VAL2),
+              ANI_INVALID_ARGS);
+    ASSERT_EQ(env->c_api->Object_CallMethodByName_Float_A(nullptr, object, "floatMethod", "ff:f", &res, args),
+              ANI_INVALID_ARGS);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Float(nullptr, "floatMethod", "ff:f", &res, VAL1, VAL2), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(nullptr, "floatMethod", "ff:f", &res, args), ANI_INVALID_ARGS);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Float(object, nullptr, "ff:f", &res, VAL1, VAL2), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(object, nullptr, "ff:f", &res, args), ANI_INVALID_ARGS);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Float(object, "floatMethod", nullptr, &res, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(object, "floatMethod", nullptr, &res, args), ANI_OK);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Float(object, "floatMethod", "ff:f", nullptr, VAL1, VAL2),
+              ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Object_CallMethodByName_Float_A(object, "floatMethod", "ff:f", nullptr, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_26([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_float VAL1 = 2.0F;
+    constexpr ani_float VAL2 = 3.0F;
+    ani_object object {};
+    GetMethodDataFloat(env, &object);
+
+    ani_value args[2U];
+    args[0U].f = VAL1;
+    args[1U].f = VAL2;
+
+    ani_float res = 0.0F;
+    const std::array<std::string_view, 4U> invalidMethodNames = {{"", "测试emoji🙂🙂", "\n\r\t", "\x01\x02\x03"}};
+
+    for (const auto &methodName : invalidMethodNames) {
+        ASSERT_EQ(env->Object_CallMethodByName_Float(object, methodName.data(), "ff:f", &res, VAL1, VAL2),
+                  ANI_NOT_FOUND);
+        ASSERT_EQ(env->Object_CallMethodByName_Float_A(object, methodName.data(), "ff:f", &res, args), ANI_NOT_FOUND);
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Float_By_Name_27([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_float VAL1 = 2.0F;
+    constexpr ani_float VAL2 = 3.0F;
+    ani_object object {};
+    GetMethodDataFloat(env, &object);
+
+    ani_value args[2U];
+    args[0U].f = VAL1;
+    args[1U].f = VAL2;
+
+    ani_float res = 0.0F;
+    const std::array<std::string_view, 4U> invalidMethodNames = {{"", "测试emoji🙂🙂", "\n\r\t", "\x01\x02\x03"}};
+
+    for (const auto &methodName : invalidMethodNames) {
+        ASSERT_EQ(env->Object_CallMethodByName_Float(object, "floatMethod", methodName.data(), &res, VAL1, VAL2),
+                  ANI_NOT_FOUND);
+        ASSERT_EQ(env->Object_CallMethodByName_Float_A(object, "floatMethod", methodName.data(), &res, args),
+                  ANI_NOT_FOUND);
+    }
+    return ANI_TRUE;
+}
+
+ani_int GetMethodDataInt(ani_env *env, ani_object *objectResult)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameInt.A", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_static_method newMethod {};
+    ASSERT_EQ(env->Class_FindStaticMethod(cls,
+                  "new_A", ":C{entry.src.main.src.ets.ObjectOperationsMethodByNameInt.A}", &newMethod),
+              ANI_OK);
+    ani_ref ref {};
+    ASSERT_EQ(env->Class_CallStaticMethod_Ref(cls, newMethod, &ref), ANI_OK);
+    *objectResult = static_cast<ani_object>(ref);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_int VAL1 = 5;
+    constexpr ani_int VAL2 = 6;
+    ani_object object {};
+    GetMethodDataInt(env, &object);
+
+    ani_value args[2U];
+    args[0U].i = VAL1;
+    args[1U].i = VAL2;
+
+    ani_int res = 0;
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(object, "intByNameMethod", "ii:i", &res, args), ANI_OK);
+    ASSERT_EQ(res, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_int VAL1 = 5;
+    constexpr ani_int VAL2 = 6;
+    ani_object object {};
+    GetMethodDataInt(env, &object);
+
+    ani_int res = 0;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(object, "intByNameMethod", "ii:i", &res, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(res, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_int VAL1 = 5;
+    constexpr ani_int VAL2 = 6;
+    ani_object object {};
+    GetMethodDataInt(env, &object);
+
+    ani_int res = 0;
+    ASSERT_EQ(env->c_api->Object_CallMethodByName_Int(env, object, "intByNameMethod", "ii:i", &res, VAL1, VAL2),
+              ANI_OK);
+    ASSERT_EQ(res, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_int VAL1 = 5;
+    constexpr ani_int VAL2 = 6;
+    ani_object object {};
+    GetMethodDataInt(env, &object);
+
+    ani_int res = 0;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(object, "intByNameMethod", "ii:x", &res, VAL1, VAL2), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Object_CallMethodByName_Int(object, "unknown_function", "ii:i", &res, VAL1, VAL2), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_int VAL1 = 5;
+    constexpr ani_int VAL2 = 6;
+    ani_object object {};
+    GetMethodDataInt(env, &object);
+
+    ani_int res = 0;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(object, nullptr, "ii:i", &res, VAL1, VAL2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_int VAL1 = 5;
+    constexpr ani_int VAL2 = 6;
+    ani_object object {};
+    GetMethodDataInt(env, &object);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Int(object, "intByNameMethod", "ii:i", nullptr, VAL1, VAL2),
+              ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_int VAL1 = 5;
+    constexpr ani_int VAL2 = 6;
+    ani_object object {};
+    GetMethodDataInt(env, &object);
+
+    ani_int res = 0;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(nullptr, "intByNameMethod", "ii:i", &res, VAL1, VAL2),
+              ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    ani_object object {};
+    GetMethodDataInt(env, &object);
+
+    ani_int res = 0;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(nullptr, "intByNameMethod", "ii:i", &res, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    constexpr ani_int VAL1 = 5;
+    constexpr ani_int VAL2 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameInt.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "i:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_int arg = 100;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_int sum = 0;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "intMethod", "ii:i", &sum, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(sum, arg);
+
+    ani_value args[2U];
+    args[0U].i = VAL1;
+    args[1U].i = VAL2;
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(obj, "intMethod", "ii:i", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, arg);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameInt.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "i:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_int arg = 100;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_int sum = 0;
+    const ani_int value = 5;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "intMethod", "i:i", &sum, value), ANI_OK);
+    ASSERT_EQ(sum, arg);
+
+    ani_value args[1U];
+    args[0U].i = value;
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(obj, "intMethod", "i:i", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, arg);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    constexpr ani_int VAL1 = 5;
+    constexpr ani_int VAL2 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameInt.C", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "i:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_int arg = 100;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_int sum = 0;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "intAddMethod", "ii:i", &sum, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(sum, arg + VAL1 + VAL2);
+
+    ani_value args[2U];
+    args[0U].i = VAL1;
+    args[1U].i = VAL2;
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(obj, "intAddMethod", "ii:i", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, arg + VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    constexpr ani_int VAL1 = 5;
+    constexpr ani_int VAL2 = 6;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameInt.C", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "i:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_int arg = 100;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_int sum = 0;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "intMethod", "ii:i", &sum, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(sum, arg - VAL1 - VAL2);
+
+    ani_value args[2U];
+    args[0U].i = VAL1;
+    args[1U].i = VAL2;
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(obj, "intMethod", "ii:i", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, arg - VAL1 - VAL2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_13([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameInt.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "i:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_int arg = 100;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_int num = 0;
+    const ani_int value = 5;
+    ani_value args[1U];
+    args[0U].i = value;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "protectedMethod", "i:i", &num, value), ANI_OK);
+    ASSERT_EQ(num, arg + value);
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(obj, "protectedMethod", "i:i", &num, args), ANI_OK);
+    ASSERT_EQ(num, arg + value);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "privateMethod", "i:i", &num, value), ANI_OK);
+    ASSERT_EQ(num, arg - value);
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(obj, "privateMethod", "i:i", &num, args), ANI_OK);
+    ASSERT_EQ(num, arg - value);
+
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameInt.C", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "i:", &method), ANI_OK);
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "callProtected", "i:i", &num, value), ANI_OK);
+    ASSERT_EQ(num, arg + value);
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(obj, "callProtected", "i:i", &num, args), ANI_OK);
+    ASSERT_EQ(num, arg + value);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_14([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameInt.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "i:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_int arg = 6;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_int sum = 0;
+    const ani_int value = 5;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "nestedMethod", "i:i", &sum, value), ANI_OK);
+    ASSERT_EQ(sum, arg + value);
+
+    ani_value args[1U];
+    args[0U].i = value;
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(obj, "nestedMethod", "i:i", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, arg + value);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_15([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameInt.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "i:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_int arg = 6;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_int sum = 0;
+    const ani_int value1 = 5;
+    const ani_int result = 120;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "recursiveMethod", "i:i", &sum, value1), ANI_OK);
+    ASSERT_EQ(sum, result);
+
+    ani_value args[1U];
+    args[0U].i = value1;
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(obj, "recursiveMethod", "i:i", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, result);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_16([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameInt.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "i:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_int arg = 6;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_int sum = 0;
+    const ani_int value1 = 1;
+    const ani_char value2 = 'A';
+    const ani_double value3 = 1.0;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "calculateSum", "icd:i", &sum, value1, value2, value3), ANI_OK);
+    ASSERT_EQ(sum, arg - value1);
+
+    const ani_char value4 = 'B';
+    ani_value args[3U];
+    args[0U].i = value1;
+    args[1U].c = value4;
+    args[2U].d = value3;
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(obj, "calculateSum", "icd:i", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, value1);
+
+    const ani_double value5 = 2U;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "calculateSum", "icd:i", &sum, value1, value4, value5), ANI_OK);
+    ASSERT_EQ(sum, arg + value1);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_17([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameInt.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "i:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_int arg = 15;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_int sum = 0;
+    const ani_int value1 = 5;
+    const ani_int value2 = 6;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "intMethod", "ii:i", &sum, value1, value2), ANI_OK);
+    ASSERT_EQ(sum, arg);
+
+    const ani_int value3 = 7;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "intMethod", "ii:i", &sum, value1, value3), ANI_OK);
+    ASSERT_EQ(sum, arg);
+
+    const ani_int value4 = 3;
+    ani_value args[2U];
+    args[0U].i = value1;
+    args[1U].i = value4;
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(obj, "intMethod", "ii:i", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, arg);
+
+    const ani_int value5 = 10;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "intMethod", "ii:i", &sum, value1, value5), ANI_OK);
+    ASSERT_EQ(sum, value1 + value5);
+
+    const ani_int value6 = 12;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "intMethod", "ii:i", &sum, value1, value6), ANI_OK);
+    ASSERT_EQ(sum, value1 + value6);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_18([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameInt.C", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "i:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_int arg = 10;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_int sum = 0;
+    const ani_int value = 2;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "jf", "i:i", &sum, value), ANI_OK);
+    ASSERT_EQ(sum, arg + value);
+
+    ani_value args[1U];
+    args[0U].i = value;
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(obj, "jf", "i:i", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, arg + value);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_19([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object obj {};
+    GetMethodDataInt(env, &obj);
+
+    ani_int sum = 0;
+    const ani_int value1 = std::numeric_limits<ani_int>::max();
+    const ani_int value2 = 0;
+    ani_value args1[2U];
+    args1[0U].i = value1;
+    args1[1U].i = value2;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "intByNameMethod", "ii:i", &sum, value1, value2), ANI_OK);
+    ASSERT_EQ(sum, value1 + value2);
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(obj, "intByNameMethod", "ii:i", &sum, args1), ANI_OK);
+    ASSERT_EQ(sum, value1 + value2);
+
+    const ani_int value3 = std::numeric_limits<ani_int>::min();
+    ani_value args2[2U];
+    args2[0U].i = value3;
+    args2[1U].i = value2;
+    ASSERT_EQ(env->Object_CallMethodByName_Int(obj, "intByNameMethod", "ii:i", &sum, value3, value2), ANI_OK);
+    ASSERT_EQ(sum, value3 + value2);
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(obj, "intByNameMethod", "ii:i", &sum, args2), ANI_OK);
+    ASSERT_EQ(sum, value3 + value2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_20([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_int VAL1 = 5;
+    constexpr ani_int VAL2 = 6;
+    ani_object object {};
+    GetMethodDataInt(env, &object);
+
+    ani_value args[2U];
+    args[0U].i = VAL1;
+    args[1U].i = VAL2;
+
+    ani_int res = 0;
+    ASSERT_EQ(env->c_api->Object_CallMethodByName_Int(nullptr, object, "intByNameMethod", "ii:i", &res, VAL1, VAL2),
+              ANI_INVALID_ARGS);
+    ASSERT_EQ(env->c_api->Object_CallMethodByName_Int_A(nullptr, object, "intByNameMethod", "ii:i", &res, args),
+              ANI_INVALID_ARGS);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Int(nullptr, "intByNameMethod", "ii:i", &res, VAL1, VAL2),
+              ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(nullptr, "intByNameMethod", "ii:i", &res, args), ANI_INVALID_ARGS);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Int(object, nullptr, "ii:i", &res, VAL1, VAL2), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(object, nullptr, "ii:i", &res, args), ANI_INVALID_ARGS);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Int(object, "intByNameMethod", nullptr, &res, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(object, "intByNameMethod", nullptr, &res, args), ANI_OK);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Int(object, "intByNameMethod", "ii:i", nullptr, VAL1, VAL2),
+              ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Object_CallMethodByName_Int_A(object, "intByNameMethod", "ii:i", nullptr, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_21([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_int VAL1 = 5;
+    constexpr ani_int VAL2 = 6;
+    ani_object object {};
+    GetMethodDataInt(env, &object);
+
+    ani_value args[2U];
+    args[0U].i = VAL1;
+    args[1U].i = VAL2;
+
+    ani_int res = 0;
+    const std::array<std::string_view, 4U> invalidMethodNames = {{"", "测试emoji🙂🙂", "\n\r\t", "\x01\x02\x03"}};
+
+    for (const auto &methodName : invalidMethodNames) {
+        ASSERT_EQ(env->Object_CallMethodByName_Int(object, methodName.data(), "ii:i", &res, VAL1, VAL2),
+                  ANI_NOT_FOUND);
+        ASSERT_EQ(env->Object_CallMethodByName_Int_A(object, methodName.data(), "ii:i", &res, args), ANI_NOT_FOUND);
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Int_By_Name_22([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_int VAL1 = 5;
+    constexpr ani_int VAL2 = 6;
+    ani_object object {};
+    GetMethodDataInt(env, &object);
+
+    ani_value args[2U];
+    args[0U].i = VAL1;
+    args[1U].i = VAL2;
+
+    ani_int res = 0;
+    const std::array<std::string_view, 4U> invalidMethodNames = {{"", "测试emoji🙂🙂", "\n\r\t", "\x01\x02\x03"}};
+
+    for (const auto &methodName : invalidMethodNames) {
+        ASSERT_EQ(env->Object_CallMethodByName_Int(object, "intByNameMethod", methodName.data(), &res, VAL1, VAL2),
+                  ANI_NOT_FOUND);
+        ASSERT_EQ(env->Object_CallMethodByName_Int_A(object, "intByNameMethod", methodName.data(), &res, args),
+                  ANI_NOT_FOUND);
+    }
+    return ANI_TRUE;
+}
+
+ani_int GetMethodDataLong(ani_env *env, ani_object *objectResult)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameLong.A", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_static_method newMethod {};
+    ASSERT_EQ(env->Class_FindStaticMethod(cls,
+                  "new_A", ":C{entry.src.main.src.ets.ObjectOperationsMethodByNameLong.A}", &newMethod),
+        ANI_OK);
+    ani_ref ref {};
+    ASSERT_EQ(env->Class_CallStaticMethod_Ref(cls, newMethod, &ref), ANI_OK);
+
+    *objectResult = static_cast<ani_object>(ref);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_long VAL1 = 5000;
+    constexpr ani_long VAL2 = 6000;
+    ani_object object {};
+    GetMethodDataLong(env, &object);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+    ani_long sum {};
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(object, "longMethod", "ll:l", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_long VAL1 = 5000;
+    constexpr ani_long VAL2 = 6000;
+    ani_object object {};
+    GetMethodDataLong(env, &object);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+    ani_long sum {};
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(object, "longMethod", nullptr, &sum, args), ANI_OK);
+    ASSERT_EQ(sum, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_long VAL1 = 5000;
+    constexpr ani_long VAL2 = 6000;
+    ani_object object {};
+    GetMethodDataLong(env, &object);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+    ani_long sum {};
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(object, "xxxxxxxxxx", "ll:l", &sum, args), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(object, "longMethod", "ll:i", &sum, args), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_long VAL1 = 5000;
+    constexpr ani_long VAL2 = 6000;
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+    ani_long sum {};
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(nullptr, "longMethod", "ll:l", &sum, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_long VAL1 = 5000;
+    constexpr ani_long VAL2 = 6000;
+    ani_object object {};
+    GetMethodDataLong(env, &object);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+    ani_long sum {};
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(object, nullptr, "ll:l", &sum, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_long VAL1 = 5000;
+    constexpr ani_long VAL2 = 6000;
+    ani_object object {};
+    GetMethodDataLong(env, &object);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(object, "longMethod", "ll:l", nullptr, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    ani_object object {};
+    GetMethodDataLong(env, &object);
+
+    ani_long sum {};
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(object, "longMethod", "ll:l", &sum, nullptr), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_long VAL1 = 5000;
+    constexpr ani_long VAL2 = 6000;
+    ani_object object {};
+    GetMethodDataLong(env, &object);
+
+    ani_long sum {};
+    ASSERT_EQ(env->Object_CallMethodByName_Long(object, "longMethod", "ll:l", &sum, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(sum, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_long VAL1 = 5000;
+    constexpr ani_long VAL2 = 6000;
+    ani_object object {};
+    GetMethodDataLong(env, &object);
+
+    ani_long sum {};
+    ASSERT_EQ(env->Object_CallMethodByName_Long(object, "longMethod", nullptr, &sum, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(sum, VAL1 + VAL2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_long VAL1 = 5000;
+    constexpr ani_long VAL2 = 6000;
+    ani_object object {};
+    GetMethodDataLong(env, &object);
+
+    ani_long sum {};
+    ASSERT_EQ(env->Object_CallMethodByName_Long(object, "XXXXXXX", "ll:l", &sum, VAL1, VAL2), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Object_CallMethodByName_Long(object, "longMethod", "ll:i", &sum, VAL1, VAL2), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_long VAL1 = 5000;
+    constexpr ani_long VAL2 = 6000;
+    ani_long sum {};
+    ASSERT_EQ(env->Object_CallMethodByName_Long(nullptr, "longMethod", "ll:l", &sum, VAL1, VAL2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_long VAL1 = 5000;
+    constexpr ani_long VAL2 = 6000;
+    ani_object object {};
+    GetMethodDataLong(env, &object);
+
+    ani_long sum {};
+    ASSERT_EQ(env->Object_CallMethodByName_Long(object, nullptr, "ll:l", &sum, VAL1, VAL2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_13([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_long VAL1 = 5000;
+    constexpr ani_long VAL2 = 6000;
+    ani_object object {};
+    GetMethodDataLong(env, &object);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Long(object, "longMethod", "ll:l", nullptr, VAL1, VAL2), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_14([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    constexpr ani_long VAL0 = 1000000;
+    constexpr ani_long VAL1 = 5000;
+    constexpr ani_long VAL2 = 6000;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameLong.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "l:", &method), ANI_OK);
+
+    ani_object obj {};
+    ASSERT_EQ(env->Object_New(cls, method, &obj, VAL0), ANI_OK);
+
+    ani_long sum {};
+    ASSERT_EQ(env->Object_CallMethodByName_Long(obj, "longMethod", "ll:l", &sum, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(sum, VAL0);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(obj, "longMethod", "ll:l", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, VAL0);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_15([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    constexpr ani_long VAL0 = 1000000;
+    constexpr ani_long VAL1 = 5000;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameLong.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "l:", &method), ANI_OK);
+
+    ani_object obj {};
+    ASSERT_EQ(env->Object_New(cls, method, &obj, VAL0), ANI_OK);
+
+    ani_long sum {};
+    ASSERT_EQ(env->Object_CallMethodByName_Long(obj, "longMethod", "l:l", &sum, VAL1), ANI_OK);
+    ASSERT_EQ(sum, VAL0);
+
+    ani_value args[1U];
+    args[0U].l = VAL1;
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(obj, "longMethod", "l:l", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, VAL0);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_16([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    constexpr ani_long VAL0 = 1000000;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameLong.C", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "l:", &method), ANI_OK);
+
+    ani_object obj {};
+    ASSERT_EQ(env->Object_New(cls, method, &obj, VAL0), ANI_OK);
+
+    ani_long sum {};
+    const ani_long value1 = 50000;
+    const ani_long value2 = 80000;
+    ASSERT_EQ(env->Object_CallMethodByName_Long(obj, "longAddMethod", "ll:l", &sum, value1, value2), ANI_OK);
+    ASSERT_EQ(sum, VAL0 + value1 + value2);
+
+    ani_value args[2U];
+    args[0U].l = value1;
+    args[1U].l = value2;
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(obj, "longAddMethod", "ll:l", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, VAL0 + value1 + value2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_17([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    constexpr ani_long VAL0 = 1000000;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameLong.C", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "l:", &method), ANI_OK);
+
+    ani_object obj {};
+    ASSERT_EQ(env->Object_New(cls, method, &obj, VAL0), ANI_OK);
+
+    ani_long sum {};
+    const ani_long value1 = 50000;
+    const ani_long value2 = 80000;
+    ASSERT_EQ(env->Object_CallMethodByName_Long(obj, "longMethod", "ll:l", &sum, value1, value2), ANI_OK);
+    ASSERT_EQ(sum, VAL0 - value1 - value2);
+
+    ani_value args[2U];
+    args[0U].l = value1;
+    args[1U].l = value2;
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(obj, "longMethod", "ll:l", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, VAL0 - value1 - value2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_18([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    constexpr ani_long VAL0 = 1000000;
+    constexpr ani_long VAL1 = 5000;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameLong.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "l:", &method), ANI_OK);
+
+    ani_object obj {};
+    ASSERT_EQ(env->Object_New(cls, method, &obj, VAL0), ANI_OK);
+
+    ani_long num {};
+    ani_value args[1U];
+    args[0U].l = VAL1;
+    ASSERT_EQ(env->Object_CallMethodByName_Long(obj, "protectedMethod", "l:l", &num, VAL1), ANI_OK);
+    ASSERT_EQ(num, VAL0 + VAL1);
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(obj, "protectedMethod", "l:l", &num, args), ANI_OK);
+    ASSERT_EQ(num, VAL0 + VAL1);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Long(obj, "privateMethod", "l:l", &num, VAL1), ANI_OK);
+    ASSERT_EQ(num, VAL0 - VAL1);
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(obj, "privateMethod", "l:l", &num, args), ANI_OK);
+    ASSERT_EQ(num, VAL0 - VAL1);
+
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameLong.C", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "l:", &method), ANI_OK);
+    ASSERT_EQ(env->Object_New(cls, method, &obj, VAL0), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Long(obj, "callProtected", "l:l", &num, VAL1), ANI_OK);
+    ASSERT_EQ(num, VAL0 + VAL1);
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(obj, "callProtected", "l:l", &num, args), ANI_OK);
+    ASSERT_EQ(num, VAL0 + VAL1);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_19([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    constexpr ani_long VAL1 = 5000;
+    constexpr ani_long VAL2 = 6000;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameLong.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "l:", &method), ANI_OK);
+
+    ani_object obj {};
+    ASSERT_EQ(env->Object_New(cls, method, &obj, VAL2), ANI_OK);
+
+    ani_long sum {};
+    ASSERT_EQ(env->Object_CallMethodByName_Long(obj, "nestedMethod", "l:l", &sum, VAL1), ANI_OK);
+    ASSERT_EQ(sum, VAL2 + VAL1);
+
+    ani_value args[1U];
+    args[0U].l = VAL1;
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(obj, "nestedMethod", "l:l", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, VAL2 + VAL1);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_20([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    constexpr ani_long VAL2 = 6000;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameLong.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "l:", &method), ANI_OK);
+
+    ani_object obj {};
+    ASSERT_EQ(env->Object_New(cls, method, &obj, VAL2), ANI_OK);
+
+    ani_long sum {};
+    const ani_int value1 = 5;
+    const ani_long result = 120;
+    ASSERT_EQ(env->Object_CallMethodByName_Long(obj, "recursiveMethod", "i:l", &sum, value1), ANI_OK);
+    ASSERT_EQ(sum, result);
+
+    ani_value args[1U];
+    args[0U].i = value1;
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(obj, "recursiveMethod", "i:l", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, result);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_21([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    constexpr ani_long VAL2 = 6000;
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameLong.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "l:", &method), ANI_OK);
+
+    ani_object obj {};
+    ASSERT_EQ(env->Object_New(cls, method, &obj, VAL2), ANI_OK);
+
+    ani_long sum {};
+    const ani_long value1 = 1000;
+    const ani_char value2 = 'A';
+    const ani_int value3 = 1;
+    ASSERT_EQ(env->Object_CallMethodByName_Long(obj, "calculateSum", "lci:l", &sum, value1, value2, value3), ANI_OK);
+    ASSERT_EQ(sum, VAL2 - value1);
+
+    const ani_char value4 = 'B';
+    ani_value args[3U];
+    args[0U].l = value1;
+    args[1U].c = value4;
+    args[2U].i = value3;
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(obj, "calculateSum", "lci:l", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, value1);
+
+    const ani_int value5 = 2U;
+    ASSERT_EQ(env->Object_CallMethodByName_Long(obj, "calculateSum", "lci:l", &sum, value1, value4, value5), ANI_OK);
+    ASSERT_EQ(sum, VAL2 + value1);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_22([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameLong.B", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "l:", &method), ANI_OK);
+
+    ani_object obj {};
+    const ani_long arg = 15000;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_long sum {};
+    const ani_long value1 = 5000;
+    const ani_long value2 = 6000;
+    ASSERT_EQ(env->Object_CallMethodByName_Long(obj, "longMethod", "ll:l", &sum, value1, value2), ANI_OK);
+    ASSERT_EQ(sum, arg);
+
+    const ani_long value3 = 7000;
+    ASSERT_EQ(env->Object_CallMethodByName_Long(obj, "longMethod", "ll:l", &sum, value1, value3), ANI_OK);
+    ASSERT_EQ(sum, arg);
+
+    const ani_long value4 = 3000;
+    ani_value args[2U];
+    args[0U].l = value1;
+    args[1U].l = value4;
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(obj, "longMethod", "ll:l", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, arg);
+
+    const ani_long value5 = 10000;
+    ASSERT_EQ(env->Object_CallMethodByName_Long(obj, "longMethod", "ll:l", &sum, value1, value5), ANI_OK);
+    ASSERT_EQ(sum, value1 + value5);
+
+    const ani_long value6 = 12000;
+    ASSERT_EQ(env->Object_CallMethodByName_Long(obj, "longMethod", "ll:l", &sum, value1, value6), ANI_OK);
+    ASSERT_EQ(sum, value1 + value6);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_23([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameLong.C", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_method method {};
+    ASSERT_EQ(env->Class_FindMethod(cls, "<ctor>", "l:", &method), ANI_OK);
+
+    ani_object obj {};
+    ani_long arg = 1000;
+    ASSERT_EQ(env->Object_New(cls, method, &obj, arg), ANI_OK);
+
+    ani_long sum {};
+    const ani_long value = 200;
+    ASSERT_EQ(env->Object_CallMethodByName_Long(obj, "jf", "l:l", &sum, value), ANI_OK);
+    ASSERT_EQ(sum, arg + value);
+
+    ani_value args[1U];
+    args[0U].l = value;
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(obj, "jf", "l:l", &sum, args), ANI_OK);
+    ASSERT_EQ(sum, arg + value);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_24([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ani_object obj {};
+    GetMethodDataLong(env, &obj);
+
+    ani_long sum = 0L;
+    const ani_long value1 = std::numeric_limits<ani_long>::max();
+    const ani_long value2 = 0L;
+    ani_value args1[2U];
+    args1[0U].l = value1;
+    args1[1U].l = value2;
+    ASSERT_EQ(env->Object_CallMethodByName_Long(obj, "longMethod", "ll:l", &sum, value1, value2), ANI_OK);
+    ASSERT_EQ(sum, value1 + value2);
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(obj, "longMethod", "ll:l", &sum, args1), ANI_OK);
+    ASSERT_EQ(sum, value1 + value2);
+
+    const ani_long value3 = std::numeric_limits<ani_long>::min();
+    ani_value args2[2U];
+    args2[0U].l = value3;
+    args2[1U].l = value2;
+    ASSERT_EQ(env->Object_CallMethodByName_Long(obj, "longMethod", "ll:l", &sum, value3, value2), ANI_OK);
+    ASSERT_EQ(sum, value3 + value2);
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(obj, "longMethod", "ll:l", &sum, args2), ANI_OK);
+    ASSERT_EQ(sum, value3 + value2);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_25([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_long VAL1 = 5000;
+    constexpr ani_long VAL2 = 6000;
+    ani_object object {};
+    GetMethodDataLong(env, &object);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+
+    ani_long res = 0;
+    ASSERT_EQ(env->c_api->Object_CallMethodByName_Long(nullptr, object, "longMethod", "ll:l", &res, VAL1, VAL2),
+              ANI_INVALID_ARGS);
+    ASSERT_EQ(env->c_api->Object_CallMethodByName_Long_A(nullptr, object, "longMethod", "ll:l", &res, args),
+              ANI_INVALID_ARGS);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Long(nullptr, "longMethod", "ll:l", &res, VAL1, VAL2), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(nullptr, "longMethod", "ll:l", &res, args), ANI_INVALID_ARGS);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Long(object, nullptr, "ll:l", &res, VAL1, VAL2), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(object, nullptr, "ll:l", &res, args), ANI_INVALID_ARGS);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Long(object, "longMethod", nullptr, &res, VAL1, VAL2), ANI_OK);
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(object, "longMethod", nullptr, &res, args), ANI_OK);
+
+    ASSERT_EQ(env->Object_CallMethodByName_Long(object, "longMethod", "ll:l", nullptr, VAL1, VAL2), ANI_INVALID_ARGS);
+    ASSERT_EQ(env->Object_CallMethodByName_Long_A(object, "longMethod", "ll:l", nullptr, args), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_26([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_long VAL1 = 5000;
+    constexpr ani_long VAL2 = 6000;
+    ani_object object {};
+    GetMethodDataLong(env, &object);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+
+    ani_long res = 0;
+    const std::array<std::string_view, 4U> invalidMethodNames = {{"", "测试emoji🙂🙂", "\n\r\t", "\x01\x02\x03"}};
+
+    for (const auto &methodName : invalidMethodNames) {
+        ASSERT_EQ(env->Object_CallMethodByName_Long(object, methodName.data(), "ll:l", &res, VAL1, VAL2),
+                  ANI_NOT_FOUND);
+        ASSERT_EQ(env->Object_CallMethodByName_Long_A(object, methodName.data(), "ll:l", &res, args), ANI_NOT_FOUND);
+    }
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Long_By_Name_27([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_long VAL1 = 5000;
+    constexpr ani_long VAL2 = 6000;
+    ani_object object {};
+    GetMethodDataLong(env, &object);
+
+    ani_value args[2U];
+    args[0U].l = VAL1;
+    args[1U].l = VAL2;
+
+    ani_long res = 0;
+    const std::array<std::string_view, 4U> invalidMethodNames = {{"", "测试emoji🙂🙂", "\n\r\t", "\x01\x02\x03"}};
+
+    for (const auto &methodName : invalidMethodNames) {
+        ASSERT_EQ(env->Object_CallMethodByName_Long(object, "longMethod", methodName.data(), &res, VAL1, VAL2),
+                  ANI_NOT_FOUND);
+        ASSERT_EQ(env->Object_CallMethodByName_Long_A(object, "longMethod", methodName.data(), &res, args),
+                  ANI_NOT_FOUND);
+    }
+    return ANI_TRUE;
+}
+
+ani_int GetMethodDataRef(ani_env *env, ani_object *objectResult)
+{
+    ani_class cls {};
+    ASSERT_EQ(env->FindClass("entry.src.main.src.ets.ObjectOperationsMethodByNameRef.A", &cls), ANI_OK);
+    ASSERT_NE(cls, nullptr);
+
+    ani_static_method newMethod {};
+    ASSERT_EQ(env->Class_FindStaticMethod(cls,
+                  "new_A", ":C{entry.src.main.src.ets.ObjectOperationsMethodByNameRef.A}", &newMethod),
+        ANI_OK);
+    ani_ref ref {};
+    ASSERT_EQ(env->Class_CallStaticMethod_Ref(cls, newMethod, &ref), ANI_OK);
+
+    *objectResult = static_cast<ani_object>(ref);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_By_Name_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    static constexpr ani_int VAL1 = 10;
+    static constexpr ani_int VAL2 = 20;
+    ani_object object {};
+    GetMethodDataRef(env, &object);
+
+    ani_value args[2U];
+    args[0U].i = VAL1;
+    args[1U].i = VAL2;
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->Object_CallMethodByName_Ref_A(object, "getName", nullptr, &ref, args), ANI_OK);
+    ASSERT_NE(ref, nullptr);
+
+    auto string = reinterpret_cast<ani_string>(ref);
+    ani_size result = 0U;
+    ASSERT_EQ(env->String_GetUTF8Size(string, &result), ANI_OK);
+    ASSERT_EQ(result, 8U);
+
+    ani_size substrOffset = 0U;
+    ani_size substrSize = result;
+    const uint32_t bufferSize = 11U;
+    char utfBuffer[bufferSize] = {};
+    result = 0U;
+
+    auto status =
+        env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_STREQ(utfBuffer, "Equality");
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_By_Name_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    ani_object object {};
+    GetMethodDataRef(env, &object);
+
+    ani_value args[2U];
+    const ani_int arg1 = 11;
+    const ani_int arg2 = 21;
+    args[0U].i = arg1;
+    args[1U].i = arg2;
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->Object_CallMethodByName_Ref_A(object, "getName", nullptr, &ref, args), ANI_OK);
+    ASSERT_NE(ref, nullptr);
+
+    auto string = reinterpret_cast<ani_string>(ref);
+    ani_size result = 0U;
+    ASSERT_EQ(env->String_GetUTF8Size(string, &result), ANI_OK);
+    ASSERT_EQ(result, 10U);
+
+    ani_size substrOffset = 0U;
+    ani_size substrSize = result;
+    const uint32_t bufferSize = 11U;
+    char utfBuffer[bufferSize] = {};
+    result = 0U;
+
+    auto status =
+        env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_STREQ(utfBuffer, "Inequality");
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_By_Name_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_int VAL1 = 10;
+    constexpr ani_int VAL2 = 20;
+    ani_object object {};
+    GetMethodDataRef(env, &object);
+
+    ani_value args[2U];
+    args[0U].i = VAL1;
+    args[1U].i = VAL2;
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->Object_CallMethodByName_Ref_A(object, "xxxxxx", nullptr, &ref, args), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Object_CallMethodByName_Ref_A(object, "getName", "ii:z", &ref, args), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_By_Name_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_int VAL1 = 10;
+    constexpr ani_int VAL2 = 20;
+    ani_object object {};
+    GetMethodDataRef(env, &object);
+
+    ani_value args[2U];
+    args[0U].i = VAL1;
+    args[1U].i = VAL2;
+    ani_ref ref = nullptr;
+
+    ASSERT_EQ(env->Object_CallMethodByName_Ref_A(nullptr, "getName", nullptr, &ref, args), ANI_INVALID_ARGS);
+    ASSERT_EQ(ref, nullptr);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_By_Name_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_int VAL1 = 10;
+    constexpr ani_int VAL2 = 20;
+    ani_object object {};
+    GetMethodDataRef(env, &object);
+
+    ani_value args[2U];
+    args[0U].i = VAL1;
+    args[1U].i = VAL2;
+    ani_ref ref = nullptr;
+
+    ASSERT_EQ(env->Object_CallMethodByName_Ref_A(object, nullptr, nullptr, &ref, args), ANI_INVALID_ARGS);
+    ASSERT_EQ(ref, nullptr);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_By_Name_06([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_int VAL1 = 10;
+    constexpr ani_int VAL2 = 20;
+    ani_object object {};
+    GetMethodDataRef(env, &object);
+
+    ani_value args[2U];
+    args[0U].i = VAL1;
+    args[1U].i = VAL2;
+    ani_ref ref = nullptr;
+
+    ASSERT_EQ(env->Object_CallMethodByName_Ref_A(object, "getName", nullptr, nullptr, args), ANI_INVALID_ARGS);
+    ASSERT_EQ(ref, nullptr);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_By_Name_07([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_int VAL1 = 10;
+    constexpr ani_int VAL2 = 20;
+    ani_object object {};
+    GetMethodDataRef(env, &object);
+
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->Object_CallMethodByName_Ref(object, "getName", nullptr, &ref, VAL1, VAL2), ANI_OK);
+    ASSERT_NE(ref, nullptr);
+
+    auto string = reinterpret_cast<ani_string>(ref);
+    ani_size result = 0U;
+    ASSERT_EQ(env->String_GetUTF8Size(string, &result), ANI_OK);
+    ASSERT_EQ(result, 8U);
+
+    ani_size substrOffset = 0U;
+    ani_size substrSize = result;
+    const uint32_t bufferSize = 11U;
+    char utfBuffer[bufferSize] = {};
+    result = 0U;
+
+    auto status =
+        env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_STREQ(utfBuffer, "Equality");
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_By_Name_08([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    ani_object object {};
+    GetMethodDataRef(env, &object);
+
+    const ani_int arg1 = 11;
+    const ani_int arg2 = 20;
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->Object_CallMethodByName_Ref(object, "getName", nullptr, &ref, arg1, arg2), ANI_OK);
+    ASSERT_NE(ref, nullptr);
+
+    auto string = reinterpret_cast<ani_string>(ref);
+    ani_size result = 0U;
+    ASSERT_EQ(env->String_GetUTF8Size(string, &result), ANI_OK);
+    ASSERT_EQ(result, 10U);
+
+    ani_size substrOffset = 0U;
+    ani_size substrSize = result;
+    const uint32_t bufferSize = 11U;
+    char utfBuffer[bufferSize] = {};
+    result = 0U;
+
+    auto status =
+        env->String_GetUTF8SubString(string, substrOffset, substrSize, utfBuffer, sizeof(utfBuffer), &result);
+    ASSERT_EQ(status, ANI_OK);
+    ASSERT_STREQ(utfBuffer, "Inequality");
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_By_Name_09([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_int VAL1 = 10;
+    constexpr ani_int VAL2 = 20;
+    ani_object object {};
+    GetMethodDataRef(env, &object);
+
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->Object_CallMethodByName_Ref(object, "xxxxxxxx", nullptr, &ref, VAL1, VAL2), ANI_NOT_FOUND);
+    ASSERT_EQ(env->Object_CallMethodByName_Ref(object, "getName", "ii:l", &ref, VAL1, VAL2), ANI_NOT_FOUND);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_By_Name_10([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_int VAL1 = 10;
+    constexpr ani_int VAL2 = 20;
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->Object_CallMethodByName_Ref(nullptr, "getName", nullptr, &ref, VAL1, VAL2), ANI_INVALID_ARGS);
+    ASSERT_EQ(ref, nullptr);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_By_Name_11([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    constexpr ani_int VAL1 = 10;
+    constexpr ani_int VAL2 = 20;
+    ani_object object {};
+    GetMethodDataRef(env, &object);
+
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->Object_CallMethodByName_Ref(object, nullptr, nullptr, &ref, VAL1, VAL2), ANI_INVALID_ARGS);
+    ASSERT_EQ(ref, nullptr);
+    return ANI_TRUE;
+}
+
+ani_int test_Object_Call_Method_Ref_By_Name_12([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object obj)
+{
+    ani_object object {};
+    GetMethodDataRef(env, &object);
+
+    ani_ref ref = nullptr;
+    ASSERT_EQ(env->Object_CallMethodByName_Ref(object, "getName", nullptr, nullptr), ANI_INVALID_ARGS);
+    ASSERT_EQ(ref, nullptr);
+    return ANI_TRUE;
+}
 #endif //ARKTS_ANI_TEST_OBJECTOPERATIONS_H
