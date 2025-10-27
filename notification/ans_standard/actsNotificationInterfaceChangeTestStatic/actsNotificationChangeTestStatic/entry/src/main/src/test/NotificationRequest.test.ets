@@ -69,7 +69,7 @@ export default function ActsNotificationRequestTest() {
         await notificationManager.isNotificationEnabled().then((data: boolean) => {
           console.info(TEST_CASE_NAME + "isNotificationEnabled success, data: " + JSON.stringify(data));
           expect(data).assertFalse();
-        }).catch((err: BusinessError) => {
+        }).catch((err: BusinessError) :void  => {
           console.error(TEST_CASE_NAME + `isNotificationEnabled fail: ${JSON.stringify(err)}`);
           expect(true).assertFalse();
           done()
@@ -117,7 +117,7 @@ export default function ActsNotificationRequestTest() {
         await notificationManager.isNotificationEnabled().then((data: boolean) => {
             console.info(TEST_CASE_NAME + "isNotificationEnabled success, data: " + JSON.stringify(data));
             expect(data).assertTrue();
-          }).catch((err: BusinessError) => {
+          }).catch((err: BusinessError) : void => {
             console.error(TEST_CASE_NAME + `isNotificationEnabled fail: ${JSON.stringify(err)}`);
             expect(true).assertFalse();
           });

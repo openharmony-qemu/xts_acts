@@ -460,7 +460,7 @@ export default function ActsNotificationManagerPublishTest() {
         await notificationManager.getActiveNotifications()
           .then((data: Array<notificationManager.NotificationRequest>) => {
             console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
-            eexpect(data.length == 0).assertTrue()
+            expect(data.length == 0).assertTrue()
             done()
           })
           .catch((err: BusinessError): void => {
@@ -1325,7 +1325,7 @@ export default function ActsNotificationManagerPublishTest() {
               hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish success,result is : %{public}s');
               await notificationManager.getActiveNotifications().then((data: Array<notificationManager.NotificationRequest>) => {
                 console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
-                eexpect(data.length > 0).assertTrue()
+                expect(data.length > 0).assertTrue()
                 done()
               }).catch((err: BusinessError): void => {
                 console.info(`${TAG} getActiveNotifications Promise err: ${err.code}, errMes: ${err.message}`)
