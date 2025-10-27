@@ -1023,6 +1023,7 @@ export default function rdbStoreRekeyExEtsTest() {
         await rdbStore.rekeyEx(cryptoParam);
         console.log(TAG + "rekeyEx success" )
         rdbStore.close();
+        storeConfig.cryptoParam = cryptoParam;
         rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
         let resultSet = await rdbStore.querySql("SELECT * FROM test");
         expect(1).assertEqual(resultSet.rowCount);
