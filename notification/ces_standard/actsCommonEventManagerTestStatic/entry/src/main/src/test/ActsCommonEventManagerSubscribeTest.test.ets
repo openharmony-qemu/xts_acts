@@ -453,7 +453,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
         expect(false).assertTrue()
         done()
       }
-      commonEventManager.subscribe(subscriber, async (err: BusinessError | null, data: commonEventManager.CommonEventData|undefined)=> {
+      commonEventManager.subscribe(subscriber, (err: BusinessError | null, data: commonEventManager.CommonEventData|undefined)=> {
         if (err) {
           console.error(TAG+`subscribe failed, code is ${err.code}, message is ${err.message}`)
           expect(false).assertTrue()
@@ -477,7 +477,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             done()
           })
 
-          await subscriber.abortCommonEventSync();
+          subscriber.abortCommonEventSync();
           await subscriber.getAbortCommonEvent().then((abortEvent) => {
             console.info(TAG+`getAbortCommonEvent_12 success ${abortEvent}`)
             expect(abortEvent).assertTrue()
@@ -486,7 +486,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
             expect(false).assertTrue()
             done()
           })
-          await subscriber.clearAbortCommonEventSync()
+          subscriber.clearAbortCommonEventSync()
 
           let info = subscriber.getSubscribeInfoSync();
           if(info !== null){
