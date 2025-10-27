@@ -27,7 +27,7 @@ struct Monitor_Null {
     });
   }
   build() {
-    Text(${this.class001.class002 === null ? 'null' : 'ww'})
+    Text(`${this.class001.class002 === null ? 'null' : 'ww'}`)
     .id('Monitor_Null_001')
   }
 }
