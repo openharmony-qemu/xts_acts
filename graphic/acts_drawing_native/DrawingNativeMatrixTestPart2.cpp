@@ -991,7 +991,6 @@ HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixCopyNull, Function | SmallTest 
     OH_Drawing_MatrixDestroy(matrix2);
 }
 
-
 /*
  * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2402
  * @tc.name: testMatrixCopyMultipleCalls
@@ -1016,6 +1015,136 @@ HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixCopyMultipleCalls, Function | S
     // 5. Free memory
     OH_Drawing_MatrixDestroy(matrix1);
     OH_Drawing_MatrixDestroy(matrix2);
+}
+
+/*
+ * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2500
+ * @tc.name: testMatrixPerConcatNormal
+ * @tc.desc: test for testMatrixPerConcatNormal.
+ * @tc.size  : SmallTest
+ * @tc.type  : Function
+ * @tc.level : Level 0
+ */
+HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixPerConcatNormal, Function | SmallTest | Level0) {
+    // 1. Create a matrix object using OH_Drawing_MatrixCreate.
+    OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
+    OH_Drawing_Matrix *other = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix, nullptr);
+    // 2. The function OH_Drawing_MatrixSetMatrix creates a identity matrix.
+    OH_Drawing_MatrixSetMatrix(matrix, 1, 0, 1, 0, -2, 0, 0, 3, 1);
+    OH_Drawing_MatrixSetMatrix(other, 1, 1, 1, 0, -1, 0, -1, 0, 1);
+    OH_Drawing_ErrorCode code = OH_Drawing_MatrixPreConcat(matrix, other);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 0), 0.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 1), 1.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 2), 2.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 3), 0.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 4), 2.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 5), 0.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 6), -1.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 7), -3.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 8), 1.0);
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+    // 3. Free memory
+    OH_Drawing_MatrixDestroy(matrix);
+    OH_Drawing_MatrixDestroy(other);
+}
+
+/*
+ * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2501
+ * @tc.name: testMatrixPerConcatNull1
+ * @tc.desc: test for testMatrixPerConcatNull1.
+ * @tc.size  : SmallTest
+ * @tc.type  : Function
+ * @tc.level : Level 3
+ */
+HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixPerConcatNull1, Function | SmallTest | Level3) {
+    // 1. Create a matrix object using OH_Drawing_MatrixCreate.
+    OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
+    OH_Drawing_Matrix *other = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix, nullptr);
+    // 2. The function OH_Drawing_MatrixSetMatrix creates a identity matrix.
+    OH_Drawing_MatrixSetMatrix(matrix, 1, 0, 1, 0, -2, 0, 0, 3, 1);
+    OH_Drawing_MatrixSetMatrix(other, 1, 1, 1, 0, -1, 0, -1, 0, 1);
+    OH_Drawing_ErrorCode code = OH_Drawing_MatrixPreConcat(nullptr, other);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 0), 1.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 1), 0.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 2), 1.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 3), 0.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 4), -2.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 5), 0.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 6), 0.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 7), 3.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 8), 1.0);
+    EXPECT_EQ(code, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    // 3. Free memory
+    OH_Drawing_MatrixDestroy(matrix);
+    OH_Drawing_MatrixDestroy(other);
+}
+
+/*
+ * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2502
+ * @tc.name: testMatrixPerConcatNull2
+ * @tc.desc: test for testMatrixPerConcatNull2.
+ * @tc.size  : SmallTest
+ * @tc.type  : Function
+ * @tc.level : Level 3
+ */
+HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixPerConcatNull2, Function | SmallTest | Level3) {
+    // 1. Create a matrix object using OH_Drawing_MatrixCreate.
+    OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
+    OH_Drawing_Matrix *other = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix, nullptr);
+    EXPECT_NE(other, nullptr);
+    // 2. The function OH_Drawing_MatrixSetMatrix creates a identity matrix.
+    OH_Drawing_MatrixSetMatrix(matrix, 1, 0, 1,  0, -2, 0, 0, 3, 1);
+    OH_Drawing_MatrixSetMatrix(other, 1, 1, 1, 0, -1, 0, -1, 0, 1);
+    OH_Drawing_ErrorCode code = OH_Drawing_MatrixPreConcat(matrix, nullptr);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 0), 1.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 1), 0.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 2), 1.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 3), 0.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 4), -2.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 5), 0.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 6), 0.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 7), 3.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 8), 1.0);
+    EXPECT_EQ(code, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+    // 3. Free memory
+    OH_Drawing_MatrixDestroy(matrix);
+    OH_Drawing_MatrixDestroy(other);
+}
+/*
+ * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_MATRIX_2503
+ * @tc.name: testMatrixPerConcatCalls
+ * @tc.desc: test for testMatrixPerConcatCalls.
+ * @tc.size  : SmallTest
+ * @tc.type  : Function
+ * @tc.level : Level 3
+ */
+HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixPerConcatCalls, Function | SmallTest | Level3) {
+     // 1. Create a matrix object using OH_Drawing_MatrixCreate.
+    OH_Drawing_Matrix *matrix = OH_Drawing_MatrixCreate();
+    OH_Drawing_Matrix *other = OH_Drawing_MatrixCreate();
+    EXPECT_NE(matrix, nullptr);
+    // 2. The function OH_Drawing_MatrixSetMatrix creates a identity matrix.
+    OH_Drawing_MatrixSetMatrix(matrix, 1, 0, 1, 0, -2, 0, 0, 3, 1);
+    OH_Drawing_MatrixSetMatrix(other, 1, 1, 1, 0, -1, 0, -1, 0, 1);
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode code = OH_Drawing_MatrixPreConcat(matrix, other);
+        EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+    }
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 0), 0.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 1), 1.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 2), 2.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 3), 0.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 4), 2.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 5), 0.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 6), -1.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 7), -3.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 8), 1.0);
+    // 3. Free memory
+    OH_Drawing_MatrixDestroy(matrix);
+    OH_Drawing_MatrixDestroy(other);
 }
 } // namespace Drawing
 } // namespace Rosen
