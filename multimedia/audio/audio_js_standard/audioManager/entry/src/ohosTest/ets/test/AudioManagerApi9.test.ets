@@ -1095,7 +1095,7 @@ export default function audioManagerApi9() {
         let data = streamManager.isActiveSync(audioMedia)
         if (data == false) {
           console.log(`${TagFrmwk}: Callback: isActive: Media: TRUE: PASS:${data}`);
-          expect(true).assertTrue();
+          expect(data),asserEqual(false);
         } else {
           console.log(`${TagFrmwk}: Callback: isActive: Media: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
