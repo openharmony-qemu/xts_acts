@@ -134,5 +134,31 @@ export default function ImageLoaderTest() {
       console.info('[ImageLoaderTest003] END');
       done();
     });
+
+    /**
+     * @tc.number    ImageLoaderTest004
+     * @tc.name      ImageLoaderTest004
+     * @tc.desc      test the load errorCode 111001
+     * @tc.level:    Level 1
+     * @tc.type :
+     * @tc.size :
+     */
+    it('ImageLoaderTest004', Level.LEVEL1, async (done: Function) => {
+      console.info('[ImageLoaderTest004] START');
+      await CommonFunc.sleep(1500);
+      let driver = await Driver.create()
+      let button3 = await driver.findComponent(ON.id('btnLoadErr'));
+      await CommonFunc.sleep(500);
+      await button3.click();
+      await CommonFunc.sleep(500);
+
+      let strJson = getInspectorByKey('errorCode');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('[ImageLoaderTest004] obj.$attrs.content is: ' + JSON.stringify(obj.$attrs.content));
+
+      expect(obj.$attrs.content).assertEqual('111001');
+      console.info('[ImageLoaderTest004] END');
+      done();
+    });
   })
 }
