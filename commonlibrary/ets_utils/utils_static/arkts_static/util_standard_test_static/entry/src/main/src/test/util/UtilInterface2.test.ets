@@ -52,7 +52,7 @@ class ChildLRUCache extends util.LRUCache<number, number> {
     super();
   }
 
-  createDefault(key: number): number {
+  createDefault(key: number): number | undefined {
     return key;
   }
 }
@@ -1088,7 +1088,7 @@ export default function Util2Test() {
     it('testUtil_054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let pro = new util.LRUCache<number, number>();
       let result = pro.put(2, 10);
-      expect(result).assertEqual(10);
+      expect(result).assertEqual(undefined);
     })
 
     /**
