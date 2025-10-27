@@ -28,7 +28,9 @@ import { createCertChain, createX509Cert,
   caChainWithOcsp3,
   caChainWithOcsp4,
   caTrustCertWithOcsp4,
-  caInter
+  caInter,
+  caChainWithOcsp5,
+  caTrustCertWithOcsp5
 } from "./utils/crl/crl";
 
 
@@ -517,9 +519,8 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           // openssl ocsp -port 8888 -index index_3.txt -CA ecdsa_root_3.crt -rkey ecdsa_root_3.key -rsigner ecdsa_root_3.crt -text
-          let x509CertChain: cert.X509CertChain = await createCertChain(caChainWithOcsp4);
-          let x509Cert: cert.X509Cert = await createX509Cert(caTrustCertWithOcsp4);
-          let x509Cert2: cert.X509Cert = await createX509Cert(caInter);
+          let x509CertChain: cert.X509CertChain = await createCertChain(caChainWithOcsp5);
+          let x509Cert: cert.X509Cert = await createX509Cert(caTrustCertWithOcsp5);
           const param: cert.CertChainValidationParameters = {
             trustAnchors: [{
               CACert: x509Cert
@@ -530,8 +531,6 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
                 cert.RevocationCheckOptions.REVOCATION_CHECK_OPTION_PREFER_OCSP,
                 cert.RevocationCheckOptions.REVOCATION_CHECK_OPTION_CHECK_INTERMEDIATE_CA_ONLINE
               ],
-              ocspResponderCert: x509Cert2,
-              ocspDigest: "SHA256"
             }
           };
           await x509CertChain.validate(param);
@@ -555,9 +554,8 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try {
           // openssl ocsp -port 8888 -index index_3.txt -CA ecdsa_root_3.crt -rkey ecdsa_root_3.key -rsigner ecdsa_root_3.crt -text
-          let x509CertChain: cert.X509CertChain = await createCertChain(caChainWithOcsp4);
-          let x509Cert: cert.X509Cert = await createX509Cert(caTrustCertWithOcsp4);
-          let x509Cert2: cert.X509Cert = await createX509Cert(caInter);
+          let x509CertChain: cert.X509CertChain = await createCertChain(caChainWithOcsp5);
+          let x509Cert: cert.X509Cert = await createX509Cert(caTrustCertWithOcsp5);
           const param: cert.CertChainValidationParameters = {
             trustAnchors: [{
               CACert: x509Cert
@@ -566,9 +564,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
               options: [
                 cert.RevocationCheckOptions.REVOCATION_CHECK_OPTION_ACCESS_NETWORK,
                 cert.RevocationCheckOptions.REVOCATION_CHECK_OPTION_PREFER_OCSP,
-              ],
-              ocspResponderCert: x509Cert2,
-              ocspDigest: "SHA256"
+              ]
             }
           };
           await x509CertChain.validate(param);

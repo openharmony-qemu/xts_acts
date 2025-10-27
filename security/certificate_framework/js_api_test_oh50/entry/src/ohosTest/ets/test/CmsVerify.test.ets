@@ -995,7 +995,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           expect(null).assertFail();
         } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_2400 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect(error.code).assertEqual(cert.CertResult.ERR_UNABLE_TO_GET_ISSUER_CERT_LOCALLY);
         }
         done();
       });
@@ -1027,7 +1027,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           expect(null).assertFail();
         } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_2500 1 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect(error.code).assertEqual(cert.CertResult.ERR_UNABLE_TO_GET_ISSUER_CERT_LOCALLY);
         } finally {
           try {
             await verify.getContentData();
@@ -1295,7 +1295,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
             expect(null).assertFail();
           } catch (error) {
             console.error(`[XTS] verifySignedData 1 “${error}“, error code: ${error.code}`);
-            expect(error.code).assertFail(cert.CertResult.INVALID_PARAMS);
+            expect(error.code).assertEqual(cert.CertResult.ERR_PARAMETER_CHECK_FAILED);
           }
           try {
             config.contentDataFormat = undefined;
@@ -1303,7 +1303,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
             expect(null).assertFail();
           } catch (error) {
             console.error(`[XTS] verifySignedData 2 “${error}“, error code: ${error.code}`);
-            expect(error.code).assertFail(cert.CertResult.INVALID_PARAMS);
+            expect(error.code).assertEqual(cert.CertResult.ERR_PARAMETER_CHECK_FAILED);
           }
         } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_3300 “${error}“, error code: ${error.code}`);
