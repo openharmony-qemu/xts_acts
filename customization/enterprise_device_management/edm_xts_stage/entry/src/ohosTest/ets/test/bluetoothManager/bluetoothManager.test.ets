@@ -1113,6 +1113,7 @@ export default function bluetoothManagerTest() {
         bluetoothManager.addDisallowedBluetoothProtocols(SELFWANT, accountId, protocols);
         let ret: Array<bluetoothManager.Protocol> =
           bluetoothManager.getDisallowedBluetoothProtocols(SELFWANT, accountId);
+        expect(ret.length > 0).assertTrue();
         expect(ret.length == 3).assertTrue();
         bluetoothManager.removeDisallowedBluetoothProtocols(SELFWANT, accountId, protocols);
         ret = bluetoothManager.getDisallowedBluetoothProtocols(SELFWANT, accountId);

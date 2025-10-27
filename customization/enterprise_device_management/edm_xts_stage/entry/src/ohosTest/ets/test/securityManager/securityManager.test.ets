@@ -796,6 +796,8 @@ function testInstallUserCertificate() {
     try {
       let path: string = securityManager.installUserCertificate(SELFWANT, CERTIFICATE_MAX_ALIAS, INT_VALID_ACCOUNTID);
       expect(path !== undefined).assertTrue();
+      let res = securityManager.getUserCertificates(SELFWANT, INT_VALID_ACCOUNTID);
+      expect(res.length > 0).assertTrue();
       await securityManager.uninstallUserCertificate(SELFWANT, path);
     } catch (error) {
       expect(false).assertTrue();
@@ -2098,7 +2100,7 @@ function testSetPermissionManagedState() {
   it("test_set_permission_managed_state_0600", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      securityManager.setPermissionManagedState(SELFWANT, TEST_INVALID_APP_INSTANCE, TEST_PERMISSION_LIST_1, TEST_PERMISSION_MANAGED_STATE_GRANTED);
+      securityManager.setPermissionManagedState(SELFWANT, TEST_INVALID_APP_INSTANCE, TEST_PERMISSION_LIST_1, securityManager.PermissionManagedState.GRANTED);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 9200012).assertTrue();
@@ -2119,7 +2121,7 @@ function testSetPermissionManagedState() {
   it("test_set_permission_managed_state_0700", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, TEST_PERMISSION_MANAGED_STATE_DEFAULT);
+      securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, securityManager.PermissionManagedState.DEFAULT);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 9200012).assertTrue();
@@ -2141,9 +2143,9 @@ function testSetPermissionManagedState() {
   it("test_set_permission_managed_state_0800", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, TEST_PERMISSION_MANAGED_STATE_GRANTED)
+      securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, securityManager.PermissionManagedState.GRANTED)
       let managedState: securityManager.PermissionManagedState = securityManager.getPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_1);
-      expect(managedState == TEST_PERMISSION_MANAGED_STATE_GRANTED).assertTrue();
+      expect(managedState == securityManager.PermissionManagedState.GRANTED).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }

@@ -3708,6 +3708,7 @@ function testAddDisallowedListForAccountPolicy() {
       expect(res.length == 0).assertTrue();
       restrictions.addDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, APP_IDS_1, DEFAULT_USER_ID);
       let result: Array<string> = restrictions.getDisallowedListForAccount(SELFWANT, LABEL_SNAPSHOT_SKIP_FOR_ACCOUNT, DEFAULT_USER_ID);
+      expect(result.length > 0).assertTrue();
       expect(result.length === APP_IDS_1.length).assertTrue();
     } catch (error) {
       expect(false).assertTrue();

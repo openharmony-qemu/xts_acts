@@ -715,6 +715,15 @@ export default function applicationManagerTest() {
         let autoStartApps: Array<Want> = [AUTOSTARTAPP1, AUTOSTARTAPP2];
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         applicationManager.addAutoStartApps(SELFWANT, autoStartApps);
+        let res = applicationManager.getAutoStartApps(SELFWANT);
+        expect(res.length > 0).assertTrue();
+        let res2 = applicationManager.getAutoStartApps(SELFWANT, DEFAULT_USER_ID);
+        expect(res2.length > 0).assertTrue();
+        applicationManager.removeAutoStartApps(SELFWANT, autoStartApps);
+        let emptyRes = applicationManager.getAutoStartApps(SELFWANT);
+        expect(emptyRes.length == 0).assertTrue();
+        let emptyRes2 = applicationManager.getAutoStartApps(SELFWANT, DEFAULT_USER_ID);
+        expect(emptyRes2.length == 0).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -877,7 +886,8 @@ export default function applicationManagerTest() {
     it("test_getAutoStartApps_004", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.getAutoStartApps(SELFWANT);
+        let res = applicationManager.getAutoStartApps(SELFWANT);
+        expect(res.length == 0).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -1123,7 +1133,8 @@ export default function applicationManagerTest() {
     it("test_getAutoStartAppsByUserId_004", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.getAutoStartApps(SELFWANT, DEFAULT_USER_ID);
+        let res = applicationManager.getAutoStartApps(SELFWANT, DEFAULT_USER_ID);
+        expect(res.length == 0).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -1434,6 +1445,27 @@ export default function applicationManagerTest() {
     })
 
     /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETKEEPALIVEAPPS_004
+     * @tc.name      : test_getKeepAliveApps_004
+     * @tc.desc      : test getKeepAliveApps method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_getKeepAliveApps_004", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let res = applicationManager.getKeepAliveApps(SELFWANT, DEFAULT_USER_ID);
+        expect(res.length == 0).assertTrue();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.number    : SUB_CUSTOMIZATION_EDM_SETALLOWEDKIOSKAPPS_001
      * @tc.name      : test_setAllowedKioskApps_001
      * @tc.desc      : test setAllowedKioskApps method with unActive admin
@@ -1647,8 +1679,12 @@ export default function applicationManagerTest() {
     it("test_isAppKioskAllowed_002", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let emptyBundles: Array<string> = applicationManager.getAllowedKioskApps(SELFWANT);
+        expect(emptyBundles.length == 0).assertTrue();
         let bundleName: Array<string> = [`${TEST_BUNDLENAME}`];
         applicationManager.setAllowedKioskApps(SELFWANT, bundleName);
+        let bundleNames: Array<string> = applicationManager.getAllowedKioskApps(SELFWANT);
+        expect(bundleNames.length > 0).assertTrue();
         let isAllowed = applicationManager.isAppKioskAllowed(TEST_BUNDLENAME);
         expect(isAllowed).assertTrue();
       } catch (error) {
@@ -2293,6 +2329,7 @@ export default function applicationManagerTest() {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         applicationManager.addAllowedRunningBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
         let arr: string[] = applicationManager.getAllowedRunningBundles(SELFWANT, DEFAULT_USER_ID);
+        expect(arr.length > 0).assertTrue();
         expect(arr.length).assertEqual(APP_IDS_1.length);
         applicationManager.removeAllowedRunningBundles(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
         let retRemove: string[] = applicationManager.getAllowedRunningBundles(SELFWANT, DEFAULT_USER_ID);
