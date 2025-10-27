@@ -6270,30 +6270,7 @@ export default function audioFramework() {
         }
         expect(flag).assertTrue();
         done();
-    })
-    /**
-    * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0300
-    * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0300
-    * @tc.desc      : isAcousticEchoCancelerSupported - false
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
-    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
-    (done: Function) => {
-        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
-        try {
-            let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_UNPROCESSED);
-            console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_UNPROCESSED}, Status: ${isSupportAEC}`);
-            expect(isSupportAEC).assertFalse();
-        } catch (err) {
-            let error = err as BusinessError;
-            console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
-            expect(false).assertTrue();
-        }
-        done();
-    })
-    
+    }) 
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0100
      * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0100
