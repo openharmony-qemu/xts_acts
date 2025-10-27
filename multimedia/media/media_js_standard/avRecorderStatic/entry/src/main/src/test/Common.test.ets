@@ -143,7 +143,7 @@ export default class Commmon {
       let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(globalThis.getContext()!!);
       let assetChangeRequest = new photoAccessHelper.MediaAssetChangeRequest(asset);
       assetChangeRequest.saveCameraPhoto();
-      await phAccessHelper.applyChanges(assetChangeRequest);
+      await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).applyChanges(assetChangeRequest);
       console.info('case saveVideo successfully');
     } catch (error) {
       console.info(`case error called,errMessage is ${error}`);

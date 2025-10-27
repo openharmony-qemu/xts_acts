@@ -50,7 +50,7 @@ export default function albumIsAfterLastTest() {
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album>;
           let count = 0;
           for (let i = 0; i < subTypes.length; i++) {
-            fetchResult = await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i]);
+            fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i]);
             expect(fetchResult.getCount()).assertEqual(1);
             await fetchResult.getFirstObject();
             try {

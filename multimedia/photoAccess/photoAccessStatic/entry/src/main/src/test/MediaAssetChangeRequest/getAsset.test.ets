@@ -44,10 +44,10 @@ export default function getAsset() {
           let extension = 'jpg';
           let assetChangeRequest =
             photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(appContext, photoType, extension);
-          expect(assetChangeRequest.getAsset()).assertEqual(null);
-          assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1000));
-          await helper.applyChanges(assetChangeRequest);
-          let asset = assetChangeRequest.getAsset();
+          expect((assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).getAsset()).assertEqual(null);
+          (assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1000));
+          await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges((assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest));
+          let asset = (assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).getAsset();
           if (asset === null || asset === undefined || !asset.uri.match('file://media/Photo')) {
             console.error(`${testNum} failed to get asset after applyChanges`);
             expect(false).assertTrue();

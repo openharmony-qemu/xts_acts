@@ -43,7 +43,7 @@ export default function createImageAssetRequest() {
           let invalidFileUri: string =
             "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/files/invalid.png";
           let res = photoAccessHelper.MediaAssetChangeRequest.createImageAssetRequest(appContext, invalidFileUri);
-          await helper.applyChanges(res);
+          await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges((res as photoAccessHelper.MediaAssetChangeRequest));
           console.error(`${testNum} failed; error: succeed to create image asset with invalid fileUri`);
           expect(false).assertTrue();
           done();

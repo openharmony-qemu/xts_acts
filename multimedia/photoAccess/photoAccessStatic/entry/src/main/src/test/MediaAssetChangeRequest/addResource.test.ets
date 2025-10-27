@@ -45,16 +45,16 @@ export default function addResource() {
 
           let fetchOps =
             fetchOption(testNum, photoAccessHelper.PhotoKeys.PHOTO_TYPE, photoAccessHelper.PhotoType.IMAGE);
-          let result: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper.getAssets(fetchOps);
+          let result: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           let count = result.getCount();
 
           let photoType: photoAccessHelper.PhotoType = photoAccessHelper.PhotoType.IMAGE;
           let extension: string = "jpg";
           let res = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(appContext, photoType, extension);
-          res.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1024));
-          await helper.applyChanges(res);
+          (res as photoAccessHelper.MediaAssetChangeRequest).addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1024));
+          await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges((res as photoAccessHelper.MediaAssetChangeRequest));
 
-          let resultTwo: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper.getAssets(fetchOps);
+          let resultTwo: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           expect(resultTwo.getCount()).assertEqual(count + 1);
           console.info(`${testNum} succeed to add resource by ArrayBuffer`);
           done();
@@ -85,8 +85,8 @@ export default function addResource() {
           let res = photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(appContext, photoType, extension);
           let invalidFileUri: string =
             "file://ohos.acts.multimedia.photoaccess.Static/data/storage/el2/base/haps/entry/files/test.mp4";
-          res.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, invalidFileUri);
-          await helper.applyChanges(res);
+          (res as photoAccessHelper.MediaAssetChangeRequest).addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, invalidFileUri);
+          await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges((res as photoAccessHelper.MediaAssetChangeRequest));
           console.error(`${testNum} failed; error: succeed to add resource with invalid fileUri`);
           expect(false).assertTrue();
           done();
@@ -114,7 +114,7 @@ export default function addResource() {
           let assetChangeRequest =
             photoAccessHelper.MediaAssetChangeRequest.createAssetRequest(appContext, photoType, extension);
           console.info(`assetChangeRequest is declared successfully`);
-          assetChangeRequest.addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1024));
+          (assetChangeRequest as photoAccessHelper.MediaAssetChangeRequest).addResource(photoAccessHelper.ResourceType.IMAGE_RESOURCE, new ArrayBuffer(1024));
           console.info(`${testNum} succeed to add resource by ArrayBuffer`);
           expect(false).assertTrue();
           done();

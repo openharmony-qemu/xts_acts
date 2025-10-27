@@ -33,7 +33,7 @@ export default function assetGetFirstObjectTest() {
     let getFirstObjectCallbackTest =
       async (done: () => void, testNum: string, fetchOps: photoAccessHelper.FetchOptions) => {
         try {
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           hilog.info(domain, tag, '%{public}s', `${testNum} fetchResult: ${fetchResult.getCount()}`);
           expect(fetchResult.getCount()).assertEqual(1);
           fetchResult.getFirstObject((err: BusinessError | null, asset: photoAccessHelper.PhotoAsset | undefined) => {
@@ -61,7 +61,7 @@ export default function assetGetFirstObjectTest() {
     let getFirstObjectPromiseTest =
       async (done: () => void, testNum: string, fetchOps: photoAccessHelper.FetchOptions) => {
         try {
-          let fetchResult = await helper.getAssets(fetchOps);
+          let fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps);
           expect(fetchResult.getCount()).assertEqual(1);
           const asset = await fetchResult.getFirstObject();
           fetchResult.close();

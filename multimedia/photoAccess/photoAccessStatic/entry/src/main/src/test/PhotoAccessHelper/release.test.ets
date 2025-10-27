@@ -47,7 +47,7 @@ export default function releaseTest() {
         try {
           let appContext: Context = Hypium.get("context") as Context;
           let helper = photoAccessHelper.getPhotoAccessHelper(appContext);
-          helper.release((err: BusinessError<void> | null) => {
+          (helper as photoAccessHelper.PhotoAccessHelper).release((err: BusinessError<void> | null) => {
             if (err?.code !== 0) {
               expect(false).assertTrue();
             }
@@ -75,7 +75,7 @@ export default function releaseTest() {
         try {
           let appContext: Context = Hypium.get("context") as Context;
           let helper = photoAccessHelper.getPhotoAccessHelper(appContext);
-          await helper.release()
+          await (helper as photoAccessHelper.PhotoAccessHelper).release()
           done();
         } catch (error) {
           hilog.info(domain, tag,
