@@ -1546,7 +1546,7 @@ export default function builtinsLongPrototypebTest() {
         const larger = new Long(150);
         const smaller = new Long(100);
         let result = smaller.compareTo(larger);
-        expect(result).assertEqual(-50);
+        expect(result).assertEqual(-1);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1566,7 +1566,7 @@ export default function builtinsLongPrototypebTest() {
         const smaller = new Long(50);
         const larger = new Long(100);
         let result = smaller.compareTo(larger);
-        expect(result).assertEqual(-50);
+        expect(result).assertEqual(-1);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1587,8 +1587,8 @@ export default function builtinsLongPrototypebTest() {
         const negLarge = new Long(-50);
         let result1 = negSmall.compareTo(negLarge);
         let result2 = negLarge.compareTo(negSmall);
-        expect(result1).assertEqual(-50);
-        expect(result2).assertEqual(50);
+        expect(result1).assertEqual(-1);
+        expect(result2).assertEqual(1);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1609,8 +1609,8 @@ export default function builtinsLongPrototypebTest() {
         const positive = new Long(50);
         let result1 = negative.compareTo(positive);
         let result2 = positive.compareTo(negative);
-        expect(result1).assertEqual(-100);
-        expect(result2).assertEqual(100);
+        expect(result1).assertEqual(1);
+        expect(result2).assertEqual(-1);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1652,7 +1652,7 @@ export default function builtinsLongPrototypebTest() {
         const big1 = new Long(123456789);
         const big2 = new Long(987654321);
         let result = big1.compareTo(big2);
-        expect(result).assertEqual(-864197532);
+        expect(result).assertEqual(-1);
         console.info(`${caseName}, test end`);
         Done();
       })

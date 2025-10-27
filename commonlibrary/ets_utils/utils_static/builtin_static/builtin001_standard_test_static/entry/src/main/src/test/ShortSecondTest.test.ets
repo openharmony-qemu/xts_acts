@@ -222,7 +222,7 @@ export default function builtinsShortSecondPrototypebTest() {
         console.info(`${caseName}, test start`);
         const a = new Short(50);
         const b = new Short(100);
-        expect(a.compareTo(b)).assertEqual(-50);
+        expect(a.compareTo(b)).assertEqual(-1);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -241,7 +241,7 @@ export default function builtinsShortSecondPrototypebTest() {
         console.info(`${caseName}, test start`);
         const a = new Short(200);
         const b = new Short(100);
-        expect(a.compareTo(b)).assertEqual(100);
+        expect(a.compareTo(b)).assertEqual(1);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -260,7 +260,7 @@ export default function builtinsShortSecondPrototypebTest() {
         console.info(`${caseName}, test start`);
         const a = new Short(Short.MIN_VALUE);
         const b = new Short(100);
-        expect(a.compareTo(b)).assertEqual(Short.MIN_VALUE - 100);
+        expect(a.compareTo(b)).assertEqual(-1);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -279,7 +279,7 @@ export default function builtinsShortSecondPrototypebTest() {
         console.info(`${caseName}, test start`);
         const a = new Short(Short.MAX_VALUE);
         const b = new Short(-100);
-        expect(a.compareTo(b)).assertEqual(Short.MAX_VALUE + 100);
+        expect(a.compareTo(b)).assertEqual(1);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -317,7 +317,7 @@ export default function builtinsShortSecondPrototypebTest() {
         console.info(`${caseName}, test start`);
         const a = new Short(-100);
         const b = new Short(50);
-        expect(a.compareTo(b)).assertEqual(-150);
+        expect(a.compareTo(b)).assertEqual(-1);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -336,7 +336,7 @@ export default function builtinsShortSecondPrototypebTest() {
         console.info(`${caseName}, test start`);
         const a = new Short(50);
         const b = new Short(-100);
-        expect(a.compareTo(b)).assertEqual(150);
+        expect(a.compareTo(b)).assertEqual(1);
         console.info(`${caseName}, test end`);
         Done();
       })

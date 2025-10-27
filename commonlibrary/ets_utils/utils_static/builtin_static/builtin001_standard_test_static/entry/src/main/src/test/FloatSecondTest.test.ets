@@ -1079,7 +1079,7 @@ export default function builtinsFloatSecondPrototypebTest() {
         console.info(`${caseName}, test start`);
         const a = new Float(3.0);
         const b = new Float(5.0);
-        expect(a.compareTo(b)).assertEqual(-2);
+        expect(a.compareTo(b)).assertEqual(-1);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1098,7 +1098,7 @@ export default function builtinsFloatSecondPrototypebTest() {
         console.info(`${caseName}, test start`);
         const a = new Float(5.0);
         const b = new Float(3.0);
-        expect(a.compareTo(b)).assertEqual(2);
+        expect(a.compareTo(b)).assertEqual(1);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1157,7 +1157,7 @@ export default function builtinsFloatSecondPrototypebTest() {
         console.info(`${caseName}, test start`);
         const a = new Float(Number.POSITIVE_INFINITY);
         const b = new Float(1.0);
-        expect(a.compareTo(b)).assertEqual(2147483647);
+        expect(a.compareTo(b)).assertEqual(1);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1176,7 +1176,7 @@ export default function builtinsFloatSecondPrototypebTest() {
         console.info(`${caseName}, test start`);
         const a = new Float(Number.NEGATIVE_INFINITY);
         const b = new Float(1.0);
-        expect(a.compareTo(b)).assertEqual(-2147483648);
+        expect(a.compareTo(b)).assertEqual(-1);
         console.info(`${caseName}, test end`);
         Done();
       })

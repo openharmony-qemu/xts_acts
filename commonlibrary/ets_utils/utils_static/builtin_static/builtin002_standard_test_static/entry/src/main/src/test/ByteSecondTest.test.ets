@@ -119,7 +119,7 @@ export default function builtinsByteSecondPrototypebTest() {
         const byte1 = new Byte(1);
         const byte2 = new Byte(-1);
         const result = byte1.compareTo(byte2);
-        expect(result).assertEqual(2);
+        expect(result).assertEqual(1);
         console.info(`${caseName}, test end`);
         Done();
       })

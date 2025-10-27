@@ -1414,7 +1414,7 @@ export default function IntTest() {
         const a = new Int(10);
         const b = new Int(5);
         const result = a.compareTo(b);
-        expect(result).assertEqual(5);
+        expect(result).assertEqual(1);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1435,7 +1435,7 @@ export default function IntTest() {
         const a = new Int(3);
         const b = new Int(7);
         const result = a.compareTo(b);
-        expect(result).assertEqual(-4);
+        expect(result).assertEqual(-1);
         console.info(`${caseName}, test end`);
         Done();
       })
