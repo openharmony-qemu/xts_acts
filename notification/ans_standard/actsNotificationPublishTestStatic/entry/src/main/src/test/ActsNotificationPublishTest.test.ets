@@ -1019,8 +1019,13 @@ export default function ActsNotificationPublishTest() {
             done()
           } else {
             console.info(`${TAG} getActiveNotifications AsyncCallback success`)
-            expect(true).assertTrue()
-            done()
+            if(data == null){
+              expect(false).assertTrue()
+              done()
+            }else{
+              expect(data.length == 0).assertTrue()
+              done()
+            }
           }
         })
         console.info(`Sub_Notification_Ans_Distributed_Search_Static_0800 END`)
@@ -1038,7 +1043,7 @@ export default function ActsNotificationPublishTest() {
         await notificationManager.getActiveNotifications()
           .then((data: Array<notificationManager.NotificationRequest>) => {
             console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
-            expect(true).assertTrue()
+            expect(data.length == 0).assertTrue()
             done()
           })
           .catch((err: BusinessError): void => {
@@ -1068,10 +1073,16 @@ export default function ActsNotificationPublishTest() {
             done()
           } else {
             console.info(`${TAG} isSupportTemplate AsyncCallback success`)
-            expect(true).assertTrue()
-            done()
+            if(data == undefined){
+              expect(false).assertTrue()
+              done()
+            }else{
+              expect(data).assertFalse()
+              done()
+            }
           }
         })
+        await Utils.msSleep(500)
         console.info(`${TAG} SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0100 END`)
       })
 
@@ -1087,7 +1098,7 @@ export default function ActsNotificationPublishTest() {
         let templateName:string = 'test_templateName'
         notificationManager.isSupportTemplate(templateName).then((data:Boolean) => {
           console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(data).assertFalse()
           done()
         }).catch((err: BusinessError): void => {
           console.info(`${TAG} isSupportTemplate Promise err: ${err.code}`)

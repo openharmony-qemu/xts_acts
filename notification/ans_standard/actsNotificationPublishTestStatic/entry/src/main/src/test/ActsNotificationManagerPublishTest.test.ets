@@ -422,6 +422,7 @@ export default function ActsNotificationManagerPublishTest() {
         let TAG:string = 'Sub_Notification_Ans_Distributed_Search_Static_1500'
         console.info(`Sub_Notification_Ans_Distributed_Search_Static_1500 START`)
         try {
+          await notificationManager.cancelAll();
           notificationManager.getActiveNotifications((err: BusinessError | null,
             data: Array<notificationManager.NotificationRequest>|undefined): void => {
             if (err) {
@@ -430,8 +431,13 @@ export default function ActsNotificationManagerPublishTest() {
               done()
             } else {
               console.info(`${TAG} getActiveNotifications AsyncCallback success ${JSON.stringify(data)}`)
-              expect(true).assertTrue()
-              done()
+              if(data == undefined){
+                expect(false).assertTrue()
+                done()
+              }else{
+                expect(data.length == 0).assertTrue()
+                done()
+              }
             }
           })
         } catch (err: BusinessError) {
@@ -454,7 +460,7 @@ export default function ActsNotificationManagerPublishTest() {
         await notificationManager.getActiveNotifications()
           .then((data: Array<notificationManager.NotificationRequest>) => {
             console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
-            expect(true).assertTrue()
+            eexpect(data.length == 0).assertTrue()
             done()
           })
           .catch((err: BusinessError): void => {
@@ -518,7 +524,7 @@ export default function ActsNotificationManagerPublishTest() {
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Distributed_template_Static_0300'
         console.info(`${TAG} Sub_Notification_Ans_Distributed_template_Static_0300 START`)
-        let templateName:string = 'test_templateName'
+        let templateName:string = 'downloadTemplate'
         try {
           notificationManager.isSupportTemplate(templateName, (err: BusinessError | null, data:boolean|undefined) => {
             if (err) {
@@ -527,7 +533,7 @@ export default function ActsNotificationManagerPublishTest() {
               done()
             } else {
               console.info(`${TAG} isSupportTemplate AsyncCallback success:${JSON.stringify(data)} `)
-              expect(true).assertTrue()
+              expect(data).assertTrue()
               done()
             }
           })
@@ -548,10 +554,10 @@ export default function ActsNotificationManagerPublishTest() {
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Distributed_template_Static_0400'
         console.info(`${TAG} Sub_Notification_Ans_Distributed_template_Static_0400 START`)
-        let templateName:string = 'test_templateName'
+        let templateName:string = 'downloadTemplate'
         await notificationManager.isSupportTemplate(templateName).then((data:boolean) => {
           console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(data).assertTrue()
           done()
         }).catch((err: BusinessError):void => {
           console.info(`${TAG} isSupportTemplate Promise err: ${err.code}, errMes: ${err.message}`)
@@ -571,9 +577,23 @@ export default function ActsNotificationManagerPublishTest() {
         let TAG:string = 'SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_Static_0300'
         console.info(`${TAG} SUB_NOTIFICATION_ANS_MANAGER_SUPPORT_TEST_Static_0300 START`)
         let num:string = '1'
+
+        notificationManager.isSupportTemplate(num, (err: BusinessError | null, data:boolean|undefined) => {
+            if (err) {
+              console.info(`${TAG} isSupportTemplate AsyncCallback err: ${err.code}, errMes: ${err.message}`)
+              expect(false).assertTrue()
+              done()
+            } else {
+              console.info(`${TAG} isSupportTemplate AsyncCallback success:${JSON.stringify(data)} `)
+              expect(data).assertFalse()
+            }
+          })
+
+        await Utils.msSleep(500)
+
         notificationManager.isSupportTemplate(num).then((data:boolean) => {
           console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(data).assertFalse()
           done()
         }).catch((err: BusinessError):void => {
           console.info(`${TAG} isSupportTemplate Promise err: ${err.code}, errMes: ${err.message}`)
@@ -792,9 +812,23 @@ export default function ActsNotificationManagerPublishTest() {
               done();
             } else {
               hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish success,result is : %{public}s');
-              expect(true).assertTrue();
-              hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
-              done();
+              notificationManager.getActiveNotifications((err: BusinessError | null,
+                data: Array<notificationManager.NotificationRequest>|undefined): void => {
+                if (err) {
+                  console.info(`${TAG} getActiveNotifications AsyncCallback err: ${err.code}, errMes: ${err.message}`)
+                  expect(false).assertTrue()
+                  done()
+                } else {
+                  console.info(`${TAG} getActiveNotifications AsyncCallback success ${JSON.stringify(data)}`)
+                  if(data == undefined){
+                    expect(false).assertTrue()
+                    done()
+                  }else{
+                    expect(data.length > 0).assertTrue()
+                    done()
+                  }
+                }
+              })
             }
           })
         } catch (err) {
@@ -964,8 +998,8 @@ export default function ActsNotificationManagerPublishTest() {
               hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
               done();
             } else {
-              hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish success,result is : %{public}s');
-              expect(true).assertTrue();
+              hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish success,result is : %{public}s', err);
+              expect(err).assertEqual(null);
               hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
               done();
             }
@@ -1280,7 +1314,7 @@ export default function ActsNotificationManagerPublishTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME} test case start`);
         try {
           await Utils.msSleep(2500);
-          notificationManager.publish(notificationRequest, (err: BusinessError | null) => {
+          notificationManager.publish(notificationRequest, async (err: BusinessError | null) => {
             if (err) {
               hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s',
                 JSON.stringify(err));
@@ -1289,9 +1323,15 @@ export default function ActsNotificationManagerPublishTest() {
               done();
             } else {
               hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish success,result is : %{public}s');
-              expect(true).assertTrue();
-              hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
-              done();
+              await notificationManager.getActiveNotifications().then((data: Array<notificationManager.NotificationRequest>) => {
+                console.info(`${TAG} getActiveNotifications Promise success :${JSON.stringify(data)}`)
+                eexpect(data.length > 0).assertTrue()
+                done()
+              }).catch((err: BusinessError): void => {
+                console.info(`${TAG} getActiveNotifications Promise err: ${err.code}, errMes: ${err.message}`)
+                expect(false).assertTrue()
+                done()
+              })
             }
           })
         } catch (err: BusinessError) {

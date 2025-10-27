@@ -30,7 +30,7 @@ export default function ActsNotificationEmitterPublishTest() {
         eventId: 1
       };
       let num : int = 0
-      let callback01 = (): void => {
+      let callback01:Callback<emitter.EventData> = (eventData: emitter.EventData) => {
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' callback01 success');
         num++;
         expect(false).assertTrue();

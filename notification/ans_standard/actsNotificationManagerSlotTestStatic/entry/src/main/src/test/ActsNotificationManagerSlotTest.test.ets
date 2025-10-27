@@ -1355,7 +1355,9 @@ export default function ActsNotificationManagerSlotTest() {
     it('Sub_Notification_Ans_Slot_GetSlot_Static_2200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_2200 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_GetSlot_Static_2200 START')
+      await Utils.msSleep(500);
       try {
+        await notificationManager.removeAllSlots()
         notificationManager.getSlots((err: BusinessError | null, data: Array<notificationManager.NotificationSlot>|undefined) => {
           if (err) {
             console.info(`${TAG} getSlots AsyncCallback err: ${err}, errMes: ${err.message}`)
@@ -1363,8 +1365,13 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           } else {
             console.info(`${TAG} getSlots AsyncCallback ` )
-            expect(true).assertTrue()
-            done()
+            if(data == undefined){
+              expect(false).assertTrue()
+              done()
+            }else{
+              expect(data.length == 0).assertTrue()
+              done()
+            }
           }
         })
       } catch (err: BusinessError) {
@@ -1383,9 +1390,11 @@ export default function ActsNotificationManagerSlotTest() {
     it('Sub_Notification_Ans_Slot_GetSlot_Static_2300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Slot_GetSlot_Static_2300 '
       console.info(TAG + 'Sub_Notification_Ans_Slot_GetSlot_Static_2300 START')
+      await Utils.msSleep(500);
+      await notificationManager.removeAllSlots()
       notificationManager.getSlots().then((data: Array<notificationManager.NotificationSlot>) => {
         console.info(`${TAG} getSlots Promise ` )
-        expect(true).assertTrue()
+        expect(data.length == 0).assertTrue()
         done()
       }).catch((err: BusinessError):void => {
         console.info(`${TAG} getSlots Promise err: ${err}, errMes: ${err.message}`)
@@ -1458,6 +1467,7 @@ export default function ActsNotificationManagerSlotTest() {
           } else {
             console.info(`${TAG} getSlots AsyncCallback success:` )
             if(data !== undefined){
+              expect(data.length > 0).assertTrue()
               for (let i = 0; i < data.length; i++) {
                 console.info(`${TAG} NotificationSlot[${i}].type` + data[i].notificationType)
                 let num = data[i].notificationType as notificationManager.SlotType
@@ -1543,6 +1553,7 @@ export default function ActsNotificationManagerSlotTest() {
 
       await notificationManager.getSlots().then((data: Array<notificationManager.NotificationSlot>) => {
         console.info(`${TAG} getSlots Promise success:` )
+        expect(data.length > 0).assertTrue()
         for (let i = 0; i < data.length; i++) {
           console.info(`${TAG} NotificationSlot[${i}].type:` + data[i].notificationType)
           let num = data[i].notificationType as notificationManager.SlotType

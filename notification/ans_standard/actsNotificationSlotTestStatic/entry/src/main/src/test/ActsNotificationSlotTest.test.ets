@@ -1315,8 +1315,13 @@ export default function ActsNotificationSlotTest() {
             done()
           } else {
             console.info(`${TAG} getSlots AsyncCallback success: ${NotificationSlot}`)
-            expect(true).assertTrue()
-            done()
+            if(NotificationSlot == undefined){
+              expect(false).assertTrue()
+              done()
+            }else{
+              expect(NotificationSlot.length == 0 ).assertTrue()
+              done()
+            }
           }
         })
         console.info(TAG + 'Sub_Notification_Ans_Slot_GetSlot_2400 END')
@@ -1333,7 +1338,7 @@ export default function ActsNotificationSlotTest() {
         console.info(TAG + 'Sub_Notification_Ans_Slot_GetSlot_2500 START')
         await notificationManager.getSlots().then((NotificationSlot: Array<notificationManager.NotificationSlot>) => {
           console.info(`${TAG} getSlots Promise success: ${NotificationSlot}`)
-          expect(true).assertTrue()
+          expect(NotificationSlot.length == 0 ).assertTrue()
           done()
         }).catch((err: BusinessError): void => {
           console.info(`${TAG} getSlots Promise err: ${err.code}`)
@@ -1415,6 +1420,7 @@ export default function ActsNotificationSlotTest() {
           } else {
             console.info(`${TAG} getSlots AsyncCallback success:`)
             if(NotificationSlot !== undefined){
+              expect(NotificationSlot.length > 0).assertTrue()
               for (let i = 0; i < NotificationSlot.length; i++) {
                 console.info(`${TAG} NotificationSlot[${i}].type:` + NotificationSlot[i].notificationType)
                 let num = NotificationSlot[i].notificationType as notificationManager.SlotType
@@ -1503,6 +1509,7 @@ export default function ActsNotificationSlotTest() {
 
         await notificationManager.getSlots().then((NotificationSlot: Array<notificationManager.NotificationSlot>) => {
           console.info(`${TAG} getSlots Promise success:`)
+          expect(NotificationSlot.length > 0).assertTrue()
           for (let i = 0; i < NotificationSlot.length; i++) {
             console.info(`${TAG} NotificationSlot[${i}].type:` + NotificationSlot[i].notificationType)
             let num = NotificationSlot[i].notificationType as notificationManager.SlotType
