@@ -56,7 +56,7 @@ export default function getAlbumsTest() {
           subTypes.push(photoAccessHelper.AlbumSubtype.FAVORITE);
           let count = 0;
           for (let i = 0; i < subTypes.length; i++) {
-            helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i], (err: BusinessError<void> | null,
+            (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, subTypes[i], (err: BusinessError<void> | null,
               fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined) => {
               try {
                 if (err?.code !== 0) {
@@ -104,7 +104,7 @@ export default function getAlbumsTest() {
       try {
         let albumName = testNum;
         const fetchOps = fetchOption(testNum, photoAccessHelper.AlbumKeys.ALBUM_NAME, albumName);
-        helper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, fetchOps,
+        (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC, fetchOps,
           (err: BusinessError<void> | null,
             fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> | undefined): void => {
             expect(false).assertTrue();

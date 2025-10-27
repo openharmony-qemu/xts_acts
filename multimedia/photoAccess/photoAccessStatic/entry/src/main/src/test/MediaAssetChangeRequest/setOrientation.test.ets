@@ -33,14 +33,14 @@ export default function setOrientationChangeRequestTest() {
       async (assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest, photoAsset: photoAccessHelper.PhotoAsset,
         orientation: number) => {
         try {
-          await helper.applyChanges(assetChangeRequest);
+          await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges(assetChangeRequest);
           predicates.equalTo(photoAccessHelper.PhotoKeys.URI, photoAsset.uri);
           const fetchOptionsNew: photoAccessHelper.FetchOptions = {
             fetchColumns: ['orientation'],
             predicates: predicates
           };
           let photoFetchResultNew: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-            await helper.getAssets(fetchOptionsNew);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptionsNew);
           let photoAssetNew: photoAccessHelper.PhotoAsset = await photoFetchResultNew.getFirstObject();
           let orientationNew: photoAccessHelper.PhotoKeys = photoAccessHelper.PhotoKeys.ORIENTATION;
           expect(photoAssetNew.get(orientationNew)).assertEqual(orientation);
@@ -67,7 +67,7 @@ export default function setOrientationChangeRequestTest() {
             predicates: predicates
           };
           let photoFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-            await helper.getAssets(fetchOptions);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
           let photoAsset: photoAccessHelper.PhotoAsset = await photoFetchResult.getFirstObject();
           console.info(`${testNum} , old_photoAsset_orientation: ${photoAsset.get('orientation')}`);
           let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
@@ -135,14 +135,14 @@ export default function setOrientationChangeRequestTest() {
             predicates: predicates
           };
           let photoFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-            await helper.getAssets(fetchOptions);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
           let photoAsset: photoAccessHelper.PhotoAsset = await photoFetchResult.getFirstObject();
           let old_photoAsset_orientation = photoAsset.get('orientation');
           let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
             new photoAccessHelper.MediaAssetChangeRequest(photoAsset);
           let newOrientation = 45;
           assetChangeRequest.setOrientation(newOrientation);
-          await helper.applyChanges(assetChangeRequest).then(() => {
+          await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges(assetChangeRequest).then(() => {
             console.error(`${testNum} failed`);
           });
           expect(photoAsset.get('orientation')).assertEqual(old_photoAsset_orientation);
@@ -170,14 +170,14 @@ export default function setOrientationChangeRequestTest() {
             predicates: predicates
           };
           let photoFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-            await helper.getAssets(fetchOptions);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
           let photoAsset: photoAccessHelper.PhotoAsset = await photoFetchResult.getFirstObject();
           let old_photoAsset_orientation = photoAsset.get('orientation');
           let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
             new photoAccessHelper.MediaAssetChangeRequest(photoAsset);
           let newOrientation = 1000;
           assetChangeRequest.setOrientation(newOrientation);
-          await helper.applyChanges(assetChangeRequest).then(() => {
+          await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges(assetChangeRequest).then(() => {
             console.error(`${testNum} failed`);
           });
           expect(photoAsset.get('orientation')).assertEqual(old_photoAsset_orientation);
@@ -205,14 +205,14 @@ export default function setOrientationChangeRequestTest() {
             predicates: predicates
           };
           let photoFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-            await helper.getAssets(fetchOptions);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
           let photoAsset: photoAccessHelper.PhotoAsset = await photoFetchResult.getFirstObject();
           let old_photoAsset_orientation = photoAsset.get('orientation');
           let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
             new photoAccessHelper.MediaAssetChangeRequest(photoAsset);
           let newOrientation = 90;
           assetChangeRequest.setOrientation(newOrientation);
-          await helper.applyChanges(assetChangeRequest).then(() => {
+          await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges(assetChangeRequest).then(() => {
             console.error(`${testNum} failed`);
             expect(false).assertTrue();
           });

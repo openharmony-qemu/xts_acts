@@ -67,7 +67,7 @@ export default function getBurstAssetsTest() {
           let ops = fetchAllOption();
           let burstKey = "e719d696-09fa-44f8-ec3f215aa62a";
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-            await helper.getBurstAssets(burstKey, ops);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getBurstAssets(burstKey, ops);
           if (fetchResult === undefined || fetchResult.getCount() > 0) {
             expect(false).assertTrue();
             done();
@@ -100,7 +100,7 @@ export default function getBurstAssetsTest() {
             predicates: predicates
           };
           let assetResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-            await helper.getAssets(fetchOptions);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
           hilog.info(domain, tag, `${testNum} :: assetResult count:: count = ${assetResult.getCount()}`);
           expect(assetResult.getCount() >= 0).assertTrue();
           done();

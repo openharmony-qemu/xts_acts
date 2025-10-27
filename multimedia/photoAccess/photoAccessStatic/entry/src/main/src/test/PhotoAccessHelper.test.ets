@@ -56,7 +56,7 @@ export default function PhotoAccessHelperStaticTest() {
           hilog.info(domain, tag, '%{public}s', 'PhotoAccessHelperStaticTest 444');
           options.predicates = predicates;
           hilog.info(domain, tag, '%{public}s', 'PhotoAccessHelperStaticTest 666');
-          let result: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper.getAssets(options);
+          let result: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(options);
           hilog.info(domain, tag, '%{public}s', 'PhotoAccessHelperStaticTest 777');
           let photoAssetList: Array<photoAccessHelper.PhotoAsset> = await result.getAllObjects();
           hilog.info(domain, tag, '%{public}s', 'PhotoAccessHelperStaticTest 8888');

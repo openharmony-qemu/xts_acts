@@ -41,17 +41,17 @@ export default function getAlbumChangeRequestTest() {
         let testNum = 'get_album_change_request_static_000';
         try {
           const fetchResult =
-            await helper.getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAlbums(photoAccessHelper.AlbumType.SYSTEM, photoAccessHelper.AlbumSubtype.VIDEO);
           const album = await fetchResult.getFirstObject();
           fetchResult.close();
           let albumChangeRequest = new photoAccessHelper.MediaAlbumChangeRequest(album);
 
-          expect(album.albumType).assertEqual(albumChangeRequest.getAlbum().albumType);
-          expect(album.albumSubtype).assertEqual(albumChangeRequest.getAlbum().albumSubtype);
-          expect(album.albumName).assertEqual(albumChangeRequest.getAlbum().albumName);
-          expect(album.albumUri).assertEqual(albumChangeRequest.getAlbum().albumUri);
-          expect(album.count).assertEqual(albumChangeRequest.getAlbum().count);
-          expect(album.coverUri).assertEqual(albumChangeRequest.getAlbum().coverUri);
+          expect(album.albumType).assertEqual((albumChangeRequest.getAlbum() as photoAccessHelper.Album).albumType);
+          expect(album.albumSubtype).assertEqual((albumChangeRequest.getAlbum() as photoAccessHelper.Album).albumSubtype);
+          expect(album.albumName).assertEqual((albumChangeRequest.getAlbum() as photoAccessHelper.Album).albumName);
+          expect(album.albumUri).assertEqual((albumChangeRequest.getAlbum() as photoAccessHelper.Album).albumUri);
+          expect(album.count).assertEqual((albumChangeRequest.getAlbum() as photoAccessHelper.Album).count);
+          expect(album.coverUri).assertEqual((albumChangeRequest.getAlbum() as photoAccessHelper.Album).coverUri);
           done();
         } catch (error) {
           console.error(`${testNum} failed; error: ${error}`);

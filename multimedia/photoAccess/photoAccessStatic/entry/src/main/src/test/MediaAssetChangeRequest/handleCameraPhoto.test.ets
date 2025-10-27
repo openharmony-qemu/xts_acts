@@ -52,7 +52,7 @@ export default function handleCameraPhotoTest() {
           let size_before: int | long | number | string | boolean | undefined = 0 as Int;
           let assetCount: int | undefined = 0;
           while (flag > 0) {
-            fetchResult = await helper.getAssets(fetchOptions);
+            fetchResult = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
             if (fetchResult !== undefined && fetchResult.getCount() > 0) {
               console.log(`${testNum} :: assetCount == ${fetchResult.getCount()}`);
               photoAsset = await fetchResult.getFirstObject();
@@ -77,11 +77,11 @@ export default function handleCameraPhotoTest() {
             } else {
               assetChangeRequest.discardCameraPhoto();
             }
-            await helper.applyChanges(assetChangeRequest);
+            await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges(assetChangeRequest);
           }
           console.info(`${testNum} :: apply change successfully`);
           let fetchResult2: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-            await helper.getAssets(fetchOptions);
+            await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
           let asset = await fetchResult2.getFirstObject();
           console.log(`${testNum} :: after change apply, get photoAsset data`);
           let date_added_after = asset.get(photoAccessHelper.PhotoKeys.DATE_ADDED);
@@ -111,7 +111,7 @@ export default function handleCameraPhotoTest() {
           predicates: predicates
         };
         let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await helper.getAssets(fetchOptions);
+          await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
         count = fetchResult.getCount();
         fetchResult.close();
         return count;
@@ -124,7 +124,7 @@ export default function handleCameraPhotoTest() {
     const saveCameraPhotoException = async (done: () => void, testNum: string, type: photoAccessHelper.ImageFileType,
       ops: photoAccessHelper.FetchOptions): Promise<void> => {
       try {
-        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper.getAssets(ops)
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(ops)
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let date_added_before = photoAsset.get(photoAccessHelper.PhotoKeys.DATE_ADDED);
         let date_modified_before = photoAsset.get(photoAccessHelper.PhotoKeys.DATE_MODIFIED);
@@ -135,8 +135,8 @@ export default function handleCameraPhotoTest() {
         let assetChangeRequest: photoAccessHelper.MediaAssetChangeRequest =
           new photoAccessHelper.MediaAssetChangeRequest(photoAsset);
         assetChangeRequest.saveCameraPhoto(type);
-        await helper.applyChanges(assetChangeRequest);
-        let fetchResult2: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await helper.getAssets(ops)
+        await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges(assetChangeRequest);
+        let fetchResult2: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(ops)
         let photoAsset2: photoAccessHelper.PhotoAsset = await fetchResult2.getFirstObject();
         let date_added_after = photoAsset2.get(photoAccessHelper.PhotoKeys.DATE_ADDED);
         let date_modified_after = photoAsset2.get(photoAccessHelper.PhotoKeys.DATE_MODIFIED);

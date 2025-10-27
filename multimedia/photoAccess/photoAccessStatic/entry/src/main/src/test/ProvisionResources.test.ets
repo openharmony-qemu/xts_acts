@@ -68,7 +68,7 @@ export default function provisionResourcesTest() {
           predicates: predicates
         };
         let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await phAccessHelper.getAssets(fetchOptions);
+          await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOptions);
         count = fetchResult.getCount();
         fetchResult.close();
         return count;

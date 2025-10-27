@@ -45,7 +45,7 @@ export default function setTest() {
           predicates: predicates
         };
         let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await phAccessHelper.getAssets(fetchOption);
+          await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOption);
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let title: string = photoAccessHelper.PhotoKeys.TITLE.toString();
         photoAsset.set(title, 'newTitle');
@@ -66,7 +66,7 @@ export default function setTest() {
           predicates: predicates
         };
         let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> =
-          await phAccessHelper.getAssets(fetchOption);
+          await (phAccessHelper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOption);
         let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
         let title: string = '';
         photoAsset.set(title, 'newTitle');
