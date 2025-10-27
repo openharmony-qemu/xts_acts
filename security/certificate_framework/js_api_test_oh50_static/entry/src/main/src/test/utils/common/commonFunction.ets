@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import { expect } from "../../../../../hypium/index";
+import { BusinessError } from '@ohos.base';
 import cryptoFramework from "@ohos.security.cryptoFramework";
 import { reg } from './commonParam';
 import buffer from '@ohos.buffer';
@@ -230,6 +231,40 @@ function compareString(a: string, b: string): boolean {
   }
 }
 
+function compareUint8Array(a: Uint8Array, b: Uint8Array): boolean {
+  let buf1 = buffer.from(a);
+  let buf2 = buffer.from(b);
+  if (buf1.compare(buf2, 0, b.length, 0, a.length) == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+async function createUint8Array(dataLen: int): Promise<Uint8Array>{
+  try {
+    let rand: cryptoFramework.Random = cryptoFramework.createRandom();
+    let rawData: cryptoFramework.DataBlob = await rand.generateRandom(dataLen);
+
+    return rawData.data;
+  } catch (error: BusinessError) {
+    console.error('[XTS] create data ' + error.code + " errorMsg " + error.message);
+    throw error as Error;
+  }
+}
+
+async function createData(dataLen: int): Promise<cryptoFramework.DataBlob>{
+  try {
+    let rand: cryptoFramework.Random = cryptoFramework.createRandom();
+    let rawData: cryptoFramework.DataBlob = await rand.generateRandom(dataLen);
+
+    return rawData;
+  } catch (error: BusinessError) {
+    console.error('[XTS] create data ' + error.code + " errorMsg " + error.message);
+    throw error as Error;
+  }
+}
+
 
 export {
   stringToArray,
@@ -241,5 +276,8 @@ export {
   genCcmParamsSpec,
   genKeyMaterialBlob,
   convertToUint8Array,
-  compareString
+  compareString,
+  createData,
+  createUint8Array,
+  compareUint8Array
 };

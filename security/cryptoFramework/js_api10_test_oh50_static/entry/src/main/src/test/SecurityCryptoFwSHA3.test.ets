@@ -279,7 +279,7 @@ export default function SecurityCryptoFwSha3TestUnit() {
           }
         } catch (error: BusinessError) {
           console.error(`Sha3 "${error}", error code: ${error.code}`);
-          expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          expect(error.code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
       });

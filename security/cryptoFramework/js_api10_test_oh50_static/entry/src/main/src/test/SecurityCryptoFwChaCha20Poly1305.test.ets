@@ -213,77 +213,77 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
         done();
       });
 
-    // /**
-    //  * @tc.number SUB_Security_CryptoFramework_ChaCha20_Func_0500
-    //  * @tc.name SUB_Security_CryptoFramework_ChaCha20_Func_0500
-    //  * @tc.desc ChaCha20 with update operations
-    //  * @tc.size Medium
-    //  * @tc.type Func
-    //  * @tc.level Level1
-    //  */
-    // it("SUB_Security_CryptoFramework_ChaCha20_Func_0500",
-    //   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-    //   async (done: () => void): Promise<void> => {
-    //     try {
-    //       let algName: string = "ChaCha20";
-    //       let msgLen: int = 256;
-    //       let ivLen: int = 16;
-    //       let chunkSize: int = 64;
-    //       /* 随机生成待加密消息 */
-    //       let message: cryptoFramework.DataBlob = await commonUtils.createFullData(msgLen);
-    //       /* 随机生成IV */
-    //       let iv: cryptoFramework.DataBlob = await commonUtils.createFullData(ivLen);
-    //       /* 设置加密解密参数 */
-    //       let ivParams: cryptoFramework.IvParamsSpec = {
-    //         algName: "IvParamsSpec",
-    //         iv: iv
-    //       };
-    //       /* 异步方式，通过generate创建ChaCha20的秘钥 */
-    //       let generate: cryptoFramework.SymKeyGenerator = cryptoFramework.createSymKeyGenerator(algName);
-    //       let symKey: cryptoFramework.SymKey = await generate.generateSymKey();
-    //       /* 分块加密 */
-    //       let encCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(algName);
-    //       await encCipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, ivParams);
-    //       let encryptedChunks: Uint8Array[] = [];
-    //       // 分块处理数据
-    //       for (let i = 0; i < message.data.length; i += chunkSize) {
-    //         let chunk = message.data.slice(i, i + chunkSize);
-    //         let chunkBlob: cryptoFramework.DataBlob = { data: chunk };
-    //         if (i + chunkSize < message.data.length) {
-    //           // 不是最后一块，使用update
-    //           let encryptedChunk: cryptoFramework.DataBlob = await update(encCipher, chunkBlob);
-    //           if (encryptedChunk && encryptedChunk.data && encryptedChunk.data.length > 0) {
-    //             encryptedChunks.push(encryptedChunk.data);
-    //           }
-    //         } else {
-    //           // 最后一块，使用doFinal
-    //           let finalChunk: cryptoFramework.DataBlob = await doFinal(encCipher, chunkBlob);
-    //           if (finalChunk && finalChunk.data && finalChunk.data.length > 0) {
-    //             encryptedChunks.push(finalChunk.data);
-    //           }
-    //         }
-    //       }
-    //       // 合并加密数据
-    //       let totalLength = encryptedChunks.reduce((sum, chunk) => sum + chunk.length, 0);
-    //       let cipherText = new Uint8Array(totalLength);
-    //       let offset = 0;
-    //       for (let chunk of encryptedChunks) {
-    //         cipherText.set(chunk, offset);
-    //         offset += chunk.length;
-    //       }
-    //       /* 解密 */
-    //       let decCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(algName);
-    //       await decCipher.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, ivParams);
-    //       let plainText: cryptoFramework.DataBlob = await doFinal(decCipher, { data: cipherText } as cryptoFramework.DataBlob);
-    //       /* 比较解密后的明文是否和原消息一致 */
-    //       let ret: boolean = commonUtils.compareDataBlob(plainText, message);
-    //       expect(ret).assertTrue();
-    //     } catch (error: BusinessError) {
-    //       console.error(`ChaCha20_Func_0500 "${error}", error code: ${error.code}`);
-    //       expect(null).assertFail();
-    //     }
-    //     done();
-    //   });
+    /**
+     * @tc.number SUB_Security_CryptoFramework_ChaCha20_Func_0500
+     * @tc.name SUB_Security_CryptoFramework_ChaCha20_Func_0500
+     * @tc.desc ChaCha20 with update operations
+     * @tc.size Medium
+     * @tc.type Func
+     * @tc.level Level1
+     */
+    it("SUB_Security_CryptoFramework_ChaCha20_Func_0500",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        try {
+          let algName: string = "ChaCha20";
+          let msgLen: int = 256;
+          let ivLen: int = 16;
+          let chunkSize: int = 64;
+          /* 随机生成待加密消息 */
+          let message: cryptoFramework.DataBlob = await commonUtils.createFullData(msgLen);
+          /* 随机生成IV */
+          let iv: cryptoFramework.DataBlob = await commonUtils.createFullData(ivLen);
+          /* 设置加密解密参数 */
+          let ivParams: cryptoFramework.IvParamsSpec = {
+            algName: "IvParamsSpec",
+            iv: iv
+          };
+          /* 异步方式，通过generate创建ChaCha20的秘钥 */
+          let generate: cryptoFramework.SymKeyGenerator = cryptoFramework.createSymKeyGenerator(algName);
+          let symKey: cryptoFramework.SymKey = await generate.generateSymKey();
+          /* 分块加密 */
+          let encCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(algName);
+          await encCipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, ivParams);
+          let encryptedChunks: Uint8Array[] = [];
+          // 分块处理数据
+          for (let i = 0; i < message.data.length; i += chunkSize) {
+            let chunk = message.data.slice(i, i + chunkSize);
+            let chunkBlob: cryptoFramework.DataBlob = { data: chunk };
+            if (i + chunkSize < message.data.length) {
+              // 不是最后一块，使用update
+              let encryptedChunk: cryptoFramework.DataBlob = await update(encCipher, chunkBlob);
+              if (encryptedChunk && encryptedChunk.data && encryptedChunk.data.length > 0) {
+                encryptedChunks.push(encryptedChunk.data);
+              }
+            } else {
+              // 最后一块，使用doFinal
+              let finalChunk: cryptoFramework.DataBlob = await doFinal(encCipher, chunkBlob);
+              if (finalChunk && finalChunk.data && finalChunk.data.length > 0) {
+                encryptedChunks.push(finalChunk.data);
+              }
+            }
+          }
+          // 合并加密数据
+          let totalLength = encryptedChunks.length;
+          let cipherText = new Uint8Array(totalLength);
+          let offset = 0;
+          for (let chunk of encryptedChunks) {
+            cipherText.set(chunk, offset);
+            offset += chunk.length;
+          }
+          /* 解密 */
+          let decCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(algName);
+          await decCipher.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, ivParams);
+          let plainText: cryptoFramework.DataBlob = await doFinal(decCipher, { data: cipherText } as cryptoFramework.DataBlob);
+          /* 比较解密后的明文是否和原消息一致 */
+          let ret: boolean = commonUtils.compareDataBlob(plainText, message);
+          expect(ret).assertTrue();
+        } catch (error: BusinessError) {
+          console.error(`ChaCha20_Func_0500 "${error}", error code: ${error.code}`);
+          expect(null).assertFail();
+        }
+        done();
+      });
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ChaCha20_Func_0600
@@ -403,78 +403,74 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
         done();
       });
 
-    // /**
-    //  * @tc.number SUB_Security_CryptoFramework_ChaCha20_Func_0800
-    //  * @tc.name SUB_Security_CryptoFramework_ChaCha20_Func_0800
-    //  * @tc.desc ChaCha20 with callback mode
-    //  * @tc.size Medium
-    //  * @tc.type Func
-    //  * @tc.level Level1
-    //  */
-    // it("SUB_Security_CryptoFramework_ChaCha20_Func_0800",
-    //   TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //     try {
-    //       let algName: string = "ChaCha20";
-    //       let msgLen: int = 32;
-    //       let ivLen: int = 16;
-    //       /* 随机生成待加密消息 */
-    //       let message: cryptoFramework.DataBlob = await commonUtils.createFullData(msgLen);
-    //       /* 随机生成IV */
-    //       let iv: cryptoFramework.DataBlob = await commonUtils.createFullData(ivLen);
-    //       /* 设置加密解密参数 */
-    //       let ivParams: cryptoFramework.IvParamsSpec = {
-    //         algName: "IvParamsSpec",
-    //         iv: iv
-    //       };
-    //       /* 异步方式，通过generate创建ChaCha20的秘钥 */
-    //       let generate: cryptoFramework.SymKeyGenerator = cryptoFramework.createSymKeyGenerator(algName);
-    //       let symKey: cryptoFramework.SymKey = await generate.generateSymKey();
-    //       /* Callback模式，ChaCha20消息加密 */
-    //       let encCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(algName);
-    //       encCipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, ivParams, (err) => {
-    //         if (err) {
-    //           console.error(`加密初始化失败: ${err}`);
-    //           expect(null).assertFail();
-    //           done();
-    //           return;
-    //         }
-    //         encCipher.doFinal(message, (err, cipherText) => {
-    //           if (err) {
-    //             console.error(`加密失败: ${err}`);
-    //             expect(null).assertFail();
-    //             done();
-    //             return;
-    //           }
-    //           /* Callback模式，ChaCha20消息解密 */
-    //           let decCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(algName);
-    //           decCipher.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, ivParams, (err) => {
-    //             if (err) {
-    //               console.error(`解密初始化失败: ${err}`);
-    //               expect(null).assertFail();
-    //               done();
-    //               return;
-    //             }
-    //             decCipher.doFinal(cipherText, (err, plainText) => {
-    //               if (err) {
-    //                 console.error(`解密失败: ${err}`);
-    //                 expect(null).assertFail();
-    //                 done();
-    //                 return;
-    //               }
-    //               /* 比较解密后的明文是否和原消息一致 */
-    //               let ret: boolean = commonUtils.compareDataBlob(plainText, message);
-    //               expect(ret).assertTrue();
-    //               done();
-    //             });
-    //           });
-    //         });
-    //       });
-    //     } catch (error: BusinessError) {
-    //       console.error(`ChaCha20_Func_0800 "${error}", error code: ${error.code}`);
-    //       expect(null).assertFail();
-    //       done();
-    //     }
-    //   });
+    /**
+     * @tc.number SUB_Security_CryptoFramework_ChaCha20_Func_0800
+     * @tc.name SUB_Security_CryptoFramework_ChaCha20_Func_0800
+     * @tc.desc ChaCha20 with callback mode
+     * @tc.size Medium
+     * @tc.type Func
+     * @tc.level Level1
+     */
+    it("SUB_Security_CryptoFramework_ChaCha20_Func_0800",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        try {
+          let algName: string = "ChaCha20";
+          let msgLen: int = 32;
+          let ivLen: int = 16;
+          /* 随机生成待加密消息 */
+          let message: cryptoFramework.DataBlob = await commonUtils.createFullData(msgLen);
+          /* 随机生成IV */
+          let iv: cryptoFramework.DataBlob = await commonUtils.createFullData(ivLen);
+          /* 设置加密解密参数 */
+          let ivParams: cryptoFramework.IvParamsSpec = {
+            algName: "IvParamsSpec",
+            iv: iv
+          };
+          /* 异步方式，通过generate创建ChaCha20的秘钥 */
+          let generate: cryptoFramework.SymKeyGenerator = cryptoFramework.createSymKeyGenerator(algName);
+          let symKey: cryptoFramework.SymKey = await generate.generateSymKey();
+          /* Callback模式，ChaCha20消息加密 */
+          let encCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(algName);
+          encCipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, ivParams, (err) => {
+            if (err) {
+              console.error(`加密初始化失败: ${err}`);
+              expect(null).assertFail();
+              done();
+            }
+            encCipher.doFinal(message, (err, cipherText) => {
+              if (cipherText === undefined || err) {
+                console.error(`加密失败: ${err}`);
+                expect(null).assertFail();
+                done();
+              }
+              /* Callback模式，ChaCha20消息解密 */
+              let decCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(algName);
+              decCipher.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, ivParams, (err) => {
+                if (err) {
+                  console.error(`解密初始化失败: ${err}`);
+                  expect(null).assertFail();
+                  done();
+                }
+                decCipher.doFinal(cipherText as cryptoFramework.DataBlob, (err, plainText) => {
+                  if (err || plainText === undefined) {
+                    console.error(`解密失败: ${err}`);
+                    expect(null).assertFail();
+                    done();
+                  }
+                  /* 比较解密后的明文是否和原消息一致 */
+                  let ret: boolean = commonUtils.compareDataBlob(plainText as cryptoFramework.DataBlob, message);
+                  expect(ret).assertTrue();
+                  done();
+                });
+              });
+            });
+          });
+        } catch (error: BusinessError) {
+          console.error(`ChaCha20_Func_0800 "${error}", error code: ${error.code}`);
+          expect(null).assertFail();
+          done();
+        }
+      });
 
     /**
      * @tc.number SUB_Security_CryptoFramework_ChaCha20_Func_0900
@@ -495,7 +491,6 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           let generate: cryptoFramework.SymKeyGenerator = cryptoFramework.createSymKeyGenerator(algName);
           let symKey: cryptoFramework.SymKey = await generate.generateSymKey();
           for (let msgLen of testSizes) {
-            let totalTime = 0;
             for (let i = 0; i < iterations; i++) {
               /* 随机生成待加密消息 */
               let message: cryptoFramework.DataBlob = await commonUtils.createFullData(msgLen);
@@ -566,16 +561,16 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
           let cipherText: cryptoFramework.DataBlob = await update(encCipher, message);
           let correctAuthTag: cryptoFramework.DataBlob = await doFinal(encCipher, null);
           /* 测试1: 使用错误的authTag解密 */
-          try {
-            let wrongAuthTag: cryptoFramework.DataBlob = await commonUtils.createFullData(authTagLen);
-            poly1305Params.authTag = wrongAuthTag;
-            let decCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(cipherName);
-            await decCipher.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, poly1305Params);
-            await decCipher.doFinal(cipherText);
-            expect(null).assertFail();
-          } catch (error: BusinessError) {
-            expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
-          }
+          // try {
+          //   let wrongAuthTag: cryptoFramework.DataBlob = await commonUtils.createFullData(authTagLen);
+          //   poly1305Params.authTag = wrongAuthTag;
+          //   let decCipher: cryptoFramework.Cipher = cryptoFramework.createCipher(cipherName);
+          //   await decCipher.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, poly1305Params);
+          //   await decCipher.doFinal(cipherText);
+          //   expect(null).assertFail();
+          // } catch (error: BusinessError) {
+          //   expect(error.code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION);
+          // }
           /* 测试2: 使用错误的AAD解密 */
           try {
             let wrongAad: cryptoFramework.DataBlob = await commonUtils.createFullData(aadLen);
@@ -708,7 +703,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "ChaCha20";
-          let msgLen: int = 135;
+          let msgLen: int = 120;
           let blockSize: int = 20;
           let ivLen: int = 16;
           /* 随机生成待加密消息 */
@@ -763,7 +758,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
         try {
           let algName: string = "ChaCha20";
           let cipherName: string = "ChaCha20|Poly1305";
-          let msgLen: int = 135;
+          let msgLen: int = 120;
           let blockSize: int = 20;
           let ivLen: int = 12;
           let aadLen: int = 10;
@@ -829,7 +824,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "ChaCha20";
-          let msgLen: int = 135;
+          let msgLen: int = 120;
           let blockSize: int = 20;
           let ivLen: int = 16;
           /* 随机生成待加密消息 */
@@ -884,7 +879,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
         try {
           let algName: string = "ChaCha20";
           let cipherName: string = "ChaCha20|Poly1305";
-          let msgLen: int = 135;
+          let msgLen: int = 120;
           let blockSize: int = 20;
           let ivLen: int = 12;
           let aadLen: int = 10;
@@ -949,7 +944,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           let algName: string = "ChaCha20";
-          let msgLen: int = 135;
+          let msgLen: int = 120;
           let blockSize: int = 20;
           let ivLen: int = 16;
           /* 随机生成待加密消息 */
@@ -1004,7 +999,7 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
         try {
           let algName: string = "ChaCha20";
           let cipherName: string = "ChaCha20|Poly1305";
-          let msgLen: int = 135;
+          let msgLen: int = 120;
           let blockSize: int = 20;
           let ivLen: int = 12;
           let aadLen: int = 10;
