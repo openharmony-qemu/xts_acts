@@ -335,7 +335,7 @@ async function setOnCallback(avPlayer: media.AVPlayer | null, done: () => void) 
   avPlayer?.onEndOfStream(() => {
     count++;
     console.info(TAG + 'endOfStream success')
-    avPlayer?.off('endOfStream');
+    avPlayer?.offEndOfStream();
   })
 
   avPlayer?.onStateChange((state, reason) => {
@@ -416,7 +416,7 @@ async function setOnCallback(avPlayer: media.AVPlayer | null, done: () => void) 
       case RELEASED:
         avPlayer = null;
         done();
-        avPlayer?.off('endOfStream')
+        avPlayer?.offEndOfStream()
         break;
       case ERROR:
         expect().assertFail();
