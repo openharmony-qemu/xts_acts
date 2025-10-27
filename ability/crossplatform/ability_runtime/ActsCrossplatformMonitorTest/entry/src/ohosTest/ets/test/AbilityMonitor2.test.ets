@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,8 +16,12 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry";
 import Want from '@ohos.app.ability.Want';
 import { BusinessError } from '@ohos.base';
-import UIAbility from '@ohos.app.ability.UIAbility';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
+import commonEvent from '@ohos.commonEventManager';
+let ACTS_CallFunction: commonEvent.CommonEventSubscribeInfo = {
+  events: ['Main4Ability.onAbilityCreate']
+};
+let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
@@ -50,25 +54,21 @@ export default function AbilityMonitor2Test() {
   describe("AbilityMonitor2Test", () => {
     beforeEach(async (done: Function) => {
       console.info("AbilityMonitor2Test before each called");
-      await sleep(1000);
+      await sleep(500);
       done();
     });
 
     afterEach(async (done: Function) => {
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       if (monitor) {
         console.info(LABLE + TAG + "AbilityMonitor2Test afterEach removeAbilityMonitor called");
         abilityDelegator.removeAbilityMonitor(monitor, () => {
           monitor = undefined;
         });
       }
-      if (TAG === "ACTS_ADD_ABILITY_MONITOR_CALLBACK_0300" ||
-        TAG === "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0100" ||
-        TAG === "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0200" ||
-        TAG === "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0300" ||
-        TAG === "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0100" ||
-        TAG === "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0200" ||
-        TAG === "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0300") {
+      if (TAG === "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0100" ||
+        TAG === "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_2_0200" ||
+        TAG === "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0100" ||
+        TAG === "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_2_0200") {
         if (globalThis.main4AbilityContext) {
           console.info(LABLE + TAG + "AbilityMonitorTest afterEach terminateSelf main4 called");
           globalThis.main4AbilityContext.terminateSelf();
@@ -96,8 +96,6 @@ export default function AbilityMonitor2Test() {
         "Main2Ability",
         "entry"
       );
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-
       monitor = {
         abilityName: "Main2Ability",
         onAbilityForeground: (data) => {
@@ -148,9 +146,6 @@ export default function AbilityMonitor2Test() {
         "Main3Ability",
         "entry"
       );
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-
-
       monitor = {
         abilityName: "Main3Ability",
         onWindowStageCreate: (data) => {
@@ -169,7 +164,7 @@ export default function AbilityMonitor2Test() {
           setTimeout(() => {
             console.log(LABLE + TAG + " done");
             done();
-          }, 1000);
+          }, 500);
         },
       };
       console.log(LABLE + TAG + " addAbilityMonitor start");
@@ -209,7 +204,6 @@ export default function AbilityMonitor2Test() {
         "Main4Ability",
         "entry"
       );
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
       monitor = {
         abilityName: "Main4Ability",
@@ -234,7 +228,7 @@ export default function AbilityMonitor2Test() {
         );
         setTimeout(() => {
           globalThis.main4AbilityContext.terminateSelf();
-        }, 2000);
+        }, 1000);
       });
     });
 
@@ -254,7 +248,6 @@ export default function AbilityMonitor2Test() {
         "Main2Ability",
         "entry"
       );
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
       monitor = {
         abilityName: "Main2Ability",
@@ -270,15 +263,14 @@ export default function AbilityMonitor2Test() {
           TAG + " err:" + JSON.stringify(error)
         );
       });
-      setTimeout(() => {
-        console.log(LABLE + TAG + " startAbility start");
-        abilityDelegator.startAbility(want, (err) => {
-          console.log(LABLE + TAG + " err:" + JSON.stringify(err));
-          setTimeout(() => {
-            globalThis.main2AbilityContext.terminateSelf();
-          }, 2000);
-        });
-      }, 2000);
+      await sleep(500);
+      console.log(LABLE + TAG + " startAbility start");
+      abilityDelegator.startAbility(want, (err) => {
+        console.log(LABLE + TAG + " err:" + JSON.stringify(err));
+        setTimeout(() => {
+          globalThis.main2AbilityContext.terminateSelf();
+        }, 1000);
+      });
     });
 
     /**
@@ -297,8 +289,6 @@ export default function AbilityMonitor2Test() {
         "Main3Ability",
         "entry"
       );
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-
 
       monitor = {
         abilityName: "Main3Ability",
@@ -344,7 +334,6 @@ export default function AbilityMonitor2Test() {
         "entry"
       );
 
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       monitor = {
         abilityName: "Main4Ability",
         onAbilityForeground: (data) => {
@@ -397,8 +386,6 @@ export default function AbilityMonitor2Test() {
         "entry"
       );
 
-
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       monitor = {
         abilityName: "Main2Ability",
         onWindowStageCreate: (data) => {
@@ -431,7 +418,7 @@ export default function AbilityMonitor2Test() {
                 TAG + " start"
               );
             });
-          }, 2000);
+          }, 1000);
         })
         .catch(() => {
           abilityDelegator.printSync(
@@ -463,8 +450,6 @@ export default function AbilityMonitor2Test() {
         "entry"
       );
 
-
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       monitor = {
         abilityName: "Main3Ability",
         onAbilityBackground: (data) => {
@@ -491,21 +476,20 @@ export default function AbilityMonitor2Test() {
           console.info(TAG + " error");
           done();
         });
-      setTimeout(() => {
-        console.log(LABLE + TAG + " startAbility start");
-        abilityDelegator
-          .startAbility(want)
-          .then(async () => {
-            console.info(TAG + " start");
-            setTimeout(() => {
-              globalThis.main3Context.terminateSelf();
-            }, 2000);
-          })
-          .catch(() => {
-            console.info(LABLE + TAG + "ACTS_AddAbilityMonitor_Promise_0300 startability error");
-            done();
-          });
-      }, 2000);
+      console.log(LABLE + TAG + " startAbility start");
+      await sleep(200);
+      abilityDelegator
+        .startAbility(want)
+        .then(async () => {
+          console.info(TAG + " start");
+          setTimeout(() => {
+            globalThis.main3Context.terminateSelf();
+          }, 1000);
+        })
+        .catch(() => {
+          console.info(LABLE + TAG + "ACTS_AddAbilityMonitor_Promise_0300 startability error");
+          done();
+        });
     });
 
     /**
@@ -525,7 +509,6 @@ export default function AbilityMonitor2Test() {
         "entry"
       );
 
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       monitor = {
         abilityName: "Main4Ability",
         onWindowStageDestroy: (data) => {
@@ -547,14 +530,13 @@ export default function AbilityMonitor2Test() {
           done();
         });
       console.log(LABLE + TAG + " startAbility start");
-      setTimeout(() => {
-        abilityDelegator.startAbility(want, (err) => {
-          console.log(LABLE + TAG + " startAbility end, err=" + JSON.stringify(err));
-          setTimeout(() => {
-            globalThis.main4AbilityContext.terminateSelf();
-          }, 2000);
-        });
-      }, 2000);
+      await sleep(200);
+      abilityDelegator.startAbility(want, (err) => {
+        console.log(LABLE + TAG + " startAbility end, err=" + JSON.stringify(err));
+        setTimeout(() => {
+          globalThis.main4AbilityContext.terminateSelf();
+        }, 1000);
+      });
     });
 
     /**
@@ -574,7 +556,6 @@ export default function AbilityMonitor2Test() {
         "entry"
       );
 
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       monitor = {
         abilityName: "Main3Ability",
         onAbilityDestroy: (data) => {
@@ -600,7 +581,7 @@ export default function AbilityMonitor2Test() {
         console.log(LABLE + TAG + " startAbility, err:" + JSON.stringify(err));
         setTimeout(() => {
           globalThis.main3Context.terminateSelf();
-        }, 2000);
+        }, 1000);
       });
     });
 
@@ -621,7 +602,7 @@ export default function AbilityMonitor2Test() {
         "entry"
       );
       let result = 0;
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+      let id: number;
 
       monitor = {
         abilityName: "Main4Ability",
@@ -641,14 +622,40 @@ export default function AbilityMonitor2Test() {
       abilityDelegator.removeAbilityMonitor(monitor, (error: BusinessError) => {
         monitor = undefined;
         abilityDelegator.printSync(TAG + " ACTS_RemoveABILITY_MONITOR_CALLBACK_0100.");
-        abilityDelegator.startAbility(want);
+        commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+          subscriber = data
+          commonEvent.subscribe(data, subscribeCallBack)
+          console.log(LABLE + TAG + "startAbility");
+          abilityDelegator.startAbility(want).then((data) => {
+            console.log(LABLE + TAG + "successful data: " + JSON.stringify(data));
+          }).catch((error:BusinessError) => {
+            console.log(LABLE + TAG + "startAbility error: " + JSON.stringify(error));
+          });
+        });
       });
-      setTimeout(() => {
-        expect(result).assertEqual(0);
-        abilityDelegator.printSync(
-          TAG + " pass "
-        );
-        done();
+      let subscriber: commonEvent.CommonEventSubscriber;
+      let subscribeCallBack = (err: BusinessError, data: commonEvent.CommonEventData) => {
+        if (data.event == 'Main4Ability.onAbilityCreate') {
+          expect(result).assertEqual(0);
+          abilityDelegator.printSync(
+            TAG + " pass "
+          );
+          clearTimeout(id);
+          if (subscriber) {
+            commonEvent.unsubscribe(subscriber, done());
+          } else {
+            done();
+          }
+        }
+      };
+      id = setTimeout(() => {
+        console.log(LABLE + TAG + "startAbility fail");
+        expect().assertFail();
+        if (subscriber) {
+          commonEvent.unsubscribe(subscriber, done());
+        } else {
+          done();
+        }
       }, 3000);
     });
 
@@ -669,7 +676,7 @@ export default function AbilityMonitor2Test() {
         "entry"
       );
       let result = 0;
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+      let id: number;
 
       monitor = {
         abilityName: "Main4Ability",
@@ -691,14 +698,41 @@ export default function AbilityMonitor2Test() {
         abilityDelegator.printSync(
           TAG + " ACTS_REMOVEABILITY_MONITOR_CALLBACK_0200 ."
         );
-        abilityDelegator.startAbility(want);
+        commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+          subscriber = data
+          commonEvent.subscribe(data, subscribeCallBack)
+          console.log(LABLE + TAG + "startAbility");
+          abilityDelegator.startAbility(want).then((data) => {
+            console.log(LABLE + TAG + "successful data: " + JSON.stringify(data));
+          }).catch((error:BusinessError) => {
+            console.log(LABLE + TAG + "startAbility error: " + JSON.stringify(error));
+          });
+        });
       });
-      setTimeout(() => {
-        expect(result).assertEqual(0);
-        abilityDelegator.printSync(
-          TAG + " pass "
-        );
-        done();
+      let subscriber: commonEvent.CommonEventSubscriber;
+
+      let subscribeCallBack = (err: BusinessError, data: commonEvent.CommonEventData) => {
+        if (data.event == 'Main4Ability.onAbilityCreate') {
+          expect(result).assertEqual(0);
+          abilityDelegator.printSync(
+            TAG + " pass "
+          );
+          clearTimeout(id);
+        if (subscriber) {
+          commonEvent.unsubscribe(subscriber, done());
+        } else {
+          done();
+        }
+        }
+      };
+      id = setTimeout(() => {
+        console.log(LABLE + TAG + "startAbility fail");
+        expect().assertFail();
+        if (subscriber) {
+          commonEvent.unsubscribe(subscriber, done());
+        } else {
+          done();
+        }
       }, 3000);
     });
 
@@ -719,7 +753,6 @@ export default function AbilityMonitor2Test() {
         "entry"
       );
       let result = 0;
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
       monitor = {
         abilityName: "Main4Ability",
@@ -748,7 +781,7 @@ export default function AbilityMonitor2Test() {
           );
           setTimeout(() => {
             globalThis.main4AbilityContext.terminateSelf();
-          }, 2000);
+          }, 1000);
         });
       });
       setTimeout(() => {
@@ -758,7 +791,7 @@ export default function AbilityMonitor2Test() {
           TAG + " pass "
         );
         done();
-      }, 3000);
+      }, 1000);
     });
 
     /**
@@ -778,8 +811,6 @@ export default function AbilityMonitor2Test() {
         "entry"
       );
       let result = 0;
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-
       monitor = {
         abilityName: "Main4Ability",
         onAbilityDestroy: () => {
@@ -804,7 +835,7 @@ export default function AbilityMonitor2Test() {
           );
           setTimeout(() => {
             globalThis.main4AbilityContext.terminateSelf();
-          }, 2000);
+          }, 1000);
         });
       });
       setTimeout(() => {
@@ -814,7 +845,7 @@ export default function AbilityMonitor2Test() {
           TAG + " pass "
         );
         done();
-      }, 3000);
+      }, 1000);
     });
 
     /**
@@ -834,7 +865,6 @@ export default function AbilityMonitor2Test() {
         "entry"
       );
       let result = 0;
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
       monitor = {
         abilityName: "Main4Ability",
@@ -858,7 +888,7 @@ export default function AbilityMonitor2Test() {
           console.log(LABLE + TAG + " startAbility err:" + JSON.stringify(err));
           setTimeout(() => {
             globalThis.main4AbilityContext.terminateSelf();
-          }, 2000);
+          }, 1000);
         });
       });
       setTimeout(() => {
@@ -868,7 +898,7 @@ export default function AbilityMonitor2Test() {
           TAG + " pass "
         );
         done();
-      }, 4000);
+      }, 1000);
     });
 
     /**
@@ -888,7 +918,7 @@ export default function AbilityMonitor2Test() {
         "entry"
       );
       let result = 1;
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+      let id: number;
 
       monitor = {
         abilityName: "Main4Ability",
@@ -915,15 +945,39 @@ export default function AbilityMonitor2Test() {
           expect().assertFail();
           done();
         });
-      await sleep(500);
-      console.log(LABLE + TAG + " startAbility start");
-      await abilityDelegator.startAbility(want);
-      setTimeout(() => {
-        expect(result).assertEqual(1);
-        abilityDelegator.printSync(
-          TAG + " pass "
-        );
-        done();
+      let subscriber: commonEvent.CommonEventSubscriber;
+      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+        subscriber = data
+        commonEvent.subscribe(data, subscribeCallBack)
+        console.log(LABLE + TAG + "startAbility");
+        abilityDelegator.startAbility(want).then((data) => {
+          console.log(LABLE + TAG + "successful data: " + JSON.stringify(data));
+        }).catch((error:BusinessError) => {
+          console.log(LABLE + TAG + "startAbility error: " + JSON.stringify(error));
+        });
+      });
+      let subscribeCallBack = (err: BusinessError, data: commonEvent.CommonEventData) => {
+        if (data.event == 'Main4Ability.onAbilityCreate') {
+          expect(result).assertEqual(1);
+          abilityDelegator.printSync(
+            TAG + " pass "
+          );
+          clearTimeout(id);
+          if (subscriber) {
+            commonEvent.unsubscribe(subscriber, done());
+          } else {
+            done();
+          }
+        }
+      };
+      id = setTimeout(() => {
+        console.log(LABLE + TAG + "startAbility fail");
+        expect().assertFail();
+          if (subscriber) {
+            commonEvent.unsubscribe(subscriber, done());
+          } else {
+            done();
+          }
       }, 3000);
     });
 
@@ -944,7 +998,7 @@ export default function AbilityMonitor2Test() {
         "entry"
       );
       let result = 1;
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+      let id: number;
 
       monitor = {
         abilityName: "Main4Ability",
@@ -969,15 +1023,31 @@ export default function AbilityMonitor2Test() {
           done();
         });
       await sleep(500);
-      console.log(LABLE + TAG + " startAbility start");
-      await abilityDelegator.startAbility(want);
-      setTimeout(() => {
-        console.log(LABLE + TAG + " assertEqual result=" + result);
-        expect(result).assertEqual(1);
-        abilityDelegator.printSync(
-          TAG + " pass "
-        );
-        done();
+      let subscriber: commonEvent.CommonEventSubscriber;
+      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+        subscriber = data
+        commonEvent.subscribe(data, subscribeCallBack)
+        console.log(LABLE + TAG + "startAbility");
+        abilityDelegator.startAbility(want).then((data) => {
+          console.log(LABLE + TAG + "successful data: " + JSON.stringify(data));
+        }).catch((error:BusinessError) => {
+          console.log(LABLE + TAG + "startAbility error: " + JSON.stringify(error));
+        });
+      });
+      let subscribeCallBack = (err: BusinessError, data: commonEvent.CommonEventData) => {
+        if (data.event == 'Main4Ability.onAbilityCreate') {
+          expect(result).assertEqual(1);
+          abilityDelegator.printSync(
+            TAG + " pass "
+          );
+          clearTimeout(id);
+          commonEvent.unsubscribe(subscriber, done());
+        }
+      };
+      id = setTimeout(() => {
+        console.log(LABLE + TAG + "startAbility fail");
+        expect().assertFail();
+        commonEvent.unsubscribe(subscriber, done());
       }, 3000);
     });
 
@@ -998,7 +1068,6 @@ export default function AbilityMonitor2Test() {
         "entry"
       );
       let result = 1;
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
       monitor = {
         abilityName: "Main4Ability",
@@ -1030,7 +1099,7 @@ export default function AbilityMonitor2Test() {
           console.info(TAG + " success");
           setTimeout(() => {
             globalThis.main4AbilityContext.terminateSelf();
-          }, 2000);
+          }, 500);
         })
         .catch((err: BusinessError) => {
           abilityDelegator.printSync(TAG + "startAbility catch error, err=" + JSON.stringify(err));
@@ -1044,7 +1113,7 @@ export default function AbilityMonitor2Test() {
           TAG + " pass "
         );
         done();
-      }, 3000);
+      }, 1000);
     });
 
     /**
@@ -1064,7 +1133,6 @@ export default function AbilityMonitor2Test() {
         "entry"
       );
       let result = 1;
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
       monitor = {
         abilityName: "Main4Ability",
@@ -1096,7 +1164,7 @@ export default function AbilityMonitor2Test() {
           console.info(LABLE + TAG + " startAbility start success");
           setTimeout(() => {
             globalThis.main4AbilityContext.terminateSelf();
-          }, 2000);
+          }, 500);
         })
         .catch((err: BusinessError) => {
           abilityDelegator.printSync(LABLE + TAG + "start catch error, err = " + JSON.stringify(err));
@@ -1110,7 +1178,7 @@ export default function AbilityMonitor2Test() {
           TAG + " pass "
         );
         done();
-      }, 3000);
+      }, 1000);
     });
 
     /**
@@ -1130,7 +1198,6 @@ export default function AbilityMonitor2Test() {
         "entry"
       );
       let result = 1;
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
       monitor = {
         abilityName: "Main4Ability",
@@ -1162,7 +1229,7 @@ export default function AbilityMonitor2Test() {
           console.info(LABLE + TAG + " startAbility success");
           setTimeout(() => {
             globalThis.main4AbilityContext.terminateSelf();
-          }, 2000);
+          }, 500);
         })
         .catch((err: BusinessError) => {
           abilityDelegator.printSync(LABLE + TAG + " startAbility catch error, err=" + JSON.stringify(err));
@@ -1176,7 +1243,7 @@ export default function AbilityMonitor2Test() {
           TAG + " pass "
         );
         done();
-      }, 3000);
+      }, 1000);
     });
   });
 }
