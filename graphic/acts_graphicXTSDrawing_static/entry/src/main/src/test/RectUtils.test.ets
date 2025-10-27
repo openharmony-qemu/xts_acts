@@ -96,7 +96,7 @@ export default function rectUtilsTest() {
           expect(height).assertEqual(0);
         } catch (e: BusinessError) {
           console.info(msg +
-            `RectUtils getWidth width  height error. errorCode is: ${e.code} + errormsg is: ${e.message}`);
+            `RectUtils getWidth width  height error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
           expect().assertFail()
         }
       }
@@ -276,7 +276,7 @@ export default function rectUtilsTest() {
           drawing.RectUtils.offset(rect, Math.random() *100, Math.random() *20);
           console.info(msg + `RectUtils.offset success step: ` + i);
         } catch (e: BusinessError) {
-          console.info(msg + `RectUtils offset error. errorCode is: ${e.code} + errormsg is: ${e.message}`);
+          console.info(msg + `RectUtils offset error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
           expect().assertFail()
         }
       }
@@ -386,7 +386,7 @@ export default function rectUtilsTest() {
           console.info(msg + `RectUtils.isEqual success step: ` + i);
           expect(isEqual).assertEqual(false);
         } catch (e: BusinessError) {
-          console.info(msg + `RectUtils isEqual error. errorCode is: ${e.code} + errormsg is: ${e.message}`);
+          console.info(msg + `RectUtils isEqual error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
           expect().assertFail()
         }
       }
