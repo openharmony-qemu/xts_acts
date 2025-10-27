@@ -181,6 +181,17 @@
 #define PERSISTENCE_TEST_INITIAL_VALUE (12345)
 #define PERSISTENCE_TEST_MAGIC_NUMBER (0xDEADBEEF)
 
+constexpr const char16_t TEST_STR_UTF16[] = u"中文,English,123456,!@#$%$#^%&12345";
+constexpr const char TEST_ERROR_CODE[] = "500";
+constexpr const char TEST_ERROR_MESSAGE[] = "Common error";
+const uint32_t STRING_MATCH_RESULT = 86;
+const int NUM_REFERENCES = 1000;
+static const napi_type_tag typeTags0 = {0xdaf987b3cc62481a, 0xb745b0497f299531};
+static const napi_type_tag typeTags1 = {0xbb7936c374084d9b, 0xa9548d0762eeedb9};
+napi_strong_ref ref1 = nullptr;
+napi_strong_ref ref2 = nullptr;
+napi_strong_ref ref3 = nullptr;
+
 // 通用的实例数据结构定义
 struct TestInstanceData {
     int32_t intValue;
@@ -12450,7 +12461,7 @@ static napi_value TestLongRunningInstanceDataPersistence(napi_env env, napi_call
     return result;
 }
 
-static std::u16string repeat_string(const std::u16string& str, size_t n)
+static std::u16string RepeatString(const std::u16string& str, size_t n)
 {
     if (n == 0 || str.empty()) {
         return std::u16string();
@@ -12609,8 +12620,8 @@ static napi_value StringLineStringTest(napi_env env, napi_callback_info info)
     // 超大串
     napi_value value2 = nullptr;
     const std::u16string pattern = u"中文,English,123456,!@#$%$#^%&12345";
-    std::u16string large_str = repeat_string(pattern, 1024*1024);
-    status = napi_create_string_utf16(env, large_str.c_str(), NAPI_AUTO_LENGTH, &value2);
+    std::u16string largeStr = RepeatString(pattern, LARGE_DATA_SIZE_1MB);
+    status = napi_create_string_utf16(env, largeStr.c_str(), NAPI_AUTO_LENGTH, &value2);
     
     // 为空字符传
     napi_value value1 = nullptr;
@@ -12732,29 +12743,31 @@ static napi_value StringArrayTest(napi_env env, napi_callback_info info)
 {
     napi_status status;
     size_t argc = 1;
-    napi_value array_arg;
-    uint32_t array_length;
+    napi_value arrayArg;
+    uint32_t arrayLength;
     
-    status = napi_get_cb_info(env, info, &argc, &array_arg, nullptr, nullptr);
+    status = napi_get_cb_info(env, info, &argc, &arrayArg, nullptr, nullptr);
     ASSERT_EQ_RS(status, napi_ok, "StringArrayTest");
     
     // 验证参数是否为数组
-    bool is_array;
-    status = napi_is_array(env, array_arg, &is_array);
-    if (status != napi_ok || !is_array) {
+    bool isArray;
+    status = napi_is_array(env, arrayArg, &isArray);
+    if (status != napi_ok || !isArray) {
         napi_throw_type_error(env, nullptr, "Expected an array of strings");
         return nullptr;
     }
     
-    status = napi_get_array_length(env, array_arg, &array_length);
+    status = napi_get_array_length(env, arrayArg, &arrayLength);
     ASSERT_EQ_RS(status, napi_ok, "StringArrayTest");
 
-    uint32_t result_count = 0;
-    for (uint32_t i = 0; i < array_length; i++) {
+    uint32_t resultCount = 0;
+    for (uint32_t i = 0; i < arrayLength; i++) {
         napi_value element;
-        status = napi_get_element(env, array_arg, i, &element);
-        if (status != napi_ok) continue;
-        
+        status = napi_get_element(env, arrayArg, i, &element);
+        if (status != napi_ok) {
+            continue;
+        }
+
         napi_critical_scope scope;
         const char16_t* buffer = nullptr;
         size_t length = 0;
@@ -12765,18 +12778,18 @@ static napi_value StringArrayTest(napi_env env, napi_callback_info info)
         
         status = napi_get_buffer_string_utf16_in_critical_scope(env, element, &buffer, &length);
         if (status == napi_ok) {
-            uint32_t char_count = 0;
+            uint32_t charCount = 0;
             for (size_t j = 0; j < length && buffer[j] != 0; j++) {
-                char_count++;
+                charCount++;
             }
-            result_count += char_count;
+            resultCount += charCount;
         }
         
         status = napi_close_critical_scope(env, scope);
     }
 
     ASSERT_EQ_RS(status, napi_ok, "StringArrayTest");
-    ASSERT_EQ_RS(result_count, STRING_MATCH_RESULT, "StringArrayTest");
+    ASSERT_EQ_RS(resultCount, STRING_MATCH_RESULT, "StringArrayTest");
     OH_LOG_INFO(LOG_APP, "StringArrayTest success");
     
     napi_value result = nullptr;
@@ -13605,7 +13618,7 @@ static napi_value OptStrongRefInArkRuntimeTest(napi_env env, napi_callback_info 
 // 多次获取同一引用 + 完整的创建-获取-删除流程
 static napi_value OptStrongRefStress(napi_env env, napi_callback_info info)
 {
-    for (int i=0; i<1000; i++) {
+    for (int i = 0; i < 1000; i++) {
         napi_handle_scope scope;
         napi_status status = napi_open_handle_scope(env, &scope);
         
@@ -13621,7 +13634,7 @@ static napi_value OptStrongRefStress(napi_env env, napi_callback_info info)
         status = napi_get_strong_reference_value(env, strong_ref, &retrieved_obj);
         ASSERT_EQ_RS(status, napi_ok, "Get strong ref value");
         
-        bool is_equal;
+        bool isEqual;
         napi_strict_equals(env, obj, retrieved_obj, &is_equal);
         ASSERT_EQ_RS(is_equal, true, "Objects should be equal");
         

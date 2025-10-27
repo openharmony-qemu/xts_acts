@@ -22,7 +22,7 @@
 #define NAPI_RETVAL_NOTHING
 
 #define ASSERT_EQ_RS(a, b, str)                                                     \
-    if (a != b) {                                                                   \
+    if ((a) != (b)) {                                                                   \
         OH_LOG_ERROR(LOG_APP, "%{public}s failed status=%{pusblic}d", str, a);      \
         return nullptr;                                                             \
     }                                                                               \
