@@ -2442,7 +2442,7 @@ export default function audioLoopBack() {
       }
     })
 
-    /**
+     /**
       * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOLOOPBACK_GETSTATUS_0100
       * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOLOOPBACK_GETSTATUS_0100
       * @tc.desc      : getStatus
