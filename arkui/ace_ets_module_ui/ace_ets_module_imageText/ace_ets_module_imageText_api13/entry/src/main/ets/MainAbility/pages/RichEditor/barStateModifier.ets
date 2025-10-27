@@ -71,7 +71,7 @@ struct RichEditorBarStateModifier {
   build() {
     Column() {
       RichEditor(this.options1)
-        .attributeModifier(this.RichEditorModifier1)
+        .attributeModifier(new RichEditorModifier1())
         .id('RichEditorModifier_BarState_Auto')
         .height('5%').borderWidth(1)
         .onReady(() => {
@@ -79,7 +79,7 @@ struct RichEditorBarStateModifier {
         })
 
       RichEditor(this.options2)
-        .attributeModifier(this.RichEditorModifier2)
+        .attributeModifier(new RichEditorModifier2())
         .id('RichEditorModifier_BarState_Off')
         .height('5%').borderWidth(1)
         .onReady(() => {
@@ -87,7 +87,7 @@ struct RichEditorBarStateModifier {
         })
 
       RichEditor(this.options3)
-        .attributeModifier(this.RichEditorModifier3)
+        .attributeModifier(new RichEditorModifier3())
         .id('RichEditorModifier_BarState_On')
         .height('5%').borderWidth(1)
         .onReady(() => {
@@ -95,7 +95,7 @@ struct RichEditorBarStateModifier {
         })
 
       RichEditor(this.options4)
-        .attributeModifier(this.RichEditorModifier4)
+        .attributeModifier(new RichEditorModifier4())
         .id('RichEditorModifier_barState_default')
         .height('5%')
         .onReady(() => {
@@ -103,7 +103,7 @@ struct RichEditorBarStateModifier {
         })
 
       RichEditor(this.options5)
-        .attributeModifier(this.RichEditorModifier5)
+        .attributeModifier(new RichEditorModifier5())
         .id('RichEditorModifier_barState_undefined')
         .height('5%').borderWidth(1)
         .onReady(() => {
