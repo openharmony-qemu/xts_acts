@@ -20,7 +20,7 @@ export let URL: string = URL1 + URL2
 export class CommonConstants {
   static readonly URL_HTTPS_EXAMPLE: string = 'https://www.example.com';
 
-  static readonly URL_HTTP_BAIDU: string = 'http://www.baidu.com';
+  static readonly URL_HTTP_EXAMPLE: string = 'http://www.example.com';
 
   static readonly URL_HTTPS_EXPIREDBADSSL: string = 'https://expired.badssl.com/';
 

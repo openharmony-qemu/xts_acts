@@ -515,9 +515,9 @@ struct webAdsBlockManager {
                         if(e.code == 801) {
                           console.log(`emitIsAdsBlockEnabledCheck The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
                           this.errorCode = 801
-                          Utils.emitEvent(true, 161190)
-                        } else {
                           Utils.emitEvent(false, 161190)
+                        } else {
+                          Utils.emitEvent(e.code, 161190)
                         }
                       }
                       break;
@@ -603,9 +603,9 @@ struct webAdsBlockManager {
                             if(e.code == 801) {
                               console.log(`emitEnableAdsBlockFalse The current device type does not support Cause code:${e.code},  Message: ${e.message}`)
                               this.errorCode = 801
-                              Utils.emitEvent(true, 25102201)
-                            } else {
                               Utils.emitEvent(false, 25102201)
+                            } else {
+                              Utils.emitEvent(e.code, 25102201)
                             }
                         }
                         break;

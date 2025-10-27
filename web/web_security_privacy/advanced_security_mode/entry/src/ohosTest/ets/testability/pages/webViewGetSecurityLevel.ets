@@ -103,7 +103,7 @@ struct webViewGetSecurityLevel {
               case 'testWebViewGetSecurityLevelWarning': {
                   try {
                     this.isPageEnd = -1;
-                    this.controller.loadUrl(CommonConstants.URL_HTTP_BAIDU);
+                    this.controller.loadUrl(CommonConstants.URL_HTTP_EXAMPLE);
                     await waitForExist(()=>this.isPageEnd, 'testWebViewGetSecurityLevelWarning_isPageEnd', 0, 1000);
                     let securityLevel = this.controller.getSecurityLevel();
                     console.log('securityLevel===>'+securityLevel)
