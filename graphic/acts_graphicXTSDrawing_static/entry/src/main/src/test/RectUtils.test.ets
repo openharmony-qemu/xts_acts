@@ -531,8 +531,8 @@ export default function rectUtilsTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testRectInsetNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-      const msg = 'testRectInsetNormalStatic';
+    it('testRectInsetMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testRectInsetMultipleCallsStatic';
       let rect: common2D.Rect = { left: 0, right: 0, top: 100, bottom: 100 };
       let left = 10;
       let top = 20;
