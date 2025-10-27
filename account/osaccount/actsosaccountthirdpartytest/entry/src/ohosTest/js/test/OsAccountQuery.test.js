@@ -863,7 +863,7 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
     */
     it('ActsOsAccountCheckConstraints_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
       console.info("====>ActsOsAccountCheckConstraints_3500 start====");
-      var AccountManager = osaccount.getAccountManager();
+      let AccountManager = osaccount.getAccountManager();
       console.info("====>get os AccountManager finish====");
       AccountManager.checkOsAccountConstraintEnabled(100, "constraint.fun", (err, result) => {
         console.info("====>checkOsAccountConstraintEnabled err:" + JSON.stringify(err));
@@ -884,7 +884,7 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
     */
     it('ActsOsAccountCheckConstraints_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
       console.info("====>ActsOsAccountCheckConstraints_3600 start====");
-      var AccountManager = osaccount.getAccountManager();
+      let AccountManager = osaccount.getAccountManager();
       console.info("====>get os AccountManager finish====");
       try {
         let data = await AccountManager.checkOsAccountConstraintEnabled(100, "constraint.fun");
@@ -1015,6 +1015,95 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       } catch (err) {
         console.info("====>ActsOsAccountCheckConstraints_3800 getOsAccountConstraints err:" + JSON.stringify(err));
         expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+    * @tc.number   ActsOsAccountCheckConstraints_3900
+    * @tc.name     ActsOsAccountCheckConstraints_3900
+    * @tc.desc     check checkOsAccountConstraintEnabled interface for callback
+    * @tc.level    Level4
+    * @tc.size     MediumTest
+    * @tc.type     Function
+    */
+    it('ActsOsAccountCheckConstraints_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
+      console.info("====>ActsOsAccountCheckConstraints_3900 start====");
+      let AccountManager = osaccount.getAccountManager();
+      console.info("====>get os AccountManager finish====");
+      AccountManager.checkOsAccountConstraintEnabled(999, "constraint.fun", (err, result) => {
+        console.info("====>checkOsAccountConstraintEnabled err:" + JSON.stringify(err));
+        expect(err.code).assertEqual(12300003);
+        console.info("====>ActsOsAccountCheckConstraints_3900 end====");
+        done();
+      });
+    });
+
+    /**
+    * @tc.number   ActsOsAccountCheckConstraints_4000
+    * @tc.name     ActsOsAccountCheckConstraints_4000
+    * @tc.desc     check checkOsAccountConstraintEnabled interface for promise
+    * @tc.level    Level4
+    * @tc.size     MediumTest
+    * @tc.type     Function
+    */
+    it('ActsOsAccountCheckConstraints_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
+      console.info("====>ActsOsAccountCheckConstraints_4000 start====");
+      let AccountManager = osaccount.getAccountManager();
+      console.info("====>get os AccountManager finish====");
+      try {
+        let data = await AccountManager.checkOsAccountConstraintEnabled(999, "constraint.fun");
+        console.info("====>checkOsAccountConstraintEnabled data:" + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>checkOsAccountConstraintEnabled err:" + JSON.stringify(err));
+        expect(err.code).assertEqual(12300003);
+        console.info("====>ActsOsAccountCheckConstraints_4000 end====");
+        done();
+      }
+    });
+
+    /**
+    * @tc.number    ActsOsAccountCheckConstraints_4100
+    * @tc.name      ActsOsAccountCheckConstraints_4100
+    * @tc.desc      get 100 local user all constraints, Constraints callback
+    * @tc.level     Level4
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    */
+    it('ActsOsAccountCheckConstraints_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
+      console.info("====>ActsOsAccountCheckConstraints_4100 start====");
+      let AccountManager = osaccount.getAccountManager();
+      console.info("====>get AccountManager finish====");
+      AccountManager.getOsAccountConstraints(-1, (err, constraints) => {
+        console.info("====>getOsAccountConstraints err:" + JSON.stringify(err));
+        expect(err.code).assertEqual(12300003);
+        console.info("====>ActsOsAccountCheckConstraints_4100 end====");
+        done();
+      })
+    })
+
+    /**
+    * @tc.number    ActsOsAccountCheckConstraints_4200
+    * @tc.name      ActsOsAccountCheckConstraints_4200
+    * @tc.desc      get 100 local user all constraints, Constraints promise
+    * @tc.level     Level4
+    * @tc.size      MediumTest
+    * @tc.type      Function
+    */
+    it('ActsOsAccountCheckConstraints_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
+      console.info("====>ActsOsAccountCheckConstraints_4200 start====");
+      let AccountManager = osaccount.getAccountManager();
+      console.info("get AccountManager finish====");
+      try {
+        await AccountManager.getOsAccountConstraints(9999);
+        console.info("====>ActsOsAccountCheckConstraints_4200 run err");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>ActsOsAccountCheckConstraints_4200 getOsAccountConstraints err:" + JSON.stringify(err));
+        expect(err.code).assertEqual(12300003);
         done();
       }
     });
