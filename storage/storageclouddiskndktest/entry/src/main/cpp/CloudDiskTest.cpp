@@ -14,7 +14,7 @@
  */
 
 #include "napi/native_api.h"
-#include "clouddiskmanager/oh_cloud_disk_manager.h"
+#include "filemanagement/cloud_disk_manager/oh_cloud_disk_manager.h"
 #include <iostream>
 #include "native_common.h"
 #include "hilog/log.h"
