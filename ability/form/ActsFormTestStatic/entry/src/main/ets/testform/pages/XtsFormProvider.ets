@@ -13,9 +13,12 @@
  * limitations under the License.
  */
 
-import { Text, Component, Column, Button, ClickEvent, Entry } from '@ohos.arkui.component';
+import { Text, Component, Column, Row, Button, ClickEvent, Entry, FormComponent, FormCallbackInfo, Visibility } from '@ohos.arkui.component';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
+import formBindingData from '@ohos.app.form.formBindingData';
+import formHost from '@ohos.app.form.formHost';
+import formInfo from '@ohos.app.form.formInfo';
 import formProvider from '@ohos.app.form.formProvider';
 import Want from '@ohos.app.ability.Want';
 
@@ -25,12 +28,19 @@ const TAG: string = 'testTag';
 @Entry
 @Component
 struct XtsFormProvider {
+  formComponentId: string = '0'
+  formId: string = '1566228237' //用hap包装好的应用的卡片id
+  formId2: string = '21347330770' //用hap包装好的应用的卡片id
+  falseFormId: string = '1735111111'
+  formName: string = 'widget';
+  bundleName: string = 'com.example.actsformtest.static'
+  moduleName: string = 'entry'
+  abilityName: string = 'EntryFormAbility'
   aboutToAppear() {
     hilog.info(DOMAIN, TAG, 'XtsFormProvider enter');
 
-    let formId: string = '3610022740'; //用hap包装好的应用的卡片id
     try {
-      formProvider.setFormNextRefreshTime(formId, 2, (error: BusinessError<void> | null) => {
+      formProvider.setFormNextRefreshTime(this.formId, 2, (error: BusinessError<void> | null) => {
         if (error?.code) {
           hilog.info(DOMAIN, TAG, `XtsFormProvider callback error, code:${error?.code}`);
         }
@@ -41,9 +51,8 @@ struct XtsFormProvider {
       hilog.info(DOMAIN, TAG, 'XtsFormProvider catch error');
     }
 
-    let formId2: string = '21347330770'; //用hap包装好的应用的卡片id
     try {
-      formProvider.setFormNextRefreshTime(formId2, 3).then(() => {
+      formProvider.setFormNextRefreshTime(this.formId2, 3).then(() => {
         hilog.info(DOMAIN, TAG, `XtsFormProvider setFormNextRefreshTime success`);
       }).catch((error) => {
         hilog.info(DOMAIN, TAG, `XtsFormProvider promise error, code:`);
@@ -56,6 +65,30 @@ struct XtsFormProvider {
 
   build() {
     Column(undefined) {
+      Row() {
+        FormComponent({
+          id: this.formComponentId,
+          name: this.formName,
+          bundle: this.bundleName,
+          ability: this.abilityName,
+          module: this.moduleName,
+        })
+          .allowUpdate(true)
+          .visibility(Visibility.Visible)
+          .width(300)
+          .height(300)
+          .onAcquired((formInfo: FormCallbackInfo) => {
+            hilog.info(DOMAIN, TAG, `form info: ${JSON.stringify(formInfo)}`);
+            // Invalid-form-id
+            if (formInfo.id == -1) {
+              this.formComponentId = formInfo.idString;
+            } else {
+              this.formComponentId = formInfo.id.toString();
+            }
+            hilog.info(DOMAIN, TAG, `formComponentId: ${this.formComponentId}`);
+          });
+      }
+
       Text('XTS FormProvider').fontSize(20)
 
       Button('openFormManagerCrossBundle success').backgroundColor('#ff35e288')
@@ -87,9 +120,270 @@ struct XtsFormProvider {
             hilog.info(DOMAIN, TAG, '%{public}s', `formProvider openFormManagerCrossBundle success`);
           } catch (error: BusinessError) {
             hilog.info(DOMAIN, TAG, '%{public}s', `openFormManagerCrossBundle error: ${JSON.stringify(error)}`);
-              hilog.info(DOMAIN, TAG, '%{public}s', `openFormManagerCrossBundle error.code: ${error.code}`);
+            hilog.info(DOMAIN, TAG, '%{public}s', `openFormManagerCrossBundle error.code: ${error.code}`);
           }
         })
+
+      Button('getFormsInfo Tests').backgroundColor('#ff35e288')
+        .onClick((e: ClickEvent) => {
+          hilog.info(DOMAIN, TAG, 'onClick getFormsInfo');
+          let filter: formInfo.FormInfoFilter = {
+            bundleName: this.bundleName,
+            moduleName: this.moduleName
+          };
+          try {
+            formProvider.getFormsInfo(filter, (error: BusinessError<void> | null,
+              result: Array<formInfo.FormInfo> | undefined) => {
+              hilog.info(DOMAIN, TAG, JSON.stringify(result));
+              hilog.info(DOMAIN, TAG, 'formProvider getFormsInfo with filter callback success.');
+            });
+          } catch (error: Error) {
+            hilog.error(DOMAIN, TAG,
+              `formProvider getFormsInfo error, code: ${error?.code}, message: ${error?.message}`);
+          }
+
+          try {
+            formProvider.getFormsInfo().then((result: Array<formInfo.FormInfo> | undefined) => {
+              hilog.info(DOMAIN, TAG, JSON.stringify(result));
+              hilog.info(DOMAIN, TAG, `formProvider getFormsInfo without arguments promise success.`);
+            }).catch((error: Error) => {
+              hilog.error(DOMAIN, TAG,
+                `formProvider getFormsInfo without arguments error, code: ${error?.code}, message: ${error?.message}`);
+            });
+          } catch (error: Error) {
+            hilog.error(DOMAIN, TAG,
+              `formProvider getFormsInfo without arguments error, code: ${error?.code}, message: ${error?.message}`);
+          }
+
+          try {
+            formProvider.getFormsInfo(filter).then((result: Array<formInfo.FormInfo> | undefined) => {
+              hilog.info(DOMAIN, TAG, JSON.stringify(result));
+              hilog.info(DOMAIN, TAG, `formProvider getFormsInfo with filter promise success`);
+            }).catch((error: Error) => {
+              hilog.error(DOMAIN, TAG,
+                `formProvider getFormsInfo with filter error, code: ${error?.code}, message: ${error?.message}`);
+            });
+          } catch (error: Error) {
+            hilog.error(DOMAIN, TAG,
+              `formProvider getFormsInfo with filter error, code: ${error?.code}, message: ${error?.message}`);
+          }
+
+          try {
+            formProvider.getFormsInfo((error: BusinessError<void> | null,
+              result: Array<formInfo.FormInfo> | undefined) => {
+              hilog.info(DOMAIN, TAG, JSON.stringify(result));
+              hilog.info(DOMAIN, TAG, 'formProvider getFormsInfo without filter callback success.');
+            });
+          } catch (error: Error) {
+            hilog.error(DOMAIN, TAG,
+              `formProvider getFormsInfo error, code: ${error?.code}, message: ${error?.message}`);
+          }
+        })
+
+      Button('requestPublishForm Tests').onClick((e: ClickEvent) => {
+        hilog.info(DOMAIN, TAG, 'requestPublishForm Tests triggered.');
+        try {
+          let wantParams: Record<string, Object> = {
+            'ohos.extra.param.key.form_dimension': 2,
+            'ohos.extra.param.key.form_name': 'widget',
+            'ohos.extra.param.key.module_name': 'entry',
+            'ohos.extra.param.key.form_is_theme': true,
+          }
+          let want: Want = {
+            bundleName: this.bundleName,
+            abilityName: this.abilityName,
+            parameters: wantParams
+          }
+          let param: Record<string, string> = {
+            'temperature': '22c',
+            'time': '22:00'
+          }
+
+          formProvider.requestPublishForm(want).then((data: string | undefined) => {
+            hilog.info(DOMAIN, TAG, `formProvider requestPublishForm promise, formId: ${JSON.stringify(data)}`);
+          }).catch((error: Error) => {
+            hilog.error(DOMAIN, TAG,
+              `formProvider requestPublishForm error, code: ${error?.code}, message: ${error?.message}`);
+          });
+
+          let bindingObject: formBindingData.FormBindingData = formBindingData.createFormBindingData(param);
+          formProvider.requestPublishForm(want, bindingObject,
+            (error: BusinessError | null, data: string | undefined) => {
+              if (error?.code) {
+                hilog.error(DOMAIN, TAG,
+                  `formProvider requestPublishForm with bindingData callback error, code: ${error?.code}, message: ${error?.message}`);
+              } else {
+                hilog.info(DOMAIN, TAG, `formProvider requestPublishForm with bindingData callback, formId: ${JSON.stringify(data)}`);
+              }
+            });
+
+          formProvider.requestPublishForm(want,
+            (error: BusinessError | null, data: string | undefined) => {
+              if (error?.code) {
+                hilog.error(DOMAIN, TAG,
+                  `formProvider requestPublishForm error, code: ${error?.code}, message: ${error?.message}`);
+              } else {
+                hilog.info(DOMAIN, TAG,
+                  `formProvider requestPublishForm without bindingData callback, formId: ${JSON.stringify(data)}`);
+              }
+            });
+        } catch (error: Error) {
+          hilog.error(DOMAIN, TAG,
+            `formProvider requestPublishForm without bindingData error, code: ${error?.code}, message: ${error?.message}`);
+        }
+      })
+
+      Button('updateForm Tests').onClick((e: ClickEvent) => {
+        hilog.info(DOMAIN, TAG, 'updateForm Tests triggered.');
+        let bindingData: Record<string, string> = {
+          'temperature': '11c',
+          'time': '11:00'
+        };
+        let formBinding = formBindingData.createFormBindingData(bindingData)
+        hilog.info(DOMAIN, TAG, 'proxies:' + JSON.stringify(formBinding.proxies));
+
+        try {
+          formProvider.updateForm(this.formId, formBinding, () => {
+            hilog.info(DOMAIN, TAG, 'formProvider updateForm callback success');
+          });
+        } catch (error: Error) {
+          hilog.error(DOMAIN, TAG,
+            `formProvider updateForm error, code: ${error?.code}, message: ${error?.message}`);
+        }
+
+        try {
+          formProvider.updateForm(this.formId, formBinding).then(() => {
+            hilog.info(DOMAIN, TAG, `formProvider updateForm promise success`);
+          }).catch((error: Error) => {
+            hilog.error(DOMAIN, TAG,
+              `formProvider updateForm promise error, code: ${error?.code}, message: ${error?.message}`);
+          });
+        } catch (error: Error) {
+          hilog.error(DOMAIN, TAG, `formProvider updateForm catch error, code:` + error);
+        }
+      })
+
+      Button('openFormManager').onClick((e: ClickEvent) => {
+        hilog.info(DOMAIN, TAG, 'openFormManager triggered.');
+        let want: Want = {
+          deviceId: '', // An empty deviceId indicates the local device.
+          bundleName: this.bundleName,
+          abilityName: this.abilityName
+        };
+        try {
+          formProvider.openFormManager(want);
+          hilog.info(DOMAIN, TAG, `formProvider openFormManager success`);
+        } catch (error: Error) {
+          hilog.error(DOMAIN, TAG,
+            `formProvider openFormManager error, code: ${error?.code}, message: ${error?.message}`);
+        }
+
+      })
+
+      Button('openFormEditAbility').onClick((e: ClickEvent) => {
+        hilog.info(DOMAIN, TAG, 'openFormEditAbility Tests triggered.');
+        let editAbilityName: string = 'EntryFormEditAbility';
+
+        try {
+          const formIds = [this.formComponentId];
+          formHost.notifyVisibleForms(formIds).then(() => {
+            formProvider.openFormEditAbility(editAbilityName, this.formComponentId);
+            hilog.info(DOMAIN, TAG, `formProvider openFormEditAbility success`);
+          }).catch((error: Error) => {
+            hilog.error(DOMAIN, TAG, `openFormEditAbility->NotifyVisibleFormsWithPromise error | code: ${error?.code}, message: ${error?.message}`);
+          });
+        } catch (error: Error) {
+          hilog.error(DOMAIN, TAG, `formProvider openFormEditAbility error, code : ${error?.code}, message : ${error?.message}`);
+        }
+      })
+
+      Button('IsRequestPublishFormSupported Tests').onClick((e: ClickEvent) => {
+        hilog.info(DOMAIN, TAG, 'IsRequestPublishFormSupported Tests triggered.');
+        try {
+          formProvider.isRequestPublishFormSupported().then(() => {
+            hilog.info(DOMAIN, TAG, `formProvider IsRequestPublishFormSupported success`);
+          }).catch((error: Error) => {
+            hilog.error(DOMAIN, TAG,
+              `formProvider IsRequestPublishFormSupported error, code: ${error?.code}, message: ${error?.message}`);
+          });
+        } catch (error: Error) {
+          hilog.error(DOMAIN, TAG, `formProvider IsRequestPublishFormSupported catch error, code:` + error);
+        }
+
+        try {
+          formProvider.isRequestPublishFormSupported((error, result) => {
+            if (error?.code) {
+              hilog.error(DOMAIN, TAG,
+                `formProvider IsRequestPublishFormSupported callback error, code: ${error?.code}, message: ${error?.message}`);
+            } else {
+              hilog.info(DOMAIN, TAG, `formProvider IsRequestPublishFormSupported callback success`);
+            }
+          });
+        } catch (error: Error) {
+          hilog.error(DOMAIN, TAG,
+            `formProvider IsRequestPublishFormSupported error, code: ${error?.code}, message: ${error?.message}`);
+        }
+      })
+
+      Button('getPublishedFormInfos').onClick((e: ClickEvent) => {
+        hilog.info(DOMAIN, TAG, 'getPublishedFormInfos triggered.');
+        try {
+          formProvider.getPublishedFormInfos().then((result: Array<formInfo.FormInfo>) => {
+            hilog.info(DOMAIN, TAG, `formProvider getPublishedFormInfos success`);
+          }).catch((error: Error) => {
+            hilog.error(DOMAIN, TAG,
+              `formProvider getPublishedFormInfos error, code: ${error?.code}, message: ${error?.message}`);
+          });
+        } catch (error: Error) {
+          hilog.error(DOMAIN, TAG,
+            `formProvider getPublishedFormInfos error, code: ${error?.code}, message: ${error?.message}`);
+        }
+      })
+
+      Button('getPublishedFormInfoById').onClick((e: ClickEvent) => {
+        hilog.info(DOMAIN, TAG, 'getPublishedFormInfoById triggered.');
+        try {
+          formProvider.getPublishedFormInfoById(this.formId).then((result: formInfo.FormInfo) => {
+            hilog.info(DOMAIN, TAG, `formProvider getPublishedFormInfoById success`);
+          }).catch((error: Error) => {
+            hilog.error(DOMAIN, TAG,
+              `formProvider getPublishedFormInfoById error, code: ${error?.code}, message: ${error?.message}`);
+          });
+        } catch (error: Error) {
+          hilog.error(DOMAIN, TAG,
+            `formProvider getPublishedFormInfoById error, code: ${error?.code}, message: ${error?.message}`);
+        }
+      })
+
+      Button('getPublishedRunningFormInfos').onClick((e: ClickEvent) => {
+        hilog.info(DOMAIN, TAG, 'getPublishedRunningFormInfos triggered.');
+        try {
+          formProvider.getPublishedRunningFormInfos().then((result: Array<formInfo.RunningFormInfo>) => {
+            hilog.info(DOMAIN, TAG, `formProvider getPublishedRunningFormInfos success`);
+          }).catch((error: Error) => {
+            hilog.error(DOMAIN, TAG,
+              `formProvider getPublishedRunningFormInfos error, code: ${error?.code}, message: ${error?.message}`);
+          });
+        } catch (error: Error) {
+          hilog.error(DOMAIN, TAG,
+            `formProvider getPublishedRunningFormInfos error, code: ${error?.code}, message: ${error?.message}`);
+        }
+      })
+
+      Button('getPublishedRunningFormInfoById').onClick((e: ClickEvent) => {
+        hilog.info(DOMAIN, TAG, 'getPublishedRunningFormInfoById triggered.');
+        try {
+          formProvider.getPublishedRunningFormInfoById(this.formId).then((result: formInfo.RunningFormInfo) => {
+            hilog.info(DOMAIN, TAG, `formProvider getPublishedRunningFormInfoById success`);
+          }).catch((error: Error) => {
+            hilog.error(DOMAIN, TAG,
+              `formProvider getPublishedRunningFormInfoById error, code: ${error?.code}, message: ${error?.message}`);
+          });
+        } catch (error: Error) {
+          hilog.error(DOMAIN, TAG,
+            `formProvider getPublishedRunningFormInfoById error, code: ${error?.code}, message: ${error?.message}`);
+        }
+      })
     }
   }
 }

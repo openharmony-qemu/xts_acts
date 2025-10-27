@@ -70,7 +70,7 @@ struct MyStateSample {
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormBindingData'});
           } catch (err: Error) {
-            hilog.info(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
+            hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })
 
@@ -81,7 +81,7 @@ struct MyStateSample {
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormComponent'});
           } catch (err: Error) {
-            hilog.info(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
+            hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })
 
@@ -92,7 +92,7 @@ struct MyStateSample {
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormInfo'});
           } catch (err: Error) {
-            hilog.info(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
+            hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })
 
@@ -103,7 +103,7 @@ struct MyStateSample {
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormLink'});
           } catch (err: Error) {
-            hilog.info(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
+            hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })
 
@@ -114,7 +114,7 @@ struct MyStateSample {
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormProvider'});
           } catch (err: Error) {
-            hilog.info(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
+            hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })
 
@@ -125,7 +125,7 @@ struct MyStateSample {
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormAgent'});
           } catch (err: Error) {
-            hilog.info(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
+            hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })
 
@@ -136,7 +136,18 @@ struct MyStateSample {
           try {
             aRouter.pushUrl({url: 'testform/pages/XtsFormObserver'});
           } catch (err: Error) {
-            hilog.info(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
+            hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
+          }
+        })
+
+        Button('XtsFormHost.router.push').backgroundColor('#ff35e288')
+        .onClick((event: ClickEvent) => {
+          hilog.info(DOMAIN, TAG, 'onClick XtsFormHost.router.push');
+          let aRouter = this.getUIContext().getRouter();
+          try {
+            aRouter.pushUrl({ url: 'testform/pages/XtsFormHost' });
+          } catch (err: Error) {
+            hilog.error(DOMAIN, TAG, `pushUrl error code: ${err?.code}, error message: ${err?.message}`);
           }
         })
 
