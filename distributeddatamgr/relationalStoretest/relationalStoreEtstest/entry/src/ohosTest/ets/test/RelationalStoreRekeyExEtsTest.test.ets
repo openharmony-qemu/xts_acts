@@ -575,7 +575,7 @@ export default function rdbStoreRekeyExEtsTest() {
     /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1300
      * @tc.name testRekeyEx0013
-     * @tc.desc custom encrypt rekey test
+     * @tc.desc default encrypt rekey to custom test
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -630,7 +630,7 @@ export default function rdbStoreRekeyExEtsTest() {
     /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1400
      * @tc.name testRekeyEx0014
-     * @tc.desc default rekey test
+     * @tc.desc default rekey to default test
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -685,7 +685,7 @@ export default function rdbStoreRekeyExEtsTest() {
     /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1500
      * @tc.name testRekeyEx0015
-     * @tc.desc custom rekey test
+     * @tc.desc custom rekey to fault test
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -790,7 +790,7 @@ export default function rdbStoreRekeyExEtsTest() {
     /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_1700
      * @tc.name testRekeyEx0017
-     * @tc.desc rekey 14800011 test
+     * @tc.desc default encry to custom encry rekey 14800011 test
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -938,6 +938,52 @@ export default function rdbStoreRekeyExEtsTest() {
         done()
       }
       console.log(TAG + "************* testRekeyEx0020 end *************");
+    });
+    /**
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2100
+     * @tc.name testRekeyEx0017
+     * @tc.desc no encry to encry rekey 14800011 test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testRekeyEx0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      console.log(TAG + "************* testRekeyEx0021 start *************");
+      let storeConfig: data_relationalStore.StoreConfig = {
+        name: "testRekeyEx.db",
+        securityLevel: data_relationalStore.SecurityLevel.S2,
+      }
+      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      await rdbStore.executeSql(CREATE_TABLE_TEST);
+
+
+      let cryptoParam: data_relationalStore.CryptoParam = {
+        encryptionKey: new Uint8Array(),
+        iterationCount: 500,
+      };
+
+      try {
+        let  u8 = new Uint8Array([1, 2, 3])
+        const valueBucket: data_relationalStore.ValuesBucket = {
+          "name": "zhangsan",
+          "age": 18,
+          "salary": 100.5,
+          "blobType": u8,
+        }
+        await rdbStore.insert("test", valueBucket);
+        await rdbStore.rekeyEx(cryptoParam);
+        console.log(TAG + "rekeyEx success");
+        rdbStore.close();
+        rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+        console.log(TAG + "getrdbstore success");
+        expect().assertFail();
+        done()
+      } catch (err) {
+        console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
+        expect(err.code).assertEqual(14800011)
+        done()
+      }
+      console.log(TAG + "************* testRekeyEx0021 end *************");
     });
     /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2500
