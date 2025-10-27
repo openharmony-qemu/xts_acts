@@ -46,7 +46,7 @@ export default function Array_With_Second_Test_static() {
         const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float];
         const index = 1;
         const result = with(arr, index, -2);
-        const expected: FixedArray<float> = [1.1 as float, -2.2 as float, 3.3 as float];
+        const expected: FixedArray<float> = [1.1 as float, -2.0 as float, 3.3 as float];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -71,7 +71,7 @@ export default function Array_With_Second_Test_static() {
         const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float];
         const index = -3;
         const result = with(arr, index, 1);
-        const expected: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float];
+        const expected: FixedArray<float> = [1.0 as float, 2.2 as float, 3.3 as float];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -96,7 +96,7 @@ export default function Array_With_Second_Test_static() {
         const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float];
         const index = -1;
         const result = with(arr, index, 5);
-        const expected: FixedArray<float> = [1.1 as float, 2.2 as float, 5.5 as float];
+        const expected: FixedArray<float> = [1.1 as float, 2.2 as float, 5.0 as float];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -121,7 +121,7 @@ export default function Array_With_Second_Test_static() {
         const arr: FixedArray<float> = [-1.1 as float, -2.2 as float, -3.3 as float];
         const index = -1;
         const result = with(arr, index, 33);
-        const expected: FixedArray<float> = [-1.1 as float, -2.2 as float, 33.3 as float];
+        const expected: FixedArray<float> = [-1.1 as float, -2.2 as float, 33.0 as float];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -146,7 +146,7 @@ export default function Array_With_Second_Test_static() {
         const arr: FixedArray<float> = [-1.1 as float, -2.2 as float, -3.3 as float];
         const index = 0;
         const result = with(arr, index, 11);
-        const expected: FixedArray<float> = [11.1 as float, -2.2 as float, -3.3 as float];
+        const expected: FixedArray<float> = [11.0 as float, -2.2 as float, -3.3 as float];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
