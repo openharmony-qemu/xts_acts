@@ -57,16 +57,12 @@ export default function EsBooleanTest(){
     it('ESBooleanTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const caseName = 'ESBooleanTest0001';
       console.info(`${caseName}, test start`);
-      arktest.assertEQ((new Boolean()).toString(), "false", '(new Boolean()).toString() must return "false"');
-      arktest.assertEQ((new Boolean(false)).toString(), "false", '(new Boolean(false)).toString() must return "false"');
-      arktest.assertEQ((new Boolean(true)).toString(), "true", '(new Boolean(true)).toString() must return "true"');
-      arktest.assertEQ((new Boolean(1)).toString(), "true", '(new Boolean(1)).toString() must return "true"');
-      arktest.assertEQ((new Boolean(0)).toString(), "false", '(new Boolean(0)).toString() must return "false"');
-      arktest.assertEQ(
-        (new Boolean(new Object())).toString(),
-        "true",
-        '(new Boolean(new Object())).toString() must return "true"'
-      );
+      expect((new Boolean()).toString()).assertEqual("false");
+      expect((new Boolean(false)).toString()).assertEqual("false");
+      expect((new Boolean(true)).toString()).assertEqual("true");
+      expect((new Boolean(1)).toString()).assertEqual("true");
+      expect((new Boolean(0)).toString()).assertEqual("false");
+      expect((new Boolean(new Object())).toString()).assertEqual("true");
       console.info(`${caseName}, test end`);
     });
 

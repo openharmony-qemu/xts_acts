@@ -169,7 +169,124 @@ export default function EsBigIntTest(){
     it('ESBigIntTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const caseName = 'ESBigIntTest0006';
       console.info(`${caseName}, test start`);
-      expect(1).assertEqual(1);
+      let threw = false;
+      try {
+        BigInt("10n");
+        expect(false).assertTrue();
+      } catch (e) {
+        threw = true;
+        expect(threw).assertEqual(true);
+        threw = false;
+      }
+
+      try {
+        BigInt("10x");
+        expect(false).assertTrue();
+      } catch (e) {
+        threw = true;
+        expect(threw).assertEqual(true);
+        threw = false;
+      }
+
+      try {
+        BigInt("10b");
+        expect(false).assertTrue();
+      } catch (e) {
+        threw = true;
+        expect(threw).assertEqual(true);
+        threw = false;
+      }
+
+      try {
+        BigInt("10.5");
+        expect(false).assertTrue();
+      } catch (e) {
+        threw = true;
+        expect(threw).assertEqual(true);
+        threw = false;
+      }
+
+      try {
+        BigInt("0b");
+        expect(false).assertTrue();
+      } catch (e) {
+        threw = true;
+        expect(threw).assertEqual(true);
+        threw = false;
+      }
+
+      try {
+        BigInt("-0x1");
+        expect(false).assertTrue();
+      } catch (e) {
+        threw = true;
+        expect(threw).assertEqual(true);
+        threw = false;
+      }
+
+      try {
+        BigInt("-0XFFab");
+        expect(false).assertTrue();
+      } catch (e) {
+        threw = true;
+        expect(threw).assertEqual(true);
+        threw = false;
+      }
+
+      try {
+        BigInt("000 12");
+        expect(false).assertTrue();
+      } catch (e) {
+        threw = true;
+        expect(threw).assertEqual(true);
+        threw = false;
+      }
+
+      try {
+        BigInt("0o");
+        expect(false).assertTrue();
+      } catch (e) {
+        threw = true;
+        expect(threw).assertEqual(true);
+        threw = false;
+      }
+
+      try {
+        BigInt("0x");
+        expect(false).assertTrue();
+      } catch (e) {
+        threw = true;
+        expect(threw).assertEqual(true);
+        threw = false;
+      }
+
+      try {
+        BigInt("00o");
+        expect(false).assertTrue();
+      } catch (e) {
+        threw = true;
+        expect(threw).assertEqual(true);
+        threw = false;
+      }
+
+      try {
+        BigInt("00b");
+        expect(false).assertTrue();
+      } catch (e) {
+        threw = true;
+        expect(threw).assertEqual(true);
+        threw = false;
+      }
+
+      try {
+        BigInt("00x");
+        expect(false).assertTrue();
+      } catch (e) {
+        threw = true;
+        expect(threw).assertEqual(true);
+        threw = false;
+      }
+
       console.info(`${caseName}, test end`);
     });
 
