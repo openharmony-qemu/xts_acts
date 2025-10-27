@@ -69,7 +69,7 @@ struct FlushErrorCode {
   @Monitor('count')
   onCountChange(monitor: IMonitor) {
     monitor.dirty.forEach((path: string) => {
-      console.info(${path} changed from ${monitor.value(path)?.before} to ${monitor.value(path)?.now});
+      console.info(`${path} changed from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
     });
     try {
       UIUtils.flushUIUpdates();
@@ -83,7 +83,7 @@ struct FlushErrorCode {
   @Monitor('count1')
   onCountChange2(monitor: IMonitor) {
     monitor.dirty.forEach((path: string) => {
-      console.info(${path} changed from ${monitor.value(path)?.before} to ${monitor.value(path)?.now});
+      console.info(`${path} changed from ${monitor.value(path)?.before} to ${monitor.value(path)?.now}`);
     });
     try {
       UIUtils.flushUpdates();
