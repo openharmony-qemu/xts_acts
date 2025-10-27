@@ -12,9 +12,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 {
-  "name": "libcloudsync.so",
-  "types": "./index.d.ts",
+  "license": "",
+  "devDependencies": {
+    "@types/libclouddisk.so": "file:./src/main/cpp/types/libclouddisk"
+  },
+  "author": "",
+  "name": "entry",
+  "description": "Please describe the basic information.",
+  "main": "",
   "version": "1.0.0",
-  "description": "Please describe the basic information."
+  "dependencies": {}
 }

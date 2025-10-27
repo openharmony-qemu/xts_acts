@@ -12,16 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 {
-  "license": "",
-  "devDependencies": {
-    "@types/libfileshare.so": "file:./src/main/cpp/types/libfileshare"
-  },
-  "author": "",
-  "name": "entry",
-  "description": "Please describe the basic information.",
-  "main": "",
+  "name": "libclouddisk.so",
+  "types": "./index.d.ts",
   "version": "1.0.0",
-  "dependencies": {}
+  "description": "Please describe the basic information."
 }

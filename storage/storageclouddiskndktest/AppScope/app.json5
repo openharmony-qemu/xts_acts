@@ -14,7 +14,7 @@
  */
 {
   "app": {
-    "bundleName": "com.acts.storage.cloudsyncndk",
+    "bundleName": "com.acts.storage.clouddiskndk",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",

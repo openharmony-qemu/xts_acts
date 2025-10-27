@@ -14,13 +14,13 @@
  */
 
 import { describe, it, expect, Level } from '@ohos/hypium';
-import cloudsync from 'libcloudsync.so';
+import clouddisk from 'libclouddisk.so';
 import { fileUri } from '@kit.CoreFileKit';
 import { common, UIAbility } from '@kit.AbilityKit';
 import fs from '@ohos.file.fs';
 
-export default function CloudSyncNdkTest(){
-  describe('CloudSyncNdkTest',async () => {
+export default function CloudDiskNdkTest(){
+  describe('CloudDiskNdkTest',async () => {
 
     /**
      * @tc.number SUB_BASIC_FM_FileAPI_Fileshare_0100
@@ -32,14 +32,11 @@ export default function CloudSyncNdkTest(){
      * @tc.require
      */
     it('FileShare_PersistPermission_001', Level.LEVEL0, async (done: Function) => {
-      let filepath = "/data/storage/el2/base/files/test1.txt";
+      let filepath = "/storage/user/Currentuser/";
       console.info("FileShare_PersistPermission_001: " + filepath);
-      fs.openSync(filepath,0o102);
-      new fileUri.FileUri(filepath);
-      let ret = cloudsync.FileShare_001();
+      let ret = clouddisk.RegisterSyncFolder(filepath);
       console.info("FileShare_PersistPermission_001 Test NAPI ret= " + JSON.stringify(ret));
       if (ret == 801) {
-        expect(true).assertTrue();
         done();
       } else {
         expect(ret).assertEqual(0);

@@ -1,17 +1,17 @@
 {
-    "description": "Configuration for ActsStorageCloudSyncNdkTest Tests",
+    "description": "Configuration for ActsStorageCloudDiskNdkTest Tests",
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
         "shell-timeout": "180000",
-        "bundle-name": "com.acts.storage.cloudsyncndk",
+        "bundle-name": "com.acts.storage.clouddiskndk",
         "module-name": "entry_test"
     },
     "kits": [
         {
             "test-file-name": [
-                "ActsStorageCloudSyncNdkTest.hap",
-                "ActsStorageCloudSyncNdkMainTest.hap"
+                "ActsStorageCloudDiskNdkTest.hap",
+                "ActsStorageCloudDiskNdkMainTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 import EmptyTest from './Empty.test'
-import CloudSyncNdkTest from './CloudSyncNdkTest.test'
+import CloudDiskNdkTest from './CloudDiskNdk.test'
 export default function testsuite() {
-  if (canIUse("SystemCapability.FileManagement.AppFileService.FolderAuthorization")){
-    CloudSyncNdkTest()
+  if (canIUse("SystemCapability.FileManagement.CloudDiskManager")){
+    CloudDiskNdkTest()
   }else{
     EmptyTest()
   }

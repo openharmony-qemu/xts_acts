@@ -19,7 +19,7 @@ group("storage") {
       "backupextensiontest:backupextension_js_test",
       "backupextensionteststatic:backupextension_js_test_static",
       "storagebackupextensionjstest:storagebackupextension_js_test",
-      "storagecloudsyncndktest:ActsStorageCloudSyncNdkTest",
+      "storageclouddiskndktest:ActsStorageCloudDiskNdkTest",
       "storagedownloadcloudsyncjstest:storagedownloadcloudsync_js_test",
       "storagedownloadcloudsyncjsteststatic:storagedownloadcloudsync_js_test_static",
       "storageenvironmentjstest:storageenvironment_js_test",
@@ -42,7 +42,7 @@ group("storage") {
       "storagesecuritylabeljsteststatic:storagesecuritylabel_js_test_static",
       "storagestatfsjstest:storagestatfs_js_test",
       "storagestatfsjsteststatic:storagestatfs_js_test_static",
-      "storagestatisticsjstest:storagestatistics_js_test",
+      "storagestatisticsjstest:storagestatistics_js_test"
     ]
   }
 }
