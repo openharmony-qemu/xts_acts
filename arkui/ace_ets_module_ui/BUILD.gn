@@ -44,6 +44,7 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_theme:ActsAceEtsModuleThemeTest",
       "ace_ets_module_uicontext/ace_ets_module_uicontext_api12:ActsAceBasicContextTest",
       "ace_ets_module_uicontext/ace_ets_module_uicontext_api13:ActsAceBasicContext13Test",
+      "ace_ets_module_uicontext/ace_ets_module_uicontext_api22:ActsAceBasicContext22Test",
       "ace_ets_module_uicontext_widget:ActsAceEtsModuleUiContextWidgetTest",
       "ace_ets_module_video:ActsAceEtsModuleVideoTest",
     ]
@@ -84,6 +85,7 @@ group("ActsAceEtsModuleUITest") {
       "ace_ets_module_theme:ActsAceEtsModuleThemeTest",
       "ace_ets_module_uicontext/ace_ets_module_uicontext_api12:ActsAceBasicContextTest",
       "ace_ets_module_uicontext/ace_ets_module_uicontext_api13:ActsAceBasicContext13Test",
+      "ace_ets_module_uicontext/ace_ets_module_uicontext_api22:ActsAceBasicContext22Test",
       "ace_ets_module_uicontext_widget:ActsAceEtsModuleUiContextWidgetTest",
       "ace_ets_module_video:ActsAceEtsModuleVideoTest",
     ]
