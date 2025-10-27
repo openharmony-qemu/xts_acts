@@ -235,29 +235,15 @@ struct webViewOnScroll {
             }
             case "emitpageDownAgain": {
               try {
-                this.isPageEnd = -1
-                this.controller.loadUrl($rawfile('indexCopyTwo.html'))
-                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-                this.userAgentPC = this.controller.getUserAgent();
-                if ((this.userAgentPC).includes("Tablet")) {
-                  this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexCopyTwoTablet.html'))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-                }
-                this.controller.pageUp(true);
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
-                this.controller.pageDown(false);
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
-                this.controller.pageUp(false);
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.controller.pageDown(true);
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
-                if (this.isWebBottom) {
-                  console.log("页面已经滑动到底部");
-                  Utils.emitEvent(true, 179970)
-                } else {
-                  Utils.emitEvent(false, 179970)
-                }
+                setTimeout(() => {
+                  if (this.isWebBottom) {
+                    console.log("页面已经滑动到底部");
+                    Utils.emitEvent(true, 110)
+                  } else {
+                    Utils.emitEvent(false, 110)
+                  }
+                },3000)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
