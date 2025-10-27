@@ -76,8 +76,7 @@ export default function webMessageExtErrorCode() {
     it('testWebMessageExtSetStringErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebMessageExtSetStringErrorCode001", 170290)
       Utils.registerEvent("testWebMessageExtSetStringErrorCode001", "17100014", 170300, done);
-      let component = await driver.findComponent(ON.id("WebMessageExtButton"));
-      await component.click();
+      sendEventByKey('WebMessageExtButton', 10, '');
 
     })
 
