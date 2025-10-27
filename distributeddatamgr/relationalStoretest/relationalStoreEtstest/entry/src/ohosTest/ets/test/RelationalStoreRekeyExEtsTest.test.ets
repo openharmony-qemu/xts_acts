@@ -1154,7 +1154,7 @@ export default function rdbStoreRekeyExEtsTest() {
       console.log(TAG + "************* testRekeyEx0028 start *************");
       let cryptoParam: data_relationalStore.CryptoParam = {
         encryptionKey: new Uint8Array([1, 2, 3, 4, 5, 6]),
-        encryptionAlgo: 2
+        encryptionAlgo: data_relationalStore.EncryptionAlgo.PLAIN_TEXT
       };
       let storeConfig: data_relationalStore.StoreConfig = {
         name: "testRekeyEx.db",
