@@ -70,7 +70,7 @@ export default class PageAbility102 extends UIAbility {
             }
           })
         }
-      }, 10000)
+      }, 3000)
     }
   }
 
