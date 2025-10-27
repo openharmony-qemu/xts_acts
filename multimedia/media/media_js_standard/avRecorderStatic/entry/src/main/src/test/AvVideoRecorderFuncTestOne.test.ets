@@ -526,7 +526,7 @@ export function avVideoRecorderTestOne() {
     let setAvRecorderCallback =async  (avRecorder: media.AVRecorder, done: () => void) => {
       await commonFun.sleep(1000)
       // 状态机变化回调函数
-      avRecorder.onstateChange((state, reason) => {
+      avRecorder.onStateChange((state, reason) => {
         console.info(TAG + 'current state is: ' + state);
       })
       // 录制监听回调函数
