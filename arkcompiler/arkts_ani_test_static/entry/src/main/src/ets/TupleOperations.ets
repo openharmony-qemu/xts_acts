@@ -56,7 +56,7 @@ function getDoubleTuple(): [double, double, double, double, double] {
 function getDoubleTupleForGetNum(): [double, double, double, double, double] {
   return [3.145, 2.716, 1.611, 0.594, 10.08];
 }
-function getReferenceTuple(): [String, double[], String] {
+function getReferenceTuple(): [String, FixedArray<double>, String] {
   return [new String("Hello"), [1.0, 2.0, 3.0, 4.0, 5.0], "world"];
 }
 
