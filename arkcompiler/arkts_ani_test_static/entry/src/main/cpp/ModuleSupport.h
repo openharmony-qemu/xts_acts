@@ -306,8 +306,8 @@ ani_int test_Module_Find_Enum_Invalid_Args([[maybe_unused]] ani_env *env, [[mayb
     ani_enum aniEnum {};
     ASSERT_EQ(env->FindEnum(nullptr, &aniEnum), ANI_INVALID_ARGS);
     ASSERT_EQ(env->c_api->FindEnum(nullptr, "entry.src.main.src.ets.ModuleSupport.BColor", &aniEnum), ANI_INVALID_ARGS);
-    ASSERT_EQ(env->FindEnum("", &aniEnum), ANI_NOT_FOUND);
-    ASSERT_EQ(env->FindEnum("entry.src.main.src.ets.ModuleSupport.#BColor;", &aniEnum), ANI_NOT_FOUND);
+    ASSERT_EQ(env->FindEnum("", &aniEnum), ANI_INVALID_DESCRIPTOR);
+    ASSERT_EQ(env->FindEnum("entry.src.main.src.ets.ModuleSupport.#BColor;", &aniEnum), ANI_INVALID_DESCRIPTOR);
     ASSERT_EQ(env->FindEnum("entry.src.main.src.ets.ModuleSupport.BColor", &aniEnum), ANI_NOT_FOUND);
     ASSERT_EQ(env->FindEnum("entry.src.main.src.ets.ModuleSupport.LBColor", &aniEnum), ANI_NOT_FOUND);
     return ANI_TRUE;
