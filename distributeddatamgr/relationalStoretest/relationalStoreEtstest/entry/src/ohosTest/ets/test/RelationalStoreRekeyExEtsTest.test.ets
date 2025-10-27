@@ -1412,6 +1412,7 @@ export default function rdbStoreRekeyExEtsTest() {
         }
         await rdbStore.insert("test", valueBucket);
         await rdbStore.rekeyEx(cryptoParam1);
+        console.log(TAG + "rekeyEx success");
         await rdbStore.close();
         storeConfig.cryptoParam = cryptoParam1;
         rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
