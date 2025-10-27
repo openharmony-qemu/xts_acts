@@ -502,7 +502,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           expect(null).assertFail();
         } catch (error) {
           console.error(`[XTS] CheckCa_Func_1300 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
         done();
       });
