@@ -190,5 +190,26 @@ export default function drawingTsRegionTest() {
         expect().assertFail()
       }
     })
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_STATIC_1001
+     * @tc.name      : testRegionEmptyMultipleCallsStatic
+     * @tc.desc      : testRegionEmptyMultipleCallsStatic
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testRegionEmptyMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testRegionEmptyMultipleCallsStatic';
+      let region = new drawing.Region();
+      for (let i = 0; i < 20; i++) {
+        try {
+          region.setEmpty();
+        } catch (e: BusinessError) {
+          console.info(msg + `RegionEmpty errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
+          expect().assertFail()
+        }
+      }
+    })
   });
 }
