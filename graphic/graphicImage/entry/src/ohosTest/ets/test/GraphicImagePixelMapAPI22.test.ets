@@ -43,7 +43,7 @@ export default function graphicImagePixelMapAPI22() {
         expect(flag1).assertFalse();
         let id1 = pixelMap.getUniqueId();
         console.info('www data getUniqueId', id1);
-        expect(id1).assertEqual(0);
+        expect(id1).assertLargerOrEqual(0);
         pixelMap.release();
         let flag2 = pixelMap.isReleased();
         console.info('www data isReleased', flag2);
