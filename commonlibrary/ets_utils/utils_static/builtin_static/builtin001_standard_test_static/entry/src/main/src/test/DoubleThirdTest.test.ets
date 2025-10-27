@@ -58,7 +58,7 @@ export default function builtinsDoubleThirdPrototypebTest() {
         const caseName = 'builtinsDoubleThirdPrototypebTest0100';
         console.info(`${caseName}, test start`);
         const a = new Double(1234567.89);
-        expect(a.toLocaleString('')).assertEqual((1234567.89).toLocaleString());
+        expect(a.toLocaleString()).assertEqual((1234567.89).toLocaleString());
         console.info(`${caseName}, test end`);
         Done();
       })
