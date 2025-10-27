@@ -23,13 +23,13 @@
 char* GetStringParam(napi_env env, api_callback_info info, int32_t index = 0) 
 {
     size_t argc = index + 1;
-    napi_value args[10] = {nullptr};
+    napi_value args[10] = { nullptr };
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     size_t length = 0;
     n_status status = napi_get_value_string_utf8(env, args[index], nullptr, 0, &length);
     if (status != napi_ok) {
         LOGE("napi_value_string_utf8 failed");
-       return nullptr;
+        return nullptr;
     }
     char* param = new char[length + 1];
     std::fill_n(param, length + 1, 0);
