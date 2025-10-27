@@ -1452,7 +1452,7 @@ export default function builtinsFloatThirdPrototypebTest() {
       async (Done: () => void): Promise<void> => {
         const caseName = 'builtinsFloatThirdPrototypebTest8200';
         console.info(`${caseName}, test start`);
-        expect(typeof Float.PRECISION).assertEqual('number');
+        expect(typeof Float.PRECISION).assertEqual('byte');
         console.info(`${caseName}, test end`);
         Done();
       })

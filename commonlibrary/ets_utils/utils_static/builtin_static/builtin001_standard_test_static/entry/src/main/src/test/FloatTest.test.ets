@@ -274,7 +274,7 @@ export default function builtinsFloatPrototypebTest() {
         const caseName = 'builtinsFloatPrototypebTest1200';
         console.info(`${caseName}, test start`);
         const a = new Float();
-        expect(typeof a).assertEqual('number');
+        expect(typeof a).assertEqual('float');
         console.info(`${caseName}, test end`);
         Done();
       })
