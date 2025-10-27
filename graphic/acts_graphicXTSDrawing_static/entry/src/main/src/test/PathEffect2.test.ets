@@ -164,5 +164,38 @@ export default function PathEffect2() {
         })
       })
 
+    /**
+     * @tc.number     SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_EFFECT_STATIC_0500
+     * @tc.name       SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_EFFECT_STATIC_0500
+     * @tc.desc       The Interface of drawing
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_EFFECT_STATIC_0500',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let msg = " ====testPathEffectCreateDiscretePathEffect==== "
+        const color = new ArrayBuffer(96);
+        let opts : image.InitializationOptions = {
+          editable: true,
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          size: {
+            height: 4,
+            width: 6
+          }
+        }
+        image.createPixelMap(color, opts).then((pixelMap) => {
+          const canvas = new drawing.Canvas(pixelMap);
+          let effect = drawing.PathEffect.createDiscretePathEffect(100, -50);
+          console.info(msg + ' drawing.PathEffect.createDiscretePathEffect: ' + effect);
+          expect(effect != undefined).assertTrue();
+          done()
+        }).catch((err) => {
+          console.log(msg + " Failed in drawing.PathEffect.createDiscretePathEffect " + err)
+          expect().assertFail()
+          done()
+        })
+      })
+
   })
 }
