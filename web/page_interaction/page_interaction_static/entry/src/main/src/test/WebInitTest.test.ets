@@ -72,7 +72,7 @@ export default function webInitTest() {
       Utils.registerEvent('ContextMenuInputFieldType', ContextMenuInputFieldType.PLAIN_TEXT, 34, done);
       Utils.registerEvent('ContextMenuInputFieldType', ContextMenuInputFieldType.PASSWORD, 355, done);
       Utils.registerEvent('ContextMenuInputFieldType', ContextMenuInputFieldType.TELEPHONE, 35, done);
-      Utils.registerEvent('ContextMenuInputFieldType', ContextMenuInputFieldType.NUMBER, 366, done);
+      Utils.registerEvent('ContextMenuInputFieldType', ContextMenuInputFieldType.NUMBER_DATA, 366, done);
       Utils.registerEvent('ContextMenuInputFieldType', ContextMenuInputFieldType.OTHER, 36, done);
       inspector.sendEventByKey('WebInitTestButton', 10, '');
       await Utils.sleep(3000)

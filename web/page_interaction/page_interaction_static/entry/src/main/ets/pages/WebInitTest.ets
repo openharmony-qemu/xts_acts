@@ -86,7 +86,7 @@ struct WebInitTest {
                 Utils.emitEvent(ContextMenuInputFieldType.PLAIN_TEXT, 34);
                 Utils.emitEvent(ContextMenuInputFieldType.PASSWORD, 355);
                 Utils.emitEvent(ContextMenuInputFieldType.TELEPHONE, 35);
-                Utils.emitEvent(ContextMenuInputFieldType.NUMBER, 366);
+                Utils.emitEvent(ContextMenuInputFieldType.NUMBER_DATA, 366);
                 Utils.emitEvent(ContextMenuInputFieldType.OTHER, 36);
               } catch (error: BusinessError) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
