@@ -42,19 +42,37 @@ struct QueryNavDestinationInfoNavDestination {
   }
 
   build() {
-    Column({space:20}) {
+    Column({space:5}) {
       Text(this.tState).fontSize(26).fontWeight(700).key('QueryNavDestinationInfoNavDestinationTextObserver').fontColor(Color.Red)
+      Button('testUndefined').onClick(() => {
+        let info1: observer.NavDestinationInfo | undefined = this.queryNavDestinationInfo();
+        console.log('QueryNavDestinationInfoNavDestination info1 is: ', JSON.stringify(info1))
+        if (info1 == undefined) {
+          console.log('QueryNavDestinationInfoNavDestination test undefined info1')
+        }
+        AppStorage.setOrCreate('testUndefined', info1)
+      })
+        .height('5%')
+        .id('testUndefinedId')
+      Button('testUndefinedWId').onClick(() => {
+        let info2: observer.NavDestinationInfo | undefined = this.queryNavDestinationInfo(true);
+        console.log('QueryNavDestinationInfoNavDestination info2 is: ', JSON.stringify(info2))
+        if (info2 == undefined) {
+          console.log('QueryNavDestinationInfoNavDestination test undefined info2')
+        }
+        AppStorage.setOrCreate('test2Undefined', info2)
+      })
+        .height('5%')
+        .id('testUndefinedWId')
       Navigation() {
         NavRouter() {
           Row() {
             Row().width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 }).backgroundColor(Color.Pink)
             Text(`WLAN`).key('QueryNavDestinationInfoNavDestinationText01')
-              .fontSize(22)
-              .fontWeight(500)
               .textAlign(TextAlign.Center)
           }
           .width('90%')
-          .height(72)
+          .height(70)
           NavDestination() {
             XX()
           }.hideTitleBar(false).backgroundColor('#0c182431').id('111')
@@ -66,7 +84,7 @@ struct QueryNavDestinationInfoNavDestination {
 
       }
       .title('设置')
-      .titleMode(NavigationTitleMode.Free)
+      .titleMode(NavigationTitleMode.Mini)
       .mode(NavigationMode.Auto)
       .hideTitleBar(false)
       .hideToolBar(true)
@@ -86,8 +104,15 @@ struct XX {
   }
 
   build() {
-    Column({space:20}){
-      Text(tt).fontSize(26).fontWeight(700).key('XXqueryNavDestinationInfoNavDestinationText01').fontColor(Color.Blue)
+    Column({space:5}){
+      Text(tt).key('XXqueryNavDestinationInfoNavDestinationText01').fontColor(Color.Blue)
+      Button('testQueryNavDestinationInfo').onClick(() => {
+        let info3: observer.NavDestinationInfo | undefined = this.queryNavDestinationInfo(false);
+        console.log('QueryNavDestinationInfoNavDestination info3 is: ', JSON.stringify(info3))
+        AppStorage.setOrCreate('testW', info3)
+      })
+        .height('5%')
+        .id('testWId')
     }
   }
 }

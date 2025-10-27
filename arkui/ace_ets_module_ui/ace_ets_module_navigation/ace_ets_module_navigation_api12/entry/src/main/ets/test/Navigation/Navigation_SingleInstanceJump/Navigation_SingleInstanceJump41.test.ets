@@ -29,7 +29,7 @@ export default function Navigation_SingleInstanceJump41() {
         router.clear();
         let pages = router.getState();
         console.info("get Navigation_SingleInstanceJump41 state pages:" + JSON.stringify(pages));
-        if (!("List_SpaceChange" == pages.name)) {
+        if (!("Navigation_SingleInstanceJump41" == pages.name)) {
           console.info("get Navigation_SingleInstanceJump41 pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -42,6 +42,23 @@ export default function Navigation_SingleInstanceJump41() {
       done();
     });
     afterEach(async () => {
+    });
+
+    /**
+     * @tc.number Navigation_SingleInstanceJump41_0200
+     * @tc.name testNavigation NavPathStack getParamByIndex return undefined
+     * @tc.desc
+     */
+    it('Navigation_SingleInstanceJump41_0200',  Level.LEVEL0, async (done: Function) => {
+      console.info('Navigation_SingleInstanceJump41_0200 START');
+      await CommonFunc.sleep(1000);
+      sendEventByKey('getUndefinedBtn',10,"")
+      await CommonFunc.sleep(1000);
+      let undefinedValue: ESObject | undefined = AppStorage.get('undefinedValue')
+      expect(undefinedValue).assertEqual(undefined);
+      AppStorage.delete('undefinedValue')
+      console.info('Navigation_SingleInstanceJump41_0200 END');
+      done();
     });
 
     /**
@@ -68,8 +85,5 @@ export default function Navigation_SingleInstanceJump41() {
       console.info('Navigation_SingleInstanceJump41_0100 END');
       done();
     });
-
-
-
   })
 }

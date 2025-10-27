@@ -268,5 +268,35 @@ export default function MultiEntry() {
       done();
     });
 
+    /**
+     * @tc.number    MultiEntry_0800
+     * @tc.name      MultiEntry_0800
+     * @tc.desc      Test MultiNavPathStack getIndexByName not empty array
+     * @tc.level     Level 0
+     */
+    it('MultiEntry_0800', Level.LEVEL0, async (done: Function) => {
+      console.info('MultiEntry_0800 START');
+      await CommonFunc.sleep(500);
+
+      let driver = Driver.create();
+      await CommonFunc.sleep(200);
+
+      let btn1 = await driver.findComponent(ON.id('pushPathByNameId'));
+      await btn1.click()
+      console.info('[MultiEntry_0800] btn1 click');
+      await CommonFunc.sleep(1000);
+
+      let btn2 = await driver.findComponent(ON.id('getIndexByNameId'));
+      await btn2.click()
+      console.info('[MultiEntry_0800] btn2 click');
+      await CommonFunc.sleep(3000);
+
+      let indexLength: number = AppStorage.get('indexLength') as number;
+      expect(indexLength).assertEqual(1);
+      AppStorage.delete('indexLength');
+
+      console.info('MultiEntry_0800 END');
+      done();
+    });
   })
 }
