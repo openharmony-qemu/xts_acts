@@ -330,5 +330,227 @@ export default function dynamicLoadHap() {
         expect().assertFail();
       })
     })
+
+    /**
+     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0100
+     * @tc.name      : testDynamicDeregisterSingle01
+     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
+     *                 using relative paths to load files from ./xxx.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testDynamicDeregisterSingle01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const caseName: string = "testDynamicDeregisterSingle01";
+      import('../test/fileTest/singleA').then(m => {
+        expect(m.singleA).assertEqual("singleA");
+        markModuleCollectable(m);
+      }).catch((error: BusinessError) => {
+        console.error(`${caseName} catch error: ${error}`);
+        expect().assertFail();
+      })
+    })
+
+    /**
+     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0200
+     * @tc.name      : testDynamicDeregisterSingle02
+     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
+     *                 using relative paths to load files from ./xxx.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testDynamicDeregisterSingle02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const caseName: string = "testDynamicDeregisterSingle02";
+      import('../test/fileTest/singleB').then(m => {
+        expect(m.funB()).assertEqual("funB");
+        markModuleCollectable(m);
+      }).catch((error: BusinessError) => {
+        console.error(`${caseName} catch error: ${error}`);
+        expect().assertFail();
+      })
+    })
+
+    /**
+     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0300
+     * @tc.name      : testDynamicDeregisterSingle03
+     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
+     *                 using relative paths to load files from ./xxx.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testDynamicDeregisterSingle03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const caseName: string = "testDynamicDeregisterSingle03";
+      import('../test/fileTest/singleC').then(m => {
+        let test = new m.SingleC();
+        expect(test.a).assertEqual(1);
+        expect(test.funC()).assertEqual('func');
+        expect(m.SingleC.b).assertEqual('b0');
+        markModuleCollectable(m);
+      }).catch((error: BusinessError) => {
+        console.error(`${caseName} catch error: ${error}`);
+        expect().assertFail();
+      })
+    })
+
+    /**
+     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0400
+     * @tc.name      : testDynamicDeregisterMulti01
+     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
+     *                 using relative paths to load files from ./xxx.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testDynamicDeregisterMulti01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const caseName: string = "testDynamicDeregisterMulti01";
+      import('../test/fileTest/multiB').then(m => {
+        expect(m.multiB()).assertEqual('funBsing');
+        markModuleCollectable(m);
+      }).catch((error: BusinessError) => {
+        console.error(`${caseName} catch error: ${error}`);
+        expect().assertFail();
+      })
+    })
+
+    /**
+     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0500
+     * @tc.name      : testDynamicDeregisterMulti02
+     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
+     *                 using relative paths to load files from ./xxx.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testDynamicDeregisterMulti02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const caseName: string = "testDynamicDeregisterMulti02";
+      import('../test/fileTest/multiC').then(m => {
+        let test = new m.default()
+        expect(test.mulFunc()).assertEqual('funBsing');
+        markModuleCollectable(m);
+      }).catch((error: BusinessError) => {
+        console.error(`${caseName} catch error: ${error}`);
+        expect().assertFail();
+      })
+    })
+
+    /**
+     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0600
+     * @tc.name      : testDynamicDeregisterMulti03
+     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
+     *                 using relative paths to load files from ./xxx.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testDynamicDeregisterMulti03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const caseName: string = "testDynamicDeregisterMulti03";
+      import('../test/fileTest/multiD').then(m => {
+        expect(m.multiD()).assertEqual('funBb0');
+        markModuleCollectable(m);
+      }).catch((error: BusinessError) => {
+        console.error(`${caseName} catch error: ${error}`);
+        expect().assertFail();
+      })
+    })
+
+    /**
+     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0700
+     * @tc.name      : testDynamicDeregisterCircular01
+     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
+     *                 using relative paths to load files from ./xxx.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testDynamicDeregisterCircular01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const caseName: string = "testDynamicDeregisterCircular01";
+      import('../test/fileTest/circularB').then(m => {
+        let test = new m.TestB;
+        expect(test.fun()).assertEqual('testb');
+        markModuleCollectable(m);
+      }).catch((error: BusinessError) => {
+        console.error(`${caseName} catch error: ${error}`);
+        expect().assertFail();
+      })
+    })
+
+    /**
+     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0800
+     * @tc.name      : testDynamicDeregisterCircular02
+     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
+     *                 using relative paths to load files from ./xxx.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testDynamicDeregisterCircular02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const caseName: string = "testDynamicDeregisterCircular02";
+      import('../test/fileTest/circularC').then(m => {
+        expect(m.testC()).assertEqual(3);
+        markModuleCollectable(m);
+      }).catch((error: BusinessError) => {
+        console.error(`${caseName} catch error: ${error}`);
+        expect().assertFail();
+      })
+    })
+    /**
+     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_0900
+     * @tc.name      : testDynamicDeregisterDynamic01
+     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
+     *                 using relative paths to load files from ./xxx.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testDynamicDeregisterDynamic01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const caseName: string = "testDynamicDeregisterDynamic01";
+      import('../test/fileTest/dynamicC').then(m => {
+        expect(m.fun()).assertEqual(5);
+        markModuleCollectable(m);
+      }).catch((error: BusinessError) => {
+        console.error(`${caseName} catch error: ${error}`);
+        expect().assertFail();
+      })
+    })
+    /**
+     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_1000
+     * @tc.name      : testDynamicDeregisterMuiliLoad01
+     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
+     *                 using relative paths to load files from ./xxx.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testDynamicDeregisterMuiliLoad01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const caseName: string = "testDynamicDeregisterMuiliLoad01";
+      import('../test/fileTest/multiLoadC').then(m => {
+        expect(m.multiLoadC).assertEqual("multiLoadBmultiLoadA");
+        markModuleCollectable(m);
+      }).catch((error: BusinessError) => {
+        console.error(`${caseName} catch error: ${error}`);
+        expect().assertFail();
+      })
+    })
+    /**
+     * @tc.number    : SUB_COMPILER_RUNTIME_DYNAMIC_DEREGISTER_HAP_1100
+     * @tc.name      : testDynamicDeregisterMuiliLoad02
+     * @tc.desc      : Use constant expressions in this project's HAP for dynamic loading,
+     *                 using relative paths to load files from ./xxx.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testDynamicDeregisterMuiliLoad02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const caseName: string = "testDynamicDeregisterMuiliLoad02";
+      import('../test/fileTest/multiLoadE').then(m => {
+        expect(m.multiLoadE).assertEqual(11);
+        markModuleCollectable(m);
+      }).catch((error: BusinessError) => {
+        console.error(`${caseName} catch error: ${error}`);
+        expect().assertFail();
+      })
+    })
   })
 }
