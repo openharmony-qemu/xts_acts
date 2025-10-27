@@ -178,7 +178,7 @@ export default function settingUiJsunit() {
             })
           })
           .catch((err)=>{
-            console.info("[settings_get_value_35] 1252 error is:" + String(err));
+            console.info("[settings_get_value_35] 1252 error is:" + err);
             expect().assertFail();
             done();
           })
@@ -993,12 +993,12 @@ export default function settingUiJsunit() {
       try{
         settings.enableAirplaneMode(false).then((data)=>{
           if (data) {
-            console.info('settings test enableAirplaneMode promise data' + String(data));
+            console.info('settings test enableAirplaneMode promise data' + data);
             expect(false).assertTrue();
           }
           done();
         }).catch((err)=>{
-          console.info('settings test enableAirplaneMode promise err' + String(err));
+          console.info('settings test enableAirplaneMode promise err' + err);
           if ((err as BusinessError).code) {
             expect(err.code).assertEqual(801);
           }
@@ -1041,11 +1041,11 @@ export default function settingUiJsunit() {
     it('settings_get_value_static_116',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       try{
         settings.canShowFloating().then((data)=>{
-          console.info('settings test canShowFloating promise err' + String(data));
+          console.info('settings test canShowFloating promise err' + data);
           // expect(String(err)).assertEqual(str);
           done();
         }).catch((err)=>{
-          console.info('settings test canShowFloating promise err' + String(err));
+          console.info('settings test canShowFloating promise err' + err);
           if ((err as BusinessError).code) {
             expect(err.code).assertEqual(801);
           }
@@ -1077,7 +1077,7 @@ export default function settingUiJsunit() {
             console.info("[settings_get_value_static_117] value is:" + data);
           })
           .catch((err)=>{
-            console.info("[settings_get_value_static_117] error is:" + String(err));
+            console.info("[settings_get_value_static_117] error is:" + err);
             if ((err as BusinessError).code) {
               expect(err.code).assertEqual(201);
             }
