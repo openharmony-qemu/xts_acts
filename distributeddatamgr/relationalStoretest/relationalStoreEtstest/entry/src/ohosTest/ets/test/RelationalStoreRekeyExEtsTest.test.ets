@@ -941,7 +941,7 @@ export default function rdbStoreRekeyExEtsTest() {
     });
     /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2100
-     * @tc.name testRekeyEx0017
+     * @tc.name testRekeyEx0021
      * @tc.desc no encry to encry rekey 14800011 test
      * @tc.size MediumTest
      * @tc.type Function
@@ -984,6 +984,67 @@ export default function rdbStoreRekeyExEtsTest() {
         done()
       }
       console.log(TAG + "************* testRekeyEx0021 end *************");
+    });
+    /**
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2200
+     * @tc.name testRekeyEx0022
+     * @tc.desc encry database to no encry database 14800011 test
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testRekeyEx0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      console.log(TAG + "************* testRekeyEx0022 start *************");
+      let cryptoParam: data_relationalStore.CryptoParam = {
+        encryptionKey: new Uint8Array([1, 2, 3, 4, 5, 6]),
+        encryptionAlgo: data_relationalStore.EncryptionAlgo.AES_256_CBC,
+        iterationCount: 500
+      };
+      let storeConfig: data_relationalStore.StoreConfig = {
+        name: "testRekeyEx.db",
+        securityLevel: data_relationalStore.SecurityLevel.S2,
+        encrypt: true,
+        cryptoParam:cryptoParam
+      }
+      let rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+      await rdbStore.executeSql(CREATE_TABLE_TEST);
+      try {
+        let cryptoParam1: data_relationalStore.CryptoParam = {
+          encryptionKey: new Uint8Array([6, 2, 3, 4, 5, 1]),
+          encryptionAlgo: data_relationalStore.EncryptionAlgo.AES_256_CBC,
+          iterationCount: 500
+        };
+        let  u8 = new Uint8Array([1, 2, 3])
+        const valueBucket: data_relationalStore.ValuesBucket = {
+          "name": "zhangsan",
+          "age": 18,
+          "salary": 100.5,
+          "blobType": u8,
+        }
+        await rdbStore.insert("test", valueBucket);
+        console.log(TAG + "insert success");
+        await rdbStore.rekey(cryptoParam1);
+        console.log(TAG + "rekey success");
+        await rdbStore.close();
+        storeConfig.cryptoParam = cryptoParam1;
+        rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+        let cryptoParam2: data_relationalStore.CryptoParam = {
+          encryptionKey: new Uint8Array([1, 2, 3, 4, 5, 6]),
+          encryptionAlgo: data_relationalStore.EncryptionAlgo.PLAIN_TEXT,
+          iterationCount: 500
+        };
+        await rdbStore.rekeyEx(cryptoParam2);
+        console.log(TAG + "rekeyEx success");
+        await rdbStore.close();
+        rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.log(TAG + "catch err: failed, err: code=" + err.code + " message=" + err.message);
+        expect(err.code).assertEqual(14800011);
+        done();
+      }
+      console.log(TAG + "************* testRekeyEx0022 end *************");
     });
     /**
      * @tc.number SUB_DistributedData_RelationalStore_SDK_reKeyExJsAPITest_2500
@@ -1211,6 +1272,9 @@ export default function rdbStoreRekeyExEtsTest() {
         };
         await rdbStore.rekey(cryptoParam);
         console.log(TAG + "rekey success")
+        await rdbStore.close();
+        storeConfig.cryptoParam = cryptoParam;
+        rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
         let cryptoParam1: data_relationalStore.CryptoParam = {
           encryptionKey: new Uint8Array([6, 2, 3, 4, 5,1]),
           encryptionAlgo: data_relationalStore.EncryptionAlgo.AES_256_CBC,
@@ -1282,6 +1346,9 @@ export default function rdbStoreRekeyExEtsTest() {
         }
         await rdbStore.insert("test", valueBucket);
         await rdbStore.rekeyEx(cryptoParam1);
+        await rdbStore.close();
+        storeConfig.cryptoParam = cryptoParam1;
+        rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
         let cryptoParam: data_relationalStore.CryptoParam = {
           encryptionKey: new Uint8Array([1, 2, 3, 4, 5, 6]),
           encryptionAlgo: data_relationalStore.EncryptionAlgo.AES_256_CBC,
@@ -1499,13 +1566,18 @@ export default function rdbStoreRekeyExEtsTest() {
         console.log(TAG + "insert success");
         await rdbStore.rekey(cryptoParam1);
         console.log(TAG + "rekey success");
+        await rdbStore.close();
+        storeConfig.cryptoParam = cryptoParam1;
+        rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
         let cryptoParam2: data_relationalStore.CryptoParam = {
           encryptionKey: new Uint8Array([1, 2, 3, 4, 5, 6]),
-          encryptionAlgo: data_relationalStore.EncryptionAlgo.AES_256_CBC,
+          encryptionAlgo: data_relationalStore.EncryptionAlgo.PLAIN_TEXT,
           iterationCount: 500
         };
         await rdbStore.rekeyEx(cryptoParam2);
+        await rdbStore.close();
         storeConfig.encrypt = false;
+        rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
         console.log(TAG + "rekeyEx success");
         const valueBucket1: data_relationalStore.ValuesBucket = {
           "name": "zhangsan",
@@ -1563,7 +1635,10 @@ export default function rdbStoreRekeyExEtsTest() {
         console.log(TAG + "insert success");
         await rdbStore.rekeyEx(cryptoParam);
         console.log(TAG + "rekey success");
+        await rdbStore.close();
         storeConfig.encrypt = true;
+        storeConfig.cryptoParam = cryptoParam;
+        rdbStore = await data_relationalStore.getRdbStore(context, storeConfig);
         let cryptoParam1: data_relationalStore.CryptoParam = {
           encryptionKey: new Uint8Array([1, 2, 3, 4, 5, 6]),
           encryptionAlgo: data_relationalStore.EncryptionAlgo.AES_256_CBC,
@@ -1571,6 +1646,8 @@ export default function rdbStoreRekeyExEtsTest() {
         };
         await rdbStore.rekey(cryptoParam1);
         console.log(TAG + "rekeyEx success");
+        storeConfig.cryptoParam = cryptoParam;
+        rdbStore = await data_relationalStore.getRdbStore(context, storeConfig)
         const valueBucket1: data_relationalStore.ValuesBucket = {
           "name": "zhangsan",
           "age": 19,
@@ -1633,11 +1710,17 @@ export default function rdbStoreRekeyExEtsTest() {
         console.log(TAG + "insert success");
         await rdbStore.rekey(cryptoParam1);
         console.log(TAG + "rekey success");
+        await rdbStore.close();
+        storeConfig.cryptoParam = cryptoParam1;
+        rdbStore = await data_relationalStore.getRdbStore(context, storeConfig)
         let cryptoParam2: data_relationalStore.CryptoParam = {
           encryptionKey: new Uint8Array(),
         };
         await rdbStore.rekeyEx(cryptoParam2);
         console.log(TAG + "rekeyEx success");
+        await rdbStore.close();
+        storeConfig.cryptoParam = cryptoParam2;
+        rdbStore = await data_relationalStore.getRdbStore(context, storeConfig)
         const valueBucket1: data_relationalStore.ValuesBucket = {
           "name": "zhangsan",
           "age": 19,
@@ -1697,12 +1780,18 @@ export default function rdbStoreRekeyExEtsTest() {
         await rdbStore.insert("test", valueBucket);
         console.log(TAG + "insert success");
         await rdbStore.rekeyEx(cryptoParam1);
-        console.log(TAG + "rekey success");
+        console.log(TAG + "rekeyEx success");
+        await rdbStore.close();
+        storeConfig.cryptoParam = cryptoParam1;
+        rdbStore = await data_relationalStore.getRdbStore(context, storeConfig)
         let cryptoParam2: data_relationalStore.CryptoParam = {
           encryptionKey: new Uint8Array(),
         };
         await rdbStore.rekey(cryptoParam2);
-        console.log(TAG + "rekeyEx success");
+        console.log(TAG + "rekey success");
+        await rdbStore.close();
+        storeConfig.cryptoParam = cryptoParam2;
+        rdbStore = await data_relationalStore.getRdbStore(context, storeConfig)
         const valueBucket1: data_relationalStore.ValuesBucket = {
           "name": "zhangsan",
           "age": 19,
@@ -1771,15 +1860,21 @@ export default function rdbStoreRekeyExEtsTest() {
         console.log(TAG + "insert success");
         await rdbStore.rekey(cryptoParam1);
         console.log(TAG + "rekey success");
+        await rdbStore.close();
+        storeConfig.cryptoParam = cryptoParam1;
+        rdbStore = await data_relationalStore.getRdbStore(context, storeConfig)
         let cryptoParam2: data_relationalStore.CryptoParam = {
           encryptionKey: new Uint8Array([9, 2, 3, 4, 5, 1]),
           iterationCount: 600,
-          encryptionAlgo: data_relationalStore.EncryptionAlgo.PLAIN_TEXT,
+          encryptionAlgo: data_relationalStore.EncryptionAlgo.AES_256_GCM,
           hmacAlgo: data_relationalStore.HmacAlgo.SHA1,
           kdfAlgo: data_relationalStore.KdfAlgo.KDF_SHA256,
           cryptoPageSize:4096
         };
         await rdbStore.rekeyEx(cryptoParam2);
+        await rdbStore.close();
+        storeConfig.cryptoParam = cryptoParam2;
+        rdbStore = await data_relationalStore.getRdbStore(context, storeConfig)
         console.log(TAG + "rekeyEx success");
         const valueBucket1: data_relationalStore.ValuesBucket = {
           "name": "zhangsan",
