@@ -53,6 +53,7 @@ import {
   dependend,
   hashMapTest,
   delay,
+  delaySync,
   randomTest,
   outerTaskFunc,
   isConcurrentTest1,
@@ -2646,7 +2647,7 @@ export default function TaskPoolLibTest() {
      */
     it('TaskPoolTestClass120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let task: taskpool.Task = new taskpool.Task(delay);
+        let task: taskpool.Task = new taskpool.Task(delaySync);
         expect(task.totalDuration < 5).assertTrue();
         expect(task.cpuDuration < 5).assertTrue();
         expect(task.ioDuration < 5).assertTrue();
