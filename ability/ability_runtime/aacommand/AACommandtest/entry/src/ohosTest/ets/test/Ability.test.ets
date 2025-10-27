@@ -48,10 +48,8 @@ export default function abilityTest() {
         console.log("ActsAACommandTest startAbility err : " + JSON.stringify(err));
       })
 
-      setTimeout(() => {
-        console.log("ActsAACommandTest afterEach end");
-        done();
-      }, 1000)
+      console.log("ActsAACommandTest afterEach end");
+      done();
     })
 
 
@@ -69,18 +67,18 @@ export default function abilityTest() {
         '-s unittest OpenHarmonyTestRunner ' +
         '-w 40 -s class ACTS_AACommand_01_3 -s level 1 -s size 0 -s testType aaa -s ' +
         'timeout 5 -s 1 3';
-      let delay = 3000;
-      abilityDelegator!.executeShellCommand(cmd, (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
+      await abilityDelegator!.executeShellCommand(cmd).then((data: AbilityDelegatorRegistry.ShellCmdResult) => {
         console.log('ACTS_AACommand_0100 - executeShellCommand: start ');
         console.log('ACTS_AACommand_0100 stdResult = ' + data.stdResult);
         let i = data.stdResult.indexOf('start ability successfully');
         console.log('ACTS_AACommand_0100 query string i = ' + i);
         expect(i == -1).assertEqual(false);
-      })
-      setTimeout(async () => {
-        console.log('ACTS_AACommand_0100 - executeShellCommand: end');
-        done();
-      }, delay)
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_0100 error: ' + JSON.stringify(err));
+        expect().assertFail();
+      });
+      console.log('ACTS_AACommand_0100 - executeShellCommand: end');
+      done();
     })
 
     /**
