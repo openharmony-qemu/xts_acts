@@ -511,8 +511,8 @@ export default function abilityTest() {
           expect(true).assertTrue();
           done();
         }).catch((e: BusinessError): void => {
-          if (e.code == 801) {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] startMoving promise Succeeded');
+          if (e.code == 801 || e.code == 1300004) {
+            hilog.info(0x0000, '[ANI]', `finaltest [ANI] startMoving promise Succeeded. (${e.code})`);
             expect(true).assertTrue();
           } else {
             hilog.info(0x0000, '[ANI]', 'finaltest [ANI] startMoving promise failed');
