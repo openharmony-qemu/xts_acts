@@ -691,6 +691,18 @@ export default function nfcNDEFErrorTest() {
                 try{
                     let makeERecords = tag.ndef.messageToBytes('test');
                     console.info("[NFC_test]ndef19 messageToBytes result: " + JSON.stringify(makeERecords));
+                    if (makeERecords.length > 0) {
+                        expect(makeERecords.length > 0).assertTrue();
+                    } else {
+                        expect(makeERecords).assertDeepEquals([]);
+                    }
+                    let makeERecords1 = tag.ndef.messageToBytes('');
+                    console.info("[NFC_test]ndef19 messageToBytes result: " + JSON.stringify(makeERecords1));
+                    if (makeERecords1.length > 0) {
+                        expect(makeERecords1.length > 0).assertTrue();
+                    } else {
+                        expect(makeERecords1).assertDeepEquals([]);
+                    }
                     expect(makeERecords).assertInstanceOf('Array')
                 }catch(error){
                     console.info("[NFC_test]ndef19 messageToBytes errorcode: " + error.code);

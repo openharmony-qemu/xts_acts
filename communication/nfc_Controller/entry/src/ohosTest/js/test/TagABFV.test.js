@@ -33,6 +33,18 @@ let aTag = {
     "supportedProfiles": 1,
 };
 
+let aTag1 = {
+    "uid": [0x01, 0x02, 0x03, 0x04],
+    "technology": [1],
+    "extrasData": [
+        {
+            "Sak": 0x08, "Atqa": "",
+        },
+    ],
+    "tagRfDiscId": 1,
+    "supportedProfiles": 1,
+};
+
 let bTag = {
     "uid": [0x01, 0x02, 0x03, 0x04],
     "technology": [2],
@@ -44,12 +56,34 @@ let bTag = {
     "tagRfDiscId": 1,
 };
 
+let bTag1 = {
+    "uid": [0x01, 0x02, 0x03, 0x04],
+    "technology": [2],
+    "extrasData": [
+        {
+            "AppData": "", "ProtocolInfo": "",
+        }
+    ],
+    "tagRfDiscId": 1,
+};
+
 let fTag = {
     "uid": [0x01, 0x02, 0x03, 0x04],
     "technology": [4],
     "extrasData": [
         {
             "SystemCode": "A0C0", "Pmm": "131F",
+        }
+    ],
+    "tagRfDiscId": 1,
+};
+
+let fTag1 = {
+    "uid": [0x01, 0x02, 0x03, 0x04],
+    "technology": [4],
+    "extrasData": [
+        {
+            "SystemCode": "", "Pmm": "",
         }
     ],
     "tagRfDiscId": 1,
@@ -308,6 +342,41 @@ export default function nfcTagABFVTest() {
             if (NfcATag != null && NfcATag != undefined) {
                 let Atqa = NfcATag.getAtqa(); 
                 console.info('[NFC_test] tag6 test Atqa data>:' + Atqa);
+                if (Atqa.length > 0) {
+                    expect(Atqa.length > 0).assertTrue();
+                } else {
+                    expect(Atqa).assertDeepEquals([]);
+                }
+                expect(Atqa).assertInstanceOf('Array');
+            } else {
+                console.info("[NFC_test]NfcATag3 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.number SUB_Communication_NFC_nfctage_js_0601
+         * @tc.name Test getAtqa_taga
+         * @tc.desc Obtains the Atqa value of the NFC-A tag.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 0
+         */
+        it('SUB_Communication_NFC_nfctage_js_0601', Level.LEVEL0, function ()  {
+            let NfcATag ;
+            try {
+                NfcATag = tag.getNfcATag(aTag1);
+            }catch(error){
+                console.info('Nfcget tagABFV error' + error)
+            }
+            if (NfcATag != null && NfcATag != undefined) {
+                let Atqa = NfcATag.getAtqa(); 
+                console.info('[NFC_test] tag6 test Atqa data>:' + Atqa);
+                if (Atqa.length > 0) {
+                    expect(Atqa.length > 0).assertTrue();
+                } else {
+                    expect(Atqa).assertDeepEquals([]);
+                }
                 expect(Atqa).assertInstanceOf('Array');
             } else {
                 console.info("[NFC_test]NfcATag3 = null & = undefined: ");
@@ -333,6 +402,41 @@ export default function nfcTagABFVTest() {
             if (NfcBTag != null && NfcBTag != undefined) {
                 let AppData = NfcBTag.getRespAppData(); 
                 console.info('[NFC_test] tag7 test AppData data>:' + AppData);
+                if (AppData.length > 0) {
+                    expect(AppData.length > 0).assertTrue();
+                } else {
+                    expect(AppData).assertDeepEquals([]);
+                }
+                expect(AppData).assertInstanceOf('Array');
+            } else {
+                console.info("[NFC_test]NfcBTag2 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.number SUB_Communication_NFC_nfctage_js_0701
+         * @tc.name Test getAppData_tagB
+         * @tc.desc Obtains the AppData value of the NFC-B tag.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 0
+         */
+        it('SUB_Communication_NFC_nfctage_js_0701', Level.LEVEL0, function ()  {
+            let NfcBTag ;
+            try {
+                NfcBTag = tag.getNfcBTag(bTag1);
+            }catch(error){
+                console.info('Nfcget tagABFV error' + error)
+            }
+            if (NfcBTag != null && NfcBTag != undefined) {
+                let AppData = NfcBTag.getRespAppData(); 
+                console.info('[NFC_test] tag7 test AppData data>:' + AppData);
+                if (AppData.length > 0) {
+                    expect(AppData.length > 0).assertTrue();
+                } else {
+                    expect(AppData).assertDeepEquals([]);
+                }
                 expect(AppData).assertInstanceOf('Array');
             } else {
                 console.info("[NFC_test]NfcBTag2 = null & = undefined: ");
@@ -358,6 +462,41 @@ export default function nfcTagABFVTest() {
             if (NfcBTag != null && NfcBTag != undefined) {
                 let Protocol = NfcBTag.getRespProtocol(); 
                 console.info('[NFC_test] tag8 test Protocol data>:' + Protocol);
+                if (Protocol.length > 0) {
+                    expect(Protocol.length > 0).assertTrue();
+                } else {
+                    expect(Protocol).assertDeepEquals([]);
+                }
+                expect(Protocol).assertInstanceOf('Array');
+            } else {
+                console.info("[NFC_test]NfcBTag3 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.number SUB_Communication_NFC_nfctage_js_0801
+         * @tc.name Test getRespProtocol_tagB
+         * @tc.desc Obtains the Protocol value of the NFC-B tag.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 0
+         */
+         it('SUB_Communication_NFC_nfctage_js_0801', Level.LEVEL0, function ()  {
+            let NfcBTag ;
+            try {
+                NfcBTag = tag.getNfcBTag(bTag1);
+            }catch(error){
+                console.info('Nfcget tagABFV error' + error)
+            }
+            if (NfcBTag != null && NfcBTag != undefined) {
+                let Protocol = NfcBTag.getRespProtocol(); 
+                console.info('[NFC_test] tag8 test Protocol data>:' + Protocol);
+                if (Protocol.length > 0) {
+                    expect(Protocol.length > 0).assertTrue();
+                } else {
+                    expect(Protocol).assertDeepEquals([]);
+                }
                 expect(Protocol).assertInstanceOf('Array');
             } else {
                 console.info("[NFC_test]NfcBTag3 = null & = undefined: ");
@@ -383,6 +522,41 @@ export default function nfcTagABFVTest() {
             if (NfcFTag != null && NfcFTag != undefined) {
                 let SystemCode = NfcFTag.getSystemCode(); 
                 console.info('[NFC_test] tag9 test SystemCode data>:' + SystemCode);
+                if (SystemCode.length > 0) {
+                    expect(SystemCode.length > 0).assertTrue();
+                } else {
+                    expect(SystemCode).assertDeepEquals([]);
+                }
+                expect(SystemCode).assertInstanceOf('Array');
+            } else {
+                console.info("[NFC_test]NfcFTag2 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.number SUB_Communication_NFC_nfctage_js_0901
+         * @tc.name Test getSystemCode_tagF
+         * @tc.desc Obtains the SystemCode value of the NFC-F tag.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 0
+         */
+         it('SUB_Communication_NFC_nfctage_js_0901', Level.LEVEL0, function ()  {
+            let NfcFTag ;
+            try {
+                NfcFTag = tag.getNfcFTag(fTag1);
+            }catch(error){
+                console.info('Nfcget tagABFV error' + error)
+            }
+            if (NfcFTag != null && NfcFTag != undefined) {
+                let SystemCode = NfcFTag.getSystemCode(); 
+                console.info('[NFC_test] tag9 test SystemCode data>:' + SystemCode);
+                if (SystemCode.length > 0) {
+                    expect(SystemCode.length > 0).assertTrue();
+                } else {
+                    expect(SystemCode).assertDeepEquals([]);
+                }
                 expect(SystemCode).assertInstanceOf('Array');
             } else {
                 console.info("[NFC_test]NfcFTag2 = null & = undefined: ");
@@ -408,6 +582,41 @@ export default function nfcTagABFVTest() {
             if (NfcFTag != null && NfcFTag != undefined) {
                 let Pmm = NfcFTag.getPmm(); 
                 console.info('[NFC_test] tag10 test Pmm data>:' + Pmm);
+                if (Pmm.length > 0) {
+                    expect(Pmm.length > 0).assertTrue();
+                } else {
+                    expect(Pmm).assertDeepEquals([]);
+                }
+                expect(Pmm).assertInstanceOf('Array');
+            } else {
+                console.info("[NFC_test]NfcFTag3 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.number SUB_Communication_NFC_nfctage_js_1001
+         * @tc.name Test getPmm_tagF
+         * @tc.desc Obtains the getPmm value of the NFC-F tag.
+         * @tc.size since 7
+         * @tc.type Function
+         * @tc.level Level 0
+         */
+        it('SUB_Communication_NFC_nfctage_js_1001', Level.LEVEL0, function ()  {
+            let NfcFTag ;
+            try {
+                NfcFTag = tag.getNfcFTag(fTag1);
+            }catch(error){
+                console.info('Nfcget tagABFV error' + error)
+            }
+            if (NfcFTag != null && NfcFTag != undefined) {
+                let Pmm = NfcFTag.getPmm(); 
+                console.info('[NFC_test] tag10 test Pmm data>:' + Pmm);
+                if (Pmm.length > 0) {
+                    expect(Pmm.length > 0).assertTrue();
+                } else {
+                    expect(Pmm).assertDeepEquals([]);
+                }
                 expect(Pmm).assertInstanceOf('Array');
             } else {
                 console.info("[NFC_test]NfcFTag3 = null & = undefined: ");

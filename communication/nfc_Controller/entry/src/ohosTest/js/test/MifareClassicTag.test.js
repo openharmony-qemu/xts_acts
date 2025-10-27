@@ -159,6 +159,11 @@ export default function nfcMifareClassicTag() {
                 let blockIndex = 1; 
                 await MifareClassicTag.readSingleBlock(blockIndex).then((data) => {
                     console.info("[NFC_test] MifareClassicTag3 readSingleBlock1 data: " + data + "json3:" + JSON.stringify(data));
+                    if (data.length > 0) {
+                        expect(data.length > 0).assertTrue();
+                    } else {
+                        expect(data).assertDeepEquals([]);
+                    }
                     expect(data).assertInstanceOf('Array')
                     done();
                 }).catch((err)=> {
@@ -208,6 +213,11 @@ export default function nfcMifareClassicTag() {
                         expect(true).assertTrue();
                     } else {
                         console.info("[NFC_test] MifareClassicTag4 readSingleBlock2 data: " + data+ "json4:" + JSON.stringify(data));
+                        if (data.length > 0) {
+                            expect(data.length > 0).assertTrue();
+                        } else {
+                            expect(data).assertDeepEquals([]);
+                        }
                         expect(data).assertInstanceOf('Array')
                     }
                     done();

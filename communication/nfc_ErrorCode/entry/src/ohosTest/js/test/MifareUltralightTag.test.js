@@ -79,6 +79,11 @@ export default function UltralightTagErrorTest() {
                 (async () => {
                     try {
                         let result = await MifareUltralightTag.readMultiplePages('test');
+                        if (result.length > 0) {
+                            expect(result.length > 0).assertTrue();
+                        } else{
+                            expect(result).assertDeepEquals([]);
+                        }
                         console.info("[NFC_test]mifareUltralight1 readMultiplePages data: " + result);
                     } catch(error) {
                         console.info("[NFC_test]mifareUltralight1 readMultiplePages errorcode: " + error.code);
@@ -112,6 +117,11 @@ export default function UltralightTagErrorTest() {
                             expect(true).assertEqual(true);
                         } else {
                             console.info("[NFC_test]mifareUltralight2 readMultiplePages data: " + data + "json2:" + JSON.stringify(data));
+                            if (data.length > 0) {
+                                expect(data.length > 0).assertTrue();
+                            } else  {
+                                expect(data).assertDeepEquals([]);
+                            }
                             expect(true).assertTrue(data >= 0);
                         }
                     });

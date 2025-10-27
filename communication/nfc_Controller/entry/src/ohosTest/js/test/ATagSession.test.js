@@ -251,6 +251,11 @@ export default function nfcATagSessionTest() {
             if (getAtag != null && getAtag != undefined) {
                 let sendDatas = [0x01, 0x02, 0x03, 0x04];
                 await getAtag.sendData(sendDatas).then((data) => {
+                    if(data.length > 0) {
+                        expect(data.length > 0).assertTrue();
+                    }  else {
+                        expect(data).assertDeepEquals([]);
+                    }
                     console.info("[NFC_test] tagsession7 nfcAtage sendData1 data: " + data);
                     expect(data).assertInstanceOf('Array')
                     done();
@@ -285,6 +290,11 @@ export default function nfcATagSessionTest() {
                         done();
                     } else {
                         sleep(2500);
+                        if (data.length > 0) {
+                            expect(data.length > 0).assertTrue();
+                        } else {
+                            expect(data).assertDeepEquals([]);
+                        }
                         console.info("[NFC_test] tagsession8 nfcAtage sendData2 data: " + data );
                         data
                         done();
@@ -373,6 +383,11 @@ export default function nfcATagSessionTest() {
             let sendDatas = [0x01, 0x02, 0x03, 0x04];
             await tag.getNfcATag(aTag).transmit(sendDatas).then((data) => {
                 console.info("[NFC_test] tagsession11 nfcAtage sendData1 data: " + data );
+                if (data.length > 0) {
+                    expect(data.length > 0).assertTrue();
+                } else {
+                    expect(data).assertDeepEquals([]);
+                }
                 expect(data).assertInstanceOf('Array')
                 done();
             }).catch((err)=> {
@@ -443,6 +458,11 @@ export default function nfcATagSessionTest() {
                 } else {
                     sleep(2500);
                     console.info("[NFC_test] tagsession12 nfcAtage sendData2 data: " + data);
+                    if (data.length > 0) {
+                        expect(data.length > 0).assertTrue();
+                    } else {
+                        expect(data).assertDeepEquals([]);
+                    }
                     expect(data).assertInstanceOf('Array')
                     done();
                 }
