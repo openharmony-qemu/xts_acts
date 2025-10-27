@@ -26,7 +26,6 @@ export default function webPageSizeTest() {
     describe("WebPageSizeTest", (): void => {
         beforeAll(async () : Promise<void> => {
             hilog.info(domain, tag, "WebPageSizeTest loadup start!!!!!");
-            await Utils.loadAndSetUpUiTest();
             await Utils.msSleep(2000)
             hilog.info(domain, tag, "WebPageSizeTest loadup over!!!!!");
         })
