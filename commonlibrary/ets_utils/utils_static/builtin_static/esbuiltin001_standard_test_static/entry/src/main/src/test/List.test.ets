@@ -15,8 +15,24 @@
 import EsArrayTest001 from "./EsArray001.test";
 import EsArrayTest002 from "./EsArray002.test";
 import EsArrayTest003 from "./EsArray003.test";
+import EsBigIntTest from "./EsBigInt.test";
+import EsBooleanTest from "./EsBoolean.test";
+import EsDateTest from "./EsDate.test";
+import EsErrorTest from "./EsError.test";
+import EsFinalRegTest from "./EsFinalReg.test";
+import EsInfinityTest from "./EsInfinity.test";
+import EsJSONTest from "./EsJSON.test";
+import EsNaNTest from "./EsNaN.test";
 export default function testsuite() {
   EsArrayTest001();
   EsArrayTest002();
   EsArrayTest003();
+  EsBooleanTest();
+  EsBigIntTest();
+  EsDateTest();
+  EsErrorTest();
+  EsFinalRegTest();
+  EsInfinityTest();
+  EsJSONTest();
+  EsNaNTest();
 }
