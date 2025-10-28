@@ -35,6 +35,10 @@ class MessageObject {
   }
 }
 
+function TSleep(delay:int):void {
+  for(let t = Date.now(); Date.now() - t <= delay;);
+}
+
 export const Sleep = (ms: int) => {
   return new Promise<number>((resolve) => {
     setTimeout(() => {
@@ -780,7 +784,7 @@ export default function MessageTest2() {
           eaw.start();
           let result: concurrency.Message[] = [];
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
+            TSleep(1000);
             result.push(msg);
             console.info(`push msg`);
             flag = true;
