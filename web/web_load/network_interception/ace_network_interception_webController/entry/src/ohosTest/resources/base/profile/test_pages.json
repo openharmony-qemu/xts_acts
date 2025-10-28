@@ -1,6 +1,9 @@
 {
   "src": [
     "testability/pages/Index",
-    "testability/pages/getSurfaceId"
+    "testability/pages/getSurfaceId",
+    "testability/pages/webviewCustomizeSchemesTrue",
+    "testability/pages/webviewCustomizeSchemesFalse",
+    "testability/pages/onSafeBrowsingCheckFinish"
   ]
 }

@@ -13,7 +13,13 @@
  * limitations under the License.
  */
 import getSurfaceId from './getSurfaceId.test'
+import webviewCustomizeSchemesTrue from './WebviewCustomizeSchemesTrue.test'
+import webviewCustomizeSchemesFalse from './WebviewCustomizeSchemesFalse.test'
+import onSafeBrowsingCheckFinish from './OnSafeBrowsingCheckFinish.test'
 
 export default function testsuite() {
+  webviewCustomizeSchemesTrue();
+  webviewCustomizeSchemesFalse();
+  onSafeBrowsingCheckFinish();
   getSurfaceId();
 }
