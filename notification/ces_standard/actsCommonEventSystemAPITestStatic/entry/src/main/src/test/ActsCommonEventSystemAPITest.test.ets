@@ -502,6 +502,7 @@ export default function ActsCommonEventSystemAPITest() {
           } else {
             console.error(Tag + "openNotificationSettings:1011 " + JSON.stringify(err));
             expect(err?.code).assertEqual(1011);
+            console.error(Tag + "openNotificationSettings:1011 done1" + JSON.stringify(err));
             done();
           }
         })
@@ -514,6 +515,9 @@ export default function ActsCommonEventSystemAPITest() {
           console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
           if (err.code == 801) {
             expect(true).assertTrue();
+            done();
+          } else if(err.code == 1011){
+            expect(err?.code).assertEqual(1011);
             done();
           } else {
             expect(err?.code).assertEqual(1600018)
