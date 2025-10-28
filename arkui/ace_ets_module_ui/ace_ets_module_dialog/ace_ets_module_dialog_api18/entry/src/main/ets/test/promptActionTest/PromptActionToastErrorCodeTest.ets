@@ -22,7 +22,7 @@ export default function PromptActionToastErrorCodeTest() {
     beforeEach(async (done: Function) => {
       console.info("PromptActionToastErrorCodeTest beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/promptActionTest/PromptActionToastErrorCode",
+        url: "MainAbility/pages/promptAction/PromptActionToastErrorCode",
       }
       try {
         router.clear();
