@@ -502,7 +502,7 @@ struct ExamplePage {
     .onFocus(() => {
       AppStorage.setOrCreate('pageContext', getContext(this))
       let displayOri = display.getDefaultDisplaySync().orientation;
-      console.log(caseName + ' displayOri : ' + displayOri);
+      console.log(' displayOri : ' + displayOri);
       AppStorage.setOrCreate('displayOri', displayOri)
     })
   }
