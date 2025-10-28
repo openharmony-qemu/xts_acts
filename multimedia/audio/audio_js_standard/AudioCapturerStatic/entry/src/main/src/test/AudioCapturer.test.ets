@@ -444,6 +444,90 @@ export default function audioCapturer() {
     })
 
     /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_STATIC_0100
+     * @tc.desc        AudioCapturer - setWillMuteWhenInterrupted
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_1,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapPromise: audio.AudioCapturer;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          audioCapPromise.setWillMuteWhenInterrupted(true);
+          expect(true).assertTrue();
+        }).catch(async(err: BusinessError) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          expect(false).assertTrue();
+        });
+      } catch (err: BusinessError) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(false).assertTrue();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_STATIC_0200
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_STATIC_0200
+     * @tc.desc        AudioCapturer - setWillMuteWhenInterrupted
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_1,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapPromise: audio.AudioCapturer;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          audioCapPromise.start();
+          console.info('AudioCapturer start : Success : Stream Type: SUCCESS');
+          audioCapPromise.setWillMuteWhenInterrupted(true);
+        }).catch(async(err: BusinessError) => {
+          console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+          expect(err.code).assertEqual(6800103);
+        });
+      } catch (err: BusinessError) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(false).assertTrue();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
      * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMOISE_PREPARED_STATE_STATIC_0100
      * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMOISE_PREPARED_STATE_STATIC_0100
      * @tc.desc        AudioCapturer with state prepared
@@ -2944,7 +3028,6 @@ export default function audioCapturer() {
 
         await resRendererPromise5(AudioRendererOptions, fileName);
         console.log(`${caseTag} audio playback success`);
-        expect(true).assertTrue();
       } catch (err: BusinessError) {
         console.log(`${caseTag} fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
@@ -2952,5 +3035,56 @@ export default function audioCapturer() {
         done();
       }
     })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_FRAMEWORK_LIVE_FUNCTION_TEST_STATIC_001
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_FRAMEWORK_LIVE_FUNCTION_TEST_STATIC_001
+     * @tc.desc        SourceType Live
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_FRAMEWORK_LIVE_FUNCTION_TEST_STATIC_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: {
+          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000, // 采样率。
+          channels: audio.AudioChannel.CHANNEL_2, // 通道。
+          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE, // 采样格式。
+          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW // 编码格式。
+        },
+        capturerInfo: {
+          source: audio.SourceType.SOURCE_TYPE_LIVE, // 音源类型
+          capturerFlags: 0 // 音频采集器标志。
+        }
+      };
+
+      let audioManager = audio.getAudioManager().getStreamManager();
+      let isSupportAEC = audioManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_LIVE);
+
+      if (isSupportAEC) {
+        audioCapturerOptions.capturerInfo.source = audio.SourceType.SOURCE_TYPE_LIVE;
+      } else {
+        audioCapturerOptions.capturerInfo.source = audio.SourceType.SOURCE_TYPE_MIC;
+      }
+
+      try {
+        audio.createAudioCapturer(audioCapturerOptions, (err: BusinessError | null, data: audio.AudioCapturer | undefined) => {
+          if (err) {
+            expect(false).assertTrue();
+            done();
+            console.error(`AudioCapturer Created : Error: ${err}`);
+          } else {
+            console.info('AudioCapturer Created : Success : SUCCESS');
+            data?.release();
+            done();
+          }
+          done();
+        });
+      } catch (err) {
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
   })
 }

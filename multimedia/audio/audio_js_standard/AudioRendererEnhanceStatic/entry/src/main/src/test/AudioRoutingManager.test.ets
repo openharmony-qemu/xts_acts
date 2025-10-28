@@ -30,11 +30,6 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 
 let g_context: common.UIAbilityContext;
 
-let capturerInfo: audio.AudioCapturerInfo = {
-  source: audio.SourceType.SOURCE_TYPE_CAMCORDER,
-  capturerFlags: 0
-}
-
 export default function AudioRoutingManagerTest() {
 
   describe('AudioRoutingManagerTest', () => {

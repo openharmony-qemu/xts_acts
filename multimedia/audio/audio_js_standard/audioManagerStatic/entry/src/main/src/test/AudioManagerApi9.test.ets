@@ -844,5 +844,141 @@ export default function audioManagerApi9() {
         }
       });
     })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_ONAUDIOSCENECHANGE_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_ONAUDIOSCENECHANGE_STATIC_0100
+     * @tc.desc        OnAudioSceneChange - audioManager
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ONAUDIOSCENECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        audioManager.onAudioSceneChange((audioScene) => {
+          console.info(`AudioSceneChange event: ${audioScene} `);
+        });
+        expect(true).assertTrue();
+        done();
+      } catch (err: BusinessError) {
+        console.log('err :' + err.message)
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_OFFAUDIOSCENECHANGE_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_OFFAUDIOSCENECHANGE_STATIC_0100
+     * @tc.desc        OffAudioSceneChange - audioManager
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_OFFAUDIOSCENECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let cb = (audioScene: audio.AudioScene) => {
+          console.info(`AudioSceneChange event: ${audioScene} `);
+      }
+      try {
+        audioManager.onAudioSceneChange(cb);
+        audioManager.offAudioSceneChange(cb);
+        audioManager.onAudioSceneChange(cb);
+        audioManager.offAudioSceneChange();
+        expect(true).assertTrue();
+        done();
+      } catch (err: BusinessError) {
+        console.log('err :' + err.message)
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0100
+     * @tc.desc        Test that no recording stream is currently started
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      };
+      try {
+        const isAvailable = streamManager.isRecordingAvailable(capturerInfo);
+        expect(isAvailable).assertTrue();
+      } catch (error: BusinessError) {
+        console.log(`error code: ${error.code} ,message:${error.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0200
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0200
+     * @tc.desc        Test that a recording stream is currently started
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let streamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      };
+      let capturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: streamInfo,
+        capturerInfo: capturerInfo
+      };
+      let checkCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_WAKEUP,
+        capturerFlags: 0
+      };
+      try {
+        let audioCap = await audio.createAudioCapturer(capturerOptions);
+        console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+        await audioCap.start();
+        const isAvailable = streamManager.isRecordingAvailable(checkCapturerInfo);
+        expect(isAvailable).assertFalse();
+        await audioCap.stop();
+        await audioCap.release();
+      } catch (error: BusinessError) {
+        console.log(`error code: ${error.code} ,message:${error.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0300
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0300
+     * @tc.desc        Test input parameter sourceType invalid
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let capturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_INVALID,
+        capturerFlags: 0
+      };
+      try {
+        streamManager.isRecordingAvailable(capturerInfo);
+        expect(false).assertTrue();
+      } catch (error: BusinessError) {
+        console.log(`error code: ${error.code} ,message:${error.message}`);
+        expect(Number(error.code) == 6800101).assertTrue();
+      }
+      done();
+    })
   })
 }

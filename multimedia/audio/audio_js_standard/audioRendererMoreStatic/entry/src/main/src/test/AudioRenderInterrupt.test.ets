@@ -3625,21 +3625,21 @@ export default function AudioRendererInterruptUnitTest() {
          */
         it('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_STATIC_15800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
-                let render1 = await createAudioRenderer(renderInfo['NOTIFICATION'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
-                await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-                await start(render1, done)
-  
-                let render2 = await createAudioRenderer(renderInfo['NAVIGATION'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
-                await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
-                await start(render2, done)
-                await Utils.msSleep(500)
-                await release(render1, done)
-                await release(render2, done)
-                done()
-              } catch (err: BusinessError) {
-                expect(false).assertTrue();
-                done()
-              }
+              let render1 = await createAudioRenderer(renderInfo['NOTIFICATION'] as audio.AudioRendererInfo, streamInfo['44100'] as audio.AudioStreamInfo,done)
+              await render1.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+              await start(render1, done)
+
+              let render2 = await createAudioRenderer(renderInfo['NAVIGATION'] as audio.AudioRendererInfo, streamInfo['48000'] as audio.AudioStreamInfo,done)
+              await render2.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE)
+              await start(render2, done)
+              await Utils.msSleep(500)
+              await release(render1, done)
+              await release(render2, done)
+              done()
+            } catch (err: BusinessError) {
+              expect(false).assertTrue();
+              done()
+            }
         })
 
         /**
