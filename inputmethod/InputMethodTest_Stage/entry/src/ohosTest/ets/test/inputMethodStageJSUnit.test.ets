@@ -138,21 +138,15 @@ export default function inputMethodStageJSUnit() {
             console.info("====>inputMethod_test_listInputMethodSubtype_002  failed" + JSON.stringify(err));
             expect().assertFail();
             done()
-          }
-          ;
+          };
           console.info("====>inputMethod_test_listInputMethodSubtype_002 listInputMethodSubtype:" + JSON.stringify(data));
-          if (data.length >= 1) {
-            let inputMethodSubtype = data[0]
-            console.info("====>inputMethod_test_listInputMethodSubtype_002 inputMethodSubtype" + JSON.stringify(inputMethodSubtype));
-            expect(inputMethodSubtype.id != null).assertTrue();
-            expect(inputMethodSubtype.label != null).assertTrue();
-            done();
-          } else {
-            console.info("====>inputMethod_test_listInputMethodSubtype_002 listInputMethodSubtype length less 1");
-            expect().assertFail();
-            done();
-          }
-          ;
+          console.info(`====> inputMethod_test_listInputMethodSubtype_002 success data: ${JSON.stringify(data)}`);
+          expect(data.length > 0).assertTrue();
+          let inputMethodSubtype = data[0]
+          console.info("====>inputMethod_test_listInputMethodSubtype_002 inputMethodSubtype" + JSON.stringify(inputMethodSubtype));
+          expect(inputMethodSubtype.id != null).assertTrue();
+          expect(inputMethodSubtype.label != null).assertTrue();
+          done();
         } catch (error) {
           console.info("====>inputMethod_test_listInputMethodSubtype_002 listInputMethodSubtype catch error" + JSON.stringify(error));
           done();
@@ -234,17 +228,13 @@ export default function inputMethodStageJSUnit() {
       inputMethodSetting.listInputMethodSubtype(inputMethodProperty).then((data) => {
         try {
           console.info("====>inputMethod_test_listInputMethodSubtype_004 listInputMethodSubtype:" + JSON.stringify(data));
-          if (data.length >= 1) {
-            let inputMethodSubtype = data[0]
-            console.info("====>inputMethod_test_listInputMethodSubtype_004  inputMethodSubtype" + JSON.stringify(inputMethodSubtype));
-            expect(inputMethodSubtype.id != null).assertTrue();
-            expect(inputMethodSubtype.label != null).assertTrue();
-            done();
-          } else {
-            console.info("====>inputMethod_test_listInputMethodSubtype_004 listInputMethodSubtype length less 1");
-            expect().assertFail();
-            done();
-          }
+          console.info(`====> inputMethod_test_listInputMethodSubtype_004 success data: ${JSON.stringify(data)}`);
+          expect(data.length > 0).assertTrue();
+          let inputMethodSubtype = data[0]
+          console.info("====>inputMethod_test_listInputMethodSubtype_004  inputMethodSubtype" + JSON.stringify(inputMethodSubtype));
+          expect(inputMethodSubtype.id != null).assertTrue();
+          expect(inputMethodSubtype.label != null).assertTrue();
+          done();
         } catch (error) {
           console.info("====>inputMethod_test_listInputMethodSubtype_004 listInputMethodSubtype catch error" + JSON.stringify(error));
           expect().assertFail();
@@ -279,7 +269,8 @@ export default function inputMethodStageJSUnit() {
           }
           ;
           console.info("====>inputMethod_test_listCurrentInputMethodSubtype_001 listCurrentInputMethodSubtype: " + JSON.stringify(data));
-          expect(true).assertTrue();
+          console.info(`====> inputMethod_test_listCurrentInputMethodSubtype_001 success data: ${JSON.stringify(data)}`);
+          expect(data.length > 0).assertTrue();
           done();
         } catch (error) {
           console.info("====>inputMethod_test_listCurrentInputMethodSubtype_001 listCurrentInputMethodSubtype catch error" + JSON.stringify(error));
@@ -304,7 +295,8 @@ export default function inputMethodStageJSUnit() {
         console.info("====>inputMethod_test_listCurrentInputMethodSubtype_002 getSetting result:" + inputMethodSetting);
         inputMethodSetting.listCurrentInputMethodSubtype().then((data) => {
           console.info("====>inputMethod_test_listCurrentInputMethodSubtype_002 listCurrentInputMethodSubtype: " + JSON.stringify(data));
-          expect(true).assertTrue();
+          console.info(`====> inputMethod_test_listCurrentInputMethodSubtype_002 success data: ${JSON.stringify(data)}`);
+          expect(data.length > 0).assertTrue();
           done();
         }).catch((err: BusinessError) => {
           console.info("====>inputMethod_test_listCurrentInputMethodSubtype_002  failed" + JSON.stringify(err));
@@ -371,7 +363,8 @@ export default function inputMethodStageJSUnit() {
           }
           ;
           console.info("====>inputMethod_test_showOptionalInputMethods_001 showOptionalInputMethods success data is : " + data);
-          expect(true).assertTrue();
+          console.info(`====>inputMethod_test_showOptionalInputMethods_001 showOptionalInputMethods success data is : ${data}`);
+          expect(data).assertTrue();
           setTimeout(() => {
             done();
           }, 1500);
@@ -398,7 +391,8 @@ export default function inputMethodStageJSUnit() {
         console.info("====>inputMethod_test_showOptionalInputMethods_002 result:" + JSON.stringify(inputMethodSetting));
         inputMethodSetting.showOptionalInputMethods().then((data) => {
           console.info("====>inputMethod_test_showOptionalInputMethods_002 showOptionalInputMethods success data is: " + JSON.stringify(data));
-          expect(true).assertTrue();
+          console.info(`====>inputMethod_test_showOptionalInputMethods_001 showOptionalInputMethods success data is : ${data}`);
+          expect(data).assertTrue();
           done();
         }).catch((err: BusinessError) => {
           console.info("====>inputMethod_test_showOptionalInputMethods_002 showOptionalInputMethods faild: " + JSON.stringify(err));

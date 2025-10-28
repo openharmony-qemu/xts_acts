@@ -8003,5 +8003,61 @@ export default function inputMethodWindManageAbility() {
       })
     });
 
+    /**
+     * @tc.number  Sub_InputMethod_IME_InputMethodState_0901
+     * @tc.name    Sub_InputMethod_IME_InputMethodState_0901
+     * @tc.desc    Function test
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level3
+     */
+    it('Sub_InputMethod_IME_InputMethodState_0901', Level.LEVEL3, async (done: Function) => {
+      try{
+        await delegator.executeShellCommand('ime -e com.acts.inputmethodwidmanage.test -b');
+        let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
+        console.info("====>Sub_InputMethod_IME_InputMethodState_0901 getSetting success");
+        let state =  await inputMethodSetting.getInputMethodState();
+        console.info(`====>Sub_InputMethod_IME_InputMethodState_0901 state is: ${state}`);
+        await driver.delayMs(1000);
+        await delegator.executeShellCommand('ime -e com.acts.inputmethodwidmanage.test -f');
+        await driver.delayMs(1000);
+        expect(state).assertEqual(inputMethod.EnabledState.BASIC_MODE);
+        done();
+      }catch(err){
+        console.info(`====>Sub_InputMethod_IME_InputMethodState_0901 errCode:${err.code}, errMessage is ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number  Sub_InputMethod_IME_InputMethodState_0902
+     * @tc.name    Sub_InputMethod_IME_InputMethodState_0902
+     * @tc.desc    Function test
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level3
+     */
+    it('Sub_InputMethod_IME_InputMethodState_0902', Level.LEVEL3, async (done: Function) => {
+      try{
+        await delegator.executeShellCommand('ime -d com.acts.inputmethodwidmanage.test');
+        await driver.delayMs(1000);
+        let inputMethodSetting: inputMethod.InputMethodSetting = inputMethod.getSetting();
+        console.info("====>Sub_InputMethod_IME_InputMethodState_0902 getSetting success");
+        let state =  await inputMethodSetting.getInputMethodState();
+        console.info(`====>Sub_InputMethod_IME_InputMethodState_0902 state is: ${state}`);
+        await delegator.executeShellCommand('ime -e com.acts.inputmethodwidmanage.test -f');
+        await driver.delayMs(1000);
+        await delegator.executeShellCommand('ime -s com.acts.inputmethodwidmanage.test');
+        await driver.delayMs(1000);
+        expect(state).assertEqual(inputMethod.EnabledState.DISABLED);
+        done();
+      }catch(err){
+        console.info(`====>Sub_InputMethod_IME_InputMethodState_0902 errCode:${err.code}, errMessage is ${err.message}`)
+        expect().assertFail();
+        done();
+      }
+    });
+
   });
 };

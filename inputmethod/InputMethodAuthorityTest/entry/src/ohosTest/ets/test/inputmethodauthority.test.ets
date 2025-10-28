@@ -245,7 +245,7 @@ export default function inputMethodAuthorityJSUnit() {
             done();
           }
           console.info("====>inputMethod_test_switchCurrentInputMethodAndSubtype_001 data: " + JSON.stringify(data));
-          expect(data != null).assertTrue();
+          expect(data).assertTrue();
           done();
         } catch (error) {
           console.error('inputMethod_test_switchCurrentInputMethodAndSubtype_001 catch error: ' + JSON.stringify(error));
@@ -294,7 +294,7 @@ export default function inputMethodAuthorityJSUnit() {
       try {
         inputMethod.switchCurrentInputMethodAndSubtype(inputMethodProperty, inputMethodSubProperty).then((data) => {
           console.info("====>inputMethod_test_switchCurrentInputMethodAndSubtype_002 data: " + JSON.stringify(data));
-          expect(data != null).assertTrue();
+          expect(data).assertTrue();
           done();
         }).catch((err : BusinessError) => {
           console.error('inputMethod_test_switchCurrentInputMethodAndSubtype_002 err: ' + JSON.stringify(err));
@@ -342,7 +342,7 @@ export default function inputMethodAuthorityJSUnit() {
           }
           ;
           console.info("====>inputMethod_test_switchCurrentInputMethodSubtype_001 data: " + JSON.stringify(data));
-          expect(data != null).assertTrue();
+          expect(data).assertTrue();
           done();
         } catch (error) {
           console.error('inputMethod_test_switchCurrentInputMethodSubtype_001 catch error: ' + JSON.stringify(error));
@@ -378,7 +378,7 @@ export default function inputMethodAuthorityJSUnit() {
       try {
         inputMethod.switchCurrentInputMethodSubtype(inputMethodSubProperty).then((data) => {
           console.info("====>inputMethod_test_switchCurrentInputMethodSubtype_002 data: " + JSON.stringify(data));
-          expect(data != null).assertTrue();
+          expect(data).assertTrue();
           done();
         }).catch((err: BusinessError) => {
           console.error('inputMethod_test_switchCurrentInputMethodSubtype_002 err: ' + JSON.stringify(err));
