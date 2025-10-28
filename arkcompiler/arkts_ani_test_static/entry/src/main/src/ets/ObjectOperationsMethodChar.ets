@@ -43,7 +43,7 @@ class A {
     public nestedMethod(data1: char, data2: int): char
     {
         let method = (value1: char, value2: int): char => {
-            return (value1 + value2).toChar();
+            return (value1.toInt() + value2.toInt()).toChar();
         }
 
         return method(data1, data2);
@@ -54,7 +54,7 @@ class A {
         if (a0 > 100) {
             return a0 as char;
         } else {
-            return this.recursionMethod((a0 + 5).toChar());
+            return this.recursionMethod((a0.toInt() + 5).toChar());
         }
     }
 }
@@ -73,12 +73,12 @@ abstract class C {
 
 class D extends C {
     public override func(a: char, b: byte): char {
-        return (a + b).toChar();
+        return (a.toInt() + b.toInt()).toChar();
     }
 }
 
 class E extends D {
     public override func(a: char, b: byte): char {
-        return (a - b).toChar();
+        return (a.toInt() - b.toInt).toChar();
     }
 }
