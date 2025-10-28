@@ -15,10 +15,10 @@
 import { beforeAll, describe, expect, it, Level, Size, TestType } from "@ohos/hypium";
 import windowndkapi20 from 'libwindowndkapi20.so';
 import Utils from "../common/Utils";
-import { ON } from "@kit.TestKit";
+import { Driver, ON } from "@kit.TestKit";
 import { floatingBall, window } from "@kit.ArkUI";
-import { settings } from "@kit.BasicServicesKit";
-import { common } from "@kit.AbilityKit";
+import { BusinessError, settings } from "@kit.BasicServicesKit";
+import { abilityAccessCtrl, common, PermissionRequestResult, Permissions } from "@kit.AbilityKit";
 
 const CAN_NOT_BUILD_STAGE = -1;
 const OK = 0;
@@ -36,6 +36,33 @@ const WINDOW_MANAGER_WINDOW_TYPE_APP = 0;
 const WINDOW_MANAGER_WINDOW_TYPE_MAIN = 1;
 const WINDOW_MANAGER_WINDOW_TYPE_FLOAT = 8;
 const WINDOW_MANAGER_WINDOW_TYPE_DIALOG = 16;
+
+let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
+
+function getPermision(){
+  let atManager:abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+  let context : common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
+  let permissions: Permissions[] =
+    ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
+  atManager.requestPermissionsFromUser(context,permissions,(err:BusinessError,data:PermissionRequestResult)=>{
+    if(err){
+      console.error('capture requestPermissionsFromUser failed: ' + JSON.stringify(err));
+    }else {
+      console.info('capture requestPermissionsFromUser success: ' + JSON.stringify(data));
+    }
+  })
+}
+
+async function ClickButtonDriver(){
+  console.info(`come in permissionClick`);
+  let driver: Driver = Driver.create();
+  console.info(`come in Driver create`);
+  let buttonOne = await driver.findComponent(ON.text('允许'));
+  console.info(`buttonOne is ${JSON.stringify(buttonOne)}`);
+  if (buttonOne != undefined) {
+    await buttonOne.click();
+  }
+}
 
 export default function WindowTest() {
   describe('WindowTest', () => {
@@ -57,6 +84,10 @@ export default function WindowTest() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      await getPermision();
+      await sleep(300);
+      await ClickButtonDriver();
+      await sleep(200);
       await Utils.pushPageNoClear("Window/Window", done);
     })
     /**

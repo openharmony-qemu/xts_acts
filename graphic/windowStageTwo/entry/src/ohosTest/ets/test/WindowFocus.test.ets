@@ -1705,43 +1705,52 @@ export default function windowFocusTest() {
       let caseName: string = 'testWindowHighlightChange_Order_0100 ';
       console.log(caseName + 'begin');
       let a = 0;
-      let b = 0;
       let subWindowClass: undefined | window.Window;
       let subWindowClass2: undefined | window.Window;
       try {
         subWindowClass = await windowStage.createSubWindow('testWindowHighlightChange_Order_0100_1');
-        console.info(`${caseName} Succeeded in creating the sub window.`);
+        console.error(`${caseName} Succeeded in creating the sub window.`);
         await subWindowClass.setUIContent('testability/pages/First/index2');
         await subWindowClass.showWindow();
+        await sleep(300);
+        console.info(`${caseName} subWindowClass1 show`);
         let callback1 = (res: Boolean) => {
           console.info(`${caseName} callback1 res: ${res}`);
-          console.info(`${caseName} callback1 a : ${a}`);
+          if(res == false){
+            a = a+1;
+            console.info(`${caseName} callback1 a : ${a}`);
+          }
         }
         subWindowClass.on('windowHighlightChange', callback1);
-        // 如何判断是否失去激活态
         subWindowClass2 = await windowStage.createSubWindow('testWindowHighlightChange_Order_0100_2');
         let callback2 = async (res: Boolean) => {
           console.info(`${caseName} callback2 res: ${res}`);
-          console.info(`${caseName} callback2 a : ${a}`);
-          b++;
-          console.info(`${caseName} callback2 b:  ${b}`);
-          if (b == 2) {
-            expect(a).assertEqual(1);
-            a--;
-            await subWindowClass?.destroyWindow();
-            await subWindowClass2?.destroyWindow();
-            done();
+          if(res == true){
+            a = a-1;
+            console.info(`${caseName} callback2 a : ${a}`);
           }
+
         }
-        subWindowClass.on('windowHighlightChange', callback2);
-        // 如何判断是否获得激活态
-        await subWindowClass.setUIContent('testability/pages/First/index2');
+        subWindowClass2.on('windowHighlightChange', callback2);
+        await subWindowClass2.setUIContent('testability/pages/First/index2');
         await subWindowClass2.showWindow()
-        expect(a).assertEqual(0);
-        a++;
+        await sleep(300);
+        console.info(`${caseName} subWindowClass2 show`);
         console.info(`${caseName} a (1) : ${a}`);
-        await subWindowClass.showWindow();
-        await subWindowClass2.showWindow();
+        expect(a).assertEqual(0);
+        await subWindowClass.raiseToAppTop();
+        console.info(`${caseName} subWindowClass1 show`);
+        await sleep(300);
+
+        await subWindowClass2.raiseToAppTop();
+        console.info(`${caseName} subWindowClass2 show`);
+        await sleep(300);
+
+        console.info(`${caseName} a (2) : ${a}`);
+        expect(a).assertEqual(0);
+        await subWindowClass?.destroyWindow();
+        await subWindowClass2?.destroyWindow();
+        done();
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
         await subWindowClass?.destroyWindow();

@@ -18,7 +18,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Test
 import common from '@ohos.app.ability.common';
 import { BusinessError, settings } from '@kit.BasicServicesKit';
 import * as LoadContentByName from '../testability/pages/WindowTest/LoadContentByName';
-import { StartOptions } from '@kit.AbilityKit';
+import { abilityAccessCtrl, PermissionRequestResult, Permissions, StartOptions } from '@kit.AbilityKit';
+import { Driver, ON } from '@kit.TestKit';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 
@@ -87,6 +88,30 @@ async function terminateAbility1(caseName: string) {
   await sleep(1000)
 }
 
+function getPermision(){
+  let atManager:abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+  let context : common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
+  let permissions: Permissions[] = ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
+  atManager.requestPermissionsFromUser(context,permissions,(err:BusinessError,data:PermissionRequestResult)=>{
+    if(err){
+      console.error('capture requestPermissionsFromUser failed: ' + JSON.stringify(err));
+    }else {
+      console.info('capture requestPermissionsFromUser success: ' + JSON.stringify(data));
+    }
+  })
+}
+
+async function ClickButtonDriver(){
+  console.info(`come in permissionClick`);
+  let driver: Driver = Driver.create();
+  console.info(`come in Driver create`);
+  let buttonOne = await driver.findComponent(ON.text('允许'));
+  console.info(`buttonOne is ${JSON.stringify(buttonOne)}`);
+  if (buttonOne != undefined) {
+    await buttonOne.click();
+  }
+}
+
 export default function WindowLifecycle() {
   describe('WindowLifecycleTest', async () => {
     let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
@@ -110,6 +135,10 @@ export default function WindowLifecycle() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      await getPermision();
+      await sleep(300);
+      await ClickButtonDriver();
+      await sleep(200);
       try{
           windowclassArr = await windowStage.getSubWindow();
           console.log(`brforeAll getSubWindow success. Cause: ${JSON.stringify(windowclassArr)}`);
