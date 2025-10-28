@@ -1133,15 +1133,15 @@ HWTEST_F(DrawingNativeMatrixPart2Test, testMatrixPerConcatCalls, Function | Smal
         OH_Drawing_ErrorCode code = OH_Drawing_MatrixPreConcat(matrix, other);
         EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     }
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 0), 0.0);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 1), 1.0);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 2), 2.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 0), -32.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 1), -7.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 2), 32.0);
     EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 3), 0.0);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 4), 2.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 4), -2.0);
     EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 5), 0.0);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 6), -1.0);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 7), -3.0);
-    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 8), 1.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 6), -32.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 7), -10.0);
+    EXPECT_EQ(OH_Drawing_MatrixGetValue(matrix, 8), 0.0);
     // 3. Free memory
     OH_Drawing_MatrixDestroy(matrix);
     OH_Drawing_MatrixDestroy(other);
