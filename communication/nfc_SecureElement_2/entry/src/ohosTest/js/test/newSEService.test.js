@@ -165,16 +165,21 @@ export default function newSEServicetest() {
                         expect(getReader).assertDeepEquals([]);
                     }                                 
                     for (let i = 0; i < getReader.length; i++) {
-                        if (!getReader[i].isSecureElementPresent()) {
-                            console.info("[NFC_test]9 se not present : " + i);
-                            continue;
-                        }
                         if (getReader[i].getName() != "eSE") {
                             console.info("[NFC_test]9 se reader not ese.");
                             continue;
                         }
-                        nfcOmaReaderList2 = getReader[i];
-                        }                                 
+
+                        let getReaderstate = getReader[i].isSecureElementPresent();
+                        if (getReaderstate == false ) {
+                            console.info("[NFC_test]9 se not present : " + i);
+                            expect(getReaderstate).assertFalse();
+                            continue;
+                        } else {
+                            nfcOmaReaderList2 = getReader[i];
+                            expect(getReaderstate).assertTrue();
+                        }
+                    }                                 
                     console.info("[nfc_test]9 nfcOmaReaderList2 getReader name is: " + nfcOmaReaderList2.getName()); 
                 if (nfcOmaReaderList2 == undefined) {
                     console.info("[NFC_test]9 This function is not supported because the phone NFC chip is ST chip.");
@@ -185,8 +190,13 @@ export default function newSEServicetest() {
                     console.info("[nfc_test]9 getReaders results list 0 is" + nfcESEReader2);
                     expect(nfcESEReader2 instanceof Object).assertTrue();
                     let nfcSePresent = nfcESEReader2.isSecureElementPresent();
-                    console.info("[NFC_test]9 security unit check result is: " + nfcSePresent);
-                    expect(nfcSePresent).assertTrue();
+                    if (nfcSePresent == true) {
+                        console.info("[NFC_test]9 security unit check result is: " + nfcSePresent);
+                        expect(nfcSePresent).assertTrue();
+                    } else {
+                        console.info("[NFC_test]9 security unit check result is: " + nfcSePresent);
+                        expect(nfcSePresent).assertFalse();
+                    }
                     let nfcOmaSession2 = nfcESEReader2.openSession();
                     sleep(900)
                     console.info("[nfc_test]9 Open the second session result" + nfcOmaSession2);

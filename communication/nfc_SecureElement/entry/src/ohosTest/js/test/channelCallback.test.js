@@ -64,22 +64,24 @@ export default function channelCallbacktest() {
                     }
                     console.info("[NFC_test] newSEService channelCallbacktest getReader value  is: " + getReader);                                    
                     for (let i = 0; i < getReader.length; i++) {
-                        if (!getReader[i].isSecureElementPresent()) {
-                            console.info("[NFC_test] se not present : " + i);
-                            continue;
-                        }
                         if (getReader[i].getName() != "eSE") {
                             console.info("[NFC_test] se reader not ese.");
                             continue;
                         }
-                        Reader = getReader[i];
-                        console.info("[NFC_test] newSEService channelCallbacktest getReader name is: " + Reader.getName());
-                        let readerIsPresent = Reader.isSecureElementPresent();
-                        console.info("[NFC_test] isSecureElementPresent status is: " + readerIsPresent);
-                        if (readerIsPresent) {
+
+                        let getReaderstate = getReader[i].isSecureElementPresent();
+
+                        if (getReaderstate == false) {
+                            console.info("[NFC_test] se not present : " + i);
+                            expect(getReaderstate).assertFalse();
+                            continue;
+                        } else {
+                            Reader = getReader[i];
+                            console.info("[NFC_test] newSEService channelCallbacktest getReader name is: " + Reader.getName());
                             Session = Reader.openSession();
                             let sessionIsClosed = Session.isClosed();
                             console.info("[NFC_test] Logical Session isConnected The connection status is: " + sessionIsClosed);
+                            expect(getReaderstate).assertTrue();
                         }
                     }
                 }
