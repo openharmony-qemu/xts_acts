@@ -2755,7 +2755,7 @@ export default function Uint8ArrayTest() {
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_14400
      * @tc.name       : testUint8Constructor0144
      * @tc.desc       : Testing Constructor of Uint8Array with Float32Array threshold value([-3.4028235 * 10^38]),
-     * and get value of index 0 is 248.
+     * and get value of index 0 is 0.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 1
@@ -2765,7 +2765,7 @@ export default function Uint8ArrayTest() {
       try {
         let MIN_VALUE = -3.4028235e38;
         let array = new Uint8Array(new Float32Array([MIN_VALUE]));
-        expect(String(array[0])).assertEqual('248');
+        expect(String(array[0])).assertEqual('0');
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -2776,7 +2776,7 @@ export default function Uint8ArrayTest() {
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_14500
      * @tc.name       : testUint8Constructor0145
      * @tc.desc       : Testing Constructor of Uint8Array with Float32Array out of bounds value([-3.4028235 * 10^38 -1]),
-     * and get value of index 0 is 251.
+     * and get value of index 0 is 0.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 1
@@ -2786,7 +2786,7 @@ export default function Uint8ArrayTest() {
       try {
         let MIN_VALUE = -3.4028235e38 -1;
         let array = new Uint8Array(new Float32Array([MIN_VALUE]));
-        expect(String(array[0])).assertEqual('251');
+        expect(String(array[0])).assertEqual('0');
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -2797,7 +2797,7 @@ export default function Uint8ArrayTest() {
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_14600
      * @tc.name       : testUint8Constructor0146
      * @tc.desc       : Testing Constructor of Uint8Array with Float32Array threshold value([3.4028235 x 10^38]),
-     * and get value of index 0 is 4.
+     * and get value of index 0 is 0.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 1
@@ -2807,7 +2807,7 @@ export default function Uint8ArrayTest() {
       try {
         let MAX_VALUE = 3.4028235e38;
         let array = new Uint8Array(new Float32Array([MAX_VALUE]));
-        expect(String(array[0])).assertEqual('4');
+        expect(String(array[0])).assertEqual('0');
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -2818,7 +2818,7 @@ export default function Uint8ArrayTest() {
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UINT8ARRAY_CONSTRUCTOR_14700
      * @tc.name       : testUint8Constructor0147
      * @tc.desc       : Testing Constructor of Uint8Array with Float32Array out of bounds value([3.4028235 x 10^38 + 1]),
-     * and get value of index 0 is 5.
+     * and get value of index 0 is 0.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 1
@@ -2828,7 +2828,7 @@ export default function Uint8ArrayTest() {
       try {
         let MAX_VALUE = 3.4028235e38 + 1;
         let array = new Uint8Array(new Float32Array([MAX_VALUE]));
-        expect(String(array[0])).assertEqual('5');
+        expect(String(array[0])).assertEqual('0');
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();

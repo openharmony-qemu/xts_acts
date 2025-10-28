@@ -2480,7 +2480,7 @@ export default function Int32ArrayTest() {
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INT32ARRAY_CONSTRUCTOR_12500
      * @tc.name       : testInt32Constructor0125
      * @tc.desc       : Testing Constructor of Int32Array with Float32Array threshold value([-3.4028235 * 10^38]),
-     * and get value of index 0 is -8.
+     * and get value of index 0 is 0.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 1
@@ -2490,7 +2490,7 @@ export default function Int32ArrayTest() {
       try {
         let MIN_VALUE = -3.4028235e38;
         let array = new Int32Array(new Float32Array([MIN_VALUE]));
-        expect(String(array[0])).assertEqual('-8');
+        expect(String(array[0])).assertEqual('0');
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -2501,7 +2501,7 @@ export default function Int32ArrayTest() {
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INT32ARRAY_CONSTRUCTOR_12600
      * @tc.name       : testInt32Constructor0126
      * @tc.desc       : Testing Constructor of Int32Array with Float32Array out of bounds value([-3.4028235 * 10^38 -1]),
-     * and get value of index 0 is -5.
+     * and get value of index 0 is 0.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 1
@@ -2511,7 +2511,7 @@ export default function Int32ArrayTest() {
       try {
         let MIN_VALUE = -3.4028235e38 -1;
         let array = new Int32Array(new Float32Array([MIN_VALUE]));
-        expect(String(array[0])).assertEqual('-5');
+        expect(String(array[0])).assertEqual('0');
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -2522,7 +2522,7 @@ export default function Int32ArrayTest() {
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INT32ARRAY_CONSTRUCTOR_12700
      * @tc.name       : testInt32Constructor0127
      * @tc.desc       : Testing Constructor of Int32Array with Float32Array threshold value([3.4028235 × 10^38]),
-     * and get value of index 0 is 4.
+     * and get value of index 0 is 0.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 1
@@ -2532,7 +2532,7 @@ export default function Int32ArrayTest() {
       try {
         let MAX_VALUE = 3.4028235e38;
         let array = new Int32Array(new Float32Array([MAX_VALUE]));
-        expect(String(array[0])).assertEqual('4');
+        expect(String(array[0])).assertEqual('0');
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -2543,7 +2543,7 @@ export default function Int32ArrayTest() {
      * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INT32ARRAY_CONSTRUCTOR_12800
      * @tc.name       : testInt32Constructor0128
      * @tc.desc       : Testing Constructor of Int32Array with Float32Array out of bounds value([3.4028235 × 10^38 + 1]),
-     * and get value of index 0 is 5.
+     * and get value of index 0 is 0.
      * @tc.size       : MediumTest
      * @tc.type       : Function
      * @tc.level      : Level 1
@@ -2553,7 +2553,7 @@ export default function Int32ArrayTest() {
       try {
         let MAX_VALUE = 3.4028235e38 + 1;
         let array = new Int32Array(new Float32Array([MAX_VALUE]));
-        expect(String(array[0])).assertEqual('5');
+        expect(String(array[0])).assertEqual('0');
       } catch (err:BusinessError){
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
