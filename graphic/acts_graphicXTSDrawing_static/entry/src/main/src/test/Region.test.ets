@@ -171,5 +171,45 @@ export default function drawingTsRegionTest() {
         }
       }
     })
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_STATIC_1900
+     * @tc.name      : testRegionEmptyNormalStatic
+     * @tc.desc      : testRegionEmptyNormalStatic
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testRegionEmptyNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const msg = 'testRegionEmptyNormalStatic';
+      let region = new drawing.Region();
+      try {
+        region.setEmpty();
+      } catch (e: BusinessError) {
+        console.info(msg + `RegionEmpty errorCode is: ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_STATIC_1901
+     * @tc.name      : testRegionEmptyMultipleCallsStatic
+     * @tc.desc      : testRegionEmptyMultipleCallsStatic
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testRegionEmptyMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testRegionEmptyMultipleCallsStatic';
+      let region = new drawing.Region();
+      for (let i = 0; i < 20; i++) {
+        try {
+          region.setEmpty();
+        } catch (e: BusinessError) {
+          console.info(msg + `RegionEmpty errorCode is: ${e.code} + errormsg is: ${e.message}`);
+          expect().assertFail()
+        }
+      }
+    });
   });
 }
