@@ -49,7 +49,7 @@ struct WebViewEnumAndFontLibrary {
   @State SourceTypeArr:ContextMenuSourceType[] = [ContextMenuSourceType.NONE,ContextMenuSourceType.MOUSE,ContextMenuSourceType.LONG_PRESS]
   @State MediaTypeArr:ContextMenuMediaType[] = [ContextMenuMediaType.NONE,ContextMenuMediaType.IMAGE]
   @State FieldTypeArr:ContextMenuInputFieldType[] =
-  [ContextMenuInputFieldType.NONE,ContextMenuInputFieldType.PLAIN_TEXT,ContextMenuInputFieldType.PASSWORD,ContextMenuInputFieldType.NUMBER,ContextMenuInputFieldType.TELEPHONE,ContextMenuInputFieldType.OTHER	]
+  [ContextMenuInputFieldType.NONE,ContextMenuInputFieldType.PLAIN_TEXT,ContextMenuInputFieldType.PASSWORD,ContextMenuInputFieldType.NUMBER_DATA,ContextMenuInputFieldType.TELEPHONE,ContextMenuInputFieldType.OTHER	]
 
   private valueChangeCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
