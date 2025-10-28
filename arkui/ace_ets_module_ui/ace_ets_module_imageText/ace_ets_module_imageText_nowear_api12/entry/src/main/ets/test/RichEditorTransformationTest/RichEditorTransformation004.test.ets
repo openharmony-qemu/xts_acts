@@ -90,7 +90,9 @@ export default function RichEditorTransformation004() {
       expect(textStyleText).assertContain('"fontSize":40');
       expect(textStyleText).assertContain('"fontStyle":1');
       expect(textStyleText).assertContain('"fontWeight":12');
-      expect(textStyleText).assertContain('"decoration":{"type":2,"color":"#80A91AF6"}');
+      expect(textStyleText).assertContain('"type":2');
+      expect(textStyleText).assertContain('"color":"#80A91AF6"');
+      expect(textStyleText).assertContain('"thicknessScale":1');
       expect(textStyleText).assertContain('"fontFeature":""');
       done();
     });
