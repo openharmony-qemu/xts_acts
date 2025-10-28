@@ -72,15 +72,15 @@ struct progressSecTest {
   @State progress_linear_enableSmoothEffect_boolean: boolean = false
   @State progress_scaleRing_enableSmoothEffect_boolean: boolean = false
   @State progress_eclipse_enableSmoothEffect_boolean: boolean = false
-  private stateChangCallBack = (eventData: events_emitter.EventData) => {
-    console.info("progress page state change called:" + JSON.stringify(eventData));
-    console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_0400]: callback " +
+  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
+    console.info('progress page state change called:' + JSON.stringify(eventData));
+    console.info('[ArkUI_Stage_Progress_Capsule_BorderWidth_0400]: callback ' +
       eventData.data?.progress_capsule_borderWidth_resource);
 
     this.progress_capsule_borderWidth_number = eventData.data?.progress_capsule_borderWidth_number;
     this.progress_capsule_borderWidth_string = eventData.data?.progress_capsule_borderWidth_string;
     this.progress_capsule_borderWidth_resource = eventData.data?.progress_capsule_borderWidth_resource;
-    console.info("[ArkUI_Stage_Progress_Capsule_BorderWidth_0400]: callback2 " +
+    console.info('[ArkUI_Stage_Progress_Capsule_BorderWidth_0400]: callback2 ' +
       this.progress_capsule_borderWidth_resource);
     this.progress_capsule_borderColor_number = eventData.data?.progress_capsule_borderColor_number;
     this.progress_capsule_borderColor_string = eventData.data?.progress_capsule_borderColor_string;
@@ -132,7 +132,7 @@ struct progressSecTest {
       name: 'messageManager', message: this.messageManager
     }
     let callback: Callback<ESObject> = (message: ESObject) => {
-      console.error('message = ' + message.name + "--" + message.value)
+      console.error('message = ' + message.name + '--' + message.value)
       if (message.name == 'progress_capsule_borderWidth_resource') {
         this.progress_capsule_borderWidth_resource = message.value
       }
