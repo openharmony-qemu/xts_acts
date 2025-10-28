@@ -54,6 +54,7 @@ import relationalStoreHavingTest from './RelationalStoreHavingTest.test';
 import PerfStatEtsTest from './RelationalStorePerfStatEtsTest.test'
 import rdbstoreRekeyEtsTest from './RelationalStoreRekeyEtsTest.test'
 import rdbStoreSqliteErrorOccurredTest from './RelationalStoreSqliteErrorOccurredTest.test'
+import rdbStoreRekeyExEtsTest from './RelationalStoreRekeyExEtsTest.test'
 
 export default function testsuite() {
   relationalStoreEncryptTest()
@@ -98,5 +99,6 @@ export default function testsuite() {
   PerfStatEtsTest()
   rdbstoreRekeyEtsTest()
   rdbStoreSqliteErrorOccurredTest()
+  rdbStoreRekeyExEtsTest()
 }
 

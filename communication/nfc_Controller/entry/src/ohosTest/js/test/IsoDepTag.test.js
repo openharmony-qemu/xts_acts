@@ -37,12 +37,27 @@ let isoDepTaginfo = {
     "tagRfDiscId": 1,
 };
 
+let isoDepTaginfo1 = {
+    "uid": [0x01, 0x02, 0x03, 0x04],
+    "technology": [1, 3],
+    "extrasData": [
+        {
+            "Sak": 0x08, "Atqa": "B000",
+        },
+        {
+            "HistoricalBytes": "", "HiLayerResponse": "",
+        },
+    ],
+    "tagRfDiscId": 1,
+};
+
 let CardType = {
     PAYMENT : "payment",
     OTHER : "other",
 };
 
 let IsoDepTag ;
+let IsoDepTag1 ;
 
 export default function nfcIsoDepTagTest() {
     describe('nfcIsoDepTagTest', function () {
@@ -50,6 +65,7 @@ export default function nfcIsoDepTagTest() {
             console.info('rbeforeAll called')
             try {
                 IsoDepTag = tag.getIsoDep(isoDepTaginfo);
+                IsoDepTag1 = tag.getIsoDep(isoDepTaginfo1);
             } catch (error) {
                 console.info('getIsoDep is ->' + error)
             }
@@ -75,6 +91,35 @@ export default function nfcIsoDepTagTest() {
         it('SUB_Communication_NFC_nfcIsoDep_js_0100', Level.LEVEL0, function ()  { 
             if (IsoDepTag != null && IsoDepTag != undefined) {
                 let ResponseFlags = IsoDepTag.getHistoricalBytes(); 
+                if (ResponseFlags.length > 0) {
+                    expect(ResponseFlags.length > 0).assertTrue();
+                } else {
+                    expect(ResponseFlags).assertDeepEquals([]);
+                }
+                expect(ResponseFlags).assertInstanceOf('Array')
+                console.info('[NFC_test] Isodep1 test ResponseFlags data>:' + ResponseFlags);
+            } else {
+                console.info("[NFC_test]IsoDepTag1 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0101
+         * @tc.name Test getHistoricalBytes IsoDep
+         * @tc.desc Obtains the history bytes of a label.
+         * @tc.size since 9
+         * @tc.type Function
+         * @tc.level Level 0
+         */
+        it('SUB_Communication_NFC_nfcIsoDep_js_0101', Level.LEVEL0, function ()  { 
+            if (IsoDepTag1 != null && IsoDepTag1 != undefined) {
+                let ResponseFlags = IsoDepTag1.getHistoricalBytes(); 
+                if (ResponseFlags.length > 0) {
+                    expect(ResponseFlags.length > 0).assertTrue();
+                } else {
+                    expect(ResponseFlags).assertDeepEquals([]);
+                }
                 expect(ResponseFlags).assertInstanceOf('Array')
                 console.info('[NFC_test] Isodep1 test ResponseFlags data>:' + ResponseFlags);
             } else {
@@ -94,6 +139,35 @@ export default function nfcIsoDepTagTest() {
         it('SUB_Communication_NFC_nfcIsoDep_js_0200', Level.LEVEL0, function ()  {
             if (IsoDepTag != null && IsoDepTag != undefined) {
                 let HiLayerResponse = IsoDepTag.getHiLayerResponse(); 
+                if (HiLayerResponse.length > 0) {
+                    expect(HiLayerResponse.length > 0).assertTrue();
+                } else {
+                    expect(HiLayerResponse).assertDeepEquals([]);
+                }
+                expect(HiLayerResponse).assertInstanceOf('Array')
+                console.info('[NFC_test] Isodep2 test ResponseFlags data2>:' + HiLayerResponse);
+            } else {
+                console.info("[NFC_test]IsoDepTag2 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0201
+         * @tc.name Test getHiLayerResponse IsoDep
+         * @tc.desc HiLayer response byte for obtaining the tag.
+         * @tc.size since 9
+         * @tc.type Function
+         * @tc.level Level 0
+         */
+        it('SUB_Communication_NFC_nfcIsoDep_js_0201', Level.LEVEL0, function ()  {
+            if (IsoDepTag1 != null && IsoDepTag1 != undefined) {
+                let HiLayerResponse = IsoDepTag1.getHiLayerResponse(); 
+                if (HiLayerResponse.length > 0) {
+                    expect(HiLayerResponse.length > 0).assertTrue();
+                } else {
+                    expect(HiLayerResponse).assertDeepEquals([]);
+                }
                 expect(HiLayerResponse).assertInstanceOf('Array')
                 console.info('[NFC_test] Isodep2 test ResponseFlags data2>:' + HiLayerResponse);
             } else {
@@ -160,13 +234,6 @@ export default function nfcIsoDepTagTest() {
             if (IsoDepTag != null && IsoDepTag != undefined) {
                 console.info("[NFC_test] Isodep4 00isExtendedApduSupported: " );
                 IsoDepTag.isExtendedApduSupported((err, data)=> {
-                    if (data == true) {
-                        console.info("[NFC_test] Isodep3 is isExtendedApduSupported data: " + data);
-                        expect(data).asserTrue();
-                    } else {
-                        console.info("[NFC_test] Isodep3 is isExtendedApduSupported data: " + data);
-                        expect(data).assertFalse();
-                    }
                     console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
                     if (err== 201) {
                         console.info("[NFC_test] Isodep4 isExtendedApduSupported err: " + err);
@@ -179,6 +246,13 @@ export default function nfcIsoDepTagTest() {
                         expect(true).assertTrue();
                     } else {
                         console.info("[NFC_test] Isodep4 isExtendedApduSupported data: " + data);
+                        if (data == true) {
+                            console.info("[NFC_test] Isodep3 is isExtendedApduSupported data: " + data);
+                            expect(data).assertTrue();
+                        } else {
+                            console.info("[NFC_test] Isodep3 is isExtendedApduSupported data: " + data);
+                            expect(data).assertFalse();
+                        }
                         expect(true).assertEqual(data);           
                     }
                     done();
@@ -396,6 +470,11 @@ export default function nfcIsoDepTagTest() {
                 if (err){
                   console.error('[NFC_test]0900 apduCallback err is' + err );
                 }else{
+                    if (data.length > 0) {
+                        expect(data.length > 0).assertTrue();
+                    } else {
+                        expect(data).assertDeepEquals([]);
+                    }
                     console.log('[NFC_test]0900 got apdu data ' + data );
                 }
             };

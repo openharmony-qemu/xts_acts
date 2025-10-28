@@ -17,7 +17,7 @@ import { Component, Driver, ON, On, MatchPattern, MouseButton,ResizeDirection, W
 import  hilog  from '@ohos.hilog'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-const waitUiReadyMs : number = 1000;
+const waitUiReadyMs : int = 1000;
 const DeviceErrorCode = 17000005;
 
 

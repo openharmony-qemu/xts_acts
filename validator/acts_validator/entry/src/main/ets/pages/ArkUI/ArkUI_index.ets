@@ -145,6 +145,7 @@ struct IndexPage {
     { title: 'ImageAnimationControllerPage', uri: 'pages/ArkUI/ImageAnimationControllerPage' },
     { title: 'AnimatedDrawableDescriptorFrameDurations', uri: 'pages/ArkUI/AnimatedDrawableDescriptorFrameDurations' },
     { title: 'GetDarkModeTest', uri: 'pages/ArkUI/GetDarkModeTest' },
+    { title: 'GetDarkModeTest', uri: 'pages/ArkUI/TabBarIndicatorPixmap' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];

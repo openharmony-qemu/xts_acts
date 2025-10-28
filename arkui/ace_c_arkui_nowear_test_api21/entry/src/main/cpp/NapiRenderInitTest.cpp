@@ -16,6 +16,7 @@
 #include "common/common.h"
 #include "manager/PluginManagerTest.h"
 #include "list/SwipeActionTest.h"
+#include "list/SwipeErrorTest.h"
 
 
 namespace ArkUICapiTest {
@@ -30,6 +31,8 @@ static napi_value Init(napi_env env, napi_value exports)
 
     napi_property_descriptor desc[] = {
         {"getContext", nullptr, PluginManager::GetContext, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"swipeErrorTest", nullptr, SwipeErrorTest::swipeErrorTest, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
         {"swipeActionTest", nullptr, SwipeActionTest::swipeActionTest, nullptr, nullptr, nullptr,
             napi_default, nullptr},
     };

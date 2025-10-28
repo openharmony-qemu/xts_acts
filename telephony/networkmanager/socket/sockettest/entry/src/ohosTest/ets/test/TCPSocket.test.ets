@@ -8228,8 +8228,14 @@ it('testNetworkMgrSocketTCPSocketConnect2400', TestType.FUNCTION | Size.MEDIUMTE
           console.info(`${caseName} test end`);
           done();
         };
+        tcp.on('error',(err:BusinessError) => {
+          console.error("on error,err:" + JSON.stringify(err));
+        });
         tcp.on('close', callback);
         tcp.off('close', callback);
+        tcp.off('error',(err:BusinessError) => {
+          console.error("off error,err:" + JSON.stringify(err));
+        });
         await tcp.close().catch((err:BusinessError) => {
               console.info('fail to close' + err.code.toString());
           });

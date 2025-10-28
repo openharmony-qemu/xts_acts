@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
+import webview from '@ohos.web.webview'
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
@@ -421,6 +422,55 @@ export default function webMessageExt() {
       Utils.emitEvent("testWebMessageExtSetError001", 170010)
       Utils.registerEvent("testWebMessageExtSetError001", JSON.stringify(result), 170280, done);
       sendEventByKey('WebMessageExtButton', 10, '');
+    })
+
+    /*
+     *@tc.number  : SUB_WEB_WEBMESSAGEEXT_GETARRAY_0200
+     *@tc.name    : testWebMessageExtGetArrayReturnArrayLengthEqual0
+     *@tc.desc    : test WebMessageExt getArray return  length 0
+     *@tc.size    : MediumTest
+     *@tc.type    : Function
+     *@tc.level   : Level 2
+     */
+    it('testWebMessageExtGetArrayReturnArrayLengthEqual0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testWebMessageExtGetArrayReturnArrayLengthEqual0 start')
+        try {
+            let webMessageExt:webview.WebMessageExt = new webview.WebMessageExt();
+            webMessageExt.setType(webview.WebMessageType.ARRAY)
+            console.log('[WebMessageExt] setType webview.WebMessageType.Array');
+            console.log('[WebMessageExt] getArray length:' + webMessageExt.getArray().length);
+            expect(webMessageExt.getArray().length).assertEqual(0)
+        } catch(error) {
+            console.error('testWebMessageExtGetArrayReturnArrayLengthEqual0 error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testWebMessageExtGetArrayReturnArrayLengthEqual0 end')
+        done()
+    })
+
+   /*
+     *@tc.number  : SUB_WEB_WEBMESSAGEEXT_GETARRAY_0300
+     *@tc.name    : testWebMessageExtGetArrayReturnArrayLengthLarger0
+     *@tc.desc    : test WebMessageExt getArray return  length larger 0
+     *@tc.size    : MediumTest
+     *@tc.type    : Function
+     *@tc.level   : Level 2
+     */
+    it('testWebMessageExtGetArrayReturnArrayLengthLarger0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testWebMessageExtGetArrayReturnArrayLengthLarger0 start')
+        try {
+            let webMessageExt:webview.WebMessageExt = new webview.WebMessageExt();
+            webMessageExt.setType(webview.WebMessageType.ARRAY)
+            console.log('[WebMessageExt] setType webview.WebMessageType.Array');
+            webMessageExt.setArray(['apple', 'banana', 'cherry'])
+            console.log('[WebMessageExt] getArray length:' + webMessageExt.getArray().length);
+            expect(webMessageExt.getArray().length).assertLarger(0)
+        } catch(error) {
+            console.error('testWebMessageExtGetArrayReturnArrayLengthLarger0 error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testWebMessageExtGetArrayReturnArrayLengthLarger0 end')
+        done()
     })
 
   })

@@ -14,3 +14,5 @@
  */
 
 export const swipeActionTest: (a: string) => void;
+
+export const swipeErrorTest: (a: string) => void;

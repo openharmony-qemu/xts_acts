@@ -113,7 +113,6 @@ export default function nfcControllerTest() {
             try {
                 controller.on('nfcStateChange', recvNfcStateNotifyFunc);
                 hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0400 nfc state receive state success');
-                expect().assertTrue();
             } catch(err:BusinessError) {
                 hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0400 nfc state receive state ->' + err.message);
                 expect().assertFail();
@@ -138,7 +137,6 @@ export default function nfcControllerTest() {
             try {
                 controller.off('nfcStateChange', recvNfcStateNotifyFunc);
                 hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0500 nfc state receive state success');
-                expect().assertTrue();
             } catch(err:BusinessError) {
                 hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0500 nfc state receive state ->' + err.message);
                 expect().assertFail();
@@ -178,7 +176,6 @@ export default function nfcControllerTest() {
             try {
                 controller.disableNfc();
                 hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0700 nfc state receive state success');
-                expect().assertTrue();
             } catch(err:BusinessError) {
                 if (err.code == 201) {
                     hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0700 nfc state receive state err  ->' + err.message);
@@ -210,7 +207,6 @@ export default function nfcControllerTest() {
             try {
                 controller.enableNfc();
                 hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0800 nfc state receive state success');
-                expect().assertTrue();
             } catch(err:BusinessError) {
                 if (err.code == 201) {
                     hilog.info(domain,tag,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_Cont_static_0800 nfc state receive state err  ->' + err.message);

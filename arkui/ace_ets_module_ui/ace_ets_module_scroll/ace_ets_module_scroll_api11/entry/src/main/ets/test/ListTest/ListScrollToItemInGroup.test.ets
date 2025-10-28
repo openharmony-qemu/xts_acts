@@ -21,7 +21,7 @@ import { BusinessError } from '@ohos.base'
 
 export default function ListScrollToItemInGroup() {
   const SUITE: string = 'ListScrollToItemInGroup'
-  const waitUiReadyMs: number = 2000;
+  const waitUiReadyMs = 2000;
 
   describe('ListScrollToItemInGroup', () => {
     beforeEach(async (done: Function) => {

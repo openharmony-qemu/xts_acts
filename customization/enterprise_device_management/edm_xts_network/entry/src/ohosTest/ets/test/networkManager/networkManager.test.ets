@@ -304,7 +304,7 @@ function testGetAllNetworkInterfacesSync() {
    * @tc.size      : MediumTest
    */
   it("test_get_all_network_interfaces_sync_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.getAllNetworkInterfacesSync(SELFWANT);
       expect(false).assertTrue();
@@ -387,7 +387,7 @@ function testGetIpAddressSync() {
    * @tc.size      : MediumTest
    */
   it("test_get_ip_address_sync_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.getIpAddressSync(SELFWANT, NETWORK_ETH_LOCAL);
       expect(false).assertTrue();
@@ -470,7 +470,7 @@ function testGetMacSync() {
    * @tc.size      : MediumTest
    */
   it("test_get_mac_sync_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.getMacSync(SELFWANT, NETWORK_ETH_LOCAL);
       expect(false).assertTrue();
@@ -553,7 +553,7 @@ function testIsNetworkInterfaceDisabledSync() {
    * @tc.size      : MediumTest
    */
   it("test_is_network_interface_disable_sync_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.isNetworkInterfaceDisabledSync(SELFWANT, NETWORK_ETH_LOCAL);
       expect(false).assertTrue();
@@ -657,7 +657,7 @@ function testSetNetworkInterfaceDisabledSync() {
    * @tc.size      : MediumTest
    */
   it("test_set_network_interface_disable_sync_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.setNetworkInterfaceDisabledSync(SELFWANT, NETWORK_ETH_LOCAL, false);
       expect(false).assertTrue();
@@ -782,7 +782,7 @@ function testSetGlobalProxySync() {
    * @tc.size      : MediumTest
    */
   it("test_set_global_proxy_sync_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.setGlobalProxySync(SELFWANT, HTTP_PROXY);
       expect(false).assertTrue();
@@ -870,7 +870,7 @@ function testGetGlobalProxySync() {
    * @tc.size      : MediumTest
    */
   it("test_get_global_proxy_sync_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.getGlobalProxySync(SELFWANT);
       expect(false).assertTrue();
@@ -986,7 +986,7 @@ function testAddFirewallRule() {
    * @tc.size      : MediumTest
    */
   it("test_add_firewall_rule_0104", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.addFirewallRule(SELFWANT, FIREWALL_RULE);
       expect(false).assertTrue();
@@ -1146,7 +1146,7 @@ function testAddFirewallRule() {
    * @tc.size      : MediumTest
    */
   it("test_add_firewall_rule_0112", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.addFirewallRule(SELFWANT, FIREWALL_RULE7);
       expect(false).assertTrue();
@@ -1254,7 +1254,7 @@ function testRemoveFirewallRule() {
    * @tc.size      : MediumTest
    */
   it("test_remove_firewall_rule_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.removeFirewallRule(SELFWANT);
       expect(false).assertTrue();
@@ -1335,7 +1335,7 @@ function testRemoveFirewallRule() {
    * @tc.size      : MediumTest
    */
   it("test_remove_firewall_rule_0105", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.removeFirewallRule(SELFWANT, FIREWALL_RULE);
       expect(false).assertTrue();
@@ -1400,7 +1400,7 @@ function testRemoveFirewallRule() {
    * @tc.size      : MediumTest
    */
   it("test_remove_firewall_rule_0108", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.removeFirewallRule(SELFWANT, FIREWALL_RULE13);
       expect(false).assertTrue();
@@ -1481,7 +1481,7 @@ function testRemoveFirewallRule() {
    * @tc.size      : MediumTest
    */
   it("test_remove_firewall_rule_0112", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.removeFirewallRule(SELFWANT, FIREWALL_RULE7);
       expect(false).assertTrue();
@@ -1548,7 +1548,7 @@ function testGetFirewallRules() {
    * @tc.size      : MediumTest
    */
   it("test_get_firewall_rules_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.getFirewallRules(SELFWANT);
       expect(false).assertTrue();
@@ -1610,7 +1610,7 @@ function testAddDomainFilterRule() {
    * @tc.size      : MediumTest
    */
   it("test_add_domain_filter_rule_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.addDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE);
       expect(false).assertTrue();
@@ -1716,7 +1716,7 @@ function testAddDomainFilterRule() {
    * @tc.size      : MediumTest
    */
   it("test_add_domain_filter_rule_0106", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.addDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE5);
       expect(false).assertTrue();
@@ -1824,7 +1824,7 @@ function testRemoveDomainFilterRule() {
    * @tc.size      : MediumTest
    */
   it("test_remove_domain_filter_rule_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.removeDomainFilterRule(SELFWANT);
       expect(false).assertTrue();
@@ -1884,7 +1884,7 @@ function testRemoveDomainFilterRule() {
    * @tc.size      : MediumTest
    */
   it("test_remove_domain_filter_rule_0104", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE);
       expect(false).assertTrue();
@@ -1971,7 +1971,7 @@ function testRemoveDomainFilterRule() {
    * @tc.size      : MediumTest
    */
   it("test_remove_domain_filter_rule_0108", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE9);
       expect(false).assertTrue();
@@ -2031,7 +2031,7 @@ function testRemoveDomainFilterRule() {
    * @tc.size      : MediumTest
    */
   it("test_remove_domain_filter_rule_0111", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.removeDomainFilterRule(SELFWANT, DOMAIN_FILTER_RULE5);
       expect(false).assertTrue();
@@ -2120,7 +2120,7 @@ function testGetDomainFilterRules() {
    * @tc.size      : MediumTest
    */
   it("test_get_domain_filter_rules_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.getDomainFilterRules(SELFWANT);
       expect(false).assertTrue();
@@ -2190,7 +2190,7 @@ function testSetGlobalProxyForAccount() {
         done();
         return;
     }
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.setGlobalProxyForAccount(SELFWANT, HTTP_PROXY, DEFAULT_ACCOUNT_ID);
       expect(false).assertTrue();
@@ -2319,7 +2319,7 @@ function testGetGlobalProxyForAccount() {
         done();
         return;
     }
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.getGlobalProxyForAccount(SELFWANT, DEFAULT_ACCOUNT_ID);
       expect(false).assertTrue();
@@ -2403,12 +2403,14 @@ function testTurnOnMobileData() {
    * @tc.size      : MediumTest
    */
   it("test_turnon_mobile_data_0003", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.turnOnMobileData(SELFWANT, true);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 9200002 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
     }
     done();
   });
@@ -2422,12 +2424,14 @@ function testTurnOnMobileData() {
    * @tc.size      : MediumTest
    */
   it("test_turnon_mobile_data_0004", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.turnOnMobileData(SELFWANT, false);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 9200002 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
     }
     done();
   });
@@ -2470,6 +2474,8 @@ function testTurnOnMobileData() {
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 401 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
     }
     done();
   });
@@ -2489,6 +2495,8 @@ function testTurnOnMobileData() {
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 401 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
     }
     done();
   });
@@ -2544,12 +2552,14 @@ function testTurnOffMobileData() {
    * @tc.size      : MediumTest
    */
   it("test_turnoff_mobile_data_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.turnOffMobileData(SELFWANT);
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 9200002 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
     }
     done();
   });
@@ -2569,6 +2579,8 @@ function testTurnOffMobileData() {
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 401 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
     }
     done();
   });
@@ -2626,12 +2638,12 @@ function testAddApn() {
    * @tc.size      : MediumTest
    */
   it("test_add_apn_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.addApn(SELFWANT, ADD_APN_INFO);
       expect(false).assertTrue();
     } catch (error) {
-      console.info(' --- test_add_apn_0002 error 9200002 or 801 is expected, actually catch: ' + error.code);
+      console.info(' --- test_add_apn_with_byod error 9200002 or 801 is expected, actually catch: ' + error.code);
       expect((error.code == 9200002) || (error.code == 801)).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);
@@ -2744,13 +2756,13 @@ function testDeleteApn() {
   /**
    * @tc.number    : SUB_CUSTOMIZATION_EDM_DELETE_APN_JS_0002
    * @tc.name      : test_delete_apn_0002
-   * @tc.desc      : test networkManager deleteApn with normal admin
+   * @tc.desc      : test networkManager deleteApn with byod admin
    * @tc.level     : Level 2
    * @tc.type      : Function
    * @tc.size      : MediumTest
    */
   it("test_delete_apn_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.deleteApn(SELFWANT, "0");
       expect(false).assertTrue();
@@ -2831,13 +2843,13 @@ function testUpdateApn() {
   /**
    * @tc.number    : SUB_CUSTOMIZATION_EDM_UPDATE_APN_JS_0002
    * @tc.name      : test_update_apn_0002
-   * @tc.desc      : test networkManager updateApn with normal admin
+   * @tc.desc      : test networkManager updateApn with byod admin
    * @tc.level     : Level 2
    * @tc.type      : Function
    * @tc.size      : MediumTest
    */
   it("test_update_apn_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.updateApn(SELFWANT, UPDATE_APN_INFO, "0");
       expect(false).assertTrue();
@@ -2940,13 +2952,13 @@ function testSetPreferredApn() {
   /**
    * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PREFERRED_APN_JS_0002
    * @tc.name      : test_set_preferred_apn_0002
-   * @tc.desc      : test networkManager setPreferredApn with normal admin
+   * @tc.desc      : test networkManager setPreferredApn with byod admin
    * @tc.level     : Level 2
    * @tc.type      : Function
    * @tc.size      : MediumTest
    */
   it("test_set_preferred_apn_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.setPreferredApn(SELFWANT, "0");
       expect(false).assertTrue();
@@ -3046,13 +3058,13 @@ function testQueryApn() {
   /**
    * @tc.number    : SUB_CUSTOMIZATION_EDM_QUERY_APN_JS_0003
    * @tc.name      : test_query_apn_0003
-   * @tc.desc      : test networkManager queryApn with normal admin
+   * @tc.desc      : test networkManager queryApn with byod admin
    * @tc.level     : Level 2
    * @tc.type      : Function
    * @tc.size      : MediumTest
    */
   it("test_query_apn_0003", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.queryApn(SELFWANT, "0");
       expect(false).assertTrue();
@@ -3074,7 +3086,7 @@ function testQueryApn() {
    * @tc.size      : MediumTest
    */
   it("test_query_apn_0004", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       networkManager.queryApn(SELFWANT, ADD_APN_INFO);
       expect(false).assertTrue();

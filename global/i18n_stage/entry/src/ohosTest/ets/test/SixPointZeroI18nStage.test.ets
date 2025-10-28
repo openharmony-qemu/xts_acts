@@ -4198,6 +4198,75 @@ export default function SixPointZeroI18nStageTest() {
       }
     })
 
+    /* *
+    * @tc.number    : SUB_GLOBAL_i18n_test_removePreferredLanguage_0100
+    * @tc.name      : i18n_test_removePreferredLanguage_0100
+    * @tc.desc      : removePreferredLanguage  with 1
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('i18n_test_removePreferredLanguage_0100', Level.LEVEL2, () => {
+      let removePreferred = i18n.removePreferredLanguage(1)
+      console.log('i18n_test_removePreferredLanguage_0100' + removePreferred)
+      expect(removePreferred).assertFalse()
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_timezone_i18n_test_getTimezonesByLocation_0100
+    * @tc.name      : timezone_i18n_test_getTimezonesByLocation_0100
+    * @tc.desc      : getTimezonesByLocation  with -74, 40
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('timezone_i18n_test_getTimezonesByLocation_0100', Level.LEVEL2, () => {
+      let timezonesByLocation = i18n.TimeZone.getTimezonesByLocation(-74, 40);
+      expect(timezonesByLocation.length > 0).assertEqual(true)
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_i18n_test_findEntityInfo_0100_0100
+    * @tc.name      : i18n_test_findEntityInfo_0100
+    * @tc.desc      : findEntityInfo  with '今天下午3点到5点有一个会议'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('i18n_test_findEntityInfo_0100', Level.LEVEL2, () => {
+      let entityRecognizer: i18n.EntityRecognizer = new i18n.EntityRecognizer("zh-CN");
+      let text: string = '今天下午3点到5点有一个会议';
+      let result = entityRecognizer.findEntityInfo(text);
+      expect(result.length).assertEqual(1)
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_I18n_addPreferredLanguage_0100
+    * @tc.name      : test_addPreferredLanguage_0100
+    * @tc.desc      : addPreferredLanguage  with "zh-Hans-CN"
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_addPreferredLanguage_0100', Level.LEVEL2, () => {
+      let value = i18n.addPreferredLanguage('zh-Hans-CN', 1)
+      expect(value).assertFalse()
+    })
+
+    /* *
+    * @tc.number    : SUB_GLOBAL_I18n_formatToParts_0100
+    * @tc.name      : test_formatToParts_0100
+    * @tc.desc      : formatToParts  with 100, 'second'
+    * @tc.size      : MediumTest
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('test_formatToParts_0100', Level.LEVEL2, () => {
+      let relativetimefmt = new Intl.RelativeTimeFormat('en');
+      let value = relativetimefmt.formatToParts(100, 'second');
+      expect(value.length > 0).assertEqual(true)
+    })
+
 
   })
 }

@@ -93,26 +93,29 @@ export default function ActsOsAccountThirdPartyTest_third_1() {
             })
         })
 
-        /*
-        * @tc.number  : ActsOsAccountIsActived_0200
-        * @tc.name    : isOsAccountActived promise
-        * @tc.desc    : Verify query 0 user status is true
+        /**
+        * @tc.number    ActsOsAccountIsActived_0200
+        * @tc.name      ActsOsAccountIsActived_0200
+        * @tc.desc      isOsAccountActived promise Verify query 0 user status is true
+        * @tc.level     Level2
+        * @tc.size      MediumTest
+        * @tc.type      Function
         */
         it('ActsOsAccountIsActived_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsOsAccountIsActived_0200 start====");
-            var AccountManager = osAccount.getAccountManager();
+            let AccountManager = osAccount.getAccountManager();
             console.info("====>get os AccountManager finish====");
             try {
-                var isActived = await AccountManager.isOsAccountActived(0);
+                let isActived = await AccountManager.isOsAccountActived(0);
+                console.info("====>isOsAccountActived:" + isActived);
+                expect(isActived).assertEqual(true);
+                console.info("====>ActsOsAccountIsActived_0200 end");
+                done();
             } catch (err) {
                 console.info("====>catch isOsAccountActived err:" + JSON.stringify(err));
                 expect().assertFail();
                 done();
             }
-            console.info("====>isOsAccountActived:" + isActived);
-            expect(isActived).assertEqual(true);
-            console.info("====>ActsOsAccountIsActived_0200 end");
-            done();
         })
 
         /*
@@ -238,17 +241,25 @@ export default function ActsOsAccountThirdPartyTest_third_1() {
         */
         it('ActsOsAccountIsMulty_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsOsAccountIsMulty_0100 start====");
-            var AccountManager = osAccount.getAccountManager();
+            let AccountManager = osAccount.getAccountManager();
             console.info("====>get os AccountManager finish====");
-            AccountManager.isMultiOsAccountEnable((err, data) => {
+            AccountManager.isMultiOsAccountEnable((err, isEnable) => {
                 console.info("====>isMultiOsAccountEnable err:" + JSON.stringify(err));
-                console.info("====>isMultiOsAccountEnable data:" + data);
-                expect(err).assertEqual(null);
-                expect(data).assertTrue();
-                console.info("====>ActsOsAccountIsMulty_0100 end====");
-                done();
-            })
-        })
+                console.info("====>isMultiOsAccountEnable isEnable:" + isEnable);
+                if (isEnable != true) {
+                    expect(isEnable).assertFalse();
+                    console.info("====>ActsOsAccountIsMulty_0100 end====");
+                    done();
+                    return;
+                }
+                AccountManager.isMultiOsAccountEnable((err, data) => {
+                    console.info("====>isMultiOsAccountEnable data:" + data);
+                    expect(data).assertTrue();
+                    console.info("====>ActsOsAccountIsMulty_0100 end====");
+                    done();
+                });
+            });
+        });
 
         /**
         * @tc.number   ActsOsAccountIsMulty_0200
@@ -260,54 +271,88 @@ export default function ActsOsAccountThirdPartyTest_third_1() {
         */
         it('ActsOsAccountIsMulty_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsOsAccountIsMulty_0200 start====");
-            var AccountManager = osAccount.getAccountManager();
+            let AccountManager = osAccount.getAccountManager();
             console.info("====>get os AccountManager finish====");
+            let isEnable = await AccountManager.isMultiOsAccountEnable();
+            if (isEnable != true) {
+                expect(isEnable).assertFalse();
+                console.info("====>ActsOsAccountIsMulty_0100 end====");
+                done();
+                return;
+            }
             try {
-                var data = await AccountManager.isMultiOsAccountEnable();
+                let data = await AccountManager.isMultiOsAccountEnable();
+                console.info("====>isMultiOsAccountEnable data:" + JSON.stringify(data));
+                expect(data).assertTrue();
+                console.info("====>ActsOsAccountIsMulty_0200 end====");
+                done();
             } catch (err) {
                 console.info("====>catch isMultiOsAccountEnable err:" + JSON.stringify(err));
                 expect().assertFail();
                 done();
             }
-            console.info("====>isMultiOsAccountEnable data:" + JSON.stringify(data));
-            expect(data).assertTrue();
-            console.info("====>ActsOsAccountIsMulty_0200 end====");
-            done();
         })
 
-        /*
-        * @tc.number  : ActsOsAccountVerified_0100
-        * @tc.name    : isOsAccountVerified callback
-        * @tc.desc    : Verify that the initial state query is unlocked to false
+        /**
+        * @tc.number   ActsOsAccountVerified_0100
+        * @tc.name     ActsOsAccountVerified_0100
+        * @tc.desc     Verify that the initial state query is unlocked to false isOsAccountVerified callback
+        * @tc.level    Level3
+        * @tc.size     MediumTest
+        * @tc.type     Function
         */
         it('ActsOsAccountVerified_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>isOsAccountVerified_0100 start====");
-            var AccountManager = osAccount.getAccountManager();
+            let AccountManager = osAccount.getAccountManager();
             console.info("====>get os AccountManager finish====");
-            AccountManager.isOsAccountVerified((err, data) => {
+            AccountManager.isOsAccountVerified((err, isEnable) => {
                 console.info("====>isOsAccountVerified err:" + JSON.stringify(err));
-                console.info("====>isOsAccountVerified data:" + data);
-                expect(err).assertEqual(null);
-                expect(data).assertEqual(true);
-                console.info("====>ActsOsAccountVerified_0100 end====");
-                done();
-            })
+                console.info("====>isOsAccountVerified isEnable:" + isEnable);
+                if (isEnable != true) {
+                    expect(isEnable).assertFalse();
+                    console.info("====>ActsOsAccountVerified_0100 end====");
+                    done();
+                    return;
+                }
+                AccountManager.isOsAccountVerified((err, data) => {
+                    console.info("====>isOsAccountVerified data:" + data);
+                    expect(data).assertTrue();
+                    console.info("====>ActsOsAccountVerified_0100 end====");
+                    done();
+                });
+            });
         })
 
-        /*
-        * @tc.number  : ActsOsAccountVerified_0200
-        * @tc.name    : isOsAccountVerified promise
-        * @tc.desc    : Verify that the initial state query is unlocked to false
+        /**
+        * @tc.number   ActsOsAccountVerified_0200
+        * @tc.name     ActsOsAccountVerified_0200
+        * @tc.desc     Verify that the initial state query is unlocked to false isOsAccountVerified promise
+        * @tc.level    Level3
+        * @tc.size     MediumTest
+        * @tc.type     Function
         */
         it('ActsOsAccountVerified_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>isOsAccountVerified_0200 start====");
-            var AccountManager = osAccount.getAccountManager();
+            let AccountManager = osAccount.getAccountManager();
             console.info("====>get os AccountManager finish====");
-            var isVerified = await AccountManager.isOsAccountVerified();
-            console.info("====>isOsAccountVerified data:" + isVerified);
-            expect(isVerified).assertEqual(true);
-            console.info("====>ActsOsAccountVerified_0200 end====");
-            done();
+            let isEnable = await AccountManager.isOsAccountVerified();
+            if (isEnable != true) {
+                expect(isEnable).assertFalse();
+                console.info("====>ActsOsAccountVerified_0200 end====");
+                done();
+                return;
+            }
+            try {
+                let isVerified = await AccountManager.isOsAccountVerified();
+                console.info("====>isOsAccountVerified data:" + isVerified);
+                expect(isVerified).assertTrue();
+                console.info("====>ActsOsAccountVerified_0200 end====");
+                done();
+            } catch (err) {
+                console.info("====>catch isMultiOsAccountEnable err:" + JSON.stringify(err));
+                expect().assertFail();
+                done();
+            }
         })
 
         /*

@@ -173,10 +173,14 @@ export default function ActsAccountErrPermission() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountErrPermission_0700
-        * @tc.name      : getAccountsByOwner callback
-        * @tc.desc      : This application gets its own application information after adding an account without permission
+        /**
+        * @tc.number   ActsAccountErrPermission_0700
+        * @tc.name     ActsAccountErrPermission_0700
+        * @tc.desc     gets its own application information after adding an account without permission
+        *               getAccountsByOwner callback
+        * @tc.level    Level2
+        * @tc.size     MediumTest
+        * @tc.type     Function
         */
         it('ActsAccountErrPermission_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountErrPermission_0700 start====");
@@ -189,7 +193,7 @@ export default function ActsAccountErrPermission() {
                 appAccountManager.getAccountsByOwner(selfBundle, (err, data)=>{
                     console.info("====>getAccountsByOwner 0700 err:" + JSON.stringify(err));
                     expect(err).assertEqual(null);
-                    expect(data.length>0).assertEqual(true);
+                    expect(data.length > 0).assertTrue();
                     appAccountManager.removeAccount("getAll_callback_nopermission", (err)=>{
                         console.info("====>delete account 0700 err:" + JSON.stringify(err));
                         expect(err).assertEqual(null);
@@ -200,26 +204,29 @@ export default function ActsAccountErrPermission() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountErrPermission_0800
-        * @tc.name      : getAccountsByOwner promise
-        * @tc.desc      : This application gets its own application information after adding an account without permission
+        /**
+        * @tc.number   ActsAccountErrPermission_0800
+        * @tc.name     ActsAccountErrPermission_0800
+        * @tc.desc     This application gets its own application information after adding an account without permission
+        *               getAccountsByOwner promise
+        * @tc.level    Level2
+        * @tc.size     MediumTest
+        * @tc.type     Function
         */
         it('ActsAccountErrPermission_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountErrPermission_0800 start====");
-            var appAccountManager = account.createAppAccountManager();
+            let appAccountManager = account.createAppAccountManager();
             console.info("====>creat finish====");
-            var selfBundle = "com.example.actsaccountoperatetest";
+            let selfBundle = "com.example.actsaccountoperatetest";
             console.info("====>add account 0800 start====");
             await appAccountManager.createAccount("getAll_promise_nopermission");
             console.info("====>getAccountsByOwner 0800 start====");
             try{
-                var data = await appAccountManager.getAccountsByOwner(selfBundle);
+                let data = await appAccountManager.getAccountsByOwner(selfBundle);
                 console.info("====>getAll_promise_nopermission data:" + JSON.stringify(data))
-                expect(data.length>0).assertEqual(true);
+                expect(data.length > 0).assertTrue();
                 done();
-            }
-            catch(err){
+            } catch (err) {
                 console.error("====>getAccountsByOwner 0800 err:" + JSON.stringify(err));
                 expect(err.code).assertEqual(ERR_PERMISSION_DENIED);
                 await appAccountManager.removeAccount("getAll_promise_nopermission");      

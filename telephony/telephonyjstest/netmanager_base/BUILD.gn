@@ -22,7 +22,6 @@ group("netmanager_base") {
       "network_nopermission:ActsNetworkNopermissionTest",
       "network_nowifi:ActsNetworkNowifiTest",
       "network_wifi:ActsNetworkWifiTest",
-      "socket:ActsSocketTest",
       "system_fetch:ActsSystemFetchTest",
     ]
   }

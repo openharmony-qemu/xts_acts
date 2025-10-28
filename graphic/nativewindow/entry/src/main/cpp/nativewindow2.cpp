@@ -23,6 +23,7 @@
 #include "nativewindow.h"
 #include "ace/xcomponent/native_interface_xcomponent.h"
 #include <string>
+#include "common/log_common.h"
 
 #define SUCCESS 0
 #define FAIL (-1)
@@ -2103,19 +2104,25 @@ napi_value testNativeWindowSetMetadataValue_metadata_type(napi_env env, napi_cal
         napi_create_int32(env, CONSTANT_998899, &result);
         return result;
     }
-    OH_NativeImage *iamge = initNative->returnNativeImage();
-    OH_NativeBuffer_MetadataType hdr_type[] = {OH_VIDEO_HDR_HLG, OH_VIDEO_HDR_HDR10, OH_VIDEO_HDR_VIVID, OH_VIDEO_NONE};
-    for (int i = 0; i <= sizeof(hdr_type) / sizeof(hdr_type[0]); i++) {
+    OH_NativeImage *image = initNative->returnNativeImage();
+    OH_NativeBuffer_MetadataType hdr_type[] = {
+        OH_VIDEO_HDR_HLG,
+        OH_VIDEO_HDR_HDR10,
+        OH_VIDEO_HDR_VIVID,
+        OH_IMAGE_HDR_VIVID_DUAL,
+        OH_IMAGE_HDR_VIVID_SINGLE,
+    };
+    for (int i = 0; i <= sizeof(hdr_type) / sizeof(hdr_type[0]) - 1; i++) {
         int32_t bufferSize;
-        uint8_t *buffer;
+        uint8_t *type;
         uint8_t val = hdr_type[i];
         int32_t flag = OH_NativeWindow_SetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, sizeof(uint8_t), &val);
         if (flag != SUCCESS) {
             napi_create_int32(env, CONSTANT_1000 * i + CONSTANT_1, &result);
             return result;
         }
-        flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, &bufferSize, &buffer);
-        if (*buffer != val) {
+        flag = OH_NativeWindow_GetMetadataValue(nativeWindow, OH_HDR_METADATA_TYPE, &bufferSize, &type);
+        if (*type != val) {
             napi_create_int32(env, CONSTANT_1000 * i + CONSTANT_2, &result);
             return result;
         }

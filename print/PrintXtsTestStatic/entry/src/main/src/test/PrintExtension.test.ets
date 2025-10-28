@@ -18,7 +18,7 @@ import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../
 import Want from '@ohos.app.ability.Want';
 import PrintExtension from '../testability/PrintExtension';
 
-const DOMAIN: number = 0x0023
+const DOMAIN = 0x0023
 const TAG: string = 'printExtensionTestXTS';
 let printExtension = new PrintExtension();
 

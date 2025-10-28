@@ -3,6 +3,8 @@
     "MainAbility/pages/XTSIndex",
     "MainAbility/pages/testgesture",
     "MainAbility/pages/image/imageAltTest",
-    "MainAbility/pages/textMinLines/TextMinLinesTest"
+    "MainAbility/pages/textMinLines/TextMinLinesTest",
+    "MainAbility/pages/hasAxisTest/HasAxisTest",
+    "MainAbility/pages/list/coastingAxisTest"
   ]
 }

@@ -884,8 +884,46 @@ export default function nfcNDEFTagTest() {
                     let ndefMessage = tag.ndef.createNdefMessage(rawData);
                     console.info("[NFC_test]ndef23 Message result4: " + JSON.stringify(ndefMessage));
                     let makeERecords = tag.ndef.messageToBytes(ndefMessage);
+                    if (makeERecords.length > 0) {
+                        expect(makeERecords.length > 0).assertTrue();
+                    } else {
+                        expect(makeERecords).assertDeepEquals([]);
+                    }
                     console.info("[NFC_test]ndef23 result4: " + JSON.stringify(makeERecords));
                     expect(makeERecords).assertInstanceOf('Array')
+                } catch (error) {
+                    console.info("[NFC_test]ndef23 ndefMessage4 error: " + error);
+                    expect().assertFail();
+                }
+            }else{
+                console.info("[NFC_test]NdefTag23 = null & = undefined: ");
+                expect().assertFail();
+            }
+        })
+
+        /**
+         * @tc.number SUB_Communication_NFC_nfcNDEF_js_2301
+         * @tc.name Test messageToBytes NDEF
+         * @tc.desc Obtains all records of ndef messageToBytes.
+         * @tc.size since 9
+         * @tc.type Function
+         * @tc.level Level 0
+         */
+        it('SUB_Communication_NFC_nfcNDEF_js_2301', Level.LEVEL0, function () {
+            if (NdefTag != null && NdefTag != undefined) {
+                let rawData1 = [];
+                console.info("messageToBytes is object7" );
+                try {
+                    let ndefMessage1 = tag.ndef.createNdefMessage(rawData1);
+                    console.info("[NFC_test]ndef23 Message result4: " + JSON.stringify(ndefMessage1));
+                    let makeERecords1 = tag.ndef.messageToBytes(ndefMessage1);
+                    if (makeERecords1.length > 0) {
+                        expect(makeERecords1.length > 0).assertTrue();
+                    } else {
+                        expect(makeERecords1).assertDeepEquals([]);
+                    }
+                    console.info("[NFC_test]ndef23 result4: " + JSON.stringify(makeERecords));
+                    expect(makeERecords1).assertInstanceOf('Array')
                 } catch (error) {
                     console.info("[NFC_test]ndef23 ndefMessage4 error: " + error);
                     expect().assertFail();

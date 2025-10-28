@@ -18,3 +18,8 @@ import hidebug from '@ohos.hidebug';
 export const getNativeMemInfoTrue: () => hidebug.NativeMemInfo;
 export const getNativeMemInfoFalse: () => hidebug.NativeMemInfo;
 export const getGraphicMemSummaryC: (interval: number, undefineTest?: boolean) => hidebug.GraphicsMemorySummary;
+export const addthread: (a: number) => number;
+export const start: (f: number, d: number) => number;
+export const starterrstack: () => number;
+export const starterrconfig: () => number;
+export const starterrconfigtid: () => number;

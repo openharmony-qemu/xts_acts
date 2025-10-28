@@ -765,7 +765,7 @@ export default function sceneTest() {
           if (renderContext != null) {
             let loadFail = await renderContext.loadPlugin("NonExistentPlugin");
             console.info(msg + ' plugin "NonExistentPlugin" load result:', loadFail);
-            expect(loadFail).assertFail();
+            expect(loadFail).assertFalse();
             let plugin = await renderContext.loadPlugin("1450021d-c57f-d9ff-7770-c24fb3f3321c");
             expect(plugin).assertTrue();
           }
@@ -989,5 +989,27 @@ export default function sceneTest() {
           done();
         }
       })
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0930
+     * @tc.name      : testSceneLoad
+     * @tc.desc      : Used to load the resource through the incoming resource path, load ext_meshopt_compress mode
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testSceneLoad_03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneLoad_03";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet_MeshOpt.glb"));
+        expect(scene != undefined).assertTrue();
+        done();
+      } catch (err) {
+        console.info(msg + 'Failed in Scene.load($rawfile("gltf/DamagedHelmet/glTF/DamagedHelmet_MeshOpt.glb")) ' +
+        JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }

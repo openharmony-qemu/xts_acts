@@ -125,6 +125,11 @@ export default function newSEServicetest() {
             try {
                 let nfcOmaReaderList = Service.getReaders();
                 console.info("[nfc_test]8 Result of getReaders:" + nfcOmaReaderList );
+                if (nfcOmaReaderList.length > 0) {
+                    expect(nfcOmaReaderList.length > 0).assertTrue();
+                } else {
+                    expect(newSEServicetest).assertDeepEquals([]);
+                }
                 if (nfcOmaReaderList == undefined) {
                     console.info("[NFC_test]8 This function is not supported because the phone NFC chip is ST chip.");
                 } else {
@@ -153,7 +158,12 @@ export default function newSEServicetest() {
             try {
                     let nfcOmaReaderList2 = [];
                     getReader = Service.getReaders();  
-                    console.info("[nfc_test]9 getReader value  is: " + getReader);                                    
+                    console.info("[nfc_test]9 getReader value  is: " + getReader);     
+                    if(getReader.length > 0) {
+                        expect(getReader.length > 0).assertTrue();
+                    } else {
+                        expect(getReader).assertDeepEquals([]);
+                    }                                 
                     for (let i = 0; i < getReader.length; i++) {
                         if (!getReader[i].isSecureElementPresent()) {
                             console.info("[NFC_test]9 se not present : " + i);
@@ -219,6 +229,11 @@ export default function newSEServicetest() {
                     console.info("[NFC_test] SEService isConnected The connection status is: " + seIsConnected);
                     if (seIsConnected) {
                         getReader = Service.getReaders();
+                        if(getReader.length > 0) {
+                            expect(getReader.length > 0).assertTrue();
+                        } else {
+                            expect(getReader).assertDeepEquals([]);
+                        } 
                         if (getReader == undefined) {
                             console.info("[NFC_test]10 This function is not supported because the phone NFC chip is ST chip.");
                         } else {

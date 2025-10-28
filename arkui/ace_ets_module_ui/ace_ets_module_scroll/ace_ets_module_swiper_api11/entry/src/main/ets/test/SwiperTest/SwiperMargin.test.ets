@@ -20,7 +20,7 @@ import { BusinessError } from '@ohos.base';
 export default function SwiperMarginTest() {
 
   const SUITE: string = 'SwiperMargin'
-  const waitUiReadyMs: number = 500;
+  const waitUiReadyMs = 500;
   describe('SwiperMarginTest', () => {
 
     beforeEach(async (done: Function) => {

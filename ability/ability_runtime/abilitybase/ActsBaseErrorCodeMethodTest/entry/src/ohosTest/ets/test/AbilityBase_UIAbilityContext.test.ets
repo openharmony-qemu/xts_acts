@@ -390,6 +390,7 @@ export default function openLinkTest() {
       }
       let options: OpenLinkOptions|undefined = {
         appLinkingOnly: true,
+        hideFailureTipDialog: false,
         completionHandler: handler
       }
       try {

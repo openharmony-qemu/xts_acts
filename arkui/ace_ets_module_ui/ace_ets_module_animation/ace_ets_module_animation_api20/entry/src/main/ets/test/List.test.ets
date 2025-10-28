@@ -17,10 +17,14 @@ import FrameNodeAnimation from './FrameNodeAnimation.test'
 import ParticleEmitter from './ParticleEmitter.test'
 import Vector2TTest from './Vector2TTest.test'
 import FrameNodeAnimationPage from './FrameNodeAnimationPage.test'
+import TestSweepGradientOptions from './TestSweepGradientOptions.test'
+import TransitionEdgeTest from './TransitionEdgeTest.test'
 
 export default function testsuite() {
   FrameNodeAnimation();
   ParticleEmitter();
   Vector2TTest();
   FrameNodeAnimationPage();
+  TestSweepGradientOptions();
+  TransitionEdgeTest();
 }

@@ -102,7 +102,7 @@ public:
     explicit ListItemGroupAdapter(std::vector<std::shared_ptr<Component>> &dataSource,
         const std::vector<int32_t> &groupList)
         : ItemAdapter(dataSource)
-    {
+        {
         OH_ArkUI_NodeAdapter_SetTotalNodeCount(_adapter, groupList.size());
         int32_t sum = 0;
         for (auto &item : groupList) {
@@ -197,4 +197,4 @@ private:
     std::shared_ptr<ListChildrenMainSizeOption> _childrenMainSize;
 };
 } // namespace ArkUICapiTest
-#endif // CAPIDEMO_LIST_COMPONENT_H
+#endif // ArkUICapiTest_LIST_COMPONENT_H

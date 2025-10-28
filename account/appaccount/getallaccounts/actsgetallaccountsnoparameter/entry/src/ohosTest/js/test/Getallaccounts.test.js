@@ -41,30 +41,32 @@ export default function ActsGetAllAccountsNoParameter() {
             });
         });
 
-        /*
-        * @tc.number    : ActsGetAllAccountsNoParameter_0200
-        * @tc.name      : getAllAccounts promise
-        * @tc.desc      : This application has not added an account and has not been authorized by other applications to
-        *                 obtain authorization
+        /**
+        * @tc.number   ActsGetAllAccountsNoParameter_0200
+        * @tc.name     ActsGetAllAccountsNoParameter_0200
+        * @tc.desc     This application has not added an account and has not been authorized by other applications to
+        *                 obtain authorization, getAllAccounts promise
+        * @tc.level    Level3
+        * @tc.size     MediumTest
+        * @tc.type     Function
         */
         it('ActsGetAllAccountsNoParameter_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             console.info("====>ActsGetAllAccountsNoParameter_0200 start====");
-            var appAccountManager = account.createAppAccountManager();
+            let appAccountManager = account.createAppAccountManager();
             console.info("====>creat finish====");
             console.info("====>getAllAccounts 0200 start====");
             try{
-                var data = await appAccountManager.getAllAccounts();
-            }
-            catch(err){
+                let data = await appAccountManager.getAllAccounts();
+                console.info("====>getAllAccounts 0200 data:" + JSON.stringify(data));
+                console.info("====>getAllAccounts 0200 data.length:" + data.length);
+                expect(data.length).assertEqual(0);
+                console.info("====>ActsGetAllAccountsNoParameter_0200 end====");
+                done();
+            } catch(err){
                 console.error("====>getAllAccounts 0200 err:" + JSON.stringify(err));
                 expect().assertFail();
                 done();
             }
-            console.info("====>getAllAccounts 0200 data:" + JSON.stringify(data));
-            console.info("====>getAllAccounts 0200 data.length:" + data.length);
-            expect(data.length).assertEqual(0);
-            console.info("====>ActsGetAllAccountsNoParameter_0200 end====");
-            done();
         });
 
         /*

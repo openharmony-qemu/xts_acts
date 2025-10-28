@@ -76,14 +76,14 @@ export default function appManagerStaticTest() {
           done();
         }).catch((err: BusinessError): void => {
           hilog.info(domain, tag, `System_API_Test_App_Manager_Static_1700 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(16000050);
+          expect(err.code).assertEqual(201);
           done();
         });
       } catch (paramError: BusinessError) {
         let code = (paramError as BusinessError).code;
         let message = (paramError as BusinessError).message;
         hilog.info(domain, tag, `System_API_Test_App_Manager_Static_1700 [appManager] error: ${code}, ${message}`);
-        expect(paramError.code).assertEqual(16000050);
+        expect(paramError.code).assertEqual(201);
         done();
       }
     });
@@ -103,14 +103,14 @@ export default function appManagerStaticTest() {
           done();
         }).catch((err: BusinessError): void => {
           hilog.info(domain, tag, `System_API_Test_App_Manager_Static_1800 killProcessesByBundleName fail, err: ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(16000050);
+          expect(err.code).assertEqual(201);
           done();
         });
       } catch (paramError: BusinessError) {
         let code = (paramError as BusinessError).code;
         let message = (paramError as BusinessError).message;
         hilog.info(domain, tag, `System_API_Test_App_Manager_Static_1800 [appManager] error: ${code}, ${message}`);
-        expect(paramError.code).assertEqual(16000050);
+        expect(paramError.code).assertEqual(201);
         done();
       }
     });

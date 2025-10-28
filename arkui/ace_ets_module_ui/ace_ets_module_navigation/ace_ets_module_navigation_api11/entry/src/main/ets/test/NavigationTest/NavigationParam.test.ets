@@ -20,8 +20,6 @@ import events_emitter from '@ohos.events.emitter';
 export default function NavigationParamTest() {
 
   const SUITE: string = 'NavigationParam'
-  const waitUiReadyMs: number = 500;
-
 
   describe('NavigationParamTest', () => {
 

@@ -561,7 +561,7 @@ export default function globalStageTest() {
       let value: Array<string> = res.getRawFileListSync('');
       console.log('getRawFileListSync_stagetest_0100 1' + value);
       console.log('getRawFileListSync_stagetest_0100 1' + value.length);
-      expect(value !== null).assertTrue();
+      expect(value.length > 0).assertTrue();
       done();
     })
 
@@ -692,10 +692,9 @@ export default function globalStageTest() {
      * @tc.level     : Level 0
      */
     it('getStringArrayValueSync_stagetest_0100', Level.LEVEL0, async (done: Function) => {
-      let value: Array<string> =
-      res.getStringArrayValueSync($r('app.strarray.sizeList').id);
+      let value: Array<string> = res.getStringArrayValueSync($r('app.strarray.sizeList').id);
       console.log('getStringArrayValueSync_stagetest_0100 1' + value);
-      expect(value !== null).assertTrue();
+      expect(value.length > 0).assertTrue();
       done();
     })
 
@@ -714,7 +713,7 @@ export default function globalStageTest() {
         id: $r('app.strarray.sizeList').id
       });
       console.log('getStringArrayValueSync_stagetest_0200 1' + value);
-      expect(value !== null).assertTrue();
+      expect(value.length > 0).assertTrue();
       done();
     })
 
@@ -774,7 +773,7 @@ export default function globalStageTest() {
     it('getStringArrayByNameSync_stagetest_0100', Level.LEVEL0, async (done: Function) => {
       let value: Array<string> = res.getStringArrayByNameSync('sizeList');
       console.log('getStringArrayByNameSync_stagetest_0100 1' + value);
-      expect(value !== null).assertTrue();
+      expect(value.length > 0).assertTrue();
       done();
     })
 
@@ -819,9 +818,10 @@ export default function globalStageTest() {
      * @tc.level     : Level 2
      */
     it('SUB_GLOBAL_GetLocales_0010', Level.LEVEL2, async (done: Function) => {
-      let value: string = res.getLocales().toString();
+      let value: Array<string> = res.getLocales();
       console.log('SUB_GLOBAL_GetLocales_0010' + value);
-      expect(value == 'en-US,zh-CN').assertTrue();
+      expect(value.length).assertLarger(0);
+      expect(value.toString() == 'en-US,zh-CN').assertTrue();
       done();
     })
 

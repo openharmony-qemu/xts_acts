@@ -14,7 +14,9 @@
  */
 
 import SwipeActionTest from "./list/swipeActionTest.test";
+import SwipeErrorTest from "./list/swipeErrorTest.test";
 
 export default function testsuite() {
   SwipeActionTest();
+  SwipeErrorTest();
 }

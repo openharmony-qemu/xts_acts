@@ -15,6 +15,8 @@ add_library(nativerender SHARED
     NapiRenderInitTest.cpp
     image/ImageAltTest.cpp
     textMinLines/MinLinesTest.cpp
+    hasAxisTest/HasAxisTest.cpp
+    list/CoastingAxisTest.cpp
 )
 
 add_library(nativefunc SHARED

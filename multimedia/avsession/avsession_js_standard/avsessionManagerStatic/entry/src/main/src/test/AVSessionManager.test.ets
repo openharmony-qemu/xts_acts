@@ -344,7 +344,6 @@ export default function AVSessionManager() {
                 console.error(`getAVCastController BusinessError2: code: ${error.code}, message: ${error.message}`);
                 if (error.message == "Cannot read property then of undefined") {
                     console.info(`getCurrentItem promise successfully`);
-                    expect(true).assertTrue()
                 }
             }
             done();

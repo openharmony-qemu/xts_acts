@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
+import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
@@ -290,6 +291,22 @@ export default function jsMessageExt() {
     it('testJsMessageExtGetArray001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testJsMessageExtGetArray001", 171010)
       Utils.registerEvent("testJsMessageExtGetArray001", true, 171180, done);
+      sendEventByKey('JsMessageExtButton', 10, '');
+    })
+
+    /*
+    * @tc.number      : SUB_WEB_JSMESSAGEEXT_GETARRAY_0200
+    * @tc.name        : testJsMessageExtGetArrayReturnArrayLengthLarger0
+    * @tc.desc        : test JsMessageExt GetArray return array length larger 0
+    * @tc.size        : MediumTest
+    * @tc.type        : Function
+    * @tc.level       : Level 2
+    */
+    it('testJsMessageExtGetArrayReturnArrayLengthLarger0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testJsMessageExtGetArrayReturnArrayLengthLarger0", 171010)
+      Utils.registerBaseEvent('testJsMessageExtGetArrayReturnArrayLengthLarger0', 0, 25102211, done, (backData: events_emitter.EventData, expected: Object) => {
+            expect(backData?.data?.ACTION).assertLarger(0)
+        })
       sendEventByKey('JsMessageExtButton', 10, '');
     })
   })

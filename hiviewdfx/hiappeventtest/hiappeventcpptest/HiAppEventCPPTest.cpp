@@ -1419,3 +1419,57 @@ HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_4300, Function |
     ASSERT_EQ(OH_HiAppEvent_RemoveProcessor(123), -200);
     GTEST_LOG_(INFO) << "DFX_DFT_HiviewKit_HiAppEvent_Native_4300 end" << endl;
 }
+
+/**
+* @tc.name Test of the HiAppEvent Native SetReportRoute Interface in which the keyvalue
+*          is of the boolean type and the bool value is true.
+* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_4400
+* @author w30032608
+* @tc.desc check the interface of SetEventConfig for EVENT_MAIN_THREAD_JANK_V2 when the log type is in format.
+*/
+HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_4400, TestSize.Level0)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+    int res = OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_LOG_TYPE, "1");
+    ASSERT_EQ(res, ErrorCode::HIAPPEVENT_VERIFY_SUCCESSFUL);
+    res = OH_HiAppEvent_SetEventConfig(EVENT_MAIN_THREAD_JANK_V2, config);
+    ASSERT_EQ(res, ErrorCode::HIAPPEVENT_VERIFY_SUCCESSFUL);
+
+    res = OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_IGNORE_STARTUP_TIME, "10");
+    ASSERT_EQ(res, ErrorCode::HIAPPEVENT_VERIFY_SUCCESSFUL);
+    res = OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_SAMPLE_INTERVAL, "100");
+    ASSERT_EQ(res, ErrorCode::HIAPPEVENT_VERIFY_SUCCESSFUL);
+    res = OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_REPORT_TIMES_PER_APP, "3");
+    ASSERT_EQ(res, ErrorCode::HIAPPEVENT_VERIFY_SUCCESSFUL);
+    res = OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_SAMPLE_COUNT, "21");
+    ASSERT_EQ(res, ErrorCode::HIAPPEVENT_VERIFY_SUCCESSFUL);
+    res = OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_AUTO_STOP_SAMPLING, "true");
+    ASSERT_EQ(res, ErrorCode::HIAPPEVENT_VERIFY_SUCCESSFUL);
+    res = OH_HiAppEvent_SetEventConfig(EVENT_MAIN_THREAD_JANK_V2, config);
+    ASSERT_EQ(res, ErrorCode::HIAPPEVENT_VERIFY_SUCCESSFUL);
+
+    OH_HiAppEvent_DestroyConfig(config);
+}
+
+/**
+* @tc.name Test of the HiAppEvent Native SetReportRoute Interface in which the keyvalue
+*          is of the boolean type and the bool value is true.
+* @tc.number DFX_DFT_HiviewKit_HiAppEvent_Native_4500
+* @author w30032608
+* @tc.desc check the interface of SetEventConfig for EVENT_MAIN_THREAD_JANK_V2 when the log type is in format.
+*/
+HWTEST_F(HiAppEventCPPTest, DFX_DFT_HiviewKit_HiAppEvent_Native_4500, TestSize.Level0)
+{
+    HiAppEvent_Config* config = OH_HiAppEvent_CreateConfig();
+    int res = OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_AUTO_STOP_SAMPLING, "");
+    ASSERT_EQ(res, ErrorCode::HIAPPEVENT_VERIFY_SUCCESSFUL);
+    res = OH_HiAppEvent_SetEventConfig(EVENT_MAIN_THREAD_JANK_V2, config);
+    ASSERT_EQ(res, ErrorCode::HIAPPEVENT_VERIFY_SUCCESSFUL);
+
+    res = OH_HiAppEvent_SetConfigItem(config, MAIN_THREAD_JANK_PARAM_AUTO_STOP_SAMPLING, "invalidValue");
+    ASSERT_EQ(res, ErrorCode::HIAPPEVENT_VERIFY_SUCCESSFUL);
+    res = OH_HiAppEvent_SetEventConfig(EVENT_MAIN_THREAD_JANK_V2, config);
+    ASSERT_EQ(res, ErrorCode::ERROR_INVALID_PARAM_VALUE);
+
+    OH_HiAppEvent_DestroyConfig(config);
+}

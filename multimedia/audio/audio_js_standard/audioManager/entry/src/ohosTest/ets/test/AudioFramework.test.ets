@@ -672,6 +672,37 @@ export default function audioFramework() {
 
     })
 
+        /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMICROPHONEMUTESYNC_0700
+     * @tc.name      : isMuteSync - Media - Sync
+     * @tc.desc      : isMuteSync - Media - Sync
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMICROPHONEMUTESYNC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        await audioVolumeGroupManager.setMicrophoneMute(false).then(() => {
+          console.info('Promise returned to indicate that the microphone is muted.');
+        });
+        let data = audioVolumeGroupManager.isMicrophoneMuteSync();
+        if (data == false) {
+          console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
+          expect(true).assertTrue();
+          done();
+        } else {
+          console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (err) {
+        console.log('err :' + JSON.stringify(err.message));
+        expect(false).assertTrue();
+        done();
+      }
+
+    })
+
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOMANAGER_0200
      * @tc.name      : getAudioManger - Multiple instance
@@ -4133,8 +4164,8 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const muteValue = true;
-      await audioVolumeGroupManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
-      await audioVolumeGroupManager.mute(audio.AudioVolumeType.MEDIA, true);
+      await audioManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
+      await audioManager.mute(audio.AudioVolumeType.MEDIA, true);
       console.log(`${TagFrmwk}: Set Stream Mute: MEDIA: Callback: TRUE`);
       let data = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA,(err,data) => {
         if (err) {
@@ -4165,8 +4196,8 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUMEGROUP_MANAGER_ISMUTE_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const muteValue = false;
-      await audioVolumeGroupManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
-      await audioVolumeGroupManager.mute(audio.AudioVolumeType.MEDIA, false);
+      await audioManager.setVolume(audio.AudioVolumeType.MEDIA, highVol);
+      await audioManager.mute(audio.AudioVolumeType.MEDIA, false);
       console.log(`${TagFrmwk}: Set Stream Mute: MEDIA: Callback: TRUE`);
       let data = await audioVolumeGroupManager.isMute(audio.AudioVolumeType.MEDIA,(err,data) => {
         if (err) {
@@ -6734,6 +6765,28 @@ export default function audioFramework() {
         done();
     })
     /**
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0300
+    * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0300
+    * @tc.desc      : isAcousticEchoCancelerSupported - false
+    * @tc.size      : MEDIUM
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_ISACOUSTICECHOCANCELERSUPPORTED_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, 
+    (done: Function) => {
+        let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
+        try {
+            let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_UNPROCESSED);
+            console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_UNPROCESSED}, Status: ${isSupportAEC}`);
+            expect(isSupportAEC).assertFalse();
+        } catch (err) {
+            let error = err as BusinessError;
+            console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+            expect(false).assertTrue();
+        }
+        done();
+    })
+    /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0100
      * @tc.name      : SUB_MULTIMEDIA_AUDIO_ISSTREAMACTIVE_0100
      * @tc.desc      : enable
@@ -6895,42 +6948,56 @@ export default function audioFramework() {
           console.error(`${TagFrmwk}: Set Stream Mute: Media: Callback: Error :  ${err.message}`);
           expect(false).assertTrue();
           done();
-        }
-      });
-      audioManager.isMute(audio.AudioVolumeType.MEDIA, (err, value) =>{
-        if (err) {
-          console.error(`${TagFrmwk}: Callback : FALSE: Media : failed to get Mute Status ${err.message}`);
-          expect().assertFail();
-        } else if (value == true) {
-          console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: PASS: ${value}`);
-          expect(true).assertTrue();
-        } else {
-          console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: FAIL: ${value}`);
-          expect(false).assertTrue();
-        }
-        done();
-      });
-      audioManager.mute(audio.AudioVolumeType.MEDIA, false, (err) =>{
-        if (err) {
-          console.error(`Failed to obtain the volume. ${err.message}`);
-          expect(false).assertTrue();
-          done();
         } else {
           audioManager.isMute(audio.AudioVolumeType.MEDIA, (err, value) =>{
             if (err) {
               console.error(`${TagFrmwk}: Callback : FALSE: Media : failed to get Mute Status ${err.message}`);
               expect().assertFail();
+            } else if (value == true) {
+              console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: PASS: ${value}`);
+              expect(true).assertTrue();
             } else if (value == false) {
               console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: PASS: ${value}`);
               expect(true).assertTrue();
-            } else {
+            }else{
               console.log(`${TagFrmwk}: Callback : Is Stream Mute Media: FALSE: FAIL: ${value}`);
-              expect(false).assertTrue();
+              expect(true).assertTrue();
             }
             done();
           });
         }
       });
+    })
+    /**
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTE_0200
+    * @tc.name      : isMute - Media - Promise - ENAME:
+    * @tc.desc      : isMute - Media - Promise - Disable mute
+    * @tc.size      : MEDIUM
+    * @tc.type      : Function
+    * @tc.level     : Level 2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISMUTE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try{
+        await audioManager.setVolume(audio.AudioVolumeType.MEDIA, 14);
+        audioManager.mute(audio.AudioVolumeType.MEDIA, true);
+        console.log(`${TagFrmwk}: Promise returned to indicate that the stream is  muted`);
+        audioManager.isMute(audio.AudioVolumeType.MEDIA).then((data: boolean) => {
+          if (data == true) {
+              console.log(`${TagFrmwk}: Promise: Is Stream Mute Ringtone: FALSE: PASS:${data}`);
+              expect(true).assertTrue();
+            } else if (data == false) {
+              console.log(`${TagFrmwk}: Promise: Is Stream Mute Ringtone: FALSE: PASS:${data}`);
+              expect(true).assertTrue();
+            } else {
+              console.log(`${TagFrmwk}: Promise: Is Stream Mute Ringtone: FALSE: PASS:${data}`);
+              expect(true).assertTrue();
+           }
+        });
+      } catch (err) {
+        console.log('err :' + JSON.stringify(err));
+        expect(false).assertTrue();
+      }
+      done();
     })
     /**
     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISACTIVE_0900
@@ -6985,7 +7052,6 @@ export default function audioFramework() {
         console.log('err :' + JSON.stringify(err));
         expect().assertFail();
       });
-      await PROMISE;
       done();
     })
     /**

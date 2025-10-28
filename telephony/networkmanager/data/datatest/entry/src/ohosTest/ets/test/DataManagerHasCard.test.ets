@@ -119,14 +119,14 @@ export default function dataHasCardNoDataTest() {
       try {
         let hasSim: boolean = await sim.hasSimCard(0);
         if (hasSim) {
-          data.getCellularDataState((err: BusinessError, data: data.DataConnectState) => {
+          data.getCellularDataState((err: BusinessError, dat: data.DataConnectState) => {
             if (err) {
               console.info(`${caseName} err->${JSON.stringify(err)}`);
               ExpectTrue(false);
               done();
             } else {
-              console.info(`${caseName} data->${JSON.stringify(data)}`);
-              ExpectTrue(data !== null);
+              console.info(`${caseName} dat->${JSON.stringify(dat)}`);
+              ExpectTrue(dat == data.DataConnectState.DATA_STATE_DISCONNECTED);
               done();
             }
           });
@@ -196,9 +196,9 @@ export default function dataHasCardNoDataTest() {
       try {
         let hasSim: boolean = await sim.hasSimCard(0);
         if (hasSim) {
-          data.getCellularDataState().then((data: data.DataConnectState) => {
-            console.info(`${caseName} data->${JSON.stringify(data)}`);
-            ExpectTrue(true);
+          data.getCellularDataState().then((dat: data.DataConnectState) => {
+            console.info(`${caseName} dat->${JSON.stringify(dat)}`);
+            ExpectTrue(dat == data.DataConnectState.DATA_STATE_DISCONNECTED);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} err->${JSON.stringify(err)}`);
@@ -237,7 +237,7 @@ export default function dataHasCardNoDataTest() {
             done();
           } else {
             console.info(`${caseName} data->${JSON.stringify(data)}`);
-            ExpectTrue(true);
+            ExpectTrue(data == false);
             done();
           }
         });
@@ -265,13 +265,37 @@ export default function dataHasCardNoDataTest() {
       try {
         data.isCellularDataEnabled().then((data: boolean) => {
           console.info(`${caseName} data->${JSON.stringify(data)}`);
-          ExpectTrue(true);
+          ExpectTrue(data == false);
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} err->${JSON.stringify(err)}`);
           ExpectTrue(false);
           done();
         });
+      } catch (error) {
+        console.info(`${caseName} catchError->${JSON.stringify(error)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /* *
+     * @tc.number: SUB_Telephony_Data_IsCellularDataEnabledSync_0700
+     * @tc.name  : testTelephonyDataIsCellularDataEnabledSync0700
+     * @tc.desc  : Check whether the cellular data service is enabled.
+     * @tc.size  : MediumTest
+     * @tc.type  : Function
+     * @tc.level : level 3
+    */
+    it('testTelephonyDataIsCellularDataEnabledSync0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyDataIsCellularDataEnabledSync0700';
+      console.info(`${caseName} test start `);
+      try {
+        let isEnabled:boolean = data.isCellularDataEnabledSync();
+        console.info(`${caseName} isCellularDataEnabledSync success isEnabled is ${isEnabled}`);
+        ExpectTrue(isEnabled == false);
+        done();
       } catch (error) {
         console.info(`${caseName} catchError->${JSON.stringify(error)}`);
         ExpectTrue(false);

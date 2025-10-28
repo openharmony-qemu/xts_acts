@@ -31,11 +31,11 @@ import SwipeRecognizerTest from "./GestureRecognizer/SwipeRecognizer.test";
 import TapRecognizerTest from "./GestureRecognizer/TapRecognizer.test";
 
 export default function testsuite() {
+  FrameNodeTest();
   DragModifier();
   normalDrag();
   dragSpringLoading();
   enableInternalDropAnimation();
-  FrameNodeTest();
   isActive();
   ToolBarItemTest();
   SwipeRecognizerTest();

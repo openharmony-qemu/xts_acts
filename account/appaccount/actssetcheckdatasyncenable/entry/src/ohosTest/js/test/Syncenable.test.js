@@ -88,10 +88,14 @@ export default function ActsSetCheckDataSyncEnabled() {
             });
         });
 
-        /*
-        * @tc.number    : ActsSetCheckDataSyncEnabled_0200
-        * @tc.name      : Check sync flag promise form
-        * @tc.desc      : Get the synchronization flag of the account that has not set the synchronization flag
+        /**
+        * @tc.number    ActsSetCheckDataSyncEnabled_0200
+        * @tc.name      ActsSetCheckDataSyncEnabled_0200
+        * @tc.desc      Get the synchronization flag of the account that has not set the synchronization flag
+        *                   Check sync flag promise form
+        * @tc.level     Level2
+        * @tc.size      MediumTest
+        * @tc.type      Function
         */
         it('ActsSetCheckDataSyncEnabled_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsSetCheckDataSyncEnabled_0200 start====");
@@ -108,15 +112,14 @@ export default function ActsSetCheckDataSyncEnabled() {
             }
             console.info("====>checkDataSyncEnabled ActsSetCheckDataSyncEnabled_0200 start====");
             try{
-                var data = await appAccountManager.checkDataSyncEnabled("syncenable_promise_notset");
-            }
-            catch(err){
+                let data = await appAccountManager.checkDataSyncEnabled("syncenable_promise_notset");
+                console.info("====>checkDataSyncEnabled 0200 data:" + JSON.stringify(data));
+                expect(data).assertEqual(false);
+            } catch(err) {
                 console.error("====>checkDataSyncEnabled 0200 fail err:" + JSON.stringify(err));
                 expect().assertFail();
                 done();
             }
-            console.info("====>checkDataSyncEnabled 0200 data:" + JSON.stringify(data));
-            expect(data).assertEqual(false);
             console.info("====>delete account ActsSetCheckDataSyncEnabled_0200 start====");
             try{
                 await appAccountManager.removeAccount("syncenable_promise_notset");
@@ -177,10 +180,14 @@ export default function ActsSetCheckDataSyncEnabled() {
             });
         });
 
-        /*
-        * @tc.number    : ActsSetCheckDataSyncEnabled_0400
-        * @tc.name      : Check the set synchronization flag promise form
-        * @tc.desc      : Check the synchronization flag after setting the synchronization flag to true for the account
+        /**
+        * @tc.number    ActsSetCheckDataSyncEnabled_0400
+        * @tc.name      ActsSetCheckDataSyncEnabled_0400
+        * @tc.desc      Check the synchronization flag after setting the synchronization flag to true for the account
+        *               Check the set synchronization flag promise form
+        * @tc.level     Level2
+        * @tc.size      MediumTest
+        * @tc.type      Function
         */
         it('ActsSetCheckDataSyncEnabled_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsSetCheckDataSyncEnabled_0400 start====");
@@ -199,15 +206,14 @@ export default function ActsSetCheckDataSyncEnabled() {
             await appAccountManager.setDataSyncEnabled("syncenable_promise_settrue", true);
             console.info("====>checkDataSyncEnabled ActsSetCheckDataSyncEnabled_0400 start====");
             try{
-                var data = await appAccountManager.checkDataSyncEnabled("syncenable_promise_settrue");
-            }
-            catch(err){
+                let data = await appAccountManager.checkDataSyncEnabled("syncenable_promise_settrue");
+                console.info("====>checkDataSyncEnabled 0400 data:" + JSON.stringify(data));
+                expect(data).assertEqual(true);
+            } catch(err) {
                 console.error("====>checkDataSyncEnabled 0400 fail err:" + JSON.stringify(err));
                 expect().assertFail();
                 done();
             }
-            console.info("====>checkDataSyncEnabled 0400 data:" + JSON.stringify(data));
-            expect(data).assertEqual(true);
             console.info("====>delete account ActsSetCheckDataSyncEnabled_0400 start====");
             try{
                 await appAccountManager.removeAccount("syncenable_promise_settrue");

@@ -20,7 +20,7 @@ import events_emitter from '@ohos.events.emitter';
 export default function TextAreaCallbackTest() {
 
   const SUITE: string = 'TextAreaCallback'
-  const waitUiReadyMs: number = 500;
+  const waitUiReadyMs = 500;
 
   describe('TextAreaCallbackTest', () => {
 

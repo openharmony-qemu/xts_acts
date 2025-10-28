@@ -57,7 +57,7 @@ function testSetLocationPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_set_location_policy_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       locationManager.setLocationPolicy(SELFWANT, locationManager.LocationPolicy.DISALLOW_LOCATION_SERVICE);
       expect(false).assertTrue();
@@ -145,7 +145,7 @@ function testGetLocationPolicy() {
    * @tc.size      : MediumTest
    */
   it("test_get_location_policy_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       locationManager.getLocationPolicy(SELFWANT);
       expect(false).assertTrue();

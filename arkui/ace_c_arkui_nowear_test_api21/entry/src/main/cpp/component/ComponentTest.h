@@ -120,6 +120,6 @@ protected:
     ArkUI_NodeHandle _component { nullptr };
     ArkUI_NativeNodeAPI_1* _nodeAPI { nullptr };
 };
-} // namespace ArkUICapiTest
+} // namespace ArkUICApiDemo
 
 #endif // ARKUI_CAPI_DEMO_COMPONENT_H

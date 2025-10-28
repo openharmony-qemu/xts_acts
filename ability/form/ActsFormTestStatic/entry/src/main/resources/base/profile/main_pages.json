@@ -5,6 +5,7 @@
     "testform/pages/XtsFormLink",
     "testform/pages/XtsFormComponent",
     "testform/pages/XtsFormProvider",
-    "testform/pages/XtsFormInfo"
+    "testform/pages/XtsFormInfo",
+    "testform/pages/XtsFormHost"
   ]
 }
