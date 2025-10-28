@@ -15,7 +15,7 @@
 import account from '@ohos.account.appAccount'
 import { describe, beforeAll, beforeEach, it, expect, TestType, Hypium, Size, Level } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
-import { BusinessError } from '@ohos.base'
+import { BusinessError, RecordData } from '@ohos.base'
 import Utils from './Util.test';
 import Want from '@ohos.app.ability.Want';
 
@@ -208,7 +208,7 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
     it('ActsAccountOptionalParameter_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>Parameter_1400 start====");
-        let cData: Record<string, Object> =  {}
+        let cData: Record<string, RecordData> =  {}
         cData['sex'] = 'male'
         let options: account.CreateAccountImplicitlyOptions = {
           authType: "PIN", requiredLabels: ['male', '30-40']
@@ -387,7 +387,7 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
     it('ActsAccountOptionalParameter_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>Parameter_2600 start====");
-        let cData: Record<string, Object> =  {}
+        let cData: Record<string, RecordData> =  {}
         cData['sex'] = 'male'
         let options: account.CreateAccountImplicitlyOptions = {}
         options.parameters = cData;
@@ -476,7 +476,7 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
     it('ActsAccountOptionalParameter_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>Parameter_3200 start====");
-        let cData: Record<string, Object> =  {}
+        let cData: Record<string, RecordData> =  {}
         cData['sex'] = 'male'
         let options: account.CreateAccountImplicitlyOptions = {
           authType: "PIN"
@@ -523,7 +523,7 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
     it('ActsAccountOptionalParameter_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>Parameter_3500 start====");
-        let cData: Record<string, Object> =  {}
+        let cData: Record<string, RecordData> =  {}
         cData['sex'] = 'male'
         let options: account.CreateAccountImplicitlyOptions = {
           requiredLabels: ['male', '30-40']
@@ -693,7 +693,7 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
     it('ActsAccountOptionalParameter_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>Parameter_4300 start====");
-        let cData: Record<string, Object> =  {}
+        let cData: Record<string, RecordData> =  {}
         cData['sex'] = 'male'
         let options: account.VerifyCredentialOptions = {
           credentialType: "PIN", credential: "123456"
@@ -890,7 +890,7 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
     it('ActsAccountOptionalParameter_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>Parameter_5500 start====");
-        let cData: Record<string, Object> =  {}
+        let cData: Record<string, RecordData> =  {}
         cData['sex'] = 'male'
         let options: account.VerifyCredentialOptions = {}
         options.parameters = cData;
@@ -987,7 +987,7 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
     it('ActsAccountOptionalParameter_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>Parameter_6100 start====");
-        let cData: Record<string, Object> =  {}
+        let cData: Record<string, RecordData> =  {}
         cData['sex'] = 'male'
         let options: account.VerifyCredentialOptions = {
           credentialType: "PIN"
@@ -1038,7 +1038,7 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
     it('ActsAccountOptionalParameter_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>Parameter_6400 start====");
-        let cData: Record<string, Object> =  {}
+        let cData: Record<string, RecordData> =  {}
         cData['sex'] = 'male'
         let options: account.VerifyCredentialOptions = {
           credential: "123456"
@@ -1089,7 +1089,7 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
     it('ActsAccountOptionalParameter_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>Parameter_6700 start====");
-        let cData: Record<string, Object> =  {}
+        let cData: Record<string, RecordData> =  {}
         cData['sex'] = 'male'
         let options: account.VerifyCredentialOptions = {
           credentialType: "PIN", credential: "123456"
@@ -1185,8 +1185,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
     it('ActsAccountOptionalParameter_6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>Parameter_6900 start====");
-        let cData: Record<string, Object> =  {}
-        let dData: Record<string, Object> =  {}
+        let cData: Record<string, RecordData> =  {}
+        let dData: Record<string, RecordData> =  {}
         cData['prop1'] = 'value1'
         dData['sex'] = 'male'
         let options: account.SetPropertiesOptions = {}
@@ -1291,7 +1291,7 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
     it('ActsAccountOptionalParameter_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>Parameter_7500 start====");
-        let cData: Record<string, Object> =  {}
+        let cData: Record<string, RecordData> =  {}
         cData['prop1'] = 'value1'
         let options: account.SetPropertiesOptions = {}
         options.properties = cData;
@@ -1344,7 +1344,7 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
     it('ActsAccountOptionalParameter_7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>Parameter_7800 start====");
-        let dData: Record<string, Object> =  {}
+        let dData: Record<string, RecordData> =  {}
         dData['sex'] = 'male'
         let options: account.SetPropertiesOptions = {}
         options.parameters = dData;
