@@ -14,6 +14,8 @@ add_library(nativerender SHARED
     manager/PluginManagerTest.cpp
     NapiRenderInitTest.cpp
     image/ImageAltTest.cpp
+    hasAxisTest/HasAxisTest.cpp
+    list/CoastingAxisTest.cpp
 )
 
 add_library(nativefunc SHARED

@@ -15,6 +15,8 @@
 #include "common/common.h"
 #include "manager/PluginManagerTest.h"
 #include "image/ImageAltTest.h"
+#include "hasAxisTest/HasAxisTest.h"
+#include "list/CoastingAxisTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -27,9 +29,16 @@ static napi_value Init(napi_env env, napi_value exports)
     }
 
     napi_property_descriptor desc[] = {
-        {"getContext", nullptr, PluginManager::GetContext, nullptr, nullptr, nullptr, napi_default, nullptr},
-
-        {"imageAltTest", nullptr, ImageAltTest::imageAltTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getContext", nullptr, PluginManager::GetContext, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"imageAltTest", nullptr, ImageAltTest::imageAltTest, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"hasAxisTest", nullptr, HasAxisTest::CreateNativeNode, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"CoastingAxisTest_a", nullptr, CoastingAxisTest::CoastingAxisEventTest_a,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CoastingAxisTest_b", nullptr, CoastingAxisTest::CoastingAxisEventTest_b,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

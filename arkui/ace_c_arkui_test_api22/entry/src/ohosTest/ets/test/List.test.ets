@@ -13,7 +13,11 @@
  * limitations under the License.
  */
 import imageAltTest  from "./image/imageAltTest.test";
+import HasAxisTest from './hasAxisTest/HasAxisTest.test'
+import CoastingAxisTest from "./list/coastingAxisTest.test";
 
 export default function testsuite() {
+  CoastingAxisTest();
   imageAltTest()
+  HasAxisTest();
 }
