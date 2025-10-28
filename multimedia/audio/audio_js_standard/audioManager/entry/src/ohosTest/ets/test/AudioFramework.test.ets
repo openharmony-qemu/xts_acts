@@ -4267,7 +4267,140 @@ export default function audioFramework() {
       }
       done();
     })
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_GET_AUDIOSCENCE_0100
+     * @tc.name      : mute - AudioScene - AsyncCallback - AudioSceneRinging - 1 响铃模式, AudioScenePhoneCall - 2 电话模式。
+     * @tc.desc      : mute - AudioScene - AsyncCallback - AudioScene
+     * @tc.size      : MEDIUM
+     * @tc.type      : Function
+     * @tc.level     : Level 2
+     */
+     it('SUB_MULTIMEDIA_AUDIO_MANAGER_GET_AUDIOSCENCE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        try {
+          audioManager.getAudioScene(async (err, getValue) => {
+            if (err) {
+              console.error(`Failed to obtain the audio scene mode. ${err}`);
+              return;
+            }
+            if (getValue == audio.AudioScene.AUDIO_SCENE_RINGING) {
+              expect(getValue).assertEqual(1);
+              console.info(`${TagFrmwk} Callback invoked to indicate that the audio scene mode is obtained ${getValue}.`);
+            } else if (getValue == audio.AudioScene.AUDIO_SCENE_PHONE_CALL) {
+              expect(getValue).assertEqual(2);
+              console.info(`${TagFrmwk} Callback invoked to indicate that the audio scene mode is obtained ${getValue}.`);
+            } else if (getValue == audio.AudioScene.AUDIO_SCENE_DEFAULT) {
+              expect(getValue).assertEqual(0);
+              console.info(`${TagFrmwk} Callback invoked to indicate that the audio scene mode is obtained ${getValue}.`);
+            } else if (getValue == audio.AudioScene.AUDIO_SCENE_VOICE_CHAT) {
+              expect(getValue).assertEqual(3);
+              console.info(`${TagFrmwk} Callback invoked to indicate that the audio scene mode is obtained ${getValue}.`);
+            }
+            done();
+          });
+        } catch (e) {
+          console.error(`${TagFrmwk} SUB_MULTIMEDIA_AUDIO_MANAGER_GET_AUDIOSCENCE_0100 ERROR: ${e.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      })
 
+      /**
+       * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_GET_AUDIOSCENCE_0200
+       * @tc.name      : mute - AudioScene - Promise - AudioSceneRinging - 1 响铃模式, AudioScenePhoneCall - 2 电话模式。
+       * @tc.desc      : mute - AudioScene - Promise - AudioScene
+       * @tc.size      : MEDIUM
+       * @tc.type      : Function
+       * @tc.level     : Level 2
+       */
+      it('SUB_MULTIMEDIA_AUDIO_MANAGER_GET_AUDIOSCENCE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        try {
+          let value = await audioManager.getAudioScene();
+          if (value == audio.AudioScene.AUDIO_SCENE_RINGING) {
+            expect(value).assertEqual(1);
+            console.info(`${TagFrmwk} Promise invoked to indicate that the audio scene mode is obtained ${value}.`);
+          } else if (value == audio.AudioScene.AUDIO_SCENE_PHONE_CALL) {
+            expect(value).assertEqual(2);
+            console.info(`${TagFrmwk} Promise invoked to indicate that the audio scene mode is obtained ${value}.`);
+          } else if (value == audio.AudioScene.AUDIO_SCENE_DEFAULT) {
+            expect(value).assertEqual(0);
+            console.info(`${TagFrmwk} Promise invoked to indicate that the audio scene mode is obtained ${value}.`);
+          } else if (value == audio.AudioScene.AUDIO_SCENE_VOICE_CHAT) {
+            expect(value).assertEqual(3);
+            console.info(`${TagFrmwk} Promise invoked to indicate that the audio scene mode is obtained ${value}.`);
+          }
+          done();
+        } catch (e) {
+          console.error(`${TagFrmwk} SUB_MULTIMEDIA_AUDIO_MANAGER_GET_AUDIOSCENCE_0200 ERROR: ${e.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      })
+
+      /**
+       * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_GET_AUDIOSCENCE_0300
+       * @tc.name      : mute - AudioScene - AudioSceneRinging - 1 响铃模式, AudioScenePhoneCall - 2 电话模式。
+       * @tc.desc      : mute - AudioScene - getAudioSceneSync
+       * @tc.size      : MEDIUM
+       * @tc.type      : Function
+       * @tc.level     : Level 2
+       */
+      it('SUB_MULTIMEDIA_AUDIO_MANAGER_GET_AUDIOSCENCE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        try {
+          let value = audioManager.getAudioSceneSync();
+          if (value == audio.AudioScene.AUDIO_SCENE_RINGING) {
+            expect(value).assertEqual(1);
+            console.info(`${TagFrmwk} Promise invoked to indicate that the audio scene mode is obtained ${value}.`);
+          } else if (value == audio.AudioScene.AUDIO_SCENE_PHONE_CALL) {
+            expect(value).assertEqual(2);
+            console.info(`${TagFrmwk} Promise invoked to indicate that the audio scene mode is obtained ${value}.`);
+          } else if (value == audio.AudioScene.AUDIO_SCENE_DEFAULT) {
+            expect(value).assertEqual(0);
+            console.info(`${TagFrmwk} Promise invoked to indicate that the audio scene mode is obtained ${value}.`);
+          } else if (value == audio.AudioScene.AUDIO_SCENE_VOICE_CHAT) {
+            expect(value).assertEqual(3);
+            console.info(`${TagFrmwk} Promise invoked to indicate that the audio scene mode is obtained ${value}.`);
+          }
+          done();
+        } catch (e) {
+          console.error(`${TagFrmwk} SUB_MULTIMEDIA_AUDIO_MANAGER_GET_AUDIOSCENCE_0300 ERROR: ${e.message}`);
+          expect(false).assertTrue();
+          done();
+        }
+      })
+
+      /**
+       * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ON_AUDIOSCENECHANGE_0100
+       * @tc.name      : audioSceneChange
+       * @tc.desc      : on_audioscenechange
+       * @tc.size      : MEDIUM
+       * @tc.type      : Function
+       * @tc.level     : Level 2
+       */
+      it('SUB_MULTIMEDIA_AUDIO_MANAGER_ON_AUDIOSCENECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        try {
+          audioManager.on('audioSceneChange', (audioScene) => {
+            if (audioScene == audio.AudioScene.AUDIO_SCENE_DEFAULT) {
+              expect(audioScene).assertEqual(0);
+              console.info(`AudioSceneChange event: ${audioScene}`);
+            } else if (audioScene == audio.AudioScene.AUDIO_SCENE_RINGING) {
+              expect(audioScene).assertEqual(1);
+              console.info(`AudioSceneChange event: ${audioScene}`);
+            } else if (audioScene == audio.AudioScene.AUDIO_SCENE_PHONE_CALL) {
+              expect(audioScene).assertEqual(2);
+              console.info(`AudioSceneChange event: ${audioScene}`);
+            } else if(audioScene == audio.AudioScene.AUDIO_SCENE_VOICE_CHAT) {
+              expect(audioScene).assertEqual(3);
+              console.info(`AudioSceneChange event: ${audioScene}`);
+            }
+            done();
+          });
+          done();
+        } catch (err) {
+          console.log('audioSceneChange failed, err :' + err.message)
+          expect(false).assertTrue();
+          done();
+        }
+      })
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISACTIVE_0100
      * @tc.name      : isActive - Media - Promise
