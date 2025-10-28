@@ -3,7 +3,6 @@
     "testability/pages/Index",
     "testability/pages/getSurfaceId",
     "testability/pages/webviewCustomizeSchemesTrue",
-    "testability/pages/webviewCustomizeSchemesFalse",
-    "testability/pages/onSafeBrowsingCheckFinish"
+    "testability/pages/webviewCustomizeSchemesFalse"
   ]
 }

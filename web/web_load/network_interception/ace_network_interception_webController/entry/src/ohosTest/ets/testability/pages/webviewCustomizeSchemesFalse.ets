@@ -34,7 +34,7 @@ struct webviewCustomizeSchemesFalseTest {
     { schemeName: 'jump3', isSupportCORS: false, isSupportFetch: true },
     { schemeName: 'jump4', isSupportCORS: false, isSupportFetch: false }
   ]
-  heads: Header[] = new Array()
+  heads: Header[] = [];
   responseWeb: WebResourceResponse = new WebResourceResponse()
   webData: string = '<!DOCTYPE html>' +
     ' <html lang="en">' +

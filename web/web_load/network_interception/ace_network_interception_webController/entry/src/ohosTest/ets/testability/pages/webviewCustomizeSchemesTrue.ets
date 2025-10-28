@@ -63,7 +63,7 @@ struct webviewCustomizeSchemesTrueTest {
     isCspBypassing: false,
     isCodeCacheSupported: false,
   }
-  heads: Header[] = new Array()
+  heads: Header[] = [];
   responseWeb: WebResourceResponse = new WebResourceResponse()
   webData: string = '<!DOCTYPE html>' +
     ' <html lang="en">' +
