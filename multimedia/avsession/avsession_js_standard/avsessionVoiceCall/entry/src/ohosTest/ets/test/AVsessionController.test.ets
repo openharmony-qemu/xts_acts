@@ -210,7 +210,6 @@ export default function abilityTest() {
           await controller.isActive().then((isActive: boolean) => {
             if (isActive) {
                 expect(isActive).assertEqual('true');
-                console.error(`IsActive BusinessError: code: ${err.code}, message: ${err.message}`);
             } else {
                 expect(isActive).assertEqual('false');
                 console.info(`IsActive : SUCCESS : isactive : ${isActive}`);
