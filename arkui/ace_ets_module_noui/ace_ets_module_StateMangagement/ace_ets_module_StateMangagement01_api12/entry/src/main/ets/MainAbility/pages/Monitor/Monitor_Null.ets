@@ -15,8 +15,8 @@
 
 @Entry
 @ComponentV2
-struct Monitor_Null {
-  @Local class001: Moniton_Null_001 = new Moniton_Null_001();
+struct MonitorNull {
+  @Local class001: MonitonNull001 = new MonitonNull001();
   aboutToAppear(): void {
     this.class001.class002 = null;
   }
@@ -33,16 +33,16 @@ struct Monitor_Null {
 }
 
 @ObservedV2
-class Moniton_Null_001{
-  @Trace public class002:Moniton_Null_002 | null = new Moniton_Null_002();
+class MonitonNull001{
+  @Trace public class002:MonitonNull002 | null = new MonitonNull002();
 }
 
 @ObservedV2
-class Moniton_Null_002{
-  @Trace public  class003:Moniton_Null_003 = new Moniton_Null_003();
+class MonitonNull002{
+  @Trace public  class003:MonitonNull003 = new MonitonNull003();
 }
 
 @ObservedV2
-class Moniton_Null_003{
+class MonitonNull003{
   @Trace public  x: number = 0;
 }
