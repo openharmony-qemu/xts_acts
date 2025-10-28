@@ -2287,6 +2287,7 @@ export default function abilityTest() {
         subtitle: 'music_sub_name',
         description: 'music_description',
         pcmSrc: true,
+        mediaImage: 'Image',
         extras: {extras:'any'}
       };
       let queueItem_1: avSession.AVQueueItem = {
@@ -2299,6 +2300,7 @@ export default function abilityTest() {
         subtitle: 'music_sub_name',
         description: 'music_description',
         pcmSrc: true,
+        mediaImage: 'Image',
         extras: {extras:'any'}
       };
       let queueItem_2: avSession.AVQueueItem = {
@@ -3843,7 +3845,8 @@ export default function abilityTest() {
       const str = 'a'.repeat(40960)
       let metadata:avSession.AVMetadata = {
           assetId: '121278',
-          album:str.substring(0,40960)
+          album:str.substring(0,40960),
+          title: 'this is a title'
       };
       await session.setAVMetadata(metadata, (err:BusinessError) => {
           if (err) {
