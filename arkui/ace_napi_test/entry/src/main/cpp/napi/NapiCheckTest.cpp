@@ -12474,6 +12474,13 @@ static std::u16string RepeatString(const std::u16string& str, size_t n)
     return result;
 }
 
+static napi_value CreateBoolean(napi_env env, bool value)
+{
+    napi_value result = nullptr;
+    napi_get_boolean(env, value, &result);
+    return result;
+}
+
 static napi_value OpenCriticalScopeCheckArg(napi_env env, napi_callback_info info)
 {
     napi_critical_scope scope = nullptr;
@@ -12485,9 +12492,7 @@ static napi_value OpenCriticalScopeCheckArg(napi_env env, napi_callback_info inf
     status = napi_close_critical_scope(env, scope);
     ASSERT_EQ_RS(status, napi_invalid_arg, "OpenCriticalScopeCheckArg3");
     
-    napi_value result = nullptr;
-    napi_get_boolean(env, true, &result);
-    return result;
+    return CreateBoolean(env, true);
 }
 
 static napi_value CloseCriticalScopeDouble(napi_env env, napi_callback_info info)
@@ -12500,9 +12505,7 @@ static napi_value CloseCriticalScopeDouble(napi_env env, napi_callback_info info
     ASSERT_EQ_RS(status, napi_invalid_arg, "CloseCriticalScopeDouble");
     OH_LOG_INFO(LOG_APP, "CloseCriticalScopeDouble success");
     
-    napi_value result = nullptr;
-    napi_get_boolean(env, true, &result);
-    return result;
+    return CreateBoolean(env, true);
 }
 
 static napi_value CloseCriticalScopeCheckArg(napi_env env, napi_callback_info info)
@@ -12516,9 +12519,7 @@ static napi_value CloseCriticalScopeCheckArg(napi_env env, napi_callback_info in
     status = napi_close_critical_scope(env, scope);
     ASSERT_EQ_RS(status, napi_ok, "CloseCriticalScopeCheckArg");
     OH_LOG_INFO(LOG_APP, "CloseCriticalScopeCheckArg success");
-    napi_value result = nullptr;
-    napi_get_boolean(env, true, &result);
-    return result;
+    return CreateBoolean(env, true);
 }
 
 static napi_value StringCheckArg(napi_env env, napi_callback_info info)
@@ -12549,9 +12550,7 @@ static napi_value StringCheckArg(napi_env env, napi_callback_info info)
     OH_LOG_INFO(LOG_APP, "StringCheckArg success");
     
     napi_close_critical_scope(env, scope);
-    napi_value result = nullptr;
-    napi_get_boolean(env, true, &result);
-    return result;
+    return CreateBoolean(env, true);
 }
 
 static napi_value StringLineStringUTF8Test(napi_env env, napi_callback_info info)
@@ -12575,12 +12574,9 @@ static napi_value StringLineStringUTF8Test(napi_env env, napi_callback_info info
     
     if(length == sizeof(TEST_STR_UTF16) / sizeof(char16_t) - 1 && strEq == 0) {
         OH_LOG_INFO(LOG_APP, "StringLineStringTest success");
-        napi_value result = nullptr;
-        napi_get_boolean(env, false, &result);
-        return result;
+        return CreateBoolean(env, false);
     }
-    napi_get_boolean(env, true, &result);
-    return result;
+    return CreateBoolean(env, true);
 }
 
 static napi_value StringLineStringlatin1Test(napi_env env, napi_callback_info info)
@@ -12603,12 +12599,9 @@ static napi_value StringLineStringlatin1Test(napi_env env, napi_callback_info in
     
     if(length == sizeof(TEST_STR_UTF16) / sizeof(char16_t) - 1 && strEq == 0) {
         OH_LOG_INFO(LOG_APP, "StringLineStringTest success");
-        napi_value result = nullptr;
-        napi_get_boolean(env, false, &result);
-        return result;
+        return CreateBoolean(env, false);
     }
-    napi_get_boolean(env, true, &result);
-    return result;
+    return CreateBoolean(env, true);
 }
 
 static napi_value StringLineStringTest(napi_env env, napi_callback_info info)
@@ -12643,14 +12636,10 @@ static napi_value StringLineStringTest(napi_env env, napi_callback_info info)
     
     if(length == sizeof(TEST_STR_UTF16) / sizeof(char16_t) - 1 && strEq == 0) {
         OH_LOG_INFO(LOG_APP, "StringLineStringTest success");
-        napi_value result = nullptr;
-        napi_get_boolean(env, true, &result);
-        return result;
+        return CreateBoolean(env, true);
     }
     OH_LOG_ERROR(LOG_APP, "StringLineStringTest failed");
-    napi_value result = nullptr;
-    napi_get_boolean(env, false, &result);
-    return result;
+    return CreateBoolean(env, false);
 }
 
 static napi_value StringWithoutScopTest(napi_env env, napi_callback_info info)
@@ -12664,9 +12653,7 @@ static napi_value StringWithoutScopTest(napi_env env, napi_callback_info info)
     ASSERT_EQ_RS(status, napi_generic_failure, "StringWithoutScopTest");
     OH_LOG_INFO(LOG_APP, "StringWithoutScopTest success");
     
-    napi_value result = nullptr;
-    napi_get_boolean(env, true, &result);
-    return result;
+    return CreateBoolean(env, true);
 }
 
 static napi_value StringNotString(napi_env env, napi_callback_info info)
@@ -12686,9 +12673,7 @@ static napi_value StringNotString(napi_env env, napi_callback_info info)
     ASSERT_EQ_RS(status, napi_string_expected, "StringNotString");
     OH_LOG_INFO(LOG_APP, "StringNotString success");
     
-    napi_value result = nullptr;
-    napi_get_boolean(env, true, &result);
-    return result;
+    return CreateBoolean(env, true);
 }
 
 static napi_value StringNotLineString(napi_env env, napi_callback_info info)
@@ -12710,9 +12695,7 @@ static napi_value StringNotLineString(napi_env env, napi_callback_info info)
     ASSERT_EQ_RS(status, napi_invalid_arg, "StringNotLineString");
     OH_LOG_INFO(LOG_APP, "StringNotLineString success");
     
-    napi_value result = nullptr;
-    napi_get_boolean(env, true, &result);
-    return result;
+    return CreateBoolean(env, true);
 }
 
 static napi_value StringLineStringFromEts(napi_env env, napi_callback_info info)
@@ -12734,9 +12717,7 @@ static napi_value StringLineStringFromEts(napi_env env, napi_callback_info info)
     ASSERT_EQ_RS(status, napi_ok, "StringLineStringFromEts");
     OH_LOG_INFO(LOG_APP, "StringLineStringFromEts success");
     
-    napi_value result = nullptr;
-    napi_get_boolean(env, true, &result);
-    return result;
+    return CreateBoolean(env, true);
 }
 
 static napi_value StringArrayTest(napi_env env, napi_callback_info info)
@@ -12774,7 +12755,9 @@ static napi_value StringArrayTest(napi_env env, napi_callback_info info)
         
         // 为每个字符串元素打开关键区域
         status = napi_open_critical_scope(env, &scope);
-        if (status != napi_ok) continue;
+        if (status != napi_ok) {
+            continue;    
+        }
         
         status = napi_get_buffer_string_utf16_in_critical_scope(env, element, &buffer, &length);
         if (status == napi_ok) {
@@ -12792,9 +12775,7 @@ static napi_value StringArrayTest(napi_env env, napi_callback_info info)
     ASSERT_EQ_RS(resultCount, STRING_MATCH_RESULT, "StringArrayTest");
     OH_LOG_INFO(LOG_APP, "StringArrayTest success");
     
-    napi_value result = nullptr;
-    napi_get_boolean(env, true, &result);
-    return result;
+    return CreateBoolean(env, true);
 }
 
 // env中存在异常时
@@ -12822,17 +12803,13 @@ static napi_value StringLineStringInErrorEnvTest(napi_env env, napi_callback_inf
         OH_LOG_INFO(LOG_APP, "StringLineStringTest success");
         napi_value exception = nullptr;
         status = napi_get_and_clear_last_exception(env, &exception);
-        napi_value res;
-        napi_get_boolean(env, true, &res);
-        return res;
+        return CreateBoolean(env, true);
     }
     OH_LOG_ERROR(LOG_APP, "StringLineStringTest failed");
     
     napi_value exception = nullptr;
     status = napi_get_and_clear_last_exception(env, &exception);
-    napi_value res;
-    napi_get_boolean(env, false, &res);
-    return res;
+    return CreateBoolean(env, false);
 }
 
 // 多context中
@@ -12863,9 +12840,7 @@ static napi_value StringLineStringInContextEnvTest(napi_env env, napi_callback_i
         status = napi_get_and_clear_last_exception(newEnv, &exception);
         status = napi_switch_ark_context(env);
         status = napi_destroy_ark_context(newEnv);
-        napi_value res;
-        napi_get_boolean(env, true, &res);
-        return res;
+        return CreateBoolean(env, true);
     }
     OH_LOG_ERROR(LOG_APP, "StringLineStringInContextEnvTest failed");
     
@@ -12874,9 +12849,7 @@ static napi_value StringLineStringInContextEnvTest(napi_env env, napi_callback_i
     status = napi_switch_ark_context(env);
     status = napi_destroy_ark_context(newEnv);
     
-    napi_value res;
-    napi_get_boolean(env, false, &res);
-    return res;
+    return CreateBoolean(env, false);
 }
 
 // 子线程 runtime env new context
@@ -12920,9 +12893,7 @@ static napi_value StringLineStringInArkRuntimeTest(napi_env env, napi_callback_i
     pthread_create(&tid, nullptr, CreateArkRuntimeFunc, nullptr);
     pthread_join(tid, nullptr);
     
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 static napi_value CreateStrongRefCheckArg(napi_env env, napi_callback_info info)
@@ -12944,9 +12915,7 @@ static napi_value CreateStrongRefCheckArg(napi_env env, napi_callback_info info)
     OH_LOG_INFO(LOG_APP, "CreateStrongRefCheckArg success");
     napi_close_handle_scope(env, scope);
     
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 static napi_value CreateStrongRefSingle(napi_env env, napi_callback_info info)
@@ -12975,24 +12944,18 @@ static napi_value CreateStrongRefSingle(napi_env env, napi_callback_info info)
     if(result != napi_object) {
         OH_LOG_ERROR(LOG_APP, "CreateStrongRefSingle failed type=%{public}d", result);
         napi_delete_strong_reference(env, ref1);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     bool resultBool = false;
     napi_check_object_type_tag(env, value, &typeTags0, &resultBool);
     if(!resultBool) {
         OH_LOG_ERROR(LOG_APP, "CreateStrongRefSingle failed type=%{public}d", result);
         napi_delete_strong_reference(env, ref1);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     OH_LOG_INFO(LOG_APP, "CreateStrongRefSingle success");
     napi_delete_strong_reference(env, ref1);
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 static napi_value CreateStrongRef2Ref(napi_env env, napi_callback_info info)
@@ -13021,48 +12984,33 @@ static napi_value CreateStrongRef2Ref(napi_env env, napi_callback_info info)
     napi_get_strong_reference_value(env, ref1, &value);
     napi_typeof(env, value, &result);
     if(result != napi_object) {
-        OH_LOG_ERROR(LOG_APP, "CreateStrongRef2Ref failed type=%{public}d", result);
         napi_delete_strong_reference(env, ref1);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     bool resultBool = false;
     napi_check_object_type_tag(env, value, &typeTags0, &resultBool);
     if(!resultBool) {
-        OH_LOG_ERROR(LOG_APP, "CreateStrongRef2Ref failed type=%{public}d", result);
         napi_delete_strong_reference(env, ref1);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     
     result = napi_undefined;
     napi_get_strong_reference_value(env, ref2, &value2);
     napi_typeof(env, value2, &result);
     if(result != napi_object) {
-        OH_LOG_ERROR(LOG_APP, "CreateStrongRef2Ref failed type=%{public}d", result);
         napi_delete_strong_reference(env, ref2);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     resultBool = false;
     napi_check_object_type_tag(env, value2, &typeTags0, &resultBool);
     if(!resultBool) {
-        OH_LOG_ERROR(LOG_APP, "CreateStrongRef2Ref failed type=%{public}d", result);
         napi_delete_strong_reference(env, ref2);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     
-    OH_LOG_INFO(LOG_APP, "CreateStrongRef2Ref success");
     napi_delete_strong_reference(env, ref1);
     napi_delete_strong_reference(env, ref2);
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 static napi_value CreateStrongRef2Obj(napi_env env, napi_callback_info info)
@@ -13093,48 +13041,33 @@ static napi_value CreateStrongRef2Obj(napi_env env, napi_callback_info info)
     napi_get_strong_reference_value(env, ref1, &value);
     napi_typeof(env, value, &result);
     if(result != napi_object) {
-        OH_LOG_ERROR(LOG_APP, "CreateStrongRef2Obj failed type=%{public}d", result);
         napi_delete_strong_reference(env, ref1);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     bool resultBool = false;
     napi_check_object_type_tag(env, value, &typeTags0, &resultBool);
     if(!resultBool) {
-        OH_LOG_ERROR(LOG_APP, "CreateStrongRef2Obj failed type=%{public}d", result);
         napi_delete_strong_reference(env, ref1);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     
     result = napi_undefined;
     napi_get_strong_reference_value(env, ref2, &value);
     napi_typeof(env, value, &result);
     if(result != napi_object) {
-        OH_LOG_ERROR(LOG_APP, "CreateStrongRef2Obj failed type=%{public}d", result);
         napi_delete_strong_reference(env, ref2);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     resultBool = false;
     napi_check_object_type_tag(env, value, &typeTags1, &resultBool);
     if(!resultBool) {
-        OH_LOG_ERROR(LOG_APP, "CreateStrongRef2Obj failed type=%{public}d", result);
         napi_delete_strong_reference(env, ref2);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     
-    OH_LOG_INFO(LOG_APP, "CreateStrongRef2Obj success");
     napi_delete_strong_reference(env, ref1);
     napi_delete_strong_reference(env, ref2);
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 static napi_value GetStrongRefCheckArg(napi_env env, napi_callback_info info)
@@ -13158,9 +13091,7 @@ static napi_value GetStrongRefCheckArg(napi_env env, napi_callback_info info)
     
     napi_delete_strong_reference(env, ref1);
     OH_LOG_INFO(LOG_APP, "GetStrongRefCheckArg success");
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 static napi_value GetStrongRef(napi_env env, napi_callback_info info)
@@ -13183,9 +13114,7 @@ static napi_value GetStrongRef(napi_env env, napi_callback_info info)
     if(!equalBool) {
         OH_LOG_ERROR(LOG_APP, "GetStrongRef failed");
         napi_delete_strong_reference(env, ref1);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     
     napi_delete_strong_reference(env, ref1);
@@ -13195,14 +13124,10 @@ static napi_value GetStrongRef(napi_env env, napi_callback_info info)
     napi_typeof(env, value2, &result);
     if(result == napi_object) {
         OH_LOG_ERROR(LOG_APP, "GetStrongRef failed after delete strong reference");
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     OH_LOG_INFO(LOG_APP, "GetStrongRef success");
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 static napi_value DeleteStrongRefCheckArg(napi_env env, napi_callback_info info)
@@ -13224,9 +13149,7 @@ static napi_value DeleteStrongRefCheckArg(napi_env env, napi_callback_info info)
     ASSERT_EQ_RS(status, napi_ok, "DeleteStrongRefCheckArg");
     
     OH_LOG_INFO(LOG_APP, "DeleteStrongRefCheckArg success");
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 static napi_value DeleteStrongRef(napi_env env, napi_callback_info info)
@@ -13255,14 +13178,10 @@ static napi_value DeleteStrongRef(napi_env env, napi_callback_info info)
     napi_typeof(env, value, &result);
     if(result != napi_undefined) {
         OH_LOG_ERROR(LOG_APP, "DeleteStrongRef failed type=%{public}d", result);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     OH_LOG_INFO(LOG_APP, "DeleteStrongRef success");
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 static napi_value DeleteStrongRef2Ref(napi_env env, napi_callback_info info)
@@ -13293,15 +13212,11 @@ static napi_value DeleteStrongRef2Ref(napi_env env, napi_callback_info info)
     if(result != napi_object) {
         OH_LOG_ERROR(LOG_APP, "DeleteStrongRef2Ref failed type=%{public}d", result);
         napi_delete_strong_reference(env, ref2);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     napi_delete_strong_reference(env, ref2);
     OH_LOG_INFO(LOG_APP, "DeleteStrongRef2Ref success");
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 static napi_value DeleteStrongRefDouble(napi_env env, napi_callback_info info)
@@ -13332,14 +13247,10 @@ static napi_value DeleteStrongRefDouble(napi_env env, napi_callback_info info)
     napi_typeof(env, value, &result);
     if(result != napi_undefined) {
         OH_LOG_ERROR(LOG_APP, "DeleteStrongRef failed type=%{public}d", result);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     OH_LOG_INFO(LOG_APP, "DeleteStrongRef success");
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 static napi_value RepeateCreateDeleteStrongRef(napi_env env, napi_callback_info info)
@@ -13361,9 +13272,7 @@ static napi_value RepeateCreateDeleteStrongRef(napi_env env, napi_callback_info 
     if(!equalBool) {
         OH_LOG_ERROR(LOG_APP, "GetStrongRef failed");
         napi_delete_strong_reference(env, ref1);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     
     napi_delete_strong_reference(env, ref1);
@@ -13373,9 +13282,7 @@ static napi_value RepeateCreateDeleteStrongRef(napi_env env, napi_callback_info 
     napi_typeof(env, value2, &result);
     if(result == napi_object) {
         OH_LOG_ERROR(LOG_APP, "GetStrongRef failed after delete strong reference");
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     OH_LOG_INFO(LOG_APP, "GetStrongRef success");
 
@@ -13387,14 +13294,10 @@ static napi_value RepeateCreateDeleteStrongRef(napi_env env, napi_callback_info 
     if(!equalBool) {
         OH_LOG_ERROR(LOG_APP, "GetStrongRef failed");
         napi_delete_strong_reference(env, ref3);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 static napi_value DeleteUndefindAndCreateRef(napi_env env, napi_callback_info info)
@@ -13421,9 +13324,7 @@ static napi_value DeleteUndefindAndCreateRef(napi_env env, napi_callback_info in
     napi_valuetype result = napi_undefined;
     napi_typeof(env, value1, &result);
     if(result != napi_undefined) {
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     status = napi_create_strong_reference(env, value, &ref1);
     ASSERT_EQ_RS(status, napi_ok, "DeleteUndefindAndCreateRef");
@@ -13439,9 +13340,7 @@ static napi_value DeleteUndefindAndCreateRef(napi_env env, napi_callback_info in
     if(!equalBool) {
         OH_LOG_ERROR(LOG_APP, "GetStrongRef failed");
         napi_delete_strong_reference(env, ref1);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     
     status = napi_delete_strong_reference(env, ref1);
@@ -13449,9 +13348,7 @@ static napi_value DeleteUndefindAndCreateRef(napi_env env, napi_callback_info in
     status = napi_delete_strong_reference(env, ref1);
     ASSERT_EQ_RS(status, napi_ok, "DeleteUndefindAndCreateRef");
     
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 static napi_value OptStrongRefInErrorEnvTest(napi_env env, napi_callback_info info)
@@ -13483,9 +13380,7 @@ static napi_value OptStrongRefInErrorEnvTest(napi_env env, napi_callback_info in
     if(result != napi_object) {
         OH_LOG_ERROR(LOG_APP, "CreateStrongRefSingle failed type=%{public}d", result);
         napi_delete_strong_reference(env, ref1);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
 
     napi_value exception = nullptr;
@@ -13496,16 +13391,12 @@ static napi_value OptStrongRefInErrorEnvTest(napi_env env, napi_callback_info in
     if(!resultBool) {
         OH_LOG_ERROR(LOG_APP, "CreateStrongRefSingle failed type=%{public}d", result);
         napi_delete_strong_reference(env, ref1);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     OH_LOG_INFO(LOG_APP, "CreateStrongRefSingle success");
     status = napi_delete_strong_reference(env, ref1);
 
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 static napi_value OptStrongRefInContextEnvTest(napi_env env, napi_callback_info info)
@@ -13533,9 +13424,7 @@ static napi_value OptStrongRefInContextEnvTest(napi_env env, napi_callback_info 
         napi_delete_strong_reference(newEnv, ref1);
         napi_switch_ark_context(env);
         napi_destroy_ark_context(newEnv);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     
     napi_delete_strong_reference(newEnv, ref1);
@@ -13547,17 +13436,13 @@ static napi_value OptStrongRefInContextEnvTest(napi_env env, napi_callback_info 
         OH_LOG_ERROR(LOG_APP, "GetStrongRef failed after delete strong reference");
         napi_switch_ark_context(env);
         napi_destroy_ark_context(newEnv);
-        napi_value res;
-        napi_get_boolean(env, false, &res);
-        return res;
+        return CreateBoolean(env, false);
     }
     OH_LOG_INFO(LOG_APP, "GetStrongRef success");
     napi_switch_ark_context(env);
     napi_destroy_ark_context(newEnv);
 
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 // 子线程 runtime env new context
@@ -13610,9 +13495,7 @@ static napi_value OptStrongRefInArkRuntimeTest(napi_env env, napi_callback_info 
     pthread_create(&tid, nullptr, CreateArkRuntimeFunc1, nullptr);
     pthread_join(tid, nullptr);
     
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 // 多次获取同一引用 + 完整的创建-获取-删除流程
@@ -13635,8 +13518,8 @@ static napi_value OptStrongRefStress(napi_env env, napi_callback_info info)
         ASSERT_EQ_RS(status, napi_ok, "Get strong ref value");
         
         bool isEqual;
-        napi_strict_equals(env, obj, retrieved_obj, &is_equal);
-        ASSERT_EQ_RS(is_equal, true, "Objects should be equal");
+        napi_strict_equals(env, obj, retrieved_obj, &isEqual);
+        ASSERT_EQ_RS(isEqual, true, "Objects should be equal");
         
         // 多次获取同一引用
         napi_value obj1, obj2, obj3;
@@ -13655,9 +13538,7 @@ static napi_value OptStrongRefStress(napi_env env, napi_callback_info info)
 
         napi_close_handle_scope(env, scope);
     }
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 // 同一对象的多个强引用
@@ -13704,9 +13585,7 @@ static napi_value SameObjMutilStrongRef(napi_env env, napi_callback_info info)
     napi_delete_strong_reference(env, ref2);
     napi_delete_strong_reference(env, ref3);
     
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 // 测试逐步释放多个引用时的对象生命周期
@@ -13752,9 +13631,7 @@ static napi_value GradualReferenceRelease(napi_env env, napi_callback_info info)
     status = napi_delete_strong_reference(env, ref3);
     status = napi_call_function(env, nullptr, gc_function, 0, nullptr, nullptr);
     
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 // 不同类型对象的强引用
@@ -13820,9 +13697,7 @@ static napi_value StrongRefVariousTypes(napi_env env, napi_callback_info info) {
     
     napi_close_handle_scope(env, scope);
     
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 // 测试删除引用后的各种操作
@@ -13849,9 +13724,7 @@ static napi_value PostDeleteBehavior(napi_env env, napi_callback_info info) {
     // 可能返回napi_ok或错误，取决于实现
     
     napi_close_handle_scope(env, scope);
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 // 测试强引用在不同作用域中的行为
@@ -13885,9 +13758,7 @@ static napi_value CrossScopeStrongRef(napi_env env, napi_callback_info info) {
         napi_delete_strong_reference(env, cross_scope_ref);
     }
     
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 // 测试管理大量强引用的性能
@@ -13935,9 +13806,7 @@ static napi_value ManyStrongReferences(napi_env env, napi_callback_info info) {
     }
     
     napi_close_handle_scope(env, scope);
-    napi_value res;
-    napi_get_boolean(env, true, &res);
-    return res;
+    return CreateBoolean(env, true);
 }
 
 EXTERN_C_START
