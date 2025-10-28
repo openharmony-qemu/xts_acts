@@ -22,6 +22,7 @@
     "MainAbility/pages/buttonType/minFontScale",
     "MainAbility/pages/buttonType/maxFontScale",
     "MainAbility/pages/promptAction/ToastExample",
-    "MainAbility/pages/promptAction/openToastTest"
+    "MainAbility/pages/promptAction/openToastTest",
+    "MainAbility/pages/promptAction/PromptActionToastErrorCode"
   ]
 }
