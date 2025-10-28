@@ -660,5 +660,28 @@ export default function UsbBaseTest() {
           done();
         }
       })
+
+    /**
+     * @tc.number   SUB_USB_HostManager_JS_FuncErrcode_1500
+     * @tc.name     testGetRawDescriptor002
+     * @tc.desc     Positive test: getRawDescriptor errcode 14400001
+     */
+    it('testGetRawDescriptor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(domain, tag, 'usb testGetRawDescriptor002 begin');
+        try{
+          let gPipe:UsbMgr.USBDevicePipe = {
+            "busNum":0,
+            "devAddress":0
+          };
+          let descriptor = UsbMgr.getRawDescriptor(gPipe);
+          hilog.info(domain, tag, 'usb case testGetRawDescriptor002 ret: ' + JSON.stringify(descriptor));
+        } catch(error:BusinessError){
+          const err = error as BusinessError;
+          console.info(domain, 'getRawDescriptor failed: ' + err);
+          expect(err.code).assertEqual(14400001);
+          done();
+        }
+      })
   })
 }
