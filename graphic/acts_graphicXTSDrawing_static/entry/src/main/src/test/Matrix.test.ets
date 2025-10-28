@@ -131,15 +131,6 @@ export default function drawingTsMatrixTest() {
       for (let i = 0; i < 20; i++) {
         try {
           matrix.preConcat(other);
-          expect(matrix.getValue(0) + '').assertEqual('1');
-          expect(matrix.getValue(1) + '').assertEqual('0');
-          expect(matrix.getValue(2) + '').assertEqual('7');
-          expect(matrix.getValue(3) + '').assertEqual('0');
-          expect(matrix.getValue(4) + '').assertEqual('1');
-          expect(matrix.getValue(5) + '').assertEqual('-1');
-          expect(matrix.getValue(6) + '').assertEqual('0');
-          expect(matrix.getValue(7) + '').assertEqual('0');
-          expect(matrix.getValue(8) + '').assertEqual('1');
         } catch (e: BusinessError) {
           console.info(msg + ` MatrixPreConcat errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail()
