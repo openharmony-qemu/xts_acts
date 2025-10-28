@@ -190,7 +190,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           expect(null).assertFail();
         } catch (error) {
           console.error(`[XTS] CheckCa_Func_0400 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CERT_SIGNATURE_FAILURE); // 老功能异常
+          expect(error.code).assertEqual(cert.CertResult.ERR_CERT_SIGNATURE_FAILURE); // 老功能异常，在线crl吊销，ocsp未吊销
         }
         done();
       });

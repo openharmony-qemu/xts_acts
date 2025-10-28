@@ -1300,10 +1300,9 @@ export default function certFrameworkCmsVerifyTestUnit() {
           try {
             config.contentDataFormat = undefined;
             await verify.verifySignedData(config);
-            expect(null).assertFail();
           } catch (error) {
             console.error(`[XTS] verifySignedData 2 “${error}“, error code: ${error.code}`);
-            expect(error.code).assertEqual(cert.CertResult.ERR_PARAMETER_CHECK_FAILED);
+            expect(null).assertFail();
           }
         } catch (error) {
           console.error(`[XTS] Cms_Verify_Func_3300 “${error}“, error code: ${error.code}`);
