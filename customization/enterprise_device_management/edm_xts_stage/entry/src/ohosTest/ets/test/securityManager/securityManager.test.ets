@@ -2443,8 +2443,9 @@ function testGetExternalSourceExtensionsPolicy() {
   it("test_get_external_source_extensions_policy_0400", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
-      expect(true).assertTrue();
+      securityManager.setExternalSourceExtensionsPolicy(SELFWANT, common.ManagedPolicy.DEFAULT);
+      let managedPolicy: common.ManagedPolicy = securityManager.getExternalSourceExtensionsPolicy(SELFWANT);
+      expect(managedPolicy == common.ManagedPolicy.DEFAULT).assertTrue();
     } catch (error) {
       console.info('test_get_external_source_extensions_policy_0400 error.code = ' + error.code);
       expect(error.code == 801).assertTrue();
