@@ -534,6 +534,40 @@ struct jsMessageExt {
               }
               break;
             }
+            case 'testJsMessageExtGetArrayReturnArrayLengthLarger0': {
+              try {
+                this.isPageEnd = -1;
+                this.controller.loadUrl('resource://rawfile/getJsMessageExt.html');
+                await waitForExist(() => this.isPageEnd, 'testJsMessageExtGetArrayReturnArrayLengthLarger0_isPageEnd', 0);
+                this.controller.runJavaScriptExt(
+                  'getArray()',
+                  (error, result) => {
+                    if (error) {
+                      let e: business_error.BusinessError = error as business_error.BusinessError;
+                      console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                      Utils.emitEvent(e.code, 25102211)
+                    }
+                    if (result) {
+                      try {
+                        let getArray = result.getArray();
+                        console.info(`[testJsMessageExtGetArrayReturnArrayLengthLarger0] get result length :` + getArray.length)
+                        Utils.emitEvent(getArray.length, 25102211)
+                      }
+                      catch (resError) {
+                        let e: business_error.BusinessError = resError as business_error.BusinessError;
+                        console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                        Utils.emitEvent(e.code, 25102211)
+                      }
+                    }
+                  });
+
+              } catch (error) {
+                let e: business_error.BusinessError = error as business_error.BusinessError;
+                console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                Utils.emitEvent(e.code, 25102211)
+              }
+              break;
+            }
           }
         })
       }
