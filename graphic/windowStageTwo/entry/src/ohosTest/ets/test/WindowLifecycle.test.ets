@@ -2396,33 +2396,42 @@ export default function WindowLifecycle() {
               expect(mainWindowInfo.windowId).assertEqual(windowId);
               expect(mainWindowInfo.displayId).assertEqual(0);
               expect(mainWindowInfo.showing).assertEqual(true);
-              expect(mainWindowInfo.label).assertEqual('label');
+              expect(mainWindowInfo.label).assertEqual('test label');
               break;
             }
           }
+          const callback = async (data: window.WindowStageLifecycleEventType) => {
+            console.info(`Succeeded in enabling the listener for window stage event changes. Data: ${JSON.stringify(data)}`);
+            if (data === window.WindowStageLifecycleEventType.HIDDEN) {
+              console.info(caseName+ ' current window stage event is HIDDEN');
+              let windowInfoArray2 = await window.getAllMainWindowInfo();
+              console.info(caseName + ' windowInfoArray2: ' + JSON.stringify(windowInfoArray2));
+              for (let i = 0; i < windowInfoArray2.length; i++) {
+                if (windowInfoArray2[i].windowId == windowId) {
+                  let mainWindowInfo2 = windowInfoArray2[i];
+                  console.info(caseName + ' mainWindowInfo2: ' + JSON.stringify(mainWindowInfo2));
+                  expect(mainWindowInfo2.showing).assertEqual(false);
+                  break;
+                }
+              }
+              windowStage.off('windowStageLifecycleEvent', callback);
+              await windowClass.restore();
+              context.setMissionLabel('label2');
+              let windowInfoArray3 = await window.getAllMainWindowInfo();
+              console.info(caseName + ' windowInfoArray3: ' + JSON.stringify(windowInfoArray3));
+              for (let i = 0; i < windowInfoArray3.length; i++) {
+                if (windowInfoArray3[i].windowId == windowId) {
+                  let mainWindowInfo3 = windowInfoArray3[i];
+                  console.info(caseName + ' mainWindowInfo3: ' + JSON.stringify(mainWindowInfo3));
+                  expect(mainWindowInfo3.label).assertEqual('label2');
+                  break;
+                }
+              }
+              done()
+            }
+          }
+          windowStage.on('windowStageLifecycleEvent', callback);
           await windowClass.minimize();
-          let windowInfoArray2 = await window.getAllMainWindowInfo();
-          console.info(caseName + ' windowInfoArray2: ' + JSON.stringify(windowInfoArray2));
-          for (let i = 0; i < windowInfoArray2.length; i++) {
-            if (windowInfoArray2[i].windowId == windowId) {
-              let mainWindowInfo2 = windowInfoArray2[i];
-              console.info(caseName + ' mainWindowInfo2: ' + JSON.stringify(mainWindowInfo2));
-              expect(mainWindowInfo2.showing).assertEqual(false);
-              break;
-            }
-          }
-          context.setMissionLabel('label2');
-          let windowInfoArray3 = await window.getAllMainWindowInfo();
-          console.info(caseName + ' windowInfoArray3: ' + JSON.stringify(windowInfoArray3));
-          for (let i = 0; i < windowInfoArray3.length; i++) {
-            if (windowInfoArray3[i].windowId == windowId) {
-              let mainWindowInfo3 = windowInfoArray3[i];
-              console.info(caseName + ' mainWindowInfo3: ' + JSON.stringify(mainWindowInfo3));
-              expect(mainWindowInfo3.label).assertEqual('label2');
-              break;
-            }
-          }
-          done()
         } catch (err) {
           console.error(caseName + ' failed. Cause: ' + JSON.stringify(err))
           expect().assertFail();

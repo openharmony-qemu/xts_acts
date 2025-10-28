@@ -524,7 +524,7 @@ export default function windowFocusTest() {
         }
       }
     });
- /**
+   /**
      * @tc.number    : SUB_BASIC_WMS_ISWINDOWHIGHLIGHTED_0500
      * @tc.name      : test_ISWINDOWHIGHLIGHTED_0500
      * @tc.desc      : test_ISWINDOWHIGHLIGHTED_0500

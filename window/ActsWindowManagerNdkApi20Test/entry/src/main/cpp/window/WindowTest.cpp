@@ -23,6 +23,7 @@ int32_t g_displayId = PARAM_NEGATIVE_1;
 int32_t g_result = 0;
 size_t g_snapshotListSize = 0;
 OH_PixelmapNative **g_snapshotPixelMapList = nullptr;
+bool g_callbackExecuted = false;
 
 napi_value GetWindowId(napi_env env, napi_callback_info info)
 {
@@ -711,15 +712,25 @@ napi_value Test_OH_WindowManager_GetAllMainWindowInfo_0200(napi_env env, napi_ca
         return retValue;
     }
     // 断言 windowInfoArray.长度 >= 1
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+        "Test_OH_WindowManager_GetAllMainWindowInfo_0200 mainWindowInfoSize: %{public}d",
+        mainWindowInfoSize);
     if (mainWindowInfoSize < 1) {
         napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
         return retValue;
     }
     // 3、断言displayId ==0；windowId == 步骤1中的窗口id；showing == true;label == 'label'"
-    if (infoList->displayId != 0 || infoList->windowId != windowId ||
-        infoList->showing == false || infoList->label != "label") {
+    for (size_t i = 0; i < mainWindowInfoSize; i++) {
+        WindowManager_MainWindowInfo* currentWindow = &infoList[i];
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+            "Test_OH_WindowManager_GetAllMainWindowInfo_0200 infoList[%{public}d]: "
+            "%{public}d, %{public}d, %{public}d, %{public}s", i, currentWindow->displayId,
+            currentWindow->windowId, currentWindow->showing, currentWindow->label);
+        if (currentWindow->displayId != 0 || currentWindow->windowId != windowId ||
+            currentWindow->showing == false || currentWindow->label != "label") {
             napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
             return retValue;
+        }
     }
     napi_create_int32(env, 0, &retValue);
     return retValue;
@@ -729,8 +740,22 @@ void OnWindowSnapshotCallback(const OH_PixelmapNative** snapshotPixelMapList, si
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
         "OnWindowSnapshotCallback success. snapshotListSize: %{public}u", snapshotListSize);
-    g_snapshotPixelMapList = const_cast<OH_PixelmapNative**>(snapshotPixelMapList);
+    if (g_snapshotPixelMapList != nullptr) {
+        free(g_snapshotPixelMapList);
+    }
     g_snapshotListSize = snapshotListSize;
+    g_callbackExecuted = true;
+    
+    if (snapshotListSize > 0 && snapshotPixelMapList != nullptr) {
+        g_snapshotPixelMapList = (OH_PixelmapNative**)malloc(sizeof(OH_PixelmapNative*) * snapshotListSize);
+        if (g_snapshotPixelMapList != nullptr) {
+            for (size_t i = 0; i < snapshotListSize; i++) {
+                g_snapshotPixelMapList[i] = const_cast<OH_PixelmapNative*>(snapshotPixelMapList[i]);
+            }
+        }
+    } else {
+        g_snapshotPixelMapList = nullptr;
+    }
 }
 
 napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0200(napi_env env, napi_callback_info info)
@@ -832,20 +857,33 @@ napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0400(napi_env env, napi_c
    
 napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0500(napi_env env, napi_callback_info info)
 {
+    g_callbackExecuted = false;
+    g_snapshotPixelMapList = nullptr;
+    g_snapshotListSize = 0;
+    
     std::vector<int32_t> windowIdList;
     windowIdList.push_back(PARAM_1000);
     WindowManager_WindowSnapshotConfig config;
     config.useCache = false;
     int32_t result = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(),
         windowIdList.size(), config, OnWindowSnapshotCallback);
-    napi_value retValue;
+    
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
-                 "Test_OH_WindowManager_GetMainWindowSnapshot_0500: %{public}d", result);
-    if (g_snapshotPixelMapList == nullptr && g_snapshotListSize == 1) {
-        napi_create_int32(env, 0, &retValue);
-        return retValue;
+        "Test_OH_WindowManager_GetMainWindowSnapshot_0500: %{public}d", result);
+    
+    int timeout = 1000;
+    while (!g_callbackExecuted && timeout > 0) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        timeout--;
     }
-    napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+    
+    napi_value retValue;
+    if (g_callbackExecuted && g_snapshotListSize == 1 && g_snapshotPixelMapList != nullptr) {
+        napi_create_int32(env, 0, &retValue); // 成功
+    } else {
+        napi_create_int32(env, PARAM_NEGATIVE_1, &retValue); // 失败
+    }
+    
     return retValue;
 }
 
