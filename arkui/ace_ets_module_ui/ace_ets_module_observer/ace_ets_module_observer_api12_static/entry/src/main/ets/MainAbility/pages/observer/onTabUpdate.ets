@@ -29,11 +29,11 @@ struct callbackFuncTabsExample {
   @State index1: number = -1
 
   aboutToAppear(): void {
-    observer.on('tabContentUpdate', callbackFunc);
+    observer.onTabContentUpdate(callbackFunc);
   }
 
   aboutToDisappear(): void {
-    observer.off('tabContentUpdate', callbackFunc);
+    observer.offTabContentUpdate(callbackFunc);
   }
 
   build() {

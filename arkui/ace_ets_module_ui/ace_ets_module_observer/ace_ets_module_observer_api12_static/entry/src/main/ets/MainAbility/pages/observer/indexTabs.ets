@@ -30,7 +30,7 @@ struct observerIndexTabsExample {
           .id('observer_tabs_on')
           .height('5%')
           .onClick((e: ClickEvent)=>{
-            observer.on('tabContentUpdate', { id: 'tabsIdIndex' }, (info: observer.TabContentInfo) => {
+            observer.onTabContentUpdate({ id: 'tabsIdIndex' }, (info: observer.TabContentInfo) => {
               this.index1 = info.index
               console.info('on tabContentUpdate', JSON.stringify(info));
               console.info('on tabContentUpdate id', JSON.stringify(info.id));
@@ -45,7 +45,7 @@ struct observerIndexTabsExample {
           .id('observer_tabs_off')
           .height('5%')
           .onClick((e: ClickEvent)=>{
-            observer.off('tabContentUpdate', { id: 'tabsIdIndex' }, (info: observer.TabContentInfo) => {
+            observer.offTabContentUpdate({ id: 'tabsIdIndex' }, (info: observer.TabContentInfo) => {
               console.info('off tabContentUpdate with id', JSON.stringify(info));
             })
           })
