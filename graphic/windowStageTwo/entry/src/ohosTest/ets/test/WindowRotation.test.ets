@@ -1336,11 +1336,12 @@ export default function windowRotationTest() {
       let caseName = 'testTwoPagesWithoutSetPreferredOrientation';
       if(isSupportRotate){
         // let driver = Driver.create();
-        let displayOri = display.getDefaultDisplaySync().orientation;
-        console.log(caseName + ' displayOri : ' + displayOri);
+        
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility(caseName, context);
         try {
+          let displayOri = AppStorage.get('displayOri') as display.Orientation;
+          console.log(caseName + ' displayOri : ' + displayOri);
           let btn1 = await driver.findComponent(ON.id('page2'))
           console.log(caseName + ' btn1 : ' + btn1);
           await btn1.click()
@@ -1383,11 +1384,12 @@ export default function windowRotationTest() {
       let caseName = 'testSetPreferredOrientationLandscapeToPortrait_Inverted';
       if(isSupportRotate){
         // let driver = Driver.create();
-        let displayOri = display.getDefaultDisplaySync().orientation;
-        console.log(caseName + ' displayOri : ' + displayOri);
+        
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
+          let displayOri = AppStorage.get('displayOri') as display.Orientation;
+          console.log(caseName + ' displayOri : ' + displayOri);
           let btn1 = await driver.findComponent(ON.id('nonePage'))
           console.log(caseName + ' btn1 : ' + btn1);
           await btn1.click()
@@ -1450,11 +1452,11 @@ export default function windowRotationTest() {
       let caseName = 'testSetPreferredOrientationLandscape_InvertedToPortrait';
       if(isSupportRotate){
         // let driver = Driver.create();
-        let displayOri = display.getDefaultDisplaySync().orientation;
-        console.log(caseName + ' displayOri : ' + displayOri);
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
+          let displayOri = AppStorage.get('displayOri') as display.Orientation;
+          console.log(caseName + ' displayOri : ' + displayOri);
           let btn1 = await driver.findComponent(ON.id('nonePage'))
           console.log(caseName + ' btn1 : ' + btn1);
           await btn1.click()
@@ -1517,11 +1519,11 @@ export default function windowRotationTest() {
       let caseName = 'testSetPreferredOrientationUserPortraitToUserLandscape';
       if(isSupportRotate){
         // let driver = Driver.create();
-        let displayOri = display.getDefaultDisplaySync().orientation;
-        console.log(caseName + ' displayOri : ' + displayOri);
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
+          let displayOri = AppStorage.get('displayOri') as display.Orientation;
+          console.log(caseName + ' displayOri : ' + displayOri);
           let btn1 = await driver.findComponent(ON.id('nonePage'))
           console.log(caseName + ' btn1 : ' + btn1);
           await btn1.click()
@@ -1585,11 +1587,11 @@ export default function windowRotationTest() {
       let caseName = 'testSetPreferredOrientationUserPortraitInvertedToUserLandscapeInverted';
       if(isSupportRotate){
         // let driver = Driver.create();
-        let displayOri = display.getDefaultDisplaySync().orientation;
-        console.log(caseName + ' displayOri : ' + displayOri);
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
+          let displayOri = AppStorage.get('displayOri') as display.Orientation;
+          console.log(caseName + ' displayOri : ' + displayOri);
           let btn1 = await driver.findComponent(ON.id('nonePage'))
           console.log(caseName + ' btn1 : ' + btn1);
           await btn1.click()
@@ -1652,11 +1654,11 @@ export default function windowRotationTest() {
       let caseName = 'testSetPreferredOrientationFollowDeskTop';
       if(isSupportRotate){
         // let driver = Driver.create();
-        let displayOri = display.getDefaultDisplaySync().orientation;
-        console.log(caseName + ' displayOri : ' + displayOri);
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
+          let displayOri = AppStorage.get('displayOri') as display.Orientation;
+          console.log(caseName + ' displayOri : ' + displayOri);
           let btn1 = await driver.findComponent(ON.id('nonePage'))
           console.log(caseName + ' btn1 : ' + btn1);
           await btn1.click()
