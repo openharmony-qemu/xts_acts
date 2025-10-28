@@ -14,7 +14,7 @@
  */
 
 #include "napi/native_api.h"
-#include "filemanagement/cloud_disk_manager/oh_cloud_disk_manager.h"
+#include "filemanagement/clouddiskmanager/oh_cloud_disk_manager.h"
 #include <iostream>
 #include "native_common.h"
 #include "hilog/log.h"
@@ -27,19 +27,25 @@
 static napi_value RegisterSyncFolder(napi_env env, napi_callback_info info)
 {
     char* path = GetStringParam(env, info);
-    CloudDisk_PathInfo pathInfo = {
-        .value = path,
-        .length = strlen(path)
-    };
-    CloudDisk_SyncFolder syncFolder = {
-        .path = pathInfo,
-        .state = INACTIVE
-    };
+    CloudDisk_SyncFolder syncFolder;
+    CloudDisk_SyncFolderPath pathInfo;
+    char * pvalue = "/storage/Users/currentUser";
+    pathInfo.value = pvalue;
+    pathInfo.length = strlen(pathInfo.value);
+    syncFolder.path = pathInfo;
 
-    LOGW("OH_CLoudDisk_RegisterSyncFolder start.path: %{public}s", path);
-    auto ret = OH_CLoudDisk_RegisterSyncFolder(&syncFolder);
-    LOGW("OH_CLoudDisk_RegisterSyncFolder ret: %{public}d", ret);
-    return ret;
+    CloudDisk_DisplayNameInfo displayNameInfo;
+    char * newname = "Ntest";
+    displayNameInfo.customAlias = newname;
+    displayNameInfo.customAliasLength = strlen(displayNameInfo.customAlias);
+    syncFolder.displayNameInfo = displayNameInfo;
+
+    LOGW("OH_CloudDisk_RegisterSyncFolder start.path: %{public}s", path);
+    auto ret = OH_CloudDisk_RegisterSyncFolder(&syncFolder);
+    LOGW("OH_CloudDisk_RegisterSyncFolder ret: %{public}d", ret);
+    napi_value result_1 = nullptr;
+    napi_create_int32(env, ret, &result_1);
+    return result_1;
 }
 
 EXTERN_C_START
@@ -58,7 +64,7 @@ static napi_module demoModule = {
     .nm_flags = 0,
     .nm_filename = nullptr,
     .nm_register_func = Init,
-    .nm_modname = "clouddisk",
+    .nm_modname = "CloudDiskTest",
     .nm_priv = ((void*)0),
     .reserved = { 0 },
 };

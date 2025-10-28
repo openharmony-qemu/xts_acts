@@ -20,13 +20,13 @@
 #include <napi/native_api.h>
 #include "common/logger_common.h"
 
-char* GetStringParam(napi_env env, api_callback_info info, int32_t index = 0)
+char* GetStringParam(napi_env env, napi_callback_info info, int32_t index = 0)
 {
     size_t argc = index + 1;
     napi_value args[10] = { nullptr };
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     size_t length = 0;
-    n_status status = napi_get_value_string_utf8(env, args[index], nullptr, 0, &length);
+    napi_status status = napi_get_value_string_utf8(env, args[index], nullptr, 0, &length);
     if (status != napi_ok) {
         LOGE("napi_value_string_utf8 failed");
         return nullptr;
@@ -39,7 +39,7 @@ char* GetStringParam(napi_env env, api_callback_info info, int32_t index = 0)
             delete[] param;
         }
         LOGE("napi_get_value_string_utf8 failed");
-        return nullptr
+        return nullptr;
     }
     return param;
 }
