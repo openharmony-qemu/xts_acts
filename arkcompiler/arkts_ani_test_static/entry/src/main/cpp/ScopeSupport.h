@@ -609,4 +609,82 @@ ani_boolean test_Create_Escape_Local_Scope_35([[maybe_unused]] ani_env *env, [[m
     return ANI_TRUE;
 }
 
+ani_boolean test_Ensure_Enough_References_01([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    constexpr ani_size specifiedCapacity = 60;
+    // Ensures specifiedCapacity local references are available
+    ASSERT_EQ(env->EnsureEnoughReferences(specifiedCapacity), ANI_OK);
+    // Passing specifiedCapacity as capacity should succeed and return ANI_OK
+    ASSERT_EQ(env->CreateLocalScope(specifiedCapacity), ANI_OK);
+
+    ani_string string = nullptr;
+
+    // Create specifiedCapacity strings in the newly created local scope
+    for (ani_size i = 1; i <= specifiedCapacity; ++i) {
+        // Construct a unique stringName for each iteration
+        std::string stringName = "String_NewUTF8_" + std::to_string(i) + ";";
+
+        // Attempt to create a new UTF8 string and check the result
+        ASSERT_EQ(env->String_NewUTF8(stringName.c_str(), stringName.size(), &string), ANI_OK);
+        ASSERT_NE(string, nullptr);
+    }
+
+    // Destroy the local scope after string creation
+    ASSERT_EQ(env->DestroyLocalScope(), ANI_OK);
+    constexpr ani_size minCapacity = 1;
+    // Ensures minCapacity local references are available
+    ASSERT_EQ(env->EnsureEnoughReferences(minCapacity), ANI_OK);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Ensure_Enough_References_02([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    constexpr ani_size maxCapacity = 32000000;
+    // Passing 0 as capacity should return ANI_INVALID_ARGS
+    ASSERT_EQ(env->EnsureEnoughReferences(0), ANI_INVALID_ARGS);
+
+    ASSERT_EQ(env->EnsureEnoughReferences(maxCapacity), ANI_OUT_OF_MEMORY);
+    /*
+     * Attempt to create a local scope with very large capacity (maxCapacity).
+     * The comment below indicates that the free size of local reference storage is
+     * smaller than the requested capacity, thus should return ANI_OUT_OF_MEMORY.
+     */
+    // Free size of local reference storage is less than capacity: maxCapacity
+    // blocks_count_: 1 need_blocks: 533334 blocks_free: 524287
+    ASSERT_EQ(env->CreateLocalScope(maxCapacity), ANI_OUT_OF_MEMORY);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Ensure_Enough_References_03([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    constexpr ani_size capacity = 10;
+    ASSERT_EQ(env->EnsureEnoughReferences(capacity), ANI_OK);
+
+    for (ani_size i = 0; i <= capacity; i++) {
+        std::string stringName = "String_NewUTF8_" + std::to_string(i) + ";";
+
+        ani_ref objectRef {};
+        ASSERT_EQ(
+            env->String_NewUTF8(stringName.c_str(), stringName.size(), reinterpret_cast<ani_string *>(&objectRef)),
+            ANI_OK);
+    }
+    return ANI_TRUE;
+}
+
+ani_boolean test_Ensure_Enough_References_04([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    ASSERT_EQ(env->EnsureEnoughReferences(ani_size(std::numeric_limits<uint32_t>::max()) - 1), ANI_OUT_OF_MEMORY);
+    ASSERT_EQ(env->EnsureEnoughReferences(ani_size(std::numeric_limits<uint32_t>::max()) - 0), ANI_OUT_OF_MEMORY);
+    ASSERT_EQ(env->EnsureEnoughReferences(ani_size(std::numeric_limits<ani_size>::max()) - 1), ANI_OUT_OF_MEMORY);
+    ASSERT_EQ(env->EnsureEnoughReferences(ani_size(std::numeric_limits<ani_size>::max()) - 0), ANI_OUT_OF_MEMORY);
+    return ANI_TRUE;
+}
+
+ani_boolean test_Ensure_Enough_References_05([[maybe_unused]] ani_env *env, [[maybe_unused]] ani_object object)
+{
+    constexpr ani_size minCapacity = 1;
+    ASSERT_EQ(env->c_api->EnsureEnoughReferences(nullptr, minCapacity), ANI_INVALID_ARGS);
+    return ANI_TRUE;
+}
+
 #endif // ARKTS_ANI_TEST_SCOPESUPPORT_H

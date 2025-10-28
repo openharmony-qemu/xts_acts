@@ -18,6 +18,30 @@ class A {
     return new A();
   }
 
+  public booleanMethod(a0: int, a1: int): boolean {
+      if (a0 + a1 > 10) {
+          return true;
+      } else {
+          return false;
+      }
+  }
+
+  public booleanMethodVoidParam(): boolean
+  {
+      return true;
+  }
+
+  public booleanMethodMultipleParam(a0: byte, a1: float, a2:float, a3:byte): boolean
+  {
+      if (a0 > a3) {
+          return true;
+      } else if (a1 > a2) {
+          return false;
+      } else {
+          return false;
+      }
+  }
+
   public static new_A_array(): Array<A> {
     return [];
   }
@@ -117,4 +141,111 @@ class Test {
 
 function getNull(): null {
   return null
+}
+
+class Woman {
+    constructor(name: String, married: boolean) {
+        this.name = name;
+        this.married = married;
+    }
+    name: String;
+    married: boolean;
+}
+
+function newSarahObject() {
+    return new Woman("Sarah", true);
+}
+
+class Woman2 {
+    constructor(name: String, age: byte) {
+        this.name = name;
+        this.age = age;
+    }
+    name: String;
+    age: byte;
+}
+
+function newSarahObject2() {
+    const age_: byte = 24;
+    return new Woman2("Sarah", age_);
+}
+
+class Woman3 {
+    constructor(name: String, index: char) {
+        this.name = name;
+        this.index = index;
+    }
+    name: String;
+    index: char;
+}
+
+function newSarahObject3() {
+    return new Woman3("Sarah", c'a');
+}
+
+class Woman4 {
+    constructor(name: String, age: double) {
+        this.name = name;
+        this.age = age;
+    }
+    name: String;
+    age: double;
+}
+
+function newSarahObject4() {
+    return new Woman4("Sarah", 24.0);
+}
+
+class Woman5 {
+    constructor(name: String, age: float) {
+        this.name = name;
+        this.age = age;
+    }
+    name: String;
+    age: float;
+}
+
+function newSarahObject5() {
+    const age_: float = 24.0f;
+    return new Woman5("Sarah", age_);
+}
+
+class Woman6 {
+    constructor(name: String, age: int) {
+        this.name = name;
+        this.age = age;
+    }
+    name: String;
+    age: int;
+}
+
+function newSarahObject6() {
+    return new Woman6("Sarah", 24);
+}
+
+class Woman7 {
+    constructor(name: String, age: long) {
+        this.name = name;
+        this.age = age;
+    }
+    name: String;
+    age: long;
+}
+
+function newSarahObject7() {
+    return new Woman7("Sarah", 24);
+}
+
+class Woman8 {
+    constructor(name: String, age: short) {
+        this.name = name;
+        this.age = age;
+    }
+    name: String;
+    age: short;
+}
+
+function newSarahObject8() {
+    const age_: short = 24;
+    return new Woman8("Sarah", age_);
 }

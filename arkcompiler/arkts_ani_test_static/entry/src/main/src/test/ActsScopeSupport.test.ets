@@ -713,5 +713,101 @@ export default function ScopeSupportTest() {
         done();
         console.log('test_Create_Escape_Local_Scope_0035 end');
       })
+
+    /**
+     * @tc.number     SUB_ANI_ENSURE_ENOUGH_REFERENCES_0100
+     * @tc.name       test_Ensure_Enough_References_0001
+     * @tc.desc       ensure enough references
+     * @tc.size       Function
+     * @tc.type       Function test
+     * @tc.level      Level 0
+     */
+    it("test_Ensure_Enough_References_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Ensure_Enough_References_0001 start');
+        let cls = new Foo();
+        let result = cls.test_Ensure_Enough_References_01();
+        expect(result).assertTrue();
+        console.log('test_Ensure_Enough_References_0001 done');
+        done();
+        console.log('test_Ensure_Enough_References_0001 end');
+      })
+
+    /**
+     * @tc.number     SUB_ANI_ENSURE_ENOUGH_REFERENCES_0200
+     * @tc.name       test_Ensure_Enough_References_0002
+     * @tc.desc       ensure enough references invalid args
+     * @tc.size       Function
+     * @tc.type       Function test
+     * @tc.level      Level 0
+     */
+    it("test_Ensure_Enough_References_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Ensure_Enough_References_0002 start');
+        let cls = new Foo();
+        let result = cls.test_Ensure_Enough_References_02();
+        expect(result).assertTrue();
+        console.log('test_Ensure_Enough_References_0002 done');
+        done();
+        console.log('test_Ensure_Enough_References_0002 end');
+      })
+
+    /**
+     * @tc.number     SUB_ANI_ENSURE_ENOUGH_REFERENCES_0300
+     * @tc.name       test_Ensure_Enough_References_0003
+     * @tc.desc       ensure references
+     * @tc.size       Function
+     * @tc.type       Function test
+     * @tc.level      Level 0
+     */
+    it("test_Ensure_Enough_References_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Ensure_Enough_References_0003 start');
+        let cls = new Foo();
+        let result = cls.test_Ensure_Enough_References_03();
+        expect(result).assertTrue();
+        console.log('test_Ensure_Enough_References_0003 done');
+        done();
+        console.log('test_Ensure_Enough_References_0003 end');
+      })
+
+    /**
+     * @tc.number     SUB_ANI_ENSURE_ENOUGH_REFERENCES_0400
+     * @tc.name       test_Ensure_Enough_References_0004
+     * @tc.desc       test Huge NrRefs
+     * @tc.size       Function
+     * @tc.type       Function test
+     * @tc.level      Level 0
+     */
+    it("test_Ensure_Enough_References_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Ensure_Enough_References_0004 start');
+        let cls = new Foo();
+        let result = cls.test_Ensure_Enough_References_04();
+        expect(result).assertTrue();
+        console.log('test_Ensure_Enough_References_0004 done');
+        done();
+        console.log('test_Ensure_Enough_References_0004 end');
+      })
+
+    /**
+     * @tc.number     SUB_ANI_ENSURE_ENOUGH_REFERENCES_0500
+     * @tc.name       test_Ensure_Enough_References_0005
+     * @tc.desc       ensure enough references invalid env
+     * @tc.size       Function
+     * @tc.type       Function test
+     * @tc.level      Level 0
+     */
+    it("test_Ensure_Enough_References_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        console.log('test_Ensure_Enough_References_0005 start');
+        let cls = new Foo();
+        let result = cls.test_Ensure_Enough_References_05();
+        expect(result).assertTrue();
+        console.log('test_Ensure_Enough_References_0005 done');
+        done();
+        console.log('test_Ensure_Enough_References_0005 end');
+      })
+
   })
 }
