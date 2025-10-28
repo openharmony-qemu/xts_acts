@@ -16,10 +16,12 @@ import imageAltTest  from "./image/imageAltTest.test";
 import textMinLinesTest from './textMinLines/TextMinLinesTest.test'
 import HasAxisTest from './hasAxisTest/HasAxisTest.test'
 import CoastingAxisTest from "./list/coastingAxisTest.test";
+import snapSpeedTest from "./list/snapSpeedTest.test";
 
 export default function testsuite() {
   CoastingAxisTest();
-  imageAltTest()
+  imageAltTest();
+  snapSpeedTest();
   textMinLinesTest();
   HasAxisTest();
 }

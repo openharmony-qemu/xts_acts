@@ -1,6 +1,8 @@
 {
     "src": [
         "MainAbility/pages/index/index",
-        "MainAbility/pages/List/ContentOffset"
+        "MainAbility/pages/List/ContentOffset",
+        "MainAbility/pages/List/scrollSnapAnimationSpeedModifier",
+        "MainAbility/pages/List/scrollSnapAnimationSpeed"
     ]
 }
