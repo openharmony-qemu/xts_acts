@@ -2680,7 +2680,7 @@ export default function uitestDriverErrorTest() {
         expect(e.code == 17000005||e.code == 17000007).assertTrue();
       }
       try {
-        await driver.touchPadTwoFingersScroll({x: 100, y: 100,}, 1, 10. -1);
+        await driver.touchPadTwoFingersScroll({x: 100, y: 100,}, 1, 10, -1);
         expect().assertFail();
       }catch (e) {
         console.log(`${TestTag}, teTouchPadTwoFingersScroll_17000007 error speed = -1: ${JSON.stringify(e)}`);
