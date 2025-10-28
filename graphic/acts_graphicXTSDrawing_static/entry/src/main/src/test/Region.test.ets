@@ -173,7 +173,7 @@ export default function drawingTsRegionTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_STATIC_1000
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_STATIC_1900
      * @tc.name      : testRegionEmptyNormalStatic
      * @tc.desc      : testRegionEmptyNormalStatic
      * @tc.size      : MediumTest
@@ -192,7 +192,7 @@ export default function drawingTsRegionTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_STATIC_1001
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_REGION_STATIC_1901
      * @tc.name      : testRegionEmptyMultipleCallsStatic
      * @tc.desc      : testRegionEmptyMultipleCallsStatic
      * @tc.size      : MediumTest
