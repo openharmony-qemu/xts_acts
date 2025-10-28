@@ -402,8 +402,8 @@ export default function rectUtilsTest() {
      */
     it('testRectContainsNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testRectContainsNormalStatic';
-      let rect: common2D.Rect = { left: 0, right: 0, top: 100, bottom: 100 };
-      let other: common2D.Rect = { left: 10, right: 10, top: 20, bottom: 20 };
+      let rect: common2D.Rect = { left: 0, top: 0, right: 100, bottom: 100 };
+      let other: common2D.Rect = { left: 10, top: 10, right: 20, bottom: 20 };
       try {
         let isContains1 = drawing.RectUtils.contains(rect, other);
         expect(isContains1 + '').assertEqual('true');
@@ -425,8 +425,8 @@ export default function rectUtilsTest() {
      */
     it('testRectContainsMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectContainsMultipleCallsStatic';
-      let rect: common2D.Rect = { left: 0, right: 0, top: 100, bottom: 100 };
-      let other: common2D.Rect = { left: 10, right: 10, top: 20, bottom: 20 };
+      let rect: common2D.Rect = { left: 0, top: 0, right: 100, bottom: 100 };
+      let other: common2D.Rect = { left: 10, top: 10, right: 20, bottom: 20 };
       for (let i = 0; i < 20; i ++) {
         try {
           let isContains = drawing.RectUtils.contains(rect, other);
@@ -449,7 +449,7 @@ export default function rectUtilsTest() {
      */
     it('testRectInsetNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testRectInsetNormalStatic';
-      let rect: common2D.Rect = { left: 0, right: 0, top: 100, bottom: 100 };
+      let rect: common2D.Rect = { left: 0, top: 0, right: 100, bottom: 100 };
       let left = 10;
       let top = 20;
       let right = 30;
@@ -477,7 +477,7 @@ export default function rectUtilsTest() {
     it('testRectInsetMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectInsetMultipleCallsStatic';
       for (let i = 0; i < 20; i++) {
-        let rect: common2D.Rect = { left: 0, right: 0, top: 100, bottom: 100 };
+        let rect: common2D.Rect = { left: 0, top: 0, right: 100, bottom: 100 };
         let left = 10;
         let top = 20;
         let right = 30;
