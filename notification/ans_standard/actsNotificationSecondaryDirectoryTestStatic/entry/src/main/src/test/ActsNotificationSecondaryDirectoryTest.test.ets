@@ -302,7 +302,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             } else {
               console.info(`${TAG} publish AsyncCallback success`)
-              expect(true).assertTrue()
+              expect(err).assertEqual(null)
               done()
             }
           });
@@ -701,8 +701,8 @@ export default function ActsNotificationSecondaryDirectoryTest() {
             = ${flags.soundEnabled},${flags.vibrationEnabled}`);
         console.info(`${TAG} NotificationFlags soundEnabled:vibrationEnabled1
             = ${typeof flags.soundEnabled},${typeof flags.vibrationEnabled}`);
-        expect(typeof flags.soundEnabled == 'number').assertTrue()
-        expect(typeof flags.vibrationEnabled == 'number').assertTrue()
+        expect(typeof flags.soundEnabled).assertEqual('int')
+        expect(typeof flags.vibrationEnabled).assertEqual('int')
         let num1 = flags.soundEnabled as notificationManager.NotificationFlagStatus
         let num2 = flags.vibrationEnabled as notificationManager.NotificationFlagStatus
         expect(num1 == 1).assertTrue()

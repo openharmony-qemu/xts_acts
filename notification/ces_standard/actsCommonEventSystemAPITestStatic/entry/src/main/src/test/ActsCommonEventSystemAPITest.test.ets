@@ -500,6 +500,7 @@ export default function ActsCommonEventSystemAPITest() {
             expect(err?.code).assertEqual(1600001);
             done();
           } else {
+            console.error(Tag + "openNotificationSettings:1011 " + JSON.stringify(err));
             expect(err?.code).assertEqual(1011);
             done();
           }
