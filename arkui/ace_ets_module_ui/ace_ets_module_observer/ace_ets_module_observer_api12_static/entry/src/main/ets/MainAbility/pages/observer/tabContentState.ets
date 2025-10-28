@@ -34,11 +34,11 @@ struct TabsStateExample {
   @State text:string = '1'
 
   aboutToAppear(): void {
-    observer.on('tabContentUpdate', { id: 'tabsId' }, callbackFunc);
+    observer.onTabContentUpdate({ id: 'tabsId' }, callbackFunc);
   }
 
   aboutToDisappear(): void {
-    observer.off('tabContentUpdate', { id: 'tabsId' }, callbackFunc);
+    observer.offTabContentUpdate({ id: 'tabsId' }, callbackFunc);
   }
 
   build() {
