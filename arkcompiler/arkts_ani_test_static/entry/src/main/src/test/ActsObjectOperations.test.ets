@@ -30,119 +30,1145 @@ export default function objectOperationsTest() {
       console.log('loadFailed', e.message);
     }
 
-    /*
-      * @tc.number    : Object_InstanceOf_0100
-      * @tc.name      : Object_InstanceOf_0100
-      * @tc.desc      : MediumTest
-      * @tc.size      : Function
-      * @tc.type      : Function test
-      * @tc.level     : Level 0
-      */
-    it("Object_InstanceOf_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    /**
+     * @tc.number      SUB_ANI_OBJECT_INSTANCEOF_0100
+     * @tc.name        Object_InstanceOf_0001
+     * @tc.desc        MediumTest
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("Object_InstanceOf_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.log('Object_InstanceOf_0100 start');
+        console.log('Object_InstanceOf_0001 start');
         let cls = new Foo();
         let result = cls.test_Object_InstanceOf();
         expect(result).assertTrue();
-        console.log('Object_InstanceOf_0100 done');
+        console.log('Object_InstanceOf_0001 done');
         done();
-        console.log('Object_InstanceOf_0100 end');
+        console.log('Object_InstanceOf_0001 end');
       })
 
-    /*
-      * @tc.number    : Object_GetType_0100
-      * @tc.name      : Object_GetType_0100
-      * @tc.desc      : MediumTest
-      * @tc.size      : Function
-      * @tc.type      : Function test
-      * @tc.level     : Level 0
-      */
-    it("Object_GetType_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    /**
+     * @tc.number      SUB_ANI_OBJECT_GETTYPE_0100
+     * @tc.name        Object_GetType_0001
+     * @tc.desc        MediumTest
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("Object_GetType_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.log('Object_GetType_0100 start');
+        console.log('Object_GetType_0001 start');
         let cls = new Foo();
         let result = cls.test_Object_GetType();
         expect(result).assertTrue();
-        console.log('Object_GetType_0100 done');
+        console.log('Object_GetType_0001 done');
         done();
-        console.log('Object_GetType_0100 end');
+        console.log('Object_GetType_0001 end');
       })
 
-    /*
-      * @tc.number    : Object_New_0100
-      * @tc.name      : Object_New_0100
-      * @tc.desc      : MediumTest
-      * @tc.size      : Function
-      * @tc.type      : Function test
-      * @tc.level     : Level 0
-      */
-    it("Object_New_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BOOLEAN_A
+     * @tc.name        test_Object_Call_Method_Boolean_A
+     * @tc.desc        call method boolean
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Boolean_A", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-      console.log('Object_New_0100 start');
+      console.log('test_Object_Call_Method_Boolean_A start');
       let cls = new Foo();
-      let result = cls.test_Object_New();
+      let result = cls.test_Object_Call_Method_Boolean_A();
       expect(result).assertTrue();
-      console.log('Object_New_0100 done');
+      console.log('test_Object_Call_Method_Boolean_A done');
       done();
-      console.log('Object_New_0100 end');
+      console.log('test_Object_Call_Method_Boolean_A end');
     })
 
-    /*
-      * @tc.number    : Reference_IsNull_0100
-      * @tc.name      : Reference_IsNull_0100
-      * @tc.desc      : MediumTest
-      * @tc.size      : Function
-      * @tc.type      : Function test
-      * @tc.level     : Level 0
-      */
-    it("Reference_IsNull_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BOOLEAN_0100
+     * @tc.name        test_Object_Call_Method_Boolean_0001
+     * @tc.desc        object call method boolean_v
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Boolean_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.log('Reference_IsNull_0100 start');
-        let cls = new Foo();
-        let result = cls.test_Reference_IsNull();
-        expect(result).assertTrue();
-        console.log('Reference_IsNull_0100 done');
-        done();
-        console.log('Reference_IsNull_0100 end');
-      })
+      console.log('test_Object_Call_Method_Boolean_0001 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Boolean_01();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Boolean_0001 done');
+      done();
+      console.log('test_Object_Call_Method_Boolean_0001 end');
+    })
 
-    /*
-      * @tc.number    : Reference_IsUndefined_0100
-      * @tc.name      : Reference_IsUndefined_0100
-      * @tc.desc      : MediumTest
-      * @tc.size      : Function
-      * @tc.type      : Function test
-      * @tc.level     : Level 0
-      */
-    it("Reference_IsUndefined_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BOOLEAN_0200
+     * @tc.name        test_Object_Call_Method_Boolean_0002
+     * @tc.desc        object call method boolean
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Boolean_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.log('Reference_IsUndefined_0100 start');
-        let cls = new Foo();
-        let result = cls.test_Reference_IsUndefined();
-        expect(result).assertTrue();
-        console.log('Reference_IsUndefined_0100 done');
-        done();
-        console.log('Reference_IsUndefined_0100 end');
-      })
+      console.log('test_Object_Call_Method_Boolean_0002 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Boolean_02();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Boolean_0002 done');
+      done();
+      console.log('test_Object_Call_Method_Boolean_0002 end');
+    })
 
-    /*
-      * @tc.number    : Reference_IsNullishValue_0100
-      * @tc.name      : Reference_IsNullishValue_0100
-      * @tc.desc      : MediumTest
-      * @tc.size      : Function
-      * @tc.type      : Function test
-      * @tc.level     : Level 0
-      */
-    it("Reference_IsNullishValue_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BOOLEAN_0300
+     * @tc.name        test_Object_Call_Method_Boolean_0003
+     * @tc.desc        object call method boolean v invalid env
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Boolean_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        console.log('Reference_IsNullishValue_0100 start');
-        let cls = new Foo();
-        let result = cls.test_Reference_IsNullishValue();
-        expect(result).assertTrue();
-        console.log('Reference_IsNullishValue_0100 done');
-        done();
-        console.log('Reference_IsNullishValue_0100 end');
-      })
+      console.log('test_Object_Call_Method_Boolean_0003 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Boolean_03();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Boolean_0003 done');
+      done();
+      console.log('test_Object_Call_Method_Boolean_0003 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BOOLEAN_0400
+     * @tc.name        test_Object_Call_Method_Boolean_0002
+     * @tc.desc        call method boolean v invalid method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Boolean_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Boolean_0004 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Boolean_04();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Boolean_0004 done');
+      done();
+      console.log('test_Object_Call_Method_Boolean_0004 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BOOLEAN_0500
+     * @tc.name        test_Object_Call_Method_Boolean_0005
+     * @tc.desc        call method boolean v invalid result
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Boolean_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Boolean_0005 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Boolean_05();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Boolean_0005 done');
+      done();
+      console.log('test_Object_Call_Method_Boolean_0005 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BOOLEAN_0600
+     * @tc.name        test_Object_Call_Method_Boolean_0006
+     * @tc.desc        call method boolean v invalid object
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Boolean_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Boolean_0006 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Boolean_06();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Boolean_0006 done');
+      done();
+      console.log('test_Object_Call_Method_Boolean_0006 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BOOLEAN_0700
+     * @tc.name        test_Object_Call_Method_Boolean_0007
+     * @tc.desc        call method boolean a invalid args
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Boolean_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Boolean_0007 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Boolean_07();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Boolean_0007 done');
+      done();
+      console.log('test_Object_Call_Method_Boolean_0007 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BOOLEAN_0800
+     * @tc.name        test_Object_Call_Method_Boolean_0008
+     * @tc.desc        call void param method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Boolean_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Boolean_0008 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Boolean_08();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Boolean_0008 done');
+      done();
+      console.log('test_Object_Call_Method_Boolean_0008 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BOOLEAN_0900
+     * @tc.name        test_Object_Call_Method_Boolean_0009
+     * @tc.desc        call multiple param method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Boolean_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Boolean_0009 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Boolean_09();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Boolean_0009 done');
+      done();
+      console.log('test_Object_Call_Method_Boolean_0009 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BOOLEAN_1000
+     * @tc.name        test_Object_Call_Method_Boolean_0010
+     * @tc.desc        call parent class void param method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Boolean_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Boolean_0010 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Boolean_10();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Boolean_0010 done');
+      done();
+      console.log('test_Object_Call_Method_Boolean_0010 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BOOLEAN_1100
+     * @tc.name        test_Object_Call_Method_Boolean_0011
+     * @tc.desc        call parent class method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Boolean_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Boolean_0011 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Boolean_11();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Boolean_0011 done');
+      done();
+      console.log('test_Object_Call_Method_Boolean_0011 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BOOLEAN_1200
+     * @tc.name        test_Object_Call_Method_Boolean_0012
+     * @tc.desc        call sub class method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Boolean_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Boolean_0012 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Boolean_12();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Boolean_0012 done');
+      done();
+      console.log('test_Object_Call_Method_Boolean_0012 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BOOLEAN_1300
+     * @tc.name        test_Object_Call_Method_Boolean_0013
+     * @tc.desc        multiple call method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Boolean_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Boolean_0013 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Boolean_13();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Boolean_0013 done');
+      done();
+      console.log('test_Object_Call_Method_Boolean_0013 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BOOLEAN_1400
+     * @tc.name        test_Object_Call_Method_Boolean_0014
+     * @tc.desc        call nested method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Boolean_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Boolean_0014 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Boolean_14();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Boolean_0014 done');
+      done();
+      console.log('test_Object_Call_Method_Boolean_0014 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BOOLEAN_1500
+     * @tc.name        test_Object_Call_Method_Boolean_0015
+     * @tc.desc        call recursion method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Boolean_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Boolean_0015 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Boolean_15();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Boolean_0015 done');
+      done();
+      console.log('test_Object_Call_Method_Boolean_0015 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BYTE_0100
+     * @tc.name        test_Object_Call_Method_Byte_0001
+     * @tc.desc        object call method byte a
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Byte_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Byte_0001 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Byte_01();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Byte_0001 done');
+      done();
+      console.log('test_Object_Call_Method_Byte_0001 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BYTE_0200
+     * @tc.name        test_Object_Call_Method_Byte_0002
+     * @tc.desc        object call method byte v
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Byte_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Byte_0002 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Byte_02();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Byte_0002 done');
+      done();
+      console.log('test_Object_Call_Method_Byte_0002 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BYTE_0300
+     * @tc.name        test_Object_Call_Method_Byte_0003
+     * @tc.desc        object call method byte
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Byte_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Byte_0003 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Byte_03();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Byte_0003 done');
+      done();
+      console.log('test_Object_Call_Method_Byte_0003 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BYTE_0400
+     * @tc.name        test_Object_Call_Method_Byte_0004
+     * @tc.desc        call method byte v invalid env
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Byte_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Byte_0004 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Byte_04();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Byte_0004 done');
+      done();
+      console.log('test_Object_Call_Method_Byte_0004 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BYTE_0500
+     * @tc.name        test_Object_Call_Method_Byte_0005
+     * @tc.desc        call method byte v invalid method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Byte_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Byte_0005 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Byte_05();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Byte_0005 done');
+      done();
+      console.log('test_Object_Call_Method_Byte_0005 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BYTE_0600
+     * @tc.name        test_Object_Call_Method_Byte_0006
+     * @tc.desc        call method byte v invalid result
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Byte_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Byte_0006 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Byte_06();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Byte_0006 done');
+      done();
+      console.log('test_Object_Call_Method_Byte_0006 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BYTE_0700
+     * @tc.name        test_Object_Call_Method_Byte_0007
+     * @tc.desc        call method byte v invalid object
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Byte_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Byte_0007 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Byte_07();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Byte_0007 done');
+      done();
+      console.log('test_Object_Call_Method_Byte_0007 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BYTE_0800
+     * @tc.name        test_Object_Call_Method_Byte_0008
+     * @tc.desc        call method byte a invalid args
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Byte_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Byte_0008 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Byte_08();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Byte_0008 done');
+      done();
+      console.log('test_Object_Call_Method_Byte_0008 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BYTE_0900
+     * @tc.name        test_Object_Call_Method_Byte_0009
+     * @tc.desc        call void param method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Byte_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Byte_0009 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Byte_09();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Byte_0009 done');
+      done();
+      console.log('test_Object_Call_Method_Byte_0009 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BYTE_1000
+     * @tc.name        test_Object_Call_Method_Byte_0010
+     * @tc.desc        call multiple param method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Byte_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Byte_0010 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Byte_10();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Byte_0010 done');
+      done();
+      console.log('test_Object_Call_Method_Byte_0010 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BYTE_1100
+     * @tc.name        test_Object_Call_Method_Byte_0011
+     * @tc.desc        call parent class void param method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Byte_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Byte_0011 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Byte_11();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Byte_0011 done');
+      done();
+      console.log('test_Object_Call_Method_Byte_0011 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BYTE_1200
+     * @tc.name        test_Object_Call_Method_Byte_0012
+     * @tc.desc        call parent class method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Byte_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Byte_0012 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Byte_12();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Byte_0012 done');
+      done();
+      console.log('test_Object_Call_Method_Byte_0012 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BYTE_1300
+     * @tc.name        test_Object_Call_Method_Byte_0013
+     * @tc.desc        call sub class method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Byte_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Byte_0013 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Byte_13();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Byte_0013 done');
+      done();
+      console.log('test_Object_Call_Method_Byte_0013 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BYTE_1400
+     * @tc.name        test_Object_Call_Method_Byte_0014
+     * @tc.desc        multiple call method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Byte_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Byte_0014 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Byte_14();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Byte_0014 done');
+      done();
+      console.log('test_Object_Call_Method_Byte_0014 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BYTE_1500
+     * @tc.name        test_Object_Call_Method_Byte_0015
+     * @tc.desc        call nested method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Byte_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Byte_0015 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Byte_15();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Byte_0015 done');
+      done();
+      console.log('test_Object_Call_Method_Byte_0015 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_BYTE_1600
+     * @tc.name        test_Object_Call_Method_Byte_0016
+     * @tc.desc        call recursion method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Byte_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Byte_0016 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Byte_16();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Byte_0016 done');
+      done();
+      console.log('test_Object_Call_Method_Byte_0016 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_CHAR_0100
+     * @tc.name        test_Object_Call_Method_Char_0001
+     * @tc.desc        object call method char a
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Char_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Char_0001 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Char_01();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Char_0001 done');
+      done();
+      console.log('test_Object_Call_Method_Char_0001 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_CHAR_0200
+     * @tc.name        test_Object_Call_Method_Char_0002
+     * @tc.desc        call method char a invalid args
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Char_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Char_0002 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Char_02();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Char_0002 done');
+      done();
+      console.log('test_Object_Call_Method_Char_0002 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_CHAR_0300
+     * @tc.name        test_Object_Call_Method_Char_0003
+     * @tc.desc        object call method char v
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Char_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Char_0003 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Char_03();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Char_0003 done');
+      done();
+      console.log('test_Object_Call_Method_Char_0003 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_CHAR_0400
+     * @tc.name        test_Object_Call_Method_Char_0004
+     * @tc.desc        object call method char
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Char_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Char_0004 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Char_04();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Char_0004 done');
+      done();
+      console.log('test_Object_Call_Method_Char_0004 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_CHAR_0500
+     * @tc.name        test_Object_Call_Method_Char_0005
+     * @tc.desc        call method char v invalid env
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Char_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Char_0005 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Char_05();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Char_0005 done');
+      done();
+      console.log('test_Object_Call_Method_Char_0005 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_CHAR_0600
+     * @tc.name        test_Object_Call_Method_Char_0006
+     * @tc.desc        call method char v invalid object
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Char_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Char_0006 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Char_06();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Char_0006 done');
+      done();
+      console.log('test_Object_Call_Method_Char_0006 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_CHAR_0700
+     * @tc.name        test_Object_Call_Method_Char_0007
+     * @tc.desc        call method char v invalid method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Char_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Char_0007 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Char_07();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Char_0007 done');
+      done();
+      console.log('test_Object_Call_Method_Char_0007 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_CHAR_0800
+     * @tc.name        test_Object_Call_Method_Char_0008
+     * @tc.desc        call method char v invalid result
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Char_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Char_0008 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Char_08();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Char_0008 done');
+      done();
+      console.log('test_Object_Call_Method_Char_0008 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_CHAR_0900
+     * @tc.name        test_Object_Call_Method_Char_0009
+     * @tc.desc        call void param method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Char_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Char_0009 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Char_09();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Char_0009 done');
+      done();
+      console.log('test_Object_Call_Method_Char_0009 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_CHAR_1000
+     * @tc.name        test_Object_Call_Method_Char_0010
+     * @tc.desc        call multiple param method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Char_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Char_0010 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Char_10();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Char_0010 done');
+      done();
+      console.log('test_Object_Call_Method_Char_0010 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_CHAR_1100
+     * @tc.name        test_Object_Call_Method_Char_0011
+     * @tc.desc        call parent class void param method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Char_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Char_0011 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Char_11();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Char_0011 done');
+      done();
+      console.log('test_Object_Call_Method_Char_0011 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_CHAR_1200
+     * @tc.name        test_Object_Call_Method_Char_0012
+     * @tc.desc        call parent class method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Char_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Char_0012 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Char_12();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Char_0012 done');
+      done();
+      console.log('test_Object_Call_Method_Char_0012 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_CHAR_1300
+     * @tc.name        test_Object_Call_Method_Char_0013
+     * @tc.desc        call sub class method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Char_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Char_0013 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Char_13();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Char_0013 done');
+      done();
+      console.log('test_Object_Call_Method_Char_0013 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_CHAR_1400
+     * @tc.name        test_Object_Call_Method_Char_0014
+     * @tc.desc        multiple call method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Char_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Char_0014 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Char_14();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Char_0014 done');
+      done();
+      console.log('test_Object_Call_Method_Char_0014 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_CHAR_1500
+     * @tc.name        test_Object_Call_Method_Char_0015
+     * @tc.desc        call nested method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Char_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Char_0015 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Char_15();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Char_0015 done');
+      done();
+      console.log('test_Object_Call_Method_Char_0015 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_CHAR_1600
+     * @tc.name        test_Object_Call_Method_Char_0016
+     * @tc.desc        call recursion method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Char_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Char_0016 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Char_16();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Char_0016 done');
+      done();
+      console.log('test_Object_Call_Method_Char_0016 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_DOUBLE_0100
+     * @tc.name        test_Object_Call_Method_Double_0001
+     * @tc.desc        object call method double a
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Double_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Double_0001 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Double_01();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Double_0001 done');
+      done();
+      console.log('test_Object_Call_Method_Double_0001 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_DOUBLE_0200
+     * @tc.name        test_Object_Call_Method_Double_0002
+     * @tc.desc        call recursion method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Double_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Double_0002 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Double_02();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Double_0002 done');
+      done();
+      console.log('test_Object_Call_Method_Double_0002 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_DOUBLE_0300
+     * @tc.name        test_Object_Call_Method_Double_0003
+     * @tc.desc        object call method double v
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Double_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Double_0003 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Double_03();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Double_0003 done');
+      done();
+      console.log('test_Object_Call_Method_Double_0003 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_DOUBLE_0400
+     * @tc.name        test_Object_Call_Method_Double_0004
+     * @tc.desc        object call method double
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Double_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Double_0004 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Double_04();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Double_0004 done');
+      done();
+      console.log('test_Object_Call_Method_Double_0004 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_DOUBLE_0500
+     * @tc.name        test_Object_Call_Method_Double_0005
+     * @tc.desc        call method double v invalid method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Double_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Double_0005 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Double_05();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Double_0005 done');
+      done();
+      console.log('test_Object_Call_Method_Double_0005 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_DOUBLE_0600
+     * @tc.name        test_Object_Call_Method_Double_0006
+     * @tc.desc        call method double v invalid result
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Double_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Double_0006 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Double_06();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Double_0006 done');
+      done();
+      console.log('test_Object_Call_Method_Double_0006 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_DOUBLE_0700
+     * @tc.name        test_Object_Call_Method_Double_0007
+     * @tc.desc        call method double v invalid object
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Double_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Double_0007 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Double_07();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Double_0007 done');
+      done();
+      console.log('test_Object_Call_Method_Double_0007 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_DOUBLE_0800
+     * @tc.name        test_Object_Call_Method_Double_0008
+     * @tc.desc        call method double a invalid args
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Double_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Double_0008 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Double_08();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Double_0008 done');
+      done();
+      console.log('test_Object_Call_Method_Double_0008 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_DOUBLE_0900
+     * @tc.name        test_Object_Call_Method_Double_0009
+     * @tc.desc        call void param method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Double_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Double_0009 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Double_09();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Double_0009 done');
+      done();
+      console.log('test_Object_Call_Method_Double_0009 end');
+    })
+
+    /**
+     * @tc.number      SUB_ANI_OBJECT_CALL_METHOD_DOUBLE_1000
+     * @tc.name        test_Object_Call_Method_Double_0010
+     * @tc.desc        call multiple param method
+     * @tc.size        Function
+     * @tc.type        Function test
+     * @tc.level       Level 0
+     */
+    it("test_Object_Call_Method_Double_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      console.log('test_Object_Call_Method_Double_0010 start');
+      let cls = new Foo();
+      let result = cls.test_Object_Call_Method_Double_10();
+      expect(result).assertTrue();
+      console.log('test_Object_Call_Method_Double_0010 done');
+      done();
+      console.log('test_Object_Call_Method_Double_0010 end');
+    })
 
     /*
       * @tc.number    : Reference_Equals_0100
