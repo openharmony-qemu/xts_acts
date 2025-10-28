@@ -209,9 +209,9 @@ export default function abilityTest() {
         try{
           await controller.isActive().then((isActive: boolean) => {
             if (isActive) {
-                expect(isActive).assertEqual('true');
+                expect(isActive).assertEqual(true);
             } else {
-                expect(isActive).assertEqual('false');
+                expect(isActive).assertEqual(false);
                 console.info(`IsActive : SUCCESS : isactive : ${isActive}`);
             }
           }).catch((err: BusinessError) => {
@@ -237,10 +237,10 @@ export default function abilityTest() {
       try{
         await controller.isActive((err: BusinessError, isActive: boolean) => {
             if (err) {
-                expect(isActive).assertEqual('false');
+                expect(isActive).assertEqual(false);
                 console.error(`IsActive BusinessError: code: ${err.code}, message: ${err.message}`);
             } else {
-                expect(isActive).assertEqual('true');
+                expect(isActive).assertEqual(true);
                 console.info(`IsActive : SUCCESS : isactive : ${isActive}`);
             }
             });
@@ -266,10 +266,10 @@ export default function abilityTest() {
             let isActive: boolean = await controller.isActiveSync();
             if(isActive){
                 console.info(`isActiveSync : SUCCESS :  ${isActive}`);           
-                expect(isActive).assertEqual('true');            
+                expect(isActive).assertEqual(true);            
             }else{
                 console.info(`isActiveSync : SUCCESS :  ${isActive}`);
-                expect(isActive).assertEqual('false'); 
+                expect(isActive).assertEqual(false); 
             }
         } catch (err) {
             let error = err as BusinessError;
