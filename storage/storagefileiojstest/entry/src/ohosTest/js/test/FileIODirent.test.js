@@ -316,6 +316,37 @@ describe('fileIOTestDirent', function () {
   });
 
   /**
+   @tc.number SUB_STORAGE_FileIO_dirent_isFile_0200
+  * @tc.name fileio_test_dirent_is_file_002
+  * @tc.desc Test listFile() interfaces. Callback.
+  * Do not have prop filter.Filter files by quantity only.
+  * @tc.size MEDIUM
+  * @tc.type Function
+  * @tc.level Level 3
+  * @tc.require
+   */
+  it('fileio_test_dirent_is_file_002', Level.LEVEL1, async function () {
+    let dpath = await nextFileName('fileio_test_dirent_is_file_002') + 'd';
+    let fpath = dpath + '/f1';
+    try {
+      expect(fileio.mkdirSync(dpath) !== null);
+      expect(prepareFile(fpath, FILE_CONTENT)).assertTrue();
+      let dd = fileio.opendirSync(dpath);
+      expect(dd !== null).assertTrue();
+      let dirent = dd.readSync();
+      expect(dirent !== null).assertTrue();
+      expect(dirent.isFile() == false).assertTrue();
+      expect(dd.closeSync() !== null);
+      expect(fileio.unlinkSync(fpath) !== null);
+      expect(fileio.rmdirSync(dpath) !== null);
+    } 
+    catch (e) {
+      console.log('fileio_test_dirent_is_file_002 has failed for ' + e);
+      expect(null).assertFail();
+    }
+  });
+
+  /**
    * @tc.number SUB_STORAGE_FileIO_dirent_isSocket_0000
    * @tc.name fileio_test_dirent_is_socket_000
    * @tc.desc Function of API, isSocket. Determine whether it is a socket.

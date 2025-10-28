@@ -1823,5 +1823,70 @@ export default function fileIOListfile() {
       expect(false).assertTrue();
     }
   });
+
+  /**
+   * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3000
+   * @tc.name fileIO_test_listfile_async_030
+   * @tc.desc Test listFile() interface. Callback.
+   * Only path, do not filter file.
+   * @tc.size MEDIUM
+   * @tc.type Function
+   * @tc.level Level 0
+   * @tc.require
+   */
+  it('fileIO_test_listfile_async_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let dpath = await nextFileName('fileIO_test_listfile_async_030') ;
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.listFile(dpath, (err, dirents) => {
+        if (err) {
+          console.log('fileIO_test_listfile_async_030 err package ' + JSON.stringify(err));
+          expect(false).assertTrue();
+        }
+        console.log('fileIO_test_listfile_async_030 dirents： ' + dirents);
+        expect(dirents.length == 0).assertTrue();
+        fileIO.rmdirSync(dpath);
+      });
+    } catch (e) {
+      console.log('fileIO_test_listfile_async_030 has failed for ' + e.message + ', code:' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  /**
+  * @tc.number SUB_DF_FILEIO_LISTFILE_ASYNC_3100
+  * @tc.name fileIO_test_listfile_async_031
+  * @tc.desc Test listFile() interfaces. Callback.
+  * Do not have prop filter.Filter files by quantity only.
+  * @tc.size MEDIUM
+  * @tc.type Function
+  * @tc.level Level 3
+  * @tc.require
+  */
+  it('fileIO_test_listfile_async_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function () {
+    let dpath = await nextFileName('fileIO_test_listfile_async_031');
+    fileIO.mkdirSync(dpath);
+
+    try {
+      fileIO.listFile(dpath, {
+          listNum: 2,
+          recursion: false
+        }, (err, dirents) => {
+          if (err) {
+            console.log('fileIO_test_listfile_async_031 err package ' + JSON.stringify(err));
+            expect(false).assertTrue();
+          }
+          console.log('fileIO_test_listfile_async_031 dirents： ' + dirents);
+        expect(dirents.length == 0).assertTrue();
+          fileIO.rmdirSync(dpath);
+      });
+    } catch (e) {
+      console.log('fileIO_test_listfile_async_031 has failed for ' + e.message + ', code:' + e.code);
+      expect(false).assertTrue();
+    }
+  });
+
+  
 });
 }
