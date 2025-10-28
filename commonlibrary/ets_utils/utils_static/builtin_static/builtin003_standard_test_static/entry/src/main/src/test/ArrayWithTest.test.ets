@@ -1313,7 +1313,7 @@ export default function Array_With_Test_static() {
         const arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
         const index: int = 1;
         const result = with(arr, index, 1);
-        const expected: FixedArray<double> = [1.1, 1.1, 3.3, 4.4, 5.5];
+        const expected: FixedArray<double> = [1.1, 1.0, 3.3, 4.4, 5.5];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1340,7 +1340,7 @@ export default function Array_With_Test_static() {
         const arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
         const index: int = 4;
         const result = with(arr, index, 6);
-        const expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 6.6];
+        const expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 6.0];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1367,7 +1367,7 @@ export default function Array_With_Test_static() {
         const arr: FixedArray<double> = [-1.1, -2.2, -3.3, -4.4, -5.5];
         const index: int = 2;
         const result = with(arr, index, 3);
-        const expected: FixedArray<double> = [-1.1, -2.2, 3.3, -4.4, -5.5];
+        const expected: FixedArray<double> = [-1.1, -2.2, 3.0, -4.4, -5.5];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1394,7 +1394,7 @@ export default function Array_With_Test_static() {
         const arr: FixedArray<double> = [-1.1, -2.2, -3.3, -4.4, -5.5];
         const index: int = -4;
         const result = with(arr, index, 2);
-        const expected: FixedArray<double> = [-1.1, 2.2, -3.3, -4.4, -5.5];
+        const expected: FixedArray<double> = [-1.1, 2.0, -3.3, -4.4, -5.5];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1421,7 +1421,7 @@ export default function Array_With_Test_static() {
         const arr: FixedArray<double> = [10.1];
         const index: int = 0;
         const result = with(arr, index, 101);
-        const expected: FixedArray<double> = [101.1];
+        const expected: FixedArray<double> = [101.0];
         expect(result.length).assertEqual(1);
         expect(result[0]).assertEqual(expected[0]);
         console.info(`${caseName}, test end`);
@@ -1527,7 +1527,7 @@ export default function Array_With_Test_static() {
         const arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
         const index = 3;
         const result = with(arr, index, 1);
-        const expected: FixedArray<double> = [1.1, 2.2, 3.3, 1.1, 5.5];
+        const expected: FixedArray<double> = [1.1, 2.2, 3.3, 1.0, 5.5];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1554,7 +1554,7 @@ export default function Array_With_Test_static() {
         const arr: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 5.5];
         const index = 4;
         const result = with(arr, index, 1);
-        const expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 1.1];
+        const expected: FixedArray<double> = [1.1, 2.2, 3.3, 4.4, 1.0];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1608,7 +1608,7 @@ export default function Array_With_Test_static() {
         const arr: FixedArray<double> = [-1.1, -2.2, -3.3, -4.4, -5.5];
         const index = -2;
         const result = with(arr, index, 4);
-        const expected: FixedArray<double> = [-1.1, -2.2, -3.3, 4.4, -5.5];
+        const expected: FixedArray<double> = [-1.1, -2.2, -3.3, 4.0, -5.5];
         expect(result.length).assertEqual(5);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1635,7 +1635,7 @@ export default function Array_With_Test_static() {
         const arr: FixedArray<double> = [9.9];
         const index = 0;
         const result = with(arr, index, -9);
-        const expected: FixedArray<double> = [-9.9];
+        const expected: FixedArray<double> = [-9.0];
         expect(result.length).assertEqual(1);
         expect(result[0]).assertEqual(expected[0]);
         console.info(`${caseName}, test end`);
@@ -1741,7 +1741,7 @@ export default function Array_With_Test_static() {
         const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float];
         const index: int = 2;
         const result = with(arr, index, 5);
-        const expected: FixedArray<float> = [1.1 as float, 2.2 as float, 5.5 as float];
+        const expected: FixedArray<float> = [1.1 as float, 2.2 as float, 5.0 as float];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1766,7 +1766,7 @@ export default function Array_With_Test_static() {
         const arr: FixedArray<float> = [1.1 as float, 2.2 as float, 3.3 as float];
         const index: int = 0;
         const result = with(arr, index, 7);
-        const expected: FixedArray<float> = [7.7 as float, 2.2 as float, 3.3 as float];
+        const expected: FixedArray<float> = [7.0 as float, 2.2 as float, 3.3 as float];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1791,7 +1791,7 @@ export default function Array_With_Test_static() {
         const arr: FixedArray<float> = [-1.1 as float, -2.2 as float, -3.3 as float, 4.4 as float];
         const index: int = -4;
         const result = with(arr, index, 1);
-        const expected: FixedArray<float> = [1.1 as float, -2.2 as float, -3.3 as float, 4.4 as float];
+        const expected: FixedArray<float> = [1.0 as float, -2.2 as float, -3.3 as float, 4.4 as float];
         expect(result.length).assertEqual(4);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
@@ -1844,7 +1844,7 @@ export default function Array_With_Test_static() {
         const arr: FixedArray<float> = [99.9 as float];
         const index: int = 0;
         const result = with(arr, index, -99);
-        const expected: FixedArray<float> = [-99.9 as float];
+        const expected: FixedArray<float> = [-99.0 as float];
         expect(result.length).assertEqual(1);
         expect(result[0]).assertEqual(expected[0]);
         console.info(`${caseName}, test end`);
@@ -1867,7 +1867,7 @@ export default function Array_With_Test_static() {
         const arr: FixedArray<float> = [0.0 as float, 0.0 as float, 0.0 as float];
         const index: int = -2;
         const result = with(arr, index, -1);
-        const expected: FixedArray<float> = [0.0 as float, -1.1 as float, 0.0 as float];
+        const expected: FixedArray<float> = [0.0 as float, -1.0 as float, 0.0 as float];
         expect(result.length).assertEqual(3);
         expect(result[0]).assertEqual(expected[0]);
         expect(result[1]).assertEqual(expected[1]);
