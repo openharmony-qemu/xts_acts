@@ -318,7 +318,7 @@ export default function abilityTest() {
     * @tc.level     : Level 3
     */
 
-    it('SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try{
         await sleep(500);
         await controller.getValidCommands((err: BusinessError, validCommands: avSession.AVControlCommandType[]) => {
