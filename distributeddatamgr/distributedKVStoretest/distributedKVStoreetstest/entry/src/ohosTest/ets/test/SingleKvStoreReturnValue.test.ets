@@ -75,27 +75,30 @@ export default function SingleKvStoreReturnValue(){
       await kvManager!.getKVStore(TEST_STORE_ID, options).then((store: factory.SingleKVStore) => {
         kvStore = store;
         console.info(TAG + 'beforeEach getKVStore success');
+        done();
       }).catch((err: BusinessError) => {
         console.error(TAG + 'beforeEach getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
+        done();
       });
-      done();
+
     });
     afterEach(async (done:Function) =>  {
       console.info(TAG + 'afterEach');
-      kvStore = null;
-      await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
-        console.info(TAG + ' afterEach Succeeded closeKVStore');
+      await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(async () => {
+        console.info('afterEach closeKVStore success');
+        await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
+            console.info('afterEach deleteKVStore success');
+            kvStore = null;
+            done();
+        }).catch((err: BusinessError) => {
+            console.info('afterEach deleteKVStore err ' + err);
+            done();
+        });
       }).catch((err: BusinessError) => {
-        console.error(TAG + `afterEach Failed closeKVStore.code is ${err.code},message is ${err.message}`);
+          console.info('afterEach closeKVStore err ' + err);
+          done();
       });
 
-      await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
-        console.info(TAG + ' afterEach Succeeded deleteKVStore');
-        done();
-      }).catch((err: BusinessError) => {
-        console.error(TAG + `afterEach Failed deleteKVStore .code is ${err.code},message is ${err.message}`);
-        done();
-      });
 
     });
 
@@ -972,25 +975,26 @@ export default function SingleKvStoreReturnValue(){
 
         let kvStoreS1: factory.SingleKVStore = await kvManager!.getKVStore(TEST_STORE_S1_ID, optionsS1);
 
-        kvStoreS1!.getSecurityLevel((err: BusinessError, data: factory.SecurityLevel) => {
+        await kvStoreS1!.getSecurityLevel( async (err: BusinessError, data: factory.SecurityLevel) => {
           console.info(TAG + 'Succeeded getSecurityLevel, data.=' + JSON.stringify(data) + ',err=' + err);
           expect(data).assertEqual(factory.SecurityLevel.S1);
-        });
 
-        await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID).then(() => {
-          console.info(TAG + '  Succeeded closeKVStore S1');
-        }).catch((err: BusinessError) => {
-          console.error(TAG + ` Failed closeKVStore S1 .code is ${err.code},message is ${err.message}`);
-        });
+          await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID).then(async() => {
+            console.info(TAG + '  Succeeded closeKVStore S1');
+            await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID).then(() => {
+              console.info(TAG + '  Succeeded deleteKVStore S1');
+              console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0100 end--------- ');
+              done();
+            }).catch((err: BusinessError) => {
+              console.error(TAG + ` Failed deleteKVStore S1 .code is ${err.code},message is ${err.message}`);
+              done();
+            });
+          }).catch((err: BusinessError) => {
+            console.error(TAG + ` Failed closeKVStore S1 .code is ${err.code},message is ${err.message}`);
+            done();
+          });
 
-        await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID).then(() => {
-          console.info(TAG + '  Succeeded deleteKVStore S1');
-        }).catch((err: BusinessError) => {
-          console.error(TAG + ` Failed deleteKVStore S1 .code is ${err.code},message is ${err.message}`);
         });
-
-        console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0100 end--------- ');
-        done();
 
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1022,25 +1026,27 @@ export default function SingleKvStoreReturnValue(){
 
         let kvStoreS2: factory.SingleKVStore = await kvManager!.getKVStore(TEST_STORE_S2_ID, optionsS2);
 
-        kvStoreS2!.getSecurityLevel((err: BusinessError, data: factory.SecurityLevel) => {
+        await kvStoreS2!.getSecurityLevel(async(err: BusinessError, data: factory.SecurityLevel) => {
           console.info(TAG + 'Succeeded getSecurityLevel, data.=' + JSON.stringify(data) + ',err=' + err);
           expect(data).assertEqual(factory.SecurityLevel.S2);
-        });
 
-        await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S2_ID).then(() => {
-          console.info(TAG + '  Succeeded closeKVStore S2');
-        }).catch((err: BusinessError) => {
-          console.error(TAG + ` Failed closeKVStore S2 .code is ${err.code},message is ${err.message}`);
-        });
+          await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S2_ID).then(async() => {
+            console.info(TAG + '  Succeeded closeKVStore S2');
 
-        await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S2_ID).then(() => {
-          console.info(TAG + '  Succeeded deleteKVStore S2');
-        }).catch((err: BusinessError) => {
-          console.error(TAG + ` Failed deleteKVStore S2 .code is ${err.code},message is ${err.message}`);
-        });
+            await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S2_ID).then(() => {
+              console.info(TAG + '  Succeeded deleteKVStore S2');
+              console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0101 end--------- ');
+              done();
+            }).catch((err: BusinessError) => {
+              console.error(TAG + ` Failed deleteKVStore S2 .code is ${err.code},message is ${err.message}`);
+              done();
+            });
 
-        console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0101 end--------- ');
-        done();
+          }).catch((err: BusinessError) => {
+            console.error(TAG + ` Failed closeKVStore S2 .code is ${err.code},message is ${err.message}`);
+            done();
+          });
+        });
 
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1072,25 +1078,25 @@ export default function SingleKvStoreReturnValue(){
 
         let kvStoreS3: factory.SingleKVStore = await kvManager!.getKVStore(TEST_STORE_S3_ID, optionsS3);
 
-        kvStoreS3!.getSecurityLevel((err: BusinessError, data: factory.SecurityLevel) => {
+        await kvStoreS3!.getSecurityLevel(async(err: BusinessError, data: factory.SecurityLevel) => {
           console.info(TAG + 'Succeeded getSecurityLevel, data.=' + JSON.stringify(data) + ',err=' + err);
           expect(data).assertEqual(factory.SecurityLevel.S3);
-        });
 
-        await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S3_ID).then(() => {
-          console.info(TAG + '  Succeeded closeKVStore S3');
-        }).catch((err: BusinessError) => {
-          console.error(TAG + ` Failed closeKVStore S3 .code is ${err.code},message is ${err.message}`);
+          await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S3_ID).then(async() => {
+            console.info(TAG + '  Succeeded closeKVStore S3');
+            await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S3_ID).then(async() => {
+              console.info(TAG + '  Succeeded deleteKVStore S3');
+              console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0102 end--------- ');
+              done();
+            }).catch((err: BusinessError) => {
+              console.error(TAG + ` Failed deleteKVStore S3 .code is ${err.code},message is ${err.message}`);
+              done();
+            });
+          }).catch((err: BusinessError) => {
+            console.error(TAG + ` Failed closeKVStore S3 .code is ${err.code},message is ${err.message}`);
+            done();
+          });
         });
-
-        await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S3_ID).then(() => {
-          console.info(TAG + '  Succeeded deleteKVStore S3');
-        }).catch((err: BusinessError) => {
-          console.error(TAG + ` Failed deleteKVStore S3 .code is ${err.code},message is ${err.message}`);
-        });
-
-        console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0102 end--------- ');
-        done();
 
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1122,25 +1128,25 @@ export default function SingleKvStoreReturnValue(){
 
         let kvStoreS4: factory.SingleKVStore = await kvManager!.getKVStore(TEST_STORE_S4_ID, optionsS4);
 
-        kvStoreS4!.getSecurityLevel((err: BusinessError, data: factory.SecurityLevel) => {
+        await kvStoreS4!.getSecurityLevel(async(err: BusinessError, data: factory.SecurityLevel) => {
           console.info(TAG + 'Succeeded getSecurityLevel S4, data.=' + JSON.stringify(data) + ',err=' + err);
           expect(data).assertEqual(factory.SecurityLevel.S4);
-        });
 
-        await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
-          console.info(TAG + '  Succeeded closeKVStore S4');
-        }).catch((err: BusinessError) => {
-          console.error(TAG + ` Failed closeKVStore S4 .code is ${err.code},message is ${err.message}`);
+          await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(async() => {
+            console.info(TAG + '  Succeeded closeKVStore S4');
+            await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
+              console.info(TAG + '  Succeeded deleteKVStore S4');
+              console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0103 end--------- ');
+              done();
+            }).catch((err: BusinessError) => {
+              console.error(TAG + ` Failed deleteKVStore S4 .code is ${err.code},message is ${err.message}`);
+              done();
+            });
+          }).catch((err: BusinessError) => {
+            console.error(TAG + ` Failed closeKVStore S4 .code is ${err.code},message is ${err.message}`);
+            done();
+          });
         });
-
-        await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
-          console.info(TAG + '  Succeeded deleteKVStore S4');
-        }).catch((err: BusinessError) => {
-          console.error(TAG + ` Failed deleteKVStore S4 .code is ${err.code},message is ${err.message}`);
-        });
-
-        console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0103 end--------- ');
-        done();
 
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1173,27 +1179,28 @@ export default function SingleKvStoreReturnValue(){
 
         let kvStoreS1: factory.SingleKVStore = await kvManager!.getKVStore(TEST_STORE_S1_ID, optionsS1);
 
-        await kvStoreS1!.getSecurityLevel().then((data: factory.SecurityLevel) => {
+        await kvStoreS1!.getSecurityLevel().then(async(data: factory.SecurityLevel) => {
           console.info(TAG + 'Succeeded getSecurityLevel, data.=' + JSON.stringify(data) );
           expect(data).assertEqual(factory.SecurityLevel.S1);
+
+          await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID).then(async() => {
+            console.info(TAG + '  Succeeded closeKVStore S1');
+            await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID).then(() => {
+              console.info(TAG + '  Succeeded deleteKVStore S1');
+              console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0200 end--------- ');
+              done();
+            }).catch((err: BusinessError) => {
+              console.error(TAG + ` Failed deleteKVStore S1 .code is ${err.code},message is ${err.message}`);
+              done();
+            });
+          }).catch((err: BusinessError) => {
+            console.error(TAG + ` Failed closeKVStore S1 .code is ${err.code},message is ${err.message}`);
+            done();
+          });
         }).catch((err: BusinessError) => {
           console.error(`Failed to get SecurityLevel.code is ${err.code},message is ${err.message}`);
+          done();
         });
-
-        await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID).then(() => {
-          console.info(TAG + '  Succeeded closeKVStore S1');
-        }).catch((err: BusinessError) => {
-          console.error(TAG + ` Failed closeKVStore S1 .code is ${err.code},message is ${err.message}`);
-        });
-
-        await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S1_ID).then(() => {
-          console.info(TAG + '  Succeeded deleteKVStore S1');
-        }).catch((err: BusinessError) => {
-          console.error(TAG + ` Failed deleteKVStore S1 .code is ${err.code},message is ${err.message}`);
-        });
-
-        console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0200 end--------- ');
-        done();
 
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1225,27 +1232,28 @@ export default function SingleKvStoreReturnValue(){
 
         let kvStoreS2: factory.SingleKVStore = await kvManager!.getKVStore(TEST_STORE_S2_ID, optionsS2);
 
-        await kvStoreS2!.getSecurityLevel().then((data: factory.SecurityLevel) => {
+        await kvStoreS2!.getSecurityLevel().then(async(data: factory.SecurityLevel) => {
           console.info(TAG + 'Succeeded getSecurityLevel, data.=' + JSON.stringify(data) );
           expect(data).assertEqual(factory.SecurityLevel.S2);
+
+          await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S2_ID).then(async() => {
+            console.info(TAG + '  Succeeded closeKVStore S2');
+            await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S2_ID).then(() => {
+              console.info(TAG + '  Succeeded deleteKVStore S2');
+              console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0201 end--------- ');
+              done();
+            }).catch((err: BusinessError) => {
+              console.error(TAG + ` Failed deleteKVStore S2 .code is ${err.code},message is ${err.message}`);
+              done();
+            });
+          }).catch((err: BusinessError) => {
+            console.error(TAG + ` Failed closeKVStore S2 .code is ${err.code},message is ${err.message}`);
+            done();
+          });
         }).catch((err: BusinessError) => {
           console.error(`Failed to get SecurityLevel.code is ${err.code},message is ${err.message}`);
+          done();
         });
-
-        await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S2_ID).then(() => {
-          console.info(TAG + '  Succeeded closeKVStore S2');
-        }).catch((err: BusinessError) => {
-          console.error(TAG + ` Failed closeKVStore S2 .code is ${err.code},message is ${err.message}`);
-        });
-
-        await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S2_ID).then(() => {
-          console.info(TAG + '  Succeeded deleteKVStore S2');
-        }).catch((err: BusinessError) => {
-          console.error(TAG + ` Failed deleteKVStore S2 .code is ${err.code},message is ${err.message}`);
-        });
-
-        console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0201 end--------- ');
-        done();
 
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1277,27 +1285,28 @@ export default function SingleKvStoreReturnValue(){
 
         let kvStoreS3: factory.SingleKVStore = await kvManager!.getKVStore(TEST_STORE_S3_ID, optionsS3);
 
-        await kvStoreS3!.getSecurityLevel().then((data: factory.SecurityLevel) => {
+        await kvStoreS3!.getSecurityLevel().then(async(data: factory.SecurityLevel) => {
           console.info(TAG + 'Succeeded getSecurityLevel, data.=' + JSON.stringify(data) );
           expect(data).assertEqual(factory.SecurityLevel.S3);
+
+          await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S3_ID).then(async() => {
+            console.info(TAG + '  Succeeded closeKVStore S3');
+            await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S3_ID).then(() => {
+              console.info(TAG + '  Succeeded deleteKVStore S3');
+              console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0202 end--------- ');
+              done();
+            }).catch((err: BusinessError) => {
+              console.error(TAG + ` Failed deleteKVStore S3 .code is ${err.code},message is ${err.message}`);
+              done();
+            });
+          }).catch((err: BusinessError) => {
+            console.error(TAG + ` Failed closeKVStore S3 .code is ${err.code},message is ${err.message}`);
+            done();
+          });
         }).catch((err: BusinessError) => {
           console.error(`Failed to get SecurityLevel.code is ${err.code},message is ${err.message}`);
+          done();
         });
-
-        await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S3_ID).then(() => {
-          console.info(TAG + '  Succeeded closeKVStore S3');
-        }).catch((err: BusinessError) => {
-          console.error(TAG + ` Failed closeKVStore S3 .code is ${err.code},message is ${err.message}`);
-        });
-
-        await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S3_ID).then(() => {
-          console.info(TAG + '  Succeeded deleteKVStore S3');
-        }).catch((err: BusinessError) => {
-          console.error(TAG + ` Failed deleteKVStore S3 .code is ${err.code},message is ${err.message}`);
-        });
-
-        console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0202 end--------- ');
-        done();
 
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -1329,28 +1338,27 @@ export default function SingleKvStoreReturnValue(){
 
         let kvStoreS4: factory.SingleKVStore = await kvManager!.getKVStore(TEST_STORE_S4_ID, optionsS4);
 
-        await kvStoreS4!.getSecurityLevel().then((data: factory.SecurityLevel) => {
+        await kvStoreS4!.getSecurityLevel().then(async(data: factory.SecurityLevel) => {
           console.info(TAG + 'Succeeded getSecurityLevel S4, data.=' + JSON.stringify(data) );
           expect(data).assertEqual(factory.SecurityLevel.S4);
+          await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(async() => {
+            console.info(TAG + '  Succeeded closeKVStore S4');
+            await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
+              console.info(TAG + '  Succeeded deleteKVStore S4');
+              console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0203 end--------- ');
+              done();
+            }).catch((err: BusinessError) => {
+              console.error(TAG + ` Failed deleteKVStore S4 .code is ${err.code},message is ${err.message}`);
+              done();
+            });
+          }).catch((err: BusinessError) => {
+            console.error(TAG + ` Failed closeKVStore S4 .code is ${err.code},message is ${err.message}`);
+            done();
+          });
         }).catch((err: BusinessError) => {
           console.error(`Failed to get SecurityLevel.code is ${err.code},message is ${err.message}`);
+          done();
         });
-
-        await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
-          console.info(TAG + '  Succeeded closeKVStore S4');
-        }).catch((err: BusinessError) => {
-          console.error(TAG + ` Failed closeKVStore S4 .code is ${err.code},message is ${err.message}`);
-        });
-
-        await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_S4_ID).then(() => {
-          console.info(TAG + '  Succeeded deleteKVStore S4');
-        }).catch((err: BusinessError) => {
-          console.error(TAG + ` Failed deleteKVStore S4 .code is ${err.code},message is ${err.message}`);
-        });
-
-        console.info(TAG + ' --------- SUB_DDM_SKV_ReturnValue_SL_0203 end--------- ');
-        done();
-
       } catch (e) {
         console.error(TAG + ' catch e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();

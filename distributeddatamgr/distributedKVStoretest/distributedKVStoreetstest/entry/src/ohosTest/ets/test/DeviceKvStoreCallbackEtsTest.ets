@@ -102,11 +102,22 @@ export default function deviceKvStoreCallbackTest(){
         console.error('beforeAll can NOT getDeviceId, fail: ' + `, error code is ${error.code}, message is ${error.message}`);
         expect(null).assertFail();
       });
-      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore);
-      await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
-      kvStore = null;
-      console.info('beforeAll end');
-      done();
+
+      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(async () => {
+        console.info('beforeAll closeKVStore success');
+        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
+            console.info('beforeAll deleteKVStore success');
+            kvStore = null;
+            done();
+        }).catch((err) => {
+            console.info('beforeAll deleteKVStore err ' + err);
+            done();
+        });
+      }).catch((err) => {
+          console.info('beforeAll closeKVStore err ' + err);
+          done();
+      });
+
     })
 
     afterAll(async function (done) {
@@ -127,14 +138,21 @@ export default function deviceKvStoreCallbackTest(){
 
     afterEach(async function (done) {
       console.info('afterEach');
-      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, async function (err, data) {
-        console.info('afterEach closeKVStore success');
-        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, function (err, data) {
-          console.info('afterEach deleteKVStore success');
-          done();
+      try {
+        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, async function (err, data) {
+          console.info('afterEach closeKVStore success: function err is: '+err);
+          await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, function (err, data) {
+            console.info('afterEach deleteKVStore success: function err is: '+err);
+            kvStore = null;
+            done();
+          });
         });
-      });
-      kvStore = null;
+
+      } catch (e) {
+        console.error('afterEach closeKVStore err ' + `, error code is ${e.code}, message is ${e.message}`);
+        done();
+      }
+
     })
 
     /**
@@ -534,7 +552,6 @@ export default function deviceKvStoreCallbackTest(){
             expect((err == undefined) && (floatValue == data)).assertTrue();
             done();
           })
-          done();
         });
       }catch(e) {
         console.error('SUB_DDM_DKV_DEVICESTORE_PUTFLOAT_0200 e' + `, error code is ${e.code}, message is ${e.message}`);
@@ -563,7 +580,6 @@ export default function deviceKvStoreCallbackTest(){
             expect((err == undefined) && (floatValue == data)).assertTrue();
             done();
           })
-          done();
         });
       }catch(e) {
         console.error('SUB_DDM_DKV_DEVICESTORE_PUTFLOAT_0300 e' + `, error code is ${e.code}, message is ${e.message}`);
@@ -592,7 +608,6 @@ export default function deviceKvStoreCallbackTest(){
             expect((err == undefined) && (floatValue == data)).assertTrue();
             done();
           })
-          done();
         });
       }catch(e) {
         console.error('SUB_DDM_DKV_DEVICESTORE_PUTFLOAT_0400 e' + `, error code is ${e.code}, message is ${e.message}`);
@@ -2523,15 +2538,18 @@ export default function deviceKvStoreCallbackTest(){
             console.info('SUB_DDM_DKV_DEVICESTORE_GETENTRIES_0100 entrys[0]: ' + JSON.stringify(entrys[0]));
             expect(entrys.length == 10).assertTrue();
             expect(entrys[0].value.value.toString() == arr.toString()).assertTrue();
+
+            console.info('SUB_DDM_DKV_DEVICESTORE_GETENTRIES_0100 success');
             done();
           });
         });
-        console.info('SUB_DDM_DKV_DEVICESTORE_GETENTRIES_0100 success');
+        
       }catch(e) {
         console.error('SUB_DDM_DKV_DEVICESTORE_GETENTRIES_0100 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
+        done();
       }
-      done();
+
     })
 
     /**
@@ -2571,15 +2589,17 @@ export default function deviceKvStoreCallbackTest(){
             console.info('SUB_DDM_DKV_DEVICESTORE_GETENTRIES_0200 entrys[0]: ' + JSON.stringify(entrys[0]));
             expect(entrys.length == 10).assertTrue();
             expect(entrys[0].value.value.toString() == arr.toString()).assertTrue();
+
+            console.info('SUB_DDM_DKV_DEVICESTORE_GETENTRIES_0200 success');
             done();
           });
         });
-        console.info('SUB_DDM_DKV_DEVICESTORE_GETENTRIES_0200 success');
       }catch(e) {
         console.error('SUB_DDM_DKV_DEVICESTORE_GETENTRIES_0200 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
+        done();
       }
-      done();
+
     })
   })
 }

@@ -114,6 +114,7 @@ export default function schemaTest(){
       } catch (e) {
         console.info("fail on exception: " + e);
         expect(null).assertFail();
+        done();
       }
 
     })
@@ -132,18 +133,21 @@ export default function schemaTest(){
 
     afterEach(async function (done) {
       console.info('afterEach');
-      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore).then(async () => {
+      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(async () => {
         console.info('afterEach closeKVStore success');
         await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
           console.info('afterEach deleteKVStore success');
+          kvStore = null;
+          done();
         }).catch((err) => {
           console.info('afterEach deleteKVStore err ' + err);
+          done();
         });
       }).catch((err) => {
         console.info('afterEach closeKVStore err ' + err);
+        done();
       });
-      kvStore = null;
-      done();
+
     })
 
     /**
@@ -257,15 +261,18 @@ export default function schemaTest(){
         await kvStore.getEntries(query).then((entries) => {
           console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 get success : ' + JSON.stringify(entries));
           expect(entries.length == 2).assertTrue();
+          done();
         }).catch((err) => {
           console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 get fail ' + err);
           expect(null).assertFail();
+          done();
         });
       } catch (e) {
         console.info("SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0300 fail on exception: " + e);
         expect(null).assertFail();
+        done();
       }
-      done();
+      
     })
 
     /**
@@ -303,15 +310,18 @@ export default function schemaTest(){
         await kvStore.getEntries('test_key_').then((entries) => {
           console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 get success : ' + JSON.stringify(entries));
           expect(entries.length == 3).assertTrue();
+          done();
         }).catch((err) => {
           console.info('SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 get fail ' + err);
           expect(null).assertFail();
+          done();
         });
       } catch (e) {
         console.info("SUB_DDM_DKV_SCHEMA_TOJSONSTRING_0400 fail on exception: " + e);
         expect(null).assertFail();
+        done();
       }
-      done();
+      
     })
 
 

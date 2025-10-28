@@ -102,11 +102,22 @@ export default function deviceKvStoreCallbackStageTest(){
         console.info('beforeAll can NOT getDeviceId, fail: ' + error);
         expect(null).assertFail();
       });
-      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore);
-      await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
-      kvStore = null;
-      console.info('beforeAll end');
-      done();
+
+      try {
+        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore, async function (err, data) {
+            console.info('afterEach closeKVStore success. err=' + err);
+            await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, function (err, data) {
+                console.info('afterEach deleteKVStore success. err=' + err);
+                kvStore = null;
+                done();
+            });
+        });
+
+    } catch (e) {
+        console.error('afterEach closeKVStore err ' + `, error code is ${e.code}, message is ${e.message}`);
+        done();
+    }
+
     })
 
     afterAll(async function (done) {
@@ -127,14 +138,21 @@ export default function deviceKvStoreCallbackStageTest(){
 
     afterEach(async function (done) {
       console.info('afterEach');
-      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore, async function (err, data) {
-        console.info('afterEach closeKVStore success');
-        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, function (err, data) {
-          console.info('afterEach deleteKVStore success');
-          done();
+      try {
+        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, async function (err, data) {
+          console.info('afterEach closeKVStore success: function err is: '+err);
+          await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, function (err, data) {
+            console.info('afterEach deleteKVStore success: function err is: '+err);
+            kvStore = null;
+            done();
+          });
         });
-      });
-      kvStore = null;
+
+      } catch (e) {
+        console.error('afterEach closeKVStore err ' + `, error code is ${e.code}, message is ${e.message}`);
+        done();
+      }
+
     })
 
     /**
@@ -534,7 +552,6 @@ export default function deviceKvStoreCallbackStageTest(){
             expect((err == undefined) && (floatValue == data)).assertTrue();
             done();
           })
-          done();
         });
       }catch(e) {
         console.info('testDeviceKvStorePutFloat102 e' + e);
@@ -563,7 +580,6 @@ export default function deviceKvStoreCallbackStageTest(){
             expect((err == undefined) && (floatValue == data)).assertTrue();
             done();
           })
-          done();
         });
       }catch(e) {
         console.info('testDeviceKvStorePutFloat103 e' + e);
@@ -592,7 +608,6 @@ export default function deviceKvStoreCallbackStageTest(){
             expect((err == undefined) && (floatValue == data)).assertTrue();
             done();
           })
-          done();
         });
       }catch(e) {
         console.info('testDeviceKvStorePutFloat104 e' + e);
@@ -2475,12 +2490,11 @@ export default function deviceKvStoreCallbackStageTest(){
             done();
           });
         });
-        console.info('testDeviceKvStoreGetEntries101 success');
       }catch(e) {
         console.info('testDeviceKvStoreGetEntries101 e ' + e);
         expect(null).assertFail();
+        done();
       }
-      done();
     })
 
     /**
@@ -2523,13 +2537,12 @@ export default function deviceKvStoreCallbackStageTest(){
             done();
           });
         });
-        console.info('testDeviceKvStoreGetEntries101 success');
-        console.info('testDeviceKvStoreGetEntries102 success');
       }catch(e) {
         console.info('testDeviceKvStoreGetEntries102 e ' + e);
         expect(null).assertFail();
+        done();
       }
-      done();
+      
     })
   })
 }

@@ -98,14 +98,21 @@ export default function singleKvStoreCallbackStageTest(){
 
     afterEach(async function (done) {
       console.info('afterEach');
-      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore, async function (err, data) {
-        console.info('afterEach closeKVStore success');
-        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, function (err, data) {
-          console.info('afterEach deleteKVStore success');
-          done();
+      try {
+        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, async function (err, data) {
+          console.info('afterEach closeKVStore success: function err is: '+err);
+          await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, function (err, data) {
+            console.info('afterEach deleteKVStore success: function err is: '+err);
+            kvStore = null;
+            done();
+          });
         });
-      });
-      kvStore = null;
+
+      } catch (e) {
+        console.error('afterEach closeKVStore err ' + `, error code is ${e.code}, message is ${e.message}`);
+        done();
+      }
+
     })
 
     /**
@@ -501,7 +508,6 @@ export default function singleKvStoreCallbackStageTest(){
             expect((err == undefined) && (floatValue == data)).assertTrue();
             done();
           })
-          done();
         });
       }catch(e) {
         console.info('testSingleKvStorePutFloat102 e' + e);
@@ -530,7 +536,6 @@ export default function singleKvStoreCallbackStageTest(){
             expect((err == undefined) && (floatValue == data)).assertTrue();
             done();
           })
-          done();
         });
       }catch(e) {
         console.info('testSingleKvStorePutFloat103 e' + e);
@@ -559,7 +564,6 @@ export default function singleKvStoreCallbackStageTest(){
             expect((err == undefined) && (floatValue == data)).assertTrue();
             done();
           })
-          done();
         });
       }catch(e) {
         console.info('testSingleKvStorePutFloat104 e' + e);
@@ -2249,7 +2253,7 @@ export default function singleKvStoreCallbackStageTest(){
       try {
         let resultSet;
         await kvStore.getResultSet(function (err, result) {
-          console.info('testSingleKvStoreGetResultSet103 getResultSet success');
+          console.info('testSingleKvStoreGetResultSet103 getResultSet success, err=' + err);
           expect(err != undefined).assertTrue();
           done();
         });
@@ -2269,12 +2273,18 @@ export default function singleKvStoreCallbackStageTest(){
      * @tc.level  : Level 2
      */
     it('testEtsSingleKvStoreGetResultSet104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-      console.info('testSingleKvStoreGetResultSet104');
+      console.info('testEtsSingleKvStoreGetResultSet104');
       try {
         await kvStore.getResultSet('test_key_string', 123, function (err, result) {
-          console.info('testSingleKvStoreGetResultSet104 getResultSet success');
+          console.info('testEtsSingleKvStoreGetResultSet104 getResultSet success, err=' + err);
+          expect(err == undefined).assertTrue();
+          kvStore.closeResultSet(result, function (err, data) {
+            console.info('testEtsSingleKvStoreGetResultSet104 closeResultSet success');
+            expect(err == undefined).assertTrue();
+            done();
+          })
         });
-        done();
+        
       }catch(e) {
         console.info('testSingleKvStoreGetResultSet104 e ' + e);
         expect(e != null).assertTrue();
@@ -2556,6 +2566,7 @@ export default function singleKvStoreCallbackStageTest(){
             expect(resultSize == 10).assertTrue();
             done();
           });
+
         });
       } catch(e) {
         console.info('testSingleKvStoreGetResultSize102 e ' + e);
@@ -2602,12 +2613,11 @@ export default function singleKvStoreCallbackStageTest(){
             done();
           });
         });
-        console.info('testSingleKvStoreGetEntries101 success');
       }catch(e) {
         console.info('testSingleKvStoreGetEntries101 e ' + e);
         expect(e != null).assertTrue();
+        done();
       }
-      done();
     })
 
     /**
@@ -2648,13 +2658,12 @@ export default function singleKvStoreCallbackStageTest(){
             done();
           });
         });
-        console.info('testSingleKvStoreGetEntries101 success');
-        console.info('testSingleKvStoreGetEntries102 success');
       }catch(e) {
         console.info('testSingleKvStoreGetEntries102 e ' + e);
         expect(e != null).assertTrue();
+        done();
       }
-      done();
+      
     })
   })
 }

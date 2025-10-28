@@ -98,16 +98,18 @@ export default function SingleKvStoreCallbackTest(){
     afterEach(async function (done) {
       console.info('afterEach');
       try {
-        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore, async function (err, data) {
-          console.info('afterEach closeKVStore success: err is: '+err);
+        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, async function (err, data) {
+          console.info('afterEach closeKVStore success: function err is: '+err);
           await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, function (err, data) {
-            console.info('afterEach deleteKVStore success err is: '+err);
+            console.info('afterEach deleteKVStore success: function err is: '+err);
+            kvStore = null;
             done();
           });
         });
-        kvStore = null;
+
       } catch (e) {
         console.error('afterEach closeKVStore err ' + `, error code is ${e.code}, message is ${e.message}`);
+        done();
       }
     })
 
@@ -511,7 +513,6 @@ export default function SingleKvStoreCallbackTest(){
             expect((err == undefined) && (floatValue == data)).assertTrue();
             done();
           })
-          done();
         });
       }catch(e) {
         console.error('SingleKvStorePutFloatCallbackTest002 e' + `, error code is ${e.code}, message is ${e.message}`);
@@ -540,7 +541,6 @@ export default function SingleKvStoreCallbackTest(){
             expect((err == undefined) && (floatValue == data)).assertTrue();
             done();
           })
-          done();
         });
       }catch(e) {
         console.error('SingleKvStorePutFloatCallbackTest003 e' + `, error code is ${e.code}, message is ${e.message}`);
@@ -569,7 +569,6 @@ export default function SingleKvStoreCallbackTest(){
             expect((err == undefined) && (floatValue == data)).assertTrue();
             done();
           })
-          done();
         });
       }catch(e) {
         console.error('SingleKvStorePutFloatCallbackTest004 e' + `, error code is ${e.code}, message is ${e.message}`);
@@ -2392,12 +2391,14 @@ export default function SingleKvStoreCallbackTest(){
         });
         await kvStore.closeResultSet(resultSet, async function (err, data) {
           console.info('SingleKvStoreGetResultSetPredicatesCallbackTest001 closeResultSet success');
+          done();
         })
       } catch(e) {
         console.error('SingleKvStoreGetResultSetPredicatesCallbackTest001 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
+        done();
       }
-      done();
+      
     })
 
     /**
@@ -2551,15 +2552,16 @@ export default function SingleKvStoreCallbackTest(){
             console.info('SingleKvStoreGetEntriesCallbackTest001 entrys[0]: ' + JSON.stringify(entrys[0]));
             expect(entrys.length == 10).assertTrue();
             expect(entrys[0].value.value.toString() == arr.toString()).assertTrue();
+                    console.info('SingleKvStoreGetEntriesCallbackTest001 success');
             done();
           });
         });
-        console.info('SingleKvStoreGetEntriesCallbackTest001 success');
+
       }catch(e) {
         console.error('SingleKvStoreGetEntriesCallbackTest001 e ' + `, error code is ${e.code}, message is ${e.message}`);
         expect(null).assertFail();
+        done();
       }
-      done();
     })
   })
 }

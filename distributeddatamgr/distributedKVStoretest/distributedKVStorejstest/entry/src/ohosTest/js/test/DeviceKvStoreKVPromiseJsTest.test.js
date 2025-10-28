@@ -103,11 +103,21 @@ describe('deviceKvStorePromiseTest', function () {
             console.error('beforeAll can NOT getDeviceId, fail: ' + `, error code is ${error.code}, message is ${error.message}`);
             expect(null).assertFail();
         });
-        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore);
-        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
-        kvStore = null;
-        console.info('beforeAll end');
-        done();
+
+        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore).then(async () => {
+            console.info('beforeAll closeKVStore success');
+            await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
+                console.info('beforeAll deleteKVStore success');
+                kvStore = null;
+                done();
+            }).catch((err) => {
+                console.info('beforeAll deleteKVStore err ' + err);
+                done();
+            });
+        }).catch((err) => {
+            console.info('beforeAll closeKVStore err ' + err);
+            done();
+        });
     })
 
     afterAll(async function (done) {
@@ -122,11 +132,12 @@ describe('deviceKvStorePromiseTest', function () {
         await kvManager.getKVStore(TEST_STORE_ID, options).then((store) => {
             kvStore = store;
             console.info('beforeEach getKVStore success');
+            done();
         }).catch((err) => {
             console.error('beforeEach getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
+            done();
         });
-        console.info('beforeEach end');
-        done();
+
     })
 
     afterEach(async function (done) {
@@ -135,14 +146,17 @@ describe('deviceKvStorePromiseTest', function () {
             console.info('afterEach closeKVStore success');
             await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
                 console.info('afterEach deleteKVStore success');
+                kvStore = null;
+                done();
             }).catch((err) => {
                 console.error('afterEach deleteKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
+                done();
             });
         }).catch((err) => {
             console.error('afterEach closeKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
+            done();
         });
-        kvStore = null;
-        done();
+
     })
 
     /**
@@ -2762,20 +2776,24 @@ describe('deviceKvStorePromiseTest', function () {
                     console.info(entrys[0].value.value.toString());
                     expect(entrys.length == 10).assertTrue();
                     expect(entrys[0].value.value.toString() == arr.toString()).assertTrue();
+                    console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETENTRIES_PROMISE_0100 success');
+                    done();
                 }).catch((err) => {
                     console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETENTRIES_PROMISE_0100 getEntries fail ' + `, error code is ${err.code}, message is ${err.message}`);
                     expect(null).assertFail();
+                    done();
                 });
             }).catch((err) => {
                 console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETENTRIES_PROMISE_0100 putBatch fail ' + `, error code is ${err.code}, message is ${err.message}`);
                 expect(null).assertFail();
+                done();
             });
-            console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETENTRIES_PROMISE_0100 success');
+
         }catch(e) {
             console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETENTRIES_PROMISE_0100 e ' + `, error code is ${e.code}, message is ${e.message}`);
             expect(null).assertFail();
+            done();
         }
-        done();
     })
 
     /**
@@ -2813,20 +2831,25 @@ describe('deviceKvStorePromiseTest', function () {
                     console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETENTRIES_PROMISE_0200 getEntries success');
                     expect(entrys.length == 10).assertTrue();
                     expect(entrys[0].value.value.toString() == arr.toString()).assertTrue();
+                    console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETENTRIES_PROMISE_0200 success');
+                    done();
                 }).catch((err) => {
                     console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETENTRIES_PROMISE_0200 getEntries fail ' + `, error code is ${err.code}, message is ${err.message}`);
                     expect(null).assertFail();
+                    done();
                 });
             }).catch((err) => {
                 console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETENTRIES_PROMISE_0200 putBatch fail ' + `, error code is ${err.code}, message is ${err.message}`);
                 expect(null).assertFail();
+                done();
             });
-            console.info('SUB_DDM_DKV_DEVICEKVSTORE_GETENTRIES_PROMISE_0200 success');
+
         }catch(e) {
             console.error('SUB_DDM_DKV_DEVICEKVSTORE_GETENTRIES_PROMISE_0200 e ' + `, error code is ${e.code}, message is ${e.message}`);
             expect(null).assertFail();
+            done();
         }
-        done();
+        
     })
 })
 }
