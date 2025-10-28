@@ -4,54 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canvas功能完整示例</title>
+    <style>
+        .container {
+          display: flex;
+          justify-content: center; /* 水平居中 */
+          align-items: center;     /* 垂直居中 */
+          height: 100vh;           /* 占满整个视口高度 */
+        }
+    </style>
 </head>
 <body>
-<h1>Canvas功能完整示例</h1>
-
-<h2>1. 空白Canvas</h2>
-<canvas id="blankCanvas" width="300" height="150"></canvas>
-
-<h2>2. 基本形状绘制</h2>
-<canvas id="basicCanvas" width="400" height="300"></canvas>
-
-<h2>3. 绘制文本</h2>
-<canvas id="textCanvas" width="500" height="100"></canvas>
-
-<h2>4. 动画效果</h2>
-<canvas id="animationCanvas" width="400" height="200"></canvas>
-<div>
-    <button onclick="startAnimation()">开始动画</button>
-    <button onclick="stopAnimation()">停止动画</button>
+<div class="container">
+    <canvas id="basicCanvas" width="800" height="800"></canvas>
 </div>
 
-<h2>5. 交互式绘图</h2>
-<canvas id="interactiveCanvas" width="400" height="300"></canvas>
-<div>
-    <button onclick="changeColor()">更改颜色</button>
-    <button onclick="clearInteractiveCanvas()">清除画布</button>
-    <span>当前颜色: <span id="currentColor" style="color:#3498db;">蓝色</span></span>
-</div>
-
-<h2>6. 图像处理</h2>
-<canvas id="imageCanvas" width="400" height="300"></canvas>
-<div>
-    <button onclick="loadImage()">加载图片</button>
-    <button onclick="applyGrayscale()">灰度滤镜</button>
-    <button onclick="applyInvert()">反色滤镜</button>
-    <button onclick="applySepia()">复古滤镜</button>
-    <button onclick="resetImage()">重置图片</button>
-</div>
-
-<h2>7. 加载外部图片</h2>
-<canvas id="externalImageCanvas" width="400" height="300"></canvas>
-<div>
-    <button onclick="loadExternalImage()">加载外部图片</button>
-    <input type="file" id="imageUpload" accept="image/*" onchange="handleImageUpload(this.files)">
-</div>
 
 <script>
     // 1. 空白Canvas
-    const blankCanvas = document.getElementById('blankCanvas');
+    const blankCanvas = document.getElementById('basicCanvas');
     const blankCtx = blankCanvas.getContext('2d');
     blankCtx.fillStyle = '#f0f0f0';
     blankCtx.fillRect(0, 0, blankCanvas.width, blankCanvas.height);
@@ -66,32 +36,8 @@
     function drawBasicShapes() {
         // 绘制矩形
         basicCtx.fillStyle = 'red';
-        basicCtx.fillRect(20, 20, 100, 80);
+        basicCtx.fillRect(20, 20, 800, 800);
 
-        // 绘制圆形
-        basicCtx.beginPath();
-        basicCtx.fillStyle = 'blue';
-        basicCtx.arc(250, 60, 40, 0, Math.PI * 2);
-        basicCtx.fill();
-
-        // 绘制三角形
-        basicCtx.beginPath();
-        basicCtx.fillStyle = 'green';
-        basicCtx.moveTo(150, 180);
-        basicCtx.lineTo(100, 250);
-        basicCtx.lineTo(200, 250);
-        basicCtx.closePath();
-        basicCtx.fill();
-
-        // 绘制线条
-        basicCtx.beginPath();
-        basicCtx.strokeStyle = 'orange';
-        basicCtx.lineWidth = 3;
-        basicCtx.moveTo(300, 180);
-        basicCtx.lineTo(350, 250);
-        basicCtx.lineTo(250, 250);
-        basicCtx.closePath();
-        basicCtx.stroke();
     }
 
     drawBasicShapes();
