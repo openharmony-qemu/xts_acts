@@ -23,7 +23,7 @@ struct Monitor_Null {
   @Monitor ('class001.class002.class003.x')
   onChange(mon: IMonitor) {
     mon.dirty.forEach((path: string) => {
-      console.info(onChange: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now});
+      console.info(`onChange: User property ${path} change from ${mon.value(path)?.before} to ${mon.value(path)?.now}`);
     });
   }
   build() {
