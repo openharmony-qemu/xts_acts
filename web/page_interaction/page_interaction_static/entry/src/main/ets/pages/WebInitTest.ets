@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-import { memo, State} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins // should be insert by ui-plugins
+import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins // should be insert by ui-plugins
 import { Button, ClickEvent, Column, Component, ContextMenuInputFieldType, ContextMenuMediaType, ContextMenuSourceType, Entry, Row, Text, TextInput, TextAttribute, Web, OnConfirmEvent, OnPromptEvent } from '@ohos.arkui.component' // TextAttribute should be insert by ui-plugins
 import hilog from '@ohos.hilog'
 

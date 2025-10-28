@@ -19,7 +19,6 @@ import { BusinessError, Callback } from '@ohos.base';
 import {
   __memo_context_type,
   __memo_id_type,
-  memo,
   State
 } from '@ohos.arkui.stateManagement'
 import {

@@ -14,7 +14,6 @@
  */
 import RectValue from './Rect';
 import {
-  memo,
   State,
 } from '@ohos.arkui.stateManagement'
 import {

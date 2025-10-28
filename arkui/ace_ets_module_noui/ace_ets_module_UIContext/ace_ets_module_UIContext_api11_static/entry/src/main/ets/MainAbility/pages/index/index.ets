@@ -1,4 +1,3 @@
-import { memo} from '@ohos.arkui.stateManagement' 
 import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent } from '@ohos.arkui.component'  
 import { State} from '@ohos.arkui.stateManagement' 
 import hilog from '@ohos.hilog'
