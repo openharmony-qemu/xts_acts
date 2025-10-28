@@ -1284,20 +1284,17 @@ export default function certFrameworkCmsVerifyTestUnit() {
           if (signData instanceof Uint8Array) {
             expect(null).assertFalse();
           }
-          ;
           let config: cert.CmsVerificationConfig = {
             trustCerts: [x509CertRoot, x509CertInter],
-            contentDataFormat: undefined
           };
           let verify: cert.CmsParser = cert.createCmsParser();
           await verify.setRawData(signData, cert.CmsFormat.PEM);
           try {
             config.contentDataFormat = undefined;
             await verify.verifySignedData(config);
-            expect(null).assertFail();
           } catch (error: BusinessError) {
             console.error(`[XTS] verifySignedData 2 “${error}“, error code: ${error.code}`);
-            expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+            expect(null).assertFail();
           }
         } catch (error: BusinessError) {
           console.error(`[XTS] Cms_Verify_Func_3300 “${error}“, error code: ${error.code}`);

@@ -224,6 +224,9 @@ function convertToUint8Array(str: string): Uint8Array {
 function compareString(a: string, b: string): boolean {
   let buf1 = buffer.from(a);
   let buf2 = buffer.from(b);
+  if (b.length !== a.length) {
+    return false;
+  }
   if (buf1.compare(buf2, 0, b.length as int, 0, a.length as int) == 0) {
     return true;
   } else {
@@ -234,6 +237,9 @@ function compareString(a: string, b: string): boolean {
 function compareUint8Array(a: Uint8Array, b: Uint8Array): boolean {
   let buf1 = buffer.from(a);
   let buf2 = buffer.from(b);
+  if (b.length !== a.length) {
+    return false;
+  }
   if (buf1.compare(buf2, 0, b.length, 0, a.length) == 0) {
     return true;
   } else {

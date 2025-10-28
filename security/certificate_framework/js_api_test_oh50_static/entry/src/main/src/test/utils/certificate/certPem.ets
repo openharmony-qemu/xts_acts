@@ -819,6 +819,7 @@ class OH_Pkcs12DataMap {
           /* 创建p12时，如果未添加私钥，添加了公钥证书，p12解析后该公钥证书存放在其他证书里面 */
           if (!checkPriKey && checkOtherCerts && !isOnlyOtherCerts) {
             let caCert: cert.X509Cert | undefined | null = p12.otherCerts?.shift();
+            len = p12.otherCerts?.length;
             if (caCert !== undefined && caCert) {
               let x509Cert: cert.X509Cert = await this.createCaX509Cert(algName, isPem);
               await x509Cert.verify(caCert.getPublicKey());
