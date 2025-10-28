@@ -23,6 +23,8 @@ import { AbilityConstant, Configuration, ConfigurationConstant, UIAbility, Want 
 import { webview } from '@kit.ArkWeb';
 import { pasteboard } from '@kit.BasicServicesKit';
 import { Driver, MouseButton, UiWindow, ON, On } from '@kit.TestKit';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import testsuite from '../../test/List.test';
 const EVENT_ID_SET_SUITE_KEY = 183117;
 let driver = Driver.create();
 const TAG = 'ContextMenu';
@@ -33,6 +35,7 @@ struct webViewController {
   @State str: string = ""
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
+
   webcontroller: webView.WebviewController = new webView.WebviewController();
 
 
@@ -48,6 +51,13 @@ struct webViewController {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
+  aboutToAppear() {
+    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+    console.info('start run testcase!!!')
+    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+  }
+
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info("web page valueChangeCallBack");
     if (eventData != null) {
@@ -58,6 +68,8 @@ struct webViewController {
       }
     }
   }
+
+
   build() {
     Column() {
       Row() {

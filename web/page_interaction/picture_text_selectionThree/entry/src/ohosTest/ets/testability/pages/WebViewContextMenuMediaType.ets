@@ -23,6 +23,8 @@ import { AbilityConstant, Configuration, ConfigurationConstant, UIAbility, Want 
 import { webview } from '@kit.ArkWeb';
 import { pasteboard } from '@kit.BasicServicesKit';
 import { Driver, MouseButton, UiWindow, ON, On } from '@kit.TestKit';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import testsuite from '../../test/List.test';
 const EVENT_ID_SET_SUITE_KEY = 183111;
 let driver = Driver.create();
 const TAG = 'ContextMenu';
@@ -62,6 +64,13 @@ struct webViewController {
         this.isReceive = 1;
       }
     }
+  }
+
+  aboutToAppear() {
+    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+    console.info('start run testcase!!!')
+    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
   }
 
 
