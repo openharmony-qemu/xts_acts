@@ -264,7 +264,10 @@ export default function SecurityCryptoFwChaCha20Poly1305TestUnit() {
             }
           }
           // 合并加密数据
-          let totalLength = encryptedChunks.length;
+          let totalLength = 0;
+          for (let index = 0; index < encryptedChunks.length; index++) {
+            totalLength += encryptedChunks[index].length;
+          }
           let cipherText = new Uint8Array(totalLength);
           let offset = 0;
           for (let chunk of encryptedChunks) {
