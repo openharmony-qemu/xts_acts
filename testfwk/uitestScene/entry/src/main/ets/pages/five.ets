@@ -25,7 +25,7 @@ struct Five {
   @State backGroundColor: Color = Color.Transparent;
   @State inSetValueOne: number = 0;
   @State inSetValueTwo: number = 40;
-  private arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  private arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
   scroller: Scroller = new Scroller()
 
   build() {

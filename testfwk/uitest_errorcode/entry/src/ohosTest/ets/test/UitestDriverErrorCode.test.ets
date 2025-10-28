@@ -2606,6 +2606,15 @@ export default function uitestDriverErrorTest() {
         console.log(`${TestTag}, testInjectKnucklePointerAction_17000007 pointers = undefined: ${JSON.stringify(e)}`);
         expect(e.code == 17000005||e.code == 17000007).assertTrue();
       }
+      try {
+        let pointers = PointerMatrix.create(1,1);
+        pointers.setPoint(0,0, {x: 100, y: 100});
+        await driver.injectKnucklePointerAction(pointers, -1);
+        expect().assertFail();
+      }catch (e) {
+        console.log(`${TestTag}, testInjectKnucklePointerAction_17000007 speed = -1: ${JSON.stringify(e)}`);
+        expect(e.code == 17000005||e.code == 17000007).assertTrue();
+      }
       console.log(`${TestTag}, testInjectKnucklePointerAction_17000007 end`);
     })
 

@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import abilityDelegatorRegistry from '@ohos.application.abilityDelegatorRegistry';
-import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point, ComponentEventType } from '@ohos.UiTest'
+import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point, ComponentEventType, On } from '@ohos.UiTest'
 import ability_featureAbility from '@ohos.ability.featureAbility';
 import { BusinessError } from '@ohos.base';
 import display from '@ohos.display';
@@ -113,7 +113,7 @@ export default function UiTest() {
                 }
             }
             try {
-                let nextOn = ON.isBefore(ON.text('next page')).type('Button');
+                let nextOn: On = ON.isBefore(ON.text('next page')).type('Button');
                 observer.once('componentEventOccur', ComponentEventType.COMPONENT_CLICKED, {
                     timeout: 9000,
                     on: nextOn
@@ -236,7 +236,7 @@ export default function UiTest() {
                 }
             }
             try {
-                let on1 = ON.type('Scroll').id('parentScroll');
+                let on1: On = ON.type('Scroll').id('parentScroll');
                 observer.once('componentEventOccur', ComponentEventType.COMPONENT_SCROLL_START, {
                     on: on1
                 }, callback);
@@ -783,14 +783,14 @@ export default function UiTest() {
                 let center = await scrollBar.getBoundsCenter();
                 await driver.delayMs(waitUiReadyMs);
                 await driver.touchPadTwoFingersScroll({x: center.x, y: center.y},
-                    UiDirection.LEFT, 300);
+                    UiDirection.LEFT, 600);
                 await driver.delayMs(waitUiReadyMs);
                 let scroll11 = await driver.findComponent(ON.text('1_hor'));
                 await driver.delayMs(waitUiReadyMs);
                 expect(scroll11 == null).assertTrue();
                 await driver.delayMs(waitUiReadyMs);
                 await driver.touchPadTwoFingersScroll({x: center.x, y: center.y},
-                    UiDirection.RIGHT, 400);
+                    UiDirection.RIGHT, 800);
                 let scroll22 = await driver.findComponent(ON.text('1_hor'));
                 await driver.delayMs(waitUiReadyMs);
                 expect(scroll22 != null).assertTrue();
