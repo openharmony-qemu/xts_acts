@@ -79,6 +79,6 @@ class D extends C {
 
 class E extends D {
     public override func(a: char, b: byte): char {
-        return (a.toInt() - b.toInt).toChar();
+        return (a.toInt() - b.toInt()).toChar();
     }
 }
