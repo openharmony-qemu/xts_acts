@@ -15,6 +15,7 @@
 #include "common/common.h"
 #include "manager/PluginManagerTest.h"
 #include "image/ImageAltTest.h"
+#include "textMinLines/MinLinesTest.h"
 #include "hasAxisTest/HasAxisTest.h"
 #include "list/CoastingAxisTest.h"
 
@@ -29,10 +30,9 @@ static napi_value Init(napi_env env, napi_value exports)
     }
 
     napi_property_descriptor desc[] = {
-        {"getContext", nullptr, PluginManager::GetContext, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"imageAltTest", nullptr, ImageAltTest::imageAltTest, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
+        {"getContext", nullptr, PluginManager::GetContext, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"imageAltTest", nullptr, ImageAltTest::imageAltTest, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"textMinLinesTest", nullptr, MinLinesTest::CreateNativeNode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"hasAxisTest", nullptr, HasAxisTest::CreateNativeNode, nullptr, nullptr,
          nullptr, napi_default, nullptr},
         {"CoastingAxisTest_a", nullptr, CoastingAxisTest::CoastingAxisEventTest_a,

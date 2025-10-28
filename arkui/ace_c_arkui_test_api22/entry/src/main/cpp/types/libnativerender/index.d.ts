@@ -14,6 +14,8 @@
  */
 export const imageAltTest: (a: string) => void;
 
+export const textMinLinesTest: (a: string) => void;
+
 export const CoastingAxisTest_a: () => string[];
 
 export const CoastingAxisTest_b: () => string[];

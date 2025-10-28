@@ -18,6 +18,7 @@ import textAreaTest from './TextChangeObserverTest/textArea.test';
 import textInputTest from './TextChangeObserverTest/textInput.test';
 import richEditorTest from './TextChangeObserverTest/richEditor.test';
 import imageAltTest from './Image/imageAltTest.test';
+import minLines from './TextTest/minLines.test';
 
 export default function testsuite() {
   searchTest();
@@ -25,4 +26,5 @@ export default function testsuite() {
   textInputTest();
   richEditorTest();
   imageAltTest();
+  minLines();
 }
