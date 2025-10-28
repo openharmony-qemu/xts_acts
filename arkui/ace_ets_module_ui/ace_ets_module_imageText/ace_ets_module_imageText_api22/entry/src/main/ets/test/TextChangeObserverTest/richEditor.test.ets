@@ -49,7 +49,7 @@ export default function richEditorTest() {
     /**
      * @tc.number    richEditorTest_0010
      * @tc.name      richEditorTest_0010
-     * @tc.desc      Global observer enabled or disabled, text change of the richEditor component, Expected: observed text is 'richEditorTest_0010'
+     * @tc.desc      Global observer enabled or disabled, text change of the richEditor component, Expected: observed text is 'global:richEditorTest_0010'
      * @tc.level:    Level 1
      * @tc.type :
      * @tc.size :
@@ -63,23 +63,30 @@ export default function richEditorTest() {
       await globalObserverOpenButton.click();
 
       let richEditor: Component = await driver.findComponent(ON.id('richEditor'));
-      await richEditor.inputText('richEditorTest_0010', { paste: true, addition: false });
-
-      let globalOutputRichEditor: Component = await driver.findComponent(ON.id('globalOutputRichEditor'));
-      let globalOutput = await globalOutputRichEditor.getText();
+      await richEditor.inputText('richEditorTest_0010');
+	  await CommonFunc.sleep(500);
+	  await driver.triggerKey(2070);
+	  await CommonFunc.sleep(500);
+	  
+      let globalOutputRichEditor1: Component = await driver.findComponent(ON.id('globalOutputRichEditor'));
+      let globalOutput1 = await globalOutputRichEditor1.getText();
       
-      console.info('[richEditorTest_0010] textContent: ' + globalOutput);
-      expect(globalOutput).assertEqual('richEditorTest_0010');
+      console.info('[richEditorTest_0010] textContent: ' + globalOutput1);
+      expect(globalOutput1).assertEqual('global:richEditorTest_0010');
 
       let globalObserverCloseButton: Component = await driver.findComponent(ON.id('全局监听(关)'));
       await globalObserverCloseButton.click();
+	  
+	  await richEditor.inputText('Add');
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
+      await CommonFunc.sleep(500);
 
-      await richEditor.inputText('Add', { paste: true, addition: true });
-
-      let globalOutput2 = await globalOutputRichEditor.getText();
+      let globalOutputRichEditor2: Component = await driver.findComponent(ON.id('globalOutputRichEditor'));
+      let globalOutput2 = await globalOutputRichEditor2.getText();
 
       console.info('[richEditorTest_0010] textContent: ' + globalOutput2);
-      expect(globalOutput2).assertEqual('richEditorTest_0010');
+      expect(globalOutput2).assertEqual('global:richEditorTest_0010');
 
       console.info('[richEditorTest_0010] END');
       done();
@@ -88,7 +95,7 @@ export default function richEditorTest() {
     /**
      * @tc.number    richEditorTest_0011
      * @tc.name      richEditorTest_0011
-     * @tc.desc      Local observer enabled or disabled, text change of the richEditor component, Expected: observed text is 'richEditorTest_0011'
+     * @tc.desc      Local observer enabled or disabled, text change of the richEditor component, Expected: observed text is 'local:richEditorTest_0011'
      * @tc.level:    Level 1
      * @tc.type :
      * @tc.size :
@@ -102,23 +109,31 @@ export default function richEditorTest() {
       await localObserverOpenButton.click();
 
       let richEditor: Component = await driver.findComponent(ON.id('richEditor'));
-      await richEditor.inputText('richEditorTest_0011', { paste: true, addition: false });
+	  await richEditor.inputText('richEditorTest_0011');
+	  
+	  await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
+      await CommonFunc.sleep(500);
 
-      let localOutputRichEditor: Component = await driver.findComponent(ON.id('localOutputRichEditor'));
-      let localOutput = await localOutputRichEditor.getText();
+      let localOutputRichEditor1: Component = await driver.findComponent(ON.id('localOutputRichEditor'));
+      let localOutput1 = await localOutputRichEditor1.getText();
 
-      console.info('[richEditorTest_0011] textContent: ' + localOutput);
-      expect(localOutput).assertEqual('richEditorTest_0011');
+      console.info('[richEditorTest_0011] textContent: ' + localOutput1);
+      expect(localOutput1).assertEqual('local:richEditorTest_0011');
 
       let localObserverCloseButton: Component = await driver.findComponent(ON.id('局部richEditor(关)'));
       await localObserverCloseButton.click();
 
-      await richEditor.inputText('Add', { paste: true, addition: true });
+      await richEditor.inputText('Add');
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
+      await CommonFunc.sleep(500);
 
-      let localOutput2 = await localOutputRichEditor.getText();
+      let localOutputRichEditor2: Component = await driver.findComponent(ON.id('localOutputRichEditor'));
+      let localOutput2 = await localOutputRichEditor2.getText();
 
       console.info('[richEditorTest_0011] textContent: ' + localOutput2);
-      expect(localOutput2).assertEqual('richEditorTest_0011');
+      expect(localOutput2).assertEqual('local:richEditorTest_0011');
 
       console.info('[richEditorTest_0011] END');
       done();
