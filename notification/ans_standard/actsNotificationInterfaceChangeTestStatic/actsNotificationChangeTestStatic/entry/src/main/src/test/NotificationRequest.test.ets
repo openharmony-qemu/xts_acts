@@ -53,6 +53,27 @@ export default function ActsNotificationRequestTest() {
     it('Acts_NotificationRequest_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME:string = 'Acts_NotificationRequest_Static_0100';
+        notificationManager.isNotificationEnabled((err, data) => {
+          if (err) {
+            console.info(`${TEST_CASE_NAME} isNotificationEnabled AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
+            expect(false).assertTrue()
+            done()
+          } else {
+            console.info(`${TEST_CASE_NAME} isNotificationEnabled AsyncCallback success`)
+            expect(data).assertFalse();
+          }
+        });
+
+        await Utils.msSleep(200);
+
+        await notificationManager.isNotificationEnabled().then((data: boolean) => {
+          console.info(TEST_CASE_NAME + "isNotificationEnabled success, data: " + JSON.stringify(data));
+          expect(data).assertFalse();
+        }).catch((err: BusinessError) :void  => {
+          console.error(TEST_CASE_NAME + `isNotificationEnabled fail: ${JSON.stringify(err)}`);
+          expect(true).assertFalse();
+          done()
+        });
 
         notificationManager.requestEnableNotification(testAbilityContext,(err: BusinessError | null) => {
           if (err) {
@@ -64,16 +85,42 @@ export default function ActsNotificationRequestTest() {
 
         await Utils.msSleep(1500);
         let driver = Driver.create();
-        hilog.info(0x0000, 'testTag', `${TAG} driver is ${JSON.stringify(driver)}`);
+        hilog.info(0x0000, 'testTag', `${TEST_CASE_NAME} driver is ${JSON.stringify(driver)}`);
         await driver.assertComponentExist(ON.text('允许'));
         let button = await driver.findComponent(ON.text('允许'));
-        hilog.info(0x0000, 'testTag',`${TAG} button is ${JSON.stringify(button)}`);
+        hilog.info(0x0000, 'testTag',`${TEST_CASE_NAME} button is ${JSON.stringify(button)}`);
         if (button !== null) {
           await button.click();
           await Utils.msSleep(1500);
         } else {
           hilog.info(0x0000, 'testTag',`button is null`)
         }
+
+        notificationManager.isNotificationEnabled((err, data) => {
+          if (err) {
+            console.info(`${TEST_CASE_NAME} isNotificationEnabled AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
+            expect(false).assertTrue()
+            done()
+          } else {
+            console.info(`${TEST_CASE_NAME} isNotificationEnabled AsyncCallback success`)
+            expect(data).assertTrue();
+          }
+        });
+
+        await Utils.msSleep(200);
+
+        let notificationenable: boolean = notificationManager.isNotificationEnabledSync();
+        expect(notificationenable).assertTrue()
+
+        await Utils.msSleep(200);
+
+        await notificationManager.isNotificationEnabled().then((data: boolean) => {
+            console.info(TEST_CASE_NAME + "isNotificationEnabled success, data: " + JSON.stringify(data));
+            expect(data).assertTrue();
+          }).catch((err: BusinessError) : void => {
+            console.error(TEST_CASE_NAME + `isNotificationEnabled fail: ${JSON.stringify(err)}`);
+            expect(true).assertFalse();
+          });
 
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 1,
