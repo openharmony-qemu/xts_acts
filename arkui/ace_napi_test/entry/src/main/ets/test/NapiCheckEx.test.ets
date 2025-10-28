@@ -18,6 +18,11 @@ import hilog from '@ohos.hilog'
 import napitestex from 'libnapitestex.so'
 import worker, { MessageEvents } from '@ohos.worker';
 
+const DOMAIN = 0x0000;
+declare class ArkTools {
+  static forceFullGC():void;
+}
+
 async function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
     setTimeout(() => {
@@ -3809,6 +3814,829 @@ export default function napiCheckExTest() {
         console.error('envlifecycle007 err msg: ' + err.message);
         expect().assertFail();
       }
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_CRITICALSCOPE_0100
+     * @tc.name      test_CriticalScope_0001
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiOpenCriticalScopeCheckArg', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiOpenCriticalScopeCheckArg";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.openCriticalScopeCheckArg();
+        console.info('napiRunEventLoopAbnormalParameters value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_CRITICALSCOPE_0200
+     * @tc.name      test_CriticalScope_0002
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiCloseCriticalScopeDouble', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiCloseCriticalScopeDouble";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.closeCriticalScopeDouble();
+        console.info('napiCloseCriticalScopeDouble value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_CRITICALSCOPE_0300
+     * @tc.name      test_CriticalScope_0003
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiCloseCriticalScopeCheckArg', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiCloseCriticalScopeCheckArg";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.closeCriticalScopeCheckArg();
+        console.info('napiCloseCriticalScopeCheckArg value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_CRITICALSCOPE_0400
+     * @tc.name      test_CriticalScope_0004
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiStringCheckArg', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiStringCheckArg";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.stringCheckArg();
+        console.info('napiStringCheckArg value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_CRITICALSCOPE_0500
+     * @tc.name      test_CriticalScope_0005
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiStringLineStringUTF8Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiStringLineStringUTF8Test";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.stringLineStringUTF8Test();
+        console.info('napiStringLineStringUTF8Test value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_CRITICALSCOPE_0600
+     * @tc.name      test_CriticalScope_0006
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiStringLineStringlatin1Test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiStringLineStringlatin1Test";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.stringLineStringlatin1Test();
+        console.info('napiStringLineStringlatin1Test value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_CRITICALSCOPE_0700
+     * @tc.name      test_CriticalScope_0007
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiStringLineStringTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiStringLineStringTest";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.stringLineStringTest();
+        console.info('napiStringLineStringTest value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_CRITICALSCOPE_0800
+     * @tc.name      test_CriticalScope_0008
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiStringWithoutScopTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiStringWithoutScopTest";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.stringWithoutScopTest();
+        console.info('napiStringWithoutScopTest value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_CRITICALSCOPE_0900
+     * @tc.name      test_CriticalScope_0009
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiStringNotString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiStringNotString";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.stringNotString();
+        console.info('napiStringNotString value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_CRITICALSCOPE_1000
+     * @tc.name      test_CriticalScope_0010
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiStringNotLineString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiStringNotLineString";
+      console.info(`${TAG} START`);
+      try {
+        let str = "123456789"
+        let value : boolean = napitestex.stringNotLineString(str);
+        console.info('napiStringNotLineString value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_CRITICALSCOPE_1100
+     * @tc.name      test_CriticalScope_0011
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiStringLineStringFromEts', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiStringLineStringFromEts";
+      console.info(`${TAG} START`);
+      try {
+        let str = "这个字符串包含一些特殊表情符号：⭐"
+        let value : boolean = napitestex.stringLineStringFromEts(str);
+        console.info('napiStringLineStringFromEts value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_CRITICALSCOPE_1200
+     * @tc.name      test_CriticalScope_0012
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiStringArrayTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiStringArrayTest";
+      console.info(`${TAG} START`);
+      try {
+        let strings: string[] = [
+          "短文本",
+          "这是一个中等长度的ETS字符串示例",
+          "这个字符串包含一些特殊表情符号：⭐",
+          "OpenHarmony Native Development中国123456789",
+          "最后一条测试数据"
+        ];
+        let value : boolean = napitestex.stringArrayTest(strings);
+        console.info('napiStringArrayTest value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_CRITICALSCOPE_1300
+     * @tc.name      test_CriticalScope_0013
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiStringLineStringInErrorEnvTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiStringLineStringInErrorEnvTest";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.stringLineStringInErrorEnvTest();
+        console.info('napiStringLineStringInErrorEnvTest value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_CRITICALSCOPE_1400
+     * @tc.name      test_CriticalScope_0014
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiStringLineStringInContextEnvTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiStringLineStringInContextEnvTest";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.stringLineStringInContextEnvTest();
+        console.info('napiStringLineStringInContextEnvTest value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_CRITICALSCOPE_1500
+     * @tc.name      test_CriticalScope_0015
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiStringLineStringInArkRuntimeTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiStringLineStringInArkRuntimeTest";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.stringLineStringInArkRuntimeTest();
+        console.info('napiStringLineStringInArkRuntimeTest value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_0100
+     * @tc.name      test_StrongRef_00001
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiCreateStrongRefCheckArg', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiCreateStrongRefCheckArg";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.createStrongRefCheckArg();
+        console.info('napiCreateStrongRefCheckArg value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_0200
+     * @tc.name      test_StrongRef_00002
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiCreateStrongRefSingle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiCreateStrongRefSingle";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.createStrongRefSingle(ArkTools.forceFullGC);
+        console.info('napiCreateStrongRefSingle value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_0300
+     * @tc.name      test_StrongRef_00003
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiCreateStrongRef2Ref', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiCreateStrongRef2Ref";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.createStrongRef2Ref(ArkTools.forceFullGC);
+        console.info('napiCreateStrongRef2Ref value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_0400
+     * @tc.name      test_StrongRef_00004
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiCreateStrongRef2Obj', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiCreateStrongRef2Obj";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.createStrongRef2Obj(ArkTools.forceFullGC);
+        console.info('napiCreateStrongRef2Obj value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_0500
+     * @tc.name      test_StrongRef_00005
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiGetStrongRefCheckArg', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiGetStrongRefCheckArg";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.getStrongRefCheckArg();
+        console.info('napiGetStrongRefCheckArg value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_0600
+     * @tc.name      test_StrongRef_00006
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiGetStrongRef', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiGetStrongRef";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.getStrongRef();
+        console.info('napiGetStrongRef value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_0700
+     * @tc.name      test_StrongRef_00007
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiDeleteStrongRefCheckArg', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiDeleteStrongRefCheckArg";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.deleteStrongRefCheckArg();
+        console.info('napiDeleteStrongRefCheckArg value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_0800
+     * @tc.name      test_StrongRef_00008
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiDeleteStrongRef', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiDeleteStrongRef";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.deleteStrongRef(ArkTools.forceFullGC);
+        console.info('napiDeleteStrongRef value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_0900
+     * @tc.name      test_StrongRef_00009
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiDeleteStrongRef2Ref', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiDeleteStrongRef2Ref";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.deleteStrongRef2Ref(ArkTools.forceFullGC);
+        console.info('napiDeleteStrongRef2Ref value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_1000
+     * @tc.name      test_StrongRef_00010
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiDeleteStrongRefDouble', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiDeleteStrongRefDouble";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.deleteStrongRefDouble(ArkTools.forceFullGC);
+        console.info('napiDeleteStrongRefDouble value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_1100
+     * @tc.name      test_StrongRef_00011
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiRepeateCreateDeleteStrongRef', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiRepeateCreateDeleteStrongRef";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.repeateCreateDeleteStrongRef();
+        console.info('napiRepeateCreateDeleteStrongRef value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_1200
+     * @tc.name      test_StrongRef_00012
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiDeleteUndefindAndCreateRef', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiDeleteUndefindAndCreateRef";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.deleteUndefindAndCreateRef();
+        console.info('napiDeleteUndefindAndCreateRef value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_1300
+     * @tc.name      test_StrongRef_00013
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiOptStrongRefInErrorEnvTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiOptStrongRefInErrorEnvTest";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.optStrongRefInErrorEnvTest(ArkTools.forceFullGC);
+        console.info('napiOptStrongRefInErrorEnvTest value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_1400
+     * @tc.name      test_StrongRef_00014
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiOptStrongRefInContextEnvTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiOptStrongRefInContextEnvTest";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.optStrongRefInContextEnvTest();
+        console.info('napiOptStrongRefInContextEnvTest value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_1500
+     * @tc.name      test_StrongRef_00015
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiOptStrongRefInArkRuntimeTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiOptStrongRefInArkRuntimeTest";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.optStrongRefInArkRuntimeTest();
+        console.info('napiOptStrongRefInArkRuntimeTest value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_1600
+     * @tc.name      test_StrongRef_00016
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiOptStrongRefStress', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiOptStrongRefStress";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.optStrongRefStress();
+        console.info('napiOptStrongRefStress value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_1700
+     * @tc.name      test_StrongRef_00017
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiSameObjMutilStrongRef', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiSameObjMutilStrongRef";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.sameObjMutilStrongRef(ArkTools.forceFullGC);
+        console.info('napiSameObjMutilStrongRef value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_1800
+     * @tc.name      test_StrongRef_00018
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiGradualReferenceRelease', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiGradualReferenceRelease";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.gradualReferenceRelease(ArkTools.forceFullGC);
+        console.info('napiGradualReferenceRelease value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_1900
+     * @tc.name      test_StrongRef_00019
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiStrongRefVariousTypes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiStrongRefVariousTypes";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.strongRefVariousTypes();
+        console.info('napiStrongRefVariousTypes value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_2000
+     * @tc.name      test_StrongRef_00020
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiPostDeleteBehavior', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiPostDeleteBehavior";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.postDeleteBehavior();
+        console.info('napiPostDeleteBehavior value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_2100
+     * @tc.name      test_StrongRef_00021
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiCrossScopeStrongRef', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiCrossScopeStrongRef";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.crossScopeStrongRef();
+        console.info('napiCrossScopeStrongRef value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_NAPI_STRONGREF_2200
+     * @tc.name      test_StrongRef_00022
+     * @tc.desc      MediumTest
+     * @tc.size      Function
+     * @tc.type      Function test
+     * @tc.level     Level 0
+     */
+    it('napiManyStrongReferences', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "napiManyStrongReferences";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitestex.manyStrongReferences();
+        console.info('napiManyStrongReferences value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
     });    
   });
 }
