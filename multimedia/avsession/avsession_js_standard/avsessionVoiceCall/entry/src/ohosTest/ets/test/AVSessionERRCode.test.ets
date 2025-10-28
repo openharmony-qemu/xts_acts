@@ -1206,10 +1206,10 @@ export default function abilityTest() {
       try{
         let avCommand: avSession.AVCastControlCommand = {command:'seek',parameter: 15};
         console.info(`ControlCommand successfully ${JSON.stringify(avCommand)}`);
-      } catch((err){
+      } catch(err){
         expect(false).assertTrue();
         console.error(`ControlCommand BusinessError: code: ${err.code}, message: ${err.message}`);
-      });
+      };
         done();
     })
 

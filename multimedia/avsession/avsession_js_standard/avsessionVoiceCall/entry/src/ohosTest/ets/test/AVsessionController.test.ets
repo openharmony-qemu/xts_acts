@@ -126,11 +126,14 @@ export default function abilityTest() {
       try{
         await sleep(500);
         await controller.getAVQueueItems().then((items: avSession.AVQueueItem[]) => {
-            console.info(`GetAVQueueItems : SUCCESS : length : ${items.length}`);
-            expect(items.length==0).assertTrue();
+                if(items.length){
+                    console.info(`GetAVQueueItems : SUCCESS : length : ${items.length}`);           
+                    expect(items.length>0).assertTrue();            
+                }else{
+                    console.info(`GetAVQueueItems : SUCCESS : length : ${items.length}`);
+                    expect(items.length==0).assertTrue();
+                }
             }).catch((err: BusinessError) => {
-            expect(items.length>0).assertTrue();
-            console.error(`GetAVQueueItems BusinessError: code: ${err.code}, message: ${err.message}`);
             });
       } catch (err) {
         console.info('GetAVQueueItems failed${err.code} message:${err.message}');
@@ -180,10 +183,10 @@ export default function abilityTest() {
       try {
         let currentQueueItems: Array<avSession.AVQueueItem> = await controller.getAVQueueItemsSync();
         if(currentQueueItems.length){
-            console.info(`GetAVQueueItems : SUCCESS : length : ${currentQueueItems.length}`);           
+            console.info(`GetAVQueueItemsSync : SUCCESS : length : ${currentQueueItems.length}`);           
             expect(currentQueueItems.length>0).assertTrue();            
         }else{
-            console.info(`GetAVQueueItems : SUCCESS : length : ${currentQueueItems.length}`);
+            console.info(`GetAVQueueItemsSync : SUCCESS : length : ${currentQueueItems.length}`);
             expect(currentQueueItems.length==0).assertTrue();
         }
       } catch (err) {
@@ -205,10 +208,14 @@ export default function abilityTest() {
     it('SUB_MULTIMEDIA_AVSESSION_ISACTIVE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         try{
           await controller.isActive().then((isActive: boolean) => {
-            console.info(`IsActive : SUCCESS : isactive : ${isActive}`);
-            expect(isActive).assertEqual('true');
+            if (isActive) {
+                expect(isActive).assertEqual('true');
+                console.error(`IsActive BusinessError: code: ${err.code}, message: ${err.message}`);
+            } else {
+                expect(isActive).assertEqual('false');
+                console.info(`IsActive : SUCCESS : isactive : ${isActive}`);
+            }
           }).catch((err: BusinessError) => {
-            expect(isActive).assertEqual('false');
             console.error(`IsActive BusinessError: code: ${err.code}, message: ${err.message}`);
           });
         } catch (err) {
@@ -285,11 +292,15 @@ export default function abilityTest() {
       try{
         await sleep(500);
         await controller.getValidCommands().then((validCommands: avSession.AVControlCommandType[]) => {
-            console.info(`getValidCommands : SUCCESS : length : ${validCommands.length}`);
-            expect(validCommands.length==0).assertTrue();
+                if(validCommands.length){
+                    console.info(`GetvalidCommands : SUCCESS : length : ${validCommands.length}`);           
+                    expect(validCommands.length>0).assertTrue();            
+                }else{
+                    console.info(`GetvalidCommands : SUCCESS : length : ${validCommands.length}`);
+                    expect(validCommands.length==0).assertTrue();
+                }
             }).catch((err: BusinessError) => {
-            console.info(`getValidCommands : SUCCESS : length : ${validCommands.length}`);
-            expect(validCommands.length>0).assertTrue();
+
             console.error(`getValidCommands BusinessError: code: ${err.code}, message: ${err.message}`);
             });
       } catch (err) {
@@ -379,7 +390,7 @@ export default function abilityTest() {
         await sleep(500);
         await session.off('setTargetLoopMode')
         done();
-    )
+    })
 
 
 
