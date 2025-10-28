@@ -1439,7 +1439,7 @@ export default function urlTest1() {
         );
         paramsObject.sort();
         expect(paramsObject.toString()).assertEqual(
-          '1=c&5=c&a=c&ab=c&ad=c&b=c&ca=c&name=YH&name=DKH&name=Jonathan'
+          '1=c&5=c&a=c&ab=c&ad=c&b=c&ca=c&name=Jonathan&name=YH&name=DKH'
         );
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
@@ -1478,7 +1478,7 @@ export default function urlTest1() {
         }
         expect(paramsObject.toString()).assertEqual('1=3&1=6&1=1&1=2&1=3&1=4&2=5&3=5&4=2&2=2&1=3&3=7&0=9');
         paramsObject.sort();
-        expect(paramsObject.toString()).assertEqual('0=9&1=6&1=1&1=2&1=3&1=4&1=3&1=3&2=5&2=2&3=7&3=5&4=2');
+        expect(paramsObject.toString()).assertEqual('0=9&1=3&1=6&1=1&1=2&1=3&1=4&1=3&2=5&2=2&3=5&3=7&4=2');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
@@ -1509,8 +1509,7 @@ export default function urlTest1() {
         expect(paramsObject.toString()).assertEqual('key%401=value1&key%232=value2&key%401=value3&' +
           'key%232=value4&key*3=value5&key%284%29=value6');
         paramsObject.sort();
-        expect(paramsObject.toString()).assertEqual('key%232=value2&key%232=value4&key%284%29=value6&' +
-          'key*3=value5&key%401=value3&key%401=value1');
+        expect(paramsObject.toString()).assertEqual('key%232=value2&key%232=value4&key%284%29=value6&key*3=value5&key%401=value1&key%401=value3');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
