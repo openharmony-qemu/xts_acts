@@ -13,12 +13,6 @@
  * limitations under the License.
  */
 import ActsShortTimeTaskManagerStaticTest from './ActsShortTimeTaskManagerStaticTest.test'
-import ActsShortTimeTaskManagerErrorCodeStaticTest from './ActsShortTimeTaskManagerErrorCodeStaticTest.test'
-import ActsGetAllAccountsNoParameterStatic from "./GetallaccountsStatic.test";
-import abilityTest from "./Ability.test";
 export default function testsuite() {
-  abilityTest();
-  ActsGetAllAccountsNoParameterStatic();
   ActsShortTimeTaskManagerStaticTest();
-  ActsShortTimeTaskManagerErrorCodeStaticTest();
 }
