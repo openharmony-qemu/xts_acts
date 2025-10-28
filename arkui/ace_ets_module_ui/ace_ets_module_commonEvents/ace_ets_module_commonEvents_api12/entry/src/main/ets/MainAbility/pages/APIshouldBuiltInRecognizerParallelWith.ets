@@ -107,6 +107,8 @@ struct APIshouldBuiltInRecognizerParallelWith {
               let target = this.childRecognizer.getEventTargetInfo() as ScrollableTargetInfo;
               let currentTarget = this.currentRecognizer.getEventTargetInfo() as ScrollableTargetInfo;
               if (target instanceof ScrollableTargetInfo && currentTarget instanceof ScrollableTargetInfo) {
+                AppStorage.setOrCreate('isBegin',target.isBegin())
+                AppStorage.setOrCreate('isEnd',target.isEnd())
                 if (target.isEnd()) {
                   if ((event.offsetY - this.lastOffset) < 0) {
                     this.childRecognizer.setEnabled(false)

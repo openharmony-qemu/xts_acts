@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import RectValue from './Rect';
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 
 export default class Utils {
   static rect_left: number;
@@ -120,7 +121,7 @@ export default class Utils {
     Utils.sleep(500)
   }
 
-    static performTouchComponentCenter(id: string, type: TouchType): boolean {
+  static performTouchComponentCenter(id: string, type: TouchType): boolean {
     console.info('performTouchComponent id : ' + id);
     return Utils.performTouchRectCenter(0, 0, Utils.getComponentRect(id), type);
   }
@@ -165,6 +166,22 @@ export default class Utils {
     console.info('performTouch result : ' + result);
 
     return result;
+  }
+
+  static async simulateByShell(cmd: string) {
+    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+
+    return new Promise<string>((resolve, reject) => {
+      abilityDelegator.executeShellCommand(cmd, (err, data) => {
+        if (err) {
+          console.error(`command ${cmd} failed: ${JSON.stringify(err)}`);
+          reject("failed");
+        } else {
+          console.info(`command ${cmd} executed: ${data.stdResult}`);
+          resolve("executed");
+        }
+      });
+    })
   }
 }
 
