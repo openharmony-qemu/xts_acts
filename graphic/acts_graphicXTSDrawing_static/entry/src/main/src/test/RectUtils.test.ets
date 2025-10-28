@@ -406,10 +406,9 @@ export default function rectUtilsTest() {
       let other: common2D.Rect = { left: 10, right: 10, top: 20, bottom: 20 };
       try {
         let isContains1 = drawing.RectUtils.contains(rect, other);
-        console.info(msg + `isContains = ` + isContains1);
-        expect(isContains1).assertEqual(true);
+        expect(isContains1 + '').assertEqual('true');
         let isContains2 = drawing.RectUtils.contains(other, rect);
-        expect(isContains2).assertEqual(false);
+        expect(isContains2 + '').assertEqual('false');
       } catch (e: BusinessError) {
         console.info(msg + `RectContains errorCode is: ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
@@ -432,7 +431,7 @@ export default function rectUtilsTest() {
         try {
           let isContains = drawing.RectUtils.contains(rect, other);
           console.info(msg + `isContains = ` + isContains);
-          expect(isContains).assertEqual(true);
+          expect(isContains + '').assertEqual('true');
         } catch (e: BusinessError) {
           console.info(msg + `RectContains errorCode is: ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail()
@@ -457,10 +456,10 @@ export default function rectUtilsTest() {
       let bottom = 40;
       try {
         drawing.RectUtils.inset(rect, left, top, right, bottom);
-        expect(rect.left).assertEqual('10');
-        expect(rect.top).assertEqual('20');
-        expect(rect.right).assertEqual('70');
-        expect(rect.bottom).assertEqual('60');
+        expect(rect.left + '').assertEqual('10');
+        expect(rect.top + '').assertEqual('20');
+        expect(rect.right + '').assertEqual('70');
+        expect(rect.bottom + '').assertEqual('60');
       } catch (e: BusinessError) {
         console.info(msg + `RectInset errorCode is: ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
@@ -477,18 +476,18 @@ export default function rectUtilsTest() {
      */
     it('testRectInsetMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectInsetMultipleCallsStatic';
-      let rect: common2D.Rect = { left: 0, right: 0, top: 100, bottom: 100 };
-      let left = 10;
-      let top = 20;
-      let right = 30;
-      let bottom = 40;
       for (let i = 0; i < 20; i++) {
+        let rect: common2D.Rect = { left: 0, right: 0, top: 100, bottom: 100 };
+        let left = 10;
+        let top = 20;
+        let right = 30;
+        let bottom = 40;
         try {
           drawing.RectUtils.inset(rect, left, top, right, bottom);
-          expect(rect.left).assertEqual('10');
-          expect(rect.top).assertEqual('20');
-          expect(rect.right).assertEqual('70');
-          expect(rect.bottom).assertEqual('60');
+          expect(rect.left + '').assertEqual('10');
+          expect(rect.top + '').assertEqual('20');
+          expect(rect.right + '').assertEqual('70');
+          expect(rect.bottom + '').assertEqual('60');
         } catch (e: BusinessError) {
           console.info(msg + `RectInset errorCode is: ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail()
