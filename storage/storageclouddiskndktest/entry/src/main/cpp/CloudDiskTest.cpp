@@ -29,13 +29,13 @@ static napi_value RegisterSyncFolder(napi_env env, napi_callback_info info)
     char* path = GetStringParam(env, info);
     CloudDisk_SyncFolder syncFolder;
     CloudDisk_SyncFolderPath pathInfo;
-    char * pvalue = "/storage/Users/currentUser";
+    char* pvalue = "/storage/Users/currentUser";
     pathInfo.value = pvalue;
     pathInfo.length = strlen(pathInfo.value);
     syncFolder.path = pathInfo;
 
     CloudDisk_DisplayNameInfo displayNameInfo;
-    char * newname = "Ntest";
+    char* newname = "Ntest";
     displayNameInfo.customAlias = newname;
     displayNameInfo.customAliasLength = strlen(displayNameInfo.customAlias);
     syncFolder.displayNameInfo = displayNameInfo;
