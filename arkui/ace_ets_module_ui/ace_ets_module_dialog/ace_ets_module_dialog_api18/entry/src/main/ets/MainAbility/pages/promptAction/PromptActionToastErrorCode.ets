@@ -28,7 +28,7 @@ struct PromptActionToastErrorCode {
       Column({space:3}) {
         Text(this.str).height(30).id('ToastErrorCodeThree')
         Button('OpenToast')
-          .id('OpenToastErrorCode_401')
+          .id('OpenToastErrorCodeFirst')
           .height(30)
           .width(90)
           .type(ButtonType.Capsule)
@@ -45,7 +45,7 @@ struct PromptActionToastErrorCode {
             }
           })
         Button('CloseToast1')
-          .id('CloseToastErrorCode_103401')
+          .id('CloseToastErrorCodeSecond')
           .height(30)
           .width(90)
           .type(ButtonType.Capsule)
@@ -62,7 +62,7 @@ struct PromptActionToastErrorCode {
             }
           })
         Button('CloseToast2')
-          .id('CloseToastErrorCode_401')
+          .id('CloseToastErrorCodeThird')
           .height(30)
           .width(90)
           .type(ButtonType.Capsule)

@@ -46,21 +46,21 @@ export default function PromptActionToastErrorCodeTest() {
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
 
-      let button1 = await driver.findComponent(ON.id('OpenToastErrorCode_401'));
+      let button1 = await driver.findComponent(ON.id('OpenToastErrorCodeFirst'));
       await button1.click();
       await Utils.sleep(1000)
       let strJson1 = getInspectorByKey('ToastErrorCodeThree');
       console.info("[PromptActionToastErrorCodeTest_0100] PromptActionToastErrorCode1 is: " + JSON.stringify(JSON.parse(strJson1).$attrs.content));
       expect(JSON.parse(strJson1).$attrs.content).assertEqual('401');
 
-      let button2 = await driver.findComponent(ON.id('CloseToastErrorCode_103401'));
+      let button2 = await driver.findComponent(ON.id('CloseToastErrorCodeSecond'));
       await button2.click();
       await Utils.sleep(1000)
       let strJson2 = getInspectorByKey('ToastErrorCodeThree');
       console.info("[PromptActionToastErrorCodeTest_0100] PromptActionToastErrorCode2 is: " + JSON.stringify(JSON.parse(strJson2).$attrs.content));
       expect(JSON.parse(strJson2).$attrs.content).assertEqual('103401');
 
-      let button3 = await driver.findComponent(ON.id('CloseToastErrorCode_401'));
+      let button3 = await driver.findComponent(ON.id('CloseToastErrorCodeThird'));
       await button3.click();
       await Utils.sleep(1000)
       let strJson3 = getInspectorByKey('ToastErrorCodeThree');
