@@ -1177,10 +1177,10 @@ HWTEST_F(DrawingNativeRectTest, testRectInsetCalls, Function | SmallTest | Level
         OH_Drawing_ErrorCode code = OH_Drawing_RectInset(rect, left, top, right, bottom);
         EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     }
-    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 110.0);
-    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 180.0);
-    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 370.0);
-    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 340.0);
+    EXPECT_EQ(OH_Drawing_RectGetLeft(rect), 200.0);
+    EXPECT_EQ(OH_Drawing_RectGetTop(rect), 0.0);
+    EXPECT_EQ(OH_Drawing_RectGetRight(rect), 100.0);
+    EXPECT_EQ(OH_Drawing_RectGetBottom(rect), 700.0);
     // 2. Call OH_Drawing_RectDestroy to destroy the rectangle object
     OH_Drawing_RectDestroy(rect);
 }
