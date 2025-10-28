@@ -28,21 +28,21 @@ struct Monitor_Null {
   }
   build() {
     Text(`${this.class001.class002 === null ? 'null' : 'ww'}`)
-    .id('Monitor_Null_001')
+      .id('Monitor_Null_001')
   }
 }
 
 @ObservedV2
 class Moniton_Null_001{
-  @Trace class002:Moniton_Null_002 | null = new Moniton_Null_002();
+  @Trace public class002:Moniton_Null_002 | null = new Moniton_Null_002();
 }
 
 @ObservedV2
 class Moniton_Null_002{
-  @Trace class003:Moniton_Null_003 = new Moniton_Null_003();
+  @Trace public  class003:Moniton_Null_003 = new Moniton_Null_003();
 }
 
 @ObservedV2
 class Moniton_Null_003{
-  @Trace x: number = 0;
+  @Trace public  x: number = 0;
 }
