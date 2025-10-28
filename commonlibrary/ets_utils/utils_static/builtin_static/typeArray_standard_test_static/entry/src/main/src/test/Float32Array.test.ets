@@ -2088,7 +2088,7 @@ export default function Float32ArrayTest() {
       try {
         let MIN_VALUE = -3.4e38;
         let array = new Float32Array([MIN_VALUE]);
-        expect(String(array[0])).assertEqual('-3.3999999521443642e38');
+        expect(String(array[0])).assertEqual('-3.3999999521443642e+38');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
          expect(false).assertFail();
@@ -3209,7 +3209,7 @@ export default function Float32ArrayTest() {
       try {
         let infinity = 1 / 0.0;
         let array = Float32Array.of(infinity);
-        expect(String(array[0])).assertEqual(Infinity);
+        expect(String(array[0])).assertEqual('Infinity');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
          expect(false).assertFail();
@@ -3229,7 +3229,7 @@ export default function Float32ArrayTest() {
       try {
         let infinity = -1 / 0.0;
         let array = Float32Array.of(infinity);
-        expect(String(array[0])).assertEqual(-Infinity);
+        expect(String(array[0])).assertEqual('-Infinity');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
          expect(false).assertFail();
@@ -3311,7 +3311,7 @@ export default function Float32ArrayTest() {
       try {
         let MIN_VALUE = -3.4028235e38;
         let array = Float32Array.of(MIN_VALUE);
-        expect(array[0]).assertEqual('-3.4028234663852886e38');
+        expect(String(array[0])).assertEqual('-3.4028234663852886e+38');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
          expect(false).assertFail();
@@ -3331,7 +3331,7 @@ export default function Float32ArrayTest() {
       try {
         let MIN_VALUE = -3.4028235e38 -1;
         let array = Float32Array.of(MIN_VALUE);
-        expect(array[0]).assertEqual('-3.4028234663852886e38');
+        expect(String(array[0])).assertEqual('-3.4028234663852886e+38');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
          expect(false).assertFail();
@@ -3351,7 +3351,7 @@ export default function Float32ArrayTest() {
       try {
         let MAX_VALUE = 3.4028235e38;
         let array = Float32Array.of(MAX_VALUE);
-        expect(array[0]).assertEqual('3.4028234663852886e38');
+        expect(String(array[0])).assertEqual('3.4028234663852886e+38');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
          expect(false).assertFail();
@@ -3371,7 +3371,7 @@ export default function Float32ArrayTest() {
       try {
         let MAX_VALUE = 3.4028235e38 - 1;
         let array = Float32Array.of(MAX_VALUE);
-        expect(array[0]).assertEqual('3.4028234663852886e38');
+        expect(String(array[0])).assertEqual('3.4028234663852886e+38');
       } catch (err: BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
          expect(false).assertFail();

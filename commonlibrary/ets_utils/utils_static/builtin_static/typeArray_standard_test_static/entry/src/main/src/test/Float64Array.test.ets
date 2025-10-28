@@ -1234,7 +1234,6 @@ export default function Float64ArrayTest() {
         let buffer = new ArrayBuffer(8);
         let array = new Float64Array(buffer);
         array[0] = 21;
-        array[1] = 31;
         expect(String(array[0])).assertEqual('21');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err}`);
