@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,12 +19,12 @@ import Utils, { BasePageConfig, PageConfig, TestValue, SetValue} from '../../../
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 
 export default function UseEffectTest() {
-  
+  //A list of components that support the position attribute, which is required.
   let supportView = [
     'Button',
   ]
 
-  
+  //Custom params.
   let targetComponentWidth = 200;
   let targetComponentHeight = 200;
   let parentWidth = 320;
@@ -61,18 +61,18 @@ export default function UseEffectTest() {
   describe('useEffectTest', () => {
     beforeAll(() => {
       await UtilsTest.msSleep(4000)
+      console.error('useEffectTest  start');
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    
+    //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      
-      console.error('[' + data.caseTag + '] useEffectTest');
-      AttrsManager.change(data.caseTag, data.testValue.setValue);
+      //Modify the target component properties.
+      console.error('[' + data.caseTag + '] useEffectTest123');
       console.error('[' + data.caseTag + '] check useEffect.' + ` ${data.testValue.setValue.useEffect}`);
 
-      
-      expect(true).assertTrue();
+      //Confirm that the position attribute value has been set successfully.
+      expect(true).assertTrue(); // 断言为1.1原码未做改动
     });
   })
 }

@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -17,15 +17,16 @@ import { describe, expect, beforeAll } from '../../../../hypium/index'
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, SetValue} from '../../../ets/MainAbility/common/Utils';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import { RepeatMode, GradientDirection } from '@ohos.arkui.component'
+import { RepeatMode, GradientDirection, LinearGradientOptions, BorderImageOption, ResourceColor, Color } from '@ohos.arkui.component'
 
 export default function BorderImageTest() {
-  
+  console.log('fkljsdnfkjsdhfjen vgfkl')
+  //A list of components that support the position attribute, which is required.
   let supportView = [
     'Button',
   ]
 
-  
+  //Custom params.
   let targetComponentWidth = 200;
   let targetComponentHeight = 200;
   let parentWidth = 320;
@@ -49,8 +50,9 @@ export default function BorderImageTest() {
   let testValues:TestValue[]= [{
     describe: 'SetBorderImage',
     setValue: {
-      borderImage: ({
-        source: { angle: 90,
+      borderImage: {
+        source: {
+          angle: 90,
           direction: GradientDirection.Right,
           colors: [[0xAEE1E1, 0.5], [0xD3E0DC, 0.7], [0xFCD1D1, 1.0]]
         },
@@ -59,7 +61,7 @@ export default function BorderImageTest() {
         repeat: RepeatMode.Repeat,
         outset: 3,
         fill: false
-      })
+      }
     },
     expectValue: {
       borderImage: ({
@@ -77,13 +79,14 @@ export default function BorderImageTest() {
    */
   describe('borderImageTest', () => {
     beforeAll(() => {
+      console.log('1111111111')
       await UtilsTest.msSleep(4000)
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    
+    //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      
+      //Modify the target component properties.
       console.info('[' + data.caseTag + '] borderImageTest');
       console.info('[' + data.testValue.expectValue.borderImage + '] expectValue');
       console.info('[' + data.viewObj!.getElement('$attrs').getString('borderImage') + '] viewObj.$attrs.borderImage');

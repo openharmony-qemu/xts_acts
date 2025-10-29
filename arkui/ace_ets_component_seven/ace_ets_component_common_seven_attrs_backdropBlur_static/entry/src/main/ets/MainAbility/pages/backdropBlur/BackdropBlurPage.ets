@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -36,8 +36,8 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, AlignRuleOption } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement';
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, Color,CommonMethod, AlignRuleOption } from '@ohos.arkui.component'
+import { State, StorageProp } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
@@ -345,29 +345,29 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
+//   backdropBlur: number = 3
+//
+//   applyNormalAttribute(instance: NavigatorAttribute): void {
+//     instance.backdropBlur(this.backdropBlur)
+//   }
+// }
+//
+// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
+//   backdropBlur: number = 3
+//
+//   applyNormalAttribute(instance: NavRouterAttribute): void {
+//     instance.backdropBlur(this.backdropBlur)
+//   }
+// }
+//
+// class PanelModifier implements AttributeModifier<PanelAttribute> {
+//   backdropBlur: number = 3
+//
+//   applyNormalAttribute(instance: PanelAttribute): void {
+//     instance.backdropBlur(this.backdropBlur)
+//   }
+// }
 
 class PathModifier implements AttributeModifier<PathAttribute> {
   backdropBlur: number = 3
@@ -549,7 +549,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
   backdropBlur: number = 3
 
   applyNormalAttribute(instance: SpanAttribute): void {
-    /* backdropBlur not supported */
+    // instance.backdropBlur(this.backdropBlur)
   }
 }
 
@@ -705,9 +705,415 @@ class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   }
 }
 
+function commonStyle(this: AlphabetIndexerAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: BadgeAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: BlankAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyleButton(this: ButtonAttribute, componentKey: string, backdrop: number): this {
+  console.log('commonStyleButton backdrop = ' + backdrop)
+  this.backdropBlur(backdrop)
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CalendarPickerAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CheckboxAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CheckboxGroupAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ColumnSplitAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CounterAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: DataPanelAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: DatePickerAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: EllipseAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FlexAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FlowItemAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FormLinkAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CanvasAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GaugeAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridColAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridItemAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridRowAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: HyperlinkAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ImageAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ImageAnimatorAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: LineAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ListItemAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ListItemGroupAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: LoadingProgressAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MarqueeAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MenuAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MenuItemAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MenuItemGroupAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: NavDestinationAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: NavigationAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: PathAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: PolygonAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: PolylineAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ProgressAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: QRCodeAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RadioAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RatingAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RectAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RefreshAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RelativeContainerAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RemoteWindowAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RichEditorAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RichTextAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RowAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RowSplitAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ScrollAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ScrollBarAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SearchAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SelectAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ShapeAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SliderAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SpanAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: StackAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: StepperAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: StepperItemAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SwiperAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SideBarContainerAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ToggleAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TabsAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextAreaAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextClockAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextInputAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextPickerAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextTimerAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TimePickerAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: VideoAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: WaterFlowAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: WebAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: WindowSceneAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: XComponentAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: DividerAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CircleAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ColumnAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ListAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TabContentAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
 @Entry
 @Component
 struct BackdropBlurPage {
+  @StorageProp('_backdropBlurButton') _backdropBlurButton: SetValue = {
+    backdropBlur: 0
+  }
+  @StorageProp('_backdropBlur') _backdropBlur: number = 0
   @State _backdropBlurAlphabetIndexerModifier: AlphabetIndexerModifier = new AlphabetIndexerModifier()
   @State _backdropBlurBadgeModifier: BadgeModifier = new BadgeModifier()
   @State _backdropBlurButtonModifier: ButtonModifier = new ButtonModifier()
@@ -746,9 +1152,6 @@ struct BackdropBlurPage {
   @State _backdropBlurMenuItemGroupModifier: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _backdropBlurNavDestinationModifier: NavDestinationModifier = new NavDestinationModifier()
   @State _backdropBlurNavigationModifier: NavigationModifier = new NavigationModifier()
-  
-  
-  
   @State _backdropBlurPathModifier: PathModifier = new PathModifier()
   @State _backdropBlurPolygonModifier: PolygonModifier = new PolygonModifier()
   @State _backdropBlurPolylineModifier: PolylineModifier = new PolylineModifier()
@@ -791,232 +1194,153 @@ struct BackdropBlurPage {
   @State _backdropBlurWebModifier: WebModifier = new WebModifier()
   @State _backdropBlurWindowSceneModifier: WindowSceneModifier = new WindowSceneModifier()
   @State _backdropBlurXComponentModifier: XComponentModifier = new XComponentModifier()
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? '';
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
-  @State parentWidth: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
-  @State parentHeight: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-  @State columns: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int) ?? 0
-  @State gutter: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int) ?? 0
-  @State parentBackGroundColor: Color = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor ?? Color.White;
-  @State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey ?? '';
-
+  @State targetView: string = '';
+  @State componentKey: string = '';
+  @State parentWidth: number = 0;
+  @State parentHeight: number = 0;
+  @State columns: number = 0;
+  @State gutter: number = 0;
+  @State parentComponentKey: string = '';
+  @State parentBackGroundColor: Color = Color.White
   onPageShow() {
     console.info('backdropBlur translate page show called ')
-    attrsManager.registerDataChange((value: SetValue) => {
-      console.info('backdropBlur [registerDataChange] ' + JSON.stringify(value.backdropBlur))
-      this._backdropBlurAlphabetIndexerModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurBadgeModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurButtonModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurBlankModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurCalendarPickerModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurCanvasModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurCheckboxModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurCheckboxGroupModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurCircleModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurColumnModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurColumnSplitModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurCounterModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurDataPanelModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurDatePickerModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurDividerModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurEllipseModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurFlexModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurFlowItemModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurFormLinkModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurGaugeModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurGridModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurGridColModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurGridItemModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurGridRowModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurHyperlinkModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurImageModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurImageAnimatorModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurLineModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurListModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurListItemModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurListItemGroupModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurLoadingProgressModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurMarqueeModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurMenuModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurMenuItemModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurMenuItemGroupModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurNavDestinationModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurNavigationModifier.backdropBlur = value.backdropBlur
-      
-      
-      
-      this._backdropBlurPathModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurPolygonModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurPolylineModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurProgressModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurQRCodeModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurRadioModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurRatingModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurRectModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurRefreshModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurRelativeContainerModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurRemoteWindowModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurRichEditorModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurRichTextModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurRowModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurRowSplitModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurScrollModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurScrollBarModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurSearchModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurSelectModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurShapeModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurSideBarContainerModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurSliderModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurSpanModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurStackModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurStepperModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurStepperItemModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurSwiperModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurTabContentModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurTabsModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurTextModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurTextAreaModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurTextClockModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurTextInputModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurTextPickerModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurTextTimerModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurTimePickerModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurToggleModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurVideoModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurWaterFlowModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurWebModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurWindowSceneModifier.backdropBlur = value.backdropBlur
-      this._backdropBlurXComponentModifier.backdropBlur = value.backdropBlur
-    })
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    this._backdropBlurButton = routerParamOptions.view.testValue.setValue
+    console.info('backdropBlur = ' + this._backdropBlurButton.backdropBlur)
+    this.targetView = routerParamOptions.view.targetView
+    this.componentKey = routerParamOptions.view.componentKey ?? ""
+    this.parentWidth = routerParamOptions.view.parentWidth
+    this.parentHeight = routerParamOptions.view.parentHeight
+    this.columns = routerParamOptions.view.columns
+    this.gutter = routerParamOptions.view.gutter
+    this.parentComponentKey = routerParamOptions.view.parentComponentKey
+    this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
   }
-
-  
-  
-  
-  
 
   build() {
     Column() {
       if (this.targetView == 'AlphabetIndexer') {
         AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurAlphabetIndexerModifier)
       }
       if (this.targetView == 'Button') {
         Button('button1')
-          
-          .attributeModifier(this._backdropBlurButtonModifier)
+        .backdropBlur(2)
+        .key(this.componentKey)
+          // .commonStyleButton(this.componentKey, this._backdropBlurButton.backdropBlur)
+          // .attributeModifier(this._backdropBlurButtonModifier)
       }
       if (this.targetView == 'Blank') {
         Blank()
           .backgroundColor(Color.Yellow)
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurBlankModifier)
       }
       if (this.targetView == 'Checkbox') {
         Checkbox()
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurCheckboxModifier)
       }
       if (this.targetView == 'CheckboxGroup') {
         CheckboxGroup({ group: 'checkboxGroup' })
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurCheckboxGroupModifier)
       }
       if (this.targetView == 'DataPanel') {
         DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] })
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurDataPanelModifier)
       }
       if (this.targetView == 'DatePicker') {
         DatePicker({ start: new Date('1970-1-1'), end: new Date('2100-1-1') })
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurDatePickerModifier)
       }
       if (this.targetView == 'Divider') {
         Divider()
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurDividerModifier)
       }
       if (this.targetView == 'Gauge') {
         Gauge({ value: 105 })
           .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurGaugeModifier)
       }
       if (this.targetView == 'Image') {
         Image($r('app.media.icon'))
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurImageModifier)
       }
       if (this.targetView == 'ImageAnimator') {
         ImageAnimator()
           .images([{ src: $r('app.media.icon') }])
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurImageAnimatorModifier)
       }
       if (this.targetView == 'LoadingProgress') {
         LoadingProgress()
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurLoadingProgressModifier)
       }
       if (this.targetView == 'Marquee') {
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity as int,
+          loop: Int.MAX_VALUE,
           fromStart: true,
           src: 'Running Marquee starts rolling'
         })
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurMarqueeModifier)
       }
       if (this.targetView == 'Navigation') {
         Navigation(new NavPathStack()) {
         }
-					
-          
+					.commonStyle(this.componentKey)
+          .attributeModifier(this._backdropBlurNavigationModifier)
       }
       if (this.targetView == 'Menu') {
         Menu() {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
         }
 					.backgroundColor(Color.Yellow)
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurMenuModifier)
       }
       if (this.targetView == 'NavRouter') {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-				
-        
+        // NavRouter() {
+        //   Row() {
+        //     Image($r('app.media.icon'))
+        //   }
+        //
+        //   NavDestination() {
+        //     Text('NavDestination')
+        //       .fontSize(10)
+        //   }
+        // }
+				// 	.commonStyle(this.componentKey)
+        //   .attributeModifier(this._backdropBlurNavRouterModifier)
       }
       if (this.targetView == 'Progress') {
         Progress({ value: 10, type: ProgressType.Eclipse })
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurProgressModifier)
       }
       if (this.targetView == 'QRCode') {
         QRCode('Running Marquee starts rolling')
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurQRCodeModifier)
       }
       if (this.targetView == 'Radio') {
         Radio({ value: 'Radio1', group: 'radioGroup' })
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurRadioModifier)
       }
       if (this.targetView == 'Rating') {
         Rating({ rating: 3.5, indicator: false })
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurRatingModifier)
       }
       if (this.targetView == 'ScrollBar') {
@@ -1027,23 +1351,23 @@ struct BackdropBlurPage {
             .borderRadius(10)
             .backgroundColor('#C0C0C0')
         }
-					
+					.commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurScrollBarModifier)
       }
       if (this.targetView == 'Search') {
         Search()
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurSearchModifier)
       }
       if (this.targetView == 'Select') {
         Select([{ value: 'aaa' }, { value: 'bbb' }])
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurSelectModifier)
       }
       if (this.targetView == 'Slider') {
         Slider({ value: 50, min: 0, max: 100, style: SliderStyle.OutSet })
           .showTips(true)
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurSliderModifier)
       }
       if (this.targetView == 'Stepper') {
@@ -1054,8 +1378,8 @@ struct BackdropBlurPage {
             }
           }
         }
-					
-          
+					.commonStyle(this.componentKey)
+          .attributeModifier(this._backdropBlurStepperModifier)
       }
       if (this.targetView == 'StepperItem') {
         Stepper() {
@@ -1065,8 +1389,8 @@ struct BackdropBlurPage {
             }
           }
 						.backgroundColor(Color.Red)
-            
-            
+            .commonStyle(this.componentKey)
+            .attributeModifier(this._backdropBlurStepperItemModifier)
         }
 					.backgroundColor(Color.Yellow)
           .width('100%')
@@ -1074,62 +1398,62 @@ struct BackdropBlurPage {
       }
       if (this.targetView == 'Text') {
         Text('text1')
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurTextModifier)
       }
       if (this.targetView == 'TextArea') {
         TextArea({ placeholder: 'The text area can hold an unlimited amount of text. input your word...' })
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurTextAreaModifier)
       }
       if (this.targetView == 'TextClock') {
         TextClock({ timeZoneOffset: -8 })
           .format('hms')
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurTextClockModifier)
       }
       if (this.targetView == 'TextInput') {
         TextInput({ placeholder: 'input your word...' })
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurTextInputModifier)
       }
       if (this.targetView == 'TextPicker') {
         TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] })
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurTextPickerModifier)
       }
       if (this.targetView == 'TextTimer') {
         TextTimer({ isCountDown: true, count: 30000 })
           .format('mm:ss.SS')
           .fontColor(Color.Black)
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurTextTimerModifier)
       }
       if (this.targetView == 'TimePicker') {
         TimePicker({ selected: new Date('2022-07-22T08:00:00') })
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurTimePickerModifier)
       }
       if (this.targetView == 'Toggle') {
         Toggle({ type: ToggleType.Switch, isOn: false })
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurToggleModifier)
       }
       if (this.targetView == 'Web') {
         Web({ src: 'www.example.com', controller: new WebviewController() })
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurWebModifier)
       }
       if (this.targetView == 'Circle') {
         Circle()
           .width(150)
           .height(200)
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurCircleModifier)
       }
       if (this.targetView == 'Ellipse') {
         Ellipse()
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurEllipseModifier)
       }
       if (this.targetView == 'Line') {
@@ -1137,27 +1461,27 @@ struct BackdropBlurPage {
           .startPoint([0, 0])
           .endPoint([50, 100])
           .backgroundColor(Color.Black)
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurLineModifier)
       }
       if (this.targetView == 'Polyline') {
         Polyline()
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurPolylineModifier)
       }
       if (this.targetView == 'Polygon') {
         Polygon()
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurPolygonModifier)
       }
       if (this.targetView == 'Path') {
         Path()
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurPathModifier)
       }
       if (this.targetView == 'Rect') {
         Rect()
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurRectModifier)
       }
       if (this.targetView == 'Shape') {
@@ -1166,7 +1490,7 @@ struct BackdropBlurPage {
             .width(100)
             .height(50)
         }
-					
+					.commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurShapeModifier)
       }
       if (this.targetView == 'Badge') {
@@ -1176,7 +1500,7 @@ struct BackdropBlurPage {
             .height(50)
             .backgroundColor(0x317aff)
         }
-					
+					.commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurBadgeModifier)
       }
       if (this.targetView == 'Column') {
@@ -1185,7 +1509,7 @@ struct BackdropBlurPage {
             .width(100)
             .height(50)
         }
-					
+					.commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurColumnModifier)
       }
       if (this.targetView == 'ColumnSplit') {
@@ -1196,13 +1520,13 @@ struct BackdropBlurPage {
             .backgroundColor(0xF5DEB3)
             .textAlign(TextAlign.Center)
         }
-					
+					.commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurColumnSplitModifier)
       }
       if (this.targetView == 'Counter') {
         Counter() {
         }
-					
+					.commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurCounterModifier)
       }
       if (this.targetView == 'Flex') {
@@ -1212,7 +1536,7 @@ struct BackdropBlurPage {
             .height(50)
             .backgroundColor(0xF5DEB3)
         }
-					
+					.commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurFlexModifier)
       }
       if (this.targetView == 'GridRow') {
@@ -1230,7 +1554,7 @@ struct BackdropBlurPage {
             }
           )
         }
-					
+					.commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurGridRowModifier)
       }
       if (this.targetView == 'Grid') {
@@ -1250,7 +1574,7 @@ struct BackdropBlurPage {
 					.columnsTemplate('1fr 1fr 1fr 1fr 1fr')
           .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
           .backgroundColor(0xFAEEE0)
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurGridModifier)
       }
       if (this.targetView == 'List') {
@@ -1258,7 +1582,7 @@ struct BackdropBlurPage {
         }
 					.height('100%')
           .width('100%')
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurListModifier)
       }
       if (this.targetView == 'ListItem') {
@@ -1269,7 +1593,7 @@ struct BackdropBlurPage {
               .textAlign(TextAlign.Center)
               .backgroundColor(Color.White)
           }
-						
+						.commonStyle(this.componentKey)
             .attributeModifier(this._backdropBlurListItemModifier)
         }
 					.width('100%')
@@ -1279,7 +1603,7 @@ struct BackdropBlurPage {
         List({ space: 0, initialIndex: 0 }) {
           ListItemGroup()
             .backgroundColor(Color.Yellow)
-            
+            .commonStyle(this.componentKey)
             .attributeModifier(this._backdropBlurListItemGroupModifier)
         }
 					.backgroundColor(Color.Pink)
@@ -1287,28 +1611,28 @@ struct BackdropBlurPage {
           .height('100%')
       }
       if (this.targetView == 'Navigator') {
-        
-        
-        
-        
-        
-				
-        
-        
+        // Navigator() {
+        //   Text('Go to back page')
+        //     .width('100%')
+        //     .height(20)
+        // }
+				// 	.backgroundColor(Color.Red)
+        //   .commonStyle(this.componentKey)
+        //   .attributeModifier(this._backdropBlurNavigatorModifier)
       }
       if (this.targetView == 'Panel') {
-        
-        
-        
-				
-        
-        
+        // Panel(true) {
+        //   Text('Text')
+        // }
+				// 	.backgroundColor(Color.Yellow)
+        //   .commonStyle(this.componentKey)
+        //   .attributeModifier(this._backdropBlurPanelModifier)
       }
       if (this.targetView == 'Refresh') {
         Refresh({ refreshing: true }) {
           Text('123')
         }
-					
+					.commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurRefreshModifier)
       }
       if (this.targetView == 'RelativeContainer') {
@@ -1323,42 +1647,42 @@ struct BackdropBlurPage {
             } as AlignRuleOption)
             .id('constraintSize')
         }
-					
+					.commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurRelativeContainerModifier)
       }
       if (this.targetView == 'Row') {
         Row()
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurRowModifier)
       }
       if (this.targetView == 'RowSplit') {
         RowSplit() {
           Text('Text')
         }
-					
+					.commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurRowSplitModifier)
       }
       if (this.targetView == 'Scroll') {
         Scroll() {
           Column() {
-            ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
+            ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int) => {
               Text('Scroll' + item.toString())
                 .width('90%')
                 .height(50)
                 .backgroundColor(Color.White)
                 .textAlign(TextAlign.Center)
-            }, (item: int, index: int) => item.toString())
+            }, (item: int) => item.toString())
           }
 					.width('100%')
         }
 					.scrollBar(BarState.On)
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurScrollModifier)
       }
       if (this.targetView == 'SideBarContainer') {
         SideBarContainer(SideBarContainerType.Embed) {
           Column() {
-            ForEach([1, 2, 3], (item: int, index: int) => {
+            ForEach([1, 2, 3], (item: int) => {
               Column({ space: 5 } as ColumnOptions) {
                 Image($r('app.media.icon'))
                   .width(50)
@@ -1378,27 +1702,27 @@ struct BackdropBlurPage {
           }
 						.backgroundColor(Color.Orange)
         }
-					
-          
+					.commonStyle(this.componentKey)
+          .attributeModifier(this._backdropBlurSideBarContainerModifier)
       }
       if (this.targetView == 'Stack') {
         Stack() {
         }
-					
+					.commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurStackModifier)
       }
       if (this.targetView == 'Swiper') {
         Swiper() {
-          ForEach([1, 2, 3], (item: int, index: int) => {
+          ForEach([1, 2, 3], (item: int) => {
             Text('Swiper' + item)
               .width('90%')
               .height(50)
-          }, (item: int, index: int) => item.toString())
+          }, (item: int) => item.toString())
         }
 					.indicator(true)
           .backgroundColor(Color.White)
-          
-          
+          .commonStyle(this.componentKey)
+          .attributeModifier(this._backdropBlurSwiperModifier)
       }
       if (this.targetView == 'Tabs') {
         Tabs() {
@@ -1409,7 +1733,7 @@ struct BackdropBlurPage {
               .backgroundColor('#00CB87')
           }
         }
-					
+					.commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurTabsModifier)
       }
       if (this.targetView == 'TabContent') {
@@ -1421,7 +1745,7 @@ struct BackdropBlurPage {
               .backgroundColor(Color.White)
           }
 						.tabBar('Tabs1')
-            
+            .commonStyle(this.componentKey)
             .attributeModifier(this._backdropBlurTabContentModifier)
         }
 					.width('100%')
@@ -1429,7 +1753,7 @@ struct BackdropBlurPage {
       }
       if (this.targetView == 'WaterFlow') {
         WaterFlow() {
-          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
+          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int) => {
             FlowItem() {
               Column() {
                 Text('WaterFlow' + item)
@@ -1441,9 +1765,9 @@ struct BackdropBlurPage {
                   .objectFit(ImageFit.Fill)
               }
             }
-          }, (item: int, index: int) => item.toString())
+          }, (item: int) => item.toString())
         }
-					
+					.commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurWaterFlowModifier)
       }
       if (this.targetView == 'GridCol') {
@@ -1454,7 +1778,7 @@ struct BackdropBlurPage {
               .height('20vp')
           }
 						.backgroundColor(Color.Yellow)
-            
+            .commonStyle(this.componentKey)
             .attributeModifier(this._backdropBlurGridColModifier)
         }
 					.backgroundColor(Color.Pink)
@@ -1473,7 +1797,7 @@ struct BackdropBlurPage {
 						.rowStart(1)
             .rowEnd(4)
             .backgroundColor(Color.Yellow)
-            
+            .commonStyle(this.componentKey)
             .attributeModifier(this._backdropBlurGridItemModifier)
         }
 					.backgroundColor(Color.Pink)
@@ -1482,7 +1806,7 @@ struct BackdropBlurPage {
       }
       if (this.targetView == 'FlowItem') {
         WaterFlow() {
-          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
+          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int) => {
             FlowItem() {
               Column() {
                 Text('WaterFlow' + item)
@@ -1495,9 +1819,9 @@ struct BackdropBlurPage {
               }
             }
 						.backgroundColor(Color.Yellow)
-              
+              .commonStyle(this.componentKey)
               .attributeModifier(this._backdropBlurFlowItemModifier)
-          }, (item: int, index: int) => item.toString())
+          }, (item: int) => item.toString())
         }
 					.backgroundColor(Color.Pink)
           .width('100%')
@@ -1507,7 +1831,7 @@ struct BackdropBlurPage {
         Row() {
           Menu() {
             MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-              
+              .commonStyle(this.componentKey)
               .attributeModifier(this._backdropBlurMenuItemModifier)
           }
 						.backgroundColor(Color.Yellow)
@@ -1524,7 +1848,7 @@ struct BackdropBlurPage {
             MenuItemGroup({ header: 'MenuItemGroup' }) {
               MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
             }
-							
+							.commonStyle(this.componentKey)
               .attributeModifier(this._backdropBlurMenuItemGroupModifier)
           }
 						.backgroundColor(Color.Yellow)
@@ -1537,13 +1861,13 @@ struct BackdropBlurPage {
       }
       if (this.targetView == 'CalendarPicker') {
         CalendarPicker({ hintRadius: 10, selected: new Date() })
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurCalendarPickerModifier)
       }
       if (this.targetView == 'Canvas') {
         Canvas(new CanvasRenderingContext2D(new RenderingContextSettings(true)))
           .backgroundColor('#FFFF00')
-          
+          .commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurCanvasModifier)
       }
       if (this.targetView == 'FormLink') {
@@ -1554,19 +1878,19 @@ struct BackdropBlurPage {
         } as FormLinkOptions) {
           Button("router event").width(120)
         }
-					
+					.commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurFormLinkModifier)
       }
       if (this.targetView == 'Hyperlink') {
         Hyperlink('https://example.com/', 'Go to the developer website') {
         }
-					
+					.commonStyle(this.componentKey)
           .attributeModifier(this._backdropBlurHyperlinkModifier)
       }
       if (this.targetView == 'Span') {
         Text() {
           Span('Span1')
-            
+            .commonStyle(this.componentKey)
             .attributeModifier(this._backdropBlurSpanModifier)
         }
       }

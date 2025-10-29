@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -35,9 +35,9 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
   StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
-  TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
-  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, LinearGradientOptions, GradientDirection,AlignRuleOption } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement';
+  TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute, AlignRuleOption,
+  BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, LinearGradientOptions, GradientDirection } from '@ohos.arkui.component'
+import { State, StorageProp } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
@@ -535,44 +535,44 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
 	}
 }
 
+// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
+// 	mLinearGradient: LinearGradientOptions = {
+// 	direction: GradientDirection.Left,
+// 	repeating: true,
+// 	colors: [['FFFF0000', 0.0], ['#FF0000FF', 0.3], ['#FFFFFF00', 0.5]],
+// 	angle: 10
+// }
+//
+// 	applyNormalAttribute(instance: NavigatorAttribute): void {
+// 		instance.linearGradient(this.mLinearGradient)
+// 	}
+// }
+//
+// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
+// 	mLinearGradient: LinearGradientOptions = {
+// 	direction: GradientDirection.Left,
+// 	repeating: true,
+// 	colors: [['FFFF0000', 0.0], ['#FF0000FF', 0.3], ['#FFFFFF00', 0.5]],
+// 	angle: 10
+// }
+//
+// 	applyNormalAttribute(instance: NavRouterAttribute): void {
+// 		instance.linearGradient(this.mLinearGradient)
+// 	}
+// }
+//
+// class PanelModifier implements AttributeModifier<PanelAttribute> {
+// 	mLinearGradient: LinearGradientOptions = {
+// 	direction: GradientDirection.Left,
+// 	repeating: true,
+// 	colors: [['FFFF0000', 0.0], ['#FF0000FF', 0.3], ['#FFFFFF00', 0.5]],
+// 	angle: 10
+// }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// 	applyNormalAttribute(instance: PanelAttribute): void {
+// 		instance.linearGradient(this.mLinearGradient)
+// 	}
+// }
 
 class PathModifier implements AttributeModifier<PathAttribute> {
 	mLinearGradient: LinearGradientOptions = {
@@ -869,7 +869,7 @@ class SpanModifier implements AttributeModifier<SpanAttribute> {
 }
 
 	applyNormalAttribute(instance: SpanAttribute): void {
-		/* linearGradient not supported */
+		// instance.linearGradient(this.mLinearGradient)
 	}
 }
 
@@ -1120,9 +1120,414 @@ class XComponentModifier implements AttributeModifier<XComponentAttribute> {
 	}
 }
 
+function commonStyle(this: AlphabetIndexerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: BadgeAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: BlankAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyleButton(this: ButtonAttribute, componentKey: string, linearGradient: LinearGradientOptions): this {
+	this.linearGradient(linearGradient)
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: CalendarPickerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: CheckboxAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: CheckboxGroupAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ColumnSplitAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: CounterAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: DataPanelAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: DatePickerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: EllipseAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: FlexAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: FlowItemAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: FormLinkAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: GaugeAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: GridAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: GridColAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: GridItemAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: GridRowAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: HyperlinkAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ImageAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ImageAnimatorAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: LineAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ListItemAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ListItemGroupAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: LoadingProgressAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: MarqueeAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: MenuAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: MenuItemAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: MenuItemGroupAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: NavDestinationAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: NavigationAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: PathAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: PolygonAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: PolylineAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ProgressAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: QRCodeAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RadioAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RatingAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RectAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RefreshAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RelativeContainerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RemoteWindowAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RichEditorAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RichTextAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RowAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: RowSplitAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ScrollAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ScrollBarAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: SearchAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: SelectAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ShapeAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: SliderAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: SpanAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: StackAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: StepperAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: StepperItemAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: SwiperAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: SideBarContainerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ToggleAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TabsAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TextAreaAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TextClockAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TextInputAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TextPickerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TextTimerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TimePickerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: VideoAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: WaterFlowAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: WebAttribute, componentKey: string): this {
+
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: WindowSceneAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: CanvasAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: XComponentAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TextAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: DividerAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: CircleAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ColumnAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: ListAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
+function commonStyle(this: TabContentAttribute, componentKey: string): this {
+	this.key(componentKey)
+	return this
+}
+
 @Entry
 @Component
 struct LinearGradientPage {
+	@StorageProp('_linearGradientButton') linearGradientButton: SetValue = {
+		linearGradient: {colors: [['FFFFFFFF', 0.0]]}
+	}
 	@State _linearGradientAlphabetIndexerModifier: AlphabetIndexerModifier = new AlphabetIndexerModifier()
 	@State _linearGradientBadgeModifier: BadgeModifier = new BadgeModifier()
 	@State _linearGradientButtonModifier: ButtonModifier = new ButtonModifier()
@@ -1161,9 +1566,6 @@ struct LinearGradientPage {
 	@State _linearGradientMenuItemGroupModifier: MenuItemGroupModifier = new MenuItemGroupModifier()
 	@State _linearGradientNavDestinationModifier: NavDestinationModifier = new NavDestinationModifier()
 	@State _linearGradientNavigationModifier: NavigationModifier = new NavigationModifier()
-	
-	
-	
 	@State _linearGradientPathModifier: PathModifier = new PathModifier()
 	@State _linearGradientPolygonModifier: PolygonModifier = new PolygonModifier()
 	@State _linearGradientPolylineModifier: PolylineModifier = new PolylineModifier()
@@ -1206,17 +1608,30 @@ struct LinearGradientPage {
 	@State _linearGradientWebModifier: WebModifier = new WebModifier()
 	@State _linearGradientWindowSceneModifier: WindowSceneModifier = new WindowSceneModifier()
 	@State _linearGradientXComponentModifier: XComponentModifier = new XComponentModifier()
-	@State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? '';
-	@State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
-	@State parentWidth: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
-	@State parentHeight: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-	@State columns: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int) ?? 0
-	@State gutter: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int) ?? 0
-	@State parentBackGroundColor: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor ?? '#FFFF00'
-  	@State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey ?? '';
+	@State targetView: string = '';
+	@State componentKey: string = '';
+	@State parentWidth: number = 0;
+	@State parentHeight: number = 0;
+	@State columns: number = 0;
+	@State gutter: number = 0;
+	@State parentComponentKey: string = '';
+	@State parentBackGroundColor: string = ''
 
 	onPageShow() {
 		console.info('linearGradient translate page show called ')
+		let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+		this.linearGradientButton = routerParamOptions.view.testValue.setValue
+		this._linearGradientButtonModifier.mLinearGradient = routerParamOptions.view.testValue.setValue.linearGradient
+		const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
+			.getElement("view")
+		this.targetView = viewElement.getString("targetView")
+		this.componentKey = viewElement.getString("componentKey")
+		this.parentWidth = viewElement.getDouble("parentWidth")
+		this.parentHeight = viewElement.getDouble("parentHeight")
+		this.columns = viewElement.getDouble("columns")
+		this.gutter = viewElement.getDouble("gutter")
+		this.parentComponentKey = viewElement.getString("parentComponentKey")
+		this.parentBackGroundColor = viewElement.getString("parentBackGroundColor")
     attrsManager.registerDataChange((value: SetValue) => {
 			console.info('linearGradient [registerDataChange] ' + JSON.stringify(value.linearGradient))
 			this._linearGradientAlphabetIndexerModifier.mLinearGradient = value.linearGradient
@@ -1257,9 +1672,6 @@ struct LinearGradientPage {
 			this._linearGradientMenuItemGroupModifier.mLinearGradient = value.linearGradient
 			this._linearGradientNavDestinationModifier.mLinearGradient = value.linearGradient
 			this._linearGradientNavigationModifier.mLinearGradient = value.linearGradient
-			
-			
-			
 			this._linearGradientPathModifier.mLinearGradient = value.linearGradient
 			this._linearGradientPolygonModifier.mLinearGradient = value.linearGradient
 			this._linearGradientPolylineModifier.mLinearGradient = value.linearGradient
@@ -1305,133 +1717,128 @@ struct LinearGradientPage {
 		})
 	}
 
-  
-  
-  
-  
-
 	build() {
 		Column() {
 			if (this.targetView == 'AlphabetIndexer') {
 				AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientAlphabetIndexerModifier)
 			}
 			if (this.targetView == 'Button') {
 				Button('button1')
-					
+					.commonStyleButton(this.componentKey, this.linearGradientButton.linearGradient)
 					.attributeModifier(this._linearGradientButtonModifier)
 			}
 			if (this.targetView == 'Blank') {
 				Blank()
 					.backgroundColor(Color.Yellow)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientBlankModifier)
 			}
 			if (this.targetView == 'Checkbox') {
 				Checkbox()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientCheckboxModifier)
 			}
 			if (this.targetView == 'CheckboxGroup') {
 				CheckboxGroup({ group: 'checkboxGroup' })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientCheckboxGroupModifier)
 			}
 			if (this.targetView == 'DataPanel') {
 				DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientDataPanelModifier)
 			}
 			if (this.targetView == 'DatePicker') {
 				DatePicker({ start: new Date('1970-1-1'), end: new Date('2100-1-1') })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientDatePickerModifier)
 			}
 			if (this.targetView == 'Divider') {
 				Divider()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientDividerModifier)
 			}
 			if (this.targetView == 'Gauge') {
 				Gauge({ value: 105 })
 					.colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientGaugeModifier)
 			}
 			if (this.targetView == 'Image') {
 				Image($r('app.media.icon'))
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientImageModifier)
 			}
 			if (this.targetView == 'ImageAnimator') {
 				ImageAnimator()
 					.images([{ src: $r('app.media.icon') }])
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientImageAnimatorModifier)
 			}
 			if (this.targetView == 'LoadingProgress') {
 				LoadingProgress()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientLoadingProgressModifier)
 			}
 			if (this.targetView == 'Marquee') {
 				Marquee({ 
 					start: true,
 					step: 50,
-					loop: Infinity as int,
+					loop: Int.MAX_VALUE,
 					fromStart: true,
 					src: 'Running Marquee starts rolling'
 				})
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientMarqueeModifier)
 			}
 			if (this.targetView == 'Navigation') {
         Navigation(new NavPathStack()) {
 				}
-					
-					
+					.commonStyle(this.componentKey)
+					.attributeModifier(this._linearGradientNavigationModifier)
 			}
 			if (this.targetView == 'Menu') {
 				Menu() {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
 				}
 					.backgroundColor(Color.Yellow)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientMenuModifier)
 			}
 			if (this.targetView == 'NavRouter') {
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+				// NavRouter() {
+				// 	Row() {
+				// 		Image($r('app.media.icon'))
+				// 	}
+				//
+				// 	NavDestination() {
+				// 		Text('NavDestination')
+				// 			.fontSize(10)
+				// 	}
+				// }
+				// 	.commonStyle(this.componentKey)
+				// 	.attributeModifier(this._linearGradientNavRouterModifier)
 			}
 			if (this.targetView == 'Progress') {
 				Progress({ value: 10, type: ProgressType.Eclipse })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientProgressModifier)
 			}
 			if (this.targetView == 'QRCode') {
 				QRCode('Running Marquee starts rolling')
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientQRCodeModifier)
 			}
 			if (this.targetView == 'Radio') {
 				Radio({ value: 'Radio1', group: 'radioGroup' })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientRadioModifier)
 			}
 			if (this.targetView == 'Rating') {
 				Rating({ rating: 3.5, indicator: false })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientRatingModifier)
 			}
 			if (this.targetView == 'ScrollBar') {
@@ -1442,23 +1849,23 @@ struct LinearGradientPage {
 						.borderRadius(10)
 						.backgroundColor('#C0C0C0')
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientScrollBarModifier)
 			}
 			if (this.targetView == 'Search') {
 				Search()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientSearchModifier)
 			}
 			if (this.targetView == 'Select') {
 				Select([{ value: 'aaa' }, { value: 'bbb' }])
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientSelectModifier)
 			}
 			if (this.targetView == 'Slider') {
 				Slider({ value: 50, min: 0, max: 100, style: SliderStyle.OutSet })
 					.showTips(true)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientSliderModifier)
 			}
 			if (this.targetView == 'Stepper') {
@@ -1469,8 +1876,8 @@ struct LinearGradientPage {
 						}
 					}
 				}
-					
-					
+					.commonStyle(this.componentKey)
+					.attributeModifier(this._linearGradientStepperModifier)
 			}
 			if (this.targetView == 'StepperItem') {
 				Stepper() {
@@ -1480,8 +1887,8 @@ struct LinearGradientPage {
 						}
 					}
 						.backgroundColor(Color.Red)
-						
-						
+						.commonStyle(this.componentKey)
+						.attributeModifier(this._linearGradientStepperItemModifier)
 				}
 					.backgroundColor(Color.Yellow)
 					.width('100%')
@@ -1489,62 +1896,62 @@ struct LinearGradientPage {
 			}
 			if (this.targetView == 'Text') {
 				Text('text1')
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientTextModifier)
 			}
 			if (this.targetView == 'TextArea') {
 				TextArea({ placeholder: 'The text area can hold an unlimited amount of text. input your word...' })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientTextAreaModifier)
 			}
 			if (this.targetView == 'TextClock') {
 				TextClock({ timeZoneOffset: -8 })
 					.format('hms')
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientTextClockModifier)
 			}
 			if (this.targetView == 'TextInput') {
 				TextInput({ placeholder: 'input your word...' })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientTextInputModifier)
 			}
 			if (this.targetView == 'TextPicker') {
 				TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientTextPickerModifier)
 			}
 			if (this.targetView == 'TextTimer') {
 				TextTimer({ isCountDown: true, count: 30000 })
 					.format('mm:ss.SS')
 					.fontColor(Color.Black)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientTextTimerModifier)
 			}
 			if (this.targetView == 'TimePicker') {
 				TimePicker({ selected: new Date('2022-07-22T08:00:00') })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientTimePickerModifier)
 			}
 			if (this.targetView == 'Toggle') {
 				Toggle({ type: ToggleType.Switch, isOn: false })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientToggleModifier)
 			}
 			if (this.targetView == 'Web') {
         Web({ src: 'www.example.com', controller: new WebviewController() })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientWebModifier)
 			}
 			if (this.targetView == 'Circle') {
 				Circle()
 					.width(150)
 					.height(200)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientCircleModifier)
 			}
 			if (this.targetView == 'Ellipse') {
 				Ellipse()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientEllipseModifier)
 			}
 			if (this.targetView == 'Line') {
@@ -1552,27 +1959,27 @@ struct LinearGradientPage {
 					.startPoint([0, 0])
 					.endPoint([50, 100])
 					.backgroundColor(Color.Black)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientLineModifier)
 			}
 			if (this.targetView == 'Polyline') {
 				Polyline()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientPolylineModifier)
 			}
 			if (this.targetView == 'Polygon') {
 				Polygon()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientPolygonModifier)
 			}
 			if (this.targetView == 'Path') {
 				Path()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientPathModifier)
 			}
 			if (this.targetView == 'Rect') {
 				Rect()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientRectModifier)
 			}
 			if (this.targetView == 'Shape') {
@@ -1581,7 +1988,7 @@ struct LinearGradientPage {
 						.width(100)
 						.height(50)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientShapeModifier)
 			}
 			if (this.targetView == 'Badge') {
@@ -1591,7 +1998,7 @@ struct LinearGradientPage {
 						.height(50)
 						.backgroundColor(0x317aff)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientBadgeModifier)
 			}
 			if (this.targetView == 'Column') {
@@ -1600,7 +2007,7 @@ struct LinearGradientPage {
 						.width(100)
 						.height(50)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientColumnModifier)
 			}
 			if (this.targetView == 'ColumnSplit') {
@@ -1611,13 +2018,13 @@ struct LinearGradientPage {
 						.backgroundColor(0xF5DEB3)
 						.textAlign(TextAlign.Center)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientColumnSplitModifier)
 			}
 			if (this.targetView == 'Counter') {
 				Counter() {
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientCounterModifier)
 			}
 			if (this.targetView == 'Flex') {
@@ -1627,7 +2034,7 @@ struct LinearGradientPage {
 						.height(50)
 						.backgroundColor(0xF5DEB3)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientFlexModifier)
 			}
 			if (this.targetView == 'GridRow') {
@@ -1645,7 +2052,7 @@ struct LinearGradientPage {
 						}
 					)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientGridRowModifier)
 			}
 			if (this.targetView == 'Grid') {
@@ -1665,7 +2072,7 @@ struct LinearGradientPage {
 					.columnsTemplate('1fr 1fr 1fr 1fr 1fr')
 					.rowsTemplate('1fr 1fr 1fr 1fr 1fr')
 					.backgroundColor(0xFAEEE0)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientGridModifier)
 			}
 			if (this.targetView == 'List') {
@@ -1673,7 +2080,7 @@ struct LinearGradientPage {
 				}
 					.height('100%')
 					.width('100%')
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientListModifier)
 			}
 			if (this.targetView == 'ListItem') {
@@ -1684,7 +2091,7 @@ struct LinearGradientPage {
 							.textAlign(TextAlign.Center)
 							.backgroundColor(Color.White)
 					}
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._linearGradientListItemModifier)
 				}
 					.width('100%')
@@ -1694,7 +2101,7 @@ struct LinearGradientPage {
 				List({ space: 0, initialIndex: 0 }) {
 					ListItemGroup()
 						.backgroundColor(Color.Yellow)
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._linearGradientListItemGroupModifier)
 				}
 					.backgroundColor(Color.Pink)
@@ -1702,28 +2109,28 @@ struct LinearGradientPage {
 					.height('100%')
 			}
 			if (this.targetView == 'Navigator') {
-				
-				
-				
-				
-				
-				
-				
-				
+				// Navigator() {
+				// 	Text('Go to back page')
+				// 		.width('100%')
+				// 		.height(20)
+				// }
+				// 	.backgroundColor(Color.Red)
+				// 	.commonStyle(this.componentKey)
+				// 	.attributeModifier(this._linearGradientNavigatorModifier)
 			}
 			if (this.targetView == 'Panel') {
-				
-				
-				
-				
-				
-				
+				// Panel(true) {
+				// 	Text('Text')
+				// }
+				// 	.backgroundColor(Color.Yellow)
+				// 	.commonStyle(this.componentKey)
+				// 	.attributeModifier(this._linearGradientPanelModifier)
 			}
 			if (this.targetView == 'Refresh') {
 				Refresh({ refreshing: true }) {
 					Text('123')
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientRefreshModifier)
 			}
 			if (this.targetView == 'RelativeContainer') {
@@ -1738,42 +2145,42 @@ struct LinearGradientPage {
 						} as AlignRuleOption)
 						.id('constraintSize')
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientRelativeContainerModifier)
 			}
 			if (this.targetView == 'Row') {
 				Row()
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientRowModifier)
 			}
 			if (this.targetView == 'RowSplit') {
 				RowSplit() {
 					Text('Text')
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientRowSplitModifier)
 			}
 			if (this.targetView == 'Scroll') {
 				Scroll() {
 					Column() {
-            ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
+            ForEach([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int) => {
 							Text('Scroll' + item.toString())
 								.width('90%')
 								.height(50)
 								.backgroundColor(Color.White)
 								.textAlign(TextAlign.Center)
-            }, (item: int, index: int) => item.toString())
+            }, (item: int) => item.toString())
 					}
 					.width('100%')
 				}
 					.scrollBar(BarState.On)
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientScrollModifier)
 			}
 			if (this.targetView == 'SideBarContainer') {
 				SideBarContainer(SideBarContainerType.Embed) {
 					Column() {
-						ForEach([1, 2, 3], (item: int, index: int) => {
+						ForEach([1, 2, 3], (item: int) => {
 							Column({ space: 5 } as ColumnOptions) {
 								Image($r('app.media.icon'))
 									.width(50)
@@ -1793,27 +2200,27 @@ struct LinearGradientPage {
 					}
 						.backgroundColor(Color.Orange)
 				}
-					
-					
+					.commonStyle(this.componentKey)
+					.attributeModifier(this._linearGradientSideBarContainerModifier)
 			}
 			if (this.targetView == 'Stack') {
 				Stack() {
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientStackModifier)
 			}
 			if (this.targetView == 'Swiper') {
 				Swiper() {
-          ForEach([1, 2, 3], (item: int, index: int) => {
+          ForEach([1, 2, 3], (item: int) => {
 						Text('Swiper' + item)
 							.width('90%')
 							.height(50)
-          }, (item: int, index: int) => item.toString())
+          }, (item: int) => item.toString())
 				}
 					.indicator(true)
 					.backgroundColor(Color.White)
-					
-					
+					.commonStyle(this.componentKey)
+					.attributeModifier(this._linearGradientSwiperModifier)
 			}
 			if (this.targetView == 'Tabs') {
 				Tabs() {
@@ -1824,7 +2231,7 @@ struct LinearGradientPage {
 							.backgroundColor('#00CB87')
 					}
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientTabsModifier)
 			}
 			if (this.targetView == 'TabContent') {
@@ -1836,7 +2243,7 @@ struct LinearGradientPage {
 							.backgroundColor(Color.White)
 					}
 						.tabBar('Tabs1')
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._linearGradientTabContentModifier)
 				}
 					.width('100%')
@@ -1844,7 +2251,7 @@ struct LinearGradientPage {
 			}
 			if (this.targetView == 'WaterFlow') {
 				WaterFlow() {
-          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
+          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int) => {
 						FlowItem() {
 							Column() {
 								Text('WaterFlow' + item)
@@ -1856,9 +2263,9 @@ struct LinearGradientPage {
 									.objectFit(ImageFit.Fill)
 							}
 						}
-          }, (item: int, index: int) => item.toString())
+          }, (item: int) => item.toString())
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientWaterFlowModifier)
 			}
 			if (this.targetView == 'GridCol') {
@@ -1869,7 +2276,7 @@ struct LinearGradientPage {
 							.height('20vp')
 					}
 						.backgroundColor(Color.Yellow)
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._linearGradientGridColModifier)
 				}
 					.backgroundColor(Color.Pink)
@@ -1888,7 +2295,7 @@ struct LinearGradientPage {
 						.rowStart(1)
 						.rowEnd(4)
 						.backgroundColor(Color.Yellow)
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._linearGradientGridItemModifier)
 				}
 					.backgroundColor(Color.Pink)
@@ -1897,7 +2304,7 @@ struct LinearGradientPage {
 			}
 			if (this.targetView == 'FlowItem') {
 				WaterFlow() {
-          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int, index: int) => {
+          ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int) => {
 						FlowItem() {
 							Column() {
 								Text('WaterFlow' + item)
@@ -1910,9 +2317,9 @@ struct LinearGradientPage {
 							}
 						}
 						.backgroundColor(Color.Yellow)
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._linearGradientFlowItemModifier)
-          }, (item: int, index: int) => item.toString())
+          }, (item: int) => item.toString())
 				}
 					.backgroundColor(Color.Pink)
 					.width('100%')
@@ -1922,7 +2329,7 @@ struct LinearGradientPage {
 				Row() {
 					Menu() {
 						MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-							
+							.commonStyle(this.componentKey)
 							.attributeModifier(this._linearGradientMenuItemModifier)
 					}
 						.backgroundColor(Color.Yellow)
@@ -1939,7 +2346,7 @@ struct LinearGradientPage {
 						MenuItemGroup({ header: 'MenuItemGroup' }) {
               MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
 						}
-							
+							.commonStyle(this.componentKey)
 							.attributeModifier(this._linearGradientMenuItemGroupModifier)
 					}
 						.backgroundColor(Color.Yellow)
@@ -1952,13 +2359,13 @@ struct LinearGradientPage {
 			}
 			if (this.targetView == 'CalendarPicker') {
 				CalendarPicker({ hintRadius: 10, selected: new Date() })
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientCalendarPickerModifier)
 			}
 			if (this.targetView == 'Canvas') {
 				Canvas(new CanvasRenderingContext2D(new RenderingContextSettings(true)))
 					.backgroundColor('#FFFF00')
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientCanvasModifier)
 			}
 			if (this.targetView == 'FormLink') {
@@ -1969,19 +2376,19 @@ struct LinearGradientPage {
         } as FormLinkOptions) {
 					Button("router event").width(120)
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientFormLinkModifier)
 			}
 			if (this.targetView == 'Hyperlink') {
 				Hyperlink('https://example.com/', 'Go to the developer website') {
 				}
-					
+					.commonStyle(this.componentKey)
 					.attributeModifier(this._linearGradientHyperlinkModifier)
 			}
 			if (this.targetView == 'Span') {
 				Text() {
 					Span('Span1')
-						
+						.commonStyle(this.componentKey)
 						.attributeModifier(this._linearGradientSpanModifier)
 				}
 			}

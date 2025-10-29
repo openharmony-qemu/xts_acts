@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -75,7 +75,7 @@ export struct WaterFlowView {
 
   build() {
     WaterFlow({ footer: this.itemFoot, scroller: this.scroller }) {
-      ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9] as number[], (item: number, index: int) => {
+      ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9], (item: int) => {
         FlowItem() {
           Column() {
             Text('N' + item).fontSize(12).height('16')
@@ -84,7 +84,7 @@ export struct WaterFlowView {
         .width(this.itemWidthArray[item.toInt()])
         .height(this.itemHeightArray[item.toInt()])
         .backgroundColor(this.colors[item.toInt() % 5])
-      }, (item: number) => String(item))
+      }, (item: int) => String(item))
     }
     .columnsTemplate('1fr 1fr 1fr 1fr')
     .itemConstraintSize({

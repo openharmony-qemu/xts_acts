@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -35,10 +35,10 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   SearchAttribute, SelectAttribute, ShapeAttribute, SliderAttribute, SpanAttribute, StackAttribute, StepperAttribute,
   StepperItemAttribute, SwiperAttribute, SideBarContainerAttribute, ToggleAttribute, TabContentAttribute, TabsAttribute,
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
-  TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
+  TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute, GridRowOptions,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, AlignRuleOption } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement';
+import { State, StorageProp } from '@ohos.arkui.stateManagement';
 import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
@@ -301,20 +301,20 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
    instance.invert(this.mInvert)
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
+//   mInvert: number= 10
+//   applyNormalAttribute(instance: NavigatorAttribute): void {
+//     console.info(`invert page show ${JSON.stringify(this.mInvert)}`)
+//    instance.invert(this.mInvert)
+//   }
+// }
+// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
+//   mInvert: number= 10
+//   applyNormalAttribute(instance: NavRouterAttribute): void {
+//     console.info(`invert page show ${JSON.stringify(this.mInvert)}`)
+//    instance.invert(this.mInvert)
+//   }
+// }
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mInvert: number= 10
   applyNormalAttribute(instance: PatternLockAttribute): void {
@@ -567,11 +567,506 @@ class XComponentModifier implements AttributeModifier<XComponentAttribute> {
    instance.invert(this.mInvert)
   }
 }
+function commonStyleAlphabetIndexer(this: AlphabetIndexerAttribute, componentKey: string, invert: number): this {
+  this.invert(invert)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: BadgeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: BlankAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ButtonAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CalendarPickerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CheckboxAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CheckboxGroupAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ColumnSplitAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CounterAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: DataPanelAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: DatePickerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: EffectComponentAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FormComponentAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: EllipseAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FlexAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FlowItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FormLinkAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GaugeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridColAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridRowAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: HyperlinkAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ImageAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ImageAnimatorAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: LineAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ListItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ListItemGroupAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: LoadingProgressAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MarqueeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MenuAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MenuItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MenuItemGroupAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: NavDestinationAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: NavigationAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: PathAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: PolygonAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: PolylineAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ProgressAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: QRCodeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RadioAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RatingAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RectAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RefreshAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RelativeContainerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RemoteWindowAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RichEditorAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RichTextAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RowAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RowSplitAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ScrollAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ScrollBarAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SearchAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SelectAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ShapeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SliderAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SpanAttribute, componentKey: string): this {
+  // this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: StackAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: StepperAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: StepperItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SwiperAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SideBarContainerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ToggleAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TabsAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextAreaAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextClockAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextInputAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextPickerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextTimerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TimePickerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: VideoAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: WaterFlowAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: WebAttribute, componentKey: string): this {
+
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: WindowSceneAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CanvasAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: XComponentAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: DividerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CircleAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ColumnAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ListAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TabContentAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
 
 @Entry
 @Component
 struct invertPage {
   @State _invert: number = 0
+  @StorageProp('_invertAlphabetIndexer') invertAlphabetIndexer: SetValue = {
+    invert: 0
+  }
   @State _invertAlphabetIndexerMod: AlphabetIndexerModifier = new AlphabetIndexerModifier()
   @State _invertBadgeMod: BadgeModifier = new BadgeModifier()
   @State _invertBlankMod: BlankModifier = new BlankModifier()
@@ -608,9 +1103,9 @@ struct invertPage {
   @State _invertMenuItemMod: MenuItemModifier = new MenuItemModifier()
   @State _invertMenuItemGroupMod: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _invertNavDestinationMod: NavDestinationModifier = new NavDestinationModifier()
-  
+  // @State _invertNavRouterMod: NavRouterModifier = new NavRouterModifier()
   @State _invertNavigationMod: NavigationModifier = new NavigationModifier()
-  
+  // @State _invertNavigatorMod: NavigatorModifier = new NavigatorModifier()
   @State _invertPatternLockMod: PatternLockModifier = new PatternLockModifier()
   @State _invertPluginComponentMod: PluginComponentModifier = new PluginComponentModifier()
   @State _invertQRCodeMod: QRCodeModifier = new QRCodeModifier()
@@ -647,16 +1142,28 @@ struct invertPage {
   @State _invertWaterFlowMod: WaterFlowModifier = new WaterFlowModifier()
   @State _invertWebMod: WebModifier = new WebModifier()
   @State _invertXComponentMod: XComponentModifier = new XComponentModifier()
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? '';
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
-  @State parentWidth: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
-  @State parentHeight: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-  @State columns: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int) ?? 0
-  @State gutter: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int) ?? 0
-  @State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey ?? '';
+  @State targetView: string = '';
+  @State componentKey: string = '';
+  @State parentWidth: number = 0;
+  @State parentHeight: number = 0;
+  @State columns: int = 0;
+  @State gutter: number = 0;
+  @State parentComponentKey: string = '';
 
   onPageShow() {
     console.info('22222 invert page show called ')
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    this.invertAlphabetIndexer = routerParamOptions.view.testValue.setValue
+    this._invertAlphabetIndexerMod.mInvert = routerParamOptions.view.testValue.setValue.invert
+    const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
+      .getElement("view")
+    this.targetView = viewElement.getString("targetView")
+    this.componentKey = viewElement.getString("componentKey")
+    this.parentWidth = viewElement.getDouble("parentWidth")
+    this.parentHeight = viewElement.getDouble("parentHeight")
+    this.columns = viewElement.getInteger("columns")
+    this.gutter = viewElement.getDouble("gutter")
+    this.parentComponentKey = viewElement.getString("parentComponentKey")
     attrsManager.registerDataChange((value: SetValue) => {
       console.info('22222 [registerDataChange] ' + JSON.stringify(value.invert))
       this._invertAlphabetIndexerMod.mInvert = value.invert
@@ -695,9 +1202,9 @@ struct invertPage {
       this._invertMenuItemMod.mInvert = value.invert
       this._invertMenuItemGroupMod.mInvert = value.invert
       this._invertNavDestinationMod.mInvert = value.invert
-      
+      // this._invertNavRouterMod.mInvert = value.invert
       this._invertNavigationMod.mInvert = value.invert
-      
+      // this._invertNavigatorMod.mInvert = value.invert
       this._invertPatternLockMod.mInvert = value.invert
       this._invertPluginComponentMod.mInvert = value.invert
       this._invertQRCodeMod.mInvert = value.invert
@@ -738,87 +1245,80 @@ struct invertPage {
     })
   }
 
-  
-  
-  
-  
-  
-  
-
   build() {
-    GridRow({ columns: this.columns, gutter: this.gutter}) {
+    GridRow({ columns: this.columns, gutter: this.gutter} as GridRowOptions) {
       Row() {
         if (this.targetView == 'Button') {
-          Button('button1').attributeModifier(this._invertButttonMod)
+          Button('button1').commonStyle(this.componentKey).attributeModifier(this._invertButttonMod)
         } else if (this.targetView == 'Text') {
-          Text('text1').attributeModifier(this._invertTextMod)
+          Text('text1').commonStyle(this.componentKey).attributeModifier(this._invertTextMod)
         } else if (this.targetView == 'AlphabetIndexer') {
           AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
-          .attributeModifier(this._invertAlphabetIndexerMod)
+          .commonStyleAlphabetIndexer(this.componentKey, this.invertAlphabetIndexer.invert).attributeModifier(this._invertAlphabetIndexerMod)
         } else if (this.targetView == 'Blank') {
-          Blank().backgroundColor(Color.Yellow).attributeModifier(this._invertBlankMod)
+          Blank().backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._invertBlankMod)
         } else if (this.targetView == 'Checkbox') {
-          Checkbox().attributeModifier(this._invertCheckboxMod)
+          Checkbox().commonStyle(this.componentKey).attributeModifier(this._invertCheckboxMod)
         } else if (this.targetView == 'CheckboxGroup') {
-          CheckboxGroup({ group: 'checkboxGroup' }).attributeModifier(this._invertCheckboxGroupMod)
+          CheckboxGroup({ group: 'checkboxGroup' }).commonStyle(this.componentKey).attributeModifier(this._invertCheckboxGroupMod)
         } else if (this.targetView == 'DataPanel') {
           DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] })
-          .attributeModifier(this._invertDataPanelMod)
+          .commonStyle(this.componentKey).attributeModifier(this._invertDataPanelMod)
         } else if (this.targetView == 'DatePicker') {
           DatePicker({
             start: new Date('1970-1-1'),
             end: new Date('2100-1-1'),
-          }).attributeModifier(this._invertDatePickerMod)
+          }).commonStyle(this.componentKey).attributeModifier(this._invertDatePickerMod)
         } else if (this.targetView == 'Divider') {
-          Divider().attributeModifier(this._invertDividerMod)
+          Divider().commonStyle(this.componentKey).attributeModifier(this._invertDividerMod)
         } else if (this.targetView == 'Gauge') {
           Gauge({ value: 105 })
-            .attributeModifier(this._invertGaugeMod)
+            .commonStyle(this.componentKey).attributeModifier(this._invertGaugeMod)
             .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
         } else if (this.targetView == 'Image') {
-          Image($r('app.media.icon')).attributeModifier(this._invertImageMod)
+          Image($r('app.media.icon')).commonStyle(this.componentKey).attributeModifier(this._invertImageMod)
         } else if (this.targetView == 'ImageAnimator') {
           ImageAnimator()
             .images([
               {
                 src: $r('app.media.icon')
               }
-            ]).attributeModifier(this._invertImageAnimatorMod)
+            ]).commonStyle(this.componentKey).attributeModifier(this._invertImageAnimatorMod)
         } else if (this.targetView == 'LoadingProgress') {
-          LoadingProgress().attributeModifier(this._invertLoadingProgressMod)
+          LoadingProgress().commonStyle(this.componentKey).attributeModifier(this._invertLoadingProgressMod)
         } else if (this.targetView == 'Marquee') {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity as int,
+            loop: Int.MAX_VALUE,
             fromStart: true,
             src: 'Running Marquee starts rolling'
-          }).attributeModifier(this._invertMarqueeMod)
+          }).commonStyle(this.componentKey).attributeModifier(this._invertMarqueeMod)
         } else if (this.targetView == 'Navigation') {
         Navigation(new NavPathStack()) {
-          }
+          }.commonStyle(this.componentKey).attributeModifier(this._invertNavigationMod)
         } else if (this.targetView == 'Menu') {
           Menu() {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
-          }.backgroundColor(Color.Yellow).attributeModifier(this._invertMenuMod)
+          }.backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._invertMenuMod)
         } else if (this.targetView == 'NavRouter') {
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          // NavRouter() {
+          //   Row() {
+          //     Image($r('app.media.icon'))
+          //   }
+          //
+          //   NavDestination() {
+          //     Text('NavDestination').fontSize(10)
+          //   }
+          // }.commonStyle(this.componentKey).attributeModifier(this._invertNavRouterMod)
         } else if (this.targetView == 'Progress') {
-          Progress({ value: 10, type: ProgressType.Eclipse })
+          Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey)
         } else if (this.targetView == 'QRCode') {
-          QRCode('Running Marquee starts rolling').attributeModifier(this._invertQRCodeMod)
+          QRCode('Running Marquee starts rolling').commonStyle(this.componentKey).attributeModifier(this._invertQRCodeMod)
         } else if (this.targetView == 'Radio') {
-          Radio({ value: 'Radio1', group: 'radioGroup' }).attributeModifier(this._invertRadioMod)
+          Radio({ value: 'Radio1', group: 'radioGroup' }).commonStyle(this.componentKey).attributeModifier(this._invertRadioMod)
         } else if (this.targetView == 'Rating') {
-          Rating({ rating: 3.5, indicator: false }).attributeModifier(this._invertRatingMod)
+          Rating({ rating: 3.5, indicator: false }).commonStyle(this.componentKey).attributeModifier(this._invertRatingMod)
         } else if (this.targetView == 'ScrollBar') {
           ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
             Text()
@@ -826,12 +1326,12 @@ struct invertPage {
               .height(100)
               .borderRadius(10)
               .backgroundColor('#C0C0C0')
-          }.attributeModifier(this._invertScrollBarMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._invertScrollBarMod)
         } else if (this.targetView == 'Search') {
-          Search().attributeModifier(this._invertSearchMod)
+          Search().commonStyle(this.componentKey).attributeModifier(this._invertSearchMod)
         } else if (this.targetView == 'Select') {
           Select([{ value: 'aaa' },
-            { value: 'bbb' }]).attributeModifier(this._invertSelectMod)
+            { value: 'bbb' }]).commonStyle(this.componentKey).attributeModifier(this._invertSelectMod)
         } else if (this.targetView == 'Slider') {
           Slider({
             value: 50,
@@ -840,7 +1340,7 @@ struct invertPage {
             style: SliderStyle.OutSet
           })
             .showTips(true)
-            .attributeModifier(this._invertSliderMod)
+            .commonStyle(this.componentKey).attributeModifier(this._invertSliderMod)
         } else if (this.targetView == 'Stepper') {
           Stepper() {
             StepperItem() {
@@ -848,54 +1348,54 @@ struct invertPage {
                 Text('Page One')
               }
             }
-          }
+          }.commonStyle(this.componentKey).attributeModifier(this._invertStepperMod)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
-          }).attributeModifier(this._invertTextAreaMod)
+          }).commonStyle(this.componentKey).attributeModifier(this._invertTextAreaMod)
         } else if (this.targetView == 'TextClock') {
           TextClock({ timeZoneOffset: -8 })
             .format('hms')
-            .attributeModifier(this._invertTextClockMod)
+            .commonStyle(this.componentKey).attributeModifier(this._invertTextClockMod)
         } else if (this.targetView == 'TextPicker') {
-          TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] })
+          TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] }).commonStyle(this.componentKey)
         } else if (this.targetView == 'TextTimer') {
           TextTimer({ isCountDown: true, count: 30000 })
             .format('mm:ss.SS')
             .fontColor(Color.Black)
-            .attributeModifier(this._invertTextTimerMod)
+            .commonStyle(this.componentKey).attributeModifier(this._invertTextTimerMod)
         } else if (this.targetView == 'TimePicker') {
           TimePicker({
             selected: new Date('2022-07-22T08:00:00'),
-          }).attributeModifier(this._invertTimePickerMod)
+          }).commonStyle(this.componentKey).attributeModifier(this._invertTimePickerMod)
         } else if (this.targetView == 'Toggle') {
           Toggle({ type: ToggleType.Switch, isOn: false })
-          .attributeModifier(this._invertToggleMod)
+          .commonStyle(this.componentKey).attributeModifier(this._invertToggleMod)
         } else if (this.targetView == 'Web') {
-          Web({ src: 'www.example.com', controller: new WebviewController() })
+          Web({ src: 'www.example.com', controller: new WebviewController() }).commonStyle(this.componentKey)
           .attributeModifier(this._invertWebMod)
         } else if (this.targetView == 'Circle') {
-          Circle()
+          Circle().commonStyle(this.componentKey)
         } else if (this.targetView == 'Ellipse') {
-          Ellipse()
+          Ellipse().commonStyle(this.componentKey)
         } else if (this.targetView == 'Line') {
           Line()
-            
+            .commonStyle(this.componentKey)
             .startPoint([0, 0])
             .endPoint([50, 100])
             .backgroundColor(Color.Black)
         } else if (this.targetView == 'Polyline') {
-          Polyline()
+          Polyline().commonStyle(this.componentKey)
         } else if (this.targetView == 'Polygon') {
-          Polygon()
+          Polygon().commonStyle(this.componentKey)
         } else if (this.targetView == 'Path') {
-          Path()
+          Path().commonStyle(this.componentKey)
         } else if (this.targetView == 'Rect') {
-          Rect()
+          Rect().commonStyle(this.componentKey)
         } else if (this.targetView == 'Shape') {
           Shape() {
             Rect().width(100).height(50)
-          }
+          }.commonStyle(this.componentKey)
         } else if (this.targetView == 'Badge') {
           Badge({
             count: 50,
@@ -903,22 +1403,22 @@ struct invertPage {
           } as BadgeParamWithNumber) {
             Button('message')
               .width(100).height(50).backgroundColor(0x317aff)
-          }.attributeModifier(this._invertBadgeMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._invertBadgeMod)
         } else if (this.targetView == 'Column') {
           Column() {
             Column().width('100%').height(30).backgroundColor(0xAFEEEE)
-          }.attributeModifier(this._invertColumnMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._invertColumnMod)
         } else if (this.targetView == 'ColumnSplit') {
           ColumnSplit() {
             Text('1').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
-          }.attributeModifier(this._invertColumnSplitMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._invertColumnSplitMod)
         } else if (this.targetView == 'Counter') {
           Counter() {
-          }.attributeModifier(this._invertCounterMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._invertCounterMod)
         } else if (this.targetView == 'Flex') {
           Flex() {
             Text('1').width('20%').height(50).backgroundColor(0xF5DEB3)
-          }.attributeModifier(this._invertFlexMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._invertFlexMod)
         } else if (this.targetView == 'GridRow') {
           GridRow({
             columns: 1,
@@ -930,7 +1430,7 @@ struct invertPage {
                 Row().width('100%').height('20vp')
               }.borderColor(color).borderWidth(2)
             })
-          }.attributeModifier(this._invertGridRowMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._invertGridRowMod)
         } else if (this.targetView == 'Grid') {
           Grid() {
             ForEach(['0', '1', '2', '3', '4'], (item: string) => {
@@ -944,11 +1444,11 @@ struct invertPage {
           }
           .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
           .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
-          .attributeModifier(this._invertGridMod)
+          .commonStyle(this.componentKey).attributeModifier(this._invertGridMod)
           .backgroundColor(0xFAEEE0)
         } else if (this.targetView == 'List') {
           List() {
-          }.height('100%').width('100%').attributeModifier(this._invertListMod)
+          }.commonStyle(this.componentKey).height('100%').width('100%').attributeModifier(this._invertListMod)
         } else if (this.targetView == 'ListItem') {
           List({ space: 20, initialIndex: 0 }) {
             ListItem() {
@@ -956,7 +1456,7 @@ struct invertPage {
                 .width('100%')
                 .textAlign(TextAlign.Center)
                 .backgroundColor(Color.White)
-            }.attributeModifier(this._invertListItemMod)
+            }.commonStyle(this.componentKey).attributeModifier(this._invertListItemMod)
           }
           .width('100%')
           .height('100%')
@@ -964,22 +1464,22 @@ struct invertPage {
           List({ space: 0, initialIndex: 0 }) {
             ListItemGroup()
               .backgroundColor(Color.Yellow)
-              .attributeModifier(this._invertListItemGroupMod)
+              .commonStyle(this.componentKey).attributeModifier(this._invertListItemGroupMod)
           }.backgroundColor(Color.Pink)
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Navigator') {
-          
-          
-          
+          // Navigator() {
+          //   Text('Go to back page').width('100%').height(20)
+          // }.commonStyle(this.componentKey).backgroundColor(Color.Red).attributeModifier(this._invertNavigatorMod)
         } else if (this.targetView == 'Panel') {
-          
-          
-          
+          // Panel(true) {
+          //   Text('Text')
+          // }.backgroundColor(Color.Yellow).commonStyle(this.componentKey)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')
-          }.attributeModifier(this._invertRefreshMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._invertRefreshMod)
         } else if (this.targetView == 'RelativeContainer') {
           RelativeContainer() {
             Row()
@@ -991,13 +1491,13 @@ struct invertPage {
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
               } as AlignRuleOption)
               .id('constraintSize')
-          }.attributeModifier(this._invertRelativeContainerMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._invertRelativeContainerMod)
         } else if (this.targetView == 'Row') {
-          Row().attributeModifier(this._invertRowMod)
+          Row().commonStyle(this.componentKey).attributeModifier(this._invertRowMod)
         } else if (this.targetView == 'RowSplit') {
           RowSplit() {
             Text('Text')
-          }.attributeModifier(this._invertRowSplitMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._invertRowSplitMod)
         } else if (this.targetView == 'Scroll') {
           Scroll() {
             Column() {
@@ -1009,7 +1509,7 @@ struct invertPage {
                   .textAlign(TextAlign.Center)
               }, (item: int) => item.toString())
             }.width('100%')
-          }.scrollBar(BarState.On).attributeModifier(this._invertScrollMod)
+          }.scrollBar(BarState.On).commonStyle(this.componentKey).attributeModifier(this._invertScrollMod)
         } else if (this.targetView == 'SideBarContainer') {
           SideBarContainer(SideBarContainerType.Embed) {
             Column() {
@@ -1024,10 +1524,10 @@ struct invertPage {
             Column() {
               Text('SideBarContainer content').fontSize(25)
             }.backgroundColor(Color.Orange)
-          }
+          }.commonStyle(this.componentKey).attributeModifier(this._invertSideBarContainerMod)
         } else if (this.targetView == 'Stack') {
           Stack() {
-          }.attributeModifier(this._invertStackMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._invertStackMod)
         } else if (this.targetView == 'Swiper') {
           Swiper() {
             ForEach([1, 2, 3], (item: int) => {
@@ -1036,18 +1536,18 @@ struct invertPage {
           }
           .indicator(true)
           .backgroundColor(Color.White)
-          
+          .commonStyle(this.componentKey).attributeModifier(this._invertSwiperMod)
         } else if (this.targetView == 'Tabs') {
           Tabs() {
             TabContent() {
               Column().width('100%').height('100%').backgroundColor('#00CB87')
             }
-          }.attributeModifier(this._invertTabsMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._invertTabsMod)
         } else if (this.targetView == 'TabContent') {
           Tabs() {
             TabContent() {
               Text('TabContent Test').width('100%').height('100%').backgroundColor(Color.White)
-            }.tabBar('Tabs1').attributeModifier(this._invertTabContentMod)
+            }.tabBar('Tabs1').commonStyle(this.componentKey).attributeModifier(this._invertTabContentMod)
           }.width('100%').height('100%')
         } else if (this.targetView == 'WaterFlow') {
           WaterFlow() {
@@ -1062,7 +1562,7 @@ struct invertPage {
                 }
               }
             }, (item: int) => item.toString())
-          }.attributeModifier(this._invertWaterFlowMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._invertWaterFlowMod)
         } else if (this.targetView == 'StepperItem') {
           Stepper() {
             StepperItem() {
@@ -1071,7 +1571,7 @@ struct invertPage {
               }
             }
             .backgroundColor(Color.Red)
-            
+            .commonStyle(this.componentKey).attributeModifier(this._invertStepperItemMod)
           }
           .backgroundColor(Color.Yellow)
           .width('100%')
@@ -1084,7 +1584,7 @@ struct invertPage {
             GridCol() {
               Row().width('100%').height('20vp')
             }
-            .attributeModifier(this._invertGridColMod)
+            .commonStyle(this.componentKey).attributeModifier(this._invertGridColMod)
             .backgroundColor(Color.Yellow)
           }
           .backgroundColor(Color.Pink)
@@ -1102,7 +1602,7 @@ struct invertPage {
                     .objectFit(ImageFit.Fill)
                 }
               }
-              .attributeModifier(this._invertFlowItemMod)
+              .commonStyle(this.componentKey).attributeModifier(this._invertFlowItemMod)
               .backgroundColor(Color.Yellow)
             }, (item: int) => item.toString())
           }
@@ -1118,7 +1618,7 @@ struct invertPage {
                 .height('100%')
                 .textAlign(TextAlign.Center)
             }.rowStart(1).rowEnd(4)
-            .attributeModifier(this._invertGridItemMod)
+            .commonStyle(this.componentKey).attributeModifier(this._invertGridItemMod)
             .backgroundColor(Color.Yellow)
           }
           .backgroundColor(Color.Pink)
@@ -1128,7 +1628,7 @@ struct invertPage {
           Row() {
             Menu() {
               MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-                .attributeModifier(this._invertMenuItemMod)
+                .commonStyle(this.componentKey).attributeModifier(this._invertMenuItemMod)
             }.backgroundColor(Color.Yellow)
             .width('100%')
             .height('100%')
@@ -1139,7 +1639,7 @@ struct invertPage {
               MenuItemGroup({ header: 'MenuItemGroup' }) {
                 MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
               }
-              .attributeModifier(this._invertMenuItemGroupMod)
+              .commonStyle(this.componentKey).attributeModifier(this._invertMenuItemGroupMod)
             }.backgroundColor(Color.Yellow)
             .width('100%')
             .height('100%')
