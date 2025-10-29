@@ -63,7 +63,7 @@ export default function WaterFlowFillPolicy() {
 
       let strJson2 = getInspectorByKey('waterFlow_fillType');
       console.info("[WaterFlowFillPolicy_0100] itemFillPolicy: " + JSON.stringify(JSON.parse(strJson2).$attrs.itemFillPolicy));
-      expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType::BREAKPOINT_DEFAULT");
+      expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType.BREAKPOINT_DEFAULT");
 
       let flowItem1 = CommonFunc.getComponentRectOnScreen('waterFlowType_1');
       console.info('[WaterFlowFillPolicy_0100] flowItem1.right: ' + flowItem1.right);
@@ -96,7 +96,7 @@ export default function WaterFlowFillPolicy() {
 
       let strJson2 = getInspectorByKey('waterFlow_fillType');
       console.info("[WaterFlowFillPolicy_0200] itemFillPolicy: " + JSON.stringify(JSON.parse(strJson2).$attrs.itemFillPolicy));
-      expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType::BREAKPOINT_SM1MD2LG3");
+      expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType.BREAKPOINT_SM1MD2LG3");
 
       let flowItem1 = CommonFunc.getComponentRectOnScreen('waterFlowType_1');
       console.info('[WaterFlowFillPolicy_0200] flowItem1.bottom: ' + flowItem1.bottom);
@@ -129,7 +129,7 @@ export default function WaterFlowFillPolicy() {
 
       let strJson2 = getInspectorByKey('waterFlow_fillType');
       console.info("[WaterFlowFillPolicy_0300] itemFillPolicy: " + JSON.stringify(JSON.parse(strJson2).$attrs.itemFillPolicy));
-      expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType::BREAKPOINT_SM2MD3LG5");
+      expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType.BREAKPOINT_SM2MD3LG5");
 
       let flowItem1 = CommonFunc.getComponentRectOnScreen('waterFlowType_1');
       console.info('[WaterFlowFillPolicy_0300] flowItem1.right: ' + flowItem1.right);
