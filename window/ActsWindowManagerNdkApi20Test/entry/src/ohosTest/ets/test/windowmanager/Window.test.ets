@@ -16,7 +16,7 @@ import { beforeAll, describe, expect, it, Level, Size, TestType } from "@ohos/hy
 import windowndkapi20 from 'libwindowndkapi20.so';
 import Utils from "../common/Utils";
 import { Driver, ON } from "@kit.TestKit";
-import { floatingBall, window } from "@kit.ArkUI";
+import { display, floatingBall, window } from "@kit.ArkUI";
 import { BusinessError, settings } from "@kit.BasicServicesKit";
 import { abilityAccessCtrl, common, PermissionRequestResult, Permissions } from "@kit.AbilityKit";
 
@@ -797,7 +797,9 @@ export default function WindowTest() {
           let windowClass = windowStage.getMainWindowSync();
           let windowId = windowClass.getWindowProperties().id;
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 windowId: ${windowId}`);
-          let Result: number = windowndkapi20.test_OH_WindowManager_GetAllMainWindowInfo_0200(windowId);
+          let displayId = display.getDefaultDisplaySync().id;
+          console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 displayId: ${displayId}`);
+          let Result: number = windowndkapi20.test_OH_WindowManager_GetAllMainWindowInfo_0200(windowId, displayId);
           console.info(`====>SUB_BASIC_WMS_NDK_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200 Result: ${Result}`);
           expect(Result).assertEqual(OK);
           done()

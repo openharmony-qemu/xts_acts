@@ -1771,7 +1771,7 @@ export default function windowTitleBarTest() {
         mainWindow.setWindowTitle('test_setWindowTitle_mainWindow_Too_long_parameter test_setWindowTitle_mainWindow_Too_long_parameter test_setWindowTitle_mainWindow_Too_long_parameter').then(() => {
           console.info(`${caseName} :Succeeded in setting the window title.`);
           expect(true).assertTrue();
-          mainWindow.setWindowTitle('label');
+          mainWindow.setWindowTitle('test label');
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} :Failed to set the window title. Cause code: ${err.code}, message: ${err.message}`);

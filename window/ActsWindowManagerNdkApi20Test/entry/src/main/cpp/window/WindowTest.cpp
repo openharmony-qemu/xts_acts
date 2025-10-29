@@ -689,29 +689,34 @@ napi_value Test_OH_WindowManager_GetAllMainWindowInfo_0200(napi_env env, napi_ca
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType", "CreateNativeNode env or info is null");
         return nullptr;
     }
-    size_t argCnt = 1;
-    napi_value args[1] = { nullptr };
+    size_t argCnt = PARAM_2;
+    napi_value args[PARAM_2] = { nullptr, nullptr };
     if (napi_get_cb_info(env, info, &argCnt, args, nullptr, nullptr) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetWindowType",
             "CreateNativeNode napi_get_cb_info failed");
     }
-    if (argCnt != PARAM_1) {
+    if (argCnt != PARAM_2) {
         napi_throw_type_error(env, NULL, "Wrong number of arguments");
         return nullptr;
     }
-    int32_t windowId;
+    int32_t windowId = 0;
     napi_get_value_int32(env, args[0], &windowId);
+    int32_t displayId = 0;
+    napi_get_value_int32(env, args[1], &displayId);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+        "Test_OH_WindowManager_GetAllMainWindowInfo_0200 windowId: %{public}d", windowId);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
+        "Test_OH_WindowManager_GetAllMainWindowInfo_0200 displayId: %{public}d", displayId);
     napi_value retValue;
     WindowManager_MainWindowInfo *infoList = NULL;
     size_t mainWindowInfoSize = 0;
     int32_t result = OH_WindowManager_GetAllMainWindowInfo(&infoList, &mainWindowInfoSize);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
-                 "Test_OH_WindowManager_GetAllMainWindowInfo_0200: %{public}d", result);
+        "Test_OH_WindowManager_GetAllMainWindowInfo_0200: %{public}d", result);
     if (result != OK) {
         napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
         return retValue;
     }
-    // 断言 windowInfoArray.长度 >= 1
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
         "Test_OH_WindowManager_GetAllMainWindowInfo_0200 mainWindowInfoSize: %{public}d",
         mainWindowInfoSize);
@@ -719,7 +724,6 @@ napi_value Test_OH_WindowManager_GetAllMainWindowInfo_0200(napi_env env, napi_ca
         napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
         return retValue;
     }
-    // 3、断言displayId ==0；windowId == 步骤1中的窗口id；showing == true;label == 'label'"
     for (size_t i = 0; i < mainWindowInfoSize; i++) {
         WindowManager_MainWindowInfo* currentWindow = &infoList[i];
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Window",
@@ -729,8 +733,8 @@ napi_value Test_OH_WindowManager_GetAllMainWindowInfo_0200(napi_env env, napi_ca
         if (currentWindow->windowId != windowId) {
             continue;
         }
-        if (currentWindow->displayId == 0 && currentWindow->windowId == windowId &&
-            currentWindow->showing == false && currentWindow->label != "label") {
+        if (currentWindow->displayId == displayId && currentWindow->windowId == windowId &&
+            currentWindow->showing == true && currentWindow->label != "label") {
             napi_create_int32(env, 0, &retValue);
             return retValue;
         }
