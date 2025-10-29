@@ -3,6 +3,9 @@
         "MainAbility/pages/index/index",
         "MainAbility/pages/List/ContentOffset",
         "MainAbility/pages/List/scrollSnapAnimationSpeedModifier",
-        "MainAbility/pages/List/scrollSnapAnimationSpeed"
+        "MainAbility/pages/List/scrollSnapAnimationSpeed",
+        "MainAbility/pages/List/ListFillPolicy",
+        "MainAbility/pages/Grid/GridFillPolicy",
+        "MainAbility/pages/WaterFlow/WaterFlowFillPolicy"
     ]
 }
