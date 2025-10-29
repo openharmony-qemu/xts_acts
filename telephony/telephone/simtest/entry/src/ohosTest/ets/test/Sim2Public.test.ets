@@ -239,6 +239,44 @@ export default function Sim2Public() {
     });
 
     /**
+     * @tc.number : SUB_Telephony_Sim_HasOperaterPrivileges_0900
+     * @tc.name   : testTelephonySimHasOperaterPrivileges0900
+     * @tc.desc   : SIMCard required Check if the application (caller) has been granted operator permissions. Use callback for asynchronous callback.
+     * @tc.size   : MediumTest
+     * @tc.type   : Function
+     * @tc.level  : Level 2
+     */
+    it("testTelephonySimHasOperaterPrivileges0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonySimHasOperaterPrivileges0900';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName}:success has SimCard1,data->${JSON.stringify(data)}`);
+          sim.hasOperatorPrivileges(0, (err: BusinessError, data: boolean) => {
+            console.info(`${caseName}:Invalid parameter value. 000000 err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+            if (!data) {
+              console.info(`${caseName}:Invalid parameter value. err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+              expect(data).assertFalse();
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              expect(data).assertTrue();
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
+          });
+        } else {
+          console.info(`${caseName}:fail Do not have SimCard1,data->${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
      * @tc.number : SUB_Telephony_Sim_HasOperaterPrivileges_1600
      * @tc.name   : testTelephonySimHasOperaterPrivileges1600
      * @tc.desc   : SIMCard required Check if the application (caller) has been granted operator permissions. Use callback for asynchronous promise.
@@ -312,6 +350,56 @@ export default function Sim2Public() {
             ExpectFail();
             console.info(`${caseName} test end `);
             done();
+          }).catch((err: BusinessError) => {
+            if (err.code === 8300001) {
+              console.info(`${caseName}:Invalid parameter value. err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
+          });
+        } else {
+          console.info(`${caseName}:success has not SimCard1,data->${JSON.stringify(data)}`);
+          ExpectFail();
+          console.info(`${caseName} test end `);
+          done();
+        }
+      });
+    });
+
+    /**
+     * @tc.number : SUB_Telephony_Sim_HasOperaterPrivileges_1800
+     * @tc.name   : testTelephonySimHasOperaterPrivileges1800
+     * @tc.desc   : SIMCard required Check if the application (caller) has been granted operator permissions. Use callback for asynchronous promise.
+     * @tc.size   : MediumTest
+     * @tc.type   : Function
+     * @tc.level  : Level 2
+     */
+    it("testTelephonySimHasOperaterPrivileges1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testTelephonySimHasOperaterPrivileges1800';
+      console.info(`${caseName} test start `);
+      sim.hasSimCard(0, (err: BusinessError, data: boolean) => {
+        if (data) {
+          console.info(`${caseName}:success has  SimCard1,data->${JSON.stringify(data)}`);
+          sim.hasOperatorPrivileges(0).then((data: boolean) => {
+            if (!data){
+              console.info(`${caseName}:Invalid parameter value. data->${JSON.stringify(data)}`);
+              expect(data).assertFalse();
+              ExpectTrue(true);
+              console.info(`${caseName} test end `);
+              done();
+            } else {
+              console.info(`${caseName} failed, promise: data->${JSON.stringify(data)}`);
+              expect(data).assertTrue();
+              ExpectFail();
+              console.info(`${caseName} test end `);
+              done();
+            }
           }).catch((err: BusinessError) => {
             if (err.code === 8300001) {
               console.info(`${caseName}:Invalid parameter value. err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
@@ -1599,11 +1687,12 @@ export default function Sim2Public() {
       sim.hasSimCard(0).then((data: boolean) => {
         if (data) {
           console.info(`hasSimCard success, promise: data->${JSON.stringify(data)}`);
-          ExpectTrue(true);
+          expect(data).assertTrue();
           console.info(`${caseName} test end `);
           done();
         } else {
           console.info(`${caseName}:data->${JSON.stringify(data)}`);
+          expect(data).assertFalse();
           ExpectFail();
           console.info(`${caseName} test end `);
           done();
@@ -1999,11 +2088,12 @@ export default function Sim2Public() {
           sim.isSimActive(0, (err: BusinessError, data: boolean) => {
             if (data) {
               console.info(`${caseName}:success, data->${JSON.stringify(data)}`);
-              ExpectTrue(true);
+              expect(data).assertTrue();
               console.info(`${caseName} test end `);
               done();
             } else {
               console.info(`${caseName} failed: err->${JSON.stringify(err)}`);
+              expect(data).assertFalse();
               ExpectFail();
               console.info(`${caseName} test end `);
               done();
@@ -2075,10 +2165,11 @@ export default function Sim2Public() {
           sim.isSimActive(0).then((data: boolean) => {
             if (data) {
               console.info(`${caseName} success, promise: data->${JSON.stringify(data)}`);
-              ExpectTrue(true);
+              expect(data).assertTrue();
               console.info(`${caseName} test end `);
               done();
             } else {
+              expect(data).assertFalse();
               ExpectFail();
               console.info(`${caseName} test end `);
               done();

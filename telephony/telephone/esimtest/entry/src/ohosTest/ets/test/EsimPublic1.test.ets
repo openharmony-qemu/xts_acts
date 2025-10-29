@@ -88,10 +88,11 @@ export default function EsimPublic1() {
         if (isEsimSupport) {
           console.info(`${caseName} success : the data is:${isEsimSupport}`);
           console.info(`eSIM is supported`);
-          expect(true).assertTrue();
+          expect(isEsimSupport).assertTrue();
           console.info(`${caseName} test end`);
           done();
         } else {
+          expect(isEsimSupport).assertFalse();
           console.info(`${caseName} success : the data is:${isEsimSupport}`);
           expect(true).assertTrue();
           console.info(`${caseName} test end`);
@@ -221,10 +222,20 @@ export default function EsimPublic1() {
       console.info(`${caseName} test start`);
       try {
         let data = await eSIM.addProfile(profile);
-        console.info(`${caseName} success : the data is:${data}`);
-        expect(true).assertTrue();
-        console.info(`${caseName} test end`);
-        done();
+        if(data){
+          console.info(`${caseName} success : the data is:${data}`);
+          expect(data).assertTrue();
+          console.info(`${caseName} test end`);
+          done();
+        }
+        else{
+          console.info(`${caseName} success : the data is:${data}`);
+          expect(data).assertFalse();
+          expect().assertFail();
+          console.info(`${caseName} test end`);
+          done();
+        }
+
       } catch (err) {
         if (err.code === 801) {
           console.info(`${caseName} The current device type does not, promise: err->${JSON.stringify(err)}`);
