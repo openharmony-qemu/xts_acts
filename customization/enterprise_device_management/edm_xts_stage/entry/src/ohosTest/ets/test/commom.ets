@@ -40,7 +40,7 @@ const INVALID_WANT: Want = {
 
 const AUTOSTARTAPP1: Want = {
   bundleName: "com.edm.acts.normal",
-  abilityName: "com.example.myapplication.MainAbility"
+  abilityName: "TestAbility"
 };
 
 const AUTOSTARTAPP2: Want = {

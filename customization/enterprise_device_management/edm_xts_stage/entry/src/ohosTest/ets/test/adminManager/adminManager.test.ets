@@ -277,6 +277,8 @@ export default function adminManagerTest() {
     it("test_setDelegatedPolicies_005", Level.LEVEL0, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let emptyBundles: Array<string> = adminManager.getDelegatedBundleNames(SELFWANT, DELEGATED_POLICIES[0]);
+        expect(emptyBundles.length == 0).assertTrue();
         adminManager.setDelegatedPolicies(SELFWANT, BUNDLENAME1, DELEGATED_POLICIES);
         let policies: Array<string> = adminManager.getDelegatedPolicies(SELFWANT, BUNDLENAME1);
         expect(policies.length == 1).assertTrue();

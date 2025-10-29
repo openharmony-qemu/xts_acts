@@ -1624,7 +1624,11 @@ export default function bundleManagerTest() {
     it("test_addDisallowedUninstallBundlesSync_008", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let emptyRes = bundleManager.getDisallowedUninstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
+        expect(emptyRes.length == 0).assertTrue();
         bundleManager.addDisallowedUninstallBundlesSync(SELFWANT, APP_IDS_AND_IDENTIFIER_1, DEFAULT_USER_ID);
+        let res = bundleManager.getDisallowedUninstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
+        expect(res.length > 0).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -1952,7 +1956,8 @@ export default function bundleManagerTest() {
     it("test_getDisallowedUninstallBundlesSync_004", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        bundleManager.getDisallowedUninstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
+        let res = bundleManager.getDisallowedUninstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
+        expect(res.length == 0).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -2542,6 +2547,7 @@ export default function bundleManagerTest() {
         let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT,
             DEFAULT_USER_ID);
         expect(bundleInfos).not().assertUndefined();
+        expect(bundleInfos.length > 0).assertTrue();
         let edmBundleInfo = bundleInfos.find((bundleInfo) => {
           return bundleInfo.name === 'com.edm.acts.normal';
         })

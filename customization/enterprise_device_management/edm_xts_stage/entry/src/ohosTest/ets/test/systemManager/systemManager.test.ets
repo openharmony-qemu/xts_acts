@@ -1112,6 +1112,7 @@ function testGetDisallowedNearLinkProtocols() {
       systemManager.addDisallowedNearLinkProtocols(SELFWANT, nearlinkProtocols, DEFAULT_USER_ID);
       let protocols1: Array<systemManager.NearLinkProtocol> =
         systemManager.getDisallowedNearLinkProtocols(SELFWANT, DEFAULT_USER_ID);
+      expect(protocols1.length > 0).assertTrue();
       expect(protocols1.length == nearlinkProtocols.length).assertTrue();
     } catch (error) {
       expect(error.code == 801).assertTrue();
@@ -1425,15 +1426,13 @@ function testSetInstallLocalEnterpriseAppEnabled() {
   it("test_set_install_local_enterprise_app_enabled_004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
-      let value: boolean = true;
-      systemManager.setInstallLocalEnterpriseAppEnabled(SELFWANT, value);
+      systemManager.setInstallLocalEnterpriseAppEnabled(SELFWANT, true);
       let result: boolean = systemManager.getInstallLocalEnterpriseAppEnabled(SELFWANT);
-      expect(result === value).assertTrue();
+      expect(result).assertTrue();
 
-      value = false;
-      systemManager.setInstallLocalEnterpriseAppEnabled(SELFWANT, value);
+      systemManager.setInstallLocalEnterpriseAppEnabled(SELFWANT, false);
       result = systemManager.getInstallLocalEnterpriseAppEnabled(SELFWANT);
-      expect(result === value).assertTrue();
+      expect(result).assertFalse();
     } catch (error) {
       expect(error.code == 801).assertTrue();
     } finally {
