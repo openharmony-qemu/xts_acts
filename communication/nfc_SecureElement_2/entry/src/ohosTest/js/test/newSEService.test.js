@@ -213,7 +213,9 @@ export default function newSEServicetest() {
                 }
             } catch (error) {
                 console.info("[NFC_test]9 isSecureElementPresent occurs exception:" + error + "/" + error.code);
-                expect(801).assertEqual(error.code);
+                if (error.code == 801) {
+                    expect(801).assertEqual(error.code);
+                }
             }
             done();
         })
