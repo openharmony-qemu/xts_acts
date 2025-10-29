@@ -15,6 +15,10 @@ import DiscardCameraPhotoTest from './photoAccess/PhotoAccessHelperDiscardCamera
 import SaveCameraPhoto from './photoAccess/PhotoAccessHelperSaveCameraPhoto.test';
 import CommitModifySuppTest from './photoAccess/CommitModifyTest.test';
 import DeleteAssetsChangeRequestSuppTest from './photoAccess/DeleteAssets.test';
+import ShowAssetsCreationDialogSuppTest from './photoAccess/showAssetsCreationDialogSuppTest.test';
+import getAllObjectsTest from './photoAccess/getAllObjects.test';
+import getSupportedPhotoFormatsTest from './photoAccess/getSupportedPhotoFormats.test';
+import IsAfterLastTest from './photoAccess/isAfterLast.test';
 
 export default function testsuite() {
   PhotoAccessMediaAssetChangeRequestSuppTest();
@@ -34,4 +38,8 @@ export default function testsuite() {
   PhotoAccessHelperAssetsTest();
   CommitModifySuppTest();
   DeleteAssetsChangeRequestSuppTest();
+  ShowAssetsCreationDialogSuppTest();
+  getAllObjectsTest();
+  getSupportedPhotoFormatsTest();
+  IsAfterLastTest ();
 }

@@ -332,6 +332,32 @@ async function getFocusModeTest(done: Function, testName: string,
   }
 }
 
+async function getZoomRatioRangeTest(done: Function, testName: string, callback: (res: Array<number>) => void) {
+  try {
+    if (isEmpty(mCameraDeviceArray)) {
+      console.info(TAG, testName, ' mCameraDeviceArray is null.');
+      done();
+      return;
+    } else {
+      createPhotoOutput();
+      await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
+      if (mCaptureSession.getZoomRatioRange()) {
+        let res: Array<number> = mCaptureSession.getZoomRatioRange();
+        console.info(TAG, testName, 'video FocusModeSupported, expected: ', JSON.stringify(res));
+        callback(res);
+      } else {
+        console.error(TAG, testName, "该设备不支持变焦");
+      }
+    }
+  } catch (error) {
+    console.error(TAG, testName, JSON.stringify(error), error.code);
+    expect().assertFail();
+  } finally {
+    await releasePhotoSession();
+    done();
+  }
+}
+
 export default function CameraDeprecatedCaptureSessionTest() {
   describe('CameraDeprecatedCaptureSessionTest', () => {
     beforeAll(async () => {
@@ -682,6 +708,21 @@ export default function CameraDeprecatedCaptureSessionTest() {
         camera.FocusMode.FOCUS_MODE_LOCKED, (res?: camera.FocusMode) => {
           expect(res).assertEqual(camera.FocusMode.FOCUS_MODE_LOCKED);
         });
+    });
+
+    /**
+     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_GET_ZOOM_RATIO_RANGE_0100
+     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_GET_ZOOM_RATIO_RANGE_0100
+     * @tc.desc      Test get GET_ZOOM_RATIO_RANGE
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_CAP_MULTIMEDIA_CAMERA_GET_ZOOM_RATIO_RANGE_0100', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_ZOOM_RATIO_RANGE_0100';
+      await getZoomRatioRangeTest(done, testName, (res: Array<number>) => {
+        expect(res.length > 0).assertTrue();
+      });
     });
   })
 }

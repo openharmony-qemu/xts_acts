@@ -347,6 +347,87 @@ async function getPreviewOutputRotation(done: Function, testName: string,
   }
 }
 
+async function getZoomRatioRangeTest1(done: Function, testName: string, callback: (res: Array<number>) => void) {
+  try {
+    if (isEmpty(mCameraDeviceArray)) {
+      console.info(TAG, testName, ' mCameraDeviceArray is null.');
+      done();
+      return;
+    } else {
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      console.info(TAG, testName, JSON.stringify(mPhotoSession.getZoomRatioRange()),)
+      if (mPhotoSession.getZoomRatioRange()) {
+        let res: Array<number> = mPhotoSession.getZoomRatioRange();
+        console.info(TAG, testName, 'video FocusModeSupported, expected: ', JSON.stringify(res));
+        callback(res);
+      } else {
+        console.error(TAG, testName, "该设备不支持变焦");
+      }
+    }
+  } catch (error) {
+    console.error(TAG, testName, JSON.stringify(error), error.code);
+    expect().assertFail();
+  } finally {
+    await releasePhotoSession();
+    done();
+  }
+}
+
+async function getSupportedFrameRatesTest1(done: Function, testName: string,
+  callback: (res: Array<camera.FrameRateRange>) => void) {
+  try {
+    if (isEmpty(mCameraDeviceArray)) {
+      console.info(TAG, testName, ' mCameraDeviceArray is null.');
+      done();
+      return;
+    } else {
+      await createVideoOutput();
+      await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
+      if (mVideoOutput.getSupportedFrameRates()) {
+        let res: Array<camera.FrameRateRange> = mVideoOutput.getSupportedFrameRates();
+        console.info(TAG, testName, 'video getSupportedFrameRates, success: ', JSON.stringify(res));
+        callback(res);
+      } else {
+        console.error(TAG, testName, "该设备不支持自动帧率");
+      }
+    }
+  } catch (error) {
+    console.error(TAG, testName, 'video getSupportedFrameRates, failed', JSON.stringify(error), error.code, error);
+    expect().assertFail();
+  } finally {
+    await releaseVideoSession();
+    done();
+  }
+}
+
+async function getSupportedFrameRatesTest2(done: Function, testName: string,
+  callback: (res: Array<camera.FrameRateRange>) => void) {
+  try {
+    if (isEmpty(mCameraDeviceArray)) {
+      console.info(TAG, testName, ' mCameraDeviceArray is null.');
+      done();
+      return;
+    } else {
+      createPhotoOutput();
+      await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+      if (mPreviewOutput.getSupportedFrameRates()) {
+        let res: Array<camera.FrameRateRange> = mPreviewOutput.getSupportedFrameRates();
+        console.info(TAG, testName, 'video getSupportedFrameRates, success: ', JSON.stringify(res));
+        callback(res);
+      } else {
+        console.error(TAG, testName, "该设备不支持自动帧率");
+      }
+    }
+  } catch (error) {
+    console.error(TAG, testName, 'video getSupportedFrameRates, failed', JSON.stringify(error), error.code, error);
+    expect().assertFail();
+  } finally {
+    await releasePhotoSession();
+    done();
+  }
+}
+
 export default function CameraSessionHasSuppTest() {
   describe('CameraSessionHasSuppTest', () => {
     beforeAll(async () => {
@@ -637,6 +718,86 @@ export default function CameraSessionHasSuppTest() {
         camera.ImageRotation.ROTATION_270, (res?: camera.ImageRotation) => {
           expect(res).assertEqual(camera.ImageRotation.ROTATION_180);
         });
+    });
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_GET_ZOOM_RATIO_RANGE_0100
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_GET_ZOOM_RATIO_RANGE_0100
+     * @tc.desc      Test get GET_ZOOM_RATIO_RANGE
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_GET_ZOOM_RATIO_RANGE_0100', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_GET_ZOOM_RATIO_RANGE_0100';
+      await getZoomRatioRangeTest1(done, testName, (res: Array<number>) => {
+        expect(res.length > 0).assertTrue();
+      });
+    });
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_FRAME_RATES_0100
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_FRAME_RATES_0100
+     * @tc.desc      Test get GET_SUPPORTED_FRAME_RATES
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_FRAME_RATES_0100', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_FRAME_RATES_0100';
+      await getSupportedFrameRatesTest1(done, testName, (res: Array<camera.FrameRateRange>) => {
+        expect(res.length > 0).assertTrue();
+      });
+    });
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_FRAME_RATES_0200
+     * @tc.name      SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_FRAME_RATES_0200
+     * @tc.desc      Test get GET_SUPPORTED_FRAME_RATES
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_FRAME_RATES_0200', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_CAMERA_GET_SUPPORTED_FRAME_RATES_0200';
+      await getSupportedFrameRatesTest2(done, testName, (res: Array<camera.FrameRateRange>) => {
+        expect(res.length > 0).assertTrue();
+      });
+    });
+
+    /**
+     * @tc.number    SUB_MULTIMEDIA_GET_SUPPORTED_MOVING_PHOTO_VIDEO_CODEC_TYPES_0100
+     * @tc.name      SUB_MULTIMEDIA_GET_SUPPORTED_MOVING_PHOTO_VIDEO_CODEC_TYPES_0100
+     * @tc.desc      Test get GET_SUPPORTED_FRAME_RATES
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('SUB_MULTIMEDIA_GET_SUPPORTED_MOVING_PHOTO_VIDEO_CODEC_TYPES_0100', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_GET_SUPPORTED_MOVING_PHOTO_VIDEO_CODEC_TYPES_0100';
+      try {
+        if (isEmpty(mCameraDeviceArray)) {
+          console.info(TAG, testName, ' mCameraDeviceArray is null.');
+          done();
+          return;
+        } else {
+          createPhotoOutput();
+          await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
+          if (mPhotoOutput.isMovingPhotoSupported()) {
+            let res: camera.VideoCodecType[] = mPhotoOutput.getSupportedMovingPhotoVideoCodecTypes();
+            console.info(TAG, testName, 'video getSupportedFrameRates, success: ', JSON.stringify(res));
+            expect(res.length > 0).assertTrue();
+          } else {
+            console.error(TAG, testName, "该设备不支持动态照片拍摄");
+          }
+        }
+      } catch (error) {
+        console.error(TAG, testName, 'video getSupportedFrameRates, failed', JSON.stringify(error), error.code, error);
+        expect().assertFail();
+      } finally {
+        await releasePhotoSession();
+        done();
+      }
     });
   });
 }
