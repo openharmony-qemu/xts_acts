@@ -1169,6 +1169,32 @@ export default function abilityTest() {
             }
             done();
         })
+
+        
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_RESOLUTION_ENUM_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_RESOLUTION_ENUM_STATIC_0100
+         * @tc.desc        compare all value in ResolutionLevel to number value
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_RESOLUTION_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+            async (done: () => void): Promise<void> => {
+            console.info(`TestLog: RESOLUTION_480P is ${avSession.ResolutionLevel.RESOLUTION_480P}`);
+            expect(avSession.ResolutionLevel.RESOLUTION_480P).assertEqual(0 as avSession.ResolutionLevel);
+            console.info(`TestLog: RESOLUTION_720P is ${avSession.ResolutionLevel.RESOLUTION_720P}`);
+            expect(avSession.ResolutionLevel.RESOLUTION_720P).assertEqual(1 as avSession.ResolutionLevel);
+            console.info(`TestLog: RESOLUTION_1080P is ${avSession.ResolutionLevel.RESOLUTION_1080P}`);
+            expect(avSession.ResolutionLevel.RESOLUTION_1080P).assertEqual(2 as avSession.ResolutionLevel);
+            console.info(`TestLog: RESOLUTION_2K is ${avSession.ResolutionLevel.RESOLUTION_2K}`);
+            expect(avSession.ResolutionLevel.RESOLUTION_2K).assertEqual(3 as avSession.ResolutionLevel);
+            console.info(`TestLog: RESOLUTION_4K is ${avSession.ResolutionLevel.RESOLUTION_4K}`);
+            expect(avSession.ResolutionLevel.RESOLUTION_4K).assertEqual(4 as avSession.ResolutionLevel);
+            done();
+        })
+
     })
 }
 
