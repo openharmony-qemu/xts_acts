@@ -194,7 +194,6 @@ export default function CameraVideoOutputSuppTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
     beforeEach(() => {
       console.info('afterEach case');

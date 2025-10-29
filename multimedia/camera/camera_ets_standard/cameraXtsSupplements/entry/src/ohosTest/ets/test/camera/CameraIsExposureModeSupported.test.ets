@@ -290,7 +290,6 @@ export default function cameraIsExposureModeSupported() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
 
     beforeEach(() => {

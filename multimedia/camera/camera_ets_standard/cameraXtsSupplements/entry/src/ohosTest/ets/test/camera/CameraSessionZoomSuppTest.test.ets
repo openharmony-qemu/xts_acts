@@ -253,7 +253,6 @@ export default function CameraSessionZoomSuppTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
     beforeEach(() => {
       console.info('afterEach case');

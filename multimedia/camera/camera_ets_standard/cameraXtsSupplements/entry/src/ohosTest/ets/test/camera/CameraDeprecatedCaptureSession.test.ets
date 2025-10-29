@@ -341,7 +341,6 @@ export default function CameraDeprecatedCaptureSessionTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
       AppStorage.setOrCreate('test', [])
     });
 
