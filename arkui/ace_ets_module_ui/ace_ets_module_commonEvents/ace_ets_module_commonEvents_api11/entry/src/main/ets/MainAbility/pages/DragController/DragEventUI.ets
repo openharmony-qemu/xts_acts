@@ -77,6 +77,8 @@ struct DragEvent {
               promptAction.showToast({duration: 100, message: 'Drop Disabled'});
             }else if (event.getResult() === DragResult.DROP_ENABLED) {
               promptAction.showToast({duration: 100, message: 'Drop Enabled'});
+            }else if (event.getResult() === DragResult.UNKNOWN) {
+              promptAction.showToast({duration: 100, message: 'Drop UNKNOWN'});
             }
             this.dragResult = event.getResult().toString()
           })

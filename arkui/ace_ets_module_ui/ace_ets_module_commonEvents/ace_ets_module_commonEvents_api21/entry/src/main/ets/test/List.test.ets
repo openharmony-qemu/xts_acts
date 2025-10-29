@@ -13,9 +13,12 @@
  * limitations under the License.
  */
 
-import getPinchAxisScaleValue from './AxisEvent/getPinchAxisScaleValue.test'
-import postInputEvent from './BuilderNode/postInputEvent.test'
+import getPinchAxisScaleValue from './AxisEvent/getPinchAxisScaleValue.test';
+import postInputEvent from './BuilderNode/postInputEvent.test';
+import measureFromViewportTest from "./onVisiable/measureFromViewport.test";
+
 export default function testsuite() {
   getPinchAxisScaleValue();
-  postInputEvent()
+  postInputEvent();
+  measureFromViewportTest();
 }
