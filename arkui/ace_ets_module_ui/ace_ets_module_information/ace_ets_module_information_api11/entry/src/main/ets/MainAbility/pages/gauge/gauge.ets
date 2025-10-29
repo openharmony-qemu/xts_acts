@@ -23,9 +23,9 @@ struct GaugeExample {
   @State startAngleValue: number = 210;
   @State endAngleValue: number = 150;
   @State colorValues: string = JSON.stringify([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1], [0xD94838, 1]]);
-  private stateChangCallBack = (eventData: events_emitter.EventData) => {
+  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
-      console.info("gauge page state change called:" + JSON.stringify(eventData));
+      console.info('gauge page state change called:' + JSON.stringify(eventData));
       if (eventData.data?.gaugeValue != null) {
         this.gaugeValue = eventData.data?.gaugeValue;
       }
@@ -80,7 +80,7 @@ struct GaugeExample {
   build() {
     Column() {
       Gauge({ value: 0, min: 0, max: 100 })
-        .key("gauge")
+        .key('gauge')
         .value(this.gaugeValue)
         .startAngle(this.startAngleValue)
         .endAngle(this.endAngleValue)
