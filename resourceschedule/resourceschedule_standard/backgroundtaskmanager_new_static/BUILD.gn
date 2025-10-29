@@ -19,6 +19,7 @@ group("backgroundtaskmanager_new_static_test") {
     deps = [
       "longtimetask_static:ActsResourcescheduleLongTimeTaskStaticTest",
       "shorttimetask_static:ActsResourcescheduleShortTimeTaskStaticTest",
+      "workscheduler_static:ActsResourcescheduleWorkschedulerStaticTest"
     ]
   }
 }
