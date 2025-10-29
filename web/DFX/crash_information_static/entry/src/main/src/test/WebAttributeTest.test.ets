@@ -59,7 +59,7 @@ export default function webAttributeTest() {
     /*
     * @tc.number      : SUB_WEB_ONRENDEREXITED_0100
     * @tc.name        : testOnRenderExitedStatic001
-    * @tc.desc        : test onRenderExited RenderExitReason.ProcessCrashed
+    * @tc.desc        : test onRenderExited RenderExitReason.PROCESS_CRASHED
     * @tc.size        : MediumTest
     * @tc.type        : Function
     * @tc.level       : Level 1
@@ -68,7 +68,7 @@ export default function webAttributeTest() {
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("emitOnRenderExited", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testOnRenderExited001", RenderExitReason.ProcessCrashed, 60106, done);
+        Utils.registerEvent("testOnRenderExited001", RenderExitReason.PROCESS_CRASHED, 60106, done);
         await Utils.msSleep(2000);
         let driver: Driver = Driver.create();
         await Utils.msSleep(2000);
