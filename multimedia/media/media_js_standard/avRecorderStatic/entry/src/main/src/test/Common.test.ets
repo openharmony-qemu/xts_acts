@@ -467,7 +467,7 @@ export default class Commmon {
   async setOnCallback(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
     done: () => void) {
     console.info(`case setOnCallback in`);
-    avRecorder.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+    avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
       console.info('case state has changed, new state is :' + state);
       let stateValue: string = state as string
       switch (state) {
@@ -511,7 +511,7 @@ export default class Commmon {
       }
     });
 
-    avRecorder.on('error', (err: BusinessError | null) => {
+    avRecorder.onError((err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
     });
   }
@@ -519,7 +519,7 @@ export default class Commmon {
   async setPrepareOnCallback(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
     done: () => void) {
     console.info(`case setOnCallback in`);
-    avRecorder.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+    avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1346,7 +1346,7 @@ export default class Commmon {
   async getInputSurfaceTest32(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
     done: () => void) {
     console.info(`case getInputSurfaceTest in`);
-    avRecorder.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+    avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1371,7 +1371,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError | null) => {
+    avRecorder.onError((err: BusinessError | null) => {
       console.info('case getInputSurfaceTest32 avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1387,7 +1387,7 @@ export default class Commmon {
   async getInputSurfaceTest33(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
     done: () => void) {
     console.info(`case getInputSurfaceTest33 in`);
-    avRecorder.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+    avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1418,7 +1418,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError | null) => {
+    avRecorder.onError((err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1434,7 +1434,7 @@ export default class Commmon {
   async getInputSurfaceTest34(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
     done: () => void) {
     console.info(`case getInputSurfaceTest34 in`);
-    avRecorder.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+    avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1468,7 +1468,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError | null) => {
+    avRecorder.onError((err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1484,7 +1484,7 @@ export default class Commmon {
   async getInputSurfaceTest35(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
     done: () => void) {
     console.info(`case getInputSurfaceTest35 in`);
-    avRecorder.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+    avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1521,7 +1521,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError | null) => {
+    avRecorder.onError((err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1537,7 +1537,7 @@ export default class Commmon {
   async getInputSurfaceTest36(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
     done: () => void) {
     console.info(`case getInputSurfaceTest36 in`);
-    avRecorder.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+    avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1574,7 +1574,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError | null) => {
+    avRecorder.onError((err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1590,7 +1590,7 @@ export default class Commmon {
   async getInputSurfaceTest37(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
     done: () => void) {
     console.info(`case getInputSurfaceTest37 in`);
-    avRecorder.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+    avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case "idle":
@@ -1626,7 +1626,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError | null) => {
+    avRecorder.onError((err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1658,7 +1658,7 @@ export default class Commmon {
     let result3 = true;
     let surfaceID: string | undefined = undefined;
     console.info(`case getInputSurfaceTest38 in`);
-    avRecorder.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+    avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1682,7 +1682,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError | null) => {
+    avRecorder.onError((err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1732,7 +1732,7 @@ export default class Commmon {
   async getAVRecorderConfigTest40(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
     done: () => void) {
     console.info(`case getAVRecorderConfigTest40 in`);
-    avRecorder.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+    avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1756,7 +1756,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError | null) => {
+    avRecorder.onError((err: BusinessError | null) => {
       console.info('case getAVRecorderConfigTest40 avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1772,7 +1772,7 @@ export default class Commmon {
   async getAVRecorderConfigTest41(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
     done: () => void) {
     console.info(`case getAVRecorderConfigTest41 in`);
-    avRecorder.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+    avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1803,7 +1803,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError | null) => {
+    avRecorder.onError((err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1819,7 +1819,7 @@ export default class Commmon {
   async getAVRecorderConfigTest42(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
     done: () => void) {
     console.info(`case getAVRecorderConfigTest42 in`);
-    avRecorder.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+    avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1853,7 +1853,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError | null) => {
+    avRecorder.onError((err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1869,7 +1869,7 @@ export default class Commmon {
   async getAVRecorderConfigTest43(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
     done: () => void) {
     console.info(`case getAVRecorderConfigTest43 in`);
-    avRecorder.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+    avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1906,7 +1906,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError | null) => {
+    avRecorder.onError((err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1922,7 +1922,7 @@ export default class Commmon {
   async getAVRecorderConfigTest44(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
     done: () => void) {
     console.info(`case getAVRecorderConfigTest44 in`);
-    avRecorder.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+    avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case 'prepared':
@@ -1959,7 +1959,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError | null) => {
+    avRecorder.onError((err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });
@@ -1968,7 +1968,7 @@ export default class Commmon {
   async getAVRecorderConfigTest45(avConfig: media.AVRecorderConfig, avRecorder: media.AVRecorder, recorderTime: number,
     done: () => void) {
     console.info(`case getAVRecorderConfigTest45 in`);
-    avRecorder.on('stateChange', (state: media.AVRecorderState, reason: media.StateChangeReason) => {
+    avRecorder.onStateChange((state: media.AVRecorderState, reason: media.StateChangeReason) => {
       console.info('case state has changed, new state is :' + state);
       switch (state) {
         case "idle":
@@ -2004,7 +2004,7 @@ export default class Commmon {
           console.info('case state is unknown');
       }
     });
-    avRecorder.on('error', (err: BusinessError | null) => {
+    avRecorder.onError((err: BusinessError | null) => {
       console.info('case avRecorder.on(error) called, errMessage is ' + err!!.message);
       done();
     });

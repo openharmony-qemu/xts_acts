@@ -152,8 +152,8 @@ function toNextStep(avTranscoder: media.AVTranscoder | null, config: media.AVTra
       break;
     case RELEASEAVTRANSCODER_PROMISE_EVENT:
       steps.shift();
-      avTranscoder?.off('complete');
-      avTranscoder?.off('progressUpdate');
+      avTranscoder?.offComplete();
+      avTranscoder?.offProgressUpdate();
         avTranscoder?.release().then(() => {
           console.info('release AVTranscoder success');
           toNextStep(avTranscoder, config, pauseTime, steps, done);
@@ -202,7 +202,7 @@ function toNextStep(avTranscoder: media.AVTranscoder | null, config: media.AVTra
 function setCallback(avTranscoder: media.AVTranscoder, config: media.AVTranscoderConfig, pauseTime: int,
   steps: Array<string>, done: () => void) {
     // 转码进度
-    avTranscoder.on('progressUpdate', (progress: int) => {
+    avTranscoder.onProgressUpdate((progress: int) => {
       console.info('avTranscoder progressUpdate = ' + progress);
       // to pause
       if (progress > 100) {
@@ -218,7 +218,7 @@ function setCallback(avTranscoder: media.AVTranscoder, config: media.AVTranscode
       }
     })
     // 错误上报回调函数
-    avTranscoder.on('error', (err: BusinessError) => {
+    avTranscoder.onError((err: BusinessError) => {
       try {
         console.error('error ocConstantSourceNode, error message is ' + err);
         toNextStep(avTranscoder, config, pauseTime, steps, done);
@@ -228,7 +228,7 @@ function setCallback(avTranscoder: media.AVTranscoder, config: media.AVTranscode
       }
     });
     // 转码完成事件
-    avTranscoder.on('complete', () => {
+    avTranscoder.onComplete(() => {
       console.info('avTranscoder complete');
       toNextStep(avTranscoder, config, pauseTime, steps, done);
     });

@@ -44,10 +44,10 @@ async function resetAndCallbackOff() {
   await avPlayer!!.reset().then(() => {
     console.info('case reset AVPlayer success');
   }).catch(mediaTestBase.catchCallback);
-  avPlayer!!.off('stateChange');
-  avPlayer!!.off('superResolutionChanged');
-  avPlayer!!.off('error');
-  avPlayer!!.off('endOfStream');
+  avPlayer!!.offStateChange();
+  avPlayer!!.offSuperResolutionChanged();
+  avPlayer!!.offError();
+  avPlayer!!.offEndOfStream();
   console.info('case now stopped, to release');
   await avPlayer!!.release().then(() => {
     console.info('case release AVPlayer success');
@@ -116,19 +116,19 @@ async function testPostProcessor(fd: media.AVFileDescriptor, initializedOp: Asyn
     }
   }).catch(mediaTestBase.catchCallback);
 
-  avPlayer!!.on('stateChange', (state: media.AVPlayerState, reason: media.StateChangeReason) => {
+  avPlayer!!.onStateChange((state: media.AVPlayerState, reason: media.StateChangeReason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     await handleState(state.toString(), initializedOp, preparedOp, playedOp, stoppedOp);
   });
-  avPlayer!!.on('error', (err: BusinessError) => {
+  avPlayer!!.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
   });
-  avPlayer!!.on('endOfStream', () => {
+  avPlayer!!.onEndOfStream(() => {
     if (extraOp) {
       extraOp();
     }
   });
-  avPlayer!!.on('superResolutionChanged', (enabled: boolean) => {
+  avPlayer!!.onSuperResolutionChanged((enabled: boolean) => {
     try {
       console.info('Received SEI message at playbackPosition: ' + enabled);
     } catch (error) {

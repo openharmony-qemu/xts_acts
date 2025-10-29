@@ -77,7 +77,7 @@ function createEvent(avPlayer: media.AVPlayer | undefined, config: PreDownConfig
 async function setCallbackEvent(avPlayer: media.AVPlayer | undefined, config: PreDownConfig,
   steps: Array<string>, done: () => void) {
   console.info(`case setAVPlayerCb`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case state: ${state}, reason: ${state}`);
     switch (state) {
       case 'playing':
@@ -88,7 +88,7 @@ async function setCallbackEvent(avPlayer: media.AVPlayer | undefined, config: Pr
         toNextStep(avPlayer, config, steps, done);
     }
   })
-  avPlayer?.on('error', (err) => {
+  avPlayer?.onError((err) => {
     console.info(`case on error: ${err}`);
     expect(steps[0]).assertEqual(ERROR_EVENT);
     steps.shift();
