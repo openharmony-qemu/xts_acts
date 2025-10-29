@@ -255,12 +255,12 @@ export default function nfcIsoDepTagTest() {
                         }
                         expect(true).assertEqual(data);           
                     }
-                    done();
                 });
             } else {
                 console.info("[NFC_test]IsoDepTag4 = null & = undefined: ");
                 expect().assertFail();
             }
+            done();
         })
 
         /**

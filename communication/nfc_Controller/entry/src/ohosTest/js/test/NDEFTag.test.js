@@ -911,7 +911,7 @@ export default function nfcNDEFTagTest() {
          */
         it('SUB_Communication_NFC_nfcNDEF_js_2301', Level.LEVEL0, function () {
             if (NdefTag != null && NdefTag != undefined) {
-                let rawData1 = [];
+                let rawData1 = [0xD1, 0x01];
                 console.info("messageToBytes is object7" );
                 try {
                     let ndefMessage1 = tag.ndef.createNdefMessage(rawData1);
@@ -922,7 +922,7 @@ export default function nfcNDEFTagTest() {
                     } else {
                         expect(makeERecords1).assertDeepEquals([]);
                     }
-                    console.info("[NFC_test]ndef23 result4: " + JSON.stringify(makeERecords));
+                    console.info("[NFC_test]ndef23 result4: " + JSON.stringify(makeERecords1));
                     expect(makeERecords1).assertInstanceOf('Array')
                 } catch (error) {
                     console.info("[NFC_test]ndef23 ndefMessage4 error: " + error);
