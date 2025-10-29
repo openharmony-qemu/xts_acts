@@ -63,7 +63,7 @@ export default function GridFillPolicy() {
 
       let strJson2 = getInspectorByKey('grid_fillType');
       console.info("[GridFillPolicy_0100] itemFillPolicy: " + JSON.stringify(JSON.parse(strJson2).$attrs.itemFillPolicy));
-      expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType::BREAKPOINT_DEFAULT");
+      expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType.BREAKPOINT_DEFAULT");
 
       let gridItem1 = CommonFunc.getComponentRectOnScreen('gridType_1');
       console.info('[GridFillPolicy_0100] gridItem1.right: ' + gridItem1.right);
@@ -96,7 +96,7 @@ export default function GridFillPolicy() {
 
       let strJson2 = getInspectorByKey('grid_fillType');
       console.info("[GridFillPolicy_0200] itemFillPolicy: " + JSON.stringify(JSON.parse(strJson2).$attrs.itemFillPolicy));
-      expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType::BREAKPOINT_SM1MD2LG3");
+      expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType.BREAKPOINT_SM1MD2LG3");
 
       let gridItem1 = CommonFunc.getComponentRectOnScreen('gridType_1');
       console.info('[GridFillPolicy_0200] gridItem1.bottom: ' + gridItem1.bottom);
@@ -129,7 +129,7 @@ export default function GridFillPolicy() {
 
       let strJson2 = getInspectorByKey('grid_fillType');
       console.info("[GridFillPolicy_0300] itemFillPolicy: " + JSON.stringify(JSON.parse(strJson2).$attrs.itemFillPolicy));
-      expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType::BREAKPOINT_SM2MD3LG5");
+      expect(JSON.parse(strJson2).$attrs.itemFillPolicy).assertEqual("PresetFillType.BREAKPOINT_SM2MD3LG5");
 
       let gridItem1 = CommonFunc.getComponentRectOnScreen('gridType_1');
       console.info('[GridFillPolicy_0300] gridItem1.right: ' + gridItem1.right);
