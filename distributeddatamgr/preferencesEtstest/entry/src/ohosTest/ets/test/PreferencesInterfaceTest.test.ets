@@ -330,6 +330,68 @@ export default function PreferencesInterfaceTest() {
     })
 
 
+    /**
+     * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_4000
+     * @tc.name testPreferencesStorageType0900
+     * @tc.desc test StorageType
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
 
+    it('testPreferencesStorageType0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info(TAG + "enum value of xml: ${data_preferences.StorageType.XML}");
+        expect(0).assertEqual(data_preferences.StorageType.XML);
+        let isXmlSupported = data_preferences.isStorageTypeSupported(data_preferences.StorageType.XML);
+        console.info(TAG + "isXmlSupported: ${isXmlSupported}");
+        if (isXmlSupported) {
+          console.info(TAG + "isXmlSupported: ${isXmlSupported}");
+          expect(isXmlSupported).assertTrue();
+          console.info("====>testPreferencesStorageType0900 success: part1")
+        } else {
+          console.info(TAG + "isXmlSupported: ${isXmlSupported}");
+          expect(isXmlSupported).assertFalse();
+          console.info("====>testPreferencesStorageType0900 success: part1");
+        }
+        done();
+      } catch (err) {
+        console.info("====>testPreferencesStorageType0900 throw_err:" + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+    })
+
+
+    /**
+     * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_4100
+     * @tc.name testPreferencesStorageType1000
+     * @tc.desc test StorageType
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+
+    it('testPreferencesStorageType1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      try {
+        console.info(TAG + "enum value of GSkv: ${data_preferences.StorageType.GSKV}");
+        expect(1).assertEqual(data_preferences.StorageType.GSKV);
+        let isGSkvSupported = data_preferences.isStorageTypeSupported(data_preferences.StorageType.GSKV);
+        if (isGSkvSupported) {
+          console.info(TAG + "isGSkvSupported: ${isGSkvSupported}");
+          expect(isGSkvSupported).assertTrue();
+          console.info("====>testPreferencesStorageType001 success: part1")
+        } else {
+          console.info(TAG + "isGSkvSupported: ${isGSkvSupported}");
+          expect(isGSkvSupported).assertFalse();
+          console.info("====>testPreferencesStorageType1000 success: part1");
+        }
+        done();
+      } catch (err) {
+        console.info("====>testPreferencesStorageType1000 throw_err:" + JSON.stringify(err))
+        expect().assertFail()
+        done()
+      }
+    })
   })
 }
