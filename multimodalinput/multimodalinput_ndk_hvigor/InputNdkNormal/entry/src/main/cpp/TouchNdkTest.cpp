@@ -26,6 +26,13 @@
 const int GLOBAL_RESMGR = 0xFF00;
 const char *TAG = "[SensorCapiSample]";
 
+void HookCallback(const Input_KeyEvent *keyEvent) {
+    int32_t eventId{-1};
+    if (OH_Input_GetKeyEventId(keyEvent, &eventId) != INPUT_SUCCESS) {
+        return;
+    }
+}
+
 static napi_value QueryMaxTouchPoints1(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -118,6 +125,51 @@ static napi_value AxisEventGlobal2(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value GetKeyEventId1(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+
+    int32_t eventId;
+    struct Input_KeyEvent *keyEvent = OH_Input_CreateKeyEvent();
+    Input_Result retResult = OH_Input_GetKeyEventId(keyEvent &eventId);
+    OH_LOG_INFO(LOG_APP, "SUB_MMI_Input_Api_GetKeyEventId_0100 retResult:%{public}d", retResult);
+    napi_create_int32(env, (retResult == INPUT_SUCCESS) ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value AddKeyEventHook1(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+
+    Input_Result retResult = OH_Input_AddKeyEventHook(HookCallback);
+    OH_LOG_INFO(LOG_APP, "SUB_MMI_Input_Api_AddKeyEventHook_0100 retResult:%{public}d", retResult);
+    napi_create_int32(env, (retResult == 201 || retResult == INPUT_SERVICE_EXCEPTION || retResult == 801) ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value RemoveKeyEventHook1(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+
+    Input_Result retResult = OH_Input_RemoveKeyEventHook(HookCallback);
+    OH_LOG_INFO(LOG_APP, "SUB_MMI_Input_Api_RemoveKeyEventHook_0100 retResult:%{public}d", retResult);
+    napi_create_int32(env, (retResult == INPUT_SUCCESS || retResult == INPUT_SERVICE_EXCEPTION) ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value DispatchToNextHandler1(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+
+    int32_t eventId;
+    struct Input_KeyEvent *keyEvent = OH_Input_CreateKeyEvent();
+    OH_Input_GetKeyEventId(keyEvent &eventId);
+    Input_Result retResult = OH_Input_DispatchToNextHandler(eventId);
+    OH_LOG_INFO(LOG_APP, "SUB_MMI_Input_Api_DispatchToNextHandler_0100 retResult:%{public}d", retResult);
+    napi_create_int32(env, (retResult == 401 || retResult == INPUT_SERVICE_EXCEPTION) ? 1 : 0, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -129,6 +181,10 @@ static napi_value Init(napi_env env, napi_value exports)
         {"InjectTouchEventGlobal3", nullptr, InjectTouchEventGlobal3, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"AxisEventGlobal1", nullptr, AxisEventGlobal1, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"AxisEventGlobal2", nullptr, AxisEventGlobal2, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetKeyEventId1", nullptr, GetKeyEventId1, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"AddKeyEventHook1", nullptr, AddKeyEventHook1, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"RemoveKeyEventHook1", nullptr, RemoveKeyEventHook1, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"DispatchToNextHandler1", nullptr, DispatchToNextHandler1, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
