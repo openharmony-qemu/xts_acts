@@ -1,4 +1,4 @@
-/*
+/**
 * Copyright (c) 2023 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ let testAbilityContext: common.UIAbilityContext
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let bundle :string = 'com.example.actsnotificationmanagerrequestenablenotificationcallbacktest.static'
+let count: int = 0;
 
 export default function ActsCallbackTest() {
   describe('ActsCallbackTest', () => {
@@ -39,19 +40,20 @@ export default function ActsCallbackTest() {
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
       await Utils.msSleep(2000)
-      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100
-     * @tc.name      : Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100
-     * @tc.desc      : requestEnableNotification allowed button is clicked
+    /**
+     * @tc.number     Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100
+     * @tc.name       Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100
+     * @tc.desc       requestEnableNotification allowed button is clicked
      */
     it('Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG = 'Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100'
+        count = 0;
         notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
           if (err) {
             console.info(`${TAG} requestEnableNotification err: ${JSON.stringify(err)}`)
@@ -60,7 +62,8 @@ export default function ActsCallbackTest() {
             expect(false).assertTrue()
             done()
             }else{
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               console.info(`${TAG} succeeded.`);
               done()
             }
