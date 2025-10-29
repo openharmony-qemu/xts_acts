@@ -1180,7 +1180,7 @@ export default function abilityTest() {
       * @tc.type        Function
       * @tc.level       Level2
       */
-    it('SUB_MULTIMEDIA_AVSESSION_RESOLUTION_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_RESOLUTION_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
         console.info(`TestLog: RESOLUTION_480P is ${avSession.ResolutionLevel.RESOLUTION_480P}`);
         expect(avSession.ResolutionLevel.RESOLUTION_480P).assertEqual(0 as avSession.ResolutionLevel);
         console.info(`TestLog: RESOLUTION_720P is ${avSession.ResolutionLevel.RESOLUTION_720P}`);
@@ -1197,12 +1197,12 @@ export default function abilityTest() {
      /**
       * @tc.number      SUB_MULTIMEDIA_AVSESSION_CASTCONTROLCOMMAND_0100
       * @tc.name        SUB_MULTIMEDIA_AVSESSION_CASTCONTROLCOMMAND_0100
-      * @tc.desc        compare all value in ResolutionLevel to number value
+      * @tc.desc        compare all value in ControlCommand to number value
       * @tc.size        MediumTest
       * @tc.type        Function
       * @tc.level       Level2
       */
-    it('SUB_MULTIMEDIA_AVSESSION_RESOLUTION_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_CASTCONTROLCOMMAND_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
       try{
         let avCommand: avSession.AVCastControlCommand = {command:'seek',parameter: 15};
         console.info(`ControlCommand successfully ${JSON.stringify(avCommand)}`);
