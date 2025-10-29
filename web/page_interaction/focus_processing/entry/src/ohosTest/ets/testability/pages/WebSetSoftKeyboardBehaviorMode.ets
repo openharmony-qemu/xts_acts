@@ -93,6 +93,8 @@ struct WebComponent {
                   Utils.emitEvent(true, 20251116)
                   break;
                 }
+                this.controller.loadUrl('resource://rawfile/SetSoftKeyboardBehaviorMode.html');
+                await Utils.waitForExist(()=>this.isOnConsoleEnd, this.str+' isOnConsoleEnd', 1, 1000);
                 this.controller.onActive();
                 this.controller.setSoftKeyboardBehaviorMode(web_webview.WebSoftKeyboardBehaviorMode.DEFAULT);
                 let buttonOne = await driver.findComponent(ON.text('textContent'));
