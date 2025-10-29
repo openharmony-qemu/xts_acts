@@ -146,7 +146,7 @@ export default function BuiltinsNumberConstructorTest() {
     it('builtinsNumberConstructorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberConstructorTest0600';
       console.log(`${caseName} test start`);
-      const value = "number";
+      const value = "object";
       let numObj = new Number(10);
       console.log(`${typeof numObj}`);
       expect(value).assertEqual(typeof numObj);
