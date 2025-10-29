@@ -94,9 +94,63 @@ static napi_value DeactiveSyncFolder(napi_env env, napi_callback_info info)
 
 static napi_value GetSyncFolders(napi_env env, napi_callback_info info)
 {
+    CloudDisk_SyncFolder syncFolder;
+    int32_t count = 0;
     LOGW("OH_CloudDisk_GetSyncFolders start.path: %{public}s", path);
-    auto ret = OH_CloudDisk_GetSyncFolders();
+    auto ret = OH_CloudDisk_GetSyncFolders(&syncFolder, count);
     LOGW("OH_CloudDisk_GetSyncFolders ret: %{public}d", ret);
+    napi_value result_1 = nullptr;
+    napi_create_int32(env, ret, &result_1);
+    return result_1;
+}
+
+static napi_value RegisterSyncFolderChanges(napi_env env, napi_callback_info info)
+{
+    if (callback_ == nullptr) {
+        callback_ = OnChangeDataCallback;
+    }
+    char* path = GetStringParam(env, info);
+    CloudDisk_SyncFolderPath pathInfo;
+    pathInfo.value = path;
+    pathInfo.length = strlen(pathInfo.value);
+
+    LOGW("OH_CloudDisk_RegisterSyncFolderChanges start.path: %{public}s", path);
+    auto ret = OH_CloudDisk_RegisterSyncFolderChanges(pathInfo, callback_);
+    LOGW("OH_CloudDisk_RegisterSyncFolderChanges ret: %{public}d", ret);
+    napi_value result_1 = nullptr;
+    napi_create_int32(env, ret, &result_1);
+    return result_1;
+}
+
+static napi_value UnregisterSyncFolderChanges(napi_env env, napi_callback_info info)
+{
+    char* path = GetStringParam(env, info);
+    CloudDisk_SyncFolderPath pathInfo;
+    pathInfo.value = path;
+    pathInfo.length = strlen(pathInfo.value);
+
+    LOGW("OH_CloudDisk_UnregisterSyncFolderChanges start.path: %{public}s", path);
+    auto ret = OH_CloudDisk_UnregisterSyncFolderChanges(pathInfo);
+    LOGW("OH_CloudDisk_UnregisterSyncFolderChanges ret: %{public}d", ret);
+    napi_value result_1 = nullptr;
+    napi_create_int32(env, ret, &result_1);
+    return result_1;
+}
+
+static napi_value GetSyncFolderChanges(napi_env env, napi_callback_info info)
+{
+    char* path = GetStringParam(env, info);
+    CloudDisk_SyncFolderPath pathInfo;
+    pathInfo.value = path;
+    pathInfo.length = strlen(pathInfo.value);
+
+    int32_t count = 0;
+    uint64_t startUsn = 0;
+    CloudDisk_ChangesResult changesResult;
+
+    LOGW("OH_CloudDisk_GetSyncFolderChanges start.path: %{public}s", path);
+    auto ret = OH_CloudDisk_GetSyncFolderChanges(pathInfo, count, startUsn, &changesResult);
+    LOGW("OH_CloudDisk_GetSyncFolderChanges ret: %{public}d", ret);
     napi_value result_1 = nullptr;
     napi_create_int32(env, ret, &result_1);
     return result_1;
