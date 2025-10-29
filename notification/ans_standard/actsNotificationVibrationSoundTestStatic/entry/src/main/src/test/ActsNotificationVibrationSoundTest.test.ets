@@ -17,7 +17,7 @@ import notificationManager from '@ohos.notificationManager'
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import { BusinessError } from '@ohos.base'
 
-const DOMAIN: number = 0x0000;
+const DOMAIN: int = 0x0000;
 let TAG: string  = 'SUB_NOTIFICATION_ANS_IS_VIBRATIONSOUND_ENABLED_TEST ===>'
 
 export default function ActsNotificationVibrationSoundTest() {
