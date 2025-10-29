@@ -15,18 +15,6 @@
 {
   "app": {
     "signingConfigs": [
-      {
-        "name": "default",
-        "material": {
-          "certpath": "C:/Users/lenovo/.ohos/config/openharmony/default_test1028_Zck3UMSzv6PTEL_GW9qsNdAC1pE4W3m4RGDLD_eDyl8=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001B08252B8D9051F6C86E6F21A33688AEBF1C5C56EE4965F86189C0D16DD941DFABF6AC50DAF76A08",
-          "profile": "C:/Users/lenovo/.ohos/config/openharmony/default_test1028_Zck3UMSzv6PTEL_GW9qsNdAC1pE4W3m4RGDLD_eDyl8=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/Users/lenovo/.ohos/config/openharmony/default_test1028_Zck3UMSzv6PTEL_GW9qsNdAC1pE4W3m4RGDLD_eDyl8=.p12",
-          "storePassword": "0000001BAE62785D96B40F4127321BB3FEB58F1A8BA6C5E2355AC1F6E67840D5F4854C1DD74F70CA5391B3"
-        }
-      }
     ],
     "products": [
       {
