@@ -94,7 +94,12 @@ static napi_value DeactiveSyncFolder(napi_env env, napi_callback_info info)
 
 static napi_value GetSyncFolders(napi_env env, napi_callback_info info)
 {
+    char* path = GetStringParam(env, info);
     CloudDisk_SyncFolder syncFolder;
+    CloudDisk_SyncFolderPath pathInfo;
+    pathInfo.value = path;
+    pathInfo.length = strlen(pathInfo.value);
+    syncFolder.path = pathInfo;
     int32_t count = 0;
     LOGW("OH_CloudDisk_GetSyncFolders start.path: %{public}s", path);
     auto ret = OH_CloudDisk_GetSyncFolders(&syncFolder, count);
