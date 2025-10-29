@@ -29,8 +29,7 @@ static napi_value RegisterSyncFolder(napi_env env, napi_callback_info info)
     char* path = GetStringParam(env, info);
     CloudDisk_SyncFolder syncFolder;
     CloudDisk_SyncFolderPath pathInfo;
-    char* pvalue = "/storage/Users/currentUser";
-    pathInfo.value = pvalue;
+    pathInfo.value = path;
     pathInfo.length = strlen(pathInfo.value);
     syncFolder.path = pathInfo;
 
@@ -64,7 +63,7 @@ static napi_module demoModule = {
     .nm_flags = 0,
     .nm_filename = nullptr,
     .nm_register_func = Init,
-    .nm_modname = "CloudDiskTest",
+    .nm_modname = "clouddisk",
     .nm_priv = ((void*)0),
     .reserved = { 0 },
 };

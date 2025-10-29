@@ -23,20 +23,26 @@ export default function CloudDiskNdkTest(){
   describe('CloudDiskNdkTest',async () => {
 
     /**
-     * @tc.number SUB_BASIC_FM_FileAPI_Fileshare_0100
-     * @tc.name FileShare_PersistPermission_001
-     * @tc.desc Test persistPermission() interfaces
+     * @tc.number SUB_BASIC_FM_CloudDisk_RegisterSyncFolder_0100
+     * @tc.name CloudDisk_RegisterSyncFolder_001
+     * @tc.desc Test RegisterSyncFolder() interfaces
      * @tc.size MEDIUM
      * @tc.type Function
      * @tc.level Level 0
      * @tc.require
      */
-    it('FileShare_PersistPermission_001', Level.LEVEL0, async (done: Function) => {
-      let filepath = "/storage/user/Currentuser/";
-      console.info("FileShare_PersistPermission_001: " + filepath);
+    it('CloudDisk_RegisterSyncFolder_001', Level.LEVEL0, async (done: Function) => {
+      let filepath = "/storage/Users/currentUser/";
+      console.info("CloudDisk_RegisterSyncFolder_001: " + filepath);
       let ret = clouddisk.RegisterSyncFolder(filepath);
-      console.info("FileShare_PersistPermission_001 Test NAPI ret= " + JSON.stringify(ret));
-      expect(false).assertTrue();
+      console.info("CloudDisk_RegisterSyncFolder_001 Test NAPI ret= " + JSON.stringify(ret));
+      if (ret == 801) {
+        expect(ret).assertEqual(801);
+        done();
+      } else {
+        expect(ret).assertEqual(34400002);
+        done();
+      }
       done();
     });
 
