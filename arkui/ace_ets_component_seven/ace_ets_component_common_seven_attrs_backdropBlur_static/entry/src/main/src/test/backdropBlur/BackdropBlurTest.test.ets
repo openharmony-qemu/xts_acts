@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,12 +19,12 @@ import Utils, { BasePageConfig, PageConfig, TestValue, SetValue} from '../../../
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 
 export default function BackdropBlurTest() {
-  
+  //A list of components that support the backdropBlur attribute, which is required.
   let supportView = [
     'Button',
   ]
 
-  
+  //Custom params.
   let pageConfig: PageConfig = {
     testName: 'testBackdropBlur',
     pageName: 'backdropBlurPage',
@@ -47,20 +47,16 @@ export default function BackdropBlurTest() {
    */
   describe('backdropBlurTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      console.info("backdropBlurTest beforeAll start");
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    
+    //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      
-      console.error('[' + data.caseTag + '] backdropBlurTest.');
-      
-      console.error('[' + data.caseTag + '] backdropBlurTest. data.testValue.setValue.backdropBlur : ' + data.testValue.setValue.backdropBlur);
-      
 
-      
-      
+      console.error('[' + data.caseTag + '] backdropBlurTest.');
+      console.error('[' + data.caseTag + '] backdropBlurTest. data.testValue.setValue.backdropBlur : ' + data.testValue.setValue.backdropBlur);
+      console.error('viewObj.$attrs : ' + data.viewObj!.getElement('$attrs'));
       console.error('[' + data.viewObj!.getElement('$attrs').getDouble('backdropBlur') + '] backdropBlurTest. viewObj.$attrs.backdropBlur.');
       console.error('[' + data.testValue.expectValue.backdropBlur + '] backdropBlurTest. data.testValue.expectValue.backdropBlur.');
       expect(data.viewObj!.getElement('$attrs').getDouble('backdropBlur')).assertEqual(data.testValue.expectValue.backdropBlur);

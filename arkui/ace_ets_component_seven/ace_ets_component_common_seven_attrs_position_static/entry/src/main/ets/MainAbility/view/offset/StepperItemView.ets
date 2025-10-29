@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,45 +14,45 @@
  */
 
 import {
-  Component,
-  Text,
   Button,
   ClickEvent,
+  Color,
   Column,
+  Component,
+  ItemState,
   List,
+  ListItem,
   ListItemGroup,
+  Position,
   Stepper,
   StepperItem,
-  ListItem,
   StickyStyle,
-  Position,
-  TextAlign,
-  Color,
-  ItemState
+  Text,
+  TextAlign
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// @Styles
+// function itemStyle() {
+//   .width(336)
+//   .height(621)
+//   .margin({ top: 48, left: 12 })
+//   .borderRadius(24)
+//   .backgroundColor('#FFFFFF')
+// }
+//
+// @Extend(Text)
+// function itemTextStyle() {
+//   .fontColor('#182431')
+//   .fontSize(36)
+//   .fontWeight(500)
+//   .opacity(0.4)
+//   .margin({ top: 82, bottom: 40 })
+// }
 
 @Component
 export struct StepperItemView {
-  @State prevIndex: Int = 0
+  @State prevIndex: number = 0
   @State currentIndex: Int = 0
   @State firstState: ItemState = ItemState.Normal
   @State secondState: ItemState = ItemState.Normal
@@ -67,34 +67,34 @@ export struct StepperItemView {
     Stepper({
       index: this.currentIndex
     }) {
-      
+      // First step page
       StepperItem() {
         Column() {
           Text('Page One')
-            
+          //.itemTextStyle()
           Button('change status:' + this.firstState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.firstState = this.firstState === ItemState.Skip ? ItemState.Normal : ItemState.Skip
             })
-        }
+        } //.itemStyle()
       }
       .nextLabel('Next')
       .status(this.firstState)
       .offset(this._offset)
       .key(this.componentKey)
 
-      
+      // Second step page
       StepperItem() {
         Column() {
           Text('Page Two')
-            
+          //.itemTextStyle()
           Button('change status:' + this.secondState)
             .backgroundColor('#007dFF')
             .onClick((e: ClickEvent) => {
               this.secondState = this.secondState === ItemState.Disabled ? ItemState.Normal : ItemState.Disabled
             })
-        }
+        } //.itemStyle()
       }
       .nextLabel('Next')
       .prevLabel('Previous')

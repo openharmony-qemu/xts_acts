@@ -21,7 +21,7 @@ import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import pointer from '@ohos.multimodalInput.pointer';
-import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@kit.ArkUI";
+import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
 
 export class RectValue {
@@ -30,19 +30,7 @@ export class RectValue {
   right: number = 0;
   bottom: number = 0;
 }
-export class AttrContent {
-  content: string = ''
-}
-export class StrJsonObj {
-  $attrs: AttrContent = new AttrContent()
-}
-
-export interface CurrentRatio{
-  currentRatio: number
-  isVisible: boolean
-};
 export class SetValue {
-  height: Length = 0;
   backdropBlur: number;
 }
 export class ExpectValue {
@@ -138,15 +126,15 @@ export default class Utils {
     try {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
-      let pageParams: RouterParams = router.getParams() as RouterParams;
+      let pageParams = router.getParams();
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
-      if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
-        console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
-        console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
-        console.info('targetView: ' + obj.targetView);
-        await Utils.back();
-        pages = router.getState();
-      }
+      // if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
+      //   console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
+      //   console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
+      //   console.info('targetView: ' + obj.targetView);
+      //   await Utils.back();
+      //   pages = router.getState();
+      // }
 
       if (!(obj.pageName == pages.name)) {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
@@ -157,7 +145,7 @@ export default class Utils {
           } as RouterParams
         });
         await Utils.sleep(2000);
-        console.info('push ' + obj.pageName)
+        console.info('push ' + obj.pageName);
       }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
@@ -320,7 +308,7 @@ export default class Utils {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       stopPropagation: () => {
       },
       getModifierKeyState:(keys: Array<string>):boolean => {
@@ -360,7 +348,7 @@ export default class Utils {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime().toLong(),
+      timestamp: new Date().getTime(),
       target: {
         area: {
           width: width,

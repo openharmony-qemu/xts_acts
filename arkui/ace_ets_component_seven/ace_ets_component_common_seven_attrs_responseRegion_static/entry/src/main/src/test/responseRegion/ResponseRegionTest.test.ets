@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,28 +13,28 @@
  * limitations under the License.
  */
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index'
-import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
-import Utils, { BasePageConfig, PageConfig, TestValue, SetValue} from '../../../ets/MainAbility/common/Utils';
-import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { beforeAll, describe, expect } from '../../../../hypium/index';
+import { BasePageConfig, PageConfig, SetValue, TestValue } from '../../../ets/MainAbility/common/Utils';
+import { startAbility, UtilsTest } from '../Util.test';
+import { AppStorage } from '@ohos.arkui.stateManagement';
 
 /**
  * Test of common attribute: responseRegion
  */
 export default function responseRegionTest() {
-  
+  //A list of components that support padding attributes is required.
   let supportView = [
     'Button',
   ]
 
-  
+  //Page related configuration, this parameter is required.
   let targetComponentWidth = 200;
   let targetComponentHeight = 200;
   let parentWidth = 320;
   let parentHeight = 200;
   let gutter = 10;
   let columns = 3;
-  let pageConfig:PageConfig = {
+  let pageConfig: PageConfig = {
     testName: 'testResponseRegion',
     pageName: 'ResponseRegionPage',
     pageUrl: 'MainAbility/pages/responseRegion/ResponseRegionPage',
@@ -48,14 +48,24 @@ export default function responseRegionTest() {
     columns: columns
   }
 
-  
-  let testValues:TestValue[]= [{
+  //The data type to be tested, this parameter is required.
+  let testValues: TestValue[] = [{
     describe: 'SetResponseRegion',
     setValue: {
-      responseRegion: [{ x: 1.0, y: 2.0, width: '70%', height: '30%' }]
+      responseRegion: [{
+        x: 1.0,
+        y: 2.0,
+        width: '70%',
+        height: '30%'
+      }]
     },
     expectValue: {
-      responseRegion: [{ x: '1.00vp', y: '2.00vp', width: '70.00%', height: '30.00%' }]
+      responseRegion: [{
+        x: '1.00vp',
+        y: '2.00vp',
+        width: '70.00%',
+        height: '30.00%'
+      }]
     }
   }]
 
@@ -68,16 +78,30 @@ export default function responseRegionTest() {
       await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
-    
+
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
-      console.info('[' + data.caseTag + ']' + 'responseRegion is:' + data.viewObj!.getElement('$attrs').getArray('responseRegion'));
-      expect(JSON.parseJsonElement(data.viewObj!.getElement('$attrs').getArray('responseRegion')[0].toString()).getString('x'))
+      console.info('[' + data.caseTag + ']' + 'responseRegion is:' +
+      data.viewObj!.getElement('$attrs').getArray('responseRegion'));
+
+      console.info(data.viewObj + 'data.viewObj00');
+      console.info(data.viewObj!.getElement('$attrs') + 'data.viewObj11');
+      console.info(JSON.stringify(data.viewObj!.getElement('$attrs').getArray('responseRegion')[0]) +
+        'data.viewObj22');
+      console.info(JSON.stringify(data.viewObj!.getElement('$attrs').getArray('responseRegion')[0].toString()) +
+        'data.viewObj33');
+      console.info(data.viewObj!.getElement('$attrs').getArray('responseRegion')[0].toString() +
+        'data.viewObj44')
+      expect(JSON.parseJsonElement(data.viewObj!.getElement('$attrs').getArray('responseRegion')[0].asString())
+        .getString('x'))
         .assertEqual(data.testValue.expectValue.responseRegion[0].x);
-      expect(JSON.parseJsonElement(data.viewObj!.getElement('$attrs').getArray('responseRegion')[0].toString()).getString('y'))
+      expect(JSON.parseJsonElement(data.viewObj!.getElement('$attrs').getArray('responseRegion')[0].asString())
+        .getString('y'))
         .assertEqual(data.testValue.expectValue.responseRegion[0].y);
-      expect(JSON.parseJsonElement(data.viewObj!.getElement('$attrs').getArray('responseRegion')[0].toString()).getString('width'))
+      expect(JSON.parseJsonElement(data.viewObj!.getElement('$attrs').getArray('responseRegion')[0].asString())
+        .getString('width'))
         .assertEqual(data.testValue.expectValue.responseRegion[0].width);
-      expect(JSON.parseJsonElement(data.viewObj!.getElement('$attrs').getArray('responseRegion')[0].toString()).getString('height'))
+      expect(JSON.parseJsonElement(data.viewObj!.getElement('$attrs').getArray('responseRegion')[0].asString())
+        .getString('height'))
         .assertEqual(data.testValue.expectValue.responseRegion[0].height);
     });
   })

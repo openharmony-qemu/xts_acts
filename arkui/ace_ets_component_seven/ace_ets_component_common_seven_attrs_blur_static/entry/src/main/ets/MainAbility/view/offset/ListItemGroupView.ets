@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -76,36 +76,36 @@ export struct ListItemGroupView {
 
   build() {
     List({ space: 20 }) {
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      // ListItemGroup({
+      //   header: this.itemHead('Monday'),
+      //   footer: this.itemFoot(this.projects.length)
+      // } as ListItemGroupOptions) {
+      //   ForEach(this.projects, (project: string) => {
+      //     ListItem() {
+      //       this.content(project)
+      //     }
+      //   }, (item: string) => item)
+      // }
+      // .width(this.subassemblyWidth)
+      // .height(this.subassemblyHeight)
+      // .borderRadius(20)
+      // .offset(this._offset)
+      // .key(this.componentKey)
+      // .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
+      //
+      // ListItemGroup({
+      //   header: this.itemHead('Tuesday'),
+      //   footer: this.itemFoot(this.projects.length)
+      // } as ListItemGroupOptions) {
+      //   ForEach(this.projects, (project: string) => {
+      //     ListItem() {
+      //       this.content(project)
+      //     }
+      //   }, (item: string) => item)
+      // }
+      // .borderRadius(20)
+      // .key(this.referenceComponentKey)
+      // .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
     }
     .width(this.parentWidth)
     .height(this.parentHeight)
