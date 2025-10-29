@@ -17,6 +17,7 @@ group("ActsStartManager") {
   testonly = true
   if (is_standard_system) {
     deps = [
+      "actsgetautostartupstatusforselftest:ActsGetAutoStartupStatusForSelfTest",
       "actsstartmanagertest:ActsStartManagerTest",
       "autostartupmanageone:AutoStartupManageOne"
     ]
