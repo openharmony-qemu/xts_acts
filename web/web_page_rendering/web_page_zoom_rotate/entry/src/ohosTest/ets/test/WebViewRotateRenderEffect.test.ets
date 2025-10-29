@@ -64,31 +64,39 @@ export default function WebViewRotateRenderEffect() {
     })
 
     /*
-    * @tc.number     : SUB_WEB_TESTROTATERENDEREFFECT_0100
+    * @tc.number     : SUB_WEB_ROTATERENDEREFFECT_0100
     * @tc.name       : testRotateRenderEffect01
-    * @tc.desc       : test ZoomRatio
+    * @tc.desc       : test rotateRenderEffect
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testRotateRenderEffect01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testRotateRenderEffect01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitRotateRenderEffect01", EVENT_ID_SET_SUITE_KEY)
-      Utils.registerEvent("testRotateRenderEffect01", WebRotateEffect.RESIZE_COVER_EFFECT, 20251101, done);
-      sendEventByKey('rotateRenderEffectButton', 10, '');
+      Utils.registerBaseEvent("testRotateRenderEffect01", WebRotateEffect.RESIZE_COVER_EFFECT,
+        20251101, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'rotateRenderEffectButton', 'testRotateRenderEffect01');
     })
 
     /*
-    * @tc.number     : SUB_WEB_TESTROTATERENDEREFFECT_0200
+    * @tc.number     : SUB_WEB_ROTATERENDEREFFECT_0200
     * @tc.name       : testRotateRenderEffect02
-    * @tc.desc       : test ZoomAtio
+    * @tc.desc       : test rotateRenderEffect
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testRotateRenderEffect02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testRotateRenderEffect02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitRotateRenderEffect02", EVENT_ID_SET_SUITE_KEY)
-      Utils.registerEvent("testRotateRenderEffect02",WebRotateEffect.TOPLEFT_EFFECT, 20251102, done);
-      sendEventByKey('rotateRenderEffectButton', 10, '');
+      Utils.registerBaseEvent("testRotateRenderEffect02", WebRotateEffect.TOPLEFT_EFFECT,
+        20251102, done,
+        (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      await Utils.waitAndClickComponent(driver, 'rotateRenderEffectButton', 'testRotateRenderEffect02');
     })
 
 
