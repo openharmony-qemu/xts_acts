@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+import setOverlayManagerOptionsReturnTest from './UIContextTest/setOverlayManagerOptionsReturnTest'
 import overlayManager from './UIContextTest/overlayManager.test'
 import uiOpenCustomDialogMode from './UIContextTest/uiOpenCustomDialogMode.test'
 import openCustomDialogWithCtrMode from './UIContextTest/openCustomDialogWithCtrMode.test'
@@ -27,9 +28,9 @@ import bindSheetRadius from './bindSheet/bindSheetRadius.test'
 import buttonTypeTest from './buttonType/buttonTypeTest.test';
 import customDialogKeyboardAvoidDistance from './customDialog/customDialogKeyboardAvoidDistance.test';
 import promptActionKeyboardAvoidDistance from './prompt/promptActionKeyboardAvoidDistance.test';
-import setOverlayManagerOptionsReturnTest from './UIContextTest/setOverlayManagerOptionsReturnTest'
 
 export default function testsuite() {
+  setOverlayManagerOptionsReturnTest()
   overlayManager()
   actionSheetMode()
   showActionSheetMode()
@@ -44,5 +45,4 @@ export default function testsuite() {
   buttonTypeTest()
   customDialogKeyboardAvoidDistance()
   promptActionKeyboardAvoidDistance()
-  setOverlayManagerOptionsReturnTest()
 }
