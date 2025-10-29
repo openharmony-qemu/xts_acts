@@ -680,7 +680,7 @@ export default function BackgroundTaskManagerTest() {
     /*
      * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_016
      * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_016
-     * @tc.desc:Test that the continuousTaskRequest function requestAuthFromUser
+     * @tc.desc:Test that the continuousTaskRequest function requestAuthFromUser does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
      * @tc.level:Level 3
      * @tc.type:Function
      * @tc.size:MediumTest
@@ -701,6 +701,40 @@ export default function BackgroundTaskManagerTest() {
         } catch (error) {
           console.error(`SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_016 Operation checkSpecialScenarioAuth failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
         }
+      })
+
+    /*
+     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_017
+     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_017
+     * @tc.desc:Test that the continuousTaskRequest function requestAuthFromUser does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.level:Level 3
+     * @tc.type:Function
+     * @tc.size:MediumTest
+     */
+    it('SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_017 begin---');
+
+        let callbackAuth = (authResult: backgroundTaskManager.UserAuthResult) => {
+          console.info("SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_017 Operation requestAuthFromUser success. auth result: " + JSON.stringify(authResult));
+        };
+
+        let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+        let modeList: Array<number> = [backgroundTaskManager.BackgroundTaskMode.MODE_SPECIAL_SCENARIO_PROCESSING];
+        continuousTaskRequest.backgroundTaskModes = modeList;
+        let subModeList: Array<number> = [backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_MEDIA_PROCESS_NORMAL_NOTIFICATION];
+        continuousTaskRequest.backgroundTaskSubmodes = subModeList;
+        try {
+          hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_017 try begin---');
+          await continuousTaskRequest.requestAuthFromUser(callbackAuth);
+          hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_017 try end---');
+        } catch (error) {
+          console.error(`SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_017 Operation requestAuthFromUser failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+          expect(error.code == PERMISSION_DENIED_CODE).assertTrue();
+          done();
+        }
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_TASK_MANAGER_NOP_XTS_017 end---');
       })
 
   })
