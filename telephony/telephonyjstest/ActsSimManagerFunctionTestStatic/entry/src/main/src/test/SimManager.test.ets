@@ -62,6 +62,11 @@ export default function SimManagerTest() {
 
   describe('SimManagerTest',  () => {
 
+    /**
+     * @tc.number  Telephony_Sim_getDefaultVoiceSlotId_0100
+     * @tc.name    SIM card get default validation
+     * @tc.desc    Function test
+     */
     it('Telephony_Sim_getDefaultVoiceSlotId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       sim.getDefaultVoiceSlotId((err: BusinessError | null, data: int | undefined) => {
         expect(data === null).assertFalse();
@@ -69,6 +74,11 @@ export default function SimManagerTest() {
       });
     });
 
+    /**
+     * @tc.number  Telephony_Sim_getDefaultVoiceSlotId_0200
+     * @tc.name    SIM card get default validation
+     * @tc.desc    Function test
+     */
     it('Telephony_Sim_getDefaultVoiceSlotId_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let promise = sim.getDefaultVoiceSlotId();
       promise.then(data => {
