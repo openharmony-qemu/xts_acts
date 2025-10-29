@@ -32,13 +32,13 @@ struct WaterFlowItemFillPolicy {
           FlowItem() {
             Column() {
               Text('N' + item)
-                .id('waterFlowType_' + item)
                 .width('100%')
                 .height('20%')
                 .fontSize(16)
                 .textAlign(TextAlign.Center)
             }
-          }.backgroundColor(this.colors[item % 5])
+          }.id('waterFlowType_' + item)
+          .backgroundColor(this.colors[item % 5])
         }, (item: string) => item)
       }.id('waterFlow_fillType')
       .width('200vp').height('40%')
