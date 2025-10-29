@@ -2414,7 +2414,7 @@ export default function requestConfigSavesTest() {
       }
       let config: request.agent.Config = {
         action: request.agent.Action.DOWNLOAD,
-        url: 'http://222.111.222.111',
+        url: 'https://gitee.com/murphy1984/download/releases/download/V1/BigFile.txt',
         title: 'reeateTest',
         overwrite: true,
         description: 'XTS download test!',
