@@ -72,7 +72,7 @@ export default function Date7Test() {
      * @tc.level Level 2
      */
     it('Date7Test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const testDate3 = new Date();
+      const testDate3 = new Date(2025,10,3);
       testDate3.setUTCFullYear(2024);
       testDate3.setUTCMonth(1);
       testDate3.setUTCDate(29);
@@ -205,7 +205,7 @@ export default function Date7Test() {
      * @tc.level Level 2
      */
     it('Date7Test_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date11 = new Date();
+      const date11 = new Date(2025,10,3);
       date11.setUTCFullYear(-500);
       expect(date11.getUTCFullYear()).assertEqual(-500);
     });
@@ -349,7 +349,7 @@ export default function Date7Test() {
      * @tc.level Level 2
      */
     it('Date7Test_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date20 = new Date();
+      const date20 = new Date(2025,10,3);
       date20.setUTCFullYear(1999);
       date20.setUTCMonth(11);
       date20.setUTCDate(31);
@@ -465,7 +465,7 @@ export default function Date7Test() {
      * @tc.level Level 2
      */
     it('Date7Test_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date27 = new Date();
+      const date27 = new Date(2025,10,3);
       date27.setUTCFullYear(2010);
       date27.setUTCMonth(5);
       date27.setUTCDate(15);
@@ -506,7 +506,7 @@ export default function Date7Test() {
      * @tc.level Level 2
      */
     it('Date7Test_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date29 = new Date();
+      const date29 = new Date(2025,10,3);
       date29.setUTCFullYear(0);
       expect(date29.getUTCFullYear()).assertEqual(0);
     });
@@ -520,7 +520,7 @@ export default function Date7Test() {
      * @tc.level Level 2
      */
     it('Date7Test_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date30 = new Date();
+      const date30 = new Date(2025,10,3);
       date30.setUTCFullYear(9999);
       expect(date30.getUTCFullYear()).assertEqual(9999);
     });
@@ -610,7 +610,7 @@ export default function Date7Test() {
      * @tc.level Level 2
      */
     it('Date7Test_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date36 = new Date();
+      const date36 = new Date(2025,10,3);
       date36.setUTCFullYear(10000);
       expect(date36.getUTCFullYear()).assertEqual(10000);
     });
@@ -671,7 +671,7 @@ export default function Date7Test() {
      * @tc.level Level 2
      */
     it('Date7Test_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date40 = new Date();
+      const date40 = new Date(2025,10,3);
       date40.setUTCFullYear(2050);
       expect(date40.getUTCFullYear()).assertEqual(2050);
       date40.setUTCMonth(10);
@@ -1161,7 +1161,7 @@ export default function Date7Test() {
      * @tc.level Level 2
      */
     it('Date7Test_071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date71 = new Date();
+      const date71 = new Date(2025,10,3);
       date71.setUTCFullYear(2000);
       date71.setUTCMonth(1);
       date71.setUTCDate(29);
@@ -1286,7 +1286,7 @@ export default function Date7Test() {
      * @tc.level Level 2
      */
     it('Date7Test_079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date79 = new Date();
+      const date79 = new Date(2025,10,3);
       date79.setUTCHours(23);
       date79.setUTCMinutes(59);
       date79.setUTCSeconds(59);
@@ -1324,7 +1324,7 @@ export default function Date7Test() {
      * @tc.level Level 2
      */
     it('Date7Test_081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date81 = new Date();
+      const date81 = new Date(2025,10,3);
       date81.setUTCFullYear(1);
       expect(date81.getUTCFullYear()).assertEqual(1);
     });
@@ -1338,7 +1338,7 @@ export default function Date7Test() {
      * @tc.level Level 2
      */
     it('Date7Test_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date82 = new Date();
+      const date82 = new Date(2025,10,3);
       date82.setUTCFullYear(999);
       expect(date82.getUTCFullYear()).assertEqual(999);
     });
@@ -1369,7 +1369,7 @@ export default function Date7Test() {
      * @tc.level Level 2
      */
     it('Date7Test_084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date84 = new Date();
+      const date84 = new Date(2025,10,3);
       date84.setUTCFullYear(2030);
       date84.setUTCMonth(6);
       date84.setUTCDate(15);
@@ -1561,7 +1561,7 @@ export default function Date7Test() {
      * @tc.level Level 2
      */
     it('Date7Test_096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date96 = new Date();
+      const date96 = new Date(2025,10,3);
       date96.setUTCFullYear(2026);
       date96.setUTCMonth(8);
       date96.setUTCDate(10);
@@ -1602,7 +1602,7 @@ export default function Date7Test() {
      * @tc.level Level 2
      */
     it('Date7Test_098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date98 = new Date();
+      const date98 = new Date(2025,10,3);
       date98.setUTCFullYear(0);
       date98.setUTCMonth(1);
       date98.setUTCDate(28);
@@ -1958,7 +1958,7 @@ export default function Date7Test() {
      * @tc.level Level 2
      */
     it('Date7Test_121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date121 = new Date();
+      const date121 = new Date(2025,10,3);
       date121.setUTCFullYear(2000);
       date121.setUTCMonth(2);
       date121.setUTCDate(1);
@@ -2263,10 +2263,11 @@ export default function Date7Test() {
      * @tc.level Level 2
      */
     it('Date7Test_141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date141 = new Date();
-      date141.setUTCFullYear(1900);
-      date141.setUTCMonth(1);
+      const date141 = new Date(2025,10,3);
       date141.setUTCDate(28);
+      date141.setUTCMonth(1);
+      date141.setUTCFullYear(1900);
+ 
       expect(date141.getUTCFullYear()).assertEqual(1900);
       expect(date141.getUTCMonth()).assertEqual(1);
       expect(date141.getUTCDate()).assertEqual(28);
