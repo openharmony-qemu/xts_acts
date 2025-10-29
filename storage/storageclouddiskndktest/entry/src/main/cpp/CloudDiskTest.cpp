@@ -47,11 +47,70 @@ static napi_value RegisterSyncFolder(napi_env env, napi_callback_info info)
     return result_1;
 }
 
+static napi_value UnregisterSyncFolder(napi_env env, napi_callback_info info)
+{
+    char* path = GetStringParam(env, info);
+    CloudDisk_SyncFolderPath pathInfo;
+    pathInfo.value = path;
+    pathInfo.length = strlen(pathInfo.value);
+
+    LOGW("OH_CloudDisk_UnregisterSyncFolder start.path: %{public}s", path);
+    auto ret = OH_CloudDisk_UnregisterSyncFolder(pathInfo);
+    LOGW("OH_CloudDisk_UnregisterSyncFolder ret: %{public}d", ret);
+    napi_value result_1 = nullptr;
+    napi_create_int32(env, ret, &result_1);
+    return result_1;
+}
+
+static napi_value ActiveSyncFolder(napi_env env, napi_callback_info info)
+{
+    char* path = GetStringParam(env, info);
+    CloudDisk_SyncFolderPath pathInfo;
+    pathInfo.value = path;
+    pathInfo.length = strlen(pathInfo.value);
+
+    LOGW("OH_CloudDisk_ActiveSyncFolder start.path: %{public}s", path);
+    auto ret = OH_CloudDisk_ActiveSyncFolder(pathInfo);
+    LOGW("OH_CloudDisk_ActiveSyncFolder ret: %{public}d", ret);
+    napi_value result_1 = nullptr;
+    napi_create_int32(env, ret, &result_1);
+    return result_1;
+}
+
+static napi_value DeactiveSyncFolder(napi_env env, napi_callback_info info)
+{
+    char* path = GetStringParam(env, info);
+    CloudDisk_SyncFolderPath pathInfo;
+    pathInfo.value = path;
+    pathInfo.length = strlen(pathInfo.value);
+
+    LOGW("OH_CloudDisk_DeactiveSyncFolder start.path: %{public}s", path);
+    auto ret = OH_CloudDisk_DeactiveSyncFolder(pathInfo);
+    LOGW("OH_CloudDisk_DeactiveSyncFolder ret: %{public}d", ret);
+    napi_value result_1 = nullptr;
+    napi_create_int32(env, ret, &result_1);
+    return result_1;
+}
+
+static napi_value GetSyncFolders(napi_env env, napi_callback_info info)
+{
+    LOGW("OH_CloudDisk_GetSyncFolders start.path: %{public}s", path);
+    auto ret = OH_CloudDisk_GetSyncFolders();
+    LOGW("OH_CloudDisk_GetSyncFolders ret: %{public}d", ret);
+    napi_value result_1 = nullptr;
+    napi_create_int32(env, ret, &result_1);
+    return result_1;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
         { "RegisterSyncFolder", nullptr, RegisterSyncFolder, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "UnregisterSyncFolder", nullptr, UnregisterSyncFolder, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "ActiveSyncFolder", nullptr, ActiveSyncFolder, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "DeactiveSyncFolder", nullptr, DeactiveSyncFolder, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "GetSyncFolders", nullptr, GetSyncFolders, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

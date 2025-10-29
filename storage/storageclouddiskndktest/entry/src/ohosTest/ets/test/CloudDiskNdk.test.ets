@@ -46,6 +46,100 @@ export default function CloudDiskNdkTest(){
       done();
     });
 
+    /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_UnregisterSyncFolder_0100
+     * @tc.name CloudDisk_UnregisterSyncFolder_001
+     * @tc.desc Test UnregisterSyncFolder() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('CloudDisk_UnregisterSyncFolder_001', Level.LEVEL0, async (done: Function) => {
+      let filepath = "/storage/Users/currentUser/";
+      console.info("CloudDisk_UnregisterSyncFolder_001: " + filepath);
+      let ret = clouddisk.UnregisterSyncFolder(filepath);
+      console.info("CloudDisk_UnregisterSyncFolder_001 Test NAPI ret= " + JSON.stringify(ret));
+      if (ret == 801) {
+        expect(ret).assertEqual(801);
+        done();
+      } else {
+        expect(ret).assertEqual(34400002);
+        done();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_ActiveSyncFolder_0100
+     * @tc.name CloudDisk_ActiveSyncFolder_001
+     * @tc.desc Test ActiveSyncFolder() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('CloudDisk_ActiveSyncFolder_001', Level.LEVEL0, async (done: Function) => {
+      let filepath = "/storage/Users/currentUser/";
+      console.info("CloudDisk_ActiveSyncFolder_001: " + filepath);
+      let ret = clouddisk.ActiveSyncFolder(filepath);
+      console.info("CloudDisk_ActiveSyncFolder_001 Test NAPI ret= " + JSON.stringify(ret));
+      if (ret == 801) {
+        expect(ret).assertEqual(801);
+        done();
+      } else {
+        expect(ret).assertEqual(34400002);
+        done();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_DeactiveSyncFolder_0100
+     * @tc.name CloudDisk_DeactiveSyncFolder_001
+     * @tc.desc Test DeactiveSyncFolder() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('CloudDisk_DeactiveSyncFolder_001', Level.LEVEL0, async (done: Function) => {
+      let filepath = "/storage/Users/currentUser/";
+      console.info("CloudDisk_DeactiveSyncFolder_001: " + filepath);
+      let ret = clouddisk.DeactiveSyncFolder(filepath);
+      console.info("CloudDisk_DeactiveSyncFolder_001 Test NAPI ret= " + JSON.stringify(ret));
+      if (ret == 801) {
+        expect(ret).assertEqual(801);
+        done();
+      } else {
+        expect(ret).assertEqual(34400002);
+        done();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_GetSyncFolders_0100
+     * @tc.name CloudDisk_GetSyncFolders_001
+     * @tc.desc Test GetSyncFolders() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('CloudDisk_GetSyncFolders_001', Level.LEVEL0, async (done: Function) => {
+      let ret = clouddisk.GetSyncFolders();
+      console.info("CloudDisk_GetSyncFolders_001 Test NAPI ret= " + JSON.stringify(ret));
+      if (ret == 801) {
+        expect(ret).assertEqual(801);
+        done();
+      } else {
+        expect(ret).assertEqual(34400002);
+        done();
+      }
+      done();
+    });
+
 
   });
 }

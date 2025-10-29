@@ -13,3 +13,7 @@
  * limitations under the License.
  */
 export const RegisterSyncFolder: (path: string) => number;
+export const UnregisterSyncFolder: (path: string) => number;
+export const ActiveSyncFolder: (path: string) => number;
+export const DeactiveSyncFolder: (path: string) => number;
+export const GetSyncFolders: () => number;
