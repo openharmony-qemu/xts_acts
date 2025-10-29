@@ -69,6 +69,7 @@ struct WebComponent {
                     Utils.emitEvent(true, 20251115)
                     break;
                   }
+                  this.controller.onActive();
                   this.controller.setSoftKeyboardBehaviorMode(web_webview.WebSoftKeyboardBehaviorMode.DISABLE_AUTO_KEYBOARD_ON_ACTIVE);
                   let buttonOne = await driver.findComponent(ON.text('textContent'));
                   console.log('buttonOne11' + buttonOne)
@@ -92,6 +93,7 @@ struct WebComponent {
                   Utils.emitEvent(true, 20251116)
                   break;
                 }
+                this.controller.onActive();
                 this.controller.setSoftKeyboardBehaviorMode(web_webview.WebSoftKeyboardBehaviorMode.DEFAULT);
                 let buttonOne = await driver.findComponent(ON.text('textContent'));
                 this.isOnConsoleEnd = -1
