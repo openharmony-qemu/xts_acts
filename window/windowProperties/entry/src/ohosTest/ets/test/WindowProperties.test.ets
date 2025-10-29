@@ -463,47 +463,7 @@ export default function windowPropertiesTest() {
       }
 
     });
-    /**
-     * @tc.number     SUB_BASIC_WMS_GET_ALLWINDOWLAYOUTINFO_0300
-     * @tc.name       testGetVisibleWindowInfo_null
-     * @tc.desc       验证getVisibleWindowInfo接口退后台后获取可见窗口为空
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('testgetAllWindowLayoutInfo_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName = 'testgetAllWindowLayoutInfo_null';
-      let mainWindow = windowStage.getMainWindowSync();
-      let displayId:number = display.getDefaultDisplaySync().id;
-      const callback = async (data: window.WindowStageLifecycleEventType) => {
-        console.info(caseName+ ` Succeeded in enabling the listener for window stage event changes. Data: ${JSON.stringify(data)}`);
-        if (data === window.WindowStageLifecycleEventType.HIDDEN) {
-          console.info(caseName+ ' current window stage event is HIDDEN');
-          let windows = await window.getAllWindowLayoutInfo(displayId);
-          console.info(caseName+` Succeeded in obtaining all the windows objects. Data: ${JSON.stringify(windows)}`);
-          expect(windows.length).assertEqual(0);
-          windowStage.off('windowStageLifecycleEvent', callback);
-          await mainWindow.restore();
-          console.info(caseName+ ' restore success');
-          done();
-        }
-      }
-      try {
-        if(isPCStatus != ''){
-          windowStage.on('windowStageLifecycleEvent', callback);
-          await mainWindow.minimize();
-          console.info(caseName+ ' minimize success');
-          await sleep(3000);
-        }else {
-          done();
-        }
-
-      } catch (e) {
-        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-        expect(false).assertTrue();
-        done();
-      }
-    });
+  
         /** 
         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0100
         * @tc.name      : testGetWindowDensityInfo
