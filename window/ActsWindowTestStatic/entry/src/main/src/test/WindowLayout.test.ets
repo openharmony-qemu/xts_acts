@@ -640,11 +640,13 @@ export default function WindowLayoutTest() {
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to on_windowHighlightChange. Cause code:' + JSON.stringify(exception));
                     expect(exception.code).assertEqual(1300002);
+                    done()
                 } else {
                     hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
                     expect(exception.code).assertEqual(801);
+                    done()
                 }
-                done()
+                
             }
         })
 

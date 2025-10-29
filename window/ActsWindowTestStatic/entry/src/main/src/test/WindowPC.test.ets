@@ -297,17 +297,19 @@ export default function WindowPCTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        (subWin! as window.Window).maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(() => {
+                        (subWin! as window.Window).maximize(window.MaximizePresentation.ENTER_IMMERSIVE_DISABLE_TITLE_AND_DOCK_HOVER).then(() => {
                             hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling maximize.');
                             expect(false).assertTrue();
+                            done()
                         }).catch((err: BusinessError) :PromiseLike<void>|undefined => {
                             hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call maximize. Cause: ' + JSON.stringify(err));
-                            expect(false).assertTrue();
+                            expect(err!.code).assertEqual(1300002);
+                            done()
                         });
-                        done()
+                        
                     } catch (exception: BusinessError) {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call maximize. Cause:' + JSON.stringify(exception));
-                        expect(exception!.code).assertEqual(1300002);
+                        expect(false).assertTrue();
                         done()
                     }
                 })
@@ -318,11 +320,10 @@ export default function WindowPCTest() {
                 });
 
         })
-
         /**
          * @tc.number      testMaximizePromiseErrCode1300004_0100
          * @tc.name        testMaximizePromiseErrCode1300004_static_0100
-         * @tc.desc        testMaximizePromiseErrCode1300004_0100
+         * @tc.desc        testMaximizePromiseErrCode1300004_static_0100
          * @tc.size        MediumTest
          * @tc.type        Function
          * @tc.level       Level 3
@@ -340,15 +341,18 @@ export default function WindowPCTest() {
             try {
                 win = await window.createWindow(windowConfig);
                 expect(!!win).assertTrue();
+                await win.setUIContent('pages/index2');
+                await win.showWindow();
+                await Utils.msSleep(300);
                 win!.maximize(window.MaximizePresentation.EXIT_IMMERSIVE).then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling maximize.');
                     await (win! as window.Window).destroyWindow();
                     expect(false).assertTrue();
                     done()
-                }).catch((err: BusinessError) :PromiseLike<void>|undefined => {
+                }).catch(async (err: BusinessError) :PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call maximize. Cause: ' + JSON.stringify(err));
-                    await (win! as window.Window).destroyWindow();
                     expect(err!.code).assertEqual(1300004);
+                    await (win! as window.Window).destroyWindow();
                     done()
                 });
             } catch (err: BusinessError) {

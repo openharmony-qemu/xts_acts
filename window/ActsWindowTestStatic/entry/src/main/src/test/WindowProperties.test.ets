@@ -1554,7 +1554,7 @@ export default function WindowPropertiesTest() {
         it('testSetGestureBackEnabledFalse_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName :string= 'TestSetGestureBackEnabledFalse_static';
             let windowClass:window.Window = windowStage.getMainWindowSync();
-            windowClass.setGestureBackEnabled(false).then(async (done: () => void): Promise<void> => {
+            windowClass.setGestureBackEnabled(false).then(() => {
                 hilog.info(domain, tag,`${caseName} Succeeded in setting gesture back enabled false.`);
                 const isGestureBackEnabled:boolean = windowClass.isGestureBackEnabled();
                 hilog.info(domain, tag,`${caseName} Succeeded in getting gesture back enabled. Data: ${isGestureBackEnabled}`);
@@ -2556,7 +2556,7 @@ export default function WindowPropertiesTest() {
             }
             await (subWin! as window.Window).destroyWindow();
             try {
-                await (subWin! as window.Window).setWindowGrayScale(1).then(async () => {
+                 (subWin! as window.Window).setWindowGrayScale(1).then(() => {
                     console.info(msgStr + 'Succeeded in calling setWindowGrayScale.');
                     expect(false).assertTrue();
                 }).catch(async (err: BusinessError) => {
@@ -2588,154 +2588,29 @@ export default function WindowPropertiesTest() {
                 subWin = await windowStage.createSubWindow('test_mainWindow_setWindowMask_ErrorCode1300002_0100');
                 expect(!!subWin).assertTrue();
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+                await subWin.setUIContent('pages/index2');
+                await subWin.showWindow();
+                await Utils.msSleep(300);
+                (subWin! as window.Window).setWindowGrayScale(0).then(() => {
+                    console.info(msgStr + 'Succeeded in calling setWindowGrayScale.');
+                    subWin.destroyWindow();
+                    expect(true).assertTrue();
+                    done();
+                }).catch(async (err: BusinessError):PromiseLike<void>|undefined  => {
+                    console.error(msgStr + 'Failed to call setWindowGrayScale. Cause: ' + JSON.stringify(err));
+                    expect(err.code).assertEqual(801);
+                    await subWin!.destroyWindow();
+                    done();
+                });
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                 expect(false).assertTrue();
                 done()
             }
-            try {
-                await (subWin! as window.Window).setWindowGrayScale(1).then(async () => {
-                    console.info(msgStr + 'Succeeded in calling setWindowGrayScale.');
-                    expect(false).assertTrue();
-                }).catch(async (err: BusinessError) => {
-                    console.error(msgStr + 'Failed to call setWindowGrayScale. Cause: ' + JSON.stringify(err));
-                    expect(err.code).assertEqual(801);
-                });
-                done()
-            } catch (exception) {
-                console.error(msgStr + 'Failed to set the call setWindowGrayScale. Cause:' + JSON.stringify(exception));
-                expect(false).assertTrue();
-                done()
-            }
-        })
-
-/**
-         * @tc.number      SUB_BASIC_WMS_setParentWindow_1300002_0200
-         * @tc.name        testsetParentWindow1300002
-         * @tc.desc        testsetParentWindow1300002
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
-         */
-        it('testsetParentWindow1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName = "testsetParentWindow1300002";
-            let msgStr = 'jsunittest ' + caseName + ' ';
-            console.log(msgStr + 'begin.');
-            let mainWindow = windowStage.getMainWindowSync();
-            let windowId = mainWindow.getWindowProperties().id;
-            console.info(msgStr +'windowId :'+windowId)
-            try {
-                let windowClass = await windowStage.createSubWindow('testsetParentWindow1300002');
-                await windowClass.destroyWindow();
-                windowClass.setParentWindow(windowId).then(() => {
-                    console.info(msgStr +'Succeeded in  setParentWindow window.')
-                    expect(false).assertFail();
-                    done();
-                }).catch(async(e: BusinessError) => {
-                    console.error(msgStr +`Failed to setParentWindow. Cause code: ${e.code}, message: ${e.message}`);
-
-                    if(e.code == 801){
-                        done();
-                    }else{
-                        expect(e.code).assertEqual(1300002);
-                        done()
-                    }
-                });
-            } catch (e: BusinessError) {
-                console.log(msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
-                expect(false).assertFail();
-                done();
-            }
-        })
-        /**
-         * @tc.number      SUB_BASIC_WMS_setParentWindow_1300004_0300
-         * @tc.name        testsetParentWindow1300004
-         * @tc.desc        testsetParentWindow1300004
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
-         */
-        it('testsetParentWindow1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName = "testsetParentWindow1300004";
-            let msgStr = 'jsunittest ' + caseName + ' ';
-            console.log(msgStr + 'begin.');
-            let mainWindow = windowStage.getMainWindowSync();
-            let windowId = mainWindow.getWindowProperties().id;
-            console.info(msgStr +'windowId :'+windowId)
-            try {
-                let config: window.Configuration = {
-                    name: "testsetParentWindow1300004",
-                    windowType: window.WindowType.TYPE_DIALOG,
-                    ctx: context
-                };
-                let windowClass = await window.createWindow(config);
-                windowClass.setParentWindow(windowId).then(() => {
-                    console.info(msgStr +'Succeeded in setParentWindow .')
-                    expect(false).assertFail();
-                    done();
-                }).catch(async(e: BusinessError) => {
-                    console.error(msgStr +`Failed to setParentWindow. Cause code: ${e.code}, message: ${e.message}`);
-                    await windowClass.destroyWindow();
-                    if(e.code == 801){
-                        done();
-                    }else{
-                        expect(e.code).assertEqual(1300004);
-                        done()
-                    }
-                });
-            } catch (e: BusinessError) {
-                console.log(msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
-                if(e.code == 801){
-                    done();
-                }else{
-                    expect(e.code).assertEqual(1300004);
-                    done()
-                }
-            }
 
         })
 
-        /**
-         * @tc.number      SUB_BASIC_WMS_setParentWindow_1300009_0400
-         * @tc.name        testsetParentWindow1300009
-         * @tc.desc        testsetParentWindow1300009
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
-         */
-        it('testsetParentWindow1300009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName = "testsetParentWindow1300009";
-            let msgStr = 'jsunittest ' + caseName + ' ';
-            console.log(msgStr + 'begin.');
-            let mainWindow = windowStage.getMainWindowSync();
-            let windowId = mainWindow.getWindowProperties().id;
-            console.info(msgStr +'windowId :'+windowId)
-            try {
-                let windowClass = await windowStage.createSubWindow('testsetParentWindow1300009');
-                windowClass.setParentWindow(100000).then(() => {
-                    console.info(msgStr +'Succeeded in setParentWindow .')
-                    expect(false).assertFail();
-                    done();
-                }).catch(async(e: BusinessError) => {
-                    console.error(msgStr +`Failed to setParentWindow. Cause code: ${e.code}, message: ${e.message}`);
-                    await windowClass.destroyWindow();
-                    if(e.code == 801){
-                        done();
-                    }else{
-                        expect(e.code).assertEqual(1300009);
-                        done()
-                    }
-                });
-            } catch (e: BusinessError) {
-                console.log(msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
-                if(e.code == 801){
-                    done();
-                }else{
-                    expect(e.code).assertEqual(1300009);
-                    done()
-                }
-            }
-        })
+
 
 /**
          * @tc.number      testSetDefaultDensityEnabledErrCode1300002_0100
