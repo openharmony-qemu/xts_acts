@@ -375,7 +375,7 @@ export default function PreferencesInterfaceTest() {
     it('testPreferencesStorageType1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       try {
         console.info(TAG + "enum value of GSkv: ${data_preferences.StorageType.GSKV}");
-        expect(1).assertEqual(dataPreferences.StorageType.GSKV);
+        expect(1).assertEqual(data_preferences.StorageType.GSKV);
         let isGSkvSupported = data_preferences.isStorageTypeSupported(data_preferences.StorageType.GSKV);
         if (isGSkvSupported) {
           console.info(TAG + "isGSkvSupported: ${isGSkvSupported}");
