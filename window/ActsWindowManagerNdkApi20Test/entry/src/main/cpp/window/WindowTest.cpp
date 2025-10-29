@@ -726,13 +726,16 @@ napi_value Test_OH_WindowManager_GetAllMainWindowInfo_0200(napi_env env, napi_ca
             "Test_OH_WindowManager_GetAllMainWindowInfo_0200 infoList[%{public}d]: "
             "%{public}d, %{public}d, %{public}d, %{public}s", i, currentWindow->displayId,
             currentWindow->windowId, currentWindow->showing, currentWindow->label);
-        if (currentWindow->displayId != 0 || currentWindow->windowId != windowId ||
-            currentWindow->showing == false || currentWindow->label != "label") {
-            napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
+        if (currentWindow->windowId != windowId) {
+            continue;
+        }
+        if (currentWindow->displayId == 0 && currentWindow->windowId == windowId &&
+            currentWindow->showing == false && currentWindow->label != "label") {
+            napi_create_int32(env, 0, &retValue);
             return retValue;
         }
     }
-    napi_create_int32(env, 0, &retValue);
+    napi_create_int32(env, PARAM_NEGATIVE_1, &retValue);
     return retValue;
 }
 
