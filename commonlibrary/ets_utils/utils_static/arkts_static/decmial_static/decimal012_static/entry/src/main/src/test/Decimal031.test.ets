@@ -866,7 +866,7 @@ export default function DecimalTest031() {
         maxE: 9e15
       });
       test_ceil_005('0', 0);
-      test_ceil_005('-0', -0);
+      test_ceil_005('-0', -0.0);
       test_ceil_005('Infinity', Infinity);
       test_ceil_005('-Infinity', -Infinity);
       test_ceil_005('NaN', NaN);
@@ -3523,7 +3523,7 @@ export default function DecimalTest031() {
       test_constructor_015('-Infinity', '-Infinity');
       test_constructor_015('Infinity', '+Infinity');
       test_constructor_016('0', 0);
-      test_constructor_016('-0', -0);
+      test_constructor_016('-0', -0.0);
       test_constructor_015('0', '0');
     });
 
@@ -3631,12 +3631,12 @@ export default function DecimalTest031() {
       test_div_017(false, -1, -Infinity);
       test_div_017(false, 0, 1);
       test_div_017(true, 0, -1);
-      test_div_017(true, -0, 1);
-      test_div_017(false, -0, -1);
+      test_div_017(true, -0.0, 1);
+      test_div_017(false, -0.0, -1);
       test_div_017(false, 0, Infinity);
       test_div_017(true, 0, -Infinity);
-      test_div_017(true, -0, Infinity);
-      test_div_017(false, -0, -Infinity);
+      test_div_017(true, -0.0, Infinity);
+      test_div_017(false, -0.0, -Infinity);
     });
 
     /**

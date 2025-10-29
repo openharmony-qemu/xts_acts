@@ -3361,7 +3361,7 @@ export default function DecimalTest025() {
         maxE: 9e15
       });
       test_trunc_017('0', 0);
-      test_trunc_017('-0', -0);
+      test_trunc_017('-0', -0.0);
       test_trunc_016('0', '0.000');
       test_trunc_017('Infinity', Infinity);
       test_trunc_017('-Infinity', -Infinity);
@@ -3605,7 +3605,7 @@ export default function DecimalTest025() {
       test_valueOf_018('0.0123', 0.0123);
       test_valueOf_019('111111111111111111111', '111111111111111111111');
       test_valueOf_018('0.00001', 0.00001);
-      test_valueOf_018('-0', -0);
+      test_valueOf_018('-0', -0.0);
       test_valueOf_019('-0', '-0');
       test_valueOf_018('-Infinity', -1 / 0.0);
       test_valueOf_019('-Infinity', '-Infinity');
