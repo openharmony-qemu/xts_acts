@@ -463,6 +463,7 @@ export default function windowPropertiesTest() {
       }
 
     });
+  
         /** 
         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0100
         * @tc.name      : testGetWindowDensityInfo

@@ -20,6 +20,8 @@ import { BusinessError } from '@ohos.base';
 import { Driver, ON } from '@ohos.UiTest';
 import { image } from '@kit.ImageKit';
 import { screenshot } from '@kit.ArkUI';
+import common from '@ohos.app.ability.common';
+import settings from '@ohos.settings';
 
 function checkIsCaptured() {
   let status = false;
@@ -47,8 +49,24 @@ export default function displayTest() {
 
   describe('displayTest', () => {
     let windowStage: window.WindowStage;
+    let context: common.UIAbilityContext;
+    let isAutoWindow: string = '';
+    let isPCStatus: string = '';
     beforeAll(() => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
+      context = AppStorage.get('context') as common.UIAbilityContext;
+      console.log('windowTest context: ' + JSON.stringify(context));
+      windowStage = AppStorage.get('windowStage') as window.WindowStage;
+      //isAutoWindow == '' 非PAD设备
+      //isAutoWindow == 'true' PAD设备自由多窗模式
+      //isAutoWindow == 'false' PAD设备非自由多窗模式
+      isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
+      console.error(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+      isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
+      //isPCStatus == '' 非PC设备
+      //isPCStatus == '1' PC设备状态栏dock未融合
+      //isPCStatus == '0' PC设备状态栏dock融合
+      console.error(`beforeAll isPCStatus: `+ isPCStatus);
     });
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -884,6 +902,7 @@ export default function displayTest() {
       let caseName = 'TestGetAllDisplayPhysicalResolution';
       display.getAllDisplayPhysicalResolution().then((resolutionObjects) => {
         console.info(`${caseName} Obtaining physical resolution length: ${resolutionObjects.length}`);
+        expect(resolutionObjects.length).assertLargerOrEqual(0);
         for (let i = 0; i < resolutionObjects.length; i++) {
           const resolutionObject = resolutionObjects[i];
           console.info(`${caseName}: ${i} foldDisplayMode: ${resolutionObject.foldDisplayMode}, physicalWidth: ${resolutionObject.physicalWidth}, physicalHeight: ${resolutionObject.physicalHeight}`)
@@ -2325,6 +2344,232 @@ export default function displayTest() {
         console.log(`${caseName} isFoldable. : ${JSON.stringify(isFoldable)}`);
         expect(isFoldable == true || isFoldable == false).assertEqual(true);
         done();
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+     /**
+     * @tc.number     SUB_BASIC_WMS_FUNCTION_GETALLDISPLAY_0100
+     * @tc.name       testgetAllDisplay_promise_null
+     * @tc.desc       testgetAllDisplay_promise_null
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level3
+     */
+    it('testgetAllDisplay_promise_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testgetAllDisplay_promise_null';
+      let mainWindow = windowStage.getMainWindowSync();
+      const callback = async (data: window.WindowStageLifecycleEventType) => {
+        console.info(caseName+ ` Succeeded in enabling the listener for window stage event changes. Data: ${JSON.stringify(data)}`);
+        if (data === window.WindowStageLifecycleEventType.HIDDEN) {
+          console.info(caseName+ ' current window stage event is HIDDEN');
+          let displays = await display.getAllDisplay();
+          console.info(caseName+` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(displays)}`);
+          expect(displays.length).assertEqual(0);
+          windowStage.off('windowStageLifecycleEvent', callback);
+          await mainWindow.restore();
+          console.info(caseName+ ' restore success');
+          done();
+        }
+      }
+      try {
+        if(isPCStatus != ''){
+          windowStage.on('windowStageLifecycleEvent', callback);
+          await mainWindow.minimize();
+          console.info(caseName+ ' minimize success');
+          await sleep(3000);
+        }else {
+          done();
+        }
+
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+    /**
+     * @tc.number     SUB_BASIC_WMS_FUNCTION_GETALLDISPLAY_0200
+     * @tc.name       testgetAllDisplay_Callback_null
+     * @tc.desc       testgetAllDisplay_Callback_null
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level3
+     */
+    it('testgetAllDisplay_Callback_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testgetAllDisplay_Callback_null';
+      let mainWindow = windowStage.getMainWindowSync();
+      const callback = async (data: window.WindowStageLifecycleEventType) => {
+        console.info(caseName+ ` Succeeded in enabling the listener for window stage event changes. Data: ${JSON.stringify(data)}`);
+        if (data === window.WindowStageLifecycleEventType.HIDDEN) {
+          console.info(caseName+ ' current window stage event is HIDDEN');
+          display.getAllDisplay(async (err: BusinessError, data: Array<display.Display>) => {
+            const errCode: number = err.code;
+            if (errCode) {
+              console.error(caseName+ ` Failed to obtain all the display objects. Code: ${err.code}, message: ${err.message}`);
+              expect(false).assertTrue();
+              windowStage.off('windowStageLifecycleEvent', callback);
+              await mainWindow.restore();
+              console.info(caseName+ ' restore success');
+              done();
+            }else {
+              console.info(caseName+` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(data)}`);
+              let displays = data;
+              expect(displays.length).assertEqual(0);
+              windowStage.off('windowStageLifecycleEvent', callback);
+              await mainWindow.restore();
+              console.info(caseName+ ' restore success');
+              done();
+            }
+
+          });
+        }
+      }
+      try {
+        if(isPCStatus != ''){
+          windowStage.on('windowStageLifecycleEvent', callback);
+          await mainWindow.minimize();
+          console.info(caseName+ ' minimize success');
+          await sleep(3000);
+        }else {
+          done();
+        }
+
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+    /**
+     * @tc.number     SUB_BASIC_WMS_FUNCTION_GETALLDISPLAYS_0100
+     * @tc.name       testgetAllDisplays_Callback_null
+     * @tc.desc       testgetAllDisplays_Callback_null
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level3
+     */
+    it('testgetAllDisplays_Callback_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testgetAllDisplays_Callback_null';
+      let mainWindow = windowStage.getMainWindowSync();
+      const callback = async (data: window.WindowStageLifecycleEventType) => {
+        console.info(caseName+ ` Succeeded in enabling the listener for window stage event changes. Data: ${JSON.stringify(data)}`);
+        if (data === window.WindowStageLifecycleEventType.HIDDEN) {
+          console.info(caseName+ ' current window stage event is HIDDEN');
+          display.getAllDisplays(async (err: BusinessError, data: Array<display.Display>) => {
+            const errCode: number = err.code;
+            if (errCode) {
+              console.error(caseName+ ` Failed to obtain all the display objects. Code: ${err.code}, message: ${err.message}`);
+              expect(false).assertTrue();
+              windowStage.off('windowStageLifecycleEvent', callback);
+              await mainWindow.restore();
+              console.info(caseName+ ' restore success');
+              done();
+            }else {
+              console.info(caseName+` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(data)}`);
+              let displays = data;
+              expect(displays.length).assertEqual(0);
+              windowStage.off('windowStageLifecycleEvent', callback);
+              await mainWindow.restore();
+              console.info(caseName+ ' restore success');
+              done();
+            }
+
+          });
+        }
+      }
+      try {
+        if(isPCStatus != ''){
+          windowStage.on('windowStageLifecycleEvent', callback);
+          await mainWindow.minimize();
+          console.info(caseName+ ' minimize success');
+          await sleep(3000);
+        }else {
+          done();
+        }
+
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+    /**
+     * @tc.number     SUB_BASIC_WMS_FUNCTION_GETALLDISPLAYS_0200
+     * @tc.name       testgetAllDisplays_promise_null
+     * @tc.desc       testgetAllDisplays_promise_null
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level3
+     */
+    it('testgetAllDisplays_promise_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testgetAllDisplays_promise_null';
+      let mainWindow = windowStage.getMainWindowSync();
+      const callback = async (data: window.WindowStageLifecycleEventType) => {
+        console.info(caseName+ ` Succeeded in enabling the listener for window stage event changes. Data: ${JSON.stringify(data)}`);
+        if (data === window.WindowStageLifecycleEventType.HIDDEN) {
+          console.info(caseName+ ' current window stage event is HIDDEN');
+          let displays = await display.getAllDisplays();
+          console.info(caseName+` Succeeded in obtaining all the display objects. Data: ${JSON.stringify(displays)}`);
+          expect(displays.length).assertEqual(0);
+          windowStage.off('windowStageLifecycleEvent', callback);
+          await mainWindow.restore();
+          console.info(caseName+ ' restore success');
+          done();
+        }
+      }
+      try {
+        if(isPCStatus != ''){
+          windowStage.on('windowStageLifecycleEvent', callback);
+          await mainWindow.minimize();
+          console.info(caseName+ ' minimize success');
+          await sleep(3000);
+        }else {
+          done();
+        }
+
+      } catch (e) {
+        console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+    /**
+     * @tc.number     SUB_BASIC_WMS_FUNCTION_GETALLDISPLAY_PHYSICAL_RESOLUTION_0100
+     * @tc.name       testgetAllDisplayPhysicalResolution_promise_null
+     * @tc.desc       testgetAllDisplayPhysicalResolution_promise_null
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level3
+     */
+    it('testgetAllDisplayPhysicalResolution_promise_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testgetAllDisplayPhysicalResolution_promise_null';
+      let mainWindow = windowStage.getMainWindowSync();
+      const callback = async (data: window.WindowStageLifecycleEventType) => {
+        console.info(caseName+ ` Succeeded in enabling the listener for window stage event changes. Data: ${JSON.stringify(data)}`);
+        if (data === window.WindowStageLifecycleEventType.HIDDEN) {
+          console.info(caseName+ ' current window stage event is HIDDEN');
+          let resolutionObjects = await display.getAllDisplayPhysicalResolution();
+          console.info(caseName+` Succeeded in obtaining all the resolutionObjects . Data: ${JSON.stringify(resolutionObjects)}`);
+          expect(resolutionObjects.length).assertEqual(0);
+          windowStage.off('windowStageLifecycleEvent', callback);
+          await mainWindow.restore();
+          console.info(caseName+ ' restore success');
+          done();
+        }
+      }
+      try {
+        if(isPCStatus != ''){
+          windowStage.on('windowStageLifecycleEvent', callback);
+          await mainWindow.minimize();
+          console.info(caseName+ ' minimize success');
+          await sleep(3000);
+        }else {
+          done();
+        }
+
       } catch (e) {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
         expect(false).assertTrue();
