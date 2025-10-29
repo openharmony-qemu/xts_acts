@@ -701,7 +701,7 @@ export default function channelCallbacktest() {
                                         nfcLogicalChannel.transmit(cmdData).then((data) => {
                                             console.info("[NFC_test]26 Send an APDU command to the SE: " + data);
                                             if (data.length > 0) {
-                                                expect(data > 0).assertTrue();
+                                                expect(data.length > 0).assertTrue();
                                             } else {
                                                 expect(data).assertDeepEquals([]);
                                             }
@@ -773,7 +773,7 @@ export default function channelCallbacktest() {
                                         nfcLogicalChannel.transmit(cmdData1).then((data) => {
                                             console.info("[NFC_test]26 Send an APDU command to the SE: " + data);
                                             if (data.length > 0) {
-                                                expect(data > 0).assertTrue();
+                                                expect(data.length > 0).assertTrue();
                                             } else {
                                                 expect(data).assertDeepEquals([]);
                                             }
