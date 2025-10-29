@@ -23,6 +23,7 @@
     "MainAbility/pages/buttonType/maxFontScale",
     "MainAbility/pages/promptAction/ToastExample",
     "MainAbility/pages/promptAction/openToastTest",
-    "MainAbility/pages/promptAction/PromptActionToastErrorCode"
+    "MainAbility/pages/promptAction/PromptActionToastErrorCode",
+    "MainAbility/pages/dialog/getDialogControllerReturn"
   ]
 }
