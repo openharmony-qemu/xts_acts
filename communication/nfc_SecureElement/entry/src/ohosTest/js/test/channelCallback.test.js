@@ -64,7 +64,7 @@ export default function channelCallbacktest() {
                     }
                     console.info("[NFC_test] newSEService channelCallbacktest getReader value  is: " + getReader);                                    
                     for (let i = 0; i < getReader.length; i++) {
-                        if ((getReader[i].getName() != "eSE") && (getReader[i].getName() != "SIM") && (getReader[i].getName() != "SIM2")) {
+                        if (getReader[i].getName() != "eSE") {
                             console.info("[NFC_test] se reader not ese.");
                             continue;
                         }
