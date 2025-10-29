@@ -36,12 +36,7 @@ export default function CloudDiskNdkTest(){
       console.info("FileShare_PersistPermission_001: " + filepath);
       let ret = clouddisk.RegisterSyncFolder(filepath);
       console.info("FileShare_PersistPermission_001 Test NAPI ret= " + JSON.stringify(ret));
-      if (ret == 801) {
-        done();
-      } else {
-        expect(ret).assertEqual(0);
-        done();
-      }
+      expect(ret).assertEqual(0);
       done();
     });
 
