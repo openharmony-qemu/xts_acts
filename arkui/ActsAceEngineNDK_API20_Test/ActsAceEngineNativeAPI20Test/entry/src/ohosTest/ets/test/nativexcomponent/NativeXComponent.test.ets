@@ -25,7 +25,9 @@ const ARKUI_ERROR_CODE_XCOMPONENT_STATE_INVALID = 103501;
 export default function NativeXComponent() {
   describe('NativeXComponent', () => {
     beforeAll(async (done: Function) => {
+      console.info(`====>pushPageNoClear: NativeXComponent/NativeXComponent<====`);
       Utils.pushPageNoClear('NativeXComponent/NativeXComponent',done);
+      await Utils.sleep(1000);
     })
     /**
      * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTACTION_0100
