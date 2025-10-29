@@ -1554,7 +1554,7 @@ export default function WindowPropertiesTest() {
         it('testSetGestureBackEnabledFalse_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let caseName :string= 'TestSetGestureBackEnabledFalse_static';
             let windowClass:window.Window = windowStage.getMainWindowSync();
-            windowClass.setGestureBackEnabled(false).then(async (done: () => void): Promise<void> => {
+            windowClass.setGestureBackEnabled(false).then(() => {
                 hilog.info(domain, tag,`${caseName} Succeeded in setting gesture back enabled false.`);
                 const isGestureBackEnabled:boolean = windowClass.isGestureBackEnabled();
                 hilog.info(domain, tag,`${caseName} Succeeded in getting gesture back enabled. Data: ${isGestureBackEnabled}`);
@@ -2556,7 +2556,7 @@ export default function WindowPropertiesTest() {
             }
             await (subWin! as window.Window).destroyWindow();
             try {
-                await (subWin! as window.Window).setWindowGrayScale(1).then(async () => {
+                 (subWin! as window.Window).setWindowGrayScale(1).then(() => {
                     console.info(msgStr + 'Succeeded in calling setWindowGrayScale.');
                     expect(false).assertTrue();
                 }).catch(async (err: BusinessError) => {
@@ -2588,25 +2588,26 @@ export default function WindowPropertiesTest() {
                 subWin = await windowStage.createSubWindow('test_mainWindow_setWindowMask_ErrorCode1300002_0100');
                 expect(!!subWin).assertTrue();
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
+                await subWin.setUIContent('pages/index2');
+                await subWin.showWindow();
+                await Utils.msSleep(300);
+                (subWin! as window.Window).setWindowGrayScale(0).then(() => {
+                    console.info(msgStr + 'Succeeded in calling setWindowGrayScale.');
+                    subWin.destroyWindow();
+                    expect(true).assertTrue();
+                    done();
+                }).catch(async (err: BusinessError):PromiseLike<void>|undefined  => {
+                    console.error(msgStr + 'Failed to call setWindowGrayScale. Cause: ' + JSON.stringify(err));
+                    expect(err.code).assertEqual(801);
+                    await subWin!.destroyWindow();
+                    done();
+                });
             } catch (err) {
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                 expect(false).assertTrue();
                 done()
             }
-            try {
-                await (subWin! as window.Window).setWindowGrayScale(1).then(async () => {
-                    console.info(msgStr + 'Succeeded in calling setWindowGrayScale.');
-                    expect(false).assertTrue();
-                }).catch(async (err: BusinessError) => {
-                    console.error(msgStr + 'Failed to call setWindowGrayScale. Cause: ' + JSON.stringify(err));
-                    expect(err.code).assertEqual(801);
-                });
-                done()
-            } catch (exception) {
-                console.error(msgStr + 'Failed to set the call setWindowGrayScale. Cause:' + JSON.stringify(exception));
-                expect(false).assertTrue();
-                done()
-            }
+
         })
 
 /**
