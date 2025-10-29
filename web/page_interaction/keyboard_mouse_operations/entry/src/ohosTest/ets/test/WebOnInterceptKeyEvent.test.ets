@@ -38,12 +38,12 @@ export default function webOnInterceptKeyEvent() {
         if (!("WebOnInterceptKeyEvent" == pages.name)) {
           console.info("get WebOnInterceptKeyEvent state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await driver.waitForComponent(ON.id("WebOnInterceptKeyEventTestButton"), 10000);
           console.info("push WebOnInterceptKeyEvent page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push WebOnInterceptKeyEvent page error: " + err);
       }
+      await driver.waitForComponent(ON.id("WebOnInterceptKeyEventTestButton"), 10000);
       done()
     });
 
