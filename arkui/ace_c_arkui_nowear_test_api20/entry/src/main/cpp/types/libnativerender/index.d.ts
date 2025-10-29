@@ -30,6 +30,4 @@ export const enableDropDisallowedBadge: (a: string) => void;
 
 export const dialogGetStateTest: (a: string) => void;
 
-export const dialogGetStateTestGetResult: () => string[];
-
 export const imageDraggableEventTest: (a: string) => void;
