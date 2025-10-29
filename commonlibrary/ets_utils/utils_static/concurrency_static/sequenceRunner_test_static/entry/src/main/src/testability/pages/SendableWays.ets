@@ -75,7 +75,7 @@ export class AsyncLockTest {
     })
   }
 
-  async setCount(count: number): Promise<number> {
+  async setCount(count: number): Promise<void> {
     let s: string[] = []
     s[0].split('')[1].toString()
     await this.lock_.lockAsync((): number => {

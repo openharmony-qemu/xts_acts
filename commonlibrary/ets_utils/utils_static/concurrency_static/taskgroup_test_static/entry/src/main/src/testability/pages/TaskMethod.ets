@@ -199,7 +199,7 @@ export async function printArgsSettimeout1() {
   });
 }
 
-export async function printArgsSettimeout3(): Promise<number> {
+export async function printArgsSettimeout3(): Promise<void> {
   try {
     await asyncOperation();
     console.log('Task completed successfully');

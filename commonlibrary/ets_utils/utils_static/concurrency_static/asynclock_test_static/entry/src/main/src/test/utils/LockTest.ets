@@ -61,7 +61,7 @@ export function exclusiveSingleTest(): Promise<String> {
 // Code of this function must be the same as in Worker.ets
 
 async function exclusiveMultiJob(lockName: string, timeout: number, tidBuf: Int32Array,
-  tid: number): Promise<NullishType> {
+  tid: number): Promise<void> {
   let lock = AsyncLock.request(lockName);
   lock.lockAsync<void>(async (): Promise<void> => {
     let old = Atomics.compareExchange(tidBuf, 0, 0, tid);
@@ -82,7 +82,7 @@ export function exclusiveMultiTest(): Promise<String> {
   let tidBuf = createInt();
   tidBuf[0] = 0;
   let p1: Promise<NullishType> = taskpool.execute(exclusiveMultiJob, lockName, Number(100), tidBuf, Number(2));
-  let p2: Promise<NullishType> = exclusiveMultiJob(lockName, Number(100), tidBuf, Number(1));
+  let p2 = exclusiveMultiJob(lockName, Number(100), tidBuf, Number(1));
   return check("exclusiveMultiTest", Promise.all([p1, p2]));
 }
 interface lockType {
@@ -154,7 +154,7 @@ export function sharedSingleTest(): Promise<String> {
 // Code of this function must be the same as in Worker.ets
 
 async function sharedMultiJob(lockName: string, timeout: number, flagBuf: Int32Array,
-  idx: number): Promise<NullishType> {
+  idx: number): Promise<void> {
   let lock = AsyncLock.request(lockName);
   await lock.lockAsync<void>(async (): Promise<void> => {
     hilog.info(0x0000, 'sharedMultiJob', 'lock.lockAsync '+idx);
@@ -183,7 +183,7 @@ export function sharedMultiTest(): Promise<String> {
   let flagBuf = new Int32Array(sab);
   flagBuf[0] = 0;
   flagBuf[1] = 0;
-  let p1: Promise<NullishType> = sharedMultiJob(lockName, Number(200), flagBuf, Number(0));
+  let p1 = sharedMultiJob(lockName, Number(200), flagBuf, Number(0));
   let p2: Promise<NullishType> = taskpool.execute(sharedMultiJob, lockName, Number(100), flagBuf, Number(1));
   return check("sharedMultiTest", Promise.all([p1, p2]));
 }
@@ -1104,7 +1104,7 @@ export async function gcAfterLockAsyncTest(): Promise<string> {
   return check('gcAfterLockAsyncTest', p);
 }
 
-async function mainExecutor(index: number, flagBuf: Int32Array, timeout: int): Promise<NullishType> {
+async function mainExecutor(index: number, flagBuf: Int32Array, timeout: int): Promise<void> {
   let lockName = 'doubleExitSharedLockTest';
   let lock = AsyncLock.request(lockName);
   await lock.lockAsync(async (): Promise<void> => {
