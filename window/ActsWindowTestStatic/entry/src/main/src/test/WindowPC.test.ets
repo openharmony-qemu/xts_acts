@@ -320,7 +320,14 @@ export default function WindowPCTest() {
                 });
 
         })
-
+        /**
+         * @tc.number      testMaximizePromiseErrCode1300004_0100
+         * @tc.name        testMaximizePromiseErrCode1300004_static_0100
+         * @tc.desc        testMaximizePromiseErrCode1300004_static_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
         it('testMaximizePromiseErrCode1300004_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = "testMaximizePromiseErrCode1300004_0100";
             let msgStr: string = 'jsunittest ' + caseName + ' ';
