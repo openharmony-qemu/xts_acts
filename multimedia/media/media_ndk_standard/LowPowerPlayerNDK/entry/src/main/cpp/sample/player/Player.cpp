@@ -1055,6 +1055,14 @@ void Player::ReleaseThread()
     }
 }
 
+int32_t Player::GetCapability()
+{
+    if (OH_LowPowerAVSink_GetCapability()) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
 void Player::Release()
 {
     std::lock_guard<std::mutex> lock(mutex_);

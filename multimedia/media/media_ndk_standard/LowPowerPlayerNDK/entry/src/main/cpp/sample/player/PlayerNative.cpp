@@ -779,6 +779,20 @@ napi_value PlayerNative::SetVolume(napi_env env, napi_callback_info info)
     napi_create_int32(env, ret, &result);
     return result;
 }
+
+napi_value PlayerNative::GetCapability(napi_env env, napi_callback_info info)
+{
+    AVCODEC_SAMPLE_LOGD("IsLpp in");
+    auto isLpp = Player::GetInstance().GetCapability();
+    napi_value ret;
+    if (isLpp) {
+        napi_create_int32(env, 1, &ret);
+    } else {
+        napi_create_int32(env, 0, &ret);
+    }
+    AVCODEC_SAMPLE_LOGD("IsLpp out");
+    return ret;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -896,6 +910,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"startRenderNative", nullptr, PlayerNative::StartRender, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"startAudioNative", nullptr, PlayerNative::StartAudio, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setVolumeNative", nullptr, PlayerNative::SetVolume, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getCapability", nullptr, PlayerNative::GetCapability, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
 
     NativeXComponentSample::PluginManager::GetInstance()->Export(env, exports);
