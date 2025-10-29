@@ -75,7 +75,7 @@ struct ParticleEmitter {
                     radius: 3
                   },
                   count: 50000,
-                  lifetime: this.myLifTime,
+                  lifetime: this.myLifTime.toInt(),
                   lifetimeRange: 100
                 },
                 emitRate: 500,
