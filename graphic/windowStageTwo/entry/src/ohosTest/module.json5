@@ -213,6 +213,9 @@
         "name": "ohos.permission.SYSTEM_FLOAT_WINDOW"
       },
       {
+        "name": "ohos.permission.CUSTOM_SCREEN_CAPTURE"
+      },
+      {
         "name": "ohos.permission.WINDOW_TOPMOST",
         "usedScene": {
           "abilities": [

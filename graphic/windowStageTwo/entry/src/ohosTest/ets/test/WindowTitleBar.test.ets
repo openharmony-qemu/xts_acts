@@ -1753,6 +1753,7 @@ export default function windowTitleBarTest() {
         }
       }
     });
+
     /**
      * @tc.number    : SUB_BASIC_WMS_SET_WINDOW_TITLE_0800
      * @tc.name      : test_setWindowTitle_mainWindow_Too_long_parameter
@@ -1770,6 +1771,7 @@ export default function windowTitleBarTest() {
         mainWindow.setWindowTitle('test_setWindowTitle_mainWindow_Too_long_parameter test_setWindowTitle_mainWindow_Too_long_parameter test_setWindowTitle_mainWindow_Too_long_parameter').then(() => {
           console.info(`${caseName} :Succeeded in setting the window title.`);
           expect(true).assertTrue();
+          mainWindow.setWindowTitle('test label');
           done();
         }).catch((err: BusinessError) => {
           console.error(`${caseName} :Failed to set the window title. Cause code: ${err.code}, message: ${err.message}`);
@@ -1792,6 +1794,7 @@ export default function windowTitleBarTest() {
         }
       }
     });
+
     /**
      * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_getWindowDecorVisible_0100
      * @tc.name      : test_getWindowDecorVisible_1300002
