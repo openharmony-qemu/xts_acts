@@ -424,6 +424,14 @@ export default function settingUiJsunit() {
       done();
     });
 
+    /*
+     * @tc.number    : settings_set_value_024_2
+     * @tc.name      : settings_set_value_024_2
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 0
+     */
     it('settings_set_value_024_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let name = 'settings.screen.brightness142';
       let context = "context";
@@ -1233,6 +1241,14 @@ export default function settingUiJsunit() {
       }
     });
 
+    /*
+     * @tc.number    : settings_set_value_112_2
+     * @tc.name      : settings_set_value_112_2
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 0
+     */
     it('settings_set_value_112_2',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) => {
       let name = 'settings.screen.brightness11222';//关键字
       let value = 'brightness1122'//值
@@ -1442,6 +1458,14 @@ export default function settingUiJsunit() {
       done();
     });
 
+    /*
+     * @tc.number    : settings_set_value_118_2
+     * @tc.name      : settings_set_value_118_2
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 0
+     */
     it('settings_set_value_118_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function) => {
       let name = 'settings.screen.brightness1182';//关键字
       let value = 'brightness1182';//值
@@ -1696,6 +1720,14 @@ export default function settingUiJsunit() {
       done();
     });
 
+    /*
+     * @tc.number    : open_manager_settings_119_3
+     * @tc.name      : open_manager_settings_119_3
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 0
+     */
     it('open_manager_settings_119_3', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
       try{
         let context = undefined;
