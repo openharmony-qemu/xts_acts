@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -301,20 +301,20 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
    instance.useEffect(this.mUseEffect)
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
+//   mUseEffect: boolean = true
+//   applyNormalAttribute(instance: NavigatorAttribute): void {
+//     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
+//    instance.useEffect(this.mUseEffect)
+//   }
+// }
+// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
+//   mUseEffect: boolean = true
+//   applyNormalAttribute(instance: NavRouterAttribute): void {
+//     console.info(`useEffect page show ${JSON.stringify(this.mUseEffect)}`)
+//    instance.useEffect(this.mUseEffect)
+//   }
+// }
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mUseEffect: boolean = true
   applyNormalAttribute(instance: PatternLockAttribute): void {
@@ -568,6 +568,498 @@ class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   }
 }
 
+function commonStyle(this: AlphabetIndexerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: BadgeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: BlankAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ButtonAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CalendarPickerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CheckboxAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CheckboxGroupAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ColumnSplitAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CounterAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: DataPanelAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: DatePickerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: EffectComponentAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FormComponentAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: EllipseAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FlexAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FlowItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FormLinkAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GaugeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridColAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridRowAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: HyperlinkAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ImageAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ImageAnimatorAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: LineAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ListItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ListItemGroupAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: LoadingProgressAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MarqueeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MenuAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MenuItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MenuItemGroupAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: NavDestinationAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: NavigationAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: PathAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: PolygonAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: PolylineAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ProgressAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: QRCodeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RadioAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RatingAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RectAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RefreshAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RelativeContainerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RemoteWindowAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RichEditorAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RichTextAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RowAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RowSplitAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ScrollAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ScrollBarAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SearchAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SelectAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ShapeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SliderAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SpanAttribute, componentKey: string): this {
+  // this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: StackAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: StepperAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: StepperItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SwiperAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SideBarContainerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ToggleAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TabsAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextAreaAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextClockAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextInputAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextPickerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextTimerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TimePickerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: VideoAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: WaterFlowAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: WebAttribute, componentKey: string): this {
+
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: WindowSceneAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CanvasAttribute, componentKey: string): this {
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: XComponentAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: DividerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CircleAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ColumnAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ListAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TabContentAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
 @Entry
 @Component
 struct useEffectPage {
@@ -608,9 +1100,9 @@ struct useEffectPage {
   @State _useEffectMenuItemMod: MenuItemModifier = new MenuItemModifier()
   @State _useEffectMenuItemGroupMod: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _useEffectNavDestinationMod: NavDestinationModifier = new NavDestinationModifier()
-  
+  // @State _useEffectNavRouterMod: NavRouterModifier = new NavRouterModifier()
   @State _useEffectNavigationMod: NavigationModifier = new NavigationModifier()
-  
+  // @State _useEffectNavigatorMod: NavigatorModifier = new NavigatorModifier()
   @State _useEffectPatternLockMod: PatternLockModifier = new PatternLockModifier()
   @State _useEffectPluginComponentMod: PluginComponentModifier = new PluginComponentModifier()
   @State _useEffectQRCodeMod: QRCodeModifier = new QRCodeModifier()
@@ -647,16 +1139,25 @@ struct useEffectPage {
   @State _useEffectWaterFlowMod: WaterFlowModifier = new WaterFlowModifier()
   @State _useEffectWebMod: WebModifier = new WebModifier()
   @State _useEffectXComponentMod: XComponentModifier = new XComponentModifier()
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? '';
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
-  @State parentWidth: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
-  @State parentHeight: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-  @State columns: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int) ?? 0
-  @State gutter: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int) ?? 0
-  @State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey ?? '';
+  @State targetView: string = '';
+  @State componentKey: string = '';
+  @State parentWidth: number = 0;
+  @State parentHeight: number = 0;
+  @State columns: int = 0;
+  @State gutter: number = 0;
+  @State parentComponentKey: string = '';
 
   onPageShow() {
     console.info('22222 useEffect page show called ')
+    const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
+      .getElement("view")
+    this.targetView = viewElement.getString("targetView")
+    this.componentKey = viewElement.getString("componentKey")
+    this.parentWidth = viewElement.getDouble("parentWidth")
+    this.parentHeight = viewElement.getDouble("parentHeight")
+    this.columns = viewElement.getInteger("columns")
+    this.gutter = viewElement.getDouble("gutter")
+    this.parentComponentKey = viewElement.getString("parentComponentKey")
     attrsManager.registerDataChange((value: SetValue) => {
       console.info('22222 [registerDataChange] ' + JSON.stringify(value.useEffect))
       this._useEffectAlphabetIndexerMod.mUseEffect = value.useEffect
@@ -695,9 +1196,9 @@ struct useEffectPage {
       this._useEffectMenuItemMod.mUseEffect = value.useEffect
       this._useEffectMenuItemGroupMod.mUseEffect = value.useEffect
       this._useEffectNavDestinationMod.mUseEffect = value.useEffect
-      
+      // this._useEffectNavRouterMod.mUseEffect = value.useEffect
       this._useEffectNavigationMod.mUseEffect = value.useEffect
-      
+      // this._useEffectNavigatorMod.mUseEffect = value.useEffect
       this._useEffectPatternLockMod.mUseEffect = value.useEffect
       this._useEffectPluginComponentMod.mUseEffect = value.useEffect
       this._useEffectQRCodeMod.mUseEffect = value.useEffect
@@ -738,87 +1239,87 @@ struct useEffectPage {
     })
   }
 
-  
-  
-  
-  
-  
-  
+  // @Styles commonStyle(){
+  //  .useEffect(this._useEffect)
+  //   .height('100%')
+  //   .gridSpan(1)
+  //   .key(this.componentKey)
+  // }
 
   build() {
-    GridRow({ columns: this.columns, gutter: this.gutter}) {
+    GridRow({ columns: this.columns, gutter: this.gutter, /*margin: 0 */}) {
       Row() {
         if (this.targetView == 'Button') {
-          Button('button1').attributeModifier(this._useEffectButttonMod)
+          Button('button1').commonStyle(this.componentKey).attributeModifier(this._useEffectButttonMod)
         } else if (this.targetView == 'Text') {
-          Text('text1').attributeModifier(this._useEffectTextMod)
+          Text('text1').commonStyle(this.componentKey).attributeModifier(this._useEffectTextMod)
         } else if (this.targetView == 'AlphabetIndexer') {
           AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
-          .attributeModifier(this._useEffectAlphabetIndexerMod)
+          .commonStyle(this.componentKey).attributeModifier(this._useEffectAlphabetIndexerMod)
         } else if (this.targetView == 'Blank') {
-          Blank().backgroundColor(Color.Yellow).attributeModifier(this._useEffectBlankMod)
+          Blank().backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._useEffectBlankMod)
         } else if (this.targetView == 'Checkbox') {
-          Checkbox().attributeModifier(this._useEffectCheckboxMod)
+          Checkbox().commonStyle(this.componentKey).attributeModifier(this._useEffectCheckboxMod)
         } else if (this.targetView == 'CheckboxGroup') {
-          CheckboxGroup({ group: 'checkboxGroup' }).attributeModifier(this._useEffectCheckboxGroupMod)
+          CheckboxGroup({ group: 'checkboxGroup' }).commonStyle(this.componentKey).attributeModifier(this._useEffectCheckboxGroupMod)
         } else if (this.targetView == 'DataPanel') {
           DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] })
-          .attributeModifier(this._useEffectDataPanelMod)
+          .commonStyle(this.componentKey).attributeModifier(this._useEffectDataPanelMod)
         } else if (this.targetView == 'DatePicker') {
           DatePicker({
             start: new Date('1970-1-1'),
             end: new Date('2100-1-1'),
-          }).attributeModifier(this._useEffectDatePickerMod)
+          }).commonStyle(this.componentKey).attributeModifier(this._useEffectDatePickerMod)
         } else if (this.targetView == 'Divider') {
-          Divider().attributeModifier(this._useEffectDividerMod)
+          Divider().commonStyle(this.componentKey).attributeModifier(this._useEffectDividerMod)
         } else if (this.targetView == 'Gauge') {
           Gauge({ value: 105 })
-            .attributeModifier(this._useEffectGaugeMod)
+            .commonStyle(this.componentKey).attributeModifier(this._useEffectGaugeMod)
             .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
         } else if (this.targetView == 'Image') {
-          Image($r('app.media.icon')).attributeModifier(this._useEffectImageMod)
+          Image($r('app.media.icon')).commonStyle(this.componentKey).attributeModifier(this._useEffectImageMod)
         } else if (this.targetView == 'ImageAnimator') {
           ImageAnimator()
             .images([
               {
                 src: $r('app.media.icon')
               }
-            ]).attributeModifier(this._useEffectImageAnimatorMod)
+            ]).commonStyle(this.componentKey).attributeModifier(this._useEffectImageAnimatorMod)
         } else if (this.targetView == 'LoadingProgress') {
-          LoadingProgress().attributeModifier(this._useEffectLoadingProgressMod)
+          LoadingProgress().commonStyle(this.componentKey).attributeModifier(this._useEffectLoadingProgressMod)
         } else if (this.targetView == 'Marquee') {
-          Marquee({
-            start: true,
-            step: 50,
-            loop: Infinity as int,
-            fromStart: true,
-            src: 'Running Marquee starts rolling'
-          }).attributeModifier(this._useEffectMarqueeMod)
+          // Marquee({
+          //   start: true,
+          //   step: 50,
+          //   loop: Infinity,
+          //   fromStart: true,
+          //   src: 'Running Marquee starts rolling'
+          // }).commonStyle(this.componentKey).attributeModifier(this._useEffectMarqueeMod)
         } else if (this.targetView == 'Navigation') {
         Navigation(new NavPathStack()) {
-          }
+          }.commonStyle(this.componentKey).attributeModifier(this._useEffectNavigationMod)
         } else if (this.targetView == 'Menu') {
           Menu() {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
-          }.backgroundColor(Color.Yellow).attributeModifier(this._useEffectMenuMod)
+          }.backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._useEffectMenuMod)
         } else if (this.targetView == 'NavRouter') {
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          // NavRouter() {
+          //   Row() {
+          //     Image($r('app.media.icon'))
+          //   }
+          //
+          //   NavDestination() {
+          //     Text('NavDestination').fontSize(10)
+          //   }
+          // }.commonStyle(this.componentKey).attributeModifier(this._useEffectNavRouterMod)
         } else if (this.targetView == 'Progress') {
-          Progress({ value: 10, type: ProgressType.Eclipse })
+          Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey)
         } else if (this.targetView == 'QRCode') {
-          QRCode('Running Marquee starts rolling').attributeModifier(this._useEffectQRCodeMod)
+          QRCode('Running Marquee starts rolling').commonStyle(this.componentKey).attributeModifier(this._useEffectQRCodeMod)
         } else if (this.targetView == 'Radio') {
-          Radio({ value: 'Radio1', group: 'radioGroup' }).attributeModifier(this._useEffectRadioMod)
+          Radio({ value: 'Radio1', group: 'radioGroup' }).commonStyle(this.componentKey).attributeModifier(this._useEffectRadioMod)
         } else if (this.targetView == 'Rating') {
-          Rating({ rating: 3.5, indicator: false }).attributeModifier(this._useEffectRatingMod)
+          Rating({ rating: 3.5, indicator: false }).commonStyle(this.componentKey).attributeModifier(this._useEffectRatingMod)
         } else if (this.targetView == 'ScrollBar') {
           ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
             Text()
@@ -826,12 +1327,12 @@ struct useEffectPage {
               .height(100)
               .borderRadius(10)
               .backgroundColor('#C0C0C0')
-          }.attributeModifier(this._useEffectScrollBarMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._useEffectScrollBarMod)
         } else if (this.targetView == 'Search') {
-          Search().attributeModifier(this._useEffectSearchMod)
+          Search().commonStyle(this.componentKey).attributeModifier(this._useEffectSearchMod)
         } else if (this.targetView == 'Select') {
           Select([{ value: 'aaa' },
-            { value: 'bbb' }]).attributeModifier(this._useEffectSelectMod)
+            { value: 'bbb' }]).commonStyle(this.componentKey).attributeModifier(this._useEffectSelectMod)
         } else if (this.targetView == 'Slider') {
           Slider({
             value: 50,
@@ -840,7 +1341,7 @@ struct useEffectPage {
             style: SliderStyle.OutSet
           })
             .showTips(true)
-            .attributeModifier(this._useEffectSliderMod)
+            .commonStyle(this.componentKey).attributeModifier(this._useEffectSliderMod)
         } else if (this.targetView == 'Stepper') {
           Stepper() {
             StepperItem() {
@@ -848,54 +1349,54 @@ struct useEffectPage {
                 Text('Page One')
               }
             }
-          }
+          }.commonStyle(this.componentKey).attributeModifier(this._useEffectStepperMod)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
-          }).attributeModifier(this._useEffectTextAreaMod)
+          }).commonStyle(this.componentKey).attributeModifier(this._useEffectTextAreaMod)
         } else if (this.targetView == 'TextClock') {
           TextClock({ timeZoneOffset: -8 })
             .format('hms')
-            .attributeModifier(this._useEffectTextClockMod)
+            .commonStyle(this.componentKey).attributeModifier(this._useEffectTextClockMod)
         } else if (this.targetView == 'TextPicker') {
-          TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] })
+          TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] }).commonStyle(this.componentKey)
         } else if (this.targetView == 'TextTimer') {
           TextTimer({ isCountDown: true, count: 30000 })
             .format('mm:ss.SS')
             .fontColor(Color.Black)
-            .attributeModifier(this._useEffectTextTimerMod)
+            .commonStyle(this.componentKey).attributeModifier(this._useEffectTextTimerMod)
         } else if (this.targetView == 'TimePicker') {
           TimePicker({
             selected: new Date('2022-07-22T08:00:00'),
-          }).attributeModifier(this._useEffectTimePickerMod)
+          }).commonStyle(this.componentKey).attributeModifier(this._useEffectTimePickerMod)
         } else if (this.targetView == 'Toggle') {
           Toggle({ type: ToggleType.Switch, isOn: false })
-          .attributeModifier(this._useEffectToggleMod)
+          .commonStyle(this.componentKey).attributeModifier(this._useEffectToggleMod)
         } else if (this.targetView == 'Web') {
-          Web({ src: 'www.example.com', controller: new WebviewController() })
+          Web({ src: 'www.example.com', controller: new WebviewController() }).commonStyle(this.componentKey)
           .attributeModifier(this._useEffectWebMod)
         } else if (this.targetView == 'Circle') {
-          Circle()
+          Circle().commonStyle(this.componentKey)
         } else if (this.targetView == 'Ellipse') {
-          Ellipse()
+          Ellipse().commonStyle(this.componentKey)
         } else if (this.targetView == 'Line') {
           Line()
-            
+            .commonStyle(this.componentKey)
             .startPoint([0, 0])
             .endPoint([50, 100])
             .backgroundColor(Color.Black)
         } else if (this.targetView == 'Polyline') {
-          Polyline()
+          Polyline().commonStyle(this.componentKey)
         } else if (this.targetView == 'Polygon') {
-          Polygon()
+          Polygon().commonStyle(this.componentKey)
         } else if (this.targetView == 'Path') {
-          Path()
+          Path().commonStyle(this.componentKey)
         } else if (this.targetView == 'Rect') {
-          Rect()
+          Rect().commonStyle(this.componentKey)
         } else if (this.targetView == 'Shape') {
           Shape() {
             Rect().width(100).height(50)
-          }
+          }.commonStyle(this.componentKey)
         } else if (this.targetView == 'Badge') {
           Badge({
             count: 50,
@@ -903,22 +1404,22 @@ struct useEffectPage {
           } as BadgeParamWithNumber) {
             Button('message')
               .width(100).height(50).backgroundColor(0x317aff)
-          }.attributeModifier(this._useEffectBadgeMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._useEffectBadgeMod)
         } else if (this.targetView == 'Column') {
           Column() {
             Column().width('100%').height(30).backgroundColor(0xAFEEEE)
-          }.attributeModifier(this._useEffectColumnMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._useEffectColumnMod)
         } else if (this.targetView == 'ColumnSplit') {
           ColumnSplit() {
             Text('1').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
-          }.attributeModifier(this._useEffectColumnSplitMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._useEffectColumnSplitMod)
         } else if (this.targetView == 'Counter') {
           Counter() {
-          }.attributeModifier(this._useEffectCounterMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._useEffectCounterMod)
         } else if (this.targetView == 'Flex') {
           Flex() {
             Text('1').width('20%').height(50).backgroundColor(0xF5DEB3)
-          }.attributeModifier(this._useEffectFlexMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._useEffectFlexMod)
         } else if (this.targetView == 'GridRow') {
           GridRow({
             columns: 1,
@@ -930,7 +1431,7 @@ struct useEffectPage {
                 Row().width('100%').height('20vp')
               }.borderColor(color).borderWidth(2)
             })
-          }.attributeModifier(this._useEffectGridRowMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._useEffectGridRowMod)
         } else if (this.targetView == 'Grid') {
           Grid() {
             ForEach(['0', '1', '2', '3', '4'], (item: string) => {
@@ -944,11 +1445,11 @@ struct useEffectPage {
           }
           .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
           .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
-          .attributeModifier(this._useEffectGridMod)
+          .commonStyle(this.componentKey).attributeModifier(this._useEffectGridMod)
           .backgroundColor(0xFAEEE0)
         } else if (this.targetView == 'List') {
           List() {
-          }.height('100%').width('100%').attributeModifier(this._useEffectListMod)
+          }.commonStyle(this.componentKey).height('100%').width('100%').attributeModifier(this._useEffectListMod)
         } else if (this.targetView == 'ListItem') {
           List({ space: 20, initialIndex: 0 }) {
             ListItem() {
@@ -956,7 +1457,7 @@ struct useEffectPage {
                 .width('100%')
                 .textAlign(TextAlign.Center)
                 .backgroundColor(Color.White)
-            }.attributeModifier(this._useEffectListItemMod)
+            }.commonStyle(this.componentKey).attributeModifier(this._useEffectListItemMod)
           }
           .width('100%')
           .height('100%')
@@ -964,22 +1465,22 @@ struct useEffectPage {
           List({ space: 0, initialIndex: 0 }) {
             ListItemGroup()
               .backgroundColor(Color.Yellow)
-              .attributeModifier(this._useEffectListItemGroupMod)
+              .commonStyle(this.componentKey).attributeModifier(this._useEffectListItemGroupMod)
           }.backgroundColor(Color.Pink)
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Navigator') {
-          
-          
-          
+          // Navigator() {
+          //   Text('Go to back page').width('100%').height(20)
+          // }.commonStyle(this.componentKey).backgroundColor(Color.Red).attributeModifier(this._useEffectNavigatorMod)
         } else if (this.targetView == 'Panel') {
-          
-          
-          
+          // Panel(true) {
+          //   Text('Text')
+          // }.backgroundColor(Color.Yellow).commonStyle(this.componentKey)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')
-          }.attributeModifier(this._useEffectRefreshMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._useEffectRefreshMod)
         } else if (this.targetView == 'RelativeContainer') {
           RelativeContainer() {
             Row()
@@ -991,13 +1492,13 @@ struct useEffectPage {
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
               } as AlignRuleOption)
               .id('constraintSize')
-          }.attributeModifier(this._useEffectRelativeContainerMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._useEffectRelativeContainerMod)
         } else if (this.targetView == 'Row') {
-          Row().attributeModifier(this._useEffectRowMod)
+          Row().commonStyle(this.componentKey).attributeModifier(this._useEffectRowMod)
         } else if (this.targetView == 'RowSplit') {
           RowSplit() {
             Text('Text')
-          }.attributeModifier(this._useEffectRowSplitMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._useEffectRowSplitMod)
         } else if (this.targetView == 'Scroll') {
           Scroll() {
             Column() {
@@ -1009,7 +1510,7 @@ struct useEffectPage {
                   .textAlign(TextAlign.Center)
               }, (item: int) => item.toString())
             }.width('100%')
-          }.scrollBar(BarState.On).attributeModifier(this._useEffectScrollMod)
+          }.scrollBar(BarState.On).commonStyle(this.componentKey).attributeModifier(this._useEffectScrollMod)
         } else if (this.targetView == 'SideBarContainer') {
           SideBarContainer(SideBarContainerType.Embed) {
             Column() {
@@ -1024,10 +1525,10 @@ struct useEffectPage {
             Column() {
               Text('SideBarContainer content').fontSize(25)
             }.backgroundColor(Color.Orange)
-          }
+          }.commonStyle(this.componentKey).attributeModifier(this._useEffectSideBarContainerMod)
         } else if (this.targetView == 'Stack') {
           Stack() {
-          }.attributeModifier(this._useEffectStackMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._useEffectStackMod)
         } else if (this.targetView == 'Swiper') {
           Swiper() {
             ForEach([1, 2, 3], (item: int) => {
@@ -1036,18 +1537,18 @@ struct useEffectPage {
           }
           .indicator(true)
           .backgroundColor(Color.White)
-          
+          .commonStyle(this.componentKey).attributeModifier(this._useEffectSwiperMod)
         } else if (this.targetView == 'Tabs') {
           Tabs() {
             TabContent() {
               Column().width('100%').height('100%').backgroundColor('#00CB87')
             }
-          }.attributeModifier(this._useEffectTabsMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._useEffectTabsMod)
         } else if (this.targetView == 'TabContent') {
           Tabs() {
             TabContent() {
               Text('TabContent Test').width('100%').height('100%').backgroundColor(Color.White)
-            }.tabBar('Tabs1').attributeModifier(this._useEffectTabContentMod)
+            }.tabBar('Tabs1').commonStyle(this.componentKey).attributeModifier(this._useEffectTabContentMod)
           }.width('100%').height('100%')
         } else if (this.targetView == 'WaterFlow') {
           WaterFlow() {
@@ -1062,7 +1563,7 @@ struct useEffectPage {
                 }
               }
             }, (item: int) => item.toString())
-          }.attributeModifier(this._useEffectWaterFlowMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._useEffectWaterFlowMod)
         } else if (this.targetView == 'StepperItem') {
           Stepper() {
             StepperItem() {
@@ -1071,7 +1572,7 @@ struct useEffectPage {
               }
             }
             .backgroundColor(Color.Red)
-            
+            .commonStyle(this.componentKey).attributeModifier(this._useEffectStepperItemMod)
           }
           .backgroundColor(Color.Yellow)
           .width('100%')
@@ -1084,7 +1585,7 @@ struct useEffectPage {
             GridCol() {
               Row().width('100%').height('20vp')
             }
-            .attributeModifier(this._useEffectGridColMod)
+            .commonStyle(this.componentKey).attributeModifier(this._useEffectGridColMod)
             .backgroundColor(Color.Yellow)
           }
           .backgroundColor(Color.Pink)
@@ -1102,7 +1603,7 @@ struct useEffectPage {
                     .objectFit(ImageFit.Fill)
                 }
               }
-              .attributeModifier(this._useEffectFlowItemMod)
+              .commonStyle(this.componentKey).attributeModifier(this._useEffectFlowItemMod)
               .backgroundColor(Color.Yellow)
             }, (item: int) => item.toString())
           }
@@ -1118,7 +1619,7 @@ struct useEffectPage {
                 .height('100%')
                 .textAlign(TextAlign.Center)
             }.rowStart(1).rowEnd(4)
-            .attributeModifier(this._useEffectGridItemMod)
+            .commonStyle(this.componentKey).attributeModifier(this._useEffectGridItemMod)
             .backgroundColor(Color.Yellow)
           }
           .backgroundColor(Color.Pink)
@@ -1128,7 +1629,7 @@ struct useEffectPage {
           Row() {
             Menu() {
               MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-                .attributeModifier(this._useEffectMenuItemMod)
+                .commonStyle(this.componentKey).attributeModifier(this._useEffectMenuItemMod)
             }.backgroundColor(Color.Yellow)
             .width('100%')
             .height('100%')
@@ -1139,7 +1640,7 @@ struct useEffectPage {
               MenuItemGroup({ header: 'MenuItemGroup' }) {
                 MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
               }
-              .attributeModifier(this._useEffectMenuItemGroupMod)
+              .commonStyle(this.componentKey).attributeModifier(this._useEffectMenuItemGroupMod)
             }.backgroundColor(Color.Yellow)
             .width('100%')
             .height('100%')

@@ -138,6 +138,8 @@ group("componentSevenAttrssTest") {
       "ace_ets_component_common_seven_attrs_translate_static:ActsAceEtsComponentCommonSevenAttrsTranslateStaticTest",
       "ace_ets_component_common_seven_attrs_width_static:ActsAceEtsComponentCommonSevenAttrsWidthStaticTest",
       "ace_ets_component_common_seven_attrs_zIndex_static:ActsAceEtsComponentCommonSevenAttrsZIndexStaticTest",
+      "ace_ets_component_common_seven_attrs_colorBlend_static:ActsAceEtsComponentCommonSevenAttrsColorBlendStaticTest",
+      "ace_ets_component_seven_special_static:ActsAceEtsComponentSevenSpecialStaticTest",
     ]
   }
 }

@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
-*     http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -37,8 +37,8 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   TextAttribute, TextAreaAttribute, TextClockAttribute, TextInputAttribute, TextPickerAttribute, TextTimerAttribute,
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
-  ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, RenderFit, AlignRuleOption } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement';
+  ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, RenderFit, SystemAdaptiveOptions, AlignRuleOption } from '@ohos.arkui.component'
+import { State, StorageProp } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -300,20 +300,20 @@ class NavigationModifier implements AttributeModifier<NavigationAttribute> {
     instance.blur(this.mBlur)
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// class NavigatorModifier implements AttributeModifier<NavigatorAttribute> {
+//   mBlur: number = 10
+//   applyNormalAttribute(instance: NavigatorAttribute): void {
+//     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
+//     instance.blur(this.mBlur)
+//   }
+// }
+// class NavRouterModifier implements AttributeModifier<NavRouterAttribute> {
+//   mBlur: number = 10
+//   applyNormalAttribute(instance: NavRouterAttribute): void {
+//     console.info(`blur page show ${JSON.stringify(this.mBlur)}`)
+//     instance.blur(this.mBlur)
+//   }
+// }
 class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mBlur: number = 10
   applyNormalAttribute(instance: PatternLockAttribute): void {
@@ -567,9 +567,500 @@ class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   }
 }
 
+function commonStyle(this: AlphabetIndexerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: BadgeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: BlankAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyleButton(this: ButtonAttribute, componentKey: string, blur: number): this {
+  console.log('commonStyleButton blur = ' + blur)
+  this.blur(blur)
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CalendarPickerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CheckboxAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CheckboxGroupAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ColumnSplitAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CounterAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: DataPanelAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: DatePickerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: EffectComponentAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FormComponentAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: EllipseAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FlexAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FlowItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: FormLinkAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GaugeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridColAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: GridRowAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: HyperlinkAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ImageAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ImageAnimatorAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: LineAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ListItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ListItemGroupAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: LoadingProgressAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MarqueeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MenuAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MenuItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: MenuItemGroupAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: NavDestinationAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: NavigationAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: PathAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: PolygonAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: PolylineAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ProgressAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: QRCodeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RadioAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RatingAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RectAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RefreshAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RelativeContainerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RemoteWindowAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RichEditorAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RichTextAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RowAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: RowSplitAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ScrollAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ScrollBarAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SearchAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SelectAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ShapeAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SliderAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SpanAttribute, componentKey: string): this {
+  // this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: StackAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: StepperAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: StepperItemAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SwiperAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: SideBarContainerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ToggleAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TabsAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextAreaAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextClockAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextInputAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextPickerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextTimerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TimePickerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: VideoAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: WaterFlowAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: WebAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: WindowSceneAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: XComponentAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TextAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: DividerAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: CircleAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ColumnAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: ListAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
+function commonStyle(this: TabContentAttribute, componentKey: string): this {
+  this.height('100%')
+  this.key(componentKey)
+  return this
+}
+
 @Entry
 @Component
 struct blurPage {
+  @StorageProp('_blurButton') blurButton: SetValue = {
+    blur: 0
+  }
   @State _blur: number = 1.0
   @State _blurAlphabetIndexerMod: AlphabetIndexerModifier = new AlphabetIndexerModifier()
   @State _blurBadgeMod: BadgeModifier = new BadgeModifier()
@@ -607,9 +1098,9 @@ struct blurPage {
   @State _blurMenuItemMod: MenuItemModifier = new MenuItemModifier()
   @State _blurMenuItemGroupMod: MenuItemGroupModifier = new MenuItemGroupModifier()
   @State _blurNavDestinationMod: NavDestinationModifier = new NavDestinationModifier()
-  
+  // @State _blurNavRouterMod: NavRouterModifier = new NavRouterModifier()
   @State _blurNavigationMod: NavigationModifier = new NavigationModifier()
-  
+  // @State _blurNavigatorMod: NavigatorModifier = new NavigatorModifier()
   @State _blurPatternLockMod: PatternLockModifier = new PatternLockModifier()
   @State _blurPluginComponentMod: PluginComponentModifier = new PluginComponentModifier()
   @State _blurQRCodeMod: QRCodeModifier = new QRCodeModifier()
@@ -646,16 +1137,26 @@ struct blurPage {
   @State _blurWaterFlowMod: WaterFlowModifier = new WaterFlowModifier()
   @State _blurWebMod: WebModifier = new WebModifier()
   @State _blurXComponentMod: XComponentModifier = new XComponentModifier()
-  @State targetView: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView ?? '';
-  @State componentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey ?? '';
-  @State parentWidth: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
-  @State parentHeight: double = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
-  @State columns: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int) ?? 0
-  @State gutter: int = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int) ?? 0
-  @State parentComponentKey: string = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey ?? '';
+  @State targetView: string = '';
+  @State componentKey: string = '';
+  @State parentWidth: number = 0;
+  @State parentHeight: number = 0;
+  @State columns: int = 0;
+  @State gutter: number = 0;
+  @State parentComponentKey: string = '';
 
   onPageShow() {
     console.info('22222 blur page show called ')
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    this.blurButton = routerParamOptions.view.testValue.setValue
+    this.targetView = routerParamOptions.view.targetView
+    this.componentKey = routerParamOptions.view.componentKey ?? ""
+    this.parentWidth = routerParamOptions.view.parentWidth
+    this.parentHeight = routerParamOptions.view.parentHeight
+    this.columns = routerParamOptions.view.columns
+    this.gutter = routerParamOptions.view.gutter
+    this.parentComponentKey = routerParamOptions.view.parentComponentKey
+
     attrsManager.registerDataChange((value: SetValue) => {
       console.info('22222 [registerDataChange] ' + JSON.stringify(value.blur))
       this._blurAlphabetIndexerMod.mBlur =  value.blur
@@ -694,9 +1195,9 @@ struct blurPage {
       this._blurMenuItemMod.mBlur =  value.blur
       this._blurMenuItemGroupMod.mBlur =  value.blur
       this._blurNavDestinationMod.mBlur =  value.blur
-      
+      // this._blurNavRouterMod.mBlur =  value.blur
       this._blurNavigationMod.mBlur =  value.blur
-      
+      // this._blurNavigatorMod.mBlur =  value.blur
       this._blurPatternLockMod.mBlur =  value.blur
       this._blurPluginComponentMod.mBlur =  value.blur
       this._blurQRCodeMod.mBlur =  value.blur
@@ -733,91 +1234,83 @@ struct blurPage {
       this._blurWaterFlowMod.mBlur =  value.blur
       this._blurWebMod.mBlur =  value.blur
       this._blurXComponentMod.mBlur =  value.blur
-  
     })
   }
-
-  
-  
-  
-  
-  
-  
 
   build() {
     GridRow({ columns: this.columns, gutter: this.gutter}) {
       Row() {
         if (this.targetView == 'Button') {
-          Button('button1').attributeModifier(this._blurButttonMod)
+          Button('button1').commonStyleButton(this.componentKey, this.blurButton.blur).attributeModifier(this._blurButttonMod)
         } else if (this.targetView == 'Text') {
-          Text('text1').attributeModifier(this._blurTextMod)
+          Text('text1').commonStyle(this.componentKey).attributeModifier(this._blurTextMod)
         } else if (this.targetView == 'AlphabetIndexer') {
           AlphabetIndexer({ arrayValue: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'], selected: 0 })
-          .attributeModifier(this._blurAlphabetIndexerMod)
+          .commonStyle(this.componentKey).attributeModifier(this._blurAlphabetIndexerMod)
         } else if (this.targetView == 'Blank') {
-          Blank().backgroundColor(Color.Yellow).attributeModifier(this._blurBlankMod)
+          Blank().backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._blurBlankMod)
         } else if (this.targetView == 'Checkbox') {
-          Checkbox().attributeModifier(this._blurCheckboxMod)
+          Checkbox().commonStyle(this.componentKey).attributeModifier(this._blurCheckboxMod)
         } else if (this.targetView == 'CheckboxGroup') {
-          CheckboxGroup({ group: 'checkboxGroup' }).attributeModifier(this._blurCheckboxGroupMod)
+          CheckboxGroup({ group: 'checkboxGroup' }).commonStyle(this.componentKey).attributeModifier(this._blurCheckboxGroupMod)
         } else if (this.targetView == 'DataPanel') {
           DataPanel({ values: [5, 10, 10, 7, 9, 10, 10, 10, 10] })
-          .attributeModifier(this._blurDataPanelMod)
+          .commonStyle(this.componentKey).attributeModifier(this._blurDataPanelMod)
         } else if (this.targetView == 'DatePicker') {
           DatePicker({
             start: new Date('1970-1-1'),
             end: new Date('2100-1-1'),
-          }).attributeModifier(this._blurDatePickerMod)
+          }).commonStyle(this.componentKey).attributeModifier(this._blurDatePickerMod)
         } else if (this.targetView == 'Divider') {
-          Divider().attributeModifier(this._blurDividerMod)
+          Divider().commonStyle(this.componentKey).attributeModifier(this._blurDividerMod)
         } else if (this.targetView == 'Gauge') {
           Gauge({ value: 105 })
-            .attributeModifier(this._blurGaugeMod)
+            .commonStyle(this.componentKey).attributeModifier(this._blurGaugeMod)
             .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
         } else if (this.targetView == 'Image') {
-          Image($r('app.media.icon')).attributeModifier(this._blurImageMod)
+          Image($r('app.media.icon')).commonStyle(this.componentKey).attributeModifier(this._blurImageMod)
         } else if (this.targetView == 'ImageAnimator') {
           ImageAnimator()
             .images([
               {
                 src: $r('app.media.icon')
               }
-            ]).attributeModifier(this._blurImageAnimatorMod)
+            ]).commonStyle(this.componentKey).attributeModifier(this._blurImageAnimatorMod)
         } else if (this.targetView == 'LoadingProgress') {
-          LoadingProgress().attributeModifier(this._blurLoadingProgressMod)
+          LoadingProgress().commonStyle(this.componentKey).attributeModifier(this._blurLoadingProgressMod)
         } else if (this.targetView == 'Marquee') {
           Marquee({
             start: true,
             step: 50,
-            loop: Infinity as int,
+            loop: Int.MAX_VALUE,
             fromStart: true,
             src: 'Running Marquee starts rolling'
-          }).attributeModifier(this._blurMarqueeMod)
+          }).commonStyle(this.componentKey).attributeModifier(this._blurMarqueeMod)
         } else if (this.targetView == 'Navigation') {
         Navigation(new NavPathStack()) {
-          }
+          }.commonStyle(this.componentKey).attributeModifier(this._blurNavigationMod)
         } else if (this.targetView == 'Menu') {
           Menu() {
           MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
-          }.backgroundColor(Color.Yellow).attributeModifier(this._blurMenuMod)
+          }.backgroundColor(Color.Yellow).commonStyle(this.componentKey).attributeModifier(this._blurMenuMod)
         } else if (this.targetView == 'NavRouter') {
-          
-          
-          
-          
-          
-          
-          
-          
-          
+          // NavRouter() {
+          //   Row() {
+          //     Image($r('app.media.icon'))
+          //   }
+          //
+          //   NavDestination() {
+          //     Text('NavDestination').fontSize(10)
+          //   }
+          // }.commonStyle(this.componentKey).attributeModifier(this._blurNavRouterMod)
         } else if (this.targetView == 'Progress') {
-          Progress({ value: 10, type: ProgressType.Eclipse })
+          Progress({ value: 10, type: ProgressType.Eclipse }).commonStyle(this.componentKey)
         } else if (this.targetView == 'QRCode') {
-          QRCode('Running Marquee starts rolling').attributeModifier(this._blurQRCodeMod)
+          QRCode('Running Marquee starts rolling').commonStyle(this.componentKey).attributeModifier(this._blurQRCodeMod)
         } else if (this.targetView == 'Radio') {
-          Radio({ value: 'Radio1', group: 'radioGroup' }).attributeModifier(this._blurRadioMod)
+          Radio({ value: 'Radio1', group: 'radioGroup' }).commonStyle(this.componentKey).attributeModifier(this._blurRadioMod)
         } else if (this.targetView == 'Rating') {
-          Rating({ rating: 3.5, indicator: false }).attributeModifier(this._blurRatingMod)
+          Rating({ rating: 3.5, indicator: false }).commonStyle(this.componentKey).attributeModifier(this._blurRatingMod)
         } else if (this.targetView == 'ScrollBar') {
           ScrollBar({ scroller: new Scroller(), state: BarState.On }) {
             Text()
@@ -825,12 +1318,12 @@ struct blurPage {
               .height(100)
               .borderRadius(10)
               .backgroundColor('#C0C0C0')
-          }.attributeModifier(this._blurScrollBarMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._blurScrollBarMod)
         } else if (this.targetView == 'Search') {
-          Search().attributeModifier(this._blurSearchMod)
+          Search().commonStyle(this.componentKey).attributeModifier(this._blurSearchMod)
         } else if (this.targetView == 'Select') {
           Select([{ value: 'aaa' },
-            { value: 'bbb' }]).attributeModifier(this._blurSelectMod)
+            { value: 'bbb' }]).commonStyle(this.componentKey).attributeModifier(this._blurSelectMod)
         } else if (this.targetView == 'Slider') {
           Slider({
             value: 50,
@@ -839,7 +1332,7 @@ struct blurPage {
             style: SliderStyle.OutSet
           })
             .showTips(true)
-            .attributeModifier(this._blurSliderMod)
+            .commonStyle(this.componentKey).attributeModifier(this._blurSliderMod)
         } else if (this.targetView == 'Stepper') {
           Stepper() {
             StepperItem() {
@@ -847,54 +1340,54 @@ struct blurPage {
                 Text('Page One')
               }
             }
-          }
+          }.commonStyle(this.componentKey).attributeModifier(this._blurStepperMod)
         } else if (this.targetView == 'TextArea') {
           TextArea({
             placeholder: 'The text area can hold an unlimited amount of text. input your word...'
-          }).attributeModifier(this._blurTextAreaMod)
+          }).commonStyle(this.componentKey).attributeModifier(this._blurTextAreaMod)
         } else if (this.targetView == 'TextClock') {
           TextClock({ timeZoneOffset: -8 })
             .format('hms')
-            .attributeModifier(this._blurTextClockMod)
+            .commonStyle(this.componentKey).attributeModifier(this._blurTextClockMod)
         } else if (this.targetView == 'TextPicker') {
-          TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] })
+          TextPicker({ range: ['#', 'A', 'B', 'C', 'D', 'E', 'F', 'G'] }).commonStyle(this.componentKey)
         } else if (this.targetView == 'TextTimer') {
           TextTimer({ isCountDown: true, count: 30000 })
             .format('mm:ss.SS')
             .fontColor(Color.Black)
-            .attributeModifier(this._blurTextTimerMod)
+            .commonStyle(this.componentKey).attributeModifier(this._blurTextTimerMod)
         } else if (this.targetView == 'TimePicker') {
           TimePicker({
             selected: new Date('2022-07-22T08:00:00'),
-          }).attributeModifier(this._blurTimePickerMod)
+          }).commonStyle(this.componentKey).attributeModifier(this._blurTimePickerMod)
         } else if (this.targetView == 'Toggle') {
           Toggle({ type: ToggleType.Switch, isOn: false })
-          .attributeModifier(this._blurToggleMod)
+          .commonStyle(this.componentKey).attributeModifier(this._blurToggleMod)
         } else if (this.targetView == 'Web') {
-          Web({ src: 'www.example.com', controller: new WebviewController() })
+          Web({ src: 'www.example.com', controller: new WebviewController() }).commonStyle(this.componentKey)
           .attributeModifier(this._blurWebMod)
         } else if (this.targetView == 'Circle') {
-          Circle()
+          Circle().commonStyle(this.componentKey)
         } else if (this.targetView == 'Ellipse') {
-          Ellipse()
+          Ellipse().commonStyle(this.componentKey)
         } else if (this.targetView == 'Line') {
           Line()
-            
+            .commonStyle(this.componentKey)
             .startPoint([0, 0])
             .endPoint([50, 100])
             .backgroundColor(Color.Black)
         } else if (this.targetView == 'Polyline') {
-          Polyline()
+          Polyline().commonStyle(this.componentKey)
         } else if (this.targetView == 'Polygon') {
-          Polygon()
+          Polygon().commonStyle(this.componentKey)
         } else if (this.targetView == 'Path') {
-          Path()
+          Path().commonStyle(this.componentKey)
         } else if (this.targetView == 'Rect') {
-          Rect()
+          Rect().commonStyle(this.componentKey)
         } else if (this.targetView == 'Shape') {
           Shape() {
             Rect().width(100).height(50)
-          }
+          }.commonStyle(this.componentKey)
         } else if (this.targetView == 'Badge') {
           Badge({
             count: 50,
@@ -902,22 +1395,22 @@ struct blurPage {
           } as BadgeParamWithNumber) {
             Button('message')
               .width(100).height(50).backgroundColor(0x317aff)
-          }.attributeModifier(this._blurBadgeMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._blurBadgeMod)
         } else if (this.targetView == 'Column') {
           Column() {
             Column().width('100%').height(30).backgroundColor(0xAFEEEE)
-          }.attributeModifier(this._blurColumnMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._blurColumnMod)
         } else if (this.targetView == 'ColumnSplit') {
           ColumnSplit() {
             Text('1').width('100%').height(50).backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
-          }.attributeModifier(this._blurColumnSplitMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._blurColumnSplitMod)
         } else if (this.targetView == 'Counter') {
           Counter() {
-          }.attributeModifier(this._blurCounterMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._blurCounterMod)
         } else if (this.targetView == 'Flex') {
           Flex() {
             Text('1').width('20%').height(50).backgroundColor(0xF5DEB3)
-          }.attributeModifier(this._blurFlexMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._blurFlexMod)
         } else if (this.targetView == 'GridRow') {
           GridRow({
             columns: 1,
@@ -929,7 +1422,7 @@ struct blurPage {
                 Row().width('100%').height('20vp')
               }.borderColor(color).borderWidth(2)
             })
-          }.attributeModifier(this._blurGridRowMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._blurGridRowMod)
         } else if (this.targetView == 'Grid') {
           Grid() {
             ForEach(['0', '1', '2', '3', '4'], (item: string) => {
@@ -943,11 +1436,11 @@ struct blurPage {
           }
           .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
           .rowsTemplate('1fr 1fr 1fr 1fr 1fr')
-          .attributeModifier(this._blurGridMod)
+          .commonStyle(this.componentKey).attributeModifier(this._blurGridMod)
           .backgroundColor(0xFAEEE0)
         } else if (this.targetView == 'List') {
           List() {
-          }.height('100%').width('100%').attributeModifier(this._blurListMod)
+          }.commonStyle(this.componentKey).height('100%').width('100%').attributeModifier(this._blurListMod)
         } else if (this.targetView == 'ListItem') {
           List({ space: 20, initialIndex: 0 }) {
             ListItem() {
@@ -955,7 +1448,7 @@ struct blurPage {
                 .width('100%')
                 .textAlign(TextAlign.Center)
                 .backgroundColor(Color.White)
-            }.attributeModifier(this._blurListItemMod)
+            }.commonStyle(this.componentKey).attributeModifier(this._blurListItemMod)
           }
           .width('100%')
           .height('100%')
@@ -963,22 +1456,22 @@ struct blurPage {
           List({ space: 0, initialIndex: 0 }) {
             ListItemGroup()
               .backgroundColor(Color.Yellow)
-              .attributeModifier(this._blurListItemGroupMod)
+              .commonStyle(this.componentKey).attributeModifier(this._blurListItemGroupMod)
           }.backgroundColor(Color.Pink)
           .width('100%')
           .height('100%')
         } else if (this.targetView == 'Navigator') {
-          
-          
-          
+          // Navigator() {
+          //   Text('Go to back page').width('100%').height(20)
+          // }.commonStyle(this.componentKey).backgroundColor(Color.Red).attributeModifier(this._blurNavigatorMod)
         } else if (this.targetView == 'Panel') {
-          
-          
-          
+          // Panel(true) {
+          //   Text('Text')
+          // }.backgroundColor(Color.Yellow).commonStyle(this.componentKey)
         } else if (this.targetView == 'Refresh') {
           Refresh({ refreshing: true }) {
             Text('123')
-          }.attributeModifier(this._blurRefreshMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._blurRefreshMod)
         } else if (this.targetView == 'RelativeContainer') {
           RelativeContainer() {
             Row()
@@ -990,13 +1483,13 @@ struct blurPage {
                 left: { anchor: '__container__', align: HorizontalAlign.Start }
               } as AlignRuleOption)
               .id('constraintSize')
-          }.attributeModifier(this._blurRelativeContainerMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._blurRelativeContainerMod)
         } else if (this.targetView == 'Row') {
-          Row().attributeModifier(this._blurRowMod)
+          Row().commonStyle(this.componentKey).attributeModifier(this._blurRowMod)
         } else if (this.targetView == 'RowSplit') {
           RowSplit() {
             Text('Text')
-          }.attributeModifier(this._blurRowSplitMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._blurRowSplitMod)
         } else if (this.targetView == 'Scroll') {
           Scroll() {
             Column() {
@@ -1008,7 +1501,7 @@ struct blurPage {
                   .textAlign(TextAlign.Center)
               }, (item: int) => item.toString())
             }.width('100%')
-          }.scrollBar(BarState.On).attributeModifier(this._blurScrollMod)
+          }.scrollBar(BarState.On).commonStyle(this.componentKey).attributeModifier(this._blurScrollMod)
         } else if (this.targetView == 'SideBarContainer') {
           SideBarContainer(SideBarContainerType.Embed) {
             Column() {
@@ -1023,10 +1516,10 @@ struct blurPage {
             Column() {
               Text('SideBarContainer content').fontSize(25)
             }.backgroundColor(Color.Orange)
-          }
+          }.commonStyle(this.componentKey).attributeModifier(this._blurSideBarContainerMod)
         } else if (this.targetView == 'Stack') {
           Stack() {
-          }.attributeModifier(this._blurStackMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._blurStackMod)
         } else if (this.targetView == 'Swiper') {
           Swiper() {
             ForEach([1, 2, 3], (item: int) => {
@@ -1035,18 +1528,18 @@ struct blurPage {
           }
           .indicator(true)
           .backgroundColor(Color.White)
-          
+          .commonStyle(this.componentKey).attributeModifier(this._blurSwiperMod)
         } else if (this.targetView == 'Tabs') {
           Tabs() {
             TabContent() {
               Column().width('100%').height('100%').backgroundColor('#00CB87')
             }
-          }.attributeModifier(this._blurTabsMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._blurTabsMod)
         } else if (this.targetView == 'TabContent') {
           Tabs() {
             TabContent() {
               Text('TabContent Test').width('100%').height('100%').backgroundColor(Color.White)
-            }.tabBar('Tabs1').attributeModifier(this._blurTabContentMod)
+            }.tabBar('Tabs1').commonStyle(this.componentKey).attributeModifier(this._blurTabContentMod)
           }.width('100%').height('100%')
         } else if (this.targetView == 'WaterFlow') {
           WaterFlow() {
@@ -1061,7 +1554,7 @@ struct blurPage {
                 }
               }
             }, (item: int) => item.toString())
-          }.attributeModifier(this._blurWaterFlowMod)
+          }.commonStyle(this.componentKey).attributeModifier(this._blurWaterFlowMod)
         } else if (this.targetView == 'StepperItem') {
           Stepper() {
             StepperItem() {
@@ -1070,7 +1563,7 @@ struct blurPage {
               }
             }
             .backgroundColor(Color.Red)
-            
+            .commonStyle(this.componentKey).attributeModifier(this._blurStepperItemMod)
           }
           .backgroundColor(Color.Yellow)
           .width('100%')
@@ -1083,7 +1576,7 @@ struct blurPage {
             GridCol() {
               Row().width('100%').height('20vp')
             }
-            .attributeModifier(this._blurGridColMod)
+            .commonStyle(this.componentKey).attributeModifier(this._blurGridColMod)
             .backgroundColor(Color.Yellow)
           }
           .backgroundColor(Color.Pink)
@@ -1101,7 +1594,7 @@ struct blurPage {
                     .objectFit(ImageFit.Fill)
                 }
               }
-              .attributeModifier(this._blurFlowItemMod)
+              .commonStyle(this.componentKey).attributeModifier(this._blurFlowItemMod)
               .backgroundColor(Color.Yellow)
             }, (item: int) => item.toString())
           }
@@ -1117,7 +1610,7 @@ struct blurPage {
                 .height('100%')
                 .textAlign(TextAlign.Center)
             }.rowStart(1).rowEnd(4)
-            .attributeModifier(this._blurGridItemMod)
+            .commonStyle(this.componentKey).attributeModifier(this._blurGridItemMod)
             .backgroundColor(Color.Yellow)
           }
           .backgroundColor(Color.Pink)
@@ -1127,7 +1620,7 @@ struct blurPage {
           Row() {
             Menu() {
               MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-                .attributeModifier(this._blurMenuItemMod)
+                .commonStyle(this.componentKey).attributeModifier(this._blurMenuItemMod)
             }.backgroundColor(Color.Yellow)
             .width('100%')
             .height('100%')
@@ -1138,7 +1631,7 @@ struct blurPage {
               MenuItemGroup({ header: 'MenuItemGroup' }) {
                 MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
               }
-              .attributeModifier(this._blurMenuItemGroupMod)
+              .commonStyle(this.componentKey).attributeModifier(this._blurMenuItemGroupMod)
             }.backgroundColor(Color.Yellow)
             .width('100%')
             .height('100%')
