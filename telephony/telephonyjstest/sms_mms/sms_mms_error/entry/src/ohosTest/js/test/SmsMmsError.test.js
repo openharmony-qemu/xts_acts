@@ -51,7 +51,7 @@ describe('SmsMmsErrorTest', function () {
     });
   });
 
-  
+
   /*
    * @tc.number  Telephony_SmsMms_createMessage_Promise_0200
    * @tc.name    Call interface CreateMessage,
@@ -80,8 +80,13 @@ describe('SmsMmsErrorTest', function () {
    */
   it('Telephony_SmsMms_hasSmsCapability_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
     let result = sms.hasSmsCapability();
-    console.log('Telephony_SmsMms_hasSmsCapability_0100 result : ' + result);
-    expect(result === false || result === true).assertTrue();
+    if (result) {
+      expect(result).assertEqual(true);
+      console.log(`Telephony_SmsMms_hasSmsCapability_0100 result : ${JSON.stringify(result)}`);
+    } else {
+      expect(result).assertEqual(false);
+      console.log(`Telephony_SmsMms_hasSmsCapability_0100 result : ${JSON.stringify(result)}`);
+    }
     done();
   });
 
@@ -231,7 +236,7 @@ describe('SmsMmsErrorTest', function () {
           console.info('Telephony_SmsMms_sendShortMessage_Async_0100 ' + JSON.stringify(data));
           expect().assertFail();
           done();
-        }        
+        }
       });
       done();
     } catch (error) {

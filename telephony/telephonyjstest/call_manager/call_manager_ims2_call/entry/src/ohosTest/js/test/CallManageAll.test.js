@@ -385,13 +385,14 @@ export default function CallManageImsCall() {
             let CaseName = 'Telephony_CallManager_Dial_Async_0100';
             try {
                 call.dial("", (err, data) => {
+                    expect(data == undefined).assertTrue();
                     console.info(CaseName + " case success" + JSON.stringify(data));
                     done();
                     return;
                 });
             } catch (err) {
                 console.info(CaseName + ' case error' + JSON.stringify(err));
-                expect().assertFail();
+                expect(err).assertFalse();
                 done();
             }
         });
@@ -408,13 +409,14 @@ export default function CallManageImsCall() {
                 call.dial("", {
                     extras: false
                 }, (err, data) => {
+                    expect(data == undefined).assertTrue();
                     console.info(CaseName + " case success" + JSON.stringify(data));
                     done();
                     return;
                 });
             } catch (err) {
                 console.info(CaseName + ' case error' + JSON.stringify(err));
-                expect().assertFail();
+                expect(err).assertFalse();
                 done();
             }
         });
