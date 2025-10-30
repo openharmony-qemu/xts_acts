@@ -28,8 +28,8 @@ const TAG = '[SignificantMotion]';
 struct SignificantMotion {
   @State FillColor: string = '#FF000000';
   @State name: string = 'SignificantMotion';
-  @State StepTips: string = '测试目的：用于测试本机传感器,确定是否有大幅动作检测传感器' + '\n操作步骤：\n1.确定设备是否有大幅动作检测传感器\n2.如果有该传感器，点击开启并大幅度甩动设备，观察数值或触发次数是否为“1”\n(若点击开启直接返回上一级，则表示设备无该传感器)\n'
-    + '\n预期结果：各方向的数值是为“1”或触发次数发生变化';
+  @State StepTips: string = '测试目的：用于测试本机传感器,确定是否有大幅动作检测传感器' + '\n操作步骤：\n1.确定设备是否有大幅动作检测传感器\n2.如果有该传感器，点击开启并大幅度甩动设备(持续15秒)，观察数值或触发次数是否为“1”\n(若点击开启直接返回上一级，则表示设备无该传感器)\n'
+    + '\n预期结果：是否有大幅运动为“1”或触发次数发生变化';
   @State Vue: boolean = false;
   @State isHave: boolean = true;
   @State sensorChange: boolean = false;
@@ -66,7 +66,7 @@ struct SignificantMotion {
         }, { interval: 100000000 });
         setTimeout(() => {
           sensor.off(sensor.SensorId.SIGNIFICANT_MOTION);
-        }, 5000);
+        }, 15000);
       } catch (error) {
         let e: BusinessError.BusinessError = error as BusinessError.BusinessError;
         if (e) {
