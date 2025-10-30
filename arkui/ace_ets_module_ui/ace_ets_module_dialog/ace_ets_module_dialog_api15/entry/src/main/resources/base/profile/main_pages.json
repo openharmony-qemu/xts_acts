@@ -17,6 +17,6 @@
     "MainAbility/pages/buttonType/buttonTypeTest",
     "MainAbility/pages/customDialog/customDialogKeyboardAvoidDistance",
     "MainAbility/pages/prompt/promptActionKeyboardAvoidDistance",
-    "MainAbility/pages/UIContext/setOverlayManagerOptionsReturn"
+    "MainAbility/pages/dialog/setOverlayManagerOptionsReturn"
   ]
 }

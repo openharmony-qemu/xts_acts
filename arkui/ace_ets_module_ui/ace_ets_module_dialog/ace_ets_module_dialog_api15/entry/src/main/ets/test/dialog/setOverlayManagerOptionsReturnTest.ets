@@ -22,7 +22,7 @@ export default function setOverlayManagerOptionsReturnTest() {
     beforeEach(async (done: Function) => {
       console.info("setOverlayManagerOptionsReturnTest beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/UIContext/setOverlayManagerOptionsReturn",
+        url: "MainAbility/pages/dialog/setOverlayManagerOptionsReturn",
       }
       try {
         router.clear();
