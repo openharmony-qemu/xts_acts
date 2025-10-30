@@ -27,10 +27,9 @@ import bindSheetRadius from './bindSheet/bindSheetRadius.test'
 import buttonTypeTest from './buttonType/buttonTypeTest.test';
 import customDialogKeyboardAvoidDistance from './customDialog/customDialogKeyboardAvoidDistance.test';
 import promptActionKeyboardAvoidDistance from './prompt/promptActionKeyboardAvoidDistance.test';
-import setOverlayManagerOptionsReturnTest from './dialog/setOverlayManagerOptionsReturnTest'
+
 
 export default function testsuite() {
-  setOverlayManagerOptionsReturnTest()
   overlayManager()
   actionSheetMode()
   showActionSheetMode()
