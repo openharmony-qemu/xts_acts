@@ -326,6 +326,85 @@ export default function audioFramework() {
     })
 
     /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIOCAPTURER_STATECHANGE_PERIODREACH_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIOCAPTURER_STATECHANGE_PERIODREACH_STATIC_0100
+     * @tc.desc        on_off_statechange_periodreach
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIOCAPTURER_STATECHANGE_PERIODREACH_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000, // ²ÉÑùÂÊ¡£
+        channels: audio.AudioChannel.CHANNEL_2, // Í¨µÀ¡£
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE, // ²ÉÑù¸ñÊ½¡£
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW // ±àÂë¸ñÊ½¡£
+      };
+
+      let audioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_CAMCORDER,
+        capturerFlags: 0 // ÒôÆµ²É¼¯Æ÷±êÖ¾¡£
+      };
+
+      let audioCapturerOptions:audio.AudioCapturerOptions = {
+        streamInfo: audioStreamInfo,
+        capturerInfo: audioCapturerInfo
+      };
+
+      let audioCapturer: audio.AudioCapturer;
+
+      audio.createAudioCapturer(audioCapturerOptions).then((data) => {
+        audioCapturer = data;
+        console.info('AudioCapturer Created : SUCCESS');
+        data.getCapturerInfo().then((audioParamsGet: audio.AudioCapturerInfo) => {
+          if (audioParamsGet != undefined) {
+            console.info('AudioFrameworkRecLog: Capturer CapturerInfo:');
+            if (audioParamsGet.source == audio.SourceType.SOURCE_TYPE_CAMCORDER) {
+              console.info(`AudioFrameworkRecLog: Capturer SourceType: ${audioParamsGet.source}`);
+              expect(audioParamsGet.source).assertEqual(13);
+            }
+            console.info(`AudioFrameworkRecLog: Capturer capturerFlags: ${audioParamsGet.capturerFlags}`);
+          } else {
+            console.info(`AudioFrameworkRecLog: audioParamsGet is : ${audioParamsGet}`);
+            console.info('AudioFrameworkRecLog: audioParams getCapturerInfo are incorrect');
+          }
+        }).catch(async(err: BusinessError) => {
+          console.error(`AudioFrameworkRecLog: CapturerInfo :ERROR: ${err}`);
+        })
+        let periodReachCallback = (position: long) => {
+          if (position == 1000) {
+            console.info('ON Triggered successfully');
+          }
+        };
+        data.onPeriodReach(1000, periodReachCallback);
+        data.offPeriodReach(periodReachCallback);
+        let stateChangeCallback = (state: audio.AudioState) => {
+          if (state == 1) {
+            console.info('audio renderer state is: STATE_PREPARED');
+          }
+          if (state == 2) {
+            console.info('audio renderer state is: STATE_RUNNING');
+          }
+        };
+        data.onStateChange(stateChangeCallback);
+        data.offStateChange(stateChangeCallback);
+        data.release().then(() => {
+          console.info('AudioFrameworkRecLog: ---------RELEASE RECORD---------');
+          console.info('AudioFrameworkRecLog: Capturer release : SUCCESS');
+          console.info(`AudioFrameworkRecLog: AudioCapturer : STATE : ${audioCapturer.state}`);
+        }).catch(async(err: BusinessError) => {
+          console.error(`AudioFrameworkRecLog: Capturer stop: ERROR: ${err}`);
+          expect(true).assertFalse();
+        });
+      }).catch(async(err: BusinessError) => {
+        console.error(`AudioCapturer Created : ERROR : ${err}`);
+        expect(true).assertFalse();
+      });
+      done();
+    })
+
+    /**
      * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0100
      * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_INTERRUPT_STATIC_0100
      * @tc.desc        InterruptType - INTERRUPT_TYPE_BEGIN
@@ -990,6 +1069,27 @@ export default function audioFramework() {
         expect(false).assertTrue();
         done();
       }
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_GETSPATIALIZATIONMANAGER_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_GETSPATIALIZATIONMANAGER_STATIC_0100
+     * @tc.desc        OFF_VOLUMECHANGE 6800101
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_GETSPATIALIZATIONMANAGER_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let audioSpatializationManager: audio.AudioSpatializationManager = audio.getAudioManager().getSpatializationManager();
+        let isSpatializationEnabledForCurrentDevice: boolean = audioSpatializationManager.isSpatializationEnabledForCurrentDevice();
+        console.info(`AudioSpatializationManager isSpatializationEnabledForCurrentDevice: ${isSpatializationEnabledForCurrentDevice}`);
+      } catch (error: BusinessError) {
+        console.info(`Fail, error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
+        expect(false).assertTrue();
+      }
+      expect(true).assertTrue();
+      done();
     })
 
     /**

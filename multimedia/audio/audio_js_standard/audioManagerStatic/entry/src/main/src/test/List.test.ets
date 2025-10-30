@@ -17,6 +17,7 @@ import audioFramework from "./AudioFramework.test";
 import getAudioSceneApi12 from "./GetAudioScene.test"
 import audioRoutingManager from "./AudioRoutingManager.test"
 import audioLoopBack from './AudioLoopBack.test';
+import audioSpatializationManager from './AudioSpatializationManager.test';
 import Utils from './Util.test';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -56,4 +57,5 @@ export default function testsuite() {
     audioRoutingManager();
     getAudioSceneApi12();
     audioLoopBack();
+    audioSpatializationManager();
 }

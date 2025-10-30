@@ -2102,6 +2102,58 @@ export default function audioCapturer() {
     })
 
     /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_TIMESTAMP_INFO_SYNC_STATIC
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_TIMESTAMP_INFO_SYNC_STATIC
+     * @tc.desc        AudioCapturer GET_AUDIO_TIMESTAMP_INFO_SYNC
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_TIMESTAMP_INFO_SYNC_STATIC',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let AudioStreamInfo: audio.AudioStreamInfo = {
+          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+          channels: audio.AudioChannel.CHANNEL_2,
+          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let AudioCapturerInfo: audio.AudioCapturerInfo = {
+          source: audio.SourceType.SOURCE_TYPE_MIC,
+          capturerFlags: 0
+        }
+        let AudioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: AudioStreamInfo,
+          capturerInfo: AudioCapturerInfo
+        }
+
+        let audioCapPromise: audio.AudioCapturer;
+        try {
+          audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
+        } catch (err: BusinessError) {
+          console.log(`${Tag} createAudioCapturer err: ${JSON.stringify(err)}`);
+          expect(false).assertTrue();
+          done();
+        }
+        try {
+          await audioCapPromise.start();
+          let audioTimestampInfo: audio.AudioTimestampInfo = audioCapPromise.getAudioTimestampInfoSync();
+          console.log(`${Tag} framePos: ${JSON.stringify(audioTimestampInfo.framePos)},
+          timestamp: ${JSON.stringify(audioTimestampInfo.timestamp)}`)
+          expect(audioTimestampInfo.timestamp != 0).assertTrue();
+        } catch (err: BusinessError) {
+          console.log(`${Tag} start-getAudioTimestampInfoSync err: ${JSON.stringify(err)}`);
+          expect(false).assertTrue();
+        }
+        try {
+          await audioCapPromise.release();
+        } catch (err: BusinessError) {
+          console.log(`${Tag} err: ${JSON.stringify(err)}`);
+          expect(false).assertTrue();
+        }
+        done();
+      })
+
+    /**
      * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOP_BEFORE_START_STATIC_0100
      * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOP_BEFORE_START_STATIC_0100
      * @tc.desc        AudioCapturer createAudioCapturer->stop->release
@@ -3032,6 +3084,120 @@ export default function audioCapturer() {
         console.log(`${caseTag} fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
       } finally {
+        done();
+      }
+    })
+
+    /**
+     * @tc.number      SUB_AUDIO_AUDIOCAPTURE_ON_MARKREACH_STATIC_0100
+     * @tc.name        SUB_AUDIO_AUDIOCAPTURE_ON_MARKREACH_STATIC_0100
+     * @tc.desc        AudioCapturer ON MARKREACH
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_AUDIO_AUDIOCAPTURE_ON_MARKREACH_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(AudioCapturerOptions);
+      let cb1: Callback<long> = () => {
+        console.info('Current callback is cb1');
+      }
+      let flag : boolean =false;
+      try {
+        let para1: long = 0;
+        audioCapturer.onMarkReach(para1, cb1);
+      } catch (err: BusinessError) {
+        console.log(`err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        flag = true;
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_AUDIO_AUDIOCAPTURE_ON_PERIODREACH_STATIC_0100
+     * @tc.name        SUB_AUDIO_AUDIOCAPTURE_ON_PERIODREACH_STATIC_0100
+     * @tc.desc        AudioCapturer ON PERIODREACH
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_AUDIO_AUDIOCAPTURE_ON_PERIODREACH_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(AudioCapturerOptions);
+      let cb1: Callback<long> =() =>{
+        console.info('Current callback is cb1');
+      }
+      let flag: boolean =false;
+      try {
+        let para1: long = 0;
+        audioCapturer.onPeriodReach(para1, cb1);
+      } catch (err: BusinessError) {
+        console.log(`err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        flag = true;
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_AUDIO_AUDIOCAPTURE_SOURCETYPE_UNPROCESSED_STATIC_0100
+     * @tc.name        SUB_AUDIO_AUDIOCAPTURE_SOURCETYPE_UNPROCESSED_STATIC_0100
+     * @tc.desc        SOURCETYPE_UNPROCESSED
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_AUDIO_AUDIOCAPTURE_SOURCETYPE_UNPROCESSED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+
+      try {
+        let audioCapturer: audio.AudioCapturer = await audio.createAudioCapturer(AudioCapturerOptions);
+        done();
+      } catch (error: BusinessError) {
+        console.log(`error : ${error.message},Code:${error.code}`);
+        expect().assertFail();
         done();
       }
     })

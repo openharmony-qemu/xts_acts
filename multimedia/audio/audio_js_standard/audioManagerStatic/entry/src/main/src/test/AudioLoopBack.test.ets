@@ -106,7 +106,7 @@ export default function audioLoopBack() {
     it("SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
         try {
-          let audioLoopBack: audio.AudioLoopback | null  = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+          let audioLoopBack: audio.AudioLoopback | null = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
           expect(null != audioLoopBack);
           audioLoopBack?.setVolume(0.5);
           done();
@@ -133,7 +133,7 @@ export default function audioLoopBack() {
     it("SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
         try {
-          let audioLoopBack: audio.AudioLoopback | null  = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+          let audioLoopBack: audio.AudioLoopback | null = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
           expect(null != audioLoopBack);
           audioLoopBack?.setVolume(1);
           done();
@@ -160,7 +160,7 @@ export default function audioLoopBack() {
     it("SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
         try {
-          let audioLoopBack: audio.AudioLoopback | null  = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+          let audioLoopBack: audio.AudioLoopback | null = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
           expect(null != audioLoopBack);
           audioLoopBack?.setVolume(-0.1);
         } catch (err: BusinessError) {
@@ -187,7 +187,7 @@ export default function audioLoopBack() {
     it("SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
         try {
-          let audioLoopBack: audio.AudioLoopback | null  = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+          let audioLoopBack: audio.AudioLoopback | null = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
           expect(null != audioLoopBack);
           audioLoopBack?.setVolume(1.1);
         } catch (err: BusinessError) {
@@ -214,7 +214,7 @@ export default function audioLoopBack() {
     it("SUB_MULTIMEDIA_AUDIO_GETSTATUS_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
         try {
-          let audioLoopBack: audio.AudioLoopback | null  = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+          let audioLoopBack: audio.AudioLoopback | null = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
           expect(null != audioLoopBack);
           if (audioLoopBack != null) {
             let res = await audioLoopBack.getStatus();
@@ -241,7 +241,7 @@ export default function audioLoopBack() {
     it("SUB_MULTIMEDIA_AUDIO_ENABLE_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
         try {
-          let audioLoopback: audio.AudioLoopback | null  = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
+          let audioLoopback: audio.AudioLoopback | null = await audio.createAudioLoopback(audio.AudioLoopbackMode.HARDWARE);
           expect(null != audioLoopBack);
           audioLoopback?.onStatusChange((status: audio.AudioLoopbackStatus) => {
             if (status == audio.AudioLoopbackStatus.UNAVAILABLE_DEVICE) {

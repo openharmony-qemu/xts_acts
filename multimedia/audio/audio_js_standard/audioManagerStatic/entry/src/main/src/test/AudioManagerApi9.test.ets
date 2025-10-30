@@ -188,8 +188,36 @@ export default function audioManagerApi9() {
         expect(Number(error.code)).assertEqual(6800101);
         done();
       }
-
     })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_PERCENTAGE_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_PERCENTAGE_STATIC_0100
+     * @tc.desc        getAPPVolumePercentage
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_PERCENTAGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let audioVolumeManager = audioManager.getVolumeManager();
+      try {
+        let groupManager = audioVolumeManager.getAppVolumePercentage();
+        if ((typeof groupManager) == 'object') {
+          console.info('audioManagerApi9Test: Promise: getAppVolumePercentage  :  PASS');
+          expect(true).assertTrue();
+          done();
+        } else {
+          console.info('audioManagerApi9Test: Promise: getAppVolumePercentage  :  FAIL');
+          expect(false).assertTrue();
+          done();
+        }
+      } catch (error: BusinessError) {
+        console.error(`audioManagerApi9Test: failed to getAppVolumePercentage: Callback:  ${error.message},code:${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
     /**
      * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGERERROR_STATIC_0100
      * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGERERROR_STATIC_0100
@@ -843,6 +871,52 @@ export default function audioManagerApi9() {
           });
         }
       });
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_VOLUMECHANGE_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_VOLUMECHANGE_STATIC_0100
+     * @tc.desc        OnVolumeChange - setVolume - MEDIA
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 3
+     */
+    it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_VOLUMECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let audioVolumeManager = audioManager.getVolumeManager();
+      let groupManager = audioVolumeManager.getVolumeGroupManagerSync(audio.DEFAULT_VOLUME_GROUP_ID)
+      let maxVolume = await groupManager.getMaxVolume(audio.AudioVolumeType.MEDIA)
+      let minVolume = await groupManager.getMinVolume(audio.AudioVolumeType.MEDIA)
+      await groupManager.setVolume(audio.AudioVolumeType.MEDIA, maxVolume)
+      await Utils.msSleep(5000);
+      audioVolumeManager.onAppVolumeChange((VolumeEvent) => {
+        console.info(`SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_VOLUMECHANGE_STATIC_0100 VolumeEvent.volumeType: ${VolumeEvent.volumeType}, VolumeEvent.volume:${VolumeEvent.volume},VolumeEvent.volumeMode:${VolumeEvent.volumeMode}, VolumeEvent.updateUi:${VolumeEvent.updateUi}`);
+        expect(VolumeEvent.volumeType).assertEqual(audio.AudioVolumeType.MEDIA);
+        expect(VolumeEvent.volume).assertEqual(minVolume);
+        expect(VolumeEvent.updateUi).assertEqual(false);
+        done();
+      });
+      await groupManager.setVolume(audio.AudioVolumeType.MEDIA, minVolume)
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_AUDIO_AUDIORENDER_OFF_DEVICECHANGE_STATIC_0200
+     * @tc.name        SUB_AUDIO_AUDIORENDER_OFF_DEVICECHANGE_STATIC_0200
+     * @tc.desc        OnVolumeChange - getVolumeManager - MEDIA
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_AUDIO_AUDIORENDER_OFF_DEVICECHANGE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try {
+        let audioSpatializationManager: audio.AudioSpatializationManager = audioManager.getSpatializationManager();
+        done();
+      } catch (error: BusinessError) {
+        console.info(`ON_MICSTATECHANGE error ${error.message}, code ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+      done();
     })
 
     /**
