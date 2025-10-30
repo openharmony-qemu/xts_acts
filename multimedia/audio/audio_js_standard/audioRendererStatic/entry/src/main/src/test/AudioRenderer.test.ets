@@ -11508,15 +11508,15 @@ export default function audioRendererTest() {
      */
     it("SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
-        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000, // 采样率。
-        channels: audio.AudioChannel.CHANNEL_2, // 通道。
-        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE, // 采样格式。
-        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW // 编码格式。
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
       };
 
       let audioRendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_MUSIC, // 音频流使用类型：音乐。根据业务场景配置，参考StreamUsage。
-        rendererFlags: 0, // 音频渲染器标志。
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0,
         volumeMode: audio.AudioVolumeMode.SYSTEM_GLOBAL
       };
 
