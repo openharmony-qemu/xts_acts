@@ -23,6 +23,13 @@ function sleep(delay) {
 
 function seStateOnCb(data){
     console.info("[NFC_test] omapi.on ServiceState: ", data);
+    if (data == secureElement.ServiceState.DISCONNECTED) {
+        console.info("[NFC_test] omapi.on ServiceState: ", data);
+        expect(data).assertEqual(secureElement.ServiceState.DISCONNECTED);
+    } else {
+        console.info("[NFC_test] omapi.on ServiceState: ", data);
+        expect(data).assertEqual(secureElement.ServiceState.CONNECTED);
+    }
 }
 function seStateOffCb(data){
     console.info("[NFC_test] omapi.off ServiceState: ", data);
