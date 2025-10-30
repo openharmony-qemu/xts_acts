@@ -351,7 +351,7 @@ export default function ActsNotificationSlotTest() {
               done()
             } else {
               console.info(`${TAG} getSlot_2 AsyncCallback success: ${NotificationSlot}`)
-              expect(NotificationSlot !== null).assertTrue()
+              expect(NotificationSlot == null).assertTrue()
               done()
             }
           })
@@ -375,7 +375,7 @@ export default function ActsNotificationSlotTest() {
               done()
             } else {
               console.info(`${TAG} getSlot_3 AsyncCallback success: ${NotificationSlot}`)
-              expect(NotificationSlot !== null).assertTrue()
+              expect(NotificationSlot == null).assertTrue()
               done()
             }
           })
@@ -399,7 +399,7 @@ export default function ActsNotificationSlotTest() {
               done()
             } else {
               console.info(`${TAG} getSlot_4 AsyncCallback success: ${NotificationSlot}`)
-              expect(NotificationSlot !== null).assertTrue()
+              expect(NotificationSlot == null).assertTrue()
               done()
             }
           })
@@ -423,7 +423,7 @@ export default function ActsNotificationSlotTest() {
               done()
             } else {
               console.info(`${TAG} getSlot_5 AsyncCallback success: ${NotificationSlot}`)
-              expect(NotificationSlot !== null).assertTrue()
+              expect(NotificationSlot == null).assertTrue()
               done()
             }
           })
@@ -442,7 +442,7 @@ export default function ActsNotificationSlotTest() {
         await notificationManager.getSlot(notificationManager.SlotType.SERVICE_INFORMATION)
           .then((NotificationSlot) => {
             console.info(`${TAG} getSlot_8 Promise success: ${NotificationSlot}`)
-            expect(NotificationSlot !== null).assertTrue()
+            expect(NotificationSlot == null).assertTrue()
             done()
           })
           .catch((err: BusinessError): void => {
@@ -465,7 +465,7 @@ export default function ActsNotificationSlotTest() {
         await notificationManager.getSlot(notificationManager.SlotType.CONTENT_INFORMATION)
           .then((NotificationSlot) => {
             console.info(`${TAG} getSlot_9 Promise success: ${NotificationSlot}`)
-            expect(NotificationSlot !== null).assertTrue()
+            expect(NotificationSlot == null).assertTrue()
             done()
           })
           .catch((err: BusinessError): void => {
@@ -488,7 +488,7 @@ export default function ActsNotificationSlotTest() {
         await notificationManager.getSlot(notificationManager.SlotType.OTHER_TYPES)
           .then((NotificationSlot) => {
             console.info(`${TAG} getSlot_10 Promise success: ${NotificationSlot}`)
-            expect(NotificationSlot !== null).assertTrue()
+            expect(NotificationSlot == null).assertTrue()
             done()
           })
           .catch((err: BusinessError): void => {

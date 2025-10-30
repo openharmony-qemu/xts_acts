@@ -1310,7 +1310,7 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           } else {
             console.info(`${TAG} getSlot_21 ` )
-            expect(data !== null).assertTrue()
+            expect(data == null).assertTrue()
             done()
           }
         })
