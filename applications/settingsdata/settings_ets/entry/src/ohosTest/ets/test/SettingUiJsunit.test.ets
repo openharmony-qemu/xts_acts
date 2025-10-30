@@ -386,6 +386,14 @@ export default function settingUiJsunit() {
       done();
     });
 
+    /*
+     * @tc.number    : settings_set_value_023_2
+     * @tc.name      : settings_set_value_023_2
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 0
+     */
     it('settings_set_value_023_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let name = 'settings.screen.brightness142';
       let context = "context";
@@ -1172,6 +1180,14 @@ export default function settingUiJsunit() {
       }
     });
 
+    /*
+     * @tc.number    : settings_set_value_111_2
+     * @tc.name      : settings_set_value_111_2
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 0
+     */
     it('settings_set_value_111_2',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) => {
       let name = 'settings.screen.brightness1112';//关键字
       let value = 'brightness111'//值
@@ -1241,6 +1257,14 @@ export default function settingUiJsunit() {
       }
     });
 
+    /*
+     * @tc.number    : settings_set_value_112_3
+     * @tc.name      : settings_set_value_112_3
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 0
+     */
     it('settings_set_value_112_3',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) => {
       let name = 'settings.screen.brightness1123';//关键字
       let value = 'brightness1123'//值
@@ -1315,6 +1339,14 @@ export default function settingUiJsunit() {
       }
     });
 
+    /*
+     * @tc.number    : settings_can_show_floating_115
+     * @tc.name      : settings_can_show_floating_115
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 0
+     */
     it('settings_can_show_floating_115',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) => {
       try{
         settings.canShowFloating((err,data)=>{
@@ -1435,6 +1467,14 @@ export default function settingUiJsunit() {
       done();
     });
 
+    /*
+     * @tc.number    : settings_set_value_118_3
+     * @tc.name      : settings_set_value_118_3
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 0
+     */
     it('settings_set_value_118_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function) => {
       let name = 'settings.screen.brightness1183';//关键字
       let value = 'brightness1183';//值
@@ -1492,6 +1532,14 @@ export default function settingUiJsunit() {
       done();
     });
 
+    /*
+     * @tc.number    : settings_get_value_120_2
+     * @tc.name      : settings_get_value_120_2
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 0
+     */
     it('settings_get_value_120_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function) => {
       let name = 'settings.screen.brightness1220';//关键字
       let obj = '323445.00';//值
@@ -1542,6 +1590,14 @@ export default function settingUiJsunit() {
       done();
     });
 
+    /*
+     * @tc.number    : settings_unregister_Key_Observer_122_2
+     * @tc.name      : settings_unregister_Key_Observer_122_2
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 0
+     */
     it('settings_unregister_Key_Observer_122_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function) => {
       let name = 'settings.screen.brightness1222';//关键字
       let domainName = 'secure';
@@ -1576,6 +1632,14 @@ export default function settingUiJsunit() {
       done();
     });
 
+    /*
+     * @tc.number    : settings_register_Key_Observer_123_2
+     * @tc.name      : settings_register_Key_Observer_123_2
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 0
+     */
     it('settings_register_Key_Observer_123_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function) => {
       let name = 'settings.screen.brightness1232';//关键字
       let domainName = settings.domainName.DEVICE_SHARED;
@@ -1612,6 +1676,14 @@ export default function settingUiJsunit() {
       done();
     });
 
+    /*
+     * @tc.number    : open_manager_settings_119_2
+     * @tc.name      : open_manager_settings_119_2
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 0
+     */
     it('open_manager_settings_119_2', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
       try{
         let value = settings.openNetworkManagerSettings(globalThis.abilityContext);
