@@ -7,6 +7,7 @@ function sleep(time: number): Promise<void> {
     }, time);
   });
 }
+
 export default function Date5Test() {
   describe('Date5Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -217,7 +218,7 @@ export default function Date5Test() {
      * @tc.level Level 2
      */
     it('Date5Test_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date11 = new Date();
+      const date11 = new Date(2025, 10, 30);
       date11.setTime(0);
       const date11LocalStr =
         `${date11.getFullYear()}-${String(date11.getMonth() + 1).padStart(2, '0')}-${String(date11.getDate())
@@ -421,7 +422,7 @@ export default function Date5Test() {
      */
     it('Date5Test_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const targetTime23 = new Date(2099, 11, 31, 23, 59, 59).getTime();
-      const date23 = new Date();
+      const date23 = new Date(2025, 10, 30);
       date23.setTime(targetTime23);
       expect(date23.getFullYear()).assertEqual(2099);
       expect(date23.getMonth()).assertEqual(11);
@@ -566,7 +567,7 @@ export default function Date5Test() {
      */
     it('Date5Test_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const negativeTimestamp = new Date(1969, 11, 31, 23, 59, 59).getTime();
-      const date32 = new Date();
+      const date32 = new Date(2025, 10, 30);
       date32.setTime(negativeTimestamp);
       expect(date32.toString()).assertEqual("Wed Dec 31 1969 23:59:59 GMT+0800");
     });
@@ -693,7 +694,7 @@ export default function Date5Test() {
      */
     it('Date5Test_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const baseTimestamp = new Date(2025, 2, 1, 10, 0, 0).getTime();
-      const date40 = new Date();
+      const date40 = new Date(2025, 10, 30);
       date40.setTime(baseTimestamp);
       date40.setMonth(5);
       date40.setMilliseconds(780);
@@ -889,7 +890,7 @@ export default function Date5Test() {
      */
     it('Date5Test_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const dayEndTimestamp = new Date(2024, 4, 10, 23, 59, 59).getTime();
-      const date52 = new Date();
+      const date52 = new Date(2025, 10, 30);
       date52.setTime(dayEndTimestamp + 1000);
       expect(date52.getDate()).assertEqual(11);
       expect(date52.getHours()).assertEqual(0);
@@ -1136,7 +1137,7 @@ export default function Date5Test() {
      */
     it('Date5Test_067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const y2kTimestamp = new Date(2000, 0, 1, 0, 0, 0).getTime();
-      const date67 = new Date();
+      const date67 = new Date(2025, 10, 30);
       date67.setTime(y2kTimestamp);
       expect(date67.getFullYear()).assertEqual(2000);
       expect(date67.getMonth()).assertEqual(0);
@@ -1392,7 +1393,7 @@ export default function Date5Test() {
      */
     it('Date5Test_082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const minSafeTimestamp = new Date(Number.MIN_SAFE_INTEGER).getTime();
-      const date82 = new Date();
+      const date82 = new Date(2025, 10, 30);
       date82.setTime(minSafeTimestamp);
       expect(isNaN(date82.getFullYear())).assertEqual(true);
       expect(isNaN(date82.getMonth())).assertEqual(true);
@@ -1526,7 +1527,7 @@ export default function Date5Test() {
      */
     it('Date5Test_090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const baseTime90 = new Date(2025, 5, 1, 12, 0, 0).getTime();
-      const date90 = new Date();
+      const date90 = new Date(2025, 10, 30);
       date90.setTime(baseTime90);
       date90.setDate(35);
       date90.setHours(30);
@@ -1645,7 +1646,7 @@ export default function Date5Test() {
      */
     it('Date5Test_097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const maxSafeTimestamp = new Date(Number.MAX_SAFE_INTEGER).getTime();
-      const date97 = new Date();
+      const date97 = new Date(2025, 10, 30);
       date97.setTime(maxSafeTimestamp);
       expect(isNaN(date97.getFullYear())).assertEqual(true);
       expect(isNaN(date97.getMonth())).assertEqual(true);
@@ -1897,7 +1898,7 @@ export default function Date5Test() {
      */
     it('Date5Test_112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const fixedTimestamp = 1717209600000;
-      const date112 = new Date();
+      const date112 = new Date(2025, 10, 30);
       date112.setTime(fixedTimestamp);
       expect(date112.getFullYear()).assertEqual(2024);
       expect(date112.getMonth()).assertEqual(5);
@@ -2158,7 +2159,7 @@ export default function Date5Test() {
      * @tc.level Level 2
      */
     it('Date5Test_128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date128 = new Date();
+      const date128 = new Date(2025, 10, 30);
       date128.setTime(-1000000000000);
       expect(date128.getFullYear()).assertEqual(1938);
       expect(date128.getMonth()).assertEqual(3);
@@ -2398,7 +2399,7 @@ export default function Date5Test() {
      * @tc.level Level 2
      */
     it('Date5Test_143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date143 = new Date();
+      const date143 = new Date(2025, 10, 30);
       date143.setTime(-5000000000000);
       expect(date143.getFullYear()).assertEqual(1811);
       expect(date143.getMonth()).assertEqual(6);
