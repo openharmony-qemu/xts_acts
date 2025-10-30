@@ -886,7 +886,7 @@ export default function audioManagerApi9() {
       let groupManager = audioVolumeManager.getVolumeGroupManagerSync(audio.DEFAULT_VOLUME_GROUP_ID)
       let maxVolume = await groupManager.getMaxVolume(audio.AudioVolumeType.MEDIA)
       let minVolume = await groupManager.getMinVolume(audio.AudioVolumeType.MEDIA)
-      await groupManager.setVolume(audio.AudioVolumeType.MEDIA, maxVolume)
+      await audioVolumeManager.setAppVolumePercentage(maxVolume);
       await Utils.msSleep(5000);
       audioVolumeManager.onAppVolumeChange((VolumeEvent) => {
         console.info(`SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_VOLUMECHANGE_STATIC_0100 VolumeEvent.volumeType: ${VolumeEvent.volumeType}, VolumeEvent.volume:${VolumeEvent.volume},VolumeEvent.volumeMode:${VolumeEvent.volumeMode}, VolumeEvent.updateUi:${VolumeEvent.updateUi}`);
@@ -895,7 +895,7 @@ export default function audioManagerApi9() {
         expect(VolumeEvent.updateUi).assertEqual(false);
         done();
       });
-      await groupManager.setVolume(audio.AudioVolumeType.MEDIA, minVolume)
+      await audioVolumeManager.setAppVolumePercentage(minVolume);
       done();
     })
 
