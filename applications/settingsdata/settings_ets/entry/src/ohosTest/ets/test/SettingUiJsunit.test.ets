@@ -1309,7 +1309,8 @@ export default function settingUiJsunit() {
           })
       }catch(err){
         console.info("[settings_get_value_112] error is:" + String(err));
-        expect(true).assertTrue();
+        let codeResult: boolean = err?.code ?? defaultCode >= -1;
+        expect(codeResult).assertTrue();
         done();
         return;
       }
