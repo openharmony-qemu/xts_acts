@@ -112,31 +112,31 @@ export default function RequestPermissionOnSettingTest() {
     })
 
     /**
-     * @tc.number Test_getSelfPermissionStatus_001
-     * @tc.name Test_getSelfPermissionStatus_001
-     * @tc.desc test requestPermissionOnSetting result is DENIED.
+     * @tc.number Test_getSelfPermissionStatus_007
+     * @tc.name Test_getSelfPermissionStatus_007
+     * @tc.desc test getSelfPermissionStatus result is DENIED.
      * @tc.level: Level3
      * @tc.size: MediumTest
      * @tc.type: Function
      */
-    it('Test_getSelfPermissionStatus_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      hilog.info(domain, tag, "Test_getSelfPermissionStatus_001 start");
+    it('Test_getSelfPermissionStatus_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      hilog.info(domain, tag, "Test_getSelfPermissionStatus_007 start");
       let atManager = abilityAccessCtrl.createAtManager();
       let context: Context = getContext(globalThis) as common.UIAbilityContext;
       let permissionList: Array<Permissions> = new Array<Permissions>("ohos.permission.WRITE_CALENDAR");
       try {
         //1.申请权限弹框，并选择拒绝授权
-        hilog.info(domain,'testTag',"Test_getSelfPermissionStatus_001 begin request Permission from user");
+        hilog.info(domain,'testTag',"Test_getSelfPermissionStatus_007 begin request Permission from user");
         atManager.requestPermissionsFromUser(context, permissionList).then((data: PermissionRequestResult): void => {
-          hilog.info(domain,tag,"Test_getSelfPermissionStatus_001 requestPermissionsFromUser data " + JSON.stringify(data));
+          hilog.info(domain,tag,"Test_getSelfPermissionStatus_007 requestPermissionsFromUser data " + JSON.stringify(data));
           expect(data.permissions.length).assertEqual(permissionList.length);
           expect(data.authResults[0]).assertEqual(-1);//-1:DENIED
           expect(data.dialogShownResults?.[0]).assertEqual(true);
-          hilog.info(domain,tag,"Test_requestPermissionOnSetting_001 requestPermissionsFromUser expect ");
+          hilog.info(domain,tag,"Test_getSelfPermissionStatus_007 requestPermissionsFromUser expect ");
 
           //2. 查询授权结果
           let res: abilityAccessCtrl.PermissionStatus = atManager.getSelfPermissionStatus("ohos.permission.WRITE_CALENDAR");
-          hilog.info(domain,tag,"Test_getSelfPermissionStatus_001 getSelfPermissionStatus res " + JSON.stringify(res));
+          hilog.info(domain,tag,"Test_getSelfPermissionStatus_007 getSelfPermissionStatus res " + JSON.stringify(res));
           expect(res).assertEqual(abilityAccessCtrl.PermissionStatus.DENIED); //-1:DENIED
           done();
         });
@@ -145,20 +145,20 @@ export default function RequestPermissionOnSettingTest() {
         let button1 = await driver3.findComponent(ON.text('不允许'));
         let button2 = await driver3.findComponent(ON.text('禁止'));
         await Utils.sleep(500);
-        console.info('Test_getSelfPermissionStatus_001 button1 is:' + JSON.stringify(button1));
-        console.info('Test_getSelfPermissionStatus_001 button2 is:' + JSON.stringify(button2));
+        console.info('Test_getSelfPermissionStatus_007 button1 is:' + JSON.stringify(button1));
+        console.info('Test_getSelfPermissionStatus_007 button2 is:' + JSON.stringify(button2));
         if(button1!== null){
-          console.info("Test_getSelfPermissionStatus_001 button1Click START====");
+          console.info("Test_getSelfPermissionStatus_007 button1Click START====");
           await button1.click();
-          console.info("Test_getSelfPermissionStatus_001 button1 reClick====");
+          console.info("Test_getSelfPermissionStatus_007 button1 reClick====");
         }
         if(button2!== null){
-          console.info("Test_getSelfPermissionStatus_001 button2Click START====");
+          console.info("Test_getSelfPermissionStatus_007 button2Click START====");
           await button2.click();
-          console.info("Test_getSelfPermissionStatus_001 button2 reClick====");
+          console.info("Test_getSelfPermissionStatus_007 button2 reClick====");
         }
       } catch (error) {
-        hilog.info(domain, tag, "Test_getSelfPermissionStatus_001 catch err" + error.code);
+        hilog.info(domain, tag, "Test_getSelfPermissionStatus_007 catch err" + error.code);
         expect(false).assertTrue();
         done();
       }
