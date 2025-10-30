@@ -30,6 +30,7 @@ import promptActionKeyboardAvoidDistance from './prompt/promptActionKeyboardAvoi
 import setOverlayManagerOptionsReturnTest from './dialog/setOverlayManagerOptionsReturnTest'
 
 export default function testsuite() {
+  setOverlayManagerOptionsReturnTest()
   overlayManager()
   actionSheetMode()
   showActionSheetMode()
@@ -44,5 +45,4 @@ export default function testsuite() {
   buttonTypeTest()
   customDialogKeyboardAvoidDistance()
   promptActionKeyboardAvoidDistance()
-  setOverlayManagerOptionsReturnTest()
 }

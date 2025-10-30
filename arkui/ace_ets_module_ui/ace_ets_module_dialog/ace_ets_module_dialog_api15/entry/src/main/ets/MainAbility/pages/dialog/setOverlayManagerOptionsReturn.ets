@@ -17,7 +17,7 @@
 @Component
 struct setOverlayManagerOptionsReturn {
   @State str: string = 'hello'
-  @State RootOverlay: boolean = true;
+  @State rootOverlay: boolean = true;
 
   build() {
     Column({ space: 5 }) {
@@ -29,7 +29,7 @@ struct setOverlayManagerOptionsReturn {
         .onClick(() => {
           let res: boolean = this.getUIContext().setOverlayManagerOptions
           ({
-            RootOverlay: this.RootOverlay
+            renderRootOverlay: this.rootOverlay
           })
           AppStorage.SetOrCreate('setOverlayManagerOptionsReturnBoolean', res)
           this.str = JSON.stringify(res)
