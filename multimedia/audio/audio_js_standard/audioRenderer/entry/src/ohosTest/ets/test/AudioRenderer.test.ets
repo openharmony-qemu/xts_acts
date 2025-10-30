@@ -14785,14 +14785,14 @@ export default function audioRendererTest() {
       audio.createAudioRenderer(audioRendererOptions,(err, data) => {
         if (err) {
           console.error(`AudioRenderer Created: Error: ${err}`);
-          expect(ture).assertFalse();
+          expect(true).assertFalse();
         } else {
           console.info('AudioRenderer Created: SUCCESS');
           audioRenderer = data;
           data.start((err: BusinessError) => {
             if (err) {
               console.error('Renderer start failed.');
-              expect(ture).assertFalse();
+              expect(true).assertFalse();
             } else {
               console.info('Renderer start success.');
             }
@@ -14800,7 +14800,7 @@ export default function audioRendererTest() {
           data.getRendererInfo((err: BusinessError, audioRendererInfo: audio.AudioRendererInfo) => {
             if (err) {
               console.error(`Failed to get renderer info. Code: ${err.code}, message: ${err.message}`);
-              expect(ture).assertFalse();
+              expect(true).assertFalse();
             } else {
               expect(audio.SourceType.SOURCE_TYPE_CAMCORDER).assertEqual(13);
               console.info(`Succeeded in getting renderer info, AudioRendererInfo: ${JSON.stringify(audioRendererInfo)}.`);
@@ -14809,7 +14809,7 @@ export default function audioRendererTest() {
           data.getStreamInfo((err: BusinessError, streamInfo: audio.AudioStreamInfo) => {
             if (err) {
               console.error(`Failed to get StreamInfo info. Code: ${err.code}, message: ${err.message}`);
-              expect(ture).assertFalse();
+              expect(true).assertFalse();
             } else {
               console.info('Renderer GetStreamInfo:');
               console.info(`Renderer sampling rate: ${streamInfo.samplingRate}`);
@@ -14821,7 +14821,7 @@ export default function audioRendererTest() {
           data.getBufferSize((err: BusinessError, value: number) => {
             if (err) {
               console.error('getBufferSize error');
-              expect(ture).assertFalse();
+              expect(true).assertFalse();
             } else {
               bufferSize = value;
               console.info(`AudioFrameworkRenderLog: getBufferSize: SUCCESS ${value}`);
@@ -14830,7 +14830,7 @@ export default function audioRendererTest() {
           data.drain((err: BusinessError) => {
             if (err) {
               console.error('Renderer drain failed');
-              expect(ture).assertFalse();
+              expect(true).assertFalse();
             } else {
               console.info('Renderer drained.');
             }
@@ -14838,7 +14838,7 @@ export default function audioRendererTest() {
           data.stop((err: BusinessError) => {
             if (err) {
               console.error('Renderer stop failed');
-              expect(ture).assertFalse();
+              expect(true).assertFalse();
             } else {
               console.info('Renderer stopped.');
             }
@@ -14846,7 +14846,7 @@ export default function audioRendererTest() {
           data.release((err: BusinessError) => {
             if (err) {
               console.error('Renderer release failed');
-              expect(ture).assertFalse();
+              expect(true).assertFalse();
             } else {
               console.info('Renderer released.');
             }
