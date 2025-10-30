@@ -996,7 +996,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           expect(null).assertFail();
         } catch (error: BusinessError) {
           console.error(`[XTS] Cms_Verify_Func_2400 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect(error.code).assertEqual(cert.CertResult.ERR_UNABLE_TO_GET_ISSUER_CERT_LOCALLY);
         }
         done();
       });
@@ -1028,7 +1028,7 @@ export default function certFrameworkCmsVerifyTestUnit() {
           expect(null).assertFail();
         } catch (error: BusinessError) {
           console.error(`[XTS] Cms_Verify_Func_2500 1 “${error}“, error code: ${error.code}`);
-          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+          expect(error.code).assertEqual(cert.CertResult.ERR_UNABLE_TO_GET_ISSUER_CERT_LOCALLY);
         } finally {
           try {
             await verify.getContentData();
