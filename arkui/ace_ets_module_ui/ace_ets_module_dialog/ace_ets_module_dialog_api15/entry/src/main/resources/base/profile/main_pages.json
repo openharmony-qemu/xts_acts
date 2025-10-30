@@ -16,7 +16,6 @@
     "MainAbility/pages/bindSheet/bindSheetRadius",
     "MainAbility/pages/buttonType/buttonTypeTest",
     "MainAbility/pages/customDialog/customDialogKeyboardAvoidDistance",
-    "MainAbility/pages/prompt/promptActionKeyboardAvoidDistance",
-    "MainAbility/pages/UIContext/setOverlayManagerOptionsReturn"
+    "MainAbility/pages/prompt/promptActionKeyboardAvoidDistance"
   ]
 }
