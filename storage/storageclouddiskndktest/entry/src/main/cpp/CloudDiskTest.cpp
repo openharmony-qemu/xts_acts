@@ -197,7 +197,7 @@ static napi_value SetFileSyncStates(napi_env env, napi_callback_info info)
                 .value = path1,
                 .length = strlen(path1)
             },
-            CloudDisk_SyncState::SYNC_SUCCESSED
+            CloudDisk_SyncState::SYNC_SUCCEEDED
         },
         {
             {
@@ -243,7 +243,7 @@ static napi_value GetFileSyncStates(napi_env env, napi_callback_info info)
 
     LOGW("OH_CloudDisk_GetFileSyncStates start.path: %{public}s", path);
     auto ret = OH_CloudDisk_GetFileSyncStates(pathInfo, paths, sizeof(paths) / sizeof(paths[0]),
-     &resultLists, &resultCount);
+    &resultLists, &resultCount);
     LOGW("OH_CloudDisk_GetFileSyncStates ret: %{public}d", ret);
     napi_value result_1 = nullptr;
     napi_create_int32(env, ret, &result_1);
@@ -260,10 +260,10 @@ static napi_value Init(napi_env env, napi_value exports)
         { "DeactiveSyncFolder", nullptr, DeactiveSyncFolder, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "GetSyncFolders", nullptr, GetSyncFolders, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "UpdateCustomAlias", nullptr, UpdateCustomAlias, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "RegisterSyncFolderChanges", nullptr, RegisterSyncFolderChanges, nullptr, nullptr, nullptr, 
-            napi_default, nullptr },
-        { "UnregisterSyncFolderChanges", nullptr, UnregisterSyncFolderChanges, nullptr, nullptr, nullptr, 
-            napi_default, nullptr },
+        { "RegisterSyncFolderChanges", nullptr, RegisterSyncFolderChanges, nullptr, nullptr, nullptr
+            , napi_default, nullptr },
+        { "UnregisterSyncFolderChanges", nullptr, UnregisterSyncFolderChanges, nullptr, nullptr, nullptr
+            , napi_default, nullptr },
         { "GetSyncFolderChanges", nullptr, GetSyncFolderChanges, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "SetFileSyncStates", nullptr, SetFileSyncStates, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "GetFileSyncStates", nullptr, GetFileSyncStates, nullptr, nullptr, nullptr, napi_default, nullptr },
