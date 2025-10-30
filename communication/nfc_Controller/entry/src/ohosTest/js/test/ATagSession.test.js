@@ -194,7 +194,7 @@ export default function nfcATagSessionTest() {
             if (getAtag != null && getAtag != undefined) {
                 try {
                     let timeoutMs = 1000;
-                    let settime  = getAtag.setSendDataTimeout(timeoutMs);
+                    let settime = getAtag.setSendDataTimeout(timeoutMs);
                     if (settime == true) {
                         console.info("[NFC_test] tagsession5 setSendDataTimeout:" + settime);
                         expect(settime).assertTrue();
