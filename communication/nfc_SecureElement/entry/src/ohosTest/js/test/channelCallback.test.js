@@ -86,6 +86,9 @@ export default function channelCallbacktest() {
                     }
                 }
             }).catch((err) =>{
+                if (err.code == 801) {
+                    expect(801).assertEqual(err.code);
+                }
                 console.info("[NFC_test] getSEService err.code " + err.code + "err.message " + err.message);
             })
             done();
