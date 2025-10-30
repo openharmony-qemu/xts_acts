@@ -201,5 +201,101 @@ export default function MultimodalTouchNdkTest() {
       }
       console.info(`${caseName} end to test OH_Input_SetAxisEventGlobalY`);
     });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_GetKeyEventId_0100
+     * @tc.name: SUB_MMI_Input_Api_GetKeyEventId_0100
+     * @tc.desc: OH_Input_GetKeyEventId Interface testing.
+     * @tc.level 0
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it('SUB_MMI_Input_Api_GetKeyEventId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_GetKeyEventId_0100';
+      console.info(`${caseName} start to test OH_Input_GetKeyEventId`);
+      try {
+        let data = touch.GetKeyEventId1();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        ExpectTrue(data == 1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        ExpectFalse(true);
+        done();
+      }
+      console.info(`${caseName} end to test OH_Input_GetKeyEventId`);
+    });
+
+    /**
+     * @tc.number: SUB_MMI_Input_Api_AddKeyEventHook_0100
+     * @tc.name: SUB_MMI_Input_Api_AddKeyEventHook_0100
+     * @tc.desc: OH_Input_AddKeyEventHook Interface testing.
+     * @tc.level 0
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it('SUB_MMI_Input_Api_AddKeyEventHook_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_AddKeyEventHook_0100';
+      console.info(`${caseName} start to test OH_Input_AddKeyEventHook`);
+      try {
+        let data = touch.AddKeyEventHook1();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        ExpectTrue(data == 1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        ExpectFalse(true);
+        done();
+      }
+      console.info(`${caseName} end to test OH_Input_AddKeyEventHook`);
+    });
+
+        /**
+     * @tc.number: SUB_MMI_Input_Api_RemoveKeyEventHook_0100
+     * @tc.name: SUB_MMI_Input_Api_RemoveKeyEventHook_0100
+     * @tc.desc: OH_Input_RemoveKeyEventHook Interface testing.
+     * @tc.level 0
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it('SUB_MMI_Input_Api_RemoveKeyEventHook_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_RemoveKeyEventHook_0100';
+      console.info(`${caseName} start to test OH_Input_RemoveKeyEventHook`);
+      try {
+        let data = touch.RemoveKeyEventHook1();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        ExpectTrue(data == 1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        ExpectFalse(true);
+        done();
+      }
+      console.info(`${caseName} end to test OH_Input_RemoveKeyEventHook`);
+    });
+
+        /**
+     * @tc.number: SUB_MMI_Input_Api_DispatchToNextHandler_0100
+     * @tc.name: SUB_MMI_Input_Api_DispatchToNextHandler_0100
+     * @tc.desc: OH_Input_DispatchToNextHandler Interface testing.
+     * @tc.level 0
+     * @tc.type: Function
+     * @tc.size: SmallTest
+     */
+    it('SUB_MMI_Input_Api_DispatchToNextHandler_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_DispatchToNextHandler_0100';
+      console.info(`${caseName} start to test OH_Input_DispatchToNextHandler`);
+      try {
+        let data = touch.DispatchToNextHandler1();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        ExpectTrue(data == 1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        ExpectFalse(true);
+        done();
+      }
+      console.info(`${caseName} end to test OH_Input_DispatchToNextHandler`);
+    });
   });
 }
