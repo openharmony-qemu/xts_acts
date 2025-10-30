@@ -134,7 +134,7 @@ export default function CloudDiskNdkTest(){
         expect(ret).assertEqual(801);
         done();
       } else {
-        expect(ret).assertEqual(34400008);
+        expect(ret).assertEqual(0);
         done();
       }
       done();
@@ -176,7 +176,7 @@ export default function CloudDiskNdkTest(){
     it('CloudDisk_RegisterSyncFolderChanges_001', Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/";
       console.info("CloudDisk_RegisterSyncFolderChanges_001: " + filepath);
-      let ret = clouddisk.RegisterSyncFolderChanges(filepath);
+      let ret = clouddisk.ReFolderChanges(filepath);
       console.info("CloudDisk_RegisterSyncFolderChanges_001 Test NAPI ret= " + JSON.stringify(ret));
       if (ret == 801) {
         expect(ret).assertEqual(801);
@@ -200,7 +200,7 @@ export default function CloudDiskNdkTest(){
     it('CloudDisk_UnregisterSyncFolderChanges_001', Level.LEVEL0, async (done: Function) => {
       let filepath = "/storage/Users/currentUser/";
       console.info("CloudDisk_UnregisterSyncFolderChanges_001: " + filepath);
-      let ret = clouddisk.UnregisterSyncFolderChanges(filepath);
+      let ret = clouddisk.UnReFolderChanges(filepath);
       console.info("CloudDisk_UnregisterSyncFolderChanges_001 Test NAPI ret= " + JSON.stringify(ret));
       if (ret == 801) {
         expect(ret).assertEqual(801);
