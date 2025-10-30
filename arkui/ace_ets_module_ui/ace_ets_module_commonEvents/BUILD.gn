@@ -37,6 +37,7 @@ group("ActsAceEtsModuleCommonEventsTest") {
       "ace_ets_module_commonEvents_noware_api14:ActsAceEtsModuleCommonEventsNoWearApi14Test",
       "ace_ets_module_commonEvents_nowear_api11:ActsAceEtsModuleCommonEventsNoWearApi11Test",
       "ace_ets_module_commonEvents_nowear_api20:ActsAceEtsModuleCommonEventsApiNowear20Test",
+      "ace_ets_module_commonEvents_nowear_api20_static:ActsAceEtsModuleCommonEventsApiNowear20Test",
       "ace_ets_module_commonEvents_api11_static:ActsAceEtsModuleCommonEventsApi11StaticTest",
       "ace_ets_module_commonEvents_api12_static:ActsAceEtsModuleCommonEventsApi12StaticTest",
       "ace_ets_module_commonEvents_api12None_static:ActsAceEtsModuleCommonEventsApi12NoneStaticTest",
