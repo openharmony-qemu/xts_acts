@@ -17,3 +17,6 @@ export const UnregisterSyncFolder: (path: string) => number;
 export const ActiveSyncFolder: (path: string) => number;
 export const DeactiveSyncFolder: (path: string) => number;
 export const GetSyncFolders: () => number;
+export const UpdateCustomAlias: (path: string) => number;
+export const RegisterSyncFolderChanges: (path: string) => number;
+export const UnregisterSyncFolderChanges: (path: string) => number;

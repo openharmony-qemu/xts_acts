@@ -23,6 +23,21 @@
 #include "common/logger_common.h"
 #include "common/utils.h"
 
+static uint64_t usn = 0;
+
+static void OnChangeDataCallback(const CloudDisk_SyncFolderPath syncFolderPath, const CloudDisk_ChangeData changeDatas[], size_t bufferLength)
+{
+    LOGI("OnChangeDataCallback start");
+    for (int32_t i = 0; i < bufferLength; ++i) {
+        auto data = changeDatas[i];
+        auto operationType = data.operationType;
+        auto path = data.relativePathInfo.value;
+        auto length = data.relativePathInfo.length;
+        usn = changeDatas[i].updateSequenceNumber;
+    }
+    LOGI("OnChangeDataCallback end");
+
+}
 
 static napi_value RegisterSyncFolder(napi_env env, napi_callback_info info)
 {
@@ -120,6 +135,36 @@ static napi_value UpdateCustomAlias(napi_env env, napi_callback_info info)
     return result_1;
 }
 
+static napi_value RegisterSyncFolderChanges(napi_env env, napi_callback_info info)
+{
+    char* path = GetStringParam(env, info);
+    CloudDisk_SyncFolderPath pathInfo;
+    pathInfo.value = path;
+    pathInfo.length = strlen(pathInfo.value);
+
+    LOGW("OH_CloudDisk_RegisterSyncFolderChanges start.path: %{public}s", path);
+    auto ret = OH_CloudDisk_RegisterSyncFolderChanges(pathInfo, &OnChangeDataCallback);
+    LOGW("OH_CloudDisk_RegisterSyncFolderChanges ret: %{public}d", ret);
+    napi_value result_1 = nullptr;
+    napi_create_int32(env, ret, &result_1);
+    return result_1;
+}
+
+static napi_value UnregisterSyncFolderChanges(napi_env env, napi_callback_info info)
+{
+    char* path = GetStringParam(env, info);
+    CloudDisk_SyncFolderPath pathInfo;
+    pathInfo.value = path;
+    pathInfo.length = strlen(pathInfo.value);
+
+    LOGW("OH_CloudDisk_UnregisterSyncFolderChanges start.path: %{public}s", path);
+    auto ret = OH_CloudDisk_UnregisterSyncFolderChanges(pathInfo);
+    LOGW("OH_CloudDisk_UnregisterSyncFolderChanges ret: %{public}d", ret);
+    napi_value result_1 = nullptr;
+    napi_create_int32(env, ret, &result_1);
+    return result_1;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -130,6 +175,8 @@ static napi_value Init(napi_env env, napi_value exports)
         { "DeactiveSyncFolder", nullptr, DeactiveSyncFolder, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "GetSyncFolders", nullptr, GetSyncFolders, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "UpdateCustomAlias", nullptr, UpdateCustomAlias, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "RegisterSyncFolderChanges", nullptr, RegisterSyncFolderChanges, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "UnregisterSyncFolderChanges", nullptr, UnregisterSyncFolderChanges, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

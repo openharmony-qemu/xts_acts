@@ -150,8 +150,58 @@ export default function CloudDiskNdkTest(){
      * @tc.require
      */
     it('CloudDisk_UpdateCustomAlias_001', Level.LEVEL0, async (done: Function) => {
-      let ret = clouddisk.UpdateCustomAlias();
+      let filepath = "/storage/Users/currentUser/";
+      console.info("CloudDisk_UpdateCustomAlias_001: " + filepath);
+      let ret = clouddisk.UpdateCustomAlias(filepath);
       console.info("CloudDisk_UpdateCustomAlias_001 Test NAPI ret= " + JSON.stringify(ret));
+      if (ret == 801) {
+        expect(ret).assertEqual(801);
+        done();
+      } else {
+        expect(ret).assertEqual(34400008);
+        done();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_RegisterSyncFolderChanges_0100
+     * @tc.name CloudDisk_RegisterSyncFolderChanges_001
+     * @tc.desc Test RegisterSyncFolderChanges() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('CloudDisk_RegisterSyncFolderChanges_001', Level.LEVEL0, async (done: Function) => {
+      let filepath = "/storage/Users/currentUser/";
+      console.info("CloudDisk_RegisterSyncFolderChanges_001: " + filepath);
+      let ret = clouddisk.RegisterSyncFolderChanges(filepath);
+      console.info("CloudDisk_RegisterSyncFolderChanges_001 Test NAPI ret= " + JSON.stringify(ret));
+      if (ret == 801) {
+        expect(ret).assertEqual(801);
+        done();
+      } else {
+        expect(ret).assertEqual(34400008);
+        done();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_UnregisterSyncFolderChanges_0100
+     * @tc.name CloudDisk_UnregisterSyncFolderChanges_001
+     * @tc.desc Test UnregisterSyncFolderChanges() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('CloudDisk_UnregisterSyncFolderChanges_001', Level.LEVEL0, async (done: Function) => {
+      let filepath = "/storage/Users/currentUser/";
+      console.info("CloudDisk_UnregisterSyncFolderChanges_001: " + filepath);
+      let ret = clouddisk.UnregisterSyncFolderChanges(filepath);
+      console.info("CloudDisk_UnregisterSyncFolderChanges_001 Test NAPI ret= " + JSON.stringify(ret));
       if (ret == 801) {
         expect(ret).assertEqual(801);
         done();
