@@ -223,7 +223,7 @@ export default function MultimodalTouchNdkTest() {
         ExpectFalse(true);
         done();
       }
-      console.info(`${caseName} end to test OH_Input_GetKeyEventId);
+      console.info(`${caseName} end to test OH_Input_GetKeyEventId`);
     });
 
     /**
@@ -247,7 +247,7 @@ export default function MultimodalTouchNdkTest() {
         ExpectFalse(true);
         done();
       }
-      console.info(`${caseName} end to test OH_Input_AddKeyEventHook);
+      console.info(`${caseName} end to test OH_Input_AddKeyEventHook`);
     });
 
         /**
@@ -271,7 +271,7 @@ export default function MultimodalTouchNdkTest() {
         ExpectFalse(true);
         done();
       }
-      console.info(`${caseName} end to test OH_Input_RemoveKeyEventHook);
+      console.info(`${caseName} end to test OH_Input_RemoveKeyEventHook`);
     });
 
         /**
@@ -295,7 +295,7 @@ export default function MultimodalTouchNdkTest() {
         ExpectFalse(true);
         done();
       }
-      console.info(`${caseName} end to test OH_Input_DispatchToNextHandler);
+      console.info(`${caseName} end to test OH_Input_DispatchToNextHandler`);
     });
   });
 }

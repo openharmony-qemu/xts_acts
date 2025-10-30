@@ -26,7 +26,7 @@
 const int GLOBAL_RESMGR = 0xFF00;
 const char *TAG = "[SensorCapiSample]";
 
-void HookCallback(const Input_KeyEvent *keyEvent) 
+void HookCallback(const Input_KeyEvent *keyEvent)
 {
     int32_t eventId{-1};
     if (OH_Input_GetKeyEventId(keyEvent, &eventId) != INPUT_SUCCESS) {
@@ -144,12 +144,9 @@ static napi_value AddKeyEventHook1(napi_env env, napi_callback_info info)
 
     Input_Result retResult = OH_Input_AddKeyEventHook(HookCallback);
     OH_LOG_INFO(LOG_APP, "SUB_MMI_Input_Api_AddKeyEventHook_0100 retResult:%{public}d", retResult);
-    napi_create_int32(env, 
-        (retResult == INPUT_PERMISSION_DENIED || 
-         retResult == INPUT_SERVICE_EXCEPTION || 
-         retResult == INPUT_DEVICE_NOT_SUPPORTED) ? 1 : 0, 
-        &result
-    );
+    napi_create_int32(env,
+        (retResult == INPUT_PERMISSION_DENIED || retResult == INPUT_SERVICE_EXCEPTION ||
+        retResult == INPUT_DEVICE_NOT_SUPPORTED) ? 1 : 0, &result);
     return result;
 }
 
@@ -172,11 +169,8 @@ static napi_value DispatchToNextHandler1(napi_env env, napi_callback_info info)
     OH_Input_GetKeyEventId(keyEvent, &eventId);
     Input_Result retResult = OH_Input_DispatchToNextHandler(eventId);
     OH_LOG_INFO(LOG_APP, "SUB_MMI_Input_Api_DispatchToNextHandler_0100 retResult:%{public}d", retResult);
-    napi_create_int32(env, 
-        (retResult == INPUT_PARAMETER_ERROR || 
-         retResult == INPUT_SERVICE_EXCEPTION) ? 1 : 0, 
-        &result
-    );
+    napi_create_int32(env,
+        (retResult == INPUT_PARAMETER_ERROR || retResult == INPUT_SERVICE_EXCEPTION) ? 1 : 0, &result);
     OH_Input_DestroyKeyEvent(&keyEvent);
     return result;
 }
