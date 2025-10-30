@@ -114,43 +114,17 @@ struct WebOnHttpErrorReceive {
          .javaScriptAccess(true)
          .geolocationAccess(true)
          .databaseAccess(true)
-         .onInterceptRequest((event:OnInterceptRequestEvent):WebResourceResponse => {
-           if (event) {
-             console.log('url:' + event.request.getRequestUrl())
-           }
-
-           let head1: Header = {
-             headerKey: 'Connection',
-             headerValue: 'keep-alive'
-           }
-           let head2: Header = {
-             headerKey: 'Cache-Control',
-             headerValue: 'no-cache'
-           }
-           this.heads.push(head1)
-           this.heads.push(head2)
-           this.responseWeb.setResponseHeader(this.heads)
-           this.responseWeb.setResponseData(this.webData)
-           this.responseWeb.setResponseEncoding('utf-8')
-           this.responseWeb.setResponseMimeType('text/html')
-           this.responseWeb.setReasonMessage('OK')
-
-           return this.responseWeb
-         })
-
          .onTitleReceive((event:OnTitleReceiveEvent):void => {
            if (event) {
              console.log('title:' + event.title);
              this.title = event.title
            }
          })
-
           .onHttpErrorReceive((event) => {
             console.info('isHttpErrorReceive==>' + this.httpErrorReceive)
             if (event) {
               this.httpErrorReceive = event.response.getResponseCode()
               console.info('isHttpErrorReceive==>' + this.httpErrorReceive)
-
             }
           })
       }
