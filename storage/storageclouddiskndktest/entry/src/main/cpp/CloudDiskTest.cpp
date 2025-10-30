@@ -92,6 +92,34 @@ static napi_value DeactiveSyncFolder(napi_env env, napi_callback_info info)
     return result_1;
 }
 
+static napi_value GetSyncFolders(napi_env env, napi_callback_info info)
+{
+    CloudDisk_SyncFolder *syncFolders;
+    size_t count = 0;
+    LOGW("OH_CloudDisk_GetSyncFolders start");
+    auto ret = OH_CloudDisk_GetSyncFolders(&syncFolders, &count);
+    LOGW("OH_CloudDisk_GetSyncFolders ret: %{public}d", ret, count);
+    napi_value result_1 = nullptr;
+    napi_create_int32(env, ret, &result_1);
+    return result_1;
+}
+
+static napi_value UpdateCustomAlias(napi_env env, napi_callback_info info)
+{
+    char* path = GetStringParam(env, info);
+    CloudDisk_SyncFolderPath pathInfo;
+    pathInfo.value = path;
+    pathInfo.length = strlen(pathInfo.value);
+    char* updateDisPlayName = "Newname";
+
+    LOGW("OH_CloudDisk_UpdateCustomAlias start.path: %{public}s", path);
+    auto ret = OH_CloudDisk_UpdateCustomAlias(pathInfo, updateDisPlayName, strlen(updateDisPlayName));
+    LOGW("OH_CloudDisk_UpdateCustomAlias ret: %{public}d", ret);
+    napi_value result_1 = nullptr;
+    napi_create_int32(env, ret, &result_1);
+    return result_1;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -100,6 +128,8 @@ static napi_value Init(napi_env env, napi_value exports)
         { "UnregisterSyncFolder", nullptr, UnregisterSyncFolder, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "ActiveSyncFolder", nullptr, ActiveSyncFolder, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "DeactiveSyncFolder", nullptr, DeactiveSyncFolder, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "GetSyncFolders", nullptr, GetSyncFolders, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "UpdateCustomAlias", nullptr, UpdateCustomAlias, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

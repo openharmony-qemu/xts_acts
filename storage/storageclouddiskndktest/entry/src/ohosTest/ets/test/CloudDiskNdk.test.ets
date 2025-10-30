@@ -64,7 +64,7 @@ export default function CloudDiskNdkTest(){
         expect(ret).assertEqual(801);
         done();
       } else {
-        expect(ret).assertEqual(34400002);
+        expect(ret).assertEqual(0);
         done();
       }
       done();
@@ -88,7 +88,7 @@ export default function CloudDiskNdkTest(){
         expect(ret).assertEqual(801);
         done();
       } else {
-        expect(ret).assertEqual(34400002);
+        expect(ret).assertEqual(34400008);
         done();
       }
       done();
@@ -112,7 +112,51 @@ export default function CloudDiskNdkTest(){
         expect(ret).assertEqual(801);
         done();
       } else {
-        expect(ret).assertEqual(34400002);
+        expect(ret).assertEqual(34400008);
+        done();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_GetSyncFolders_0100
+     * @tc.name CloudDisk_GetSyncFolders_001
+     * @tc.desc Test GetSyncFolders() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('CloudDisk_GetSyncFolders_001', Level.LEVEL0, async (done: Function) => {
+      let ret = clouddisk.GetSyncFolders();
+      console.info("CloudDisk_GetSyncFolders_001 Test NAPI ret= " + JSON.stringify(ret));
+      if (ret == 801) {
+        expect(ret).assertEqual(801);
+        done();
+      } else {
+        expect(ret).assertEqual(34400008);
+        done();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_UpdateCustomAlias_0100
+     * @tc.name CloudDisk_UpdateCustomAlias_001
+     * @tc.desc Test UpdateCustomAlias() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('CloudDisk_UpdateCustomAlias_001', Level.LEVEL0, async (done: Function) => {
+      let ret = clouddisk.UpdateCustomAlias();
+      console.info("CloudDisk_UpdateCustomAlias_001 Test NAPI ret= " + JSON.stringify(ret));
+      if (ret == 801) {
+        expect(ret).assertEqual(801);
+        done();
+      } else {
+        expect(ret).assertEqual(34400008);
         done();
       }
       done();
