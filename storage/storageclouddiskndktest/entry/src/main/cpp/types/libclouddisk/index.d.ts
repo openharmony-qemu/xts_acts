@@ -20,3 +20,6 @@ export const GetSyncFolders: () => number;
 export const UpdateCustomAlias: (path: string) => number;
 export const RegisterSyncFolderChanges: (path: string) => number;
 export const UnregisterSyncFolderChanges: (path: string) => number;
+export const GetSyncFolderChanges: (path: string) => number;
+export const SetFileSyncStates: (path: string) => number;
+export const GetFileSyncStates: (path: string) => number;

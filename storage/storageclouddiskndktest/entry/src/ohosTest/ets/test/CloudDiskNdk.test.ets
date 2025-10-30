@@ -212,6 +212,78 @@ export default function CloudDiskNdkTest(){
       done();
     });
 
+    /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_GetSyncFolderChanges_0100
+     * @tc.name CloudDisk_GetSyncFolderChanges_001
+     * @tc.desc Test GetSyncFolderChanges() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('CloudDisk_GetSyncFolderChanges_001', Level.LEVEL0, async (done: Function) => {
+      let filepath = "/storage/Users/currentUser/";
+      console.info("CloudDisk_GetSyncFolderChanges_001: " + filepath);
+      let ret = clouddisk.GetSyncFolderChanges(filepath);
+      console.info("CloudDisk_GetSyncFolderChanges_001 Test NAPI ret= " + JSON.stringify(ret));
+      if (ret == 801) {
+        expect(ret).assertEqual(801);
+        done();
+      } else {
+        expect(ret).assertEqual(34400008);
+        done();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_SetFileSyncStates_0100
+     * @tc.name CloudDisk_SetFileSyncStates_001
+     * @tc.desc Test SetFileSyncStates() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('CloudDisk_SetFileSyncStates_001', Level.LEVEL0, async (done: Function) => {
+      let filepath = "/storage/Users/currentUser/";
+      console.info("CloudDisk_SetFileSyncStates_001: " + filepath);
+      let ret = clouddisk.SetFileSyncStates(filepath);
+      console.info("CloudDisk_SetFileSyncStates_001 Test NAPI ret= " + JSON.stringify(ret));
+      if (ret == 801) {
+        expect(ret).assertEqual(801);
+        done();
+      } else {
+        expect(ret).assertEqual(34400008);
+        done();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_BASIC_FM_CloudDisk_GetFileSyncStates_0100
+     * @tc.name CloudDisk_GetFileSyncStates_001
+     * @tc.desc Test GetFileSyncStates() interfaces
+     * @tc.size MEDIUM
+     * @tc.type Function
+     * @tc.level Level 0
+     * @tc.require
+     */
+    it('CloudDisk_GetFileSyncStates_001', Level.LEVEL0, async (done: Function) => {
+      let filepath = "/storage/Users/currentUser/";
+      console.info("CloudDisk_GetFileSyncStates_001: " + filepath);
+      let ret = clouddisk.GetFileSyncStates(filepath);
+      console.info("CloudDisk_GetFileSyncStates_001 Test NAPI ret= " + JSON.stringify(ret));
+      if (ret == 801) {
+        expect(ret).assertEqual(801);
+        done();
+      } else {
+        expect(ret).assertEqual(34400008);
+        done();
+      }
+      done();
+    });
+
 
   });
 }

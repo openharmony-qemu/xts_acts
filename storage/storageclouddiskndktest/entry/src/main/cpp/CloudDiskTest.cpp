@@ -23,9 +23,11 @@
 #include "common/logger_common.h"
 #include "common/utils.h"
 
-static uint64_t usn = 0;
+static uint64_t g_usn = 0;
+static const size_t COUNT = 10;
 
-static void OnChangeDataCallback(const CloudDisk_SyncFolderPath syncFolderPath, const CloudDisk_ChangeData changeDatas[], size_t bufferLength)
+static void OnChangeDataCallback(const CloudDisk_SyncFolderPath syncFolderPath, 
+    const CloudDisk_ChangeData changeDatas[], size_t bufferLength)
 {
     LOGI("OnChangeDataCallback start");
     for (int32_t i = 0; i < bufferLength; ++i) {
@@ -33,10 +35,9 @@ static void OnChangeDataCallback(const CloudDisk_SyncFolderPath syncFolderPath, 
         auto operationType = data.operationType;
         auto path = data.relativePathInfo.value;
         auto length = data.relativePathInfo.length;
-        usn = changeDatas[i].updateSequenceNumber;
+        g_usn = changeDatas[i].updateSequenceNumber;
     }
     LOGI("OnChangeDataCallback end");
-
 }
 
 static napi_value RegisterSyncFolder(napi_env env, napi_callback_info info)
@@ -165,6 +166,90 @@ static napi_value UnregisterSyncFolderChanges(napi_env env, napi_callback_info i
     return result_1;
 }
 
+static napi_value GetSyncFolderChanges(napi_env env, napi_callback_info info)
+{
+    char* path = GetStringParam(env, info);
+    CloudDisk_SyncFolderPath pathInfo;
+    pathInfo.value = path;
+    pathInfo.length = strlen(pathInfo.value);
+    CloudDisk_ChangesResult* changesResult = nullptr;
+
+    LOGW("OH_CloudDisk_GetSyncFolderChanges start.path: %{public}s", path);
+    auto ret = OH_CloudDisk_GetSyncFolderChanges(pathInfo, g_usn, COUNT, &changesResult);
+    LOGW("OH_CloudDisk_GetSyncFolderChanges ret: %{public}d", ret);
+    napi_value result_1 = nullptr;
+    napi_create_int32(env, ret, &result_1);
+    return result_1;
+}
+
+static napi_value SetFileSyncStates(napi_env env, napi_callback_info info)
+{
+    char* path = GetStringParam(env, info);
+    CloudDisk_SyncFolderPath pathInfo;
+    pathInfo.value = path;
+    pathInfo.length = strlen(pathInfo.value);
+
+    char* path1 = "/storage/Users/currentUser/111.txt";
+    char* path2 = "/storage/Users/currentUser/222.txt";
+    CloudDisk_FileSyncState fileSyncStates[] = {
+        {
+            {
+                .value = path1,
+                .length = strlen(path1)
+            },
+            CloudDisk_SyncState::SYNC_SUCCESSED
+        },
+        {
+            {
+                .value = path2,
+                .length = strlen(path2)
+            },
+            CloudDisk_SyncState::SYNC_FAILED
+        }
+    };
+    CloudDisk_FailedList *failedLists;
+    size_t failedCount;
+
+    LOGW("OH_CloudDisk_SetFileSyncStates start.path: %{public}s", path);
+    auto ret = OH_CloudDisk_SetFileSyncStates(pathInfo, fileSyncStates, 
+        sizeof(fileSyncStates) / sizeof(fileSyncStates[0]), &failedLists, &failedCount);
+    LOGW("OH_CloudDisk_SetFileSyncStates ret: %{public}d", ret);
+    napi_value result_1 = nullptr;
+    napi_create_int32(env, ret, &result_1);
+    return result_1;
+}
+
+static napi_value GetFileSyncStates(napi_env env, napi_callback_info info)
+{
+    char* path = GetStringParam(env, info);
+    CloudDisk_SyncFolderPath pathInfo;
+    pathInfo.value = path;
+    pathInfo.length = strlen(pathInfo.value);
+
+    char* path1 = "/storage/Users/currentUser/111.txt";
+    char* path2 = "/storage/Users/currentUser/222.txt";
+    CloudDisk_PathInfo paths[] = {
+        {
+            .value = path1,
+            .length = strlen(path1)
+        },
+        {
+            .value = path2,
+            .length = strlen(path2)
+        }
+    };
+    CloudDisk_ResultList *resultLists;
+    size_t resultCount;
+
+    LOGW("OH_CloudDisk_GetFileSyncStates start.path: %{public}s", path);
+    auto ret = OH_CloudDisk_GetFileSyncStates(pathInfo, paths, sizeof(paths) / sizeof(paths[0]),
+     &resultLists, &resultCount);
+    LOGW("OH_CloudDisk_GetFileSyncStates ret: %{public}d", ret);
+    napi_value result_1 = nullptr;
+    napi_create_int32(env, ret, &result_1);
+    return result_1;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -175,8 +260,13 @@ static napi_value Init(napi_env env, napi_value exports)
         { "DeactiveSyncFolder", nullptr, DeactiveSyncFolder, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "GetSyncFolders", nullptr, GetSyncFolders, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "UpdateCustomAlias", nullptr, UpdateCustomAlias, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "RegisterSyncFolderChanges", nullptr, RegisterSyncFolderChanges, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "UnregisterSyncFolderChanges", nullptr, UnregisterSyncFolderChanges, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "RegisterSyncFolderChanges", nullptr, RegisterSyncFolderChanges, nullptr, nullptr, nullptr, 
+            napi_default, nullptr },
+        { "UnregisterSyncFolderChanges", nullptr, UnregisterSyncFolderChanges, nullptr, nullptr, nullptr, 
+            napi_default, nullptr },
+        { "GetSyncFolderChanges", nullptr, GetSyncFolderChanges, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "SetFileSyncStates", nullptr, SetFileSyncStates, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "GetFileSyncStates", nullptr, GetFileSyncStates, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
