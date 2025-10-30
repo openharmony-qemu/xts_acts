@@ -990,7 +990,8 @@ async function cmsWithPasswordTest(
       return false;
     }
     return true;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`cmsWithPasswordTest catch error: ${JSON.stringify(error)}`);
     return false;
   }
@@ -1027,7 +1028,8 @@ async function cmsSignerWithPasswordTest(
     let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
     generator.addSigner(x509Cert, keyInfo, signer);
     return true;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`cmsSignerWithPasswordTest catch error: ${JSON.stringify(error)}`);
     return false;
   }
@@ -1062,7 +1064,8 @@ async function cmsSignerTest(
     let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
     generator.addSigner(x509Cert, keyInfo, signer);
     return true;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`cmsSignerTest catch error: ${JSON.stringify(error)}`);
     return false;
   }

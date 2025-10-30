@@ -75,7 +75,8 @@ struct SnapshotExample {
             })
             this.pixmap = pixelmap
             this.value = 'suc'
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.error('getSync errorCode: ' + error.code + ' message: ' + error.message)
           }
         }).margin(10)

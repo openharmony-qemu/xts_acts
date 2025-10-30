@@ -50,7 +50,8 @@ export default function bmsZlibChecksumCrc64Test() {
           let num: number = await checksum.crc64(crc, bufEmpty);
           hilog.info(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_4800 crc ${crc} ret: ${num}`);
           done();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(Domain, TAG,
             `Sub_Bms_Zlib_Checksum_Check_static_4800 error, error code is: ${e.code}, error message is: ${e.message}`);
           expect().assertFail();
@@ -79,7 +80,8 @@ export default function bmsZlibChecksumCrc64Test() {
             expect().assertFail();
             done();
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.info(Domain, TAG,
             `Sub_Bms_Zlib_Checksum_Check_static_0500 error, error code is: ${e.code}, error message is: ${e.message}`);
           expect().assertFail();

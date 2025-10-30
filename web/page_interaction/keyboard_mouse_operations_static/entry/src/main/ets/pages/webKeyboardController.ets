@@ -107,7 +107,8 @@ struct WebHitTestTypeEnumTest {
               case 'testwebKeyboardController001': {
                 try {
                   Utils.emitEvent(WebLayoutMode.NONE, 20250321)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;

@@ -1169,7 +1169,8 @@ export default function XmlDynamicSerializerTest() {
       }
       try {
         thatSer.startElement("note1");
-      } catch (e : BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(value).assertEqual(e.code);
       }
 
@@ -1190,7 +1191,8 @@ export default function XmlDynamicSerializerTest() {
       thatSer.endElement();
       try {
         thatSer.endElement();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(value).assertEqual(e.code);
       }
     })
@@ -1210,7 +1212,8 @@ export default function XmlDynamicSerializerTest() {
       thatSer.endElement();
       try {
         thatSer.setAttributes("a", "b");
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(value).assertEqual(e.code);
       }
     })
@@ -1230,7 +1233,8 @@ export default function XmlDynamicSerializerTest() {
       thatSer.endElement();
       try {
         thatSer.setAttributes("", "b");
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(value).assertEqual(e.code);
       }
     })
@@ -1247,7 +1251,8 @@ export default function XmlDynamicSerializerTest() {
       let value = 10200066;
       try {
         let thatSer = new xml.XmlDynamicSerializer('utf-16');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(value).assertEqual(e.code);
       }
     })

@@ -100,7 +100,8 @@ struct WebViewControllerPart3 {
                 let historyItem = list.getItemAtIndex(list.currentIndex);
                 console.log('testRestoreWebState001 result is :' + historyItem.title);
                 Utils.emitEvent(historyItem.title, 100083)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;

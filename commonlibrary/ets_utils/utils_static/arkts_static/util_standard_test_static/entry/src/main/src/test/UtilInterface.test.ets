@@ -213,7 +213,8 @@ export default function UtilTest() {
     it('testUtilParseUUID002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () : Promise<void> => {
       try {
         const result = util.parseUUID('84df796-66cc-4655-9b89-d6218d100f9c');
-      } catch(e: BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         expect(e.message).assertEqual('Syntax Error.Invalid 84df796-66cc-4655-9b89-d6218d100f9c string');
       }
     })
@@ -229,7 +230,8 @@ export default function UtilTest() {
     it('testUtilParseUUID003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () : Promise<void> => {
       try {
         const result = util.parseUUID('84Wdf796-66cc-4655-9b89-d6218d100f9c');
-      } catch(e: BusinessError) {
+      } catch(e) {
+        e = e as BusinessError;
         expect(e.message).assertEqual('Syntax Error.Invalid 84Wdf796-66cc-4655-9b89-d6218d100f9c string');
       }
     })

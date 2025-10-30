@@ -46,7 +46,8 @@ export default function bluetoothConstantTest() {
                     hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
                     hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
                   });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + err);
             }
             await Utils.msSleep(2000);
@@ -59,7 +60,8 @@ export default function bluetoothConstantTest() {
             try {
                 await Utils.openBluetooth();
                 hilog.info(domain, tag, '%{public}s', 'beforeEach end');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', 'beforeEach get failed, err: ' + err);
             }
         })
@@ -86,7 +88,8 @@ export default function bluetoothConstantTest() {
                 let PROFILE_PAN_NETWORK = constant.ProfileId.PROFILE_PAN_NETWORK;
                 hilog.info(domain, tag, "PROFILE_PAN_NETWORK : " + JSON.stringify(PROFILE_PAN_NETWORK));
                 expect(true).assertEqual(PROFILE_PAN_NETWORK == 7);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "testProfileId get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -143,7 +146,8 @@ export default function bluetoothConstantTest() {
                 let hogp = constant.ProfileUuids.PROFILE_UUID_HOGP;
                 hilog.info(domain, tag, "PROFILE_UUID_HOGP : " + JSON.stringify(hogp));
                 expect('00001812-0000-1000-8000-00805F9B34FB').assertEqual(hogp);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "testProfileUuids get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -173,7 +177,8 @@ export default function bluetoothConstantTest() {
                 let STATE_DISCONNECTING = constant.ProfileConnectionState.STATE_DISCONNECTING;
                 hilog.info(domain, tag, "STATE_DISCONNECTING : " + JSON.stringify(STATE_DISCONNECTING));
                 expect(true).assertEqual(STATE_DISCONNECTING == 3);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "testProfileConnectionState get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -224,7 +229,8 @@ export default function bluetoothConstantTest() {
                 let MAJOR_UNCATEGORIZED = constant.MajorClass.MAJOR_UNCATEGORIZED;
                 hilog.info(domain, tag, "MAJOR_UNCATEGORIZED : " + JSON.stringify(MAJOR_UNCATEGORIZED));
                 expect(true).assertEqual(MAJOR_UNCATEGORIZED == 0x1F00);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "testMajorClass get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -540,7 +546,8 @@ export default function bluetoothConstantTest() {
                 hilog.info(domain, tag, "HEALTH_PERSONAL_MOBILITY_DEVICE : " +
                 JSON.stringify(HEALTH_PERSONAL_MOBILITY_DEVICE));
                 expect(true).assertEqual(HEALTH_PERSONAL_MOBILITY_DEVICE == 0x093C);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "testMajorMinorClass get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();

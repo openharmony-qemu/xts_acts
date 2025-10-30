@@ -189,7 +189,7 @@ describe('ActsNetworkSearchTest',  () => {
             hilog.info(domain, tag, 'Telephony_NetworkSearch_getOperatorName_Promise_static_0400 finish data: ' + data);
             expect(data === '').assertTrue();
             done();
-        } catch (error: Error) {
+        } catch (error) {
             let err = error as BusinessError;
             hilog.info(domain, tag,'Telephony_NetworkSearch_getOperatorName_Promise_static_0400 fail err: ' + JSON.stringify(err));
             expect(err.code).assertEqual(8300001);
@@ -245,7 +245,7 @@ describe('ActsNetworkSearchTest',  () => {
             hilog.info(domain, tag,
                 'Telephony_NetworkSearch_getSignalInformation_Promise_static_0400 finish data: ' + JSON.stringify(data));
             expect(data.length === 0).assertTrue();
-        } catch (error: Error) {
+        } catch (error) {
             let err = error as BusinessError;
             hilog.info(domain, tag, 'Telephony_NetworkSearch_getSignalInformation_Promise_static_0400 fail err: ' + JSON.stringify(err));
             expect(err.code).assertEqual(8300001);
@@ -286,7 +286,7 @@ describe('ActsNetworkSearchTest',  () => {
                 'Telephony_NetworkSearch_getISOCountryCodeForNetwork_Promise_static_0400 finish data:' + JSON.stringify(data));
             expect(data?.length === 0).assertTrue();
             done();
-        } catch (error: Error) {
+        } catch (error) {
             let err = error as BusinessError;
             hilog.info(domain, tag, 'Telephony_NetworkSearch_getISOCountryCodeForNetwork_Promise_0400 fail err:' + JSON.stringify(err));
             expect(err.code).assertEqual(8300001);
@@ -324,7 +324,7 @@ describe('ActsNetworkSearchTest',  () => {
             await radio.getNetworkSelectionMode(SLOT_2);
             hilog.info(domain, tag, 'Telephony_NetworkSearch_getNetworkSelectionMode_Promise_static_0500 fail not go to err');
             expect().assertFail();
-        } catch (error: Error) {
+        } catch (error) {
             let err = error as BusinessError;
             hilog.info(domain, tag, 'Telephony_NetworkSearch_getNetworkSelectionMode_Promise_static_0500 finish');
             expect(err.code).assertEqual(8300001);
@@ -342,7 +342,7 @@ describe('ActsNetworkSearchTest',  () => {
             await radio.getRadioTech(SLOT_2);
             hilog.info(domain, tag,'Telephony_NetworkSearch_getRadioTech_Promise_static_0400 fail not go to err');
             expect().assertFail();
-        } catch (error: Error) {
+        } catch (error) {
             let err = error as BusinessError;
             expect(err.code).assertEqual(8300001);
             done();
@@ -359,7 +359,7 @@ describe('ActsNetworkSearchTest',  () => {
             let data: radio.NetworkRadioTech = radio.getRadioTechSync(SLOT_2);
             hilog.info(domain, tag,'Telephony_NetworkSearch_getRadioTechSync_static_0400 fail not go to err');
             expect().assertFail();
-        } catch (error: Error) {
+        } catch (error) {
             let err = error as BusinessError;
             expect(err.code).assertEqual(8300001);
             done();

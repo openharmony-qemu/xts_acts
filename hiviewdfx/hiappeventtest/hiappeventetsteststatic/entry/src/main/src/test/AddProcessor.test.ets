@@ -45,7 +45,8 @@ export default function addProcessorTest() {
                 hiAppEvent.removeProcessor(processorId)
                 done()
             }
-            catch (err: BusinessError) {
+            catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, `testHiAppEvent008 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(false).assertTrue()
                 done();
@@ -71,7 +72,8 @@ export default function addProcessorTest() {
                 hiAppEvent.removeProcessor(processorId)
                 done()
             }
-            catch (err: BusinessError) {
+            catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, `testHiAppEvent009 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(err.code == 401).assertTrue()
                 done();
@@ -118,7 +120,8 @@ export default function addProcessorTest() {
                 hiAppEvent.removeProcessor(processorId)
                 done()
             }
-            catch (err: BusinessError) {
+            catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, `testHiAppEvent010 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(false).assertTrue()
                 done();

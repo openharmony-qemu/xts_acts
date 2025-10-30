@@ -168,7 +168,8 @@ export default function audioFramework() {
         console.info(`${TagFrmwk}: Media getVolumeSync : success :${data}`);
         expect(true).assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwk}: err : ${err.message},Code:${err.code}`);
         expect(Number(err.code)).assertEqual(401);
         done();
@@ -195,7 +196,8 @@ export default function audioFramework() {
           expect(false).assertTrue();
           done();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('err :' + JSON.stringify(err.message));
         expect(false).assertTrue();
         done();
@@ -217,7 +219,8 @@ export default function audioFramework() {
         console.log('getMinVolumeSync success');
         expect(true).assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
         expect(Number(err.code)).assertEqual(401);
         done();
@@ -247,7 +250,8 @@ export default function audioFramework() {
           expect(false).assertTrue();
           done();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('err :' + JSON.stringify(err.message));
         expect(false).assertTrue();
         done();
@@ -269,7 +273,8 @@ export default function audioFramework() {
         console.log('getMaxVolumeSync success');
         expect(true).assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
         expect(Number(err.code)).assertEqual(401);
         done();
@@ -291,7 +296,8 @@ export default function audioFramework() {
         console.log('isMuteSync success');
         expect(true).assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('err :' + JSON.stringify(err.message) + 'Code:' + err.code);
         expect(Number(err.code)).assertEqual(401);
         done();
@@ -318,7 +324,8 @@ export default function audioFramework() {
           expect(false).assertTrue();
           done();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('err :' + JSON.stringify(err.message));
         expect(false).assertTrue();
         done();
@@ -865,7 +872,8 @@ export default function audioFramework() {
         let value = AudioRoutingManager.getDevicesSync(audio.DeviceFlag.INPUT_DEVICES_FLAG);
         console.info(`${TagFrmwk}: getDevicesSync Success,value: ${value}`);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TagFrmwk}: getDevicesSync Fail,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
         expect(false).assertTrue();
         done();

@@ -70,7 +70,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} addSlot_1 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -98,7 +99,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} addSlot_2 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -126,7 +128,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} addSlot_3 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -154,7 +157,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} addSlot_4 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -182,7 +186,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} addSlot_5 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -311,7 +316,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} getSlot_1 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -340,7 +346,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} getSlot_2 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -369,7 +376,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} getSlot_3 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -398,7 +406,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} getSlot_4 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -427,7 +436,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} getSlot_5 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -564,7 +574,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} removeSlot_1 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -592,7 +603,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} removeSlot_2 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -620,7 +632,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} removeSlot_3 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -648,7 +661,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} removeSlot_4 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -676,7 +690,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} removeSlot_5 errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -824,7 +839,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} getSlot UNKNOWN_TYPE errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -873,7 +889,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} getSlot SOCIAL_COMMUNICATION errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -922,7 +939,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} getSlot SERVICE_INFORMATION errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -971,7 +989,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} getSlot CONTENT_INFORMATION errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -1020,7 +1039,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} getSlot OTHER_TYPES errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -1254,7 +1274,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} getSlot_21 errCode: ${err}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -1291,7 +1312,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} removeSlot errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -1319,7 +1341,8 @@ export default function ActsNotificationManagerSlotTest() {
             done()
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} removeAllSlots errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -1374,7 +1397,8 @@ export default function ActsNotificationManagerSlotTest() {
             }
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} getSlots errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -1489,7 +1513,8 @@ export default function ActsNotificationManagerSlotTest() {
 
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} getSlots AsyncCallback errCode: ${err}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()

@@ -69,7 +69,8 @@ export default function userauthTest_Nopermission_API12() {
       let authType:userAuth.UserAuthType = userAuth.UserAuthType.PIN
       try {
         userAuth.getEnrolledState(authType);
-      } catch (e:BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, format, "SUB_Security_IAM_Func_API12_static_0110 fail " + 'authType:' + authType + 'e.code:' + e.code);
         expect(e.code).assertEqual(201);
       }

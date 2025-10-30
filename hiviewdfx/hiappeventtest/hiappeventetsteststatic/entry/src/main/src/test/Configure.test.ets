@@ -38,7 +38,8 @@ export default function configureTest() {
         hiAppEvent.configure({
           maxStorage: '100M'
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `testConfigure001 err ,err code is ${err.code}, err message is ${err.message}`)
         expect(false).assertTrue();
       }

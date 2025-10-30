@@ -58,7 +58,8 @@ export default function ActsOsAccountErrCodeCheckStatic() {
               }
               done();
             });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -99,7 +100,8 @@ export default function ActsOsAccountErrCodeCheckStatic() {
               }
               done();
             });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -131,7 +133,8 @@ export default function ActsOsAccountErrCodeCheckStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -164,7 +167,8 @@ export default function ActsOsAccountErrCodeCheckStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -201,7 +205,8 @@ export default function ActsOsAccountErrCodeCheckStatic() {
               }
               done();
             });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           expect().assertFail();
           done();

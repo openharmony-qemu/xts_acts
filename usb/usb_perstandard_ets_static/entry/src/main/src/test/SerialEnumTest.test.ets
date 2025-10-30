@@ -99,7 +99,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute001 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -127,7 +128,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute002 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -155,7 +157,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute003 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -183,7 +186,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute004 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -211,7 +215,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute005 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -239,7 +244,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute006 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -267,7 +273,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute007 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -295,7 +302,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute008 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -323,7 +331,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute009 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -351,7 +360,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute010 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -379,7 +389,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute011 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -407,7 +418,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute012 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -435,7 +447,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute013 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -463,7 +476,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute014 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -491,7 +505,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute015 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -519,7 +534,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute016 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -547,7 +563,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute017 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -575,7 +592,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute018 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -603,7 +621,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute019 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -631,7 +650,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute020 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -659,7 +679,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute021 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -687,7 +708,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute022 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -715,7 +737,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute023 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -743,7 +766,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute024 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -771,7 +795,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute025 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -799,7 +824,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute026 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -827,7 +853,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute027 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -855,7 +882,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute028 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -883,7 +911,8 @@ export default function SerialEnumTest() {
           };
           serialManager.setAttribute(openPortId, attribute);
           expect().assertFail();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, TAG, 'testSetAttribute029 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400005);
           done();
@@ -910,7 +939,8 @@ export default function SerialEnumTest() {
           expect(length >= 0).assertTrue();
           serialManager.close(openPortId);
           done();
-        } catch (error : BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(TAG, 'testWriteSync001 catch err code: ', error.code, ', message: ', error.message);
           expect(error.code).assertEqual(31400006);
         }

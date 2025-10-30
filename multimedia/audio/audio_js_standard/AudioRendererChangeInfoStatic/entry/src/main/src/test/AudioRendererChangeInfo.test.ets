@@ -137,7 +137,8 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR : ${err.message}`);
       }
 
@@ -149,7 +150,8 @@ export default function audioCapturerChange() {
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR : ${err.message}`);
       }
       expect(resultFlag).assertTrue();
@@ -187,7 +189,8 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR : ${err.message}`);
       }
       await Utils.msSleep(100);
@@ -211,7 +214,8 @@ export default function audioCapturerChange() {
       try {
         await audioRen.start();
         console.info(`${Tag} : renderInstant started :SUCCESS `);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : renderInstant start :ERROR :  ${err.message}`);
       }
 
@@ -224,14 +228,16 @@ export default function audioCapturerChange() {
       try {
         await audioRen.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer stop:ERROR :  ${err.message}`);
       }
 
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :  ${err.message}`);
       }
       expect(resultFlag).assertTrue();
@@ -270,14 +276,16 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
 
       try {
         await audioRen.start();
         console.info(`${Tag} : renderInstant started :SUCCESS `);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : renderInstant start :ERROR :   ${err.message}`);
       }
 
@@ -302,7 +310,8 @@ export default function audioCapturerChange() {
       try {
         await audioRen.stop();
         console.info(`${Tag} : renderInstant stopped :SUCCESS `);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : renderInstant stop :ERROR :   ${err.message}`);
       }
 
@@ -315,7 +324,8 @@ export default function audioCapturerChange() {
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
       }
 
@@ -355,21 +365,24 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
 
       try {
         await audioRen.start();
         console.info(`${Tag} : renderInstant started :SUCCESS }`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : renderInstant start :ERROR :  ${err.message}`);
       }
 
       try {
         await audioRen.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer stop:ERROR :  ${err.message}`);
       }
 
@@ -395,7 +408,8 @@ export default function audioCapturerChange() {
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
       }
 
@@ -440,14 +454,16 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
 
       try {
         await audioRen.start();
         console.info(`${Tag} : renderInstant started :SUCCESS }`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : renderInstant start :ERROR :  ${err.message}`);
       }
 
@@ -473,7 +489,8 @@ export default function audioCapturerChange() {
       try {
         await audioRen.pause();
         console.info(`${Tag} : renderInstant paused :SUCCESS }`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : renderInstant pause :ERROR :   ${err.message}`);
       }
 
@@ -486,14 +503,16 @@ export default function audioCapturerChange() {
       try {
         await audioRen.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer stop:ERROR :   ${err.message}`);
       }
 
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
       }
 
@@ -546,7 +565,8 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
 
@@ -559,7 +579,8 @@ export default function audioCapturerChange() {
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
       }
 
@@ -613,7 +634,8 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
 
@@ -626,7 +648,8 @@ export default function audioCapturerChange() {
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
       }
 
@@ -681,7 +704,8 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
 
@@ -694,7 +718,8 @@ export default function audioCapturerChange() {
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
       }
 
@@ -748,7 +773,8 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
 
@@ -760,7 +786,8 @@ export default function audioCapturerChange() {
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
       }
 
@@ -816,7 +843,8 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
 
@@ -828,7 +856,8 @@ export default function audioCapturerChange() {
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
       }
 
@@ -887,7 +916,8 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
 
@@ -899,7 +929,8 @@ export default function audioCapturerChange() {
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
       }
 
@@ -956,13 +987,15 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
       try {
         await audioRen.start();
         console.info(`${Tag} : renderInstant started :SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : renderInstant start :ERROR :   ${err.message}`);
       }
 
@@ -975,7 +1008,8 @@ export default function audioCapturerChange() {
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
       }
 
@@ -1031,14 +1065,16 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
 
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
       }
 
@@ -1078,7 +1114,8 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
 
@@ -1103,14 +1140,16 @@ export default function audioCapturerChange() {
       try {
         await audioRen.start();
         console.info(`${Tag} : renderInstant started :SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : renderInstant start :ERROR :   ${err.message}`);
       }
 
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
       }
 
@@ -1149,14 +1188,16 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
 
       try {
         await audioRen.start();
         console.info(`${Tag} : renderInstant started :SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : renderInstant start :ERROR :   ${err.message}`);
       }
 
@@ -1181,14 +1222,16 @@ export default function audioCapturerChange() {
       try {
         await audioRen.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer stop:ERROR :   ${err.message}`);
       }
 
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
       }
 
@@ -1229,21 +1272,24 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
 
       try {
         await audioRen.start();
         console.info(`${Tag} : renderInstant started :SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : renderInstant start :ERROR :   ${err.message}`);
       }
 
       try {
         await audioRen.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer stop:ERROR :   ${err.message}`);
       }
 
@@ -1268,7 +1314,8 @@ export default function audioCapturerChange() {
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
       }
 
@@ -1308,14 +1355,16 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
 
       try {
         await audioRen.start();
         console.info(`${Tag} : renderInstant started :SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : renderInstant start :ERROR :   ${err.message}`);
       }
 
@@ -1340,21 +1389,24 @@ export default function audioCapturerChange() {
       try {
         await audioRen.pause();
         console.info(`${Tag} : renderInstant Pause :SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : renderInstant Pause :ERROR :   ${err.message}`);
       }
 
       try {
         await audioRen.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer stop:ERROR :   ${err.message}`);
       }
 
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
       }
 
@@ -1419,14 +1471,16 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
 
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
       }
 
@@ -1476,7 +1530,8 @@ export default function audioCapturerChange() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRenderer = data;
         console.info(`${Tag}: AudioRenderer Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag}: AudioRenderer Created : ERROR :   ${err.message}`);
       }
 
@@ -1497,7 +1552,8 @@ export default function audioCapturerChange() {
             }
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : getCurrentAudioRendererInfoArray :ERROR:   ${error.message}`);
         resultFlag = false;
       }
@@ -1509,7 +1565,8 @@ export default function audioCapturerChange() {
       try {
         await audioRenderer.release();
         console.info(`${Tag}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag}: Renderer release :ERROR :   ${err.message}`);
       }
       expect(resultFlag).assertTrue();
@@ -1557,7 +1614,8 @@ export default function audioCapturerChange() {
       try {
         audioRenderer = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRenderer Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRenderer Created : ERROR :   ${err.message}`);
       }
 
@@ -1580,7 +1638,8 @@ export default function audioCapturerChange() {
             }
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : getCurrentAudioRendererInfoArray :ERROR:   ${error.message}`);
         resultFlag = false;
       }
@@ -1592,7 +1651,8 @@ export default function audioCapturerChange() {
       try {
         await audioRenderer.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : audioRenderer.release :ERROR:   ${error.message}`);
       }
 
@@ -1634,7 +1694,8 @@ export default function audioCapturerChange() {
       try {
         audioRenderer = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRenderer Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRenderer Created : ERROR :   ${err.message}`);
       }
 
@@ -1653,7 +1714,8 @@ export default function audioCapturerChange() {
       try {
         await audioRenderer.start();
         console.info(`${Tag} : Renderer started :SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : audioRenderer.start :ERROR:   ${error.message}`);
       }
 
@@ -1676,7 +1738,8 @@ export default function audioCapturerChange() {
             }
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+          error = error as BusinessError;
           console.info(`${Tag} : getCurrentAudioRendererInfoArray :ERROR:   ${error.message}`);
       }
 
@@ -1687,7 +1750,8 @@ export default function audioCapturerChange() {
       try {
         await audioRenderer.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
+          error = error as BusinessError;
           console.info(`${Tag} : audioRenderer.release :ERROR:   ${error.message}`);
       }
 
@@ -1729,14 +1793,16 @@ export default function audioCapturerChange() {
       try {
         audioRenderer = await audio.createAudioRenderer(AudioRendererOptions)
         console.info(`${Tag} : AudioRenderer Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRenderer Created : ERROR :   ${err.message}`);
       }
 
       try {
         await audioRenderer.start();
         console.info(`${Tag} : Renderer started :SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : audioRenderer.start :ERROR:   ${error.message}`);
       }
 
@@ -1756,7 +1822,8 @@ export default function audioCapturerChange() {
       try {
         await audioRenderer.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : audioRenderer.stop :ERROR:   ${error.message}`);
       }
 
@@ -1779,7 +1846,8 @@ export default function audioCapturerChange() {
             }
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : getCurrentAudioRendererInfoArray :ERROR:   ${error.message}`);
         resultFlag = false;
       }
@@ -1790,7 +1858,8 @@ export default function audioCapturerChange() {
       try {
         await audioRenderer.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : audioRenderer.release :ERROR:   ${error.message}`);
       }
 
@@ -1830,14 +1899,16 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
 
       try {
         await audioRen.start();
         console.info(`${Tag} : renderInstant started :SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : renderInstant start :ERROR :   ${err.message}`);
       }
 
@@ -1857,7 +1928,8 @@ export default function audioCapturerChange() {
       try {
         await audioRen.pause();
         console.info(`${Tag} : renderInstant Pause :SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : renderInstant Pause :ERROR :   ${err.message}`);
       }
 
@@ -1880,7 +1952,8 @@ export default function audioCapturerChange() {
             }
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : getCurrentAudioRendererInfoArray :ERROR:   ${error.message}`);
         resultFlag = false;
       }
@@ -1892,14 +1965,16 @@ export default function audioCapturerChange() {
       try {
         await audioRen.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer stop:ERROR :   ${err.message}`);
       }
 
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
       }
 
@@ -1948,7 +2023,8 @@ export default function audioCapturerChange() {
       try {
         audioRenderer = await audio.createAudioRenderer(AudioRendererOptions)
         console.info(`${Tag} : AudioRenderer Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRenderer Created : ERROR :   ${err.message}`);
       }
 
@@ -1975,7 +2051,8 @@ export default function audioCapturerChange() {
             }
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : getCurrentAudioRendererInfoArray :ERROR:   ${error.message}`);
         resultFlag = false;
       }
@@ -1987,7 +2064,8 @@ export default function audioCapturerChange() {
       try {
         await audioRenderer.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR:   ${error.message}`);
       }
 
@@ -2036,7 +2114,8 @@ export default function audioCapturerChange() {
       try {
         audioRenderer = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRenderer Created : Success : Stream Type: SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : AudioRenderer Created : ERROR :   ${error.message}`);
       }
 
@@ -2075,7 +2154,8 @@ export default function audioCapturerChange() {
       try {
         await audioRenderer.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${error.message}`);
       }
 
@@ -2117,7 +2197,8 @@ export default function audioCapturerChange() {
       try {
         audioRenderer = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRenderer Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRenderer Created : ERROR :   ${err.message}`);
       }
 
@@ -2136,7 +2217,8 @@ export default function audioCapturerChange() {
       try {
         await audioRenderer.start();
         console.info(`${Tag} : Renderer started :SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : Renderer start :ERROR :   ${error.message}`);
       }
 
@@ -2175,7 +2257,8 @@ export default function audioCapturerChange() {
       try {
         await audioRenderer.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${error.message}`);
       }
 
@@ -2216,14 +2299,16 @@ export default function audioCapturerChange() {
       try {
         audioRenderer = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRenderer Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRenderer Created : ERROR :   ${err.message}`);
       }
 
       try {
         await audioRenderer.start();
         console.info(`${Tag} : Renderer started :SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : Renderer start :ERROR :   ${error.message}`);
       }
 
@@ -2243,7 +2328,8 @@ export default function audioCapturerChange() {
       try {
         await audioRenderer.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : Renderer stop:ERROR :   ${error.message}`);
       }
       await Utils.msSleep(100);
@@ -2281,7 +2367,8 @@ export default function audioCapturerChange() {
       try {
         await audioRenderer.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${error.message}`);
       }
 
@@ -2320,14 +2407,16 @@ export default function audioCapturerChange() {
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRender Created : ERROR :   ${err.message}`);
       }
 
       try {
         await audioRen.start();
         console.info(`${Tag} : renderInstant started :SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : renderInstant start :ERROR :   ${err.message}`);
       }
 
@@ -2347,7 +2436,8 @@ export default function audioCapturerChange() {
       try {
         await audioRen.pause();
         console.info(`${Tag} : renderInstant Pause :SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : renderInstant Pause :ERROR :   ${err.message}`);
       }
 
@@ -2386,14 +2476,16 @@ export default function audioCapturerChange() {
       try {
         await audioRen.stop();
         console.info(`${Tag} : Renderer stopped : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer stop:ERROR :   ${err.message}`);
       }
 
       try {
         await audioRen.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${err.message}`);
       }
 
@@ -2442,7 +2534,8 @@ export default function audioCapturerChange() {
       try {
         audioRenderer = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag} : AudioRenderer Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${Tag} : AudioRenderer Created : ERROR :   ${err.message}`);
       }
 
@@ -2485,7 +2578,8 @@ export default function audioCapturerChange() {
       try {
         await audioRenderer.release();
         console.info(`${Tag} : Renderer release : SUCCESS`);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} : Renderer release :ERROR :   ${error.message}`);
       }
       expect(resultFlag).assertTrue();

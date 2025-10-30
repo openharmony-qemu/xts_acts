@@ -80,7 +80,8 @@ struct WebMessagePortIsExtentionTypeTest {
                 this.message.setType(webview.WebMessageType.ARRAY_BUFFER);
                 this.message.setArrayBuffer(buffer);
                 this.ports[0].postMessageEventExt(this.message);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 Utils.emitEvent(error.code, 100100)
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }

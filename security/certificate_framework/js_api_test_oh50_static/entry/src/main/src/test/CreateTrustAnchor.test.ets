@@ -50,7 +50,8 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
         //   expect(null).assertFail();
         //   done();
         // });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`[XtsTestLog] catch error: ${error}`);
         expect(null).assertFail();
       }
@@ -80,7 +81,8 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
           //   expect(err.code == 19030001).assertTrue();
           //   done();
           // });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`[XtsTestLog] catch error: ${error}`);
         // expect(null).assertFail();
         expect(error.code == 19030001).assertTrue();
@@ -110,7 +112,8 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
           //   expect(null).assertFail();
           //   done();
           // });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`[XtsTestLog] catch error: ${error.code}`);
         expect(error.code == 401).assertTrue(); // 返回30001与期望不符
       }
@@ -140,7 +143,8 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
           //   expect(err.code == 19030001).assertTrue();
             // done();
           // });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`[XtsTestLog] catch error: ${error}`);
         // expect(null).assertFail();
         expect(error.code == 19030001).assertTrue();
@@ -170,7 +174,8 @@ export default function certFrameworkCreateTrustAnchorJsAPIFunctionTestUnit() {
           //   expect(null).assertFail();
           //   done();
           // });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`[XtsTestLog] catch error: ${JSON.stringify(error.code)}`);
         expect(error.code).assertEqual(401);
       }

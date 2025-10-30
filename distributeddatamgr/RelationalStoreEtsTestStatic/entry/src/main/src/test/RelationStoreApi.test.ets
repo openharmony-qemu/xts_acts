@@ -190,7 +190,8 @@ export default function RelationStoreRdbStoreTest() {
       try {
         let num = await rdbStore.insert("test", valueBucket0, data_relationalStore.ConflictResolution.ON_CONFLICT_NONE);
         expect(num == 1).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Insert is failed, code is ${err.code},message is ${err.message}`);
         expect(err != null ).assertFail();
       }
@@ -318,7 +319,8 @@ export default function RelationStoreRdbStoreTest() {
         let rows:number = await rdbStore.update(valueBucket3, predicates);
         expect(rows).assertEqual(1);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* testupdate0001 err *************' + err.code);
         expect(err != null).assertFail();
         done();
@@ -344,7 +346,8 @@ export default function RelationStoreRdbStoreTest() {
         hilog.info(domain, tag, '%{public}s', '************* testupdate0002 rows *************' + rows);
         expect(rows).assertEqual(1);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* testupdate0002 err *************' + err.code);
         expect(err != null).assertFail();
         done();
@@ -371,7 +374,8 @@ export default function RelationStoreRdbStoreTest() {
         hilog.info(domain, tag, '%{public}s', '************* testupdate0003 rows *************' + rows);
         expect(rows).assertEqual(1);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* testupdate0003 err *************' + err.code);
         expect(err != null).assertFail();
         done();
@@ -398,7 +402,8 @@ export default function RelationStoreRdbStoreTest() {
         hilog.info(domain, tag, '%{public}s', '************* testdelete0001 rows *************' + rows);
         expect(rows).assertEqual(1);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* testdelete0001 err *************' + err.code);
         expect(err != null).assertFail();
         done();
@@ -425,7 +430,8 @@ export default function RelationStoreRdbStoreTest() {
         hilog.info(domain, tag, '%{public}s', '************* testquery0001 rows.columnCount *************' + rows.columnCount);
         expect(rows.columnCount).assertEqual(1);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* testquery0001 err *************' + err.code);
         expect(err != null).assertFail();
         done();
@@ -451,7 +457,8 @@ export default function RelationStoreRdbStoreTest() {
         hilog.info(domain, tag, '%{public}s', '************* testquery0002 rows.columnCount *************' + rows.rowCount);
         expect(rows.rowCount).assertEqual(1);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* testquery0002 err *************' + err.code);
         expect(err != null).assertFail();
         done();
@@ -478,7 +485,8 @@ export default function RelationStoreRdbStoreTest() {
         hilog.info(domain, tag, '%{public}s', '************* tesquerySync0001 rows.columnCount *************' + rows.columnCount);
         expect(rows.columnCount).assertEqual(1);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* tesquerySync0001 err *************' + err.code);
         expect(err != null).assertFail();
         done();
@@ -505,7 +513,8 @@ export default function RelationStoreRdbStoreTest() {
         hilog.info(domain, tag, '%{public}s', '************* tesquerySync0002 rows.columnCount *************' + rows.rowCount);
         expect(rows.rowCount).assertEqual(1);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* tesquerySync0002 err *************' + err.code);
         expect(err != null).assertFail();
         done();
@@ -532,7 +541,8 @@ export default function RelationStoreRdbStoreTest() {
         hilog.info(domain, tag, '%{public}s', '************* testquerySql0001 rows.rowCount *************' + rows.rowCount);
         expect(rows.rowCount).assertEqual(1);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* testquerySql0001 err *************' + err.code);
         expect(err != null).assertFail();
         done();
@@ -556,7 +566,8 @@ export default function RelationStoreRdbStoreTest() {
         hilog.info(domain, tag, '%{public}s', '************* testexecute0001 rows *************' + rows);
         expect(rows).assertEqual("ok");
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* testexecute0001 err *************' + err.code);
         expect(err != null).assertFail();
         done();
@@ -580,7 +591,8 @@ export default function RelationStoreRdbStoreTest() {
         hilog.info(domain, tag, '%{public}s', '************* testexecute0002 rows *************' + rows);
         expect(rows == 1).assertEqual(true);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* testexecute0002 err *************' + err.code);
         expect(err != null).assertFail();
         done();
@@ -606,13 +618,15 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testclose0001 rows *************' + rows);
           expect(rows == "ok").assertFail();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testclose0001 err2 *************' + err.code +err.message );
           expect(err.message).assertEqual("The RdbStore or ResultSet is already closed.");
           expect(err.code).assertEqual(14800014);
           done();
         }
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* testclose0001 err1 *************' + err.code +err.message );
         expect(err != null).assertFail();
         done();
@@ -1294,7 +1308,8 @@ export default function RelationStoreRdbStoreTest() {
           let res = resultSet.goToFirstRow();
           expect(res != null  ).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testRsultSetclose001 end *************' + err );
           expect(err.message).assertEqual("The RdbStore or ResultSet is already closed.");
           expect(err.code).assertEqual(14800014);
@@ -1351,7 +1366,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0002 end *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0002 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1382,7 +1398,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0003 end *************' + rows.rowCount);
           expect(rows.rowCount == 0).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0003 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1414,7 +1431,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0004 end *************' + rows.rowCount);
           expect(rows.rowCount == -1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0004 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1446,7 +1464,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0005 end *************' + rows.rowCount);
           expect(rows.rowCount == -1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0005 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1479,7 +1498,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0006 rows *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0006 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1511,7 +1531,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0007 end *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0007 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1543,7 +1564,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0008 end *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0008 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1575,7 +1597,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0009 end *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0009 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1606,7 +1629,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0010 end *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0010 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1639,7 +1663,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0011 end *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0011 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1671,7 +1696,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0012 end *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0012 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1702,7 +1728,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0013 end *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0013 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1733,7 +1760,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0019 end *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0019 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1765,7 +1793,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0014 end *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0014 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1797,7 +1826,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0015 end *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0015 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1829,7 +1859,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0016 end *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0016 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1861,7 +1892,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0017 end *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0017 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1893,7 +1925,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0018 end *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0018 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1924,7 +1957,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0018 end *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0018 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1955,7 +1989,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0021 end *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0021 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -1986,7 +2021,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0022 end *************' + rows.rowCount);
           expect(rows.rowCount == 3).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0022 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -2017,7 +2053,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0023 end *************' + rows.rowCount);
           expect(rows.rowCount == 3).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0023 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -2049,7 +2086,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0024 end *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0024 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -2081,7 +2119,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0025 end *************' + rows.rowCount);
           expect(rows.rowCount == 1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0025 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -2112,7 +2151,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0026 end *************' + rows.rowCount);
           expect(rows.rowCount == 0).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0026 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -2144,7 +2184,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0027 end *************' + rows.rowCount);
           expect(rows.rowCount == 3).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0027 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -2176,7 +2217,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0028 end *************' + rows.rowCount);
           expect(rows.rowCount == -1).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0028 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -2208,7 +2250,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0029 end *************' + rows.rowCount);
           expect(rows.rowCount == 2).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0029 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -2240,7 +2283,8 @@ export default function RelationStoreRdbStoreTest() {
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0030 end *************' + rows.rowCount);
           expect(rows.rowCount == 3).assertTrue();
           done();
-        }catch(err:BusinessError){
+        }catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', '************* testPredicates0030 end *************' + err);
           expect(err != null ).assertFail();
           done();
@@ -2771,7 +2815,8 @@ export default function RelationStoreRdbStoreTest() {
         resultSet.getRow();
         hilog.info(domain, tag, '%{public}s', '************* testGetRow001*************');
         expect().assertFail();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* testGetRow001 end *************' + err + err.code);
         expect(err.code == 14800012).assertTrue();
       }

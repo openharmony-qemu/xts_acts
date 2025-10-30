@@ -104,7 +104,8 @@ export default function RelationalStoreEnumTest(){
         expect(store != undefined).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest001, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
@@ -132,7 +133,8 @@ export default function RelationalStoreEnumTest(){
         expect(store != undefined).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
@@ -161,7 +163,8 @@ export default function RelationalStoreEnumTest(){
         expect(store != undefined).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`Get RdbStore failed, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
@@ -191,7 +194,8 @@ export default function RelationalStoreEnumTest(){
         expect(store != undefined).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest004, code is ${err.code},message is ${err.message}`);
         expect(err != null ).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
@@ -220,7 +224,8 @@ export default function RelationalStoreEnumTest(){
         expect(store != undefined).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest005, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
@@ -251,7 +256,8 @@ export default function RelationalStoreEnumTest(){
         expect(store != undefined).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest006, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
@@ -282,7 +288,8 @@ export default function RelationalStoreEnumTest(){
         expect(store != undefined).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest007, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
@@ -310,7 +317,8 @@ export default function RelationalStoreEnumTest(){
         expect(store != undefined).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest008, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
@@ -359,7 +367,8 @@ export default function RelationalStoreEnumTest(){
         expect(num == 1).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, 'getrdb llll error' + err.stack);
         console.error(`Get RdbStore failed, code is ${err.code},message is ${err.message}`);
         expect().assertFail();
@@ -417,12 +426,14 @@ export default function RelationalStoreEnumTest(){
           console.error(`RelationalStoreEnumerateTest010, num` + num);
           expect(num == 1).assertFail();
           done();
-        }catch(err:BusinessError) {
+        }catch(err) {
+          err = err as BusinessError;
           console.error(`RelationalStoreEnumerateTest010, code is ${err.code},message is ${err.message}`);
           expect(err.code).assertEqual(14800014);
           done();
         }
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`Get RdbStore failed, code is ${err.code},message is ${err.message}`);
         expect().assertFail();
         done();
@@ -449,7 +460,8 @@ export default function RelationalStoreEnumTest(){
         expect(store != undefined).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
@@ -477,7 +489,8 @@ export default function RelationalStoreEnumTest(){
         expect(store != undefined).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
@@ -506,7 +519,8 @@ export default function RelationalStoreEnumTest(){
         expect(store != undefined).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
@@ -535,7 +549,8 @@ export default function RelationalStoreEnumTest(){
         expect(store != undefined).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
@@ -573,7 +588,8 @@ export default function RelationalStoreEnumTest(){
         expect(store != undefined).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
@@ -611,7 +627,8 @@ export default function RelationalStoreEnumTest(){
         expect(store != undefined).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
@@ -649,7 +666,8 @@ export default function RelationalStoreEnumTest(){
         expect(store != undefined).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
@@ -687,7 +705,8 @@ export default function RelationalStoreEnumTest(){
         expect(store != undefined).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
@@ -724,7 +743,8 @@ export default function RelationalStoreEnumTest(){
         expect(store != undefined).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
@@ -762,7 +782,8 @@ export default function RelationalStoreEnumTest(){
         expect(store != undefined).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest002, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
@@ -808,7 +829,8 @@ export default function RelationalStoreEnumTest(){
         fs.truncateSync(file.fd, 4);
         fs.fsyncSync(file.fd)
         fs.closeSync(file)
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(tag, `RelationalStoreEnumerateTest0021 err.code ${err.code}, err.message ${err.message}`)
       }
       (store as data_relationalStore.RdbStore).close();
@@ -820,7 +842,8 @@ export default function RelationalStoreEnumTest(){
         expect( data_relationalStore.RebuildType.REPAIRED == 2).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest0021, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG1);
@@ -859,7 +882,8 @@ export default function RelationalStoreEnumTest(){
         fs.truncateSync(file.fd, 4);
         fs.fsyncSync(file.fd)
         fs.closeSync(file)
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(tag, `CreateCorruptDb err.code ${err.code}, err.message ${err.message}`)
       }
       try{
@@ -873,7 +897,8 @@ export default function RelationalStoreEnumTest(){
         expect(data_relationalStore.RebuildType.REPAIRED == 2).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest0022, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG1);
@@ -916,7 +941,8 @@ export default function RelationalStoreEnumTest(){
         fs.truncateSync(file.fd, 4);
         fs.fsyncSync(file.fd)
         fs.closeSync(file)
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(tag, `CreateCorruptDb err.code ${err.code}, err.message ${err.message}`)
       }
       (store as data_relationalStore.RdbStore).close();
@@ -927,7 +953,8 @@ export default function RelationalStoreEnumTest(){
         expect((store as data_relationalStore.RdbStore).rebuilt == data_relationalStore.RebuildType.NONE).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG1);
         done();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest0023, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG1);
@@ -974,7 +1001,8 @@ export default function RelationalStoreEnumTest(){
         rdbTrans.commit();
         console.error(`RelationalStoreEnumerateTest0024, (store as data_relationalStore.RdbStore).rebuilt 5555555555555555555555`);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationalStoreEnumerateTest0024 err *************' + err.code+err.message);
         expect(err != null ).assertFail();
         console.error(`RelationalStoreEnumerateTest0024, (store as data_relationalStore.RdbStore).rebuilt 77777777777777777`);
@@ -1079,12 +1107,14 @@ export default function RelationalStoreEnumTest(){
           console.error(`RelationalStoreEnumerateTest026, num` + num);
           expect(num == 1).assertTrue();
           done();
-        }catch(err:BusinessError) {
+        }catch(err) {
+          err = err as BusinessError;
           console.error(`RelationalStoreEnumerateTest026, code is ${err.code},message is ${err.message}`);
           expect(err != null ).assertFail();
           done();
         }
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(` RelationalStoreEnumerateTest026 Get RdbStore failed, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         done();
@@ -1139,12 +1169,14 @@ export default function RelationalStoreEnumTest(){
           console.error(`RelationalStoreEnumerateTest027, num` + num);
           expect(num == 1).assertTrue();
           done();
-        }catch(err:BusinessError) {
+        }catch(err) {
+          err = err as BusinessError;
           console.error(`RelationalStoreEnumerateTest027, code is ${err.code},message is ${err.message}`);
           expect(err != null ).assertFail();
           done();
         }
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(` RelationalStoreEnumerateTest027 Get RdbStore failed, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         done();
@@ -1200,12 +1232,14 @@ export default function RelationalStoreEnumTest(){
           console.error(`RelationalStoreEnumerateTest028, num` + num);
           expect(num == 1).assertTrue();
           done();
-        }catch(err:BusinessError) {
+        }catch(err) {
+          err = err as BusinessError;
           console.error(`RelationalStoreEnumerateTest028, code is ${err.code},message is ${err.message}`);
           expect(err != null ).assertFail();
           done();
         }
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest028 Get RdbStore failed, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         done();
@@ -1260,12 +1294,14 @@ export default function RelationalStoreEnumTest(){
           console.error(`RelationalStoreEnumerateTest029, num` + num);
           expect(num == 1).assertTrue();
           done();
-        }catch(err:BusinessError) {
+        }catch(err) {
+          err = err as BusinessError;
           console.error(`RelationalStoreEnumerateTest029, code is ${err.code},message is ${err.message}`);
           expect(err != null ).assertFail();
           done();
         }
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest029 failed, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         done();
@@ -1321,12 +1357,14 @@ export default function RelationalStoreEnumTest(){
           console.error(`RelationalStoreEnumerateTest030, num` + num);
           expect(num == 1).assertTrue();
           done();
-        }catch(err:BusinessError) {
+        }catch(err) {
+          err = err as BusinessError;
           console.error(`RelationalStoreEnumerateTest030, code is ${err.code},message is ${err.message}`);
           expect(err != null ).assertFail();
           done();
         }
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest030 failed, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         done();
@@ -1382,12 +1420,14 @@ export default function RelationalStoreEnumTest(){
           console.error(`RelationalStoreEnumerateTest031, num` + num);
           expect(num == 1).assertTrue();
           done();
-        }catch(err:BusinessError) {
+        }catch(err) {
+          err = err as BusinessError;
           console.error(`RelationalStoreEnumerateTest031, code is ${err.code},message is ${err.message}`);
           expect(err != null ).assertFail();
           done();
         }
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`RelationalStoreEnumerateTest031 failed, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         done();
@@ -1444,12 +1484,14 @@ export default function RelationalStoreEnumTest(){
           console.error(`RelationalStoreEnumerateTest032, num` + num);
           expect(num == 1).assertTrue();
           done();
-        }catch(err:BusinessError) {
+        }catch(err) {
+          err = err as BusinessError;
           console.error(`RelationalStoreEnumerateTest032, code is ${err.code},message is ${err.message}`);
           expect(err != null ).assertFail();
           done();
         }
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         console.error(`Get RdbStore failed, code is ${err.code},message is ${err.message}`);
         expect(err != null).assertFail();
         done();

@@ -91,7 +91,8 @@ export default function audioManagerTest() {
           // maxVolume value depends on device configuration, simplify judgment here
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log(`getVolume error: ${error.code}, message ${error.message}`);
         expect(false).assertTrue();
         done();
@@ -121,7 +122,8 @@ export default function audioManagerTest() {
 
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log(`getVolume error ${error.code}, message ${error.message}`);
         expect(false).assertTrue();
         done();

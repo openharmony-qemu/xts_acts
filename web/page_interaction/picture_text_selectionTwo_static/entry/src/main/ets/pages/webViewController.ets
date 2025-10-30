@@ -80,7 +80,8 @@ struct webViewController {
                   if (icon != undefined) {
                     Utils.emitEvent(true, 31023)
                   }
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 31023)
               }
@@ -97,7 +98,8 @@ struct webViewController {
                 console.log("HistoryItem: " + JSON.stringify(historyItem));
                 historyItemString = historyItem.historyUrl;
                 Utils.emitEvent(historyItemString, 31024)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 31024)
               }
@@ -113,7 +115,8 @@ struct webViewController {
                 console.log("HistoryItem: " + JSON.stringify(historyItem));
                 historyItemRawUrl = historyItem.historyRawUrl;
                 Utils.emitEvent(historyItemRawUrl, 31025)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 31025)
               }
@@ -129,7 +132,8 @@ struct webViewController {
                 console.log("HistoryItem: " + JSON.stringify(historyItem));
                 historyItemTitle = historyItem.title;
                 Utils.emitEvent(historyItemTitle, 31026)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 31026)
               }

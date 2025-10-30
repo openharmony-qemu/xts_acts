@@ -611,7 +611,8 @@ export default function ActsAccountAuthTokenStatic() {
             "promise_authType_limit_token");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>7500 getAuthToken err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>7500 removeAccount start====");
@@ -688,7 +689,8 @@ export default function ActsAccountAuthTokenStatic() {
           hilog.info(0x0000, tag, "====>7700 removeAccount start====");
           await accountManager.removeAccount("promise_authType_limit")
           hilog.info(0x0000, tag, "====>7700 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>7500 getAuthToken err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -778,7 +780,8 @@ export default function ActsAccountAuthTokenStatic() {
             "promise_empty_authType_token");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>7900 deleteAuthToken err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300107);
           hilog.info(0x0000, tag, "====>7900 getAuthToken start====");
@@ -867,7 +870,8 @@ export default function ActsAccountAuthTokenStatic() {
           let data: Array<account.AuthTokenInfo> = await accountManager.getAllAuthTokens(limitName, OWNERSELF);
           hilog.info(0x0000, tag, "====>8100 run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>8100 getAllAuthTokens err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>8100====");
@@ -1339,7 +1343,8 @@ export default function ActsAccountAuthTokenStatic() {
           hilog.info(0x0000, tag, "====>0200 removeAccount start====");
           await accountManager.removeAccount("promise_normal");
           hilog.info(0x0000, tag, "====>0200 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>7500 getAuthToken err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -1401,7 +1406,8 @@ export default function ActsAccountAuthTokenStatic() {
           await accountManager.getAuthToken("promise_noSetToken", OWNERSELF, "authType");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>0400 getAuthToken err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300107);
           hilog.info(0x0000, tag, "====>0400 removeAccount start====");
@@ -1457,7 +1463,8 @@ export default function ActsAccountAuthTokenStatic() {
           await accountManager.getAuthToken("noAdd_account_promise", OWNERSELF, "authType");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>0600 getAuthToken err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
           hilog.info(0x0000, tag, "====>0600 end====");
@@ -1572,7 +1579,8 @@ export default function ActsAccountAuthTokenStatic() {
           hilog.info(0x0000, tag, "====>0800 removeAccount start====");
           await accountManager.removeAccount("promise_setSameAuthType");
           hilog.info(0x0000, tag, "====>0800 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>ActsAccountAuthToken_0800 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -1683,7 +1691,8 @@ export default function ActsAccountAuthTokenStatic() {
           hilog.info(0x0000, tag, "====>1000 removeAccount start====");
           await accountManager.removeAccount("promise_setDiff");
           hilog.info(0x0000, tag, "====>1000 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>ActsAccountAuthToken_1000 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -1880,7 +1889,8 @@ export default function ActsAccountAuthTokenStatic() {
         try {
           await accountManager.deleteAuthToken("promise_setDeleteGet", OWNERSELF, "old_authType",
             "promise_setDeleteGet_token");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>deleteAuthToken 1200 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -1890,7 +1900,8 @@ export default function ActsAccountAuthTokenStatic() {
             await accountManager.getAuthToken("promise_setDeleteGet", OWNERSELF, "old_authType",);
           hilog.info(0x0000, tag, "====>getAuthToken getOld 1200 data1_AfterDel: " + data1AfterDel);
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getAuthToken getOld 1200 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300107);
         }
@@ -1900,7 +1911,8 @@ export default function ActsAccountAuthTokenStatic() {
             await accountManager.getAuthToken("promise_setDeleteGet", OWNERSELF, "new_authType",);
           hilog.info(0x0000, tag, "====>getAuthToken getOld 1200 data2_AfterDel: " + data2AfterDel);
           expect(data2AfterDel).assertEqual("promise_setDeleteGet_token");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getAuthToken getNew 1200 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -1908,7 +1920,8 @@ export default function ActsAccountAuthTokenStatic() {
         try {
           await accountManager.deleteAuthToken("promise_setDeleteGet", OWNERSELF, "new_authType",
             "promise_setDeleteGet_token");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>deleteAuthToken 1200 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -1918,7 +1931,8 @@ export default function ActsAccountAuthTokenStatic() {
             await accountManager.getAuthToken("promise_setDeleteGet", OWNERSELF, "old_authType",);
           hilog.info(0x0000, tag, "====>getAuthToken getOld 1200 data1_AgainDel: " + data1AgainDel);
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getAuthToken getOld 1200 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300107);
         }
@@ -1928,7 +1942,8 @@ export default function ActsAccountAuthTokenStatic() {
             await accountManager.getAuthToken("promise_setDeleteGet", OWNERSELF, "new_authType",);
           hilog.info(0x0000, tag, "====>getAuthToken getOld 1200 data2_AgainDel: " + data2AgainDel);
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getAuthToken getNew 1200 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300107);
         }
@@ -2007,7 +2022,8 @@ export default function ActsAccountAuthTokenStatic() {
           await accountManager.getAuthToken("promise_setDeleteGet", OWNERSELF, "authType");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getAuthToken 1400 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300107);
           hilog.info(0x0000, tag, "====>1400 removeAccount start====");
@@ -2063,7 +2079,8 @@ export default function ActsAccountAuthTokenStatic() {
             "promise_accountNotExit_token");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>setAuthToken 1600 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
           hilog.info(0x0000, tag, "====>1600 end====");
@@ -2117,7 +2134,8 @@ export default function ActsAccountAuthTokenStatic() {
             "promise_accountNotExit_token");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>deleteAuthToken 1800 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
           hilog.info(0x0000, tag, "====>1800 end====");
@@ -2185,7 +2203,8 @@ export default function ActsAccountAuthTokenStatic() {
           await accountManager.deleteAuthToken("promise_noExitToken", OWNERSELF, "aythType", "test_token")
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>deleteAuthToken 2000 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300107);
         }
@@ -2195,7 +2214,8 @@ export default function ActsAccountAuthTokenStatic() {
           await accountManager.getAuthToken("promise_noExitToken", OWNERSELF, "authType");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getAuthToken 2000 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300107);
           hilog.info(0x0000, tag, "====>2000 removeAccount start====");
@@ -2295,7 +2315,8 @@ export default function ActsAccountAuthTokenStatic() {
             "promise_repeatDelete_token");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>deleteAuthToken second 2200 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300107);
         }
@@ -2304,7 +2325,8 @@ export default function ActsAccountAuthTokenStatic() {
           await accountManager.getAuthToken("promise_repeatDelete", OWNERSELF, "authType");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getAuthToken 2200 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300107);
           hilog.info(0x0000, tag, "====>2200 removeAccount start====");
@@ -2376,7 +2398,8 @@ export default function ActsAccountAuthTokenStatic() {
           await accountManager.getAuthToken("promise_setEmptyToken", "authType", "");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getAuthToken 2400 err: " + JSON.stringify(err));
           // expect(err.code).assertEqual(12300107);
           hilog.info(0x0000, tag, "====>2400 removeAccount start====");
@@ -2455,7 +2478,8 @@ export default function ActsAccountAuthTokenStatic() {
           hilog.info(0x0000, tag, "====>2600 removeAccount start====");
           await accountManager.removeAccount("promise_spaceToken");
           hilog.info(0x0000, tag, "====>2600 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>ActsAccountAuthToken_2600 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -2524,7 +2548,8 @@ export default function ActsAccountAuthTokenStatic() {
           await accountManager.setAuthToken("promise_exceed_limitToken", "authType", limitToken);
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>setAuthToken 2800 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>2800 removeAccount start====");
@@ -2611,7 +2636,8 @@ export default function ActsAccountAuthTokenStatic() {
           hilog.info(0x0000, tag, "====>3000 removeAccount start====");
           await accountManager.removeAccount("promise_limitToken");
           hilog.info(0x0000, tag, "====>3000 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>ActsAccountAuthToken_3000 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -2681,7 +2707,8 @@ export default function ActsAccountAuthTokenStatic() {
             "promise_limitAuthType_token");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>setAuthToken 3200 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>3200 removeAccount start====");
@@ -2754,7 +2781,8 @@ export default function ActsAccountAuthTokenStatic() {
           await accountManager.getAuthToken("promise_limitAuthType", OWNERSELF, limitAuthType);
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getAuthToken 3400 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>3400 removeAccount start====");
@@ -2862,7 +2890,8 @@ export default function ActsAccountAuthTokenStatic() {
           await accountManager.deleteAuthToken("", "com.example.actsaccounttest", "authType", "account_notExist_token");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>deleteAuthToken 4200 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>4200 end====");
@@ -2917,7 +2946,8 @@ export default function ActsAccountAuthTokenStatic() {
             "account_notExist_token");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>deleteAuthToken 4400 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
           hilog.info(0x0000, tag, "====>4400 end====");
@@ -2981,7 +3011,8 @@ export default function ActsAccountAuthTokenStatic() {
             "account_notExist_token");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>deleteAuthToken 4600 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>4600 end====");
@@ -3054,7 +3085,8 @@ export default function ActsAccountAuthTokenStatic() {
           hilog.info(0x0000, tag, "====>3600 removeAccount start====");
           await accountManager.removeAccount("promise_limitAuthType");
           hilog.info(0x0000, tag, "====>3600 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>ActsAccountAuthToken_3600 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -3129,7 +3161,8 @@ export default function ActsAccountAuthTokenStatic() {
           hilog.info(0x0000, tag, "====>3800 removeAccount start====");
           await accountManager.removeAccount("promise_authType_empty");
           hilog.info(0x0000, tag, "====>3800 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>ActsAccountAuthToken_3800 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -3206,7 +3239,8 @@ export default function ActsAccountAuthTokenStatic() {
           hilog.info(0x0000, tag, "====>4000 removeAccount start====");
           await accountManager.removeAccount("promise_authType_space");
           hilog.info(0x0000, tag, "====>4000 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>checkDataSyncEnabled 1200 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -3231,7 +3265,8 @@ export default function ActsAccountAuthTokenStatic() {
           await accountManager.getAuthToken("promise_invalid_owner", "invalid_owner", "authType");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>4800 getAuthToken err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
           hilog.info(0x0000, tag, "====>4800 removeAccount start====");
@@ -3296,7 +3331,8 @@ export default function ActsAccountAuthTokenStatic() {
           await accountManager.getAuthToken("promise_owner_empty", "", "authType");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>5000 getAuthToken err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>5000 removeAccount start====");
@@ -3361,7 +3397,8 @@ export default function ActsAccountAuthTokenStatic() {
           await accountManager.getAuthToken("account_callback_owner_space", " ", "authType");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>5200 getAuthToken err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
           hilog.info(0x0000, tag, "====>5200 removeAccount start====");
@@ -3434,7 +3471,8 @@ export default function ActsAccountAuthTokenStatic() {
           await accountManager.getAuthToken("promise_authType_invalid", OWNERSELF, "invalid_authType");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>5400 getAuthToken err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300107);
           hilog.info(0x0000, tag, "====>5400 removeAccount start====");
@@ -3507,7 +3545,8 @@ export default function ActsAccountAuthTokenStatic() {
           await accountManager.getAuthToken("promise_authType_empty", OWNERSELF, "");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>5600 getAuthToken err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300107);
           hilog.info(0x0000, tag, "====>5600 removeAccount start====");
@@ -3580,7 +3619,8 @@ export default function ActsAccountAuthTokenStatic() {
           await accountManager.getAuthToken("promise_authType_space", OWNERSELF, " ");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>5800 getAuthToken err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300107);
           hilog.info(0x0000, tag, "====>5800 removeAccount start====");
@@ -3653,7 +3693,8 @@ export default function ActsAccountAuthTokenStatic() {
             "promise_owner_invalid_token");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>6000 getAuthToken err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
           hilog.info(0x0000, tag, "====>6000 removeAccount start====");
@@ -3726,7 +3767,8 @@ export default function ActsAccountAuthTokenStatic() {
             "promise_owner_empty_token");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>6200 getAuthToken err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>6200 removeAccount start====");
@@ -3799,7 +3841,8 @@ export default function ActsAccountAuthTokenStatic() {
             "promise_owner_space_token");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>6400 getAuthToken err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
           hilog.info(0x0000, tag, "====>6400 removeAccount start====");
@@ -3872,7 +3915,8 @@ export default function ActsAccountAuthTokenStatic() {
           await accountManager.deleteAuthToken("promise_token_exceedLimit", OWNERSELF, "authType", limitToken);
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>6600 getAuthToken err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>6600 removeAccount start====");
@@ -3952,7 +3996,8 @@ export default function ActsAccountAuthTokenStatic() {
           hilog.info(0x0000, tag, "====>6800 removeAccount start====");
           await accountManager.removeAccount("promise_token_limit");
           hilog.info(0x0000, tag, "====>6800 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>ActsAccountAuthToken_6800 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -4035,7 +4080,8 @@ export default function ActsAccountAuthTokenStatic() {
           hilog.info(0x0000, tag, "====>7000 removeAccount start====");
           await accountManager.removeAccount("promise_delete_space");
           hilog.info(0x0000, tag, "====>7000 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>ActsAccountAuthToken_7000 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -4056,7 +4102,8 @@ export default function ActsAccountAuthTokenStatic() {
         try {
           await accountManager.getAuthCallback("test_sessionId");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>9200 getAuthCalback err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300108);
         }
@@ -4077,7 +4124,8 @@ export default function ActsAccountAuthTokenStatic() {
         try {
           await accountManager.getAuthCallback("");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>9300 getAuthCalback err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
         }
@@ -4098,7 +4146,8 @@ export default function ActsAccountAuthTokenStatic() {
         try {
           await accountManager.getAuthCallback(" ");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>9400 getAuthCalback err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300108);
         }
@@ -4235,7 +4284,8 @@ export default function ActsAccountAuthTokenStatic() {
             valid_owner_name, true);
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>9900 setAuthTokenVisibility err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300107);
           accountManager.getAuthToken("account_setAuthTokenVisibility_name", OWNERSELF, "authType",
@@ -4797,7 +4847,8 @@ export default function ActsAccountAuthTokenStatic() {
           await accountManager.setAuthTokenVisibility(" ", "authType", valid_owner_name, true);
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>11001 setAuthTokenVisibility err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
         }
@@ -5687,7 +5738,8 @@ export default function ActsAccountAuthTokenStatic() {
           let data: Array<string> = await accountManager.getAuthList("", "authType");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>ActsAccountAuthToken_12700 fail err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
         }
@@ -5966,7 +6018,8 @@ export default function ActsAccountAuthTokenStatic() {
           hilog.info(0x0000, tag, "====>13201 queryAuthenticatorInfo dataInfo: " + JSON.stringify(data));
           expect(data.iconId >= 0).assertTrue();
           expect(data.labelId >= 0).assertTrue();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>13201 queryAuthenticatorInfo err: " + JSON.stringify(err));
           expect().assertFail();
         }

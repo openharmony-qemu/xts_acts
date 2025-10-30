@@ -94,7 +94,8 @@ export default function RequestDownloadStaticTest() {
         let task: request.agent.Task = await request.agent.create(baseContext, config);
         expect(task !== undefined).assertEqual(true);
         hilog.info(domain, tag, '%{public}s',"====>SUB_Misc_REQUEST_Create_Download_Promise_Static_0010 create success: " + task);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s',"====>SUB_Misc_REQUEST_Create_Download_Promise_Static_0010 catch error: " + JSON.stringify(err));
         expect().assertFail();
       }
@@ -122,7 +123,8 @@ export default function RequestDownloadStaticTest() {
         await task.start();
         expect(task !== undefined).assertEqual(true);
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Start_Download_Promise_Static_0010 download start success: " + task);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Start_Download_Promise_Static_0010 download start err: " + JSON.stringify(err));
         expect().assertFail();
       }
@@ -156,7 +158,8 @@ export default function RequestDownloadStaticTest() {
           }
           expect(task !== undefined).assertEqual(true);
           hilog.info(domain, tag, '%{public}s', "====>SUB_Misc_REQUEST_Create_Download_Callback_Static_0010 create success: " + task);
-        } catch(error: BusinessError ) {
+        } catch(error) {
+          error = error as BusinessError ;
           hilog.info(domain, tag, '%{public}s', "====>SUB_Misc_REQUEST_Create_Download_Callback_Static_0010 create fail: " + JSON.stringify(error));
         }
         hilog.info(domain, tag, '%{public}s', "-----------------------SUB_Misc_REQUEST_Create_Download_Callback_Static_0010 end-----------------------");
@@ -194,7 +197,8 @@ export default function RequestDownloadStaticTest() {
         await task.start();
         expect(task !== undefined).assertEqual(true);
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Start_Upload_Promise_Static_0010 download start success: " + task);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Start_Upload_Promise_Static_0010 download start err: " + JSON.stringify(err));
         expect().assertFail();
       }
@@ -315,7 +319,8 @@ export default function RequestDownloadStaticTest() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Start_Download_Callback_Static_0010 download catch err: " + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -342,7 +347,8 @@ export default function RequestDownloadStaticTest() {
         hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_1000 create not err");
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_1000 create catch err: " + err.code + JSON.stringify(err));
         expect(err.code).assertEqual(13400001);
         done();
@@ -376,7 +382,8 @@ export default function RequestDownloadStaticTest() {
             expect().assertFail();
             done();
           }
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `====>SUB_Request_Agent_TaskSaveas_Static_1100 Succeeded in create a download task.` + err.code + JSON.stringify(err));
           done();
         }
@@ -403,7 +410,8 @@ export default function RequestDownloadStaticTest() {
         hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_0500 create not err");
         expect().assertFail();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "====>SUB_Request_Agent_TaskSaveas_Static_0500 create catch err: " + err.code + JSON.stringify(err));
         expect(err.code).assertEqual(401);
         done();
@@ -437,7 +445,8 @@ export default function RequestDownloadStaticTest() {
             expect().assertFail();
             done();
           }
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `====>SUB_Request_Agent_TaskSaveas_Static_0600 Succeeded in create a download task.` + err.code + JSON.stringify(err));
           done();
         }
@@ -472,7 +481,8 @@ export default function RequestDownloadStaticTest() {
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0040 pro.extras: " + JSON.stringify(pro.extras));
             expect(true).assertTrue();
             done();
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0040 catch err: " + JSON.stringify(err));
             done();
           }
@@ -480,7 +490,8 @@ export default function RequestDownloadStaticTest() {
         task.on('progress', on_progressCallback);
         await task.start();
         hilog.info(domain, tag, '====>SUB_Misc_REQUEST_On_Download_Progress_Static_0040 start success');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0040 create catch err: " + JSON.stringify(err));
         done();
       }
@@ -516,7 +527,8 @@ export default function RequestDownloadStaticTest() {
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0030 pro.extras: " + JSON.stringify(pro.extras));
             expect(flag && flag1).assertTrue();
             done();
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0030 catch err: " + JSON.stringify(err));
             done();
           }
@@ -525,7 +537,8 @@ export default function RequestDownloadStaticTest() {
         task.on('progress', on_progressCallback1);
         await task.start();
         hilog.info(domain, tag, '====>SUB_Misc_REQUEST_On_Download_Progress_Static_0030 start success');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0030 create catch err: " + JSON.stringify(err));
         done();
       }
@@ -559,7 +572,8 @@ export default function RequestDownloadStaticTest() {
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 pro.state: " + pro.state);
             expect(pro.state).assertEqual(64);
             done();
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 err: " + JSON.stringify(err));
             done();
           }
@@ -567,7 +581,8 @@ export default function RequestDownloadStaticTest() {
         task.on('completed', on_completedCallback);
         await task.start();
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 task.start");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0100 create catch err: " + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -601,12 +616,14 @@ export default function RequestDownloadStaticTest() {
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0200 task start twice success");
             expect().assertFail();
             done();
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             try{
               hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0200 second download err: " + JSON.stringify(err));
               expect(err.code).assertEqual(13400001);
               done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+              err = err as BusinessError;
               hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0200 err: " + JSON.stringify(err));
               done();
             }
@@ -615,7 +632,8 @@ export default function RequestDownloadStaticTest() {
         task.on('completed', on_completedCallback);
         await task.start();
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0200 task.start");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0200 create catch err: " + JSON.stringify(err));
         expect().assertFail();
         done();
@@ -648,12 +666,14 @@ export default function RequestDownloadStaticTest() {
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0300 task start twice success");
             expect().assertFail();
             done();
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             try{
               hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0300 second download err: " + JSON.stringify(err));
               expect(err.code).assertEqual(21900007);
               done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+              err = err as BusinessError;
               hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0300 err: " + JSON.stringify(err));
               done();
             }
@@ -662,7 +682,8 @@ export default function RequestDownloadStaticTest() {
         task.on('completed', on_completedCallback);
         await task.start();
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0300 task.start");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0300 create catch err: " + JSON.stringify(err));
         expect().assertFail();
         done();

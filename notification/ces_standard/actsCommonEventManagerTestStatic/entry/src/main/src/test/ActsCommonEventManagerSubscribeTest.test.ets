@@ -155,7 +155,8 @@ export default function ActsCommonEventManagerSubscribeTest() {
             })
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_1900 failed, code is ${err.code}, message is ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -262,7 +263,8 @@ export default function ActsCommonEventManagerSubscribeTest() {
 
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_2000 failed, code is ${err.code}, message is ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -418,7 +420,8 @@ export default function ActsCommonEventManagerSubscribeTest() {
             }
           });
         }, 1000);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG+`publish failed, code is ${err.code}, message is ${err.message}`)
       }
     })
@@ -526,7 +529,8 @@ export default function ActsCommonEventManagerSubscribeTest() {
         setTimeout(()=>{
           commonEventManager.publish("eventname2", options, publishCB);
         }, 1000);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(TAG+`publish failed, code is ${err.code}, message is ${err.message}`)
         expect(false).assertTrue()
         done()

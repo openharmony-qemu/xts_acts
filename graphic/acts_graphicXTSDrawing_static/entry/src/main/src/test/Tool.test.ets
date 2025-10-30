@@ -67,7 +67,8 @@ export default function toolTest() {
         if (color1) {
           expect(color1 != null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor Color.Orange errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -78,7 +79,8 @@ export default function toolTest() {
         if (color2) {
           expect(color2 != null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` makeColorFromResourceColor 0xff0000 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -88,7 +90,8 @@ export default function toolTest() {
         if (color3) {
           expect(color3 != null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor 0x5500ff00 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -99,7 +102,8 @@ export default function toolTest() {
         if (color4) {
           expect(color4 != null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` makeColorFromResourceColor #0223fa errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -109,7 +113,8 @@ export default function toolTest() {
         if (color5) {
           expect(color5 != null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor #ffaca5e5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -120,7 +125,8 @@ export default function toolTest() {
         if (color6) {
           expect(color6 != null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` makeColorFromResourceColor #1f0 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -130,7 +136,8 @@ export default function toolTest() {
         if (color7) {
           expect(color7 != null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` makeColorFromResourceColor #5ff0 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -140,7 +147,8 @@ export default function toolTest() {
         if (color8) {
           expect(color8 != null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor rgb(255, 100, 255) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -151,7 +159,8 @@ export default function toolTest() {
         if (color9) {
           expect(color9 != null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor rgba(255, 100, 255, 0.20) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -163,7 +172,8 @@ export default function toolTest() {
         if (color10) {
           expect(color10 != null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor sys.color.ohos_id_color_button_normal errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -175,7 +185,8 @@ export default function toolTest() {
         if (color11) {
           expect(color11 != null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor app.color.appColorTest1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -197,7 +208,8 @@ export default function toolTest() {
         if (color2) {
           expect(color2 != null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` makeColorFromResourceColor 255 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -207,7 +219,8 @@ export default function toolTest() {
         if (color3) {
           expect(color3 != null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor -0x5500ffff errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -218,7 +231,8 @@ export default function toolTest() {
         if (color4) {
           expect(color4 != null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` makeColorFromResourceColor 255 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -228,7 +242,8 @@ export default function toolTest() {
         if (color5) {
           expect(color5 != null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor rgb(256, 256, 256) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -239,7 +254,8 @@ export default function toolTest() {
         if (color6) {
           expect(color6 != null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor rgba(256, 256, 256, 0.5) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -251,7 +267,8 @@ export default function toolTest() {
         if (color7) {
           expect(color7 != null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor app.string.AppColorStringTest1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -263,7 +280,8 @@ export default function toolTest() {
         if (color8) {
           expect(color8 != null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor app.integer.appColorTest1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -285,7 +303,8 @@ export default function toolTest() {
         if (color1) {
           expect(color1 == null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor rgb(255, 255, -255) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -296,7 +315,8 @@ export default function toolTest() {
         if (color2) {
           expect(color2 == null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor rgb(0, 255, 255, 255) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -307,7 +327,8 @@ export default function toolTest() {
         if (color3) {
           expect(color3 == null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor rgba(255, 100, -1, 0.5) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -318,7 +339,8 @@ export default function toolTest() {
         if (color4) {
           expect(color4 == null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor rgba(255, 100, 255, -0.1) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -329,7 +351,8 @@ export default function toolTest() {
         if (color5) {
           expect(color5 == null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor rgba(255, 100, 255, 1.1) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -341,7 +364,8 @@ export default function toolTest() {
         if (color6) {
           expect(color6 == null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor rgba(255, 100, 255, 0.5, 0.5) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -352,7 +376,8 @@ export default function toolTest() {
         if (color7) {
           expect(color7 == null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor hello world errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -363,7 +388,8 @@ export default function toolTest() {
         if (color8) {
           expect(color8 == null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` makeColorFromResourceColor  errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -374,7 +400,8 @@ export default function toolTest() {
         if (color9) {
           expect(color9 == null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor 1111111111111111111 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -385,7 +412,8 @@ export default function toolTest() {
         if (color10) {
           expect(color10 == null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` makeColorFromResourceColor # errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -395,7 +423,8 @@ export default function toolTest() {
         if (color11) {
           expect(color11 == null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` makeColorFromResourceColor #ff errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -405,7 +434,8 @@ export default function toolTest() {
         if (color12) {
           expect(color12 == null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor #ffffffffff errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -416,7 +446,8 @@ export default function toolTest() {
         if (color13) {
           expect(color13 == null).assertTrue()
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` makeColorFromResourceColor ##ff!@ff errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -438,7 +469,8 @@ export default function toolTest() {
           console.info(msg + ' makeColorFromResourceColor sys.string.general_paste return null pointer');
           expect(color1 == null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor sys.string.general_paste errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -449,7 +481,8 @@ export default function toolTest() {
           console.info(msg + ' makeColorFromResourceColor app.boolean.apptest1 return null pointer');
           expect(color2 == null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor app.boolean.apptest1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -460,7 +493,8 @@ export default function toolTest() {
           console.info(msg + ' makeColorFromResourceColor image.png return null pointer');
           expect(color3 == null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor image.png errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -471,7 +505,8 @@ export default function toolTest() {
           console.info(msg + ' makeColorFromResourceColor app.media.icon return null pointer');
           expect(color4 == null).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeColorFromResourceColor app.media.icon errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
@@ -494,7 +529,8 @@ export default function toolTest() {
           if (color1) {
             expect(color1 != null).assertTrue();
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg +
             ` makeColorFromResourceColor rgba(255, 100, 255, 0.20) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();

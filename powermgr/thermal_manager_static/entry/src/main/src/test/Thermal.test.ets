@@ -45,7 +45,8 @@ export default function ThermalTest() {
             expect(level as int).assertLessOrEqual(thermal.ThermalLevel.ESCAPE);
             done();
           });
-        } catch (e : BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -69,7 +70,8 @@ export default function ThermalTest() {
             hilog.info(domain, tag, `${TAG} unregisterThermalLevelCallback success`);
             done();
           });
-        } catch (e : BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -94,7 +96,8 @@ export default function ThermalTest() {
           expect(level as int).assertLargerOrEqual(thermal.ThermalLevel.COOL);
           expect(level as int).assertLessOrEqual(thermal.ThermalLevel.ESCAPE);
           done();
-        } catch (e : BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -118,7 +121,8 @@ export default function ThermalTest() {
           hilog.info(domain, tag, `${TAG} level: ${level}`);
           expect(level).assertEqual(0);
           done();
-        } catch (e : BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -142,7 +146,8 @@ export default function ThermalTest() {
           hilog.info(domain, tag, `${TAG} level: ${level}`);
           expect(level).assertEqual(1);
           done();
-        } catch (e : BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -166,7 +171,8 @@ export default function ThermalTest() {
           hilog.info(domain, tag, `${TAG} level: ${level}`);
           expect(level).assertEqual(2);
           done();
-        } catch (e : BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -190,7 +196,8 @@ export default function ThermalTest() {
           hilog.info(domain, tag, `${TAG} level: ${level}`);
           expect(level).assertEqual(3);
           done();
-        } catch (e : BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -214,7 +221,8 @@ export default function ThermalTest() {
           hilog.info(domain, tag, `${TAG} level: ${level}`);
           expect(level).assertEqual(4);
           done();
-        } catch (e : BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -238,7 +246,8 @@ export default function ThermalTest() {
           hilog.info(domain, tag, `${TAG} level: ${level}`);
           expect(level).assertEqual(5);
           done();
-        } catch (e : BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -262,7 +271,8 @@ export default function ThermalTest() {
           hilog.info(domain, tag, `${TAG} level: ${level}`);
           expect(level).assertEqual(6);
           done();
-        } catch (e : BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();
@@ -286,7 +296,8 @@ export default function ThermalTest() {
           hilog.info(domain, tag, `${TAG} level: ${level}`);
           expect(level).assertEqual(7);
           done();
-        } catch (e : BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect().assertFail();
           done();

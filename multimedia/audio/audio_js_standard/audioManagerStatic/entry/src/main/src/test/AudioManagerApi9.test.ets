@@ -160,7 +160,8 @@ export default function audioManagerApi9() {
           expect(false).assertTrue();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`audioManagerApi9Test: failed to getGroupManager: Callback:  ${error.message}`);
         expect(false).assertTrue();
         done();
@@ -183,7 +184,8 @@ export default function audioManagerApi9() {
         console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getGroupManager  :  FAIL`);
         expect(false).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`audioManagerApi9Test: failed to getGroupManager: Callback:  ${error.message},code:${error.code}`);
         expect(Number(error.code)).assertEqual(6800101);
         done();
@@ -265,7 +267,8 @@ export default function audioManagerApi9() {
           console.info('audioManagerApi9Test: Promise: getGroupManager  :  FAIL');
           expect(false).assertTrue();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info('audioManagerApi9Test: getGroupManager: parameter err:' + err.message);
         expect(false).assertTrue();
         done();
@@ -299,7 +302,8 @@ export default function audioManagerApi9() {
           }
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info('audioManagerApi9Test: getVolumeGroupManager : err:' + err.message);
         expect(false).assertTrue();
         done();
@@ -327,7 +331,8 @@ export default function audioManagerApi9() {
           expect(false).assertTrue();
         }
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info('audioManagerApi9Test: getVolumeGroupManager : err:' + err.message);
         expect(false).assertTrue();
         done();
@@ -364,7 +369,8 @@ export default function audioManagerApi9() {
           }
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info('audioManagerApi9Test: getVolumeGroupManager : err:' + err.message);
         expect(false).assertTrue();
         done();
@@ -394,7 +400,8 @@ export default function audioManagerApi9() {
           console.info('audioManagerApi9Test: promise : Ringtone getMaxVolume: FAIL :' + maxVolume);
           expect(false).assertTrue();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info('audioManagerApi9Test: getVolumeGroupManager : err:' + err.message);
         expect(false).assertTrue();
       }
@@ -428,7 +435,8 @@ export default function audioManagerApi9() {
           }
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info('audioManagerApi9Test: getVolumeGroupManager : err:' + err.message);
         expect(false).assertTrue();
         done();
@@ -455,7 +463,8 @@ export default function audioManagerApi9() {
           console.info('audioManagerApi9Test: promise : Ringtone getMinVolume: FAIL :' + minVolume);
           expect(false).assertTrue();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info('audioManagerApi9Test: getVolumeGroupManager : err:' + err.message);
         expect(false).assertTrue();
       }
@@ -486,7 +495,8 @@ export default function audioManagerApi9() {
           }
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info('audioManagerApi9Test: getGroupManager mute : parameter err:' + err.message);
         expect(false).assertTrue();
         done();
@@ -511,13 +521,15 @@ export default function audioManagerApi9() {
                     Is Stream GroupManager Mute RINGTONE: FALSE: PASS:` + data);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TagFrmwk}: audioManagerApi9Test: Promise:
                     Is Stream GroupManager Mute RINGTONE: FALSE: ERROR:` + err.message);
           expect(false).assertTrue();
           done();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info('audioManagerApi9Test: getGroupManager ismute : parameter err:' + err.message);
         expect(false).assertTrue();
         done();
@@ -556,7 +568,8 @@ export default function audioManagerApi9() {
           }
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info('audioManagerApi9Test: getGroupManager mute : parameter err:' + err.message);
         expect(false).assertTrue();
         done();
@@ -586,7 +599,8 @@ export default function audioManagerApi9() {
           console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_NORMAL: FAIL :${value}`);
           expect(false).assertTrue();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info('err :' + err.message);
         expect(false).assertTrue();
       }
@@ -609,7 +623,8 @@ export default function audioManagerApi9() {
         });
         expect(true).assertTrue();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info('err :' + err.message)
         expect(false).assertTrue();
         done();
@@ -636,7 +651,8 @@ export default function audioManagerApi9() {
           console.info(`${TagFrmwk}: Promise: isActive: Media: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info('err :' + JSON.stringify(err));
         expect().assertFail();
       }
@@ -688,7 +704,8 @@ export default function audioManagerApi9() {
           console.info(`${TagFrmwk}: Callback: isActive: Media: TRUE: FAIL: ${data}`);
           expect(false).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`Callback : Media : isActive: failed  ${error.message}`);
         expect().assertFail();
       }
@@ -787,11 +804,13 @@ export default function audioManagerApi9() {
                         isCommunicationDeviceActive : SPEAKER: Deactivate : fail :${value} flag is ${flag}`);
             expect(false).assertTrue();
           }
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('err :' + JSON.stringify(err.message));
           expect(false).assertTrue();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info('err :' + JSON.stringify(err.message));
         expect(false).assertTrue();
       }

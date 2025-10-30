@@ -81,7 +81,8 @@ struct webviewTerminateRenderProcess {
                 let result = this.controller.terminateRenderProcess();
                 hilog.info(0x0000, 'testTag', 'terminateRenderProcess result: ' + result);
                 Utils.emitEvent(result, 5300)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -103,7 +104,8 @@ struct webviewTerminateRenderProcess {
                 let result = this.controller.terminateRenderProcess();
                 hilog.info(0x0000, 'testTag', 'terminateRenderProcess result: ' + result);
                 Utils.emitEvent(result, 5304)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -124,7 +126,8 @@ struct webviewTerminateRenderProcess {
                 hilog.info(0x0000, 'testTag', 'terminateRenderProcess result: ' + result);
                 this.controller.slideScroll(500, 500);
                 Utils.emitEvent(true, 5306)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
               break;

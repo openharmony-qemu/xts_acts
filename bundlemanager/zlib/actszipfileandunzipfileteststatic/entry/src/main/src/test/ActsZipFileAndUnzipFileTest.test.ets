@@ -142,7 +142,8 @@ export default function ActsZlibTest() {
             hilog.info(domain, 'bmsTestTag',`006 errData is errCode:${err.code}  message:${err.message}`);
             expect(err.code).assertEqual(900001);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('fileio_test_stream_write_sync_000 has failed for ' + err);
           expect().assertFail();
         }
@@ -199,7 +200,8 @@ export default function ActsZlibTest() {
             let data: boolean = fileIo.accessSync(zipDest1);
             expect(data).assertTrue();
             done();
-          } catch(error: BusinessError) {
+          } catch(error) {
+            error = error as BusinessError;
             console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
             expect().assertFail();
             done();
@@ -245,7 +247,8 @@ export default function ActsZlibTest() {
         try {
           let data: boolean = fileIo.accessSync(unzipdir1);
           expect(data).assertTrue();
-        } catch(error: BusinessError) {
+        } catch(error) {
+          error = error as BusinessError;
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
         }
@@ -260,7 +263,8 @@ export default function ActsZlibTest() {
           hilog.info(domain, 'bmsTestTag',"011 decompressFileInputNotZipPro fail1: " + JSON.stringify(err));
           expect(err.code).assertEqual(INPUT_FILE_NOT_ZIP);
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info("decompressFileInputNotZipPro catch1 : " + JSON.stringify(err));
         expect().assertFail();
       }
@@ -287,7 +291,8 @@ export default function ActsZlibTest() {
         try {
           let data: boolean = fileIo.accessSync(zipDest22);
           expect(data).assertTrue();
-        } catch(error: BusinessError) {
+        } catch(error) {
+          error = error as BusinessError;
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
           done();
@@ -303,7 +308,8 @@ export default function ActsZlibTest() {
         try {
           let data: boolean = fileIo.accessSync(unzipdir22);
           expect(data).assertTrue();
-        } catch(error: BusinessError) {
+        } catch(error) {
+          error = error as BusinessError;
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
         }
@@ -321,7 +327,8 @@ export default function ActsZlibTest() {
         try {
           let data: boolean = fileIo.accessSync(unzipdir22);
           expect(data).assertTrue();
-        } catch(error: BusinessError) {
+        } catch(error) {
+          error = error as BusinessError;
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
           done();
@@ -347,7 +354,8 @@ export default function ActsZlibTest() {
           let data: boolean = fileIo.accessSync(zippath25);
           expect(data).assertTrue();
           done();
-        } catch(error: BusinessError) {
+        } catch(error) {
+          error = error as BusinessError;
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
           done();
@@ -374,7 +382,8 @@ export default function ActsZlibTest() {
         try {
           let data: boolean = fileIo.accessSync(unzipdir1);
           expect(data).assertTrue();
-        } catch(error: BusinessError) {
+        } catch(error) {
+          error = error as BusinessError;
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
         }
@@ -388,7 +397,8 @@ export default function ActsZlibTest() {
           expect(err?.code).assertEqual(INPUT_FILE_NOT_ZIP);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info("decompressFileInputNotZipPro catch1 : " + JSON.stringify(err));
         expect().assertFail();
       }
@@ -411,7 +421,8 @@ export default function ActsZlibTest() {
         try {
           let data: boolean = fileIo.accessSync(unzipdir1);
           expect(data).assertTrue();
-        } catch(error: BusinessError) {
+        } catch(error) {
+          error = error as BusinessError;
           console.error(`accessSync failed with errCode:${error.code}  message:${error.message}`);
           expect().assertFail();
         }
@@ -425,7 +436,8 @@ export default function ActsZlibTest() {
           expect(err?.code).assertEqual(INPUT_FILE_NOT_ZIP);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info("decompressFileInputNotZipProcallback catch1 : " + JSON.stringify(err));
         expect().assertFail();
       }

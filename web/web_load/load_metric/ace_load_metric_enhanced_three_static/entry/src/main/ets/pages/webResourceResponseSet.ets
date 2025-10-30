@@ -111,7 +111,8 @@ struct webResourceResponseSet {
                   Utils.emitEvent(this.getResponseDataValue == "", 36010);
                 }, 5000)
 
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -125,7 +126,8 @@ struct webResourceResponseSet {
                   Utils.emitEvent(this.getResponseEncodingValue, 36011);
                 }, 5000)
 
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -139,7 +141,8 @@ struct webResourceResponseSet {
                   Utils.emitEvent(this.getResponseMimeTypeValue, 36012);
                 }, 5000)
 
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -153,7 +156,8 @@ struct webResourceResponseSet {
                   Utils.emitEvent(this.getReasonMessageValue, 36013);
                 }, 5000)
 
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -167,7 +171,8 @@ struct webResourceResponseSet {
                   Utils.emitEvent(this.getResponseHeaderValue, 36014);
                 }, 5000)
 
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -182,7 +187,8 @@ struct webResourceResponseSet {
                   Utils.emitEvent(this.getResponseCodeValue, 36015);
                 }, 5000)
 
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -196,7 +202,8 @@ struct webResourceResponseSet {
                 this.setResponseCode = 200
                 this.controller.loadUrl('http://1.1.1.123/index.html');
                 Utils.emitEvent(this.title, 36016);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;

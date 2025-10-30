@@ -187,7 +187,8 @@ export default function xmlTest2() {
         let options: xml.ParseOptions = { supportDoctype: true, ignoreNameSpace: true, tagValueCallbackFunction: func6 }
         that.parseXml(options);
         expect().assertFail();
-      } catch (e : BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(e.toString()).assertEqual("BusinessError: The node name contains invalid characters: <");
         expect(e.code).assertEqual(401);
       }
@@ -461,7 +462,8 @@ export default function xmlTest2() {
       try {
         pullParse.parseXml(options);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(e.toString()).assertEqual("BusinessError: Cannot find the ']]>' in xml string.");
         expect(e.code).assertEqual(401);
       }
@@ -487,7 +489,8 @@ export default function xmlTest2() {
       try {
         pullParse.parseXml(options);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(e.toString()).assertEqual("BusinessError: Cannot find the ']]>' in xml string.");
         expect(e.code).assertEqual(401);
       }
@@ -515,7 +518,8 @@ export default function xmlTest2() {
       try {
         pullParse.parseXml(options);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(e.toString()).assertEqual("BusinessError: Cannot find the '?>' in xml string.");
         expect(e.code).assertEqual(401);
       }
@@ -542,7 +546,8 @@ export default function xmlTest2() {
       try {
         pullParse.parseXml(options);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(e.toString()).assertEqual("BusinessError: Cannot find the '?>' in xml string.");
         expect(e.code).assertEqual(401);
       }
@@ -570,7 +575,8 @@ export default function xmlTest2() {
       try {
         pullParse.parseXml(options);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(e.toString()).assertEqual("BusinessError: Cannot find the '--' in xml string.");
         expect(e.code).assertEqual(401);
       }

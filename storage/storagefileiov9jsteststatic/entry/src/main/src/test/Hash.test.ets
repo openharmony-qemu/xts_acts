@@ -50,7 +50,8 @@ export default function fileIOHash() {
         expect(str == '5EB63BBBE01EEED093CB22BB8F5ACDC3').assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -81,7 +82,8 @@ export default function fileIOHash() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -107,7 +109,8 @@ export default function fileIOHash() {
         expect(str == '2AAE6C35C94FCFB415DBE95F408B9CE91EE846ED').assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -138,7 +141,8 @@ export default function fileIOHash() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -164,7 +168,8 @@ export default function fileIOHash() {
         expect(str == 'B94D27B9934D3E08A52E52D7DA7DABFAC484EFE37A5380EE9088F7ACE2EFCDE9').assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_004 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -195,7 +200,8 @@ export default function fileIOHash() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -218,7 +224,8 @@ export default function fileIOHash() {
       try {
         let str = await fileHash.hash(fpath,'256');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_006 has failed for' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
         fs.unlinkSync(fpath);
@@ -249,7 +256,8 @@ export default function fileIOHash() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_async_static_007 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -293,7 +301,8 @@ export default function fileIOHash() {
           expect(streamHash == ret).assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_008 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -337,7 +346,8 @@ export default function fileIOHash() {
           expect(streamHash == ret).assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_009 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -381,7 +391,8 @@ export default function fileIOHash() {
           expect(streamHash == ret).assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_010 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -406,7 +417,8 @@ export default function fileIOHash() {
         let rs = fs.createReadStream(fpath);
         let hsSha256 = fileHash.createHash('123');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_hash_createHash_static_011 has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
         done();

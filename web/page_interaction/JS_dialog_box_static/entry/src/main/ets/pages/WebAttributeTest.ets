@@ -88,7 +88,8 @@ struct webViewController {
                       Utils.emitEvent(result, 70021)
                   }
                 })
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;

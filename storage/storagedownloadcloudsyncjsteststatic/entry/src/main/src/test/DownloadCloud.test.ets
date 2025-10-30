@@ -53,7 +53,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_Download_State_static_001 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }
@@ -85,7 +86,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_Download_State_static_002 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }
@@ -117,7 +119,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_Uploading_State_static_003 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }
@@ -149,7 +152,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_Uploading_Failed_State_static_004 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }
@@ -181,7 +185,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_SyncState_static_005 failed, err = ' + error.code + ', message = ' + error.message);
         expect(error.code == 201 && error.message == 'Permission verification failed').assertTrue();
       }
@@ -213,7 +218,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_Downloading_State_static_006 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }
@@ -245,7 +251,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_Download_Processed_static_001 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }
@@ -277,7 +284,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_001 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }
@@ -309,7 +317,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_002 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }
@@ -341,7 +350,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_003 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }
@@ -373,7 +383,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_004 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }
@@ -405,7 +416,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_005 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }
@@ -437,7 +449,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_006 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }
@@ -465,7 +478,8 @@ export default function cloudFileDownloadTest() {
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_007 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }
@@ -497,7 +511,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_008 failed, err = ' + error.code + ', message = ' + error.message);
         expect(error.code == 201 && error.message == 'Permission verification failed').assertTrue();
       }
@@ -529,7 +544,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_009 failed, err = ' + error.code + ', message = ' + error.message);
         expect(error.code == 201 && error.message == 'Permission verification failed').assertTrue();
       }
@@ -561,7 +577,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_010 failed, err = ' + error.code + ', message = ' + error.message);
         expect(error.code == 201 && error.message == 'Permission verification failed').assertTrue();
       }
@@ -593,7 +610,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_011 failed, err = ' + error.code + ', message = ' + error.message);
         expect(error.code == 201 && error.message == 'Permission verification failed').assertTrue();
       }
@@ -625,7 +643,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_012 failed, err = ' + error.code + ', message = ' + error.message);
         expect(error.code == 201 && error.message == 'Permission verification failed').assertTrue();
       }
@@ -649,7 +668,8 @@ export default function cloudFileDownloadTest() {
         hilog.info(domain, tag, '%{public}s', 'cloudSync.NotifyType.NOTIFY_ADDED = ' + value1);
         expect(value1).assertEqual(cloudSync.NotifyType.NOTIFY_ADDED);
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_NotifyType_static_001 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }
@@ -671,7 +691,8 @@ export default function cloudFileDownloadTest() {
         hilog.info(domain, tag, '%{public}s', 'cloudSync.NotifyType.NOTIFY_MODIFIED = ' + value1);
         expect(value1).assertEqual(cloudSync.NotifyType.NOTIFY_MODIFIED);
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_NotifyType_static_002 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }
@@ -693,7 +714,8 @@ export default function cloudFileDownloadTest() {
         hilog.info(domain, tag, '%{public}s', 'cloudSync.NotifyType.NOTIFY_DELETED = ' + value1);
         expect(value1).assertEqual(cloudSync.NotifyType.NOTIFY_DELETED);
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_NotifyType_static_003 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }
@@ -715,7 +737,8 @@ export default function cloudFileDownloadTest() {
         hilog.info(domain, tag, '%{public}s', 'cloudSync.NotifyType.NOTIFY_RENAMED = ' + value1);
         expect(value1).assertEqual(cloudSync.NotifyType.NOTIFY_RENAMED);
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_NotifyType_static_004 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }
@@ -741,7 +764,8 @@ export default function cloudFileDownloadTest() {
         }, (err: BusinessError<void>): void => {
           hilog.info(domain, tag, '%{public}s', 'test_Getlastsynctime_static_001 failed, err = ' + err.code + ', message = ' + err.message);
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_Getlastsynctime_static_001 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }
@@ -773,7 +797,8 @@ export default function cloudFileDownloadTest() {
             }
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_Getlastsynctime_static_002 failed, err = ' + error.code + ', message = ' + error.message);
         expect(false).assertTrue();
       }

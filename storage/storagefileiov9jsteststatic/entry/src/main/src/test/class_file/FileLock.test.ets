@@ -51,7 +51,8 @@ export default function fileIOFileLock() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -79,7 +80,8 @@ export default function fileIOFileLock() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -107,7 +109,8 @@ export default function fileIOFileLock() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_002 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -136,7 +139,8 @@ export default function fileIOFileLock() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_003 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -165,7 +169,8 @@ export default function fileIOFileLock() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_004 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -194,7 +199,8 @@ export default function fileIOFileLock() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_005 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -221,7 +227,8 @@ export default function fileIOFileLock() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_006 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -247,7 +254,8 @@ export default function fileIOFileLock() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_007 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -275,7 +283,8 @@ export default function fileIOFileLock() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_008 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -303,7 +312,8 @@ export default function fileIOFileLock() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_promise_static_009 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -332,7 +342,8 @@ export default function fileIOFileLock() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_callback_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -361,7 +372,8 @@ export default function fileIOFileLock() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_callback_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -390,7 +402,8 @@ export default function fileIOFileLock() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_filelock_callback_static_002 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }

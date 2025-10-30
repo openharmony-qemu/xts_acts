@@ -122,7 +122,8 @@ struct webViewControllerPart2 {
                 this.controller.clearHistory()
                 let accessStep = this.controller.accessStep(-1);
                 Utils.emitEvent(accessStep, 37000)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;

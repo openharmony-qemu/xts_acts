@@ -380,7 +380,8 @@ export default function TextTextLineTest() {
               .assertEqual(textLineExpectData[i].alignmentOffset);
           }
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(domain, tag, `www data Failed in getMaxWidth. Cause:${JSON.stringify(err)}`);
           expect().assertFail();
           done();

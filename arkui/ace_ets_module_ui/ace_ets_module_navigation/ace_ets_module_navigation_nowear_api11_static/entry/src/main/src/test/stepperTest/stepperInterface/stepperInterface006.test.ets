@@ -87,7 +87,8 @@ export default function stepperInterface006() {
       try{
         let button1: Component = await driver.findComponent(ON.text('Previous')) as Component;
         await button1.click();
-      }catch( err:BusinessError ){
+      }catch(err) {
+        err = err as BusinessError ;
         expect(err).assertFail()
       }
       await driver.delayMs(1000);

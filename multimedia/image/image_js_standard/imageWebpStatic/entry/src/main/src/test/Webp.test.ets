@@ -408,7 +408,8 @@ export default function imageWebp() {
               logger.log(`delayTimes[ ${i} ]= ${delayTimes[i]}`);
             }
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             logger.log("getDelayTimeList failed err: " + error);
             logger.log("getDelayTimeList failed err: " + error.code);
             expect(error.code == ERR_CODE).assertTrue();

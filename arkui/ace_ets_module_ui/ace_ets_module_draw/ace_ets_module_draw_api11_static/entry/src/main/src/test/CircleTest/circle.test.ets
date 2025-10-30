@@ -242,7 +242,8 @@ export default function circleNewJsunit() {
           message: 'Message Info'
         });
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ACE_showAlertBeforeBackPage_static_0100 failed, code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
       }
@@ -263,7 +264,8 @@ export default function circleNewJsunit() {
           message: 'undefined'
         });
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ACE_showAlertBeforeBackPage_static_0200, code is ${error.code}, message is ${error.message}`);
         expect(error.code == 401).assertTrue();
       }
@@ -282,7 +284,8 @@ export default function circleNewJsunit() {
       try {
         ohosrouter.hideAlertBeforeBackPage();
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ACE_hideAlertBeforeBackPage_static_0100, code is ${error.code}, message is ${error.message}`);
         expect().assertFail();
       }
@@ -315,7 +318,8 @@ export default function circleNewJsunit() {
         
         
         
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         let code = (error as BusinessError).code;
         let message = (error as BusinessError).message;
         console.error(`callback getStringValue failed, error code: ${code}, message: ${message}.`);

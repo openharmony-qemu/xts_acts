@@ -59,7 +59,8 @@ export default function InputDeviceTest() {
           ExpectTrue(inputDevice.KeyboardType.HANDWRITING_PEN == 4);
           ExpectTrue(inputDevice.KeyboardType.REMOTE_CONTROL == 5);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -82,7 +83,8 @@ export default function InputDeviceTest() {
         try {
           ExpectTrue(inputDevice.FunctionKey.CAPS_LOCK == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -118,7 +120,8 @@ export default function InputDeviceTest() {
               }
             });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} Failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
           done();
@@ -170,7 +173,8 @@ export default function InputDeviceTest() {
             }
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag,
             `${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
@@ -205,7 +209,8 @@ export default function InputDeviceTest() {
             }
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} Failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
           done();
@@ -231,7 +236,8 @@ export default function InputDeviceTest() {
             ExpectTrue(Array.isArray(ids));
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag,
             `${caseName} Failed to get device id list, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
@@ -259,7 +265,8 @@ export default function InputDeviceTest() {
             isPhysicalKeyboardExist++;
             ExpectTrue(isPhysicalKeyboardExist == 1);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} fail, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
         }
@@ -304,7 +311,8 @@ export default function InputDeviceTest() {
           ifInputDeviceOffSuccess++;
           ExpectTrue(ifInputDeviceOffSuccess == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Cancel listening device event failed, error: ${JSON.stringify(error,
             [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
@@ -332,7 +340,8 @@ export default function InputDeviceTest() {
           ifInputDeviceOffSuccess++;
           ExpectTrue(ifInputDeviceOffSuccess == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Cancel all listening device event failed, error: ${JSON.stringify(error,
             [`code`, `message`])}`);
           ExpectFalse(true);
@@ -357,7 +366,8 @@ export default function InputDeviceTest() {
             ExpectTrue(timeInterval > 0);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to get interval since last input, error: ${JSON.stringify(error,
             [`code`, `message`])}`);
           ExpectFalse(true);
@@ -392,7 +402,8 @@ export default function InputDeviceTest() {
               done();
             }
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Failed to get keyboard type, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
           done();
@@ -419,7 +430,8 @@ export default function InputDeviceTest() {
               type == inputDevice.KeyboardType.HANDWRITING_PEN || type == inputDevice.KeyboardType.REMOTE_CONTROL);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Failed to get keyboard type, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
           done();
@@ -445,7 +457,8 @@ export default function InputDeviceTest() {
             type == inputDevice.KeyboardType.DIGITAL_KEYBOARD ||
             type == inputDevice.KeyboardType.HANDWRITING_PEN || type == inputDevice.KeyboardType.REMOTE_CONTROL);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Failed to get keyboard type, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
           done();
@@ -469,7 +482,8 @@ export default function InputDeviceTest() {
           console.info(`${caseName} Query result: ${JSON.stringify(supportResult)}`);
           ExpectTrue(Array.isArray(supportResult));
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
           done();
@@ -494,7 +508,8 @@ export default function InputDeviceTest() {
               ExpectTrue(Array.isArray(supportResult));
               done();
             });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
           done();
@@ -519,7 +534,8 @@ export default function InputDeviceTest() {
               ExpectTrue(Array.isArray(supportResult));
               done();
             });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Query failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
           done();
@@ -542,7 +558,8 @@ export default function InputDeviceTest() {
           console.info(`${caseName} Device info: ${JSON.stringify(deviceData)}`);
           ExpectTrue(typeof (deviceData) == 'object');
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
           done();

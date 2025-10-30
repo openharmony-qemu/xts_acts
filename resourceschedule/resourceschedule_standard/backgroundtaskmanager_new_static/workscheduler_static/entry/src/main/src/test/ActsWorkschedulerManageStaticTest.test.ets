@@ -59,7 +59,8 @@ export default function WorkSchedulerJsTest() {
             done();
           }
         });
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_001 failed. code is ${err.code} message is ${err.message}`);
         expect(false).assertTrue();
         done();
@@ -123,7 +124,8 @@ export default function WorkSchedulerJsTest() {
           expect(false).assertEqual(true);
           done();
         })
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_002 failed. code is ${err.code} message is ${err.message}`);
         expect(false).assertEqual(true);
         done();
@@ -463,7 +465,8 @@ export default function WorkSchedulerJsTest() {
             done();
           }
         });
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_019 ----------------err---', JSON.stringify(err));
         expect(false).assertTrue();
         done();
@@ -514,7 +517,8 @@ export default function WorkSchedulerJsTest() {
           expect(false).assertEqual(true);
           done();
         })
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_020 ----------------err---', JSON.stringify(err));
         expect(false).assertTrue();
         done();
@@ -562,7 +566,8 @@ export default function WorkSchedulerJsTest() {
             done();
           }
         });
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_021 ----------------err---', JSON.stringify(err));
         expect(false).assertTrue();
         done();
@@ -603,7 +608,8 @@ export default function WorkSchedulerJsTest() {
           expect(false).assertEqual(true);
           done();
         });
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_022 failed. code is ${err.code} message is ${err.message}`);
         expect(false).assertTrue();
         done();

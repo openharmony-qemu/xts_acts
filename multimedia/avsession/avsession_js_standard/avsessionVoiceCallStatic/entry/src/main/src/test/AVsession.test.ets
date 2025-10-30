@@ -48,18 +48,21 @@ export default function abilityTest() {
         beforeEach(async () => {
             try{
                 session = await avSession.createAVSession(context, tag, 'voice_call');
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}: Session create error: code: ${err.code}, message: ${err.message}`);
             };
             try{
                 await session!.activate();
                 console.info(`${TAG}: Session activate`);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}: Session activate error: code: ${err.code}, message: ${err.message}`);
             };
             try {
                 controller = await session!.getController();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`${TAG}: getController error: code: ${err.code}, message: ${err.message}`);
             }
             await Utils.msSleep(800);
@@ -72,7 +75,8 @@ export default function abilityTest() {
                 try{
                     await session!.destroy()
                     console.info(`${TAG}: Session destroy success`);
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.info(`${TAG}: Session destroy error: code: ${err.code}, message: ${err.message}`);
                 };
             } else {
@@ -82,7 +86,8 @@ export default function abilityTest() {
                 try{
                     await controller.destroy()
                     console.info(`${TAG}: Controller destroy success`);
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.info(`${TAG}: Controller destroy error: code: ${err.code}, message: ${err.message}`);
                 };
             } else {
@@ -112,7 +117,8 @@ export default function abilityTest() {
                 aVCastController = await session!.getAVCastController();
                 console.info(`${TAG}: getAVCastController11 : SUCCESS`);
                 expect(false).assertTrue();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}:getAVCastController11 BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(6600102);
             };
@@ -160,7 +166,8 @@ export default function abilityTest() {
                     console.info('on pause entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`SUB_MULTIMEDIA_AVSESSION_ON_PAUSE_STATIC_1300 on pause entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -183,7 +190,8 @@ export default function abilityTest() {
                     console.info('on stop entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on stop entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -206,7 +214,8 @@ export default function abilityTest() {
                     console.info('on playNext entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on playNext entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -229,7 +238,8 @@ export default function abilityTest() {
                     console.info('on playPrevious entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on playPrevious entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -253,7 +263,8 @@ export default function abilityTest() {
                     console.info('on fastForward entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on fastForward entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -277,7 +288,8 @@ export default function abilityTest() {
                     console.info('on rewind entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on rewind entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -297,7 +309,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offPlay();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off play entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -318,7 +331,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offPause();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off pause entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -338,7 +352,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offStop();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off stop entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -358,7 +373,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offPlayNext();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off playNext entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -378,7 +394,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offPlayPrevious();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off playPrevious entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -398,7 +415,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offFastForward();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off fastForward entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -418,7 +436,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offRewind();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off rewind entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -441,7 +460,8 @@ export default function abilityTest() {
                     console.info('on playFromAssetId entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on seek entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -462,7 +482,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offSeek();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off seek entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -485,7 +506,8 @@ export default function abilityTest() {
                     console.info('on setSpeed entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on setSpeed entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -505,7 +527,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offSetSpeed();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off setSpeed entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -528,7 +551,8 @@ export default function abilityTest() {
                     console.info('on setLoopMode entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on setLoopMode entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -548,7 +572,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offSetLoopMode();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off setLoopMode entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -571,7 +596,8 @@ export default function abilityTest() {
                     console.info('on toggleFavorite entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on toggleFavorite entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -591,7 +617,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offToggleFavorite();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off toggleFavorite entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -614,7 +641,8 @@ export default function abilityTest() {
                     console.info('on handleKeyEvent entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on handleKeyEvent entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -634,7 +662,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offHandleKeyEvent();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off handleKeyEvent entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -657,7 +686,8 @@ export default function abilityTest() {
                     console.info('on outputDeviceChange entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on outputDeviceChange entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -677,7 +707,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offOutputDeviceChange();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off outputDeviceChange entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -700,7 +731,8 @@ export default function abilityTest() {
                     console.info('on commonCommand entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on commonCommand entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -720,7 +752,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offCommonCommand();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off commonCommand entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -743,7 +776,8 @@ export default function abilityTest() {
                     console.info('on skipToQueueItem entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on skipToQueueItem entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -763,7 +797,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offSkipToQueueItem();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off skipToQueueItem entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -783,7 +818,8 @@ export default function abilityTest() {
             await Utils.msSleep(500)
             try {
                 session!.offCastDisplayChange();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`off castDisplayChange entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -806,7 +842,8 @@ export default function abilityTest() {
                     console.info('on play entry11');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`on play entry11 error,error code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600102);
             }
@@ -828,7 +865,8 @@ export default function abilityTest() {
             try{
                 await session!.setAVMetadata(metadata0);
                 console.info(`${TAG}:TestLog: Set bundleIcon Successfully`);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}:TestLog: Set bundleIcon error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -844,7 +882,8 @@ export default function abilityTest() {
                     console.info(`${TAG}:TestLog: bundleIcon is: ${data.bundleIcon}`);
                     expect(true).assertTrue();
                 }
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}:TestLog: Get assetId error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -873,7 +912,8 @@ export default function abilityTest() {
                session!.setAVPlaybackState(PlaybackState)
                console.info(`${TAG}:SetAVPlaybackState successfully`);
                expect(true).assertTrue();
-           }catch(err: BusinessError){
+           }catch(err) {
+               err = err as BusinessError;
                console.error(`${TAG}:SetAVPlaybackState BusinessError: code: ${err.code}, message: ${err.message}`);
            };
            done();
@@ -895,7 +935,8 @@ export default function abilityTest() {
                 data = await session!.getAllCastDisplays()
                 console.info(`${TAG}:getAllCastDisplays success: ${JSON.stringify(data)}`);
                 expect(true).assertTrue();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}:getAllCastDisplays successfully: ${err.code}, message: ${err.message}`)
                 expect(err.code).assertEqual(6600102);
             };
@@ -920,7 +961,8 @@ export default function abilityTest() {
                         expect(true).assertTrue();
                     };
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`stopCasting BusinessError2: code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600109);
                 if (error.message == "Cannot read property catch of undefined") {
@@ -944,10 +986,12 @@ export default function abilityTest() {
                 try{
                     await session!.stopCasting()
                     console.info('stopCasting successfully');
-                }catch(err: BusinessError){
+                }catch(err) {
+                    err = err as BusinessError;
                     console.error(`stopCasting BusinessError: code: ${err.code}, message: ${err.message}`);
                 };
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`stopCasting BusinessError2: code: ${error.code}, message: ${error.message}`);
                 if (error.message == "Cannot read property catch of undefined" || error.code == 6600109) {
                     console.info(`stopCasting callback successfully`);
@@ -973,10 +1017,12 @@ export default function abilityTest() {
                     session!.getAVCastController();
                     aVCastController = avcontroller;
                     console.info(`${TAG}:getAVCastController : SUCCESS : sessionid `);
-                }catch(err: BusinessError){
+                }catch(err) {
+                    err = err as BusinessError;
                     console.error(`${TAG}:getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
                 };
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`${TAG}:getAVCastController failed: code: ${error.code}, message: ${error.message}`);
                 if (error.message == "Cannot read property then of undefined" || error.code == 6600109 ) {
                     console.info(`${TAG}:getAVCastController callback successfully`);
@@ -1005,7 +1051,8 @@ export default function abilityTest() {
                         console.info(`${TAG}:getAVCastController : SUCCESS`);
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.error(`${TAG}:getAVCastController BusinessError: code: ${error.code}, message: ${error.message}`);
                 expect(error.code).assertEqual(6600109);
                 if (error.message == "Cannot read property catch of undefined") {

@@ -71,7 +71,8 @@ export default function EscapeRegexpTest() {
         expect(res1).assertEqual("%5Cabc%5Cb")
         expect(res2).assertEqual("%5Cabc%5Cb")
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -94,7 +95,8 @@ export default function EscapeRegexpTest() {
         expect(res1).assertEqual("%5Cabc%5Cf")
         expect(res2).assertEqual("%5Cabc%5Cf")
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -117,7 +119,8 @@ export default function EscapeRegexpTest() {
         expect(res1).assertEqual("%5Cabc%5Cn")
         expect(res2).assertEqual("%5Cabc%5Cn")
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -140,7 +143,8 @@ export default function EscapeRegexpTest() {
         expect(res1).assertEqual("%5Cabc%5Cr")
         expect(res2).assertEqual("%5Cabc%5Cr")
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -163,7 +167,8 @@ export default function EscapeRegexpTest() {
         expect(res1).assertEqual("%5Cabc%5Ct")
         expect(res2).assertEqual("%5Cabc%5Ct")
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -186,7 +191,8 @@ export default function EscapeRegexpTest() {
         expect(res1).assertEqual("%5Cabc%5Cv")
         expect(res2).assertEqual("%5Cabc%5Cv")
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -209,7 +215,8 @@ export default function EscapeRegexpTest() {
         expect(res1).assertEqual("%5Cabc%5Cx24")
         expect(res2).assertEqual("%5Cabc%5Cx24")
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -232,7 +239,8 @@ export default function EscapeRegexpTest() {
         expect(res1).assertEqual("%5Cabc%5C%E5%BC%80")
         expect(res2).assertEqual("%5Cabc%5C%E5%BC%80")
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -255,7 +263,8 @@ export default function EscapeRegexpTest() {
         expect(res1).assertEqual("%5Cabc%5C%F0%9F%98%8A")
         expect(res2).assertEqual("%5Cabc%5C%F0%9F%98%8A")
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -277,7 +286,8 @@ export default function EscapeRegexpTest() {
         const res2 = encodeURI(regex2.source)
         expect(res1).assertEqual("%5Cabc%5C0")
         expect(res2).assertEqual("%5Cabc%5C0")
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -300,7 +310,8 @@ export default function EscapeRegexpTest() {
         expect(res1).assertEqual("%5Cabc%5C%08")
         expect(res2).assertEqual("%5Cabc%5C%08")
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -322,7 +333,8 @@ export default function EscapeRegexpTest() {
         const result = escape.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -343,7 +355,8 @@ export default function EscapeRegexpTest() {
         const result = escape.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -364,7 +377,8 @@ export default function EscapeRegexpTest() {
         const result = escape.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -385,7 +399,8 @@ export default function EscapeRegexpTest() {
         const result = escape.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -406,7 +421,8 @@ export default function EscapeRegexpTest() {
         const result = escape.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -427,7 +443,8 @@ export default function EscapeRegexpTest() {
         const result = escape.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -448,7 +465,8 @@ export default function EscapeRegexpTest() {
         const result = escape.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -469,7 +487,8 @@ export default function EscapeRegexpTest() {
         const result = escape.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -490,7 +509,8 @@ export default function EscapeRegexpTest() {
         const result = escape.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -511,7 +531,8 @@ export default function EscapeRegexpTest() {
         const result = escape.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -532,7 +553,8 @@ export default function EscapeRegexpTest() {
         const result = escape.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -554,7 +576,8 @@ export default function EscapeRegexpTest() {
         const re = escape.replace(pattern, 'b');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("bbb%08");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -575,7 +598,8 @@ export default function EscapeRegexpTest() {
         const re = escape.replace(pattern, 'b');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("bbb%0C");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -596,7 +620,8 @@ export default function EscapeRegexpTest() {
         const re = escape.replace(pattern, 'b');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("bbb%0A");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -617,7 +642,8 @@ export default function EscapeRegexpTest() {
         const re = escape.replace(pattern, 'b');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("bbb%0D");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -638,7 +664,8 @@ export default function EscapeRegexpTest() {
         const re = escape.replace(pattern, 'b');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("bbb%09");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -659,7 +686,8 @@ export default function EscapeRegexpTest() {
         const re = escape.replace(pattern, 'b');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("bbb%0B");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -680,7 +708,8 @@ export default function EscapeRegexpTest() {
         const re = escape.replace(pattern, 'b');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("bbb$");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -701,7 +730,8 @@ export default function EscapeRegexpTest() {
         const re = escape.replace(pattern, 'b');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("%E5%BC%80");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -722,7 +752,8 @@ export default function EscapeRegexpTest() {
         const re = escape.replace(pattern, 'b');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("%F0%9F%98%8A");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -743,7 +774,8 @@ export default function EscapeRegexpTest() {
         const re = escape.replace(pattern, 'b');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("%00");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -764,7 +796,8 @@ export default function EscapeRegexpTest() {
         const re = escape.replace(pattern, 'b');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("%08");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -784,7 +817,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\b');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -803,7 +837,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\f');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -822,7 +857,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\n');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -841,7 +877,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\r');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -860,7 +897,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\t');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -879,7 +917,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\v');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -898,7 +937,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\x24');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -917,7 +957,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\开');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -936,7 +977,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\😊');
         const res = encodeURI(String(regexp.test(s)));
         expect(res).assertEqual('true')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -955,7 +997,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\0');
         const res = encodeURI(String(regexp.test(s)));
         expect(res).assertEqual('true')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -974,7 +1017,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\\b');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -992,7 +1036,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\b');
         const res = encodeURI(regexp.toString())
         expect(res.toString()).assertEqual('/%08/')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -1010,7 +1055,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\f');
         const res = encodeURI(regexp.toString())
         expect(res.toString()).assertEqual('/%0C/')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -1028,7 +1074,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\n');
         const res = encodeURI(regexp.toString())
         expect(res.toString()).assertEqual('/%0A/')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -1046,7 +1093,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\r');
         const res = encodeURI(regexp.toString())
         expect(res.toString()).assertEqual('/%0D/')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -1064,7 +1112,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\t');
         const res = encodeURI(regexp.toString())
         expect(res.toString()).assertEqual('/%09/')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -1082,7 +1131,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\v');
         const res = encodeURI(regexp.toString())
         expect(res.toString()).assertEqual('/%0B/')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -1100,7 +1150,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\x24');
         const res = encodeURI(regexp.toString())
         expect(res.toString()).assertEqual('/$/')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -1118,7 +1169,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\开');
         const res = encodeURI(regexp.toString())
         expect(res.toString()).assertEqual('/%E5%BC%80/')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -1136,7 +1188,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\😊');
         const res = encodeURI(regexp.toString())
         expect(res.toString()).assertEqual('/%F0%9F%98%8A/')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -1154,7 +1207,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\0');
         const res = encodeURI(regexp.toString())
         expect(res.toString()).assertEqual('/%00/')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -1172,7 +1226,8 @@ export default function EscapeRegexpTest() {
         let regexp: RegExp = new RegExp('\\b');
         const res = encodeURI(regexp.toString())
         expect(res.toString()).assertEqual('/%5Cb/')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -1190,7 +1245,8 @@ export default function EscapeRegexpTest() {
         const escape = "aaa\b";
         const re = new RegExp(escape, 's');
         expect(String(re.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1209,7 +1265,8 @@ export default function EscapeRegexpTest() {
         const escape = "aaa\f";
         const re = new RegExp(escape, 's');
         expect(String(re.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1228,7 +1285,8 @@ export default function EscapeRegexpTest() {
         const escape = "aaa\n";
         const re = new RegExp(escape, 's');
         expect(String(re.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1247,7 +1305,8 @@ export default function EscapeRegexpTest() {
         const escape = "aaa\r";
         const re = new RegExp(escape, 's');
         expect(String(re.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1266,7 +1325,8 @@ export default function EscapeRegexpTest() {
         const escape = "aaa\t";
         const re = new RegExp(escape, 's');
         expect(String(re.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1285,7 +1345,8 @@ export default function EscapeRegexpTest() {
         const escape = "aaa\v";
         const re = new RegExp(escape, 's');
         expect(String(re.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1304,7 +1365,8 @@ export default function EscapeRegexpTest() {
         const escape = "aaa\x24";
         const re = new RegExp(escape, 's');
         expect(String(re.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1323,7 +1385,8 @@ export default function EscapeRegexpTest() {
         const escape = "\开";
         const re = new RegExp(escape, 's');
         expect(String(re.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1342,7 +1405,8 @@ export default function EscapeRegexpTest() {
         const escape = "\😊";
         const re = new RegExp(escape, 's');
         expect(String(re.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1361,7 +1425,8 @@ export default function EscapeRegexpTest() {
         const escape = "\0";
         const re = new RegExp(escape, 's');
         expect(String(re.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1380,7 +1445,8 @@ export default function EscapeRegexpTest() {
         const escape = "\b";
         const re = new RegExp(escape, 's');
         expect(String(re.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1402,7 +1468,8 @@ export default function EscapeRegexpTest() {
         const regex = pattern;
         const flags = encodeURI(regex.flags);
         expect(flags).assertEqual("gi");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1423,7 +1490,8 @@ export default function EscapeRegexpTest() {
         const regex = pattern;
         const flags = encodeURI(regex.flags);
         expect(flags).assertEqual("gi");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1444,7 +1512,8 @@ export default function EscapeRegexpTest() {
         const regex = pattern;
         const flags = encodeURI(regex.flags);
         expect(flags).assertEqual("gi");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1465,7 +1534,8 @@ export default function EscapeRegexpTest() {
         const regex = pattern;
         const flags = encodeURI(regex.flags);
         expect(flags).assertEqual("gi");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1486,7 +1556,8 @@ export default function EscapeRegexpTest() {
         const regex = pattern;
         const flags = encodeURI(regex.flags);
         expect(flags).assertEqual("gi");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1507,7 +1578,8 @@ export default function EscapeRegexpTest() {
         const regex = pattern;
         const flags = encodeURI(regex.flags);
         expect(flags).assertEqual("gi");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1528,7 +1600,8 @@ export default function EscapeRegexpTest() {
         const regex = pattern;
         const flags = encodeURI(regex.flags);
         expect(flags).assertEqual("gi");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1549,7 +1622,8 @@ export default function EscapeRegexpTest() {
         const regex = pattern;
         const flags = encodeURI(regex.flags);
         expect(flags).assertEqual("gi");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1569,7 +1643,8 @@ export default function EscapeRegexpTest() {
         const regex = new RegExp("\\bword😊", "gi");
         const flags = encodeURI(regex.flags);
         expect(flags).assertEqual("gi");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1590,7 +1665,8 @@ export default function EscapeRegexpTest() {
         const regex = pattern;
         const flags = encodeURI(regex.flags);
         expect(flags).assertEqual("gi");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1611,7 +1687,8 @@ export default function EscapeRegexpTest() {
         const regex = pattern;
         const flags = encodeURI(regex.flags);
         expect(flags).assertEqual("gi");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1631,7 +1708,8 @@ export default function EscapeRegexpTest() {
         const pattern = new RegExp("\\bword\\b", "g");
         const regex = pattern;
         expect(String(regex.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1651,7 +1729,8 @@ export default function EscapeRegexpTest() {
         const pattern = new RegExp("\\bword\\f", "g");
         const regex = pattern;
         expect(String(regex.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1671,7 +1750,8 @@ export default function EscapeRegexpTest() {
         const pattern = new RegExp("\\bword\\n", "g");
         const regex = pattern;
         expect(String(regex.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1691,7 +1771,8 @@ export default function EscapeRegexpTest() {
         const pattern = new RegExp("\\bword\\r", "g");
         const regex = pattern;
         expect(String(regex.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1711,7 +1792,8 @@ export default function EscapeRegexpTest() {
         const pattern = new RegExp("\\bword\\t", "g");
         const regex = pattern;
         expect(String(regex.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1731,7 +1813,8 @@ export default function EscapeRegexpTest() {
         const pattern = new RegExp("\\bword\\v", "g");
         const regex = pattern;
         expect(String(regex.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1751,7 +1834,8 @@ export default function EscapeRegexpTest() {
         const pattern = new RegExp("\\bword\\x24", "g");
         const regex = pattern;
         expect(String(regex.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1771,7 +1855,8 @@ export default function EscapeRegexpTest() {
         const pattern = new RegExp("\\bword开", "g");
         const regex = pattern;
         expect(String(regex.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1791,7 +1876,8 @@ export default function EscapeRegexpTest() {
         const pattern = new RegExp("\\bword😊", "g");
         const regex = pattern;
         expect(String(regex.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1811,7 +1897,8 @@ export default function EscapeRegexpTest() {
         const pattern = new RegExp("\\bword\\0", "g");
         const regex = pattern;
         expect(String(regex.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1831,7 +1918,8 @@ export default function EscapeRegexpTest() {
         const pattern = new RegExp("\\bword\\\\b", "g");
         const regex = pattern;
         expect(String(regex.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1853,7 +1941,8 @@ export default function EscapeRegexpTest() {
           const regex = new RegExp("\\bword\\b", "g");
           const regexFlags = regex.flags;
           expect(String(regexFlags.includes('g'))).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -1874,7 +1963,8 @@ export default function EscapeRegexpTest() {
           const regex = new RegExp("\\bword\\f", "g");
           const regexFlags = regex.flags;
           expect(String(regexFlags.includes('g'))).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -1895,7 +1985,8 @@ export default function EscapeRegexpTest() {
           const regex = new RegExp("\\bword\\n", "g");
           const regexFlags = regex.flags;
           expect(String(regexFlags.includes('g'))).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -1916,7 +2007,8 @@ export default function EscapeRegexpTest() {
           const regex = new RegExp("\\bword\\r", "g");
           const regexFlags = regex.flags;
           expect(String(regexFlags.includes('g'))).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -1938,7 +2030,8 @@ export default function EscapeRegexpTest() {
           const regexFlags = regex.flags;
           expect(String(regexFlags.includes('g'))).assertEqual('true');
           ;
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -1959,7 +2052,8 @@ export default function EscapeRegexpTest() {
           const regex = new RegExp("\\bword\\v", "g");
           const regexFlags = regex.flags;
           expect(String(regexFlags.includes('g'))).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -1980,7 +2074,8 @@ export default function EscapeRegexpTest() {
           const regex = new RegExp("\\bword\\x24", "g");
           const regexFlags = regex.flags;
           expect(String(regexFlags.includes('g'))).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -2002,7 +2097,8 @@ export default function EscapeRegexpTest() {
           const regex = new RegExp("\\bword开", "g");
           const regexFlags = regex.flags;
           expect(String(regexFlags.includes('g'))).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -2023,7 +2119,8 @@ export default function EscapeRegexpTest() {
           const regex = new RegExp("\\bword😊", "g");
           const regexFlags = regex.flags;
           expect(String(regexFlags.includes('g'))).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -2044,7 +2141,8 @@ export default function EscapeRegexpTest() {
           const pattern = new RegExp("\\bword\\0", "g");
           const regexFlags = pattern.flags;
           expect(String(regexFlags.includes('g'))).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -2065,7 +2163,8 @@ export default function EscapeRegexpTest() {
           const regex = new RegExp("\\bword\\b", "g");
           const regexFlags = regex.flags;
           expect(String(regexFlags.includes('g'))).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -2085,7 +2184,8 @@ export default function EscapeRegexpTest() {
         try {
           const regex = new RegExp("\\bword\\b", "i");
           expect(String(regex.ignoreCase)).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -2105,7 +2205,8 @@ export default function EscapeRegexpTest() {
         try {
           const regex = new RegExp("\\bword\\f", "i");
           expect(String(regex.ignoreCase)).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -2125,7 +2226,8 @@ export default function EscapeRegexpTest() {
         try {
           const regex = new RegExp("\\bword\\n", "i");
           expect(String(regex.ignoreCase)).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -2145,7 +2247,8 @@ export default function EscapeRegexpTest() {
         try {
           const regex = new RegExp("\\bword\\r", "i");
           expect(String(regex.ignoreCase)).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -2165,7 +2268,8 @@ export default function EscapeRegexpTest() {
         try {
           const regex = new RegExp("\\bword\\t", "i");
           expect(String(regex.ignoreCase)).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -2185,7 +2289,8 @@ export default function EscapeRegexpTest() {
         try {
           const regex = new RegExp("\\bword\\v", "i");
           expect(String(regex.ignoreCase)).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -2205,7 +2310,8 @@ export default function EscapeRegexpTest() {
         try {
           const regex = new RegExp("\\bword\\x24", "i");
           expect(String(regex.ignoreCase)).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -2225,7 +2331,8 @@ export default function EscapeRegexpTest() {
         try {
           const regex = new RegExp("\\bword开", "i");
           expect(String(regex.ignoreCase)).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -2245,7 +2352,8 @@ export default function EscapeRegexpTest() {
         try {
           const regex = new RegExp("\\bword😊", "i");
           expect(String(regex.ignoreCase)).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -2265,7 +2373,8 @@ export default function EscapeRegexpTest() {
         try {
           const regex = new RegExp('\\bword\\0', 'i');
           expect(String(regex.ignoreCase)).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -2285,7 +2394,8 @@ export default function EscapeRegexpTest() {
         try {
           const regex = new RegExp('\\bword\\b', 'i');
           expect(String(regex.ignoreCase)).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -2309,7 +2419,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${JSON.stringify(search)}`)
         let result = re.lastIndex
         expect(String(result)).assertEqual('3');
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2333,7 +2444,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${JSON.stringify(search)}`)
         let result = re.lastIndex
         expect(String(result)).assertEqual('3');
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2357,7 +2469,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${JSON.stringify(search)}`)
         let result = re.lastIndex
         expect(String(result)).assertEqual('3');
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2381,7 +2494,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${JSON.stringify(search)}`)
         let result = re.lastIndex
         expect(String(result)).assertEqual('3');
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2405,7 +2519,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${JSON.stringify(search)}`)
         let result = re.lastIndex
         expect(String(result)).assertEqual('3');
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2429,7 +2544,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${JSON.stringify(search)}`)
         let result = re.lastIndex
         expect(String(result)).assertEqual('3');
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2453,7 +2569,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${JSON.stringify(search)}`)
         let result = re.lastIndex
         expect(String(result)).assertEqual('1');
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2477,7 +2594,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${JSON.stringify(search)}`)
         let result = re.lastIndex
         expect(String(result)).assertEqual('9');
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2501,7 +2619,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${JSON.stringify(search)}`)
         let result = re.lastIndex
         expect(String(result)).assertEqual('12');
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2525,7 +2644,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${JSON.stringify(search)}`)
         let result = re.lastIndex
         expect(String(result)).assertEqual('3');
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2549,7 +2669,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${JSON.stringify(search)}`)
         let result = re.lastIndex
         expect(String(result)).assertEqual('4');
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2571,7 +2692,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.multiline
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2593,7 +2715,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.multiline
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2615,7 +2738,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.multiline
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2637,7 +2761,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.multiline
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2659,7 +2784,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.multiline
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2681,7 +2807,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.multiline
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2703,7 +2830,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.multiline
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2725,7 +2853,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.multiline
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2747,7 +2876,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.multiline
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2769,7 +2899,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.multiline
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2791,7 +2922,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.multiline
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2812,7 +2944,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2834,7 +2967,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2856,7 +2990,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2878,7 +3013,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2900,7 +3036,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2922,7 +3059,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2944,7 +3082,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2966,7 +3105,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -2988,7 +3128,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -3010,7 +3151,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -3032,7 +3174,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -3054,7 +3197,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.unicode
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -3076,7 +3220,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.unicode
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -3098,7 +3243,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.unicode
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -3120,7 +3266,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.unicode
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -3142,7 +3289,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.unicode
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -3164,7 +3312,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.unicode
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -3186,7 +3335,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.unicode
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -3208,7 +3358,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.unicode
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -3230,7 +3381,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.unicode
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -3252,7 +3404,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.unicode
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }
@@ -3274,7 +3427,8 @@ export default function EscapeRegexpTest() {
         console.log(`${TAG} success: ${re}`);
         let result = re.unicode
         expect(result).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${TAG} failed,error: ${error.message}`);
         expect(false).assertFail();
       }

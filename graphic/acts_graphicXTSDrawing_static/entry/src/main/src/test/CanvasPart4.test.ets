@@ -74,28 +74,32 @@ export default function drawingTsCanvasPart4Test() {
         canvas.saveLayer(null, brush)
         canvas.saveLayer(rect, null)
         console.info(msg + 'saveLayer 1 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `saveLayer 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
         canvas.saveLayer()
         console.info(msg + 'saveLayer 2 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `saveLayer 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
         canvas.saveLayer(null, null)
         console.info(msg + 'saveLayer 3 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `saveLayer 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
         canvas.saveLayer(rect)
         console.info(msg + 'saveLayer 4 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `saveLayer 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -120,7 +124,8 @@ export default function drawingTsCanvasPart4Test() {
         canvas.saveLayer(undefined, brush)
         console.info(msg + `test error`);
         expect().assertFail()
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
@@ -129,7 +134,8 @@ export default function drawingTsCanvasPart4Test() {
         canvas.saveLayer(rect, undefined)
         console.info(msg + `test error`);
         expect().assertFail()
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
@@ -155,7 +161,8 @@ export default function drawingTsCanvasPart4Test() {
         let color3: common2D.Color = { alpha: 0, red: 0, green: 2, blue: 2 };
         canvas.clear(color3);
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -182,7 +189,8 @@ export default function drawingTsCanvasPart4Test() {
           canvas.clear(color);
         }
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -206,7 +214,8 @@ export default function drawingTsCanvasPart4Test() {
           });
           console.info(msg + `test error`);
           expect().assertFail()
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
           expect(e.code).assertEqual(401);
         }
@@ -217,7 +226,8 @@ export default function drawingTsCanvasPart4Test() {
           });
           console.info(msg + `test error`);
           expect().assertFail()
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
           expect(e.code).assertEqual(401);
         }
@@ -228,7 +238,8 @@ export default function drawingTsCanvasPart4Test() {
           });
           console.info(msg + `test error`);
           expect().assertFail()
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
           expect(e.code).assertEqual(401);
         }
@@ -239,7 +250,8 @@ export default function drawingTsCanvasPart4Test() {
           });
           console.info(msg + `test error`);
           expect().assertFail()
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
           expect(e.code).assertEqual(401);
         }
@@ -250,7 +262,8 @@ export default function drawingTsCanvasPart4Test() {
           });
           console.info(msg + `test error`);
           expect().assertFail()
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
           expect(e.code).assertEqual(401);
         }
@@ -261,7 +274,8 @@ export default function drawingTsCanvasPart4Test() {
           });
           console.info(msg + `test error`);
           expect().assertFail()
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
           expect(e.code).assertEqual(401);
         }
@@ -272,7 +286,8 @@ export default function drawingTsCanvasPart4Test() {
           });
           console.info(msg + `test error`);
           expect().assertFail()
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
           expect(e.code).assertEqual(401);
         }
@@ -283,13 +298,15 @@ export default function drawingTsCanvasPart4Test() {
           });
           console.info(msg + `test error`);
           expect().assertFail()
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
           expect(e.code).assertEqual(401);
         }
 
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -313,7 +330,8 @@ export default function drawingTsCanvasPart4Test() {
         console.info(msg + 'test successes');
         expect(width).assertEqual(100);
         expect(height).assertEqual(100);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -339,7 +357,8 @@ export default function drawingTsCanvasPart4Test() {
           expect(height).assertEqual(100);
         }
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -382,7 +401,8 @@ export default function drawingTsCanvasPart4Test() {
           left: maxVal, right: maxVal, top: maxVal, bottom: maxVal
         });
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -408,7 +428,8 @@ export default function drawingTsCanvasPart4Test() {
         }
 
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -448,7 +469,8 @@ export default function drawingTsCanvasPart4Test() {
           left: maxVal, right: maxVal, top: maxVal, bottom: maxVal
         }, 90, 180);
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -473,7 +495,8 @@ export default function drawingTsCanvasPart4Test() {
           }, 90, 180);
         }
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -520,7 +543,8 @@ export default function drawingTsCanvasPart4Test() {
           x: 200, y: -300
         }]);
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -551,7 +575,8 @@ export default function drawingTsCanvasPart4Test() {
           }], itemList[randomEnum]);
           console.info(msg + 'test successes' + i);
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -579,7 +604,8 @@ export default function drawingTsCanvasPart4Test() {
         }], undefined);
         console.info(msg + `test error`);
         expect().assertFail()
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
@@ -599,7 +625,8 @@ export default function drawingTsCanvasPart4Test() {
         canvas.drawPoints([]);
         console.info(msg + `test error`);
         expect().assertFail()
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
@@ -622,7 +649,8 @@ export default function drawingTsCanvasPart4Test() {
         matrix.setMatrix([5, 0, 0, 0, 1, 2, 0, 0, 1]);
         canvas.concatMatrix(matrix);
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -646,7 +674,8 @@ export default function drawingTsCanvasPart4Test() {
           canvas.concatMatrix(matrix);
         }
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -668,7 +697,8 @@ export default function drawingTsCanvasPart4Test() {
         matrix.setMatrix([5.1, 1.1, 1.1, 1.1, 1.1, 1.1, 5.1, 0.3, 1.7]);
         canvas.setMatrix(matrix);
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -692,7 +722,8 @@ export default function drawingTsCanvasPart4Test() {
           canvas.setMatrix(matrix)
         }
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }

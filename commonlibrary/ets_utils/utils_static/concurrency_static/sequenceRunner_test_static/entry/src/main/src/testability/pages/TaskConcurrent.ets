@@ -77,7 +77,8 @@ export async function asyncLock2(a: AsyncLockTest1): Promise<void> {
       let s: string[] = []
       s[0].split('')[1].toString()
     })
-  } catch(e: BusinessError) {
+  } catch(e) {
+    e = e as BusinessError;
     let s: string[] = []
     s[0].split('')[1].toString()
   }
@@ -171,7 +172,8 @@ export async function printArgsPromise4(): Promise<void> {
 export async function printArgsPromise5(): Promise<void> {
   try {
     await asyncTaskCatch()
-  } catch(error: BusinessError) {
+  } catch(error) {
+      error = error as BusinessError;
       throw Error('catch error')
   }
 }
@@ -179,7 +181,8 @@ export async function printArgsPromise5(): Promise<void> {
 export async function printArgsPromise6(): Promise<void> {
   try {
     await asyncTaskCatch()
-  } catch(error: BusinessError) {
+  } catch(error) {
+    error = error as BusinessError;
     throw Error('catch error2')
   }
 }
@@ -263,7 +266,8 @@ export async function printArgsWaitE(a: AsyncLockTest2): Promise<void> {
         throw new Error('await error')
       }
     })
-  } catch(e: BusinessError) {
+  } catch(e) {
+    e = e as BusinessError;
     if (Math.random() < 1) {
       throw new Error('await error')
     }
@@ -277,7 +281,8 @@ export async function printArgsWaitF(a: AsyncLockTest2): Promise<void> {
         throw new Error('await error')
       }
     })
-  } catch(e: BusinessError) {
+  } catch(e) {
+    e = e as BusinessError;
     if (Math.random() < 1) {
       throw new Error('await error')
     }
@@ -288,7 +293,8 @@ export async function printArgsWaitG(a: AsyncLockTest2): Promise<void> {
   try {
     await a.setCount(10).then((): void => {
     })
-  } catch(e: BusinessError) {
+  } catch(e) {
+e = e as BusinessError;
 
   } finally {
   }
@@ -301,7 +307,8 @@ export async function printArgsWaitH(a: AsyncLockTest2): Promise<void> {
   try {
     await a.setCount(10).then((): void => {
     })
-  } catch(e: BusinessError) {
+  } catch(e) {
+  e = e as BusinessError;
   } finally {
   }
   if (Math.random() < 1) {

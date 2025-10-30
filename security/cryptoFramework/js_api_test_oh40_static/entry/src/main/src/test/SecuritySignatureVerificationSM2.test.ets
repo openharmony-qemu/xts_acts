@@ -25,7 +25,8 @@ async function genAsyKeyPair(): Promise<cryptoFramework.KeyPair> {
     let asyGenerator: cryptoFramework.AsyKeyGenerator = asyCommon.createAsyKeyGenerator("SM2_256");
     let aysKeyPair: cryptoFramework.KeyPair = await asyGenerator.generateKeyPair();
     return aysKeyPair;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     throw err as Error;
   }
 }
@@ -79,7 +80,8 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         try {
           cryptoFramework.createSign("RSA|SM3");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("signGenerator 1 error:" + err);
           expect(err.code).assertEqual(401);
         }
@@ -87,14 +89,16 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         try {
           cryptoFramework.createSign("ECC|SM3");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("signGenerator 2 error:" + err);
           expect(err.code).assertEqual(401);
         }
 
         try {
           cryptoFramework.createSign("DSA|SM3");
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("signGenerator 3 error:" + err);
           expect(err.code).assertEqual(undefined);
         }
@@ -120,43 +124,50 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         try {
           cryptoFramework.createSign("SM2_256|NoHash");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createSign("SM2_256|MD5");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createSign("SM2_256|SHA256");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createSign("SM2_256|SHA1");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createSign("SM2_256|SHA224");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createSign("SM2_256|SHA384");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createSign("SM2_256|SHA512");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         done();
@@ -181,43 +192,50 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         try {
           cryptoFramework.createVerify("SM2_256|NoHash");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createVerify("SM2_256|MD5");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createVerify("SM2_256|SHA256");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createVerify("SM2_256|SHA1");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createVerify("SM2_256|SHA224");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createVerify("SM2_256|SHA384");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createVerify("SM2_256|SHA512");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         done();
@@ -237,7 +255,8 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         try {
           cryptoFramework.createAsyKeyGenerator("SM2_2567");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("createAsyKeyGenerator 1 error:" + err);
           expect(err.code).assertEqual(401);
         }
@@ -260,7 +279,8 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         try {
           cryptoFramework.createSign("SM2_256|SHA257");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("signGenerator 1 error:" + err);
           expect(err.code).assertEqual(401);
         }
@@ -268,7 +288,8 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         try {
           cryptoFramework.createSign("SM2_256|NULL");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("signGenerator 2 error:" + err);
           expect(err.code).assertEqual(401);
         }
@@ -276,7 +297,8 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         try {
           cryptoFramework.createSign("NULL|SHA1");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("signGenerator 3 error:" + err);
           expect(err.code).assertEqual(401);
         }
@@ -284,7 +306,8 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         try {
           cryptoFramework.createSign("ECC|SHA");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("signGenerator 4 error:" + err);
           expect(err.code).assertEqual(401);
         }
@@ -342,7 +365,8 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         try {
           await signGenerator.update(input);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         await signGenerator.init(asyKeyPair.priKey);
@@ -372,7 +396,8 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         try {
           await signGenerator.sign(null);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         done();
@@ -394,7 +419,8 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         try {
           cryptoFramework.createVerify("SM2_2567|SHA256");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("verifyGenerator 1 error:" + err.code);
           expect(err.code).assertEqual(401);
         }
@@ -402,7 +428,8 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         try {
           cryptoFramework.createVerify("NULL|SHA256");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("verifyGenerator 2 error:" + err.code);
           expect(err.code).assertEqual(401);
         }
@@ -410,7 +437,8 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         try {
           cryptoFramework.createVerify("SM2_256|SHA122");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("verifyGenerator 3 error:" + err.code);
           expect(err.code).assertEqual(401);
         }
@@ -418,7 +446,8 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
         try {
           cryptoFramework.createVerify("SM2_256|NULL");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("verifyGenerator 4 error:" + err.code);
           expect(err.code).assertEqual(401);
         }
@@ -487,7 +516,8 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
           await verifyGenerator.update(input);
           let finalStatus: boolean = await verifyGenerator.verify(input, globalSignBlob);
           expect(finalStatus).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(null).assertFail();
         }
         done();
@@ -507,7 +537,8 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
           cryptoFramework.createAsyKeyGenerator("SM2_256");
           cryptoFramework.createKeyAgreement("SM2_256");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("createAsyKeyAgreement error:" + err.code);
           expect(err.code).assertEqual(801);
         }
@@ -530,7 +561,8 @@ export default function SecuritySignatureVerificationSM2Jsunit() {
           expect(signGenerator.algName == "SM2_256|SM3").assertTrue();
           let verifyGenerator: cryptoFramework.Verify = cryptoFramework.createVerify("SM2_256|SM3");
           expect(verifyGenerator.algName == "SM2_256|SM3").assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(
             "Security_CryptoFramework_SignatureVerificationSM2_Func_1600 catch err: " +
               err

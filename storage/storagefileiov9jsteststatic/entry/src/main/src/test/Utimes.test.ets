@@ -49,7 +49,8 @@ export default function fileIOUtimes() {
         let setime = Math.floor(time / 1000);
         expect(stat.mtime == setime).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_utimes_async_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -76,7 +77,8 @@ export default function fileIOUtimes() {
         let setime = Math.floor(time / 1000);
         expect(stat.mtime == setime).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_utimes_async_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -103,7 +105,8 @@ export default function fileIOUtimes() {
         let setime = Math.floor(time / 1000);
         expect(stat.mtime == setime).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_utimes_async_static_003 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -125,7 +128,8 @@ export default function fileIOUtimes() {
       try {
         fs.utimes(fpath,new Date().getTime());
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_utimes_async_static_004 has failed for' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
       }
@@ -148,7 +152,8 @@ export default function fileIOUtimes() {
       try {
         fs.utimes(fpath,-1);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_utimes_async_static_006 has failed for' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
       }

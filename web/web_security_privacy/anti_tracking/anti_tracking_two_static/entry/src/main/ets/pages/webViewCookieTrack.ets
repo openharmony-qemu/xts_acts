@@ -91,7 +91,8 @@ struct webViewCookieTrack {
                   let list = ['www.test1.com','www.test2.com'];
                   webView.WebviewController.removeIntelligentTrackingPreventionBypassingList(list);
                   Utils.emitEvent('401',202503208)
-                } catch (e: BusinessError) {
+                } catch (e) {
+                  e = e as BusinessError;
                   let check = (v1: string, v2: string): boolean => {
                     return v1 == v2 ? true: false;
                   }

@@ -60,7 +60,8 @@ struct webViewController {
               try {
                 this.controller.loadUrl('resource://rawfile/indexCopy.html')
                 this.controller.setNetworkAvailable(false);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               this.controller.runJavaScript("getNavigatorOnLine()", (error, result) => {
@@ -84,7 +85,8 @@ struct webViewController {
               try {
                 this.controller.loadUrl('resource://rawfile/indexCopy.html')
                 this.controller.setNetworkAvailable(true);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               this.controller.runJavaScript("getNavigatorOnLine()", (error, result) => {

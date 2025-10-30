@@ -98,7 +98,8 @@ struct WebOnDataResubmitted {
                 setTimeout(() => {
                 Utils.emitEvent(this.test, 28931)
                 }, 7000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
               break;

@@ -67,7 +67,8 @@ export default function circleJsunit() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push circle page error:" + JSON.stringify(err));
       }
     });
@@ -117,7 +118,8 @@ export default function circleJsunit() {
         }
         console.info("[circleTest_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[circleTest_static_0200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -151,7 +153,8 @@ export default function circleJsunit() {
         }
         console.info("[circleTest_030] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[circleTest_030] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

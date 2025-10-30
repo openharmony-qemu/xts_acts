@@ -1234,7 +1234,8 @@ export default function getBundleInfoForSelf() {
         expect(data!.hapModulesInfo[0].abilitiesInfo[2].orientationId).assertEqual(0.0);
         expect(data!.hapModulesInfo[0].abilitiesInfo[2].launchType).assertEqual(bundle.LaunchType.SPECIFIED);
         hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> end');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('getBundleInfoForSelfApplicationPromise  ====> err', JSON.stringify(err));
         expect(err).assertFail();
       }

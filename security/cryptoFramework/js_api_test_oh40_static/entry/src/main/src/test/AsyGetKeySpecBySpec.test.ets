@@ -371,7 +371,8 @@ export default function AsyGetKeySpecBySpecJsunit() {
             cryptoFramework.AsyKeySpecItem.DSA_P_BN
           );
           expect(null).assertFalse();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         done();
@@ -400,7 +401,8 @@ export default function AsyGetKeySpecBySpecJsunit() {
             cryptoFramework.AsyKeySpecItem.DSA_P_BN
           );
           expect(null).assertFalse();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         done();

@@ -63,12 +63,14 @@ export default function audioRoutingManager() {
           expect(data[0].deviceType).assertEqual(audio.DeviceType.MIC);
           expect(data[0].networkId).assertEqual("LocalDevice");
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`get device descriptor fail: ${err.code},${err.message}`);
           expect(false).assertTrue();
           done();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0100 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -99,12 +101,14 @@ export default function audioRoutingManager() {
           expect(data[0].deviceType).assertEqual(audio.DeviceType.MIC);
           expect(data[0].networkId).assertEqual("LocalDevice");
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`get device descriptor fail: ${err.code},${err.message}`);
           expect(false).assertTrue();
           done();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0200 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -135,12 +139,14 @@ export default function audioRoutingManager() {
           expect(data[0].deviceType).assertEqual(audio.DeviceType.MIC);
           expect(data[0].networkId).assertEqual("LocalDevice");
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`get device descriptor fail: ${err.code},${err.message}`);
           expect(false).assertTrue();
           done();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0400 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -179,7 +185,8 @@ export default function audioRoutingManager() {
               done();
             }
           });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0500 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -217,7 +224,8 @@ export default function audioRoutingManager() {
               done();
             }
           });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0600 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -255,7 +263,8 @@ export default function audioRoutingManager() {
               done();
             }
           });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0800 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -282,7 +291,8 @@ export default function audioRoutingManager() {
         JSON.stringify(data));
         expect(true).assertTrue();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 ERROR: ${e.message}`);
         expect().assertFail();
         done();
@@ -331,7 +341,8 @@ export default function audioRoutingManager() {
         console.info(`${TAG} SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 SUCCESS`);
         expect(true).assertTrue();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_OFF_REFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 ERROR: ${e.message}`);
         expect().assertFail();
         done();
@@ -362,7 +373,8 @@ export default function audioRoutingManager() {
         expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
         expect(data[0].networkId).assertEqual("LocalDevice");
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFEROUTPUTDEVICEFORRENDERERINFOTEST_STATIC_0100 ERROR: ${e.message}`);
         expect().assertFail();
         done();
@@ -393,7 +405,8 @@ export default function audioRoutingManager() {
         expect(data[0].deviceType).assertEqual(audio.DeviceType.SPEAKER);
         expect(data[0].networkId).assertEqual("LocalDevice");
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDOUTPUTDEVICEFORRENDERERINFOSYNC_STATIC_0400 ERROR: ${e.message},ErrorCode:${e.code}`);
         expect(false).assertTrue();
         done();
@@ -422,7 +435,8 @@ export default function audioRoutingManager() {
         expect(data[0].deviceType).assertEqual(audio.DeviceType.MIC);
         expect(data[0].networkId).assertEqual("LocalDevice");
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(`${TAG} SUB_MULTIMEDIA_AUDIO_GETREFERREDINPUTDEVICEFORCAPTURERINFOTEST_STATIC_0100 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();

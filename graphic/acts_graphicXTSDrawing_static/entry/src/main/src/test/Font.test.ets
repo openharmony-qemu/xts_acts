@@ -53,7 +53,8 @@ export default function fontTest() {
       try {
         font.enableSubpixel(true);
         console.info(msg + ' enableSubpixel succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` enableSubpixel failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -61,7 +62,8 @@ export default function fontTest() {
       try {
         font.enableSubpixel(false);
         console.info(msg + ' enableSubpixel succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` enableSubpixel failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -86,7 +88,8 @@ export default function fontTest() {
           // Attempt to call enableSubpixel method with a random boolean value
           font.enableSubpixel(randomBool);
           console.info(`${msg} enableSubpixel succeeded for call ${i + 1}`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(`${msg} enableSubpixel failed for call ${i + 1}, errorCode is: ${e.code}, errorMessage is: ${e.message}`);
           expect().assertFail();
         }
@@ -109,7 +112,8 @@ export default function fontTest() {
         // Step 2: Attempt to call enableLinearMetrics method with true
         font.enableLinearMetrics(true);
         console.info(msg + ' enableLinearMetrics succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` enableLinearMetrics failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -118,7 +122,8 @@ export default function fontTest() {
         // Step 3: Attempt to call enableLinearMetrics method with false
         font.enableLinearMetrics(false);
         console.info(msg + ' enableLinearMetrics succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` enableLinearMetrics failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -143,7 +148,8 @@ export default function fontTest() {
           // Attempt to call enableLinearMetrics method with a random boolean value
           font.enableLinearMetrics(randomBool);
           console.info(`${msg} enableLinearMetrics succeeded for call ${i + 1}`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(`${msg} enableLinearMetrics failed for call ${i + 1}, errorCode is: ${e.code}, errorMessage is: ${e.message}`);
           expect().assertFail();
         }
@@ -165,7 +171,8 @@ export default function fontTest() {
         // Attempt to call setSize method with 5
         font.setSize(5);
         console.info(msg + ' setSize succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setSize failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -175,7 +182,8 @@ export default function fontTest() {
         const size = font.getSize();
         expect(size).assertEqual(5);
         console.info(msg + ' getSize succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getSize failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -184,7 +192,8 @@ export default function fontTest() {
         // Attempt to call setSize method with 0
         font.setSize(0);
         console.info(msg + ' setSize succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setSize failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -194,7 +203,8 @@ export default function fontTest() {
         const size = font.getSize();
         expect(size).assertEqual(0);
         console.info(msg + ' getSize succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getSize failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -219,7 +229,8 @@ export default function fontTest() {
           // Step 2: Attempt to call setSize method with a random size value
           font.setSize(randomSize);
           console.info(`${msg} setSize succeeded for call ${i + 1}`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(`${msg} setSize failed for call ${i + 1}, errorCode is: ${e.code}, errorMessage is: ${e.message}`);
           expect().assertFail();
         }
@@ -229,7 +240,8 @@ export default function fontTest() {
           let size = font.getSize();
           console.info(`${msg} getSize succeeded for call ${i + 1}`);
           expect(size).assertEqual(randomSize);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(`${msg} getSize failed for call ${i + 1}, errorCode is: ${e.code}, errorMessage is: ${e.message}`);
           expect().assertFail();
         }
@@ -249,7 +261,8 @@ export default function fontTest() {
       try {
         font.getSize();
         console.info(msg + ' getSize successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getSize errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -269,7 +282,8 @@ export default function fontTest() {
       try {
         font.setTypeface(new drawing.Typeface());
         console.info(msg + ' setTypeface succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setTypeface failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -277,7 +291,8 @@ export default function fontTest() {
       try {
         font.getTypeface();
         console.info(msg + ' getTypeface succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getTypeface failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -288,7 +303,8 @@ export default function fontTest() {
       try {
         font.setTypeface(customTypeface);
         console.info(msg + ' setTypeface succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setTypeface failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -296,7 +312,8 @@ export default function fontTest() {
       try {
         font.getTypeface();
         console.info(msg + ' getTypeface succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getTypeface failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -317,7 +334,8 @@ export default function fontTest() {
           font.setTypeface(new drawing.Typeface());
           font.getTypeface();
           console.info(`${msg} getTypeface succeeded`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(`${msg} setTypeface or getTypeface failed, errorCode is: ${e.code}, errorMessage is: ${e.message}`);
           expect().assertFail();
         }
@@ -337,7 +355,8 @@ export default function fontTest() {
         const font = new drawing.Font();
         font.getTypeface();
         console.info(msg + ' getTypeface successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getTypeface errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -372,7 +391,8 @@ export default function fontTest() {
         expect(metrics.underlinePosition !== null).assertTrue();
         expect(metrics.strikethroughThickness !== null).assertTrue();
         expect(metrics.strikethroughPosition !== null).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getMetrics errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -394,7 +414,8 @@ export default function fontTest() {
           const result = font.getMetrics();
           expect(!!result).assertTrue();
           console.info(`${msg} getMetrics succeeded for font ${i}`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(`${msg} getMetrics failed for font ${i}, errorCode is: ${e.code}, errorMessage is: ${e.message}`);
           expect().assertFail();
         }
@@ -418,7 +439,8 @@ export default function fontTest() {
         font.measureText("drawing", drawing.TextEncoding.TEXT_ENCODING_UTF32);
         font.measureText("drawing", drawing.TextEncoding.TEXT_ENCODING_GLYPH_ID);
         console.info(msg + ' measureText successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` measureText errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -429,7 +451,8 @@ export default function fontTest() {
         font.measureText("中文魑認識", drawing.TextEncoding.TEXT_ENCODING_UTF32);
         font.measureText("中文魑認識", drawing.TextEncoding.TEXT_ENCODING_GLYPH_ID);
         console.info(msg + ' measureText successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` measureText errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -437,7 +460,8 @@ export default function fontTest() {
       try {
         font.measureText("", drawing.TextEncoding.TEXT_ENCODING_UTF8);
         console.info(msg + ' measureText successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` measureText errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -469,7 +493,8 @@ export default function fontTest() {
           console.info(msg + ' measureText width is: ' + width + ' step is: ' + i);
           expect(width >= 0).assertTrue();
           console.info(msg + ' measureText succeeded');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` measureText errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }

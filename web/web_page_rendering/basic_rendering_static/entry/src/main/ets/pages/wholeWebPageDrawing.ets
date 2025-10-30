@@ -86,7 +86,8 @@ struct Index {
                   console.info('return id is:'+result?.id ?? '');
                   Utils.emitEvent(result?.id ?? '', 2793);
                 });
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;

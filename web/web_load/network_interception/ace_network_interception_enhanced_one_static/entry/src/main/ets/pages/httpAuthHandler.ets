@@ -84,7 +84,8 @@ struct httpAuthHandler {
                   Utils.emitEvent(this.HttpAuthHandlerConfirmCallBack, 32040)
                 }, 3000)
 
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 32040)
               }
@@ -100,7 +101,8 @@ struct httpAuthHandler {
                   Utils.emitEvent(this.Http_Error_Code, 32041)
                 }, 3000)
 
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 32041)
               }
@@ -115,7 +117,8 @@ struct httpAuthHandler {
                   Utils.emitEvent(this.HttpAuthHandlerIsHttpAuthInfoSavedCallBack, 32042)
                 }, 3000)
 
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 32042)
               }

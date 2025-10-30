@@ -106,7 +106,8 @@ struct webResourceResponsePage {
                 let result: boolean = false;
                 console.log('testGetResponseDataExReturnString:' + result)
                 Utils.emitEvent(true, 36010);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -120,7 +121,8 @@ struct webResourceResponsePage {
                 this.controller.loadUrl('www.example.com');
                 console.log('testGetResponseIsReadyReturnTrue getResponseIsReady:' +
                 this.responseWeb.getResponseIsReady())
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;

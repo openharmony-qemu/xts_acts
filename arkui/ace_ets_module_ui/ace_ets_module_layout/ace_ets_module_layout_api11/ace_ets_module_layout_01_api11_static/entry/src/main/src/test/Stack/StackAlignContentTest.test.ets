@@ -67,7 +67,8 @@ export default function StackAlignContentTest() {
           routerInstance?.pushUrl(options);
           await UtilsTest.msSleep(2000);
         }
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push stackAlignContent page error: " + err);
       }
     });
@@ -107,7 +108,8 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         }
         console.info('[' + `${tagName}` + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData)
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('[' + `${tagName}` + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -130,7 +132,8 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent2,eventData2);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -152,7 +155,8 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent3, eventData3);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -174,7 +178,8 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent4, eventData4);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -196,7 +201,8 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent5, eventData5);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -218,7 +224,8 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent6, eventData6);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -240,7 +247,8 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent7, eventData7);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);
@@ -262,7 +270,8 @@ it('testStackAlignContent_static', Level.LEVEL0, async (done: () => void): Promi
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent8, eventData8);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await UtilsTest.msSleep(2000);

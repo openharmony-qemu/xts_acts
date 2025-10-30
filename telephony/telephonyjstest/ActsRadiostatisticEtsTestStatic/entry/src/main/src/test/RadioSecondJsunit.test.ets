@@ -384,7 +384,7 @@ export default function radioSecondJsunit() {
           JSON.stringify(err));
           done();
         });
-      } catch(error: Error) {
+      } catch(error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, "Telephony_NetworkSearch_getNetworkSelectionMode_Async_static_0700 err = " + JSON.stringify(err));
         expect().assertFail();
@@ -413,7 +413,7 @@ export default function radioSecondJsunit() {
           }
         });
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, "Telephony_NetworkSearch_getSignalInformation_Promise_static_0500 fail err:" + JSON.stringify(err));
         expect(false).assertTrue();

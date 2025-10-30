@@ -51,7 +51,8 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
           let mdSize: number = digestSyncUtils.getMdSize(algName);
           expect(dataRes.mdObj.getMdLength()).assertEqual(mdSize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`Digest “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -80,7 +81,8 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
           expect(dataResSpilt.mdObj.getMdLength()).assertEqual(mdSize);
           expect(dataRes.mdObj.getMdLength()).assertEqual(mdSize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`Digest “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -102,7 +104,8 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
           let mdSize: number = digestSyncUtils.getMdSize(algName);
           expect(dataRes.mdObj.getMdLength()).assertEqual(mdSize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`Digest “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -128,13 +131,15 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
           let md: cryptoFramework.Md = cryptoFramework.createMd(algName);
           try {
             md.updateSync(message);
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.error(`Digest Update “${error}“, error code: ${error.code}`);
             expect(error.code).assertEqual(401); // 1.1: 30001
           }
         }
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`Digest “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -154,7 +159,8 @@ export default function SecurityCryptoFwDigestSyncTestUnit() {
         let algName: string = "SHA3-256";
         cryptoFramework.createMd(algName);
         expect(null).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`Digest “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }

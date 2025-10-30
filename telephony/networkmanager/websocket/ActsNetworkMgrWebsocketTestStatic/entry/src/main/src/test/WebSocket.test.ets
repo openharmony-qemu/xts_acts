@@ -12,14 +12,16 @@ let tag: string = 'WebSocketTag'; //日志标识字符串,作为tag标识当前r
 const ExpectFail = () => {
   try {
     expect().assertFail();
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.info("expectInfo", `test failed`);
   }
 }
 const ExpectTrue = (n: boolean) => {
   try {
     expect(n).assertTrue();
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.info("expectInfo", `test failed`);
   }
 }
@@ -59,7 +61,8 @@ export default function WebSocketTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -92,7 +95,8 @@ export default function WebSocketTest() {
           done();
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -125,7 +129,8 @@ export default function WebSocketTest() {
           done();
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -168,7 +173,8 @@ export default function WebSocketTest() {
             })
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +' catch error is '+JSON.stringify(err));
         ExpectTrue(false)
         done();

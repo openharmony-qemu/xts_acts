@@ -49,7 +49,8 @@ export default function bluetoothBleTest() {
                         hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
                         hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
                     });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + err);
             }
             await Utils.msSleep(2000);
@@ -65,7 +66,8 @@ export default function bluetoothBleTest() {
             try {
                 await Utils.openBluetooth();
                 hilog.info(domain, tag, '%{public}s', 'beforeEach end');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', 'beforeEach get failed, err: ' + err);
             }
         })
@@ -84,7 +86,8 @@ export default function bluetoothBleTest() {
                 clientDevice = ble.createGattClientDevice("00:00:00:00:00:00");
                 hilog.info(domain, tag, 'createGattClientDevice result:' + clientDevice);
                 expect(true).assertEqual(clientDevice != null);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "createGattClientDevice get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -96,7 +99,8 @@ export default function bluetoothBleTest() {
             }
             try {
                 clientDevice.close();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "clientDevice close get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -123,14 +127,16 @@ export default function bluetoothBleTest() {
                 serverDevice = ble.createGattServer();
                 hilog.info(domain, tag, 'createGattServer result:' + serverDevice);
                 expect(true).assertEqual(serverDevice != null);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "createGattServer get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
             }
             try {
                 serverDevice.close();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "serverDevice close get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -156,7 +162,8 @@ export default function bluetoothBleTest() {
                 gattClientDevice.setBLEMtuSize(500);
                 hilog.info(domain, tag, 'setBLEMtuSize success');
                 expect().assertFail();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "setBLEMtuSize get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -180,7 +187,8 @@ export default function bluetoothBleTest() {
         it("clientConnectDisconnectTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 gattClientDevice.connect();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "gattClientDevice connect get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -192,7 +200,8 @@ export default function bluetoothBleTest() {
             }
             try {
                 gattClientDevice.disconnect();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "gattClientDevice disconnect get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -230,7 +239,8 @@ export default function bluetoothBleTest() {
                 let WRITE_NO_RESPONSE: ble.GattWriteType = ble.GattWriteType.WRITE_NO_RESPONSE;
                 hilog.info(domain, tag, "WRITE_NO_RESPONSE:" + WRITE_NO_RESPONSE);
                 expect(true).assertEqual(WRITE_NO_RESPONSE == 2);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "bleConstantTest get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -249,7 +259,8 @@ export default function bluetoothBleTest() {
         it("bleStopBLEScanTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 ble.stopBLEScan();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "stopBLEScan get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -275,7 +286,8 @@ export default function bluetoothBleTest() {
                 let testBleScanner: ble.BleScanner = ble.createBleScanner();
                 hilog.info(domain, tag, 'createBleScanner result:' + JSON.stringify(testBleScanner));
                 expect(true).assertEqual(testBleScanner != null);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "createBleScanner get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -337,7 +349,8 @@ export default function bluetoothBleTest() {
                 ble.startAdvertising(setting, advData, advResponse);
                 hilog.info(domain, tag, "startAdvertising successful");
                 ble.stopAdvertising();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, "startAdvertisingTest get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, "Capability not supported.");
@@ -362,7 +375,8 @@ export default function bluetoothBleTest() {
                 let result: Array<string> = ble.getConnectedBLEDevices();
                 hilog.info(domain, tag, JSON.stringify(result));
                 expect(true).assertEqual(result !== null);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -395,7 +409,8 @@ export default function bluetoothBleTest() {
                     matchMode: ble.MatchMode.MATCH_MODE_AGGRESSIVE
                 };
                 ble.startBLEScan([scanFilter], scanOptions);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, "startBLEScan errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -440,7 +455,8 @@ export default function bluetoothBleTest() {
             let gattService: ble.GattService = { serviceUuid: '00001810-0000-1000-8000-00805F9B34FB', isPrimary: true, characteristics: characteristics, includeServices: [] };
             try {
                 gattServerDevice.addService(gattService);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -463,7 +479,8 @@ export default function bluetoothBleTest() {
         it("removeServiceTest", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 gattServerDevice.removeService('00001810-0000-1000-8000-00805F9B34FB');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -497,7 +514,8 @@ export default function bluetoothBleTest() {
             try {
                 gattServerDevice.sendResponse(serverResponse);
                 expect(true).assertFalse();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -531,7 +549,8 @@ export default function bluetoothBleTest() {
             try {
                 gattServerDevice.sendResponse(serverResponse);
                 expect(true).assertFalse();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, "sendResponseTest_001, errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -559,7 +578,8 @@ export default function bluetoothBleTest() {
                 expect(scanModeLowPower).assertEqual(0);
                 expect(scanModeBalanced).assertEqual(1);
                 expect(scanModeLowLatency).assertEqual(2);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "testScanDuty errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -585,7 +605,8 @@ export default function bluetoothBleTest() {
                 expect(enabled).assertEqual(2);
                 expect(disabled).assertEqual(3);
                 expect(stopped).assertEqual(4);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "testStartAdvertising errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -607,7 +628,8 @@ export default function bluetoothBleTest() {
                 let phyLeAllSupported = ble.PhyType.PHY_LE_ALL_SUPPORTED;
                 expect(phyLe1m).assertEqual(1);
                 expect(phyLeAllSupported).assertEqual(255);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "testPhyType errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -640,7 +662,8 @@ export default function bluetoothBleTest() {
                 let batch = ble.ScanReportMode.BATCH;
                 hilog.info(domain, tag, "ScanReportMode BATCH: " + JSON.stringify(batch));
                 expect(batch).assertEqual(2);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "testScanReportMode errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -665,7 +688,8 @@ export default function bluetoothBleTest() {
                 let ON_LOST = ble.ScanReportType.ON_LOST;
                 hilog.info(domain, tag, "ScanReportType ON_LOST: " + JSON.stringify(ON_LOST));
                 expect(ON_LOST).assertEqual(2);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "testScanReportType errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -689,7 +713,8 @@ export default function bluetoothBleTest() {
                     serviceUuid: "00001888-0000-1000-8000-00805f9b34fb"
                 };
                 ble.startBLEScan([scanFilter]);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, "startBLEScanTest_001 errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -745,7 +770,8 @@ export default function bluetoothBleTest() {
                 ble.startAdvertising(setting, advData);
                 hilog.info(domain, tag, "startAdvertising successful");
                 ble.stopAdvertising();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, "startAdvertisingTest_001 get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');

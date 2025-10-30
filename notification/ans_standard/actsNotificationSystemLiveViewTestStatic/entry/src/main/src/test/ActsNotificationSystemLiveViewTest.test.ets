@@ -159,7 +159,8 @@ export default function ActsNotificationSystemLiveViewTest() {
               done();
             }
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(0x000, `${TAG}`,
             `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish failed,data is %{public}s` + JSON.stringify(error));
           expect(false).assertTrue();
@@ -223,7 +224,8 @@ export default function ActsNotificationSystemLiveViewTest() {
               done();
             }
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(0x000, `${TAG}`,
             `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish1 failed,data is %{public}s` + JSON.stringify(error));
           expect(false).assertTrue();
@@ -989,7 +991,8 @@ export default function ActsNotificationSystemLiveViewTest() {
           }).catch((err: BusinessError): void => {
             console.error('getWantAgent failed! ${err.code} ${err.message}');
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error('getWantAgent failed! ${err.code} ${err.message}');
         }
 
@@ -1053,7 +1056,8 @@ export default function ActsNotificationSystemLiveViewTest() {
               done();
             }
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(0x000, `${TAG}`,
             `${TEST_SUITE_NAME}` + `${TEST_CASE_NAME}` + `publish failed,data is %{public}s` + JSON.stringify(error));
           let err: BusinessError = error as BusinessError
@@ -1121,7 +1125,8 @@ export default function ActsNotificationSystemLiveViewTest() {
           }).catch((err: BusinessError): void => {
             console.error('getWantAgent failed! ${err.code} ${err.message}');
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error('getWantAgent failed! ${err.code} ${err.message}');
         }
         let capsule: notificationManager.NotificationCapsule = {
@@ -1266,7 +1271,8 @@ export default function ActsNotificationSystemLiveViewTest() {
           }).catch((err: BusinessError): void => {
             console.error('getWantAgent failed! ${err.code} ${err.message}');
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error('getWantAgent failed! ${err.code} ${err.message}');
         }
         let capsule: notificationManager.NotificationCapsule = {

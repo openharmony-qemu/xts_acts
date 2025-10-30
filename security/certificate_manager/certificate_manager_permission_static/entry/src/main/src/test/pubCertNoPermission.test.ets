@@ -150,7 +150,8 @@ export default function pubCertJsAPINoPermissionTestUnit() {
       try {
         cmResult = await certManager.getPrivateCertificates();
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "%{public}s", "SUB_Security_CertManager_GetPriCertJsApi_Func_static_0020: e.code = " + err.code);
         expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION)
       }

@@ -71,7 +71,8 @@ struct webViewControllerPart2 {
                   Utils.emitEvent(this.numberOfMatches, 37012)
                 }, 2000)
 
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -86,7 +87,8 @@ struct webViewControllerPart2 {
                 setTimeout(() => {
                 Utils.emitEvent(this.searchNext, 100080)
                 }, 2000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -97,7 +99,8 @@ struct webViewControllerPart2 {
                 let setUA = 'userAgent'
                 this.controller.setCustomUserAgent(setUA)
                 Utils.emitEvent(this.controller.getCustomUserAgent(), 37019);
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
               }
               break;

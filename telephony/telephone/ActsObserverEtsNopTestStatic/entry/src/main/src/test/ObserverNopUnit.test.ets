@@ -60,7 +60,8 @@ export default function ObserverNopTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(error.code == 201 || error.code == 401);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -86,7 +87,8 @@ export default function ObserverNopTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
-     } catch (error: BusinessError) {
+     } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(error.code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');

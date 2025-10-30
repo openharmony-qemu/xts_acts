@@ -44,7 +44,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.createX509CRLInstancePromise("der")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -59,7 +60,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certCallback.createX509CRLInstanceCallback("der")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -74,7 +76,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.createX509CRLInstancePromise("pem")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -88,7 +91,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certCallback.createX509CRLInstanceCallback("pem")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -104,7 +108,8 @@ export default function certificateCRLJsunit() {
       try {
         let crlInstance:cert.X509CRL = await certPromise.createX509CRLInstancePromise("pem")
         certPromise.checkIsRevokedX509CRLPromise(crlInstance, "normal");
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -120,7 +125,8 @@ export default function certificateCRLJsunit() {
       try {
         let crlInstance:cert.X509CRL = await certPromise.createX509CRLInstancePromise("pem")
         certPromise.checkIsRevokedX509CRLPromise(crlInstance, "error");
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -135,7 +141,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CRLInfoPromise("pem", "getType")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -149,7 +156,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.checkGetEncodedX509CRLPromise("pem")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -164,7 +172,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certCallback.checkGetEncodedX509CRLCallback("pem")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -178,7 +187,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CRLInfoPromise("pem", "getVersion")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -192,7 +202,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CRLInfoPromise("pem", "getIssuerName")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -206,7 +217,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CRLInfoPromise("pem", "getLastUpdate")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -220,7 +232,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CRLInfoPromise("pem", "getNextUpdate")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -234,7 +247,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certCallback.checkGetRevokedCertX509CRLCallback("pem")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -250,7 +264,8 @@ export default function certificateCRLJsunit() {
         let crlInstance: cert.X509CRL = await certPromise.createX509CRLInstancePromise("pem")
         let result: cert.X509CRLEntry = await certPromise.checkGetRevokedCertWithCertX509CRLPromise(crlInstance, "normal");
         expect(result != null).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -264,7 +279,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.checkGetRevokedCertsX509CRLPromise("pem")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -278,7 +294,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certCallback.checkGetRevokedCertsX509CRLCallback("pem")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -292,7 +309,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CRLInfoPromise("pem", "getTbsInfo")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -307,7 +325,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CRLInfoPromise("pem", "getSignature")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -321,7 +340,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CRLInfoPromise("pem", "getSignatureAlgName")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -335,7 +355,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CRLInfoPromise("pem", "getSignatureAlgOid")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -349,7 +370,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.getX509CRLInfoPromise("pem", "getSignatureAlgParams")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -363,7 +385,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certCallback.checkGetRevokedCertX509CRLCallback("pem")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -377,7 +400,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.verifyX509CRLPromise("pem")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -392,7 +416,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certPromise.verifyX509CRLPromise("der", "NULL")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(error.code == 401).assertTrue();
       }
@@ -406,7 +431,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certCallback.verifyX509CRLCallback("der", "000")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(error.code == 401).assertTrue();
       }
@@ -420,7 +446,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certCallback.checkX509CRLEntryGetSerialNumberCallback("pem")
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -434,7 +461,8 @@ export default function certificateCRLJsunit() {
     it("Security_Cert_Framework_CRL_Func_2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await certCallback.checkX509CRLGetRevokedCertCallback()
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }

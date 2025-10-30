@@ -73,7 +73,8 @@ async function normalProcess(cipherAlgName: string, spec: cpFw.AsyKeySpec, param
     }
     return isTrue;
   }
-  catch (err: BusinessError) {
+  catch (err) {
+    err = err as BusinessError;
     console.log("[Callback] cipherCallbackNormalProcess catch err:" + err);
     throw err as Error;
   }

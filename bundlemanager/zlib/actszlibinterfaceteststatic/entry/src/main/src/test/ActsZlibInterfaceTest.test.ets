@@ -75,7 +75,8 @@ export default function ActsZlibInterfaceTest() {
               expect(err).assertFail();
               done();
             });
-          } catch(errData: BusinessError) {
+          } catch(errData) {
+            errData = errData as BusinessError;
             hilog.error(domain, tag, `011 errData is errCode:${errData.code}  message:${errData.message}`);
             expect(errData).assertFail();
             done();
@@ -85,7 +86,8 @@ export default function ActsZlibInterfaceTest() {
           expect(errData).assertFail();
           done();
         })
-      } catch(errData: BusinessError) {
+      } catch(errData) {
+        errData = errData as BusinessError;
         hilog.error(domain, tag, `013 errData is errCode:${errData.code}  message:${errData.message}`);
         expect(errData).assertFail();
         done();
@@ -114,7 +116,8 @@ export default function ActsZlibInterfaceTest() {
           expect(errData.code).assertEqual(900001);
           done();
         })
-      } catch(errData: BusinessError) {
+      } catch(errData) {
+        errData = errData as BusinessError;
         hilog.error(domain, tag, `ACTS_ZlibInterfaceTest_static_03 errData is errCode:${errData.code}  message:${errData.message}`);
         expect(errData).assertFail();
         done();
@@ -147,7 +150,8 @@ export default function ActsZlibInterfaceTest() {
           expect(errData.code).assertEqual(900003);
           done();
         })
-      } catch(errData: BusinessError) {
+      } catch(errData) {
+        errData = errData as BusinessError;
         hilog.error(domain, tag, `ACTS_ZlibInterfaceTest_static_04 errData is errCode:${errData.code}  message:${errData.message}`);
         expect(errData).assertFail();
         done();

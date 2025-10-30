@@ -68,7 +68,8 @@ export default function typefaceTest() {
           typeface.getFamilyName();
           console.info(msg + ' getFamilyName successed');
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getFamilyName errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -92,7 +93,8 @@ export default function typefaceTest() {
           try {
             typeface.getFamilyName();
             console.info(msg + ' getFamilyName successed');
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             console.info(msg + ` getFamilyName errorCode is:  ${e.code} + errormsg is: ${e.message}`);
             expect().assertFail();
           }
@@ -115,7 +117,8 @@ export default function typefaceTest() {
         let mytypeface = drawing.Typeface.makeFromFile(str);
         mytypeface = drawing.Typeface.makeFromFile("");
         console.info(msg + ' test succeeded.');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` test failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -137,7 +140,8 @@ export default function typefaceTest() {
           const mytypeface = drawing.Typeface.makeFromFile(str);
         }
         console.info(msg + ' test succeeded.');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` test failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -155,14 +159,16 @@ export default function typefaceTest() {
       try {
         const mytypeface = drawing.Typeface.makeFromFile("hello_world");
         console.info(msg + ' test failed.');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` test succeeded, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
       try {
         const mytypeface = drawing.Typeface.makeFromFile("/system/fonts/FakePath.ttf");
         console.info(msg + ' test failed.');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` test succeeded, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -181,7 +187,8 @@ export default function typefaceTest() {
         const mytypeface: drawing.Typeface | undefined = drawing.Typeface.makeFromRawFile($rawfile('image.png'));
         console.info(msg + ' makeFromRawFile image.png success' + JSON.stringify(mytypeface));
         expect(mytypeface == null).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` makeFromRawFile image.png errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -205,7 +212,8 @@ export default function typefaceTest() {
             expect(!!mytypeface).assertTrue();
           }
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeFromRawFile HarmonyOS_Sans_Condensed.ttf errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
@@ -228,7 +236,8 @@ export default function typefaceTest() {
         if (mytypeface) {
           expect(!!mytypeface).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeFromRawFile HarmonyOS_Sans_Condensed.ttf errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
@@ -239,7 +248,8 @@ export default function typefaceTest() {
         if (mytypeface2) {
           expect(!!mytypeface2).assertTrue();
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeFromRawFile ttf/HarmonyOS_Sans_Condensed.ttf errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();

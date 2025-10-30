@@ -77,7 +77,8 @@ export async function readyFiles(testNum: string) : Promise<Dir> {
         destDir: ddpath2
       }
       resolve(alldir);
-    } catch (e: BusinessError) {
+    } catch (e) {
+      e = e as BusinessError;
       hilog.info(domain, tag, '%{public}s',
         testNum + 'failed to readyFiles for ' + e.message + ', code: ' + e.code);
       expect(false).assertTrue();
@@ -136,7 +137,8 @@ export default function fileIOCopyDir() {
         let stat3 = fs.statSync(ddpath2 + '/srcDir_first/srcDir_second/srcFile_second_01');
         expect(stat3.size == FILE_CONTENT.length).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_sync_static_000 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
@@ -188,7 +190,8 @@ export default function fileIOCopyDir() {
         let stat4 = fs.statSync(ddpath2 + '/srcDir_first/destFile_second_01');
         expect(stat4.size == FILE_CONTENT.length).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_sync_static_001 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
@@ -214,7 +217,8 @@ export default function fileIOCopyDir() {
         expect(dirnet1.length == 4).assertTrue();
         fs.copyDirSync(dpath.srcDir, dpath.destDir, DIRMODE_FILE_COPY_THROW_ERR);
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_sync_static_002 has failed for ' + err.message + ', code: ' + err.code);
         expect(err.code == 13900015 && err.message == 'File exists').assertTrue();
         let dirent2 = fs.listFileSync(dpath.destDir, {recursion : true});
@@ -273,7 +277,8 @@ export default function fileIOCopyDir() {
         let dirent2 = fs.listFileSync(dpath.destDir, {recursion : true});
         expect(dirent2.length == 8).assertTrue();
         fs.rmdirSync(dpath.baseDir);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_sync_static_003 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
@@ -306,7 +311,8 @@ export default function fileIOCopyDir() {
         const INVALIDE_MODE = -1;
         fs.copyDirSync(ddpath1, ddpath2, INVALIDE_MODE);
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         fs.rmdirSync(dpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_sync_static_004 has failed for ' + err.message + ', code: ' + err.code);
         expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
@@ -336,7 +342,8 @@ export default function fileIOCopyDir() {
       try {
         fs.copyDirSync(fpath, ffpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.rmdirSync(dpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_sync_static_005 has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -369,7 +376,8 @@ export default function fileIOCopyDir() {
       try {
         fs.copyDirSync(ddpath1, ddpath1, DIRMODE_FILE_COPY_THROW_ERR);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.rmdirSync(dpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_sync_static_006 has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -406,7 +414,8 @@ export default function fileIOCopyDir() {
       try {
         fs.copyDirSync(ddpath1, dddpath1, DIRMODE_FILE_COPY_THROW_ERR);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.rmdirSync(dpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_sync_static_007 has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -433,7 +442,8 @@ export default function fileIOCopyDir() {
         expect(dirnet1.length == 4).assertTrue();
         fs.copyDirSync(dpath.srcDir, dpath.destDir, undefined);
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_sync_static_008 has failed for ' + err.message + ', code: ' + err.code);
         expect(err.code == 13900015 && err.message == 'File exists').assertTrue();
         let dirent2 = fs.listFileSync(dpath.destDir, {recursion : true});
@@ -497,7 +507,8 @@ export default function fileIOCopyDir() {
         expect(stat3.size == FILE_CONTENT.length).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_000 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
@@ -548,7 +559,8 @@ export default function fileIOCopyDir() {
           fs.rmdirSync(dpath);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_001 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
@@ -600,7 +612,8 @@ export default function fileIOCopyDir() {
         expect(stat4.size == FILE_CONTENT.length).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_002 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
@@ -657,7 +670,8 @@ export default function fileIOCopyDir() {
           fs.rmdirSync(dpath);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_003 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
@@ -681,7 +695,8 @@ export default function fileIOCopyDir() {
         expect(dirnet1.length == 4).assertTrue();
         await fs.copyDir(dpath.srcDir, dpath.destDir, DIRMODE_FILE_COPY_THROW_ERR);
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_004 has failed for ' + err.message + ', code: ' + err.code);
         expect(err.code == 13900015 && err.message == 'File exists').assertTrue();
         let dirent2 = fs.listFileSync(dpath.destDir, {recursion : true});
@@ -745,7 +760,8 @@ export default function fileIOCopyDir() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_005 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -786,7 +802,8 @@ export default function fileIOCopyDir() {
         expect(dirent2.length == 8).assertTrue();
         fs.rmdirSync(dpath.baseDir);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_006 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
@@ -831,7 +848,8 @@ export default function fileIOCopyDir() {
           fs.rmdirSync(dpath.baseDir);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_007 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
       }
@@ -854,7 +872,8 @@ export default function fileIOCopyDir() {
         const INVALIDE_MODE = -1;
         await fs.copyDir(dpath.srcDir, dpath.destDir, INVALIDE_MODE);
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_008 has failed for ' + err.message + ', code: ' + err.code);
         expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
         fs.rmdirSync(dpath.baseDir);
@@ -885,7 +904,8 @@ export default function fileIOCopyDir() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_009 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -907,7 +927,8 @@ export default function fileIOCopyDir() {
       try {
         await fs.copyDir(dpath.srcDir + '/srcFile_first_01', dpath.destDir + 'srcDir/srcFile_first_01');
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_010 has failed for ' + err.message + ', code: ' + err.code);
         expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
         fs.rmdirSync(dpath.baseDir);
@@ -938,7 +959,8 @@ export default function fileIOCopyDir() {
 
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_011 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -960,7 +982,8 @@ export default function fileIOCopyDir() {
       try {
         await fs.copyDir(dpath.srcDir, dpath.srcDir, DIRMODE_FILE_COPY_REPLACE);
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_012 has failed for ' + err.message + ', code: ' + err.code);
         expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
         fs.rmdirSync(dpath.baseDir);
@@ -990,7 +1013,8 @@ export default function fileIOCopyDir() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_013 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -1023,7 +1047,8 @@ export default function fileIOCopyDir() {
       try {
         await fs.copyDir(ddpath, dddddpath, DIRMODE_FILE_COPY_REPLACE);
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_014 has failed for ' + err.message + ', code: ' + err.code);
         expect(err.code == 13900020 && err.message == 'Invalid argument').assertTrue();
         fs.rmdirSync(dpath);
@@ -1065,7 +1090,8 @@ export default function fileIOCopyDir() {
 
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_015 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -1089,7 +1115,8 @@ export default function fileIOCopyDir() {
         expect(dirnet1.length == 4).assertTrue();
         await fs.copyDir(dpath.srcDir, dpath.destDir, undefined);
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_016 has failed for ' + err.message + ', code: ' + err.code);
         expect(err.code == 13900015 && err.message == 'File exists').assertTrue();
         let dirent2 = fs.listFileSync(dpath.destDir, {recursion : true});
@@ -1144,7 +1171,8 @@ export default function fileIOCopyDir() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_017 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
         done();
@@ -1182,7 +1210,8 @@ export default function fileIOCopyDir() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_copyDir_async_static_018 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
         done();

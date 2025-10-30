@@ -112,7 +112,8 @@ export default function LifeCycleLinstenerStaticTest() {
       console.log(`${tag}, it begin`);
       try {
         let appCloneIndex: Int = applicationContext.getCurrentAppCloneIndex();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${tag} error, errorCode: ${JSON.stringify(err?.message)}`);
         expect(err?.code).assertEqual(16000071);
         done();
@@ -151,7 +152,8 @@ export default function LifeCycleLinstenerStaticTest() {
 
           hilog.info(domain, tag, `${itName} off applicationStateChange`);
           applicationContext.offApplicationStateChange(cb);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
         }
@@ -202,7 +204,8 @@ export default function LifeCycleLinstenerStaticTest() {
           await Utils.msSleep(2000);
           hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isForeground: ${cb.isForeground}`);
           expect(cb.isForeground).assertFalse();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect().assertFail();
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
         }
@@ -254,7 +257,8 @@ export default function LifeCycleLinstenerStaticTest() {
           await Utils.msSleep(2000);
           hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isForeground: ${cb.isForeground}`);
           expect(cb.isForeground).assertFalse();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect().assertFail();
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
         }
@@ -280,7 +284,8 @@ export default function LifeCycleLinstenerStaticTest() {
           applicationContext.onInteropAbilityLifecycle(cb)
           hilog.info(domain, tag, `${itName} offInteropAbilityLifecycle`);
           applicationContext.offInteropAbilityLifecycle(cb);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
         }
@@ -305,7 +310,8 @@ export default function LifeCycleLinstenerStaticTest() {
           applicationContext.offInteropAbilityLifecycle(cb);
           expect().assertFail()
           done()
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect(err.code === 401).assertTrue();
           hilog.info(domain, tag, `${itName} end`);

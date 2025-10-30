@@ -132,13 +132,15 @@ export default function getAssetsTest() {
               fetchResult?.close();
               expect(false).assertTrue();
             }
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${testNum} getAssets failed; error: ${error},  ${error.code}`);
             expect(error.code).assertEqual('14000011');
           }
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${testNum} failed; error: ${error},  ${error.code}`);
         expect(error.code).assertEqual('14000011');
         done();
@@ -151,7 +153,8 @@ export default function getAssetsTest() {
         await (helper as photoAccessHelper.PhotoAccessHelper).getAssets(fetchOps as photoAccessHelper.FetchOptions);
         expect(false).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${testNum} failed; error: ${error}, ${error.code}`);
         expect(error.code).assertEqual('14000011');
         done();

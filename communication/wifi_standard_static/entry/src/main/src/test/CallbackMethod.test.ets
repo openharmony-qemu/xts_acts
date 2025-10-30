@@ -51,7 +51,8 @@ export default class CallbackMethods {
               resolve(data);
             }
           }
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
         }
       });
@@ -72,7 +73,8 @@ export default class CallbackMethods {
               resolve(data);
             }
           }
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
         }
       });
@@ -93,7 +95,8 @@ export default class CallbackMethods {
               resolve(data);
             }
           }
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
         }
       });
@@ -114,7 +117,8 @@ export default class CallbackMethods {
               resolve(data);
             }
           }
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
         }
       });
@@ -135,7 +139,8 @@ export default class CallbackMethods {
               resolve(netWorkId);
             }
           }
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
         }
       });
@@ -156,7 +161,8 @@ export default class CallbackMethods {
               resolve(netWorkId);
             }
           }
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
         }
       });
@@ -175,7 +181,8 @@ export default class CallbackMethods {
             hilog.info(domain, tag, 'removeCandidateConfig callback success');
             resolve(true);
           }
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
         }
       });

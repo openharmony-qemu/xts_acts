@@ -56,7 +56,8 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
           let ret: boolean = commonUtils.compareDataBlob(secret_A, secret_B);
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -81,7 +82,8 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
           let ret: boolean = commonUtils.compareDataBlob(secret_A, secret_B);
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -110,7 +112,8 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
           let ret: boolean = commonUtils.compareDataBlob(secret_A, secret_B);
           expect(ret).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -132,7 +135,8 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
         let keyPair_B: cryptoFramework.KeyPair = await negotiateAlgSyncUtils.generateKey(algName);
         negotiateAlgSyncUtils.eccKeyAgreement(algName, keyPair_A.pubKey, keyPair_B.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(801);
       }
@@ -155,7 +159,8 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
       try {
         negotiateAlgSyncUtils.eccKeyAgreement(keyAlgName_B, keyPair_A.pubKey, keyPair_B.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -178,7 +183,8 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
       try {
         negotiateAlgSyncUtils.eccKeyAgreement(keyAlgName_B, keyPair_A.pubKey, keyPair_B.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -201,7 +207,8 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
       try {
         negotiateAlgSyncUtils.eccKeyAgreement(keyAlgName_B, keyPair_A.pubKey, keyPair_B.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -224,7 +231,8 @@ export default function SecurityCryptoFwAgreementSyncTestUnit() {
       try {
         negotiateAlgSyncUtils.eccKeyAgreement(keyAlgName_B, keyPair_A.pubKey, keyPair_B.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }

@@ -44,7 +44,8 @@ export default function ActsNotificationBadgeTest() {
             done();
           }
         })
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} Sub_Notification_Ans_Corner_SetNum_Static_0900 failed, catch error code: ${err.code}, message: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -73,7 +74,8 @@ export default function ActsNotificationBadgeTest() {
           }
 
         })
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} Sub_Notification_Ans_Corner_SetNum_Static_1000 failed, catch error code: ${err.code}, message: ${err.message}`)
         expect(false).assertTrue()
         done()

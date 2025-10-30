@@ -485,7 +485,8 @@ async function signAbnormalParameterProcess(
         await signForSign(signGenerator, input);
         break;
     }
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error("[Callback] signAbnormalParameterProcess catch err: " + err);
     throw err as Error;
   }
@@ -718,7 +719,8 @@ async function verifyAbnormalParameterProcess (
       default:
         return await verifyForVerify(verifyGenerator, input, signBlob);
     }
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error("[Callback] verifyUpdateAbnormalParameterProcess catch err: " + err);
     throw err as Error;
   }

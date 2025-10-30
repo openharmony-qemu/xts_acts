@@ -172,7 +172,8 @@ class MyAuthenticator extends account.Authenticator {
           hilog.info(0x0000, tag, '====>[Authenticator] remove appaccount success');
           callback.onResult(0);
           return;
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>[Authenticator] removeAccount err: ' + JSON.stringify(err));
         }
       }

@@ -56,7 +56,8 @@ export default function fileIOTruncate() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -90,7 +91,8 @@ export default function fileIOTruncate() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -127,7 +129,8 @@ export default function fileIOTruncate() {
           console.log('fileIO_truncate_async_static_002 error package: ' + JSON.stringify(err));
           expect(false).assertTrue();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -161,7 +164,8 @@ export default function fileIOTruncate() {
           console.log('fileIO_truncate_async_static_003 error package: ' + JSON.stringify(err));
           expect(false).assertTrue();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_003 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -190,7 +194,8 @@ export default function fileIOTruncate() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_004 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -215,7 +220,8 @@ export default function fileIOTruncate() {
         let file = fs.openSync(fpath,fs.OpenMode.READ_WRITE);
         await fs.truncate(fpath, truncateLen);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_005 has failed for' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
@@ -250,7 +256,8 @@ export default function fileIOTruncate() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_006 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -284,7 +291,8 @@ export default function fileIOTruncate() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_007 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -317,7 +325,8 @@ export default function fileIOTruncate() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_008 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -353,7 +362,8 @@ export default function fileIOTruncate() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_011 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -378,7 +388,8 @@ export default function fileIOTruncate() {
         let truncateLen = 5;
         await fs.truncate(fpath, truncateLen);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.rmdirSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_012 has failed for' + JSON.stringify(e));
         expect(e.code == 13900019 && e.message == 'Is a directory').assertTrue();
@@ -403,7 +414,8 @@ export default function fileIOTruncate() {
         let truncateLen = 5;
         await fs.truncate(fpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.rmdirSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_013 has failed for' + JSON.stringify(e));
         expect(e.code == 13900019 && e.message == 'Is a directory').assertTrue();
@@ -430,7 +442,8 @@ export default function fileIOTruncate() {
         fs.truncateSync(fpath);
         expect(fs.statSync(fpath).size == 0).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_truncate_sync_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -462,7 +475,8 @@ export default function fileIOTruncate() {
         expect(readLen == truncateLen).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_truncate_sync_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -485,7 +499,8 @@ export default function fileIOTruncate() {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_truncate_sync_static_002 fpath: ' + fpath);
         fs.truncateSync(fpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_truncate_sync_static_002 has failed for' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
       }
@@ -506,7 +521,8 @@ export default function fileIOTruncate() {
         let truncateLen = 2;
         fs.truncateSync(-1, truncateLen);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_truncate_sync_static_003 has failed for' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
       }
@@ -537,7 +553,8 @@ export default function fileIOTruncate() {
         expect(readLen == 0).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_truncate_sync_static_005 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -567,7 +584,8 @@ export default function fileIOTruncate() {
         fs.closeSync(file.fd);
         fs.truncateSync(file.fd, truncateLen);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_truncate_sync_static_006 has failed for' + JSON.stringify(e));
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
       }
@@ -590,7 +608,8 @@ export default function fileIOTruncate() {
         fs.mkdirSync(fpath);
         fs.truncateSync(fpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.rmdirSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_truncate_sync_static_007 has failed for' + JSON.stringify(e));
         expect(e.code == 13900019 && e.message == 'Is a directory').assertTrue();

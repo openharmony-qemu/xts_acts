@@ -20,7 +20,8 @@ function createAsyKeyGenerator(asyAlgoName: string): cryptoFramework.AsyKeyGener
     let rsaGenerator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(asyAlgoName);
     console.log("rsaGenerator algName: " + rsaGenerator.algName);
     return rsaGenerator;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error("rsaGenerator error:" + err);
     throw err as Error;
   }
@@ -31,7 +32,8 @@ function createAsyKeyGeneratorBySpec(asyKeySpec: cryptoFramework.AsyKeySpec): cr
     let rsaGenerator: cryptoFramework.AsyKeyGeneratorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(asyKeySpec);
     console.log("rsaGenerator algName: " + rsaGenerator.algName);
     return rsaGenerator;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error("rsaGenerator error:" + err);
     throw err as Error;
   }
@@ -42,7 +44,8 @@ function createAsyCipher(cipherAlgoName: string): cryptoFramework.Cipher {
     let cipherGenerator: cryptoFramework.Cipher = cryptoFramework.createCipher(cipherAlgoName);
     console.log("cipherGenerator algName: " + cipherGenerator.algName);
     return cipherGenerator;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error("cipherGenerator error:" + err);
     throw err as Error;
   }
@@ -53,7 +56,8 @@ function createAsySign(signAlgoName: string): cryptoFramework.Sign {
     let signGenerator: cryptoFramework.Sign = cryptoFramework.createSign(signAlgoName);
     console.log("signGenerator algName: " + signGenerator.algName);
     return signGenerator;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error("signGenerator error:" + err);
     throw err as Error;
   }
@@ -64,7 +68,8 @@ function createAsyVerify(verifyAlgoName: string): cryptoFramework.Verify {
     let verifyGenerator: cryptoFramework.Verify = cryptoFramework.createVerify(verifyAlgoName);
     console.log("verifyGenerator algName: " + verifyGenerator.algName);
     return verifyGenerator;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error("verifyGenerator error:" + err);
     throw err as Error;
   }
@@ -75,7 +80,8 @@ function createAsyKeyAgreement(ECDHAlgoName: string): cryptoFramework.KeyAgreeme
     let generator: cryptoFramework.KeyAgreement = cryptoFramework.createKeyAgreement(ECDHAlgoName);
     console.log("createKeyAgreement algName: " + generator.algName);
     return generator;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error("createKeyAgreement error:" + err);
     throw err as Error;
   }
@@ -86,7 +92,8 @@ function createSymKeyGenerator(symAlgoName: string): cryptoFramework.SymKeyGener
     let symKeyGenerator: cryptoFramework.SymKeyGenerator = cryptoFramework.createSymKeyGenerator(symAlgoName);
     console.log("symKeyGenerator algName: " + symKeyGenerator.algName);
     return symKeyGenerator;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error("symKeyGenerator error:" + err);
     throw err as Error;
   }

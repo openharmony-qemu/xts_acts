@@ -78,7 +78,7 @@ export default function EsimNoPermissionPublic() {
         ExpectTrue(true);
         hilog.info(domain, tag, `${caseName} test end`);
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         if (err?.code === 801) {
           hilog.info(domain, tag, `${caseName} The current device type does not, promise: err->${JSON.stringify(err)}`);

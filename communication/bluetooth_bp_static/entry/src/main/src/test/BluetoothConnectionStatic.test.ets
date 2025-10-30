@@ -81,7 +81,8 @@ export default function bluetoothConnectionTest() {
                         hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
                         hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
                     });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + err);
             }
             await Utils.msSleep(2000);
@@ -94,7 +95,8 @@ export default function bluetoothConnectionTest() {
             try {
                 await Utils.openBluetooth();
                 hilog.info(domain, tag, '%{public}s', 'beforeEach end');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', 'beforeEach get failed, err: ' + err);
             }
         })
@@ -112,7 +114,8 @@ export default function bluetoothConnectionTest() {
                 let name: string = connection.getRemoteDeviceName("00:11:22:33:44:55");
                 hilog.info(domain, tag, "getRemoteDeviceName:" + name);
                 expect(true).assertEqual(name == "");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteDeviceName get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -141,7 +144,8 @@ export default function bluetoothConnectionTest() {
                 let aliasNames: string = connection.getRemoteDeviceName("00:11:22:33:44:55", false);
                 hilog.info(domain, tag, "getRemoteDeviceName alias is false:" + aliasNames);
                 expect(true).assertEqual(aliasNames == "");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteDeviceName alias get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -170,7 +174,8 @@ export default function bluetoothConnectionTest() {
                 hilog.info(domain, tag, "getRemoteDeviceClass result majorMinorClass:" + JSON.stringify(deviceClass.majorMinorClass));
                 hilog.info(domain, tag, "getRemoteDeviceClass result classOfDevice:" + JSON.stringify(deviceClass.classOfDevice));
                 expect(true).assertEqual(deviceClass != null);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteDeviceClass get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -195,7 +200,8 @@ export default function bluetoothConnectionTest() {
             try {
                 connection.setBluetoothScanMode(connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE, 0);
                 hilog.info(domain, tag, "setBluetoothScanMode success");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "setBluetoothScanMode get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -221,7 +227,8 @@ export default function bluetoothConnectionTest() {
                 let devices: Array<string> = connection.getPairedDevices();
                 hilog.info(domain, tag, "getPairedDevices result:" + JSON.stringify(devices));
                 expect(true).assertEqual(devices != null);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getPairedDevices get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -250,7 +257,8 @@ export default function bluetoothConnectionTest() {
                 let SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE: connection.ScanMode = connection.ScanMode.SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE;
                 hilog.info(domain, tag, "SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE:" + SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE);
                 expect(true).assertEqual(SCAN_MODE_CONNECTABLE_GENERAL_DISCOVERABLE == 4);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "ConnectionConstant get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -271,7 +279,8 @@ export default function bluetoothConnectionTest() {
                 await connection.getLastConnectionTime(deviceId).then((time: long) => {
                     hilog.info(domain, tag, "getLastConnectionTime result:" + JSON.stringify(time));
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getLastConnectionTime get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -304,7 +313,8 @@ export default function bluetoothConnectionTest() {
                     hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo boxBatteryLevel:" + JSON.stringify(data.boxBatteryLevel));
                     hilog.info(domain, tag, "getRemoteDeviceBatteryInfo success, BatteryInfo boxChargeState:" + JSON.stringify(data.boxChargeState));
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteDeviceBatteryInfo get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -330,7 +340,8 @@ export default function bluetoothConnectionTest() {
                 await connection.setRemoteDeviceName(deviceId, "RemoteDeviceName").then(() => {
                     hilog.info(domain, tag, "setRemoteDeviceName success");
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "setRemoteDeviceName get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -364,7 +375,8 @@ export default function bluetoothConnectionTest() {
                 hilog.info(domain, tag, 'ScanMode_0100 setoldscanmode = '+ JSON.stringify(Number(getOldScanMode)));
                 expect(true).assertEqual(oldScanMode == getOldScanMode);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -397,7 +409,8 @@ export default function bluetoothConnectionTest() {
                 hilog.info(domain, tag, 'ScanMode_0200 setoldscanmode = '+ JSON.stringify(Number(getOldScanMode)));
                 expect(true).assertEqual(oldScanMode == getOldScanMode);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -430,7 +443,8 @@ export default function bluetoothConnectionTest() {
                 hilog.info(domain, tag, 'ScanMode_0300 getOldScanMode = '+ JSON.stringify(Number(getOldScanMode)));
                 expect(true).assertEqual(oldScanMode == getOldScanMode);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -463,7 +477,8 @@ export default function bluetoothConnectionTest() {
                 hilog.info(domain, tag, "ScanMode_0400 getOldScanMode = "+ JSON.stringify(Number(getOldScanMode)));
                 expect(true).assertEqual(oldScanMode == getOldScanMode);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -496,7 +511,8 @@ export default function bluetoothConnectionTest() {
                 hilog.info(domain, tag, "ScanMode_0500 getOldScanMode = "+ JSON.stringify(Number(getOldScanMode)));
                 expect(true).assertEqual(oldScanMode == getOldScanMode);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -529,7 +545,8 @@ export default function bluetoothConnectionTest() {
                 hilog.info(domain, tag, "ScanMode_0600 getOldScanMode = "+ JSON.stringify(Number(getOldScanMode)));
                 expect(true).assertEqual(oldScanMode == getOldScanMode);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -562,7 +579,8 @@ export default function bluetoothConnectionTest() {
                 hilog.info(domain, tag, "ScanMode_0700 getOldScanMode = "+ JSON.stringify(Number(getOldScanMode)));
                 expect(true).assertEqual(oldScanMode == getOldScanMode);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -595,7 +613,8 @@ export default function bluetoothConnectionTest() {
                 hilog.info(domain, tag, 'ScanMode_0800 getOldScanMode = '+ JSON.stringify(Number(getOldScanMode)));
                 expect(true).assertEqual(oldScanMode == getOldScanMode);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -628,7 +647,8 @@ export default function bluetoothConnectionTest() {
                 hilog.info(domain, tag, 'ScanMode_0900 getOldScanMode = '+ JSON.stringify(Number(getOldScanMode)));
                 expect(true).assertEqual(oldScanMode == getOldScanMode);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -655,7 +675,8 @@ export default function bluetoothConnectionTest() {
 
                 let result = connection.getProfileConnectionState(connection.ProfileId.PROFILE_A2DP_SOURCE);
                 expect(true).assertEqual(result == 0 || result == 1 || result == 2 || result == 3);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -680,7 +701,8 @@ export default function bluetoothConnectionTest() {
                 let getNewName = connection.getLocalName();
                 hilog.info(domain, tag, 'LocalName_0700 NewName = '+ JSON.stringify(getNewName));
                 expect(true).assertEqual(getNewName != null);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -706,7 +728,8 @@ export default function bluetoothConnectionTest() {
                 let state: connection.BondState = connection.getPairState("00:11:22:33:44:55");
                 hilog.info(domain, tag, "getPairState: " + state);
                 expect(true).assertEqual(state == 0 || state == 1 || state == 2);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "getPairState errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -731,7 +754,8 @@ export default function bluetoothConnectionTest() {
                 let result: boolean = connection.isBluetoothDiscovering();
                 hilog.info(domain, tag, "isBluetoothDiscovering: " + result);
                 expect(result).assertEqual(false);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "isBluetoothDiscovering errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -760,7 +784,8 @@ export default function bluetoothConnectionTest() {
                     }
                     hilog.info(domain, tag, 'connectAllowedProfiles_callback, err: ' + JSON.stringify(err));
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "connectAllowedProfiles_callback get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -787,7 +812,8 @@ export default function bluetoothConnectionTest() {
                     hilog.info(domain, tag, 'connectAllowedProfiles success');
                 });
                 expect().assertFail();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "connectAllowedProfiles_promise get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -817,7 +843,8 @@ export default function bluetoothConnectionTest() {
                         hilog.info(domain, tag, "getRemoteProfileUuids_callback success");
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteProfileUuids_callback get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -843,7 +870,8 @@ export default function bluetoothConnectionTest() {
                 await connection.getRemoteProfileUuids(deviceId).then((data: connection.ProfileUuids[])=> {
                     hilog.info(domain, tag, "getRemoteProfileUuids_promise resule:" + JSON.stringify(data));
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getRemoteProfileUuids_promise get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -873,7 +901,8 @@ export default function bluetoothConnectionTest() {
                         hilog.info(domain, tag, "setDevicePinCode_callback success");
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "setDevicePinCode_callback get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -901,7 +930,8 @@ export default function bluetoothConnectionTest() {
                 }).catch((err: Error) => {
                     hilog.info(domain, tag, "setDevicePinCode_promise error:" + Number(err.code));
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "setDevicePinCode_promise get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -928,7 +958,8 @@ export default function bluetoothConnectionTest() {
                 let TRANSPORT_LE = connection.BluetoothTransport.TRANSPORT_LE;
                 expect(TRANSPORT_BR_EDR).assertEqual(0);
                 expect(TRANSPORT_LE).assertEqual(1);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "BluetoothTransport errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -969,7 +1000,8 @@ export default function bluetoothConnectionTest() {
                 let SCAN_MODE_CONNECTABLE_LIMITED_DISCOVERABLE = connection.ScanMode.SCAN_MODE_CONNECTABLE_LIMITED_DISCOVERABLE;
                 hilog.info(domain, tag, "ScanMode SCAN_MODE_CONNECTABLE_LIMITED_DISCOVERABLE: " + SCAN_MODE_CONNECTABLE_LIMITED_DISCOVERABLE);
                 expect(SCAN_MODE_CONNECTABLE_LIMITED_DISCOVERABLE).assertEqual(5);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "testScanMode errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -995,7 +1027,8 @@ export default function bluetoothConnectionTest() {
                 expect(deviceNormalChargeInCharging).assertEqual(1);
                 expect(deviceSuperChargeNotCharged).assertEqual(2);
                 expect(deviceSuperChargeInCharging).assertEqual(3);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "testDeviceChargeState errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -1023,7 +1056,8 @@ export default function bluetoothConnectionTest() {
                 expect(authFailure).assertEqual(2);
                 expect(authRejected).assertEqual(3);
                 expect(internalRrror).assertEqual(4);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "testUnbondCause errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -1046,7 +1080,8 @@ export default function bluetoothConnectionTest() {
                 await Utils.msSleep(2000);
                 connection.offPinRequired(onReceivePinRequiredEvent);
                 hilog.info(domain, tag, "setDevicePairingConfirmation success");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "setDevicePairingConfirmation get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -1074,7 +1109,8 @@ export default function bluetoothConnectionTest() {
                 await Utils.msSleep(3000);
                 connection.offBluetoothDeviceFind(onReceiveEvent2);
                 connection.stopBluetoothDiscovery();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "startOrStopBluetoothDiscoveryTest errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1108,7 +1144,8 @@ export default function bluetoothConnectionTest() {
                 expect(connection.BondState.BOND_STATE_INVALID == 0).assertTrue();
                 expect(connection.BondState.BOND_STATE_BONDING == 1).assertTrue();
                 expect(connection.BondState.BOND_STATE_BONDED == 2).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "pairDeviceTest_callback, errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, "pairDevice is not support");
@@ -1139,7 +1176,8 @@ export default function bluetoothConnectionTest() {
                 expect(connection.BondState.BOND_STATE_INVALID == 0).assertTrue();
                 expect(connection.BondState.BOND_STATE_BONDING == 1).assertTrue();
                 expect(connection.BondState.BOND_STATE_BONDED == 2).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "pairDeviceTest_promise, errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, "pairDevice is not support");
@@ -1170,7 +1208,8 @@ export default function bluetoothConnectionTest() {
                 expect(connection.BondState.BOND_STATE_INVALID == 0).assertTrue();
                 expect(connection.BondState.BOND_STATE_BONDING == 1).assertTrue();
                 expect(connection.BondState.BOND_STATE_BONDED == 2).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "pairDeviceTest_promise, errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, "pairDevice is not support");
@@ -1196,7 +1235,8 @@ export default function bluetoothConnectionTest() {
                 connection.onDiscoveryResult(onReceiveEvent);
                 await Utils.msSleep(900);
                 connection.offDiscoveryResult(onReceiveEvent);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "testOnDiscoveryResult, errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, "pairDevice is not support");
@@ -1219,7 +1259,8 @@ export default function bluetoothConnectionTest() {
         it("testBatteryChange", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 connection.onBatteryChange(onReceiveEvent1);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "testBatteryChange, errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, "api is not support");
@@ -1230,7 +1271,8 @@ export default function bluetoothConnectionTest() {
             }
             try {
                 connection.offBatteryChange(onReceiveEvent1);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "testBatteryChange, errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, "api is not support");
@@ -1257,7 +1299,8 @@ export default function bluetoothConnectionTest() {
                 await Utils.msSleep(2000);
                 connection.offPinRequired();
                 hilog.info(domain, tag, "setDevicePairingConfirmation success");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "setDevicePairingConfirmation get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -1285,7 +1328,8 @@ export default function bluetoothConnectionTest() {
                 await Utils.msSleep(3000);
                 connection.offBluetoothDeviceFind();
                 connection.stopBluetoothDiscovery();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "startOrStopBluetoothDiscoveryTest errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1319,7 +1363,8 @@ export default function bluetoothConnectionTest() {
                 expect(connection.BondState.BOND_STATE_INVALID == 0).assertTrue();
                 expect(connection.BondState.BOND_STATE_BONDING == 1).assertTrue();
                 expect(connection.BondState.BOND_STATE_BONDED == 2).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "pairDeviceTest_callback, errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, "pairDevice is not support");
@@ -1350,7 +1395,8 @@ export default function bluetoothConnectionTest() {
                 expect(connection.BondState.BOND_STATE_INVALID == 0).assertTrue();
                 expect(connection.BondState.BOND_STATE_BONDING == 1).assertTrue();
                 expect(connection.BondState.BOND_STATE_BONDED == 2).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "pairDeviceTest_promise, errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, "pairDevice is not support");
@@ -1376,7 +1422,8 @@ export default function bluetoothConnectionTest() {
                 connection.onDiscoveryResult(onReceiveEvent);
                 await Utils.msSleep(900);
                 connection.offDiscoveryResult();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "testOnDiscoveryResult, errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, "pairDevice is not support");
@@ -1399,7 +1446,8 @@ export default function bluetoothConnectionTest() {
         it("testBatteryChange_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
                 connection.onBatteryChange(onReceiveEvent1);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "testBatteryChange, errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, "api is not support");
@@ -1410,7 +1458,8 @@ export default function bluetoothConnectionTest() {
             }
             try {
                 connection.offBatteryChange();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "testBatteryChange, errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, "api is not support");

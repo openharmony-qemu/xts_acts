@@ -24,14 +24,16 @@ let tag: string = 'networkSecurityNopTag'; //日志标识字符串,作为tag标�
 const ExpectFail = () => {
   try {
     expect().assertFail();
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.info("expectInfo", `test failed`);
   }
 }
 const ExpectTrue = (n: boolean) => {
   try {
     expect(n).assertTrue();
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.info("expectInfo", `test sucess`);
   }
 }
@@ -52,7 +54,8 @@ export default function networkSecurityNoPTest() {
       try {
         let result: boolean = networkSecurity.isCleartextPermitted();
         hilog.info(domain, tag, `${caseName} isCleartextPermitted Result: ${result}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
         ExpectTrue(err.code === 201);
         done();
@@ -75,7 +78,8 @@ export default function networkSecurityNoPTest() {
       try {
         let result: boolean = networkSecurity.isCleartextPermittedByHostName('www.baidu.com');
         hilog.info(domain, tag, `${caseName} isCleartextPermittedByHostName Result: ${result}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
         ExpectTrue(err.code === 201);
         done();

@@ -473,7 +473,8 @@ export default function imageDecodeOptions() {
             console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0100 success ");
             expect(pixelmap != undefined).assertTrue();
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.log("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0100 error: " + error);
             expect().assertFail();
             done();
@@ -737,7 +738,8 @@ export default function imageDecodeOptions() {
               console.info("imageInfo height :" + imageInfo.size.height);
               console.info("imageInfo width : " + imageInfo.size.width);
               done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+              error = error as BusinessError;
               console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0400 getimageInfo err " +
               JSON.stringify(err));
               expect().assertFail();
@@ -774,7 +776,8 @@ export default function imageDecodeOptions() {
           console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0200 success ");
           expect(pixelmap !== undefined).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_PROMISE_STATIC_0200 error: " + error);
           expect().assertFail();
           done();
@@ -998,7 +1001,8 @@ export default function imageDecodeOptions() {
               console.info("imageInfo height :" + imageInfo.size.height);
               console.info("imageInfo width : " + imageInfo.size.width);
               done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+              error = error as BusinessError;
               console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0600 getimageInfo err " +
               JSON.stringify(err));
               expect().assertFail();
@@ -1200,7 +1204,8 @@ export default function imageDecodeOptions() {
               console.info("imageInfo height :" + imageInfo.size.height);
               console.info("imageInfo width : " + imageInfo.size.width);
               done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+              error = error as BusinessError;
               console.info("SUB_MULTIMEDIA_IMAGE_DECODEOPTIONS_CREATEPIXELMAP_DESIRED_STATIC_0800 getimageInfo err " +
               JSON.stringify(err));
               expect().assertFail();

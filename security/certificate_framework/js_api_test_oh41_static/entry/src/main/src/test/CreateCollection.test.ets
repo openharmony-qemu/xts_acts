@@ -49,7 +49,8 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
       try {
         let collectRes = cert.createCertCRLCollection([]);
         expect(collectRes != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(null).assertFail();
       }
       done();
@@ -70,7 +71,8 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
 
         let collectRes = cert.createCertCRLCollection([], [crl1, crl2]);
         expect(collectRes != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(null).assertFail();
       }
       done();
@@ -89,7 +91,8 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
         const cert1 = await certFunc.createCustomizedX509CertPromise("pem", 1);
         let collectRes = collectionFunc.createCertCRLCollectionWithOneParam([cert1]);
         expect(collectRes != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(null).assertFail();
       }
       done();
@@ -108,7 +111,8 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
         const x509Cert = await certFunc.createCustomizedX509CertPromise("pem", 1);
         let collectRes = cert.createCertCRLCollection([x509Cert], []);
         expect(collectRes != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(null).assertFail();
       }
       done();
@@ -128,7 +132,8 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
         const crl = await crlFunc.createCustomizedX509CRLPromise("pem", 1);
         let collectRes = collectionFunc.createCertCRLCollectionWithTwoParam([x509Cert], [crl]);
         expect(collectRes != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(null).assertFail();
       }
       done();
@@ -150,7 +155,8 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
 
         let collectRes = collectionFunc.createCertCRLCollectionWithTwoParam([cert1], [crl1, crl2]);
         expect(collectRes != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(null).assertFail();
       }
       done();
@@ -170,7 +176,8 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
         const crl1 = await crlFunc.createCustomizedX509CRLPromise("der", 1);
         let collectRes = collectionFunc.createCertCRLCollectionWithTwoParam([cert1], [crl1]);
         expect(collectRes != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(null).assertFail();
       }
       done();
@@ -192,7 +199,8 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
 
         let collectRes = collectionFunc.createCertCRLCollectionWithTwoParam([cert1], [crl1, crl2]);
         expect(collectRes != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(null).assertFail();
       }
       done();
@@ -219,7 +227,8 @@ export default function certFrameworkCreateCollectionJsAPIFunctionTestUnit() {
 
         let collectRes = collectionFunc.createCertCRLCollectionWithTwoParam([cert1, cert2, cert3, cert4], [crl1, crl2, crl3, crl4]);
         expect(collectRes != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(null).assertFail();
       }
       done();

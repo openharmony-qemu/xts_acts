@@ -274,7 +274,8 @@ export default function imageSync() {
             done();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         logger.log('createPixelMapSync error' + error);
         expect(false).assertTrue();
         done();
@@ -943,7 +944,8 @@ export default function imageSync() {
             done();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         logger.log('createPixelMapSync error' + error);
         expect(false).assertTrue();
         done();

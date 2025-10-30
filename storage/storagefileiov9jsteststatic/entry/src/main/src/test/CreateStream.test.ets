@@ -44,7 +44,8 @@ export default function fileIOCreateStream() {
       try {
         fs.createStreamSync(fpath, 'r');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_000 end error' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
       }
@@ -71,7 +72,8 @@ export default function fileIOCreateStream() {
         expect(sr.writeSync(FILE_CONTENT, { offset: 0 }) == FILE_CONTENT.length).assertTrue();
         sr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_002 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -93,7 +95,8 @@ export default function fileIOCreateStream() {
       try {
         fs.createStreamSync(fpath, 'r+');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_003 end error' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
       }
@@ -116,7 +119,8 @@ export default function fileIOCreateStream() {
       try {
         fs.createStreamSync(fpath, 'ohos');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_004 end error' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
         fs.unlinkSync(fpath);
@@ -143,7 +147,8 @@ export default function fileIOCreateStream() {
         expect(sw.writeSync(FILE_CONTENT) == FILE_CONTENT.length).assertTrue();
         sw.readSync(new ArrayBuffer(4096));
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         sw.closeSync();
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_006 end error' + JSON.stringify(e));
@@ -175,7 +180,8 @@ export default function fileIOCreateStream() {
         expect(sr.readSync(new ArrayBuffer(4096)) == FILE_CONTENT.length).assertTrue();
         sr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_007 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -200,7 +206,8 @@ export default function fileIOCreateStream() {
         expect(sw.writeSync(FILE_CONTENT) == FILE_CONTENT.length).assertTrue();
         sw.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_008 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -227,7 +234,8 @@ export default function fileIOCreateStream() {
         expect(sw.readSync(new ArrayBuffer(4096), { offset: 0 }) == FILE_CONTENT.length).assertTrue();
         sw.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_009 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -253,7 +261,8 @@ export default function fileIOCreateStream() {
         expect(sw.readSync(new ArrayBuffer(4096), { offset: 0 }) == FILE_CONTENT.length).assertTrue();
         sw.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_010 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -283,7 +292,8 @@ export default function fileIOCreateStream() {
         expect(sr.readSync(new ArrayBuffer(4096)) == FILE_CONTENT.length * 2).assertTrue();
         sr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_011 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -308,7 +318,8 @@ export default function fileIOCreateStream() {
         expect(sa.writeSync(FILE_CONTENT) == FILE_CONTENT.length).assertTrue();
         sa.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_012 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -334,7 +345,8 @@ export default function fileIOCreateStream() {
         expect(sa.writeSync(FILE_CONTENT) == FILE_CONTENT.length).assertTrue();
         sa.readSync(new ArrayBuffer(4096));
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         sa.closeSync();
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_012 end error' + JSON.stringify(e));
@@ -363,7 +375,8 @@ export default function fileIOCreateStream() {
         expect(sa.readSync(new ArrayBuffer(4096), { offset: 0 }) == FILE_CONTENT.length * 2).assertTrue();
         sa.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_014 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -389,7 +402,8 @@ export default function fileIOCreateStream() {
         expect(sa.readSync(new ArrayBuffer(4096), { offset: 0 }) == FILE_CONTENT.length).assertTrue();
         sa.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_sync_static_015 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -411,7 +425,8 @@ export default function fileIOCreateStream() {
       try {
         await fs.createStream(fpath, 'r');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_002 end error' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
@@ -439,7 +454,8 @@ export default function fileIOCreateStream() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_003 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -468,7 +484,8 @@ export default function fileIOCreateStream() {
         sr.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_004 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -497,7 +514,8 @@ export default function fileIOCreateStream() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_005 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -519,7 +537,8 @@ export default function fileIOCreateStream() {
       try {
         await fs.createStream(fpath, 'r+');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_006 end error' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
@@ -547,7 +566,8 @@ export default function fileIOCreateStream() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_007 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -578,7 +598,8 @@ export default function fileIOCreateStream() {
         sr.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_010 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -603,7 +624,8 @@ export default function fileIOCreateStream() {
         expect(sw.writeSync(FILE_CONTENT) == FILE_CONTENT.length).assertTrue();
         sw.readSync(new ArrayBuffer(4096));
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         sw.closeSync();
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_011 end error' + JSON.stringify(e));
@@ -645,7 +667,8 @@ export default function fileIOCreateStream() {
             }
           });
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_012 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -673,7 +696,8 @@ export default function fileIOCreateStream() {
         sw.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_013 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -700,7 +724,8 @@ export default function fileIOCreateStream() {
         sw.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_014 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -729,7 +754,8 @@ export default function fileIOCreateStream() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_015 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -760,7 +786,8 @@ export default function fileIOCreateStream() {
         sr.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_016 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -785,7 +812,8 @@ export default function fileIOCreateStream() {
         expect(sa.writeSync(FILE_CONTENT) == FILE_CONTENT.length).assertTrue();
         sa.readSync(new ArrayBuffer(4096));
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         sa.closeSync();
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_017 end error' + JSON.stringify(e));
@@ -827,7 +855,8 @@ export default function fileIOCreateStream() {
             }
           })
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_018 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -855,7 +884,8 @@ export default function fileIOCreateStream() {
         sa.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_019 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -882,7 +912,8 @@ export default function fileIOCreateStream() {
         sa.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_020 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -911,7 +942,8 @@ export default function fileIOCreateStream() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_create_stream_async_static_021 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }

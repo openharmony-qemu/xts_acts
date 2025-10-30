@@ -82,7 +82,8 @@ struct UnmarshallingErrorCode401 {
               
               this.serializeStr = '序列化'
               console.info('Succeeded unmarshalling.');
-            } catch(err: BusinessError) {
+            } catch(err) {
+              err = err as BusinessError;
               this.textResult = err.code.toString()
               console.info('Get error code: %{public}s', JSON.stringify(err.code));
             }

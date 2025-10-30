@@ -89,7 +89,8 @@ struct WebOnDataResubmitted {
                     Utils.emitEvent(this.onSslErrorEventReceiveCallBack, 30272)
                   }, 6000)
                 }, 2000)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -109,7 +110,8 @@ struct WebOnDataResubmitted {
                     Utils.emitEvent(this.cancel_result, 30271);
                   }, 3000)
                 }, 2000)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -131,7 +133,8 @@ struct WebOnDataResubmitted {
                     }
                   }, 6000)
                 }, 2000)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -148,7 +151,8 @@ struct WebOnDataResubmitted {
                     Utils.emitEvent(this.onSslErrorEventReceiveCallBack, 100073)
                   }, 6000)
                 }, 3000)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;

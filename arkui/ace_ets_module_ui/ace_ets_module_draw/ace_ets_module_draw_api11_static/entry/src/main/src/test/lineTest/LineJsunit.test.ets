@@ -66,7 +66,8 @@ export default function LineJsunit() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push line page error: " + err);
       }
     });
@@ -163,7 +164,8 @@ export default function LineJsunit() {
         } as events_emitter.InnerEvent
         console.info("lineTest_static_0500 start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("lineTest_static_0500 change component error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -201,7 +203,8 @@ export default function LineJsunit() {
         } as events_emitter.InnerEvent
         console.info("lineTest_static_0600 start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("lineTest_static_0600 change component error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -239,7 +242,8 @@ export default function LineJsunit() {
         } as events_emitter.InnerEvent
         console.info("lineTest_static_0700 start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("lineTest_static_0700 change component error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -277,7 +281,8 @@ export default function LineJsunit() {
         } as events_emitter.InnerEvent
         console.info("lineTest_static_0800 start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("lineTest_static_0800 change component error: " + err.message);
       }
       await CommonFunc.sleep(2000);

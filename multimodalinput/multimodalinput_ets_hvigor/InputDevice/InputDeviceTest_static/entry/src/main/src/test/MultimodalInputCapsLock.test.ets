@@ -51,7 +51,8 @@ export default function MultimodalInputCapsLockTest() {
             ExpectTrue(state == true || state == false);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to get capslock state, error: ${JSON.stringify(error,
             [`code`, `message`])}`);
           ExpectTrue(error.code == 3900002);
@@ -86,7 +87,8 @@ export default function MultimodalInputCapsLockTest() {
           console.info(`${caseName} capslock state2: ${JSON.stringify(state2)}`);
           ExpectTrue(state1 == state2);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to get capslock state, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectTrue(error.code == 3900002);
           done();
@@ -116,7 +118,8 @@ export default function MultimodalInputCapsLockTest() {
               ExpectTrue(error.code == 3900003);
               done();
             });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to set capslock state, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();

@@ -50,7 +50,8 @@ export default function fileIOCopyfile() {
         expect(stat1.size == stat2.size).assertTrue();
         fs.unlinkSync(fpath);
         fs.unlinkSync(fpathTarget);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_sync_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -80,7 +81,8 @@ export default function fileIOCopyfile() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         fs.unlinkSync(fpathTarget);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_sync_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -103,7 +105,8 @@ export default function fileIOCopyfile() {
       try {
         fs.copyFileSync(fpath, fpathTarget);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_sync_static_002 end error' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
       }
@@ -135,7 +138,8 @@ export default function fileIOCopyfile() {
         fs.closeSync(fileTgt);
         fs.unlinkSync(fpath);
         fs.unlinkSync(fpathTarget);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_sync_static_005 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -165,7 +169,8 @@ export default function fileIOCopyfile() {
         fs.closeSync(fileTgt);
         fs.unlinkSync(fpath);
         fs.unlinkSync(fpathTarget);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_sync_static_006 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -189,7 +194,8 @@ export default function fileIOCopyfile() {
       try {
         fs.copyFileSync(fpath, fpathTarget, 1);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_sync_static_007 end error' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -218,7 +224,8 @@ export default function fileIOCopyfile() {
         expect(stat1.size == stat2.size).assertTrue();
         fs.unlinkSync(fpath);
         fs.unlinkSync(fpathTarget);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_sync_static_009 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -247,7 +254,8 @@ export default function fileIOCopyfile() {
         fs.unlinkSync(fpath);
         fs.unlinkSync(fpathTarget);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -277,7 +285,8 @@ export default function fileIOCopyfile() {
           fs.unlinkSync(fpathTarget);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -308,7 +317,8 @@ export default function fileIOCopyfile() {
         fs.unlinkSync(fpath);
         fs.unlinkSync(fpathTarget);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -331,7 +341,8 @@ export default function fileIOCopyfile() {
       try {
         await fs.copyFile(fpath, fpathTarget);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_003 end error' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
@@ -360,7 +371,8 @@ export default function fileIOCopyfile() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_004 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -389,7 +401,8 @@ export default function fileIOCopyfile() {
         fs.unlinkSync(fpath);
         fs.unlinkSync(fpathTarget);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_008 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -419,7 +432,8 @@ export default function fileIOCopyfile() {
           fs.unlinkSync(fpathTarget);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_009 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -452,7 +466,8 @@ export default function fileIOCopyfile() {
         fs.unlinkSync(fpath);
         fs.unlinkSync(fpathTarget);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_012 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -486,7 +501,8 @@ export default function fileIOCopyfile() {
           fs.unlinkSync(fpathTarget);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_013 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -518,7 +534,8 @@ export default function fileIOCopyfile() {
         fs.unlinkSync(fpath);
         fs.unlinkSync(fpathTarget);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_014 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -550,7 +567,8 @@ export default function fileIOCopyfile() {
           fs.unlinkSync(fpathTarget);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_015 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -579,7 +597,8 @@ export default function fileIOCopyfile() {
         fs.unlinkSync(fpath);
         fs.unlinkSync(fpathTarget);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_copy_file_async_static_018 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }

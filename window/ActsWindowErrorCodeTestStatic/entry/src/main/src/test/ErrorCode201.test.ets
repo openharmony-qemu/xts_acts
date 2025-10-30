@@ -75,7 +75,8 @@ export default function ErrorCode201() {
                     done()
                 });
 
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call setWindowPrivacyMode. Cause:' + JSON.stringify(exception));
                 expect().assertFail();
                 done()
@@ -108,7 +109,8 @@ export default function ErrorCode201() {
                     }
 
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call setWindowPrivacyMode. Cause:' + JSON.stringify(exception));
                 expect().assertFail();
                 done()
@@ -141,7 +143,8 @@ export default function ErrorCode201() {
                     expect(err.code).assertEqual(201);
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to create the window. Cause: ' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(201);
                 done();
@@ -178,7 +181,8 @@ export default function ErrorCode201() {
                     expect().assertFail();
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to create the window. Cause: ' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(201);
                 done()
@@ -212,7 +216,8 @@ export default function ErrorCode201() {
                         done();
                     }
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code === 801) {
                     hilog.error(domain, tag,`${caseName} The current device type does not support to setWindowTopmost`);
                     done();
@@ -252,7 +257,8 @@ export default function ErrorCode201() {
                     expect(err!.message!=null).assertTrue();
                     done();
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err)+',msg:'+ JSON.stringify(err!.message));
                 if (err!.code != 801) {
                     expect(err.message!=null).assertTrue();
@@ -287,7 +293,8 @@ export default function ErrorCode201() {
                      expect(err.code == 801 || err.code == 201).assertTrue()
                      done();
                  })
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,caseName + 'Failed to pick Code: ' + JSON.stringify(exception.code)+':msg:'+ JSON.stringify(exception.message));
                 expect(exception.message!=null).assertTrue();
                 expect(exception.code == 801 || exception.code == 201).assertTrue()

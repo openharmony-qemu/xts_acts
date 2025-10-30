@@ -49,7 +49,8 @@ async function pbkdf2NormalProcess(algName: string, pbkdf2Spec: crypto.PBKDF2Spe
     console.log(`[Callback] dataBlob is: ${dataBlob.data}`);
     console.log(`[Callback] dataBlob is: ${uInt8ArrayToShowStr(dataBlob.data)}`);
     return dataBlob;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.log(`[Callback] pbkdf2NormalProcess catch error: ${err}`);
     throw err as Error;
   }

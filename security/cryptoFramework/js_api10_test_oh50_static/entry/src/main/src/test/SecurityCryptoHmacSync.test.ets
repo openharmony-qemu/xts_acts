@@ -53,7 +53,8 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
           let macLen: number = hmacSyncUtils.getMacSize(algName);
           expect(macLen).assertEqual(macRes.macObj.getMacLength());
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HMAC “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -79,7 +80,8 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
           let macLen: number = hmacSyncUtils.getMacSize(algName);
           expect(macLen).assertEqual(macRes.macObj.getMacLength());
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HMAC “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -133,7 +135,8 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
           expect(macLen).assertEqual(macRes.macObj.getMacLength());
         }
         expect(data.length).assertEqual(key.getEncoded().data.length);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HMAC “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -162,7 +165,8 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
           expect(macLen).assertEqual(macRes.macObj.getMacLength());
           expect(keyLen).assertEqual(key.getEncoded().data.length);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HMAC “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -191,7 +195,8 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
           expect(macLen).assertEqual(macRes.macObj.getMacLength());
           expect(keyLen).assertEqual(key.getEncoded().data.length);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HMAC “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -215,7 +220,8 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
           let macRes: hmacSyncUtils.macInfo = hmacSyncUtils.doHmacNoMessageSync(algName, key);
           expect(macLen).assertEqual(macRes.macObj.getMacLength());
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HMAC “${error}“, error code: ${error.code}`);
         expect(null).assertTrue();
       }
@@ -243,7 +249,8 @@ export default function SecurityCryptoFwHmacSyncTestUnit() {
         let mac: cryptoFramework.Mac = cryptoFramework.createMac(algName);
         mac.initSync(key);
         mac.updateSync(message);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HMAC “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401); // 1.1:30001
       }

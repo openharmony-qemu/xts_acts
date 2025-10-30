@@ -56,7 +56,8 @@ export default function girdContainerJsunit() {
 
 
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push girdContainer page error:" + err);
       }
     });
@@ -109,7 +110,8 @@ export default function girdContainerJsunit() {
         }
         console.info("[testGirdContainer02] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGirdContainer02] change component data error: " + err.message);
       }
       await Utils.sleep(1000);

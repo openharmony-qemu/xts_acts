@@ -89,7 +89,8 @@ struct webResourceResponsePage {
                   Utils.emitEvent(this.hasGestureResult, 8860)
                 }, 2000)
 
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
               break;
@@ -110,7 +111,8 @@ struct webResourceResponsePage {
                   Utils.emitEvent(this.getRequestUrlResult, 8862)
                 }, 2000)
 
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }
               break;
@@ -146,7 +148,8 @@ struct webResourceResponsePage {
                   console.log("[schemeHandler] onRequestStart header:" + header[i].headerKey + " " + header[i].headerValue);
                   requestHeaderMap.set(header[i].headerKey, header[i].headerValue)
                 }
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
               }
@@ -176,7 +179,8 @@ struct webResourceResponsePage {
             this.webSchemeHander.onRequestStop((request: web_webview.WebSchemeHandlerRequest) => {
               console.log("[schemeHandler] onRequestStop")
             });
-          } catch (error:BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             let e: BusinessError = error as BusinessError;
             console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
           }

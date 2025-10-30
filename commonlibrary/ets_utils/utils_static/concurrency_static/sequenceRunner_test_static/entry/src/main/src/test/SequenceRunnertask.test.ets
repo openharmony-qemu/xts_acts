@@ -120,7 +120,8 @@ export default function sequenceRunnerTaskTest() {
               // expect(e.message).assertContain('Cannot read property split of undefined')
               count1 = count1 + 1
             })
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${Tag}`, '%{public}s', `Task1 ---error：：${JSON.stringify(error)}}`);
           }
           try {
@@ -129,7 +130,8 @@ export default function sequenceRunnerTaskTest() {
               // expect(e.message).assertContain('Cannot read property split of undefined')
               count2 = count2 + 1
             })
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${Tag}`, '%{public}s', `Task2 ---error：：${JSON.stringify(error)}`);
           }
         }
@@ -168,13 +170,15 @@ export default function sequenceRunnerTaskTest() {
               try {
                 count1 += 1
                 throw Error(`${Tag}--error`)
-              } catch (e: BusinessError) {
+              } catch (e) {
+                e = e as BusinessError;
                 // expect(e.message).assertContain('Sequence_Runner_TaskTest_1200--error')
               }
             });
             runner.execute(task1).then((): void => {
             })
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${Tag}`, '%{public}s',
               `Task1 ---error：Code is  , message is ${error.message}`);
           }
@@ -186,12 +190,14 @@ export default function sequenceRunnerTaskTest() {
                 count2 = count2 + 1
                 throw Error(`${Tag}--error`)
               });
-            } catch (e: BusinessError) {
+            } catch (e) {
+              e = e as BusinessError;
               // expect(e.message).assertContain('Sequence_Runner_TaskTest_1200--error')
             }
             runner.execute(task2).then((): void => {
             })
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${Tag}`, '%{public}s',
               `Task2 ---error：Code is  , message is ${error.message}`);
           }
@@ -230,13 +236,15 @@ export default function sequenceRunnerTaskTest() {
                 count1 += 1
                 throw Error(`${Tag}--error`)
               });
-            } catch (e: BusinessError) {
+            } catch (e) {
+              e = e as BusinessError;
               // expect(e.message).assertContain('Sequence_Runner_TaskTest_1400--error')
             }
             runner.execute(task1).then((): void => {
             })
 
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${Tag}`, '%{public}s',
               `Task1 ---error：Code is  , message is ${error.message}`);
           }
@@ -247,12 +255,14 @@ export default function sequenceRunnerTaskTest() {
                 count2 += 1
                 throw Error(`${Tag}--error`)
               });
-            } catch (e: BusinessError) {
+            } catch (e) {
+              e = e as BusinessError;
               // expect(e.message).assertContain('Sequence_Runner_TaskTest_1400--error')
             }
             runner.execute(task2).then((): void => {
             })
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${Tag}`, '%{public}s',
               `Task2 ---error：Code is  , message is ${error.message}`);
           }
@@ -293,12 +303,14 @@ export default function sequenceRunnerTaskTest() {
                 count1 += 1
                 throw Error(`${Tag}--error`)
               });
-            } catch (e: BusinessError) {
+            } catch (e) {
+              e = e as BusinessError;
               // expect(e.message).assertContain('Sequence_Runner_TaskTest_1500--error')
             }
             runner.execute(task1).then((): void => {
             })
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${Tag}`, '%{public}s',
               `Task1 ---error：Code is  , message is ${error.message}`);
           }
@@ -309,12 +321,14 @@ export default function sequenceRunnerTaskTest() {
                 count2 = count2 + 1
                 throw Error(`${Tag}--error`)
               });
-            } catch (e: BusinessError) {
+            } catch (e) {
+              e = e as BusinessError;
               // expect(e.message).assertContain('Sequence_Runner_TaskTest_1500--error')
             }
             runner.execute(task2).then((): void => {
             })
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${Tag}`, '%{public}s',
               `Task2 ---error：Code is  , message is ${error.message}`);
           }
@@ -351,7 +365,8 @@ export default function sequenceRunnerTaskTest() {
             try {
               count1 += 1
               throw Error(`${Tag}---error`)
-            } catch (e: BusinessError) {
+            } catch (e) {
+              e = e as BusinessError;
               // expect(e.message).assertContain('Sequence_Runner_TaskTest_1600---error')
             }
           })
@@ -364,7 +379,8 @@ export default function sequenceRunnerTaskTest() {
             try {
               count2 += 1
               throw Error(`${Tag}---error`)
-            } catch (e: BusinessError) {
+            } catch (e) {
+              e = e as BusinessError;
               // expect(e.message).assertContain('Sequence_Runner_TaskTest_1600---error')
             }
           })
@@ -407,7 +423,8 @@ export default function sequenceRunnerTaskTest() {
             }).catch((e: Object | null | undefined) => {
               // expect(e.message).assertContain('Sequence_Runner_TaskTest_1700--error')
             })
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             console.error(`taskpool: error code: ${e.code}, info: ${e.message}`);
           }
           try {
@@ -418,7 +435,8 @@ export default function sequenceRunnerTaskTest() {
             }).catch((e: Object | null | undefined) => {
               // expect(e.message).assertContain('Sequence_Runner_TaskTest_1700--error')
             })
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             console.error(`taskpool: error code: ${e.code}, info: ${e.message}`);
           }
         }
@@ -456,7 +474,8 @@ export default function sequenceRunnerTaskTest() {
               count1 += 1
               // expect(e.message).assertContain('Cannot read property split of undefined')
             })
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             console.error(`taskpool: error code: ${e.code}, info: ${e.message}`);
           }
           try {
@@ -466,7 +485,8 @@ export default function sequenceRunnerTaskTest() {
               count2 += 1
               // expect(e.message).assertContain('Cannot read property split of undefined')
             })
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             console.error(`taskpool: error code: ${e.code}, info: ${e.message}`);
           }
         }
@@ -507,7 +527,8 @@ export default function sequenceRunnerTaskTest() {
               count1 += 1
               throw Error(`${Tag}--error`)
             })
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             console.error(`taskpool: error code: ${e.code}, info: ${e.message}`);
           }
           try {
@@ -519,7 +540,8 @@ export default function sequenceRunnerTaskTest() {
               count2 += 1
               throw Error(`${Tag}--error`)
             })
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             console.error(`taskpool: error code: ${e.code}, info: ${e.message}`);
           }
         }

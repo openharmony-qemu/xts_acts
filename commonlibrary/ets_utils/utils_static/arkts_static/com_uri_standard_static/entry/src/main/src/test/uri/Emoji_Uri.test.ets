@@ -38,7 +38,8 @@ export default function Uri_Emoji() {
         const emoji = "\ud83d\ude0a";
         let mm = new uri.URI(emoji);
         expect(mm.toString()).assertEqual("%F0%9F%98%8A");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -58,7 +59,8 @@ export default function Uri_Emoji() {
         const emoji = "\ud83d\udc64";
         let mm = new uri.URI(emoji);
         expect(mm.toString()).assertEqual("%F0%9F%91%A4");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -78,7 +80,8 @@ export default function Uri_Emoji() {
         const emoji = "\ud83d\udc6b";
         let mm = new uri.URI(emoji);
         expect(mm.toString()).assertEqual("%F0%9F%91%AB");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -98,7 +101,8 @@ export default function Uri_Emoji() {
         const emoji = "\u260e";
         let mm = new uri.URI(emoji);
         expect(mm.toString()).assertEqual("%E2%98%8E");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -118,7 +122,8 @@ export default function Uri_Emoji() {
         const emoji = "\ud83d\udc79";
         let mm = new uri.URI(emoji);
         expect(mm.toString()).assertEqual("%F0%9F%91%B9");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -138,7 +143,8 @@ export default function Uri_Emoji() {
         const emoji = "\ud83d\udd5b";
         let mm = new uri.URI(emoji);
         expect(mm.toString()).assertEqual("%F0%9F%95%9B");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -158,7 +164,8 @@ export default function Uri_Emoji() {
         const emoji = "\ud83c\udf4f";
         let mm = new uri.URI(emoji);
         expect(mm.toString()).assertEqual("%F0%9F%8D%8F");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -178,7 +185,8 @@ export default function Uri_Emoji() {
         const emoji = "\ud83d\udd03";
         let mm = new uri.URI(emoji);
         expect(mm.toString()).assertEqual("%F0%9F%94%83");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -198,7 +206,8 @@ export default function Uri_Emoji() {
         const emoji = "\ud83c\udf41";
         let mm = new uri.URI(emoji);
         expect(mm.toString()).assertEqual("%F0%9F%8D%81");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -218,7 +227,8 @@ export default function Uri_Emoji() {
         const emoji = "\u2666";
         let mm = new uri.URI(emoji);
         expect(mm.toString()).assertEqual("%E2%99%A6");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -238,7 +248,8 @@ export default function Uri_Emoji() {
         const emoji = "\ud83d\udc48";
         let mm = new uri.URI(emoji);
         expect(mm.toString()).assertEqual("%F0%9F%91%88");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -258,7 +269,8 @@ export default function Uri_Emoji() {
         const emoji = "\ud83e\udd3c\u200d\u2642\ufe0f";
         let mm = new uri.URI(emoji);
         expect(mm.toString()).assertEqual("%F0%9F%A4%BC%E2%80%8D%E2%99%82%EF%B8%8F");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -279,7 +291,8 @@ export default function Uri_Emoji() {
         let mm = new uri.URI(emoji);
         let result = mm.toString();
         expect(result).assertEqual("%F0%9F%98%8A");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -300,7 +313,8 @@ export default function Uri_Emoji() {
         let mm = new uri.URI(emoji)
         let result = mm.toString()
         expect(result).assertEqual("%F0%9F%91%A4")
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`)
         expect(false).assertFail();
       }
@@ -321,7 +335,8 @@ export default function Uri_Emoji() {
         let mm = new uri.URI(emoji)
         let result = mm.toString()
         expect(result).assertEqual("%F0%9F%91%AB")
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`)
         expect(false).assertFail();
       }
@@ -342,7 +357,8 @@ export default function Uri_Emoji() {
         let mm = new uri.URI(emoji)
         let result = mm.toString()
         expect(result).assertEqual("%E2%98%8E")
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`)
         expect(false).assertFail();
       }
@@ -363,7 +379,8 @@ export default function Uri_Emoji() {
         let mm = new uri.URI(emoji)
         let result = mm.toString()
         expect(result).assertEqual("%F0%9F%91%B9")
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`)
         expect(false).assertFail();
       }
@@ -384,7 +401,8 @@ export default function Uri_Emoji() {
         let mm = new uri.URI(emoji)
         let result = mm.toString()
         expect(result).assertEqual("%F0%9F%95%9B")
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`)
         expect(false).assertFail();
       }
@@ -405,7 +423,8 @@ export default function Uri_Emoji() {
         let mm = new uri.URI(emoji)
         let result = mm.toString()
         expect(result).assertEqual("%F0%9F%8D%8F")
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`)
         expect(false).assertFail();
       }
@@ -426,7 +445,8 @@ export default function Uri_Emoji() {
         let mm = new uri.URI(emoji)
         let result = mm.toString()
         expect(result).assertEqual("%F0%9F%94%83")
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`)
         expect(false).assertFail();
       }
@@ -447,7 +467,8 @@ export default function Uri_Emoji() {
         let mm = new uri.URI(emoji)
         let result = mm.toString()
         expect(result).assertEqual("%F0%9F%8D%81")
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`)
         expect(false).assertFail();
       }
@@ -468,7 +489,8 @@ export default function Uri_Emoji() {
         let mm = new uri.URI(emoji)
         let result = mm.toString()
         expect(result).assertEqual("%E2%99%A6")
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`)
         expect(false).assertFail();
       }
@@ -489,7 +511,8 @@ export default function Uri_Emoji() {
         let mm = new uri.URI(emoji)
         let result = mm.toString()
         expect(result).assertEqual("%F0%9F%91%88")
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`)
         expect(false).assertFail();
       }
@@ -510,7 +533,8 @@ export default function Uri_Emoji() {
         let mm = new uri.URI(emoji)
         let result = mm.toString()
         expect(result).assertEqual("%F0%9F%A4%BC%E2%80%8D%E2%99%82%EF%B8%8F")
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`)
         expect(false).assertFail();
       }
@@ -533,7 +557,8 @@ export default function Uri_Emoji() {
         expect(uriInstance.getQueryValue("param1")).assertEqual("\ud83d\ude0a")
         expect(uriInstance1.getQueryValue('sa=')).assertEqual("\ud83d\ude0a")
         expect(uriInstance1.getQueryValue('abc')).assertEqual(null)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`)
         expect(false).assertFail();
       }
@@ -556,7 +581,8 @@ export default function Uri_Emoji() {
         expect(uriInstance.getQueryValue("param1")).assertEqual("\ud83d\udc64");
         expect(uriInstance1.getQueryValue('sa=')).assertEqual("\ud83d\udc64");
         expect(uriInstance1.getQueryValue('abc')).assertEqual(null);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -579,7 +605,8 @@ export default function Uri_Emoji() {
         expect(uriInstance.getQueryValue("param1")).assertEqual("\ud83d\udc6b");
         expect(uriInstance1.getQueryValue('sa=')).assertEqual("\ud83d\udc6b");
         expect(uriInstance1.getQueryValue('abc')).assertEqual(null);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -602,7 +629,8 @@ export default function Uri_Emoji() {
         expect(uriInstance.getQueryValue("param1")).assertEqual("\u260e");
         expect(uriInstance1.getQueryValue('sa=')).assertEqual("\u260e");
         expect(uriInstance1.getQueryValue('abc')).assertEqual(null);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -625,7 +653,8 @@ export default function Uri_Emoji() {
         expect(uriInstance.getQueryValue("param1")).assertEqual("\ud83d\udc79");
         expect(uriInstance1.getQueryValue('sa=')).assertEqual("\ud83d\udc79");
         expect(uriInstance1.getQueryValue('abc')).assertEqual(null);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -648,7 +677,8 @@ export default function Uri_Emoji() {
         expect(uriInstance.getQueryValue("param1")).assertEqual("\ud83d\udd5b");
         expect(uriInstance1.getQueryValue('sa=')).assertEqual("\ud83d\udd5b");
         expect(uriInstance1.getQueryValue('abc')).assertEqual(null);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -671,7 +701,8 @@ export default function Uri_Emoji() {
         expect(uriInstance.getQueryValue("param1")).assertEqual("\ud83c\udf4f");
         expect(uriInstance1.getQueryValue('sa=')).assertEqual("\ud83c\udf4f");
         expect(uriInstance1.getQueryValue('abc')).assertEqual(null);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -694,7 +725,8 @@ export default function Uri_Emoji() {
         expect(uriInstance.getQueryValue("param1")).assertEqual("\ud83d\udd03");
         expect(uriInstance1.getQueryValue('sa=')).assertEqual("\ud83d\udd03");
         expect(uriInstance1.getQueryValue('abc')).assertEqual(null);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -717,7 +749,8 @@ export default function Uri_Emoji() {
         expect(uriInstance.getQueryValue("param1")).assertEqual("\ud83c\udf41");
         expect(uriInstance1.getQueryValue('sa=')).assertEqual("\ud83c\udf41");
         expect(uriInstance1.getQueryValue('abc')).assertEqual(null);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -740,7 +773,8 @@ export default function Uri_Emoji() {
         expect(uriInstance.getQueryValue("param1")).assertEqual("\u2666");
         expect(uriInstance1.getQueryValue('sa=')).assertEqual("\u2666");
         expect(uriInstance1.getQueryValue('abc')).assertEqual(null);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -763,7 +797,8 @@ export default function Uri_Emoji() {
         expect(uriInstance.getQueryValue("param1")).assertEqual("\ud83d\udc48");
         expect(uriInstance1.getQueryValue('sa=')).assertEqual("\ud83d\udc48");
         expect(uriInstance1.getQueryValue('abc')).assertEqual(null);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -786,7 +821,8 @@ export default function Uri_Emoji() {
         expect(uriInstance.getQueryValue("param1")).assertEqual("\ud83e\udd3c\u200d\u2642\ufe0f");
         expect(uriInstance1.getQueryValue('sa=')).assertEqual("\ud83e\udd3c\u200d\u2642\ufe0f");
         expect(uriInstance1.getQueryValue('abc')).assertEqual(null);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -812,7 +848,8 @@ export default function Uri_Emoji() {
         expect(newUri2.toString()).assertEqual('http://test.com?smile=%F0%9F%98%8A&smile=%F0%9F%98%8A');
         expect(newUri3.toString())
           .assertEqual('http://test.com?smile=%F0%9F%98%8A&smile=%F0%9F%98%8A&smile=%F0%9F%98%8A');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -838,7 +875,8 @@ export default function Uri_Emoji() {
         expect(newUri2.toString()).assertEqual('http://test.com?avatar=%F0%9F%91%A4&avatar=%F0%9F%91%A4');
         expect(newUri3.toString())
           .assertEqual('http://test.com?avatar=%F0%9F%91%A4&avatar=%F0%9F%91%A4&avatar=%F0%9F%91%A4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }

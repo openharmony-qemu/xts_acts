@@ -36,7 +36,8 @@ export default function imageHDR() {
       filesDir = Hypium.get('filesDir') as string | undefined | null;
       try {
         isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("access failed with error message: " + err.message + ", error code: " + err.code);
         isSupportHdr = false;
       }

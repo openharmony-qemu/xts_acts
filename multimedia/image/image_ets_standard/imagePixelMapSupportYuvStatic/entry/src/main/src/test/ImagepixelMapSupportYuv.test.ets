@@ -232,7 +232,8 @@ export default function imagepixelMapSupportYuv() {
         try {
           await imagePackerApi.packToData(pixelMap, packOpts);
           checkResult = true
-        } catch(error: BusinessError) {
+        } catch(error) {
+          error = error as BusinessError;
           hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:${JSON.stringify(error)}`);
           checkResult = false
         }
@@ -244,7 +245,8 @@ export default function imagepixelMapSupportYuv() {
           try {
             await imagePackerApi.packToFile(pixelMap, file.fd as int, packOpts);
             checkResult = true
-          } catch (error:BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}:${JSON.stringify(error)}`);
             checkResult = false
           }

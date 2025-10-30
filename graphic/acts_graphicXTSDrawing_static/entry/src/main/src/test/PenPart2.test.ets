@@ -68,7 +68,8 @@ export default function penPart2Test() {
           try {
             pen.setImageFilter(imgFilter);
             console.info(msg + ' setImageFilter successed');
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             console.info(msg + ` setImageFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
             expect().assertFail();
           }
@@ -77,7 +78,8 @@ export default function penPart2Test() {
       try {
         pen.setImageFilter(null);
         console.info(msg + ' setImageFilter(null) succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setImageFilter(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -101,7 +103,8 @@ export default function penPart2Test() {
             try {
               pen.setImageFilter(imgFilter);
               console.info(msg + ' setImageFilter succeeded');
-            } catch (e: BusinessError) {
+            } catch (e) {
+              e = e as BusinessError;
               console.info(msg + ` setImageFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
               expect().assertFail();
             }
@@ -125,7 +128,8 @@ export default function penPart2Test() {
         let cf = drawing.ColorFilter.createLumaColorFilter();
         let cf2 = pen.getColorFilter();
         console.info(msg + ' getColorFilter successed,colorFilter:' + cf2);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -147,7 +151,8 @@ export default function penPart2Test() {
         try {
           let cf2 = pen.getColorFilter();
           console.info(msg + ' getColorFilter succeeded,colorFilter:' + cf2);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` getColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -172,7 +177,8 @@ export default function penPart2Test() {
         let fillPath = pen.getFillPath(pathSrc, pathDst);
         expect(fillPath == false).assertTrue();
         console.info(msg + ' getFillPath successed,fillPath:' + fillPath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getFillPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -183,7 +189,8 @@ export default function penPart2Test() {
         let fillPath = pen.getFillPath(pathSrc, pathDst);
         expect(fillPath == false).assertTrue();
         console.info(msg + ' getFillPath successed,fillPath:' + fillPath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getFillPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -192,7 +199,8 @@ export default function penPart2Test() {
         let fillPath = pen.getFillPath(pathSrc, pathDst);
         expect(fillPath == true).assertTrue();
         console.info(msg + ' getFillPath successed, 3 fillPath:' + fillPath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getFillPath errorCode 3 is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -216,7 +224,8 @@ export default function penPart2Test() {
           let fillPath = pen.getFillPath(pathSrc, pathDst);
           expect(fillPath == false).assertTrue();
           console.info(msg + ' getFillPath successed,fillPath:' + fillPath);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` getFillPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -237,7 +246,8 @@ export default function penPart2Test() {
       try {
         const pen = new drawing.Pen();
         console.info(msg + ' drawing.Pen() successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` drawing.Pen() errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -245,7 +255,8 @@ export default function penPart2Test() {
       try {
         const newpen = new drawing.Pen(pen);
         console.info(msg + ' drawing.Pen(pen) successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` drawing.Pen(pen) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -260,7 +271,8 @@ export default function penPart2Test() {
         pen.setColor(penColor);
         let newpen = new drawing.Pen(pen);
         console.info(msg + ' drawing.Pen(pen) successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` drawing.Pen(pen) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -282,7 +294,8 @@ export default function penPart2Test() {
           const pen = new drawing.Pen();
           const newpen = new drawing.Pen(pen);
           console.info(msg + ' drawing.Pen(pen) succeeded');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` drawing.Pen(pen) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -303,7 +316,8 @@ export default function penPart2Test() {
         let alpha = pen.getAlpha();
         expect(alpha == 255).assertTrue();
         console.info(msg + ' pen.getAlpha() successed,alpha:' + alpha);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` pen.getAlpha() errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -313,7 +327,8 @@ export default function penPart2Test() {
         let alpha = pen.getAlpha();
         expect(alpha == 128).assertTrue();
         console.info(msg + ' pen.getAlpha() successed,alpha:' + alpha);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` pen.getAlpha() errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -323,7 +338,8 @@ export default function penPart2Test() {
         let alpha = pen.getAlpha();
         expect(alpha == 255).assertTrue();
         console.info(msg + ' pen.getAlpha() successed,alpha:' + alpha);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` pen.getAlpha() errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -345,7 +361,8 @@ export default function penPart2Test() {
         try {
           let alpha = pen.getAlpha();
           console.info(msg + ' pen.getAlpha() successed,alpha:' + alpha);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` pen.getAlpha() errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -368,7 +385,8 @@ export default function penPart2Test() {
         let isAntiAlias = pen.isAntiAlias();
         expect(isAntiAlias == false).assertTrue();
         console.info(msg + ' isAntiAlias successed,isAntiAlias:' + isAntiAlias);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` isAntiAlias errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -378,7 +396,8 @@ export default function penPart2Test() {
         let isAntiAlias = pen.isAntiAlias();
         expect(isAntiAlias == true).assertTrue()
         console.info(msg + ' isAntiAlias successed,isAntiAlias:' + isAntiAlias);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` isAntiAlias errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -388,7 +407,8 @@ export default function penPart2Test() {
         let isAntiAlias = pen.isAntiAlias();
         expect(isAntiAlias == false).assertTrue()
         console.info(msg + ' isAntiAlias successed,isAntiAlias:' + isAntiAlias);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` isAntiAlias errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -411,7 +431,8 @@ export default function penPart2Test() {
           let isAntiAlias = pen.isAntiAlias();
           expect(isAntiAlias == false).assertTrue();
           console.info(msg + ' isAntiAlias successed,isAntiAlias:' + isAntiAlias);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` isAntiAlias errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -433,7 +454,8 @@ export default function penPart2Test() {
         let colorGet = pen.getColor();
         expect(colorGet != null).assertTrue();
         console.info(msg + ' getColor successed,colorGet:' + JSON.stringify(colorGet));
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -449,7 +471,8 @@ export default function penPart2Test() {
         let colorGet = pen.getColor();
         expect(JSON.stringify(colorGet) == JSON.stringify(colors)).assertTrue();
         console.info(msg + ' getColor2 successed,colorGet:' + JSON.stringify(colorGet));
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getColor2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -465,7 +488,8 @@ export default function penPart2Test() {
         let colorGet = pen.getColor();
         expect(JSON.stringify(colorGet) == JSON.stringify(colors)).assertTrue();
         console.info(msg + ' getColor2 successed,colorGet:' + JSON.stringify(colorGet));
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -487,7 +511,8 @@ export default function penPart2Test() {
         try {
           let colorGet = pen.getColor();
           console.info(msg + ' getColor successed,colorGet:' + JSON.stringify(colorGet));
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` getColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -510,7 +535,8 @@ export default function penPart2Test() {
         let width = pen.getWidth();
         expect(width == 0).assertTrue();
         console.info(msg + ' getWidth successed,width:' + width);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getWidth errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -520,7 +546,8 @@ export default function penPart2Test() {
         let width = pen.getWidth();
         expect(width == 30).assertTrue();
         console.info(msg + ' getWidth successed,width:' + width);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getWidth errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -530,7 +557,8 @@ export default function penPart2Test() {
         let width = pen.getWidth();
         expect(Math.floor(width) == 50).assertTrue();
         console.info(msg + ' getWidth successed,width:' + width);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getWidth errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -553,7 +581,8 @@ export default function penPart2Test() {
           let width = pen.getWidth();
           expect(width == 0).assertTrue();
           console.info(msg + ' getWidth successed,width:' + width);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` getWidth errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -576,7 +605,8 @@ export default function penPart2Test() {
         let miter = pen.getMiterLimit();
         expect(miter != null).assertTrue();
         console.info(msg + ' getMiterLimit1 successed,miter:' + miter);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getMiterLimit1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -586,7 +616,8 @@ export default function penPart2Test() {
         let miter = pen.getMiterLimit();
         expect(miter == 5).assertTrue();
         console.info(msg + ' getMiterLimit2 successed,miter:' + miter);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getMiterLimit2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -596,7 +627,8 @@ export default function penPart2Test() {
         let miter = pen.getMiterLimit();
         expect(Math.floor(miter) == 20).assertTrue();
         console.info(msg + ' getMiterLimit3 successed,miter:' + miter);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getMiterLimit3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -606,7 +638,8 @@ export default function penPart2Test() {
         let miter = pen.getMiterLimit();
         expect(miter == 0).assertTrue();
         console.info(msg + ' getMiterLimit4 successed,miter:' + miter);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getMiterLimit4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -616,7 +649,8 @@ export default function penPart2Test() {
         let miter = pen.getMiterLimit();
         expect(miter == -1).assertTrue();
         console.info(msg + ' getMiterLimit5 successed,miter:' + miter);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getMiterLimit5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -637,7 +671,8 @@ export default function penPart2Test() {
         try {
           pen.setMiterLimit(getRandomNumber(1, 100));
           console.info(msg + ' setMiterLimit succeeded');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setMiterLimit errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -647,7 +682,8 @@ export default function penPart2Test() {
         try {
           pen.getMiterLimit();
           console.info(msg + ' getMiterLimit succeeded');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` getMiterLimit errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -660,7 +696,8 @@ export default function penPart2Test() {
           let miter = pen.getMiterLimit();
           expect(miter == randomNumber).assertTrue();
           console.info(msg + ' setAndGetMiterLimit succeeded');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setAndGetMiterLimit errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -685,7 +722,8 @@ export default function penPart2Test() {
         try {
           pen.setShaderEffect(shaderEffect);
           console.info(msg + ' setShaderEffect successed');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setShaderEffect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -693,7 +731,8 @@ export default function penPart2Test() {
       try {
         pen.setShaderEffect(null);
         console.info(msg + ' setShaderEffect successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setShaderEffect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -717,7 +756,8 @@ export default function penPart2Test() {
           try {
             pen.setShaderEffect(shaderEffect);
             console.info(msg + ' setShaderEffect succeeded');
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             console.info(msg + ` setShaderEffect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
             expect().assertFail();
           }
@@ -739,7 +779,8 @@ export default function penPart2Test() {
       try {
         pen.reset();
         console.info(msg + ' reset successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -754,7 +795,8 @@ export default function penPart2Test() {
         pen.setColor(brush_color);
         pen.reset();
         console.info(msg + ' reset successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -776,7 +818,8 @@ export default function penPart2Test() {
         try {
           pen.reset();
           console.info(msg + ' reset succeeded');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }

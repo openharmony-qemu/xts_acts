@@ -56,7 +56,8 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
           let secret: cryptoFramework.DataBlob = pbkdf2Utils.generateKdfKey(kdfAlgName, spec);
           expect(secret.data.byteLength).assertEqual(keySize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -85,7 +86,8 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
           pbkdf2Utils.generateKdfKey(kdfAlgName, spec);
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
@@ -114,7 +116,8 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
           let secret: cryptoFramework.DataBlob = pbkdf2Utils.generateKdfKey(kdfAlgName, spec);
           expect(secret.data.byteLength).assertEqual(keySize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
@@ -143,7 +146,8 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
           let secret: cryptoFramework.DataBlob = pbkdf2Utils.generateKdfKey(kdfAlgName, spec);
           expect(secret.data.byteLength).assertEqual(keySize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -172,7 +176,8 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
           let secret: cryptoFramework.DataBlob = pbkdf2Utils.generateKdfKey(kdfAlgName, spec);
           expect(secret.data.byteLength).assertEqual(keySize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -198,7 +203,8 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
       try {
         pbkdf2Utils.generateKdfKey(algName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`PBKDF2 “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
@@ -224,7 +230,8 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
       try {
         let secret: cryptoFramework.DataBlob = pbkdf2Utils.generateKdfKey(algName, spec);
         expect(secret.data.byteLength).assertEqual(keySize);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`PBKDF2 “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -250,7 +257,8 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
       try {
         pbkdf2Utils.generateKdfKey(algName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`PBKDF2 “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
@@ -276,7 +284,8 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
       try {
         pbkdf2Utils.generateKdfKey(algName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`PBKDF2 “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
@@ -302,7 +311,8 @@ export default function SecurityCryptoFwPbkdf2TestUnit() {
       try {
         pbkdf2Utils.generateKdfKey(algName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`PBKDF2 “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }

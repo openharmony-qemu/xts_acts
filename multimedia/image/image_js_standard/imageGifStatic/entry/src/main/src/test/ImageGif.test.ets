@@ -178,7 +178,8 @@ export default function imageGif() {
               console.info(`${testNum} disposalTypes[ ${i} ]= ${disposalTypes[i]}`);
             }
             console.info(`${testNum} disposalTypes show end`);
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.info(`${testNum} testGetDisposalTypePromise getDisposalTypeList failed err: code is ${err.code},message is ${err.message}`);
             expect(err.code == ERR_CODE).assertTrue();
           }
@@ -339,7 +340,8 @@ export default function imageGif() {
           logger.log('create pixel map list failed');
           expect(false).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           logger.log('createPixelMapListErrPromise error.code: ' + error.code);
           logger.log('createPixelMapListErrPromise error: ' + error);
           checkErrCode(error.code as int);

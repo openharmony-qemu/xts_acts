@@ -51,7 +51,8 @@ export default function RunningLockPermissionTest() {
               expect(error.code).assertEqual(201);
               done();
             })
-        } catch (e : BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(201);
           done();
@@ -83,7 +84,8 @@ export default function RunningLockPermissionTest() {
                 done();
               }
             })
-        } catch (e : BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e in catch: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(201);
           done();

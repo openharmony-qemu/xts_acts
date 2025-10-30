@@ -53,7 +53,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
         let res: boolean = await cipherPromiseFunc.normalProcess(cipherAlg, spec, null);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_Cipher_SM2_Func_0100: cipher succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_Cipher_SM2_Func_0100 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -86,7 +87,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
         let res: boolean = await cipherCallbackFunc.normalProcess(cipherAlg, spec, null);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_Cipher_SM2_Func_0200: cipher succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_Cipher_SM2_Func_0200 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -109,7 +111,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
         let cipher: cryptoFramework.Cipher = cryptoFramework.createCipher(cipherAlg);
         cipher.getCipherSpec(cryptoFramework.CipherSpecItem.SM2_MD_NAME_STR);
         console.log(`Security_CryptoFramework_Cipher_SM2_Func_0300: getCipherSpec succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_Cipher_SM2_Func_0300 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -132,7 +135,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
         let cipher: cryptoFramework.Cipher = cryptoFramework.createCipher(cipherAlg);
         cipher.getCipherSpec(cryptoFramework.CipherSpecItem.SM2_MD_NAME_STR);
         console.log(`Security_CryptoFramework_Cipher_SM2_Func_0400: getCipherSpec succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_Cipher_SM2_Func_0400 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -155,7 +159,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
         let cipher: cryptoFramework.Cipher = cryptoFramework.createCipher(cipherAlg);
         cipher.getCipherSpec(cryptoFramework.CipherSpecItem.SM2_MD_NAME_STR);
         console.log(`Security_CryptoFramework_Cipher_SM2_Func_0500: getCipherSpec succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_Cipher_SM2_Func_0500 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -178,7 +183,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
         let cipher: cryptoFramework.Cipher = cryptoFramework.createCipher(cipherAlg);
         cipher.getCipherSpec(cryptoFramework.CipherSpecItem.SM2_MD_NAME_STR);
         console.log(`Security_CryptoFramework_Cipher_SM2_Func_0600: getCipherSpec succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_Cipher_SM2_Func_0600 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -201,7 +207,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
         let cipher: cryptoFramework.Cipher = cryptoFramework.createCipher(cipherAlg);
         cipher.getCipherSpec(cryptoFramework.CipherSpecItem.SM2_MD_NAME_STR);
         console.log(`Security_CryptoFramework_Cipher_SM2_Func_0700: getCipherSpec succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_Cipher_SM2_Func_0700 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -224,7 +231,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
         let cipher: cryptoFramework.Cipher = cryptoFramework.createCipher(cipherAlg);
         cipher.getCipherSpec(cryptoFramework.CipherSpecItem.SM2_MD_NAME_STR);
         console.log(`Security_CryptoFramework_Cipher_SM2_Func_0800: getCipherSpec succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_Cipher_SM2_Func_0800 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -247,7 +255,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
         let cipher: cryptoFramework.Cipher = cryptoFramework.createCipher(cipherAlg);
         cipher.getCipherSpec(cryptoFramework.CipherSpecItem.SM2_MD_NAME_STR);
         console.log(`Security_CryptoFramework_Cipher_SM2_Func_0900: getCipherSpec succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_Cipher_SM2_Func_0900 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -276,7 +285,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
         expect(postCipherSpec.cipherTextData.toString()).assertEqual(preCipherSpec.cipherTextData.toString());
         expect(postCipherSpec.hashData.toString()).assertEqual(preCipherSpec.hashData.toString());
         console.log(testNumber + `: getCipherTextSpec succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -299,7 +309,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
       try {
         let cipher: cryptoFramework.Cipher = cryptoFramework.createCipher(cipherAlg);
         expect(cipher.algName == cipherAlg);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -321,7 +332,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
       try {
         cryptoFramework.SM2CryptoUtil.genCipherTextBySpec(preCipherSpec, "C1C2C2");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
         expect(401).assertEqual(err.code);
       }
@@ -344,7 +356,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
       try {
         cryptoFramework.SM2CryptoUtil.genCipherTextBySpec(preCipherSpec, "C1C3C2");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(401).assertEqual(err.code);
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
       }
@@ -378,7 +391,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
         await cipherPromiseFunc.initCipher(decrypt, cryptoFramework.CryptoMode.DECRYPT_MODE, keyPair.priKey, null);
         let postText: cryptoFramework.DataBlob = await cipherPromiseFunc.doFinalCipher(decrypt, cryptoFramework.CryptoMode.DECRYPT_MODE, postAsn1Data);
         expect(preText.data.toString()).assertEqual(postText.data.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -404,7 +418,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
         expect(postCipherSpec.yCoordinate).assertEqual(preCipherSpec.yCoordinate);
         expect(postCipherSpec.cipherTextData.toString()).assertEqual(preCipherSpec.cipherTextData.toString());
         expect(postCipherSpec.hashData.toString()).assertEqual(preCipherSpec.hashData.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -426,7 +441,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
       try {
         cryptoFramework.SM2CryptoUtil.getCipherTextSpec(preAsn1Data, "C1C2C2");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(401).assertEqual(err.code);
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
       }
@@ -449,7 +465,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
       try {
         cryptoFramework.SM2CryptoUtil.getCipherTextSpec(preAsn1Data, "C1C3C2");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(17630001).assertEqual(err.code);
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
       }
@@ -472,7 +489,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
       try {
         let asn1Data = cryptoFramework.SM2CryptoUtil.genCipherTextBySpec(preCipherSpec);
         expect(asn1Data.data.toString()).assertEqual(preAsn1Data.data.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -500,7 +518,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
         };
         let preAsn1Data: cryptoFramework.DataBlob = await cipherPromiseFunc.doFinalCipher(encrypt, cryptoFramework.CryptoMode.ENCRYPT_MODE, preText);
         cryptoFramework.SM2CryptoUtil.getCipherTextSpec(preAsn1Data, "C1C3C2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
         expect(17630001).assertEqual(err.code);
       }
@@ -528,7 +547,8 @@ export default function SecurityCryptoFwCipherSM2TestUnit() {
         };
         let preAsn1Data: cryptoFramework.DataBlob = await cipherPromiseFunc.doFinalCipher(encrypt, cryptoFramework.CryptoMode.ENCRYPT_MODE, preText);
         cryptoFramework.SM2CryptoUtil.getCipherTextSpec(preAsn1Data, "C1C3C2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
         expect(17630001).assertEqual(err.code);
       }

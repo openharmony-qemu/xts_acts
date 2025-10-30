@@ -111,7 +111,7 @@ struct webResourceResponseGet {
                   }
                   Utils.emitEvent(false, 35010);
                 }, 4000)
-              } catch (error: Error) {
+              } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -123,7 +123,8 @@ struct webResourceResponseGet {
                 setTimeout(() => {
                 Utils.emitEvent(this.getRequestUrlValue, 35011);
                 }, 4000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -137,7 +138,8 @@ struct webResourceResponseGet {
                   Utils.emitEvent(this.isRequestGestureValue, 35012);
                 }, 4000)
 
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -151,7 +153,8 @@ struct webResourceResponseGet {
                 setTimeout(() => {
                   Utils.emitEvent(this.isMainFrameValue, 35013);
                 }, 4000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -164,7 +167,8 @@ struct webResourceResponseGet {
                 setTimeout(() => {
                   Utils.emitEvent(this.isRedirectValue, 35014);
                 }, 4000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -177,7 +181,8 @@ struct webResourceResponseGet {
                 setTimeout(() => {
                   Utils.emitEvent(this.getRequestMethodValue, 35015);
                 }, 4000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -190,7 +195,8 @@ struct webResourceResponseGet {
                 setTimeout(() => {
                   Utils.emitEvent(this.getResponseEncodingValue, 35017);
                 }, 4000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -203,7 +209,8 @@ struct webResourceResponseGet {
                 setTimeout(() => {
                   Utils.emitEvent(this.getResponseMimeTypeValue, 35018);
                 }, 4000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -217,7 +224,8 @@ struct webResourceResponseGet {
                   Utils.emitEvent(this.getReasonMessageValue, 35019);
                 }, 4000)
 
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -235,7 +243,8 @@ struct webResourceResponseGet {
                   Utils.emitEvent(false, 35020);
                 }, 4000)
 
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -249,7 +258,8 @@ struct webResourceResponseGet {
                   Utils.emitEvent(this.getResponseCodeValue, 35021);
                 }, 4000)
 
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;

@@ -65,7 +65,8 @@ export default function MultimodalGestureEventTest() {
           ExpectTrue(pinch.type == 1);
           ExpectTrue(pinch.scale == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -93,7 +94,8 @@ export default function MultimodalGestureEventTest() {
           ExpectTrue(rotate.type == 1);
           ExpectTrue(rotate.angle == 0);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -121,7 +123,8 @@ export default function MultimodalGestureEventTest() {
           }];
           ExpectTrue(ThreeFingersSwipe[0].type == 2);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -150,7 +153,8 @@ export default function MultimodalGestureEventTest() {
           console.info(`${caseName} success, FourFingersSwipe is ${JSON.stringify(FourFingersSwipe)}`);
           ExpectTrue(FourFingersSwipe[0].type == 3);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -177,7 +181,8 @@ export default function MultimodalGestureEventTest() {
           console.info(`${caseName} success, ThreeFingersTap is ${JSON.stringify(ThreeFingersTap)}`);
           ExpectTrue(ThreeFingersTap[0].type == 0);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -203,7 +208,8 @@ export default function MultimodalGestureEventTest() {
           ExpectTrue(ActionType.UPDATE == 2);
           ExpectTrue(ActionType.END == 3);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();

@@ -131,7 +131,8 @@ export default function taskPoolTaskGroupExecuteTest() {
               count++
               console.error(`error message error: ${JSON.stringify(error)}`)
             })
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             console.error(`error message e: ${JSON.stringify(e)}`)
           }
         }

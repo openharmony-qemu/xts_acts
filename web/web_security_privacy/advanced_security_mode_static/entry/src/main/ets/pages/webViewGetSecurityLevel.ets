@@ -85,7 +85,8 @@ struct webViewGetSecurityLevel {
                   } else {
                     Utils.emitEvent('fail', 8008);
                   }
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code}`);
                 }
                 break;

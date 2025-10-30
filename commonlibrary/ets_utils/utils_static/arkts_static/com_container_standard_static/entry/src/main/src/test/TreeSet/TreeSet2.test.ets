@@ -1212,7 +1212,8 @@ export default function TreeSetTest2() {
         let treeSet: TreeSet<number> = new TreeSet<number>();
         let result = treeSet.getHigherValue(123);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.message).assertEqual("Container is empty");
       }
     });

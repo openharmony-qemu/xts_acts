@@ -104,7 +104,8 @@ export default function audioCapturerEnhanceTest() {
           console.info(`${Tag} audioParamsGet are incorrect,is :  ${JSON.stringify(audioParamsGet as audio.AudioStreamInfo)}`);
           expect(false).assertTrue();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log(`${Tag} getStreamInfo  :ERROR:  ${JSON.stringify(err.message)} ${JSON.stringify(err.code)}`);
         expect(false).assertTrue();
       }
@@ -116,7 +117,8 @@ export default function audioCapturerEnhanceTest() {
           console.info(`${Tag} audioParamsGet are incorrect , is :  ${JSON.stringify(audioParamsGet as audio.AudioCapturerInfo)}`);
           expect(false).assertTrue();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log(`${Tag} CapturerInfo :ERROR:  ${JSON.stringify(err.message)} ${JSON.stringify(err.code)}`);
         expect(false).assertTrue();
       }
@@ -158,7 +160,8 @@ export default function audioCapturerEnhanceTest() {
                 let CapturerChangeInfo = audioCap.getCurrentAudioCapturerChangeInfo();
                 // console.info(`recordingFun getCurrentAudioCapturerChangeInfo:SUCCESS,
                 //      ${getCapturerChangeInfo(CapturerChangeInfo)}`)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.log(`recordingFun getCurrentAudioCapturerChangeInfo: ERROR ${error.message},${error.code}`);
                 expect(false).assertTrue();
               }
@@ -207,7 +210,8 @@ export default function audioCapturerEnhanceTest() {
         }).catch((err: Error) => {
           console.info(' AudioCapturer Created catch ERROR' + err.message);
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} AudioCapturer Created : ERROR :  ${error.message},${error.code}`);
         expect(false).assertTrue();
         done();
@@ -222,7 +226,8 @@ export default function audioCapturerEnhanceTest() {
         expect(CapturerChangeInfo.deviceDescriptors[0].deviceRole).assertEqual(audio.DeviceRole.INPUT_DEVICE);
         expect(CapturerChangeInfo.deviceDescriptors[0].encodingTypes?.[0]).assertEqual(TestConst.OUTPUT_NUMBER_0);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log(`${Tag}getCurrentAudioCapturerChangeInfo : ERROR ${error.message},${error.code}`);
         if (error.code) {
           expect(false).assertTrue();
@@ -264,7 +269,8 @@ export default function audioCapturerEnhanceTest() {
         });
         await getFd("capture_js-44100-2C-16B.pcm");
         await recordingFun(audioCap);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} AudioCapturer Created and start ERROR :  ${error.message},${error.code}`);
         expect(false).assertTrue();
         done();
@@ -278,7 +284,8 @@ export default function audioCapturerEnhanceTest() {
         expect(CapturerChangeInfo.deviceDescriptors[0].deviceRole).assertEqual(audio.DeviceRole.INPUT_DEVICE);
         expect(CapturerChangeInfo.deviceDescriptors[0].encodingTypes?.[0]).assertEqual(TestConst.OUTPUT_NUMBER_0);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log(`${Tag} getCurrentAudioCapturerChangeInfo : ERROR ${error.message},${error.code}`);
         expect(false).assertTrue();
         done();
@@ -316,7 +323,8 @@ export default function audioCapturerEnhanceTest() {
         }).catch((err: Error) => {
           console.info(' AudioCapturer Created catch ERROR' + err.message);
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} AudioCapturer Created : ERROR :  ${error.message},${error.code}`);
         expect(false).assertTrue();
         done();
@@ -331,7 +339,8 @@ export default function audioCapturerEnhanceTest() {
         expect(CapturerChangeInfo.deviceDescriptors[0].deviceRole).assertEqual(audio.DeviceRole.INPUT_DEVICE);
         expect(CapturerChangeInfo.deviceDescriptors[0].encodingTypes?.[0]).assertEqual(TestConst.OUTPUT_NUMBER_0);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log(`${Tag}getCurrentAudioCapturerChangeInfo : ERROR ${error.message},${error.code}`);
         expect(false).assertTrue();
         done();

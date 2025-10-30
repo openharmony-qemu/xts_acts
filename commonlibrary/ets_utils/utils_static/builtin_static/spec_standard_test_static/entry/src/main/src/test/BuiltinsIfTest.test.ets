@@ -1015,7 +1015,8 @@ export default function builtinsIfTest() {
         } else if (condition1) {
           a--;
         }
-      } catch (e : BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info('error is', e.message)
       }
       expect(-1).assertEqual(a);
@@ -1557,7 +1558,8 @@ export default function builtinsIfTest() {
             }
           }
         }
-      } catch (e : BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info('error is', e.message);
       }
     });

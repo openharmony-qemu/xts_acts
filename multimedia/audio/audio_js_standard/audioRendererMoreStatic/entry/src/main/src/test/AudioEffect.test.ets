@@ -94,7 +94,8 @@ export default function AudioEffectTest() {
           let data: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptionsList[index]);
           console.info(TAG + `create1  ${JSON.stringify(data)} `);
           audioRendererList.push(data);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(TAG + `create Error  ${JSON.stringify(err)} `);
         }
         console.info(TAG + `create  ${JSON.stringify(audioRendererList[index])} `);
@@ -121,7 +122,8 @@ export default function AudioEffectTest() {
           try {
             await audioRendererList[index]!.setAudioEffectMode(audioEffectModeList[index]);
             console.info(TAG + `setAudioEffectMode audioRendererList ${index} success `);
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.info(TAG + `setAudioEffectMode audioRendererList ${index} failed `);
             assertFunction();
             done()
@@ -154,7 +156,8 @@ export default function AudioEffectTest() {
             try {
               await audioRendererList[index]!.start();
               console.info(TAG + `start audioRendererList ${index} success `);
-            } catch (err: BusinessError) {
+            } catch (err) {
+              err = err as BusinessError;
               console.info(TAG + `start audioRendererList ${index} failed `);
               assertFunction();
               done()
@@ -779,7 +782,8 @@ export default function AudioEffectTest() {
         let data = await audio.createAudioRenderer(audioRendererOptions);
         audioRenderer = data;
         console.info(TAG + ' AudioRenderer Created : Success : Stream Type: SUCCESS');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG}  AudioRenderer Created : ERROR : ${err}`);
       }
       await audioRenderer.setAudioEffectMode(audio.AudioEffectMode.EFFECT_DEFAULT);

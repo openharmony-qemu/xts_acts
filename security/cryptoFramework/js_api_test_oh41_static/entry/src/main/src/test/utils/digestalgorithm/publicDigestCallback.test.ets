@@ -118,7 +118,8 @@ async function HmacDigestProcess(HMACAlgoName: string, keyAlgoName: string): Pro
     console.warn("[Callback]MAC len:" + macLen);
     symKey.clearMem();
     return { "output": macOutput, "macLength": macLen } as macData;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error(`[Callback]HmacDigestProcess catch error: ${err}`);
     throw err as Error;
   }
@@ -141,7 +142,8 @@ async function HmacAnyLengthKeyDigestProcess(HMACAlgoName: string, dataBlob: cry
     console.warn("[Callback]MAC len:" + macLen);
     symKey.clearMem();
     return { "output": macOutput, "macLength": macLen } as macData;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error(`[Callback]HmacDigestProcess catch error: ${err}`);
     throw err as Error;
   }

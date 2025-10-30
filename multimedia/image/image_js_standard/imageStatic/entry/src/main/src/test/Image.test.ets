@@ -1278,7 +1278,8 @@ export default function imageJsTest() {
                       console.info('imageInfo.size.width:' + imageInfo!.size.width);
                       done();
                     }
-                } catch(error: BusinessError) {
+                } catch(error) {
+                    error = error as BusinessError;
                     console.log('SUB_MULTIMEDIA_IMAGE_GETIMAGEINFO_PROMISE_STATIC_0100 error: ' + error);
                     expect().assertFail();
                     done();

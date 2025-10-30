@@ -159,7 +159,8 @@ export default function TaskGroupAbilityTest2() {
               //console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
             });
           promises.push(promise);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`error message e: ${JSON.stringify(e)}`)
         }
       }
@@ -244,7 +245,8 @@ export default function TaskGroupAbilityTest2() {
               //console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
             });
           promises.push(promise);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`error message e: ${JSON.stringify(e)}`)
         }
       }
@@ -341,7 +343,8 @@ export default function TaskGroupAbilityTest2() {
               //console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
             });
           promises.push(promise);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`error message e: ${JSON.stringify(e)}`)
         }
       }
@@ -430,7 +433,8 @@ export default function TaskGroupAbilityTest2() {
               //console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
             });
           promises.push(promise);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`error message e: ${JSON.stringify(e)}`)
         }
       }
@@ -522,7 +526,8 @@ export default function TaskGroupAbilityTest2() {
               //console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
             });
           promises.push(promise);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`error message e: ${JSON.stringify(e)}`)
         }
       }
@@ -606,7 +611,8 @@ export default function TaskGroupAbilityTest2() {
               //console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
             });
           promises.push(promise);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`error message e: ${JSON.stringify(e)}`)
         }
       }
@@ -659,7 +665,8 @@ export default function TaskGroupAbilityTest2() {
               //console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
             });
           promises.push(promise);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`error message e: ${JSON.stringify(e)}`)
         }
       }
@@ -745,7 +752,8 @@ export default function TaskGroupAbilityTest2() {
             Count2.count++;
           });
 
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`第 ${i + 1} 次执行任务组时出错:`, error);
         }
       }

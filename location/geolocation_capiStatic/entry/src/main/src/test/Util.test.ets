@@ -41,7 +41,8 @@ let tag: string = 'location'; //日志标识字符串,作为tag标识当前runne
         await permissionButton.click();
         hilog.info(domain, tag, 'clickRequestPermission end');
       }
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       hilog.info(domain, tag, 'clickRequestPermission get err:' + err);
     }
   }

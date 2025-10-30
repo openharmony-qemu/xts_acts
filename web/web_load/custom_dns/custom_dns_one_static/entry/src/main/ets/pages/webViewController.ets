@@ -66,7 +66,8 @@ struct webViewController {
                 setTimeout(() => {
                   Utils.emitEvent(this.controller.getTitle(), 31036)
                 }, 1000)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 31036)
               }

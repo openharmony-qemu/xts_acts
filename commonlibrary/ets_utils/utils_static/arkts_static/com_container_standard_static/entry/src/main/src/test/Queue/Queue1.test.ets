@@ -42,7 +42,8 @@ export default function queueTest1() {
         let queue: Queue<number> = new Queue<number>();
         let result = queue.add(1)
         expect(String(result)).assertEqual("true");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -62,7 +63,8 @@ export default function queueTest1() {
         let queue: Queue<string> = new Queue<string>();
         let result = queue.add("a")
         expect(String(result)).assertEqual("true");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -85,7 +87,8 @@ export default function queueTest1() {
         };
         let result = queue.add(a)
         expect(String(result)).assertEqual("true");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -114,7 +117,8 @@ export default function queueTest1() {
         expect(String(result1)).assertEqual("true");
         expect(String(result2)).assertEqual("true");
         expect(String(result3)).assertEqual("true");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -162,7 +166,8 @@ export default function queueTest1() {
         queue.add(c)
         let result = queue.pop();
         expect(String(result)).assertEqual(String(a));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -210,7 +215,8 @@ export default function queueTest1() {
         queue.add(c)
         let result = queue.getFirst();
         expect(String(result)).assertEqual(String(a));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -231,7 +237,8 @@ export default function queueTest1() {
         let queue: Queue<number | string | object> = new Queue<number | string | object>();
         let result = queue.getFirst();
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.message).assertEqual("Container is empty");
       }
     });
@@ -263,7 +270,8 @@ export default function queueTest1() {
           expect(String(result)).assertEqual(String(value));
           expect(String(result1)).assertEqual(String(index));
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -295,7 +303,8 @@ export default function queueTest1() {
           temp = iter.next().value;
           expect(String(temp)).assertEqual(String(temp));
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -325,7 +334,8 @@ export default function queueTest1() {
           let item = queue.pop();
           console.log("value:" + item);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -355,7 +365,8 @@ export default function queueTest1() {
         queue.forEach((): void => {
           expect(String(queue.length)).assertEqual("3");
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -381,7 +392,8 @@ export default function queueTest1() {
         queue.forEach((value): void => {
           expect(String(queue.getFirst())).assertEqual(String(value));
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -407,7 +419,8 @@ export default function queueTest1() {
         queue.forEach((value, index, queue: Queue<number | string | object>): void => {
           expect(String(queue.getFirst())).assertEqual(String(value));
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -431,7 +444,8 @@ export default function queueTest1() {
           expect(String(queue.getFirst())).assertEqual("1");
         });
         expect(String(queue.getFirst())).assertEqual("1");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }

@@ -51,7 +51,8 @@ export default function bluetoothAccessTest() {
                         hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
                         hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
                     });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + err);
             }
             await Utils.msSleep(2000);
@@ -64,7 +65,8 @@ export default function bluetoothAccessTest() {
             try {
                 await Utils.openBluetooth();
                 hilog.info(domain, tag, '%{public}s', 'beforeEach end');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', 'beforeEach get failed, err: ' + err);
             }
         })
@@ -103,7 +105,8 @@ export default function bluetoothAccessTest() {
                 let AUDIO_VIDEO_HEADPHONES: constant.MajorMinorClass = constant.MajorMinorClass.AUDIO_VIDEO_HEADPHONES;
                 hilog.info(domain, tag, "AUDIO_VIDEO_HEADPHONES:" + AUDIO_VIDEO_HEADPHONES);
                 expect(true).assertEqual(AUDIO_VIDEO_HEADPHONES == 0x0418);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "constant get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -123,7 +126,8 @@ export default function bluetoothAccessTest() {
             try{
                 access.disableBluetooth();
                 await Utils.clickRequestPermission("关闭");
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "disableBluetooth get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -138,7 +142,8 @@ export default function bluetoothAccessTest() {
                 let state: access.BluetoothState = access.getState();
                 hilog.info(domain, tag, "getState:" + state);
                 expect(true).assertEqual(state == access.BluetoothState.STATE_OFF);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getState get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -151,7 +156,8 @@ export default function bluetoothAccessTest() {
             try{
                 access.enableBluetooth();
                 await Utils.clickRequestPermission("开启");
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "enableBluetooth get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -166,7 +172,8 @@ export default function bluetoothAccessTest() {
                 let states: access.BluetoothState = access.getState();
                 hilog.info(domain, tag, "getState:" + states);
                 expect(true).assertEqual(states == access.BluetoothState.STATE_ON);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getState get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -210,7 +217,8 @@ export default function bluetoothAccessTest() {
                 let STATE_BLE_TURNING_ON: access.BluetoothState = access.BluetoothState.STATE_BLE_TURNING_ON;
                 hilog.info(domain, tag, "STATE_BLE_TURNING_ON:" + STATE_BLE_TURNING_ON);
                 expect(true).assertEqual(STATE_BLE_TURNING_ON == 4);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "accessConstant get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -232,7 +240,8 @@ export default function bluetoothAccessTest() {
                     hilog.info(domain, tag, "deletePersistentDeviceId success");
                 });
                 expect().assertFail();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "deletePersistentDeviceId get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -258,7 +267,8 @@ export default function bluetoothAccessTest() {
                 let macs: string[] = access.getPersistentDeviceIds();
                 hilog.info(domain, tag, "getPersistentDeviceIds success");
                 expect(true).assertEqual(macs.length == 0);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getPersistentDeviceIds get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -284,7 +294,8 @@ export default function bluetoothAccessTest() {
                 let isValidRandom = access.isValidRandomDeviceId("11:22:33:44:55:66");
                 hilog.info(domain, tag, "isValidRandomDeviceId success");
                 expect(isValidRandom).assertFalse();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "isValidRandomDeviceId get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -311,7 +322,8 @@ export default function bluetoothAccessTest() {
                     hilog.info(domain, tag, "addPersistentDeviceId success");
                 });
                 expect().assertFail();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "addPersistentDeviceId get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -345,7 +357,8 @@ export default function bluetoothAccessTest() {
                     hilog.info(domain, tag, 'enable state ' + JSON.stringify(state1));
                     expect(state1).assertEqual(access.BluetoothState.STATE_ON);
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "testOnStateChange get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -390,7 +403,8 @@ export default function bluetoothAccessTest() {
                 if (!isNotSupport) {
                     await Utils.msSleep(11000);
                 }
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, "disableBluetoothAsync get error:" + JSON.stringify(error));
             }
             done();
@@ -426,7 +440,8 @@ export default function bluetoothAccessTest() {
                 if (!isNotSupports) {
                     await Utils.msSleep(11000);
                 }
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, "enableBluetoothAsync get error:" + JSON.stringify(error));
             }
             done();
@@ -453,7 +468,8 @@ export default function bluetoothAccessTest() {
                     hilog.info(domain, tag, 'enable state ' + JSON.stringify(state1));
                     expect(state1).assertEqual(access.BluetoothState.STATE_ON);
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "testOnStateChange get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {

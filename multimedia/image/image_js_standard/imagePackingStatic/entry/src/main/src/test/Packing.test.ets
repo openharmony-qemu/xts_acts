@@ -79,7 +79,8 @@ export default function imagePacking() {
         globalImagesource = image.createImageSource(path);
         console.log('image source1111111: ' + globalImagesource)
         return globalImagesource;
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("image getRawFileContent case" + error.code + ",err message" + error.message);
         return undefined;
       }
@@ -124,7 +125,8 @@ export default function imagePacking() {
             expect(false).assertTrue();
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info("createPixelMapList error = " + error.code + "createPixelMapList errormsg = " + error.message);
           expect(false).assertTrue();
           done();
@@ -254,7 +256,8 @@ export default function imagePacking() {
         console.log(`${testNum} testPackingForSequencePromiseError success`);
         expect(false).assertTrue();
         done();
-      } catch(error: BusinessError) {
+      } catch(error) {
+        error = error as BusinessError;
         await globalPacker.release();
         for (let i = 0; i < pixelMapList.length; i++) {
           if (pixelMapList[i] != undefined) {

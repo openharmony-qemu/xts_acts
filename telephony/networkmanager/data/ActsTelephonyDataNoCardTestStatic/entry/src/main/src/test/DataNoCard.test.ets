@@ -113,7 +113,8 @@ export default function dataNoCardTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectTrue(err?.code === 8300003);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
@@ -147,7 +148,8 @@ export default function dataNoCardTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectTrue(err.code === 8300003);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');

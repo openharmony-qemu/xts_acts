@@ -54,7 +54,8 @@ export default function fileIORandomAccessFileSetFilePointer() {
 
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_set_file_pointer_sync_static_000 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }

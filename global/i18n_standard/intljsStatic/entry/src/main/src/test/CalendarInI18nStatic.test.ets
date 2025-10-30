@@ -429,7 +429,8 @@ export default function CalendarIni18nTest() {
       try{
         let holidayManager = new i18n.HolidayManager("/system/lib/TR.ics");
         console.log('SUB_GLOBAL_I18N_SR000IFGNH_static_0010' + holidayManager);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(e.code==null).assertTrue();
         console.log('SUB_GLOBAL_I18N_SR000IFGNH_static_0010_errorCode'+e.code);
         console.log('SUB_GLOBAL_I18N_SR000IFGNH_static_0010_errorMessage'+e.message);

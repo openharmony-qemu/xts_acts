@@ -46,7 +46,8 @@ export default function fileIOLstat() {
         let stat = fs.lstatSync(fpath);
         expect(stat !== null).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_sync_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -68,7 +69,8 @@ export default function fileIOLstat() {
       try {
         fs.lstatSync(fpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_sync_static_001 end error' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
       }
@@ -92,7 +94,8 @@ export default function fileIOLstat() {
         let stat = fs.lstatSync(fpath);
         expect(await Utils.isBigInt(stat.ino)).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_ino_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -116,7 +119,8 @@ export default function fileIOLstat() {
         let stat = fs.lstatSync(fpath);
         expect(await Utils.isIntNum(stat.mode)).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_mode_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -140,7 +144,8 @@ export default function fileIOLstat() {
         let stat = fs.lstatSync(fpath);
         expect(await Utils.isIntNum(stat.uid)).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_uid_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -164,7 +169,8 @@ export default function fileIOLstat() {
         let stat = fs.lstatSync(fpath);
         expect(await Utils.isIntNum(stat.gid)).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_gid_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -188,7 +194,8 @@ export default function fileIOLstat() {
         let stat = fs.lstatSync(fpath);
         expect(await Utils.isIntNum(stat.size)).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_size_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -212,7 +219,8 @@ export default function fileIOLstat() {
         let stat = fs.lstatSync(fpath);
         expect(await Utils.isIntNum(stat.atime)).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_atime_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -236,7 +244,8 @@ export default function fileIOLstat() {
         let stat = fs.lstatSync(fpath);
         expect(await Utils.isIntNum(stat.mtime)).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_mtime_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -260,7 +269,8 @@ export default function fileIOLstat() {
         let stat = fs.lstatSync(fpath);
         expect(await Utils.isIntNum(stat.ctime)).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_ctime_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -284,7 +294,8 @@ export default function fileIOLstat() {
         let stat = fs.lstatSync(fpath);
         expect(stat.isBlockDevice() === false).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_is_block_device_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -308,7 +319,8 @@ export default function fileIOLstat() {
         let stat = fs.lstatSync(fpath);
         expect(stat.isCharacterDevice() === false).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_is_character_device_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -332,7 +344,8 @@ export default function fileIOLstat() {
         let stat = fs.lstatSync(fpath);
         expect(stat.isDirectory() === false).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_is_directory_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -356,7 +369,8 @@ export default function fileIOLstat() {
         let stat = fs.lstatSync(dpath);
         expect(stat.isDirectory() === true).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_is_directory_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -380,7 +394,8 @@ export default function fileIOLstat() {
         let stat = fs.lstatSync(fpath);
         expect(stat.isFIFO() === false).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_is_fifo_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -404,7 +419,8 @@ export default function fileIOLstat() {
         let stat = fs.lstatSync(fpath);
         expect(stat.isFile() === true).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_is_file_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -428,7 +444,8 @@ export default function fileIOLstat() {
         let stat = fs.lstatSync(dpath);
         expect(stat.isFile() === false).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_is_file_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -452,7 +469,8 @@ export default function fileIOLstat() {
         let stat = fs.lstatSync(fpath);
         expect(stat.isSocket() === false).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_is_socket_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -476,7 +494,8 @@ export default function fileIOLstat() {
         let stat = fs.lstatSync(fpath);
         expect(stat.isSymbolicLink() === false).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_is_symbolic_link_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -505,7 +524,8 @@ export default function fileIOLstat() {
           hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_static_000 has error' + JSON.stringify(err));
           expect(false).assertTrue();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -530,7 +550,8 @@ export default function fileIOLstat() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -555,7 +576,8 @@ export default function fileIOLstat() {
         expect(stat !== null).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_static_002 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -582,7 +604,8 @@ export default function fileIOLstat() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_static_003 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -604,7 +627,8 @@ export default function fileIOLstat() {
       try {
         await fs.lstat(fpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_static_004 end error' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
@@ -630,7 +654,8 @@ export default function fileIOLstat() {
         expect(await Utils.isBigInt(stat.ino)).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_ino_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -656,7 +681,8 @@ export default function fileIOLstat() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_ino_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -681,7 +707,8 @@ export default function fileIOLstat() {
         expect(await Utils.isIntNum(stat.mode)).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_mode_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -707,7 +734,8 @@ export default function fileIOLstat() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_mode_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -732,7 +760,8 @@ export default function fileIOLstat() {
         expect(await Utils.isIntNum(stat.uid)).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_uid_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -758,7 +787,8 @@ export default function fileIOLstat() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_uid_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -783,7 +813,8 @@ export default function fileIOLstat() {
         expect(await Utils.isIntNum(stat.gid)).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_gid_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -809,7 +840,8 @@ export default function fileIOLstat() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_gid_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -834,7 +866,8 @@ export default function fileIOLstat() {
         expect(await Utils.isIntNum(stat.size)).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_size_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -860,7 +893,8 @@ export default function fileIOLstat() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_size_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -885,7 +919,8 @@ export default function fileIOLstat() {
         expect(await Utils.isIntNum(stat.atime)).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_atime_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -911,7 +946,8 @@ export default function fileIOLstat() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_atime_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -936,7 +972,8 @@ export default function fileIOLstat() {
         expect(await Utils.isIntNum(stat.mtime)).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_mtime_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -962,7 +999,8 @@ export default function fileIOLstat() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_mtime_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -987,7 +1025,8 @@ export default function fileIOLstat() {
         expect(await Utils.isIntNum(stat.ctime)).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_ctime_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1013,7 +1052,8 @@ export default function fileIOLstat() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_ctime_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1038,7 +1078,8 @@ export default function fileIOLstat() {
         expect(stat.isBlockDevice() === false).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_is_block_device_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1064,7 +1105,8 @@ export default function fileIOLstat() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_is_block_device_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1089,7 +1131,8 @@ export default function fileIOLstat() {
         expect(stat.isCharacterDevice() === false).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_is_character_device_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1115,7 +1158,8 @@ export default function fileIOLstat() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_is_character_device_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1140,7 +1184,8 @@ export default function fileIOLstat() {
         expect(stat.isDirectory() === false).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_is_directory_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1166,7 +1211,8 @@ export default function fileIOLstat() {
         expect(stat.isDirectory() === true).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_is_directory_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1192,7 +1238,8 @@ export default function fileIOLstat() {
           fs.rmdirSync(dpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_is_directory_static_002 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1217,7 +1264,8 @@ export default function fileIOLstat() {
         expect(stat.isFIFO() === false).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_is_fifo_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1243,7 +1291,8 @@ export default function fileIOLstat() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_is_fifo_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1268,7 +1317,8 @@ export default function fileIOLstat() {
         expect(stat.isFile() === true).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_is_file_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1294,7 +1344,8 @@ export default function fileIOLstat() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_is_file_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1319,7 +1370,8 @@ export default function fileIOLstat() {
         expect(stat.isFile() === false).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_is_file_static_002 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1344,7 +1396,8 @@ export default function fileIOLstat() {
         expect(stat.isSocket() === false).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_is_socket_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1370,7 +1423,8 @@ export default function fileIOLstat() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_is_socket_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1395,7 +1449,8 @@ export default function fileIOLstat() {
         expect(stat.isSymbolicLink() === false).assertTrue();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_is_symbolic_link_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1421,7 +1476,8 @@ export default function fileIOLstat() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_lstat_async_is_symbolic_link_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1454,7 +1510,8 @@ export default function fileIOLstat() {
         stat = fs.lstatSync(fpath);
         expect(stat.size == FILE_CONTENT.length * 2).assertTrue();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_append_file_sync_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }

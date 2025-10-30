@@ -58,7 +58,8 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.ECCCurveProcess(signVerifyAlg, false, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ":signVerify succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -84,7 +85,8 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.ECCCurveProcess(signVerifyAlg, true, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ":signVerify succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -113,7 +115,8 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
         let res: boolean = await signVerifyCallbackFunc.ECCCurveProcess(signVerifyAlg, false, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ":signVerify succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -142,7 +145,8 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.ECCCurveErrProcess(signVerifyAlg, false, spec, param);
         expect(!res).assertTrue();
         console.log(testNumber + ":signVerify succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -171,7 +175,8 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
         let res: boolean = await signVerifyCallbackFunc.ECCCurveErrProcess(signVerifyAlg, false, spec, param);
         expect(!res).assertTrue();
         console.log(testNumber + ":signVerify succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -196,7 +201,8 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
         let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signVerifyAlg);
         expect(sign.algName == signVerifyAlg).assertTrue();
         expect(verify.algName == signVerifyAlg).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -219,14 +225,16 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
       try {
         let sign: cryptoFramework.Sign = cryptoFramework.createSign(signVerifyAlg);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code == 401).assertTrue();
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
       }
       try {
         let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signVerifyAlg);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code == 401).assertTrue();
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
       }
@@ -249,7 +257,8 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
       try {
         let sign: cryptoFramework.Sign = cryptoFramework.createSign(signVerifyAlg);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log(testNumber + ": " + err.code);
         expect(err.code).assertEqual(801);
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
@@ -257,7 +266,8 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
       try {
         let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signVerifyAlg);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(801);
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
       }
@@ -287,7 +297,8 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
         let sign: cryptoFramework.Sign = cryptoFramework.createSign(signVerifyAlg);
         await sign.init(keyPair.priKey);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log(testNumber + ": " + err.code);
         expect(err.code == 17630001).assertTrue();
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
@@ -296,7 +307,8 @@ export default function SecurityCryptoFwSignVerifyECCTestUnit() {
         let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signVerifyAlg);
         await verify.init(keyPair.pubKey);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code == 17630001).assertTrue();
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
       }

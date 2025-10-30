@@ -41,7 +41,8 @@ export default function AVSessionManager() {
             try{
                 await currentAVSession.destroy()
                 console.info('TestLog: Session destroy success');
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Session destroy error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -73,7 +74,8 @@ export default function AVSessionManager() {
                     console.info('TestLog: avSession create failed');
                     expect(false).assertTrue();
                 }
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`TestLog: avSession create error SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0100: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
                 done();
@@ -94,7 +96,8 @@ export default function AVSessionManager() {
             try{
                 await avSession.createAVSession(context, '', 'video_call')
                 console.info('TestLog: avSession create successfully');
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`TestLog: avSession create error: code: ${err.code}, message: ${err.message}`);
                 expect(err.code).assertEqual(401);
             };
@@ -124,7 +127,8 @@ export default function AVSessionManager() {
                     expect(false).assertTrue();
                     done();
                 }
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`TestLog: avSession create error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
                 done();
@@ -152,7 +156,8 @@ export default function AVSessionManager() {
                         expect(err?.code == 6600101).assertTrue();
                     }
                 });
-            }catch(error: BusinessError){
+            }catch(error) {
+                error = error as BusinessError;
                 console.error(`getAVCastController BusinessError: code: ${error.code}, message: ${error.message}`);
                 if (error.message == "Cannot read property catch of undefined") {
                     console.info(`getAVCastController promise successfully`);
@@ -176,7 +181,8 @@ export default function AVSessionManager() {
                 try{
                     currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
                     console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession.sessionId}`);
-                }catch(err: BusinessError){
+                }catch(err) {
+                    err = err as BusinessError;
                     console.info(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
                 };
 
@@ -187,7 +193,8 @@ export default function AVSessionManager() {
                     console.error(`getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
                     expect(err.code == 6600101).assertTrue();
                 });
-            }catch(error: BusinessError){
+            }catch(error) {
+                error = error as BusinessError;
                 console.info(`getAVCastController failed: code: ${error.code}, message: ${error.message}`);
                 if (error.message == "Cannot read property then of undefined") {
                     console.info(`getAVCastController callback successfully`);
@@ -220,11 +227,13 @@ export default function AVSessionManager() {
                                 expect(true).assertTrue();
                             }
                         })
-                    }catch(err: BusinessError){
+                    }catch(err) {
+                        err = err as BusinessError;
                         console.info(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
                     };
                 });
-            }catch(error: BusinessError){
+            }catch(error) {
+                error = error as BusinessError;
                 console.info(`stopCasting BusinessError2: code: ${error.code}, message: ${error.message}`);
                 if (error.message == "Cannot read property catch of undefined") {
                     console.info(`stopCasting callback successfully`);
@@ -248,18 +257,21 @@ export default function AVSessionManager() {
                 try{
                     currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
                     console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession.sessionId}`);
-                }catch(err: BusinessError){
+                }catch(err) {
+                    err = err as BusinessError;
                     console.info(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
                 };
                 try{
                     currentAVSession.stopCasting()
                     console.info(`stopCasting successfully`);
                     expect(true).assertTrue();
-                }catch(err: BusinessError){
+                }catch(err) {
+                    err = err as BusinessError;
                     console.info(`stopCasting BusinessError: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
                 };
-            }catch(error: BusinessError){
+            }catch(error) {
+                error = error as BusinessError;
                 console.error(`stopCasting BusinessError2: code: ${error.code}, message: ${error.message}`)
                 if (error.message == "Cannot read property then of undefined") {
                     console.info(`stopCasting promise successfully`);
@@ -283,7 +295,8 @@ export default function AVSessionManager() {
                 try{
                     currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
                     console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession.sessionId}`);
-                }catch(err: BusinessError){
+                }catch(err) {
+                    err = err as BusinessError;
                     console.info(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
                 };
                 let aVCastController: avSession.AVCastController;
@@ -300,7 +313,8 @@ export default function AVSessionManager() {
                     console.error(`getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
                     expect(err.code == 6600101).assertTrue();
                 });
-            }catch(error: BusinessError){
+            }catch(error) {
+                error = error as BusinessError;
                 console.error(`getCurrentItem BusinessError2: code: ${error.code}, message: ${error.message}`)
                 if (error.message == "Cannot read property then of undefined") {
                     console.info(`getCurrentItem callback successfully`);
@@ -324,7 +338,8 @@ export default function AVSessionManager() {
                 try{
                     currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
                     console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession.sessionId}`);
-                }catch(err: BusinessError){
+                }catch(err) {
+                    err = err as BusinessError;
                     console.info(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
                 };
                 let aVCastController: avSession.AVCastController
@@ -333,14 +348,16 @@ export default function AVSessionManager() {
                     try{
                         aVCastController.getCurrentItem()
                         console.info(`getCurrentItem successfully`);
-                    }catch(err: BusinessError){
+                    }catch(err) {
+                        err = err as BusinessError;
                         console.error(`getCurrentItem BusinessError: code: ${err.code}, message: ${err.message}`);
                     };
                 }).catch(async(err: BusinessError) => {
                     console.error(`getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
                     expect(err.code == 6600101).assertTrue();
                 });
-            }catch(error: BusinessError){
+            }catch(error) {
+                error = error as BusinessError;
                 console.error(`getAVCastController BusinessError2: code: ${error.code}, message: ${error.message}`);
                 if (error.message == "Cannot read property then of undefined") {
                     console.info(`getCurrentItem promise successfully`);

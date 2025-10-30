@@ -45,7 +45,7 @@ export default function ActsBackgroundProcessManagerStaticTest() {
                         callbackFlag = 1;
                         expect(callbackFlag).assertEqual(1);
                         done();
-                    } catch (error: Error) {
+                    } catch (error) {
                         console.error(`SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_001 setProcessPriority failed, errCode: ${(error as Error).code}, message: ${(error as Error).message}`);
                     }
 
@@ -53,10 +53,10 @@ export default function ActsBackgroundProcessManagerStaticTest() {
                         backgroundProcessManager.resetProcessPriority(childProcessPid);
                         expect(callbackFlag).assertLarger(0);
                         done();
-                    } catch (error: Error) {
+                    } catch (error) {
                         console.error(`SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_001 setProcessPriority failed, errCode: ${(error as Error).code}, message: ${(error as Error).message}`);
                     }
-                } catch (error: Error) {
+                } catch (error) {
                     let e: Error = error as Error;
                     hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_STATIC_XTS_001 aa error: %{public}s', JSON.stringify(error));
                     expect(false).assertTrue();

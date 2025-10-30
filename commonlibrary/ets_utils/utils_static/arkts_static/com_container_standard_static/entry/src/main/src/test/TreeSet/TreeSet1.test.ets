@@ -56,7 +56,8 @@ describe("TreeSetTest1", (): void => {
     try {
       let treeSet = new TreeSet<string>();
       expect(String(treeSet != undefined)).assertEqual('true');
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       expect(err.name).assertEqual("BusinessError");
       expect(err.code).assertEqual(10200012);
       expect(err.message).assertEqual("The TreeSet's constructor cannot be directly invoked");
@@ -85,7 +86,8 @@ describe("TreeSetTest1", (): void => {
         let res = treeSet.remove(item)
         expect(String(res)).assertEqual('true');
       }
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       expect(err.name).assertEqual("BusinessError");
       expect(err.code).assertEqual(10200012);
       expect(err.message).assertEqual("The TreeMap's constructor cannot be directly invoked");
@@ -329,7 +331,8 @@ describe("TreeSetTest1", (): void => {
     try {
       let res = treeSet.getFirstValue();
       expect(false).assertFail();
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       expect(err.message).assertEqual("Container is empty");
     }
   });
@@ -364,7 +367,8 @@ describe("TreeSetTest1", (): void => {
     try {
       let res = treeSet.getLastValue();
       expect(false).assertFail();
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       expect(err.message).assertEqual("Container is empty");
     }
   });
@@ -401,7 +405,8 @@ describe("TreeSetTest1", (): void => {
     try {
       let res = treeSet.getLowerValue(2);
       expect(false).assertFail();
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       expect(err.message).assertEqual("Container is empty");
     }
   });
@@ -438,7 +443,8 @@ describe("TreeSetTest1", (): void => {
     try {
       let res = treeSet.getHigherValue(3);
       expect(false).assertFail();
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       expect(err.message).assertEqual("Container is empty");
     }
   });
@@ -475,7 +481,8 @@ describe("TreeSetTest1", (): void => {
     try {
       let res = treeSet.popFirst();
       expect(false).assertFail();
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       expect(err.message).assertEqual("Container is empty");
     }
   });
@@ -512,7 +519,8 @@ describe("TreeSetTest1", (): void => {
     try {
       let res = treeSet.popLast();
       expect(false).assertFail();
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       expect(err.message).assertEqual("Container is empty");
     }
   });
@@ -554,7 +562,8 @@ describe("TreeSetTest1", (): void => {
     try {
       let res1 = treeSet.popFirst();
       expect(false).assertFail();
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       expect(err.message).assertEqual("Container is empty");
     }
   });
@@ -821,7 +830,8 @@ describe("TreeSetTest1", (): void => {
     try {
       let res = treeSet.getLowerValue(null);
       expect(false).assertFail();
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       expect(err.message).assertEqual("Container is empty");
     }
   });
@@ -839,7 +849,8 @@ describe("TreeSetTest1", (): void => {
     try {
       let res = treeSet.getHigherValue(null);
       expect(false).assertFail();
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       expect(err.message).assertEqual("Container is empty");
     }
   });

@@ -74,7 +74,8 @@ export default function userAuthTestExecute() {
           userAuth.getAvailableStatus(authType[idx0], userAuth.AuthTrustLevel.ATL1);
           hilog.info(domain, tag, format,"Security_IAM_Nopermission_API9_Func_static_0104  success " );
           done()
-        } catch (e:BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.info(domain, tag, format,"Security_IAM_Nopermission_API9_Func_static_0104  fail " + e.code);
           expect(e.code).assertEqual(201);
           done()

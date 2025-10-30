@@ -45,7 +45,8 @@ export default function WeakMapTest() {
         weakMap.set(a, 123);
         let value = weakMap.get(a);
         expect(String(value)).assertEqual('123');
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -87,7 +88,8 @@ export default function WeakMapTest() {
         let a = new Object();
         weakMap1.set(a, 1);
         expect(String(weakMap1.delete(a))).assertEqual('true');
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -108,7 +110,8 @@ export default function WeakMapTest() {
         let b = 0;
         weakMap1.set(a, 1);
         expect(String(weakMap1.delete(b))).assertEqual('false');
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -132,7 +135,8 @@ export default function WeakMapTest() {
           key: undefined
         };
         expect(String(weakMap.delete(a))).assertEqual('false');
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -156,7 +160,8 @@ export default function WeakMapTest() {
         let key: GeneratedObjectLiteralInterface_4 = {}
         let value = weakMap.get(key);
         expect(value).assertEqual(undefined);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -180,7 +185,8 @@ export default function WeakMapTest() {
         weakMap.set(key, "aaa");
         let value = weakMap.get(key);
         expect(value).assertEqual("aaa");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -212,7 +218,8 @@ export default function WeakMapTest() {
         weakMap.set(b, 'huihui');
         weakMap.set(c, 'zhenzhen');
         expect(weakMap.get(a)).assertEqual('weiwei');
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -231,7 +238,8 @@ export default function WeakMapTest() {
         let result: WeakMap<object, number> = new WeakMap<object, number>();
         let key:string[] = [];
         expect(result.get(key)).assertEqual(undefined);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -251,7 +259,8 @@ export default function WeakMapTest() {
         let key:string[] = [];
         result.set(key, "values1");
         expect(result.get(key)).assertEqual("values1");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -277,7 +286,8 @@ export default function WeakMapTest() {
         expect(result.get(key1)).assertEqual("value1");
         expect(result.get(key2)).assertEqual("value2");
         expect(result.get(key3)).assertEqual("value3");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -297,7 +307,8 @@ export default function WeakMapTest() {
         let key:string[] = [];
         result.set(key, "undefined");
         expect(result.get(key)).assertEqual("undefined");
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -316,7 +327,8 @@ export default function WeakMapTest() {
         let weakMap: WeakMap<object, string> = new WeakMap<object, string>();
         let key:string[] = [];
         expect(weakMap.has(key)).assertFalse();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -337,7 +349,8 @@ export default function WeakMapTest() {
         let value1 = '张三';
         weakMap.set(key1, value1);
         expect(weakMap.has(key1)).assertTrue();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -366,7 +379,8 @@ export default function WeakMapTest() {
         expect(weakMap.has(key1)).assertTrue();
         expect(weakMap.has(key2)).assertTrue();
         expect(weakMap.has(key3)).assertTrue();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -385,7 +399,8 @@ export default function WeakMapTest() {
         let weakMap: WeakMap<object, string> = new WeakMap<object, string>();
         let a: Partial<GeneratedObjectLiteralInterface_4> = {};
         expect(String(weakMap.has(a))).assertEqual('false');
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -408,7 +423,8 @@ export default function WeakMapTest() {
         weakMap1.set(a, 'tqj');
         let value = weakMap1.has(a);
         expect(String(value)).assertEqual('true');
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -429,7 +445,8 @@ export default function WeakMapTest() {
         let object1: GeneratedObjectLiteralInterface_4 = {};
         weakMap1.set(object1, 'foo');
         expect(weakMap1.get(object1)).assertEqual('foo');
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -451,7 +468,8 @@ export default function WeakMapTest() {
         weakMap1.delete(a);
         weakMap1.set(a, 'weiwei');
         expect(weakMap1.get(a)).assertEqual('weiwei');
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }

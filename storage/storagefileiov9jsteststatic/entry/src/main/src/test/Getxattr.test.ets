@@ -49,7 +49,8 @@ export default function fileIOGetxattr() {
         let attrValue = fs.getxattrSync(fpath, attrKey);
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Sync_Static_001 the value is: ' + attrValue);
         expect(attrValue).assertEqual('Test file.');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_Sync_Static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -80,7 +81,8 @@ export default function fileIOGetxattr() {
         }).catch((err: ()=>void): Promise<void> => {
           hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_ASync_Static_001 has error' + JSON.stringify(err));
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_ASync_Static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }

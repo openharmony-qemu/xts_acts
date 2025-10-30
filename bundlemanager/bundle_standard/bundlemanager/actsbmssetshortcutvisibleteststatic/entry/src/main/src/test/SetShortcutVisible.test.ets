@@ -72,7 +72,8 @@ export default function setShortcutVisible() {
         await shortcutManager.setShortcutVisibleForSelf('not_exist', false);
         expect().assertFail();
         done();
-      } catch (error : BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         let msg: string = `setShortcutVisibleForSelf(not_exist,false) failed: ${JSON.stringify(error)}`;
         hilog.info(DOMAIN, 'testTag', '%{public}s', msg);
         expect(error.code).assertEqual(17700070);

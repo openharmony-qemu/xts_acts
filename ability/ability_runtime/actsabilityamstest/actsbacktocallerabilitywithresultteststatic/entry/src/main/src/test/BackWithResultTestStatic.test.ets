@@ -66,7 +66,8 @@ export default function BackWithResultStaticTest() {
           expect(err.code).assertEqual(16000074);
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, `getGroupDir faile, err: ${error}`);
         expect().assertFail();
         done();

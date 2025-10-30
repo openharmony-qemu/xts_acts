@@ -122,7 +122,8 @@ export default function TaskPoolSequenceRunnerTest() {
             count1++
             console.error(`error message error: error}`)
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`error message e: e`)
         }
         try {
@@ -134,7 +135,8 @@ export default function TaskPoolSequenceRunnerTest() {
             count2++
             console.error(`error message error: error}`)
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`error message e: e`)
         }
       }

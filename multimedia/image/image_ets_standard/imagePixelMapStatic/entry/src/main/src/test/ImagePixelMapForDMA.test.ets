@@ -89,7 +89,8 @@ export default function imagePixelmap() {
       //     display.getDefaultDisplaySync().hdrFormats.length != 0;
       try {
         isSupportHdr = await fs.access('/system/lib64/ndk/libvideo_processing_capi_impl.so');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("access failed with error message: " + err.message + ", error code: " + err.code);
         isSupportHdr = false;
       }
@@ -3214,7 +3215,8 @@ export default function imagePixelmap() {
             await pixelMap!.release();
           }
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           logger.log("createPixelMapUsingAllocator is error: " + JSON.stringify(error));
           expect(error.code == UNSUPPORTED_ALLOCATOR_TYPE).assertTrue();
           done();
@@ -3257,7 +3259,8 @@ export default function imagePixelmap() {
             await pixelMap.release();
           }
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           logger.log("createPixelMapUsingAllocator is error: " + JSON.stringify(error));
           expect(error.code == UNSUPPORTED_ALLOCATOR_TYPE).assertTrue();
           done();
@@ -3283,7 +3286,8 @@ export default function imagePixelmap() {
         let pixelMap = await imageSource!.createPixelMapUsingAllocator();
         expect(false).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         logger.log("createPixelMapUsingAllocator is error: " + JSON.stringify(error));
         expect(error.code == DECODE_FAILED).assertTrue();
         done();
@@ -3308,7 +3312,8 @@ export default function imagePixelmap() {
         let pixelMap = imageSource!.createPixelMapUsingAllocatorSync();
         expect(false).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         logger.log("createPixelMapUsingAllocatorSync is error: " + JSON.stringify(error));
         expect(error.code == DECODE_FAILED).assertTrue();
         done();

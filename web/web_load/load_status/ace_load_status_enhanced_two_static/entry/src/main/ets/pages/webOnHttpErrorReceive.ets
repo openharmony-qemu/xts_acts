@@ -80,7 +80,8 @@ struct WebOnHttpErrorReceive {
                   setTimeout(() => {
                   Utils.emitEvent(this.httpErrorReceive, 60600);
                   }, 2000)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -91,7 +92,8 @@ struct WebOnHttpErrorReceive {
                   setTimeout(() => {
                   Utils.emitEvent(this.httpErrorReceive, 60602);
                 }, 2000)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -102,7 +104,8 @@ struct WebOnHttpErrorReceive {
                   setTimeout(() => {
                   Utils.emitEvent(this.httpErrorReceive, 60604);
                   }, 2000)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;

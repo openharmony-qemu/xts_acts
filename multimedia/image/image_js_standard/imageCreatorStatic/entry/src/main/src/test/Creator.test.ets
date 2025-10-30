@@ -89,7 +89,8 @@ export default function ImageCreator() {
           logger.log('creator release success');
           expect(true).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           logger.log('creator release failed error.code: ' + error.code);
           expect(false).assertTrue();
           done();
@@ -154,7 +155,8 @@ export default function ImageCreator() {
           expect(img != undefined).assertTrue();
           globalImg = img;
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log('SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_PROMISE_STATIC_0100 error: ' + error);
           expect(false).assertTrue();
           done();
@@ -234,17 +236,20 @@ export default function ImageCreator() {
               // creator.test;
               expect(true).assertTrue();
               done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+              error = error as BusinessError;
               console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_STATIC_0200 queueImage error: ' + error);
               expect(false).assertTrue();
               done();
             }
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             expect(false).assertTrue();
             console.log('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_STATIC_0200 getComponent error:' + error);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_STATIC_0200 dequeueImage error: ' + error);
           expect(false).assertTrue();
           done();
@@ -401,7 +406,8 @@ export default function ImageCreator() {
         expect(true).assertTrue();
         console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_STATIC_0100 off success');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         expect(false).assertTrue();
         console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_STATIC_0100 off failed');
         done();

@@ -53,7 +53,8 @@ export default function ActsZipInflateTest() {
           hilog.info(domain, tag, 'actsZipTest_static_17 createZipSync success. data: ' + JSON.stringify(zip));
           expect(zip).not().assertUndefined();
           expect(zip != null).assertTrue();
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.info(domain, tag,
             `actsZipTest_static_17 createZipSync errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData).assertFail();
@@ -235,7 +236,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_81 compress success');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_81 compress errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800007);
@@ -263,7 +265,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_106 compress success');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_106 compress errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(401);
@@ -378,7 +381,8 @@ export default function ActsZipInflateTest() {
               hilog.info(domain, tag, 'actsZipTest_static_82 compress2 success');
               expect(data).assertFail();
             })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_82 compress2 errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800007);
@@ -407,7 +411,8 @@ export default function ActsZipInflateTest() {
               hilog.info(domain, tag, 'actsZipTest_static_107 compress2 success');
               expect(data).assertFail();
             })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_38 compress2 errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(401);
@@ -473,7 +478,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_37 compressBound success');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_37 compressBound errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(401);
@@ -506,7 +512,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_38 uncompress success');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_38 uncompress errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800005);
@@ -539,7 +546,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_108 uncompress success');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_108 uncompress errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(401);
@@ -650,7 +658,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_39 uncompress2 success');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_39 uncompress2 errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800005);
@@ -683,7 +692,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_109 uncompress2 success');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_109 uncompress2 errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(401);
@@ -805,7 +815,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_40 inflateValidate success');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_40 inflateValidate errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800004);
@@ -887,7 +898,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_42 inflateSyncPoint success');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_42 inflateSyncPoint errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800004);
@@ -972,7 +984,8 @@ export default function ActsZipInflateTest() {
               `actsZipTest_static_74 inflateInit errData is errCode:${errData.code}  message:${errData.message}`);
             expect(errData).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_74 inflateInit2 errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData).assertFail();
@@ -1080,7 +1093,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_43 inflateSync success');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_43 inflateSync errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800004);
@@ -1184,7 +1198,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_113 inflateSync success.');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_113 inflateSync errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800007);
@@ -1261,7 +1276,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_75 inflateInit success. data: ' + JSON.stringify(data));
             expect(data).assertEqual(zlib.ReturnStatus.OK);
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_75 inflateInit errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData).assertFail();
@@ -1289,7 +1305,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_775 inflateSetDictionary success');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_75 inflateSetDictionary errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800005);
@@ -1335,7 +1352,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_44 inflateSetDictionary success');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_44 inflateSetDictionary errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800004);
@@ -1412,7 +1430,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_115 inflateInit success. data: ' + JSON.stringify(data));
             expect(data).assertEqual(zlib.ReturnStatus.OK);
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_115 inflateInit errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData).assertFail();
@@ -1519,7 +1538,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_45 inflateResetKeep success');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_45 inflateResetKeep errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800004);
@@ -1602,7 +1622,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_47 inflateReset2 success');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_47 inflateReset2 errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800004);
@@ -1685,7 +1706,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_46 inflateReset success');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_46 inflateReset errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800004);
@@ -1767,7 +1789,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_48 inflatePrime success');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_48 inflatePrime errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800004);
@@ -1912,7 +1935,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_50 inflateInit2 success');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_50 inflateInit2 errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800004);
@@ -1950,7 +1974,8 @@ export default function ActsZipInflateTest() {
             hilog.info(domain, tag, 'actsZipTest_static_52 inflateGetHeader success');
             expect(data).assertFail();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `actsZipTest_static_52 inflateGetHeader errData is errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800004);

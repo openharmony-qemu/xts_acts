@@ -67,12 +67,14 @@ export default function InputConsumerTest() {
             ExpectTrue(ifInputConsumerOnSuccess == 1);
             inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to subscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -106,12 +108,14 @@ export default function InputConsumerTest() {
             ExpectFalse(true);
             inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 401 || error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to subscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -144,12 +148,14 @@ export default function InputConsumerTest() {
             ExpectFalse(true);
             inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 401 || error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to subscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -182,12 +188,14 @@ export default function InputConsumerTest() {
             ExpectFalse(true);
             inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 401 || error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} fail to subscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -220,12 +228,14 @@ export default function InputConsumerTest() {
             ExpectFalse(true);
             inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 401 || error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to subscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -258,12 +268,14 @@ export default function InputConsumerTest() {
             ExpectFalse(true);
             inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 401 || error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to subscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -296,12 +308,14 @@ export default function InputConsumerTest() {
             ExpectFalse(true);
             inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 401 || error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to subscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -335,12 +349,14 @@ export default function InputConsumerTest() {
             ExpectFalse(true);
             inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 401 || error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to subscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -373,12 +389,14 @@ export default function InputConsumerTest() {
             ExpectFalse(true);
             inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 401 || error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to subscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -413,12 +431,14 @@ export default function InputConsumerTest() {
             ExpectTrue(ifInputConsumerOnSuccess == 1);
             inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to subscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -451,12 +471,14 @@ export default function InputConsumerTest() {
             ExpectFalse(true);
             inputConsumer.offHotkeyChange(hotkeyOptions, hotkeyCallback);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} Subscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 4200003 || error.code == 4200002 || error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to subscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -491,12 +513,14 @@ export default function InputConsumerTest() {
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -531,12 +555,14 @@ export default function InputConsumerTest() {
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -571,12 +597,14 @@ export default function InputConsumerTest() {
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -611,12 +639,14 @@ export default function InputConsumerTest() {
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -651,12 +681,14 @@ export default function InputConsumerTest() {
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -691,12 +723,14 @@ export default function InputConsumerTest() {
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -731,12 +765,14 @@ export default function InputConsumerTest() {
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -771,12 +807,14 @@ export default function InputConsumerTest() {
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -811,12 +849,14 @@ export default function InputConsumerTest() {
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -851,12 +891,14 @@ export default function InputConsumerTest() {
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -891,12 +933,14 @@ export default function InputConsumerTest() {
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -931,12 +975,14 @@ export default function InputConsumerTest() {
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -970,12 +1016,14 @@ export default function InputConsumerTest() {
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1010,12 +1058,14 @@ export default function InputConsumerTest() {
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1050,12 +1100,14 @@ export default function InputConsumerTest() {
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1088,12 +1140,14 @@ export default function InputConsumerTest() {
             console.info(`${caseName} unsubscribe success`);
             ExpectFalse(true);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 401 || error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1128,12 +1182,14 @@ export default function InputConsumerTest() {
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} unsubscribe failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1170,13 +1226,15 @@ export default function InputConsumerTest() {
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOnSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} subscribe and unsubscribe failed, error: ${JSON.stringify(error,
               [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1213,13 +1271,15 @@ export default function InputConsumerTest() {
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOnSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} subscribe and unsubscribe failed, error: ${JSON.stringify(error,
               [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1256,13 +1316,15 @@ export default function InputConsumerTest() {
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOnSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} subscribe and unsubscribe failed, error: ${JSON.stringify(error,
               [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1299,13 +1361,15 @@ export default function InputConsumerTest() {
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOnSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} subscribe and unsubscribe failed, error: ${JSON.stringify(error,
               [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1347,13 +1411,15 @@ export default function InputConsumerTest() {
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOnSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} subscribe and unsubscribe failed, error: ${JSON.stringify(error,
               [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1395,13 +1461,15 @@ export default function InputConsumerTest() {
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOnSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} subscribe and unsubscribe failed, error: ${JSON.stringify(error,
               [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1466,13 +1534,15 @@ export default function InputConsumerTest() {
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectTrue(ifInputConsumerOffSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} subscribe and unsubscribe failed, error: ${JSON.stringify(error,
               [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1535,13 +1605,15 @@ export default function InputConsumerTest() {
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} subscribe and unsubscribe failed, error: ${JSON.stringify(error,
               [`code`, `message`])}`);
             ExpectTrue(error.code == 401 || error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1604,13 +1676,15 @@ export default function InputConsumerTest() {
             ifInputConsumerOffSuccess++;
             ExpectTrue(ifInputConsumerOffSuccess == 1);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} subscribe and unsubscribe failed, error: ${JSON.stringify(error,
               [`code`, `message`])}`);
             ExpectTrue(error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1637,13 +1711,15 @@ export default function InputConsumerTest() {
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} subscribe and unsubscribe failed, error: ${JSON.stringify(error,
               [`code`, `message`])}`);
             ExpectTrue(error.code == 401 || error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1677,13 +1753,15 @@ export default function InputConsumerTest() {
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} subscribe and unsubscribe failed, error: ${JSON.stringify(error,
               [`code`, `message`])}`);
             ExpectTrue(error.code == 401 || error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1717,13 +1795,15 @@ export default function InputConsumerTest() {
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} subscribe and unsubscribe failed, error: ${JSON.stringify(error,
               [`code`, `message`])}`);
             ExpectTrue(error.code == 401 || error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1757,13 +1837,15 @@ export default function InputConsumerTest() {
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} subscribe and unsubscribe failed, error: ${JSON.stringify(error,
               [`code`, `message`])}`);
             ExpectTrue(error.code == 401 || error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1797,13 +1879,15 @@ export default function InputConsumerTest() {
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} subscribe and unsubscribe failed, error: ${JSON.stringify(error,
               [`code`, `message`])}`);
             ExpectTrue(error.code == 401 || error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1837,13 +1921,15 @@ export default function InputConsumerTest() {
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} subscribe and unsubscribe failed, error: ${JSON.stringify(error,
               [`code`, `message`])}`);
             ExpectTrue(error.code == 401 || error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1877,13 +1963,15 @@ export default function InputConsumerTest() {
             console.info(`${caseName} subscribe and unsubscribe success.`);
             ExpectFalse(true);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${caseName} subscribe and unsubscribe failed, error: ${JSON.stringify(error,
               [`code`, `message`])}`);
             ExpectTrue(error.code == 401 || error.code == 801);
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to unsubscribe, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -1907,7 +1995,8 @@ export default function InputConsumerTest() {
             ExpectTrue(data.length >= 0);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} failed to get system hotkeys, error: ${JSON.stringify(error,
             [`code`, `message`])}`);
           ExpectTrue(error.code == 801);

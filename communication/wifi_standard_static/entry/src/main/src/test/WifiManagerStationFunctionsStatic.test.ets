@@ -79,7 +79,8 @@ export default function actsWifiManagerFunctionsTest() {
                 let WIFI_SEC_TYPE_WAPI_PSK: wifiManager.WifiSecurityType = wifiManager.WifiSecurityType.WIFI_SEC_TYPE_WAPI_PSK;
                 hilog.info(domain, tag, "WIFI_SEC_TYPE_WAPI_PSK:" + WIFI_SEC_TYPE_WAPI_PSK);
                 expect(true).assertEqual(WIFI_SEC_TYPE_WAPI_PSK == 9);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "constant WifiSecurityType get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "constant WifiSecurityType get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -112,7 +113,8 @@ export default function actsWifiManagerFunctionsTest() {
                 let DEVICE_UNAVAILABLE: wifiManager.P2pDeviceStatus = wifiManager.P2pDeviceStatus.UNAVAILABLE;
                 hilog.info(domain, tag, "DEVICE_UNAVAILABLE:" + DEVICE_UNAVAILABLE);
                 expect(true).assertEqual(DEVICE_UNAVAILABLE == 4);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "constant P2pDeviceStatus get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "constant P2pDeviceStatus get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -136,7 +138,8 @@ export default function actsWifiManagerFunctionsTest() {
                 let P2PCONN_DISCONNECTED: wifiManager.P2pConnectState = wifiManager.P2pConnectState.DISCONNECTED;
                 hilog.info(domain, tag, "P2PCONN_DISCONNECTED:" + P2PCONN_DISCONNECTED);
                 expect(true).assertEqual(P2PCONN_DISCONNECTED == 0);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "constant P2pConnectState get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "constant P2pConnectState get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -169,7 +172,8 @@ export default function actsWifiManagerFunctionsTest() {
                 let WIFI7_PLUS: wifiManager.WifiCategory = wifiManager.WifiCategory.WIFI7_PLUS;
                 hilog.info(domain, tag, "WIFI7_PLUS:" + WIFI7_PLUS);
                 expect(true).assertEqual(WIFI7_PLUS == 5);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "constant WifiCategory get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "constant WifiCategory get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -202,7 +206,8 @@ export default function actsWifiManagerFunctionsTest() {
                 let WIFI7_STR: wifiManager.WifiLinkType = wifiManager.WifiLinkType.WIFI7_STR;
                 hilog.info(domain, tag, "WIFI7_STR:" + WIFI7_STR);
                 expect(true).assertEqual(WIFI7_STR == 4);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "constant WifiLinkType get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "constant WifiLinkType get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -235,7 +240,8 @@ export default function actsWifiManagerFunctionsTest() {
                 let WIDTH_80MHZ_PLUS: wifiManager.WifiChannelWidth = wifiManager.WifiChannelWidth.WIDTH_80MHZ_PLUS;
                 hilog.info(domain, tag, "WIDTH_80MHZ_PLUS:" + WIDTH_80MHZ_PLUS);
                 expect(true).assertEqual(WIDTH_80MHZ_PLUS == 4);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "constant WifiChannelWidth get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "constant WifiChannelWidth get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -259,7 +265,8 @@ export default function actsWifiManagerFunctionsTest() {
                 let WAPI_PSK_HEX: wifiManager.WapiPskType = wifiManager.WapiPskType.WAPI_PSK_HEX;
                 hilog.info(domain, tag, "WAPI_PSK_HEX:" + WAPI_PSK_HEX);
                 expect(true).assertEqual(WAPI_PSK_HEX == 1);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "constant WapiPskType get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "constant WapiPskType get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -286,7 +293,8 @@ export default function actsWifiManagerFunctionsTest() {
                 let GO_BAND_5GHZ: wifiManager.GroupOwnerBand = wifiManager.GroupOwnerBand.GO_BAND_5GHZ;
                 hilog.info(domain, tag, "GO_BAND_5GHZ:" + GO_BAND_5GHZ);
                 expect(true).assertEqual(GO_BAND_5GHZ == 2);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "constant GroupOwnerBand get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "constant GroupOwnerBand get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -384,7 +392,8 @@ export default function actsWifiManagerFunctionsTest() {
                 hilog.info(domain, tag, "DISCONNECTED:" + DISCONNECTED);
                 let UNKNOWN: wifiManager.ConnState = wifiManager.ConnState.UNKNOWN;
                 hilog.info(domain, tag, "UNKNOWN:" + UNKNOWN);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "constant constantTest get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "constant constantTest get errCode:" + err.code + ",errMessage:" + err.message);
                 expect().assertFail();
@@ -406,7 +415,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onWifiStateChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "wifiStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -417,7 +427,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.disableWifi();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "disableWifi get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -431,7 +442,8 @@ export default function actsWifiManagerFunctionsTest() {
                 let state = wifiManager.isWifiActive();
                 hilog.info(domain, tag, "isWifiActive:" + state);
                 expect(state).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "isWifiActive get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -442,7 +454,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.enableWifi();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "enableWifi get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -456,7 +469,8 @@ export default function actsWifiManagerFunctionsTest() {
                 let states = wifiManager.isWifiActive();
                 hilog.info(domain, tag, "isWifiActive:" + states);
                 expect(states).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "isWifiActive get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -467,7 +481,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.offWifiStateChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "wifiStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -493,7 +508,8 @@ export default function actsWifiManagerFunctionsTest() {
                 let state: boolean = wifiManager.isConnected();
                 hilog.info(domain, tag, "isConnected:" + state);
                 expect(state).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "isConnected get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -526,7 +542,8 @@ export default function actsWifiManagerFunctionsTest() {
                 hilog.info(domain, tag, "getIpInfo serverIp:" + JSON.stringify(info.serverIp));
                 hilog.info(domain, tag, "getIpInfo leaseDuration:" + JSON.stringify(info.leaseDuration));
                 expect(true).assertEqual(info != null);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getIpInfo get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -577,7 +594,8 @@ export default function actsWifiManagerFunctionsTest() {
                 } else {
                     expect().assertFail();
                 }
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "getScanInfoList get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getScanInfoList get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -603,7 +621,8 @@ export default function actsWifiManagerFunctionsTest() {
                 let metered: boolean = wifiManager.isMeteredHotspot();
                 hilog.info(domain, tag, "isMeteredHotspot:" + JSON.stringify(metered));
                 expect(metered).assertFalse();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "isMeteredHotspot get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "isMeteredHotspot get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -638,7 +657,8 @@ export default function actsWifiManagerFunctionsTest() {
                 hilog.info(domain, tag, "getIpv6Info primaryDNS:" + JSON.stringify(info.primaryDNS));
                 hilog.info(domain, tag, "getIpv6Info secondDNS:" + JSON.stringify(info.secondDNS));
                 expect(true).assertEqual(info != null);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getIpv6Info get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -664,7 +684,8 @@ export default function actsWifiManagerFunctionsTest() {
                 let level: int = wifiManager.getSignalLevel(0 ,0);
                 hilog.info(domain, tag, 'getSignalLevel success result:' + level);
                 expect(true).assertEqual(level >= 0 && level <= 4);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getSignalLevel get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -712,7 +733,8 @@ export default function actsWifiManagerFunctionsTest() {
                     expect(true).assertEqual(data != null);
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getLinkedInfo promise get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -760,7 +782,8 @@ export default function actsWifiManagerFunctionsTest() {
                             done();
                         }
                     }
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                     expect().assertFail();
                     done();
@@ -787,7 +810,8 @@ export default function actsWifiManagerFunctionsTest() {
                     expect(true).assertEqual(data != null);
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getP2pLinkedInfo promise get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -824,7 +848,8 @@ export default function actsWifiManagerFunctionsTest() {
                     expect(true).assertEqual(data != null);
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getCurrentGroup promise get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -860,7 +885,8 @@ export default function actsWifiManagerFunctionsTest() {
                         done();
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getP2pPeerDevices promise get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -888,7 +914,8 @@ export default function actsWifiManagerFunctionsTest() {
                     expect(true).assertEqual(data != null);
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getP2pLocalDevice promise get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -981,7 +1008,8 @@ export default function actsWifiManagerFunctionsTest() {
                     expect(true).assertEqual(configs.length == 0);
                 }
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "DeviceConfig promise get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -1043,7 +1071,8 @@ export default function actsWifiManagerFunctionsTest() {
                     expect(true).assertEqual(configs.length == 0);
                 }
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "CandidateConfig promise get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -1081,7 +1110,8 @@ export default function actsWifiManagerFunctionsTest() {
                 hilog.info(domain, tag, 'getLinkedInfoSync success result macAddress:' + infoSync.macAddress);
                 hilog.info(domain, tag, 'getLinkedInfoSync success result band:' + infoSync.band);
                 hilog.info(domain, tag, 'getLinkedInfoSync success result supportedWifiCategory:' + infoSync.supportedWifiCategory);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getLinkedInfoSync get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -1106,7 +1136,8 @@ export default function actsWifiManagerFunctionsTest() {
             try {
                 let multiLinkedInfo: Array<wifiManager.WifiLinkedInfo> = wifiManager.getMultiLinkedInfo();
                 hilog.info(domain, tag, 'getMultiLinkedInfo success result:' + JSON.stringify(multiLinkedInfo));
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getMultiLinkedInfo get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -1132,7 +1163,8 @@ export default function actsWifiManagerFunctionsTest() {
                 let supported: boolean = wifiManager.isFeatureSupported(0);
                 hilog.info(domain, tag, 'isFeatureSupported success result:' + JSON.stringify(supported));
                 expect(supported).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "isFeatureSupported get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -1158,7 +1190,8 @@ export default function actsWifiManagerFunctionsTest() {
                 let addr: string[] = wifiManager.getDeviceMacAddress();
                 hilog.info(domain, tag, 'getDeviceMacAddress success result:' + JSON.stringify(addr));
                 expect(true).assertEqual(addr != null);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getDeviceMacAddress get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -1184,7 +1217,8 @@ export default function actsWifiManagerFunctionsTest() {
                 let countryCode: string = wifiManager.getCountryCode();
                 hilog.info(domain, tag, 'getCountryCode success result:' + JSON.stringify(countryCode));
                 expect(countryCode).assertEqual("CN");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getCountryCode get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -1209,7 +1243,8 @@ export default function actsWifiManagerFunctionsTest() {
             try {
                 let supported: boolean = wifiManager.isBandTypeSupported(wifiManager.WifiBandType.WIFI_BAND_NONE);
                 hilog.info(domain, tag, 'isBandTypeSupported success result:' + JSON.stringify(supported));
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "isBandTypeSupported get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -1269,7 +1304,8 @@ export default function actsWifiManagerFunctionsTest() {
                 wifiManager.removeGroup();
                 await Utils.msSleep(1000);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "p2pGroupTest get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -1293,7 +1329,8 @@ export default function actsWifiManagerFunctionsTest() {
                 let apActive: boolean = wifiManager.isHotspotActive();
                 hilog.info(domain, tag, 'isHotspotActive success result:' + JSON.stringify(apActive));
                 expect(apActive).assertFalse();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "isHotspotActive get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -1322,7 +1359,8 @@ export default function actsWifiManagerFunctionsTest() {
                 hilog.info(domain, tag, 'stopDiscoverDevices start.');
                 wifiManager.stopDiscoverDevices();
                 await Utils.msSleep(1000);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "p2pDiscoverDevicesTest get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -1349,7 +1387,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onWifiStateChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "wifiStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1361,7 +1400,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offWifiStateChange();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "wifiStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1387,7 +1427,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onWifiStateChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "wifiStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1399,7 +1440,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offWifiStateChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "wifiStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1425,7 +1467,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onP2pDiscoveryChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pDiscoveryChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1437,7 +1480,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offP2pDiscoveryChange();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pDiscoveryChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1463,7 +1507,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onP2pDiscoveryChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pDiscoveryChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1475,7 +1520,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offP2pDiscoveryChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pDiscoveryChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1501,7 +1547,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onP2pPersistentGroupChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pPersistentGroupChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1513,7 +1560,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offP2pPersistentGroupChange();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pPersistentGroupChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1539,7 +1587,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onP2pPersistentGroupChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pPersistentGroupChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1551,7 +1600,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offP2pPersistentGroupChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pPersistentGroupChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1577,7 +1627,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onP2pPeerDeviceChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pPeerDeviceChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1589,7 +1640,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offP2pPeerDeviceChange();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pPeerDeviceChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1615,7 +1667,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onP2pPeerDeviceChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pPeerDeviceChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1627,7 +1680,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offP2pPeerDeviceChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pPeerDeviceChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1653,7 +1707,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onWifiScanStateChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "wifiScanStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1665,7 +1720,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offWifiScanStateChange();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "wifiScanStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1691,7 +1747,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onWifiScanStateChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "wifiScanStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1703,7 +1760,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offWifiScanStateChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "wifiScanStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1729,7 +1787,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onWifiConnectionChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "wifiConnectionChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1741,7 +1800,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offWifiConnectionChange();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "wifiConnectionChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1767,7 +1827,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onWifiConnectionChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "wifiConnectionChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1779,7 +1840,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offWifiConnectionChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "wifiConnectionChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1815,7 +1877,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onP2pDeviceChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pDeviceChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1827,7 +1890,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offP2pDeviceChange();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pDeviceChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1853,7 +1917,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onP2pDeviceChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pDeviceChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1865,7 +1930,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offP2pDeviceChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pDeviceChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1894,7 +1960,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onP2pConnectionChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pConnectionChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1906,7 +1973,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offP2pConnectionChange();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pConnectionChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1932,7 +2000,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onP2pConnectionChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pConnectionChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1944,7 +2013,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offP2pConnectionChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pConnectionChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1970,7 +2040,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onP2pStateChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -1982,7 +2053,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offP2pStateChange();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -2008,7 +2080,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onP2pStateChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -2020,7 +2093,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offP2pStateChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "p2pStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -2046,7 +2120,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onHotspotStateChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "hotspotStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -2058,7 +2133,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offHotspotStateChange();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "hotspotStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -2084,7 +2160,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onHotspotStateChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "hotspotStateChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -2096,7 +2173,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offHotspotStateChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "hotspotStateChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -2122,7 +2200,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onWifiRssiChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "wifiRssiChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -2134,7 +2213,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offWifiRssiChange();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "wifiRssiChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -2160,7 +2240,8 @@ export default function actsWifiManagerFunctionsTest() {
             }
             try{
                 wifiManager.onWifiRssiChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "wifiRssiChange on get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -2172,7 +2253,8 @@ export default function actsWifiManagerFunctionsTest() {
             await Utils.msSleep(1000);
             try{
                 wifiManager.offWifiRssiChange(onReceiveEvent);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "wifiRssiChange off get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -2198,7 +2280,8 @@ export default function actsWifiManagerFunctionsTest() {
                     hilog.info(domain, tag, 'getCurrentGroupCallback success result:' + JSON.stringify(data));
                 });
                 expect().assertFail();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -2223,7 +2306,8 @@ export default function actsWifiManagerFunctionsTest() {
                 await CallbackMethods.getP2pLinkedInfoCallback().then((data: wifiManager.WifiP2pLinkedInfo) => {
                     hilog.info(domain, tag, 'getP2pLinkedInfoCallback success result:' + JSON.stringify(data));
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -2248,7 +2332,8 @@ export default function actsWifiManagerFunctionsTest() {
                 await CallbackMethods.getP2pPeerDevicesCallback().then((data: wifiManager.WifiP2pDevice[]) => {
                     hilog.info(domain, tag, 'getP2pPeerDevicesCallback success result:' + JSON.stringify(data));
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -2273,7 +2358,8 @@ export default function actsWifiManagerFunctionsTest() {
                 await CallbackMethods.getP2pLocalDeviceCallback().then((data: wifiManager.WifiP2pDevice) => {
                     hilog.info(domain, tag, 'getP2pLocalDeviceCallback success result:' + JSON.stringify(data));
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'use callback api get err:' + JSON.stringify(err));
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -2321,7 +2407,8 @@ export default function actsWifiManagerFunctionsTest() {
                 } else {
                     expect(true).assertEqual(configs.length == 0);
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'use api get err:' + JSON.stringify(err));
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');
@@ -2355,7 +2442,8 @@ export default function actsWifiManagerFunctionsTest() {
                     expect(data).assertTrue();
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'use api get err:' + JSON.stringify(err));
                 if (err.code == 801) {
                     hilog.info(domain, tag, 'api is not support');

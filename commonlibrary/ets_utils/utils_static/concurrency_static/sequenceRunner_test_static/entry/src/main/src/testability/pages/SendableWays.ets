@@ -123,7 +123,8 @@ export class AsyncLockTestCatch {
         let s: string[] = []
         s[0].split('')[1].toString()
       })
-    } catch(e: BusinessError) {
+    } catch(e) {
+      e = e as BusinessError;
       let s: string[] = []
       s[0].split('')[1].toString()
     }

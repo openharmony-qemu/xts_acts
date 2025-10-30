@@ -78,7 +78,8 @@ struct webController {
                   stopCalled = true
                 }
                 Utils.emitEvent(stopCalled, 31007)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 31007)
               }

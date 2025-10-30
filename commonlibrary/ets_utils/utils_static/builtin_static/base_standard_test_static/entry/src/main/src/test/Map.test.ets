@@ -51,7 +51,8 @@ export default function MapTest() {
         const result = map1.size;
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -75,7 +76,8 @@ export default function MapTest() {
         const result = map1.size;
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -97,7 +99,8 @@ export default function MapTest() {
         const result = map1.size;
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -120,7 +123,8 @@ export default function MapTest() {
         const result = map1.has('bar');
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -142,7 +146,8 @@ export default function MapTest() {
         const result = map1.has('bar');
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -164,7 +169,8 @@ export default function MapTest() {
         const result = map1.has('bar');
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -188,7 +194,8 @@ export default function MapTest() {
         console.log(`${TAG} result:` + JSON.stringify(iterator1));
         expect(JSON.stringify(iterator1.next().value)).assertEqual('["0","foo"]');
         expect(JSON.stringify(iterator1.next().value)).assertEqual('["1","bar"]');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -221,7 +228,8 @@ export default function MapTest() {
           ['baz', undefined],
         ]);
         myMap.forEach(logMapElements);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -243,7 +251,8 @@ export default function MapTest() {
         const result = map1.get('bar');
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('foo');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -265,7 +274,8 @@ export default function MapTest() {
         const result = map1.get('baz');
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -335,7 +345,8 @@ export default function MapTest() {
         const result = map1.has('bar');
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -357,7 +368,8 @@ export default function MapTest() {
         const result = map1.has('baz');
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -381,7 +393,8 @@ export default function MapTest() {
         console.log(`${TAG} result:` + JSON.stringify(iterator1));
         expect(String(iterator1.next().value)).assertEqual('0');
         expect(String(iterator1.next().value)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -403,7 +416,8 @@ export default function MapTest() {
         const result = map1.get('bar');
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual("foo");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -425,7 +439,8 @@ export default function MapTest() {
         const result = map1.get('baz');
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -449,7 +464,8 @@ export default function MapTest() {
         const result = myMap.get('bar');
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual("baz");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -473,7 +489,8 @@ export default function MapTest() {
         const result = myMap.get('1');
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual("foobar");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -497,7 +514,8 @@ export default function MapTest() {
         const result = myMap.get('2');
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -519,7 +537,8 @@ export default function MapTest() {
         const result = myMap.get('bar');
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual("foo");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -541,7 +560,8 @@ export default function MapTest() {
         const result = myMap.get('1');
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual("foobar");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -563,7 +583,8 @@ export default function MapTest() {
         const result = myMap.get('2');
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual("baz");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -585,7 +606,8 @@ export default function MapTest() {
         const result = myMap.get('3');
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -615,7 +637,8 @@ export default function MapTest() {
             expect(JSON.stringify(item)).assertEqual('["1","bar"]');
           }
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -639,7 +662,8 @@ export default function MapTest() {
         console.log(`${TAG} result:` + JSON.stringify(iterator1));
         expect(String(iterator1.next().value)).assertEqual('foo');
         expect(String(iterator1.next().value)).assertEqual('bar');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
