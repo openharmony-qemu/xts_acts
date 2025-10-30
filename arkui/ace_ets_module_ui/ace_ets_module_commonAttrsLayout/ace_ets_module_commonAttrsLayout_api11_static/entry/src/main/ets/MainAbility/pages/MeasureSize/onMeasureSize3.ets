@@ -116,13 +116,13 @@ struct CustomLayout {
     let size = 100;
     children.forEach((child, child_index) => {
       if (child_index != 2) {
-        let result: MeasureResult = child.measure({
+        let res: MeasureResult = child.measure({
           minHeight: size,
           minWidth: size,
           maxWidth: size,
           maxHeight: size
         })
-        size += result.width / 2;
+        size += res.width / 2;
       }
     })
     this.result.width = 100;
