@@ -200,5 +200,75 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
         }
       })
 
+    /*
+     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_008
+     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_008
+     * @tc.desc:test updateReminder function errorCode is 1700003
+     * @tc.level:Level 3
+     * @tc.type:Function
+     * @tc.size:MediumTest
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_008',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+
+        reminderAgentManager.cancelAllReminders().then(() => {
+          console.log("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_008 cancelAllReminders promise")
+        }).catch((err: Error) => {
+          console.error("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_008 promise err code:" + err?.code + " message:" + err?.message);
+        });
+        const reminderId: int = 1231;
+        let timer: reminderAgentManager.ReminderRequestTimer = {
+          reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+          triggerTimeInSeconds: 10
+        };
+        try {
+          reminderAgentManager.updateReminder(reminderId, timer).then(() => {
+            console.log("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_008 addExcludeDate promise");
+          }).catch((err: Error) => {
+            console.error("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_008 promise err code:" + err.code + " message:" + err.message);
+            expect(err.code == 1700003).assertTrue();
+            done();
+          });
+        } catch (error: BusinessError) {
+          console.info("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_008 updateReminder error.code:" + error.code);
+        }
+      })
+
+    /*
+     * @tc.number:SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_009
+     * @tc.name:SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_009
+     * @tc.desc:test updateReminder function errorCode is 1700007
+     * @tc.level:Level 3
+     * @tc.type:Function
+     * @tc.size:MediumTest
+     */
+    it('SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_009',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+
+        reminderAgentManager.cancelAllReminders().then(() => {
+          console.log("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_009 cancelAllReminders promise")
+        }).catch((err: Error) => {
+          console.error("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_009 promise err code:" + err?.code + " message:" + err?.message);
+        });
+        const reminderId: int = -1;
+        let timer: reminderAgentManager.ReminderRequestTimer = {
+          reminderType: reminderAgentManager.ReminderType.REMINDER_TYPE_TIMER,
+          triggerTimeInSeconds: 10
+        }
+        try {
+          reminderAgentManager.updateReminder(reminderId, timer).then(() => {
+            console.log("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_009 addExcludeDate promise");
+          }).catch((err: Error) => {
+            console.error("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_009 promise err code:" + err.code + " message:" + err.message);
+            expect(err.code == 1700007).assertTrue();
+            done();
+          });
+        } catch (error: BusinessError) {
+          console.info("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_009 updateReminder error.code:" + error.code);
+        }
+      })
+
   })
 }
