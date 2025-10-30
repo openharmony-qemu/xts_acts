@@ -164,5 +164,63 @@ export default function PathEffect2() {
         })
       })
 
+    /**
+     * @tc.number     SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_EFFECT_0500
+     * @tc.name       SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_EFFECT_0500
+     * @tc.desc       The Interface of drawing
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_EFFECT_0500',
+     TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+      let msg = " ====testPathEffectCreatePathDashEffect==== "
+      const color = new ArrayBuffer(96);
+      let opts : image.InitializationOptions = {
+        editable: true,
+        pixelFormat: 3,
+        size: {
+          height: 4,
+          width: 6
+        }
+      }
+      image.createPixelMap(color, opts).then((pixelMap) => {
+        const canvas = new drawing.Canvas(pixelMap);
+        let pen = new drawing.Pen();
+        const penColor: common2D.Color = { alpha: 255, red: 255, green: 0, blue: 0 }
+        pen.setColor(penColor);
+        pen.setStrokeWidth(10);
+        canvas.attachPen(pen);
+        pen.setAntiAlias(true);
+
+        const path = new drawing.Path();
+        path.moveTo(100, 100);
+        path.lineTo(150, 50);
+        path.lineTo(200, 100);
+
+        const path1 = new drawing.Path();
+        path1.moveTo(0, 0);
+        path1.lineTo(10, 0);
+        path1.lineTo(20, 10);
+        path1.lineTo(0,10);
+
+        let pathEffect1: drawing.PathEffect = drawing.PathEffect.createPathDashEffect(path1, 50, -30,
+            drawing.PathDashStyle.MORPH);
+        pen.setPathEffect(pathEffect1);
+
+        canvas.attachPen(pen);
+        canvas.drawPath(path);
+        canvas.detachPen();
+        console.info(msg + ' drawing.PathEffect.createPathDashEffect: ' + pathEffect1);
+        console.info(msg + ' drawing.PathEffect.createPathDashEffect: ' + JSON.stringify(pathEffect1));
+        done()
+      }).catch((err: BusinessError) => {
+        console.log(msg + " Failed in drawing.PathEffect.createPathDashEffect " + JSON.stringify(err))
+        console.log(msg + " Failed in drawing.PathEffect.createPathDashEffect " + err)
+        expect().assertFail()
+        done()
+      })
+    })
+
   })
 }
