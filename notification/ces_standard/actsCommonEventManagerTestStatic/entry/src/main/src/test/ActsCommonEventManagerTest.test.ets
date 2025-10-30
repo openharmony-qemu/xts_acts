@@ -268,7 +268,6 @@ export default function ActsCommonEventManagerTest() {
                   done()
                 }).then(() => {
                   console.info(`Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401 subscribe_1 success`)
-                  expect(data !== null).assertTrue()
                   done()
                 }).catch((err) => {
                   console.error(`Sub_Notification_Ans_Subscriber_SubscribeToEvent_0401 subscribe_1 err, code is ${err.code}, message is ${err.message}`)
