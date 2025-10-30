@@ -236,7 +236,7 @@ export default function audioRendererTest() {
         }
         return audio.AudioDataCallbackResult.VALID;
       };
-      audioRen.on('writeData', writeDataCallback);
+      audioRen.onWriteData(writeDataCallback);
 
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
@@ -257,7 +257,7 @@ export default function audioRendererTest() {
         done();
       });
       console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
-      audioRen.off('writeData', writeDataCallback);
+      audioRen.offWriteData(writeDataCallback);
       await Utils.msSleep(2000);
 
       await audioRen.release().then(() => {
@@ -1122,7 +1122,7 @@ export default function audioRendererTest() {
         }
         return audio.AudioDataCallbackResult.VALID;
       };
-      audioRen.on('writeData', writeDataCallback);
+      audioRen.onWriteData(writeDataCallback);
 
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
@@ -1191,7 +1191,7 @@ export default function audioRendererTest() {
         resultFlag = true;
         return resultFlag;
       }
-      audioRen.on('markReach', 55, (position: long) => {
+      audioRen.onMarkReach(55, (position: long) => {
         console.log(`${TagFrmwk}: markReach Event is called :  ${position}`);
         resultFlag = true;
       })
@@ -1227,7 +1227,7 @@ export default function audioRendererTest() {
         }
         return audio.AudioDataCallbackResult.VALID;
       };
-      audioRen.on('writeData', writeDataCallback);
+      audioRen.onWriteData(writeDataCallback);
 
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
@@ -1291,15 +1291,15 @@ export default function audioRendererTest() {
         resultFlag = true;
         return resultFlag;
       }
-      audioRen.on('markReach', 55, (position: long) => {
+      audioRen.onMarkReach(55, (position: long) => {
         console.log(`${TagFrmwk}: markReach Event is called :  ${position}`);
-        audioRen.off('markReach');
+        audioRen.offMarkReach();
         expect(true).assertTrue();
       });
-      audioRen.on('markReach', 100, (position: long) => {
+      audioRen.onMarkReach(100, (position: long) => {
         console.log(`${TagFrmwk}: markReach Event is called :  ${position}`);
         resultFlag = true;
-        audioRen.off('markReach');
+        audioRen.offMarkReach();
       });
       console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
 
@@ -1328,7 +1328,7 @@ export default function audioRendererTest() {
         }
         return audio.AudioDataCallbackResult.VALID;
       };
-      audioRen.on('writeData', writeDataCallback);
+      audioRen.onWriteData(writeDataCallback);
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
       await audioRen.start().then(() => {
@@ -1390,10 +1390,10 @@ export default function audioRendererTest() {
         resultFlag = true;
         return resultFlag;
       }
-      audioRen.on('markReach', 55, (position: long) => {
+      audioRen.onMarkReach(55, (position: long) => {
         console.log(`${TagFrmwk}: markReach Event is called :  ${position}`);
         resultFlag = true;
-        audioRen.on('markReach', 73, (position: long) => {
+        audioRen.onMarkReach(73, (position: long) => {
           console.log(`${TagFrmwk}: markReach Event is called :  ${position}`);
           resultFlag = true;
         });
@@ -1427,7 +1427,7 @@ export default function audioRendererTest() {
         }
         return audio.AudioDataCallbackResult.VALID;
       };
-      audioRen.on('writeData', writeDataCallback);
+      audioRen.onWriteData(writeDataCallback);
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
       await audioRen.start().then(() => {
@@ -1490,10 +1490,10 @@ export default function audioRendererTest() {
         resultFlag = true;
         return resultFlag;
       }
-      audioRen.on('periodReach', 55, (position: long) => {
+      audioRen.onPeriodReach(55, (position: long) => {
         console.log(`${TagFrmwk}: periodReach Event is called : ${position}`);
         resultFlag = true;
-        audioRen.off('periodReach');
+        audioRen.offPeriodReach();
       });
 
       console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
@@ -1524,7 +1524,7 @@ export default function audioRendererTest() {
         }
         return audio.AudioDataCallbackResult.VALID;
       };
-      audioRen.on('writeData', writeDataCallback);
+      audioRen.onWriteData(writeDataCallback);
 
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
@@ -1586,18 +1586,18 @@ export default function audioRendererTest() {
         resultFlag = true;
         return resultFlag;
       }
-      audioRen.on('periodReach', 55, (position: long) => {
+      audioRen.onPeriodReach(55, (position: long) => {
         console.log(`${TagFrmwk}: periodReach Event is called : ${position}`);
         resultFlag = true;
         expect(true).assertTrue();
-        audioRen.off('periodReach');
+        audioRen.offPeriodReach();
 
       });
-      audioRen.on('periodReach', 100, (position: long) => {
+      audioRen.onPeriodReach(100, (position: long) => {
         console.log(`${TagFrmwk}: periodReach Event is called : ${position}`);
         resultFlag = true;
         expect(true).assertTrue();
-        audioRen.off('periodReach');
+        audioRen.offPeriodReach();
       });
 
       console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
@@ -1628,7 +1628,7 @@ export default function audioRendererTest() {
         }
         return audio.AudioDataCallbackResult.VALID;
       };
-      audioRen.on('writeData', writeDataCallback);
+      audioRen.onWriteData(writeDataCallback);
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
       await audioRen.start().then(() => {
@@ -1690,11 +1690,11 @@ export default function audioRendererTest() {
         resultFlag = true;
         return resultFlag;
       }
-      audioRen.on('periodReach', 55, (position: long) => {
+      audioRen.onPeriodReach(55, (position: long) => {
         console.log(`${TagFrmwk}: periodReach Event is called : ${position}`);
         resultFlag = true;
         try {
-          audioRen.on('periodReach', 73, (position: long) => {
+          audioRen.onPeriodReach(73, (position: long) => {
             console.log(`${TagFrmwk}: periodReach Event is called : ${position}`);
             resultFlag = false;
           });
@@ -1732,7 +1732,7 @@ export default function audioRendererTest() {
         }
         return audio.AudioDataCallbackResult.VALID;
       };
-      audioRen.on('writeData', writeDataCallback);
+      audioRen.onWriteData(writeDataCallback);
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
       await audioRen.start().then(() => {
@@ -1931,7 +1931,7 @@ export default function audioRendererTest() {
         return audio.AudioDataCallbackResult.VALID;
       };
       try {
-        audioRen.on('writeData', writeDataCallback);
+        audioRen.onWriteData(writeDataCallback);
         console.info(`${TagFrmwkRender}:BufferAudioFramework: Buff write successful`);
         resultFlag = true;
       } catch (err: BusinessError) {
@@ -2018,7 +2018,7 @@ export default function audioRendererTest() {
         done();
       });
 
-      audioRen.on('writeData', (buffer: ArrayBuffer): audio.AudioDataCallbackResult => {
+      audioRen.onWriteData((buffer: ArrayBuffer): audio.AudioDataCallbackResult => {
         console.info(`${TagFrmwkRender}: writeDataCallback : ${buffer.byteLength}`);
         return audio.AudioDataCallbackResult.VALID;
       });
@@ -2088,7 +2088,7 @@ export default function audioRendererTest() {
         done();
       });
 
-      audioRen.on('writeData', (buffer: ArrayBuffer): audio.AudioDataCallbackResult => {
+      audioRen.onWriteData((buffer: ArrayBuffer): audio.AudioDataCallbackResult => {
         console.info(`${TagFrmwkRender}: writeDataCallback : ${buffer.byteLength}`);
         return audio.AudioDataCallbackResult.VALID;
       });
@@ -2158,7 +2158,7 @@ export default function audioRendererTest() {
         done();
       });
 
-      audioRen.on('writeData', (buffer: ArrayBuffer): audio.AudioDataCallbackResult => {
+      audioRen.onWriteData((buffer: ArrayBuffer): audio.AudioDataCallbackResult => {
         console.info(`${TagFrmwkRender}: writeDataCallback : ${buffer.byteLength}`);
         return audio.AudioDataCallbackResult.INVALID;
       });
@@ -2225,7 +2225,7 @@ export default function audioRendererTest() {
         rendererInfo: audioRendererInfo
       }
       let audioRender = await audio.createAudioRenderer(audioRendererOptions);
-      audioRender.on('outputDeviceChangeWithInfo', (deviceChangeInfo: audio.AudioStreamDeviceChangeInfo) => {
+      audioRender.onOutputDeviceChangeWithInfo((deviceChangeInfo: audio.AudioStreamDeviceChangeInfo) => {
         console.info(`${TagFrmwkRender}: devices: ${JSON.stringify(deviceChangeInfo.devices)}`);
         console.info(`${TagFrmwkRender}: changeReason: ${JSON.stringify(deviceChangeInfo.changeReason)}`);
       });
@@ -2251,6 +2251,10 @@ export default function audioRendererTest() {
       expect(audio.AudioStreamDeviceChangeReason.REASON_OLD_DEVICE_UNAVAILABLE == 2).assertTrue();
       console.info(`${TagFrmwkRender}: AudioStreamDeviceChangeReason: ${JSON.stringify(audio.AudioStreamDeviceChangeReason.REASON_OVERRODE)}`);
       expect(audio.AudioStreamDeviceChangeReason.REASON_OVERRODE == 3).assertTrue();
+      console.info(`AudioStreamDeviceChangeReason: ${JSON.stringify(audio.AudioStreamDeviceChangeReason.REASON_SESSION_ACTIVATED)}`);
+      expect(audio.AudioStreamDeviceChangeReason.REASON_SESSION_ACTIVATED).assertEqual(4);
+      console.info(`AudioStreamDeviceChangeReason: ${JSON.stringify(audio.AudioStreamDeviceChangeReason.REASON_STREAM_PRIORITY_CHANGED)}`);
+      expect(audio.AudioStreamDeviceChangeReason.REASON_STREAM_PRIORITY_CHANGED).assertEqual(5);
       done();
     })
 
@@ -3053,7 +3057,7 @@ export default function audioRendererTest() {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         });
 
-        audioRen.on('audioInterrupt', (interruptEvent: audio.InterruptEvent) => {
+        audioRen.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.info("AudioFrameworkRenderLog: InterruptType : " + interruptEvent.eventType);
           console.info("AudioFrameworkRenderLog: InterruptForceType : " + interruptEvent.forceType);
           console.info("AudioFrameworkRenderLog: InterruptHint : " + interruptEvent.hintType);
@@ -3151,7 +3155,7 @@ export default function audioRendererTest() {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         });
 
-        audioRen.on('audioInterrupt', (interruptEvent: audio.InterruptEvent) => {
+        audioRen.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.info("AudioFrameworkRenderLog: InterruptType : " + interruptEvent.eventType);
           console.info("AudioFrameworkRenderLog: InterruptForceType : " + interruptEvent.forceType);
           console.info("AudioFrameworkRenderLog: InterruptHint : " + interruptEvent.hintType);
@@ -3247,7 +3251,7 @@ export default function audioRendererTest() {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         });
 
-        audioRen.on('audioInterrupt', (interruptEvent: audio.InterruptEvent) => {
+        audioRen.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.info("AudioFrameworkRenderLog: InterruptType : " + interruptEvent.eventType);
           console.info("AudioFrameworkRenderLog: InterruptForceType : " + interruptEvent.forceType);
           console.info("AudioFrameworkRenderLog: InterruptHint : " + interruptEvent.hintType);
@@ -3343,7 +3347,7 @@ export default function audioRendererTest() {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         });
 
-        audioRen.on('audioInterrupt', (interruptEvent: audio.InterruptEvent) => {
+        audioRen.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.info("AudioFrameworkRenderLog: InterruptType : " + interruptEvent.eventType);
           console.info("AudioFrameworkRenderLog: InterruptForceType : " + interruptEvent.forceType);
           console.info("AudioFrameworkRenderLog: InterruptHint : " + interruptEvent.hintType);
@@ -3439,7 +3443,7 @@ export default function audioRendererTest() {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         });
 
-        audioRen.on('audioInterrupt', (interruptEvent: audio.InterruptEvent) => {
+        audioRen.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.info("AudioFrameworkRenderLog: InterruptType : " + interruptEvent.eventType);
           console.info("AudioFrameworkRenderLog: InterruptForceType : " + interruptEvent.forceType);
           console.info("AudioFrameworkRenderLog: InterruptHint : " + interruptEvent.hintType);
@@ -3535,7 +3539,7 @@ export default function audioRendererTest() {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         });
 
-        audioRen.on('audioInterrupt', (interruptEvent: audio.InterruptEvent) => {
+        audioRen.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.info("AudioFrameworkRenderLog: InterruptType : " + interruptEvent.eventType);
           console.info("AudioFrameworkRenderLog: InterruptForceType : " + interruptEvent.forceType);
           console.info("AudioFrameworkRenderLog: InterruptHint : " + interruptEvent.hintType);
@@ -3630,7 +3634,7 @@ export default function audioRendererTest() {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         });
 
-        audioRen.on('audioInterrupt', (interruptEvent: audio.InterruptEvent) => {
+        audioRen.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.info("AudioFrameworkRenderLog: InterruptType : " + interruptEvent.eventType);
           console.info("AudioFrameworkRenderLog: InterruptForceType : " + interruptEvent.forceType);
           console.info("AudioFrameworkRenderLog: InterruptHint : " + interruptEvent.hintType);
@@ -3725,7 +3729,7 @@ export default function audioRendererTest() {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         });
 
-        audioRen.on('audioInterrupt', (interruptEvent: audio.InterruptEvent) => {
+        audioRen.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.info("AudioFrameworkRenderLog: InterruptType : " + interruptEvent.eventType);
           console.info("AudioFrameworkRenderLog: InterruptForceType : " + interruptEvent.forceType);
           console.info("AudioFrameworkRenderLog: InterruptHint : " + interruptEvent.hintType);
@@ -8718,7 +8722,7 @@ export default function audioRendererTest() {
         });
       }
 
-      audioRenderer.on('stateChange', (state: audio.AudioState) => {
+      audioRenderer.onStateChange((state: audio.AudioState) => {
         console.info(`${TagFrmwkRender}: ${TagFrmwk}: Volume Change Event is called`);
         switch (state) {
           case audio.AudioState.STATE_RELEASED:
@@ -8797,7 +8801,7 @@ export default function audioRendererTest() {
         });
       }
 
-      audioRen.on('stateChange', (AudioState: audio.AudioState) => {
+      audioRen.onStateChange((AudioState: audio.AudioState) => {
 
         console.log(`${TagFrmwk}: Volume Change Event is called`);
 
@@ -8894,7 +8898,7 @@ export default function audioRendererTest() {
         });
       }
 
-      audioRen.on('stateChange', (AudioState: audio.AudioState) => {
+      audioRen.onStateChange((AudioState: audio.AudioState) => {
 
         console.log(`${TagFrmwk}: Volume Change Event is called`);
 
@@ -8993,7 +8997,7 @@ export default function audioRendererTest() {
         });
       }
 
-      audioRen.on('stateChange', (AudioState: audio.AudioState) => {
+      audioRen.onStateChange((AudioState: audio.AudioState) => {
 
         console.log(`${TagFrmwk}: Volume Change Event is called`);
 
@@ -9091,7 +9095,7 @@ export default function audioRendererTest() {
           resolve(undefined);
         });
       }
-      audioRen.on('stateChange', (AudioState: audio.AudioState) => {
+      audioRen.onStateChange((AudioState: audio.AudioState) => {
 
         console.log(`${TagFrmwk}: Volume Change Event is called`);
 
@@ -9250,7 +9254,7 @@ export default function audioRendererTest() {
           resolve(undefined);
         });
       }
-      audioRen.on('stateChange', (AudioState: audio.AudioState) => {
+      audioRen.onStateChange((AudioState: audio.AudioState) => {
 
         console.log(`${TagFrmwk}: Volume Change Event is called`);
 
@@ -11009,7 +11013,7 @@ export default function audioRendererTest() {
         });
       }
 
-      audioRen.on('stateChange', (AudioState: audio.AudioState) => {
+      audioRen.onStateChange((AudioState: audio.AudioState) => {
 
         console.log(`${TagFrmwk}: Volume Change Event is called`);
 
@@ -11151,11 +11155,15 @@ export default function audioRendererTest() {
         rendererInfo: audioRendererInfo
       }
       let readPath = 'StarWars10s-1C-16000-2SW.wav'
-      await getFdRead(readPath, done);
-      await playbackWriteDataCallback_003(audioRendererOptions, filePath, done);
-      await Utils.msSleep(100);
-      expect(true).assertTrue();
-      await closeFileDescriptor();
+      try {
+        await getFdRead(readPath, done);
+        await playbackWriteDataCallback_003(audioRendererOptions, filePath, done);
+        await Utils.msSleep(100);
+        await closeFileDescriptor();
+      } catch (err: BusinessError) {
+        console.info(`SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_STATIC_0300 : FAILED`);
+        expect(false).assertTrue();
+      }
       done();
     })
 
@@ -11310,5 +11318,185 @@ export default function audioRendererTest() {
       console.info('afterAll called')
       done();
     })
+
+    /**
+     *@tc.number      SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_ON_STATIC_0100
+     *@tc.name        SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_ON_STATIC_0100
+     *@tc.desc        on_streamVolumeChange
+     *@tc.size        MEDIUM
+     *@tc.type        Function
+     *@tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_ON_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let TAG:string = 'SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_ON_STATIC_0100';
+      //define manager
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+
+      //define audiorenderer Parameter
+      let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      console.info(`${TAG},createAudioRenderer SUCCESS`);
+      let minStreamVolumeValue:number = audioRenderer.getMinStreamVolumeSync();
+      console.info(`${TAG},getMinStreamVolumeSync SUCCESS,minStreamVolumeValue : ${minStreamVolumeValue}`);
+      try{
+        let streamVolumeChangeCB = (data:audio.StreamVolumeEvent) =>{
+          console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.streamUsage : ${data.streamUsage}`);
+          expect(data.streamUsage).assertEqual(StreamUsage);
+          console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.volume : ${data.volume}`);
+          expect(data.volume).assertEqual(minStreamVolumeValue);
+          console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.updateUi : ${data.updateUi}`);
+          done();
+        };
+        console.info(`${TAG},streamVolumeChangeCB SUCCESS`);
+
+        audioVolumeManager.onStreamVolumeChange(StreamUsage,streamVolumeChangeCB)
+        console.info(`${TAG},audioVolumeManager_on SUCCESS`);
+        await audioRenderer.setVolume(minStreamVolumeValue).then(() =>{
+          console.info(`${TAG},setVolume SUCCESS`);
+        }).catch(async(err: BusinessError) =>{
+          console.info(`${TAG},setVolume FAILED : ${err}`);
+        });
+        audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB);
+        console.info(`${TAG},audioVolumeManager_off SUCCESS`);
+        done();
+      } catch (error: BusinessError){
+        console.info(`${TAG},audioVolumeManager_off FAILED,error.code : ${error.code}, error.message : ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+      await audioRenderer.release().then(() => {
+        console.info(`AudioRenderer release : SUCCESS`);
+      }).catch(async (err: BusinessError) => {
+        console.info(`AudioRenderer release :ERROR : ${err.message}`);
+        expect(false).assertTrue();
+      });
+      console.info('afterAll called')
+      done();
+    })
+
+    /**
+     *@tc.number      SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_OFF_STATIC_0100
+     *@tc.name        SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_OFF_STATIC_0100
+     *@tc.desc        off_streamVolumeChange
+     *@tc.size        MEDIUM
+     *@tc.type        Function
+     *@tc.level       Level 1
+     */
+    it("SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_OFF_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let TAG:string = 'SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_OFF_STATIC_0100';
+      //define manager
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+
+      try{
+        let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
+        let streamVolumeChangeCB = (data:audio.StreamVolumeEvent) =>{
+          console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.streamUsage : ${data.streamUsage}`);
+          console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.volume : ${data.volume}`);
+          console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.updateUi : ${data.updateUi}`);
+          done();
+        };
+        console.info(`${TAG},streamVolumeChangeCB SUCCESS`);
+
+        audioVolumeManager.onStreamVolumeChange(StreamUsage,streamVolumeChangeCB)
+        console.info(`${TAG},audioVolumeManager_on SUCCESS`);
+        audioVolumeManager.offStreamVolumeChange(streamVolumeChangeCB)
+        console.info(`${TAG},audioVolumeManager_off SUCCESS`);
+        expect(true).assertTrue();
+        done();
+      } catch (error: BusinessError){
+        console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
+        expect(Number(error.code)).assertEqual(6800101);
+        done();
+      }
+    })
+
+    /**
+     *@tc.number      SUB_MULTIMEDIA_AUDIO_GETVOLUMEINUNITOFDBBYSTREAM_STATIC_0100
+     *@tc.name        SUB_MULTIMEDIA_AUDIO_GETVOLUMEINUNITOFDBBYSTREAM_STATIC_0100
+     *@tc.desc        getVolumeInUnitOfDbByStream
+     *@tc.size        MEDIUM
+     *@tc.type        Function
+     *@tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEINUNITOFDBBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let TAG:string = 'SUB_MULTIMEDIA_AUDIO_GETVOLUMEINUNITOFDBBYSTREAM_0100';
+      //define manager
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+
+      try{
+        let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
+        let volumeDb : double = audioVolumeManager.getVolumeInUnitOfDbByStream(StreamUsage,5,audio.DeviceType.SPEAKER)
+        console.error(`Gets the volume db value that system calculate by volume stream,volume level and device type success`);
+        expect(true).assertTrue();
+        done();
+      } catch (error: BusinessError) {
+        console.error(`${TagFrmwk},getDevucesSync FAILED,error:${error},ErrorCode:${error.code},${typeof (error.code)}`);
+        expect(Number(error.code)).assertEqual(6800101);
+        done();
+      }
+    })
+
+    /**
+     *@tc.number      SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0100
+     *@tc.name        SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0100
+     *@tc.desc        getVolumeByStream
+     *@tc.size        MEDIUM
+     *@tc.type        Function
+     *@tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let TAG:string = 'SUB_MULTIMEDIA_AUDIO_GETVOLUMEBYSTREAM_STATIC_0100';
+      //define manager
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+
+      //define audiorenderer Parameter
+      let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
+      let audioStreamInfo:audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo:audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION,
+        rendererFlags: 0
+      }
+      let audioRendererOptions:audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      console.info(`${TAG},createAudioRenderer SUCCESS`);
+      let StreamVolumeValue:int = audioVolumeManager.getVolumeByStream(StreamUsage);
+      console.info(`${TAG},getStreamVolume SUCCESS,StreamVolumeValue : ${StreamVolumeValue}`);
+
+      await audioRenderer.release().then(() => {
+        console.info(`AudioRenderer release : SUCCESS`);
+      }).catch(async(err:BusinessError) => {
+        console.info(`AudioRenderer release :ERROR : ${err.message}`);
+        expect(false).assertTrue();
+      });
+      console.info('afterAll called')
+      done();
+    })
+
   })
 }

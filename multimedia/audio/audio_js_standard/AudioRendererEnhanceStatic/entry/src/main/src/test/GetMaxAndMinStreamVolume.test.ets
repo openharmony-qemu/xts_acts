@@ -820,7 +820,6 @@ export default function audioRendererTest() {
           try {
             await audioRen.setVolume(minVolume!);
             console.info(`${TagFrmwkRender}:  setVolume to minVolume Success! minVolume: ${minVolume}`);
-            expect(true).assertTrue();
             done();
           } catch (err: BusinessError) {
             console.info(`${TagFrmwkRender}:  setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);

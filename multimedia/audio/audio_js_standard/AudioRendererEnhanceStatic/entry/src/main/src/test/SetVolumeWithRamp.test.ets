@@ -489,7 +489,6 @@ export default function audioRendererEnhanceTest() {
           }
           audioRen.setVolumeWithRamp(0, 1);
           console.info(`${Tag}: attachVolumeRamp renderPlay: SUCCESS`);
-          expect(true).assertTrue();
           done();
         } catch (err: BusinessError) {
           console.info(`${Tag}: attachVolumeRamp on renderPlay: error.code:${err.code}, error.message:${err.message}`);

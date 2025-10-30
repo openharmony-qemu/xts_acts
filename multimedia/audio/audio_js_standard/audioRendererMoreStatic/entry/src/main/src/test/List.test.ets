@@ -18,6 +18,7 @@ import audioRendererTestPc from './AudioRendererPc.test'
 import AudioRendererInterruptUnitTest from './AudioRenderInterrupt.test'
 import maxAmplitudeFor from './MaxAmplitudeFor.test'
 import audioSessionManagerTest from  './AudioSessionManager.test'
+import audioLoudnessGainTest from  './AudioLoudnessGain.test'
 
 export default function testsuite() {
   AudioRendererInterruptUnitTest();
@@ -25,5 +26,6 @@ export default function testsuite() {
   maxAmplitudeFor();
   audioRendererTestPc();
   audioSessionManagerTest();
+  audioLoudnessGainTest();
 }
 

@@ -105,9 +105,19 @@ const sessionDeactivatedEvent = (event: audio.AudioSessionDeactivatedEvent) => {
   expect(event.reason).assertEqual(DEACTIVATED_TIMEOUT);
 }
 
+const sessionStateChangedEvent = (event: audio.AudioSessionStateChangedEvent) => {
+  console.info(`sessionStateChanged stateChangeHint is :${event.stateChangeHint}`);
+}
+
+const sessionDeviceChangedChangedEvent = (event: audio.CurrentOutputDeviceChangedEvent) => {
+  console.info(`sessionDeviceChangedChanged recommendedAction is :${event.recommendedAction}`);
+  console.info(`sessionDeviceChangedChanged changeReason is :${event.changeReason}`);
+}
+
 export default function audioSessionManagerTest() {
   describe('AudioSessionManagerTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
+    let TAG = 'AudioSessionManagerTest';
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
       // This API supports only one parameter: preset action function.
@@ -117,13 +127,13 @@ export default function audioSessionManagerTest() {
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
       getSessionManager();
-      sessionManager.on('audioSessionDeactivated', sessionDeactivatedEvent);
+      sessionManager.onAudioSessionDeactivated(sessionDeactivatedEvent);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
-      sessionManager.off('audioSessionDeactivated', sessionDeactivatedEvent);
+      sessionManager.offAudioSessionDeactivated(sessionDeactivatedEvent);
     })
     afterAll(() => {
       // Presets a clear action, which is performed after all test cases of the test suite end.
@@ -272,7 +282,7 @@ export default function audioSessionManagerTest() {
     * @tc.level       Level3
     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      sessionManager.on('audioSessionDeactivated', (audioSessionDeactivatedEvent: audio.AudioSessionDeactivatedEvent) => {
+      sessionManager.onAudioSessionDeactivated((audioSessionDeactivatedEvent: audio.AudioSessionDeactivatedEvent) => {
         if(audioSessionDeactivatedEvent.reason === audio.AudioSessionDeactivatedReason.DEACTIVATED_LOWER_PRIORITY){
           console.info(`reason of audioSessionDeactivated: ${audioSessionDeactivatedEvent.reason} `);
         }else if(audioSessionDeactivatedEvent.reason === audio.AudioSessionDeactivatedReason.DEACTIVATED_TIMEOUT){
@@ -283,7 +293,7 @@ export default function audioSessionManagerTest() {
         concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
       }
       await activateAudioSession(strategy, done, !isDone);
-      sessionManager.off('audioSessionDeactivated', (audioSessionDeactivatedEvent: audio.AudioSessionDeactivatedEvent) => {
+      sessionManager.offAudioSessionDeactivated((audioSessionDeactivatedEvent: audio.AudioSessionDeactivatedEvent) => {
         if(audioSessionDeactivatedEvent.reason === audio.AudioSessionDeactivatedReason.DEACTIVATED_LOWER_PRIORITY){
           console.info(`reason of audioSessionDeactivated: ${audioSessionDeactivatedEvent.reason} `);
         }else if(audioSessionDeactivatedEvent.reason === audio.AudioSessionDeactivatedReason.DEACTIVATED_TIMEOUT){
@@ -291,6 +301,242 @@ export default function audioSessionManagerTest() {
         }
       });
       isAudioSessionActivatedTrue(done, isDone);
+    })
+
+    /**
+    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_11
+    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_11
+    * @tc.desc        test AudioSessionManager operation:调用AudioSessionManager注册事件和关闭注册事件覆盖参数
+    * @tc.size        AudioTest
+    * @tc.type        Function
+    * @tc.level       Level3
+    */
+    it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        sessionManager.onAudioSessionStateChanged((AudioSessionStateChangedEvent: audio.AudioSessionStateChangedEvent) => {
+        if (AudioSessionStateChangedEvent.stateChangeHint === audio.AudioSessionStateChangeHint.AUDIO_SESSION_STATE_CHANGE_HINT_RESUME) {
+          console.info(`reason of audioSessionDeactivated: ${AudioSessionStateChangedEvent.stateChangeHint} `);
+        }
+      });
+      } catch (err: BusinessError) {
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_12
+    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_12
+    * @tc.desc        test AudioSessionManager operation:调用AudioSessionManager注册事件和关闭注册事件覆盖参数
+    * @tc.size        AudioTest
+    * @tc.type        Function
+    * @tc.level       Level3
+    */
+    it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        sessionManager.onCurrentOutputDeviceChanged((CurrentOutputDeviceChangedEvent: audio.CurrentOutputDeviceChangedEvent) => {
+        console.info(`devices of currentOutputDeviceChanged: ${CurrentOutputDeviceChangedEvent.devices} `);
+        console.info(`changeReason of currentOutputDeviceChanged: ${CurrentOutputDeviceChangedEvent.changeReason} `);
+        console.info(`recommendedAction of currentOutputDeviceChanged: ${CurrentOutputDeviceChangedEvent.recommendedAction} `);
+      });
+      } catch (err: BusinessError) {
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_13
+    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_13
+    * @tc.desc        test AudioSessionManager operation: setAudioSessionScene
+    * @tc.size        AudioTest
+    * @tc.type        Function
+    * @tc.level       Level2
+    */
+    it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        sessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_MEDIA);
+        console.info(`setAudioSessionScene AUDIO_SESSION_SCENE_MEDIA value PASS`);
+        expect(true).assertTrue();
+      } catch (err: BusinessError) {
+        console.info(`setAudioSessionScene AUDIO_SESSION_SCENE_MEDIA value Error :${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_14
+    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_14
+    * @tc.desc        test AudioSessionManager operation: audioSessionStateChanged register with param
+    * @tc.size        AudioTest
+    * @tc.type        Function
+    * @tc.level       Level2
+    */
+    it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        sessionManager.onAudioSessionStateChanged(sessionStateChangedEvent);
+        console.info(`on audioSessionStateChanged registration PASS`);
+        expect(true).assertTrue();
+      } catch (err: BusinessError) {
+        console.info(`on audioSessionStateChanged registration Error :${err.message}`);
+        expect(false).assertTrue();
+      }
+      try {
+        sessionManager.offAudioSessionStateChanged(sessionStateChangedEvent);
+        console.info(`off audioSessionStateChanged unregistration PASS`);
+        expect(true).assertTrue();
+      } catch (err: BusinessError) {
+        console.info(`off audioSessionStateChanged unregistration Error :${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_15
+    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_15
+    * @tc.desc        test AudioSessionManager operation: audioSessionStateChanged register with no param
+    * @tc.size        AudioTest
+    * @tc.type        Function
+    * @tc.level       Level2
+    */
+    it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        sessionManager.onAudioSessionStateChanged(sessionStateChangedEvent);
+        console.info(`on audioSessionStateChanged registration PASS`);
+        expect(true).assertTrue();
+      } catch (err: BusinessError) {
+        console.info(`on audioSessionStateChanged registration Error :${err.message}`);
+        expect(false).assertTrue();
+      }
+      try {
+        sessionManager.offAudioSessionStateChanged();
+        console.info(`off audioSessionStateChanged all function unregistration PASS`);
+        expect(true).assertTrue();
+      } catch (err: BusinessError) {
+        console.info(`off audioSessionStateChanged all function unregistration Error :${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_16
+    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_16
+    * @tc.desc        test AudioSessionManager operation: getDefaultOutputDevice/setDefaultOutputDevice
+    * @tc.size        AudioTest
+    * @tc.type        Function
+    * @tc.level       Level2
+    */
+    it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let data = sessionManager.getDefaultOutputDevice();
+        console.info(`getDefaultOutputDevice success`);
+        expect(data).assertEqual(audio.DeviceType.INVALID);
+      } catch (err: BusinessError) {
+        console.info(`getDefaultOutputDevice value failed, Error :${err.message}`);
+        expect(false).assertTrue();
+      }
+
+      try {
+        await sessionManager.setDefaultOutputDevice(audio.DeviceType.DEFAULT);
+        console.info(`setDefaultOutputDevice DEFAULT value PASS`);
+        expect(true).assertTrue();
+      } catch (err: BusinessError) {
+        if (err.code != audio.AudioErrors.ERROR_SYSTEM) {
+          console.info(`setDefaultOutputDevice DEFAULT value Error :${err.message}`);
+          expect(false).assertTrue();
+        }
+      }
+
+      try {
+        let data = sessionManager.getDefaultOutputDevice();
+        console.info(`getDefaultOutputDevice success`);
+        expect(true).assertTrue();
+      } catch (err: BusinessError) {
+        console.info(`getDefaultOutputDevice value failed, Error :${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_17
+    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_17
+    * @tc.desc        test AudioSessionManager operation: currentOutputDeviceChanged register with param
+    * @tc.size        AudioTest
+    * @tc.type        Function
+    * @tc.level       Level2
+    */
+    it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        sessionManager.onCurrentOutputDeviceChanged(sessionDeviceChangedChangedEvent);
+        console.info(`on currentOutputDeviceChanged registration PASS`);
+        expect(true).assertTrue();
+      } catch (err: BusinessError) {
+        console.info(`on currentOutputDeviceChanged registration Error :${err.message}`);
+        expect(false).assertTrue();
+      }
+      try {
+        sessionManager.offCurrentOutputDeviceChanged(sessionDeviceChangedChangedEvent);
+        console.info(`off currentOutputDeviceChanged unregistration PASS`);
+        expect(true).assertTrue();
+      } catch (err: BusinessError) {
+        console.info(`off currentOutputDeviceChanged unregistration Error :${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_18
+    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_18
+    * @tc.desc        test AudioSessionManager operation: currentOutputDeviceChanged register with no param
+    * @tc.size        AudioTest
+    * @tc.type        Function
+    * @tc.level       Level2
+    */
+    it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        sessionManager.onCurrentOutputDeviceChanged(sessionDeviceChangedChangedEvent);
+        console.info(`on currentOutputDeviceChanged registration PASS`);
+        expect(true).assertTrue();
+      } catch (err: BusinessError) {
+        console.info(`on currentOutputDeviceChanged registration Error :${err.message}`);
+        expect(false).assertTrue();
+      }
+      try {
+        sessionManager.offCurrentOutputDeviceChanged();
+        console.info(`off currentOutputDeviceChanged all function unregistration PASS`);
+        expect(true).assertTrue();
+      } catch (err: BusinessError) {
+        console.info(`off currentOutputDeviceChanged all function unregistration Error :${err.message}`);
+        expect(false).assertTrue();
+      }
+      done();
+    })
+
+    /**
+    * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0100
+    * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0100
+    * @tc.desc        setDefaultOutputDevice -6800101
+    * @tc.size        MEDIUMTEST
+    * @tc.type        FUNCTION
+    * @tc.level       LEVEL2
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
+      try {
+        await audioSessionManager.setDefaultOutputDevice(audio.DeviceType.INVALID);
+        expect(false).assertTrue();
+        done();
+      } catch (err: BusinessError) {
+        expect(Number(err.code)).assertEqual(6800101);
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
     })
   })
 }

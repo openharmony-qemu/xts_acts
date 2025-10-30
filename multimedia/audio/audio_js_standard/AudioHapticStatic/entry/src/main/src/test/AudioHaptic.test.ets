@@ -1433,7 +1433,7 @@ export default function AudioHapticTest() {
         let AudioHapticPlayer = await AudioHapticManager.createPlayer(sourceId_Ringtone, AudioHapticPlayerOptions);
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
         try {
-          AudioHapticPlayer.on('endOfStream', () => {
+          AudioHapticPlayer.onEndOfStream(() => {
             console.info(`${tag} on endOfStream called `);
           });
           await AudioHapticPlayer.start();
@@ -1441,7 +1441,7 @@ export default function AudioHapticTest() {
           await sleep(100);
           await AudioHapticPlayer.stop();
           console.log(`${tag} AudioHapticPlayer stop success`);
-          AudioHapticPlayer.off('endOfStream');
+          AudioHapticPlayer.offEndOfStream();
           await AudioHapticPlayer.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
@@ -1484,11 +1484,11 @@ export default function AudioHapticTest() {
         let AudioHapticPlayer = await AudioHapticManager.createPlayer(sourceId_Notification, AudioHapticPlayerOptions);
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
         try {
-          AudioHapticPlayer.on('endOfStream', () => {
+          AudioHapticPlayer.onEndOfStream(() => {
             console.info(`${tag} on endOfStream called `);
             console.log(`${tag} AudioHapticPlayer release success`);
           });
-          AudioHapticPlayer.off('endOfStream');
+          AudioHapticPlayer.offEndOfStream();
           await AudioHapticPlayer.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
@@ -1536,13 +1536,13 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
         await sleep(100);
         try {
-          AudioHapticPlayer.on('audioInterrupt', (InterruptEvent) => {
+          AudioHapticPlayer.onAudioInterrupt((InterruptEvent) => {
             console.info(`${tag} on audioInterrupt called `);
           });
           await AudioHapticPlayer.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          AudioHapticPlayer.off('audioInterrupt');
+          AudioHapticPlayer.offAudioInterrupt();
           await AudioHapticPlayer.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
@@ -1555,13 +1555,166 @@ export default function AudioHapticTest() {
       } catch(err: BusinessError) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
-          expect(true).assertTrue();
           done();
         } else {
           expect(false).assertTrue();
           done();
         }
       }
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_STATIC_0100
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_STATIC_0100
+     * @tc.desc        AudioHapticPlayer_on_audioInterrupt
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let id = 0;
+      let audioFd: audioHaptic.AudioHapticFileDescriptor = {fd:0, length:0, offset:0}
+      let hapticFd: audioHaptic.AudioHapticFileDescriptor = {fd:0, length:0, offset:0}
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+      let testContext = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
+      let rawFdOgg = testContext.resourceManager.getRawFdSync('notification.ogg');
+      audioFd.fd = rawFdOgg.fd;
+      audioFd.length = rawFdOgg.length;
+      audioFd.offset = rawFdOgg.offset;
+      let rawFdJson = testContext.resourceManager.getRawFdSync('notification.json');
+      hapticFd.fd = rawFdJson.fd;
+      hapticFd.length = rawFdJson.length;
+      hapticFd.offset = rawFdJson.offset;
+      await audioHapticManager.registerSourceFromFd(audioFd, hapticFd).then((value: int) => {
+        console.info(`Promise returned to indicate that th id of registerSource`);
+        id = value;
+      }).catch(async (err: BusinessError) => {
+        console.error(`fail to register source`);
+        expect(false).assertTrue();
+      });
+      let latencyMode:audioHaptic.AudioLatencyMode=audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
+      audioHapticManager.setAudioLatencyMode(id, latencyMode);
+      let usage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_NOTIFICATION;
+      audioHapticManager.setStreamUsage(id, usage);
+      let options:audioHaptic.AudioHapticPlayerOptions = {muteAudio:false, muteHaptics:false};
+      let audioHapticPlayer:audioHaptic.AudioHapticPlayer;
+      await audioHapticManager.createPlayer(id, options).then(async(value:audioHaptic.AudioHapticPlayer) => {
+        console.info(`Create Success`);
+        audioHapticPlayer = value;
+        await audioHapticPlayer.start().then(() => {
+          console.info(`Create Success`);
+        }).catch(async (err: BusinessError) => {
+          console.error(`fail to start playing, ${err}`);
+          expect(false).assertTrue();
+        });
+        await sleep(1000);
+        await audioHapticPlayer.stop().then(()=>{
+          console.info(`promise return to indicate stop successfully`);
+        }).catch(async (err: BusinessError) => {
+          console.error(`fail to start playing, ${err}`);
+          expect(false).assertTrue();
+        });
+        await audioHapticPlayer.release().then(()=>{
+          console.info(`release player successfully`);
+        }).catch(async (err: BusinessError) => {
+          console.error(`fail to start playing, ${err}`);
+          expect(false).assertTrue();
+        });
+      }).catch(async (err: BusinessError) => {
+        console.error(`fail to start playing, ${err}`);
+        expect(false).assertTrue();
+      });
+      await audioHapticManager.unregisterSource(id).then(() => {
+        console.info(`successfully to unregisterSource playing`);
+      }).catch(async (err: BusinessError) => {
+        console.error(`fail to start unregisterSource, ${err}`);
+        expect(false).assertTrue();
+      });
+      done();
+    })
+
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_STATIC_0200
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_STATIC_0200
+     * @tc.desc        AudioHapticPlayer_on_audioInterrupt
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it("SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let id = 0;
+      let audioFd:audioHaptic.AudioHapticFileDescriptor = {fd:0, length:0, offset:0}
+      let hapticFd:audioHaptic.AudioHapticFileDescriptor = {fd:0, length:0, offset:0}
+      let audioHapticManager: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
+      let testContext = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
+      let rawFdOgg = testContext.resourceManager.getRawFdSync('notification.ogg');
+      audioFd.fd = rawFdOgg.fd;
+      audioFd.length = rawFdOgg.length;
+      audioFd.offset = rawFdOgg.offset;
+      let rawFdJson = testContext.resourceManager.getRawFdSync('notification.json');
+      hapticFd.fd = rawFdJson.fd;
+      hapticFd.length = rawFdJson.length;
+      hapticFd.offset = rawFdJson.offset;
+      await audioHapticManager.registerSourceFromFd(audioFd,hapticFd).then((value:int) => {
+        console.info(`Promise returned to indicate that th id of registerSource`);
+        id = value;
+      }).catch(async (err: BusinessError) => {
+        console.error(`fail to register source`);
+        expect(false).assertTrue();
+      });
+      let latencyMode:audioHaptic.AudioLatencyMode=audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
+      audioHapticManager.setAudioLatencyMode(id,latencyMode);
+      let usage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_NOTIFICATION;
+      audioHapticManager.setStreamUsage(id,usage);
+      let options:audioHaptic.AudioHapticPlayerOptions = {muteAudio:false, muteHaptics:false};
+      let audioHapticPlayer:audioHaptic.AudioHapticPlayer;
+      await audioHapticManager.createPlayer(id,options).then(async(value:audioHaptic.AudioHapticPlayer)=>{
+        console.info(`Create Success`);
+        audioHapticPlayer = value;
+        await audioHapticPlayer.start().then(()=>{
+          console.info(`Create Success`);
+        }).catch(async(err: BusinessError) => {
+          console.error(`fail to start playing, ${err}`);
+          expect(false).assertTrue();
+        });
+        await sleep(1000);
+        await audioHapticPlayer.setVolume(5).then(()=>{
+          console.info(`setVolume player successfully`);
+        }).catch(async(err: BusinessError) => {
+          console.error(`fail to setVolume playing out of range, ${err.code}`);
+          expect(Number(err.code)).assertEqual(5400108);
+        });
+        await audioHapticPlayer.stop().then(() => {
+          console.info(`promise return to indicate stop successfully`);
+        }).catch(async(err: BusinessError) => {
+          console.error(`fail to stop playing, ${err}`);
+          expect(false).assertTrue();
+        });
+        await audioHapticPlayer.release().then(() => {
+          console.info(`release player successfully`);
+        }).catch(async(err: BusinessError) => {
+          console.error(`fail to release playing, ${err}`);
+          expect(false).assertTrue();
+        });
+        await audioHapticPlayer.setVolume(0.50).then(()=>{
+          console.info(`setVolume player successfully`);
+          expect(false).assertTrue();
+        }).catch(async(err: BusinessError) => {
+          console.error(`fail to setVolume playing already release, ${err.code}`);
+          expect(Number(err.code)).assertEqual(5400102);
+        });
+        await audioHapticPlayer.setLoop(true).then(() => {
+          console.info(`setVolume player successfully`);
+          expect(false).assertTrue();
+        }).catch(async(err: BusinessError) => {
+          console.error(`fail to setloop playing, ${err.code}`);
+          expect(Number(err.code)).assertEqual(5400102);
+        });
+      }).catch(async(err: BusinessError) => {
+        console.error(`fail to start playing, ${err}`);
+        expect(false).assertTrue();
+      });
+      done();
     })
   })
 }
