@@ -1033,6 +1033,168 @@ export default function abilityTest() {
         })
 
         /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_SETTARGETLOOPMODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_SETTARGETLOOPMODE_STATIC_0100
+         * @tc.desc        Testing on setTargetLoopMode callback
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_SETTARGETLOOPMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            session!.onSetTargetLoopMode((callback: avSession.LoopMode) => {
+                if (callback === 1) {
+                    console.info('TestLog: Set TargetLoopMode command callback registration successful');
+                    expect(true).assertTrue();
+                } else {
+                    console.error(`TestLog: Set TargetLoopMode command callback registration error`);
+                    expect(false).assertTrue();
+                };
+            });
+
+            try {
+                await controller.sendControlCommand({
+                    command: 'setTargetLoopMode',
+                    parameter: avSession.LoopMode.LOOP_MODE_SINGLE
+                });
+                console.info('TestLog: Controller sent setTargetLoopMode command successfully');
+            } catch (err: BusinessError) {
+                console.error(`TestLog: Controller command error: code: ${err.code}, message: ${err.message}`);
+                expect(false).assertTrue();
+            };
+            await Utils.msSleep(500);
+            done();
+        })
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_SETTARGETLOOPMODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_SETTARGETLOOPMODE_STATIC_0200
+         * @tc.desc        test on(setTargetLoopMode) errcode 6600102
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_ON_SETTARGETLOOPMODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            await session!.destroy()
+            await Utils.msSleep(500)
+            try {
+                session!.onSetTargetLoopMode(() => {
+                    console.info('on setTargetLoopMode entry');
+                });
+            } catch (err: BusinessError) {
+                console.info(`on setTargetLoopMode entry error,error code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(6600102);
+            }
+            session = null;
+            done();
+        })
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFF_SETTARGETLOOPMODE_STATIC_0100
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFF_SETTARGETLOOPMODE_STATIC_0100
+         * @tc.desc        Testing off setTargetLoopMode all callback
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_OFF_SETTARGETLOOPMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            const callback1 = (data: avSession.LoopMode) => {
+                if (data === 1) {
+                    console.info('TestLog: setTargetLoopMode command registration1 success');
+                    expect(false).assertTrue();
+                }
+            };
+
+            const callback2 = (data: avSession.LoopMode) => {
+                if (data === 2) {
+                    console.info('TestLog: setTargetLoopMode command registration2 success');
+                    expect(false).assertTrue();
+                }
+            };
+
+            session!.onSetTargetLoopMode(callback1);
+
+            session!.onSetTargetLoopMode(callback2);
+
+            session!.offSetTargetLoopMode();
+
+            try{
+                await controller.sendControlCommand({
+                    command: 'setTargetLoopMode',
+                    parameter: avSession.LoopMode.LOOP_MODE_SINGLE
+                });
+                console.info('TestLog: Controller send command successfully');
+            } catch(err: BusinessError) {
+                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                expect(true).assertTrue();
+            };
+            await Utils.msSleep(500);
+            done();
+        })
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFF_SETTARGETLOOPMODE_STATIC_0200
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFF_SETTARGETLOOPMODE_STATIC_0200
+         * @tc.desc        Testing off setTargetLoopMode specified callback
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_OFF_SETTARGETLOOPMODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            const callback1 = (data: avSession.LoopMode) => {
+                if (data === 1) {
+                    console.info('TestLog: setTargetLoopMode command registration1 success');
+                    expect(false).assertTrue();
+                }
+            };
+
+            const callback2 = (data: avSession.LoopMode) => {
+                if (data === 2) {
+                    console.info('TestLog: setTargetLoopMode command registration2 success');
+                    expect(false).assertTrue();
+                }
+            };
+
+            session!.onSetTargetLoopMode(callback1);
+
+            session!.onSetTargetLoopMode(callback2);
+
+            session!.offSetTargetLoopMode(callback1);
+            try{
+                await controller.sendControlCommand({
+                    command: 'setTargetLoopMode',
+                    parameter: avSession.LoopMode.LOOP_MODE_SINGLE
+                });
+                console.info('TestLog: Controller send command successfully');
+            } catch(err: BusinessError) {
+                console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
+                expect(false).assertTrue();
+            };
+            await Utils.msSleep(500);
+            done();
+        })
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFF_SETTARGETLOOPMODE_STATIC_0300
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFF_SETTARGETLOOPMODE_STATIC_0300
+         * @tc.desc        test off(setTargetLoopMode) errcode 6600102
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level2
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_OFF_SETTARGETLOOPMODE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            await session!.destroy()
+            await Utils.msSleep(500)
+            try {
+                session!.offSetTargetLoopMode();
+            } catch (err: BusinessError) {
+                console.info(`off setTargetLoopMode entry error,error code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(6600102);
+            }
+            session = null;
+            done();
+        })
+
+        /**
          * @tc.number      SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_5500
          * @tc.name        SUB_MULTIMEDIA_AVSESSION_SETAVPLAYBACKSTATE_PROMISE_STATIC_5500
          * @tc.desc        Testing call setAVPlaybackState(promise)
@@ -1362,6 +1524,7 @@ export default function abilityTest() {
                 subtitle: 'music_sub_name',
                 description: 'music_description',
                 pcmSrc: true,
+                mediaImage: 'Image',
                 extras: {'extras':'any'} as Record<string, Object>
             };
             let queueItem_1: avSession.AVQueueItem = {
@@ -1374,6 +1537,7 @@ export default function abilityTest() {
                 subtitle: 'music_sub_name',
                 description: 'music_description',
                 pcmSrc: true,
+                mediaImage: 'Image',
                 extras: {'extras':'any'} as Record<string, Object>
             };
             let queueItem_2: avSession.AVQueueItem = {
@@ -1707,6 +1871,25 @@ export default function abilityTest() {
                 console.error(`setExtras BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             })
+            await Utils.msSleep(300);
+            done();
+        })
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_OFF_SETTARGETLOOPMODE_STATIC_0500
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_OFF_SETTARGETLOOPMODE_STATIC_0500
+         * @tc.desc        Testing off(setTargetLoopMode) errcode 6600101
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_OFF_SETTARGETLOOPMODE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try{
+                session!.offSetTargetLoopMode()
+            }catch(err: BusinessError){
+                console.error(`off BusinessError: code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(6600101);
+            }
             await Utils.msSleep(300);
             done();
         })
@@ -2201,6 +2384,35 @@ export default function abilityTest() {
             }).catch(async(err: BusinessError) => {
                 console.error(`dispatchSessionEvent BusinessError: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue;
+            })
+            done();
+        })
+
+        /**
+         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0500
+         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0500
+         * @tc.desc        Testing call setAVMetadata(callback) set album- exceed max length
+         * @tc.size        MediumTest
+         * @tc.type        Fault Tolerance
+         * @tc.level       Level4
+         */
+        it('SUB_MULTIMEDIA_AVSESSION_SET_METADATA_ERRORCODE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            const str = 'a'.repeat(40960)
+            let metadata:avSession.AVMetadata = {
+                assetId: '121278',
+                album:str.substring(0,40960),
+                title: 'this is a title'
+            };
+            session!.setAVMetadata(metadata, (err:BusinessError | null) => {
+                if (err) {
+                    console.info(`TestLog: Set album error: code: ${err.code}, message: ${err.message}`);
+                    expect(err.code).assertEqual(401);
+                    done();
+                } else {
+                    console.info(`TestLog: Set album Successfully `);
+                    expect(false).assertTrue();
+                    done();
+                }
             })
             done();
         })
