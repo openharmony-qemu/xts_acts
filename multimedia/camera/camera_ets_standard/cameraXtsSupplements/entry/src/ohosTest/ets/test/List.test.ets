@@ -18,6 +18,7 @@ import cameraIsControlCenterSupported from './camera/CameraIsControlCenterSuppor
 import cameraIsExposureModeSupported from './camera/CameraIsExposureModeSupported.test';
 import CameraSessionHasSuppTest from './camera/CameraSessionHasSupp.test';
 import CameraDeprecatedCaptureSessionTest from './camera/CameraDeprecatedCaptureSession.test';
+import getSupportedSceneModesTest from './camera/getSupportedSceneModes.test';
 
 export default function testsuite() {
   CameraSessionFlashSuppTest();
@@ -40,4 +41,5 @@ export default function testsuite() {
   cameraCaptureSessionGetExposureBiasRangeTest();
   CameraDeprecatedCaptureSessionTest();
   CameraSessionHasSuppTest();
+  getSupportedSceneModesTest();
 }
