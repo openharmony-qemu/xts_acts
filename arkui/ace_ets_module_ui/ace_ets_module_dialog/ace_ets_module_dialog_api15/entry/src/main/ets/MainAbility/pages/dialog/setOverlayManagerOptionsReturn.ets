@@ -29,7 +29,7 @@ struct setOverlayManagerOptionsReturn {
         .onClick(() => {
           let res: boolean = this.getUIContext().setOverlayManagerOptions
           ({
-            RootOverlay: this.renderRootOverlay
+            RootOverlay: this.RootOverlay
           })
           AppStorage.SetOrCreate('setOverlayManagerOptionsReturnBoolean', res)
           this.str = JSON.stringify(res)
