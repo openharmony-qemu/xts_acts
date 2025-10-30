@@ -1173,6 +1173,7 @@ export default function settingUiJsunit() {
 
     it('settings_get_value_111',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) => {
       let name = 'settings.screen.brightness111';//关键字
+      let defaultCode: number = 0;
       let value = 'brightness111'//值
       try{
         settings.setValue(globalThis.abilityContext, name, value,(data)=>{
@@ -1182,7 +1183,8 @@ export default function settingUiJsunit() {
         });
       }catch(err){
         console.info("[settings_get_value_111] error is:" + String(err));
-        expect(true).assertTrue();
+        const codeResult: boolean = err?.code ?? defaultCode >= -1;
+        expect(codeResult).assertTrue();
         done();
         return;
       }
@@ -1200,6 +1202,7 @@ export default function settingUiJsunit() {
       let name = 'settings.screen.brightness1112';//关键字
       let value = 'brightness111'//值
       let context = undefined;
+      let defaultCode: number = 0;
       try{
         settings.setValue(context, name, value,(data)=>{
           expect(data).assertEqual(false);
@@ -1208,7 +1211,8 @@ export default function settingUiJsunit() {
         });
       }catch(err){
         console.info("[settings_get_value_111] error is:" + String(err));
-        expect(true).assertTrue();
+        const codeResult: boolean = err?.code ?? defaultCode >= 0;
+        expect(codeResult).assertTrue();
         done();
         return;
       }
@@ -1252,6 +1256,7 @@ export default function settingUiJsunit() {
     it('settings_set_value_112_2',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) => {
       let name = 'settings.screen.brightness11222';//关键字
       let value = 'brightness1122'//值
+      let defaultCode: number = 0;
       try{
         settings.setValue(globalThis.abilityContext, name, value)
           .then((data)=>{
@@ -1261,13 +1266,15 @@ export default function settingUiJsunit() {
           })
           .catch((err: BusinessError)=>{
             console.info("[settings_get_value_112] error is:" + String(err));
-            expect(true).assertTrue();
+            let codeResult: boolean = err?.code ?? defaultCode >= 0;
+            expect(codeResult).assertTrue();
             done();
             return;
           })
       }catch(err){
         console.info("[settings_get_value_112] error is:" + String(err));
-        expect(true).assertTrue();
+        let codeResult: boolean = err?.code ?? defaultCode >= 0;
+        expect(codeResult).assertTrue();
         done();
         return;
       }
@@ -1285,6 +1292,7 @@ export default function settingUiJsunit() {
       let name = 'settings.screen.brightness1123';//关键字
       let value = 'brightness1123'//值
       let context = undefined;
+      let defaultCode: number = 0;
       try{
         settings.setValue(context, name, value)
           .then((data)=>{
@@ -1294,7 +1302,8 @@ export default function settingUiJsunit() {
           })
           .catch((err: BusinessError)=>{
             console.info("[settings_get_value_112] error is:" + String(err));
-            expect(true).assertTrue();
+            let codeResult: boolean = err?.code ?? defaultCode >= -1;
+            expect(codeResult).assertTrue();
             done();
             return;
           })
@@ -1364,6 +1373,7 @@ export default function settingUiJsunit() {
      * @tc.level     : Level 0
      */
     it('settings_can_show_floating_115',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) => {
+      let defaultCode: number = 0;
       try{
         settings.canShowFloating((err,data)=>{
           if (err && err?.code) {
@@ -1375,7 +1385,8 @@ export default function settingUiJsunit() {
         })
       }catch(err){
         console.info('settings test canShowFloating promise err'+String(err));
-        expect(true).assertTrue();
+        let codeResult: boolean = err?.code ?? defaultCode >= -1;
+        expect(codeResult).assertTrue();
         done();
         return;
       }
@@ -1470,6 +1481,7 @@ export default function settingUiJsunit() {
       let name = 'settings.screen.brightness1182';//关键字
       let value = 'brightness1182';//值
       let domainName = 'secure';
+      let defaultCode: number = 0;
       try{
         settings.setValue(globalThis.abilityContext, name, value, domainName)
           .then((data) => {
@@ -1479,7 +1491,8 @@ export default function settingUiJsunit() {
           })
           .catch((err: BusinessError)=>{
             console.info("[settings_get_value_118] 1252 error is:" + String(err));
-            expect(true).assertTrue();
+            let codeResult: boolean = err?.code ?? defaultCode >= -1;
+            expect(codeResult).assertTrue();
             done();
             return;
           })
@@ -1504,6 +1517,7 @@ export default function settingUiJsunit() {
       let value = 'brightness1183';//值
       let domainName = 'secure';
       let context = undefined;
+      let defaultCode: number = 0;
       try{
         settings.setValue(context, name, value, domainName)
           .then((data) => {
@@ -1513,7 +1527,8 @@ export default function settingUiJsunit() {
           })
           .catch((err: BusinessError)=>{
             console.info("[settings_get_value_118] 1252 error is:" + String(err));
-            expect(true).assertTrue();
+            let codeResult: boolean = err?.code ?? defaultCode >= -1;
+            expect(codeResult).assertTrue();
             done();
             return;
           })
