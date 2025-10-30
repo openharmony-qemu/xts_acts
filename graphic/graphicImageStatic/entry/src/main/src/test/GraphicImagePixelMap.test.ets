@@ -1045,13 +1045,17 @@ export default function graphicImagePixelMap() {
     it('graphicImagePixelMap_static_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
+        let opts: image.InitializationOptions = {
+          editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 }
+        }
+        let pixelMap3: image.PixelMap = image.createPixelMapSync(opts);
         try {
-          await pixelMap.crop(region).then(() => {
+          await pixelMap3.crop(region).then(() => {
             console.info('www data 4200 Succeeded in cropping pixelmap.');
-            expect(true).assertTrue();
-          }).catch((err) => {
-            console.error('www data 4200 Failed to crop pixelmap.');
             expect().assertFail();
+          }).catch((err) => {
+            console.error('www data 4200 Failed to crop pixelmap.', err.code);
+            expect(Number(err.code) == 62980109).assertTrue();
           });;
         } catch (err) {
           expect().assertFail();
@@ -1070,11 +1074,16 @@ export default function graphicImagePixelMap() {
     it('graphicImagePixelMap_static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
+        let opts: image.InitializationOptions = {
+          editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 }
+        }
+        let pixelMap4: image.PixelMap = image.createPixelMapSync(opts);
         try {
-          pixelMap.cropSync(region);
-          expect(true).assertTrue();
-        } catch (err) {
+          pixelMap4.cropSync(region);
           expect().assertFail();
+        } catch (err) {
+          console.error('www data 4300 Failed to crop pixelmap.', JSON.stringify(err.code));
+          expect(Number(err.code) == 62980109).assertTrue();
         }
         done();
       })
@@ -1920,6 +1929,59 @@ export default function graphicImagePixelMap() {
           err = err as BusinessError;
           console.error('www data error createPixelMapSync' + JSON.stringify(err));
           expect(Number(err.code) == 401).assertTrue();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number    graphicImagePixelMap_static_8700
+     * @tc.name      graphicImagePixelMap_static_8700
+     * @tc.desc      image API ArkTS1.2
+     * @tc.size      SmallTest
+     * @tc.type      Function
+     * @tc.level     Level0
+     */
+    it('graphicImagePixelMap_static_8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let region: image.Region = { x: 0, y: 0, size: { height: 1, width: 1 } };
+        let opts: image.InitializationOptions = {
+          editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 }
+        }
+        let pixelMap5: image.PixelMap = image.createPixelMapSync(opts);
+        try {
+          await pixelMap5.crop(region).then(() => {
+            console.info('www data 8700 Succeeded in cropping pixelmap.');
+          }).catch((err) => {
+            console.error('www data 8700 Failed to crop pixelmap.', err.code);
+            expect().assertFail();
+          });
+        } catch (err) {
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
+     * @tc.number   graphicImagePixelMap_static_8800
+     * @tc.name     graphicImagePixelMap_static_8800
+     * @tc.desc     image API ArkTS1.2
+     * @tc.size     SmallTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('graphicImagePixelMap_static_8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let region: image.Region = { x: 0, y: 0, size: { height: 1, width: 1 } };
+        let opts: image.InitializationOptions = {
+          editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: { height: 4, width: 6 }
+        }
+        let pixelMap6: image.PixelMap = image.createPixelMapSync(opts);
+        try {
+          pixelMap6.cropSync(region);
+          console.info('www data 8800 Succeeded in cropping pixelmap.');
+        } catch (err) {
+          console.error('www data 8800 Failed to crop pixelmap.');
+          expect().assertFail();
         }
         done();
       })
