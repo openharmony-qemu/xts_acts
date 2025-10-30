@@ -66,6 +66,7 @@ struct WebComponent {
             case "emitSetSoftKeyboardBehaviorMode01": {
                   this.userAgentPC = this.controller.getUserAgent();
                   if (!canIUse('SystemCapability.Multimedia.Camera.Core')) {
+                    console.log('emitSetSoftKeyboardBehaviorMode01ppp')
                     Utils.emitEvent(true, 20251115)
                     break;
                   }
@@ -90,6 +91,7 @@ struct WebComponent {
             case "emitSetSoftKeyboardBehaviorMode02": {
                 this.userAgentPC = this.controller.getUserAgent();
                 if (!canIUse('SystemCapability.Multimedia.Camera.Core')) {
+                  console.log('emitSetSoftKeyboardBehaviorMode02ppp')
                   Utils.emitEvent(true, 20251116)
                   break;
                 }
