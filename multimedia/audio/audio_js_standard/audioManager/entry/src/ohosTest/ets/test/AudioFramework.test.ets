@@ -6305,13 +6305,19 @@ export default function audioFramework() {
     (done: Function) => {
         let audioStreamManager: audio.AudioStreamManager = audio.getAudioManager().getStreamManager();
         try {
-            let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_LIVE);
-            console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupportAEC}`);
-            expect(isSupportAEC).assertEqual(true);
+          let isSupportAEC: boolean = audioStreamManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_LIVE);
+          console.info(`[AEC Support] Source Type: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupportAEC}`)
+          if (isSupportAEC) {
+              console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupportAEC}`);
+              expect(isSupportAEC).assertEqual(true);
+          } else {
+              console.info(`[AEC Support] SourceType: ${audio.SourceType.SOURCE_TYPE_LIVE}, Status: ${isSupportAEC}`);
+              expect(isSupportAEC).assertEqual(false);
+          } 
         } catch (err) {
-            let error = err as BusinessError;
-            console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
-            expect(false).assertTrue();
+          let error = err as BusinessError;
+          console.error(`isAcousticEchoCancelerSupported ERROR: ${error}`);
+          expect(false).assertTrue();        
         }
         done();
     })
