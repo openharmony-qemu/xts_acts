@@ -18,7 +18,7 @@ import bundleManager from '@ohos.bundle.bundleManager'
 import { abilityAccessCtrl, common, Permissions } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { UiDriver, BY, Driver, ON } from "@ohos.UiTest";
-
+import Utils from './Utils';
 
 let tokenID = 0;
 
@@ -166,7 +166,7 @@ export default function AccessTokenApiTest() {
     /**
      * @tc.number Test_requestGlobalSwitch_0500
      * @tc.name Test_requestGlobalSwitch_005.
-     * @tc.desc requestGlobalSwitch Permissions SwitchType.LOCATION.
+     * @tc.desc requestGlobalSwitch Permissions result is false.
      * @tc.level: Level3
      * @tc.size: MediumTest
      * @tc.type: Function
@@ -180,7 +180,7 @@ export default function AccessTokenApiTest() {
         let flag = false;
         atManager.requestGlobalSwitch(context, type).then((data) => {
           console.info('Test_requestGlobalSwitch_005 data:' + data);
-          expect(data).assertTrue();
+          expect(data).assertFalse();
           done();
         }).catch((err: BusinessError) => {
           console.error('Test_requestGlobalSwitch_005 err.code:' + JSON.stringify(err));
@@ -192,19 +192,67 @@ export default function AccessTokenApiTest() {
             done();
           }
         });
-
-        let driver = Driver.create();
-        console.info("Test_requestGlobalSwitch_005 come in driverFn");
-        let toggle = await driver.findComponent(ON.type("Toggle"));
-        let button = await driver.findComponent(ON.text("确定"));
-        await toggle.click();
-        await button.click();
-        console.info("Test_requestGlobalSwitch_005 click over");
-        
       } catch (error) {
         console.info('Test_requestGlobalSwitch_005 error.code: ' + error.code);
         expect(error.code).assertEqual(401);
         done();
+      }
+      try {
+        await Utils.sleep(1000);
+        let driver = Driver.create();
+        let button = await driver.findComponent(ON.text("确定"));
+        await button.click();
+        console.info("Test_requestGlobalSwitch_005 click over");
+      } catch (err) {
+        console.info("Test_requestGlobalSwitch_005 click err:" + JSON.stringify(err));
+      }
+    })
+
+    /**
+     * @tc.number Test_requestGlobalSwitch_0600
+     * @tc.name Test_requestGlobalSwitch_006.
+     * @tc.desc requestGlobalSwitch Permissions SwitchType.LOCATION.
+     * @tc.level: Level3
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     */
+    it('Test_requestGlobalSwitch_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      console.info("Test_requestGlobalSwitch_006 start ");
+      let atManager = abilityAccessCtrl.createAtManager();
+      let context: Context = getContext(globalThis) as common.UIAbilityContext;
+      let type = abilityAccessCtrl.SwitchType.LOCATION;
+      try {
+        let flag = false;
+        atManager.requestGlobalSwitch(context, type).then((data) => {
+          console.info('Test_requestGlobalSwitch_006 data:' + data);
+          expect(data).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error('Test_requestGlobalSwitch_006 err.code:' + JSON.stringify(err));
+          if (flag = err.code == 12100013 || err.code == 12100001) {
+            expect(flag).assertTrue();
+            done();
+          } else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch (error) {
+        console.info('Test_requestGlobalSwitch_006 error.code: ' + error.code);
+        expect(error.code).assertEqual(401);
+        done();
+      }
+      try {
+        await Utils.sleep(1000);
+        let driver = Driver.create();
+        console.info("Test_requestGlobalSwitch_006 come in driverFn");
+        let toggle = await driver.findComponent(ON.type("Toggle"));
+        let button = await driver.findComponent(ON.text("确定"));
+        await toggle.click();
+        await button.click();
+        console.info("Test_requestGlobalSwitch_006 click over");
+      } catch (err) {
+        console.info("Test_requestGlobalSwitch_006 click err:" + JSON.stringify(err));
       }
     })
 
