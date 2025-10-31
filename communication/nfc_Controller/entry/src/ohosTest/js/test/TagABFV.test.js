@@ -21,6 +21,15 @@ function sleep(delay) {
     return new Promise(resovle => setTimeout(resovle, delay))
 }
 
+function readerModeCb(err, tagInfo) {
+    if (!err) {
+        console.info("offCallback: tag found tagInfo = ", JSON.stringify(tagInfo));
+    } else {
+        console.error("offCallback err: " + err.message);
+        return;
+    }
+}
+
 let aTag = {
     "uid": [0x01, 0x02, 0x03, 0x04],
     "technology": [1],
@@ -962,6 +971,36 @@ export default function nfcTagABFVTest() {
                 expect().assertFail();
                 done();
             });
+        })
+
+        /**
+         * @tc.number SUB_Communication_NFC_nfctage_js_2600
+         * @tc.name off
+         * @tc.desc This interface getBarcode
+         * @tc.size since 16
+         * @tc.type Function
+         * @tc.level Level 0
+         */
+        it('SUB_Communication_NFC_nfctage_js_2600', Level.LEVEL0, async function (done)  {
+            let elementName = {
+                "bundleName": "ohos.acts.communication.nfc.nfcdevice",
+                "abilityName": "MainAbility",
+                "moduleName": "entry"
+            };
+
+            try {
+                tag.off('readerMode', elementName, readerModeCb);
+            } catch (err) {
+                if (err.code == 3100203) {
+                    expect(3100203).assertEqual(err.code);
+                    console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2600 ERROR :  " + err + " - " + err.code);
+                    done();
+                }else {
+                    expect().assertFail();
+                    console.info("[NFC_test] SUB_Communication_NFC_nfctage_js_2600 Fail :  ");
+                }
+            }
+            done();
         })
 
         console.info("*************[nfc_test] start nfc js unit test end*************");
