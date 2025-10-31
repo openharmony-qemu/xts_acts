@@ -470,9 +470,9 @@ export default function optionalSystemCapability() {
       const btComponent = await driver.findComponent(ON.id('firstButton'));
       expect(btComponent == null).assertTrue();
       await driver.wakeUpDisplay();
-      await driver.delayMs(DELAY);
+      await driver.delayMs(10000);
       await driver.swipe(300, 600, 300, 100);
-      await driver.delayMs(DELAY);
+      await driver.delayMs(10000);
       const isSupportAudio = canIUse('SystemCapability.Multimedia.Audio.Volume')
       console.log(`${TAG}, testHomeEvent isSupportAudio is: ${ isSupportAudio }`);
       if (isSupportAudio) {
