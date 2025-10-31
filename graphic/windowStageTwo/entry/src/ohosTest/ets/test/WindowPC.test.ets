@@ -154,7 +154,7 @@ export default function windowPCTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testSetWindowTitleMoveEnabled_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetWindowTitleMoveEnabled_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let message = 'setWindowTitleMoveEnabledTest_0100';
       let windowClass = windowStage.getMainWindowSync();
       let driver =  Driver.create()
@@ -570,9 +570,9 @@ export default function windowPCTest() {
      * @tc.desc      : LeftTop为正整数，验证801
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('test_createSubWindowWithOptions_windowRect_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('test_createSubWindowWithOptions_windowRect_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         const message = 'test_createSubWindowWithOptions_windowRect_801'
         let options: window.SubWindowOptions = {
@@ -906,9 +906,9 @@ export default function windowPCTest() {
      * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testStartOptionsSupportWindowModes_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testStartOptionsSupportWindowModes_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0100';
       let options: StartOptions = {
         supportWindowModes: [
@@ -1138,9 +1138,9 @@ export default function windowPCTest() {
      * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testStartOptionsSupportWindowModes_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testStartOptionsSupportWindowModes_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'startOptionsSupportWindowModesTest_0600';
       let mainWindowRect = windowStage.getMainWindowSync().getWindowProperties().windowRect
       let driver = Driver.create()
@@ -1243,9 +1243,9 @@ export default function windowPCTest() {
      * @tc.desc      : 传参三个元素
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('test_setSupportedWindowModes_threeElement', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('test_setSupportedWindowModes_threeElement', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
         const message = 'test_setSupportedWindowModes_threeElement'
         let windowStageStart = await startAbility(message, context)
@@ -2272,9 +2272,9 @@ export default function windowPCTest() {
      * @tc.desc       : 验证moveWindowToAsync参数MoveConfiguration
      * @tc.size       : MediumTestTest
      * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.level      : LEVEL0
      */
-    it('test_MoveConfiguration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('test_MoveConfiguration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isPCStatus == '' && isAutoWindow != 'true') {
         expect(true).assertTrue();
         done();
@@ -2461,9 +2461,9 @@ export default function windowPCTest() {
      * @tc.desc       : testgetParentWindow
      * @tc.size       : MediumTest
      * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.level      : LEVEL0
      */
-    it('testgetParentWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testgetParentWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let message = "testgetParentWindow";
       let msgStr = 'jsunittest ' + message + ' ';
       console.log(msgStr + 'begin.');
@@ -3208,9 +3208,9 @@ export default function windowPCTest() {
      * @tc.desc      : Test the function value of outlineEnabled
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testOutlineEnabled_True', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testOutlineEnabled_True', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testOutlineEnabled_True';
       let windowClass:window.Window;
       let options: window.SubWindowOptions = {
@@ -3245,9 +3245,9 @@ export default function windowPCTest() {
      * @tc.desc      : Test the function value of outlineEnabled
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testOutlineEnabled_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testOutlineEnabled_False', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testOutlineEnabled_False';
       let windowClass:window.Window;
       let options: window.SubWindowOptions = {
@@ -3647,9 +3647,9 @@ export default function windowPCTest() {
      * @tc.desc       : Test the function when disable
      * @tc.size       : MediumTest
      * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.level      : LEVEL0
      */
-    it('testSetDragKeyFramePolicy_Disable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetDragKeyFramePolicy_Disable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testSetDragKeyFramePolicy_Disable';
       console.log(message + ' begin.');
       if (isPCStatus == '') {

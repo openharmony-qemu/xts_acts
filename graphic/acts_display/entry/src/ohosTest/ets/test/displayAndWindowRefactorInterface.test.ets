@@ -66,9 +66,9 @@ export default function displayAndWindowRefactorInterfaceTest() {
      * @tc.desc      : Gets all current display objects
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.level     : Level0
      */
-    it('tesGetAllDisplays_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    it('tesGetAllDisplays_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'tesGetAllDisplays_Callback';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
