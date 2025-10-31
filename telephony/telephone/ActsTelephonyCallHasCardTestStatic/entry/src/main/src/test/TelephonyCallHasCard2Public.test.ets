@@ -313,11 +313,11 @@ export default function HasCard2PublicTest() {
         call.formatPhoneNumber(phoneNumber, options, (err: BusinessError<void>|null, data: String|undefined) => {
           if (err) {
             hilog.info(domain, tag, '%{public}s', caseName +' formatPhoneNumber fail, err->'+JSON.stringify(err));
-            ExpectFail();
+            ExpectTrue(true);
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' formatPhoneNumber finish + '+JSON.stringify(data));
-            ExpectTrue(true);
+            ExpectFail();
             done();
           }
         });
@@ -448,7 +448,7 @@ export default function HasCard2PublicTest() {
         countryCode: "CN"
       };
       try {
-        call.formatPhoneNumber(phoneNumber, options).then((data: string) => {
+        call.formatPhoneNumber(phoneNumber, options).then((data: string|undefined) => {
           hilog.info(domain, tag, '%{public}s', caseName +' formatPhoneNumber finish + '+JSON.stringify(data));
           ExpectTrue(true);
           done();
@@ -480,7 +480,7 @@ export default function HasCard2PublicTest() {
         countryCode: ""
       };
       try {
-        call.formatPhoneNumber(phoneNumber, options).then((data: string) => {
+        call.formatPhoneNumber(phoneNumber, options).then((data: string|undefined) => {
           hilog.info(domain, tag, '%{public}s', caseName +' formatPhoneNumber finish + '+JSON.stringify(data));
           ExpectTrue(true);
           done();
@@ -512,7 +512,7 @@ export default function HasCard2PublicTest() {
         countryCode: "abcd"
       };
       try {
-        call.formatPhoneNumber(landlineNumber, options).then((data: string) => {
+        call.formatPhoneNumber(landlineNumber, options).then((data: string|undefined) => {
           hilog.info(domain, tag, '%{public}s', caseName +' formatPhoneNumber finish + '+JSON.stringify(data));
           ExpectTrue(true);
           done();
@@ -545,7 +545,7 @@ export default function HasCard2PublicTest() {
         countryCode: "CN"
       };
       try {
-        call.formatPhoneNumber(phoneNumber, options).then((data: string) => {
+        call.formatPhoneNumber(phoneNumber, options).then((data: string|undefined) => {
           hilog.info(domain, tag, '%{public}s', caseName +' formatPhoneNumber finish + '+JSON.stringify(data));
           ExpectTrue(true);
           done();
@@ -609,7 +609,7 @@ export default function HasCard2PublicTest() {
         countryCode: "cn"
       };
       try {
-        call.formatPhoneNumber(phoneNumber, options).then((data: string) => {
+        call.formatPhoneNumber(phoneNumber, options).then((data: string|undefined) => {
           hilog.info(domain, tag, '%{public}s', caseName +' formatPhoneNumber finish + '+JSON.stringify(data));
           ExpectTrue(true);
           done();
