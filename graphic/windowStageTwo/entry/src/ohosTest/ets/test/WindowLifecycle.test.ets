@@ -200,9 +200,9 @@ export default function WindowLifecycle() {
      * @tc.desc      : Test the function value of getSubWindow
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testgetSubWindow0_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVLEVEL0EL2, async (done: Function) => {
+    it('testgetSubWindow0_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testgetSubWindow0_callback';
       try {
 
