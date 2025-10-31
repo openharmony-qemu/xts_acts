@@ -647,8 +647,8 @@ export default function abilityTest() {
           done();
         };
         let subWindowClose = data;
-        subWindowClose.on('subWindowClose', callback);
-        subWindowClose.off('subWindowClose', callback)
+        subWindowClose.onSubWindowClose(callback);
+        subWindowClose.offSubWindowClose(callback)
         hilog.info(0x0000, '[ANI]', 'finaltest [ANI] subWindowClose Promise Succeeded');
         expect(true).assertTrue();
         done();

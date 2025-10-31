@@ -35,6 +35,10 @@ class MessageObject {
   }
 }
 
+function TSleep(delay:int):void {
+  for(let t = Date.now(); Date.now() - t <= delay;);
+}
+
 export const Sleep = (ms: int) => {
   return new Promise<number>((resolve) => {
     setTimeout(() => {
@@ -780,7 +784,7 @@ export default function MessageTest2() {
           eaw.start();
           let result: concurrency.Message[] = [];
           let handler: concurrency.MessageHandler = new concurrency.MessageHandler((msg: concurrency.Message) => {
-            await Sleep(1000);
+            TSleep(1000);
             result.push(msg);
             console.info(`push msg`);
             flag = true;
@@ -2506,6 +2510,7 @@ export default function MessageTest2() {
     it('RemoveCallbacksTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let worker = new EAWorker();
+        worker.start();
         const TAG: string = 'MessageTest063';
         let handler: concurrency.MessageHandler;
         let p = () => {
@@ -2588,6 +2593,7 @@ export default function MessageTest2() {
         const TAG: string = 'MessageTest065';
         let handler: concurrency.MessageHandler;
         let worker = new EAWorker();
+        worker.start();
         let p = () => {
           let a = 1;
         }
@@ -2670,6 +2676,7 @@ export default function MessageTest2() {
         const TAG: string = 'MessageTest067';
         let handler: concurrency.MessageHandler;
         let worker = new EAWorker();
+        worker.start();
         let p = () => {
           let a = 1;
         }

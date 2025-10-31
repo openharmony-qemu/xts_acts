@@ -57,7 +57,7 @@ struct ParticleExample {
                     src: $r("app.media.icon"),
                     size: [10, 10]
                   },
-                  count: this.myCount,
+                  count: this.myCount.toInt(),
                   lifetime: 10000
                 },
                 emitRate: 3,
@@ -182,7 +182,7 @@ struct ParticleExample {
                   src: $r('app.media.icon'),
                   size: [10, 10]
                 },
-                count: this.myCount,
+                count: this.myCount.toInt(),
                 lifetime: 10000
               },
               emitRate: 3,
@@ -302,7 +302,7 @@ struct ParticleExample {
                   src: $r('app.media.icon'),
                   size: [10, 10]
                 },
-                count: this.myCount,
+                count: this.myCount.toInt(),
                 lifetime: 10000
               },
               emitRate: 3,

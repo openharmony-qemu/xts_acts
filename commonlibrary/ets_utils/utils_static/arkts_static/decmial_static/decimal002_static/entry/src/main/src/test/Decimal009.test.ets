@@ -215,7 +215,7 @@ export default function DecimalTest009() {
       test_isFinite_001(n.lessThan(0.0001));
       test_isFinite_001(n.lessThanOrEqualTo(-0));
       test_isFinite_001(n.toString() === n.valueOf());
-      n = new Decimal(-0);
+      n = new Decimal(-0.0);
       test_isFinite_001(n.isFinite());
       test_isFinite_001(!n.isNaN());
       test_isFinite_001(n.isNegative());
@@ -244,7 +244,7 @@ export default function DecimalTest009() {
         minE: -9e15,
         maxE: 9e15
       });
-      n = new Decimal(-0);
+      n = new Decimal(-0.0);
       test_isFinite_001(n.lessThan(0.1));
       test_isFinite_001(n.lessThanOrEqualTo(0));
       test_isFinite_001(n.valueOf() === '-0' && n.toString() === '0');

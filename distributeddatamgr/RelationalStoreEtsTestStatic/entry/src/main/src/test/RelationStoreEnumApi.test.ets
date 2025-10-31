@@ -411,7 +411,7 @@ export default function RelationalStoreEnumTest(){
           "data7": new Float32Array([1.5, 2.5]),
           "data8": 100n
         };
-        await data_relationalStore.deleteRdbStore(context,STORE_CONFIG);
+        await (store as data_relationalStore.RdbStore).close();
         try{
           let num = await (store as data_relationalStore.RdbStore).insert("test", valueBucket);
           console.error(`RelationalStoreEnumerateTest010, num` + num);

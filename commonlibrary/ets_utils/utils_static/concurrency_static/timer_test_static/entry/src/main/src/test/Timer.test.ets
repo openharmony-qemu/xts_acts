@@ -897,7 +897,7 @@ export default function TimerTest1() {
           executionCount++;
           await Utils.msSleep(executionTime.toInt());
           const currentEnd: number = Math.floor(Date.now());
-          if (lastExecutionEnd > 0 && (currentEnd - lastExecutionEnd) > intervalPeriod + 5) {
+          if (lastExecutionEnd > 0 && (currentEnd - lastExecutionEnd) > intervalPeriod) {
             isContinuousExecution = false;
           }
           lastExecutionEnd = currentEnd;

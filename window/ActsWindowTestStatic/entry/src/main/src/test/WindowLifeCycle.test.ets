@@ -978,7 +978,7 @@ export default function WindowLifeCycleTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.on("subWindowClose", () => {
+                        subWin!.onSubWindowClose(() => {
                         });
                         hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling on subWindowClose.');
                         expect(false).assertTrue();
@@ -1015,7 +1015,7 @@ export default function WindowLifeCycleTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.off("subWindowClose", () => {
+                        subWin!.offSubWindowClose(() => {
                         });
                         hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling on subWindowClose.');
                         expect(false).assertTrue();
@@ -1051,7 +1051,7 @@ export default function WindowLifeCycleTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + ' ' + 'Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
                 expect(!!mainWindow).assertTrue();
                 try {
-                    mainWindow!.on('subWindowClose', () => {
+                    mainWindow!.onSubWindowClose(() => {
                     });
                     hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on_subWindowClose.');
                     expect(false).assertTrue();

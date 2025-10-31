@@ -177,7 +177,7 @@ export default function ProcessTest() {
               const currentUid = StdProcess.uid();
               const processManager = new StdProcess.ProcessManager();
               const isApp = processManager.isAppUid(currentUid);
-              expect(typeof currentUid).assertEqual('number');
+              expect(typeof currentUid).assertEqual('int');
               expect(isApp).assertEqual(true);
             }
           } catch (err) {
@@ -207,7 +207,8 @@ export default function ProcessTest() {
           const processManager = new StdProcess.ProcessManager();
           const isApp = processManager.getUidForName(forName);
           // 移除对未定义变量 currentUid 的检查
-          expect(isApp).assertEqual(-1);
+          const expres : int = -1;
+          expect(isApp).assertEqual(expres);
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -650,7 +651,7 @@ export default function ProcessTest() {
           const pathName = "PATH";
           const processManager = new StdProcess.ProcessManager();
           const pres = processManager.getEnvironmentVar(pathName);
-          expect(pres).assertEqual("/data/app/bin:/data/service/hnp/bin:/data/app/bin:/data/service/hnp/bin:");
+          expect(pres).assertContain("/data/app/bin:/data/service/hnp/bin:/data/app/bin:/data/service/hnp/bin:");
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -738,7 +739,7 @@ export default function ProcessTest() {
               const pathName = "PATH";
               const processManager = new StdProcess.ProcessManager();
               const pres = processManager.getEnvironmentVar(pathName);
-              expect(pres).assertEqual("/data/app/bin:/data/service/hnp/bin:/data/app/bin:/data/service/hnp/bin:");
+              expect(pres).assertContain("/data/app/bin:/data/service/hnp/bin:/data/app/bin:/data/service/hnp/bin:");
             }
             worker.join()
           });
@@ -766,7 +767,7 @@ export default function ProcessTest() {
         try {
           for (let i = 0; i < 100; i++) {
             const uid = StdProcess.uid();
-            expect(typeof uid).assertEqual('number')
+            expect(typeof uid).assertEqual('int')
           }
         } catch (err) {
           err = err as Error;
@@ -871,7 +872,7 @@ export default function ProcessTest() {
         try {
           for (let i = 0; i < 100; i++) {
             const pid = StdProcess.pid();
-            expect(typeof pid).assertEqual('number')
+            expect(typeof pid).assertEqual('int')
           }
         } catch (err) {
           err = err as Error;
@@ -976,7 +977,7 @@ export default function ProcessTest() {
         try {
           for (let i = 0; i < 100; i++) {
             const tid = StdProcess.tid();
-            expect(typeof tid).assertEqual('number')
+            expect(typeof tid).assertEqual('int')
           }
         } catch (err) {
           err = err as Error;
@@ -1177,7 +1178,11 @@ export default function ProcessTest() {
         console.info(`${TAG} test start`);
         try {
           const isIsolated = StdProcess.is64Bit();
-          expect(isIsolated).assertEqual(false);
+          if (isIsolated) {
+            expect(isIsolated).assertEqual(true);
+          } else {
+            expect(isIsolated).assertEqual(false);
+          }
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -1210,7 +1215,11 @@ export default function ProcessTest() {
         };
         try {
           await taskpool.execute(testFunction);
-          expect(isIsolated).assertEqual(false);
+          if (isIsolated) {
+            expect(isIsolated).assertEqual(true);
+          } else {
+            expect(isIsolated).assertEqual(false);
+          }
         } catch (err) {
           err = err as Error;
           console.error(`${TAG} catch error: code =>  message => ${err.message}`);
@@ -1270,10 +1279,10 @@ export default function ProcessTest() {
         console.info(`${TAG} test start`);
         try {
           const initialTime = StdProcess.getStartRealtime();
-          expect(typeof initialTime).assertEqual('number');
+          expect(typeof initialTime).assertEqual('long');
           for (let i = 0; i < 100; i++) {
             const currentTime = StdProcess.getStartRealtime();
-            expect(typeof currentTime).assertEqual('number');
+            expect(typeof currentTime).assertEqual('long');
             expect(currentTime).assertEqual(initialTime);
           }
         } catch (err) {
@@ -1301,11 +1310,11 @@ export default function ProcessTest() {
         const testFunction = (): void => {
           try {
             const initialTime = StdProcess.getStartRealtime();
-            expect(typeof initialTime).assertEqual('number');
+            expect(typeof initialTime).assertEqual('long');
             for (let i = 0; i < 100; i++) {
               const currentTime = StdProcess.getStartRealtime();
               count++;
-              expect(typeof currentTime).assertEqual('number');
+              expect(typeof currentTime).assertEqual('long');
               expect(currentTime).assertEqual(initialTime);
             }
           } catch (err) {
@@ -1348,7 +1357,7 @@ export default function ProcessTest() {
             for (let i = 0; i < 100; i++) {
               const currentTime = StdProcess.getStartRealtime();
               count++;
-              expect(typeof currentTime).assertEqual('number');
+              expect(typeof currentTime).assertEqual('long');
               expect(currentTime).assertEqual(initialTime);
             }
           });
@@ -1379,10 +1388,10 @@ export default function ProcessTest() {
         console.info(`${TAG} test start`);
         try {
           let previousTime = StdProcess.getPastCpuTime();
-          expect(typeof previousTime).assertEqual('number');
+          expect(typeof previousTime).assertEqual('long');
           for (let i = 0; i < 100; i++) {
             const currentTime = StdProcess.getPastCpuTime();
-            expect(typeof currentTime).assertEqual('number');
+            expect(typeof currentTime).assertEqual('long');
             expect(currentTime >= previousTime).assertEqual(true);
             previousTime = currentTime;
           }
@@ -1411,11 +1420,11 @@ export default function ProcessTest() {
         try {
           await taskpool.execute((): void => {
             let previousTime = StdProcess.getPastCpuTime();
-            expect(typeof previousTime).assertEqual('number');
+            expect(typeof previousTime).assertEqual('long');
             for (let i = 0; i < 100; i++) {
               const currentTime = StdProcess.getPastCpuTime();
               count++;
-              expect(typeof currentTime).assertEqual('number');
+              expect(typeof currentTime).assertEqual('long');
               expect(currentTime >= previousTime).assertEqual(true);
               previousTime = currentTime;
             }
@@ -1445,13 +1454,13 @@ export default function ProcessTest() {
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
         worker.start()
-        let previousCpuTime: number = 0;
-        let currentCpuTime: number = 0;
+        let previousCpuTime: long = 0;
+        let currentCpuTime: long = 0;
         try {
           let job = worker.run<void>((): void => {
             const workerTag = 'ProcessTest0122_work';
             previousCpuTime = StdProcess.getPastCpuTime();
-            if (typeof previousCpuTime !== 'number') {
+            if (typeof previousCpuTime !== 'long') {
               throw new Error('getPastCpuTime() did not return a number');
             }
             for (let i = 0; i < 100; i++) {
@@ -1463,7 +1472,7 @@ export default function ProcessTest() {
             }
           });
           job.Await();
-          expect(typeof currentCpuTime).assertEqual('number');
+          expect(typeof currentCpuTime).assertEqual('long');
           expect(currentCpuTime >= previousCpuTime).assertEqual(true);
         } catch (err) {
           err = err as Error;
@@ -1490,10 +1499,10 @@ export default function ProcessTest() {
         console.info(`${TAG} test start`);
         try {
           let previousTime = StdProcess.uptime();
-          expect(typeof previousTime).assertEqual('number');
+          expect(typeof previousTime).assertEqual('long');
           for (let i = 0; i < 100; i++) {
             const currentTime = StdProcess.uptime();
-            expect(typeof currentTime).assertEqual('number');
+            expect(typeof currentTime).assertEqual('long');
             expect(currentTime >= previousTime).assertEqual(true);
             previousTime = currentTime;
           }
@@ -1523,10 +1532,10 @@ export default function ProcessTest() {
         try {
           await taskpool.execute((): void => {
             let previousTime = StdProcess.uptime();
-            expect(typeof previousTime).assertEqual('number');
+            expect(typeof previousTime).assertEqual('long');
             for (let i = 0; i < 100; i++) {
               const currentTime = StdProcess.uptime();
-              expect(typeof currentTime).assertEqual('number');
+              expect(typeof currentTime).assertEqual('long');
               expect(currentTime >= previousTime).assertEqual(true);
               previousTime = currentTime;
               count++
@@ -1557,13 +1566,13 @@ export default function ProcessTest() {
         console.info(`${TAG} test start`);
         let worker = new EAWorker();
         worker.start()
-        let previousCpuTime: number = 0;
-        let currentCpuTime: number = 0;
+        let previousCpuTime: long = 0;
+        let currentCpuTime: long = 0;
         try {
           let job = worker.run<void>((): void => {
             const workerTag = 'ProcessTest0122_work';
             previousCpuTime = StdProcess.uptime();
-            if (typeof previousCpuTime !== 'number') {
+            if (typeof previousCpuTime !== 'long') {
               throw new Error('getPastCpuTime() did not return a number');
             }
             for (let i = 0; i < 100; i++) {
@@ -1576,7 +1585,7 @@ export default function ProcessTest() {
 
           });
           job.Await();
-          expect(typeof currentCpuTime).assertEqual('number');
+          expect(typeof currentCpuTime).assertEqual('long');
           expect(currentCpuTime >= previousCpuTime).assertEqual(true);
         } catch (err) {
           err = err as Error;

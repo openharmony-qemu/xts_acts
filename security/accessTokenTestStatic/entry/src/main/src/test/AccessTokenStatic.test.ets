@@ -912,7 +912,7 @@ export default function AccessTokenStaticTest() {
           }
         
         let permissionList: Array<Permissions> = [testpermissionName];
-        atManager.off('selfPermissionStateChange', permissionList, fn);
+        atManager.offSelfPermissionStateChange(permissionList, fn);
         hilog.info(domain, 'testTag', 'Test_Off_001 success');
         expect(false).assertFail();
         done();
@@ -937,12 +937,11 @@ export default function AccessTokenStaticTest() {
       try {
         let testpermissionName: Permissions = "ohos.permission.DISTRIBUTED_DATASYNC" as Permissions;
         let permissionList: Array<Permissions> = [testpermissionName];
-        atManager.on('selfPermissionStateChange', permissionList,
+        atManager.onSelfPermissionStateChange(permissionList,
           (data: abilityAccessCtrl.PermissionStateChangeInfo) => {
             hilog.info(domain, 'testTag', `Test_Off_002 on callback data: ${JSON.stringify(data)}`);
           });
-        atManager.off('selfPermissionStateChange', permissionList,
-          (data: abilityAccessCtrl.PermissionStateChangeInfo) => {
+        atManager.offSelfPermissionStateChange(permissionList, (data: abilityAccessCtrl.PermissionStateChangeInfo) => {
             hilog.info(domain, 'testTag', `Test_Off_002 off callback data: ${JSON.stringify(data)}`);
           });
         hilog.info(domain, 'testTag', 'Test_Off_002 success');
@@ -976,7 +975,7 @@ export default function AccessTokenStaticTest() {
         for (let i = 0; i < 1025; i++) {
           permissionList.push(testpermissionName2);
         }
-        atManager.on('selfPermissionStateChange', permissionList, fn);
+        atManager.onSelfPermissionStateChange(permissionList, fn);
         hilog.info(domain, 'testTag', 'Test_On_001 success');
         expect(false).assertFail();
         done();
@@ -1005,8 +1004,8 @@ export default function AccessTokenStaticTest() {
           }
         let testpermissionName: Permissions = "ohos.permission.DISTRIBUTED_DATASYNC" as Permissions;
         let permissionList: Array<Permissions> = [testpermissionName];
-        atManager.on('selfPermissionStateChange', permissionList, fn);
-        atManager.on('selfPermissionStateChange', permissionList, fn);
+        atManager.onSelfPermissionStateChange(permissionList, fn);
+        atManager.onSelfPermissionStateChange(permissionList, fn);
         hilog.info(domain, 'testTag', 'Test_On_002 success');
         expect(false).assertFail();
         done();
@@ -1036,7 +1035,7 @@ export default function AccessTokenStaticTest() {
           }
         let testpermissionName2: Permissions = 'a'.repeat(257) as Permissions;
         let permissionList: Array<Permissions> = [testpermissionName2];
-        atManager.on('selfPermissionStateChange', permissionList, fn);
+        atManager.onSelfPermissionStateChange(permissionList, fn);
         hilog.info(domain, 'testTag', 'Test_On_003 success');
         expect(false).assertFail();
         done();
@@ -1062,7 +1061,7 @@ export default function AccessTokenStaticTest() {
       let permissionList: Array<Permissions> = [testpermissionName];
       try {
         for (let i = 0; i < 201; i++) {
-          atManager.on('selfPermissionStateChange', permissionList,
+          atManager.onSelfPermissionStateChange(permissionList,
             (data: abilityAccessCtrl.PermissionStateChangeInfo) => {
               hilog.info(domain, 'testTag', `monitor#${i}trigger: ${JSON.stringify(data)}`);
             });

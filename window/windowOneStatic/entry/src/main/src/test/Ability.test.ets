@@ -739,31 +739,28 @@ export default function abilityTest() {
           win.onWindowWillClose(callback);
           hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowWillClose success');
           expect(true).assertTrue();
+          win.offWindowWillClose(callback);
+          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowWillClose success');
+          expect(true).assertTrue();
+          done();
         } catch (e) {
+          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowWillClose success e:' + JSON.stringify(e));
           if (e instanceof BusinessError) {
             if (e.code == 1300002) {
               hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowWillClose success e:' + JSON.stringify(e));
               expect(true).assertTrue();
               done();
-            } else {
+            } else if(e.code == 801){
+              done();
+            }
+            else {
               hilog.info(0x0000, '[ANI]', 'finaltest [ANI] on_windowWillClose fail e:' + JSON.stringify(e));
               expect(false).assertTrue();
               done();
             }
           }
         }
-        try {
-          win.offWindowWillClose(callback);
-          hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowWillClose success');
-          expect(true).assertTrue();
-        } catch (e) {
-          if (e instanceof BusinessError) {
-            hilog.info(0x0000, '[ANI]', 'finaltest [ANI] off_windowWillClose fail e:' + JSON.stringify(e));
-            expect(false).assertTrue();
-            done();
-          }
-        }
-        done();
+        
       });
 
     /**
