@@ -32,7 +32,7 @@ export default function CloudDiskNdkTest(){
      * @tc.require
      */
     it('CloudDisk_RegisterSyncFolder_001', Level.LEVEL0, async (done: Function) => {
-      let filepath = "/storage/Users/currentUser/";
+      let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_RegisterSyncFolder_001: " + filepath);
       let ret = clouddisk.RegisterSyncFolder(filepath);
       console.info("CloudDisk_RegisterSyncFolder_001 Test NAPI ret= " + JSON.stringify(ret));
@@ -56,7 +56,7 @@ export default function CloudDiskNdkTest(){
      * @tc.require
      */
     it('CloudDisk_UnregisterSyncFolder_001', Level.LEVEL0, async (done: Function) => {
-      let filepath = "/storage/Users/currentUser/";
+      let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_UnregisterSyncFolder_001: " + filepath);
       let ret = clouddisk.UnregisterSyncFolder(filepath);
       console.info("CloudDisk_UnregisterSyncFolder_001 Test NAPI ret= " + JSON.stringify(ret));
@@ -80,7 +80,7 @@ export default function CloudDiskNdkTest(){
      * @tc.require
      */
     it('CloudDisk_ActiveSyncFolder_001', Level.LEVEL0, async (done: Function) => {
-      let filepath = "/storage/Users/currentUser/";
+      let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_ActiveSyncFolder_001: " + filepath);
       let ret = clouddisk.ActiveSyncFolder(filepath);
       console.info("CloudDisk_ActiveSyncFolder_001 Test NAPI ret= " + JSON.stringify(ret));
@@ -104,7 +104,7 @@ export default function CloudDiskNdkTest(){
      * @tc.require
      */
     it('CloudDisk_DeactiveSyncFolder_001', Level.LEVEL0, async (done: Function) => {
-      let filepath = "/storage/Users/currentUser/";
+      let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_DeactiveSyncFolder_001: " + filepath);
       let ret = clouddisk.DeactiveSyncFolder(filepath);
       console.info("CloudDisk_DeactiveSyncFolder_001 Test NAPI ret= " + JSON.stringify(ret));
@@ -150,7 +150,7 @@ export default function CloudDiskNdkTest(){
      * @tc.require
      */
     it('CloudDisk_UpdateCustomAlias_001', Level.LEVEL0, async (done: Function) => {
-      let filepath = "/storage/Users/currentUser/";
+      let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_UpdateCustomAlias_001: " + filepath);
       let ret = clouddisk.UpdateCustomAlias(filepath);
       console.info("CloudDisk_UpdateCustomAlias_001 Test NAPI ret= " + JSON.stringify(ret));
@@ -174,7 +174,7 @@ export default function CloudDiskNdkTest(){
      * @tc.require
      */
     it('CloudDisk_RegisterSyncFolderChanges_001', Level.LEVEL0, async (done: Function) => {
-      let filepath = "/storage/Users/currentUser/";
+      let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_RegisterSyncFolderChanges_001: " + filepath);
       let ret = clouddisk.ReFolderChanges(filepath);
       console.info("CloudDisk_RegisterSyncFolderChanges_001 Test NAPI ret= " + JSON.stringify(ret));
@@ -198,7 +198,7 @@ export default function CloudDiskNdkTest(){
      * @tc.require
      */
     it('CloudDisk_UnregisterSyncFolderChanges_001', Level.LEVEL0, async (done: Function) => {
-      let filepath = "/storage/Users/currentUser/";
+      let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_UnregisterSyncFolderChanges_001: " + filepath);
       let ret = clouddisk.UnReFolderChanges(filepath);
       console.info("CloudDisk_UnregisterSyncFolderChanges_001 Test NAPI ret= " + JSON.stringify(ret));
@@ -222,7 +222,7 @@ export default function CloudDiskNdkTest(){
      * @tc.require
      */
     it('CloudDisk_GetSyncFolderChanges_001', Level.LEVEL0, async (done: Function) => {
-      let filepath = "/storage/Users/currentUser/";
+      let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_GetSyncFolderChanges_001: " + filepath);
       let ret = clouddisk.GetSyncFolderChanges(filepath);
       console.info("CloudDisk_GetSyncFolderChanges_001 Test NAPI ret= " + JSON.stringify(ret));
@@ -246,7 +246,7 @@ export default function CloudDiskNdkTest(){
      * @tc.require
      */
     it('CloudDisk_SetFileSyncStates_001', Level.LEVEL0, async (done: Function) => {
-      let filepath = "/storage/Users/currentUser/";
+      let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_SetFileSyncStates_001: " + filepath);
       let ret = clouddisk.SetFileSyncStates(filepath);
       console.info("CloudDisk_SetFileSyncStates_001 Test NAPI ret= " + JSON.stringify(ret));
@@ -270,7 +270,7 @@ export default function CloudDiskNdkTest(){
      * @tc.require
      */
     it('CloudDisk_GetFileSyncStates_001', Level.LEVEL0, async (done: Function) => {
-      let filepath = "/storage/Users/currentUser/";
+      let filepath = "/storage/Users/currentUser/Documents/";
       console.info("CloudDisk_GetFileSyncStates_001: " + filepath);
       let ret = clouddisk.GetFileSyncStates(filepath);
       console.info("CloudDisk_GetFileSyncStates_001 Test NAPI ret= " + JSON.stringify(ret));
