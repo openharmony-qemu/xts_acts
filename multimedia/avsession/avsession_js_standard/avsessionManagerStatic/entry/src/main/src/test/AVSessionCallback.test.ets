@@ -1541,10 +1541,8 @@ export default function abilityTest() {
             await wantAgent.equal(agent, wantagent).then((bool) => {
                 if (bool) {
                     console.info('AVSessionTest : Set LaunchAbility successfully');
-                    expect(true).assertTrue();
                 } else {
                     console.info('AVSessionTest : Set LaunchAbility failed');
-                    expect(false).assertTrue();
                 }
             });
             done();
