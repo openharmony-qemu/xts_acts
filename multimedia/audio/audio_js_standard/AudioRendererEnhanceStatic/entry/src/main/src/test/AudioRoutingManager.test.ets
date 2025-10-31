@@ -291,5 +291,41 @@ export default function AudioRoutingManagerTest() {
       done();
     });
 
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICBLOCKSTATUSCHANGE_STATIC_0800
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICBLOCKSTATUSCHANGE_STATIC_0800
+     * @tc.desc        audio.DeviceBlockStatusInfo
+     * @tc.size        MEDIUM
+     * @tc.type        Function
+     * @tc.level       Level 0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICBLOCKSTATUSCHANGE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: () => void): void => {
+      try {
+        let blockMic: boolean = await audioRoutingManager.isMicBlockDetectionSupported()
+        if (blockMic == true) {
+          audioRoutingManager.onMicBlockStatusChanged((deviceBlockStatusInfo: audio.DeviceBlockStatusInfo) =>{
+            let audioDeviceBlockStatusInfo: audio.DeviceBlockStatus = deviceBlockStatusInfo.blockStatus;
+            if (audioDeviceBlockStatusInfo == audio.DeviceBlockStatus.BLOCKED ||
+              audioDeviceBlockStatusInfo == audio.DeviceBlockStatus.UNBLOCKED) {
+              let audioDevices: audio.AudioDeviceDescriptors = deviceBlockStatusInfo.devices;
+              console.info(`${Tag}: audioDevices[0].id: ${audioDevices[0].id}`);
+              expect(audioDevices[0].id).assertLargerOrEqual(0);
+              console.info(`${Tag}: on_micBlockStatusChanged: SUCCESS`);
+              expect(true).assertTrue();
+            } else {
+              console.info(`${Tag}: on_micBlockStatusChanged: SUCCESS`);
+              expect(false).assertTrue();
+            }
+          })
+          audioRoutingManager.offMicBlockStatusChanged()
+        }
+        expect(true).assertTrue();
+      } catch (error: BusinessError) {
+        console.error(`${Tag}: on_micBlockStatusChanged ERROR: ${error.message}, ${error.code}`);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
   })
 }

@@ -11498,5 +11498,110 @@ export default function audioRendererTest() {
       done();
     })
 
+    /**
+     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9800
+     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9800
+     * @tc.desc        AudioRenderer - CallBack
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_9800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0,
+        volumeMode: audio.AudioVolumeMode.SYSTEM_GLOBAL
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer | undefined;
+
+      let bufferSize: long | undefined;
+
+      audio.createAudioRenderer(audioRendererOptions,(err: BusinessError | null, data: audio.AudioRenderer | undefined) => {
+        if (err) {
+          console.error(`AudioRenderer Created: Error: ${err}`);
+          expect(true).assertFalse();
+        } else {
+          console.info('AudioRenderer Created: SUCCESS');
+          audioRenderer = data;
+          data?.start((err: BusinessError | null) => {
+            if (err) {
+              console.error('Renderer start failed.');
+              expect(true).assertFalse();
+            } else {
+              console.info('Renderer start success.');
+            }
+          });
+          data?.getRendererInfo((err: BusinessError | null, audioRendererInfo: audio.AudioRendererInfo | undefined) => {
+            if (err) {
+              console.error(`Failed to get renderer info. Code: ${err.code}, message: ${err.message}`);
+              expect(true).assertFalse();
+            } else {
+              expect(audio.SourceType.SOURCE_TYPE_CAMCORDER).assertEqual(13);
+              console.info(`Succeeded in getting renderer info, AudioRendererInfo: ${JSON.stringify(audioRendererInfo)}.`);
+            }
+          });
+          data?.getStreamInfo((err: BusinessError | null, streamInfo: audio.AudioStreamInfo | undefined) => {
+            if (err) {
+              console.error(`Failed to get StreamInfo info. Code: ${err.code}, message: ${err.message}`);
+              expect(true).assertFalse();
+            } else {
+              console.info('Renderer GetStreamInfo:');
+              console.info(`Renderer sampling rate: ${streamInfo?.samplingRate}`);
+              console.info(`Renderer channel: ${streamInfo?.channels}`);
+              console.info(`Renderer format: ${streamInfo?.sampleFormat}`);
+              console.info(`Renderer encoding type: ${streamInfo?.encodingType}`);
+            }
+          });
+          data?.getBufferSize((err: BusinessError | null, value: long | undefined) => {
+            if (err) {
+              console.error('getBufferSize error');
+              expect(true).assertFalse();
+            } else {
+              bufferSize = value;
+              console.info(`AudioFrameworkRenderLog: getBufferSize: SUCCESS ${value}`);
+            }
+          });
+          data?.drain((err: BusinessError | null) => {
+            if (err) {
+              console.error('Renderer drain failed');
+              expect(true).assertFalse();
+            } else {
+              console.info('Renderer drained.');
+            }
+          });
+          data?.stop((err: BusinessError | null) => {
+            if (err) {
+              console.error('Renderer stop failed');
+              expect(true).assertFalse();
+            } else {
+              console.info('Renderer stopped.');
+            }
+          });
+          data?.release((err: BusinessError | null) => {
+            if (err) {
+              console.error('Renderer release failed');
+              expect(true).assertFalse();
+            } else {
+              console.info('Renderer released.');
+            }
+          });
+        }
+      });
+      done();
+    })
+
   })
 }
