@@ -43,12 +43,14 @@ export default function callJsunit() {
         console.info(`${caseName} test end`);
         done();
       } else {
-        let ret = false;
         let voiceCapablity = call.hasVoiceCapability();
-        if (voiceCapablity === true || voiceCapablity === false) {
-          ret = true;
+        if (voiceCapablity) {
+          expect(voiceCapablity).assertEqual(true);
+          console.info(`${caseName}  :voiceCapablity is ${JSON.stringify(voiceCapablity)}`);
+        } else {
+          expect(voiceCapablity).assertEqual(false);
+          console.info(`${caseName}  :voiceCapablity is ${JSON.stringify(voiceCapablity)}`);
         }
-        expect(ret).assertTrue();
         console.log(`==========> ${caseName} Test end ==========>`);
         done();
       }
