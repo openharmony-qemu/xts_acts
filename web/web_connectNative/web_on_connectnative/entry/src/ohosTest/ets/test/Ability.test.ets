@@ -119,6 +119,9 @@ export default function abilityTest() {
           done();
         },
         onFailed(code, errMsg) {
+          console.log('testtag1' + webNativeMessagingExtensionManager.NmErrorCode.PERMISSION_DENY );
+          console.log('testtag1' + webNativeMessagingExtensionManager.NmErrorCode.WANT_CONTENT_ERROR);
+          console.log('testtag1' + webNativeMessagingExtensionManager.NmErrorCode.INNER_ERROR);
           hilog.info(0x0000, 'testTag', `${tcNumber} onFailed code: ${code} errMsg: ${errMsg}`);
           connId = 0;
           console.log('pbbb' + code)
