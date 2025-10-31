@@ -3967,7 +3967,7 @@ export default function soundPoolTest() {
         streamId = (await soundPool!!.play(soundId)) as int;
         await sleep(500);
         await soundPool!!.stop(streamId);
-        soundPool!!.offplayFinished();
+        soundPool!!.offPlayFinished();
         flag = false;
         streamId = (await soundPool!!.play(soundId)) as int;
         await sleep(500);
