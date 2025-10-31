@@ -22,6 +22,7 @@ group("ActsAceEtsModuleXNodeTest") {
       "ace_ets_module_XNode_api16:ActsAceEtsModuleXNodeApi16Test",
       "ace_ets_module_XNode_api20:ActsAceEtsModuleXNodeApi20Test",
       "ace_ets_module_XNode_api21:ActsAceEtsModuleXNodeApi21Test",
+      "ace_ets_module_XNode_api22:ActsAceEtsModuleXNodeApi22Test",
     ]
   } else {
     deps = [
@@ -33,6 +34,7 @@ group("ActsAceEtsModuleXNodeTest") {
       "ace_ets_module_XNode_api18:ActsAceEtsModuleXNodeApi18Test",
       "ace_ets_module_XNode_api20:ActsAceEtsModuleXNodeApi20Test",
       "ace_ets_module_XNode_api21:ActsAceEtsModuleXNodeApi21Test",
+      "ace_ets_module_XNode_api22:ActsAceEtsModuleXNodeApi22Test",
     ]
   }
 }
