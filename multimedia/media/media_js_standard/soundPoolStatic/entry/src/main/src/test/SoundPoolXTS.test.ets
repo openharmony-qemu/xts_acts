@@ -3914,7 +3914,7 @@ export default function soundPoolTest() {
         })
         soundId = (await soundPool!!.load(fd1, 0, length1)) as int;
         await sleep(500);
-        soundPool!!.off('loadComplete');
+        soundPool!!.offLoadComplete();
         flag = false;
         soundId = (await soundPool!!.load(fd2, 0, length2)) as int;
         await sleep(500);
@@ -3967,7 +3967,7 @@ export default function soundPoolTest() {
         streamId = (await soundPool!!.play(soundId)) as int;
         await sleep(500);
         await soundPool!!.stop(streamId);
-        soundPool!!.off('playFinished');
+        soundPool!!.offplayFinished();
         flag = false;
         streamId = (await soundPool!!.play(soundId)) as int;
         await sleep(500);
