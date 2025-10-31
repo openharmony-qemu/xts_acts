@@ -1368,7 +1368,7 @@ export default function HttpRequestInterceptor() {
     /**
      * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1900
      * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions1900
-     * @tc.desc: test catch Interceptor parameter duplication error 2300804 HttpRequestInterceptor
+     * @tc.desc: test catch Duplicated interceptor type in the chain error 2300803 HttpRequestInterceptor
      * @tc.size: SmallTest
      * @tc.type: Function
      * @tc.level: level 2
@@ -1412,8 +1412,8 @@ export default function HttpRequestInterceptor() {
         } catch (error) {
           const err: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
-          ExpectTrue(err.code == 2300804);
-          ExpectTrue(err.message === "Interceptor parameter duplication");
+          ExpectTrue(err.code == 2300803);
+          ExpectTrue(err.message === "Duplicated interceptor type in the chain");
           done();
         }
         hilog.info(0x0000, 'testTag', `${caseName} test End`);
