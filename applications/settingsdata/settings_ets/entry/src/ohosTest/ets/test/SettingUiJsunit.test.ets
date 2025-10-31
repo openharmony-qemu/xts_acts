@@ -1393,21 +1393,42 @@ export default function settingUiJsunit() {
       }
     });
 
-    it('settings_get_value_116',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) => {
-      try{
-        let str: myObj2 = {"code":801};
-        settings.canShowFloating().then((data)=>{
-          console.info('settings test canShowFloating promise err'+String(data));
-          // expect(String(err)).assertEqual(str);
-          done();
-        }).catch((err: BusinessError)=>{
-          console.info('settings test canShowFloating promise err'+JSON.stringify(err.code));
-          expect(JSON.stringify(err.code)).assertEqual("801");
-          done();
-          return;
-        })
-      }catch(err){
-        console.info('settings test canShowFloating promise err'+String(err));
+    /*
+     * @tc.number    : settings_get_value_116
+     * @tc.name      : settings_get_value_116
+     * @tc.desc      : MediumTest
+     * @tc.size      : Function
+     * @tc.type      : Function test
+     * @tc.level     : Level 0
+     */
+    it('settings_get_value_116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      try {
+        let str: myObj2 = { "code": 801 };
+        let key: string = 'settings.telephony.airplanemode';
+        let result = settings.getValueSync(globalThis.abilityContext, key, '1');
+        if (result === '1') {
+          settings.canShowFloating().then((data) => {
+            expect(data).assertEqual(true);
+            done();
+          }).catch((err: BusinessError) => {
+            console.info('settings test canShowFloating promise err' + JSON.stringify(err.code));
+            expect(JSON.stringify(err.code)).assertEqual("801");
+            done();
+            return;
+          })
+        } else {
+          settings.canShowFloating().then((data) => {
+            expect(data).assertEqual(false);
+            done();
+          }).catch((err: BusinessError) => {
+            console.info('settings test canShowFloating promise err' + JSON.stringify(err.code));
+            expect(JSON.stringify(err.code)).assertEqual("801");
+            done();
+            return;
+          })
+        }
+      } catch (err) {
+        console.info('settings test canShowFloating promise err' + String(err));
         expect(true).assertTrue();
         done();
         return;
@@ -1726,7 +1747,7 @@ export default function settingUiJsunit() {
      */
     it('open_manager_settings_119_2', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
       try{
-        let value = settings.openNetworkManagerSettings(globalThis.abilityContext);
+        let value = await settings.openNetworkManagerSettings(globalThis.abilityContext);
         expect(value).assertTrue();
         done();
       }catch (err) {
@@ -1747,7 +1768,7 @@ export default function settingUiJsunit() {
     it('open_manager_settings_119_3', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done:Function) => {
       try{
         let context = undefined;
-        let value = settings.openNetworkManagerSettings(context);
+        let value = await settings.openNetworkManagerSettings(context);
         expect(value).assertEqual(false);
         done();
       }catch (err) {
