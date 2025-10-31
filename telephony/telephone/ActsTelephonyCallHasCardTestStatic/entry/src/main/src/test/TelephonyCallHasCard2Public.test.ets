@@ -313,11 +313,11 @@ export default function HasCard2PublicTest() {
         call.formatPhoneNumber(phoneNumber, options, (err: BusinessError<void>|null, data: String|undefined) => {
           if (err) {
             hilog.info(domain, tag, '%{public}s', caseName +' formatPhoneNumber fail, err->'+JSON.stringify(err));
-            ExpectTrue(true);
+            ExpectFail();
             done();
           } else {
             hilog.info(domain, tag, '%{public}s', caseName +' formatPhoneNumber finish + '+JSON.stringify(data));
-            ExpectFail();
+            ExpectTrue(true);
             done();
           }
         });
