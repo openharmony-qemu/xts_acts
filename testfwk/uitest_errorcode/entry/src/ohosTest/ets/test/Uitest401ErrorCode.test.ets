@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, it, expect } from '@ohos/hypium';
+import { describe, beforeAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, UiDirection, MouseButton, WindowMode, PointerMatrix, UIElementInfo, UIEventObserver, Point, ComponentEventType, On } from '@ohos.UiTest'
 
 const TestTag = 'uitest401';
@@ -33,7 +33,7 @@ export default function abilityTest() {
      * @tc.name test_injectMultiPointerAction_401
      * @tc.desc injectMultiPointerAction 401 test.
      */
-    it('test_injectMultiPointerAction_401', 0, async () => {
+    it('test_injectMultiPointerAction_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_injectMultiPointerAction_401 start`);
       try {
         await driver.injectMultiPointerAction(null);
@@ -74,7 +74,7 @@ export default function abilityTest() {
      * @tc.name test_PointerMatrix_401
      * @tc.desc create 401 test.
      */
-    it('test_PointerMatrix_401', 0, async () => {
+    it('test_PointerMatrix_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_PointerMatrix_401 start`);
       try {
         PointerMatrix.create(-1, 1);
@@ -114,7 +114,7 @@ export default function abilityTest() {
      * @tc.name test_setPoint_401
      * @tc.desc setPoint 401 test.
      */
-    it('test_setPoint_401', 0, async () => {
+    it('test_setPoint_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.log(`${TestTag}, test_setPoint_401 start`);
       try {
         let points = PointerMatrix.create(1, 1);
