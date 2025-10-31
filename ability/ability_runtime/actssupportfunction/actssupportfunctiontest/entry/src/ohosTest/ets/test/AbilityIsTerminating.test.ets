@@ -182,14 +182,16 @@ export default function AbilityIsTerminatingTest() {
           console.log(TAG + "SubscribeInfoCallback : " + JSON.stringify(data));
 
           if (data.event == onCreate) {
-            let abilitydelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-              let cmd = "uinput -K -d 2 -u 2";
-              await abilitydelegator.executeShellCommand(cmd).then((data) => {
-                console.log(TAG + "executeShellCommand : data : " + data.stdResult);
-                console.log(TAG + "executeShellCommand : data : " + data.exitCode);
-              }).catch((error: BusinessError) => {
-                console.log(TAG + "executeShellCommand error : " + JSON.stringify(error));
-              });
+            setTimeout(async () => {
+              let abilitydelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+                let cmd = "uinput -K -d 2 -u 2";
+                await abilitydelegator.executeShellCommand(cmd).then((data) => {
+                  console.log(TAG + "executeShellCommand : data : " + data.stdResult);
+                  console.log(TAG + "executeShellCommand : data : " + data.exitCode);
+                }).catch((error: BusinessError) => {
+                  console.log(TAG + "executeShellCommand error : " + JSON.stringify(error));
+                });
+            }, 1000);
           }
 
           if (data.event == onDestroy) {
@@ -197,13 +199,15 @@ export default function AbilityIsTerminatingTest() {
             status2 = data?.parameters?.isTerminating2;
             lifeList = data?.parameters?.lifeList;
 
-            commonEventManager.unsubscribe(subscriber, async (err, data) => {
-                console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
-                expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));
-                expect(status1).assertFalse();
-                expect(status2).assertTrue();
-                done();
-              });
+            setTimeout(async () => {	
+              commonEventManager.unsubscribe(subscriber, async (err, data) => {
+                console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));	
+                expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));	
+                expect(status1).assertFalse();	
+                expect(status2).assertTrue();	
+                done();	
+              });	
+            }, 1000);
           }
         });
       }).catch((error: BusinessError) => {
