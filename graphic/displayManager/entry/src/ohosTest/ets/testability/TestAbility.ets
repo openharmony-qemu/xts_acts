@@ -48,7 +48,7 @@ export default class TestAbility extends UIAbility {
                 JSON.stringify(data) ?? '');
         });
         AppStorage.setOrCreate('windowStage',windowStage);
-        AppStorage.setOrCreate('common',this.context);
+        AppStorage.setOrCreate('context',this.context);
     }
 
     onWindowStageDestroy() {
