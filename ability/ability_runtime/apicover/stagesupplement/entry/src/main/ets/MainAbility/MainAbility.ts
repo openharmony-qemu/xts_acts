@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -57,7 +57,7 @@ export default class MainAbility extends Ability {
         .catch((err) => {
           console.info(printLog1 + "terminateSelf err = " + JSON.stringify(err));
         });
-    }, 6000);
+    }, 2000);
   }
 
   async onDestroy(): Promise<void>{

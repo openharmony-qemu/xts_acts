@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -76,14 +76,14 @@ export default function ContextEnvironmentTest(applicationContext: common.Applic
         let code: number;
         console.info(TAG + "callbackId = " + callbackId + " callNum = " + callNum);
 
-        await sleep(700)
+        await sleep(300)
         // unregisterEnvironmentCallback
         applicationContext.off('environment', callbackId, (error, data) => {
           console.info(TAG + "unregisterEnvironmentCallback first err is : " + JSON.stringify(error) + ", data is : " + JSON.stringify(data));
           code = error?.code;
         })
 
-        await sleep(700);
+        await sleep(300);
         expect(callbackId).assertEqual(callNum);
         expect(code!).assertEqual(undefined);
         callNum++;
