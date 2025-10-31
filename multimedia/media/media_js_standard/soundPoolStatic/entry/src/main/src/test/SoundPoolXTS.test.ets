@@ -273,7 +273,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool?.on('error', (error: BusinessError) => {
+        soundPool?.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -313,7 +313,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -352,7 +352,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -390,7 +390,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -429,7 +429,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -485,7 +485,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -540,7 +540,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -577,7 +577,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -614,7 +614,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -651,7 +651,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -693,7 +693,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -734,7 +734,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -776,7 +776,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -819,7 +819,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -879,7 +879,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -938,7 +938,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -979,7 +979,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -1020,7 +1020,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -1061,7 +1061,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1096,7 +1096,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1137,7 +1137,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1177,7 +1177,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -1216,7 +1216,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -1260,7 +1260,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -1304,7 +1304,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1349,7 +1349,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1389,7 +1389,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1428,7 +1428,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1473,7 +1473,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1512,7 +1512,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1551,7 +1551,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1598,7 +1598,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1645,7 +1645,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1692,7 +1692,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1739,7 +1739,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -1786,7 +1786,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -1836,7 +1836,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -1879,7 +1879,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -1922,7 +1922,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -1972,7 +1972,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2015,7 +2015,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2058,7 +2058,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2110,7 +2110,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2162,7 +2162,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2214,7 +2214,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2266,7 +2266,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2319,7 +2319,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -2356,7 +2356,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -2398,7 +2398,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -2440,7 +2440,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2481,7 +2481,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2527,7 +2527,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2575,7 +2575,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -2615,7 +2615,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -2660,7 +2660,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -2706,7 +2706,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2750,7 +2750,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2799,7 +2799,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -2849,7 +2849,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -2888,7 +2888,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -2933,7 +2933,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -2978,7 +2978,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -3024,7 +3024,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3067,7 +3067,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3116,7 +3116,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3165,7 +3165,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3215,7 +3215,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -3255,7 +3255,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -3295,7 +3295,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -3335,7 +3335,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -3375,7 +3375,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -3416,7 +3416,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -3462,7 +3462,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -3509,7 +3509,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3554,7 +3554,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3598,7 +3598,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3642,7 +3642,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3686,7 +3686,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3731,7 +3731,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3781,7 +3781,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -3829,12 +3829,12 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
         } as ErrorCallback<BusinessError>)
-        soundPool!!.on('loadComplete', (soundId_: int) => {
+        soundPool!!.onLoadComplete((soundId_: int) => {
           console.info(`${TAG}: on loadComplete called, soundId: ${soundId_}`);
           done();
         })
@@ -3862,12 +3862,12 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
         } as ErrorCallback<BusinessError>)
-        soundPool!!.on('playFinished', () => {
+        soundPool!!.onPlayFinished(() => {
           console.info(`${TAG}: on playFinished called!`);
           done();
         } as Callback<void>)
@@ -3899,16 +3899,16 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
         } as ErrorCallback<BusinessError>)
-        soundPool!!.on('loadComplete', (soundId_: int) => {
+        soundPool!!.onLoadComplete((soundId_: int) => {
           console.info(`${TAG}: on loadComplete called, soundId: ${soundId_}`);
           flag = true;
         })
-        soundPool!!.on('loadComplete', (soundId_: int) => {
+        soundPool!!.onLoadComplete((soundId_: int) => {
           console.info(`${TAG}: on loadComplete called, soundId: ${soundId_}`);
           flag = true;
         })
@@ -3949,16 +3949,16 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
         } as ErrorCallback<BusinessError>)
-        soundPool!!.on('playFinished', () => {
+        soundPool!!.onPlayFinished(() => {
           console.info(`${TAG}: on playFinished called`);
           flag = true;
         } as Callback<void>)
-        soundPool!!.on('playFinished', () => {
+        soundPool!!.onPlayFinished(() => {
           console.info(`${TAG}: on playFinished called`);
           flag = true;
         } as Callback<void>)
@@ -4002,7 +4002,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -4039,7 +4039,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -4086,7 +4086,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -4126,7 +4126,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
           done();
@@ -4175,7 +4175,7 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
@@ -4222,15 +4222,15 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
-        soundPool!!.on('loadComplete', (soundId_: int) => {
+        soundPool!!.onLoadComplete((soundId_: int) => {
           console.info(`${TAG}: on loadComplete called, soundId: ${soundId_}`);
           loadCount++;
         })
-        soundPool!!.on('playFinished', () => {
+        soundPool!!.onPlayFinished(() => {
           console.info(`${TAG}: on playFinished called!`);
           time++;
         } as Callback<void>)
@@ -4291,11 +4291,11 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
-        soundPool!!.on('playFinishedWithStreamId', (streamId: int) => {
+        soundPool!!.onPlayFinishedWithStreamId((streamId: int) => {
           console.info(`${TAG}: on playFinished called! streamId is: ${streamId}`);
           playStreamId_.push(streamId);
         });
@@ -4361,15 +4361,15 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool!!.on('error', (error: BusinessError) => {
+        soundPool!!.onError((error: BusinessError) => {
           console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
-        soundPool!!.on('playFinished', () => {
+        soundPool!!.onPlayFinished(() => {
           console.info(`${TAG}: on playFinished called!`);
           time++;
         } as Callback<void>)
-        soundPool!!.on('playFinishedWithStreamId', (streamId: int) => {
+        soundPool!!.onPlayFinishedWithStreamId((streamId: int) => {
           console.info(`${TAG}: on playFinished called! streamId is: ${streamId}`);
           playStreamId_.push(streamId);
         })
@@ -4447,27 +4447,27 @@ export default function soundPoolTest() {
           expectFalse();
           done();
         }
-        soundPool1!!.on('error', (error: BusinessError) => {
+        soundPool1!!.onError((error: BusinessError) => {
           console.error(`${TAG}: soundPool1 onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
-        soundPool1!!.on('loadComplete', (soundId: int) => {
+        soundPool1!!.onLoadComplete((soundId: int) => {
           console.info(`${TAG}: soundPool1 on loadComplete called, soundId: ${soundId}`);
           loadCount1++;
         })
-        soundPool1!!.on('playFinished', () => {
+        soundPool1!!.onPlayFinished(() => {
           console.info(`${TAG}: soundPool1 on playFinished called!`);
           playTime1++;
         } as Callback<void>)
-        soundPool2!!.on('error', (error: BusinessError) => {
+        soundPool2!!.onError((error: BusinessError) => {
           console.error(`${TAG}: soundPool2 onError called! error happened, message is: ${error.message}`);
           expectFalse();
         } as ErrorCallback<BusinessError>)
-        soundPool2!!.on('loadComplete', (soundId: int) => {
+        soundPool2!!.onLoadComplete((soundId: int) => {
           console.info(`${TAG}: soundPool2 on loadComplete called, soundId: ${soundId}`);
           loadCount2++;
         })
-        soundPool2!!.on('playFinished', () => {
+        soundPool2!!.onPlayFinished(() => {
           console.info(`${TAG}: soundPool2 on playFinished called!`);
           playTime2++;
         } as Callback<void>)
@@ -4531,7 +4531,7 @@ export default function soundPoolTest() {
             expectFalse();
             done();
           }
-          soundPool!!.on('error', (error: BusinessError) => {
+          soundPool!!.onError((error: BusinessError) => {
             console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
             expectFalse();
           } as ErrorCallback<BusinessError>)
@@ -4573,7 +4573,7 @@ export default function soundPoolTest() {
             expectFalse();
             done();
           }
-          soundPool!!.on('error', (error: BusinessError) => {
+          soundPool!!.onError((error: BusinessError) => {
             console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
             expectFalse();
           } as ErrorCallback<BusinessError>)
@@ -4620,7 +4620,7 @@ export default function soundPoolTest() {
             expectFalse();
             done();
           }
-          soundPool!!.on('error', (error: BusinessError) => {
+          soundPool!!.onError((error: BusinessError) => {
             console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
             expectFalse();
           } as ErrorCallback<BusinessError>)
@@ -4668,7 +4668,7 @@ export default function soundPoolTest() {
             expectFalse();
             done();
           }
-          soundPool!!.on('error', (error: BusinessError) => {
+          soundPool!!.onError((error: BusinessError) => {
             console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
             expectFalse();
             done();
@@ -4715,7 +4715,7 @@ export default function soundPoolTest() {
             expectFalse();
             done();
           }
-          soundPool!!.on('error', (error: BusinessError) => {
+          soundPool!!.onError((error: BusinessError) => {
             console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
             expectFalse();
             done();
@@ -4767,7 +4767,7 @@ export default function soundPoolTest() {
             expectFalse();
             done();
           }
-          soundPool!!.on('error', (error: BusinessError) => {
+          soundPool!!.onError((error: BusinessError) => {
             console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
             expectFalse();
             done();
