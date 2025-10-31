@@ -14,7 +14,7 @@
 */
 {
   "app": {
-    "bundleName": "com.acts.context.aappserviceextension",
+    "bundleName": "com.acts.context.webonconnectnative",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",

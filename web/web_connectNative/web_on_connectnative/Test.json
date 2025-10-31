@@ -4,15 +4,15 @@
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
         "shell-timeout": "180000",
-        "bundle-name": "com.acts.context.aappserviceextension",
+        "bundle-name": "com.acts.context.webonconnectnative",
         "module-name": "entry_test"
     },
     "kits": [
         {
             "test-file-name": [
-                "ActsAAppServiceExtensionConTest.hap",
-                "ActsAAppServiceExtensionContextRelyTest.hap",
-                "ActsAAppServiceExtensionConCppTest.hap"
+                "ActsWebOnConnectnativeTest.hap",
+                "ActsWebOnConnectnativeCppTest.hap",
+                "ActsWebOnConnectnativeRelyTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

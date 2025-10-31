@@ -13,20 +13,20 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("ActsAAppServiceExtensionConCppTest") {
+ohos_app_assist_suite("ActsWebOnConnectnativeCppTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsAAppServiceExtensionConCppTest"
+  hap_name = "ActsWebOnConnectnativeCppTest"
   part_name = "webview"
   subsystem_name = "web"
 }
 
-ohos_js_app_suite("ActsAAppServiceExtensionConTest") {
+ohos_js_app_suite("ActsWebOnConnectnativeTest") {
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsAAppServiceExtensionConTest"
+  hap_name = "ActsWebOnConnectnativeTest"
   part_name = "webview"
   subsystem_name = "web"
-  deps = [ ":ActsAAppServiceExtensionConCppTest" ]
+  deps = [ ":ActsWebOnConnectnativeCppTest" ]
 }

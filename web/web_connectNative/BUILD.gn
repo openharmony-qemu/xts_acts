@@ -17,8 +17,8 @@ group("webConnectNative") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "actsaappserviceextensioncon:ActsAAppServiceExtensionConTest",
-      "actsactsaappserviceextensionrely:ActsAAppServiceExtensionContextRelyTest",
+      "web_on_connectnative:ActsWebOnConnectnativeTest",
+      "web_on_connectnative_rely:ActsWebOnConnectnativeRelyTest",
     ]
   }
 }
