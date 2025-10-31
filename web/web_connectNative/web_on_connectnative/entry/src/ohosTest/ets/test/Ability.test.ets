@@ -99,7 +99,7 @@ export default function abilityTest() {
       }
 
       let want: Want = {
-        bundleName: 'com.open.harmony.webnativemessagingextensionreply',
+        bundleName: 'com.acts.context.webonconnectnativerely',
         abilityName: 'WebNativeExtensionExtAbility1',
         parameters:{
           "ohos.arkweb.extensionOrigin":"testOrigin",
@@ -186,7 +186,7 @@ export default function abilityTest() {
       });
 
       let want: Want = {
-        bundleName: 'com.open.harmony.webnativemessagingextensionreply',
+        bundleName: 'com.acts.context.webonconnectnativerely',
         abilityName: 'WebNativeExtensionExtAbility1',
         parameters:{
           "ohos.arkweb.extensionOrigin":"testOrigin",
