@@ -1586,7 +1586,7 @@ static napi_value OHAIModelPredictOne(napi_env env, napi_callback_info)
     OH_AI_TensorHandleArray inputs = OH_AI_ModelGetInputs(model);
     NAPI_ASSERT(env, inputs.handle_list != nullptr, "inputs Create Error");
     GenerateInputDataWithRandom(inputs);
-    OH_AI_TensorHandleArray output;
+    auto output = OH_AI_ModelGetOutputs(model);
     OH_AI_Status retData = OH_AI_ModelPredict(model, inputs, &output, nullptr, nullptr);
     napi_create_int32(env, retData == OH_AI_STATUS_SUCCESS, &result);
     return result;
