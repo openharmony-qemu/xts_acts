@@ -609,7 +609,15 @@ export default function ActsReminderAgentManagerStaticTest() {
 
             reminderAgentManager.getAllValidReminders().then((reminderInfo: Array<reminderAgentManager.ReminderInfo>) => {
               hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_011 getAllValidReminders:' + JSON.stringify(reminderInfo));
+              for (let i = 0; i < reminderInfo.length; i++) {
+                console.log(`SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_011 索引 ${i}:`, reminderInfo[i]);
+              }
+              console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_011 getAllValidReminders reminderId = " + reminderInfo[0].reminderId);
+              console.log("SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_011 getAllValidReminders reminderType = " + reminderInfo[0].reminderReq.reminderType);
+              let reminderType: int = reminderInfo[0].reminderReq.reminderType;
               expect(reminderInfo.length).assertLarger(0);
+              expect(reminderInfo[0].reminderId).assertLarger(0);
+              expect(reminderType).assertLarger(0);
               done();
             }).catch((err: Error) =>{
               console.info('SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_011 promise err.code is : ' + err.code);
