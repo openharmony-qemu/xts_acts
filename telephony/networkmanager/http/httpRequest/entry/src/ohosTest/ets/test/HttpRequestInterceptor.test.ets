@@ -1,6 +1,6 @@
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
-import http from '@ohos.net.http';
-import { BusinessError } from '@ohos.base';
+import { http } from '@kit.NetworkKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 import hilog from '@ohos.hilog';
 
 const ExpectFail = () => {
@@ -96,18 +96,18 @@ class TestHttpInterceptor implements http.HttpInterceptor {
       hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_GET_NOT_CHANGE'");
     } else if (reqContext.url.includes('BODY_GET_CHANGE_HEAD')) {
       hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_GET_CHANGE_HEAD'");
-      reqContext.head['INITIAL_REQUEST_GET'] = '1';
+      reqContext.header['INITIAL_REQUEST_GET'] = '1';
     } else if (reqContext.url.includes('BODY_GET_CHANGE_URL_HEAD')) {
       hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_GET_CHANGE_URL_HEAD'");
       reqContext.url = HTTP_URL_OLD + '/?' + reqContext.url.split('?')[1];
-      reqContext.head['INITIAL_REQUEST_GET'] = '1';
+      reqContext.header['INITIAL_REQUEST_GET'] = '1';
     } else {
       let oldBody = JSON.parse(JSON.parse(JSON.stringify(reqContext.body))) as Record<string, string>;
 
       // 不修改
       if (oldBody['context'] === 'BODY_NO_CHANGE') {
         hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_NO_CHANGE'");
-        ExpectTrue(JSON.stringify(reqContext.head) === JSON.stringify(HEADER));
+        ExpectTrue(JSON.stringify(reqContext.header) === JSON.stringify(HEADER));
         ExpectTrue(oldBody['context'] === 'BODY_NO_CHANGE');
 
       } else {
@@ -116,19 +116,16 @@ class TestHttpInterceptor implements http.HttpInterceptor {
           hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_CHANGE_URL'");
           reqContext.url = HTTP_URL_OLD;
         }
-        // 修改header
-        hilog.info(0x0000, 'testTag', "reqContext.head === " + JSON.stringify(reqContext.head));
 
         // 第一次进入
         if (this.result) {
-          if (!reqContext.head['INITIAL_REQUEST']) {
+          if (!reqContext.header['INITIAL_REQUEST']) {
             hilog.info(0x0000, 'testTag', "!reqContext.body['INITIAL_REQUEST']");
-            reqContext.head['INITIAL_REQUEST'] = '1';
-            hilog.info(0x0000, 'testTag', this.title + '::reqContext::' + JSON.stringify(reqContext));
+            reqContext.header['INITIAL_REQUEST'] = '1';
           } else {
-            hilog.info(0x0000, 'testTag', "reqContext.head['INITIAL_REQUEST']");
-            ExpectTrue(reqContext.head['INITIAL_REQUEST'] === '1');
-            reqContext.head['INITIAL_REQUEST'] = (Number(reqContext.head['INITIAL_REQUEST']) + 1).toString();
+            hilog.info(0x0000, 'testTag', "reqContext.header['INITIAL_REQUEST']");
+            ExpectTrue(reqContext.header['INITIAL_REQUEST'] === '1');
+            reqContext.header['INITIAL_REQUEST'] = (Number(reqContext.header['INITIAL_REQUEST']) + 1).toString();
           }
         }
       }
@@ -172,7 +169,7 @@ class CacheHttpInterceptor implements http.HttpInterceptor {
       hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_GET_NOT_CHANGE'");
     } else {
       hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_GET_CHANGE_HEAD'");
-      reqContext.head['CACHE_CHECKED'] = '1';
+      reqContext.header['CACHE_CHECKED'] = '1';
     }
 
     rspContext.result = "CACHE_CHECKED";
@@ -195,7 +192,6 @@ class RedirectionHttpInterceptor implements http.HttpInterceptor {
   interceptorType: InterceptorType = InterceptorType.REDIRECTION;
   result: boolean;
   title = "";
-  cnt = 0;
 
   constructor(interceptorType: InterceptorType, result: boolean) {
     this.interceptorType = interceptorType;
@@ -208,14 +204,12 @@ class RedirectionHttpInterceptor implements http.HttpInterceptor {
     hilog.info(0x0000, 'testTag', this.title + '::success');
     hilog.info(0x0000, 'testTag', this.title + '::reqContext::' + JSON.stringify(reqContext));
     hilog.info(0x0000, 'testTag', this.title + '::rspContext::' + JSON.stringify(rspContext));
-    hilog.info(0x0000, 'testTag', this.title + '::rspContext::' + this.cnt);
 
-    hilog.info(0x0000, 'testTag', this.title + '::rspContext::' + reqContext.url);
     redirectionResponse = JSON.parse(JSON.stringify(rspContext));
     rspContext.result = "REDIRECTION";
     rspContext.responseCode = 500;
     rspContext.header = responseHeader;
-    this.cnt += 1;
+
     if (!this.result) {
       redirectionResponse = JSON.parse(JSON.stringify(rspContext));
       redirectionResponse.header = {
@@ -285,18 +279,18 @@ class NetworkHttpInterceptor implements http.HttpInterceptor {
       hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_GET_NOT_CHANGE'");
     } else if (reqContext.url.includes('BODY_GET_CHANGE_HEAD')) {
       hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_GET_CHANGE_HEAD'");
-      reqContext.head['NETWORK_CONNECT_GET'] = '1';
+      reqContext.header['NETWORK_CONNECT_GET'] = '1';
     } else if (reqContext.url.includes('BODY_GET_CHANGE_URL_HEAD')) {
       hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_GET_CHANGE_URL_HEAD'");
       reqContext.url = HTTP_URL_OLD + '/?' + reqContext.url.split('?')[1];
-      reqContext.head['NETWORK_CONNECT_GET'] = '1';
+      reqContext.header['NETWORK_CONNECT_GET'] = '1';
     } else {
       let oldBody = JSON.parse(JSON.parse(JSON.stringify(reqContext.body))) as Record<string, string>;
 
       // 不修改
       if (oldBody['context'] === 'BODY_NO_CHANGE') {
         hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_NO_CHANGE'");
-        ExpectTrue(JSON.stringify(reqContext.head) === JSON.stringify(HEADER));
+        ExpectTrue(JSON.stringify(reqContext.header) === JSON.stringify(HEADER));
         ExpectTrue(oldBody['context'] === 'BODY_NO_CHANGE');
 
       } else {
@@ -305,19 +299,16 @@ class NetworkHttpInterceptor implements http.HttpInterceptor {
           hilog.info(0x0000, 'testTag', "reqContext.body['context'] === 'BODY_CHANGE_URL'");
           reqContext.url = HTTP_URL_BAIDU;
         }
-        // 修改header
-        hilog.info(0x0000, 'testTag', "reqContext.head === " + JSON.stringify(reqContext.head));
 
         // 第一次进入
         if (this.result) {
-          if (!reqContext.head['NETWORK_CONNECT']) {
+          if (!reqContext.header['NETWORK_CONNECT']) {
             hilog.info(0x0000, 'testTag', "!reqContext.body['NETWORK_CONNECT']");
-            reqContext.head['NETWORK_CONNECT'] = this.cnt.toString();
-            hilog.info(0x0000, 'testTag', this.title + '::reqContext::' + JSON.stringify(reqContext));
+            reqContext.header['NETWORK_CONNECT'] = this.cnt.toString();
           } else {
-            hilog.info(0x0000, 'testTag', "reqContext.head['NETWORK_CONNECT']");
-            ExpectTrue(reqContext.head['NETWORK_CONNECT'] === (this.cnt - 1).toString());
-            reqContext.head['NETWORK_CONNECT'] = this.cnt.toString();
+            hilog.info(0x0000, 'testTag', "reqContext.header['NETWORK_CONNECT']");
+            ExpectTrue(reqContext.header['NETWORK_CONNECT'] === (this.cnt - 1).toString());
+            reqContext.header['NETWORK_CONNECT'] = this.cnt.toString();
           }
         }
       }
@@ -1368,7 +1359,7 @@ export default function HttpRequestInterceptor() {
     /**
      * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1900
      * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions1900
-     * @tc.desc: test catch Interceptor parameter duplication error 2300804 HttpRequestInterceptor
+     * @tc.desc: test catch Parameter type not supported by the interceptor error 2300801 HttpRequestInterceptor
      * @tc.size: SmallTest
      * @tc.type: Function
      * @tc.level: level 2
@@ -1376,60 +1367,6 @@ export default function HttpRequestInterceptor() {
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         const caseName: string = "testNetworkMgrHttpRequestInterceptorHttpRequestOptions1900";
-        hilog.info(0x0000, 'testTag', `${caseName} test Start`);
-        try {
-          let httpRequest: http.HttpRequest = http.createHttp();
-          hilog.info(0x0000, 'testTag', `${caseName} chain apply`);
-          let chain: http.HttpInterceptorChain = new http.HttpInterceptorChain();
-          let c1 = new TestHttpInterceptor(InterceptorType.INITIAL_REQUEST, true);
-          chain.addChain([
-            c1, c1, c1
-          ]);
-          let cs: http.HttpInterceptor[] = chain.getChain();
-          hilog.info(0x0000, 'testTag', `${caseName} cs: ${JSON.stringify(cs)}`);
-          chain.apply(httpRequest);
-          let options: http.HttpRequestOptions = {
-            method: http.RequestMethod.POST,
-            header: HEADER,
-            extraData: BODY_NO_CHANGE,
-          };
-          httpRequest.request(HTTP_URL_BAIDU, options, (err: BusinessError, res: http.HttpResponse) => {
-            if (err) {
-              hilog.info(0x0000, 'testTag', `${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
-              httpRequest.destroy();
-              ExpectFail();
-              done();
-            } else {
-              hilog.info(0x0000, 'testTag', `${caseName} res:${JSON.stringify(res)}`);
-              hilog.info(0x0000, 'testTag', `${caseName} finallyResponse:${JSON.stringify(finallyResponse)}`);
-              httpRequest.destroy();
-              ExpectTrue(finallyResponse.responseCode === res.responseCode)
-              ExpectTrue(finallyResponse.cookies === res.cookies)
-              ExpectTrue(JSON.stringify(finallyResponse.header) === JSON.stringify(res.header))
-              done();
-            }
-          });
-        } catch (error) {
-          const err: BusinessError = error as BusinessError;
-          hilog.info(0x0000, 'testTag', `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
-          ExpectTrue(err.code == 2300804);
-          ExpectTrue(err.message === "Interceptor parameter duplication");
-          done();
-        }
-        hilog.info(0x0000, 'testTag', `${caseName} test End`);
-      });
-
-    /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_2000
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions2000
-     * @tc.desc: test catch Interceptor unsupported parameter type error 2300802 HttpRequestInterceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
-     */
-    it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: Function) => {
-        const caseName: string = "testNetworkMgrHttpRequestInterceptorHttpRequestOptions2000";
         hilog.info(0x0000, 'testTag', `${caseName} test Start`);
         try {
           let httpRequest: http.HttpRequest = http.createHttp();
@@ -1466,9 +1403,62 @@ export default function HttpRequestInterceptor() {
         } catch (error) {
           const err: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
-          hilog.info(0x0000, 'testTag', `${caseName} catch ERROR-->:${JSON.stringify(err.message)}`);
+          ExpectTrue(err.code == 2300801);
+          ExpectTrue(err.message === "Parameter type not supported by the interceptor");
+          done();
+        }
+        hilog.info(0x0000, 'testTag', `${caseName} test End`);
+      });
+
+    /**
+     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_2000
+     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions2000
+     * @tc.desc: test catch Duplicated interceptor type in the chain error 2300802 HttpRequestInterceptor
+     * @tc.size: SmallTest
+     * @tc.type: Function
+     * @tc.level: level 2
+     */
+    it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: Function) => {
+        const caseName: string = "testNetworkMgrHttpRequestInterceptorHttpRequestOptions2000";
+        hilog.info(0x0000, 'testTag', `${caseName} test Start`);
+        try {
+          let httpRequest: http.HttpRequest = http.createHttp();
+          hilog.info(0x0000, 'testTag', `${caseName} chain apply`);
+          let chain: http.HttpInterceptorChain = new http.HttpInterceptorChain();
+          let c1 = new TestHttpInterceptor(InterceptorType.INITIAL_REQUEST, true);
+          chain.addChain([
+            c1, c1, c1
+          ]);
+          let cs: http.HttpInterceptor[] = chain.getChain();
+          hilog.info(0x0000, 'testTag', `${caseName} cs: ${JSON.stringify(cs)}`);
+          chain.apply(httpRequest);
+          let options: http.HttpRequestOptions = {
+            method: http.RequestMethod.POST,
+            header: HEADER,
+            extraData: BODY_NO_CHANGE,
+          };
+          httpRequest.request(HTTP_URL_BAIDU, options, (err: BusinessError, res: http.HttpResponse) => {
+            if (err) {
+              hilog.info(0x0000, 'testTag', `${caseName} request fail, error code: ${err.code}, msg: ${err.message}`);
+              httpRequest.destroy();
+              ExpectFail();
+              done();
+            } else {
+              hilog.info(0x0000, 'testTag', `${caseName} res:${JSON.stringify(res)}`);
+              hilog.info(0x0000, 'testTag', `${caseName} finallyResponse:${JSON.stringify(finallyResponse)}`);
+              httpRequest.destroy();
+              ExpectTrue(finallyResponse.responseCode === res.responseCode)
+              ExpectTrue(finallyResponse.cookies === res.cookies)
+              ExpectTrue(JSON.stringify(finallyResponse.header) === JSON.stringify(res.header))
+              done();
+            }
+          });
+        } catch (error) {
+          const err: BusinessError = error as BusinessError;
+          hilog.info(0x0000, 'testTag', `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
           ExpectTrue(err.code == 2300802);
-          ExpectTrue(err.message === "Interceptor unsupported parameter type");
+          ExpectTrue(err.message === "Duplicated interceptor type in the chain");
           done();
         }
         hilog.info(0x0000, 'testTag', `${caseName} test End`);
