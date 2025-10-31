@@ -45,20 +45,31 @@ export default function KvStoreResultSetTest(){
         kvManager = factory.createKVManager(config);
         await kvManager.getAllKVStoreId(TEST_BUNDLE_NAME).then(async (data) => {
             console.info('beforeAll getAllKVStoreId size = ' + data.length);
-            for (var i = 0; i < data.length; i++) {
-                await kvManager.deleteKVStore(TEST_BUNDLE_NAME, data[i]).then(() => {
-                    console.info('beforeAll deleteKVStore success ' + data[i]);
-                }).catch((err) => {
-                    console.info('beforeAll deleteKVStore store: ' + data[i]);
-                    console.error('beforeAll deleteKVStore error ' + `, error code is ${err.code}, message is ${err.message}`);
-                });
+            if (data.length === 0) {
+                console.info('beforeAll end, data.length: 0');
+                done();
+                return;
+            } else {
+                console.info('beforeAll end, data.length: !0');
+                for (let i = 0; i < data.length; i++) {
+                    await kvManager.deleteKVStore(TEST_BUNDLE_NAME, data[i]).then(() => {
+                        console.info('beforeAll deleteKVStore success ' + data[i]);
+                        console.info('beforeAll end');
+                        done();
+                    }).catch((err) => {
+                        console.info('beforeAll deleteKVStore store: ' + data[i]);
+                        console.error('beforeAll deleteKVStore error ' + `, error code is ${err.code}, message is ${err.message}`);
+                        done();
+                    });
+                }
             }
+
         }).catch((err) => {
             console.error('beforeAll getAllKVStoreId err ' + `, error code is ${err.code}, message is ${err.message}`);
+            done();
         });
 
-        console.info('beforeAll end');
-        done();
+
     })
 
     afterAll(async function (done) {
@@ -96,11 +107,13 @@ export default function KvStoreResultSetTest(){
         await kvStore.getResultSet('batch_test_string_key').then((result) => {
             console.info('beforeEach getResultSet success');
             resultSet = result;
+            console.info('beforeEach end');
+            done();
         }).catch((err) => {
             console.error('beforeEach getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+            done();
         });
-        console.info('beforeEach end');
-        done();
+
     })
 
     afterEach(async function (done) {
@@ -110,19 +123,22 @@ export default function KvStoreResultSetTest(){
         }).catch((err) => {
             console.error('afterEach closeResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
         });
-        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore).then(async () => {
+        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(async () => {
             console.info('afterEach closeKVStore success');
             await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
                 console.info('afterEach deleteKVStore success');
+                kvStore = null;
+                resultSet = null;
+                done();
             }).catch((err) => {
                 console.error('afterEach deleteKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
+                done();
             });
         }).catch((err) => {
             console.error('afterEach closeKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
+            done();
         });
-        kvStore = null;
-        resultSet = null;
-        done();
+
     })
 
     /**

@@ -82,16 +82,13 @@ export default function SingleKvStoreDataChange(){
           done();
         }).catch((err: BusinessError) => {
           console.error(TAG + 'beforeEach getKVStore 222 err ' + `, error code is ${err.code}, message is ${err.message}`);
+          done();
         });
       }
 
     });
     afterEach(async (done:Function) =>  {
       console.info(TAG + 'afterEach');
-
-      kvStore = null;
-      kvStore2 = null;
-
       if (kvManager != null) {
         await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
           console.info(TAG + ' afterEach Succeeded closeKVStore');
@@ -107,6 +104,8 @@ export default function SingleKvStoreDataChange(){
 
         await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
           console.info(TAG + ' afterEach Succeeded deleteKVStore');
+          kvStore = null;
+          kvStore2 = null;
           done();
         }).catch((err: BusinessError) => {
           console.error(TAG + `afterEach Failed deleteKVStore .code is ${err.code},message is ${err.message}`);

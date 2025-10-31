@@ -98,17 +98,19 @@ describe('SingleKvStoreCallbackTest', function () {
     afterEach(async function (done) {
         console.info('afterEach');
         try {
-            await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore, async function (err, data) {
-                console.info('afterEach closeKVStore success: err is: '+err);
-                await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, function (err, data) {
-                    console.info('afterEach deleteKVStore success err is: '+err);
-                    done();
-                });
+            await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, async function (err, data) {
+              console.info('afterEach closeKVStore success: function err is: '+err);
+              await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, function (err, data) {
+                console.info('afterEach deleteKVStore success: function err is: '+err);
+                kvStore = null;
+                done();
+              });
             });
-            kvStore = null;
-        } catch (e) {
-            console.error('afterEach closeKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
-        }
+    
+          } catch (e) {
+            console.error('afterEach closeKVStore err ' + `, error code is ${e.code}, message is ${e.message}`);
+            done();
+          }
     })
 
     /**
@@ -511,7 +513,6 @@ describe('SingleKvStoreCallbackTest', function () {
                     expect((err == undefined) && (floatValue == data)).assertTrue();
                     done();
                 })
-                done();
             });
         }catch(e) {
             console.error('SingleKvStorePutFloatCallbackTest002 e' + `, error code is ${e.code}, message is ${e.message}`);
@@ -540,7 +541,6 @@ describe('SingleKvStoreCallbackTest', function () {
                     expect((err == undefined) && (floatValue == data)).assertTrue();
                     done();
                 })
-                done();
             });
         }catch(e) {
             console.error('SingleKvStorePutFloatCallbackTest003 e' + `, error code is ${e.code}, message is ${e.message}`);
@@ -569,7 +569,6 @@ describe('SingleKvStoreCallbackTest', function () {
                     expect((err == undefined) && (floatValue == data)).assertTrue();
                     done();
                 })
-                done();
             });
         }catch(e) {
             console.error('SingleKvStorePutFloatCallbackTest004 e' + `, error code is ${e.code}, message is ${e.message}`);
@@ -2357,7 +2356,11 @@ describe('SingleKvStoreCallbackTest', function () {
             await kvStore.getResultSet('test_key_string', 123, function (err, result) {
                 console.info('SingleKvStoreGetResultSetCallbackTest003 getResultSet success: '+err);
                 expect(err == undefined).assertTrue();
-                done();
+                kvStore.closeResultSet(result, function (err, data) {
+                  console.info('yltest1SingleKvStoreGetResultSetCallbackTest003 closeResultSet success');
+                  expect(err == undefined).assertTrue();
+                  done();
+                })
             });
         }catch(e) {
             console.error('SingleKvStoreGetResultSetCallbackTest003 e ' + `, error code is ${e.code}, message is ${e.message}`);
@@ -2376,19 +2379,26 @@ describe('SingleKvStoreCallbackTest', function () {
      */
      it('SUB_DDM_DKV_SINGLEKVSTORE_GETRESULT_CALLBACK_7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.log('SingleKvStoreGetResultSetPredicatesCallbackTest001');
-        try {
-            let query = new factory.Query();
-            await kvStore.getResultSet(query).then((result) => {
-                console.log('SingleKvStoreGetResultSetPredicatesCallbackTest001 getResultSet success');
-            }).catch((err) => {
-                console.error('SingleKvStoreGetResultSetPredicatesCallbackTest001 getResultSet fail ' + err`, error code is ${err.code}, message is ${err.message}`);
-                expect(err == undefined).assertTrue();
-            });
-        } catch(e) {
-            console.error('SingleKvStoreGetResultSetPredicatesCallbackTest001 e ' + `, error code is ${e.code}, message is ${e.message}`);
-            expect(null).assertFail();
-        }
-     done();
+      try {
+        let resultSet;
+        let query = new factory.Query();
+        await kvStore.getResultSet(query).then((result) => {
+          console.log('SingleKvStoreGetResultSetPredicatesCallbackTest001 getResultSet success');
+          resultSet = result;
+        }).catch((err) => {
+          console.error('SingleKvStoreGetResultSetPredicatesCallbackTest001 getResultSet fail ' + err`, error code is ${err.code}, message is ${err.message}`);
+          expect(err == undefined).assertTrue();
+        });
+        await kvStore.closeResultSet(resultSet, async function (err, data) {
+          console.info('SingleKvStoreGetResultSetPredicatesCallbackTest001 closeResultSet success');
+          done();
+        })
+      } catch(e) {
+        console.error('SingleKvStoreGetResultSetPredicatesCallbackTest001 e ' + `, error code is ${e.code}, message is ${e.message}`);
+        expect(null).assertFail();
+        done();
+      }
+      
     })
 
     /**
@@ -2542,15 +2552,17 @@ describe('SingleKvStoreCallbackTest', function () {
                     console.info('SingleKvStoreGetEntriesCallbackTest001 entrys[0]: ' + JSON.stringify(entrys[0]));
                     expect(entrys.length == 10).assertTrue();
                     expect(entrys[0].value.value.toString() == arr.toString()).assertTrue();
+                    console.info('SingleKvStoreGetEntriesCallbackTest001 success');
                     done();
                 });
             });
-            console.info('SingleKvStoreGetEntriesCallbackTest001 success');
+
         }catch(e) {
             console.error('SingleKvStoreGetEntriesCallbackTest001 e ' + `, error code is ${e.code}, message is ${e.message}`);
             expect(null).assertFail();
+            done();
         }
-        done();
+
     })
 })
 }
