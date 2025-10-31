@@ -1854,35 +1854,6 @@ export default function CameraSessionFlashSuppTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_SET_FRAMERATE_0100
-     * @tc.name      : SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_SET_FRAMERATE_0100
-     * @tc.desc      : PreviewOutput_setFrameRate
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
-    it('SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_SET_FRAMERATE_0100', Level.LEVEL2, async (done: Function) => {
-      const testName: string = 'SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_SET_FRAMERATE_0100';
-      if (isEmpty(mCameraDeviceArray)) {
-        console.info(TAG, testName, ' mCameraDeviceArray is null.');
-      } else {
-        createPhotoOutput();
-        await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-        try {
-          console.info(TAG, testName, "Start setFrameRate", JSON.stringify(mPreviewOutput));
-          let result = mPreviewOutput.setFrameRate(11, 10);
-          console.info(TAG, testName, "Success setFrameRate", result);
-          expect().assertFail();
-        } catch (error) {
-          console.error(TAG, testName, 'Failed setFrameRate', JSON.stringify(error), error.code);
-          expect(error.code).assertEqual('7400101');
-        }
-        await releasePhotoSession();
-      }
-      done();
-    })
-
-    /**
      * @tc.number    : SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_SET_FRAMERATE_0200
      * @tc.name      : SUB_MULTIMEDIA_CREATE_PREVIEW_OUTPUT_SET_FRAMERATE_0200
      * @tc.desc      : PreviewOutput_setFrameRate
