@@ -103,7 +103,7 @@ export default function abilityTest() {
 
       let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
         onConnect(connection) {
-          console.log(connection.extensionPid);
+          console.log('dayin' + connection.extensionPid);
           hilog.info(0x0000, 'testTag', `${tcNumber} onConnect connectionId: ${JSON.stringify(connection.connectionId)}`);
         },
         onDisconnect(connection) {
