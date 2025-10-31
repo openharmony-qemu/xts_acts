@@ -2510,6 +2510,7 @@ export default function MessageTest2() {
     it('RemoveCallbacksTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let worker = new EAWorker();
+        worker.start();
         const TAG: string = 'MessageTest063';
         let handler: concurrency.MessageHandler;
         let p = () => {
@@ -2592,6 +2593,7 @@ export default function MessageTest2() {
         const TAG: string = 'MessageTest065';
         let handler: concurrency.MessageHandler;
         let worker = new EAWorker();
+        worker.start();
         let p = () => {
           let a = 1;
         }
@@ -2674,6 +2676,7 @@ export default function MessageTest2() {
         const TAG: string = 'MessageTest067';
         let handler: concurrency.MessageHandler;
         let worker = new EAWorker();
+        worker.start();
         let p = () => {
           let a = 1;
         }
