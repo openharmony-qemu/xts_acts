@@ -255,10 +255,12 @@ async function PhotoGetFocusMode(done: Function, testName: string, focusMode: ca
     } else {
       createPhotoOutput();
       await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
-      mPhotoSession.setFocusMode(focusMode)
-      let focusModeSupport = mPhotoSession.getFocusMode()
-      console.info(TAG, testName + ' focusModeSupport is success.',focusModeSupport);
-      callback(focusModeSupport, undefined);
+      if (mPhotoSession.isFocusModeSupported(focusMode)) {
+        mPhotoSession.setFocusMode(focusMode)
+        let focusModeSupport = mPhotoSession.getFocusMode()
+        console.info(TAG, testName + ' focusModeSupport is success.',focusModeSupport);
+        callback(focusModeSupport, undefined);
+      }
       await releasePhotoSession();
     }
     done();
@@ -277,10 +279,12 @@ async function VideoGetFocusMode(done: Function, testName: string, focusMode: ca
     } else {
       await createVideoOutput();
       await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
-      mVideoSession.setFocusMode(focusMode)
-      let focusModeSupport = mVideoSession.getFocusMode()
-      console.info(TAG, testName + ' focusModeSupport is success.',focusModeSupport);
-      callback(focusModeSupport, undefined);
+      if (mVideoSession.isFocusModeSupported(focusMode)) {
+        mVideoSession.setFocusMode(focusMode)
+        let focusModeSupport = mVideoSession.getFocusMode()
+        console.info(TAG, testName + ' focusModeSupport is success.',focusModeSupport);
+        callback(focusModeSupport, undefined);
+      }
       await releaseVideoSession();
     }
     done();

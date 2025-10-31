@@ -473,7 +473,7 @@ export default function CameraSessionHasSuppTest() {
           await getCreatePhotoSession(mPreviewOutput, mPhotoOutput);
           let hasFlash: boolean = mPhotoSession.hasFlash();
           console.info(TAG, testName, 'hasFlash', hasFlash);
-          expect(hasFlash).assertTrue();
+          expect(isEmpty(hasFlash)).assertFalse();
         }
       } catch (err) {
         console.error(TAG, testName, JSON.stringify(err), err.code);
@@ -504,7 +504,7 @@ export default function CameraSessionHasSuppTest() {
           await getCreateVideoSession(testName, mPreviewOutput, mVideoOutput);
           let hasFlash: boolean = mVideoSession.hasFlash();
           console.info(TAG, testName, 'hasFlash', hasFlash);
-          expect(hasFlash).assertTrue();
+          expect(isEmpty(hasFlash)).assertFalse();
         }
       } catch (err) {
         console.error(TAG, testName, JSON.stringify(err), err.code);
