@@ -35,7 +35,7 @@ export default class WebExtensionAbility1 extends WebNativeMessagingExtensionAbi
       if (stringData.startsWith("startAbility")) {
         try {
           let want: Want = {
-            bundleName: "com.open.harmony.webnativemessagingextensionreply",
+            bundleName: "com.acts.context.webonconnectnativerely",
             abilityName: "EntryAbility"
           }
           hilog.info(0x0000, TAG, `WebExtensionAbility1 startAbility start connectId:${connectId}`);
