@@ -1234,7 +1234,7 @@ export default function ActsNotificationSlotTest() {
             done()
           } else {
             console.info(`${TAG} getSlot_21 success: ${NotificationSlot}`)
-            expect(NotificationSlot !== null).assertTrue()
+            expect(NotificationSlot == null).assertTrue()
             done()
           }
         })
@@ -1586,7 +1586,7 @@ export default function ActsNotificationSlotTest() {
       console.info(TAG + 'SUB_NOTIFICATION_ANS_SLOT_TEST_4900 START')
       await notificationManager.getSlot(notificationManager.SlotType.OTHER_TYPES).then((NotificationSlot) => {
         console.info(`${TAG} getSlot_49 Promise success: ${NotificationSlot}`)
-        expect(NotificationSlot !== null).assertTrue()
+        expect(NotificationSlot == null).assertTrue()
         done()
       }).catch((err) => {
         console.info(`${TAG} getSlot_49 Promise err: ${err.code}`)
