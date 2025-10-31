@@ -2698,10 +2698,10 @@ export default function windowImmersiveTest() {
      * @tc.type      : Function
      * @tc.level     : LEVEL0
      */
-    it('testIsImmersiveLayoutwithFloatWindowDefaultState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'testIsImmersiveLayoutwithFloatWindowDefaultState';
+    it('testIsImmersiveLayoutwithFloatWindowDefaultState1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testIsImmersiveLayoutwithFloatWindowDefaultState1';
       let config: window.Configuration = {
-        name: "testIsImmersiveLayoutwithFloatWindowDefaultState",
+        name: "testIsImmersiveLayoutwithFloatWindowDefaultState1",
         windowType: window.WindowType.TYPE_FLOAT,
         ctx: context
       };

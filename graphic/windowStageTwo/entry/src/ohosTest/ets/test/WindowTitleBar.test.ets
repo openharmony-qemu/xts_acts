@@ -344,8 +344,8 @@ export default function windowTitleBarTest() {
      * @tc.type      : Function
      * @tc.level     : LEVEL0
      */
-    it('test_setDecorButtonStyle_colorMode_0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let caseName: string = 'test_setDecorButtonStyle_colorMode_0';LEVEL0
+    it('test_setDecorButtonStyle_colorMode_0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'test_setDecorButtonStyle_colorMode_0';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
       let windowClass = await windowStage.getMainWindow();
