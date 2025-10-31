@@ -76,7 +76,14 @@ export default function abilityTest() {
           connId = 0;
         }
     })
-
+    /*
+    * @tc.number      SUB_ACE_WebNativeMessagingExtension_API_0001
+    * @tc.name        SUB_WEB_WebNativeMessagingExtension_0100
+    * @tc.desc        test WebNativeMessagingExtension
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 0
+    */
     // 拉起webNativeExtension
     it('SUB_WEB_WebNativeMessagingExtension_0100', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_WEB_WebNativeMessagingExtension_0100`;
@@ -92,7 +99,7 @@ export default function abilityTest() {
       }
 
       let want: Want = {
-        bundleName: 'com.acts.context.webonconnectnativerely',
+        bundleName: 'com.open.harmony.webnativemessagingextensionreply',
         abilityName: 'WebNativeExtensionExtAbility1',
         parameters:{
           "ohos.arkweb.extensionOrigin":"testOrigin",
@@ -103,7 +110,7 @@ export default function abilityTest() {
 
       let callback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
         onConnect(connection) {
-          console.log('dayin' + connection.extensionPid);
+          console.log('222' + connection.extensionPid);
           hilog.info(0x0000, 'testTag', `${tcNumber} onConnect connectionId: ${JSON.stringify(connection.connectionId)}`);
         },
         onDisconnect(connection) {
@@ -139,7 +146,14 @@ export default function abilityTest() {
         done();
       }
     })
-
+    /*
+    * @tc.number      SUB_ACE_WebNativeMessagingExtension_API_0002
+    * @tc.name        SUB_WEB_WebNativeMessagingExtension_0200
+    * @tc.desc        test WebNativeMessagingExtension
+    * @tc.size        MediumTest
+    * @tc.type        Function
+    * @tc.level       Level 0
+    */
     // 拉起webNativeExtension后发送命令让其拉起他的主页面，并通过commonEvent来确认拉起结果
     it('SUB_WEB_WebNativeMessagingExtension_0200', Level.LEVEL0, async (done: Function) => {
       // 我没找到方法让每个任务间隔几秒，来保证上一次的环境已经断开销毁。。
@@ -172,7 +186,7 @@ export default function abilityTest() {
       });
 
       let want: Want = {
-        bundleName: 'com.acts.context.webonconnectnativerely',
+        bundleName: 'com.open.harmony.webnativemessagingextensionreply',
         abilityName: 'WebNativeExtensionExtAbility1',
         parameters:{
           "ohos.arkweb.extensionOrigin":"testOrigin",
