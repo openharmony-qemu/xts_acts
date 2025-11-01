@@ -91,7 +91,7 @@ struct CustomLayout {
       AppStorage.setOrCreate('CustomLayoutUniqueid_onMeasureSize_FrameNode_UniqueId_' + index, child.uniqueId)
       if (uiContext) {
         let node: FrameNode | null =
-          uiContext.getFrameNodeByUniqueId(child.uniqueId as int)
+           uiContext.getFrameNodeByUniqueId(Long.toInt(child.uniqueId!))
         if (node) {
           node.getChild(0)!.commonAttribute.id('CustomLayoutUniqueid_Child_' + index)
           node.getChild(0)!.commonAttribute.width(100)
