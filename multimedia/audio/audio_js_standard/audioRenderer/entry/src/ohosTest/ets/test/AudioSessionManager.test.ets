@@ -833,11 +833,228 @@ export default function audioSessionManagerTest() {
         } else if(deviceType = audio.DeviceType.SPEAKER){
           expect(deviceType).assertEqual(2);
           console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.INVALID){
+          expect(deviceType).assertEqual(0);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.WIRED_HEADSET){
+          expect(deviceType).assertEqual(3);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.WIRED_HEADPHONES){
+          expect(deviceType).assertEqual(4);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.BLUETOOTH_SCO){
+          expect(deviceType).assertEqual(7);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.BLUETOOTH_A2DP){
+          expect(deviceType).assertEqual(8);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.MIC){
+          expect(deviceType).assertEqual(15);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.USB_HEADSET){
+          expect(deviceType).assertEqual(22);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.DISPLAY_PORT){
+          expect(deviceType).assertEqual(23);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.REMOTE_CAST){
+          expect(deviceType).assertEqual(24);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.USB_DEVICE){
+          expect(deviceType).assertEqual(25);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.ACCESSORY){
+          expect(deviceType).assertEqual(26);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.HDMI){
+          expect(deviceType).assertEqual(27);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.LINE_DIGITAL){
+          expect(deviceType).assertEqual(28);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.REMOTE_DAUDIO){
+          expect(deviceType).assertEqual(29);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.HEARING_AID){
+          expect(deviceType).assertEqual(30);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.NEARLINK){
+          expect(deviceType).assertEqual(31);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
         }
       }catch (err){
         console.log('getDefaultOutputDevice failed, err :' + err.message)
         expect(false).assertTrue();
       }
+      done();
+    })
+    /**
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0100
+    * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0100
+    * @tc.desc      : getBluetoothAndNearlinkPreferredRecordCategory
+    * @tc.size      : MEDIUMTEST
+    * @tc.type      : FUNCTION
+    * @tc.level     : LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+      const category = audio.BluetoothAndNearlinkPreferredRecordCategory.PREFERRED_NONE;
+      audioSessionManager.setBluetoothAndNearlinkPreferredRecordCategory(category).then(() => {
+        console.info('Succeeded in doing setBluetoothAndNearlinkPreferredRecordCategory.');
+        try {
+          let categoryValue: audio.BluetoothAndNearlinkPreferredRecordCategory = audioSessionManager.getBluetoothAndNearlinkPreferredRecordCategory();
+          console.info('Succeeded in doing getBluetoothAndNearlinkPreferredRecordCategory.');
+          if (categoryValue == audio.BluetoothAndNearlinkPreferredRecordCategory.PREFERRED_NONE) {
+            console.info(`BluetoothAndNearlinkPreferredRecordCategory is :${categoryValue}`);
+            expect(categoryValue).assertEqual(0);
+          } else if (categoryValue == audio.BluetoothAndNearlinkPreferredRecordCategory.PREFERRED_DEFAULT) {
+            console.info(`BluetoothAndNearlinkPreferredRecordCategory is :${categoryValue}`);
+            expect(categoryValue).assertEqual(1);
+          } else if (categoryValue == audio.BluetoothAndNearlinkPreferredRecordCategory.PREFERRED_LOW_LATENCY) {
+            console.info(`BluetoothAndNearlinkPreferredRecordCategory is :${categoryValue}`);
+            expect(categoryValue).assertEqual(2);
+          } else if (categoryValue == audio.BluetoothAndNearlinkPreferredRecordCategory.PREFERRED_HIGH_QUALITY) {
+            console.info(`BluetoothAndNearlinkPreferredRecordCategory is :${categoryValue}`);
+            expect(categoryValue).assertEqual(3);
+          }
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`Failed to getBluetoothAndNearlinkPreferredRecordCategory. Code: ${error.code}, message: ${error.message}`);
+          expect(false).assertTrue();
+        }
+      }).catch((err: BusinessError) => {
+        console.error(`Failed to setBluetoothAndNearlinkPreferredRecordCategory. Code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      });
+      done();
+    })
+    /**
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0100
+    * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0100
+    * @tc.desc      : getBluetoothAndNearlinkPreferredRecordCategory-PREFERRED_NONE
+    * @tc.size      : MEDIUMTEST
+    * @tc.type      : FUNCTION
+    * @tc.level     : LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+      const category = audio.BluetoothAndNearlinkPreferredRecordCategory.PREFERRED_NONE;
+      audioSessionManager.setBluetoothAndNearlinkPreferredRecordCategory(category).then(() => {
+        console.info('Succeeded in doing setBluetoothAndNearlinkPreferredRecordCategory.');
+        try {
+          let categoryValue: audio.BluetoothAndNearlinkPreferredRecordCategory = audioSessionManager.getBluetoothAndNearlinkPreferredRecordCategory();
+          console.info('Succeeded in doing getBluetoothAndNearlinkPreferredRecordCategory.');
+          if (categoryValue == audio.BluetoothAndNearlinkPreferredRecordCategory.PREFERRED_NONE) {
+            console.info(`BluetoothAndNearlinkPreferredRecordCategory is :${categoryValue}`);
+            expect(categoryValue).assertEqual(0);
+          }
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`Failed to getBluetoothAndNearlinkPreferredRecordCategory. Code: ${error.code}, message: ${error.message}`);
+          expect(false).assertTrue();
+        }
+      }).catch((err: BusinessError) => {
+        console.error(`Failed to setBluetoothAndNearlinkPreferredRecordCategory. Code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      });
+      done();
+    })
+    /**
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0200
+    * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0200
+    * @tc.desc      : getBluetoothAndNearlinkPreferredRecordCategory-PREFERRED_DEFAULT
+    * @tc.size      : MEDIUMTEST
+    * @tc.type      : FUNCTION
+    * @tc.level     : LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+      const category = audio.BluetoothAndNearlinkPreferredRecordCategory.PREFERRED_DEFAULT;
+      audioSessionManager.setBluetoothAndNearlinkPreferredRecordCategory(category).then(() => {
+        console.info('Succeeded in doing setBluetoothAndNearlinkPreferredRecordCategory.');
+        try {
+          let categoryValue: audio.BluetoothAndNearlinkPreferredRecordCategory = audioSessionManager.getBluetoothAndNearlinkPreferredRecordCategory();
+          console.info('Succeeded in doing getBluetoothAndNearlinkPreferredRecordCategory.');
+          if (categoryValue == audio.BluetoothAndNearlinkPreferredRecordCategory.PREFERRED_DEFAULT) {
+            console.info(`BluetoothAndNearlinkPreferredRecordCategory is :${categoryValue}`);
+            expect(categoryValue).assertEqual(1);
+          }
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`Failed to getBluetoothAndNearlinkPreferredRecordCategory. Code: ${error.code}, message: ${error.message}`);
+          expect(false).assertTrue();
+        }
+      }).catch((err: BusinessError) => {
+        console.error(`Failed to setBluetoothAndNearlinkPreferredRecordCategory. Code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      });
+      done();
+    })
+    /**
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0300
+    * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0300
+    * @tc.desc      : getBluetoothAndNearlinkPreferredRecordCategory-PREFERRED_LOW_LATENCY
+    * @tc.size      : MEDIUMTEST
+    * @tc.type      : FUNCTION
+    * @tc.level     : LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+      const category = audio.BluetoothAndNearlinkPreferredRecordCategory.PREFERRED_LOW_LATENCY;
+      audioSessionManager.setBluetoothAndNearlinkPreferredRecordCategory(category).then(() => {
+        console.info('Succeeded in doing setBluetoothAndNearlinkPreferredRecordCategory.');
+        try {
+          let categoryValue: audio.BluetoothAndNearlinkPreferredRecordCategory = audioSessionManager.getBluetoothAndNearlinkPreferredRecordCategory();
+          console.info('Succeeded in doing getBluetoothAndNearlinkPreferredRecordCategory.');
+          if (categoryValue == audio.BluetoothAndNearlinkPreferredRecordCategory.PREFERRED_LOW_LATENCY) {
+            console.info(`BluetoothAndNearlinkPreferredRecordCategory is :${categoryValue}`);
+            expect(categoryValue).assertEqual(2);
+          }
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`Failed to getBluetoothAndNearlinkPreferredRecordCategory. Code: ${error.code}, message: ${error.message}`);
+          expect(false).assertTrue();
+        }
+      }).catch((err: BusinessError) => {
+        console.error(`Failed to setBluetoothAndNearlinkPreferredRecordCategory. Code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      });
+      done();
+    })
+    /**
+    * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0400
+    * @tc.name      : SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0400
+    * @tc.desc      : getBluetoothAndNearlinkPreferredRecordCategory-PREFERRED_HIGH_QUALITY
+    * @tc.size      : MEDIUMTEST
+    * @tc.type      : FUNCTION
+    * @tc.level     : LEVEL0
+    */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETBLUETOOTHANDNEARLINKPREFERREDRECORDCATEGORY_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let audioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+      const category = audio.BluetoothAndNearlinkPreferredRecordCategory.PREFERRED_HIGH_QUALITY;
+      audioSessionManager.setBluetoothAndNearlinkPreferredRecordCategory(category).then(() => {
+        console.info('Succeeded in doing setBluetoothAndNearlinkPreferredRecordCategory.');
+        try {
+          let categoryValue: audio.BluetoothAndNearlinkPreferredRecordCategory = audioSessionManager.getBluetoothAndNearlinkPreferredRecordCategory();
+          console.info('Succeeded in doing getBluetoothAndNearlinkPreferredRecordCategory.');
+          if (categoryValue == audio.BluetoothAndNearlinkPreferredRecordCategory.PREFERRED_HIGH_QUALITY) {
+            console.info(`BluetoothAndNearlinkPreferredRecordCategory is :${categoryValue}`);
+            expect(categoryValue).assertEqual(3);
+          }
+        } catch (err) {
+          let error = err as BusinessError;
+          console.error(`Failed to getBluetoothAndNearlinkPreferredRecordCategory. Code: ${error.code}, message: ${error.message}`);
+          expect(false).assertTrue();
+        }
+      }).catch((err: BusinessError) => {
+        console.error(`Failed to setBluetoothAndNearlinkPreferredRecordCategory. Code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      });
       done();
     })
   })
