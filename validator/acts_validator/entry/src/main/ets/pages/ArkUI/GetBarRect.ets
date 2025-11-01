@@ -24,12 +24,13 @@ const TAG = '[GetBarRect]';
 struct GetBarRect {
   @State FillColor: string = '#FF000000';
   @State name: string = 'GetBarRect';
-  @State StepTips: string = '预置条件：安装getBarRect.hap,cmd窗口执行命令：hdc shell aa start -a EntryAbility -b com.atomicservice.5765880207855185091打开应用\n' +
+  @State StepTips: string = '预置条件：安装getBarRect.hap,cmd窗口执行命令：hdc shell aa start -a EntryAbility -b com.atomicservice.6917588335048809572打开应用\n' +
     '操作步骤：1.点击‘点击获取getBarRect’按钮\n' + '预期结果：页面下方打印bar的x，y，width,height信息“\n' +
-    '操作步骤：2.点击‘点击获取getBarRect x’按钮\n' + '预期结果：页面下方打印bar的x信息“\n' +
-    '操作步骤：3.点击‘点击获取getBarRect y’按钮\n' + '预期结果：页面下方打印bar的y信息“\n' +
-    '操作步骤：4.点击‘点击获取getBarRect width’按钮\n' + '预期结果：页面下方打印bar的width信息“\n' +
-    '操作步骤：5.点击‘点击获取getBarRect height’按钮\n' + '预期结果：页面下方打印bar的height信息“\n';
+    '操作步骤：2.点击‘重置’按钮\n' + '预期结果：页面下方打印bar的bar的x，y，width,height的值均为0vp“\n' +
+    '操作步骤：3.点击‘点击获取getBarRect x’按钮\n' + '预期结果：页面下方打印bar的x信息“\n' +
+    '操作步骤：4.点击‘点击获取getBarRect y’按钮\n' + '预期结果：页面下方打印bar的y信息“\n' +
+    '操作步骤：5.点击‘点击获取getBarRect width’按钮\n' + '预期结果：页面下方打印bar的width信息“\n' +
+    '操作步骤：6.点击‘点击获取getBarRect height’按钮\n' + '预期结果：页面下方打印bar的height信息“\n';
   @State Vue: boolean = true;
   @State active: boolean = false;
   @State intervalNum: number = 0;
