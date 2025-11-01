@@ -66,19 +66,22 @@ export default function abilityTest() {
             try {
                 session = await avSession.createAVSession(context, tag, 'audio');
                 console.info(`${session!.sessionType}`);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Session create error: code: ${err.code}, message: ${err.message}`);
             };
             try {
                 await session!.activate();
                 console.info(`TestLog: Session activate`);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Session activate error: code: ${err.code}, message: ${err.message}`);
             };
             try {
                 controller = await session!.getController();
                 console.info(`TestLog: controller getController`);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: getController error: code: ${err.code}, message: ${err.message}`);
             }
             await Utils.msSleep(800);
@@ -91,7 +94,8 @@ export default function abilityTest() {
                 try {
                     await session!.destroy()
                     console.info(`TestLog: Session destroy success`);
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.info(`TestLog: Session destroy error: code: ${err.code}, message: ${err.message}`);
                 };
             } else {
@@ -101,7 +105,8 @@ export default function abilityTest() {
                 try {
                     await controller.destroy()
                     console.info(`TestLog: Controller destroy success`);
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.info(`TestLog: Controller destroy error: code: ${err.code}, message: ${err.message}`);
                 };
             } else {
@@ -151,7 +156,8 @@ export default function abilityTest() {
                 console.info('TestLog: Set start');
                 await session!.setAVMetadata(metadata0)
                 console.info('TestLog: Set assetId successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set assetId error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -166,7 +172,8 @@ export default function abilityTest() {
                     console.info(`TestLog: assetId is: ${data.assetId}`);
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get assetId error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -190,7 +197,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata1)
                 console.info('TestLog: Set artist successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set artist error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -204,7 +212,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get artist failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get artist error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -228,7 +237,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata2)
                 console.info('TestLog: Set author successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set author error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -241,7 +251,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get author failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get author error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -265,7 +276,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata3);
                 console.info('TestLog: Set album successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set album error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -278,7 +290,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get album failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get album error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -302,7 +315,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata4);
                 console.info('TestLog: Set writer successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set writer error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -316,7 +330,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get writer failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get writer error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -340,7 +355,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata5);
                 console.info('TestLog: Set composer successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set composer error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -353,7 +369,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get composer failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get composer error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -377,7 +394,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata6);
                 console.info('TestLog: Set duration successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set duration error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -392,7 +410,8 @@ export default function abilityTest() {
                     console.info(`TestLog: Get duration is: ${data.duration}`);
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get duration error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -416,7 +435,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata7);
                 console.info('TestLog: Set mediaImage successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set mediaImage error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -429,7 +449,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get mediaImage failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get mediaImage error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -457,7 +478,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata8);
                 console.info('TestLog: Set pixelMap successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set pixelMap error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -471,7 +493,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get pixelMap failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get pixelMap error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -507,7 +530,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata10);
                 console.info('TestLog: Set subtitle successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set subtitle error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -520,7 +544,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get subtitle failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get subtitle error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -544,7 +569,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata11);
                 console.info('TestLog: Set description successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set description error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -558,7 +584,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get description failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get description error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -582,7 +609,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata12);
                 console.info('TestLog: Set lyric successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set lyric error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -595,7 +623,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get lyric failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get lyric error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -620,7 +649,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata13);
                 console.info('TestLog: Set assetId successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set assetId error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -634,7 +664,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get assetId failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get assetId error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -658,7 +689,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata);
                 console.info('TestLog: Set filter successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -672,7 +704,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get filter failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -696,7 +729,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata);
                 console.info('TestLog: Set filter successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -709,7 +743,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get filter failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -732,7 +767,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata);
                 console.info('TestLog: Set filter successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -745,7 +781,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get filter failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -769,7 +806,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata);
                 console.info('TestLog: Set skipIntervals successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set skipIntervals error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -782,7 +820,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get skipIntervals failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get skipIntervals error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -808,7 +847,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata);
                 console.info('TestLog: Set avQueueName、avQueueId、avQueueImage successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set avQueueName、avQueueId、avQueueImage error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -824,7 +864,8 @@ export default function abilityTest() {
                     console.info('TestLog: getAVMetadata failed.');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: getAVMetadata error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -848,7 +889,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata);
                 console.info('TestLog: Set displayTags successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set displayTags error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -862,7 +904,8 @@ export default function abilityTest() {
                     console.info('TestLog: getAVMetadata failed.');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: getAVMetadata error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -886,7 +929,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState1);
                 console.info('TestLog: Set State successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -901,7 +945,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -924,7 +969,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState2);
                 console.info('TestLog: Set speed successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set speed error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -939,7 +985,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get speed failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get speed error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -964,7 +1011,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState3);
                 console.info('TestLog: Set position successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set position error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -979,7 +1027,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get position failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get position error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1002,7 +1051,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState4);
                 console.info('TestLog: Set bufferedTime successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set bufferedTime error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1017,7 +1067,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get bufferedTime failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get bufferedTime error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1040,7 +1091,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState5);
                 console.info('TestLog: Set loopMode successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1055,7 +1107,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get loopMode failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1078,7 +1131,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState6);
                 console.info('TestLog: Set loopMode successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1093,7 +1147,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get loopMode failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1116,7 +1171,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState7);
                 console.info('TestLog: Set loopMode successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1131,7 +1187,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get loopMode failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1154,7 +1211,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState8);
                 console.info('TestLog: Set loopMode successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1169,7 +1227,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get loopMode failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1192,7 +1251,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState9);
                 console.info('TestLog: Set isFavorite successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set isFavorite error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1207,7 +1267,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get isFavorite failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get isFavorite error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1230,7 +1291,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState12);
                 console.info('TestLog: Set playbackState successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1245,7 +1307,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1268,7 +1331,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState13);
                 console.info('TestLog: Set playbackState successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1283,7 +1347,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1306,7 +1371,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState14);
                 console.info('TestLog: Set playbackState successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1321,7 +1387,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1344,7 +1411,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState15);
                 console.info('TestLog: Set playbackState successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1359,7 +1427,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1382,7 +1451,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState16);
                 console.info('TestLog: Set playbackState successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1397,7 +1467,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1420,7 +1491,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState17);
                 console.info('TestLog: Set playbackState successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1435,7 +1507,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1458,7 +1531,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState18);
                 console.info('TestLog: Set playbackState successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1473,7 +1547,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1496,7 +1571,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(playbackState);
                 console.info('TestLog: Set playbackState successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set playbackState error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1511,7 +1587,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get State failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get State error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1534,7 +1611,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState5);
                 console.info('TestLog: Set loopMode successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1549,7 +1627,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get loopMode failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get loopMode error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1572,7 +1651,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState);
                 console.info('TestLog: Set maxVolume successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set maxVolume error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1587,7 +1667,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get maxVolume failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get maxVolume error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1610,7 +1691,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState);
                 console.info('TestLog: Set muted successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set muted error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1625,7 +1707,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get muted failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get muted error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1649,7 +1732,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState);
                 console.info('TestLog: Set videoWidth & videoHeight successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set videoWidth & videoHeight error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1665,7 +1749,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get videoWidth & videoHeight failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get videoWidth & videoHeight error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1688,7 +1773,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVPlaybackState(PlaybackState)
                 console.info('TestLog: Set duration successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set duration error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1703,7 +1789,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get duration failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Get duration error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1723,7 +1810,8 @@ export default function abilityTest() {
             try {
                 await session!.activate()
                 console.info('TestLog: Set session active successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set active error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1738,7 +1826,8 @@ export default function abilityTest() {
                     console.info('TestLog: session is directive');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: AVSessionTest error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1758,7 +1847,8 @@ export default function abilityTest() {
             try {
                 await session!.activate()
                 console.info('TestLog: Set session active');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set active error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1766,7 +1856,8 @@ export default function abilityTest() {
             try {
                 await session!.deactivate()
                 console.info('TestLog: Deactivate session');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Deactivate session error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1781,7 +1872,8 @@ export default function abilityTest() {
                     console.info('TestLog: session deactivate successfully');
                     expect(true).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: AVSessionTest error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1807,7 +1899,8 @@ export default function abilityTest() {
                         console.info('TestLog: Set session active successfully');
                     }
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: SUB_MULTIMEDIA_AVSESSION_SESSIONACTIVATE_CALLBACK_STATIC_0100`);
                 console.info(`TestLog: Set active error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -1844,7 +1937,8 @@ export default function abilityTest() {
             try {
                 await session!.activate()
                 console.info('TestLog: Set session active');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set active error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1858,7 +1952,8 @@ export default function abilityTest() {
                         console.info('TestLog: Deactivate session');
                     }
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Deactivate session error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -1900,7 +1995,8 @@ export default function abilityTest() {
                     command: 'play'
                 })
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1927,7 +2023,8 @@ export default function abilityTest() {
                     command: 'pause'
                 })
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1954,7 +2051,8 @@ export default function abilityTest() {
                     command: 'stop'
                 })
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -1981,7 +2079,8 @@ export default function abilityTest() {
                     command: 'playNext'
                 })
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -2009,7 +2108,8 @@ export default function abilityTest() {
                     command: 'playPrevious'
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2037,7 +2137,8 @@ export default function abilityTest() {
                     command: 'fastForward'
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2069,7 +2170,8 @@ export default function abilityTest() {
                     command: 'fastForward', parameter: avSession.SkipIntervals.SECONDS_10
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2101,7 +2203,8 @@ export default function abilityTest() {
                     command: 'fastForward', parameter: avSession.SkipIntervals.SECONDS_15
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2132,7 +2235,8 @@ export default function abilityTest() {
                     command: 'fastForward', parameter: avSession.SkipIntervals.SECONDS_30
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2159,7 +2263,8 @@ export default function abilityTest() {
                     command: 'rewind'
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2190,7 +2295,8 @@ export default function abilityTest() {
                     command: 'rewind', parameter: avSession.SkipIntervals.SECONDS_10
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2221,7 +2327,8 @@ export default function abilityTest() {
                     command: 'rewind', parameter: avSession.SkipIntervals.SECONDS_15
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2252,7 +2359,8 @@ export default function abilityTest() {
                     command: 'rewind', parameter: avSession.SkipIntervals.SECONDS_30
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2285,7 +2393,8 @@ export default function abilityTest() {
                     command: 'seek', parameter: 10
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2317,7 +2426,8 @@ export default function abilityTest() {
                     command: 'setSpeed', parameter: 2.6
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2351,7 +2461,8 @@ export default function abilityTest() {
                     avSession.LoopMode.LOOP_MODE_SINGLE
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2384,7 +2495,8 @@ export default function abilityTest() {
                     command: 'toggleFavorite', parameter: 'false'
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2422,7 +2534,8 @@ export default function abilityTest() {
                     command: 'play'
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertTrue();
             }
@@ -2460,7 +2573,8 @@ export default function abilityTest() {
                     command: 'play'
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2498,7 +2612,8 @@ export default function abilityTest() {
                     command: 'pause'
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertTrue();
             }
@@ -2536,7 +2651,8 @@ export default function abilityTest() {
                     command: 'pause'
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2574,7 +2690,8 @@ export default function abilityTest() {
                     command: 'stop'
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertTrue();
             };
@@ -2611,7 +2728,8 @@ export default function abilityTest() {
                     command: 'stop'
                 })
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -2648,7 +2766,8 @@ export default function abilityTest() {
                     command: 'playNext'
                 })
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertTrue();
             };
@@ -2685,7 +2804,8 @@ export default function abilityTest() {
                     command: 'playNext'
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2722,7 +2842,8 @@ export default function abilityTest() {
                     command: 'playPrevious'
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertTrue();
             }
@@ -2759,7 +2880,8 @@ export default function abilityTest() {
                     command: 'playPrevious'
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2796,7 +2918,8 @@ export default function abilityTest() {
                     command: 'fastForward'
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertTrue();
             }
@@ -2833,7 +2956,8 @@ export default function abilityTest() {
                     command: 'fastForward'
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2869,7 +2993,8 @@ export default function abilityTest() {
                     command: 'rewind'
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertTrue();
             }
@@ -2905,7 +3030,8 @@ export default function abilityTest() {
                     command: 'rewind'
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -2945,7 +3071,8 @@ export default function abilityTest() {
                     command: 'seek', parameter: 10
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertTrue();
             }
@@ -2985,7 +3112,8 @@ export default function abilityTest() {
                     command: 'seek', parameter: 10
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -3026,7 +3154,8 @@ export default function abilityTest() {
                     command: 'setSpeed', parameter: 2.0
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertTrue();
             }
@@ -3067,7 +3196,8 @@ export default function abilityTest() {
                     command: 'setSpeed', parameter: 2.0
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -3109,7 +3239,8 @@ export default function abilityTest() {
                     parameter: avSession.LoopMode.LOOP_MODE_SINGLE
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertTrue();
             }
@@ -3151,7 +3282,8 @@ export default function abilityTest() {
                     parameter: avSession.LoopMode.LOOP_MODE_SINGLE
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -3192,7 +3324,8 @@ export default function abilityTest() {
                     command: 'toggleFavorite', parameter: 'false'
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(true).assertTrue();
             }
@@ -3233,7 +3366,8 @@ export default function abilityTest() {
                     command: 'toggleFavorite', parameter: 'false'
                 });
                 console.info('TestLog: Controller send command successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -3273,7 +3407,8 @@ export default function abilityTest() {
             try {
                 await controller.sendAVKeyEvent(event);
                 console.info('TestLog: Controller send AVKeyEvent successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send AVKeyEvent error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -3320,7 +3455,8 @@ export default function abilityTest() {
             try {
                 await controller.sendAVKeyEvent(event);
                 console.info('TestLog: Controller send AVKeyEvent successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Controller send AVKeyEvent error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -3342,7 +3478,8 @@ export default function abilityTest() {
                 const data = await session!.getController();
                 console.info('TestLog: Get controller successfully');
                 expect(true).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info('TestLog: Get controller failed');
                 console.info(`TestLog:Get controller BusinessError: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
@@ -3371,7 +3508,8 @@ export default function abilityTest() {
                     }
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`Get controller failed, unknown error: code: ${err.code} message: ${err.message}.`);
                 expect(false).assertTrue();
                 done();
@@ -3399,7 +3537,8 @@ export default function abilityTest() {
                     }
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: sendAVKeyEvent unknownError: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
                 done();
@@ -3420,7 +3559,8 @@ export default function abilityTest() {
                 await controller.sendAVKeyEvent(event);
                 console.info('TestLog: sendAVKeyEvent Successfully');
                 expect(true).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: sendAVKeyEvent error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -3440,7 +3580,8 @@ export default function abilityTest() {
                 let realPosition: long = -1;
                 try {
                     realPosition = controller.getRealPlaybackPositionSync();
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.info(`TestLog: getRealPlaybackPositionSync error: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
                 }
@@ -3464,7 +3605,8 @@ export default function abilityTest() {
                 const data = await controller.getValidCommands();
                 console.info(`TestLog: getValidCommands Successfully, the length ${data.length}`);
                 expect(data[0]).assertEqual('play');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: getValidCommands error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -3496,7 +3638,8 @@ export default function abilityTest() {
                         }
                         done();
                     });
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.info(`TestLog: getValidCommands error: code: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
                     done();
@@ -3520,7 +3663,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata0);
                 console.info('TestLog: Set assetId successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`TestLog: Set assetId error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -3533,7 +3677,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get filter failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -3558,7 +3703,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata);
                 console.info('TestLog: Set assetId successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`TestLog: Set assetId error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -3572,7 +3718,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get filter failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -3598,7 +3745,8 @@ export default function abilityTest() {
             try {
                 await session!.setAVMetadata(metadata);
                 console.info('TestLog: Set singleLyricText successfully');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`TestLog: Set singleLyricText error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -3611,7 +3759,8 @@ export default function abilityTest() {
                     console.info('TestLog: Get filter failed');
                     expect(false).assertTrue();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`TestLog: Get filter error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -3650,7 +3799,8 @@ export default function abilityTest() {
                         }
                         done();
                     });
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.error(`TestLog: Get device information unknownError: ${err.code}, message: ${err.message}`);
                     expect(false).assertTrue();
                     done();
@@ -3677,7 +3827,8 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(6600101);
                 console.info(`TestLog: getAllCastDisplays successfully: ${err.code}, message: ${err.message}`);
             }

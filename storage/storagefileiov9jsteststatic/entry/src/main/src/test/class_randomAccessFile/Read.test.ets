@@ -54,7 +54,8 @@ export default function fileIORandomAccessFileRead() {
         randomaccessfile.close();
         fs.closeSync(file.fd);
         fs.unlinkSync(fpath);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_sync_static_000 has failed for ' + err);
         expect(false).assertTrue();
       }
@@ -84,7 +85,8 @@ export default function fileIORandomAccessFileRead() {
         expect(readLength == length - 1).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_sync_static_001 has failed for ' + err);
         expect(false).assertTrue();
       }
@@ -114,7 +116,8 @@ export default function fileIORandomAccessFileRead() {
         expect(readLength == 5).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_sync_static_003 has failed for ' + err);
         expect(false).assertTrue();
       }
@@ -144,7 +147,8 @@ export default function fileIORandomAccessFileRead() {
         expect(readLength == 0).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_sync_static_004 has failed for ' + err);
         expect(false).assertTrue();
       }
@@ -169,7 +173,8 @@ export default function fileIORandomAccessFileRead() {
       try {
         randomaccessfile.readSync(new ArrayBuffer(4096), { offset: -1 });
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_sync_static_006 has failed for ' + err);
         randomaccessfile.close();
         fs.closeSync(file.fd);
@@ -200,7 +205,8 @@ export default function fileIORandomAccessFileRead() {
         randomaccessfile.close();
         fs.closeSync(file.fd);
         fs.unlinkSync(fpath);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_sync_static_007 has failed for ' + err);
         expect(false).assertTrue();
       }
@@ -227,7 +233,8 @@ export default function fileIORandomAccessFileRead() {
         expect(readLength == 0).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_sync_static_008 has failed for ' + err);
         expect(false).assertTrue();
 
@@ -253,7 +260,8 @@ export default function fileIORandomAccessFileRead() {
         let length = 4096;
         randomaccessfile.readSync(new ArrayBuffer(length), { length: length + 1 });
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_sync_static_009 has failed for ' + err);
         randomaccessfile.close();
         fs.unlinkSync(fpath);
@@ -284,7 +292,8 @@ export default function fileIORandomAccessFileRead() {
         randomaccessfile.setFilePointer(0);
         randomaccessfile.readSync(new ArrayBuffer(16), { offset: 13, length: -1 });
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_sync_static_010 has failed for ' + err);
         randomaccessfile.close();
         fs.unlinkSync(fpath);
@@ -310,7 +319,8 @@ export default function fileIORandomAccessFileRead() {
       try {
         randomaccessfile.readSync(new ArrayBuffer(4096), { offset: -1 });
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_sync_static_012 has failed for ' + err);
         randomaccessfile.close();
         fs.unlinkSync(fpath);
@@ -345,7 +355,8 @@ export default function fileIORandomAccessFileRead() {
         expect(randomaccessfile.filePointer == initOffset + readLength);
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_sync_static_014 has failed for ' + err);
         expect(false).assertTrue();
       }
@@ -377,7 +388,8 @@ export default function fileIORandomAccessFileRead() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_async_static_000 has failed for ' + err);
         expect(false).assertTrue();
       }
@@ -414,7 +426,8 @@ export default function fileIORandomAccessFileRead() {
             done();
           });
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_async_static_001 has failed for ' + err);
         expect(false).assertTrue();
       }
@@ -447,7 +460,8 @@ export default function fileIORandomAccessFileRead() {
         fs.closeSync(file.fd);
         fs.unlinkSync(fpath);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_async_static_002 has failed for ' + err);
         expect(false).assertTrue();
       }
@@ -479,7 +493,8 @@ export default function fileIORandomAccessFileRead() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_async_static_003 has failed for ' + err);
         expect(false).assertTrue();
       }
@@ -510,7 +525,8 @@ export default function fileIORandomAccessFileRead() {
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_async_static_004 has failed for ' + err);
         expect(false).assertTrue();
       }
@@ -538,7 +554,8 @@ export default function fileIORandomAccessFileRead() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_async_static_005 has failed for ' + err);
         expect(false).assertTrue();
       }
@@ -562,7 +579,8 @@ export default function fileIORandomAccessFileRead() {
       try {
         await randomaccessfile.read(new ArrayBuffer(4096), { offset: -1 });
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_async_static_006 has failed for ' + err);
         randomaccessfile.close();
         fs.unlinkSync(fpath);
@@ -592,7 +610,8 @@ export default function fileIORandomAccessFileRead() {
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_async_static_007 has failed for ' + err);
         expect(false).assertTrue();
       }
@@ -623,7 +642,8 @@ export default function fileIORandomAccessFileRead() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_async_static_008 has failed for ' + err);
         expect(false).assertTrue();
       }
@@ -648,7 +668,8 @@ export default function fileIORandomAccessFileRead() {
         let length = 4096;
         await randomaccessfile.read(new ArrayBuffer(length), { length: length + 1 });
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_async_static_009 has failed for ' + err);
         randomaccessfile.close();
         fs.unlinkSync(fpath);
@@ -680,7 +701,8 @@ export default function fileIORandomAccessFileRead() {
         randomaccessfile.setFilePointer(0);
         await randomaccessfile.read(new ArrayBuffer(16), { offset: 13, length: -1 });
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_async_static_010 has failed for ' + err);
         randomaccessfile.close();
         fs.unlinkSync(fpath);
@@ -706,7 +728,8 @@ export default function fileIORandomAccessFileRead() {
       try {
         await randomaccessfile.read(new ArrayBuffer(4096), { offset: -1 });
         expect(false).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_async_static_012 has failed for ' + err);
         randomaccessfile.close();
         fs.unlinkSync(fpath);
@@ -743,7 +766,8 @@ export default function fileIORandomAccessFileRead() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_async_static_014 has failed for ' + err);
         expect(false).assertTrue();
       }
@@ -783,7 +807,8 @@ export default function fileIORandomAccessFileRead() {
             done();
           });
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_read_async_static_015 has failed for ' + err);
         expect(false).assertTrue();
       }

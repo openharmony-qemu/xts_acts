@@ -66,7 +66,8 @@ export default function MultimodalInputPointerTest() {
             ExpectTrue(ifSetPointerStyleSuccess == 1);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag,
             `${caseName} Set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
@@ -95,7 +96,8 @@ export default function MultimodalInputPointerTest() {
             ExpectTrue(ifSetPointerStyleSuccess == 1);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag,
             `${caseName} Set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
@@ -123,7 +125,8 @@ export default function MultimodalInputPointerTest() {
           ifSetPointerStyleSyncSuccess++;
           ExpectTrue(ifSetPointerStyleSyncSuccess == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} set pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
           done();
@@ -190,7 +193,8 @@ export default function MultimodalInputPointerTest() {
           ExpectTrue(pointer.PointerStyle.RUNNING == 43);
           ExpectTrue(pointer.PointerStyle.MIDDLE_BTN_EAST_WEST == 44);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -214,7 +218,8 @@ export default function MultimodalInputPointerTest() {
           ExpectTrue(pointer.PrimaryButton.LEFT == 0);
           ExpectTrue(pointer.PrimaryButton.RIGHT == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -241,7 +246,8 @@ export default function MultimodalInputPointerTest() {
           ExpectTrue(pointer.RightClickType.TOUCHPAD_TWO_FINGER_TAP_OR_RIGHT_BUTTON == 4);
           ExpectTrue(pointer.RightClickType.TOUCHPAD_TWO_FINGER_TAP_OR_LEFT_BUTTON == 5);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -266,7 +272,8 @@ export default function MultimodalInputPointerTest() {
           let followSystemTest = cursorconfig.followSystem;
           ExpectTrue(followSystemTest == true);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -298,7 +305,8 @@ export default function MultimodalInputPointerTest() {
               done();
             }
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
           done();
@@ -322,7 +330,8 @@ export default function MultimodalInputPointerTest() {
             ExpectTrue(typeof (visible) == 'boolean');
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -345,7 +354,8 @@ export default function MultimodalInputPointerTest() {
           console.info(`${caseName} Get pointer visible success, visible: ${JSON.stringify(visible)}`);
           ExpectTrue(typeof (visible) == 'boolean');
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Get pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -403,7 +413,8 @@ export default function MultimodalInputPointerTest() {
             ExpectTrue(flag == 1);
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Set pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectTrue(error.code == 801);
           done();
@@ -428,7 +439,8 @@ export default function MultimodalInputPointerTest() {
           ifSetPointerVisibleSyncSuccess++;
           ExpectTrue(ifSetPointerVisibleSyncSuccess == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Set pointer visible failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -451,7 +463,8 @@ export default function MultimodalInputPointerTest() {
           console.info(`${caseName} Get pointer style success, style: ${JSON.stringify(style)}`);
           ExpectTrue(style >= 0 && style <= 48);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Get pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -475,7 +488,8 @@ export default function MultimodalInputPointerTest() {
           console.info(`${caseName} Get pointer style success, style: ${JSON.stringify(style)}`);
           ExpectFalse(true);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Get pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectTrue(error.code == 401);
           done();
@@ -505,7 +519,8 @@ export default function MultimodalInputPointerTest() {
             ExpectTrue(style >= 0 && style <= 48);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Get pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
           done();
@@ -529,7 +544,8 @@ export default function MultimodalInputPointerTest() {
             ExpectTrue(style>=0 && style<=48);
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Get pointer style failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401 || true);
           done();

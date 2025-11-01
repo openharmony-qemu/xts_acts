@@ -80,7 +80,8 @@ struct WebSchemeHandlerResponse {
               try {
                   console.log("[schemeHandler] getUrl:" + response.getUrl())
                   Utils.emitEvent(response.getUrl(), 8806)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -90,7 +91,8 @@ struct WebSchemeHandlerResponse {
                 try {
                   console.log("[schemeHandler] getStatus:" + response.getStatus())
                   Utils.emitEvent(response.getStatus(), 8808)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -100,7 +102,8 @@ struct WebSchemeHandlerResponse {
                 try {
                   console.log("[schemeHandler] getStatusText:" + response.getStatusText())
                   Utils.emitEvent(response.getStatusText(), 8810)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -110,7 +113,8 @@ struct WebSchemeHandlerResponse {
                 try {
                   console.log("[schemeHandler] getMimeType:" + response.getMimeType())
                   Utils.emitEvent(response.getMimeType(), 8812)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -120,7 +124,8 @@ struct WebSchemeHandlerResponse {
                 try {
                   console.log("[schemeHandler] getEncoding:" + response.getEncoding())
                   Utils.emitEvent(response.getEncoding(), 8814)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -130,7 +135,8 @@ struct WebSchemeHandlerResponse {
                 try {
                   console.log("[schemeHandler] getHeaderByValue:" + response.getHeaderByName("header1"))
                   Utils.emitEvent(response.getHeaderByName("header1"), 8816)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -140,7 +146,8 @@ struct WebSchemeHandlerResponse {
                 try {
                   console.log("[schemeHandler] getNetErrorCode:" + response.getNetErrorCode())
                   Utils.emitEvent(response.getNetErrorCode(), 8818)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;

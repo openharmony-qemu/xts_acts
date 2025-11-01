@@ -569,7 +569,8 @@ export default function UsbBaseTest() {
             let result: boolean = UsbMgr.resetUsbDevice(gPipe);
             console.info(domain, 'usb resetUsbDevice ret :' + result);
             expect(result == false).assertTrue();
-          } catch (error:BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             const err = error as BusinessError;
             console.info(domain, 'resetUsbDevice failed: ' + err);
             expect(err.code).assertEqual(14400008);
@@ -604,7 +605,8 @@ export default function UsbBaseTest() {
             let result: boolean = UsbMgr.resetUsbDevice(gPipe);
             console.info(domain, 'usb resetUsbDevice ret :' + result);
             expect(result == false).assertTrue();
-          } catch (error:BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             const err = error as BusinessError;
             console.info(domain, 'resetUsbDevice failed: ' + err);
             expect(err.code).assertEqual(14400001);
@@ -637,7 +639,8 @@ export default function UsbBaseTest() {
             let result: boolean = UsbMgr.resetUsbDevice(gPipe);
             console.info(domain, 'usb resetUsbDevice ret :' + result);
             expect(result == false).assertTrue();
-          } catch (error:BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             const err = error as BusinessError;
             console.info(domain, 'resetUsbDevice failed: ' + err);
             expect(err.code).assertEqual(14400013);

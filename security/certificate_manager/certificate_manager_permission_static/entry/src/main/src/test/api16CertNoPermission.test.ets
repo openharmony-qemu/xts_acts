@@ -130,7 +130,8 @@ export default function api16CertNoPermissionTestUnit() {
         let scope: certManager.CertScope = certManager.CertScope.CURRENT_USER;
         await certManager.getAllUserTrustedCertificates(scope);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_GetAllUserTrustedCertificates_static_0010 error.code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
       }
@@ -151,7 +152,8 @@ export default function api16CertNoPermissionTestUnit() {
       try {
         let result: certManager.CMResult = certManager.installUserTrustedCertificateSync(caCert, certManager.CertScope.CURRENT_USER);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_InstallUserTrustedCertificates_static_0010 error.code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
       }
@@ -173,7 +175,8 @@ export default function api16CertNoPermissionTestUnit() {
       try {
         certManager.uninstallUserTrustedCertificateSync(uir);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_UninstallUserTrustedCertificate_static_0010 error.code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
       }

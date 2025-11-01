@@ -64,7 +64,8 @@ async function terminateAbility(caseName: string) {
         }).catch((err: BusinessError):PromiseLike<void>|undefined => {
             console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
-    } catch (e: BusinessError) {
+    } catch (e) {
+        e = e as BusinessError;
         console.error(`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
     }
     await Utils.msSleep(1000)
@@ -146,7 +147,8 @@ export default function WindowModalTest() {
                     }
 
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + ' Failed to setSubWindowModal. Cause: ' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done();
@@ -184,7 +186,8 @@ export default function WindowModalTest() {
                         done();
                     }
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + `Failed to create the subWindow. out Cause code: ${exception.code}, message: ${exception.message}`);
                 expect(false).assertTrue();
                 done();
@@ -221,7 +224,8 @@ export default function WindowModalTest() {
                         done();
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(domain, tag,msgStr + `Failed to setSubWindowModal. Cause code: ${error.code}, message: ${error.message}`);
                 expect(false).assertTrue();
                 done();
@@ -257,7 +261,8 @@ export default function WindowModalTest() {
                         done();
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(domain, tag,msgStr + `Failed to setSubWindowModal. Cause code: ${error.code}, message: ${error.message}`);
                 expect(false).assertTrue();
                 done();
@@ -296,7 +301,8 @@ export default function WindowModalTest() {
                         done()
                     }
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,`${message} Failed to create the subWindow. Cause code: ${exception.code}, message: ${exception.message}`);
                 expect(false).assertTrue();
                 done()
@@ -331,7 +337,8 @@ export default function WindowModalTest() {
                     done()
                 });
 
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(exception.code).assertEqual(1300002);
                 expect(exception.message!=null).assertTrue();
@@ -369,7 +376,8 @@ export default function WindowModalTest() {
 
                 });
 
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(false).assertTrue();
                 done()

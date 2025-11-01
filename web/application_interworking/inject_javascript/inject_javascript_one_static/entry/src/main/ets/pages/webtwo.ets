@@ -89,7 +89,8 @@ struct Index {
               try {
                 this.controller.deleteJavaScriptRegister("objName");
                 this.controller.deleteJavaScriptRegister("objName");
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, `);
                 Utils.emitEvent(`${error.code}`, 14);
               }
@@ -100,7 +101,8 @@ struct Index {
               try {
                 this.getString = true;
                 this.controller.loadUrl("resource://rawfile/index.html")
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},    `);
               }
               break;
@@ -109,7 +111,8 @@ struct Index {
               try {
                 this.getNum = true;
                 this.controller.loadUrl("resource://rawfile/index.html")
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code}, `);
               }
               break;
@@ -118,7 +121,8 @@ struct Index {
               try {
                 this.getBoo = true;
                 this.controller.loadUrl("resource://rawfile/index.html")
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code}, `);
               }
               break;
@@ -127,7 +131,8 @@ struct Index {
               try {
                 this.getArrayBuffer = true;
                 this.controller.loadUrl("resource://rawfile/index.html")
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},    `);
               }
               break;
@@ -136,7 +141,8 @@ struct Index {
               try {
                 this.getArray = true;
                 this.controller.loadUrl("resource://rawfile/index.html")
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},    `);
               }
               break;
@@ -164,7 +170,8 @@ struct Index {
                   });
                 }, 7000);
 
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
               }
               break;
@@ -175,7 +182,8 @@ struct Index {
                 this.controller.runJavaScript("postStringToApp()", (error, result) => {
                   console.log(`The emitWebMessExtGetString() return value is: ${result}`);
                 })
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
               }
               break;
@@ -199,7 +207,8 @@ struct Index {
                     }
                   });
                 }, 3000);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
               }
               break;
@@ -212,7 +221,8 @@ struct Index {
                   console.log(`The emitWebMessExtGetNumber() return value is: ${result}`);
                 })
                 }, 2000);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
               }
               break;
@@ -236,7 +246,8 @@ struct Index {
                     }
                   })
                 }, 3000);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
               }
               break;
@@ -247,7 +258,8 @@ struct Index {
                 this.controller.runJavaScript("postBooleanToApp()", (error, result) => {
                   console.log(`The emitWebMessExtGetBoolean() return value is: ${result}`);
                 })
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
               }
               break;
@@ -271,7 +283,8 @@ struct Index {
                     }
                   })
                 }, 3000)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
               }
               break;
@@ -297,7 +310,8 @@ struct Index {
                     }
                   })
                 }, 3000)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
               }
               break;
@@ -308,7 +322,8 @@ struct Index {
                 this.controller.runJavaScript("postArrayBufferToApp()", (error, result) => {
                   console.log(`The emitWebMessExtGetArrayBuffer() return value is: ${result}`);
                 })
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
               }
               break;
@@ -318,7 +333,7 @@ struct Index {
                 console.log("emitWebMessExtSetError Error0");
                 throw new ReferenceError("Error");
                 console.log("emitWebMessExtSetError Error1");
-              } catch (error: Error) {
+              } catch (error) {
                 console.log("URIError:" + error) ;
 
                 if (this.nativePort) {
@@ -345,7 +360,8 @@ struct Index {
                 this.controller.runJavaScript("postErrorToApp()", (error, result) => {
                   console.log(`The emitWebMessExtGetError() return value is: ${result}`);
                 })
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.log("In eTS side send message catch error:" + error.code + ", msg:" + error.message);
               }
               break;
@@ -384,7 +400,8 @@ struct Index {
                   }
                 });
               console.info('urlgetstring: ', event.url);
-            } catch (error: BusinessError) {
+            } catch (error) {
+              error = error as BusinessError;
               console.error(`ErrorCode: ${error.code}, `);
             }
           }
@@ -405,7 +422,8 @@ struct Index {
                   }
                 });
               console.info('urlgetstring: ', event.url);
-            } catch (error: BusinessError) {
+            } catch (error) {
+              error = error as BusinessError;
               console.error(`ErrorCode: ${error.code},    `);
             }
           }
@@ -426,7 +444,8 @@ struct Index {
                   }
                 });
               console.info('urlgetstring: ', event.url);
-            } catch (error: BusinessError) {
+            } catch (error) {
+              error = error as BusinessError;
               console.error(`ErrorCode: ${error.code},    `);
             }
           }
@@ -447,7 +466,8 @@ struct Index {
                   }
                 });
               console.info('urlgetstring: ', event.url);
-            } catch (error: BusinessError) {
+            } catch (error) {
+              error = error as BusinessError;
               console.error(`ErrorCode: ${error.code},    `);
             }
           }
@@ -463,7 +483,8 @@ struct Index {
                   }
                 })
               console.info('urlgetstring: ', event.url);
-            } catch (error: BusinessError) {
+            } catch (error) {
+              error = error as BusinessError;
               console.error(`ErrorCode: ${error.code},    `);
             }
           }
@@ -505,7 +526,8 @@ struct Index {
                 this.msg1 = "result type:" + typeof (result.getError());
                 Utils.emitEvent(this.msg1, 516);
               }
-            } catch (resError: BusinessError) {
+            } catch (resError) {
+              resError = resError as BusinessError;
               console.log(`log error code: ${resError.code}, Message: ${resError.message}`);
             }
           })

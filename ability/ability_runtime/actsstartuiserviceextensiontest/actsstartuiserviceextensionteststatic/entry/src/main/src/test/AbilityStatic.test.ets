@@ -172,7 +172,8 @@ export default function abilitystaticTest() {
           expect(err?.code).assertEqual(16000073);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `isAppRunning error, errorCode: ${err?.code}`);
         expect().assertFail();
         done();
@@ -238,7 +239,8 @@ export default function abilitystaticTest() {
 
           hilog.info(domain, tag, `${itName} off applicationState`);
           await appManager.offApplicationStateChange(observerId);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
         }

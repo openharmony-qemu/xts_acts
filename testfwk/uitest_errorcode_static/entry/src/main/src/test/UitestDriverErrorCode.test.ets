@@ -124,7 +124,8 @@ export default function uitestDriverErrorTest() {
         let driver: Driver = Driver.create();
         await driver.pressHome(-1);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, `test_driver_pressHome_static error is, ${JSON.stringify(e)}`);
         expect(e.code).assertEqual(ParameterErrorCode);
       }

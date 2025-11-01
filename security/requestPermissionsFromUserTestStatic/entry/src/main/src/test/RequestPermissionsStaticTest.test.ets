@@ -45,7 +45,8 @@ function clickRequest(driver: Driver, name: string): boolean {
       return true;
     }
     return false;
-  } catch (error: BusinessError<void>) {
+  } catch (error) {
+    error = error as BusinessError;
     hilog.error(domain, tag, ` findcomponent error, ${ JSON.stringify(error) }`);
     return false;
   }
@@ -79,7 +80,8 @@ export default function requestPermissionsStaticTest() {
       try {
         
         await Utils.msSleep(2000)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, 'err.code - '+ err.code);
       }
       hilog.info(domain, tag, 'beforeAll end');
@@ -99,7 +101,8 @@ export default function requestPermissionsStaticTest() {
       let permissionList: Array<Permissions> = new Array<Permissions>("ohos.permission.CAMERA");
       try {
         await atManager.requestPermissionsFromUser(context, permissionList);
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, "Test_requestPermissionsFromUser_001 catch err" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
         done();
@@ -119,7 +122,8 @@ export default function requestPermissionsStaticTest() {
       let permissionList: Array<Permissions> = new Array<Permissions>();
       try {
         await atManager.requestPermissionsFromUser(testAbilityContext, permissionList);
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, "Test_requestPermissionsFromUser_002 catch err" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
         done();
@@ -152,7 +156,8 @@ export default function requestPermissionsStaticTest() {
             done();
           });
 
-        } catch (error: BusinessError<void>) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, "Test_requestPermissionsFromUser_003 catch err" + JSON.stringify(error));
           expect(false).assertFail();
           done();
@@ -184,7 +189,8 @@ export default function requestPermissionsStaticTest() {
             expect(false).assertFail();
             done();
           });
-        } catch (error: BusinessError<void>) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, "Test_requestPermissionsFromUser_004 catch err" + JSON.stringify(error));
           expect(false).assertFail();
           done();
@@ -237,7 +243,8 @@ export default function requestPermissionsStaticTest() {
           });
           await Utils.msSleep(2000);
           clickRequest(driver, '允许');
-        } catch (error: BusinessError<void>) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, "Test_requestPermissionsFromUser_005 catch err " + JSON.stringify(error));
           expect(false).assertFail();
           done();
@@ -296,7 +303,8 @@ export default function requestPermissionsStaticTest() {
               clickRequest(driver, '取消');
             }
           }
-        } catch (error: BusinessError<void>) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, "Test_requestPermissionsFromUser_006 catch err " + JSON.stringify(error));
           expect(false).assertFail();
           done();
@@ -329,7 +337,8 @@ export default function requestPermissionsStaticTest() {
             expect(false).assertFail();
             done();
           });
-        } catch (error: BusinessError<void>) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, "Test_requestPermissionsFromUser_007 catch err " + JSON.stringify(error));
           expect(false).assertFail();
           done();
@@ -355,7 +364,8 @@ export default function requestPermissionsStaticTest() {
           expect(false).assertFail();
           done();
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, "Test_requestPermissionsFromUser_008 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
         done();
@@ -378,7 +388,8 @@ export default function requestPermissionsStaticTest() {
           expect(false).assertFail();
           done();
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, "Test_requestPermissionsFromUser_009 error" + JSON.stringify(error));
         expect(error?.code).assertEqual(ERR_PARAM_ILLEGAL);
         done();

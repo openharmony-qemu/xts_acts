@@ -71,7 +71,8 @@ export default function ActsAlphabetIndexerUxTest() {
           await CommonFunc.sleep(2000);
 
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push AlphabetIndexer page error " + JSON.stringify(err));
       }
     });
@@ -115,7 +116,8 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -192,7 +194,8 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_0800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_0800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -224,7 +227,8 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_0900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_0900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -256,7 +260,8 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_1000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_1000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -288,7 +293,8 @@ export default function ActsAlphabetIndexerUxTest() {
           }
           console.info("[ArkUI_AlphabetIndexer_static_1100] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log("[ArkUI_AlphabetIndexer_static_1100] change component data error: " + err.message);
         }
         await CommonFunc.sleep(2000);
@@ -323,7 +329,8 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_1200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_1200] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -354,7 +361,8 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_1300] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_1300] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -385,7 +393,8 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_1400] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_1400] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -417,7 +426,8 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_1500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_1500] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -449,7 +459,8 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_1600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_1600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -481,7 +492,8 @@ export default function ActsAlphabetIndexerUxTest() {
           }
           console.info("[ArkUI_AlphabetIndexer_static_1700] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log("[ArkUI_AlphabetIndexer_static_1700] change component data error: " + err.message);
         }
         await CommonFunc.sleep(2000);
@@ -516,7 +528,8 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_1800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_1800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -547,7 +560,8 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_1900] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_1900] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -578,7 +592,8 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_2600] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_2600] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -610,7 +625,8 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_2700] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_2700] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -642,7 +658,8 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_2800] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_2800] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -674,7 +691,8 @@ export default function ActsAlphabetIndexerUxTest() {
           }
           console.info("[ArkUI_AlphabetIndexer_static_2900] start to publish emit");
           events_emitter.emit(innerEvent, eventData);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log("[ArkUI_AlphabetIndexer_static_2900] change component data error: " + err.message);
         }
         await CommonFunc.sleep(2000);
@@ -709,7 +727,8 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_3000] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_3000] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -740,7 +759,8 @@ export default function ActsAlphabetIndexerUxTest() {
         }
         console.info("[ArkUI_AlphabetIndexer_static_3100] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[ArkUI_AlphabetIndexer_static_3100] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

@@ -81,7 +81,8 @@ export default function webStorageTest() {
                     expect(origins![0].usage > 0).assertTrue();
                     expect(origins![0].quota != 0).assertTrue();
                 })
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.info('testGetOrigins_static_001 has failed for' + JSON.stringify(e));
                 expect(false).assertTrue();
             }
@@ -111,7 +112,8 @@ export default function webStorageTest() {
                         expect(origins![0].usage > 0).assertTrue();
                         expect(origins![0].quota != 0).assertTrue();
                     })
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.info('testGetOrigins_static_001 has failed for' + JSON.stringify(e));
                 expect(false).assertTrue();
             }
@@ -139,7 +141,8 @@ export default function webStorageTest() {
                     console.info('usage: ' + usage);
                     expect(usage! > 0).assertTrue();
                 })
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.info('testGetOriginUsage_static_001 has failed for' + JSON.stringify(e));
                 expect(false).assertTrue();
             }
@@ -161,7 +164,8 @@ export default function webStorageTest() {
                         console.info('usage: ' + usage);
                         expect(usage! > 0).assertTrue();
                     })
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.info('testGetOriginUsage_static_002 has failed for' + JSON.stringify(e));
                 expect(false).assertTrue();
             }
@@ -189,7 +193,8 @@ export default function webStorageTest() {
                     console.info('testGetOriginQuota_static_001 quota: ' + quota);
                     expect(quota! != 0).assertTrue();
                 })
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.info('testGetOriginQuota_static_001 has failed for' + JSON.stringify(e));
                 expect(false).assertTrue();
             }
@@ -211,7 +216,8 @@ export default function webStorageTest() {
                         console.info('testGetOriginQuota_static_002 quota: ' + quota);
                         expect(quota! != 0).assertTrue();
                     })
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.info('testGetOriginQuota_static_002 has failed for' + JSON.stringify(e));
                 expect(false).assertTrue();
             }
@@ -235,7 +241,8 @@ export default function webStorageTest() {
                         console.info('testDeleteOrigin_static_001usage: ' + usage);
                         expect(usage! == 0).assertTrue();
                     })
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.info('testDeleteOrigin_static_001 has failed for' + JSON.stringify(e));
                 expect(false).assertTrue();
             }
@@ -271,7 +278,8 @@ export default function webStorageTest() {
                     }
                     expect(origins![0].usage == 0).assertTrue();
                 })
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.info('testDeleteAllData_static_001 has failed for' + JSON.stringify(e));
                 expect(false).assertTrue();
             }

@@ -56,7 +56,8 @@ export default function MultimodalKeyEventTest() {
           ExpectTrue(Action.DOWN == 1);
           ExpectTrue(Action.UP == 2);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -86,7 +87,8 @@ export default function MultimodalKeyEventTest() {
           ExpectTrue(testKey.pressedTime == 10);
           ExpectTrue(testKey.deviceId == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -143,7 +145,8 @@ export default function MultimodalKeyEventTest() {
           ExpectTrue(testKeyEvent.numLock == true);
           ExpectTrue(testKeyEvent.scrollLock == true);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();

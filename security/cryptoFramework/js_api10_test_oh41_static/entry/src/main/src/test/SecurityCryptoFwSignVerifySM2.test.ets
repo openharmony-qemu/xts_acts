@@ -55,7 +55,8 @@ export default function SecurityCryptoFwSignVerifySM2TestUnit() {
         let res: boolean = await signVerifyPromiseFunc.normalProcess(signVerifyAlg, true, spec, "SM2");
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_SignVerify_SM2_Func_0100: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_SM2_Func_0100 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -88,7 +89,8 @@ export default function SecurityCryptoFwSignVerifySM2TestUnit() {
         let res: boolean = await signVerifyCallbackFunc.normalProcess(signVerifyAlg, true, spec, "SM2");
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_SignVerify_SM2_Func_0200: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_SM2_Func_0200 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -114,7 +116,8 @@ export default function SecurityCryptoFwSignVerifySM2TestUnit() {
         let res: boolean = await signVerifyPromiseFunc.setUseridProcess(signVerifyAlg, true, spec, "SM2", userid, null);
         expect(res).assertEqual(true);
         console.log(`Security_CryptoFramework_SignVerify_SM2_Func_0300: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_SM2_Func_0300 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -140,7 +143,8 @@ export default function SecurityCryptoFwSignVerifySM2TestUnit() {
         let res: boolean = await signVerifyCallbackFunc.setUseridProcess(signVerifyAlg, true, spec, "SM2", userid, userid);
         expect(res).assertEqual(true);
         console.log(`Security_CryptoFramework_SignVerify_SM2_Func_0400: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_SM2_Func_0400 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -166,7 +170,8 @@ export default function SecurityCryptoFwSignVerifySM2TestUnit() {
         let res: boolean = await signVerifyPromiseFunc.setUseridProcess(signVerifyAlg, true, spec, "SM2", userid, null);
         expect(res).assertEqual(false);
         console.log(`Security_CryptoFramework_SignVerify_SM2_Func_0500: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_SM2_Func_0500 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -192,7 +197,8 @@ export default function SecurityCryptoFwSignVerifySM2TestUnit() {
         let res: boolean = await signVerifyPromiseFunc.setUseridProcess(signVerifyAlg, true, spec, "SM2", userid, null);
         expect(res).assertEqual(false);
         console.log(`Security_CryptoFramework_SignVerify_SM2_Func_0600: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_SM2_Func_0600 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -217,7 +223,8 @@ export default function SecurityCryptoFwSignVerifySM2TestUnit() {
         let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signVerifyAlg);
         expect(sign.algName == signVerifyAlg).assertTrue();
         expect(verify.algName == signVerifyAlg).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + `: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }

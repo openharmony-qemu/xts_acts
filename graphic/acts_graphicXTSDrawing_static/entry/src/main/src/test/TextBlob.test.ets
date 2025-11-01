@@ -70,7 +70,8 @@ export default function textBlobTest() {
         drawing.TextBlob.makeFromString("drawing", font, drawing.TextEncoding.TEXT_ENCODING_UTF32);
         drawing.TextBlob.makeFromString("drawing", font, drawing.TextEncoding.TEXT_ENCODING_GLYPH_ID);
         console.info(msg + ' makeFromString succeeded for encoding');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeFromString failed for encoding, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
@@ -79,7 +80,8 @@ export default function textBlobTest() {
       try {
         drawing.TextBlob.makeFromString("中文魑認識", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
         console.info(msg + ' makeFromString succeeded for Chinese string');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeFromString failed for Chinese string, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
@@ -88,7 +90,8 @@ export default function textBlobTest() {
       try {
         drawing.TextBlob.makeFromString("中文魑認識", font);
         console.info(msg + ' makeFromString succeeded for Chinese string without specifying TextEncoding');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeFromString failed for Chinese string without specifying TextEncoding, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
@@ -97,7 +100,8 @@ export default function textBlobTest() {
       try {
         drawing.TextBlob.makeFromString("", font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
         console.info(msg + ' makeFromString succeeded for empty string');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeFromString failed for empty string, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
@@ -129,7 +133,8 @@ export default function textBlobTest() {
         try {
           drawing.TextBlob.makeFromString(randomString, font, itemList[randomEnum]);
           console.info(`${msg} makeFromString succeeded for call ${i + 1}`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(`${msg} makeFromString failed for call ${i +
             1}, errorCode is: ${e.code}, errorMessage is: ${e.message}`);
           expect().assertFail();
@@ -231,7 +236,8 @@ export default function textBlobTest() {
             }
           }
           console.info(`${msg} makeFromRunBuffer succeeded for bounds ${JSON.stringify(bounds)}`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(`${msg} makeFromRunBuffer failed for bounds ${JSON.stringify(bounds)}, errorCode is: ${e.code}, errorMessage is: ${e.message}`);
           expect().assertFail();
         }
@@ -240,7 +246,8 @@ export default function textBlobTest() {
       try {
         drawing.TextBlob.makeFromRunBuffer(runBuffer, font, undefined);
         console.info(`${msg} makeFromRunBuffer succeeded for bounds ${JSON.stringify(undefined)}`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(`${msg} makeFromRunBuffer failed for bounds ${JSON.stringify(undefined)}, errorCode is: ${e.code}, errorMessage is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -249,7 +256,8 @@ export default function textBlobTest() {
         // Make a TextBlob from an empty run buffer using the Font object
         drawing.TextBlob.makeFromRunBuffer([], font);
         console.info(msg + ' makeFromRunBuffer succeeded for empty run buffer');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` makeFromRunBuffer failed for empty run buffer, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -307,13 +315,15 @@ export default function textBlobTest() {
                 expect(randomBounds.bottom).assertEqual(result.bottom);
                 console.info(`${msg} bounds succeeded`);
               }
-            } catch (e: BusinessError) {
+            } catch (e) {
+              e = e as BusinessError;
               console.info(`${msg} bounds failed, errorCode is: ${e.code}, errorMessage is: ${e.message}`);
               expect().assertFail();
             }
           }
 
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(`${msg} makeFromRunBuffer failed, errorCode is: ${e.code}, errorMessage is: ${e.message}`);
           expect().assertFail();
         }

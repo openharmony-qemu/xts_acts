@@ -55,7 +55,8 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ": agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -83,7 +84,8 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ": agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -111,7 +113,8 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ": agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -139,7 +142,8 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ": agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -167,7 +171,8 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ": agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -195,7 +200,8 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ": agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -223,7 +229,8 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ": agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -251,7 +258,8 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ": agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -279,7 +287,8 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ": agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -307,7 +316,8 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ": agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -335,7 +345,8 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ": agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -360,7 +371,8 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, true, spec, "DH");
         expect(res).assertTrue();
         console.log(testNumber + ": agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -385,7 +397,8 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
         let res: boolean = await agreementAsyPromiseFunc.normalProcess(param, true, spec, "DH");
         expect(res).assertTrue();
         console.log(testNumber + ": agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -413,7 +426,8 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
         let res: boolean = await agreementAsyCallbackFunc.normalProcess(param, false, spec, param);
         expect(res).assertTrue();
         console.log(testNumber + ": agreement succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -436,7 +450,8 @@ export default function SecurityCryptoFwAgreementDHTestUnit() {
       try {
         let agreement: cryptoFramework.KeyAgreement = cryptoFramework.createKeyAgreement(agreementAlg);
         expect(agreement.algName == agreementAlg).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }

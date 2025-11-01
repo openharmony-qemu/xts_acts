@@ -36,7 +36,8 @@ function getPbkdf2Spec(password: string,
     };
 
     return spec;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`getPbkdf2Spec “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -48,7 +49,8 @@ function generateKdfKey(algName: string, pbkdf2Spec: cryptoFramework.PBKDF2Spec)
     let secretKey: cryptoFramework.DataBlob = kdf.generateSecretSync(pbkdf2Spec);
 
     return secretKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`generateKdfKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }

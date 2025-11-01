@@ -64,7 +64,8 @@ export default function drawingTsMatrixTest() {
       try {
         let matrix = new drawing.Matrix();
         console.info(msg + ' Matrix successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` Matrix errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -85,7 +86,8 @@ export default function drawingTsMatrixTest() {
           let matrix = new drawing.Matrix();
         }
         console.info(msg + ' Matrix successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` Matrix errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -109,7 +111,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' getAll successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getAll errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -123,7 +126,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' getAll successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getAll errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -137,7 +141,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' getAll successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getAll errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -151,7 +156,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' getAll successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getAll errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -166,7 +172,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' getAll successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getAll errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -180,7 +187,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' getAll successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getAll errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -202,7 +210,8 @@ export default function drawingTsMatrixTest() {
             Math.random() * Number.MAX_VALUE);
         }
         console.info(msg + ' setRotation successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setRotation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -227,7 +236,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' setScale successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setScale errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -241,7 +251,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' setScale successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setScale errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -255,7 +266,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' setScale successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setScale errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -269,7 +281,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' setScale successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setScale errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -283,7 +296,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' setScale successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setScale errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -305,7 +319,8 @@ export default function drawingTsMatrixTest() {
             Math.random() * Number.MAX_VALUE, Math.random() * Number.MAX_VALUE);
         }
         console.info(msg + ' setScale successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setScale errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -329,7 +344,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' setTranslation successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -343,7 +359,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' setTranslation successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -357,7 +374,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' setTranslation successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -371,7 +389,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' setTranslation successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -385,7 +404,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' setTranslation successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -406,7 +426,8 @@ export default function drawingTsMatrixTest() {
           matrix.setTranslation(Math.random() * Number.MAX_VALUE, Math.random() * Number.MAX_VALUE);
         }
         console.info(msg + ' setTranslation successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setTranslation errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -430,7 +451,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' SetAndGetMatrix successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` SetAndGetMatrix errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -445,7 +467,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' SetAndGetMatrix successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` SetAndGetMatrix errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -460,7 +483,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' SetAndGetMatrix successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` SetAndGetMatrix errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -475,7 +499,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' SetAndGetMatrix successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` SetAndGetMatrix errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -491,7 +516,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' SetAndGetMatrix successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` SetAndGetMatrix errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -511,7 +537,8 @@ export default function drawingTsMatrixTest() {
         let matrix = new drawing.Matrix();
         matrix.setMatrix([]);
         console.info(msg + ' SetAndGetMatrix successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` SetAndGetMatrix errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -538,7 +565,8 @@ export default function drawingTsMatrixTest() {
           matrix.getAll();
         }
         console.info(msg + ' SetAndGetMatrix successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` SetAndGetMatrix errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -549,7 +577,8 @@ export default function drawingTsMatrixTest() {
           matrix.setMatrix([1, 2, 3, 4, 5, 6, 7, 8, 9]);
         }
         console.info(msg + ' SetAndGetMatrix successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` SetAndGetMatrix errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -564,7 +593,8 @@ export default function drawingTsMatrixTest() {
           matrix.getAll();
         }
         console.info(msg + ' SetAndGetMatrix successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` SetAndGetMatrix errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -585,7 +615,8 @@ export default function drawingTsMatrixTest() {
         matrix.setMatrix([1, 2, 3, 4, 5, 6, 7, 8]);
         matrix.getValue(9);
         console.info(msg + ' SetAndGetMatrix 1 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` SetAndGetMatrix 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -595,7 +626,8 @@ export default function drawingTsMatrixTest() {
         matrix.setMatrix([1, 2, 3, 4, 5, 6, 7, 8, 8, 8])
         matrix.getValue(-1);
         console.info(msg + ' SetAndGetMatrix 2 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` SetAndGetMatrix 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -604,7 +636,8 @@ export default function drawingTsMatrixTest() {
         let matrix = new drawing.Matrix();
         matrix.getValue(-1);
         console.info(msg + ' SetAndGetMatrix 3 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` SetAndGetMatrix 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -636,7 +669,8 @@ export default function drawingTsMatrixTest() {
         matrix1.preConcat(matrix2);
         matrix1.getAll();
         console.info(msg + ' preConcat successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` preConcat errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -657,7 +691,8 @@ export default function drawingTsMatrixTest() {
           matrix.preConcat(matrix);
         }
         console.info(msg + ' preConcat successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` preConcat errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -680,7 +715,8 @@ export default function drawingTsMatrixTest() {
         matrix2.setMatrix([-2, 1, 3, 1, 0, -1, 3, -1, 2]);
         matrix1.isEqual(matrix2);
         console.info(msg + ' isEqual successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` isEqual errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -692,7 +728,8 @@ export default function drawingTsMatrixTest() {
         matrix2.setMatrix([1, 2, 3, 4, 5, 6, 7, 8, 9]);
         matrix1.isEqual(matrix2)
         console.info(msg + ' isEqual successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` isEqual errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -713,7 +750,8 @@ export default function drawingTsMatrixTest() {
         let matrix2 = new drawing.Matrix();
         matrix2.setMatrix([-2, 1, 3, 1, 0, -1, 3, -1, 2]);
         console.info(msg + ' isEqual successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` isEqual errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -727,7 +765,8 @@ export default function drawingTsMatrixTest() {
           matrix1.isEqual(matrix2);
         }
         console.info(msg + ' isEqual successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` isEqual errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -749,7 +788,8 @@ export default function drawingTsMatrixTest() {
         matrix2.setScale(0, 0, 0.5, 0.5);
         matrix1.invert(matrix2);
         console.info(msg + ' invert successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` invert errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -760,7 +800,8 @@ export default function drawingTsMatrixTest() {
         matrix1.setScale(0, 0, 0.5, 0.5);
         matrix1.invert(matrix2);
         console.info(msg + ' invert successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` invert errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -781,7 +822,8 @@ export default function drawingTsMatrixTest() {
         let matrix2 = new drawing.Matrix();
         matrix2.setMatrix([-2, 1, 3, 1, 0, -1, 3, -1, 2]);
         console.info(msg + ' invert successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` invert errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -795,7 +837,8 @@ export default function drawingTsMatrixTest() {
           matrix1.invert(matrix2);
         }
         console.info(msg + ' invert successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` invert errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -815,7 +858,8 @@ export default function drawingTsMatrixTest() {
         let matrix1 = new drawing.Matrix();
         matrix1.isIdentity();
         console.info(msg + ' isIdentity successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` isIdentity errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -825,7 +869,8 @@ export default function drawingTsMatrixTest() {
         matrix1.setMatrix([2, 1, 3, 1, 2, 1, 3, 1, 2]);
         matrix1.isIdentity();
         console.info(msg + ' isIdentity successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` isIdentity errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -847,7 +892,8 @@ export default function drawingTsMatrixTest() {
           matrix1.isIdentity();
         }
         console.info(msg + ' isIdentity successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` isIdentity errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -872,7 +918,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' postRotate successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` postRotate errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -886,7 +933,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' postRotate successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` postRotate errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -900,7 +948,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' postRotate successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` postRotate errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -914,7 +963,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' postRotate successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` postRotate errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -928,7 +978,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' postRotate successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` postRotate errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -942,7 +993,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' postRotate successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` postRotate errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -964,7 +1016,8 @@ export default function drawingTsMatrixTest() {
             Math.random() * Number.MAX_VALUE);
         }
         console.info(msg + ' postRotate successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` postRotate errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -989,7 +1042,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' postScale successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` postScale errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -1003,7 +1057,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' postScale successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` postScale errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -1017,7 +1072,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' postScale successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` postScale errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -1031,7 +1087,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' postScale successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` postScale errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -1045,7 +1102,8 @@ export default function drawingTsMatrixTest() {
           expect(matrix != null).assertTrue();
           console.info(msg + ' postScale successed,width:' + widths.length + JSON.stringify(matrix));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` postScale errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -1067,7 +1125,8 @@ export default function drawingTsMatrixTest() {
             Math.random() * Number.MAX_VALUE, Math.random() * Number.MAX_VALUE);
         }
         console.info(msg + ' postScale successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` postScale errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }

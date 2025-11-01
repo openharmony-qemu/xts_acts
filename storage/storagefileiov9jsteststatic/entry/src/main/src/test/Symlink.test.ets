@@ -47,7 +47,8 @@ export default function fileIOSymlink() {
       try {
         fs.symlinkSync(fpath, fpath + 'link01');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_sync_static_000 has failed for' + JSON.stringify(e));
         expect(e.message == 'Permission denied').assertTrue();
         fs.unlinkSync(fpath);
@@ -71,7 +72,8 @@ export default function fileIOSymlink() {
       try {
         await fs.symlink(fpath, fpath + 'link2');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_001 has failed for' + JSON.stringify(e));
         expect(e.message == 'Permission denied').assertTrue();
         fs.unlinkSync(fpath);
@@ -103,7 +105,8 @@ export default function fileIOSymlink() {
           }
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_symlink_async_static_002 has failed for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }

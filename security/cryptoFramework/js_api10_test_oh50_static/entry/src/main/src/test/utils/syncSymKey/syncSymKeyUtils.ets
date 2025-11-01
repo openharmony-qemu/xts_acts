@@ -55,7 +55,8 @@ function createSymKeySync(algName: string): cryptoFramework.DataBlob {
     let encodedKey: cryptoFramework.DataBlob = syncSymKey.getEncoded();
 
     return encodedKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -67,7 +68,8 @@ function createSymKey(algName: string): cryptoFramework.SymKey {
     let syncSymKey: cryptoFramework.SymKey = symKeyGenerator.generateSymKeySync();
 
     return syncSymKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -79,7 +81,8 @@ async function createSymKeyPromise(algName: string): Promise<cryptoFramework.Sym
     let symKey: cryptoFramework.SymKey = await symKeyGenerator.generateSymKey();
 
     return symKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('Promise error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -97,7 +100,8 @@ async function createSymKeyCallback(algName: string): Promise<cryptoFramework.Sy
         }
       })
     })
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('callback error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -122,7 +126,8 @@ function convertSymKeySync(algName: string, data: cryptoFramework.DataBlob): cry
     let syncSymKey: cryptoFramework.SymKey = symKeyGenerator.convertKeySync(data);
 
     return syncSymKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -134,7 +139,8 @@ async function convertSymKeyPromise(algName: string, data: cryptoFramework.DataB
     let syncSymKey: cryptoFramework.SymKey = await symKeyGenerator.convertKey(data);
 
     return syncSymKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('promise error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -152,7 +158,8 @@ async function convertSymKeyCallback(algName: string, data: cryptoFramework.Data
         }
       })
     })
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('callback error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -299,7 +306,8 @@ async function doCipher(algName: string, mode: string, padding: string, spec: cr
     }
 
     return cipherText;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('doCipher error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }

@@ -87,7 +87,8 @@ export default function drawingTsRegionTest() {
         canvas.drawPoint(200, 200);
         canvas.drawRegion(region);
         console.info(msg + `isPointContained successed`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `isPointContained failed. Error code is: ${e.code}. Error message is: ${e.message}`);
         expect().assertFail();
       }
@@ -117,7 +118,8 @@ export default function drawingTsRegionTest() {
         canvas.drawPoint(200, 200);
         canvas.drawRegion(region);
         console.info(msg + `isPointContained successed`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `isPointContained failed. Error code is: ${e.code}. Error message is: ${e.message}`);
         expect().assertFail();
       }
@@ -157,7 +159,8 @@ export default function drawingTsRegionTest() {
         canvas.drawRegion(region);
         canvas.drawRegion(other);
         console.info(msg + `isRegionContained successed`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `isRegionContained failed. Error code is: ${e.code}. Error message is: ${e.message}`);
         expect().assertFail();
       }
@@ -181,7 +184,8 @@ export default function drawingTsRegionTest() {
           expect(flag).assertTrue();
         }
         console.info(msg + `isRegionContained successed`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `isRegionContained failed. Error code is: ${e.code}. Error message is: ${e.message}`);
         expect().assertFail();
       }
@@ -215,7 +219,8 @@ export default function drawingTsRegionTest() {
         canvas.drawRegion(region);
         canvas.drawRegion(other);
         console.info(msg + `quickReject successed`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickReject failed. Error code is: ${e.code}. Error message is: ${e.message}`);
         expect().assertFail();
       }
@@ -239,7 +244,8 @@ export default function drawingTsRegionTest() {
           expect(flag).assertTrue();
         }
         console.info(msg + `quickReject successed`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickReject failed. Error code is: ${e.code}. Error message is: ${e.message}`);
         expect().assertFail();
       }
@@ -265,7 +271,8 @@ export default function drawingTsRegionTest() {
         region.setPath(path, region);
         canvas.drawRegion(region);
         console.info(msg + `setPath successed`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `setPath failed. Error code is: ${e.code}. Error message is: ${e.message}`);
         expect().assertFail();
       }
@@ -293,7 +300,8 @@ export default function drawingTsRegionTest() {
         }
         canvas.drawRegion(region);
         console.info(msg + `setPath successed`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `setPath failed. Error code is: ${e.code}. Error message is: ${e.message}`);
         expect().assertFail();
       }
@@ -333,7 +341,8 @@ export default function drawingTsRegionTest() {
         expect(result6).assertEqual(false);
         canvas.drawRegion(region);
         console.info(msg + `setRect successed`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `setRect failed. Error code is: ${e.code}. Error message is: ${e.message}`);
         expect().assertFail();
       }
@@ -358,7 +367,8 @@ export default function drawingTsRegionTest() {
         }
         canvas.drawRegion(region);
         console.info(msg + `setRect successed`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `setRect failed. Error code is: ${e.code}. Error message is: ${e.message}`);
         expect().assertFail();
       }
@@ -383,7 +393,8 @@ export default function drawingTsRegionTest() {
         expect(flag).assertTrue();
         canvas.drawRegion(region);
         console.info(msg + `op successed`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `op failed. Error code is: ${e.code}. Error message is: ${e.message}`);
         expect().assertFail();
       }
@@ -396,7 +407,8 @@ export default function drawingTsRegionTest() {
         expect(flag).assertTrue();
         canvas.drawRegion(region);
         console.info(msg + `op successed`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `op failed. Error code is: ${e.code}. Error message is: ${e.message}`);
         expect().assertFail();
       }
@@ -409,7 +421,8 @@ export default function drawingTsRegionTest() {
         expect(flag).assertTrue();
         canvas.drawRegion(region);
         console.info(msg + `op successed`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `op failed. Error code is: ${e.code}. Error message is: ${e.message}`);
         expect().assertFail();
       }
@@ -422,7 +435,8 @@ export default function drawingTsRegionTest() {
         expect(flag).assertTrue();
         canvas.drawRegion(region);
         console.info(msg + `op successed`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `op failed. Error code is: ${e.code}. Error message is: ${e.message}`);
         expect().assertFail();
       }
@@ -435,7 +449,8 @@ export default function drawingTsRegionTest() {
         expect(flag).assertTrue();
         canvas.drawRegion(region);
         console.info(msg + `op successed`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `op failed. Error code is: ${e.code}. Error message is: ${e.message}`);
         expect().assertFail();
       }
@@ -448,7 +463,8 @@ export default function drawingTsRegionTest() {
         expect(flag).assertTrue();
         canvas.drawRegion(region);
         console.info(msg + `op successed`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `op failed. Error code is: ${e.code}. Error message is: ${e.message}`);
         expect().assertFail();
       }
@@ -486,7 +502,8 @@ export default function drawingTsRegionTest() {
           canvas.drawRegion(region);
         }
         console.info(msg + `op successed`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `op failed. Error code is: ${e.code}. Error message is: ${e.message}`);
         expect().assertFail();
       }
@@ -505,7 +522,8 @@ export default function drawingTsRegionTest() {
         let region = new drawing.Region();
         console.info(msg + `drawing Region success`);
         expect(region != null || region != undefined).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawing Region error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail()
       }
@@ -525,7 +543,8 @@ export default function drawingTsRegionTest() {
           let region = new drawing.Region();
           console.info(msg + `drawing Region success step: ` + i);
           expect(region != null || region != undefined).assertTrue();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + `drawing Region error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
           expect().assertFail()
         }
@@ -546,7 +565,8 @@ export default function drawingTsRegionTest() {
         region.setRect((Math.random() * 100).toInt(), (Math.random() * 200).toInt(), (Math.random() * 100).toInt(),
           (Math.random() * 200).toInt());
         console.info(msg + `drawing Region setRect success `);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawing Region setRect error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail()
       }
@@ -555,7 +575,8 @@ export default function drawingTsRegionTest() {
           let region2 = new drawing.Region(region)
           console.info(msg + `drawing region2 success step: ` + i);
           expect(region2 != null || region2 != undefined).assertTrue();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + `drawing region2 error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
           expect().assertFail()
         }

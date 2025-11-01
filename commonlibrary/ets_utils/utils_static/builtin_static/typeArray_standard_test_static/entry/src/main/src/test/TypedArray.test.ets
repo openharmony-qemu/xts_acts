@@ -219,7 +219,8 @@ export default function typedArray() {
         let arr: Array<bigint> = Array.from(s);
         let value: BigInt64Array = BigInt64Array.from(arr);
         expect(String(value)).assertEqual('1,2,3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -240,7 +241,8 @@ export default function typedArray() {
         let arr: Array<bigint> = Array.from(s);
         let value: BigUint64Array = BigUint64Array.from(arr);
         expect(String(value)).assertEqual('1,2,3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -260,7 +262,8 @@ export default function typedArray() {
         let value: Uint8Array = Uint8Array.of(1, 2, 3);
         // hilog.info(11, TAG, '%{public}s', 'ws value is:' + JSON.stringify(value));
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -279,7 +282,8 @@ export default function typedArray() {
       try {
         let value: Int8Array = Int8Array.of(1, 2, 3);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -298,7 +302,8 @@ export default function typedArray() {
       try {
         let value: Uint8ClampedArray = Uint8ClampedArray.of(1, 2, 3);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -317,7 +322,8 @@ export default function typedArray() {
       try {
         let value: Int16Array = Int16Array.of(1, 2, 3);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -336,7 +342,8 @@ export default function typedArray() {
       try {
         let value: Uint16Array = Uint16Array.of(1, 2, 3);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -355,7 +362,8 @@ export default function typedArray() {
       try {
         let value: Int32Array = Int32Array.of(1, 2, 3);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -374,7 +382,8 @@ export default function typedArray() {
       try {
         let value: Uint32Array = Uint32Array.of(1, 2, 3);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -393,7 +402,8 @@ export default function typedArray() {
       try {
         let value = Float32Array.of(1, 2, 3);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -412,7 +422,8 @@ export default function typedArray() {
       try {
         let value = Float64Array.of(1, 2, 3);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -431,7 +442,8 @@ export default function typedArray() {
       try {
         let value = BigInt64Array.of(1n, 2n, 3n);
         expect(String(value)).assertEqual('1,2,3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -450,7 +462,8 @@ export default function typedArray() {
       try {
         let value = BigUint64Array.of(1n, 2n, 3n);
         expect(String(value)).assertEqual('1,2,3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -472,7 +485,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(1, 2);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":3,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -494,7 +508,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(1, -2);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -516,7 +531,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(-1, -1);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -538,7 +554,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(3, 0, 3);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3,"3":1,"4":2,"5":3,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -560,7 +577,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(1, 2);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":3,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -582,7 +600,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(1, -2);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -604,7 +623,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(-1, -1);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -626,7 +646,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(3, 0, 3);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3,"3":1,"4":2,"5":3,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -648,7 +669,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(1, 2);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":3,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -670,7 +692,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(1, -2);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -692,7 +715,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(-1, -1);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -714,7 +738,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(3, 0, 3);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3,"3":1,"4":2,"5":3,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -736,7 +761,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(1, 2);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":3,"2":0,"3":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -758,7 +784,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(1, -2);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":3,"2":0,"3":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -780,7 +807,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(-1, -1);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3,"3":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -802,7 +830,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(3, 0, 3);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3,"3":1}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -824,7 +853,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(1, 2);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":3,"2":0,"3":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -846,7 +876,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(1, -2);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":3,"2":0,"3":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -868,7 +899,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(-1, -1);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3,"3":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -890,7 +922,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(3, 0, 3);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3,"3":1}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -912,7 +945,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(1, 2);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":3,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -934,7 +968,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(1, -2);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -956,7 +991,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(-1, -1);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -978,7 +1014,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(3, 0, 3);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3,"3":1,"4":2,"5":3,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1000,7 +1037,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(1, 2);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":3,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1022,7 +1060,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(1, -2);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1044,7 +1083,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(-1, -1);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1066,7 +1106,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(3, 0, 3);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3,"3":1,"4":2,"5":3,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1088,7 +1129,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(1, 2);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":3,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1110,7 +1152,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(1, -2);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1132,7 +1175,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(-1, -1);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1154,7 +1198,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(3, 0, 3);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3,"3":1,"4":2,"5":3,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1176,7 +1221,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(1, 2);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":3,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1198,7 +1244,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(1, -2);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1220,7 +1267,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(-1, -1);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3,"3":0,"4":0,"5":0,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1242,7 +1290,8 @@ export default function typedArray() {
         array.set([1, 2, 3]);
         let value = array.copyWithin(3, 0, 3);
         expect(JSON.stringify(value)).assertEqual('{"0":1,"1":2,"2":3,"3":1,"4":2,"5":3,"6":0,"7":0}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1264,7 +1313,8 @@ export default function typedArray() {
         array.set([1n, 2n, 3n]);
         let value = array.copyWithin(1, 2);
         expect(String(value)).assertEqual('1,3,0,0,0,0,0,0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1286,7 +1336,8 @@ export default function typedArray() {
         array.set([1n, 2n, 3n]);
         let value = array.copyWithin(1, -2);
         expect(String(value)).assertEqual('1,0,0,0,0,0,0,0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1308,7 +1359,8 @@ export default function typedArray() {
         array.set([1n, 2n, 3n]);
         let value = array.copyWithin(-1, -1);
         expect(String(value)).assertEqual('1,2,3,0,0,0,0,0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1330,7 +1382,8 @@ export default function typedArray() {
         array.set([1n, 2n, 3n]);
         let value = array.copyWithin(3, 0, 3);
         expect(String(value)).assertEqual('1,2,3,1,2,3,0,0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1352,7 +1405,8 @@ export default function typedArray() {
         array.set([1n, 2n, 3n]);
         let value = array.copyWithin(1, 2);
         expect(String(value)).assertEqual('1,3,0,0,0,0,0,0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1374,7 +1428,8 @@ export default function typedArray() {
         array.set([1n, 2n, 3n]);
         let value = array.copyWithin(1, -2);
         expect(String(value)).assertEqual('1,0,0,0,0,0,0,0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1396,7 +1451,8 @@ export default function typedArray() {
         array.set([1n, 2n, 3n]);
         let value = array.copyWithin(-1, -1);
         expect(String(value)).assertEqual('1,2,3,0,0,0,0,0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1418,7 +1474,8 @@ export default function typedArray() {
         array.set([1n, 2n, 3n]);
         let value = array.copyWithin(3, 0, 3);
         expect(String(value)).assertEqual('1,2,3,1,2,3,0,0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1440,7 +1497,8 @@ export default function typedArray() {
         expect(JSON.stringify(eArr.next().value)).assertEqual("[0,10]")
         expect(JSON.stringify(eArr.next().value)).assertEqual("[1,20]")
         expect(JSON.stringify(eArr.next().value)).assertEqual("[2,30]");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1462,7 +1520,8 @@ export default function typedArray() {
         expect(JSON.stringify(eArr.next().value)).assertEqual("[0,10]")
         expect(JSON.stringify(eArr.next().value)).assertEqual("[1,20]")
         expect(JSON.stringify(eArr.next().value)).assertEqual("[2,30]");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1484,7 +1543,8 @@ export default function typedArray() {
         expect(JSON.stringify(eArr.next().value)).assertEqual("[0,10]")
         expect(JSON.stringify(eArr.next().value)).assertEqual("[1,20]")
         expect(JSON.stringify(eArr.next().value)).assertEqual("[2,30]");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1506,7 +1566,8 @@ export default function typedArray() {
         expect(JSON.stringify(eArr.next().value)).assertEqual("[0,10]")
         expect(JSON.stringify(eArr.next().value)).assertEqual("[1,20]")
         expect(JSON.stringify(eArr.next().value)).assertEqual("[2,30]");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1528,7 +1589,8 @@ export default function typedArray() {
         expect(JSON.stringify(eArr.next().value)).assertEqual("[0,10]")
         expect(JSON.stringify(eArr.next().value)).assertEqual("[1,20]")
         expect(JSON.stringify(eArr.next().value)).assertEqual("[2,30]");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1550,7 +1612,8 @@ export default function typedArray() {
         expect(JSON.stringify(eArr.next().value)).assertEqual("[0,10]")
         expect(JSON.stringify(eArr.next().value)).assertEqual("[1,20]")
         expect(JSON.stringify(eArr.next().value)).assertEqual("[2,30]");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1572,7 +1635,8 @@ export default function typedArray() {
         expect(JSON.stringify(eArr.next().value)).assertEqual("[0,10]")
         expect(JSON.stringify(eArr.next().value)).assertEqual("[1,20]")
         expect(JSON.stringify(eArr.next().value)).assertEqual("[2,30]");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1594,7 +1658,8 @@ export default function typedArray() {
         expect(JSON.stringify(eArr.next().value)).assertEqual("[0,10]")
         expect(JSON.stringify(eArr.next().value)).assertEqual("[1,20]")
         expect(JSON.stringify(eArr.next().value)).assertEqual("[2,30]");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1616,7 +1681,8 @@ export default function typedArray() {
         expect(JSON.stringify(eArr.next().value)).assertEqual("[0,10]")
         expect(JSON.stringify(eArr.next().value)).assertEqual("[1,20]")
         expect(JSON.stringify(eArr.next().value)).assertEqual("[2,30]");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1688,7 +1754,8 @@ export default function typedArray() {
         let array = [1, 2, 3];
         let value = new Uint8Array(array).fill(4);
         expect(JSON.stringify(value)).assertEqual("{\"0\":4,\"1\":4,\"2\":4}");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1708,7 +1775,8 @@ export default function typedArray() {
         let array = [1, 2, 3];
         let value = new Uint8Array(array).fill(4, 1);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":4,\"2\":4}");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1728,7 +1796,8 @@ export default function typedArray() {
         let array = [1, 2, 3];
         let value = new Uint8Array(array).fill(4, 1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":4,\"2\":3}");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1748,7 +1817,8 @@ export default function typedArray() {
         let array = [1, 2, 3];
         let value = new Uint8Array(array).fill(4, 1, 1);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":3}");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1767,7 +1837,8 @@ export default function typedArray() {
         let array = [1, 2, 3];
         let value = new Uint8Array(array).fill(4, -3, -2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":4,\"1\":2,\"2\":3}");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1787,7 +1858,8 @@ export default function typedArray() {
         let array = [1, 2, 3, 4];
         let value = new Uint8Array(array).fill(1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":1,\"3\":1}");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1807,7 +1879,8 @@ export default function typedArray() {
         let array = [1, 2, 3, 4];
         let value = new Uint8Array(array).fill(1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":1,\"3\":1}");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1827,7 +1900,8 @@ export default function typedArray() {
         let array = [1, 2, 3, 4];
         let value = new Int8Array(array).fill(1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":1,\"3\":1}");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1847,7 +1921,8 @@ export default function typedArray() {
         let array = [1, 2, 3, 4];
         let value = new Int16Array(array).fill(1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":1,\"3\":1}");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1867,7 +1942,8 @@ export default function typedArray() {
         let array = [1, 2, 3, 4];
         let value = new Uint16Array(array).fill(1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":1,\"3\":1}");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1887,7 +1963,8 @@ export default function typedArray() {
         let array = [1, 2, 3, 4];
         let value = new Int32Array(array).fill(1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":1,\"3\":1}");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1907,7 +1984,8 @@ export default function typedArray() {
         let array = [1, 2, 3, 4];
         let value = new Uint32Array(array).fill(1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":1,\"3\":1}");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1927,7 +2005,8 @@ export default function typedArray() {
         let array = [1, 2, 3, 4];
         let value = new Float32Array(array).fill(1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":1,\"3\":1}");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1947,7 +2026,8 @@ export default function typedArray() {
         let array = [1, 2, 3, 4];
         let value = new Float64Array(array).fill(1, 2);
         expect(JSON.stringify(value)).assertEqual("{\"0\":1,\"1\":2,\"2\":1,\"3\":1}");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1967,7 +2047,8 @@ export default function typedArray() {
         let array = [1n, 2n, 3n, 4n];
         let value = new BigInt64Array(array).fill(1n, 2);
         expect(String(value)).assertEqual("1,2,1,1");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1987,7 +2068,8 @@ export default function typedArray() {
         let array = [1n, 2n, 3n, 4n];
         let value = new BigUint64Array(array).fill(1n, 2);
         expect(String(value)).assertEqual("1,2,1,1");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2007,7 +2089,8 @@ export default function typedArray() {
         let array = [12, 5, 8, 130, 44]
         let value = new Uint8Array(array).filter((elem) => elem >= 10);
         expect(JSON.stringify(value)).assertEqual('{"0":12,"1":130,"2":44}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2027,7 +2110,8 @@ export default function typedArray() {
         let array = [12, 5, 8, 130, 44]
         let value = new Int8Array(array).filter((elem) => elem <= 10);
         expect(JSON.stringify(value)).assertEqual('{"0":5,"1":8,"2":-126}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2048,7 +2132,8 @@ export default function typedArray() {
         // let array = new Array<Int>(12, 5, 8, 130, 44);
         let value = new Uint8ClampedArray(array).filter((elem) => elem == 10);
         expect(JSON.stringify(value)).assertEqual('{}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2068,7 +2153,8 @@ export default function typedArray() {
         let array = [12, 5, 8, 130, 44]
         let value = new Int16Array(array).filter((elem) => elem <= 10);
         expect(JSON.stringify(value)).assertEqual('{"0":5,"1":8}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2088,7 +2174,8 @@ export default function typedArray() {
         let array = [12, 5, 8, 130, 44]
         let value = new Uint16Array(array).filter((elem) => elem <= 10);
         expect(JSON.stringify(value)).assertEqual('{"0":5,"1":8}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2108,7 +2195,8 @@ export default function typedArray() {
         let array = [12, 5, 8, 130, 44]
         let value = new Int32Array(array).filter((elem) => elem <= 10);
         expect(JSON.stringify(value)).assertEqual('{"0":5,"1":8}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2128,7 +2216,8 @@ export default function typedArray() {
         let array = [12, 5, 8, 130, 44]
         let value = new Uint32Array(array).filter((elem) => elem <= 10);
         expect(JSON.stringify(value)).assertEqual('{"0":5,"1":8}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2148,7 +2237,8 @@ export default function typedArray() {
         let array = [12, 5, 8, 130, 44]
         let value = new Float32Array(array).filter((elem) => elem <= 10);
         expect(JSON.stringify(value)).assertEqual('{"0":5,"1":8}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2168,7 +2258,8 @@ export default function typedArray() {
         let array = [12, 5, 8, 130, 44]
         let value = new Float64Array(array).filter((elem) => elem <= 10);
         expect(JSON.stringify(value)).assertEqual('{"0":5,"1":8}');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2209,7 +2300,8 @@ export default function typedArray() {
         let array = [12n, 5n, 8n, 130n, 44n]
         let value = new BigUint64Array(array).filter((elem) => elem <= 10);
         expect(value.toString()).assertEqual('5,8');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2230,7 +2322,8 @@ export default function typedArray() {
         }
         const int8 = new Int8Array([10, 0, -10, 20, -30, 40, -50]);
         expect(String(int8.find(isNegative))).assertEqual('-10');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2257,7 +2350,8 @@ export default function typedArray() {
         };
         const uint8 = new Uint8Array([4, 5, 8, 12]);
         expect(String(uint8.find(isPrime))).assertEqual('5');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2278,7 +2372,8 @@ export default function typedArray() {
         }
         const int8 = new Int8Array([10, 0, 10, 20, 30, 40, 50]);
         expect(String(int8.find(isNegative))).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2299,7 +2394,8 @@ export default function typedArray() {
         }
         const int8 = new Int8Array(0);
         expect(String(int8.find(isNegative))).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2320,7 +2416,8 @@ export default function typedArray() {
         }
         const int8 = new Int8Array([10, 0, -10, 20, -30, 40, -50]);
         expect(String(int8.find(isNegative))).assertEqual('10');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2342,7 +2439,8 @@ export default function typedArray() {
         }
         const int8 = new Int8Array([10, 0, -10, 20, -30, 40, -50]);
         expect(String(int8.findIndex(isNegative))).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2369,7 +2467,8 @@ export default function typedArray() {
         };
         const uint8 = new Uint8Array([4, 5, 8, 12]);
         expect(String(uint8.findIndex(isPrime))).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2391,7 +2490,8 @@ export default function typedArray() {
         }
         const int8 = new Int8Array([10, 0, 10, 20, 30, 40, 50]);
         expect(String(int8.findIndex(isNegative))).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2412,7 +2512,8 @@ export default function typedArray() {
         }
         const int8 = new Int8Array(0);
         expect(String(int8.findIndex(isNegative))).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2433,7 +2534,8 @@ export default function typedArray() {
         }
         const int8 = new Int8Array([10, 0, -10, 20, -30, 40, -50]);
         expect(String(int8.findIndex(isNegative))).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2457,7 +2559,8 @@ export default function typedArray() {
           count++;
         })
         expect(String(count)).assertEqual('4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2480,7 +2583,8 @@ export default function typedArray() {
           count++;
         })
         expect(String(count)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2498,7 +2602,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         expect(String(uint8.includes(20))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2516,7 +2621,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         expect(String(uint8.includes(20, 1))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2534,7 +2640,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         expect(String(uint8.includes(20, 3))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2552,7 +2659,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         expect(String(uint8.includes(0))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2570,7 +2678,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([NaN]);
         expect(String(uint8.includes(0))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2588,7 +2697,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([NaN]);
         expect(String(uint8.includes(NaN))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2606,7 +2716,8 @@ export default function typedArray() {
       try {
         const uint8 = new Float32Array([NaN]);
         expect(String(uint8.includes(NaN))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2624,7 +2735,8 @@ export default function typedArray() {
       try {
         const uint8 = new Float32Array([NaN]);
         expect(String(uint8.includes(0))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2643,7 +2755,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         expect(String(uint8.indexOf(50))).assertEqual('4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2661,7 +2774,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         expect(String(uint8.indexOf(20, 3))).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2679,7 +2793,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         expect(String(uint8.indexOf(51))).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2697,7 +2812,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         expect(String(uint8.indexOf(30, 1))).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2715,7 +2831,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         expect(String(uint8.indexOf(20, -1))).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2733,7 +2850,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array(0);
         expect(String(uint8.indexOf(30, 1))).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2751,7 +2869,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array(0);
         expect(String(uint8.indexOf(20, -1))).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2769,7 +2888,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array(0);
         expect(String(uint8.indexOf(51))).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2789,7 +2909,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         expect(uint8.join()).assertEqual("10,20,30,40,50");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2807,7 +2928,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         expect(uint8.join('')).assertEqual("1020304050");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2825,7 +2947,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         expect(uint8.join('-')).assertEqual("10-20-30-40-50");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2843,7 +2966,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         expect(uint8.join(" / ")).assertEqual('10 / 20 / 30 / 40 / 50');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2862,7 +2986,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         expect(String(uint8.keys().next().value)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2882,7 +3007,8 @@ export default function typedArray() {
         const keys = uint8.keys();
         keys.next();
         expect(String(keys.next().value)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2903,7 +3029,8 @@ export default function typedArray() {
         keys.next();
         keys.next();
         expect(String(keys.next().value)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2958,7 +3085,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([10, 20, 50, 50, 50, 60]);
         expect(String(uint8.lastIndexOf(50))).assertEqual('4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2976,7 +3104,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([10, 20, 50, 50, 50, 60]);
         expect(String(uint8.lastIndexOf(51))).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2994,7 +3123,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([2, 5, 9, 2]);
         expect(String(uint8.lastIndexOf(2))).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3012,7 +3142,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([2, 5, 9, 2]);
         expect(String(uint8.lastIndexOf(7))).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3102,7 +3233,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([25, 36, 49]);
         expect(uint8.map(Math.sqrt).toString()).assertEqual("5,6,7");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3124,7 +3256,8 @@ export default function typedArray() {
         let arr1 = new Array<Int>(1, 4, 9)
         expect(doubles.join()).assertEqual(arr.join());
         expect(numbers.join()).assertEqual(arr1.join());
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3146,7 +3279,8 @@ export default function typedArray() {
           return accumulator + currentValue;
         };
         expect(String(uint8.reduce(sum))).assertEqual('6');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3189,7 +3323,8 @@ export default function typedArray() {
         const finalResult = result.replace(new RegExp('^,'), '').trim();
         // const finalResult = result.replace(/^,/, '').trim();
         expect(finalResult).assertEqual("30,20,10");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3226,7 +3361,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([1, 2, 3]);
         expect(uint8.reverse().toString()).assertEqual("3,2,1");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3268,7 +3404,8 @@ export default function typedArray() {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         const slicedArray = Array.from(uint8.slice(1, 3));
         expect(String(slicedArray)).assertEqual(String([20, 30]));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3286,7 +3423,8 @@ export default function typedArray() {
       try {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         expect(uint8.slice().toString()).assertEqual("10,20,30,40,50");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3305,7 +3443,8 @@ export default function typedArray() {
         const uint8 = new Uint8Array([1, 2, 3]);
         const slicedArray = Array.from(uint8.slice(1));
         expect(String(slicedArray)).assertEqual(String([2, 3]));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3324,7 +3463,8 @@ export default function typedArray() {
         const uint8 = new Uint8Array([1, 2, 3]);
         const slicedArray = Array.from(uint8.slice(2))
         expect(String(slicedArray)).assertEqual(String([3]));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3343,7 +3483,8 @@ export default function typedArray() {
         const uint8 = new Uint8Array([1, 2, 3]);
         const sliceArray = Array.from(uint8.slice(-2))
         expect(String(sliceArray)).assertEqual(String([2, 3]));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3362,7 +3503,8 @@ export default function typedArray() {
         const uint8 = new Uint8Array([1, 2, 3]);
         const sliceArray = Array.from(uint8.slice(0, 1))
         expect(String(sliceArray)).assertEqual(String([1]));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3384,7 +3526,8 @@ export default function typedArray() {
         };
         const int8 = new Int8Array([-10, 20, -30, 40, -50]);
         expect(String(int8.some(isNegative))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3405,7 +3548,8 @@ export default function typedArray() {
         };
         const positives = new Int8Array([10, 20, 30, 40, 50]);
         expect(String(positives.some(isNegative))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3426,7 +3570,8 @@ export default function typedArray() {
         };
         const result = new Uint8Array([2, 5, 8, 1, 4]).some(isBiggerThan10);
         expect(String(result)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3446,7 +3591,8 @@ export default function typedArray() {
           return element > 10;
         };
         expect(String(new Uint8Array([12, 5, 8, 1, 4]).some(isBiggerThan10))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3466,7 +3612,8 @@ export default function typedArray() {
         uint8.sort()
         const array = Array.from(uint8)
         expect(String(array)).assertEqual(String([10, 20, 30, 40, 50]));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3486,7 +3633,8 @@ export default function typedArray() {
         numbers.sort()
         const array = Array.from(numbers)
         expect(String(array)).assertEqual(String([1, 5, 40, 200]));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3506,7 +3654,8 @@ export default function typedArray() {
         numbers.sort()
         const array = Array.from(numbers)
         expect(String(array)).assertEqual(String([1, 200, 40, 5]));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3525,7 +3674,8 @@ export default function typedArray() {
         let numbers = new Array<Int>(40, 1, 5, 200);
         numbers.sort((a, b) => a - b)
         expect(String(Array.from(numbers))).assertEqual(String([1, 5, 40, 200]));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3545,7 +3695,8 @@ export default function typedArray() {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         const value = Array.from(uint8.subarray(1, 3))
         expect(String(value)).assertEqual(String([20, 30]));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3564,7 +3715,8 @@ export default function typedArray() {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         const value = uint8.subarray(1).toString();
         expect(value).assertEqual("20,30,40,50");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3584,7 +3736,8 @@ export default function typedArray() {
         const value = uint8.subarray().toString()
 
         expect(value).assertEqual("10,20,30,40,50");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3605,7 +3758,8 @@ export default function typedArray() {
         uint8.set([1, 2, 3])
         const resultArray = Array.from(uint8)
         expect(String(resultArray)).assertEqual(String([1, 2, 3, 0, 0, 0, 0, 0]));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3626,7 +3780,8 @@ export default function typedArray() {
         uint8.set([1, 2, 3])
         const subarray = uint8.subarray(0, 4)
         expect(String(Array.from(subarray))).assertEqual(String([1, 2, 3, 0]));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3654,7 +3809,8 @@ export default function typedArray() {
           index++;
         }
         expect(String(isEqual)).assertDeepEquals('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3673,7 +3829,8 @@ export default function typedArray() {
       try {
         const arr = new Uint8Array([10, 20, 30, 40, 50]);
         expect(arr).assertDeepEquals(new Uint8Array([10, 20, 30, 40, 50]));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3697,7 +3854,8 @@ export default function typedArray() {
         expect(String(arrIter.next().value)).assertEqual('30')
         expect(String(arrIter.next().value)).assertEqual('40')
         expect(String(arrIter.next().value)).assertEqual('50');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3717,7 +3875,8 @@ export default function typedArray() {
         const arr = new Uint8Array(0);
         const arrIter = arr.$_iterator();
         expect(String(arrIter.next().value)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3737,7 +3896,8 @@ export default function typedArray() {
         const uint8 = new Uint32Array([500, 8123, 12]);
         let value = uint8.toLocaleString()
         expect(value).assertEqual("500,8,123,12");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3757,7 +3917,8 @@ export default function typedArray() {
         const uint = new Uint32Array(0);
         let value = uint.toLocaleString()
         expect(value).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3777,7 +3938,8 @@ export default function typedArray() {
         const uint8 = new Uint8Array([10, 20, 30, 40, 50]);
         let value = uint8.toString()
         expect(value).assertEqual("10,20,30,40,50");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3797,7 +3959,8 @@ export default function typedArray() {
         const uint8 = new Uint8Array(0);
         let value = uint8.toString()
         expect(value).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3821,7 +3984,8 @@ export default function typedArray() {
         expect(String(uint8Value.next().value)).assertEqual('30')
         expect(String(uint8Value.next().value)).assertEqual('40')
         expect(String(uint8Value.next().value)).assertEqual('50');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3850,7 +4014,8 @@ export default function typedArray() {
           index++;
         }
         expect(String(isEqual)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3870,7 +4035,8 @@ export default function typedArray() {
         const uint8 = new Uint8Array(0);
         let uint8Value = uint8.values();
         expect(uint8Value.next().value).assertEqual(undefined);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }

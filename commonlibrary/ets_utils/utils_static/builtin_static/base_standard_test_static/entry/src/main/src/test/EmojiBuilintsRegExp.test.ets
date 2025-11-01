@@ -48,7 +48,8 @@ export default function EmojiRegExp() {
         const regex1 = new RegExp('\\ud83d\\ude0a');
         const regex2 = new RegExp('\\ud83d\\ude0a');
         expect(String(regex1 === regex2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -69,7 +70,8 @@ export default function EmojiRegExp() {
         const regex2 = new RegExp('\\ud83d\\udc64');
 
         expect(String(regex1 === regex2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -90,7 +92,8 @@ export default function EmojiRegExp() {
         const regex2 = new RegExp('\\ud83d\\udc6b');
 
         expect(String(regex1 === regex2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -111,7 +114,8 @@ export default function EmojiRegExp() {
         const regex2 = new RegExp('\\u260e');
 
         expect(String(regex1 === regex2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -132,7 +136,8 @@ export default function EmojiRegExp() {
         const regex2 = new RegExp('\\ud83d\\udc79');
 
         expect(String(regex1 === regex2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -153,7 +158,8 @@ export default function EmojiRegExp() {
         const regex2 = new RegExp('\\ud83d\\udd5b');
 
         expect(String(regex1 === regex2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -174,7 +180,8 @@ export default function EmojiRegExp() {
         const regex2 = new RegExp('\\ud83c\\udf4f');
 
         expect(String(regex1 === regex2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -195,7 +202,8 @@ export default function EmojiRegExp() {
         const regex2 = new RegExp('\\ud83d\\udd03');
 
         expect(String(regex1 === regex2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -216,7 +224,8 @@ export default function EmojiRegExp() {
         const regex2 = new RegExp('\\ud83c\\udf41');
 
         expect(String(regex1 === regex2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -237,7 +246,8 @@ export default function EmojiRegExp() {
         const regex2 = new RegExp('\\u2666');
 
         expect(String(regex1 === regex2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -258,7 +268,8 @@ export default function EmojiRegExp() {
         const regex2 = new RegExp('\\ud83d\\udc48');
 
         expect(String(regex1 === regex2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -279,7 +290,8 @@ export default function EmojiRegExp() {
         const regex2 = new RegExp('\\ud83e\\udd3c\\u200d\\u2642\\ufe0f');
 
         expect(String(regex1 === regex2)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -301,7 +313,8 @@ export default function EmojiRegExp() {
         const result = emoji.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -323,7 +336,8 @@ export default function EmojiRegExp() {
         const result = emoji.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -345,7 +359,8 @@ export default function EmojiRegExp() {
         const result = emoji.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -367,7 +382,8 @@ export default function EmojiRegExp() {
         const result = emoji.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -389,7 +405,8 @@ export default function EmojiRegExp() {
         const result = emoji.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -411,7 +428,8 @@ export default function EmojiRegExp() {
         const result = emoji.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -433,7 +451,8 @@ export default function EmojiRegExp() {
         const result = emoji.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -455,7 +474,8 @@ export default function EmojiRegExp() {
         const result = emoji.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -477,7 +497,8 @@ export default function EmojiRegExp() {
         const result = emoji.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -499,7 +520,8 @@ export default function EmojiRegExp() {
         const result = emoji.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -521,7 +543,8 @@ export default function EmojiRegExp() {
         const result = emoji.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -543,7 +566,8 @@ export default function EmojiRegExp() {
         const result = emoji.matchAll(re);
         const resultArray = Array.from(result);
         expect(String(resultArray.length)).assertEqual("0");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -565,7 +589,8 @@ export default function EmojiRegExp() {
         const re = emoji.replace(reg, 'hello');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("hello");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -588,7 +613,8 @@ export default function EmojiRegExp() {
 
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("user");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -610,7 +636,8 @@ export default function EmojiRegExp() {
         const re = emoji.replace(reg, 'couple');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("couple");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -632,7 +659,8 @@ export default function EmojiRegExp() {
         const re = emoji.replace(reg, 'phone');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("phone");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -654,7 +682,8 @@ export default function EmojiRegExp() {
         const re = emoji.replace(reg, 'monster');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("monster");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -676,7 +705,8 @@ export default function EmojiRegExp() {
         const re = emoji.replace(reg, 'clock');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("clock");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -698,7 +728,8 @@ export default function EmojiRegExp() {
         const re = emoji.replace(reg, 'apple');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("apple");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -720,7 +751,8 @@ export default function EmojiRegExp() {
         const re = emoji.replace(reg, 'refresh');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("refresh");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -742,7 +774,8 @@ export default function EmojiRegExp() {
         const re = emoji.replace(reg, 'leaf');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("leaf");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -764,7 +797,8 @@ export default function EmojiRegExp() {
         const re = emoji.replace(reg, 'diamond');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("diamond");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -786,7 +820,8 @@ export default function EmojiRegExp() {
         const re = emoji.replace(reg, 'left');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("left");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -808,7 +843,8 @@ export default function EmojiRegExp() {
         const re = emoji.replace(reg, 'wrestler');
         const res = encodeURI(re);
         expect(res.toString()).assertEqual("wrestler");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -829,7 +865,8 @@ export default function EmojiRegExp() {
         let regexp: RegExp = new RegExp('\ud83d\ude0a');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -849,7 +886,8 @@ export default function EmojiRegExp() {
         let regexp: RegExp = new RegExp('\ud83d\udc64');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -869,7 +907,8 @@ export default function EmojiRegExp() {
         let regexp: RegExp = new RegExp('\ud83d\udc6b');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -889,7 +928,8 @@ export default function EmojiRegExp() {
         let regexp: RegExp = new RegExp('\u260e');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -909,7 +949,8 @@ export default function EmojiRegExp() {
         let regexp: RegExp = new RegExp('\ud83d\udc79');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -929,7 +970,8 @@ export default function EmojiRegExp() {
         let regexp: RegExp = new RegExp('\ud83d\udd5b');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -949,7 +991,8 @@ export default function EmojiRegExp() {
         let regexp: RegExp = new RegExp('\ud83c\udf4f');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -969,7 +1012,8 @@ export default function EmojiRegExp() {
         let regexp: RegExp = new RegExp('\ud83d\udd03');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -989,7 +1033,8 @@ export default function EmojiRegExp() {
         let regexp: RegExp = new RegExp('\ud83c\udf41');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -1009,7 +1054,8 @@ export default function EmojiRegExp() {
         let regexp: RegExp = new RegExp('\u2666');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -1029,7 +1075,8 @@ export default function EmojiRegExp() {
         let regexp: RegExp = new RegExp('\ud83d\udc48');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -1049,7 +1096,8 @@ export default function EmojiRegExp() {
         let regexp: RegExp = new RegExp('\ud83e\udd3c\u200d\u2642\ufe0f');
         const res = encodeURI(String(regexp.test(s)));
         expect(res.toString()).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
       }
     });
@@ -1068,7 +1116,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\ude0a';
         let myExp = new RegExp(emoji);
         expect(myExp.toString()).assertEqual('/😊/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1087,7 +1136,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udc64';
         let myExp = new RegExp(emoji);
         expect(myExp.toString()).assertEqual('/👤/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1106,7 +1156,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udc6b';
         let myExp = new RegExp(emoji);
         expect(myExp.toString()).assertEqual('/👫/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1125,7 +1176,8 @@ export default function EmojiRegExp() {
         let emoji = '\u260e';
         let myExp = new RegExp(emoji);
         expect(myExp.toString()).assertEqual('/☎/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1144,7 +1196,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udc79';
         let myExp = new RegExp(emoji);
         expect(myExp.toString()).assertEqual('/👹/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1163,7 +1216,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udd5b';
         let myExp = new RegExp(emoji);
         expect(myExp.toString()).assertEqual('/🕛/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1182,7 +1236,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83c\udf4f';
         let myExp = new RegExp(emoji);
         expect(myExp.toString()).assertEqual('/🍏/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1201,7 +1256,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udd03';
         let myExp = new RegExp(emoji);
         expect(myExp.toString()).assertEqual('/🔃/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1220,7 +1276,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83c\udf41';
         let myExp = new RegExp(emoji);
         expect(myExp.toString()).assertEqual('/🍁/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1239,7 +1296,8 @@ export default function EmojiRegExp() {
         let emoji = '\u2666';
         let myExp = new RegExp(emoji);
         expect(myExp.toString()).assertEqual('/♦/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1258,7 +1316,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udc48';
         let myExp = new RegExp(emoji);
         expect(myExp.toString()).assertEqual('/👈/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1277,7 +1336,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83e\udd3c\u200d\u2642\ufe0f';
         let myExp = new RegExp(emoji);
         expect(myExp.toString()).assertEqual('/🤼‍♂️/');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1296,7 +1356,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\ude0a';
         let myExp = new RegExp(emoji, 's');
         expect(String(myExp.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1315,7 +1376,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udc64';
         let myExp = new RegExp(emoji, 's');
         expect(String(myExp.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1334,7 +1396,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udc6b';
         let myExp = new RegExp(emoji, 's');
         expect(String(myExp.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1353,7 +1416,8 @@ export default function EmojiRegExp() {
         let emoji = '\u260e';
         let myExp = new RegExp(emoji, 's');
         expect(String(myExp.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1372,7 +1436,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udc79';
         let myExp = new RegExp(emoji, 's');
         expect(String(myExp.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1391,7 +1456,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udd5b';
         let myExp = new RegExp(emoji, 's');
         expect(String(myExp.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1410,7 +1476,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83c\udf4f';
         let myExp = new RegExp(emoji, 's');
         expect(String(myExp.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1429,7 +1496,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udd03';
         let myExp = new RegExp(emoji, 's');
         expect(String(myExp.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1448,7 +1516,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83c\udf41';
         let myExp = new RegExp(emoji, 's');
         expect(String(myExp.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1467,7 +1536,8 @@ export default function EmojiRegExp() {
         let emoji = '\u2666';
         let myExp = new RegExp(emoji, 's');
         expect(String(myExp.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1486,7 +1556,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udc48';
         let myExp = new RegExp(emoji, 's');
         expect(String(myExp.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1505,7 +1576,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83e\udd3c\u200d\u2642\ufe0f';
         let myExp = new RegExp(emoji, 's');
         expect(String(myExp.dotAll)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1524,7 +1596,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\ude0a';
         let myExp = new RegExp(emoji, 'gim');
         expect(myExp.flags).assertEqual('gim');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1543,7 +1616,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udc64';
         let myExp = new RegExp(emoji, 'gim');
         expect(myExp.flags).assertEqual('gim');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1562,7 +1636,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udc6b';
         let myExp = new RegExp(emoji, 'gim');
         expect(myExp.flags).assertEqual('gim');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1581,7 +1656,8 @@ export default function EmojiRegExp() {
         let emoji = '\u260e';
         let myExp = new RegExp(emoji, 'gim');
         expect(myExp.flags).assertEqual('gim');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1600,7 +1676,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udc79';
         let myExp = new RegExp(emoji, 'gim');
         expect(myExp.flags).assertEqual('gim');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1619,7 +1696,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udd5b';
         let myExp = new RegExp(emoji, 'gim');
         expect(myExp.flags).assertEqual('gim');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1638,7 +1716,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83c\udf4f';
         let myExp = new RegExp(emoji, 'gim');
         expect(myExp.flags).assertEqual('gim');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1657,7 +1736,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udd03';
         let myExp = new RegExp(emoji, 'gim');
         expect(myExp.flags).assertEqual('gim');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1676,7 +1756,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83c\udf41';
         let myExp = new RegExp(emoji, 'gim');
         expect(myExp.flags).assertEqual('gim');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1695,7 +1776,8 @@ export default function EmojiRegExp() {
         let emoji = '\u2666';
         let myExp = new RegExp(emoji, 'gim');
         expect(myExp.flags).assertEqual('gim');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1714,7 +1796,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udc48';
         let myExp = new RegExp(emoji, 'gim');
         expect(myExp.flags).assertEqual('gim');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1733,7 +1816,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83e\udd3c\u200d\u2642\ufe0f';
         let myExp = new RegExp(emoji, 'gim');
         expect(myExp.flags).assertEqual('gim');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1752,7 +1836,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\ude0a';
         let myExp = new RegExp(emoji, 'g');
         expect(String(myExp.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1771,7 +1856,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udc64';
         let myExp = new RegExp(emoji, 'g');
         expect(String(myExp.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1790,7 +1876,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udc6b';
         let myExp = new RegExp(emoji, 'g');
         expect(String(myExp.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1809,7 +1896,8 @@ export default function EmojiRegExp() {
         let emoji = '\u260e';
         let myExp = new RegExp(emoji, 'g');
         expect(String(myExp.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1828,7 +1916,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udc79';
         let myExp = new RegExp(emoji, 'g');
         expect(String(myExp.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1847,7 +1936,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udd5b';
         let myExp = new RegExp(emoji, 'g');
         expect(String(myExp.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1866,7 +1956,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83c\udf4f';
         let myExp = new RegExp(emoji, 'g');
         expect(String(myExp.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1885,7 +1976,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udd03';
         let myExp = new RegExp(emoji, 'g');
         expect(String(myExp.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1904,7 +1996,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83c\udf41';
         let myExp = new RegExp(emoji, 'g');
         expect(String(myExp.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1923,7 +2016,8 @@ export default function EmojiRegExp() {
         let emoji = '\u2666';
         let myExp = new RegExp(emoji, 'g');
         expect(String(myExp.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1942,7 +2036,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83d\udc48';
         let myExp = new RegExp(emoji, 'g');
         expect(String(myExp.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1961,7 +2056,8 @@ export default function EmojiRegExp() {
         let emoji = '\ud83e\udd3c\u200d\u2642\ufe0f';
         let myExp = new RegExp(emoji, 'g');
         expect(String(myExp.global)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1981,7 +2077,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\ude0a';
         const regex = new RegExp("\ud83d\ude0a", "g").flags;
         expect(String(regex.includes('g'))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2001,7 +2098,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\udc64';
         const regex = new RegExp("\ud83d\udc64", "g").flags;
         expect(String(regex.includes('g'))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2021,7 +2119,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\udc6b';
         const regex = new RegExp("\ud83d\udc6b", "g").flags;
         expect(String(regex.includes('g'))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2041,7 +2140,8 @@ export default function EmojiRegExp() {
         const emoji = '\u260e';
         const regex = new RegExp("\u260e", "g").flags;
         expect(String(regex.includes('g'))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2061,7 +2161,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\udc79';
         const regex = new RegExp("\ud83d\udc79", "g").flags;
         expect(String(regex.includes('g'))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2081,7 +2182,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\udd5b';
         const regex = new RegExp("\ud83d\udd5b", "g").flags;
         expect(String(regex.includes('g'))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2101,7 +2203,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83c\udf4f';
         const regex = new RegExp("\ud83c\udf4f", "g").flags;
         expect(String(regex.includes('g'))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2121,7 +2224,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\udd03';
         const regex = new RegExp("\ud83d\udd03", "g").flags;
         expect(String(regex.includes('g'))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2141,7 +2245,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83c\udf41';
         const regex = new RegExp("\ud83c\udf41", "g").flags;
         expect(String(regex.includes('g'))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2161,7 +2266,8 @@ export default function EmojiRegExp() {
         const emoji = '\u2666';
         const regex = new RegExp("\u2666", "g").flags;
         expect(String(regex.includes('g'))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2181,7 +2287,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\udc48';
         const regex = new RegExp("\ud83d\udc48", "g").flags;
         expect(String(regex.includes('g'))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2201,7 +2308,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83e\udd3c\u200d\u2642\ufe0f';
         const regex = new RegExp("\ud83e\udd3c\u200d\u2642\ufe0f", "g").flags;
         expect(String(regex.includes('g'))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2221,7 +2329,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\ude0a';
         let regex = new RegExp(emoji, "i");
         expect(String(regex.ignoreCase)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2241,7 +2350,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\udc64';
         let regex = new RegExp(emoji, "i");
         expect(String(regex.ignoreCase)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2261,7 +2371,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\udc6b';
         let regex = new RegExp(emoji, "i");
         expect(String(regex.ignoreCase)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2281,7 +2392,8 @@ export default function EmojiRegExp() {
         const emoji = '\u260e';
         let regex = new RegExp(emoji, "i");
         expect(String(regex.ignoreCase)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2301,7 +2413,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\udc79';
         let regex = new RegExp(emoji, "i");
         expect(String(regex.ignoreCase)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2321,7 +2434,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\udd5b';
         let regex = new RegExp(emoji, "i");
         expect(String(regex.ignoreCase)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2341,7 +2455,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83c\udf4f';
         let regex = new RegExp(emoji, "i");
         expect(String(regex.ignoreCase)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2361,7 +2476,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\udd03';
         let regex = new RegExp(emoji, "i");
         expect(String(regex.ignoreCase)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2381,7 +2497,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83c\udf41';
         let regex = new RegExp(emoji, "i");
         expect(String(regex.ignoreCase)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2401,7 +2518,8 @@ export default function EmojiRegExp() {
         const emoji = '\u2666';
         let regex = new RegExp(emoji, "i");
         expect(String(regex.ignoreCase)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2421,7 +2539,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\udc48';
         let regex = new RegExp(emoji, "i");
         expect(String(regex.ignoreCase)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2441,7 +2560,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83e\udd3c\u200d\u2642\ufe0f';
         let regex = new RegExp(emoji, "i");
         expect(String(regex.ignoreCase)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2461,7 +2581,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\ude0a';
         let regex = new RegExp(emoji, "m");
         expect(String(regex.multiline)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2481,7 +2602,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\udc64';
         let regex = new RegExp(emoji, "m");
         expect(String(regex.multiline)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2501,7 +2623,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\udc6b';
         let regex = new RegExp(emoji, "m");
         expect(String(regex.multiline)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2521,7 +2644,8 @@ export default function EmojiRegExp() {
         const emoji = '\u260e';
         let regex = new RegExp(emoji, "m");
         expect(String(regex.multiline)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2541,7 +2665,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\udc79';
         let regex = new RegExp(emoji, "m");
         expect(String(regex.multiline)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2561,7 +2686,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\udd5b';
         let regex = new RegExp(emoji, "m");
         expect(String(regex.multiline)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2581,7 +2707,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83c\udf4f';
         let regex = new RegExp(emoji, "m");
         expect(String(regex.multiline)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2601,7 +2728,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\udd03';
         let regex = new RegExp(emoji, "m");
         expect(String(regex.multiline)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2621,7 +2749,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83c\udf41';
         let regex = new RegExp(emoji, "m");
         expect(String(regex.multiline)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2641,7 +2770,8 @@ export default function EmojiRegExp() {
         const emoji = '\u2666';
         let regex = new RegExp(emoji, "m");
         expect(String(regex.multiline)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2661,7 +2791,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83d\udc48';
         let regex = new RegExp(emoji, "m");
         expect(String(regex.multiline)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2681,7 +2812,8 @@ export default function EmojiRegExp() {
         const emoji = '\ud83e\udd3c\u200d\u2642\ufe0f';
         let regex = new RegExp(emoji, "m");
         expect(String(regex.multiline)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2700,7 +2832,8 @@ export default function EmojiRegExp() {
       try {
         const new1 = new RegExp('\ud83d\ude0a').source;
         expect(new1).assertEqual('😊');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2719,7 +2852,8 @@ export default function EmojiRegExp() {
       try {
         const new1 = new RegExp('\ud83d\udc64').source;
         expect(new1).assertEqual('👤');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2738,7 +2872,8 @@ export default function EmojiRegExp() {
       try {
         const new1 = new RegExp('\ud83d\udc6b').source;
         expect(new1).assertEqual('👫');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2757,7 +2892,8 @@ export default function EmojiRegExp() {
       try {
         const new1 = new RegExp('\u260e').source;
         expect(new1).assertEqual('☎');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2776,7 +2912,8 @@ export default function EmojiRegExp() {
       try {
         const new1 = new RegExp('\ud83d\udc79').source;
         expect(new1).assertEqual('👹');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2795,7 +2932,8 @@ export default function EmojiRegExp() {
       try {
         const new1 = new RegExp('\ud83d\udd5b').source;
         expect(new1).assertEqual('🕛');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2814,7 +2952,8 @@ export default function EmojiRegExp() {
       try {
         const new1 = new RegExp('\ud83c\udf4f').source;
         expect(new1).assertEqual('🍏');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2833,7 +2972,8 @@ export default function EmojiRegExp() {
       try {
         const new1 = new RegExp('\ud83d\udd03').source;
         expect(new1).assertEqual('🔃');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2852,7 +2992,8 @@ export default function EmojiRegExp() {
       try {
         const new1 = new RegExp('\ud83c\udf41').source;
         expect(new1).assertEqual('🍁');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2871,7 +3012,8 @@ export default function EmojiRegExp() {
       try {
         const new1 = new RegExp('\u2666').source;
         expect(new1).assertEqual('♦');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2890,7 +3032,8 @@ export default function EmojiRegExp() {
       try {
         const new1 = new RegExp('\ud83d\udc48').source;
         expect(new1).assertEqual('👈');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2909,7 +3052,8 @@ export default function EmojiRegExp() {
       try {
         const new1 = new RegExp('\ud83e\udd3c\u200d\u2642\ufe0f').source;
         expect(new1).assertEqual('🤼‍♂️');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2930,7 +3074,8 @@ export default function EmojiRegExp() {
         const re = new RegExp(escape, 'y');
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2951,7 +3096,8 @@ export default function EmojiRegExp() {
         const re = new RegExp(escape, 'y');
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2972,7 +3118,8 @@ export default function EmojiRegExp() {
         const re = new RegExp(escape, 'y');
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2993,7 +3140,8 @@ export default function EmojiRegExp() {
         const re = new RegExp(escape, 'y');
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3014,7 +3162,8 @@ export default function EmojiRegExp() {
         const re = new RegExp(escape, 'y');
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3035,7 +3184,8 @@ export default function EmojiRegExp() {
         const re = new RegExp(escape, 'y');
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3056,7 +3206,8 @@ export default function EmojiRegExp() {
         const re = new RegExp(escape, 'y');
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3077,7 +3228,8 @@ export default function EmojiRegExp() {
         const re = new RegExp(escape, 'y');
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3098,7 +3250,8 @@ export default function EmojiRegExp() {
         const re = new RegExp(escape, 'y');
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3119,7 +3272,8 @@ export default function EmojiRegExp() {
         const re = new RegExp(escape, 'y');
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3140,7 +3294,8 @@ export default function EmojiRegExp() {
         const re = new RegExp(escape, 'y');
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3161,7 +3316,8 @@ export default function EmojiRegExp() {
         const re = new RegExp(escape, 'y');
         let result = re.sticky
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3180,7 +3336,8 @@ export default function EmojiRegExp() {
       try {
         const regex = new RegExp("\ud83d\ude0a");
         expect(String(regex.unicode)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3199,7 +3356,8 @@ export default function EmojiRegExp() {
       try {
         const regex = new RegExp("\ud83d\udc64");
         expect(String(regex.unicode)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3218,7 +3376,8 @@ export default function EmojiRegExp() {
       try {
         const regex = new RegExp("\ud83d\udc6b");
         expect(String(regex.unicode)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3237,7 +3396,8 @@ export default function EmojiRegExp() {
       try {
         const regex = new RegExp("\u260e");
         expect(String(regex.unicode)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3256,7 +3416,8 @@ export default function EmojiRegExp() {
       try {
         const regex = new RegExp("\ud83d\udc79");
         expect(String(regex.unicode)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3275,7 +3436,8 @@ export default function EmojiRegExp() {
       try {
         const regex = new RegExp("\ud83d\udd5b");
         expect(String(regex.unicode)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3294,7 +3456,8 @@ export default function EmojiRegExp() {
       try {
         const regex = new RegExp("\ud83c\udf4f");
         expect(String(regex.unicode)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3313,7 +3476,8 @@ export default function EmojiRegExp() {
       try {
         const regex = new RegExp("\ud83d\udd03");
         expect(String(regex.unicode)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3332,7 +3496,8 @@ export default function EmojiRegExp() {
       try {
         const regex = new RegExp("\ud83c\udf41");
         expect(String(regex.unicode)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3351,7 +3516,8 @@ export default function EmojiRegExp() {
       try {
         const regex = new RegExp("\u2666");
         expect(String(regex.unicode)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3370,7 +3536,8 @@ export default function EmojiRegExp() {
       try {
         const regex = new RegExp("\ud83d\udc48");
         expect(String(regex.unicode)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3389,7 +3556,8 @@ export default function EmojiRegExp() {
       try {
         const regex = new RegExp("\ud83e\udd3c\u200d\u2642\ufe0f");
         expect(String(regex.unicode)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }

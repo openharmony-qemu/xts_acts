@@ -58,7 +58,8 @@ export default function dateTest() {
         console.log(`${TAG} result:` + result);
         expect(String([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28,
           29, 30, 31])).assertContain(String(result));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -80,7 +81,8 @@ export default function dateTest() {
         const result = birthday.getDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -101,7 +103,8 @@ export default function dateTest() {
         const result = birthday.getDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('19');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -122,7 +125,8 @@ export default function dateTest() {
         const result = birthday.getDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('31');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -143,7 +147,8 @@ export default function dateTest() {
         const result = birthday.getDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -164,7 +169,8 @@ export default function dateTest() {
         const result = birthday.getDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -185,7 +191,8 @@ export default function dateTest() {
         const result = birthday.getDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('29');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -206,7 +213,8 @@ export default function dateTest() {
         const result = birthday.getDate();
         console.log(`${TAG} result:` + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -227,7 +235,8 @@ export default function dateTest() {
         const result = birthday.getDate();
         console.log(`${TAG} result:` + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -249,7 +258,8 @@ export default function dateTest() {
         console.log(`${TAG} result:` + result);
         hilog.info(1, TAG, '%{public}s', 'SJG_result:' + JSON.stringify(result));
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         hilog.info(2, TAG, '%{public}s', 'SJG_result error:' + JSON.stringify(err.message));
         expect(false).assertFail();
@@ -271,7 +281,8 @@ export default function dateTest() {
         const result = birthday.getDay();
         console.log(`${TAG} result:` + result);
         expect(String([0, 1, 2, 3, 4, 5, 6])).assertContain(String(result));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -292,7 +303,8 @@ export default function dateTest() {
         const result = birthday.getDay();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -313,7 +325,8 @@ export default function dateTest() {
         const result = birthday.getDay();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -334,7 +347,8 @@ export default function dateTest() {
         const result = birthday.getDay();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('6');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -354,7 +368,8 @@ export default function dateTest() {
         const birthday = new Date('August 0, 1975 23:15:30');
         const result = birthday.getDay();
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -375,7 +390,8 @@ export default function dateTest() {
         const result = birthday.getDay();
         console.log(`${TAG} result:` + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -397,7 +413,8 @@ export default function dateTest() {
         const result = birthday.getDay();
         console.log(`${TAG} result:` + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -420,7 +437,8 @@ export default function dateTest() {
         console.log(`${TAG} result:` + result);
         expect(result < 2124 && result > 1924).assertTrue();
         expect(String(result)).assertEqual(String(birthday.getFullYear()));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -441,7 +459,8 @@ export default function dateTest() {
         const result = moonLanding.getFullYear();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('1950');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -462,7 +481,8 @@ export default function dateTest() {
         const result = moonLanding.getFullYear();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('2000');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -483,7 +503,8 @@ export default function dateTest() {
         const result = moonLanding.getFullYear();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('2049');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -504,7 +525,8 @@ export default function dateTest() {
         const result = moonLanding.getFullYear();
         console.log(`${TAG} result:` + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -526,7 +548,8 @@ export default function dateTest() {
         console.log(`${TAG} result:` + result);
         expect(String([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]))
           .assertContain(String(result));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -547,7 +570,8 @@ export default function dateTest() {
         const result = birthday.getHours();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -568,7 +592,8 @@ export default function dateTest() {
         const result = birthday.getHours();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -589,7 +614,8 @@ export default function dateTest() {
         const result = birthday.getHours();
         console.log(`${TAG} result:` + result);
         expect(result).assertEqual(23);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -610,7 +636,8 @@ export default function dateTest() {
         const result = birthday.getHours();
         console.log(`${TAG} result:` + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -632,7 +659,8 @@ export default function dateTest() {
         const result = moonLanding.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(result >= 0 && result <= 999).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -654,7 +682,8 @@ export default function dateTest() {
         const result = moonLanding.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('123');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -676,7 +705,8 @@ export default function dateTest() {
         const result = moonLanding.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -698,7 +728,8 @@ export default function dateTest() {
         const result = moonLanding.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -720,7 +751,8 @@ export default function dateTest() {
         const result = moonLanding.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -741,7 +773,8 @@ export default function dateTest() {
         const result = birthday.getMinutes();
         console.log(`${TAG} result:` + result);
         expect(result >= 0 && result <= 59).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -762,7 +795,8 @@ export default function dateTest() {
         const result = birthday.getMinutes();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -783,7 +817,8 @@ export default function dateTest() {
         const result = birthday.getMinutes();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('20');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -804,7 +839,8 @@ export default function dateTest() {
         const result = birthday.getMinutes();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('59');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -825,7 +861,8 @@ export default function dateTest() {
         const result = birthday.getMinutes();
         console.log(`${TAG} result:` + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -847,7 +884,8 @@ export default function dateTest() {
         console.log(`${TAG} result:` + result);
         hilog.info(3, TAG, '%{public}s', 'testGetMinutes0006 jzl flag1 is:' + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -868,7 +906,8 @@ export default function dateTest() {
         const result = moonLanding.getMonth();
         console.log(`${TAG} result:` + result);
         expect(String([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])).assertContain(String(result));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -889,7 +928,8 @@ export default function dateTest() {
         const result = moonLanding.getMonth();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -910,7 +950,8 @@ export default function dateTest() {
         const result = moonLanding.getMonth();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('6');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -931,7 +972,8 @@ export default function dateTest() {
         const result = moonLanding.getMonth();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('11');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -953,7 +995,8 @@ export default function dateTest() {
         console.log(`${TAG} result:` + result);
         hilog.info(3, TAG, '%{public}s', 'testGetMonth0005 jzl flag1 is:' + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -974,7 +1017,8 @@ export default function dateTest() {
         const result = moonLanding.getSeconds();
         console.log(`${TAG} result:` + result);
         expect(result >= 0 && result <= 59).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -995,7 +1039,8 @@ export default function dateTest() {
         const result = moonLanding.getSeconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1016,7 +1061,8 @@ export default function dateTest() {
         const result = moonLanding.getSeconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('18');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1037,7 +1083,8 @@ export default function dateTest() {
         const result = moonLanding.getSeconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('59');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1059,7 +1106,8 @@ export default function dateTest() {
         console.log(`${TAG} result:` + result);
         hilog.info(4, TAG, '%{public}s', 'testGetSeconds0005 jzl flag1 is:' + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1080,7 +1128,8 @@ export default function dateTest() {
         const copy = new Date();
         console.log(`${TAG} result:` + copy.setTime(moonLanding.getTime()));
         expect(String(copy.setTime(moonLanding.getTime()))).assertEqual(String(copy.setTime(moonLanding.getTime())));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1101,7 +1150,8 @@ export default function dateTest() {
         const copy = new Date();
         console.log(`${TAG} result:` + copy.setTime(moonLanding.getTime()));
         expect(String(copy.setTime(moonLanding.getTime()))).assertEqual('-29922000000');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1122,7 +1172,8 @@ export default function dateTest() {
         const copy = new Date();
         console.log(`${TAG} result:` + copy.setTime(moonLanding.getTime()));
         expect(String(copy.setTime(moonLanding.getTime()))).assertEqual('-14283582000');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1143,7 +1194,8 @@ export default function dateTest() {
         const copy = new Date();
         console.log(`${TAG} result:` + copy.setTime(moonLanding.getTime()));
         expect(String(copy.setTime(moonLanding.getTime()))).assertEqual('-1064341000');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1165,7 +1217,8 @@ export default function dateTest() {
         console.log(`${TAG} result:` + copy.setTime(moonLanding.getTime()));
         hilog.info(5, TAG, '%{public}s', 'testGetTime0005 jzl flag1 is:' + copy);
         expect(Number.isNaN(copy.setTime(moonLanding.getTime()))).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1186,7 +1239,8 @@ export default function dateTest() {
         const result = date1.getTimezoneOffset();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('-480');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1208,7 +1262,8 @@ export default function dateTest() {
         const result = date1.getTimezoneOffset() === date2.getTimezoneOffset();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1230,7 +1285,8 @@ export default function dateTest() {
         const result = date1.getTimezoneOffset() === date2.getTimezoneOffset();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1252,7 +1308,8 @@ export default function dateTest() {
         console.log(`${TAG} result:` + result);
         hilog.info(6, TAG, '%{public}s', 'testGetTimezoneOffset0004 jzl flag1 is:' + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1274,7 +1331,8 @@ export default function dateTest() {
         const result = date1.getUTCDate();
         console.log(`${TAG} result:` + result);
         expect(result >= 1 && result <= 31).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1295,7 +1353,8 @@ export default function dateTest() {
         const result = date1.getUTCDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1316,7 +1375,8 @@ export default function dateTest() {
         const result = birthday.getUTCDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('19');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1337,7 +1397,8 @@ export default function dateTest() {
         const result = birthday.getUTCDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('31');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1358,7 +1419,8 @@ export default function dateTest() {
         const result = birthday.getUTCDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1379,7 +1441,8 @@ export default function dateTest() {
         const result = birthday.getUTCDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1400,7 +1463,8 @@ export default function dateTest() {
         const result = birthday.getUTCDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('29');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1421,7 +1485,8 @@ export default function dateTest() {
         const result = birthday.getUTCDate();
         console.log(`${TAG} result:` + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1442,7 +1507,8 @@ export default function dateTest() {
         const result = birthday.getUTCDate();
         console.log(`${TAG} result:` + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1465,7 +1531,8 @@ export default function dateTest() {
         hilog.info(2, TAG, '%{public}s', 'SJG_testGetUTCDate0010_result:' + result);
         expect(Number.isNaN(result)).assertEqual(true);
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1486,7 +1553,8 @@ export default function dateTest() {
         const result = birthday.getUTCDay();
         console.log(`${TAG} result:` + result);
         expect(String([0, 1, 2, 3, 4, 5, 6])).assertContain(String(result));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1507,7 +1575,8 @@ export default function dateTest() {
         const result = birthday.getUTCDay();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1528,7 +1597,8 @@ export default function dateTest() {
         const result = birthday.getUTCDay();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1549,7 +1619,8 @@ export default function dateTest() {
         const result = birthday.getUTCDay();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('6');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1570,7 +1641,8 @@ export default function dateTest() {
         const result = birthday.getUTCDay();
         console.log(`${TAG} result:` + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1591,7 +1663,8 @@ export default function dateTest() {
         const result = birthday.getUTCDay();
         console.log(`${TAG} result:` + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1613,7 +1686,8 @@ export default function dateTest() {
         console.log(`${TAG} result:` + result);
         hilog.info(2, TAG, '%{public}s', 'SJG_testGetUTCDay0007_result:' + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1634,7 +1708,8 @@ export default function dateTest() {
         const result = moonLanding.getUTCFullYear();
         console.log(`${TAG} result:` + result);
         expect(result > 1924 && result < 2124).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1655,7 +1730,8 @@ export default function dateTest() {
         const result = moonLanding.getUTCFullYear();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('1950');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1676,7 +1752,8 @@ export default function dateTest() {
         const result = moonLanding.getUTCFullYear();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('2000');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1697,7 +1774,8 @@ export default function dateTest() {
         const result = moonLanding.getUTCFullYear();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('2049');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1718,7 +1796,8 @@ export default function dateTest() {
         const result = moonLanding.getUTCFullYear();
         console.log(`${TAG} result:` + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1739,7 +1818,8 @@ export default function dateTest() {
         const result = birthday.getUTCHours();
         console.log(`${TAG} result:` + result);
         expect(result > 0 && result < 23).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1760,7 +1840,8 @@ export default function dateTest() {
         const result = birthday.getUTCHours();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1781,7 +1862,8 @@ export default function dateTest() {
         const result = birthday.getUTCHours();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1802,7 +1884,8 @@ export default function dateTest() {
         const result = birthday.getUTCHours();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('23');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1823,7 +1906,8 @@ export default function dateTest() {
         const result = birthday.getUTCHours();
         console.log(`${TAG} result:` + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1845,7 +1929,8 @@ export default function dateTest() {
         const result = moonLanding.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1867,7 +1952,8 @@ export default function dateTest() {
         const result = moonLanding.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('123');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1889,7 +1975,8 @@ export default function dateTest() {
         const result = moonLanding.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1911,7 +1998,8 @@ export default function dateTest() {
         const result = moonLanding.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1933,7 +2021,8 @@ export default function dateTest() {
         const result = moonLanding.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1954,7 +2043,8 @@ export default function dateTest() {
         const result = birthday.getUTCMinutes();
         console.log(`${TAG} result:` + result);
         expect(result >= 0 && result <= 59).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1975,7 +2065,8 @@ export default function dateTest() {
         const result = birthday.getUTCMinutes();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1996,7 +2087,8 @@ export default function dateTest() {
         const result = birthday.getUTCMinutes();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('20');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2017,7 +2109,8 @@ export default function dateTest() {
         const result = birthday.getUTCMinutes();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('59');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2038,7 +2131,8 @@ export default function dateTest() {
         const result = birthday.getUTCMinutes();
         console.log(`${TAG} result:` + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2060,7 +2154,8 @@ export default function dateTest() {
         console.log(`${TAG} result:` + result);
         hilog.info(2, TAG, '%{public}s', 'SJG_testGetUTCMinutes0006_result:' + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2081,7 +2176,8 @@ export default function dateTest() {
         const result = moonLanding.getUTCMonth();
         console.log(`${TAG} result:` + result);
         expect([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]).assertContain(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2103,7 +2199,8 @@ export default function dateTest() {
         const result = moonLanding.getUTCMonth();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2124,7 +2221,8 @@ export default function dateTest() {
         const result = moonLanding.getUTCMonth();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('6');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2145,7 +2243,8 @@ export default function dateTest() {
         const result = moonLanding.getUTCMonth();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('11');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2167,7 +2266,8 @@ export default function dateTest() {
         console.log(`${TAG} result:` + result);
         hilog.info(2, TAG, '%{public}s', 'SJG_testBufferByteLength00010_result:' + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2188,7 +2288,8 @@ export default function dateTest() {
         const result = moonLanding.getSeconds();
         console.log(`${TAG} result:` + result);
         expect(result >= 0 && result <= 59).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2209,7 +2310,8 @@ export default function dateTest() {
         const result = moonLanding.getSeconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2230,7 +2332,8 @@ export default function dateTest() {
         const result = moonLanding.getSeconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('18');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2251,7 +2354,8 @@ export default function dateTest() {
         const result = moonLanding.getSeconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('59');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2273,7 +2377,8 @@ export default function dateTest() {
         console.log(`${TAG} result:` + result);
         hilog.info(2, TAG, '%{public}s', 'SJG_testGetUTCSeconds0005_result:' + result);
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2295,7 +2400,8 @@ export default function dateTest() {
         const result = event.getDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('31');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2317,7 +2423,8 @@ export default function dateTest() {
         const result = event.getDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2339,7 +2446,8 @@ export default function dateTest() {
         const result = event.getDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('14');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2361,7 +2469,8 @@ export default function dateTest() {
         const result = event.getDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('31');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2383,7 +2492,8 @@ export default function dateTest() {
         const result = event.getDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2405,7 +2515,8 @@ export default function dateTest() {
         const result = event.getDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('28');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2427,7 +2538,8 @@ export default function dateTest() {
         const result = event.getDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2449,7 +2561,8 @@ export default function dateTest() {
         const result = event.getDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('30');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2471,7 +2584,8 @@ export default function dateTest() {
         const result = event.getDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2493,7 +2607,8 @@ export default function dateTest() {
         const result = event.getFullYear();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2515,7 +2630,8 @@ export default function dateTest() {
         const result = event.getFullYear();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('1969');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2537,7 +2653,8 @@ export default function dateTest() {
         const result = event.getFullYear();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('9999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2559,7 +2676,8 @@ export default function dateTest() {
         const result = event.getFullYear();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('1999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2581,7 +2699,8 @@ export default function dateTest() {
         const result = event.getFullYear();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('2000');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2603,7 +2722,8 @@ export default function dateTest() {
         const result = event.getFullYear();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('2000');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2625,7 +2745,8 @@ export default function dateTest() {
         const result = "Mon Aug 18 1975 23:15:30 GMT+0800";
         console.log(`${TAG} event:` + event + ',result:' + result);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2647,7 +2768,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 00:15:30 GMT+0800";
         console.log(`${TAG} event:` + event + ',result:' + result);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2669,7 +2791,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:15:30 GMT+0800";
         console.log(`${TAG} event:` + event + ',result:' + result);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2691,7 +2814,8 @@ export default function dateTest() {
         const result = "Wed Aug 20 1975 00:15:30 GMT+0800";
         console.log(`${TAG} event:` + event + ',result:' + result);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2713,7 +2837,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 00:59:30 GMT+0800";
         console.log(`${TAG} event:` + event + ',result:' + result);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2735,7 +2860,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 01:00:30 GMT+0800";
         console.log(`${TAG} event:` + event + ',result:' + result);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2757,7 +2883,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 01:59:30 GMT+0800";
         console.log(`${TAG} event:` + event + ',result:' + result);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2779,7 +2906,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 02:00:30 GMT+0800";
         console.log(`${TAG} event:` + event + ',result:' + result);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2801,7 +2929,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 01:01:59 GMT+0800";
         console.log(`${TAG} event:` + event + ',result:' + result);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2823,7 +2952,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 01:02:00 GMT+0800";
         console.log(`${TAG} event:` + event + ',result:' + result);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2845,7 +2975,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 01:02:59 GMT+0800";
         console.log(`${TAG} event:` + event + ',result:' + result);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2867,7 +2998,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 01:03:00 GMT+0800";
         console.log(`${TAG} event:` + event + ',result:' + result);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2889,7 +3021,8 @@ export default function dateTest() {
         const result = event.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2911,7 +3044,8 @@ export default function dateTest() {
         const result = event.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2933,7 +3067,8 @@ export default function dateTest() {
         const result = event.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2955,7 +3090,8 @@ export default function dateTest() {
         const result = event.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2977,7 +3113,8 @@ export default function dateTest() {
         const result = event.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2999,7 +3136,8 @@ export default function dateTest() {
         const result = event.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3021,7 +3159,8 @@ export default function dateTest() {
         const result = event.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('456');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3043,7 +3182,8 @@ export default function dateTest() {
         const result = event.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3065,7 +3205,8 @@ export default function dateTest() {
         const result = event.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3087,7 +3228,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 22:59:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3109,7 +3251,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:00:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3131,7 +3274,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:59:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3153,7 +3297,8 @@ export default function dateTest() {
         const result = "Wed Aug 20 1975 00:00:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3175,7 +3320,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:01:59 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3197,7 +3343,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:02:00 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3219,7 +3366,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:02:59 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3241,7 +3389,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:03:00 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3263,7 +3412,8 @@ export default function dateTest() {
         const result = event.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3285,7 +3435,8 @@ export default function dateTest() {
         const result = event.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3307,7 +3458,8 @@ export default function dateTest() {
         const result = event.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3329,7 +3481,8 @@ export default function dateTest() {
         const result = event.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3351,7 +3504,8 @@ export default function dateTest() {
         const result = event.getMonth();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('11');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3373,7 +3527,8 @@ export default function dateTest() {
         const result = event.getMonth();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3395,7 +3550,8 @@ export default function dateTest() {
         const result = event.getMonth();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3417,7 +3573,8 @@ export default function dateTest() {
         const result = event.getMonth();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('11');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3439,7 +3596,8 @@ export default function dateTest() {
         const result = event.getMonth();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3461,7 +3619,8 @@ export default function dateTest() {
         const result = 'Sun Aug 31 1975 23:15:30 GMT+0800';
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3483,7 +3642,8 @@ export default function dateTest() {
         const result = 'Mon Sep 01 1975 23:15:30 GMT+0800';
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3505,7 +3665,8 @@ export default function dateTest() {
         const result = 'Thu Oct 16 1975 23:15:30 GMT+0800';
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3527,7 +3688,8 @@ export default function dateTest() {
         const result = 'Sun Aug 31 1975 23:15:30 GMT+0800';
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3549,7 +3711,8 @@ export default function dateTest() {
         const result = 'Mon Sep 01 1975 23:15:30 GMT+0800';
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3571,7 +3734,8 @@ export default function dateTest() {
         const result = 'Tue Aug 19 1975 23:14:59 GMT+0800';
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3593,7 +3757,8 @@ export default function dateTest() {
         const result = 'Tue Aug 19 1975 23:15:00 GMT+0800';
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3615,7 +3780,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:15:59 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3637,7 +3803,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:16:00 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3659,7 +3826,8 @@ export default function dateTest() {
         const result = event.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3681,7 +3849,8 @@ export default function dateTest() {
         const result = event.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3703,7 +3872,8 @@ export default function dateTest() {
         const result = event.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3725,7 +3895,8 @@ export default function dateTest() {
         const result = event.getMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3748,7 +3919,8 @@ export default function dateTest() {
         const result = "Thu Jul 01 1999 12:00:00 GMT+0800";
         console.log(`${TAG} result:` + futureDate);
         expect(futureDate.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3773,7 +3945,8 @@ export default function dateTest() {
         const result = "Thu Jul 01 1999 12:05:00 GMT+0800";
         console.log(`${TAG} result:` + futureDate);
         expect(futureDate.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3796,7 +3969,8 @@ export default function dateTest() {
         const result = "Thu Jul 01 1999 12:00:00 GMT+0800";
         console.log(`${TAG} result:` + futureDate);
         expect(futureDate.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3821,7 +3995,8 @@ export default function dateTest() {
         const result = "Thu Jul 01 1999 11:55:00 GMT+0800";
         console.log(`${TAG} result:` + futureDate);
         expect(futureDate.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3844,7 +4019,8 @@ export default function dateTest() {
         const result = "Thu Jan 01 1970 08:00:00 GMT+0800";
         console.log(`${TAG} result:` + futureDate);
         expect(futureDate.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3867,7 +4043,8 @@ export default function dateTest() {
         const result = "Thu Jan 01 1970 08:00:01 GMT+0800";
         console.log(`${TAG} result:` + futureDate);
         expect(futureDate.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3889,7 +4066,8 @@ export default function dateTest() {
         const result = event.getUTCDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('31');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3911,7 +4089,8 @@ export default function dateTest() {
         const result = event.getUTCDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3933,7 +4112,8 @@ export default function dateTest() {
         const result = event.getUTCDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('14');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3955,7 +4135,8 @@ export default function dateTest() {
         const result = event.getUTCDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('31');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3977,7 +4158,8 @@ export default function dateTest() {
         const result = event.getUTCDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3999,7 +4181,8 @@ export default function dateTest() {
         const result = event.getUTCDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('28');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4021,7 +4204,8 @@ export default function dateTest() {
         const result = event.getUTCDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4043,7 +4227,8 @@ export default function dateTest() {
         const result = event.getUTCDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('30');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4065,7 +4250,8 @@ export default function dateTest() {
         const result = event.getUTCDate();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4087,7 +4273,8 @@ export default function dateTest() {
         const result = event.getUTCFullYear();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4109,7 +4296,8 @@ export default function dateTest() {
         const result = event.getUTCFullYear();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('1969');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4131,7 +4319,8 @@ export default function dateTest() {
         const result = event.getUTCFullYear();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('9999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4153,7 +4342,8 @@ export default function dateTest() {
         const result = event.getUTCFullYear();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('1999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4175,7 +4365,8 @@ export default function dateTest() {
         const result = event.getUTCFullYear();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('2000');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4197,7 +4388,8 @@ export default function dateTest() {
         const result = event.getUTCFullYear();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('2000');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4219,7 +4411,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 07:15:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4241,7 +4434,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 08:15:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4263,7 +4457,8 @@ export default function dateTest() {
         const result = "Wed Aug 20 1975 07:15:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4285,7 +4480,8 @@ export default function dateTest() {
         const result = "Wed Aug 20 1975 08:15:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4307,7 +4503,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 08:59:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4329,7 +4526,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 09:00:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4351,7 +4549,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 09:59:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4373,7 +4572,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 10:00:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4395,7 +4595,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 09:01:59 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4417,7 +4618,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 09:02:00 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4439,7 +4641,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 09:02:59 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4461,7 +4664,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 09:03:00 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4483,7 +4687,8 @@ export default function dateTest() {
         const result = event.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4505,7 +4710,8 @@ export default function dateTest() {
         const result = event.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4527,7 +4733,8 @@ export default function dateTest() {
         const result = event.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4549,7 +4756,8 @@ export default function dateTest() {
         const result = event.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4571,7 +4779,8 @@ export default function dateTest() {
         const result = event.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4593,7 +4802,8 @@ export default function dateTest() {
         const result = event.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4615,7 +4825,8 @@ export default function dateTest() {
         const result = event.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('456');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4637,7 +4848,8 @@ export default function dateTest() {
         const result = event.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4659,7 +4871,8 @@ export default function dateTest() {
         const result = event.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4681,7 +4894,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 22:59:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4703,7 +4917,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:00:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4725,7 +4940,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:59:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4747,7 +4963,8 @@ export default function dateTest() {
         const result = "Wed Aug 20 1975 00:00:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4769,7 +4986,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:01:59 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4791,7 +5009,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:02:00 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4813,7 +5032,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:02:59 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4835,7 +5055,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:03:00 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4857,7 +5078,8 @@ export default function dateTest() {
         const result = event.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4879,7 +5101,8 @@ export default function dateTest() {
         const result = event.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4901,7 +5124,8 @@ export default function dateTest() {
         const result = event.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4923,7 +5147,8 @@ export default function dateTest() {
         const result = event.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4945,7 +5170,8 @@ export default function dateTest() {
         const result = event.getUTCMonth();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('11');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4967,7 +5193,8 @@ export default function dateTest() {
         const result = event.getUTCMonth();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4989,7 +5216,8 @@ export default function dateTest() {
         const result = event.getUTCMonth();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5011,7 +5239,8 @@ export default function dateTest() {
         const result = event.getUTCMonth();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('11');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5033,7 +5262,8 @@ export default function dateTest() {
         const result = event.getUTCMonth();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5055,7 +5285,8 @@ export default function dateTest() {
         const result = "Sun Aug 31 1975 23:15:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5077,7 +5308,8 @@ export default function dateTest() {
         const result = "Mon Sep 01 1975 23:15:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5099,7 +5331,8 @@ export default function dateTest() {
         const result = "Thu Oct 16 1975 23:15:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5121,7 +5354,8 @@ export default function dateTest() {
         const result = "Sun Aug 31 1975 23:15:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5143,7 +5377,8 @@ export default function dateTest() {
         const result = "Mon Sep 01 1975 23:15:30 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5165,7 +5400,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:14:59 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5187,7 +5423,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:15:00 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5209,7 +5446,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:15:59 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5231,7 +5469,8 @@ export default function dateTest() {
         const result = "Tue Aug 19 1975 23:16:00 GMT+0800";
         console.log(`${TAG} result:` + event);
         expect(event.toString()).assertEqual(result);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5253,7 +5492,8 @@ export default function dateTest() {
         const result = event.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5275,7 +5515,8 @@ export default function dateTest() {
         const result = event.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5297,7 +5538,8 @@ export default function dateTest() {
         const result = event.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('999');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5319,7 +5561,8 @@ export default function dateTest() {
         const result = event.getUTCMilliseconds();
         console.log(`${TAG} result:` + result);
         expect(String(result)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5340,7 +5583,8 @@ export default function dateTest() {
         hilog.info(2, TAG, '%{public}s', 'testDateToDateString0001 jzl flag1 is:' + event);
         expect(event.toString()).assertEqual("Wed Jul 28 1993 14:39:07 GMT+0800");
         expect(event.toDateString()).assertEqual("Wed Jul 28 1993");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5359,7 +5603,8 @@ export default function dateTest() {
       try {
         const event = new Date(1993, 6, 28);
         expect(event.toDateString()).assertEqual("Wed Jul 28 1993");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5384,7 +5629,8 @@ export default function dateTest() {
         const nowDateString = now.toDateString();
         expect(eventTimeString.includes(nowTimeString.slice(0, 24))).assertTrue();
         expect(eventDateString).assertEqual(nowDateString);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5403,7 +5649,8 @@ export default function dateTest() {
       try {
         const event = new Date("");
         expect(event.toString()).assertEqual("Invalid Date");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5422,7 +5669,8 @@ export default function dateTest() {
       try {
         const event = new Date(1996, 1, 29);
         expect(event.toDateString()).assertEqual("Thu Feb 29 1996");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5441,7 +5689,8 @@ export default function dateTest() {
       try {
         const event = new Date(1997, 1, 29);
         expect(event.toDateString()).assertEqual("Sat Mar 01 1997");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5460,7 +5709,8 @@ export default function dateTest() {
       try {
         const event = new Date(2024, 7, 32);
         expect(event.toDateString()).assertEqual("Sun Sep 01 2024");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5479,7 +5729,8 @@ export default function dateTest() {
       try {
         const event = new Date(2024, 8, 31);
         expect(event.toDateString()).assertEqual("Tue Oct 01 2024");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5499,7 +5750,8 @@ export default function dateTest() {
         const event = new Date('05 October 2011 14:48 UTC');
         expect(event.toString()).assertEqual("Wed Oct 05 2011 22:48:00 GMT+0800");
         expect(event.toISOString()).assertEqual("2011-10-05T14:48:00.000Z");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5520,7 +5772,8 @@ export default function dateTest() {
         const now = event.toISOString();
         const expected = event.toISOString();
         expect(now).assertEqual(expected);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5539,7 +5792,8 @@ export default function dateTest() {
       try {
         const event = new Date(0);
         expect(event.toISOString()).assertEqual("1970-01-01T00:00:00.000Z");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5559,7 +5813,8 @@ export default function dateTest() {
         const event = new Date('');
         event.toISOString();
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual('range error');
       }
@@ -5579,7 +5834,8 @@ export default function dateTest() {
         const event = new Date('32 October 2011 14:48 UTC');
         event.toISOString();
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual('range error');
       }
@@ -5598,7 +5854,8 @@ export default function dateTest() {
       try {
         const event = new Date('05 October 2011 14:48:01.123 UTC');
         expect(event.toISOString()).assertEqual("2011-10-05T14:48:01.123Z");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5617,7 +5874,8 @@ export default function dateTest() {
       try {
         const event = new Date('05 October 2011 14:48:02 UTC');
         expect(event.toISOString()).assertEqual("2011-10-05T14:48:02.000Z");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5636,7 +5894,8 @@ export default function dateTest() {
       try {
         const event = new Date('05 October 2011 14:48:03.1 UTC');
         expect(event.toISOString()).assertEqual("2011-10-05T14:48:03.100Z");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5655,7 +5914,8 @@ export default function dateTest() {
       try {
         const event = new Date(1993, 6, 28, 14, 39, 7);
         expect(event.toJSON()).assertEqual('1993-07-28T06:39:07.000Z');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5674,7 +5934,8 @@ export default function dateTest() {
       try {
         const event = new Date(1993, 6, 28);
         expect(event.toJSON()).assertEqual('1993-07-27T16:00:00.000Z');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5694,7 +5955,8 @@ export default function dateTest() {
         const event = new Date();
         const expectedISOString = event.toISOString();
         expect(event.toJSON()).assertEqual(expectedISOString);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5713,7 +5975,8 @@ export default function dateTest() {
       try {
         const event = new Date("");
         expect(event.toJSON()).assertEqual(null);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5732,7 +5995,8 @@ export default function dateTest() {
       try {
         const event = new Date(1996, 1, 29);
         expect(event.toJSON()).assertEqual("1996-02-28T16:00:00.000Z");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5751,7 +6015,8 @@ export default function dateTest() {
       try {
         const event = new Date(1997, 1, 29);
         expect(event.toJSON()).assertEqual("1997-02-28T16:00:00.000Z");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5770,7 +6035,8 @@ export default function dateTest() {
       try {
         const event = new Date(2024, 7, 32);
         expect(event.toJSON()).assertEqual("2024-08-31T16:00:00.000Z");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5789,7 +6055,8 @@ export default function dateTest() {
       try {
         const event = new Date(2024, 8, 31);
         expect(event.toJSON()).assertEqual("2024-09-30T16:00:00.000Z");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5808,7 +6075,8 @@ export default function dateTest() {
       try {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         expect(event.toLocaleDateString()).assertEqual('12/20/2012');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5827,7 +6095,8 @@ export default function dateTest() {
       try {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         expect(event.toLocaleDateString('de-DE')).assertEqual('20.12.2012');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5852,7 +6121,8 @@ export default function dateTest() {
           day: 'numeric',
         };
         expect(event.toLocaleDateString('de-DE', options)).assertEqual('Donnerstag, 20. Dezember 2012');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5877,7 +6147,8 @@ export default function dateTest() {
           day: 'numeric',
         };
         expect(event.toLocaleDateString('ar-EG', options)).assertEqual('الخميس، ٢٠ ديسمبر ٢٠١٢');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5901,7 +6172,8 @@ export default function dateTest() {
           day: 'numeric',
         };
         expect(event.toLocaleDateString(undefined, options)).assertEqual('Thursday, December 20, 2012');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5920,7 +6192,8 @@ export default function dateTest() {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         event.toLocaleDateString('');
         expect(false).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual("invalid locale");
       }
@@ -5938,7 +6211,8 @@ export default function dateTest() {
       try {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         expect(event.toLocaleDateString("en-US")).assertEqual("12/20/2012");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5956,7 +6230,8 @@ export default function dateTest() {
       try {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         expect(event.toLocaleDateString("en-GB")).assertEqual("20/12/2012");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5974,7 +6249,8 @@ export default function dateTest() {
       try {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         expect(event.toLocaleDateString("ko-KR")).assertEqual("2012. 12. 20.");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5992,7 +6268,8 @@ export default function dateTest() {
       try {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         expect(event.toLocaleDateString("fa-IR")).assertEqual("۱۳۹۱/۹/۳۰");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6010,7 +6287,8 @@ export default function dateTest() {
       try {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         expect(event.toLocaleDateString("ar-EG")).assertEqual("٢٠‏/١٢‏/٢٠١٢");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6028,7 +6306,8 @@ export default function dateTest() {
       try {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         expect(event.toLocaleDateString("ja-JP-u-ca-japanese")).assertEqual("H24/12/20");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6046,7 +6325,8 @@ export default function dateTest() {
       try {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         expect(event.toLocaleDateString(["ban", "id"])).assertEqual("20/12/2012");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6067,7 +6347,8 @@ export default function dateTest() {
           timeZone: 'UTC'
         });
         expect(formattedDate).assertEqual("20/12/2012, 03:00:00");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6088,7 +6369,8 @@ export default function dateTest() {
           timeZone: 'UTC'
         });
         expect(formattedDate).assertEqual("2012. 12. 20. 오전 3:00:00");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6107,7 +6389,8 @@ export default function dateTest() {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         const result = event.toLocaleString();
         expect(result).assertEqual("12/20/2012, 11:00:00 AM");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6126,7 +6409,8 @@ export default function dateTest() {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         const result = event.toLocaleString("");
         expect(result).assertEqual("12/20/2012, 11:00:00 AM");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6145,7 +6429,8 @@ export default function dateTest() {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         const result = event.toLocaleString('en-GB');
         expect(result).assertEqual("20/12/2012, 11:00:00");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6166,7 +6451,8 @@ export default function dateTest() {
           timeZone: 'UTC'
         });
         expect(result).assertEqual("12/20/2012, 3:00:00 AM");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6184,7 +6470,8 @@ export default function dateTest() {
       try {
         const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         expect(date.toLocaleString("en-US")).assertEqual("12/20/2012, 11:00:00 AM");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6203,7 +6490,8 @@ export default function dateTest() {
         let date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         let value = date.toLocaleString("en-GB");
         expect(value).assertEqual("20/12/2012, 11:00:00");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6222,7 +6510,8 @@ export default function dateTest() {
         let date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         let value = date.toLocaleString("ko-KR");
         expect(value).assertEqual("2012. 12. 20. 오전 11:00:00");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6241,7 +6530,8 @@ export default function dateTest() {
         let date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         let value = date.toLocaleString("ar-EG");
         expect(value).assertEqual("٢٠‏/١٢‏/٢٠١٢، ١١:٠٠:٠٠ ص");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6260,7 +6550,8 @@ export default function dateTest() {
         let date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         let value = date.toLocaleString("ja-JP-u-ca-japanese");
         expect(value).assertEqual("H24/12/20 11:00:00");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6279,7 +6570,8 @@ export default function dateTest() {
         let date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         date.toLocaleString(date.toLocaleString(["ban", "id"]));
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(err.message).assertEqual("invalid locale");
       }
@@ -6297,7 +6589,8 @@ export default function dateTest() {
       try {
         const event = new Date('August 19, 1975 23:15:30 GMT+00:00');
         expect(event.toLocaleTimeString('en-US')).assertEqual("7:15:30 AM");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6315,7 +6608,8 @@ export default function dateTest() {
       try {
         const event = new Date('August 19, 1975 23:15:30 GMT+00:00');
         expect(event.toLocaleTimeString('it-IT')).assertEqual("07:15:30");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6333,7 +6627,8 @@ export default function dateTest() {
       try {
         const event = new Date('August 19, 1975 23:15:30 GMT+00:00');
         expect(event.toLocaleTimeString('ar-EG')).assertEqual("٧:١٥:٣٠ ص");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6352,7 +6647,8 @@ export default function dateTest() {
         const event = new Date('August 19, 1975 23:15:30 GMT+00:00');
         event.toLocaleTimeString('');
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(`${err.message}`).assertEqual('invalid locale');
       }
@@ -6372,7 +6668,8 @@ export default function dateTest() {
         const result = event.toLocaleTimeString();
         const expectedTime = new Date(event.getTime()).toLocaleTimeString();
         expect(result).assertEqual(expectedTime);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6390,7 +6687,8 @@ export default function dateTest() {
       try {
         const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         expect(date.toLocaleTimeString("en-US")).assertEqual("11:00:00 AM");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6409,7 +6707,8 @@ export default function dateTest() {
         const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         let result = date.toLocaleTimeString("en-GB");
         expect(result).assertEqual("11:00:00");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6428,7 +6727,8 @@ export default function dateTest() {
         const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         let result = date.toLocaleTimeString("ko-KR");
         expect(result).assertEqual("오전 11:00:00");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6447,7 +6747,8 @@ export default function dateTest() {
         const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         let result = date.toLocaleTimeString("ar-EG");
         expect(result).assertEqual("١١:٠٠:٠٠ ص");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6466,7 +6767,8 @@ export default function dateTest() {
         const date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         let result = date.toLocaleTimeString(["ban", "id"]);
         expect(result).assertEqual("11.00.00");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6489,7 +6791,8 @@ export default function dateTest() {
         };
         const result = date.toLocaleTimeString("en-US", options);
         expect(result).assertEqual("3:00:00 AM UTC");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6511,7 +6814,8 @@ export default function dateTest() {
         };
         const result = date.toLocaleTimeString("en-US", options);
         expect(result).assertEqual("11:00:00");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6537,7 +6841,8 @@ export default function dateTest() {
         const str: string[] = []
         const result = date.toLocaleTimeString(str, options);
         expect(result).assertEqual('03:00 AM UTC');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6555,7 +6860,8 @@ export default function dateTest() {
       try {
         const event: Date = new Date('August 19, 1975 23:15:30');
         expect(event.toString()).assertEqual('Tue Aug 19 1975 23:15:30 GMT+0800');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6573,7 +6879,8 @@ export default function dateTest() {
       try {
         const x: Date = new Date();
         expect(x.toString()).assertEqual(new Date().toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6591,7 +6898,8 @@ export default function dateTest() {
       try {
         const x: Date = new Date(' ');
         expect(x.toString()).assertEqual('Invalid Date')
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6609,7 +6917,8 @@ export default function dateTest() {
       try {
         const event: Date = new Date('August 19, 1975 23:15:30');
         expect(event.toTimeString()).assertEqual('23:15:30 GMT+0800');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6627,7 +6936,8 @@ export default function dateTest() {
       try {
         const x: Date = new Date();
         expect(x.toTimeString()).assertEqual(new Date().toTimeString());
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6646,7 +6956,8 @@ export default function dateTest() {
         const x = new Date(' ');
         const result = x.toTimeString();
         expect(result).assertEqual("Invalid Date");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6665,7 +6976,8 @@ export default function dateTest() {
         const event = new Date('14 Jun 2017 00:00:00 PDT');
         const result = event.toUTCString();
         expect(result).assertEqual("Invalid Date");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6683,7 +6995,8 @@ export default function dateTest() {
       try {
         const x: Date = new Date();
         expect(x.toUTCString()).assertEqual(new Date().toUTCString());
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6702,7 +7015,8 @@ export default function dateTest() {
         const x = new Date(' ');
         const result = x.toUTCString();
         expect(result).assertEqual("Invalid Date");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6721,7 +7035,8 @@ export default function dateTest() {
         const date1 = new Date(Date.UTC(96, 1, 2, 3, 4, 5));
         const result = date1.valueOf();
         expect(result).assertEqual(823230245000);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6744,7 +7059,8 @@ export default function dateTest() {
         const value2 = x2.valueOf();
         const result = value2 > value1;
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -6763,7 +7079,8 @@ export default function dateTest() {
         const x = new Date(' ');
         const result = x.valueOf();
         expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }

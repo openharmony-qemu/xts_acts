@@ -967,7 +967,7 @@ export default function ConnectionPublicNopTest() {
         ExpectFail();
         hilog.info(domain, tag, `${caseName}---End`);
         done();
-      } catch (err: Error) {
+      } catch (err) {
         let error = err as BusinessError;
         hilog.error(domain, tag, `${caseName} catch err is `,JSON.stringify(error));
         expect(true).assertEqual(error?.code === PERMISSION_DENIED_CODE);

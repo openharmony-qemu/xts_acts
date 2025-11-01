@@ -63,7 +63,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
             expect(secret.data.length).assertEqual(keySize);
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -99,7 +100,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
             expect(secret.data.length).assertEqual(keySize);
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -135,7 +137,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
             expect(secret.data.length).assertEqual(keySize);
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -162,7 +165,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
       try {
         await hkdfUtils.hkdfPromise(kdfAlgName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
@@ -188,7 +192,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
       try {
         await hkdfUtils.hkdfPromise(kdfAlgName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -214,7 +219,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
       try {
         await hkdfUtils.hkdfPromise(kdfAlgName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -240,7 +246,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
       try {
         await hkdfUtils.hkdfCallback(kdfAlgName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -266,7 +273,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
       try {
         await hkdfUtils.hkdfCallback(kdfAlgName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -292,7 +300,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
       try {
         await hkdfUtils.hkdfPromise(kdfAlgName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -318,7 +327,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
       try {
         await hkdfUtils.hkdfPromise(kdfAlgName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -344,7 +354,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
       try {
         let secret: cryptoFramework.DataBlob = await hkdfUtils.hkdfPromise(kdfAlgName, spec);
         expect(secret.data.byteLength).assertEqual(keySize);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -370,7 +381,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
       try {
         await hkdfUtils.hkdfPromise(kdfAlgName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
@@ -396,7 +408,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
       try {
         await hkdfUtils.hkdfPromise(kdfAlgName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
@@ -422,7 +435,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
       try {
         await hkdfUtils.hkdfPromise(kdfAlgName, spec);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
@@ -448,7 +462,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
       try {
         let secret: cryptoFramework.DataBlob = await hkdfUtils.hkdfPromise(kdfAlgName, spec);
         expect(secret.data.byteLength).assertEqual(keySize);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -474,7 +489,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
       try {
         let secret: cryptoFramework.DataBlob = await hkdfUtils.hkdfPromise(kdfAlgName, spec);
         expect(secret.data.byteLength).assertEqual(keySize);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -500,7 +516,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
       try {
         let secret: cryptoFramework.DataBlob = await hkdfUtils.hkdfPromise(kdfAlgName, spec);
         expect(secret.data.byteLength).assertEqual(keySize);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -526,7 +543,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
       try {
         let secret: cryptoFramework.DataBlob = await hkdfUtils.hkdfPromise(kdfAlgName, spec);
         expect(secret.data.byteLength).assertEqual(keySize);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -545,7 +563,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
       try {
         let kdfAlgName: string = "HKDF|MD5";
         cryptoFramework.createKdf(kdfAlgName);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
@@ -564,7 +583,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
       try {
         let kdfAlgName: string = "SCRYPT|SHA256";
         cryptoFramework.createKdf(kdfAlgName);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
@@ -603,7 +623,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
           expect(ret).assertTrue();
           expect(secret.data.length).assertEqual(keySize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -642,7 +663,8 @@ export default function SecurityCryptoFwHkdfTestUnit() {
           expect(ret).assertTrue();
           expect(secret.data.length).assertEqual(keySize);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`HKDF “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }

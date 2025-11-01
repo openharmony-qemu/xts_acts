@@ -65,7 +65,8 @@ async function terminateAbility(caseName: string) {
         }).catch((err: BusinessError):PromiseLike<void>|undefined => {
             console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
-    } catch (e: BusinessError) {
+    } catch (e) {
+        e = e as BusinessError;
         console.error(`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
     }
     await Utils.msSleep(1000)
@@ -132,7 +133,8 @@ export default function WindowPCTest() {
                             expect(err!.code).assertEqual(1300002);
                         });
                         done()
-                    } catch (exception: BusinessError) {
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call recover. Cause:' + JSON.stringify(exception));
                         expect(false).assertTrue();
                         done()
@@ -176,7 +178,8 @@ export default function WindowPCTest() {
                         done();
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + ' Failed to testRecover. 04Cause: ' + JSON.stringify(err))
                 expect(false).assertTrue();
                 done();
@@ -222,7 +225,8 @@ export default function WindowPCTest() {
                             expect(false).assertTrue();
                             done();
                         });
-                    } catch (exception: BusinessError) {
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call minimize. Cause:' + JSON.stringify(exception));
                         expect(false).assertTrue();
                         done()
@@ -263,7 +267,8 @@ export default function WindowPCTest() {
                             expect(err!.code).assertEqual(1300002);
                         });
                         done()
-                    } catch (exception: BusinessError) {
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call minimize. Cause:' + JSON.stringify(exception));
                         expect(false).assertTrue();
                         done()
@@ -307,7 +312,8 @@ export default function WindowPCTest() {
                             done()
                         });
                         
-                    } catch (exception: BusinessError) {
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call maximize. Cause:' + JSON.stringify(exception));
                         expect(false).assertTrue();
                         done()
@@ -355,7 +361,8 @@ export default function WindowPCTest() {
                     await (win! as window.Window).destroyWindow();
                     done()
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(0x0000, '[ANI]',msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
                 await (win! as window.Window).destroyWindow();
                 expect(false).assertTrue();
@@ -406,7 +413,8 @@ export default function WindowPCTest() {
                         done();
                     }
                 })
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,`${message} Failed to check whether the window support the rect auto-save. Cause code: ${exception.code}, message: ${exception.message}`)
                 if (exception.code == 801) {
                     done();
@@ -444,7 +452,8 @@ export default function WindowPCTest() {
                     done()
                 });
 
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(exception.code).assertEqual(1300002);
                 expect(exception.message!=null).assertTrue();
@@ -475,7 +484,8 @@ export default function WindowPCTest() {
                     expect(err.message!=null).assertTrue();
                 });
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(exception.code).assertEqual(1300002);
                 expect(exception.message!=null).assertTrue();
@@ -510,7 +520,8 @@ export default function WindowPCTest() {
                         done();
                     }
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed to set the call setWindowRectAutoSave. Cause:' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002);
                 done()
@@ -537,7 +548,8 @@ export default function WindowPCTest() {
                 console.error(msgStr + 'Succeeded in calling on windowStageClose.');
                 expect(false).assertTrue();
                 done()
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.log(msgStr + 'Failed to call on windowStageClose. Cause:' + JSON.stringify(e));
                 expect(e.code).assertEqual(1300002);
                 done()
@@ -566,7 +578,8 @@ export default function WindowPCTest() {
                 console.error(msgStr + 'Succeeded in calling on windowStageClose.');
                 expect(false).assertTrue();
                 done()
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.log(msgStr + 'Failed to call on windowStageClose. Cause:' + JSON.stringify(e));
                 if(e.code == 801){
                     done()

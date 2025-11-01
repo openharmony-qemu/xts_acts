@@ -50,7 +50,8 @@ export default function getAppCloneIdentity() {
             expect(err).assertFail();
             done();
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           let message = (err as BusinessError).message;
           console.info(TAG + 'getAppCloneIdentity_0100 catch failed: ' + message);
           expect().assertFail();

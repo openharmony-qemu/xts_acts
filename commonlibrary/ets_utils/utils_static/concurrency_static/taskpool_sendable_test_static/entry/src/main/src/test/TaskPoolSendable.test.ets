@@ -68,7 +68,8 @@ function sendableAFunc(sendAble: SendableA): Promise<Number> {
   try {
     const result = await taskpool.execute(task1);
     console.info(`task1 result: ${JSON.stringify(result)}`);
-  } catch (e: BusinessError) {
+  } catch (e) {
+    e = e as BusinessError;
     console.info(`task1 error: ${JSON.stringify(e)}`);
   }
   return new Promise<Number>((res) => {
@@ -151,7 +152,8 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -183,7 +185,8 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -214,7 +217,8 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -245,7 +249,8 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -277,7 +282,8 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -313,7 +319,8 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           hilog.info(0x0000, caseName, '%{public}s', `error========${error}`);
           expect(false).assertTrue();
@@ -348,7 +355,8 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           hilog.info(0x0000, caseName, '%{public}s', `error========${error}`);
           expect(false).assertTrue();
@@ -380,7 +388,8 @@ export default function taskPoolSendableTest() {
             expect(true).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -411,7 +420,8 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -442,7 +452,8 @@ export default function taskPoolSendableTest() {
             expect(true).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -480,7 +491,8 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -520,7 +532,8 @@ export default function taskPoolSendableTest() {
             expect(false).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();
@@ -551,7 +564,8 @@ export default function taskPoolSendableTest() {
             expect(true).assertTrue();
           });
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${caseName} catchError ${JSON.stringify(error)}}`);
           expect(false).assertTrue();
           done();

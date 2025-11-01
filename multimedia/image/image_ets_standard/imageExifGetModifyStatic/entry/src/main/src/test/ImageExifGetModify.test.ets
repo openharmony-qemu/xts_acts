@@ -256,7 +256,8 @@ export default function imageExifGetModifyTest() {
           hilog.info(0x0000, testTag,
             `getImageProperty promise not exist error %{public}s %{public}s %{public}s %{public}s`,
             testTag, key, data, type);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           if(expectedGetErrorCode == error.code) {
             hilog.info(0x0000, testTag,
               `getImageProperty promise not exist success %{public}s %{public}s %{public}s`,
@@ -306,7 +307,8 @@ export default function imageExifGetModifyTest() {
               `modifyImageProperty errorData promise success %{public}s `, key);
             await imageSourceApi.release();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           await imageSourceApi.release();
           hilog.info(0x0000, testTag,
             `modifyImageProperty errorData promise failed %{public}s %{public}s `, key, error.code);
@@ -401,7 +403,8 @@ export default function imageExifGetModifyTest() {
           hilog.info(0x0000, testTag, `${testTag} getImageProperties data ${data} %{public}s`,
             type)
           checkResult = false
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(0x0000, testTag, `${testTag} ${fileName} getImageProperties error ${JSON.stringify(error)} %{public}s`, type)
           checkResult = true
           checkResult = checkResult && error.code == expectedErrorCode;
@@ -484,7 +487,8 @@ export default function imageExifGetModifyTest() {
           hilog.info(0x0000, testTag, `modifyImageProperty success  %{public}s %{public}s %{public}s %{public}s`,
             testTag, type, fileName);
           checkResult = false
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(0x0000, testTag, `modifyImageProperty error  testTag: %{public}s error: %{public}s,
             errorCodes: %{public}s  expectedErrorCodes: %{public}s, type: %{public}s fileName: %{public}s`, testTag,
             JSON.stringify(error), JSON.stringify(expectedErrorCodes), type, fileName);
@@ -6941,7 +6945,8 @@ export default function imageExifGetModifyTest() {
           try {
             await imageSourceApi.modifyImageProperty(key, modifyData);
             checkResult = false
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             hilog.info(0x0000, testTag, `${testTag} modifyImageProperty  BitsPerSample error ${JSON.stringify(error)}`);
             checkResult = await testGetPromise(testTag, key, values[i].value, values[i].fileName, 'rawfile');
           }
@@ -20314,7 +20319,8 @@ export default function imageExifGetModifyTest() {
                   await imageSourceApi.release();
                 }
                 done();
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 hilog.info(0x0000, testTag, `modifyImageProperty promise failed %{public}s %{public}s %{public}s`, key, error.code, '62980146',testType);
                 checkResult = false
                 expect(false).assertTrue();
@@ -20548,7 +20554,8 @@ export default function imageExifGetModifyTest() {
         }
         expect(result).assertTrue()
         done()
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(0x0000, testTag, `getImageProperties error ` + e.code);
         expect().assertFail();
         done();

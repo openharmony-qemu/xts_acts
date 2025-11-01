@@ -74,7 +74,8 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams1, "t", "Test_123name_Test_123name_Test_123name_Test_123N");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam01 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam01 Error:', error.message, 'testHiAppEventSetPam01 Code:', error.code);
           expect().assertFail();
         }
@@ -82,7 +83,8 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams1, "Test_123domain_Test_123domain_TE", "t");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam01 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam01 Error:', error.message, 'testHiAppEventSetPam01 Code:', error.code);
           expect().assertFail();
         }
@@ -90,7 +92,8 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams2, "test_domain", "test_name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam01 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam01 Error:', error.message, 'testHiAppEventSetPam01 Code:', error.code);
           expect().assertFail();
         }
@@ -98,7 +101,8 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams2, "test_domain123", "$test_name123");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam01 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam01 Error:', error.message, 'testHiAppEventSetPam01 Code:', error.code);
           expect().assertFail();
         }
@@ -167,7 +171,8 @@ export default function setEventParamTest() {
           hilog.info(logDomain, tag, 'testHiAppEventSetPam01 end')
           done()
         }, 5000)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam01 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -220,7 +225,8 @@ export default function setEventParamTest() {
         try {
           hiAppEvent.setEventParam(eventParams, hiAppEvent.domain.OS, hiAppEvent.event.SCROLL_JANK);
           hilog.info(logDomain, tag, 'testHiAppEventSetPam02 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam02 Error:', error.message, 'testHiAppEventSetPam02 Code:', error.code);
           expect().assertFail();
         }
@@ -246,7 +252,8 @@ export default function setEventParamTest() {
           done()
         }, 2000)
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam02 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -270,12 +277,14 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams, "test_domain_");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam03 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam03 Error:', error.message, 'testHiAppEventSetPam03 Code:', error.code);
           expect(error.code == 11101001).assertTrue()
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam03 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -299,12 +308,14 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams, "test_?domain");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam04 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam04 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101001).assertTrue()
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam04 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -328,12 +339,14 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams, "123test_domain");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam05 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam05 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101001).assertTrue()
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam05 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -357,12 +370,14 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams, "");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam06 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam06 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101001).assertTrue()
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam06 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -386,12 +401,14 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams, "Test_123domain_Test_123domain_TES");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam07 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam07 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101001).assertTrue()
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam07 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -415,12 +432,14 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "test_name_");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam09 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam09 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101002).assertTrue()
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam09 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -444,12 +463,14 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "test_?name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam10 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam10 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101002).assertTrue()
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam10 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -473,12 +494,14 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "123test_name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam11 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam11 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101002).assertTrue()
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam11 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -503,12 +526,14 @@ export default function setEventParamTest() {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam12 Event parameters set successfully.');
           done()
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam12 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(false).assertTrue()
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam12 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -533,12 +558,14 @@ export default function setEventParamTest() {
           await hiAppEvent.setEventParam(eventParams, "test_domain",
             "Test_123name_Test_123name_Test_123name_Test_123Na");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam13 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam13 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101002).assertTrue()
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam13 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -562,12 +589,14 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "test_name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam15 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam15 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101005).assertTrue()
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam15 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -591,12 +620,14 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "test_name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam16 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam16 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101005).assertTrue()
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam16 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -620,12 +651,14 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "test_name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam17 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam17 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101005).assertTrue()
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam17 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -649,12 +682,14 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "test_name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam18 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam18 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101005).assertTrue()
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam18 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -678,12 +713,14 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "test_name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam19 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam19 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101005).assertTrue()
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam19 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -711,12 +748,14 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "test_name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam20 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam20 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101004).assertTrue()
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam20 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -741,12 +780,14 @@ export default function setEventParamTest() {
         try {
           await hiAppEvent.setEventParam(eventParams, "test_domain", "test_name");
           hilog.info(logDomain, tag, 'testHiAppEventSetPam21 Event parameters set successfully.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(logDomain, tag, 'testHiAppEventSetPam21 Error:', error.message, 'HiAppEventSub71 Code:', error.code);
           expect(error.code == 11101007).assertTrue()
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSetPam21 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();

@@ -49,7 +49,8 @@ export default function fileIOStreamFlush() {
         sr.flushSync();
         sr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_flush_sync_static_000 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -77,7 +78,8 @@ export default function fileIOStreamFlush() {
         sr.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_flush_async_static_000 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -106,7 +108,8 @@ export default function fileIOStreamFlush() {
           fs.unlinkSync(fpath);
           done();
         })
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_flush_async_static_001 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }

@@ -55,7 +55,8 @@ export default function webSocketNoPTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
         ExpectTrue(err.code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ ' end');
@@ -83,7 +84,8 @@ export default function webSocketNoPTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
-      }catch (err:BusinessError) {
+      }catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
         ExpectTrue(err.code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
@@ -110,7 +112,8 @@ export default function webSocketNoPTest() {
         ExpectFail();
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      }catch (err:BusinessError) {
+      }catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
         ExpectTrue(err.code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
@@ -161,7 +164,8 @@ export default function webSocketNoPTest() {
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName+ ' catch error : '+ JSON.stringify(err))
         ExpectTrue(err.code === 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
@@ -287,7 +291,7 @@ export default function webSocketNoPTest() {
             hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
           })
         }
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, `${caseName} catch error ${JSON.stringify(err)}`);
         ExpectTrue(err.code == 201)
@@ -362,7 +366,7 @@ export default function webSocketNoPTest() {
             hilog.info(domain, tag, `${caseName} test end`);
           })
         }
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, `${caseName} catch error ${JSON.stringify(err)}`);
         ExpectTrue(err?.code == 201)
@@ -443,7 +447,7 @@ export default function webSocketNoPTest() {
             hilog.info(domain, tag, `${caseName} test end2`)
           }
         }
-      }catch (error: Error){
+      }catch (error){
         let err = error as BusinessError;
         hilog.info(domain, tag, `${caseName} error--${err}`)
         ExpectTrue(err.code == 201)

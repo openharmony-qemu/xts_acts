@@ -84,7 +84,8 @@ struct clearPrefetchedResourceTest {
                       console.info('The test() return value is: result');
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`emitRunJavaScriptCallbackInitErr ErrorCode: ${error.code}`);
                 Utils.emitEvent(error.code, 652)
               }
@@ -101,7 +102,8 @@ struct clearPrefetchedResourceTest {
                   .catch((error) => {
                     console.error('error: ' + error);
                   })
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`emitRunJavaScriptPromiseInitErr ErrorCode: ${error.code}`);
                 Utils.emitEvent(error.code, 654)
               }
@@ -122,7 +124,8 @@ struct clearPrefetchedResourceTest {
                       console.info(`The test() return value is: ${result}`);
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`emitRunJavaScriptExtCallbackInitErr ErrorCode: ${error.code}`);
                 Utils.emitEvent(error.code, 656)
               }
@@ -140,7 +143,8 @@ struct clearPrefetchedResourceTest {
                   .catch((error) => {
                     console.error('error: ' + error);
                   })
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`emitRunJavaScriptExtPromiseInitErr ErrorCode: ${error.code}`);
                 Utils.emitEvent(error.code, 658)
               }

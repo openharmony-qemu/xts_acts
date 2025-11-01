@@ -238,7 +238,8 @@ export default function SandboxAPIStaticTest() {
                 hilog.info(domain, tag, 'AcquireAccessJsTest001 AccessStatus is: ' + AccessStatus);
                 expect(AccessStatus).assertEqual(screenLockFileManager.AccessStatus.ACCESS_GRANTED);
                 done();
-            } catch (error: BusinessError<void>) {
+            } catch (error) {
+                error = error as BusinessError;
                 if (error.code == 801) {
                     done();
                 } else {
@@ -263,7 +264,8 @@ export default function SandboxAPIStaticTest() {
                 hilog.info(domain, tag, 'ReleaseAccessJsTest001 ReleaseStatus is: ' + ReleaseStatus);
                 expect(ReleaseStatus).assertEqual(screenLockFileManager.ReleaseStatus.RELEASE_GRANTED);
                 done();
-            } catch (error: BusinessError<void>) {
+            } catch (error) {
+                error = error as BusinessError;
                 if (error.code == 801) {
                     done();
                 } else {

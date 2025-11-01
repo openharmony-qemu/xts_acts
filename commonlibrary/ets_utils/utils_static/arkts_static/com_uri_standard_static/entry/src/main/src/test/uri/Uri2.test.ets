@@ -49,7 +49,8 @@ export default function uriTest2() {
         let uriInstance2 = new uri.URI(uri2);
         let result1 = uriInstance1.equalsTo(uriInstance2);
         expect(String(result1)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -70,7 +71,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -91,7 +93,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -112,7 +115,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -133,7 +137,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -154,7 +159,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -175,7 +181,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -194,7 +201,8 @@ export default function uriTest2() {
         const uri1 = `https${str2}://username:password@host:8080/directory/file/?key1=value1#qwer=da`;
         new uri.URI(uri1);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(String(err.code)).assertEqual('10200002');
       }
     });
@@ -214,7 +222,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -234,7 +243,8 @@ export default function uriTest2() {
         const uri1 = `https://username:password@host:8080${str2}/directory/file/?key1=value1#qwer=da`;
         new uri.URI(uri1);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(String(err.code)).assertEqual('10200002');
       }
@@ -255,7 +265,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -276,7 +287,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -297,7 +309,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -318,7 +331,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -339,7 +353,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -360,7 +375,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -381,7 +397,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -402,7 +419,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -423,7 +441,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -444,7 +463,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -465,7 +485,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -486,7 +507,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -507,7 +529,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -528,7 +551,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkIsAbsolute();
         expect(String(result1)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -550,7 +574,8 @@ export default function uriTest2() {
           let uriInstance = new uri.URI(uri1);
           let result1 = uriInstance.checkIsAbsolute();
           expect(String(result1)).assertEqual('false');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.code}`);
           expect(false).assertFail();
         }
@@ -572,7 +597,8 @@ export default function uriTest2() {
           let uriInstance = new uri.URI(uri1);
           let result1 = uriInstance.checkIsAbsolute();
           expect(String(result1)).assertEqual('false');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.code}`);
           expect(false).assertFail();
         }
@@ -593,7 +619,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.normalize().query;
         expect(result1).assertEqual('key1=value1' + str2Decode);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -614,7 +641,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.normalize().query;
         expect(result1).assertEqual('key1=value1' + str3Decode);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -635,7 +663,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.normalize().query;
         expect(result1).assertEqual('key1' + str2Decode + '=value1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -656,7 +685,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.normalize().query;
         expect(result1).assertEqual('key1' + str3Decode + '=value1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -677,7 +707,8 @@ export default function uriTest2() {
         let result = new uri.URI(uri1);
         let result1 = result.toString();
         expect(result1).assertEqual(uri1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -698,7 +729,8 @@ export default function uriTest2() {
         let result = new uri.URI(uri1);
         let result1 = result.toString();
         expect(result1).assertEqual(uri1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -719,7 +751,8 @@ export default function uriTest2() {
         let result = new uri.URI(uri1);
         let result1 = result.toString();
         expect(result1).assertEqual(uri1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -740,7 +773,8 @@ export default function uriTest2() {
         let result = new uri.URI(uri1);
         let result1 = result.toString();
         expect(result1).assertEqual(uri1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -761,7 +795,8 @@ export default function uriTest2() {
         let result = new uri.URI(uri1);
         let result1 = result.toString();
         expect(result1).assertEqual(uri1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -782,7 +817,8 @@ export default function uriTest2() {
         let result = new uri.URI(uri1);
         let result1 = result.toString();
         expect(result1).assertEqual(uri1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -803,7 +839,8 @@ export default function uriTest2() {
         let result = new uri.URI(uri1);
         let result1 = result.toString();
         expect(result1).assertEqual(uri1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -824,7 +861,8 @@ export default function uriTest2() {
         let result = new uri.URI(uri1);
         let result1 = result.toString();
         expect(result1).assertEqual(uri1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -845,7 +883,8 @@ export default function uriTest2() {
         let result = new uri.URI(uri1);
         let result1 = result.toString();
         expect(result1).assertEqual(uri1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -866,7 +905,8 @@ export default function uriTest2() {
         let result = new uri.URI(uri1);
         let result1 = result.toString();
         expect(result1).assertEqual(uri1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -886,7 +926,8 @@ export default function uriTest2() {
         const uri1 = 'https' + str2 + '://username:password@host:8080/directory/file?key1=value1#qwer=da';
         new uri.URI(uri1);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(String(err.code)).assertEqual('10200002')
       }
@@ -907,7 +948,8 @@ export default function uriTest2() {
         let result = new uri.URI(uri1);
         let result1 = result.toString();
         expect(result1).assertEqual(uri1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -928,7 +970,8 @@ export default function uriTest2() {
         let result = new uri.URI(uri1);
         let result1 = result.toString();
         expect(result1).assertEqual(uri1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -949,7 +992,8 @@ export default function uriTest2() {
         let result = new uri.URI(uri1);
         let result1 = result.toString();
         expect(result1).assertEqual(uri1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -970,7 +1014,8 @@ export default function uriTest2() {
         let result = new uri.URI(uri1);
         let result1 = result.toString();
         expect(result1).assertEqual(uri1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -991,7 +1036,8 @@ export default function uriTest2() {
         let result = new uri.URI(uri1);
         let result1 = result.toString();
         expect(result1).assertEqual(uri1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1011,7 +1057,8 @@ export default function uriTest2() {
         const uri1 = 'https://username:password@host:8080' + str2 + '/directory/file?key1=value1#qwer=da';
         new uri.URI(uri1);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(String(err.code)).assertEqual('10200002');
       }
@@ -1032,7 +1079,8 @@ export default function uriTest2() {
         let result = new uri.URI(uri1);
         let result1 = result.toString();
         expect(result1).assertEqual(uri1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1053,7 +1101,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkRelative();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1074,7 +1123,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkRelative();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1095,7 +1145,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkRelative();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1116,7 +1167,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkRelative();
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1137,7 +1189,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkRelative();
         expect(String(result1)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1158,7 +1211,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkRelative();
         expect(String(result1)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1179,7 +1233,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkRelative();
         expect(String(result1)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1200,7 +1255,8 @@ export default function uriTest2() {
         let uriInstance = new uri.URI(uri1);
         let result1 = uriInstance.checkRelative();
         expect(String(result1)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1221,7 +1277,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(uri1);
         const result1 = uriInstance.addQueryValue('key1' + str2, 'value').query;
         expect(result1).assertEqual('key1' + str2 + '=value');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1242,7 +1299,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(uri1);
         const result1 = uriInstance.addQueryValue('key1' + str3, 'value').query;
         expect(result1).assertEqual('key1' + str3 + '=value');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1263,7 +1321,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(uri1);
         const result1 = uriInstance.addQueryValue('key1', 'value' + str2).query;
         expect(result1).assertEqual('key1=value' + str2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1284,7 +1343,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(uri1);
         const result1 = uriInstance.addQueryValue('key1', 'value' + str3).query;
         expect(result1).assertEqual('key1=value' + str3);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1307,7 +1367,8 @@ export default function uriTest2() {
         expect(result1).assertEqual(
           `https://username:password@host:8080/directory/file/${str2}?key1=value1&key1=value2#qwer=da`
         );
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1331,7 +1392,8 @@ export default function uriTest2() {
         expect(result1).assertEqual(
           `https://username:password@host:8080/directory/file/${str2}?key1=value1&key1=value2#qwer=da`
         );
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1354,7 +1416,8 @@ export default function uriTest2() {
         expect(result1).assertEqual(
           `https://username:password@host:8080/directory/file/${str3}?key1=value1&key1=value2#qwer=da`
         );
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1377,7 +1440,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(uri1);
         const result1 = Array.from(uriInstance.getQueryNames()).toString();
         expect(result1).assertEqual('key1' + str2Decode + ',key2' + str2Decode);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1399,7 +1463,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(uri1);
         const result1 = Array.from(uriInstance.getQueryNames()).toString();
         expect(result1).assertEqual(`key1${str3Decode},key2${str3Decode}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1420,7 +1485,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(uri1);
         const result1 = uriInstance.getBooleanQueryValue('key1' + str2Decode, false);
         expect(String(result1)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1441,7 +1507,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(uri1);
         const result1 = uriInstance.getBooleanQueryValue('key1' + str3Decode, true);
         expect(String(result1)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1463,7 +1530,8 @@ export default function uriTest2() {
           const uriInstance = new uri.URI(uri1);
           const result1 = uriInstance.getBooleanQueryValue('key1', false);
           expect(String(result1)).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.code}`);
           expect(false).assertFail();
         }
@@ -1485,7 +1553,8 @@ export default function uriTest2() {
           const uriInstance = new uri.URI(uri1);
           const result1 = uriInstance.getBooleanQueryValue('key1', false);
           expect(String(result1)).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.code}`);
           expect(false).assertFail();
         }
@@ -1506,7 +1575,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(uri1);
         const result1 = uriInstance.clearQuery().toString();
         expect(result1).assertEqual('https://username:password@host:8080/directory/file#qwer=da');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1527,7 +1597,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(uri1);
         const result1 = uriInstance.clearQuery().toString();
         expect(result1).assertEqual('https://username:password@host:8080/directory/file#qwer=da');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1548,7 +1619,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(uri1);
         const result1 = uriInstance.clearQuery().toString();
         expect(result1).assertEqual('https://username:password@host:8080/directory/file#qwer=da');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1569,7 +1641,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(uri1);
         const result1 = uriInstance.clearQuery().toString();
         expect(result1).assertEqual('https://username:password@host:8080/directory/file#qwer=da');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1590,7 +1663,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(uri1);
         const result1 = uriInstance.getLastSegment();
         expect(result1).assertEqual(str2Decode);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1611,7 +1685,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(uri1);
         const result1 = uriInstance.getLastSegment();
         expect(result1).assertEqual(str3Decode);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1634,7 +1709,8 @@ export default function uriTest2() {
         expect(result1[0]).assertEqual('directory');
         expect(result1[1]).assertEqual('file');
         expect(result1[2]).assertEqual(str2Decode);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1657,7 +1733,8 @@ export default function uriTest2() {
         expect(result1[0]).assertEqual('directory');
         expect(result1[1]).assertEqual('file');
         expect(result1[2]).assertEqual(str3Decode);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1677,7 +1754,8 @@ export default function uriTest2() {
         const uriInstance = uri.URI.createFromParts("mailto" + str2, "no body", "top");
         uriInstance.toString();
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(String(err.code)).assertEqual('10200002')
       }
@@ -1697,7 +1775,8 @@ export default function uriTest2() {
         const uriInstance = uri.URI.createFromParts("mailto-+.test0002", "no body", "top");
         const result1 = uriInstance.toString();
         expect(result1).assertEqual("mailto-+.test0002:no%20body#top");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1719,7 +1798,8 @@ export default function uriTest2() {
         expect(result1).assertEqual("mailto:no%20body" + '!!%2522%2522%2523%2523%2524%2524%2525%2525\'\'(())**%252B' +
           '%252B%252C%252C--..%252F%252F%253A%253A%253B%253B%253C%253C%253D%253D%253E%253E%253F%253F%2540' +
           '%2540%255B%255B%255C%255C%255D%255D%255E%255E__%2560%2560%257B%257B%257C%257C%257D%257D~~' + "#top");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1742,7 +1822,8 @@ export default function uriTest2() {
           '%2526%2526%2527%2527%2528%2528%252A%252A%252B%252B%252C%252C%252D%252D%252E%252E%252F%252F%253A' +
           '%253A%253B%253B%253C%253C%253D%253D%253E%253E%253F%253F%2540%2540%255B%255B%255C%255C%255D%255D' +
           '%255E%255E%255F%255F%2560%2560%257B%257B%257C%257C%257D%257D%257E%257E' + "#top");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1765,7 +1846,8 @@ export default function uriTest2() {
           .assertEqual("mailto:no%20body" + "#top" + '!!%2522%2522%2523%2523%2524%2524%2525%2525\'\'(())**%252B' +
             '%252B%252C%252C--..%252F%252F%253A%253A%253B%253B%253C%253C%253D%253D%253E%253E%253F%253F%2540' +
             '%2540%255B%255B%255C%255C%255D%255D%255E%255E__%2560%2560%257B%257B%257C%257C%257D%257D~~');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1788,7 +1870,8 @@ export default function uriTest2() {
           '%2526%2526%2527%2527%2528%2528%252A%252A%252B%252B%252C%252C%252D%252D%252E%252E%252F%252F%253A' +
           '%253A%253B%253B%253C%253C%253D%253D%253E%253E%253F%253F%2540%2540%255B%255B%255C%255C%255D%255D' +
           '%255E%255E%255F%255F%2560%2560%257B%257B%257C%257C%257D%257D%257E%257E');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1809,7 +1892,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(uri1);
         const result1 = uriInstance.getQueryValue(`key1${str2Decode}`);
         expect(result1!.toString()).assertEqual('value1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1830,7 +1914,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(uri1);
         const result1 = uriInstance.getQueryValues(`key1${str3Decode}`);
         expect(result1.toString()).assertEqual('value3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1851,7 +1936,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(uri1);
         const result1 = uriInstance.getQueryValues(`key1`);
         expect(result1.toString()).assertEqual('value1' + str2Decode);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1872,7 +1958,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(uri1);
         const result1 = uriInstance.getQueryValues(`key1`);
         expect(result1.toString()).assertEqual('value3' + str3Decode);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1898,7 +1985,8 @@ export default function uriTest2() {
         expect(result1[0]).assertEqual('value1');
         expect(result1[1]).assertEqual('value2');
         expect(result1.toString()).assertEqual('value1,value2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1924,7 +2012,8 @@ export default function uriTest2() {
         expect(result1[0]).assertEqual('value3');
         expect(result1[1]).assertEqual('value4');
         expect(result1.toString()).assertEqual('value3,value4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1950,7 +2039,8 @@ export default function uriTest2() {
         expect(result1[0]).assertEqual('value1' + str2Decode);
         expect(result1[1]).assertEqual('value2' + str2Decode);
         expect(result1.toString()).assertEqual(`value1${str2Decode},value2${str2Decode}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1976,7 +2066,8 @@ export default function uriTest2() {
         expect(result1[0]).assertEqual('value3' + str3Decode);
         expect(result1[1]).assertEqual('value4' + str3Decode);
         expect(result1.toString()).assertEqual(`value3${str3Decode},value4${str3Decode}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -1998,7 +2089,8 @@ export default function uriTest2() {
         const Uri = "ftp://ftp.aaa.bbb.ccc/dddd/eee.txt"
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.scheme).assertEqual("ftp");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2018,7 +2110,8 @@ export default function uriTest2() {
         const Uri = "https:ftp://ftp.aaa.bbb.ccc/dddd/eee.txt";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.scheme).assertEqual("https");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2038,7 +2131,8 @@ export default function uriTest2() {
         const Uri = ":ftp://ftp.aaa.bbb.ccc/dddd/eee.txt";
         new uri.URI(Uri);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(String(err.code)).assertEqual('10200002')
       }
@@ -2058,7 +2152,8 @@ export default function uriTest2() {
         const Uri = "f:tp://ftp.aaa.bbb.ccc/dddd/eee.txt";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.scheme).assertEqual("f");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2180,7 +2275,8 @@ export default function uriTest2() {
         const Uri = "https://username::password@host:8080/directory/file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.userInfo).assertEqual("username::password");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2200,7 +2296,8 @@ export default function uriTest2() {
         const Uri = "https://user:name:password@host:8080/directory/file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.userInfo).assertEqual("user:name:password");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2240,7 +2337,8 @@ export default function uriTest2() {
         const Uri = "https://username%3Apassword@host:8080/directory/file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.userInfo).assertEqual("username:password");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2420,7 +2518,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host::8080/directory/file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.port).assertEqual("-1");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2440,7 +2539,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host:@8080/directory/file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.port).assertEqual("-1");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2460,7 +2560,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host:80@80/directory/file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.port).assertEqual("-1");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2480,7 +2581,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host:8080@/directory/file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.port).assertEqual("-1");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2500,7 +2602,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host:8080//directory/file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.path).assertEqual("//directory/file");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2520,7 +2623,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host:8080/dir/ec/tory/file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.path).assertEqual("/dir/ec/tory/file");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2540,7 +2644,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host:8080/directory//file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.path).assertEqual("/directory//file");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2560,7 +2665,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/directory%2Fmy+file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.path).assertEqual("/directory/my+file");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2580,7 +2686,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/direc%2F%3Dtory%2Fmy+file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.path).assertEqual("/direc/=tory/my+file");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2600,7 +2707,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host:8080/directory/file??foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.query).assertEqual("?foo=1&bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2620,7 +2728,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host:8080/directory/file?f?oo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.query).assertEqual("f?oo=1&bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2640,7 +2749,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host:8080/directory/file?foo==1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.query).assertEqual("foo==1&bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2660,7 +2770,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host:8080/directory/file?fo=o=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.query).assertEqual("fo=o=1&bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2680,7 +2791,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host:8080/directory/file?foo=1=&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.query).assertEqual("foo=1=&bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2700,7 +2812,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host:8080/directory/file?foo=1&&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.query).assertEqual("foo=1&&bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2720,7 +2833,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host:8080/directory/file?foo=&1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.query).assertEqual("foo=&1&bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2740,7 +2854,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host:8080/directory/file?foo=1&b&ar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.query).assertEqual("foo=1&b&ar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2780,7 +2895,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/directory/my+file?foo%3D1%26bar%3D2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.query).assertEqual("foo=1&bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2800,7 +2916,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host:8080/directory/file?foo=1&bar=2##fragment";
         new uri.URI(Uri);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(String(err.code)).assertEqual('10200002');
       }
@@ -2820,7 +2937,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host:8080/directory/file?foo=1&bar=2#fr#agment";
         new uri.URI(Uri);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(String(err.code)).assertEqual('10200002');
       }
@@ -2840,7 +2958,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host:8080/directory/file?foo=1&bar=2#fragment#";
         new uri.URI(Uri);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(String(err.code)).assertEqual('10200002');
       }
@@ -2860,7 +2979,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@host:8080/directory/file?foo=1&bar=2#frag==##ment";
         new uri.URI(Uri);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(String(err.code)).assertEqual('10200002');
       }
@@ -2900,7 +3020,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/directory/my+file?foo=1&bar=2#frag%3Dment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.fragment).assertEqual("frag=ment");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2920,7 +3041,8 @@ export default function uriTest2() {
         const Uri = "https://username:password@@host:8080/directory/file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.authority).assertEqual("username:password@@host:8080");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2940,7 +3062,8 @@ export default function uriTest2() {
         const Uri = "https://username:@password@host:8080/directory/file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.authority).assertEqual("username:@password@host:8080");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2960,7 +3083,8 @@ export default function uriTest2() {
         const Uri = "https://username@:password@host:8080/directory/file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.authority).assertEqual("username@:password@host:8080");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -2980,7 +3104,8 @@ export default function uriTest2() {
         const Uri = "https://user:name:password@host@:8080/directory/file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.authority).assertEqual("user:name:password@host@:8080");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3020,7 +3145,8 @@ export default function uriTest2() {
         const Uri = "https://username%3Amy%2Bname%40host%2B8080%2Fdirectory/my+file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.authority).assertEqual("username:my+name@host+8080/directory");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3040,7 +3166,8 @@ export default function uriTest2() {
         const Uri = "www.abc.com:::8080/directory/file?ab=pppppp#qwer=da";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.ssp).assertEqual("::8080/directory/file?ab=pppppp");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3060,7 +3187,8 @@ export default function uriTest2() {
         const Uri = "www.abc.com:8080/directory/file?ab=pppppp##qwer=da";
         new uri.URI(Uri);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(String(err.code)).assertEqual('10200002');
       }
@@ -3080,7 +3208,8 @@ export default function uriTest2() {
         const Uri = "https:%2F%2Fusername%3Amy%2Bname%40host%2B8080%2Fdirectory/my+file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.ssp).assertEqual("//username:my+name@host+8080/directory/my+file?foo=1&bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3100,7 +3229,8 @@ export default function uriTest2() {
         const Uri = "https://username::my+name@host:8080/directory/my+file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedUserInfo).assertEqual("username::my+name");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3200,7 +3330,8 @@ export default function uriTest2() {
         const Uri = "https://username%3Apassword@host:8080/directory/file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedUserInfo).assertEqual("username%3Apassword");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3240,7 +3371,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080///directory/my+file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedPath).assertEqual("///directory/my+file");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3260,7 +3392,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/directory///my+file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedPath).assertEqual("/directory///my+file");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3280,7 +3413,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/direct/ory/my+/file/?/?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedPath).assertEqual("/direct/ory/my+/file/");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3300,7 +3434,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080%2Fdirectory%2Fmy+file?foo=1&bar=2#fragment";
         new uri.URI(Uri);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(String(err.code)).assertEqual('10200002');
       }
@@ -3320,7 +3455,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/directory%2Fmy+file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedPath).assertEqual("/directory%2Fmy+file");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3340,7 +3476,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/direc%2F=tory%2Fmy+file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedPath).assertEqual("/direc%2F=tory%2Fmy+file");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3360,7 +3497,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/directory/my+file??foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedQuery).assertEqual("?foo=1&bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3380,7 +3518,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/directory/my+file/?/?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedQuery).assertEqual("/?foo=1&bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3400,7 +3539,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/directory/my+file?f?oo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedQuery).assertEqual("f?oo=1&bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3420,7 +3560,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/directory/my+file?foo=aa=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedQuery).assertEqual("foo=aa=1&bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3440,7 +3581,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/directory/my+file?foo=1&&bar&=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedQuery).assertEqual("foo=1&&bar&=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3480,7 +3622,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/directory/my+file?foo%3D1%26bar%3D2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedQuery).assertEqual("foo%3D1%26bar%3D2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3500,7 +3643,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/directory/my+file?foo=1&bar=2##fragment";
         new uri.URI(Uri);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(String(err.code)).assertEqual('10200002');
       }
@@ -3520,7 +3664,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/directory/my+file?foo=1&bar=2#fr#agment";
         new uri.URI(Uri);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(String(err.code)).assertEqual('10200002');
       }
@@ -3540,7 +3685,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/directory/my+file?foo=1&bar=2#fragment#";
         new uri.URI(Uri);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(String(err.code)).assertEqual('10200002');
       }
@@ -3560,7 +3706,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/directory/my+file?foo=1&bar=2#frag==##ment";
         new uri.URI(Uri);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(String(err.code)).assertEqual('10200002');
       }
@@ -3600,7 +3747,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/directory/my+file?foo=1&bar=2#frag%3Dment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedFragment).assertEqual("frag%3Dment");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3620,7 +3768,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@@host:8080/directory/my+file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedAuthority).assertEqual("username:my+name@@host:8080");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3640,7 +3789,8 @@ export default function uriTest2() {
         const Uri = "https://username:@my+name@host:8080/directory/my+file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedAuthority).assertEqual("username:@my+name@host:8080");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3660,7 +3810,8 @@ export default function uriTest2() {
         const Uri = "https://user@name:my+name@host:8080/directory/my+file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedAuthority).assertEqual("user@name:my+name@host:8080");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3680,7 +3831,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host@:8080/directory/my+file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedAuthority).assertEqual("username:my+name@host@:8080");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3721,7 +3873,8 @@ export default function uriTest2() {
         const Uri = "https://username%3Amy%2Bname%40host%2B8080%2Fdirectory/my+file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedAuthority).assertEqual("username%3Amy%2Bname%40host%2B8080%2Fdirectory");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3741,7 +3894,8 @@ export default function uriTest2() {
         const Uri = "https:////username:my+name@host:8080/directory/my+file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedSSP).assertEqual("////username:my+name@host:8080/directory/my+file?foo=1&bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3761,7 +3915,8 @@ export default function uriTest2() {
         const Uri = "https://username:my+name@host:8080/directory/my+file?foo=1&bar=2##fragment";
         new uri.URI(Uri);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(String(err.code)).assertEqual('10200002');
       }
@@ -3781,7 +3936,8 @@ export default function uriTest2() {
         const Uri = "https:ftp://username:my+name@host:8080/directory/my+file?foo=1&bar=2#fragment";
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedSSP).assertEqual("ftp://username:my+name@host:8080/directory/my+file?foo=1&bar=2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }
@@ -3803,7 +3959,8 @@ export default function uriTest2() {
         const uriInstance = new uri.URI(Uri);
         expect(uriInstance.encodedSSP).assertEqual("%2F%2Fusername%3Amy%2Bname%40host%2B8080%" +
           "2Fdirectory%2Fmy%3Afile%3Ffoo%3D1%26bar%3D2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(false).assertFail();
       }

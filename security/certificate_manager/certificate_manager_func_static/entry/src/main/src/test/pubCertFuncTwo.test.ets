@@ -51,7 +51,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
       try {
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_PriCertJsApi_Func_Static_0100 Failed to install private certificate. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }
@@ -84,7 +85,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
           }
 	      done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_PriCertJsApi_Func_Static_0101 Failed to install private certificate. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
 	    done();
@@ -140,7 +142,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
             expect(null).assertFail();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_PriCertJsApi_Func_Static_0103 333 Failed to install private certificate. Code: ${error.code}, message: ${error.message}`);
         expect(null).assertFail();
       }
@@ -165,7 +168,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_PriCertJsApi_Func_Static_0104 Failed to uninstall private certificate. Code: ${err.code}, message: ${err.message}`);
           expect(null).assertFail();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_PriCertJsApi_Func_Static_0104 Failed1 to uninstall private certificate. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }
@@ -192,7 +196,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
             expect(null).assertFail();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_PriCertJsApi_Func_Static_0105 Failed to uninstall private certificate. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }
@@ -220,7 +225,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
           hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_SignThree_Func_Static_0100 Failed to update. Code: ${err.code}, message: ${err.message}`);
           expect(null).assertFail();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_SignThree_Func_Static_0100 Failed1 to update. Code: ${err.code}, message: ${err.message}`);
         expect(err.code).assertEqual(401);
       }
@@ -250,7 +256,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
             expect(null).assertFail();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_SignThree_Func_Static_0101 Failed to update. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }
@@ -278,7 +285,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_SignThree_Func_Static_0102 Failed to finish verification. Code: ${err.code}, message: ${err.message}`);
           expect(null).assertFail();
         })
-      } catch(error: BusinessError) {
+      } catch(error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_SignThree_Func_Static_0102 Failed to finish. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }
@@ -308,7 +316,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
             expect(null).assertFail();
           }
         });
-      } catch(error: BusinessError) {
+      } catch(error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_SignThree_Func_Static_0103 Failed to finish. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }
@@ -340,7 +349,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
           }
         });
         expect(null).assertFail();
-      } catch(error: BusinessError) {
+      } catch(error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_SignThree_Func_Static_0104 Failed to finish. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }
@@ -365,7 +375,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_SignThree_Func_Static_0105 Failed to abort. Code: ${err.code}, message: ${err.message}`);
           expect(null).assertFail();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_SignThree_Func_Static_0105 Failed to abort. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }
@@ -392,7 +403,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitTwo() {
             expect(null).assertFail();
           }
         });
-      } catch(error: BusinessError) {
+      } catch(error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_SignThree_Func_Static_0106 Failed to abort. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }

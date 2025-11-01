@@ -53,7 +53,8 @@ export default function maskFilterTest() {
       try {
         drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.OUTER, 10);
         console.info(msg + ' createBlurMaskFilter successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlurMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -64,7 +65,8 @@ export default function maskFilterTest() {
         drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.OUTER, 10.5);
         drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.INNER, 10.5);
         console.info(msg + ' createBlurMaskFilter successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlurMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -92,7 +94,8 @@ export default function maskFilterTest() {
         try {
           drawing.MaskFilter.createBlurMaskFilter(itemList[randomEnum], randomValue);
           console.info(`${msg} createBlurMaskFilter with ${randomEnum}, ${randomValue} succeeded`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(`${msg} createBlurMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }

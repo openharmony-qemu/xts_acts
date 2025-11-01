@@ -378,7 +378,8 @@ export default function abilityTest() {
                 expect().assertFail();
                 done();
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
                 expect(error.code).assertEqual(1000000);
@@ -405,7 +406,8 @@ export default function abilityTest() {
                 expect().assertFail();
                 done();
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
                 expect(error.code).assertEqual(1000001);
@@ -432,7 +434,8 @@ export default function abilityTest() {
                 expect().assertFail();
                 done();
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
                 expect(error.code).assertEqual(1000002);
@@ -457,7 +460,8 @@ export default function abilityTest() {
                 expect().assertFail();
                 done();
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
                 expect(error.code).assertEqual(1000000);
@@ -482,7 +486,8 @@ export default function abilityTest() {
                 expect().assertFail();
                 done();
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
                 expect(error.code).assertEqual(1000002);
@@ -590,7 +595,8 @@ export default function abilityTest() {
                 expect().assertFail();
                 done();
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
                 expect(error.code).assertEqual(1000004);
@@ -617,7 +623,8 @@ export default function abilityTest() {
                 expect().assertFail();
                 done();
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
                 expect(error.code).assertEqual(1000001);
@@ -644,7 +651,8 @@ export default function abilityTest() {
                 expect().assertFail();
                 done();
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
                 expect(error.code).assertEqual(1000005);
@@ -669,7 +677,8 @@ export default function abilityTest() {
                 expect().assertFail();
                 done();
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
                 expect(error.code).assertEqual(1000004);
@@ -694,7 +703,8 @@ export default function abilityTest() {
                 expect().assertFail();
                 done();
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
                 expect(error.code).assertEqual(1000005);
@@ -779,7 +789,8 @@ export default function abilityTest() {
                 expect().assertFail();
                 done();
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
                 expect(error.code).assertEqual(1000001);
@@ -807,7 +818,8 @@ export default function abilityTest() {
                 expect().assertFail();
                 done();
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
                 expect(error.code).assertEqual(1000007);
@@ -833,7 +845,8 @@ export default function abilityTest() {
                 expect().assertFail();
                 done();
                 })
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR:' + error);
                 hilog.info(domain, tag, '%{public}s', 'loadModel fail,ERROR.code:' + error.code);
                 expect(error.code).assertEqual(1000007);

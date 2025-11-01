@@ -60,7 +60,8 @@ async function genSymKey(algName: string): Promise<cryptoFramework.SymKey> {
     let symKey: cryptoFramework.SymKey = await aesGenerator.generateSymKey();
 
     return symKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`genSymKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -72,7 +73,8 @@ async function convertSymKey(algName: string, dataKey: cryptoFramework.DataBlob)
     let symKey: cryptoFramework.SymKey = await generator.convertKey(dataKey);
 
     return symKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`convertSymKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -84,7 +86,8 @@ async function createData(dataLen: int): Promise<cryptoFramework.DataBlob>{
     let rawData: cryptoFramework.DataBlob = await rand.generateRandom(dataLen);
 
     return rawData;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -98,7 +101,8 @@ function doHmacSync(algName: string, message: cryptoFramework.DataBlob, key: cry
     let dataRes: cryptoFramework.DataBlob = mac.doFinalSync();
 
     return {dataRes: dataRes, macObj: mac} as macInfo;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doHmac “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -111,7 +115,8 @@ function doHmacNoMessageSync(algName: string, key: cryptoFramework.SymKey): macI
     let dataRes: cryptoFramework.DataBlob = mac.doFinalSync();
 
     return {dataRes: dataRes, macObj: mac} as macInfo;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doHmac “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -140,7 +145,8 @@ function doHmacSyncSpilt(algName: string, message: cryptoFramework.DataBlob, key
     let dataRes: cryptoFramework.DataBlob = mac.doFinalSync();
 
     return {dataRes: dataRes, macObj: mac} as macInfo;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doHmac “${error}“, error code: ${error.code}`);
     throw error as Error;
   }

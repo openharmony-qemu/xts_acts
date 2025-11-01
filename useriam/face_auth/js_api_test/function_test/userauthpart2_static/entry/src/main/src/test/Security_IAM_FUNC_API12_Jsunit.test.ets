@@ -55,7 +55,8 @@ function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetParam | s
         }
       });
       userAuthInstance.start();
-    } catch (e: BusinessError) {
+    } catch (e) {
+      e = e as BusinessError;
       hilog.info(domain, tag, format, `${args[2]} fail ${e.code}`);
       expect(null).assertFail();
       reject({});
@@ -103,7 +104,8 @@ export default function userauthTest_API12() {
           let EnrolledState:userAuth.EnrolledState = userAuth.getEnrolledState(userAuth.UserAuthType.FACE);
           hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialDigest:' + EnrolledState.credentialDigest)
           hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialCount:' + EnrolledState.credentialCount)
-        } catch (e:BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.info(domain, tag, format,"SUB_Security_IAM_Func_API12_Static_0100 fail " + 'FACE' + 'e.code:' + e.code);
           expect(''+e.code).assertEqual(''+userAuth.UserAuthResultCode.NOT_ENROLLED);
         }
@@ -113,7 +115,8 @@ export default function userauthTest_API12() {
           let EnrolledState:userAuth.EnrolledState = userAuth.getEnrolledState(userAuth.UserAuthType.FINGERPRINT);
           hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialDigest:' + EnrolledState.credentialDigest)
           hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialCount:' + EnrolledState.credentialCount)
-        } catch (e:BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.info(domain, tag, format,"SUB_Security_IAM_Func_API12_Static_0100 fail " + 'FINGERPRINT' +  'e.code:' + e.code);
           expect(''+e.code).assertEqual(''+userAuth.UserAuthResultCode.NOT_ENROLLED);
         }
@@ -123,7 +126,8 @@ export default function userauthTest_API12() {
           let EnrolledState:userAuth.EnrolledState = userAuth.getEnrolledState(userAuth.UserAuthType.PIN);
           hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialDigest:' + EnrolledState.credentialDigest)
           hilog.info(domain, tag, format,'SUB_Security_IAM_Func_API12_Static_0100 EnrolledState.credentialCount:' + EnrolledState.credentialCount)
-        } catch (e:BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.info(domain, tag, format,"SUB_Security_IAM_Func_API12_Static_0100 fail " + 'PIN' + 'e.code:' + e.code);
           expect(''+e.code).assertEqual(''+userAuth.UserAuthResultCode.NOT_ENROLLED);
         }
@@ -231,7 +235,8 @@ export default function userauthTest_API12() {
             }
           });
           expect(null).assertFail();
-        }catch (error:BusinessError) {
+        }catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, format, 'SUB_Security_IAM_authWidget_API_Static_0130 catch error: ' + JSON.stringify(error));
           hilog.info(domain, tag, format, 'SUB_Security_IAM_authWidget_API_Static_0130 error.code: ' + error.code);
           expect(error.code).assertEqual(401);

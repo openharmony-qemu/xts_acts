@@ -65,7 +65,8 @@ function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetParam | s
         }
       });
       userAuthInstance.start();
-    } catch (e: BusinessError) {
+    } catch (e) {
+      e = e as BusinessError;
       hilog.info(domain, tag, format, `${args[2]} fail ${e.code}`);
       expect(null).assertFail();
       reject({});
@@ -114,7 +115,8 @@ export default function signNormalNotAccessBiometricExecute() {
         userAuthInstance.off("result", { onResult: (result:userAuth.UserAuthResult) => {} });
         hilog.info(domain, tag, format, "Security_IAM_UserAuthInstance_Func_static_0042 success");
         expect(userAuthInstance).not().assertNull();
-      } catch (e:BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, format, "Security_IAM_UserAuthInstance_Func_static_0042 fail " + e.code);
         expect(null).assertFail();
       }
@@ -139,7 +141,8 @@ export default function signNormalNotAccessBiometricExecute() {
         } });
         userAuthInstance.start();
         hilog.info(domain, tag, format, "Security_IAM_UserAuthInstance_Func_static_0050 success");
-      } catch (e:BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, format, "Security_IAM_UserAuthInstance_Func_static_0050 fail " + e.code);
         expect(null).assertFail();
       }
@@ -161,7 +164,8 @@ export default function signNormalNotAccessBiometricExecute() {
         userAuthInstance.cancel();
         hilog.info(domain, tag, format, "Security_IAM_UserAuthInstance_Func_static_0090 success");
         expect(null).assertFail();
-      } catch (e:BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, format, "Security_IAM_UserAuthInstance_Func_static_0090 fail " + e.code);
         expect(''+e.code).assertEqual(''+userAuth.UserAuthResultCode.GENERAL_ERROR);
       }

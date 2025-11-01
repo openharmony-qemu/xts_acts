@@ -498,7 +498,8 @@ export default function cameraJSUnitOutput() {
         let appContext: Context = Hypium.get("Context") as Context;
         cameraManager = cameraObj.getCameraManager(appContext);
         await Utils.msSleep(1000);
-      } catch (error:BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         expect(isEmpty08(error)).assertTrue();
       }
       await Utils.msSleep(1000);
@@ -700,7 +701,8 @@ export default function cameraJSUnitOutput() {
       try {
         hilog.info(domain, tag, "Entering  SUB_MULTIMEDIA_CAMERA_CREATE_CAPTURE_SESSION_CALLBACK_STATIC_0100")
         captureSession = cameraManager.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
-      } catch (error:BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         expect(isEmpty08(error)).assertTrue();
       }
       await Utils.msSleep(1000);
@@ -1656,7 +1658,8 @@ export default function cameraJSUnitOutput() {
     
         try {
           await photoOutput.capture(captureSetting);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, "SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_PROMISE_STATIC_0100 FAILED");
           hilog.info(domain, tag, "ERRORCODE: " + err.code);
         }
@@ -1703,7 +1706,8 @@ export default function cameraJSUnitOutput() {
         }
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CAPTURE_SETTING_CALLBACK_STATIC_0100 ends here");
         done();
       }
@@ -1924,7 +1928,8 @@ export default function cameraJSUnitOutput() {
         videoOutput.release();
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_START_PROMISE_STATIC_0100 error`)
       }
@@ -1960,7 +1965,8 @@ export default function cameraJSUnitOutput() {
         videoOutput.release();
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_STOP_PROMISE_STATIC_0100 error`);
         done();
@@ -2125,7 +2131,8 @@ export default function cameraJSUnitOutput() {
         videoOutput!.release();
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_START_CALLBACK_STATIC_0100 error`);
         done();
@@ -2169,7 +2176,8 @@ export default function cameraJSUnitOutput() {
         videoOutput.release();
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_STOP_CALLBACK_STATIC_0100 error`)
       }
@@ -2202,7 +2210,8 @@ export default function cameraJSUnitOutput() {
             expect().assertFail();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_PHOTO_AVAILABLE_STATIC_0100 FAILED! ERRORCODE: " + err.code);
         expect().assertFail();
       }
@@ -2249,7 +2258,8 @@ export default function cameraJSUnitOutput() {
         videoOutput.release();
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_ON_FRAME_START_STATIC_0100 error`);
       }
@@ -2324,7 +2334,8 @@ export default function cameraJSUnitOutput() {
             expect().assertFail();
           }
         })
-      } catch (err : BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_AVAILABLE_STATIC_0100 FAILED! ERRORCODE: " + err.code);
       }
       console.info(`photo output stop listen on photoAvailable success`);
@@ -2359,7 +2370,8 @@ export default function cameraJSUnitOutput() {
             expect().assertFail();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, "ENTERING SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_PHOTO_ASSET_AVAILABLE_STATIC_0100 FAILED! ERRORCODE: " + err.code);
         expect().assertFail();
       }
@@ -2401,7 +2413,8 @@ export default function cameraJSUnitOutput() {
             expect().assertFail();
           }
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_ASSET_AVAILABLE_STATIC_0100 FAILED! ERRORCODE: " + err.code);
         expect().assertFail();
       }
@@ -2788,7 +2801,8 @@ export default function cameraJSUnitOutput() {
         videoOutput.release();
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_START_STATIC_0100 error`);
       }
@@ -2903,7 +2917,8 @@ export default function cameraJSUnitOutput() {
         videoOutput.release();
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_ON_FRAME_ERROR_STATIC_0100 error`);
         done();
@@ -2973,7 +2988,8 @@ export default function cameraJSUnitOutput() {
         videoOutput.setFrameRate((supportedFrameRates[0].min + 1), supportedFrameRates[0].max);
         hilog.info(domain, tag, `videoOutput set FrameRate success`)
         expect(true).assertTrue();
-      } catch(err:BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `videoOutput set FrameRate failed`)
         expect(true).assertFalse();
       }
@@ -3022,7 +3038,8 @@ export default function cameraJSUnitOutput() {
         hilog.info(domain, tag, `  SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_GET_ACTIVE_FRAME_RATE_STATIC_0100 set FrameRate: min = ${frameRateRangeSetValue.min + 1}, max = ${frameRateRangeSetValue.max}`)
         videoOutput.setFrameRate((supportedFrameRates[0].min + 1), supportedFrameRates[0].max);
         hilog.info(domain, tag, `videoOutput set FrameRate success`)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `videoOutput set FrameRate failed + + ${JSON.stringify(err)}`)
       }
       // 获取激活的帧率范围
@@ -3070,7 +3087,8 @@ export default function cameraJSUnitOutput() {
         videoOutput.release();
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_OFF_FRAME_ERROR_STATIC_0100 error`);
         done();
@@ -3116,7 +3134,8 @@ export default function cameraJSUnitOutput() {
         }
         await Utils.msSleep(1000);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag,
           `Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_RELEASE_CALLBACK_STATIC_0100 error`);
       }
@@ -3145,7 +3164,8 @@ export default function cameraJSUnitOutput() {
           });
           captureSession.offError();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           let error = err as BusinessError
           hilog.info(domain, tag,
             "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_ON_ERROR_STATIC_0100 FAILED!");
@@ -3186,7 +3206,8 @@ export default function cameraJSUnitOutput() {
           });
           captureSession.offFocusStateChange();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           let error = err as BusinessError
           hilog.info(domain, tag,
             "Entering SUB_MULTIMEDIA_CAMERA_CAPTURE_SESSION_CALLBACK_ON_FOCUS_STATE_CHANGE_STATIC_0100 FAILED!");
@@ -3238,7 +3259,8 @@ export default function cameraJSUnitOutput() {
           console.info('SUB_MULTIMEDIA_CAMERA_PHOTO_RELEASE_STATIC_0100 start to release photo');
           await photoTest.release();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_RELEASE_STATIC_0100 error: " + err.code);
         expect().assertFail();
       }
@@ -3302,7 +3324,8 @@ export default function cameraJSUnitOutput() {
         previewOutput.setFrameRate(supportedFrameRates[0].min + 1, supportedFrameRates[0].max - 1);
         console.info(`videoOutput set FrameRate success`)
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`videoOutput set FrameRate failed: ` + err.code)
         expect().assertFail();
       }
@@ -3369,7 +3392,8 @@ export default function cameraJSUnitOutput() {
         previewOutput.setFrameRate(-1, -1);
         console.info(`previewOutput set FrameRate success`)
         expect(true).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`previewOutput set FrameRate failed: ` + err.code)
         expect(err.code == cameraObj.CameraErrorCode.INVALID_ARGUMENT).assertTrue();
       }
@@ -3421,7 +3445,8 @@ export default function cameraJSUnitOutput() {
       }
       try {
         await cameraSession.commitConfig();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info("Skipping As The Device is Not Supported");
         expect(true).assertTrue()
         done()
@@ -3437,7 +3462,8 @@ export default function cameraJSUnitOutput() {
         previewOutput.setFrameRate(supportedFrameRates[0].min + 1, supportedFrameRates[0].max - 1);
         console.info(`previewOutput set FrameRate success`)
         expect(true).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`previewOutput set FrameRate failed: ` + err.code)
         expect(err.code == cameraObj.CameraErrorCode.UNRESOLVED_CONFLICTS_WITH_CURRENT_CONFIGURATIONS).assertTrue();
       }
@@ -3468,7 +3494,8 @@ export default function cameraJSUnitOutput() {
         let activeProfile = previewOutput.getActiveProfile()
         console.info(`get activeProfile success: ${JSON.stringify(activeProfile)}`)
         expect(true).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`get activeProfile failed: ${JSON.stringify(err.code)}`)
         expect().assertFail()
       }

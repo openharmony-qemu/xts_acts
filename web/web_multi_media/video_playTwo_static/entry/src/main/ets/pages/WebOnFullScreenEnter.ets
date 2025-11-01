@@ -87,7 +87,8 @@ struct WebOnFullScreenEnter {
                 })
                 }, 4000)
 
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
 

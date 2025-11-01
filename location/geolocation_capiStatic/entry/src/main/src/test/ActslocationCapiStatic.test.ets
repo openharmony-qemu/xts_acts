@@ -47,7 +47,8 @@ export default function actslocationTest() {
                         hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
                         hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
                     });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + err);
             }
             await Utils.msSleep(2000);
@@ -60,7 +61,8 @@ export default function actslocationTest() {
             try {
                 //await Utils.openBluetooth();
                 hilog.info(domain, tag, '%{public}s', 'beforeEach end');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', 'beforeEach get failed, err: ' + err);
             }
         })
@@ -152,7 +154,8 @@ export default function actslocationTest() {
                     }
 
                     })
-                }catch(error:BusinessError){
+                }catch(error) {
+                    error = error as BusinessError;
                     expect().assertFail();
                 }
                 await Utils.msSleep(1000)
@@ -180,7 +183,8 @@ export default function actslocationTest() {
                                     }
                                 }
                             });
-                    }catch(err:BusinessError){
+                    }catch(err) {
+                        err = err as BusinessError;
                         hilog.error(domain,tag,'[lns_js] getCurrentLocation try err.'+JSON.stringify(err));
                         expect(false).assertTrue();
                     }

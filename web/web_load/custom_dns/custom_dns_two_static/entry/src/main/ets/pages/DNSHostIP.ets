@@ -89,7 +89,8 @@ struct DNSHostIP {
                 }
                 console.log('setHostIP0100_value: ' + this.value)
                 this.controller.removeCache(true);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               setTimeout(() => {

@@ -116,7 +116,8 @@ const getImagePropertyErr = async (
       await imageSourceApi.getImageProperty(tag);
       expect(false).assertTrue();
       done();
-    } catch (error: BusinessError) {
+    } catch (error) {
+      error = error as BusinessError;
       expect(error.code != 0).assertTrue();
       console.log(`${testNum} error msg: ` + error);
       done();

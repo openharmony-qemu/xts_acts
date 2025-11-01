@@ -56,7 +56,8 @@ export default function layoutConstraintsJsunit() {
 
 
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push layoutConstraints page error:" + err);
       }
     });
@@ -103,7 +104,8 @@ export default function layoutConstraintsJsunit() {
         }
         console.info("[testLayoutConstraints002] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testLayoutConstraints002] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -152,7 +154,8 @@ export default function layoutConstraintsJsunit() {
         }
         console.info("[testLayoutConstraints004] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testLayoutConstraints004] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -184,7 +187,8 @@ export default function layoutConstraintsJsunit() {
         }
         console.info("[testLayoutConstraints005] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testLayoutConstraints005] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -216,7 +220,8 @@ export default function layoutConstraintsJsunit() {
         }
         console.info("[testLayoutConstraints006] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testLayoutConstraints006] change component data error: " + err.message);
       }
       await Utils.sleep(4000);

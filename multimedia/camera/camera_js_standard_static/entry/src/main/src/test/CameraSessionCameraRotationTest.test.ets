@@ -577,7 +577,8 @@ export default function cameraSessionCameraRotationTest() {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_STATIC_0100 ends here");
           done();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_STATIC_0100 error + ${err}+ ${err.code}+ ${err.message}`);
         expect().assertFail();
@@ -629,7 +630,8 @@ export default function cameraSessionCameraRotationTest() {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PREVIEW_ROTATION_FUNC_STATIC_0100 ends here");
           done();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PREVIEW_ROTATION_FUNC_STATIC_0100 error + ${err}+ ${err.code}+ ${err.message}`);
         expect().assertFail();
@@ -679,7 +681,8 @@ export default function cameraSessionCameraRotationTest() {
         }
         console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_STATIC_0100 ends here");
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(TAG +
           `Entering SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_STATIC_0100 error + ${err}+ ${err.code}+ ${err.message}`);
         expect().assertFail();

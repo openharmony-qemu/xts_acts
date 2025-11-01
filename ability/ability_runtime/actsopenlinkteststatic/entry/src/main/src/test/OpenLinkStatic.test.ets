@@ -80,7 +80,8 @@ export default function openLinkStaticTest() {
           expect(error.code).assertEqual(invalidParamErrNo);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0100 open fail: ` + err.code + err.message);
         expect(err.code).assertEqual(invalidParamErrNo);
         done();
@@ -107,7 +108,8 @@ export default function openLinkStaticTest() {
           expect().assertFail();
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0300 open fail : ` + err.code + err.message);
         expect().assertFail();
         done();
@@ -135,7 +137,8 @@ export default function openLinkStaticTest() {
           expect(error.code).assertEqual(componentNotExistErrNo);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0400 open fail: ` + err.code + err.message);
         expect().assertFail();
         done();
@@ -164,7 +167,8 @@ export default function openLinkStaticTest() {
           expect(error.code).assertEqual(componentNotExistErrNo);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0500 open fail : ` + err.code + err.message);
         expect().assertFail();
         done();
@@ -192,7 +196,8 @@ export default function openLinkStaticTest() {
           expect().assertFail();
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0600 open fail : ` + err.code + err.message);
         expect().assertFail();
         done();
@@ -219,7 +224,8 @@ export default function openLinkStaticTest() {
           expect().assertFail();
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0700 open fail : ` + err.code + err.message);
         expect().assertFail();
         done();
@@ -253,7 +259,8 @@ export default function openLinkStaticTest() {
           expect().assertFail();
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0800 open fail : ` + err.code + err.message);
         expect().assertFail();
         done();
@@ -289,7 +296,8 @@ export default function openLinkStaticTest() {
           expect(error.code).assertEqual(componentNotExistErrNo);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_0900 open fail : ` + err.code + err.message);
         expect().assertFail();
         done();
@@ -324,7 +332,8 @@ export default function openLinkStaticTest() {
           expect().assertFail();
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `AbilityRuntime_OpenLink_static_1000 open fail : ` + err.code + err.message);
         expect().assertFail();
         done();

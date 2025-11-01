@@ -368,7 +368,8 @@ export default function TreeMapTest1() {
       try {
         let res = treeMap.getFirstKey();
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.message).assertEqual("Container is empty");
       }
     });
@@ -403,7 +404,8 @@ export default function TreeMapTest1() {
       try {
         let res = treeMap.getLastKey();
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.message).assertEqual("Container is empty");
       }
     });
@@ -536,7 +538,8 @@ export default function TreeMapTest1() {
       try {
         let res = treeMap.getLowerKey(2);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.message).assertEqual("Container is empty");
       }
     });
@@ -573,7 +576,8 @@ export default function TreeMapTest1() {
       try {
         let res = treeMap.getHigherKey(2);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.message).assertEqual("Container is empty");
       }
     });

@@ -203,7 +203,8 @@ export async function printArgsSettimeout3(): Promise<void> {
   try {
     await asyncOperation();
     console.log('Task completed successfully');
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('caught error in task execution:', error.message);
     throw new Error('Simulated error in async operation.');
   }
@@ -247,7 +248,8 @@ export async function printArgsTaskpool(args: Number): Promise<Number> {
   taskGroup.addTask(printArgs01, 1.0);
   try {
     await taskpool.execute(taskGroup);
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     if (Math.random() < 1) { // 抛出异常
       throw new Error('Simulated error in task execution.');
     }
@@ -264,7 +266,8 @@ export async function printArgsTaskpool1(args: Number): Promise<Number> {
         throw new Error('Simulated error in then execution.');
       }
     })
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     if (Math.random() < 1) { // 抛出异常
       throw new Error('Simulated error in then execution.');
     }
@@ -283,7 +286,8 @@ export async function printArgsTaskpool2(args: Number): Promise<Number> {
         throw new Error('Simulated error in catch execution.');
       }
     })
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     if (Math.random() < 1) { // 抛出异常
       throw new Error('Simulated error in catch execution.');
     }
@@ -302,7 +306,8 @@ export async function printArgsTaskpool3(args: Number): Promise<Number> {
         throw new Error('Simulated error in finally execution.');
       }
     })
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     if (Math.random() < 1) { // 抛出异常
       throw new Error('Simulated error in finally execution.');
     }

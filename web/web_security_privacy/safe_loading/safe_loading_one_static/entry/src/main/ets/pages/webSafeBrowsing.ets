@@ -64,7 +64,8 @@ struct DNSHostIP {
                 console.log(' emitEnableSafeBrowsingTrue:  ', result);
 
                 Utils.emitEvent(result, 2001)
-              } catch (error: BusinessError) {
+              } catch (error) {
+               error = error as BusinessError;
                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(false, 2001)
               }
@@ -78,7 +79,8 @@ struct DNSHostIP {
                 console.log(' emitEnableSafeBrowsingFalse:  ', result);
 
                 Utils.emitEvent(!result, 2002)
-              } catch (error: BusinessError) {
+              } catch (error) {
+               error = error as BusinessError;
                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(false, 2002)
               }
@@ -92,7 +94,8 @@ struct DNSHostIP {
                 console.log(' emitIsSafeBrowsingEnabledTrue:  ', result);
 
                 Utils.emitEvent(result, 2003)
-              } catch (error: BusinessError) {
+              } catch (error) {
+               error = error as BusinessError;
                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(false, 2003)
               }
@@ -106,7 +109,8 @@ struct DNSHostIP {
                 console.log(' emitIsSafeBrowsingEnabledFalse:  ', result);
 
                 Utils.emitEvent(!result, 2004)
-              } catch (error: BusinessError) {
+              } catch (error) {
+               error = error as BusinessError;
                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(false, 2004)
               }

@@ -727,7 +727,8 @@ async function updateAbnormalParameterProcess(
         await updateSign(signGenerator, input);
         break;
     }
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error("[Promise] updateAbnormalParameterProcess catch err: " + err);
     throw err as Error;
   }
@@ -765,7 +766,8 @@ async function verifyUpdateAbnormalParameterProcess(
         await updateVerify(verifyGenerator, input);
         break;
     }
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error("[Promise] verifyUpdateAbnormalParameterProcess catch err: " + err);
     throw err as Error;
   }

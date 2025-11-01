@@ -88,7 +88,8 @@ export default function WindowKeyBoardTest() {
                 hilog.info(domain, tag,msgStr + 'window.isWindowShowing success');
                 expect(false).assertTrue();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(exception.code == 1300002 || exception.code == 801).assertTrue();
                 if (exception.code != 801) {
@@ -127,7 +128,8 @@ export default function WindowKeyBoardTest() {
                 hilog.info(domain, tag,msgStr + 'window.off_keyboardDidShow success');
                 expect(false).assertTrue();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(exception.code == 1300002 || exception.code == 801).assertTrue();
                 if (exception.code != 801) {
@@ -167,7 +169,8 @@ export default function WindowKeyBoardTest() {
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
                 expect(false).assertTrue();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(exception.code == 1300002 || exception.code == 801).assertTrue();
                 if (exception.code != 801) {
@@ -206,7 +209,8 @@ export default function WindowKeyBoardTest() {
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
                 expect(false).assertTrue();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(exception.code == 1300002 || exception.code == 801).assertTrue();
                 if (exception.code != 801) {
@@ -244,7 +248,8 @@ export default function WindowKeyBoardTest() {
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardHeightChange success');
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done()
@@ -275,7 +280,8 @@ export default function WindowKeyBoardTest() {
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardHeightChange success');
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done()
@@ -298,7 +304,8 @@ export default function WindowKeyBoardTest() {
                 subWin = await windowStage.createSubWindow('testKeepKeyboardOnFocusErrCode1300002_SubWindow_Promise')
                 expect(!!subWin).assertTrue();
                 console.info(msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(subWin));
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.log(msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                 expect(false).assertTrue();
                 done()
@@ -309,7 +316,8 @@ export default function WindowKeyBoardTest() {
                 console.error(msgStr + 'Succeeded in calling keepKeyboardOnFocus.');
                 expect(false).assertTrue();
                 done()
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.log(msgStr + 'Failed to call keepKeyboardOnFocus. Cause:' + JSON.stringify(e));
                 expect(e.code).assertEqual(1300002);
                 done()

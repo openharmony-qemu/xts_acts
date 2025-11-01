@@ -155,7 +155,8 @@ export default function DeviceManagerTest() {
           expect(deviceUsb.description != null).assertEqual(true);
           expect(deviceUsb.vendorId != null).assertEqual(true);
           expect(deviceUsb.productId != null).assertEqual(true);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(TAG, 'testTag', 'Test case testQueryDevices001 catch err: ' + JSON.stringify(err));
           expect().assertFail();
         }
@@ -180,7 +181,8 @@ export default function DeviceManagerTest() {
           hilog.info(TAG, 'testTag', 'Test case testQueryDevices002 ret : ' + JSON.stringify(devices));
           expect(devices != null).assertEqual(true);
           expect(devices[0].deviceId != null).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(TAG, 'testTag', 'Test case testQueryDevices002 catch err: ' + JSON.stringify(err));
           expect().assertFail();
         }
@@ -204,7 +206,8 @@ export default function DeviceManagerTest() {
           let devices = deviceManager.queryDevices(12345);
           hilog.info(TAG, 'testTag', 'Test case testQueryDevices003 ret : ', JSON.stringify(devices));
           expect(devices.length == 0).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(TAG, 'testTag', 'Test case testQueryDevices003 catch err : ' + JSON.stringify(err));
           expect(err.code).assertEqual(SERVICE_EXCEPTION_CODE);
         }
@@ -227,7 +230,8 @@ export default function DeviceManagerTest() {
         try {
           let devices = deviceManager.queryDevices();
           hilog.info(TAG, 'testTag', 'Test case testQueryDevices004 ret : ' + JSON.stringify(devices));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(TAG, 'testTag', 'Test case testQueryDevices004 catch err : ' + JSON.stringify(err));
           expect(err.code).assertEqual(SERVICE_EXCEPTION_CODE);
         }
@@ -260,7 +264,8 @@ export default function DeviceManagerTest() {
             });
             expect(false).assertTrue();
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             hilog.info(TAG, 'testTag', 'Test case testBindDriverWithDeviceId001 catch err : ' + JSON.stringify(error));
             expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE_NEW);
             expect(error.code != SERVICE_NOT_ALLOW_ACCESS).assertTrue();
@@ -288,7 +293,8 @@ export default function DeviceManagerTest() {
               done();
             });
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             hilog.info(TAG, 'testTag', 'Test case testUnbindDriverWithDeviceId002 catch err :' + JSON.stringify(error));
             expect(error.code).assertEqual(SERVICE_NOT_BOUND);
             done();
@@ -315,7 +321,8 @@ export default function DeviceManagerTest() {
               done();
             });
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             hilog.info(TAG, 'testTag', 'Test case testUnbindDriverWithDeviceId003 catch err :' + JSON.stringify(error));
             expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE_NEW);
             done();
@@ -345,7 +352,8 @@ export default function DeviceManagerTest() {
             hilog.info(0, 'testTag ui', 'bindDevice success:' + data.deviceId);
             hilog.info(0, 'testTag ui', 'bindDevice success:' + JSON.stringify(data.remote));
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             hilog.info(TAG, 'testTag', 'Test case testBindDriverWithDeviceId002 catch err : ' + JSON.stringify(error));
             expect(false).assertTrue();
             done();
@@ -371,7 +379,8 @@ export default function DeviceManagerTest() {
             expect(true).assertTrue();
             await Utils.msSleep(2000);
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             hilog.info(TAG, 'testTag', 'Test case testUnbindDriverWithDeviceId001 catch err :' + JSON.stringify(error));
             expect(false).assertTrue();
             done();

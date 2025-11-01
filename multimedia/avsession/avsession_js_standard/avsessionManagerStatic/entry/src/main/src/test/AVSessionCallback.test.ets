@@ -51,19 +51,22 @@ export default function abilityTest() {
             try{
                 session = await avSession.createAVSession(context, tag, 'audio');
                 console.info(`${session!.sessionType}`);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}: Session create error: code: ${err?.code}, message: ${err?.message}`);
             };
             try{
                 await session!.activate();
                 console.info(`${TAG}: Session activate`);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}: Session activate error: code: ${err?.code}, message: ${err?.message}`);
             };
             try {
                 controller = await session!.getController();
                 console.info(`${TAG}: controller getController`);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`${TAG}: getController error: code: ${err?.code}, message: ${err?.message}`);
             }
             await Utils.msSleep(800);
@@ -76,7 +79,8 @@ export default function abilityTest() {
                 try{
                     await session!.destroy()
                     console.info(`${TAG}: Session destroy success`);
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.info(`${TAG}: Session destroy error: code: ${err?.code}, message: ${err?.message}`);
                 };
             } else {
@@ -86,7 +90,8 @@ export default function abilityTest() {
                 try{
                     await controller.destroy()
                     console.info(`${TAG}: Controller destroy success`);
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.info(`${TAG}: Controller destroy error: code: ${err?.code}, message: ${err?.message}`);
                 };
             } else {
@@ -765,7 +770,8 @@ export default function abilityTest() {
                         })
                     }
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: set & get displayTags error: code: ${err?.code}, message: ${err?.message}`);
                 expect(true).assertFalse();
                 done();
@@ -809,7 +815,8 @@ export default function abilityTest() {
                         })
                     }
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: set & get singleLyricText error: code: ${err?.code}, message: ${err?.message}`);
                 expect(true).assertFalse();
                 done();
@@ -1275,7 +1282,8 @@ export default function abilityTest() {
                         })
                     }
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set loopMode error: code: ${err?.code}, message: ${err?.message}`);
                 expect(true).assertFalse();
                 done();
@@ -1317,7 +1325,8 @@ export default function abilityTest() {
                         })
                     }
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set maxVolume error: code: ${err?.code}, message: ${err?.message}`);
                 expect(true).assertFalse();
                 done();
@@ -1359,7 +1368,8 @@ export default function abilityTest() {
                         })
                     }
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set muted error: code: ${err?.code}, message: ${err?.message}`);
                 expect(true).assertFalse();
                 done();
@@ -1402,7 +1412,8 @@ export default function abilityTest() {
                         })
                     }
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set videoWidth & videoHeight error: code: ${err?.code}, message: ${err?.message}`);
                 expect(true).assertFalse();
                 done();
@@ -1444,7 +1455,8 @@ export default function abilityTest() {
                         })
                     }
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Set duration error: code: ${err?.code}, message: ${err?.message}`);
                 expect(true).assertFalse();
                 done();

@@ -78,7 +78,8 @@ export default function audioManagerTest() {
         console.info(`isVolumeUnadjustable SUCCESS, is ${bol}`);
         expect(bol).assertEqual(false);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log(`isVolumeUnadjustable error: ${error.code}, message ${error.message}`);
         expect(false).assertTrue();
         done();

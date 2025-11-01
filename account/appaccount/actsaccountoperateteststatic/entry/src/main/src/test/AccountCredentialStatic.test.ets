@@ -101,7 +101,8 @@ export default function ActsAppAccountCredentialStatic() {
         hilog.info(0x0000, tag, "====>setCredential ActsAppAccountCredential_0200 start====");
         try {
           await accountManager.setCredential("account_name_0200", "credentialType2", "credential2");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "setCredential ActsAppAccountCredential_0200 err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -114,7 +115,8 @@ export default function ActsAppAccountCredentialStatic() {
           hilog.info(0x0000, tag, "====>delete account ActsAppAccountCredential_0200 start====");
           accountManager.removeAccount("account_name_0200")
           hilog.info(0x0000, tag, "====>ActsAppAccountCredential_0200 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "getCredential ActsAppAccountCredential_0200 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -204,7 +206,8 @@ export default function ActsAppAccountCredentialStatic() {
           hilog.info(0x0000, tag, "====>delete account ActsAppAccountCredential_0400 start====");
           accountManager.removeAccount("account_name_0400")
           hilog.info(0x0000, tag, "====>ActsAppAccountCredential_0400 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "getCredential ActsAppAccountCredential_0400 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -277,7 +280,8 @@ export default function ActsAppAccountCredentialStatic() {
           hilog.info(0x0000, tag, "====>delete account ActsAppAccountCredential_0600 start====");
           await accountManager.removeAccount("account_name_0600");
           hilog.info(0x0000, tag, "====>ActsAppAccountCredential_0600 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "getCredential ActsAppAccountCredential_0400 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -341,7 +345,8 @@ export default function ActsAppAccountCredentialStatic() {
           await accountManager.setCredential("account_name_0800", "", "credential8");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>setCredential ActsAppAccountCredential_0800 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>delete account ActsAppAccountCredential_0800 start====");
@@ -407,7 +412,8 @@ export default function ActsAppAccountCredentialStatic() {
           await accountManager.getCredential("account_name_1000", "");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getCredential ActsAppAccountCredential_1000 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>delete account ActsAppAccountCredential_1000 start====");
@@ -490,7 +496,8 @@ export default function ActsAppAccountCredentialStatic() {
           hilog.info(0x0000, tag, "====>delete account ActsAppAccountCredential_1200 start====");
           await accountManager.removeAccount("account_name_1200");
           hilog.info(0x0000, tag, "====>ActsAppAccountCredential_1200 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>ActsAppAccountCredential_1200 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -553,7 +560,8 @@ export default function ActsAppAccountCredentialStatic() {
           await accountManager.setCredential("", "credentialType14", "credential14");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>setCredential ActsAppAccountCredential_1400 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>delete account ActsAppAccountCredential_1400 start====");
@@ -619,7 +627,8 @@ export default function ActsAppAccountCredentialStatic() {
           await accountManager.getCredential("account_name_1600", "credentialType16");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getCredential ActsAppAccountCredential_1600 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300102);
           hilog.info(0x0000, tag, "====>delete account ActsAppAccountCredential_1600 start====");
@@ -695,7 +704,8 @@ export default function ActsAppAccountCredentialStatic() {
           await accountManager.setCredential("account_name_1800", "credentialType18", bigStr);
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>bigStr.length: " + JSON.stringify(bigStr.length));
           expect(bigStr.length).assertEqual(1025);
           hilog.info(0x0000, tag, "====>setCredential ActsAppAccountCredential_1800 err: " + JSON.stringify(err));
@@ -771,7 +781,8 @@ export default function ActsAppAccountCredentialStatic() {
         await accountManager.createAccount("account_name_2000");
         try {
           await accountManager.setCredential("account_name_2000", CREDENTIALTYPEOVERSIZE, "credential20");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>CREDENTIALTYPEOVERSIZE.length: " + JSON.stringify(CREDENTIALTYPEOVERSIZE.length));
           expect(CREDENTIALTYPEOVERSIZE.length).assertEqual(1025);
           hilog.info(0x0000, tag, "====>setCredential ActsAppAccountCredential_2000 err: " + JSON.stringify(err));
@@ -844,7 +855,8 @@ export default function ActsAppAccountCredentialStatic() {
         hilog.info(0x0000, tag, "====>add account ActsAppAccountCredential_2200 start====");
         try {
           await accountManager.createAccount("account_name_2200");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>add account ActsAppAccountCredential_2200 err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -854,7 +866,8 @@ export default function ActsAppAccountCredentialStatic() {
           await accountManager.setCredential(NAMEOVERSIZE, "credentialType22", "credential22");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>setCredential ActsAppAccountCredential_2200 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>delete account ActsAppAccountCredential_2200 start====");

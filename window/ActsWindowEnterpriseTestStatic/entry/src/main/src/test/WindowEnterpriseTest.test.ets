@@ -64,7 +64,8 @@ async function terminateAbility(caseName: string) {
         }).catch((err: BusinessError):PromiseLike<void>|undefined => {
             console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
-    } catch (e: BusinessError) {
+    } catch (e) {
+        e = e as BusinessError;
         console.error(`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
     }
     await Utils.msSleep(1000)
@@ -155,7 +156,8 @@ export default function WindowEnterpriseTest() {
                     expect(false).assertTrue();
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 await terminateAbility(caseName);
                 hilog.info(domain, tag,`${caseName} : failed, code: ${err.code}, msg: ${err.message}`);
                 expect(err.message!=null).assertTrue();

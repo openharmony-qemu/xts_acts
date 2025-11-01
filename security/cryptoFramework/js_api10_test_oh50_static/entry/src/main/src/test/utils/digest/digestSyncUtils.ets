@@ -62,7 +62,8 @@ function doMdSync(algName: string, message: cryptoFramework.DataBlob): mdInfo {
     let mdResult: cryptoFramework.DataBlob = md.digestSync();
 
     return {dataRes: mdResult, mdObj: md} as mdInfo;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doMdSync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -74,7 +75,8 @@ function doMdWithNoUpdateSync(algName: string): mdInfo {
     let mdResult: cryptoFramework.DataBlob = md.digestSync();
 
     return {dataRes: mdResult, mdObj: md} as mdInfo;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doMdSync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -102,7 +104,8 @@ function doMdSyncSplit(algName: string, message: cryptoFramework.DataBlob, block
     let mdResult: cryptoFramework.DataBlob = md.digestSync();
 
     return {dataRes: mdResult, mdObj: md} as mdInfo;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doMdSyncSplit “${error}“, error code: ${error.code}`);
     throw error as Error;
   }

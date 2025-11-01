@@ -77,7 +77,8 @@ export default function drawingTsCanvasPart3Test() {
         canvas.restoreToCount(15);
         canvas.getSaveCount();
         console.info(msg + 'restoreToCount successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `restoreToCount errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -90,7 +91,8 @@ export default function drawingTsCanvasPart3Test() {
         canvas.restoreToCount(-1);
         canvas.getSaveCount();
         console.info(msg + 'restoreToCount successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `restoreToCount errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -111,7 +113,8 @@ export default function drawingTsCanvasPart3Test() {
           canvas.restoreToCount((Math.random() * Number.MAX_VALUE).toInt());
         }
         console.info(msg + 'restoreToCount successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `restoreToCount errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -132,7 +135,8 @@ export default function drawingTsCanvasPart3Test() {
         canvas.restore();
         canvas.getSaveCount();
         console.info(msg + 'restore successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `restore errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -162,7 +166,8 @@ export default function drawingTsCanvasPart3Test() {
           canvas.getSaveCount();
         }
         console.info(msg + 'restore successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `restore errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -182,7 +187,8 @@ export default function drawingTsCanvasPart3Test() {
         canvas.restore();
         canvas.getSaveCount();
         console.info(msg + 'restore successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `restore errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }

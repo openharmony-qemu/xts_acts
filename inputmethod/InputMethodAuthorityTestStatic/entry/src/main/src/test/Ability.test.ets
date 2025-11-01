@@ -55,7 +55,8 @@ export default function inputMethodAuthorityJSUnit() {
                 expect(result == true).assertTrue();
                 done();
                 hilog.info(domain, tag, "====>SUB_Misc_inputMethod_switchInputMethod__static_0100 end");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, '====>SUB_Misc_inputMethod_switchInputMethod__static_0100 switchInputMethod catch err' + JSON.stringify(err))
                 expect().assertFail();
                 done();
@@ -82,7 +83,8 @@ export default function inputMethodAuthorityJSUnit() {
                         expect(data == true).assertTrue();
                         done();
                     }
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     hilog.error(domain, tag, "====>SUB_Misc_inputMethod_switchInputMethod__static_0200 catch err: " + JSON.stringify(err));
                     expect().assertFail();
                     done();
@@ -110,7 +112,8 @@ export default function inputMethodAuthorityJSUnit() {
             try {
                 let data = await inputMethodCtrl.attach(true, ATTRIBUTE);
                 hilog.info(domain, tag, `====>inputmethodNomal_test_hideSoftKeyboard_static_001 execution success, data: ${JSON.stringify(data)}`);
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, `====>inputmethodNomal_test_hideSoftKeyboard_static_001 catch error, error: [${error.code}, ${error.message}]`);
                 expect().assertFail();
                 done();
@@ -125,7 +128,8 @@ export default function inputMethodAuthorityJSUnit() {
                         expect(true).assertTrue();
                     }
                     done();
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     hilog.error(domain, tag, "====>inputmethodNomal_test_hideSoftKeyboard_static_001 catch err: " + JSON.stringify(err));
                     expect().assertFail();
                     done();
@@ -155,7 +159,8 @@ export default function inputMethodAuthorityJSUnit() {
                 try {
                     let data = await inputMethodCtrl.attach(true, ATTRIBUTE);
                     hilog.info(domain, tag, `inputmethodNomal_test_hideSoftKeyboard_static_002 execution success, data: ${JSON.stringify(data)}`);
-                } catch (error: BusinessError) {
+                } catch (error) {
+                    error = error as BusinessError;
                     hilog.info(domain, tag, `inputmethodNomal_test_hideSoftKeyboard_static_002 catch error, error: [${error.code}, ${error.message}]`);
                     expect().assertFail();
                     done();
@@ -164,7 +169,8 @@ export default function inputMethodAuthorityJSUnit() {
                 await inputMethodCtrl.hideSoftKeyboard();
                 expect(true).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, '====>inputmethodNomal_test_hideSoftKeyboard_static_002 hideSoftKeyboard catch err' + JSON.stringify(err))
                 expect().assertFail();
                 done();

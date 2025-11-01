@@ -80,7 +80,8 @@ export default function onOffAudioCapturerChangeTest() {
       try {
         audioManager = audio.getAudioManager();
         console.log(`get audioManager success!`);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log(`getAudioManager err: ${error.message}, ${error.code}`);
       }
       console.info('TestLog: Start Testing AudioCpaturerEnhanceTest Interfaces');
@@ -130,7 +131,8 @@ export default function onOffAudioCapturerChangeTest() {
         }).catch((err: Error) => {
           console.info(' AudioCapturer Created catch ERROR' + err.message);
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} AudioCapturer Created and start ERROR! ${error.message} ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -149,7 +151,8 @@ export default function onOffAudioCapturerChangeTest() {
           expect(flag2).assertEqual(true);
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${Tag}: on-audioCapturerChange Fail: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -186,7 +189,8 @@ export default function onOffAudioCapturerChangeTest() {
         }).catch((err: Error) => {
           console.info(' AudioCapturer Created catch ERROR' + err.message);
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} AudioCapturer Created and start ERROR! ${error.message} ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -208,7 +212,8 @@ export default function onOffAudioCapturerChangeTest() {
           expect(flag2).assertEqual(true);
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${Tag}: on-audioCapturerChange Fail: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -244,7 +249,8 @@ export default function onOffAudioCapturerChangeTest() {
         }).catch((err: Error) => {
           console.info(' AudioCapturer Created catch ERROR' + err.message);
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag} AudioCapturer Created and start ERROR! ${error.message} ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -266,7 +272,8 @@ export default function onOffAudioCapturerChangeTest() {
           expect(flag2).assertEqual(false);
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${Tag}: on-audioCapturerChange Fail: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();

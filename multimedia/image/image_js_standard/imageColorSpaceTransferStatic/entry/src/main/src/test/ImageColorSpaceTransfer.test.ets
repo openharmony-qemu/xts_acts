@@ -179,7 +179,8 @@ const applyColorSpacePromiseTest = async (
           let pixelSize = pixelMap.getPixelBytesNumber();
           logger.log(`new pixel size ${pixelSize}`);
           done();
-        } catch(error:BusinessError) {
+        } catch(error) {
+          error = error as BusinessError;
           logger.log("apply colorSpace failed " + error);
           expect().assertFail();
           done();

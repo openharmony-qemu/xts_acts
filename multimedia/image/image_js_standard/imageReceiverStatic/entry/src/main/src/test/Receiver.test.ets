@@ -253,7 +253,8 @@ export default function ImageReceiver() {
           );
           expect(isString(id)).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_PROMISE_STATIC_0100 error: " + error);
           expect(false).assertTrue();
           done();
@@ -394,7 +395,8 @@ export default function ImageReceiver() {
         });
 
         initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
         expect(false).assertTrue();
         done();
@@ -426,7 +428,8 @@ export default function ImageReceiver() {
         receiver!.offImageArrival();
         expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
         expect(false).assertTrue();
         done();
@@ -480,7 +483,8 @@ export default function ImageReceiver() {
         });
 
         initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
         expect(false).assertTrue();
         done();
@@ -536,7 +540,8 @@ export default function ImageReceiver() {
         });
 
         initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
         expect(false).assertTrue();
         done();
@@ -590,7 +595,8 @@ export default function ImageReceiver() {
         });
 
         initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
         expect(false).assertTrue();
         done();
@@ -646,7 +652,8 @@ export default function ImageReceiver() {
         });
 
         initCamera('SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100', cameraManager, surfaceId1, surfaceId2);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log(`SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_STATIC_0100 errorCode:${error.code}, errorName:${error.name}, errorMessage:${error.message}`);
         expect(false).assertTrue();
         done();

@@ -95,7 +95,8 @@ struct WebOnDataResubmitted {
                     this.receivedFromHtml = msg;
                   })
                   this.controllerNull.postMessage('__init_port__', [this.controllerNull.createWebMessagePorts()[0]], '*');
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   Utils.emitEvent(error.code, 1022)
                 }
                 break;
@@ -107,7 +108,8 @@ struct WebOnDataResubmitted {
                   this.ports[1].close();
                   this.ports[1].postMessageEvent('post message from ets to html5');
                   Utils.emitEvent('no_error', 20360)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   Utils.emitEvent(String(error.code), 20360)
                 }
@@ -117,7 +119,8 @@ struct WebOnDataResubmitted {
               case 'emitClearMatches': {
                 try {
                   this.controllerNull.clearMatches();
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   Utils.emitEvent(error.code, 1007)
                 }
                 break;
@@ -125,7 +128,8 @@ struct WebOnDataResubmitted {
               case 'emitCreateWebMessagePort': {
                 try {
                   this.controllerNull.createWebMessagePorts();
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   Utils.emitEvent(error.code, 1021)
                 }
                 break;
@@ -134,7 +138,8 @@ struct WebOnDataResubmitted {
                 try {
                   webview.WebviewController.prepareForPageLoad('https://www.example.com/', true, 7);
                   Utils.emitEvent(true, 50025)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   Utils.emitEvent(error.code, 50025)
                 }

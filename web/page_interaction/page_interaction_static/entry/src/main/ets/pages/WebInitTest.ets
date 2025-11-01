@@ -75,7 +75,8 @@ struct WebInitTest {
                 // await Utils.sleep(1000)
                 Utils.emitEvent(ContextMenuMediaType.NONE, 333);
                 Utils.emitEvent(ContextMenuMediaType.IMAGE, 33);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -88,7 +89,8 @@ struct WebInitTest {
                 Utils.emitEvent(ContextMenuInputFieldType.TELEPHONE, 35);
                 Utils.emitEvent(ContextMenuInputFieldType.NUMBER_DATA, 366);
                 Utils.emitEvent(ContextMenuInputFieldType.OTHER, 36);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -99,7 +101,8 @@ struct WebInitTest {
                 Utils.emitEvent(ContextMenuSourceType.MOUSE, 38);
                 Utils.emitEvent(ContextMenuSourceType.LONG_PRESS, 39);
                 console.log('result: ' + ContextMenuSourceType.LONG_PRESS);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -118,7 +121,8 @@ struct WebInitTest {
                 setTimeout(() => {
                   Utils.emitEvent(scrollEnabled, 234234)
                 }, 2000)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -143,7 +147,8 @@ struct WebInitTest {
                       }
                     })
                 }, 500)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -168,7 +173,8 @@ struct WebInitTest {
                       }
                     })
                 }, 500)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -192,7 +198,8 @@ struct WebInitTest {
                       }
                     })
                 }, 500)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -201,7 +208,8 @@ struct WebInitTest {
             case 'back': {
               try {
                 this.getUIContext().getRouter().back()
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;

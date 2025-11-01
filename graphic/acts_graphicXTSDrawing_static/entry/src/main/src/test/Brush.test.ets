@@ -63,7 +63,8 @@ export default function brushTest() {
         try {
           brush.setColor(colors[i]);
           console.info(msg + ` setColor succeeded`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setColor failed. Error code is: ${e.code}. Error message is: ${e.message}`);
           expect().assertFail();
         }
@@ -90,7 +91,8 @@ export default function brushTest() {
             alpha, red, green, blue
           });
           console.info(msg + ' setColor successed');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -137,7 +139,8 @@ export default function brushTest() {
         try {
           brush.setColor(colors[i]);
           console.info(msg + ' setColor successed');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setColor errorCode is:  ${e.code} + errormsg is: ${e.message}`)
           expect(e.code).assertEqual(401);
         }
@@ -157,14 +160,16 @@ export default function brushTest() {
       try {
         brush.setAntiAlias(true);
         console.info(msg + ' setAntiAlias successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAntiAlias errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
         brush.setAntiAlias(false);
         console.info(msg + ' setAntiAlias successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAntiAlias errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -185,7 +190,8 @@ export default function brushTest() {
           const randomBoolean = Math.random() < 0.5;
           brush.setAntiAlias(randomBoolean);
           console.info(msg + ' setAntiAlias successed');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setAntiAlias errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -205,21 +211,24 @@ export default function brushTest() {
       try {
         brush.setAlpha(255);
         console.info(msg + ' setAlpha successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAlpha errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
         brush.setAlpha(0);
         console.info(msg + ' setAlpha successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAlpha errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
         brush.setAlpha(100);
         console.info(msg + ' setAlpha successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAlpha errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -241,7 +250,8 @@ export default function brushTest() {
           brush.setAlpha(randomAlpha);
         }
         console.info(msg + ' setAlpha successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAlpha errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -263,7 +273,8 @@ export default function brushTest() {
           brush.setColorFilter(colorFilter);
           console.info(msg + ' setColorFilter successed');
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -282,7 +293,8 @@ export default function brushTest() {
       try {
         brush.setColorFilter(null);
         console.info(msg + ' setColorFilter successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -306,7 +318,8 @@ export default function brushTest() {
             console.info(msg + ' setColorFilter successed');
           }
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -328,7 +341,8 @@ export default function brushTest() {
           brush.setMaskFilter(maskFilter);
           console.info(msg + ' setMaskFilter successed');
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -347,7 +361,8 @@ export default function brushTest() {
         const brush = new drawing.Brush();
         brush.setMaskFilter(null);
         console.info(msg + ' setMaskFilter successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -370,7 +385,8 @@ export default function brushTest() {
               brush.setMaskFilter(maskFilter);
               console.info(msg + ' setMaskFilter successed');
             }
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             console.info(msg + ` setMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
             expect().assertFail();
           }
@@ -395,7 +411,8 @@ export default function brushTest() {
           brush.setShadowLayer(shadowLayer);
           console.info(msg + ' setShadowLayer successed');
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setShadowLayer errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -414,7 +431,8 @@ export default function brushTest() {
       try {
         brush.setShadowLayer(null);
         console.info(msg + ' setShadowLayer successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setShadowLayer errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -446,7 +464,8 @@ export default function brushTest() {
             brush.setShadowLayer(shadowLayer);
             console.info(msg + ' setShadowLayer successed');
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setShadowLayer errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -494,7 +513,8 @@ export default function brushTest() {
         brush.setBlendMode(drawing.BlendMode.COLOR);
         brush.setBlendMode(drawing.BlendMode.LUMINOSITY);
         console.info(msg + ' setBlendMode successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setBlendMode errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -514,7 +534,8 @@ export default function brushTest() {
         try {
           brush.setBlendMode(drawing.BlendMode.CLEAR);
           console.info(msg + ' setBlendMode successed');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setBlendMode errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -535,7 +556,8 @@ export default function brushTest() {
         brush.setColor(255, 255, 0, 0);
         brush.setColor(245, 251, 10, 12);
         console.info(msg + ' setColor12 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setColor12 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -560,7 +582,8 @@ export default function brushTest() {
           brush.setColor(alpha, red, green, blue);
         }
         console.info(msg + ' setColor12 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setColor12 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -579,7 +602,8 @@ export default function brushTest() {
         const brush = new drawing.Brush();
         brush.setColor(-1, 255, 0, 0);
         console.info(msg + ' setColor12 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setColor12 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -587,7 +611,8 @@ export default function brushTest() {
         const brush = new drawing.Brush();
         brush.setColor(255, -1, 0, 0);
         console.info(msg + ' setColor12 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setColor12 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -595,7 +620,8 @@ export default function brushTest() {
         const brush = new drawing.Brush();
         brush.setColor(256, 255, -1, 0);
         console.info(msg + ' setColor12 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setColor12 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -603,7 +629,8 @@ export default function brushTest() {
         const brush = new drawing.Brush();
         brush.setColor(255, 255, 0, -1);
         console.info(msg + ' setColor12 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setColor12 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -611,7 +638,8 @@ export default function brushTest() {
         const brush = new drawing.Brush();
         brush.setColor(256, 255, 0, 0);
         console.info(msg + ' setColor12 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setColor12 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -619,7 +647,8 @@ export default function brushTest() {
         const brush = new drawing.Brush();
         brush.setColor(255, 256, 0, 0);
         console.info(msg + ' setColor12 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setColor12 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -627,7 +656,8 @@ export default function brushTest() {
         const brush = new drawing.Brush();
         brush.setColor(255, 255, 256, 0);
         console.info(msg + ' setColor12 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setColor12 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -635,7 +665,8 @@ export default function brushTest() {
         const brush = new drawing.Brush();
         brush.setColor(255, 255, 0, 256);
         console.info(msg + ' setColor12 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setColor12 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -656,14 +687,16 @@ export default function brushTest() {
         try {
           brush.setImageFilter(imgFilter);
           console.info(msg + ' setImageFilter successed');
-        } catch( e: BusinessError ) {
+        } catch(e) {
+          e = e as BusinessError ;
           console.info(msg + ` setImageFilter errorCode 1 is:  ${ e.code } + errormsg is: ${ e.message }`);
           expect().assertFail();
         }
         try {
           brush.setImageFilter(null);
           console.info(msg + ' setImageFilter(null) succeeded');
-        } catch( e: BusinessError ) {
+        } catch(e) {
+          e = e as BusinessError ;
           console.info(msg + ` setImageFilter errorCode 2 is:  ${ e.code } + errormsg is: ${ e.message }`);
           expect().assertFail();
         }
@@ -686,7 +719,8 @@ export default function brushTest() {
           try {
             brush.setImageFilter(imgFilter);
             console.info(msg + ' setImageFilter succeeded');
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             console.info(msg + ` setImageFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
             expect().assertFail();
           }
@@ -708,7 +742,8 @@ export default function brushTest() {
         let cf = drawing.ColorFilter.createLumaColorFilter();
         let cf2 = brush.getColorFilter();
         console.info(msg + ' getColorFilter successed,cf:' + cf2);
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` getColorFilter errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
@@ -728,7 +763,8 @@ export default function brushTest() {
         try {
           let cf2 = brush.getColorFilter();
           console.info(msg + ' getColorFilter successed,cf:' + cf2);
-        } catch( e: BusinessError ) {
+        } catch(e) {
+          e = e as BusinessError ;
           console.info(msg + ` getColorFilter errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
           expect().assertFail();
         }
@@ -748,14 +784,16 @@ export default function brushTest() {
       try {
         let brush = new drawing.Brush();
         console.info(msg + ' drawing.Brush() successed');
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` drawing.Brush() errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
       try {
         let newBrush = new drawing.Brush(brush);
         console.info(msg + ' drawing.Brush() successed');
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` drawing.Brush() errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
@@ -765,7 +803,8 @@ export default function brushTest() {
         });
         let newBrush = new drawing.Brush(brush);
         console.info(msg + ' drawing.Brush() successed');
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` drawing.Brush() errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
@@ -790,7 +829,8 @@ export default function brushTest() {
           brush.setColor(alpha, red, green, blue);
           const newBrush = new drawing.Brush(brush)
           console.info(msg + ' drawing.Brush succeeded');
-        } catch( e: BusinessError ) {
+        } catch(e) {
+          e = e as BusinessError ;
           console.info(msg + ` drawing.Brush errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
           expect().assertFail();
         }
@@ -812,7 +852,8 @@ export default function brushTest() {
         let alpha = brush.getAlpha();
         expect(alpha == 255).assertTrue();
         console.info(msg + ' getAlpha successed,alpha:' + alpha);
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` getAlpha errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
@@ -822,7 +863,8 @@ export default function brushTest() {
         let alpha = brush.getAlpha();
         expect(alpha == 128).assertTrue();
         console.info(msg + ' getAlpha successed,alpha:' + alpha);
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` getAlpha errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
@@ -832,7 +874,8 @@ export default function brushTest() {
         let alpha = brush.getAlpha();
         expect(alpha == 0).assertTrue();
         console.info(msg + ' getAlpha successed,alpha:' + alpha);
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` getAlpha errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
@@ -853,7 +896,8 @@ export default function brushTest() {
           let alpha = brush.getAlpha();
           expect(alpha == 255).assertTrue();
           console.info(msg + ' getAlpha successed,alpha:' + alpha);
-        } catch( e: BusinessError ) {
+        } catch(e) {
+          e = e as BusinessError ;
           console.info(msg + ` getAlpha errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
           expect().assertFail();
         }
@@ -875,7 +919,8 @@ export default function brushTest() {
         let isAntiAlias = brush.isAntiAlias();
         expect(isAntiAlias == false).assertTrue();
         console.info(msg + ' isAntiAlias successed,isAntiAlias:' + isAntiAlias);
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` isAntiAlias errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
@@ -885,7 +930,8 @@ export default function brushTest() {
         let isAntiAlias = brush.isAntiAlias();
         expect(isAntiAlias == true).assertTrue();
         console.info(msg + ' isAntiAlias successed,isAntiAlias:' + isAntiAlias);
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` isAntiAlias errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
@@ -895,7 +941,8 @@ export default function brushTest() {
         let isAntiAlias = brush.isAntiAlias();
         expect(isAntiAlias == false).assertTrue();
         console.info(msg + ' isAntiAlias successed,isAntiAlias:' + isAntiAlias);
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` isAntiAlias errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
@@ -916,7 +963,8 @@ export default function brushTest() {
           let isAntiAlias = brush.isAntiAlias();
           expect(isAntiAlias == false).assertTrue();
           console.info(msg + ' isAntiAlias successed,isAntiAlias:' + isAntiAlias);
-        } catch( e: BusinessError ) {
+        } catch(e) {
+          e = e as BusinessError ;
           console.info(msg + ` isAntiAlias errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
           expect().assertFail();
         }
@@ -937,7 +985,8 @@ export default function brushTest() {
         let colorGet = brush.getColor();
         expect(colorGet != null).assertTrue();
         console.info(msg + ' getColor successed,colorGet:'+ JSON.stringify(colorGet));
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` getColor1 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
@@ -949,7 +998,8 @@ export default function brushTest() {
         let colorGet = brush.getColor();
         expect(JSON.stringify(colorGet) == JSON.stringify(colors)).assertTrue();
         console.info(msg + ' getColor2 successed,colorGet:'+ JSON.stringify(colorGet));
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` getColor2 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
@@ -961,7 +1011,8 @@ export default function brushTest() {
         let colorGet = brush.getColor();
         expect(JSON.stringify(colorGet) == JSON.stringify(colors)).assertTrue();
         console.info(msg + ' getColor3 successed,colorGet:'+ JSON.stringify(colorGet));
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` getColor3 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
@@ -982,7 +1033,8 @@ export default function brushTest() {
           let colorGet = brush.getColor();
           expect(colorGet != null).assertTrue();
           console.info(msg + ' getColor successed');
-        } catch( e: BusinessError ) {
+        } catch(e) {
+          e = e as BusinessError ;
           console.info(msg + ` getColor errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
           expect().assertFail();
         }
@@ -1005,14 +1057,16 @@ export default function brushTest() {
           brush.setShaderEffect(shaderEffect);
           console.info(msg + ' setShaderEffect successed');
         }
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` setShaderEffect errorCode 1 is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
       try {
         brush.setShaderEffect(null);
         console.info(msg + ' setShaderEffect null successed');
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` setShaderEffect errorCode 2 is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
@@ -1034,7 +1088,8 @@ export default function brushTest() {
           try {
             brush.setShaderEffect(shaderEffect);
             console.info(msg + ' setShaderEffect succeeded');
-          } catch( e: BusinessError ) {
+          } catch(e) {
+            e = e as BusinessError ;
             console.info(msg + ` setShaderEffect errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
             expect().assertFail();
           }
@@ -1055,7 +1110,8 @@ export default function brushTest() {
       try {
         brush.reset();
         console.info(msg + ' reset successed');
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` reset errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
@@ -1063,7 +1119,8 @@ export default function brushTest() {
         brush.setColor(255 , 255 , 0 , 0);
         brush.reset();
         console.info(msg + ' reset successed');
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` reset errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
@@ -1083,7 +1140,8 @@ export default function brushTest() {
         try {
           brush.reset();
           console.info(msg + ' reset succeeded');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }

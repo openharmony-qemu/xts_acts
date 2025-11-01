@@ -83,7 +83,8 @@ export default function taskPoolSequenceRunnerActTest() {
               console.info('testTag', 'Task1 result: %{public}d', result);
               expect('1').assertEqual(string(result))
             })
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.error('testTag', 'Task1 Error: %{public}s', err);
           }
           try {
@@ -93,7 +94,8 @@ export default function taskPoolSequenceRunnerActTest() {
               console.info('testTag', 'Task2 result: %{public}d', result);
               expect('2').assertEqual(string(result))
             })
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.error('testTag', 'Task2 Error: %{public}s', err);
           }
         }
@@ -130,7 +132,8 @@ export default function taskPoolSequenceRunnerActTest() {
               console.info('testTag', 'Task1 result: %{public}d', result);
               expect('1').assertEqual(string(result))
             })
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.error('testTag', 'Task1 Error: %{public}s', err);
           }
           try {
@@ -141,7 +144,8 @@ export default function taskPoolSequenceRunnerActTest() {
               console.info('testTag', 'Task2 result: %{public}d', result);
               expect('2').assertEqual(string(result))
             })
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.error('testTag', 'Task2 Error: %{public}s', err);
           }
         }
@@ -177,7 +181,8 @@ export default function taskPoolSequenceRunnerActTest() {
               console.info('testTag', 'Task1 result: %{public}d', result);
               expect('1').assertEqual(string(result))
             })
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.error('testTag', 'Task1 Error: %{public}s', err);
           }
           try {
@@ -186,7 +191,8 @@ export default function taskPoolSequenceRunnerActTest() {
               console.info('testTag', 'Task2 result: %{public}d', result);
               expect('2').assertEqual(string(result))
             })
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.error('testTag', 'Task2 Error: %{public}s', err);
           }
         }
@@ -223,7 +229,8 @@ export default function taskPoolSequenceRunnerActTest() {
               console.info('testTag', 'Task1 result: %{public}d', result);
               expect('1').assertEqual(string(result))
             })
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.error('testTag', 'Task1 Error: %{public}s', err);
           }
           try {
@@ -233,7 +240,8 @@ export default function taskPoolSequenceRunnerActTest() {
               console.info('testTag', 'Task2 result: %{public}d', result);
               expect('2').assertEqual(string(result))
             })
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.error('testTag', 'Task2 Error: %{public}s', err);
           }
         }
@@ -308,7 +316,8 @@ export default function taskPoolSequenceRunnerActTest() {
               console.info('testTag', 'Task1 result: %{public}d', result);
               expect('1').assertEqual(string(result))
             })
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.error('testTag', 'Task1 Error: %{public}s', err);
           }
           try {
@@ -317,7 +326,8 @@ export default function taskPoolSequenceRunnerActTest() {
               console.info('testTag', 'Task2 result: %{public}d', result);
               expect('2').assertEqual(string(result))
             })
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.error('testTag', 'Task2 Error: %{public}s', err);
           }
         }
@@ -397,7 +407,8 @@ export default function taskPoolSequenceRunnerActTest() {
               console.info('testTag', 'Task1 result: %{public}d', result);
               expect('1').assertEqual(string(result))
             })
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.error('testTag', 'Task1 Error: %{public}s', err);
           }
           try {
@@ -406,7 +417,8 @@ export default function taskPoolSequenceRunnerActTest() {
               console.info('testTag', 'Task2 result: %{public}d', result);
               expect('2').assertEqual(string(result))
             })
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.error('testTag', 'Task2 Error: %{public}s', err);
           }
         }

@@ -1229,7 +1229,8 @@ export default function DecimalTest014() {
       try {
         test_toSignificantDigits_002('0', '0', 1e10);
         expect(true).assertEqual(false);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(10200001);
         expect(err.message).assertEqual(`The value of "10000000000" is out of range. It must be >= 1 && <= 1000000000 . Received value is: 10000000000`);

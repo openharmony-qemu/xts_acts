@@ -99,7 +99,8 @@ export default function ApiCoverStaticTest() {
         expect((String(el5))).assertEqual("4");
         hilog.info(0x0000, 'SUB_AA_ABILITY_Extension_API_Static_012', `AreaMode end`);
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(0x0000, 'testTag', '%{public}s', `catch code: ${err.code}, message: ${err.message}`);
         expect().assertFail();
         done();
@@ -230,7 +231,8 @@ export default function ApiCoverStaticTest() {
           expect(options.isFailed).assertTrue();
           hilog.info(domain, tag, `${itName} options failedCode: ${options.failedCode}`)
           expect(`${options.failedCode}`).assertEqual('16000001');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
         }
@@ -265,7 +267,8 @@ export default function ApiCoverStaticTest() {
           expect(options.isFailed).assertTrue();
           hilog.info(domain, tag, `${itName} options failedCode: ${options.failedCode}`);
           expect(`${options.failedCode}`).assertEqual('16000001');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
         }
@@ -300,7 +303,8 @@ export default function ApiCoverStaticTest() {
           expect(options.isFailed).assertTrue();
           hilog.info(domain, tag, `${itName} options failedCode: ${options.failedCode}`);
           expect(`${options.failedCode}`).assertEqual('16000002');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
         }
@@ -334,7 +338,8 @@ export default function ApiCoverStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
           done();
@@ -362,7 +367,8 @@ export default function ApiCoverStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           });
-        } catch(err: BusinessError) {
+        } catch(err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
           done();
@@ -394,7 +400,8 @@ export default function ApiCoverStaticTest() {
           await Utils.msSleep(2000);
           hilog.info(domain, tag, `${itName} options isConnect: ${options.isConnect}`);
           expect(options.isConnect).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
         }
@@ -439,7 +446,8 @@ export default function ApiCoverStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
           done();
@@ -479,7 +487,8 @@ export default function ApiCoverStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
           done();

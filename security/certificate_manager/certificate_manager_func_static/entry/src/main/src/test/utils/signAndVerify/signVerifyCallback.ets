@@ -95,7 +95,8 @@ namespace signVerifyCallback {
       await updateProcess(verifyHandle.handle, srcData);
       let verifyResult: certManager.CMResult = await finishProcess(verifyHandle.handle, signResult.outData);
       return verifyResult;
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       hilog.error(domain, tag, '%{public}s', "[Callback]signVerifyNormalProcess catch err: " + err);
       throw err as Error;
     }
@@ -129,7 +130,8 @@ namespace signVerifyCallback {
         default:
           throw new Error("wrong parameter");
       }
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       hilog.error(domain, tag, '%{public}s', "[Callback]verifyAbortProcess catch err: " + err);
       throw err as Error;
     }
@@ -157,7 +159,8 @@ namespace signVerifyCallback {
         default:
           throw new Error("wrong parameter");
       }
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       hilog.error(domain, tag, '%{public}s', "[Callback]signAbortProcess catch err: " + err);
       throw err as Error;
     }

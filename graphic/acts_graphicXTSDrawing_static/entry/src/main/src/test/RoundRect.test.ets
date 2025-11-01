@@ -69,7 +69,8 @@ export default function roundRectTest() {
           bottom: 300
         }, 50, 50);
         console.info(msg + ' RoundRect succeeded,roundRect:' + JSON.stringify(roundRect));
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` RoundRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -82,7 +83,8 @@ export default function roundRectTest() {
           bottom: 300.1
         }, 50.1, 50.1);
         console.info(msg + ' RoundRect succeeded,roundRect:' + JSON.stringify(roundRect));
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` RoundRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -95,7 +97,8 @@ export default function roundRectTest() {
           bottom: 300
         }, 50, 50);
         console.info(msg + ' RoundRect succeeded,roundRect:' + JSON.stringify(roundRect));
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` RoundRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -108,7 +111,8 @@ export default function roundRectTest() {
           bottom: -300
         }, 50, 50);
         console.info(msg + ' RoundRect succeeded,roundRect:' + JSON.stringify(roundRect));
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` RoundRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -121,7 +125,8 @@ export default function roundRectTest() {
           bottom: 300
         }, -50, 50);
         console.info(msg + ' RoundRect succeeded,roundRect:' + JSON.stringify(roundRect));
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` RoundRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -134,7 +139,8 @@ export default function roundRectTest() {
           bottom: 300
         }, 50, -50);
         console.info(msg + ' RoundRect succeeded,roundRect:' + JSON.stringify(roundRect));
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` RoundRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -147,7 +153,8 @@ export default function roundRectTest() {
           bottom: 300
         }, 50, 50);
         console.info(msg + ' RoundRect succeeded,roundRect:' + JSON.stringify(roundRect));
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` RoundRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -160,7 +167,8 @@ export default function roundRectTest() {
           bottom: 100
         }, 50, 50);
         console.info(msg + ' RoundRect succeeded,roundRect:' + JSON.stringify(roundRect));
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` RoundRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -186,7 +194,8 @@ export default function roundRectTest() {
             bottom: getRandomNumber(0, 500)
           }, getRandomNumber(0, 500), getRandomNumber(0, 500));
           console.info(msg + ' RoundRect succeeded');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` RoundRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect(e.code).assertEqual(401);
         }
@@ -232,7 +241,8 @@ export default function roundRectTest() {
           console.info(msg + ' setAndGetCorner succeeded，point4：' + JSON.stringify(point4));
         }
         console.info(msg + ' setAndGetCorner succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetCorner errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -260,7 +270,8 @@ export default function roundRectTest() {
           console.info(msg + ' setAndGetCorner succeeded，point4：' + JSON.stringify(point4));
         }
         console.info(msg + ' setAndGetCorner succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetCorner errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -288,7 +299,8 @@ export default function roundRectTest() {
           console.info(msg + ' setAndGetCorner succeeded，point4：' + JSON.stringify(point4));
         }
         console.info(msg + ' setAndGetCorner succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetCorner errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -316,7 +328,8 @@ export default function roundRectTest() {
           console.info(msg + ' setAndGetCorner succeeded，point4：' + JSON.stringify(point4));
         }
         console.info(msg + ' setAndGetCorner succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetCorner errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -344,7 +357,8 @@ export default function roundRectTest() {
           console.info(msg + ' setAndGetCorner succeeded，point4：' + JSON.stringify(point4));
         }
         console.info(msg + ' setAndGetCorner succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetCorner errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -372,7 +386,8 @@ export default function roundRectTest() {
           console.info(msg + ' setAndGetCorner succeeded，point4：' + JSON.stringify(point4));
           console.info(msg + ' setAndGetCorner succeeded');
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetCorner errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -405,7 +420,8 @@ export default function roundRectTest() {
           roundRect_.setCorner(itemList[randomEnum], getRandomNumber(0, 500), getRandomNumber(0, 500));
           roundRect_.getCorner(itemList[randomEnum]);
           console.info(msg + ' setAndGetCorner succeeded');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setAndGetCorner errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -416,7 +432,8 @@ export default function roundRectTest() {
         try {
           roundRect_.setCorner(itemList[randomEnum], getRandomNumber(0, 500), getRandomNumber(0, 500));
           console.info(msg + ' setCorner succeeded');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setCorner errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -427,7 +444,8 @@ export default function roundRectTest() {
         try {
           roundRect_.getCorner(itemList[randomEnum]);
           console.info(msg + ' getCorner succeeded');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` getCorner errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -453,7 +471,8 @@ export default function roundRectTest() {
       try {
         roundRect_.offset(100, 100);
         console.info(msg + ' offset succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` offset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -461,7 +480,8 @@ export default function roundRectTest() {
       try {
         roundRect_.offset(100.1, 100.1);
         console.info(msg + ' offset succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` offset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -469,7 +489,8 @@ export default function roundRectTest() {
       try {
         roundRect_.offset(-100, 100);
         console.info(msg + ' offset succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` offset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -477,7 +498,8 @@ export default function roundRectTest() {
       try {
         roundRect_.offset(100.1, -100.1);
         console.info(msg + ' offset succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` offset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -503,7 +525,8 @@ export default function roundRectTest() {
         try {
           roundRect_.offset(getRandomNumber(0, 500), getRandomNumber(0, 500));
           console.info(msg + ' offset succeeded');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` offset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect(e.code).assertEqual(401);
         }
@@ -528,7 +551,8 @@ export default function roundRectTest() {
       try {
         // let roundRect2 = new drawing.RoundRect(roundRect);
         console.info(msg + ' roundRect2 succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` roundRect2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -539,7 +563,8 @@ export default function roundRectTest() {
       try {
         // let roundRect3 = new drawing.RoundRect(roundRect);
         console.info(msg + ' roundRect3 succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` roundRect3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -550,7 +575,8 @@ export default function roundRectTest() {
       try {
         // let roundRect4 = new drawing.RoundRect(roundRect);
         console.info(msg + ' roundRect4 succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` roundRect4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -575,7 +601,8 @@ export default function roundRectTest() {
           }, Math.random() * 10, Math.random() * 20);
           // let roundRect2 = new drawing.RoundRect(roundRect);
           console.info(msg + `drawing RoundRect success step: ` + i);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg +
             `drawing RoundRect error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
           expect().assertFail()

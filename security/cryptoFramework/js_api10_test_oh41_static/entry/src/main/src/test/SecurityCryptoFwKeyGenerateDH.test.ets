@@ -52,7 +52,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
         let res: boolean = await asyKeyGenPromiseFunc.convertDHKey(param);
         expect(res).assertTrue();
         console.log(testNumber + ": convertKey succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -76,7 +77,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
         let res: boolean = await asyKeyGenCallbackFunc.convertDHKey(param);
         expect(res).assertTrue();
         console.log(testNumber + ": convertKey succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -103,7 +105,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
           && keyPair.priKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.DH_L_NUM) == 128;
         expect(res).assertTrue();
         console.log(testNumber + ": compareSpec succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -130,7 +133,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
           && keyPair.priKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.DH_L_NUM) == 128;
         expect(res).assertTrue();
         console.log(testNumber + ": compareSpec succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -152,7 +156,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = cryptoFramework.DHKeyUtil.genDHCommonParamsSpec(2048, 224);
         expect(spec != null).assertTrue();
         console.log(testNumber + ": genDHCommonParamsSpec succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -175,7 +180,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = cryptoFramework.DHKeyUtil.genDHCommonParamsSpec(2048, 0);
         expect(spec != null).assertTrue();
         console.log(testNumber + ": genDHCommonParamsSpec succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -198,7 +204,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = cryptoFramework.DHKeyUtil.genDHCommonParamsSpec(2048, 223);
         console.log(testNumber + ": genDHCommonParamsSpec succeed");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
       }
@@ -221,7 +228,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = cryptoFramework.DHKeyUtil.genDHCommonParamsSpec(10001, 1024);
         console.log(testNumber + ": genDHCommonParamsSpec succeed");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
       }
@@ -244,7 +252,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
         let spec: cryptoFramework.AsyKeySpec = cryptoFramework.DHKeyUtil.genDHCommonParamsSpec(511, 256);
         console.log(testNumber + ": genDHCommonParamsSpec succeed");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
       }
@@ -277,7 +286,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
         let res: boolean = compareSpecFunc.DHKey(keyPair, keyPairBySpec);
         expect(res).assertTrue();
         console.log(testNumber + ": compareSpec succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -302,7 +312,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
         let pubKey: cryptoFramework.PubKey = await asyKeyGenPromiseFunc.genPubKey(spec);
         expect(pubKey != null).assertTrue();
         console.log(testNumber + ": genPubKey succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -327,7 +338,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
         let priKey: cryptoFramework.PriKey = await asyKeyGenPromiseFunc.genPriKey(spec);
         expect(priKey != null).assertTrue();
         console.log(testNumber + ": genPriKey succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -352,7 +364,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
         let pubKey: cryptoFramework.PubKey = await asyKeyGenCallbackFunc.genPubKey(spec);
         expect(pubKey != null).assertTrue();
         console.log(testNumber + ": genPriKey succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -377,7 +390,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
         let priKey: cryptoFramework.PriKey = await asyKeyGenCallbackFunc.genPriKey(spec);
         expect(priKey != null).assertTrue();
         console.log(testNumber + ": genPriKey succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -405,7 +419,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
         let res: boolean = compareSpecFunc.DHKeyPair(keyPair.priKey, keyPair.pubKey);
         expect(res).assertTrue();
         console.log(testNumber + ": compareSpec succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -432,7 +447,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
         let res: boolean = compareSpecFunc.DHKeyPair(keyPair.priKey, keyPair.pubKey);
         expect(res).assertTrue();
         console.log(testNumber + ": compareSpec succeed");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + ` catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -462,7 +478,8 @@ export default function SecurityCryptoFwKeyGenerateDHTestUnit() {
         expect(keyPair.pubKey.algName == "DH").assertTrue();
         expect(keyPair.priKey.format == "PKCS#8").assertTrue();
         expect(keyPair.priKey.algName == "DH").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + `: catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }

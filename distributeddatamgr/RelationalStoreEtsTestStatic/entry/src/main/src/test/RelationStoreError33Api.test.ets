@@ -109,7 +109,8 @@ export default function RelationStoreError33Test() {
       try {
         rdbStore.insertSync("employee", valueBucket);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest001 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800033);
       }
@@ -134,7 +135,8 @@ export default function RelationStoreError33Test() {
       try {
         rdbStore.insertSync("employee", valueBucket);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest011 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800032);
       }
@@ -161,7 +163,8 @@ export default function RelationStoreError33Test() {
       try {
         rdbStore.insertSync("employee", valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest002 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800033);
       }
@@ -188,7 +191,8 @@ export default function RelationStoreError33Test() {
       try {
         await rdbStore.insert("employee", valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest035 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800033);
       }
@@ -213,7 +217,8 @@ export default function RelationStoreError33Test() {
       try {
         await rdbStore.insert("employee", valueBucket);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest135 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800032);
       }
@@ -240,7 +245,8 @@ export default function RelationStoreError33Test() {
       try {
         await rdbStore.insert("employee", valueBucket);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest036 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800033);
       }
@@ -268,13 +274,15 @@ export default function RelationStoreError33Test() {
       values.push(valueBucket)
       try {
         rdbStore.batchInsertSync("employee", values);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "batchInsertSync fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800033);
       }
       try {
         await rdbStore.batchInsert("employee", values);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "batchInsert fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800033);
       }
@@ -300,13 +308,15 @@ export default function RelationStoreError33Test() {
       values.push(valueBucket)
       try {
         await rdbStore.batchInsert("employee", values);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "batchInsert fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800032);
       }
       try {
         rdbStore.batchInsertSync("employee", values);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "batchInsertSync fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800032);
       }
@@ -335,7 +345,8 @@ export default function RelationStoreError33Test() {
       try {
         rdbStore.updateSync(valueBucket, predicates);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest006 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800033);
       }
@@ -363,7 +374,8 @@ export default function RelationStoreError33Test() {
       try {
         rdbStore.updateSync(valueBucket, predicates);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest016 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800032);
       }
@@ -392,7 +404,8 @@ export default function RelationStoreError33Test() {
       try {
         await rdbStore.update(valueBucket, predicates);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest007 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800033);
       }
@@ -420,7 +433,8 @@ export default function RelationStoreError33Test() {
       try {
         await rdbStore.update(valueBucket, predicates);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest017 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800032);
       }
@@ -449,7 +463,8 @@ export default function RelationStoreError33Test() {
       try {
         await rdbStore.update(valueBucket, predicates, relationalStore.ConflictResolution.ON_CONFLICT_ROLLBACK);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest008 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800033);
       }
@@ -471,7 +486,8 @@ export default function RelationStoreError33Test() {
       predicates.equalTo("name", "Jim");
       try {
         rdbStore.deleteSync(predicates);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest012 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800033);
       }
@@ -493,7 +509,8 @@ export default function RelationStoreError33Test() {
       predicates.equalTo("name", "Jim");
       try {
         await rdbStore.delete(predicates);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest013 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800033);
       }
@@ -514,7 +531,8 @@ export default function RelationStoreError33Test() {
       const SQL_DELETE_TABLE = 'DELETE FROM employee';
       try {
         await rdbStore.execute(SQL_DELETE_TABLE);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest023 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800033);
       }
@@ -535,7 +553,8 @@ export default function RelationStoreError33Test() {
       try {
         const SQL_DELETE_TABLE = 'delete FROM employee WHERE name = ?';
         await rdbStore.execute(SQL_DELETE_TABLE, ['Jim'])
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest024 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800033);
       }
@@ -556,7 +575,8 @@ export default function RelationStoreError33Test() {
       const SQL_DELETE_TABLE = 'delete FROM employee';
       try {
         await rdbStore.execute(SQL_DELETE_TABLE);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + "relationalStoreTest025 fail code is " + e.code + " message is " + e.message);
         expect(e.code).assertEqual(14800033);
       }
@@ -580,7 +600,8 @@ export default function RelationStoreError33Test() {
       try {
         resultSet.getColumnIndex('id')
         resultSet.close();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + `getColumnIndex failed, code is ${e.code},message is ${e.message}`);
         expect(e.code).assertEqual(14800033);
       }
@@ -604,7 +625,8 @@ export default function RelationStoreError33Test() {
       try {
         resultSet.getColumnName(1)
         resultSet.close();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + `getColumnName failed, code is ${e.code},message is ${e.message}`);
         expect(e.code).assertEqual(14800033);
       }
@@ -627,7 +649,8 @@ export default function RelationStoreError33Test() {
       try {
         resultSet.goToFirstRow()
         resultSet.close();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + `goToFirstRow failed, code is ${e.code},message is ${e.message}`);
         expect(e.code).assertEqual(14800033);
       }
@@ -651,7 +674,8 @@ export default function RelationStoreError33Test() {
       try {
         resultSet.goToNextRow()
         resultSet.close();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + `goToNextRow failed, code is ${e.code},message is ${e.message}`);
         expect(e.code).assertEqual(14800033);
       }
@@ -674,7 +698,8 @@ export default function RelationStoreError33Test() {
       try {
         resultSet.goToLastRow()
         resultSet.close();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + `goToLastRow failed, code is ${e.code},message is ${e.message}`);
         expect(e.code).assertEqual(14800033);
       }
@@ -698,7 +723,8 @@ export default function RelationStoreError33Test() {
       try {
         resultSet.goToRow(0)
         resultSet.close();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + `goToRow failed, code is ${e.code},message is ${e.message}`);
         expect(e.code).assertEqual(14800033);
       }
@@ -722,7 +748,8 @@ export default function RelationStoreError33Test() {
       try {
         resultSet.goTo(0)
         resultSet.close();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + `goTo failed, code is ${e.code},message is ${e.message}`);
         expect(e.code).assertEqual(14800033);
       }
@@ -746,7 +773,8 @@ export default function RelationStoreError33Test() {
       try {
         resultSet.goToPreviousRow()
         resultSet.close();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + `goToPreviousRow failed, code is ${e.code},message is ${e.message}`);
         expect(e.code).assertEqual(14800033);
       }
@@ -770,7 +798,8 @@ export default function RelationStoreError33Test() {
       try {
         resultSet.getBlob(resultSet.getColumnIndex('data4'))
         resultSet.close();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + `getBlob failed, code is ${e.code},message is ${e.message}`);
         expect(e.code).assertEqual(14800033);
       }
@@ -794,7 +823,8 @@ export default function RelationStoreError33Test() {
       try {
         resultSet.getString(resultSet.getColumnIndex('name'))
         resultSet.close();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + `getString failed, code is ${e.code},message is ${e.message}`);
         expect(e.code).assertEqual(14800033);
       }
@@ -818,7 +848,8 @@ export default function RelationStoreError33Test() {
       try {
         resultSet.getLong(resultSet.getColumnIndex('age'))
         resultSet.close();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + `getLong failed, code is ${e.code},message is ${e.message}`);
         expect(e.code).assertEqual(14800033);
       }
@@ -842,7 +873,8 @@ export default function RelationStoreError33Test() {
       try {
         resultSet.getDouble(resultSet.getColumnIndex('salary'))
         resultSet.close();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + `getDouble failed, code is ${e.code},message is ${e.message}`);
         expect(e.code).assertEqual(14800033);
       }
@@ -866,7 +898,8 @@ export default function RelationStoreError33Test() {
       try {
         resultSet.getAsset(resultSet.getColumnIndex('data5'));
         resultSet.close();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + `getAsset failed, code is ${e.code},message is ${e.message}`);
         expect(e.code).assertEqual(14800033);
       }
@@ -890,7 +923,8 @@ export default function RelationStoreError33Test() {
       try {
         resultSet.getAsset(resultSet.getColumnIndex('data6'));
         resultSet.close();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + `getAssets failed, code is ${e.code},message is ${e.message}`);
         expect(e.code).assertEqual(14800033);
       }
@@ -914,7 +948,8 @@ export default function RelationStoreError33Test() {
       try {
         resultSet.getValue(resultSet.getColumnIndex('salary'))
         resultSet.close();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + `getValue failed, code is ${e.code},message is ${e.message}`);
         expect(e.code).assertEqual(14800033);
       }
@@ -938,7 +973,8 @@ export default function RelationStoreError33Test() {
       try {
         resultSet.getRow()
         resultSet.close();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(TAG + `getRow failed, code is ${e.code},message is ${e.message}`);
         expect(e.code).assertEqual(14800033);
       }
@@ -969,7 +1005,8 @@ export default function RelationStoreError33Test() {
           transaction.commit();
           console.info(TAG + `Insert is successful, rowId = ${rowId}`);
           expect().assertFail();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           transaction.rollback();
           console.error(TAG + `Insert is failed, code is ${e.code},message is ${e.message}`);
           expect(e.code).assertEqual(14800033);
@@ -1005,7 +1042,8 @@ export default function RelationStoreError33Test() {
           transaction.commit();
           console.info(TAG + `Insert is successful, rowId = ${rowId}`);
           expect().assertFail();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           transaction.rollback();
           console.error(TAG + `Insert is failed, code is ${e.code},message is ${e.message}`);
           expect(e.code).assertEqual(14800033);
@@ -1041,7 +1079,8 @@ export default function RelationStoreError33Test() {
           transaction.commit();
           console.info(TAG + `batchInsert is successful, rowId = ${rowId}`);
           expect().assertFail();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           transaction.rollback();
           console.error(TAG + `batchInsert is failed, code is ${e.code},message is ${e.message}`);
           expect(e.code).assertEqual(14800033);
@@ -1077,7 +1116,8 @@ export default function RelationStoreError33Test() {
           transaction.commit();
           console.info(TAG + `batchInsertSync is successful, rowId = ${rowId}`);
           expect().assertFail();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           transaction.rollback();
           console.error(TAG + `batchInsertSync is failed, code is ${e.code},message is ${e.message}`);
           expect(e.code).assertEqual(14800033);
@@ -1115,7 +1155,8 @@ export default function RelationStoreError33Test() {
           transaction.commit();
           console.info(TAG + `updateSync is successful, rowId = ${rowId}`);
           expect().assertFail();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           transaction.rollback();
           console.error(TAG + `updateSync is failed, code is ${e.code},message is ${e.message}`);
           expect(e.code).assertEqual(14800033);
@@ -1153,7 +1194,8 @@ export default function RelationStoreError33Test() {
           transaction.commit();
           console.info(TAG + `update is successful, rowId = ${rowId}`);
           expect().assertFail();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           transaction.rollback();
           console.error(TAG + `update is failed, code is ${e.code},message is ${e.message}`);
           expect(e.code).assertEqual(14800033);
@@ -1184,7 +1226,8 @@ export default function RelationStoreError33Test() {
           let rowId: long = await transaction.delete(predicates);
           transaction.commit();
           console.info(TAG + `delete is successful, rowId = ${rowId}`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           transaction.rollback();
           console.error(TAG + `delete is failed, code is ${e.code},message is ${e.message}`);
           expect(e.code).assertEqual(14800033);
@@ -1214,7 +1257,8 @@ export default function RelationStoreError33Test() {
           let rowId: long = transaction.deleteSync(predicates);
           transaction.commit();
           console.info(TAG + `deleteSync is successful, rowId = ${rowId}`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           transaction.rollback();
           console.error(TAG + `deleteSync is failed, code is ${e.code},message is ${e.message}`);
           expect(e.code).assertEqual(14800033);

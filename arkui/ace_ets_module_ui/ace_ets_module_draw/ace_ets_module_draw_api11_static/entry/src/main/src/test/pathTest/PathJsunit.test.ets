@@ -115,7 +115,8 @@ export default function enableJsunit() {
         } as events_emitter.InnerEvent
         console.info("[testPath_static_02_static] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testPath_static_02_static] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

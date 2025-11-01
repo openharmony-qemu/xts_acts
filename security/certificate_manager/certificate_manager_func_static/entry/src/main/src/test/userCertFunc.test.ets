@@ -45,7 +45,8 @@ export default function userCertJsAPIFunctionTestUnit() {
         hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_UserCertJsApi_getAllUserTrustedCertificates_Func_Static_0300 result is: ${result}`)
         let certList: Array<certManager.CertAbstract> = result.certList ?? [] as Array<certManager.CertAbstract>;
         expect(certList.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_UserCertJsApi_getAllUserTrustedCertificates_Func_Static_0300 get error is: ${err.code}`)
         expect(null).assertFail();
       }
@@ -64,7 +65,8 @@ export default function userCertJsAPIFunctionTestUnit() {
       try {
         await certManager.getUserTrustedCertificate("");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_UserCertJsApi_getUserTrustedCertificate_Func_Static_0401 get error is: ${err.code}`)
         expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
       }
@@ -85,7 +87,8 @@ export default function userCertJsAPIFunctionTestUnit() {
         hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_SysCertJsApi_Func_Static_0900 result is: ${result}`);
         let credentialList: Array<certManager.CredentialAbstract> = result.credentialList ?? [] as Array<certManager.CredentialAbstract>;
         expect(credentialList.length).assertEqual(0);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_SysCertJsApi_Func_Static_0900 get error is: ${err.code}`);
         expect(null).assertFail();
       }

@@ -79,7 +79,8 @@ export default function getAudioSceneApi12() {
           }
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(`${TagFrmwk} SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0100 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -103,7 +104,8 @@ export default function getAudioSceneApi12() {
           console.info(`${TagFrmwk} Promise invoked to indicate that the audio scene mode is obtained ${value}.`);
         }
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(`${TagFrmwk} SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0200 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();
@@ -127,7 +129,8 @@ export default function getAudioSceneApi12() {
           console.info(`${TagFrmwk} Promise invoked to indicate that the audio scene mode is obtained ${value}.`);
         }
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.error(`${TagFrmwk} SUB_MULTIMEDIA_AUDIO_MANAGER_GETAUDIOSCENCE_STATIC_0300 ERROR: ${e.message}`);
         expect(false).assertTrue();
         done();

@@ -51,7 +51,8 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
         cryptoFramework.createAsyKeyGeneratorBySpec(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0100: createAsyKeyGeneratorBySpec succeed.");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
         console.error(`Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0100 catch error: “${err}“, error code: ${err.code}`);
       }
@@ -75,7 +76,8 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
         cryptoFramework.createAsyKeyGeneratorBySpec(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0200: createAsyKeyGeneratorBySpec succeed.");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
         console.error(`Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0200 catch error: “${err}“, error code: ${err.code}`);
       }
@@ -98,7 +100,8 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genSM2KeySpec(cryptoFramework.AsyKeySpecType.PRIVATE_KEY_SPEC);
         await asyKeyGenPromiseFunc.genPriKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0300: generatePriKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0300 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -121,7 +124,8 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genSM2KeySpec(cryptoFramework.AsyKeySpecType.PRIVATE_KEY_SPEC);
         await asyKeyGenCallbackFunc.genPriKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0400: generatePriKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0400 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -144,7 +148,8 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genSM2KeySpec(cryptoFramework.AsyKeySpecType.PUBLIC_KEY_SPEC);
         await asyKeyGenPromiseFunc.genPubKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0500: generatePriKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0500 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -167,7 +172,8 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
         let spec: cryptoFramework.AsyKeySpec = specUtil.genSM2KeySpec(cryptoFramework.AsyKeySpecType.PUBLIC_KEY_SPEC);
         await asyKeyGenCallbackFunc.genPubKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0600: generatePriKey succeed.");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0600 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -191,7 +197,8 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
         await asyKeyGenPromiseFunc.genPriKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0700: generatePriKey succeed.");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
         console.error(`Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0700 catch error: “${err}“, error code: ${err.code}`);
       }
@@ -215,7 +222,8 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
         await asyKeyGenCallbackFunc.genPriKey(spec);
         console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0800: generatePriKey succeed.");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
         console.error(`Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0800 catch error: “${err}“, error code: ${err.code}`);
       }
@@ -248,7 +256,8 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
         //     console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_1000: getPubParam " + i + " succeed.");
         //   }
         // } // 构建失败
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_AsyKeyGenerator_SM2_Func_1000 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -275,7 +284,8 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
         expect(keyPair.pubKey.algName == "SM2").assertTrue();
         expect(keyPair.priKey.format == "PKCS#8").assertTrue();
         expect(keyPair.priKey.algName == "SM2").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + `: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }

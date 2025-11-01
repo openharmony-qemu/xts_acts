@@ -29,7 +29,8 @@ async function installPrivateCertificates(): Promise<void> {
   try {
     await certManager.installPrivateCertificate(keystore1, keystorePwd, "testPriCredential001");
     await certManager.installPrivateCertificate(keystore2, keystorePwd, "testPriCredential002");
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     hilog.error(domain, tag, '%{public}s', "installPrivateCertificates err: " + err.code);
     throw err as Error;
   }

@@ -54,7 +54,8 @@ export default function certManagerNotSystemAPPTestUnit() {
       try {
         await certManager.getAllAppPrivateCertificates();
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', `Security_CertManager_NotSystemApp_Func_static_0100 get error1: ${err.code}`);
         expect(err.code).assertEqual(202);
       }
@@ -82,7 +83,8 @@ export default function certManagerNotSystemAPPTestUnit() {
           });
         })
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(202);
       }
       done();
@@ -100,7 +102,8 @@ export default function certManagerNotSystemAPPTestUnit() {
       try {
         await certManager.getAllSystemAppCertificates();
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_SysCertJsApi_NotSystemApp_Func_static_0200 get error: ${err.code}`);
         expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NOT_SYSTEM_APP);
       }

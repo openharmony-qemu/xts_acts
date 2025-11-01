@@ -56,7 +56,8 @@ export default function abilityTest() {
                 let data =  record.data;
                 let str = record.toPlainText();
                 expect(str).assertEqual("");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -81,7 +82,8 @@ export default function abilityTest() {
                 let prop = pasteData.getProperty();
                 expect(prop.timestamp != null).assertTrue();
                 let mimeTypes = prop.mimeTypes;
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -112,7 +114,8 @@ export default function abilityTest() {
                 expect(data.getRecordCount() == 1).assertTrue();
                 systemPasteboard.clearDataSync();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -135,7 +138,8 @@ export default function abilityTest() {
                 let record = pasteData.getRecord(0);
                 let str = record.toPlainText();
                 expect(str).assertEqual("valueType");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -169,7 +173,8 @@ export default function abilityTest() {
                 let data = record.pixelMap;
                 let str = record.toPlainText();
                 expect(str).assertEqual("");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -192,7 +197,8 @@ export default function abilityTest() {
                 let record = pasteData.getRecord(0);
                 let str = record.toPlainText();
                 expect(str).assertEqual("");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -215,7 +221,8 @@ export default function abilityTest() {
                 let record = pasteData.getRecord(0);
                 let str = record.toPlainText();
                 expect(str).assertEqual("");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -252,7 +259,8 @@ export default function abilityTest() {
                 let imageInfo = pixelMap.getImageInfoSync();
                 expect(imageInfo != null).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -308,7 +316,8 @@ export default function abilityTest() {
                 let imageInfo = pixelMap.getImageInfoSync();
                 expect(imageInfo != null).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -332,7 +341,8 @@ export default function abilityTest() {
                 let pasteDataText = pasteData.getPrimaryText();
                 expect(pasteDataText).assertEqual('hello');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -356,7 +366,8 @@ export default function abilityTest() {
                 let pasteDataText = pasteData.getPrimaryText();
                 expect(pasteDataText).assertEqual('');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -380,7 +391,8 @@ export default function abilityTest() {
                 let pasteDataText = pasteData.getPrimaryText();
                 expect(pasteDataText).assertEqual('Hello 中国!@#$%^&*()_+{}\\?.');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -408,7 +420,8 @@ export default function abilityTest() {
                 let pasteDataText = pasteData.getPrimaryText();
                 expect(pasteDataText).assertEqual(textData);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -435,7 +448,8 @@ export default function abilityTest() {
                 let pasteDataWant = pasteData.getPrimaryWant();
                 expect(JSON.stringify(pasteDataWant)).assertContain('"bundleName":"bundleName","abilityName":"testAbilityName"');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -459,7 +473,8 @@ export default function abilityTest() {
                 let pasteDataType = pasteData.getMimeTypes();
                 expect(String(pasteDataType)).assertEqual('app/xml');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -501,7 +516,8 @@ export default function abilityTest() {
                 let dataTag = data.getTag();
                 expect(dataTag).assertEqual("test_tag");
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -534,7 +550,8 @@ export default function abilityTest() {
                 expect(systemPasteboard.hasDataType(pasteboard.MIMETYPE_TEXT_HTML)).assertTrue();
                 expect(data.getPrimaryMimeType()).assertEqual('text/html');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -567,7 +584,8 @@ export default function abilityTest() {
                 expect(systemPasteboard.hasDataType(pasteboard.MIMETYPE_TEXT_HTML)).assertTrue();
                 expect(data.getPrimaryMimeType()).assertEqual('text/html');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -600,7 +618,8 @@ export default function abilityTest() {
                 expect(systemPasteboard.hasDataType(pasteboard.MIMETYPE_TEXT_HTML)).assertTrue();
                 expect(data.getPrimaryMimeType()).assertEqual('text/html');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -630,7 +649,8 @@ export default function abilityTest() {
                 let recordCount = data.getRecordCount();
                 expect(data.getRecordCount()).assertEqual(2);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -652,7 +672,8 @@ export default function abilityTest() {
                 let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, uri);
                 expect(pasteData.getRecord(0).uri).assertEqual(uri);
                 expect(pasteData.getRecord(0).mimeType).assertEqual(pasteboard.MIMETYPE_TEXT_URI);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -674,7 +695,8 @@ export default function abilityTest() {
                 let text = "hello";
                 let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
                 expect(pasteData.getRecord(0).plainText).assertEqual(text);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -696,7 +718,8 @@ export default function abilityTest() {
                 let text = "hello";
                 let pasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
                 expect(pasteData.getRecord(0).plainText).assertEqual(text);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -755,7 +778,8 @@ export default function abilityTest() {
                     expect(hasData).assertTrue();
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -779,7 +803,8 @@ export default function abilityTest() {
                     expect(hasData).assertFalse();
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -814,7 +839,8 @@ export default function abilityTest() {
                 let hasDataType = systemPasteboard.hasDataType('pixelMap');
                 expect(hasDataType).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -839,7 +865,8 @@ export default function abilityTest() {
                 let hasDataType = systemPasteboard.hasDataType('text/want');
                 expect(hasDataType).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -864,7 +891,8 @@ export default function abilityTest() {
                 let hasType = systemPasteboard.hasDataType('ArrayBuffer');
                 expect(hasType).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -889,7 +917,8 @@ export default function abilityTest() {
                 let hasType = systemPasteboard.hasDataType('ArrayBuffer');
                 expect(hasType).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -914,7 +943,8 @@ export default function abilityTest() {
                 let hasType = systemPasteboard.hasDataType("x".repeat(1024));
                 expect(hasType).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -943,7 +973,8 @@ export default function abilityTest() {
                 let hasType = systemPasteboard.hasDataType(pasteboard.MIMETYPE_TEXT_PLAIN);
                 expect(hasType).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -963,7 +994,8 @@ export default function abilityTest() {
             let mimeType = "x".repeat(1025)
             try {
                 let pasteData = pasteboard.createData(mimeType, ARRAY_BUFFER);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err.code).assertEqual(401);
             }
@@ -996,7 +1028,8 @@ export default function abilityTest() {
                 expect(primaryUri == uriText).assertTrue();
                 expect(systemPasteboard.hasDataType(pasteboard.MIMETYPE_TEXT_URI)).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1026,7 +1059,8 @@ export default function abilityTest() {
                 expect(data.getPrimaryUri() == uriText).assertTrue();
                 expect(data.getRecordCount()).assertEqual(1);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1057,7 +1091,8 @@ export default function abilityTest() {
                 expect(data.getRecordCount()).assertEqual(1);
                 expect(systemPasteboard.hasDataType(pasteboard.MIMETYPE_TEXT_URI)).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1086,7 +1121,8 @@ export default function abilityTest() {
                     }
                     done();
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1113,7 +1149,8 @@ export default function abilityTest() {
                 pasteData.setProperty(prop);
                 let property = pasteData.getProperty();
                 expect(property.shareOption == 0).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1142,7 +1179,8 @@ export default function abilityTest() {
                 pasteData.setProperty(prop);
                 let property = pasteData.getProperty();
                 expect(property.shareOption == 1).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1169,7 +1207,8 @@ export default function abilityTest() {
                 let result = systemPasteBoard.hasDataSync();
                 expect(result).assertEqual(false);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1195,7 +1234,8 @@ export default function abilityTest() {
                 let result: boolean = systemPasteboard.hasDataSync();
                 expect(result).assertEqual(true);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(`Failed to hasDataSync. Cause: ${err.message + err.code}`);
                 expect(err.code).assertEqual('12900005');
                 done();
@@ -1219,7 +1259,8 @@ export default function abilityTest() {
                 systemPasteBoard.clearDataSync();
                 let result = systemPasteBoard.hasDataSync();
                 expect(result).assertEqual(false);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1244,7 +1285,8 @@ export default function abilityTest() {
                 systemPasteboard.clearDataSync();
                 expect(systemPasteboard.hasDataSync()).assertEqual(false);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err.code).assertEqual('12900005');
             };
@@ -1269,7 +1311,8 @@ export default function abilityTest() {
                 let data: Array<String> = await systemPasteboard.getMimeTypes();
                 expect(data[0]).assertEqual('text/plain');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1294,7 +1337,8 @@ export default function abilityTest() {
                 let data: Array<String> = await systemPasteboard.getMimeTypes();
                 expect(data[0]).assertEqual('text/html');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1319,7 +1363,8 @@ export default function abilityTest() {
                 let data: Array<String> = await systemPasteboard.getMimeTypes();
                 expect(data[0]).assertEqual('text/html');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1354,7 +1399,8 @@ export default function abilityTest() {
                 let data: Array<String> = await systemPasteboard.getMimeTypes();
                 expect(data[0]).assertEqual('pixelMap');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1379,7 +1425,8 @@ export default function abilityTest() {
                 let data: Array<String> = await systemPasteboard.getMimeTypes();
                 expect(data[0]).assertEqual('text/want');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1404,7 +1451,8 @@ export default function abilityTest() {
                 let data: Array<String> = await systemPasteboard.getMimeTypes();
                 expect(data[0]).assertEqual("hello/test");
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1427,7 +1475,8 @@ export default function abilityTest() {
                 let data: Array<String> = await systemPasteboard.getMimeTypes();
                 expect(data.length).assertEqual(0);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1456,7 +1505,8 @@ export default function abilityTest() {
                 let data: pasteboard.PasteData = await systemPasteboard.getData();
                 expect(data.getRecordCount() == 1).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1485,7 +1535,8 @@ export default function abilityTest() {
                 let data: pasteboard.PasteData = await systemPasteboard.getData();
                 expect(data.getRecordCount() == 1).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1514,7 +1565,8 @@ export default function abilityTest() {
                 let data: pasteboard.PasteData = await systemPasteboard.getData();
                 expect(data.getRecordCount() == 1).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1548,7 +1600,8 @@ export default function abilityTest() {
                 let data: pasteboard.PasteData = await systemPasteboard.getData();
                 expect(data.getRecordCount() == 1).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1578,7 +1631,8 @@ export default function abilityTest() {
                 expect(data.getRecordCount() == 1).assertTrue();
                 systemPasteboard.clearDataSync();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1607,7 +1661,8 @@ export default function abilityTest() {
                 let data: pasteboard.PasteData = await systemPasteboard.getData();
                 expect(data.getRecordCount() == 1).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1636,7 +1691,8 @@ export default function abilityTest() {
                 let data: pasteboard.PasteData = await systemPasteboard.getData();
                 expect(data.getRecordCount() == 1).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1665,7 +1721,8 @@ export default function abilityTest() {
                 let data: pasteboard.PasteData = await systemPasteboard.getData();
                 expect(data.getRecordCount() == 1).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1699,7 +1756,8 @@ export default function abilityTest() {
                 let data: pasteboard.PasteData = await systemPasteboard.getData();
                 expect(data.getRecordCount() == 1).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1729,7 +1787,8 @@ export default function abilityTest() {
                 expect(data.getRecordCount() == 1).assertTrue();
                 systemPasteboard.clearDataSync();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1756,7 +1815,8 @@ export default function abilityTest() {
                 expect(source != null).assertTrue();
                 systemPasteboard.clearDataSync();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -1779,7 +1839,8 @@ export default function abilityTest() {
             hilog.info(domain, tag, "------clearDataSync start------");
             try {
                 fs.mkdirSync(dstDir);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, `Failed to create dir: ${err.message}`);
             }
             let dstUri: string = fileUri.getUriFromPath(dstDir);
@@ -1792,7 +1853,8 @@ export default function abilityTest() {
             try {
                 await systemPasteboard.getDataWithProgress(params);
                 hilog.info(domain, tag, "getDataWithProgress success");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 //涉及到权限问题，权限不足就会报错误码12900010
                 hilog.info(domain, tag, "Remove specified record fail,error code is: " + err.message + err.code)
                 expect(err.code).assertEqual(12900010)
@@ -1821,7 +1883,8 @@ export default function abilityTest() {
                 hilog.info(domain, tag, "getDataWithProgress params assertFail");
                 expect().assertFail();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'getDataWithProgress fail,err:' + err.code + ',message: ' + err.message);
                 expect(err.code).assertEqual(12900010)
                 done();
@@ -1852,7 +1915,8 @@ export default function abilityTest() {
                 hilog.info(domain, tag, "Succeeded in getting the change count.Result1: " + result2);
                 expect(result2).assertEqual(result1 + 1);
                 hilog.info(domain, tag, "Pasteboard change success.");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, "Failed to get the change count.Cause: " + err.message);
                 expect().assertFail();
             }
@@ -1919,7 +1983,8 @@ export default function abilityTest() {
                 hilog.info(domain, tag, "htmlText:" + record.htmlText);
                 expect(String(htmlText)).assertEqual(record.htmlText);
                 expect(String(types)).assertEqual('text/plain,text/html,text/uri,text/want,pixelMap,app/xml');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "message: " + err.message);
                 expect().assertFail()
             }
@@ -1947,7 +2012,8 @@ export default function abilityTest() {
                 hilog.info(domain, tag, "bundleName:" + record.want.bundleName);
                 hilog.info(domain, tag, "MAX_RECORD_NUM:" + pasteboard.MAX_RECORD_NUM);
                 expect(String(WANT.bundleName)).assertEqual(record.want.bundleName);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "message: " + err.message);
                 expect().assertFail()
             }
@@ -1969,7 +2035,8 @@ export default function abilityTest() {
             let pasteDataRecord = pasteboard.createRecord("arrayBuffer", ARRAY_BUFFER)
             try {
                 pasteData.replaceRecord(1, pasteDataRecord)
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info("Replace specified record fail,error code is: " + err.code)
                 expect(err.code).assertEqual(12900001)
                 done();
@@ -2012,7 +2079,8 @@ export default function abilityTest() {
             let pasteDataRecord = pasteboard.createRecord("arrayBuffer", ARRAY_BUFFER)
             try {
                 pasteData.replaceRecord(1, pasteDataRecord)
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info("Replace specified record fail,error code is: " + err.code)
                 expect(err.code).assertEqual(12900001)
                 done();
@@ -2037,7 +2105,8 @@ export default function abilityTest() {
             try {
                 pasteData.removeRecord(2)
                 hilog.info(domain, tag, "removeRecord");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "Remove specified removeRecord fail,error code is: " + err.message)
                 expect(err.code).assertEqual(12900001)
             }
@@ -2061,7 +2130,8 @@ export default function abilityTest() {
             try {
                 pasteData.removeRecord(0)
                 hilog.info(domain, tag, "Remove specified removeRecord from pasteData success");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "Remove specified removeRecord fail,error code is: " + err.message)
                 expect(err.code).assertEqual(12900001)
             }
@@ -2108,7 +2178,8 @@ export default function abilityTest() {
                 hilog.info(domain, tag, "bundleName:" + record.want.bundleName);
                 hilog.info(domain, tag, "MAX_RECORD_NUM:" + pasteboard.MAX_RECORD_NUM);
                 expect(String(WANT.bundleName)).assertEqual(record.want.bundleName);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "message: " + err.message);
                 expect().assertFail()
             }
@@ -2151,7 +2222,8 @@ export default function abilityTest() {
                 hilog.info(domain, tag, "hasType result: " + result);
                 expect(result).assertFalse();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, `Failed to getValidTypes. Cause: ${err.message + err.code}`);
                 expect(err.code).assertEqual(401);
                 done();
@@ -2207,7 +2279,8 @@ export default function abilityTest() {
 
             try {
                 data.pasteStart();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "pasteStart fail" + err.message);
                 expect().assertFail();
                 done();
@@ -2215,7 +2288,8 @@ export default function abilityTest() {
 
             try {
                 data.pasteComplete();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "pasteComplete fail" + err.message);
                 expect().assertFail();
                 done();
@@ -2265,7 +2339,8 @@ export default function abilityTest() {
                 expect(String(htmlText)).assertEqual(record.htmlText);
                 expect(String(types)).assertEqual('text/plain,text/html,text/uri,text/want,pixelMap,app/xml');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "message: " + err.message);
                 expect().assertFail()
                 done();
@@ -2292,7 +2367,8 @@ export default function abilityTest() {
                 hilog.info(domain, tag, "getValidTypes Failed types.length === 0");
                 expect(types.length === 0).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, `Failed to getValidTypes. Cause: ${err.message + err.code}`);
                 expect(err.code).assertEqual(401);
                 done();
@@ -2321,7 +2397,8 @@ export default function abilityTest() {
                 hilog.info(domain, tag, "bundleName:" + record.want.bundleName);
                 hilog.info(domain, tag, "MAX_RECORD_NUM:" + pasteboard.MAX_RECORD_NUM);
                 expect(String(WANT.bundleName)).assertEqual(record.want.bundleName);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "message: " + err.message);
                 expect().assertFail()
             }
@@ -2369,7 +2446,8 @@ export default function abilityTest() {
                 hilog.info(domain, tag, "htmlText:" + record.htmlText);
                 expect(String(htmlText)).assertEqual(record.htmlText);
                 expect(String(types)).assertEqual('text/plain,text/html,text/uri,text/want,pixelMap,app/xml');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "message: " + err.message);
                 expect().assertFail()
             }
@@ -2396,7 +2474,8 @@ export default function abilityTest() {
                 hilog.info(domain, tag, "getValidTypes Failed types.length === 0");
                 expect(types.length === 0).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, `Failed to getValidTypes. Cause: ${err.message + err.code}`);
                 expect(err.code).assertEqual(401);
                 done();
@@ -2421,13 +2500,15 @@ export default function abilityTest() {
                 try {
                     signal.cancel();
                     hilog.info(domain, tag, 'Test pasteBoard cancel success');
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     hilog.info(domain, tag, "Test pasteBoard cancel fail" + err.message);
                     hilog.info(domain, tag, "err.code " + err.code);
                     expect().assertFail();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "pasteboard.ProgressSignal constructor fail" + err.message);
                 hilog.info(domain, tag, "err.code " + err.code);
                 expect().assertFail();
@@ -2451,7 +2532,8 @@ export default function abilityTest() {
             try {
                 systemPasteboard.setAppShareOptions(pasteboard.ShareOption.INAPP);
                 hilog.info(domain, tag, "setAppShareOptions setAppShareOptions inApp success");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "setAppShareOptions setAppShareOptions inApp fail " + err.message);
                 hilog.info(domain, tag, "err.code " + err.code);
                 expect(err.code).assertEqual(201);
@@ -2460,7 +2542,8 @@ export default function abilityTest() {
             try {
                 systemPasteboard.removeAppShareOptions();
                 hilog.info(domain, tag, "setAppShareOptions removeAppShareOptions success");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "setAppShareOptions removeAppShareOptions fail" + err.message);
                 hilog.info(domain, tag, "err.code " + err.code);
                 expect(err.code).assertEqual(201);
@@ -2484,7 +2567,8 @@ export default function abilityTest() {
             try {
                 systemPasteboard.setAppShareOptions(pasteboard.ShareOption.LOCALDEVICE);
                 hilog.info(domain, tag, "setAppShareOptions setAppShareOptions localDevice success");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "setAppShareOptions setAppShareOptions localDevice fail " + err.message);
                 hilog.info(domain, tag, "err.code " + err.code);
                 expect(err.code).assertEqual(401);
@@ -2509,7 +2593,8 @@ export default function abilityTest() {
             try {
                 systemPasteboard.setAppShareOptions(pasteboard.ShareOption.INAPP);
                 hilog.info(domain, tag, "setAppShareOptions setAppShareOptions inApp success");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "setAppShareOptions setAppShareOptions inApp fail " + err.message);
                 hilog.info(domain, tag, "err.code " + err.code);
                 expect(err.code).assertEqual(201);
@@ -2518,7 +2603,8 @@ export default function abilityTest() {
             try {
                 systemPasteboard.removeAppShareOptions();
                 hilog.info(domain, tag, "setAppShareOptions removeAppShareOptions success");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "setAppShareOptions removeAppShareOptions fail" + err.message);
                 hilog.info(domain, tag, "err.code " + err.code);
                 expect(err.code).assertEqual(201);
@@ -2572,18 +2658,21 @@ export default function abilityTest() {
                         let record = records[0] as unifiedDataChannel.PlainText;
                         expect(JSON.stringify(record.details)).assertEqual(JSON.stringify(plainText.details));
                         hilog.info(domain, tag, 'Get Plain Text Unified Data Success, type: ' + records[0].getType() + 'details:' + JSON.stringify(record.details));
-                    } catch (err: BusinessError) {
+                    } catch (err) {
+                        err = err as BusinessError;
                         hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
                         expect().assertFail();
                         done();
                     }
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
                     expect().assertFail();
                     done();
                 }
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
                 expect().assertFail();
                 done();
@@ -2627,7 +2716,8 @@ export default function abilityTest() {
                 expect(JSON.stringify(record.details)).assertEqual(JSON.stringify(plainText.details));
                 hilog.info(domain, tag, 'Get Plain Text Unified Data Success, type: ' + records[0].getType() + 'details:' + JSON.stringify(record.details));
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
                 expect().assertFail();
                 done();
@@ -2670,7 +2760,8 @@ export default function abilityTest() {
                 expect(result2).assertEqual(result1 + 1);
                 console.info(domain, tag, 'Pasteboard change success.');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
                 expect().assertFail();
                 done();
@@ -2722,18 +2813,21 @@ export default function abilityTest() {
                         let record = records[0] as unifiedDataChannel.PlainText;
                         expect(JSON.stringify(record.details)).assertEqual(JSON.stringify(plainText.details));
                         hilog.info(domain, tag, 'Get Plain Text Unified Data Success, type: ' + records[0].getType() + 'details:' + JSON.stringify(record.details));
-                    } catch (err: BusinessError) {
+                    } catch (err) {
+                        err = err as BusinessError;
                         hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
                         expect().assertFail();
                         done();
                     }
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
                     expect().assertFail();
                     done();
                 }
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
                 expect().assertFail();
                 done();
@@ -2777,7 +2871,8 @@ export default function abilityTest() {
                 expect(JSON.stringify(record.details)).assertEqual(JSON.stringify(plainText.details));
                 hilog.info(domain, tag, 'Get Plain Text Unified Data Success, type: ' + records[0].getType() + 'details:' + JSON.stringify(record.details));
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
                 expect().assertFail();
                 done();
@@ -2829,7 +2924,8 @@ export default function abilityTest() {
                 expect(result2).assertEqual(result1 + 1);
                 hilog.info(domain, tag, 'Pasteboard change success.');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
                 expect().assertFail();
                 done();
@@ -2856,14 +2952,16 @@ export default function abilityTest() {
 
             try {
                 data.pasteStart();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "pasteStart fail" + err.message);
                 expect().assertFail();
             }
 
             try {
                 data.pasteComplete();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "pasteComplete fail" + err.message);
                 expect().assertFail();
             }
@@ -2904,7 +3002,8 @@ export default function abilityTest() {
                 expect(result2).assertEqual(result1 + 1);
                 console.info(domain, tag, 'Pasteboard change success.');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
                 expect().assertFail();
                 done();
@@ -2956,7 +3055,8 @@ export default function abilityTest() {
                 expect(result2).assertEqual(result1 + 1);
                 hilog.info(domain, tag, 'Pasteboard change success.');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'Failed to set UnifiedData.Cause:' + err.message);
                 expect().assertFail();
                 done();
@@ -2991,7 +3091,8 @@ export default function abilityTest() {
                     hilog.info(domain, tag, "----detectPatterns callback----");
                     expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "error.message:" + err.message);
                 expect(null).assertFail();
                 done();
@@ -3046,7 +3147,8 @@ export default function abilityTest() {
                 hilog.info(domain, tag, "getValidTypes Failed types.length === 0");
                 console.info(tag + "Succeeded in setting PasteData");
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'getDataWithProgress fail,err：' + err.code + ',message: ' + err.message);
                 expect(err.code == 401).assertTrue();
                 done();
@@ -3069,7 +3171,8 @@ export default function abilityTest() {
                 try {
                     let isRemote = systemPasteboard.isRemoteData()
                     expect(isRemote == false).assertTrue();
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     hilog.info(domain, tag, "test isRemoteData err:" + err)
                     expect().assertFail();
                 }
@@ -3094,7 +3197,8 @@ export default function abilityTest() {
                 hilog.info(domain, tag, "Succeed in checking the PasteBoard. Result: " + result);
                 expect(result).assertEqual(false);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'getDataWithProgress fail,err：' + err.code + ',message: ' + err.message);
                 expect(err.code).assertEqual(12900005)
                 done();
@@ -3117,7 +3221,8 @@ export default function abilityTest() {
             try {
                 let pasteDataRecord = pasteboard.createRecord(mimeType, ARRAY_BUFFER)
                 hilog.info(domain, tag, "---- createRecord success----");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info("Create record error, err code is: " + err.code)
                 expect(err.code).assertEqual(401)
             }
@@ -3139,7 +3244,8 @@ export default function abilityTest() {
             try {
                 let pasteDataRecord = pasteboard.createRecord("", "String")
                 hilog.info(domain, tag, "---- createRecord success----");
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "Create record error, err code is: " + err.code)
                 expect(err.code).assertEqual(401)
             }
@@ -3162,7 +3268,8 @@ export default function abilityTest() {
                 let invalidRecord = pasteboard.createRecord("", "");
                 expect().assertFail();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(401);
                 hilog.info(domain, tag, `捕获到预期错误码：${err.code}`);
             }
@@ -3196,7 +3303,8 @@ export default function abilityTest() {
                     hilog.info(domain, tag, "----detectPatterns callback----");
                     expect(data.sort().join('')).assertEqual(patterns.sort().join(''));
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "error.message:" + err.message);
                 expect(null).assertFail();
                 done();
@@ -3229,7 +3337,8 @@ export default function abilityTest() {
                 expect(newProp.additions["nullValue"]).assertEqual(null);
                 expect(newProp.additions["undefinedValue"]).assertEqual(undefined);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("Error in complex additions test: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -3277,12 +3386,14 @@ export default function abilityTest() {
 
                         hilog.info(domain, tag, "----------Test passed----------");
                         done();
-                    } catch (err: BusinessError) {
+                    } catch (err) {
+                        err = err as BusinessError;
                         console.error("Error in clearing additions test: " + err.message + "; " + err.code);
                         done();
                     }
                 }, 100);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("Error in clearing additions test: " + err.message + "; " + err.code);
                 done();
             }
@@ -3306,7 +3417,8 @@ export default function abilityTest() {
                 let pasteDataType = pasteData.getMimeTypes();
                 expect(String(pasteDataType)).assertEqual('app/xml');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -3331,7 +3443,8 @@ export default function abilityTest() {
                 let data: Array<String> = await systemPasteboard.getMimeTypes();
                 expect(data[0]).assertEqual('text/uri');
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Static error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -3355,7 +3468,8 @@ export default function abilityTest() {
                 hilog.info(domain, tag, 'Checks: localOnly = ' + pasteDataProperty.localOnly);
                 expect(pasteDataProperty.localOnly == false).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_LocalOnly_Static error is: " + err.message + "; " + err.code);
                 expect().assertFail();
                 done();
@@ -3391,7 +3505,8 @@ export default function abilityTest() {
                 hilog.info(domain, tag, "value2.byteLength:" + (value2 as ArrayBuffer).byteLength);
                 expect((value2 as ArrayBuffer).byteLength).assertEqual(32);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Data_Static_0010 error is: " + err.message + "; " + err.code);
                 expect(err).assertEqual(null);
             }
@@ -3414,7 +3529,8 @@ export default function abilityTest() {
                 //为空字符串
                 record.addEntry("", "");
                 expect().assertFail();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 expect(err.code).assertEqual(401);
                 hilog.info(domain, tag, `Failed to addEntry. Cause: ${err.message + err.code}`);
                 done();
@@ -3663,13 +3779,15 @@ export default function abilityTest() {
                 try {
                     signal.cancel();
                     hilog.info(domain, tag, 'Test pasteBoard cancel success');
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     hilog.info(domain, tag, "Test pasteBoard cancel fail" + err.message);
                     hilog.info(domain, tag, "err.code " + err.code);
                     expect().assertFail();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "pasteboard.ProgressSignal constructor fail" + err.message);
                 hilog.info(domain, tag, "err.code " + err.code);
                 expect().assertFail();
@@ -3696,7 +3814,8 @@ export default function abilityTest() {
             hilog.info(domain, tag, "------clearDataSync start------");
             try {
                 fs.mkdirSync(dstDir);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, `Failed to create dir: ${err.message}`);
             }
             let dstUri: string = fileUri.getUriFromPath(dstDir);
@@ -3711,7 +3830,8 @@ export default function abilityTest() {
                 await systemPasteboard.getDataWithProgress(params);
                 hilog.info(domain, tag, "getDataWithProgress success");
                 // expect().assertFail();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 //涉及到权限问题，权限不足就会报错误码12900010
                 hilog.info(domain, tag, "Remove specified record fail,error code is: " + err.message + err.code)
                 expect(err.code).assertEqual(12900010)

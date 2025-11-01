@@ -79,7 +79,8 @@ export async function readyFiles(testNum: string) : Promise<Dir> {
           destDir: ddpath2
         }
         resolve(alldir);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s',
           testNum + 'failed to readyFiles for ' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
@@ -139,7 +140,8 @@ export default function fileIOMoveDir() {
         let stat4 = fs.statSync(ddpath2 + '/srcDir/srcDir_first/srcFile_second_01');
         expect(stat2.size == stat4.size).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -187,7 +189,8 @@ export default function fileIOMoveDir() {
         let stat4 = fs.statSync(ddpath2 + '/srcDir/srcDir_first/srcFile_second_01');
         expect(stat2.size == stat4.size).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -223,7 +226,8 @@ export default function fileIOMoveDir() {
         let dirent2 = fs.listFileSync(dpath.destDir, {recursion : true});
         expect(dirent2.length == 6).assertTrue();
         fs.rmdirSync(dpath.baseDir);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -259,7 +263,8 @@ export default function fileIOMoveDir() {
         let dirent2 = fs.listFileSync(dpath.destDir, {recursion : true});
         expect(dirent2.length == 8).assertTrue();
         fs.rmdirSync(dpath.baseDir);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_003 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -284,7 +289,8 @@ export default function fileIOMoveDir() {
         expect(dirnet1.length == 4).assertTrue();
         fs.moveDirSync(dpath.srcDir, dpath.destDir, DIRMODE_FILE_THROW_ERR);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_004 has failed for' + e.message + ', code: ' + e.code);
         let stat1 = fs.statSync(dpath.srcDir + '/srcFile_first_01');
         let stat2 = fs.statSync(dpath.srcDir + '/srcDir_first/srcFile_second_01');
@@ -338,7 +344,8 @@ export default function fileIOMoveDir() {
       try {
         fs.moveDirSync(ddpath1, ddpath2, DIRMODE_DIRECTORY_THROW_ERR);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_005 has failed for' + e.message + ', code: ' + e.code);
         fs.rmdirSync(dpath);
         expect(e.code == 13900032 && e.message == 'Directory not empty').assertTrue();
@@ -373,7 +380,8 @@ export default function fileIOMoveDir() {
         fs.moveDirSync(ddpath, ddpath2, DIRMODE_FILE_REPLACE);
         expect(fs.accessSync(ddpath)).assertFalse();
         fs.rmdirSync(dpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_006 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -405,7 +413,8 @@ export default function fileIOMoveDir() {
         fs.moveDirSync(ddpath, ddpath2, DIRMODE_FILE_REPLACE);
         expect(fs.accessSync(ddpath)).assertFalse();
         fs.rmdirSync(dpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_007 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -437,7 +446,8 @@ export default function fileIOMoveDir() {
         const INVALIDE_MODE = -1;
         fs.moveDirSync(ddpath1, ddpath2, INVALIDE_MODE);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_008 has failed for' + e.message + ', code: ' + e.code);
         fs.rmdirSync(dpath);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -466,7 +476,8 @@ export default function fileIOMoveDir() {
       try {
         fs.moveDirSync(fpath, ffpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_009 has failed for' + e.message + ', code: ' + e.code);
         fs.rmdirSync(dpath);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -498,7 +509,8 @@ export default function fileIOMoveDir() {
       try {
         fs.moveDirSync(ddpath1, ddpath1, DIRMODE_FILE_THROW_ERR);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_010 has failed for' + e.message + ', code: ' + e.code);
         fs.rmdirSync(dpath);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -534,7 +546,8 @@ export default function fileIOMoveDir() {
       try {
         fs.moveDirSync(ddpath1, dddpath1, DIRMODE_FILE_THROW_ERR);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_011 has failed for' + e.message + ', code: ' + e.code);
         fs.rmdirSync(dpath);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -574,7 +587,8 @@ export default function fileIOMoveDir() {
       try {
         fs.moveDirSync(ddpath1, ddpath2, DIRMODE_DIRECTORY_THROW_ERR);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_sync_static_012 has failed for' + e.message + ', code: ' + e.code);
         fs.rmdirSync(dpath);
         expect(e.code == 13900032 && e.message == 'Directory not empty').assertTrue();
@@ -622,7 +636,8 @@ export default function fileIOMoveDir() {
         expect(stat2.size == stat4.size).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -674,7 +689,8 @@ export default function fileIOMoveDir() {
             fs.rmdirSync(dpath);
             done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -723,7 +739,8 @@ export default function fileIOMoveDir() {
         expect(stat2.size == stat4.size).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -777,7 +794,8 @@ export default function fileIOMoveDir() {
           fs.rmdirSync(dpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_003 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -814,7 +832,8 @@ export default function fileIOMoveDir() {
         expect(dirent2.length == 6).assertTrue();
         fs.rmdirSync(dpath.baseDir);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_004 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -857,7 +876,8 @@ export default function fileIOMoveDir() {
           fs.rmdirSync(dpath.baseDir);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_005 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -894,7 +914,8 @@ export default function fileIOMoveDir() {
         expect(dirent2.length == 8).assertTrue();
         fs.rmdirSync(dpath.baseDir);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_006 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -941,7 +962,8 @@ export default function fileIOMoveDir() {
           fs.rmdirSync(dpath.baseDir);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_007 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -966,7 +988,8 @@ export default function fileIOMoveDir() {
         expect(dirnet1.length == 4).assertTrue();
         await fs.moveDir(dpath.srcDir, dpath.destDir, DIRMODE_FILE_THROW_ERR);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_008 has failed for' + e.message + ', code: ' + e.code);
         let stat1 = fs.statSync(dpath.srcDir + '/srcFile_first_01');
         let stat2 = fs.statSync(dpath.srcDir + '/srcDir_first/srcFile_second_01');
@@ -1024,7 +1047,8 @@ export default function fileIOMoveDir() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_009 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -1047,7 +1071,8 @@ export default function fileIOMoveDir() {
       try {
         await fs.moveDir(dpath.srcDir, dpath.destDir, DIRMODE_DIRECTORY_THROW_ERR);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_010 has failed for' + e.message + ', code: ' + e.code);
         fs.rmdirSync(dpath.baseDir);
         expect(e.code == 13900032 && e.message == 'Directory not empty').assertTrue();
@@ -1078,7 +1103,8 @@ export default function fileIOMoveDir() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_011 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -1113,7 +1139,8 @@ export default function fileIOMoveDir() {
         expect(fs.accessSync(ddpath)).assertFalse();
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_012 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -1153,7 +1180,8 @@ export default function fileIOMoveDir() {
           fs.rmdirSync(dpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_012 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -1186,7 +1214,8 @@ export default function fileIOMoveDir() {
         expect(fs.accessSync(ddpath)).assertFalse();
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_014 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -1224,7 +1253,8 @@ export default function fileIOMoveDir() {
           fs.rmdirSync(dpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_015 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -1248,7 +1278,8 @@ export default function fileIOMoveDir() {
         const INVALIDE_MODE = -1;
         await fs.moveDir(dpath.srcDir, dpath.destDir, INVALIDE_MODE);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_016 has failed for' + e.message + ', code: ' + e.code);
         fs.rmdirSync(dpath.baseDir);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -1280,7 +1311,8 @@ export default function fileIOMoveDir() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_017 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -1303,7 +1335,8 @@ export default function fileIOMoveDir() {
       try {
         await fs.moveDir(dpath.srcDir + '/srcFile_first_01', dpath.destDir + 'srcDir/srcFile_first_01');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_018 has failed for' + e.message + ', code: ' + e.code);
         fs.rmdirSync(dpath.baseDir);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -1334,7 +1367,8 @@ export default function fileIOMoveDir() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_019 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -1357,7 +1391,8 @@ export default function fileIOMoveDir() {
       try {
         await fs.moveDir(dpath.srcDir, dpath.srcDir, DIRMODE_FILE_THROW_ERR);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_020 has failed for' + e.message + ', code: ' + e.code);
         fs.rmdirSync(dpath.baseDir);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -1388,7 +1423,8 @@ export default function fileIOMoveDir() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_021 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -1411,7 +1447,8 @@ export default function fileIOMoveDir() {
       try {
         await fs.moveDir(dpath.srcDir, dpath.srcDir + '/srcDir_first', DIRMODE_FILE_THROW_ERR);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_022 has failed for' + e.message + ', code: ' + e.code);
         fs.rmdirSync(dpath.baseDir);
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
@@ -1442,7 +1479,8 @@ export default function fileIOMoveDir() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_023 has failed for' + e.message + ', code: ' + e.code);
         expect(false).assertTrue();
       }
@@ -1465,7 +1503,8 @@ export default function fileIOMoveDir() {
       try {
         await fs.moveDir(dpath.srcDir, dpath.destDir, undefined);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_024 has failed for' + e.message + ', code: ' + e.code);
         fs.rmdirSync(dpath.baseDir);
         expect(e.code == 13900032 && e.message == 'Directory not empty').assertTrue();
@@ -1502,7 +1541,8 @@ export default function fileIOMoveDir() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_025 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
         done();
@@ -1533,7 +1573,8 @@ export default function fileIOMoveDir() {
             done();
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_moveDir_async_static_026 has failed for ' + err.message + ', code: ' + err.code);
         expect(false).assertTrue();
         done();

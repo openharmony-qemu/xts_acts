@@ -400,7 +400,8 @@ export default function cameraPreconfigTest() {
     afterAll(() => {
       try {
         await releaseCameraSessionInstance();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(TAG + "afterAll err: " + error.code);
       }
       await Utils.msSleep(1000);

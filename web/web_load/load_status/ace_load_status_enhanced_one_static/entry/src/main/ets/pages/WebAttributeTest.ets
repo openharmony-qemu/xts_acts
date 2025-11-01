@@ -74,7 +74,8 @@ struct WebAttributeTest{
                 try {
                   this.controller.loadUrl('resource://rawfile/second.html')
                   Utils.emitEvent(this.progress, 700012)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;

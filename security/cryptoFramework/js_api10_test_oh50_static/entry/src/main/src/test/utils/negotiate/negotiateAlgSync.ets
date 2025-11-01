@@ -38,7 +38,8 @@ function eccKeyAgreement(algName: string,
     let secret: cryptoFramework.DataBlob = agreeObj.generateSecretSync(priKey, pubKey);
 
     return secret;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`eccKeyAgreement “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -50,7 +51,8 @@ async function generateKey(algName: string): Promise<cryptoFramework.KeyPair> {
     let keyPair: cryptoFramework.KeyPair = await keyObj.generateKeyPair();
 
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`generateKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }

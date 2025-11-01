@@ -110,7 +110,8 @@ export default function ActsNotificationSystemAPITest() {
               done()
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()

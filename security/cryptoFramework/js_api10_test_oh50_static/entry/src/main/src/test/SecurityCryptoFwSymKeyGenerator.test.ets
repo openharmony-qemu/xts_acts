@@ -53,7 +53,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -79,7 +80,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -105,7 +107,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -131,7 +134,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -157,7 +161,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -183,7 +188,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -209,7 +215,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -235,7 +242,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -261,7 +269,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -287,7 +296,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -313,7 +323,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = encodedKey.data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -333,7 +344,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let algName: string = "SM4_256";
         symKeySyncUtils.createSymKeySync(algName);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(801);
       }
@@ -355,7 +367,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let encodedKey: cryptoFramework.DataBlob = symKeySyncUtils.createSymKeySync(algName);
         symKeySyncUtils.convertSymKeySync(convertAlgName, encodedKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
@@ -377,7 +390,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let encodedKey: cryptoFramework.DataBlob = symKeySyncUtils.createSymKeySync(algName);
         symKeySyncUtils.convertSymKeySync(convertAlgName, encodedKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
@@ -405,7 +419,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let keyLen: number = convertSymKey.getEncoded().data.byteLength;
         expect(keyLen).assertEqual(expectKeyLen);
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -430,7 +445,8 @@ export default function SecurityCryptoFwSymKeyGeneratorTestUnit() {
         let convertAlgName: string = "HMAC";
         symKeySyncUtils.convertSymKeySync(convertAlgName, encodedKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }

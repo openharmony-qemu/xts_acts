@@ -118,7 +118,8 @@ export default function addResource() {
           console.info(`${testNum} succeed to add resource by ArrayBuffer`);
           expect(false).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error}, ${error.code}`);
           expect(error.code == 13900002 || error.code == 401).assertTrue();
           done();

@@ -61,7 +61,8 @@ export default function dataNoPTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch (err:BusinessError) {
+            }catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectTrue(err.code == 201);
                 hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
@@ -92,7 +93,8 @@ export default function dataNoPTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch (err:BusinessError) {
+            }catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectTrue(err.code == 201);
                 hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
@@ -123,7 +125,8 @@ export default function dataNoPTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch (err:BusinessError) {
+            }catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectTrue(err.code == 201);
                 hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
@@ -154,7 +157,8 @@ export default function dataNoPTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch (err:BusinessError) {
+            }catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectTrue(err.code == 201);
                 hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
@@ -185,7 +189,8 @@ export default function dataNoPTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch (err:BusinessError) {
+            }catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectTrue(err.code == 201);
                 hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
@@ -209,7 +214,8 @@ export default function dataNoPTest() {
                 hilog.info(domain, tag, '%{public}s', caseName+ ' isEnabled = ' + isEnabled);
                 ExpectTrue(false);
                 done();
-            }catch (err:BusinessError) {
+            }catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectTrue(err.code == 201);
                 hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
@@ -240,7 +246,8 @@ export default function dataNoPTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch (err:BusinessError) {
+            }catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectTrue(err.code == 201);
                 hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
@@ -264,7 +271,8 @@ export default function dataNoPTest() {
                 hilog.info(domain, tag, '%{public}s', caseName+ ' isEnabled = ' + isEnabled);
                 ExpectTrue(false);
                 done();
-            }catch (err:BusinessError) {
+            }catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectTrue(err.code == 201);
                 hilog.info(domain, tag, '%{public}s', caseName+ '--test end');
@@ -296,7 +304,8 @@ export default function dataNoPTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectTrue(err.code == 201);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
@@ -327,7 +336,8 @@ export default function dataNoPTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectTrue(err.code == 201);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');

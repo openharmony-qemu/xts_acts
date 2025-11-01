@@ -48,7 +48,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         await certManager.getPrivateCertificate(uri);
         hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0100 private certificate success. `);
         expect(null).assertFail();
-      } catch (error:BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0100 Failed to get private certificate. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(401);
       }
@@ -78,7 +79,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         });
         hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0101 private certificate success. `);
         expect(cmResult2 != undefined && cmResult2 != null).assertFail();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0101 Failed to get private certificate. Code: ${err.code}, message: ${err.message}`);
         expect(err.code).assertEqual(401);
       }
@@ -99,7 +101,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         await certManager.getPrivateCertificate(uri);
         hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0102 private certificate success. `);
         expect(null).assertFail();
-      } catch (error:BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0102 Failed to get private certificate. Code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(17500002);
       }
@@ -129,7 +132,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         });
         hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0103 private certificate success. `);
         expect(cmResult2 != undefined && cmResult2 != null).assertFail();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', "SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0103 getPrivateCertificate err: " + err.code);
         expect(err.code).assertEqual(17500002);
       }
@@ -150,7 +154,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
         await certManager.getUserTrustedCertificate(uri);
         hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0110 init success. `);
         expect(null).assertFail();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', "SUB_Security_CertManager_GetPriCertJsApi_Func_Static_0110 init err: " + err.code);
         expect(err.code).assertEqual(17500002);
       }
@@ -173,7 +178,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnitThree() {
       try {
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias);
         expect(null).assertFail();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_InstallPrivateCertificate_Func_Static_0200 Failed to install private certificate. Code: ${err.code}, message: ${err.message}`);
         expect(err.code).assertEqual(17500003);
       }

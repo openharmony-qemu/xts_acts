@@ -209,7 +209,8 @@ export default function cameraSecureSessionTest() {
 
     try {
       mCameraSession = mCameraManager.createSession<cameraObj.SecureSession>(cameraObj.SceneMode.SECURE_PHOTO);
-    } catch (error:BusinessError) {
+    } catch (error) {
+      error = error as BusinessError;
       console.info('createSecureSessionInstance FAILED');
     }
     isCameraSessionCreated = true;
@@ -471,7 +472,8 @@ export default function cameraSecureSessionTest() {
           mCameraSession.addSecureOutput(mPreviewOutput);
           console.info(TAG + "Success to addSecureOutput mPreviewOutput");
           expect(true).assertTrue()
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(TAG + "Failed to addSecureOutput mPreviewOutput, error code: " + err.code);
           expect().assertFail()
         }

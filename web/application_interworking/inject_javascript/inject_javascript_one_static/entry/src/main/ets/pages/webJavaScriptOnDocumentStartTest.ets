@@ -83,7 +83,8 @@ struct WebJavaScriptOnDocumentStartTest {
                       Utils.emitEvent(result, 4500)
                     }
                   })
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -108,7 +109,8 @@ struct WebJavaScriptOnDocumentStartTest {
                       Utils.emitEvent(result, 4501)
                     }
                   })
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;

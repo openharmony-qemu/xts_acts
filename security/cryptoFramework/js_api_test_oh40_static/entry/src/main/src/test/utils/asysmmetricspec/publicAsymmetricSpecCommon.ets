@@ -22,7 +22,8 @@ function createAsyKeyGeneratorBySpec(asyKeySpec: cryptoFramework.AsyKeySpec): cr
       "Security_CryptoFramework rsaGenerator algName: " + rsaGenerator.algName
     );
     return rsaGenerator;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.log("Security_CryptoFramework rsaGenerator error:" + err);
     throw err as Error;
   }

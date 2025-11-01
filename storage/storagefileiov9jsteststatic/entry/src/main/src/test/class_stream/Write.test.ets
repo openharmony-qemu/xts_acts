@@ -54,7 +54,8 @@ export default function fileIOStreamWrite() {
         expect(readLen == FILE_CONTENT.length * 2).assertTrue();
         sr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_sync_static_000 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -81,7 +82,8 @@ export default function fileIOStreamWrite() {
         expect(bytesWritten == FILE_CONTENT.length).assertTrue();
         sr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_sync_static_001 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -108,7 +110,8 @@ export default function fileIOStreamWrite() {
         expect(bytesWritten == FILE_CONTENT.length).assertTrue();
         sr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_sync_static_002 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -135,7 +138,8 @@ export default function fileIOStreamWrite() {
         expect(sr !== null).assertTrue();
         sr.writeSync(new ArrayBuffer(4096), option);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         sr.closeSync();
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_sync_static_003 has failed for ' + JSON.stringify(e));
@@ -167,7 +171,8 @@ export default function fileIOStreamWrite() {
         expect(bytesWritten == FILE_CONTENT.length).assertTrue();
         sr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_sync_static_004 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -194,7 +199,8 @@ export default function fileIOStreamWrite() {
         expect(bytesWritten == 5).assertTrue();
         sr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_sync_static_005 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -220,7 +226,8 @@ export default function fileIOStreamWrite() {
         const invalidLength = 4097;
         sr.writeSync(new ArrayBuffer(4096), { length: invalidLength });
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         sr.closeSync();
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_sync_static_006 has failed for ' + JSON.stringify(e));
@@ -248,7 +255,8 @@ export default function fileIOStreamWrite() {
         expect(sr !== null).assertTrue();
         sr.writeSync(FILE_CONTENT, { length: invalidLength });
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         sr.closeSync();
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_sync_static_007 has failed for ' + JSON.stringify(e));
@@ -281,7 +289,8 @@ export default function fileIOStreamWrite() {
         expect(bytesWritten == 4096).assertTrue();
         sr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_sync_static_008 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -312,7 +321,8 @@ export default function fileIOStreamWrite() {
         expect(bytesWritten == FILE_CONTENT.length).assertTrue();
         sr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_sync_static_009 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -339,7 +349,8 @@ export default function fileIOStreamWrite() {
         expect(bytesWritten == FILE_CONTENT.length).assertTrue();
         sr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_sync_static_010 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -366,7 +377,8 @@ export default function fileIOStreamWrite() {
         expect(bytesWritten == 4096).assertTrue();
         sr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_sync_static_011 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -397,7 +409,8 @@ export default function fileIOStreamWrite() {
         expect(bytesWritten == 4096).assertTrue();
         sr.closeSync();
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_sync_static_012 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -429,7 +442,8 @@ export default function fileIOStreamWrite() {
         sr.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_000 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -463,7 +477,8 @@ export default function fileIOStreamWrite() {
             done();
           });
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_001 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -491,7 +506,8 @@ export default function fileIOStreamWrite() {
         sr.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_002 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -520,7 +536,8 @@ export default function fileIOStreamWrite() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_003 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -548,7 +565,8 @@ export default function fileIOStreamWrite() {
         sr.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_004 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -579,7 +597,8 @@ export default function fileIOStreamWrite() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_005 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -612,7 +631,8 @@ export default function fileIOStreamWrite() {
           expect(err?.code == 13900020 && err?.message == 'Invalid argument').assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_006 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -640,7 +660,8 @@ export default function fileIOStreamWrite() {
         sr.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_007 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -671,7 +692,8 @@ export default function fileIOStreamWrite() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_008 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
         done();
@@ -700,7 +722,8 @@ export default function fileIOStreamWrite() {
         sr.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_009 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -731,7 +754,8 @@ export default function fileIOStreamWrite() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_010 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -764,7 +788,8 @@ export default function fileIOStreamWrite() {
           expect(err?.code == 13900020 && err?.message == 'Invalid argument').assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_011 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -797,7 +822,8 @@ export default function fileIOStreamWrite() {
           expect(err?.code == 13900020 && err?.message == 'Invalid argument').assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_012 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -829,7 +855,8 @@ export default function fileIOStreamWrite() {
         sr.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_013 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -862,7 +889,8 @@ export default function fileIOStreamWrite() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_014 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -894,7 +922,8 @@ export default function fileIOStreamWrite() {
         sr.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_015 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -927,7 +956,8 @@ export default function fileIOStreamWrite() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_016 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -955,7 +985,8 @@ export default function fileIOStreamWrite() {
         sr.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_017 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -985,7 +1016,8 @@ export default function fileIOStreamWrite() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_018 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1017,7 +1049,8 @@ export default function fileIOStreamWrite() {
         sr.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_019 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1058,7 +1091,8 @@ export default function fileIOStreamWrite() {
         sr.closeSync();
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_020 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1100,7 +1134,8 @@ export default function fileIOStreamWrite() {
             done();
           });
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_stream_write_async_static_021 has failed for ' + JSON.stringify(e));
         expect(false).assertTrue();
       }

@@ -13,14 +13,16 @@ let tag: string = 'networkSecurityTag'; //日志标识字符串,作为tag标识�
 const ExpectFail = () => {
     try {
         expect().assertFail();
-    } catch (err: BusinessError) {
+    } catch (err) {
+        err = err as BusinessError;
         console.info("expectInfo", `test failed`);
     }
 }
 const ExpectTrue = (n: boolean) => {
     try {
         expect(n).assertTrue();
-    } catch (err: BusinessError) {
+    } catch (err) {
+        err = err as BusinessError;
         console.info("expectInfo", `test sucess`);
     }
 }
@@ -99,7 +101,8 @@ export default function networkSecurityTest() {
                     ExpectTrue(err.code == 2305069);
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -137,7 +140,8 @@ export default function networkSecurityTest() {
                     ExpectFail();
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -175,7 +179,8 @@ export default function networkSecurityTest() {
                     ExpectTrue(err.code == 2305069);
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -217,7 +222,8 @@ export default function networkSecurityTest() {
                     ExpectFail();
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, `${caseName}  catch error is: `, JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -260,7 +266,8 @@ export default function networkSecurityTest() {
                     ExpectTrue(err?.code === 2305010);
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, `${caseName} catch error is: `, JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -298,7 +305,8 @@ export default function networkSecurityTest() {
                     ExpectTrue(err.code == 2305010);
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -340,7 +348,8 @@ export default function networkSecurityTest() {
                     ExpectTrue(err?.code === 2305009);
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, `${caseName} catch error is:`, JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -378,7 +387,8 @@ export default function networkSecurityTest() {
                     ExpectTrue(err.code == 2305009);
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -411,12 +421,14 @@ export default function networkSecurityTest() {
                     hilog.info(domain, tag, '%{public}s', caseName +': Synchronous Verification Result: ->'+resultSync);
                     ExpectTrue(resultSync == 2305069);
                     done();
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                     ExpectFail();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -449,12 +461,14 @@ export default function networkSecurityTest() {
                     hilog.info(domain, tag, '%{public}s', caseName +': Synchronous Verification Result: ->'+resultSync);
                     ExpectTrue(resultSync == 0);
                     done();
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectFail();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -487,12 +501,14 @@ export default function networkSecurityTest() {
                     hilog.info(domain, tag, '%{public}s', caseName +': Synchronous CERT_TYPE_DER Result: ->'+resultSync);
                     ExpectTrue(resultSync == 2305069);
                     done();
-                } catch (err: BusinessError) {
+                } catch (err) {
+                   err = err as BusinessError;
                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectFail();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -535,7 +551,8 @@ export default function networkSecurityTest() {
                     ExpectFail();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -578,7 +595,8 @@ export default function networkSecurityTest() {
                     ExpectFail();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -611,12 +629,14 @@ export default function networkSecurityTest() {
                     hilog.info(domain, tag, '%{public}s', caseName +': Synchronous lastCA Result: ->'+resultSync);
                     ExpectTrue(resultSync == 2305010);
                     done();
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectFail();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -659,7 +679,8 @@ export default function networkSecurityTest() {
                     ExpectFail();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -692,12 +713,14 @@ export default function networkSecurityTest() {
                     hilog.info(domain, tag, '%{public}s', caseName +': Synchronous yetVaild Result: ->'+resultSync);
                     ExpectTrue(resultSync == 2305009);
                     done();
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                     ExpectFail();
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -721,7 +744,8 @@ export default function networkSecurityTest() {
                 hilog.info(domain, tag, '%{public}s', caseName +': isCleartextPermitted Result: -> '+resultSync);
                 ExpectTrue(resultSync);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();
@@ -745,7 +769,8 @@ export default function networkSecurityTest() {
                 hilog.info(domain, tag, '%{public}s', caseName +': isCleartextPermittedByHostName Result: -> '+resultSync);
                 ExpectTrue(resultSync);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 done();

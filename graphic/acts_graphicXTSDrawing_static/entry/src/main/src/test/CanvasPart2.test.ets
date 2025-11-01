@@ -74,7 +74,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.drawTextBlob((textBlob as drawing.TextBlob), -10, -10);
         canvas.detachBrush();
         console.info(msg + 'drawTextBlob successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawTextBlob errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -102,7 +103,8 @@ export default function drawingTsCanvasPart2Test() {
         }
         canvas.detachBrush();
         console.info(msg + 'drawTextBlob successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawTextBlob errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -126,7 +128,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.drawRect({ left : 0, right : 0, top : 10, bottom : 10 });
         canvas.detachPen();
         console.info(msg + 'attachPen successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `attachPen errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -159,7 +162,8 @@ export default function drawingTsCanvasPart2Test() {
           canvas.detachPen();
         }
         console.info(msg + 'attachPen successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `attachPen errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -182,7 +186,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.attachPen(pen);
         canvas.drawRect({ left : 0, right : 0, top : 10, bottom : 10 });
         console.info(msg + 'attachPen successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `attachPen errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -201,7 +206,8 @@ export default function drawingTsCanvasPart2Test() {
         const canvas = new drawing.Canvas(pixel);
         canvas.detachPen();
         console.info(msg + 'attachPen successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `attachPen errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -224,7 +230,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.drawRect({ left : 0, right : 0, top : 10, bottom : 10 });
         canvas.detachBrush();
         console.info(msg + 'attachBrush successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `attachBrush errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -256,7 +263,8 @@ export default function drawingTsCanvasPart2Test() {
           canvas.detachBrush();
         }
         console.info(msg + 'attachBrush successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `attachBrush errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -278,7 +286,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.attachBrush(brush);
         canvas.drawRect({ left : 0, right : 0, top : 10, bottom : 10 });
         console.info(msg + 'attachBrush successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `attachBrush errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -297,7 +306,8 @@ export default function drawingTsCanvasPart2Test() {
         const canvas = new drawing.Canvas(pixel);
         canvas.detachBrush();
         console.info(msg + 'attachBrush successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `attachBrush errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -330,7 +340,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.clipPath(path);
         canvas.detachPen();
         console.info(msg + 'clipPath successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `clipPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -363,7 +374,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.clipPath(path, undefined, true);
         canvas.detachPen();
         console.info(msg + 'clipPath successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `clipPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -384,7 +396,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.clipPath(path, drawing.ClipOp.DIFFERENCE, undefined);
         canvas.detachPen();
         console.info(msg + 'clipPath successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `clipPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -415,7 +428,8 @@ export default function drawingTsCanvasPart2Test() {
         }
         canvas.detachPen();
         console.info(msg + 'clipPath successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `clipPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -447,7 +461,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.clipRect({left : 10, right : 500, top : 300, bottom : 900}, drawing.ClipOp.DIFFERENCE, true);
         canvas.detachPen();
         console.info(msg + 'clipRect successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `clipRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -471,7 +486,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.clipRect({left : 10, right : 500, top : 300, bottom : 900}, undefined, true);
         canvas.detachPen();
         console.info(msg + 'clipRect successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `clipRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -483,7 +499,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.clipRect({left : 10, right : 500, top : 300, bottom : 900}, drawing.ClipOp.DIFFERENCE, undefined);
         canvas.detachPen();
         console.info(msg + 'clipRect successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `clipRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -510,7 +527,8 @@ export default function drawingTsCanvasPart2Test() {
         }
         canvas.detachPen();
         console.info(msg + 'clipRect successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `clipRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -542,7 +560,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.restore();
         expect(saveCount + 1 == readCount).assertTrue();
         console.info(msg + 'save、getSaveCount successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `save、getSaveCount errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -573,7 +592,8 @@ export default function drawingTsCanvasPart2Test() {
         }
         canvas.restore();
         console.info(msg + 'save、getSaveCount successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `save、getSaveCount errorCode is: ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -593,7 +613,8 @@ export default function drawingTsCanvasPart2Test() {
         let readCount = canvas.getSaveCount();
         expect(1 == readCount).assertTrue();
         console.info(msg + 'save、getSaveCount successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `save、getSaveCount errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -620,7 +641,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.drawRect({left : 10, right : 500, top : 300, bottom : 900});
         canvas.detachPen();
         console.info(msg + 'scale successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `scale errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -647,7 +669,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.drawRect({left : 10, right : 500, top : 300, bottom : 900});
         canvas.detachPen();
         console.info(msg + 'clipRect successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `clipRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -674,7 +697,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.drawRect({left : 10, right : 500, top : 300, bottom : 900});
         canvas.detachPen();
         console.info(msg + 'skew successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `skew errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -701,7 +725,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.drawRect({left : 10, right : 500, top : 300, bottom : 900});
         canvas.detachPen();
         console.info(msg + 'skew successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `skew errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -732,7 +757,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.drawRect({left : 10, right : 500, top : 300, bottom : 900});
         canvas.detachPen();
         console.info(msg + 'rotate successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `rotate errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -759,7 +785,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.drawRect({left : 10, right : 500, top : 300, bottom : 900});
         canvas.detachPen();
         console.info(msg + 'rotate successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `rotate errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -786,7 +813,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.drawRect({left : 10, right : 500, top : 300, bottom : 900});
         canvas.detachPen();
         console.info(msg + 'tranlate successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `tranlate errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -813,7 +841,8 @@ export default function drawingTsCanvasPart2Test() {
         canvas.drawRect({left : 10, right : 500, top : 300, bottom : 900});
         canvas.detachPen();
         console.info(msg + 'tranlate successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `tranlate errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }

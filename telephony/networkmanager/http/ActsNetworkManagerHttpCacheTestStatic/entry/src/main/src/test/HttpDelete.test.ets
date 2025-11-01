@@ -64,7 +64,8 @@ export default function HttpDeleteTest() {
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     }
                 });
-            } catch (err:BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');

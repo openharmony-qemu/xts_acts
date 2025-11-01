@@ -65,7 +65,8 @@ async function terminateAbility(caseName: string) {
         }).catch((err: BusinessError):PromiseLike<void>|undefined => {
             console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
-    } catch (e: BusinessError) {
+    } catch (e) {
+        e = e as BusinessError;
         console.error(`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
     }
     await Utils.msSleep(1000)
@@ -140,7 +141,8 @@ export default function WindowZindexTest() {
                     }
 
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr+ 'Failed to check whether the window is showing. Cause: ' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done();
@@ -177,7 +179,8 @@ export default function WindowZindexTest() {
                     }
 
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + ' Failed   Cause: ' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done();
@@ -219,7 +222,8 @@ export default function WindowZindexTest() {
                     }
 
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr+ 'Failed to check whether the window is showing. Cause: ' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done();
@@ -251,7 +255,8 @@ export default function WindowZindexTest() {
                     expect(err.message!=null).assertTrue();
                     done()
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed to set the call raiseToAppTop. Cause:' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done()
@@ -337,7 +342,8 @@ export default function WindowZindexTest() {
                     expect(false).assertTrue();
                     done();
                 });;
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + ' Failed to check whether the window is showing. Cause: ' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done();
@@ -378,7 +384,8 @@ export default function WindowZindexTest() {
                         done();
                     }
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed Cause: ' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done();
@@ -414,7 +421,8 @@ export default function WindowZindexTest() {
                     }
                     done()
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed to set the call setRaiseByClickEnabled. Cause:' + JSON.stringify(exception));
                 if (exception.code == 801) {
                     hilog.info(domain, tag,msgStr + '此设备不支持setWindowTitleMoveEnabled能力.');
@@ -459,7 +467,8 @@ export default function WindowZindexTest() {
                     }
 
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed . Cause: ' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done();
@@ -500,7 +509,8 @@ export default function WindowZindexTest() {
                         done();
                     }
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed Cause: ' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done();
@@ -541,7 +551,8 @@ export default function WindowZindexTest() {
                         done();
                     }
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,`${caseName} Failed to set the window to be top most. Cause code: ${exception.code}, message: ${exception.message}`);
                 expect(false).assertTrue();
                 done();
@@ -580,7 +591,8 @@ export default function WindowZindexTest() {
                         done();
                     }
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,`${caseName} Unauthorized operation.. Cause code: ${exception.code}, message: ${exception.message}`);
                 await subWindowClass.destroyWindow();
                 expect(false).assertTrue();
@@ -620,7 +632,8 @@ export default function WindowZindexTest() {
                     expect(err.message!=null).assertTrue();
                     done()
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(false).assertTrue();
                 done()
@@ -650,7 +663,8 @@ export default function WindowZindexTest() {
                 hilog.info(domain, tag,`${caseName} isFocused is: ${isFocused}`);
                 expect(false).assertEqual(true);
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,`${caseName} Error. Cause code: ${exception.code}, message: ${exception.message}`);
                 expect(exception.code).assertEqual(1300002);
                 expect(exception.message!=null).assertTrue();
@@ -675,7 +689,8 @@ export default function WindowZindexTest() {
                 hilog.info(domain, tag,`${caseName} :main window setSubWindowZLevel success`);
                 expect(false).assertTrue();
                 done();
-            } catch(err: BusinessError) {
+            } catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,`${caseName} :test_SubWindowZLevel_0200 fail1:`+err.code);
                 expect(err.code).assertEqual(1300004);
             }
@@ -692,7 +707,8 @@ export default function WindowZindexTest() {
                 expect(false).assertTrue();
                 await dialogWindow.destroyWindow();
                 done();
-            } catch(err: BusinessError) {
+            } catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,`${caseName} :test_SubWindowZLevel_0200 fail2:`+err.code);
                 expect(err.code).assertEqual(1300004);
                 await dialogWindow.destroyWindow();
@@ -724,7 +740,8 @@ export default function WindowZindexTest() {
                     expect(err.code).assertEqual(1300002);
                     done()
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,caseName + 'Failed. Cause:' + JSON.stringify(err));
                 expect(false).assertTrue();
                 done()
@@ -748,7 +765,8 @@ export default function WindowZindexTest() {
                 let res = windowClass.getSubWindowZLevel();
                 expect(res).assertEqual(10);
                 await windowClass.destroyWindow();
-            } catch(err: BusinessError) {
+            } catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,`${caseName} :sub window setSubWindowZLevel fail1:`+err.code);
                 await windowClass.destroyWindow();
                 if (err.code === 801) {
@@ -767,7 +785,8 @@ export default function WindowZindexTest() {
                 expect(res).assertEqual(-10);
                 await windowClass2.destroyWindow();
                 done();
-            } catch(err: BusinessError) {
+            } catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,`${caseName} :sub window setSubWindowZLevel fail2:`+err.code);
                 await windowClass2.destroyWindow();
                 if (err.code === 801) {
@@ -802,7 +821,8 @@ export default function WindowZindexTest() {
                 expect(res).assertEqual(-10);
                 await windowClass.destroyWindow();
                 done();
-            } catch(err: BusinessError) {
+            } catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,`${caseName} :sub window setSubWindowZLevel fail1:`+err.code);
                 await windowClass.destroyWindow();
                 if (err.code === 801) {
@@ -829,7 +849,8 @@ export default function WindowZindexTest() {
             await windowClass.destroyWindow();
             try {
                 windowClass.getSubWindowZLevel();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,caseName + 'Failed. Cause:' + JSON.stringify(err));
                 expect(err.code).assertEqual(1300002);
                 done()
@@ -853,7 +874,8 @@ export default function WindowZindexTest() {
                 hilog.error(domain, tag,`${caseName} : mainwindow succeed getSubWindowZLevel`);
                 expect(false).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,`${caseName} : failed, code: ${err.code}, msg: ${err.message}`);
                 expect(err.code == 1300004 || err.code == 801).assertTrue();
                 done();
@@ -878,7 +900,8 @@ export default function WindowZindexTest() {
                 console.log(`${caseName} :setWindowDelayRaiseOnDrag success`);
                 expect(false).assertTrue();
                 done();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.log(`${caseName} :setWindowDelayRaiseOnDrag fail:`+err.code);
                 if(err.code == 801){
                     done();

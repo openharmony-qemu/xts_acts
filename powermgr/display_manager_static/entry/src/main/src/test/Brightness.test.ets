@@ -42,7 +42,8 @@ export default function BrightnessTest() {
         try {
           let value: int = 200;
           brightness.setValue(value);
-        } catch (e : BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -64,7 +65,8 @@ export default function BrightnessTest() {
         try {
           let value: int = 30;
           brightness.setValue(value, true);
-        } catch (e : BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();
@@ -86,7 +88,8 @@ export default function BrightnessTest() {
         try {
           let value: int = 255;
           brightness.setValue(value, false);
-        } catch (e : BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, `${TAG} e: ${JSON.stringify(e)}`);
           expect(e.code).assertEqual(202);
           done();

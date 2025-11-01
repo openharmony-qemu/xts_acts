@@ -71,7 +71,8 @@ export default function getTest() {
         hilog.info(domain, tag, `${testNum} key: ${key}, value: ${value}, asset.key: ${asset.get(key)}`);
         expect(false).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, `${testNum} failed; error: ${error} ${error.code}`);
         expect(error.code).assertEqual(14000014);
         done();
@@ -85,7 +86,8 @@ export default function getTest() {
         hilog.info(domain, tag, `${testNum} key: ${key}, value: ${value}, asset.key: ${asset.get(key as string)}`);
         expect(false).assertTrue();
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, `${testNum} failed; error: ${error} ${error.code}`);
         expect(error.code === 13900020 || error.code === 401).assertTrue();
         done();

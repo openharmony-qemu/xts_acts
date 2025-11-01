@@ -53,7 +53,8 @@ export default function fileIODup() {
         fs.closeSync(file);
         fs.closeSync(newFile);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_dup_sync_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -82,7 +83,8 @@ export default function fileIODup() {
         expect(readlen == FILE_CONTENT.length).assertTrue();
         fs.writeSync(newFile.fd, FILE_CONTENT);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_dup_sync_static_001 end error' + JSON.stringify(e));
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
@@ -112,7 +114,8 @@ export default function fileIODup() {
         expect(bytesWritten == FILE_CONTENT.length).assertTrue();
         fs.readSync(newFile.fd, new ArrayBuffer(4096));
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_dup_sync_static_002 end error' + JSON.stringify(e));
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
@@ -134,7 +137,8 @@ export default function fileIODup() {
       try {
         fs.dup(-1);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_dup_sync_static_004 end error' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
       }
@@ -161,7 +165,8 @@ export default function fileIODup() {
         let newFile = fs.dup(fd);
         fs.writeSync(newFile.fd, new ArrayBuffer(20));
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_dup_sync_static_005 end error' + JSON.stringify(e));
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();
       }

@@ -70,7 +70,8 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
               done();
             }
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_003 cancelReminder error.code:" + error.code);
         }
       })
@@ -101,7 +102,8 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
             expect(err.code == 1700003).assertTrue();
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_004 cancelReminder error.code:" + error.code);
         }
       })
@@ -133,7 +135,8 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
             expect(err.code == 1700003).assertTrue();
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_005 addExcludeDate error.code:" + error.code);
         }
       })
@@ -164,7 +167,8 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
             expect(err.code == 1700003).assertTrue();
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_006 deleteExcludeDates error.code:" + error.code);
         }
       })
@@ -195,7 +199,8 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
             expect(err.code == 1700003).assertTrue();
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_007 getExcludeDates error.code:" + error.code);
         }
       })
@@ -230,7 +235,8 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
             expect(err.code == 1700003).assertTrue();
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_008 updateReminder error.code:" + error.code);
         }
       })
@@ -265,7 +271,8 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
             expect(err.code == 1700007).assertTrue();
             done();
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info("SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_009 updateReminder error.code:" + error.code);
         }
       })

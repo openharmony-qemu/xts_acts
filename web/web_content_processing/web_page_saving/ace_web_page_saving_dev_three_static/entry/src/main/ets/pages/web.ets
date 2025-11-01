@@ -68,7 +68,8 @@ struct webViewController {
                     Utils.emitEvent(filename, 29);
                   }
                 });
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;

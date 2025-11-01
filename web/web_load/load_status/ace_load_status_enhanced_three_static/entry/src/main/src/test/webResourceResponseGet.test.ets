@@ -47,7 +47,7 @@ export default function webResourceResponseGet() {
           abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.open.harmony.actsaceloadstatusenhancedtestthree.static')
           await Utils.msSleep(2000)
           console.log('beforeAll end,%s', "Succeed!")
-        } catch (error: Error) {
+        } catch (error) {
           console.info(`beforeAll error: ${JSON.stringify(error)}`)
         }
       });

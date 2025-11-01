@@ -54,7 +54,8 @@ export default class Utils {
         priority: events_emitter.EventPriority.LOW
       }
       events_emitter.emit(backEvent, backData);
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       console.info('webFlag emit action state err: ' + err.message);
     }
   }
@@ -67,7 +68,8 @@ export default class Utils {
         try {
           expectFunction(backData, expected);
           console.info(`[${testCaseName}] END`);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`[${testCaseName}] err:` + err.message);
         }
         done()
@@ -77,7 +79,8 @@ export default class Utils {
         priority: events_emitter.EventPriority.LOW
       }
       events_emitter.on(innerEvent, callBack)
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       console.info(`[${testCaseName}] err:` + err.message);
     }
   }

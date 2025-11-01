@@ -196,7 +196,8 @@ export default function AddUsbManagerTest() {
             expect(ret == 18).assertEqual(true);
           })
           UsbMgr.closePipe(devicePipe);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(0, 'testTag ui', `closeAccessory error `)
           hilog.info(domain, tag, 'usbControlTransfer001 end');
           let err: BusinessError = error as BusinessError;
@@ -775,7 +776,8 @@ export default function AddUsbManagerTest() {
 
           expect(gPipe.busNum < 256).assertTrue();
           expect(gPipe.devAddress < 128).assertTrue();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           expect(error.code).assertEqual(14400001);
         }
         done();
@@ -1046,7 +1048,8 @@ export default function AddUsbManagerTest() {
           UsbMgr.usbSubmitTransfer(transferParams);
           UsbMgr.usbCancelTransfer(transferParams);
           hilog.info(domain, tag, 'USB transfer request submitted.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, 'testUsbCancelTransfer063 catch err code================: ' + JSON.stringify(error));
           expect(error.code).assertEqual(14400001);
         }
@@ -1083,7 +1086,8 @@ export default function AddUsbManagerTest() {
           UsbMgr.usbSubmitTransfer(transferParams);
           UsbMgr.usbCancelTransfer(transferParams);
           hilog.info(domain, tag, 'USB transfer request submitted.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, 'testUsbCancelTransfer064 catch err code================: ' + JSON.stringify(error));
           expect(error.code).assertEqual(14400008);
         }
@@ -1120,7 +1124,8 @@ export default function AddUsbManagerTest() {
           UsbMgr.usbSubmitTransfer(transferParams);
           UsbMgr.usbCancelTransfer(transferParams);
           hilog.info(domain, tag, 'USB transfer request submitted.');
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, 'testUsbCancelTransfer065 catch err code================: ' + JSON.stringify(error));
           expect(error.code).assertEqual(14400010);
         }
@@ -1211,7 +1216,8 @@ export default function AddUsbManagerTest() {
             expect(ret == 18).assertEqual(true);
           })
           UsbMgr.closePipe(devicePipe);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(0, 'testTag ui', `closeAccessory error `)
           hilog.info(domain, tag, 'usbControlTransfer end');
           let err: BusinessError = error as BusinessError;
@@ -1257,7 +1263,8 @@ export default function AddUsbManagerTest() {
             expect(ret == 18).assertEqual(true);
           })
           UsbMgr.closePipe(devicePipe);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(0, 'testTag ui', `closeAccessory error `)
           hilog.info(domain, tag, 'usbControlTransfer end');
           let err: BusinessError = error as BusinessError;
@@ -1303,7 +1310,8 @@ export default function AddUsbManagerTest() {
             expect(ret == 18).assertEqual(true);
           })
           UsbMgr.closePipe(devicePipe);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(0, 'testTag ui', `closeAccessory error `)
           hilog.info(domain, tag, 'usbControlTransfer end');
           let err: BusinessError = error as BusinessError;

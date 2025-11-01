@@ -52,7 +52,8 @@ export default function isDefaultApplicationTest() {
               done();
             }
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_static_0900 failed: %{public}s', JSON.stringify(err));
           expect(err.code == 801).assertTrue()
           done();
@@ -72,7 +73,8 @@ export default function isDefaultApplicationTest() {
               done()
             }
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_static_1000 failed: %{public}s', JSON.stringify(err));
           expect(err.code == 801).assertTrue()
           done();
@@ -91,7 +93,8 @@ export default function isDefaultApplicationTest() {
           hilog.info(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_2550 success, boolean: ' + boolResult);
           expect(boolResult).assertFalse();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           if (err.code != 0) {
             hilog.error(0x0000, 'bmsTag', 'Sub_Bms_Framework_Status_DefaultApp_2550 failed: %{public}s', JSON.stringify(err));
             expect(err.code == 801).assertTrue()

@@ -81,7 +81,8 @@ struct jsMessageExt {
                         console.info(`get result :` + type)
                         Utils.emitEvent(type, 30200)
                       }
-                      catch (resError:BusinessError) {
+                      catch (resError) {
+                        resError = resError as BusinessError;
                         let e: BusinessError = resError as BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                         Utils.emitEvent(e.code, 30200)
@@ -89,7 +90,8 @@ struct jsMessageExt {
                     }
                   });
                 }, 2000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 30200)
@@ -115,14 +117,16 @@ struct jsMessageExt {
                         console.info(`get result :` + type)
                         Utils.emitEvent(type, 30201)
                       }
-                      catch (resError:BusinessError) {
+                      catch (resError) {
+                        resError = resError as BusinessError;
                         let e: BusinessError = resError as BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                       }
                     }
                   });
                 }, 2000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 30201)
@@ -148,7 +152,8 @@ struct jsMessageExt {
                         console.info(`get result :` + type)
                         Utils.emitEvent(type, 30202)
                       }
-                      catch (resError:BusinessError) {
+                      catch (resError) {
+                        resError = resError as BusinessError;
                         let e: BusinessError = resError as BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                         Utils.emitEvent(e.code, 30202)
@@ -156,7 +161,8 @@ struct jsMessageExt {
                     }
                   });
                 }, 2000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 30202)
@@ -182,7 +188,8 @@ struct jsMessageExt {
                         console.info(`get result :` + type)
                         Utils.emitEvent(type, 30203)
                       }
-                      catch (resError:BusinessError) {
+                      catch (resError) {
+                        resError = resError as BusinessError;
                         let e: BusinessError = resError as BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                         Utils.emitEvent(e.code, 30203)
@@ -190,7 +197,8 @@ struct jsMessageExt {
                     }
                   });
                 }, 2000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 30203)
@@ -216,14 +224,16 @@ struct jsMessageExt {
                         console.info(`get result :` + type)
                         Utils.emitEvent(type, 30204)
                       }
-                      catch (resError:BusinessError) {
+                      catch (resError) {
+                        resError = resError as BusinessError;
                         let e: BusinessError = resError as BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                       }
                     }
                   });
                 }, 2000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 30204)
@@ -235,7 +245,8 @@ struct jsMessageExt {
               try {
                 console.info(`webView.JsMessageType.NOT_SUPPORT :` + webView.JsMessageType.NOT_SUPPORT)
                 Utils.emitEvent(webView.JsMessageType.NOT_SUPPORT, 30205)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 30205)
@@ -247,7 +258,8 @@ struct jsMessageExt {
               try {
                 console.info(`webView.JsMessageType.STRING :` + webView.JsMessageType.STRING)
                 Utils.emitEvent(webView.JsMessageType.STRING, 30206)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 30206)
@@ -259,7 +271,8 @@ struct jsMessageExt {
               try {
                 console.info(`webView.JsMessageType.NUMBER :` + webView.JsMessageType.NUMBER)
                 Utils.emitEvent(webView.JsMessageType.NUMBER, 30207)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 30207)
@@ -271,7 +284,8 @@ struct jsMessageExt {
               try {
                 console.info(`webView.JsMessageType.BOOLEAN :` + webView.JsMessageType.BOOLEAN)
                 Utils.emitEvent(webView.JsMessageType.BOOLEAN, 30208)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 30208)
@@ -283,7 +297,8 @@ struct jsMessageExt {
               try {
                 console.info(`webView.JsMessageType.ARRAY_BUFFER :` + webView.JsMessageType.ARRAY_BUFFER)
                 Utils.emitEvent(webView.JsMessageType.ARRAY_BUFFER, 30209)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 30209)
@@ -295,7 +310,8 @@ struct jsMessageExt {
               try {
                 console.info(`webView.JsMessageType.ARRAY :` + webView.JsMessageType.ARRAY)
                 Utils.emitEvent(webView.JsMessageType.ARRAY, 30210)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 30210)
@@ -321,7 +337,8 @@ struct jsMessageExt {
                         console.info(`get result :` + value)
                         Utils.emitEvent(value, 100013)
                       }
-                      catch (resError:BusinessError) {
+                      catch (resError) {
+                        resError = resError as BusinessError;
                         let e: BusinessError = resError as BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                         Utils.emitEvent(e.code, 100013)
@@ -329,7 +346,8 @@ struct jsMessageExt {
                     }
                   });
                 }, 2000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 100013)
@@ -355,7 +373,8 @@ struct jsMessageExt {
                         console.info(`get result :` + value)
                         Utils.emitEvent(value, 100014)
                       }
-                      catch (resError:BusinessError) {
+                      catch (resError) {
+                        resError = resError as BusinessError;
                         let e: BusinessError = resError as BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                         Utils.emitEvent(e.code, 100014)
@@ -363,7 +382,8 @@ struct jsMessageExt {
                     }
                   });
                 }, 2000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 100014)
@@ -391,7 +411,8 @@ struct jsMessageExt {
                         console.info(`get result :` + value)
                         Utils.emitEvent(value, 100016)
                       }
-                      catch (resError:BusinessError) {
+                      catch (resError) {
+                        resError = resError as BusinessError;
                         let e: BusinessError = resError as BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                         Utils.emitEvent(e.code, 100016)
@@ -399,7 +420,8 @@ struct jsMessageExt {
                     }
                   });
                 }, 2000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 100016)
@@ -425,7 +447,8 @@ struct jsMessageExt {
                         console.info(`get result :` + value)
                         Utils.emitEvent(value, 100017)
                       }
-                      catch (resError:BusinessError) {
+                      catch (resError) {
+                        resError = resError as BusinessError;
                         let e: BusinessError = resError as BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                         Utils.emitEvent(e.code, 100017)
@@ -433,7 +456,8 @@ struct jsMessageExt {
                     }
                   });
                 }, 2000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 100017)
@@ -463,7 +487,8 @@ struct jsMessageExt {
                           Utils.emitEvent(false, 100018)
                         }
                       }
-                      catch (resError:BusinessError) {
+                      catch (resError) {
+                        resError = resError as BusinessError;
                         let e: BusinessError = resError as BusinessError;
                         console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                         Utils.emitEvent(e.code, 100018)
@@ -471,7 +496,8 @@ struct jsMessageExt {
                     }
                   });
                 }, 2000)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 let e: BusinessError = error as BusinessError;
                 console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 Utils.emitEvent(e.code, 100018)

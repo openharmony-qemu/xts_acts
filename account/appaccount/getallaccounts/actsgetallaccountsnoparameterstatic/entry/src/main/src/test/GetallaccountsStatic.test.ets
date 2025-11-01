@@ -92,7 +92,8 @@ export default function ActsGetAllAccountsNoParameterStatic() {
           hilog.info(0x0000, tag, "====>getAllAccounts 0200 data.length: " + data.length);
           expect(data.length).assertEqual(0);
           hilog.info(0x0000, tag, "====>ActsGetAllAccountsNoParameter_0200 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>getAllAccounts 0200 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -178,7 +179,8 @@ export default function ActsGetAllAccountsNoParameterStatic() {
           expect(data[0].owner).assertEqual("com.example.getallaccountsnoparameter.static");
           await accountManager.removeAccount("accessibleAccount_promise_single");
           hilog.info(0x0000, tag, "====>ActsGetAllAccountsNoParameter_0400 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>getAllAccounts check data 0400 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -297,7 +299,8 @@ export default function ActsGetAllAccountsNoParameterStatic() {
           hilog.info(0x0000, tag, "====>remove third account 0600 start====");
           await accountManager.removeAccount("accessibleAccount_promise_third");
           hilog.info(0x0000, tag, "====>ActsGetAllAccountsNoParameter_0600 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>getAllAccounts err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -409,7 +412,8 @@ export default function ActsGetAllAccountsNoParameterStatic() {
           await accountManager.removeAccount("accessibleAccount_promise_third");
           hilog.info(0x0000, tag, "====>ActsGetAllAccountsNoParameter_0800 end====");
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>getAllAccounts err: " + JSON.stringify(err));
           expect().assertFail();
           done();

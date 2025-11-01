@@ -67,7 +67,8 @@ async function terminateAbility(caseName: string) {
         }).catch((err: BusinessError):PromiseLike<void>|undefined => {
             console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
-    } catch (e: BusinessError) {
+    } catch (e) {
+        e = e as BusinessError;
         console.error(`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
     }
     await Utils.msSleep(1000)
@@ -131,7 +132,8 @@ export default function WindowPropertiesTest() {
                     done()
                 });
 
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call setWindowPrivacyMode. Cause:' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done()
@@ -165,7 +167,8 @@ export default function WindowPropertiesTest() {
                     }
 
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call setWindowPrivacyMode. Cause:' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done()
@@ -201,7 +204,8 @@ export default function WindowPropertiesTest() {
                     expect(false).assertTrue();
                     done()
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to check whether the window support WideGamut. Cause: ' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002)
                 done()
@@ -234,7 +238,8 @@ export default function WindowPropertiesTest() {
                     expect(err.code).assertEqual(1300002)
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to load the content. Cause: ' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002)
                 done();
@@ -270,7 +275,8 @@ export default function WindowPropertiesTest() {
                     expect(false).assertTrue();
                     done()
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set window colorspace. Cause:' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002)
                 done()
@@ -302,7 +308,8 @@ export default function WindowPropertiesTest() {
                     expect(err.code).assertEqual(1300002)
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set window colorspace. Cause:' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002)
                 done();
@@ -330,7 +337,8 @@ export default function WindowPropertiesTest() {
                 (win as window.Window).setWindowBackgroundColor(color);
                 expect(false).assertTrue();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the background color. Cause: ' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002)
                 done();
@@ -366,7 +374,8 @@ export default function WindowPropertiesTest() {
                     expect(false).assertTrue();
                     done()
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the screen to be always on. Cause:' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002);
                 done();
@@ -399,7 +408,8 @@ export default function WindowPropertiesTest() {
                     expect(err.code).assertEqual(1300002);
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the screen to be always on. catch Cause: ' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done();
@@ -445,7 +455,8 @@ export default function WindowPropertiesTest() {
                 // expect(properties.isRoundCorner != null ).assertTrue();
                 expect(properties.type != null ).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
                 done();
@@ -473,7 +484,8 @@ export default function WindowPropertiesTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getWindowProperties: ' + tempWnd);
                 expect(false).assertTrue()
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + ' Failed to get the height of window decor. Cause: ' + JSON.stringify(exception));
                 if (exception.code == 1300002) {
                     expect(true).assertTrue()
@@ -509,7 +521,8 @@ export default function WindowPropertiesTest() {
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
                 expect(false).assertTrue();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(exception.code == 1300002 || exception.code == 801).assertTrue();
                 if (exception.code != 801) {
@@ -549,7 +562,8 @@ export default function WindowPropertiesTest() {
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
                 expect(false).assertTrue();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(exception.code == 1300002 || exception.code == 801).assertTrue();
                 if (exception.code != 801) {
@@ -587,7 +601,8 @@ export default function WindowPropertiesTest() {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowVisibilityChange.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e:BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call on windowVisibilityChange. Cause:' + JSON.stringify(e));
                         expect(e!.code).assertEqual(1300002);
                         done()
@@ -625,7 +640,8 @@ export default function WindowPropertiesTest() {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowVisibilityChange.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e:BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call on windowVisibilityChange. Cause:' + JSON.stringify(e));
                         expect(e!.code).assertEqual(1300002);
                         done()
@@ -662,7 +678,8 @@ export default function WindowPropertiesTest() {
                             await (win as window.Window).destroyWindow();
                             expect(true).assertTrue();
                             done();
-                        } catch (exception:BusinessError) {
+                        } catch (exception) {
+                            exception = exception as BusinessError;
                             await (win as window.Window).destroyWindow();
                             hilog.error(0x0000, '[ANI]',msgStr + 'Failed to disable the listener for system avoid area changes. Cause: ' +
                             JSON.stringify(exception));
@@ -700,7 +717,8 @@ export default function WindowPropertiesTest() {
                         win.onWindowVisibilityChange((flag:boolean) => {
                             hilog.info(0x0000, '[ANI]', msgStr + 'Window visibility changed, isVisible=' + flag);
                         });
-                    } catch (exception:BusinessError) {
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         if (exception!.code != 801) {
                             hilog.error(0x0000, '[ANI]','Failed to register callback. Cause: ' + JSON.stringify(exception));
                             expect(false).assertTrue();
@@ -714,7 +732,8 @@ export default function WindowPropertiesTest() {
                     }
                     try {
                         (win as window.Window).offWindowVisibilityChange();
-                    } catch (exception:BusinessError) {
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         if (exception!.code != 801) {
                             hilog.error(0x0000, '[ANI]','Failed to unregister callback. Cause: ' + JSON.stringify(exception));
                             expect(false).assertTrue();
@@ -730,7 +749,8 @@ export default function WindowPropertiesTest() {
                         (win as window.Window).offWindowVisibilityChange();
                         await (win as window.Window).destroyWindow();
                         done();
-                    } catch (exception:BusinessError) {
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         await (win as window.Window).destroyWindow();
                         console.error(msgStr + 'Failed to unregister callback Cause: ' + JSON.stringify(exception));
                         expect(false).assertTrue();
@@ -765,7 +785,8 @@ export default function WindowPropertiesTest() {
                 expect(true).assertTrue();
                 windowClass.offWindowVisibilityChange();
                 done();
-            } catch (error:BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(0x0000, '[ANI]', msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
                 if (error!.code != 801) {
                     hilog.error(0x0000, '[ANI]', msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
@@ -797,7 +818,8 @@ export default function WindowPropertiesTest() {
                 hilog.info(0x0000, '[ANI]', msgStr + 'Window visibility changed');
                 expect(true).assertTrue();
                 done();
-            } catch (error:BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(0x0000, '[ANI]', msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
                 if (error!.code != 801) {
                     hilog.error(0x0000, '[ANI]', msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
@@ -836,7 +858,8 @@ export default function WindowPropertiesTest() {
                         hilog.error(0x0000, '[ANI]',msgStr +'Succeeded in calling on systemDensityChange.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e:BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.info(0x0000, '[ANI]',msgStr +'Failed to call on systemDensityChange. Cause:' + JSON.stringify(e));
                         expect(e!.code).assertEqual(1300002);
                         done()
@@ -874,7 +897,8 @@ export default function WindowPropertiesTest() {
                         hilog.error(0x0000, '[ANI]',msgStr +'Succeeded in calling off systemDensityChange.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e:BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.info(0x0000, '[ANI]',msgStr +'Failed to call off systemDensityChange. Cause:' + JSON.stringify(e));
                         expect(e!.code).assertEqual(1300002);
                         done()
@@ -918,7 +942,8 @@ export default function WindowPropertiesTest() {
                 hilog.info(0x0000, '[ANI]', msgStr +`Succeeded on systemDensityChange twice.`);
                 windowClass.offSystemDensityChange();
                 hilog.info(0x0000, '[ANI]', msgStr + `off all systemDensityChange success`);
-            } catch (exception:BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]', msgStr +`Failed to on systemDensityChange. Cause code: ${exception.code}, message: ${exception.message}`);
                 if (exception!.code == 801) {
                     hilog.info(0x0000, '[ANI]', msgStr +`Current device not support API:setCustomDensity`);
@@ -954,7 +979,8 @@ export default function WindowPropertiesTest() {
                     done();
                 });
                 hilog.info(0x0000, '[ANI]', msgStr +  ' register noInteractionDetected successed');
-            } catch (exception:BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception!.code != 801) {
                     hilog.error(0x0000, '[ANI]', msgStr + `Failed to register callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -994,7 +1020,8 @@ export default function WindowPropertiesTest() {
                     expect(err?.code).assertEqual(1300002);
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to setWindowFocusable. Cause code:' + JSON.stringify(exception));
@@ -1027,7 +1054,8 @@ export default function WindowPropertiesTest() {
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
                 await tempWnd.setWindowFocusable(true);
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to setWindowFocusable promise. Cause code:' + JSON.stringify(exception));
@@ -1064,7 +1092,8 @@ export default function WindowPropertiesTest() {
                     expect(err?.code).assertEqual(1300002);
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to setWindowTouchable. Cause code:' + JSON.stringify(exception));
@@ -1098,7 +1127,8 @@ export default function WindowPropertiesTest() {
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
                 await tempWnd.setWindowTouchable(true);
                 expect(false).assertTrue();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to setWindowTouchable promise. Cause code:' + JSON.stringify(exception));
@@ -1143,7 +1173,8 @@ export default function WindowPropertiesTest() {
 
                 });
 
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to snapshot. Cause code:' + JSON.stringify(exception));
@@ -1180,7 +1211,8 @@ export default function WindowPropertiesTest() {
                 hilog.info(domain, tag,msgStr + 'window after snapshot ');
                 expect(false).assertTrue();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to snapshot. Cause code:' + JSON.stringify(exception));
@@ -1212,7 +1244,8 @@ export default function WindowPropertiesTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'a:'+ JSON.stringify(a));
                 expect(true).assertTrue();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr +
                     `Failed to call statusBarContentColor. Cause code: ${exception!.code}, message: ${exception!.message}`);
                 expect(false).assertTrue();
@@ -1245,7 +1278,8 @@ export default function WindowPropertiesTest() {
                     expect(false).assertTrue();
                     done()
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed2 to set the call setStatusBarColor. Cause:' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done()
@@ -1282,7 +1316,8 @@ export default function WindowPropertiesTest() {
 
                 });
 
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 hilog.info(domain, tag,msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
                 expect(false).assertTrue();
                 done()
@@ -1325,7 +1360,8 @@ export default function WindowPropertiesTest() {
                     }
                 });
 
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 hilog.info(domain, tag,msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
                 expect(false).assertTrue();
                 done()
@@ -1359,7 +1395,8 @@ export default function WindowPropertiesTest() {
                     await terminateAbility(caseName);
                     done()
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,caseName + 'Failed2 to call getVisibleWindowInfo. Cause: ' + JSON.stringify(err));
                 await terminateAbility(caseName);
                 if(err.code == 801 || err.code == 201){
@@ -1420,7 +1457,8 @@ export default function WindowPropertiesTest() {
                         done();
                     }
                 });
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 if (err.code === 801) {
                     hilog.error(domain, tag,`${caseName} The current device type does not support to resize.`);
                     done();
@@ -1463,7 +1501,8 @@ export default function WindowPropertiesTest() {
                         done();
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
                 done();
@@ -1496,7 +1535,8 @@ export default function WindowPropertiesTest() {
                         hilog.error(domain, tag,msgStr + 'Succeeded in calling getWindowDensityInfo.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e: BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(e.code)+` message:${e.message}`);
                         expect(e.code).assertEqual(1300002);
                         expect(e.message!=null).assertTrue();
@@ -1530,7 +1570,8 @@ export default function WindowPropertiesTest() {
                 hilog.info(domain, tag,msgStr +`getWindowDensityInfo defaultDensity: `, JSON.stringify(densityInfo.defaultDensity));
                 expect(densityInfo.systemDensity).assertEqual(densityInfo.customDensity);
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr +
                     `Failed to getWindowDensityInfo. Cause code: ${exception.code}, message: ${exception.message}`);
                 if (exception.code == 801) {
@@ -1704,7 +1745,8 @@ export default function WindowPropertiesTest() {
                 subWindowClass.isGestureBackEnabled();
                 expect(false).assertTrue();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,`${caseName} Failed to set gesture back enabled. Cause code: ${exception.code}, message: ${exception.message}`);
                 if (exception.code == 801) {
                     hilog.info(domain, tag,`${caseName} The current device type does not support to getGestureBackEnabled.`);
@@ -1743,7 +1785,8 @@ export default function WindowPropertiesTest() {
                         hilog.error(domain, tag,msgStr + 'Succeeded in calling isGestureBackEnabled.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e: BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(e.code)+` message:${e.message}`);
                         expect(e.code).assertEqual(1300002);
                         expect(e.message!=null).assertTrue();
@@ -1887,7 +1930,8 @@ export default function WindowPropertiesTest() {
                 let colorSpace = win.getWindowColorSpace();
                 expect(false).assertTrue();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed to load the content. Cause: ' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002)
                 done();
@@ -1925,7 +1969,8 @@ export default function WindowPropertiesTest() {
                     }
 
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed to set the brightness. Cause: ' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002);
                 done()
@@ -1958,7 +2003,8 @@ export default function WindowPropertiesTest() {
                     expect(err.code).assertEqual(1300002);
                     done()
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed to set the brightness. Cause: ' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002);
                 done()
@@ -1981,7 +2027,8 @@ export default function WindowPropertiesTest() {
                 await windowClass.destroyWindow();
                 expect(true).assertTrue()
                 done();
-            } catch(err: BusinessError) {
+            } catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,`${caseName} :sub window setSubWindowZLevel fail1:`+err.code);
                 await windowClass.destroyWindow();
                 if (err.code === 801) {
@@ -2010,7 +2057,8 @@ export default function WindowPropertiesTest() {
                 windowClass.isWindowHighlighted();
                 expect(false).assertTrue();
                 done();
-            } catch(err: BusinessError) {
+            } catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,`${caseName} :sub window setSubWindowZLevel fail1:`+err.code);
                 expect(err.code).assertEqual(1300002);
                 done()
@@ -2073,7 +2121,8 @@ export default function WindowPropertiesTest() {
                     }
 
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag,msgStr + 'Failed. Cause code:' + JSON.stringify(error.code) + error.message);
                 expect(false).assertTrue();
                 done();
@@ -2103,7 +2152,8 @@ export default function WindowPropertiesTest() {
                 expect(false).assertTrue();
                 hilog.error(domain, tag,msgStr + 'Succeeded in calling setWindowShadowRadius.');
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed2 to set the call setWindowShadowRadius. Cause:' + JSON.stringify(exception.code)+',errMessage: '+ exception.message);
                 expect(exception.code).assertEqual(1300002)
                 expect(exception.message!=null).assertTrue();
@@ -2129,7 +2179,8 @@ export default function WindowPropertiesTest() {
                 expect(false).assertTrue();
                 hilog.info(domain, tag,msgStr + 'Succeeded in calling setWindowShadowRadius.');
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed2 to set the call setWindowShadowRadius. Cause:' + JSON.stringify(exception.code)+',errMessage: '+ exception.message);
                 expect(exception.code).assertEqual(1300004);
                 expect(exception.message!=null).assertTrue();
@@ -2162,7 +2213,8 @@ export default function WindowPropertiesTest() {
                 hilog.info(domain, tag,msgStr + 'Succeeded in calling setWindowShadowRadius.');
                 await subWindowClass.destroyWindow();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed2 to set the call setWindowShadowRadius. Cause:' + JSON.stringify(exception.code)+',errMessage: '+ exception.message);
                 await subWindowClass.destroyWindow();
                 if (exception.code == 801) {
@@ -2203,7 +2255,8 @@ export default function WindowPropertiesTest() {
                     expect(err.message!=null).assertTrue();
                 });
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed to set the call setWindowCornerRadius. Cause:' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done()
@@ -2240,7 +2293,8 @@ export default function WindowPropertiesTest() {
                     }
                 });
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed to set the call setWindowCornerRadius. Cause:' + JSON.stringify(exception.code)+',errMessage: '+ exception.message);
                 if (exception.code == 801) {
                     hilog.info(domain, tag,`${caseName} The current device type does not support to setWindowCornerRadius`);
@@ -2274,7 +2328,8 @@ export default function WindowPropertiesTest() {
                 expect(false).assertTrue();
                 hilog.error(domain, tag,msgStr + 'Succeeded in calling setWindowCornerRadius.');
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed2 to set the call setWindowCornerRadius. Cause:' + JSON.stringify(exception.code)+',errMessage: '+ exception.message);
                 expect(exception.code).assertEqual(1300002);
                 expect(exception.message!=null).assertTrue();
@@ -2303,7 +2358,8 @@ export default function WindowPropertiesTest() {
                 expect(false).assertTrue();
                 hilog.info(domain, tag,msgStr + 'Succeeded in calling getWindowCornerRadius.');
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed2 to set the call getWindowCornerRadius. Cause:' + JSON.stringify(exception.code)+',errMessage: '+ exception.message);
                 expect(exception.code).assertEqual(1300004);
                 expect(exception.message!=null).assertTrue();
@@ -2345,7 +2401,8 @@ export default function WindowPropertiesTest() {
                     }
                 });
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed to set the call setWindowCornerRadius. Cause:' + JSON.stringify(exception.code)+',errMessage: '+ exception.message);
                 await subWindowClass!.destroyWindow();
                 if (exception.code == 801) {
@@ -2382,7 +2439,8 @@ export default function WindowPropertiesTest() {
                 expect(densityInfo2.systemDensity).assertEqual(densityInfo2.customDensity)
                 expect(densityInfo1.customDensity).assertEqual(densityInfo2.customDensity)
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr +
                     `Failed to getWindowDensityInfo. Cause code: ${exception.code}, message: ${exception.message}`);
                 if (exception.code == 801) {
@@ -2414,7 +2472,8 @@ export default function WindowPropertiesTest() {
                 hilog.info(domain, tag,msgStr + 'setWindowRectAutoSave success. ' );
                 expect(false).assertTrue();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed to set the call setWindowRectAutoSave. Cause:' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002);
                 done()
@@ -2467,7 +2526,8 @@ export default function WindowPropertiesTest() {
                     expect(err.code).assertEqual(1300002);
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.log(msgStr + 'Failed to setWindowMask' + JSON.stringify(error.code) + error.message);
                 if (error.code == 801) {
                     console.log(msgStr + '此设备不支持 setWindowMask');
@@ -2517,7 +2577,8 @@ export default function WindowPropertiesTest() {
                     expect(err.code).assertEqual(1300004);
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.log(msgStr + 'Failed to setWindowMask' + JSON.stringify(error.code) + error.message);
                 if (error.code == 801) {
                     console.log(msgStr + '此设备不支持 setWindowMask');
@@ -2633,7 +2694,8 @@ export default function WindowPropertiesTest() {
                 console.error(msgStr + 'Succeeded in calling on setDefaultDensityEnabled.');
                 expect(false).assertTrue();
                 done()
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.log(msgStr + 'Failed to call on setDefaultDensityEnabled. Cause:' + JSON.stringify(e));
                 if (e.code == 801) {
                     expect(e.code).assertEqual(801);

@@ -83,7 +83,8 @@ export default function drawingTsCanvasPart5Test() {
           left: maxVal, top: maxVal, right: maxVal, bottom: maxVal
         });
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -110,7 +111,8 @@ export default function drawingTsCanvasPart5Test() {
           }, new drawing.SamplingOptions(itemList1[randomEnum1]));
         }
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -133,7 +135,8 @@ export default function drawingTsCanvasPart5Test() {
         }, undefined);
         console.info(msg + `test error`);
         expect().assertFail()
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
@@ -159,7 +162,8 @@ export default function drawingTsCanvasPart5Test() {
         console.info(msg + " isClipEmpty 2 -----result2:  "+ result2);
         expect(result2).assertEqual(true);
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -182,7 +186,8 @@ export default function drawingTsCanvasPart5Test() {
           canvas.isClipEmpty();
         }
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -206,7 +211,8 @@ export default function drawingTsCanvasPart5Test() {
         canvas.clipRegion(region1, drawing.ClipOp.DIFFERENCE);
         canvas.clipRegion(region1, drawing.ClipOp.INTERSECT);
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -230,7 +236,8 @@ export default function drawingTsCanvasPart5Test() {
           canvas.clipRegion(region1, drawing.ClipOp.DIFFERENCE);
         }
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -253,7 +260,8 @@ export default function drawingTsCanvasPart5Test() {
         canvas.clipRegion(region1, undefined);
         console.info(msg + `test error`);
         expect().assertFail()
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
@@ -283,7 +291,8 @@ export default function drawingTsCanvasPart5Test() {
         canvas.clipRoundRect(roundRectOne, drawing.ClipOp.INTERSECT, true);
         canvas.clipRoundRect(roundRectOne, drawing.ClipOp.INTERSECT, false);
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -312,7 +321,8 @@ export default function drawingTsCanvasPart5Test() {
           canvas.clipRoundRect(roundRectOne, itemList[randomEnum], true);
         }
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -338,7 +348,8 @@ export default function drawingTsCanvasPart5Test() {
         canvas.resetMatrix();
 
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -372,7 +383,8 @@ export default function drawingTsCanvasPart5Test() {
         }
 
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -397,7 +409,8 @@ export default function drawingTsCanvasPart5Test() {
         canvas.drawSingleCharacter("\\", font, -200.1, 200.1);
         canvas.drawSingleCharacter("1", font, 200.1, -200.1);
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -421,7 +434,8 @@ export default function drawingTsCanvasPart5Test() {
           canvas.drawSingleCharacter("你", font, Math.random(), Math.random());
         }
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -443,7 +457,8 @@ export default function drawingTsCanvasPart5Test() {
         canvas.drawSingleCharacter("", font, 100, 100);
         console.info(msg + `test error`);
         expect().assertFail()
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
@@ -452,7 +467,8 @@ export default function drawingTsCanvasPart5Test() {
         canvas.drawSingleCharacter("abcdd", font, 100, 100);
         console.info(msg + `test error`);
         expect().assertFail()
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
@@ -517,7 +533,8 @@ export default function drawingTsCanvasPart5Test() {
         });
 
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -548,7 +565,8 @@ export default function drawingTsCanvasPart5Test() {
           }, new drawing.SamplingOptions(itemList1[randomEnum1]), itemList2[randomEnum2]);
         }
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -574,7 +592,8 @@ export default function drawingTsCanvasPart5Test() {
         }, undefined, drawing.SrcRectConstraint.STRICT);
         console.info(msg + `test error`);
         expect().assertFail()
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
@@ -587,7 +606,8 @@ export default function drawingTsCanvasPart5Test() {
         }, new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_NEAREST), undefined);
         console.info(msg + `test error`);
         expect().assertFail()
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
@@ -612,7 +632,8 @@ export default function drawingTsCanvasPart5Test() {
         let roundRect = new drawing.RoundRect(rectOne, 10, 10);
         canvas.drawRoundRect(roundRect);
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -640,7 +661,8 @@ export default function drawingTsCanvasPart5Test() {
           canvas.drawRoundRect(roundRect);
         }
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -677,7 +699,8 @@ export default function drawingTsCanvasPart5Test() {
           expect(rect.bottom).assertEqual(101)
         }
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -707,7 +730,8 @@ export default function drawingTsCanvasPart5Test() {
           }
         }
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -741,7 +765,8 @@ export default function drawingTsCanvasPart5Test() {
           expect(matrixResult2.getAll()).assertDeepEquals(matrix2.getAll());
         }
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -770,7 +795,8 @@ export default function drawingTsCanvasPart5Test() {
           }
         }
         console.info(msg + 'test successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -799,7 +825,8 @@ export default function drawingTsCanvasPart5Test() {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, drawing.ShadowFlag.ALL);
         console.info(msg + 'test ALL successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test ALL errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -814,7 +841,8 @@ export default function drawingTsCanvasPart5Test() {
           alpha: 0xFF, red: 0xFF, green: 0xFF, blue: 0xFF
         }, drawing.ShadowFlag.NONE);
         console.info(msg + 'test NONE successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test NONE errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -829,7 +857,8 @@ export default function drawingTsCanvasPart5Test() {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, drawing.ShadowFlag.TRANSPARENT_OCCLUDER);
         console.info(msg + 'test TRANSPARENT_OCCLUDER successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test TRANSPARENT_OCCLUDER errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -844,7 +873,8 @@ export default function drawingTsCanvasPart5Test() {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, drawing.ShadowFlag.GEOMETRIC_ONLY);
         console.info(msg + 'test GEOMETRIC_ONLY successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test GEOMETRIC_ONLY errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }

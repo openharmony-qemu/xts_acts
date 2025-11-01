@@ -81,7 +81,8 @@ export default function DisplayTest() {
                     await permissionButton.click();
                     hilog.info(domain, tag, 'clickRequestPermission end');
                 }
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'RequestPermission failed '+err);
             }
             displayFoldStatus = display.getFoldStatus();
@@ -106,7 +107,8 @@ export default function DisplayTest() {
                 //         hilog.info(domain, tag, 'jsUnittest beforeAll orientation =' + capability.orientation);
                 //     }
                 // }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, 'jsUnittest beforeAll getDisplayCapability failed ' + err.code);
                 hilog.info(domain, tag, 'jsUnittest beforeAll code =' + code);
                 if(err.code == 801){
@@ -1300,7 +1302,8 @@ export default function DisplayTest() {
                 displayClass.offAvailableAreaChange();
                 done();
             }
-            catch (err: BusinessError) {
+            catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to on availableAreaChange. Code: ${err.code}, message: ${err.message}`);
                 if (err.code == 801) {
                     hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1365,7 +1368,8 @@ export default function DisplayTest() {
                     }
                 });
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
                 expect().assertFail();
                 done();
@@ -1430,7 +1434,8 @@ export default function DisplayTest() {
                     }
                 });
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
                 expect().assertFail();
                 done();
@@ -1496,7 +1501,8 @@ export default function DisplayTest() {
                     }
                 });
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
                 expect().assertFail();
                 done();
@@ -1561,7 +1567,8 @@ export default function DisplayTest() {
                     }
                 });
             }
-            catch (exception: BusinessError) {
+            catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${exception.code}, message: ${exception.message}`);
                 expect().assertFail();
                 done();
@@ -1586,7 +1593,8 @@ export default function DisplayTest() {
                 expect(true).assertTrue();
                 done();
             }
-            catch (err: BusinessError) {
+            catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${err.code}, message: ${err.message}`);
                 if (err.code == 801) {
                     hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1628,7 +1636,8 @@ export default function DisplayTest() {
             }
             done();
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.info(0x0000, '[ANI]',`${caseName} Failed.err:${JSON.stringify(e)}`);
           expect().assertFail();
           done()
@@ -1650,7 +1659,8 @@ export default function DisplayTest() {
           expect(display.ScreenShape.RECTANGLE).assertEqual(0)
           expect(display.ScreenShape.ROUND).assertEqual(1)
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(0x0000, '[ANI]',`jsunittets ${caseName} fail to test_ScreenShape, cause:` + error);
           expect().assertFail();
           done();
@@ -1751,7 +1761,8 @@ export default function DisplayTest() {
                     // expect(displayInfo.orientation).assertEqual(int(orientation[rotation]));
                     done();
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,caseName + ': fail:'+ err + ' '+err.code);
                 expect(false).assertTrue();
                 done();
@@ -1785,7 +1796,8 @@ export default function DisplayTest() {
                     expect(err.code == 1400001).assertTrue();
                     done();
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
                 if (err.code != 801) {
                     expect(false).assertTrue();
@@ -1822,7 +1834,8 @@ export default function DisplayTest() {
                         done();
                     })
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
                 expect(err.code == 801).assertTrue();
                 done();
@@ -1848,7 +1861,8 @@ export default function DisplayTest() {
                      expect(err.code).assertTrue();
                     done();
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
                 expect(err.code == 801 || err.code == 401).assertTrue();
                 done();
@@ -1895,7 +1909,8 @@ export default function DisplayTest() {
                     expect(false).assertTrue();
                     done();
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
                 expect(err.code == 801);
                 done();
@@ -1922,7 +1937,8 @@ export default function DisplayTest() {
                      expect(false).assertTrue();
                      done();
                  })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
                 expect(err.code == 401 || err.code == 801).assertTrue();
                 done();
@@ -1957,7 +1973,8 @@ export default function DisplayTest() {
                      expect(false).assertTrue();
                      done();
                  })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
                 expect(err.code == 401 || err.code == 801).assertTrue();
                 done();
@@ -1983,7 +2000,8 @@ export default function DisplayTest() {
                     expect(false).assertTrue();
                     done();
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
                 expect(err.code == 401 || err.code == 801).assertTrue()
                 done();
@@ -2021,7 +2039,8 @@ export default function DisplayTest() {
 
                     done();
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
                 expect(err.code == 801);
                 done();
@@ -2059,7 +2078,8 @@ export default function DisplayTest() {
 
                     done();
                 })
-            } catch (err :BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
                 expect(err.code == 801);
                 done();
@@ -2116,7 +2136,8 @@ export default function DisplayTest() {
 
                 });
 
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag,caseName + ': fail:'+ err + ' '+err.code);
                 expect(false).assertTrue();
                 done();

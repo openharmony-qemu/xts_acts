@@ -57,7 +57,8 @@ export default function DigestAlgorithmSm3Jsunit() {
       try {
         cryptoFramework.createMd("SM4");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("CreateMd catch err: " + err);
         expect(err.code).assertEqual(401);
       }
@@ -114,7 +115,8 @@ export default function DigestAlgorithmSm3Jsunit() {
             });
         });
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(null).assertFail();
       }
       done();
@@ -152,7 +154,8 @@ export default function DigestAlgorithmSm3Jsunit() {
             });
         });
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(null).assertFail();
       }
       done();
@@ -168,7 +171,8 @@ export default function DigestAlgorithmSm3Jsunit() {
       try {
         let globalMd: cryptoFramework.Md = cryptoFramework.createMd("SM3");
         expect(globalMd.algName == "SM3").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("testMDDigest catch err: " + err);
         expect(null).assertFail();
       }
@@ -276,7 +280,8 @@ export default function DigestAlgorithmSm3Jsunit() {
       try {
         cryptoFramework.createMac("SHA5");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("CreateMac catch 1 err: " + err);
         expect(err.code).assertEqual(401);
       }
@@ -334,7 +339,8 @@ export default function DigestAlgorithmSm3Jsunit() {
             });
         });
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(null).assertFail();
       }
       done();
@@ -365,7 +371,8 @@ export default function DigestAlgorithmSm3Jsunit() {
       try {
         await signGenerator.init(rsaKeyPair.priKey);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
       }
       done();
@@ -405,7 +412,8 @@ export default function DigestAlgorithmSm3Jsunit() {
       try {
         await globalHMAC.update(ginBlob);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(17630001);
       }
       await globalHMAC.init(globalSymKey);
@@ -422,7 +430,8 @@ export default function DigestAlgorithmSm3Jsunit() {
       try {
         let globalMac: cryptoFramework.Md = cryptoFramework.createMd("SM3");
         expect(globalMac.algName == "SM3").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("MacDigestAlgoName catch err: " + err);
         expect(null).assertFail();
       }

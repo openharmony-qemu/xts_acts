@@ -68,7 +68,8 @@ struct Second {
               try {
                 this.webviewCtl.setDownloadDelegate(this.delegate);
                 Utils.emitEvent(true, 6)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;

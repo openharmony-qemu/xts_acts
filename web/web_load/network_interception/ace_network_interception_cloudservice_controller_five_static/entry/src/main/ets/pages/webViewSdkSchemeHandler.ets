@@ -188,7 +188,8 @@ struct webViewSdkSchemeHandler {
                 resourceHandler.didFail(WebNetErrorList.ERR_FAILED)
                 try {
                   resourceHandler.didFinish();
-                } catch (e: BusinessError) {
+                } catch (e) {
+                  e = e as BusinessError;
                   console.log('finish error')
                 }
                 return false;
@@ -200,7 +201,8 @@ struct webViewSdkSchemeHandler {
             this.controller.setWebSchemeHandler('http', this.schemeHandler);
             this.controller.setWebSchemeHandler('resource', this.schemeHandler);
             this.controller.setWebSchemeHandler('custom', this.schemeHandler);
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
           }
         })

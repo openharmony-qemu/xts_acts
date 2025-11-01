@@ -101,7 +101,8 @@ struct injectOfflineResourcesTest {
       if (context) {
         return context.resourceManager.getRawFileContentSync(url);
       }
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       return new Uint8Array(0);
     }
     return new Uint8Array(0);
@@ -157,7 +158,8 @@ struct injectOfflineResourcesTest {
                 setTimeout(() => {
                   Utils.emitEvent(true, 20001)
                 }, 2000)
-              } catch (err: BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error(msg + ' error: ' + err.code + ' message ' + err.message);
                 Utils.emitEvent(err.code, 20001)
               }
@@ -167,7 +169,8 @@ struct injectOfflineResourcesTest {
               let msg = 'testInjectOfflineResources002'
               try {
                 this.controller.injectOfflineResources([] as web_webview.OfflineResourceMap[]);
-              } catch (err: BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error(msg + ' error: ' + err.code + ' message ' + err.message);
                 Utils.emitEvent(err.code, 20002)
               }

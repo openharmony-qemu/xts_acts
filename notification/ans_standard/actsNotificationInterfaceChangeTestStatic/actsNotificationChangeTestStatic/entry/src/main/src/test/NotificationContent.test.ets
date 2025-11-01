@@ -76,7 +76,8 @@ export default function ActsNotificationContentTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish22 fail,result is : %{public}s', JSON.stringify(err));
           expect().assertFail();
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test22 case end`);
@@ -127,7 +128,8 @@ export default function ActsNotificationContentTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result1 is : %{public}s',
             JSON.stringify(err));
           expect(err.code).assertEqual(401);
@@ -199,7 +201,8 @@ export default function ActsNotificationContentTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s',
             JSON.stringify(err));
           expect(err.code).assertEqual(401);
@@ -255,7 +258,8 @@ export default function ActsNotificationContentTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result1 is : %{public}s',
             JSON.stringify(err));
           expect().assertFail();

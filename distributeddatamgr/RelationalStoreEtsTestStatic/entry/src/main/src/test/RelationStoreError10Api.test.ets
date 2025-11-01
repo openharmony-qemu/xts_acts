@@ -62,7 +62,8 @@ async function CreateCorruptDb() {
     fs.truncateSync(file.fd, 4);
     fs.fsyncSync(file.fd)
     fs.closeSync(file)
-  } catch (err:BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.info(tag, `CreateCorruptDb err.code ${err.code}, err.message ${err.message}`)
   }
   console.info(tag, `quit create corrupt store`);
@@ -118,14 +119,16 @@ export default function RelationStoreError10Test() {
         await data_relationalStore.getRdbStore(context,STORE_CONFIG1);
         hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError10Test0001 1111 *************");
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s',  "************* RelationStoreError10Test0001 333 *************");
         hilog.info(domain, tag, '%{public}s', "RelationStoreError10Test0001, error code: "+err.code, "err message:"+ err.message);
         expect(err.code).assertEqual(14800010);
       }
       try {
         await data_relationalStore.deleteRdbStore(context,STORE_CONFIG1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', "deleteRdbStore, error code: "+err.code, "err message:"+ err.message);
         expect(err.code).assertEqual(14800010);
       }

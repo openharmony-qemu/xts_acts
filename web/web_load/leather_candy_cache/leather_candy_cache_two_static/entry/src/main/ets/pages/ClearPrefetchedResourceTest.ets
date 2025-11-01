@@ -88,7 +88,8 @@ struct clearPrefetchedResourceTest {
                   ],
                   'KeyX', 500);
                 Utils.emitEvent(true, 10110)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 Utils.emitEvent(error.code, 10110)
                 console.error(`${msg} prefetchResource ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -96,7 +97,8 @@ struct clearPrefetchedResourceTest {
                 try {
                   web_webview.WebviewController.clearPrefetchedResource(['KeyX']);
                   Utils.emitEvent(true, 10112)
-                } catch (err: BusinessError) {
+                } catch (err) {
+                  err = err as BusinessError;
                   Utils.emitEvent(err.code, 10112)
                   console.error(msg + 'clearPrefetchedResource error: ' + err.code + ' Message: ' + err.message);
                 }

@@ -111,7 +111,8 @@ async function normalProcess(signVerifyAlgName: string, isSpec:boolean, spec: cp
     await verifyUpdate(verify, input1);
     console.log("[Callback] signVerifyCallbackNormalProcess: verify update succeed");
     return await verifyVerify(verify, input2, signedText);
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error("[Callback] signVerifyCallbackNormalProcess: signVerify failed")
     throw err as Error;
   }
@@ -133,7 +134,8 @@ async function ECCCurveProcess(signVerifyAlgName: string, isSpec:boolean, spec: 
     await verifyInit(verify, signVerifyKeyPair.pubKey);
     console.log("[Callback] signVerifyCallbackNormalProcess: verify init succeed");
     return await verifyVerify(verify, input, signedText);
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error("[Callback] signVerifyCallbackNormalProcess: signVerify failed")
     throw err as Error;
   }
@@ -157,7 +159,8 @@ async function ECCCurveErrProcess(signVerifyAlgName: string, isSpec:boolean, spe
     await verifyInit(verify, signVerifyKeyPair2.pubKey);
     console.log("[Callback] signVerifyCallbackNormalProcess: verify init succeed");
     return await verifyVerify(verify, input, signedText);
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error("[Callback] signVerifyCallbackNormalProcess: signVerify failed")
     throw err as Error;
   }
@@ -193,7 +196,8 @@ async function setUseridProcess(signVerifyAlgName: string,
     await verifyUpdate(verify, input1);
     console.log("[Callback] signVerifySetUseridProcess: verify update succeed");
     return await verifyVerify(verify, input2, signedText);
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error("[Callback] signVerifySetUseridProcess: signVerify failed")
     throw err as Error;
   }

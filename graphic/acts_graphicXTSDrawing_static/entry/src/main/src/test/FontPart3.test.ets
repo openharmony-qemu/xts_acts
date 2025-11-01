@@ -70,7 +70,8 @@ export default function fontPart3Test() {
           expect(glyphs.length == 17).assertTrue();
           console.info(msg + ' textToGlyphs1 successed,glyphs:' + glyphs.length);
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` textToGlyphs1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -83,7 +84,8 @@ export default function fontPart3Test() {
           expect(glyphs.length == 17).assertTrue();
           console.info(msg + ' textToGlyphs2 successed,glyphs:' + glyphs.length);
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` textToGlyphs2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -96,7 +98,8 @@ export default function fontPart3Test() {
           console.info(msg + ' textToGlyphs5 successed,glyphs:' + glyphs);
           expect(glyphs.length == 0).assertEqual(true);
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` textToGlyphs5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -116,7 +119,8 @@ export default function fontPart3Test() {
       try {
         font.textToGlyphs('奇8龍@Fly#龘2023!*你好', undefined);
         console.info(msg + ' textToGlyphs succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` textToGlyphs errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -148,7 +152,8 @@ export default function fontPart3Test() {
             expect(glyphs.length == 10).assertTrue();
             console.info(msg + ' textToGlyphs successed,glyphs:' + glyphs.length);
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` textToGlyphs errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -170,7 +175,8 @@ export default function fontPart3Test() {
       try {
         let glyphs: int[] | undefined = font.textToGlyphs('奇8龍@Fly#龘2023!*你好', 15);
         console.info(msg + ' textToGlyphs succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` textToGlyphs errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -178,7 +184,8 @@ export default function fontPart3Test() {
       try {
         let glyphs: int[] | undefined = font.textToGlyphs('奇8龍@Fly#龘2023!*你好', 20);
         console.info(msg + ' textToGlyphs succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` textToGlyphs errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -186,7 +193,8 @@ export default function fontPart3Test() {
       try {
         let glyphs: int[] | undefined = font.textToGlyphs("", -1);
         console.info(msg + ' textToGlyphs succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` textToGlyphs errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -210,7 +218,8 @@ export default function fontPart3Test() {
           expect(widths.length == 1).assertTrue();
           console.info(msg + ' getWidths successed,widths:' + widths.length);
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getWidths errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -219,7 +228,8 @@ export default function fontPart3Test() {
         let widths: number[] | undefined = font.getWidths([]);
         expect(widths == undefined).assertTrue();
         console.info(msg + ' getWidths successed,widths:' + widths);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getWidths errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -241,7 +251,8 @@ export default function fontPart3Test() {
         try {
           font.getWidths([getRandomNumber(1, 100).toInt()]);
           console.info(msg + ' getWidths successed');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` getWidths errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -266,7 +277,8 @@ export default function fontPart3Test() {
           expect(bounds.length == 1).assertTrue();
           console.info(msg + ' getBounds successed,bounds:' + bounds.length);
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getBounds errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -277,7 +289,8 @@ export default function fontPart3Test() {
           expect(bounds.length == 1).assertTrue();
           console.info(msg + ' getBounds successed,bounds:' + bounds.length);
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getBounds errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -288,14 +301,16 @@ export default function fontPart3Test() {
           expect(bounds.length == 1).assertTrue();
           console.info(msg + ' getBounds successed,bounds:' + bounds.length);
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getBounds errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
 
       try {
         let bounds: common2D.Rect[] | undefined = font.getBounds([]);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` getBounds errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -319,7 +334,8 @@ export default function fontPart3Test() {
             expect(bounds.length == 1).assertTrue();
             console.info(msg + ' getBounds successed');
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` getBounds errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -346,7 +362,8 @@ export default function fontPart3Test() {
             console.info(msg + ' createPathForGlyph successed,path length:' + path.getLength(false));
           }
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createPathForGlyph errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -361,7 +378,8 @@ export default function fontPart3Test() {
             console.info(msg + ' createPathForGlyph successed,path length:' + result);
           }
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createPathForGlyph errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -370,7 +388,8 @@ export default function fontPart3Test() {
         let path: drawing.Path | undefined = font.createPathForGlyph((Number.MAX_VALUE).toInt());
         console.info(msg + ` createPathForGlyph Number.MAX_VALUE path is:  ${path}`);
         expect(path == undefined).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createPathForGlyph errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -379,7 +398,8 @@ export default function fontPart3Test() {
         let path: drawing.Path | undefined = font.createPathForGlyph((Number.MIN_VALUE).toInt());
         console.info(msg + ` createPathForGlyph Number.MIN_VALUE path is:  ${path}`);
         expect(path != undefined).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createPathForGlyph errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -388,7 +408,8 @@ export default function fontPart3Test() {
         let path: drawing.Path | undefined = font.createPathForGlyph(65535);
         console.info(msg + ` createPathForGlyph 65535 path is:  ${path}`);
         expect(path == undefined).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createPathForGlyph errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -410,7 +431,8 @@ export default function fontPart3Test() {
           let path: drawing.Path | undefined = font.createPathForGlyph(getRandomNumber(1, 100).toInt());
           expect(path != undefined).assertTrue();
           console.info(msg + ' createPathForGlyph successed');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` createPathForGlyph errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }

@@ -80,7 +80,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
         }).catch((error: Error) => {
           hilog.info(DOMAIN, TAG, 'ActsLongTimeTaskManagerTest afterAll getWantAgent error: %{public}s' + JSON.stringify(error));
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'ActsLongTimeTaskManagerTest afterAll aa error: %{public}s' + JSON.stringify(error));
       }
     })
@@ -155,7 +156,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
           expect(false).assertTrue();
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_001 aa error: %{public}s', JSON.stringify(error));
         expect(false).assertTrue();
         done();
@@ -215,7 +217,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
           expect(false).assertTrue();
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_002 aa error: %{public}s', JSON.stringify(error));
         expect(false).assertTrue();
         done();
@@ -271,7 +274,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
           expect(false).assertTrue();
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_014 aa error: %{public}s', JSON.stringify(error));
         expect(false).assertTrue();
         done();
@@ -296,7 +300,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_015 backgroundTaskManager BackgroundMode: ' + type);
         expect(type).assertEqual(1);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_015 aa error: %{public}s', JSON.stringify(error));
         expect(false).assertTrue();
         done();
@@ -321,7 +326,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_016 backgroundTaskManager BackgroundMode: ' + type);
         expect(type).assertEqual(2);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_016 aa error: %{public}s', JSON.stringify(error));
         expect(false).assertTrue();
         done();
@@ -346,7 +352,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_017 backgroundTaskManager BackgroundMode: ' + type);
         expect(type).assertEqual(3);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_017 aa error: %{public}s', JSON.stringify(error));
         expect(false).assertTrue();
         done();
@@ -371,7 +378,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_018 backgroundTaskManager BackgroundMode: ' + type);
         expect(type).assertEqual(4);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_018 aa error: %{public}s', JSON.stringify(error));
         expect(false).assertTrue();
         done();
@@ -396,7 +404,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_019 backgroundTaskManager BackgroundMode: ' + type);
         expect(type).assertEqual(5);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_019 aa error: %{public}s', JSON.stringify(error));
         expect(false).assertTrue();
         done();
@@ -421,7 +430,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_020 backgroundTaskManager BackgroundMode: ' + type);
         expect(type).assertEqual(6);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_020 aa error: %{public}s', JSON.stringify(error));
         expect(false).assertTrue();
         done();
@@ -446,7 +456,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_021 backgroundTaskManager BackgroundMode: ' + type);
         expect(type).assertEqual(8);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_021 aa error: %{public}s', JSON.stringify(error));
         expect(false).assertTrue();
         done();
@@ -471,7 +482,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_022 backgroundTaskManager BackgroundMode: ' + type);
         expect(type).assertEqual(9);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_022 aa error: %{public}s', JSON.stringify(error));
         expect(false).assertTrue();
         done();
@@ -496,7 +508,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_023 backgroundTaskManager BackgroundMode: ' + type);
         expect(type).assertEqual(1);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_023 aa error: %{public}s', JSON.stringify(error));
         expect(false).assertTrue();
         done();
@@ -522,7 +535,8 @@ export default function ActsLongTimeTaskManagerStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_024 backgroundTaskManager BackgroundMode: ' + type);
         expect(type).assertEqual(mode);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_024 aa error: %{public}s', JSON.stringify(error));
         expect(false).assertTrue();
         done();

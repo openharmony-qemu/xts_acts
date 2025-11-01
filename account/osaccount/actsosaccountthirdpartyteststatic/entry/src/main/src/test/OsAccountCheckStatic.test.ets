@@ -94,7 +94,8 @@ export default function ActsOsAccountThirdPartyTest_third_3_Static() {
           hilog.info(0x0000, tag, "====>queryDistributedVirtualDeviceId: " + id);
           expect(id !== 'ohosAnonymousUid').assertTrue();
           hilog.info(0x0000, tag, "====>ActsOsAccountDeviceId_0200 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, '====>Assert Fail, err: ' + JSON.stringify(err));
         }
         done();
@@ -152,7 +153,8 @@ export default function ActsOsAccountThirdPartyTest_third_3_Static() {
           expect(data !== null).assertTrue();
           hilog.info(0x0000, tag, "====>ActsOsAccountCheckMulty_0200 end====");
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>catch checkMultiOsAccountEnabled err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -203,7 +205,8 @@ export default function ActsOsAccountThirdPartyTest_third_3_Static() {
           expect(isTest).assertFalse();
           hilog.info(0x0000, tag, "====>ActsOsAccountCheckTest_0200 end====");
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>catch err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -228,7 +231,8 @@ export default function ActsOsAccountThirdPartyTest_third_3_Static() {
           expect(isUnlocked).assertEqual(true);
           hilog.info(0x0000, tag, "====>ActsOsAccountIsOsAccountUnlocked_0100 end====");
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>catch err: " + JSON.stringify(err));
           expect().assertFail();
           done();

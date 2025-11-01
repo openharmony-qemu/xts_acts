@@ -523,7 +523,8 @@ export default function ActsNotificationWantAgentStaticTest() {
             wantAgent.trigger(wantAgentData, triggerInfo)
             expect(true).assertTrue()
             done();
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(domain, tag, `err: code ${err.code}, message ${err.message}`);
             expect().assertFail()
             done();

@@ -83,7 +83,8 @@ export default function audioManagerTest() {
         console.info(`getSystemVolumeInDb :SUCCESS ${data}`);
         expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`GETSYSTEMVOLUMEINDB error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -105,12 +106,14 @@ export default function audioManagerTest() {
           console.info(`getSystemVolumeInDb :SUCCESS ${data}`);
           expect(true).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${TagFrmwk}: getSystemVolumeInDb : error ${error}`);
           expect(false).assertTrue();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`GETSYSTEMVOLUMEINDB error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -133,13 +136,15 @@ export default function audioManagerTest() {
             console.info(`${TestConst.AudioVolumeType[index]} getSystemVolumeInDb :SUCCESS ${data}`);
             expect(true).assertTrue();
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.log(`${TagFrmwk}: ${TestConst.AudioVolumeType[index]} getSystemVolumeInDb : error ${error}`);
             expect(false).assertTrue();
             done();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`GETSYSTEMVOLUMEINDB error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -163,14 +168,16 @@ export default function audioManagerTest() {
           try {
             let data = await audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, volLevel, audio.DeviceType.SPEAKER);
             console.info(` ${volLevel} getSystemVolumeInDb :SUCCESS ${data}`);
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.log(`${TagFrmwk}: ${volLevel} getSystemVolumeInDb : error ${error}`);
             expect(false).assertTrue();
             done();
           }
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETSYSTEMVOLUMEINDB_PROMISE_0300: error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -224,7 +231,8 @@ export default function audioManagerTest() {
             let data = await audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, 1, enumArray[i]);
             let index = DeviceTypeKeys[i];
             console.info(`${index} getSystemVolumeInDb :SUCCESS ${data}`);
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             let index = DeviceTypeKeys[i];
             if (index == 'DEFAULT' || index == 'MAX' || index == 'INVALID' || index == 'NONE' || index == 'WAKEUP' ||
               index == 'DISPLAY_PORT' || index == 'REMOTE_CAST' || index == 'HDMI' || index == 'REMOTE_DAUDIO') {
@@ -237,7 +245,8 @@ export default function audioManagerTest() {
           }
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`GETSYSTEMVOLUMEINDB: error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -259,7 +268,8 @@ export default function audioManagerTest() {
           console.info(`getSystemVolumeInDb :SUCCESS ${data}`);
           expect(false).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           if (error) {
             console.log(`${TagFrmwk}: getSystemVolumeInDb : error ${error.message} ${error.code}`);
             expect(Number(error.code)).assertEqual(TestConst.INVALID_INPUT_PARAMETER_6800101);
@@ -269,7 +279,8 @@ export default function audioManagerTest() {
             done();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`GETSYSTEMVOLUMEINDB error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -294,7 +305,8 @@ export default function audioManagerTest() {
           console.info(`getSystemVolumeInDb :SUCCESS ${data}, testcase FAIL!`);
           expect(false).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           if (error) {
             console.log(`${TagFrmwk}:getSystemVolumeInDb : error ${error.message} ${error.code}`);
             expect(Number(error.code)).assertEqual(TestConst.INVALID_INPUT_PARAMETER_6800101);
@@ -304,7 +316,8 @@ export default function audioManagerTest() {
             done();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`GETSYSTEMVOLUMEINDB error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -325,12 +338,14 @@ export default function audioManagerTest() {
           let data = await audioVolumeGroupManager.getSystemVolumeInDb(audio.AudioVolumeType.MEDIA, 3, audio.DeviceType.MIC);
           console.info(`getSystemVolumeInDb :SUCCESS ${data}`);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${TagFrmwk}:getSystemVolumeInDb : error ${error.message} ${error.code}`);
           expect(false).assertTrue();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`GETSYSTEMVOLUMEINDB error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -358,7 +373,8 @@ export default function audioManagerTest() {
               try {
                 let data1 = audioVolumeGroupManager.getSystemVolumeInDbSync(TestConst.AudioVolumeType[typeIndex], volIndex, device[deviceIndex]);
                 db1.add(data1!);
-              } catch (err: BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.info(`db1 getSystemVolumeInDbSync : error ${err?.message} ${err?.code}`);
                 expect(false).assertTrue();
                 done();
@@ -366,7 +382,8 @@ export default function audioManagerTest() {
               try {
                 let data2 = audioVolumeGroupManager.getSystemVolumeInDbSync(TestConst.AudioVolumeType[typeIndex], volIndex, device[deviceIndex]);
                 db2.add(data2!);
-              } catch (err: BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.info(`db2 getSystemVolumeInDbSync : error ${err?.message} ${err?.code}`);
                 expect(false).assertTrue();
                 done();
@@ -379,7 +396,8 @@ export default function audioManagerTest() {
           expect(db1[i]).assertEqual(db2[i]);
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`GETSYSTEMVOLUMEINDB error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();

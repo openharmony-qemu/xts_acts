@@ -98,7 +98,8 @@ function expectEqual(exp: string | number | boolean | int | undefined,
 const ExpectFail = () => {
   try {
     expect().assertFail();
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.info("expectInfo", `test failed`);
   }
 }

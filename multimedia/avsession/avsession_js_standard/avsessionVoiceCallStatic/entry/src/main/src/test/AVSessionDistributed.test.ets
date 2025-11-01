@@ -38,18 +38,21 @@ export default function abilityTest() {
             try{
                 session = await avSession.createAVSession(context, tag, 'voice_call')
                 console.info(`${TAG}: avSession create success`);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}: Session create error: code: ${err.code}, message: ${err.message}`);
             };
             try{
                 await session!.activate()
                 console.info(`${TAG}: Session activate`);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}: Session activate error: code: ${err.code}, message: ${err.message}`);
             };
             try {
                 controller = await session!.getController();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`${TAG}: getController error: code: ${err.code}, message: ${err.message}`);
             }
             await Utils.msSleep(800);
@@ -62,7 +65,8 @@ export default function abilityTest() {
                 try{
                     await session!.destroy()
                     console.info(`${TAG}: Session destroy success`);
-                }catch(err: BusinessError){
+                }catch(err) {
+                    err = err as BusinessError;
                     console.info(`${TAG}: Session destroy error: code: ${err.code}, message: ${err.message}`);
                 };
             } else {
@@ -72,7 +76,8 @@ export default function abilityTest() {
                 try{
                     await controller.destroy()
                     console.info(`${TAG}: Controller destroy success`);
-                }catch(err: BusinessError){
+                }catch(err) {
+                    err = err as BusinessError;
                     console.info(`${TAG}: Controller destroy error: code: ${err.code}, message: ${err.message}`);
                 };
             } else {
@@ -99,7 +104,8 @@ export default function abilityTest() {
             try{
                 await controller.getExtrasWithEvent(COMMON_COMMAND_STRING)
                 console.info(`${TAG}: getExtrasWithEvent successfully`);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 if (err.message == 'expect true, actualValue is false' || err.code == 6600105){
                     console.info(`${TAG}: getExtrasWithEvent failed with err: ${err.code}, ${err.message}`);
                     expect(true).assertTrue();
@@ -151,7 +157,8 @@ export default function abilityTest() {
                 extras = await controller.getExtrasWithEvent(COMMON_COMMAND_STRING);
                 console.info(` AUDIO_GET_AVAILABLE_DEVICES ${extras[COMMON_COMMAND_STRING]}`);
                 expect(true).assertTrue();
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}: getExtrasWithEvent failed with err: ${err.code}, ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -173,7 +180,8 @@ export default function abilityTest() {
             try{
                 extras = await controller.getExtrasWithEvent(COMMON_COMMAND_STRING);
                 console.info(` AUDIO_GET_PREFERRED_OUTPUT_DEVICE_FOR_RENDERER_INFO ${extras[COMMON_COMMAND_STRING]}`);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}: getExtrasWithEvent failed with err: ${err.code}, ${err.message}`);
                 expect(false).assertTrue();
             }

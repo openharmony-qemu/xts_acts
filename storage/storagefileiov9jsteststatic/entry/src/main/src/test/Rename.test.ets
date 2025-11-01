@@ -49,7 +49,8 @@ export default function fileIORename() {
         fs.renameSync(fpath, newf);
         expect(fs.accessSync(newf)).assertTrue();
         fs.unlinkSync(newf);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_sync_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -72,7 +73,8 @@ export default function fileIORename() {
         let newf = fpath + 'test';
         fs.renameSync(fpath, newf);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_sync_static_001 has failed for' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
       }
@@ -100,7 +102,8 @@ export default function fileIORename() {
         fs.renameSync(fpath, newf);
         expect(fs.accessSync(newf)).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_sync_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -124,7 +127,8 @@ export default function fileIORename() {
       try {
         fs.renameSync(fpath, fpathTarget);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_sync_static_003 has failed for' + JSON.stringify(e));
         expect(e.code == 13900030 && e.message == 'File name too long').assertTrue();
@@ -146,7 +150,8 @@ export default function fileIORename() {
       try {
         fs.renameSync('/data', '/data_new');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_sync_static_004 has failed for' + JSON.stringify(e));
         expect(e.code == 13900012 && e.message == 'Permission denied').assertTrue();
       }
@@ -172,7 +177,8 @@ export default function fileIORename() {
         expect(fs.accessSync(newf)).assertTrue();
         fs.unlinkSync(newf);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_async_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -199,7 +205,8 @@ export default function fileIORename() {
           fs.unlinkSync(newf);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_async_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -222,7 +229,8 @@ export default function fileIORename() {
         let newf = fpath + 'test';
         await fs.rename(fpath, newf);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_async_static_002 has failed for' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
@@ -251,7 +259,8 @@ export default function fileIORename() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_async_static_003 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -280,7 +289,8 @@ export default function fileIORename() {
         expect(fs.accessSync(newf)).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_async_static_004 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -310,7 +320,8 @@ export default function fileIORename() {
           fs.rmdirSync(dpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_async_static_005 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -334,7 +345,8 @@ export default function fileIORename() {
         let fpathTarget = fpath + await Utils.randomString(250);
         await fs.rename(fpath, fpathTarget);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_async_static_006 has failed for' + JSON.stringify(e));
         expect(e.code == 13900030 && e.message == 'File name too long').assertTrue();
@@ -366,7 +378,8 @@ export default function fileIORename() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_async_static_006 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -386,7 +399,8 @@ export default function fileIORename() {
       try {
         await fs.rename('/data', '/data_new');
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_rename_async_static_008 has failed for' + JSON.stringify(e));
         expect(e.code == 13900012 && e.message == 'Permission denied').assertTrue();
         done();

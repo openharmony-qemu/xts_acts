@@ -59,7 +59,8 @@ struct MyStateSample {
                   }
                 hilog.info(0x0000, TAG, '%{public}s', `Succeeded in publishing common event.`);
               });
-          } catch (err: BusinessError) {
+          } catch (err) {
+              err = err as BusinessError;
               hilog.info(0x0000, TAG, '%{public}s',
                 `Failed to publish common event. Code is ${err?.code}, message is ${err?.message}`);
               }

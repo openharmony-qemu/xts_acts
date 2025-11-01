@@ -51,7 +51,8 @@ async function hkdfPromise(algName: string, spec: cryptoFramework.HKDFSpec): Pro
     let secret: cryptoFramework.DataBlob = await kdf.generateSecret(spec);
 
     return secret;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`hkdfPromise “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -63,7 +64,8 @@ function hkdfSync(algName: string, spec: cryptoFramework.HKDFSpec): cryptoFramew
     let secret: cryptoFramework.DataBlob = kdf.generateSecretSync(spec);
 
     return secret;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`hkdfSync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -84,7 +86,8 @@ function hkdfSpec(key: string, isKeyString: boolean, salt: string,
     };
 
     return spec;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`hkdfSpec “${error}“, error code: ${error.code}`);
     throw error as Error;
   }

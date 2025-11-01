@@ -150,7 +150,8 @@ export default function cameraSessionAutoDeviceSwitchTest() {
         for (let i = 0; i < cameraOutputCap.previewProfiles.length; i++) {
           try {
             mPreviewOutput = mCameraManager.createPreviewOutput(cameraOutputCap.previewProfiles[i], surfaceId);
-          } catch (error:BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info('  createPreviewOutput failed');
             console.info('  createPreviewOutput FAILED : ' + error);
           }
@@ -233,7 +234,8 @@ export default function cameraSessionAutoDeviceSwitchTest() {
           createOutput(i);
           try {
             mCameraSession = mCameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
-          } catch (error:BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info('createCaptureSession FAILED');
             expect().assertFail();
             done();
@@ -297,7 +299,8 @@ export default function cameraSessionAutoDeviceSwitchTest() {
           createOutput(i);
           try {
             mCameraSession = mCameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
-          } catch (error:BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info('createCaptureSession FAILED');
             expect().assertFail();
             done();
@@ -320,7 +323,8 @@ export default function cameraSessionAutoDeviceSwitchTest() {
           if (isSupported) {
             try {
               mCameraSession.enableAutoDeviceSwitch(true);
-            } catch (error:BusinessError) {
+            } catch (error) {
+              error = error as BusinessError;
               expect().assertFail();
             }
           }
@@ -360,7 +364,8 @@ export default function cameraSessionAutoDeviceSwitchTest() {
           createOutput(i);
           try {
             mCameraSession = mCameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
-          } catch (error:BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info('createCaptureSession FAILED');
             expect().assertFail();
             done();
@@ -383,7 +388,8 @@ export default function cameraSessionAutoDeviceSwitchTest() {
           if (isSupported) {
             try {
               mCameraSession.enableAutoDeviceSwitch(true);
-            } catch (error:BusinessError) {
+            } catch (error) {
+              error = error as BusinessError;
               expect().assertFail();
             }
             mCameraSession.onAutoDeviceSwitchStatusChange((error: BusinessError | null, autoDeviceSwitchStatus: cameraObj.AutoDeviceSwitchStatus | undefined) => {
@@ -431,7 +437,8 @@ export default function cameraSessionAutoDeviceSwitchTest() {
           createOutput(i);
           try {
             mCameraSession = mCameraManager.createSession<cameraObj.PhotoSession>(cameraObj.SceneMode.NORMAL_PHOTO);
-          } catch (error:BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info('createCaptureSession FAILED');
             expect().assertFail();
             done();
@@ -454,7 +461,8 @@ export default function cameraSessionAutoDeviceSwitchTest() {
           if (isSupported) {
             try {
               mCameraSession.enableAutoDeviceSwitch(true);
-            } catch (error:BusinessError) {
+            } catch (error) {
+              error = error as BusinessError;
               expect().assertFail();
             }
             let callback = (error: BusinessError | null, autoDeviceSwitchStatus: cameraObj.AutoDeviceSwitchStatus | undefined) => {

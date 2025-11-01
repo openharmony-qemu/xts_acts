@@ -60,7 +60,8 @@ async function CreateCorruptDb() {
     fs.truncateSync(file.fd, 4);
     fs.fsyncSync(file.fd)
     fs.closeSync(file)
-  } catch (err:BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.info(tag, `CreateCorruptDb err.code ${err.code}, err.message ${err.message}`)
   }
   console.info(tag, `quit create corrupt store`);
@@ -77,7 +78,8 @@ async function CreateCorruptDb1() {
     fs.truncateSync(file.fd, 4);
     fs.fsyncSync(file.fd)
     fs.closeSync(file)
-  } catch (err:BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.info(tag, `CreateCorruptDb err.code ${err.code}, err.message ${err.message}`)
   }
   console.info(tag, `quit create corrupt store`);
@@ -141,7 +143,8 @@ export default function RelationStoreError11Test() {
         expect(num == 1).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0001 ************* err ' + err.code);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -167,7 +170,8 @@ export default function RelationStoreError11Test() {
         expect(num == 1).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0002 ************* err ' + err.code);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -194,7 +198,8 @@ export default function RelationStoreError11Test() {
         expect(num == 1).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0003 ************* err ' + err.code);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -219,7 +224,8 @@ export default function RelationStoreError11Test() {
         expect(num == 1).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0004 ************* err ' + err.code);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -247,7 +253,8 @@ export default function RelationStoreError11Test() {
         expect(rows == 1).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0005 end *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -275,7 +282,8 @@ export default function RelationStoreError11Test() {
         expect(rows == 1).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0006 end *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -303,7 +311,8 @@ export default function RelationStoreError11Test() {
         expect(rows == 1).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0007 err *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -331,7 +340,8 @@ export default function RelationStoreError11Test() {
         expect(rows == 1).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0008 err *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -359,7 +369,8 @@ export default function RelationStoreError11Test() {
         expect(rows == 1).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0009 err *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -387,7 +398,8 @@ export default function RelationStoreError11Test() {
         expect(rows == 1).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0010 err *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -417,7 +429,8 @@ export default function RelationStoreError11Test() {
         expect(rows == "ok").assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0011 err *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -449,7 +462,8 @@ export default function RelationStoreError11Test() {
         trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0012 err *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         trans.rollback();
@@ -482,7 +496,8 @@ export default function RelationStoreError11Test() {
         trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0013 err *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         trans.rollback();
@@ -515,7 +530,8 @@ export default function RelationStoreError11Test() {
         trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0014 err *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         trans.rollback();
@@ -548,7 +564,8 @@ export default function RelationStoreError11Test() {
         trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0015 err *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         trans.rollback();
@@ -581,7 +598,8 @@ export default function RelationStoreError11Test() {
         trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0016 err *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         trans.rollback();
@@ -615,7 +633,8 @@ export default function RelationStoreError11Test() {
         trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0017 err *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         trans.rollback();
@@ -649,7 +668,8 @@ export default function RelationStoreError11Test() {
         trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0018 err *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         trans.rollback();
@@ -683,7 +703,8 @@ export default function RelationStoreError11Test() {
         trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0019 err *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         trans.rollback();
@@ -717,7 +738,8 @@ export default function RelationStoreError11Test() {
         trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0020 err *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         trans.rollback();
@@ -751,7 +773,8 @@ export default function RelationStoreError11Test() {
         trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0021 err *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         trans.rollback();
@@ -785,7 +808,8 @@ export default function RelationStoreError11Test() {
         trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0022 err *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         trans.rollback();
@@ -813,7 +837,8 @@ export default function RelationStoreError11Test() {
         expect(res).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0023 err *************'+err.code + err.message);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -840,7 +865,8 @@ export default function RelationStoreError11Test() {
         expect(res).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0024 err *************'+err.code + err.message);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -866,7 +892,8 @@ export default function RelationStoreError11Test() {
         expect(res == "hello" ).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0025 err *************'+err.code + err.message);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -893,7 +920,8 @@ export default function RelationStoreError11Test() {
         expect(JSON.stringify(res) == '{"0":1,"1":2,"2":3}').assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0026 err *************'+err.code + err.message);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -920,7 +948,8 @@ export default function RelationStoreError11Test() {
         expect(res == 10).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0027 err *************'+err.code + err.message);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -947,7 +976,8 @@ export default function RelationStoreError11Test() {
         expect(res == 1).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0028 err *************'+err.code + err.message);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -974,7 +1004,8 @@ export default function RelationStoreError11Test() {
         expect(JSON.stringify(res) == '{"size":"","uri":"","name":"","path":"","createTime":"","modifyTime":""}').assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0029 err *************'+err.code + err.message);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -1021,7 +1052,8 @@ export default function RelationStoreError11Test() {
         expect(res.length == 0).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0030 err *************'+err.code + err.message);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -1048,7 +1080,8 @@ export default function RelationStoreError11Test() {
         expect(res == null).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0031 err *************'+err.code + err.message);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -1074,7 +1107,8 @@ export default function RelationStoreError11Test() {
         expect(JSON.stringify(res) != '{}').assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0032 end *************'+err.code + err.message);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -1102,7 +1136,8 @@ export default function RelationStoreError11Test() {
         expect(res).assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0033 end *************'+err.code + err.message);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -1129,7 +1164,8 @@ export default function RelationStoreError11Test() {
         expect().assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0034  ************* err'+err.code + err.message);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
@@ -1162,7 +1198,8 @@ export default function RelationStoreError11Test() {
         trans.rollback();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0035 err *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         trans.rollback();
@@ -1193,7 +1230,8 @@ export default function RelationStoreError11Test() {
         expect().assertFail();
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);
         done();
-      }catch(err:BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', '************* RelationStoreError11Test0036 err *************' + err);
         expect(err.code == 14800011).assertEqual(true);
         await data_relationalStore.deleteRdbStore(context, STORE_CONFIG);

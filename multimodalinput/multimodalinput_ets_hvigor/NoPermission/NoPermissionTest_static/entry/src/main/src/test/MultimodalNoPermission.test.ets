@@ -57,7 +57,8 @@ export default function MultimodalNoPermissionTest() {
           console.info(`${caseName} Set capslock state success`);
           ExpectFalse(true);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} Failed to set capslock state, error: ${JSON.stringify(error,
             [`code`, `message`])}`);
           ExpectTrue(error.code === 201);
@@ -83,7 +84,8 @@ export default function MultimodalNoPermissionTest() {
           console.info(`${caseName} transmitInfrared success.`);
           ExpectFalse(true);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectTrue(error.code == 201);
           done();
@@ -106,7 +108,8 @@ export default function MultimodalNoPermissionTest() {
           console.info(`${caseName} getInfraredFrequencies success, frequencies: ${JSON.stringify(frequencies)}`);
           ExpectFalse(true);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectTrue(error.code == 201);
           done();

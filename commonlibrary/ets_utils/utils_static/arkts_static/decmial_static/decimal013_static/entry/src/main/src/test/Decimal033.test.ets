@@ -355,7 +355,8 @@ export default function DecimalTest033() {
       try {
         test_mod_001('e', 'e', '5.41836328678e+4', 12, 5);
         expect(true).assertEqual(false);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);

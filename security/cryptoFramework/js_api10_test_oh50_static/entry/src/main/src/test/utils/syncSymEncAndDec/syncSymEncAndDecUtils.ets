@@ -87,7 +87,8 @@ function tagEncryptDecryptMessageSync(algName: string, isEnc: boolean, symKey: c
       }
     }
     return {data:updateOutput, paramSpec:paramsSpec} as dataGcmOrCCMSpec;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -108,7 +109,8 @@ function encryptDecryptMessageSync(algName: string, isEnc: boolean, symKey: cryp
     } else {
       return {data:updateOutput, paramSpec:paramsSpec} as dataSpec;
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -120,7 +122,8 @@ function createSymKeySync(algName: string): cryptoFramework.SymKey {
     let syncSymKey: cryptoFramework.SymKey = symKeyGenerator.generateSymKeySync();
 
     return syncSymKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -132,7 +135,8 @@ async function convertSymKeyPromise(algName: string, symKeyBlob: cryptoFramework
     let syncSymKey: cryptoFramework.SymKey = await symKeyGenerator.convertKey(symKeyBlob);
 
     return syncSymKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -144,7 +148,8 @@ async function createSymKeyPromise(algName: string): Promise<cryptoFramework.Sym
     let syncSymKey: cryptoFramework.SymKey = await symKeyGenerator.generateSymKey();
 
     return syncSymKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -169,7 +174,8 @@ async function createAsymKeySync(algName: string): Promise<cryptoFramework.KeyPa
     }
 
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -190,7 +196,8 @@ function encryptDecryptAsymMessageSync(algName: string, keyPair: cryptoFramework
     } else {
       return encryptCipher;
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -216,7 +223,8 @@ function encryptDecryptAsymOAaepMessageSync(algName: string, keyPair: cryptoFram
     } else {
       return encryptCipher;
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -252,7 +260,8 @@ function gcmEncOrDecMessageSync(algName: string, isEnc: boolean, symKey: cryptoF
     }
 
     return {data:{data: cipherText1}, paramSpec} as dataGcmOrCCMSpec;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -287,7 +296,8 @@ async function gcmEncOrDecMessagePromise(algName: string, isEnc: boolean, symKey
     paramSpec.authTag = authTag1;
 
     return {data:{data: cipherText1}, paramSpec} as dataGcmOrCCMSpec;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -310,7 +320,8 @@ function gcmEncOrDecNullSync(algName: string, isEnc: boolean, symKey: cryptoFram
       paramsSpec.authTag = authTag;
     }
     return paramsSpec;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -333,7 +344,8 @@ async function gcmEncOrDecNullPromise(algName: string, isEnc: boolean, symKey: c
       paramsSpec.authTag = authTag;
     }
     return paramsSpec;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }

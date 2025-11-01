@@ -78,7 +78,8 @@ struct webViewController {
                   console.log('buttonStart==>' + this.buttonStart);
                   this.removeRom = false
                   this.controller.loadUrl('https://openharmony.cn/')
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 }
                 break;

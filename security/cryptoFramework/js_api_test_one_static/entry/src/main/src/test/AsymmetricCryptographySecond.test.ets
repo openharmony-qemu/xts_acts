@@ -62,7 +62,8 @@ export default function AsymmetricCryptographyJsSecondunit() {
         try {
           cryptoFramework.createAsyKeyGenerator("RSA256");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("err is:" + err.code);
           expect(err.code).assertEqual(401);
         }
@@ -70,7 +71,8 @@ export default function AsymmetricCryptographyJsSecondunit() {
         try {
           cryptoFramework.createAsyKeyGenerator("NULL");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("err is:" + err.code);
           expect(err.code).assertEqual(401);
         }
@@ -91,28 +93,32 @@ export default function AsymmetricCryptographyJsSecondunit() {
         try {
           cryptoFramework.createSign("RSA4096|NULL|SHA256");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
 
         try {
           cryptoFramework.createSign("RSA4096|PKCS1|NULL");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
 
         try {
           cryptoFramework.createSign("RSA4096|PKCS1|SHA122");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
 
         try {
           cryptoFramework.createSign("RSA4096|PKCS5|SHA256");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         done();
@@ -190,28 +196,32 @@ export default function AsymmetricCryptographyJsSecondunit() {
         try {
           cryptoFramework.createVerify("RSA4096|NULL|SHA256");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
 
         try {
           cryptoFramework.createVerify("RSA4096|PKCS1|NULL");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
 
         try {
           cryptoFramework.createVerify("RSA4096|PKCS1|SHA122");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
 
         try {
           cryptoFramework.createVerify("RSA4096|PKCS5|SHA256");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         done();
@@ -355,7 +365,8 @@ export default function AsymmetricCryptographyJsSecondunit() {
         try {
           cryptoFramework.createAsyKeyGenerator("ECC1");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("err is:" + err.code);
           expect(err.code).assertEqual(401);
         }
@@ -363,7 +374,8 @@ export default function AsymmetricCryptographyJsSecondunit() {
         try {
           cryptoFramework.createAsyKeyGenerator("");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("err is:" + err.code);
           expect(err.code).assertEqual(401);
         }
@@ -384,25 +396,29 @@ export default function AsymmetricCryptographyJsSecondunit() {
         try {
           cryptoFramework.createSign("ECC224|SHA257");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createSign("ECC224|NULL");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createSign("NULL|SHA1");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createSign("ECC1|SHA1");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         done();
@@ -423,25 +439,29 @@ export default function AsymmetricCryptographyJsSecondunit() {
           cryptoFramework.createAsyKeyGenerator("RSA3072");
           cryptoFramework.createVerify("ECC1|SHA256");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createVerify("NULL|SHA256");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createVerify("ECC224|SHA122");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createVerify("ECC224|NULL");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         done();
@@ -589,7 +609,8 @@ export default function AsymmetricCryptographyJsSecondunit() {
         try {
           cryptoFramework.createKeyAgreement("ECC5");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         done();
@@ -619,7 +640,8 @@ export default function AsymmetricCryptographyJsSecondunit() {
             })
           })
           expect(keyPair2 != null).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(null).assertFail();
         }
         done();
@@ -652,7 +674,8 @@ export default function AsymmetricCryptographyJsSecondunit() {
           let keyAgrementGenerator: cryptoFramework.KeyAgreement = cryptoFramework.createKeyAgreement("ECC521");
           await keyAgrementGenerator.generateSecret(keyPair1.priKey, keyPair2.pubKey)
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         done();

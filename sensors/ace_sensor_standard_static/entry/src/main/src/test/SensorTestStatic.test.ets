@@ -351,7 +351,8 @@ export default function SensorJsStaticTest() {
         });
         hilog.info(0x0000, 'testTag', `beforeAll success ${sensorList}`);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(0x0000, 'testTag', `beforeAll failed err.code ${error.code} ,err.message${error.message}`);
         done();
       }
@@ -2288,7 +2289,8 @@ export default function SensorJsStaticTest() {
           hilog.info(domain, tag, TAG + " Succeeded in getting sensor: " + JSON.stringify(ret[i]));
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         let isIncluded = CODEARR.includes(error.code)
         expect(isIncluded).assertTrue();
@@ -2324,7 +2326,8 @@ export default function SensorJsStaticTest() {
           hilog.info(domain, tag, TAG + 'getSensorListSync sensors is null');
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         let isIncluded = CODEARR.includes(error.code)
         expect(isIncluded).assertTrue();
@@ -2350,7 +2353,8 @@ export default function SensorJsStaticTest() {
         let ret = sensor.getSingleSensorSync(sensor.SensorId.ACCELEROMETER);
         hilog.info(domain, tag, TAG + " Succeeded in getting sensor: " + JSON.stringify(ret));
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         let isIncluded = CODEARR.includes(error.code)
         expect(isIncluded).assertTrue();
@@ -2384,7 +2388,8 @@ export default function SensorJsStaticTest() {
           hilog.info(domain, tag, TAG + 'getSingleSensorSync acclSensor is null');
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
         let isIncluded = CODEARR.includes(error.code)
         expect(isIncluded).assertTrue();
@@ -2691,7 +2696,8 @@ export default function SensorJsStaticTest() {
           hilog.info(domain, tag, TAG + ' getGeomagneticInfo z: ' + Number.isNaN(data.geomagneticDip));
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getGeomagneticInfo failed, errCode: ' + error.code + ' ,msg:' + error.message);
         expect(true).assertFalse();
         done();
@@ -2728,7 +2734,8 @@ export default function SensorJsStaticTest() {
           hilog.info(domain, tag, TAG + ' getGeomagneticInfo success');
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getGeomagneticInfo failed, errCode: ' + error.code + ' ,msg:' + error.message);
         expect(true).assertFalse();
         done();
@@ -2765,7 +2772,8 @@ export default function SensorJsStaticTest() {
           hilog.info(domain, tag, TAG + ' getGeomagneticInfo z: ' + Number.isNaN(data.totalIntensity));
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getGeomagneticInfo failed, errCode: ' + error.code + ' ,msg:' + error.message);
         expect(true).assertFalse();
         done();
@@ -2793,7 +2801,8 @@ export default function SensorJsStaticTest() {
           hilog.info(domain, tag, TAG + ' getDeviceAltitude success');
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
         expect(false).assertTrue();
         done()
@@ -2821,7 +2830,8 @@ export default function SensorJsStaticTest() {
           hilog.info(domain, tag, TAG + ' getDeviceAltitude success');
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
         expect(false).assertTrue();
         done()
@@ -2854,7 +2864,8 @@ export default function SensorJsStaticTest() {
           }
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
         expect(false).assertTrue();
         done()
@@ -2887,7 +2898,8 @@ export default function SensorJsStaticTest() {
           }
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
         expect(false).assertTrue();
         done()
@@ -2930,7 +2942,8 @@ export default function SensorJsStaticTest() {
           }
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
         expect(false).assertTrue();
         done()
@@ -3028,7 +3041,8 @@ export default function SensorJsStaticTest() {
           hilog.info(domain, tag, TAG + ' getDeviceAltitude success');
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getDeviceAltitude failed, errCode: ' + error.code + ' ,msg:' + error.message);
         expect(false).assertTrue();
         done()
@@ -3060,7 +3074,8 @@ export default function SensorJsStaticTest() {
           expect(false).assertTrue();
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getDeviceAltitude success, errCode: ' + error.code + ' ,msg:' + error.message);
         expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
         expect(error.message).assertEqual("Get geomagnetic dip fail");
@@ -3091,7 +3106,8 @@ export default function SensorJsStaticTest() {
           hilog.info(domain, tag, TAG + ' getDeviceAltitude fail');
           done()
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getDeviceAltitude success, errCode: ' + error.code + ' ,msg:' + error.message);
         expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
         expect(error.message).assertEqual("Get geomagnetic dip fail");
@@ -3478,7 +3494,8 @@ export default function SensorJsStaticTest() {
           expect(false).assertTrue();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' transformRotationMatrix failed, error: ' + error.code + ', ' + error.message);
         expect(false).assertTrue();
         done();
@@ -3529,7 +3546,8 @@ export default function SensorJsStaticTest() {
           expect(false).assertTrue();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' transformRotationMatrix failed, error: ' + error.code + ', ' + error.message);
         expect(false).assertTrue();
         done();
@@ -3582,7 +3600,8 @@ export default function SensorJsStaticTest() {
           expect(false).assertTrue();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getQuaternion failed, error: ' + error.code + ', ' + error.message);
         expect(false).assertTrue();
         done();
@@ -3633,7 +3652,8 @@ export default function SensorJsStaticTest() {
           expect(false).assertTrue();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getQuaternion failed, error: ' + error.code + ', ' + error.message);
         expect(false).assertTrue();
         done();
@@ -3669,7 +3689,8 @@ export default function SensorJsStaticTest() {
           expect(false).assertTrue();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getQuaternion failed, error: ' + error.code + ', ' + error.message);
         expect(error.code).assertEqual(PARAMETER_ERROR_CODE);
         expect(error.message).assertEqual("CreateQuaternion fail");
@@ -3704,7 +3725,8 @@ export default function SensorJsStaticTest() {
           expect(false).assertTrue();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getQuaternion failed, error: ' + error.code + ', ' + error.message);
         expect(error.code).assertEqual(PARAMETER_ERROR_CODE)
         expect(error.message).assertEqual("CreateQuaternion fail");
@@ -3757,7 +3779,8 @@ export default function SensorJsStaticTest() {
             done();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getQuaternion failed, error: ' + error.code + ', ' + error.message);
         expect(false).assertTrue();
         done();
@@ -3807,7 +3830,8 @@ export default function SensorJsStaticTest() {
             done();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getQuaternion failed, error: ' + error.code + ', ' + error.message);
         expect(false).assertTrue();
         done();
@@ -3900,7 +3924,8 @@ export default function SensorJsStaticTest() {
               hilog.info(domain, tag, TAG + ' getSingleSensor data: ' + JSON.stringify(data));
               expect(typeof (data)).assertEqual("object");
               done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+              error = error as BusinessError;
               console.info(TAG + ' catch error:' + error);
               hilog.info(domain, tag, TAG + ' getSingleSensor catch errCode: ' + error.code + ' ,msg:' + error.message);
               expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
@@ -3909,7 +3934,8 @@ export default function SensorJsStaticTest() {
           }
         });
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getSingleSensor errCode: ' + error.code + ' ,msg:' + error.message);
         expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
         done();
@@ -3941,7 +3967,8 @@ export default function SensorJsStaticTest() {
               hilog.info(domain, tag, TAG + ' getSingleSensor data: ' + JSON.stringify(data));
               expect(typeof (data)).assertEqual("object");
               done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+              error = error as BusinessError;
               console.info(TAG + ' catch error:' + error);
               hilog.info(domain, tag, TAG + ' getSingleSensor catch errCode: ' + error.code + ' ,msg:' + error.message);
               expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
@@ -3950,7 +3977,8 @@ export default function SensorJsStaticTest() {
           }
         });
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getSingleSensor errCode: ' + error.code + ' ,msg:' + error.message);
         expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
         done();
@@ -3991,7 +4019,8 @@ export default function SensorJsStaticTest() {
             done();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getSingleSensor errCode: ' + error.code + ' ,msg:' + error.message);
         expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
         done();
@@ -4026,7 +4055,8 @@ export default function SensorJsStaticTest() {
           expect(typeof (data.power)).assertEqual("number");
           done()
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, TAG + ' getSingleSensor errCode: ' + error.code + ' ,msg:' + error.message);
         expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
         expect(error.message).assertEqual("The sensor is not supported by the device");

@@ -90,7 +90,8 @@ let header:Record<string,string> = {
 const ExpectFail = () => {
   try {
     expect().assertFail();
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.info("expectInfo", `test failed`);
   }
 }
@@ -3197,7 +3198,7 @@ export default function WebsocketTestStatic() {
         ws.connect(availableWebSocketAddress, (error: BusinessError<void> | null, value: boolean | undefined) => {
           hilog.info(domain, tag, `${caseName} test result error ${JSON.stringify(error)} and value is ${value}`);
         })
-      } catch (err: Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch Error ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -3237,7 +3238,7 @@ export default function WebsocketTestStatic() {
         ws.connect('ws://124.222.6.66:12423', (error: BusinessError<void> | null, value: boolean | undefined) => {
           hilog.info(domain, tag, `${caseName} test result error ${JSON.stringify(error)} and value is ${value}`);
         })
-      } catch (err: Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch Error ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();

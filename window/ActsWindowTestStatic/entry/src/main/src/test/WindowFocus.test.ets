@@ -109,7 +109,8 @@ export default function WindowFocusTest() {
                     expect(false).assertTrue();
                     done();
                 });
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
                 if(err.code == 401){
                     done();
@@ -173,7 +174,8 @@ export default function WindowFocusTest() {
                     expect(false).assertTrue();
                     done();
                 });
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
                 if(err.code == 401){
                     done();

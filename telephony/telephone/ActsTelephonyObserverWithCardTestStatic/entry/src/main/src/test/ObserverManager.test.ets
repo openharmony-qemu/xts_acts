@@ -85,7 +85,8 @@ export default function ObserverManagerTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(error.code == 8300001);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -114,7 +115,8 @@ export default function ObserverManagerTest() {
         observer.off("networkStateChange");
         ExpectTrue(true);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -144,7 +146,8 @@ export default function ObserverManagerTest() {
         observer.off("networkStateChange", callback);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -177,7 +180,8 @@ export default function ObserverManagerTest() {
         observer.off("networkStateChange", callback);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -208,7 +212,8 @@ export default function ObserverManagerTest() {
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(error.code == 8300001);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -240,7 +245,8 @@ export default function ObserverManagerTest() {
         ExpectTrue(true);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -268,7 +274,8 @@ export default function ObserverManagerTest() {
         observer.off("cellularDataConnectionStateChange", callback);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -298,7 +305,8 @@ export default function ObserverManagerTest() {
         observer.off("cellularDataConnectionStateChange", callback);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -329,7 +337,8 @@ export default function ObserverManagerTest() {
         });
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -359,7 +368,8 @@ export default function ObserverManagerTest() {
           done();
         });
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(error.code == 8300001);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -389,7 +399,8 @@ export default function ObserverManagerTest() {
         observer.off('cellularDataFlowChange');
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -419,7 +430,8 @@ export default function ObserverManagerTest() {
         observer.off('cellularDataFlowChange', callback);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -451,7 +463,8 @@ export default function ObserverManagerTest() {
         observer.off('cellularDataFlowChange', callback);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');

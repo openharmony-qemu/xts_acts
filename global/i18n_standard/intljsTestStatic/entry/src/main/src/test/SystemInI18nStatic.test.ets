@@ -92,7 +92,8 @@ export default function SystemIni18nTest() {
         let value = i18n.System.getDisplayCountry('zh', 'en-US', true);
         console.log('i18n_system_test_static_0400 ' + value);
         expect(value).assertEqual('');
-      }catch(e: BusinessError){
+      }catch(e) {
+        e = e as BusinessError;
         console.log('i18n_system_test_static_0400 ' + e.code);
         console.log('i18n_system_test_static_0400 ' + e.message);
         expect(e.code).assertEqual(890001);
@@ -121,7 +122,8 @@ export default function SystemIni18nTest() {
         let value = i18n.System.getDisplayCountry('zh-Hans', 'en-US', true);
         console.log('i18n_system_test_static_0600 ' + value);
         expect(value).assertEqual('');
-      }catch(e: BusinessError){
+      }catch(e) {
+        e = e as BusinessError;
         console.log('i18n_system_test_static_0600 ' + e.code);
         console.log('i18n_system_test_static_0600 ' + e.message);
         expect(e.code).assertEqual(890001);

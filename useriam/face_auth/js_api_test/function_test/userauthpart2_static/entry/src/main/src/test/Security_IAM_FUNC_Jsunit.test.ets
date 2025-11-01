@@ -77,7 +77,8 @@ export default function userauthTest_API9() {
             try {
               hilog.info(domain, tag, format,'Security_IAM_Func_Static_0102 authtype:' + authType[idx0] + 'trustlevel:' + level[idx1])
               userAuth.getAvailableStatus(authType[idx0], level[idx1]);
-            } catch (e:BusinessError) {
+            } catch (e) {
+              e = e as BusinessError;
               hilog.info(domain, tag, format,"Security_IAM_Func_Static_0102 fail " + 'authType:' + authType[idx0] + 'trustlevel:' + level[idx1] + 'e.code:' + e.code);
               expect((e.code == userAuth.UserAuthResultCode.NOT_ENROLLED) || (e.code == userAuth.UserAuthResultCode.TYPE_NOT_SUPPORT)).assertTrue();
               done();
@@ -93,7 +94,8 @@ export default function userauthTest_API9() {
           try {
             hilog.info(domain, tag, format,'Security_IAM_Func_Static_0102 authtype:' + authType1[idx2] + 'trustlevel:' + level1)
             userAuth.getAvailableStatus(authType1[idx2], level1);
-          } catch (e:BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             hilog.info(domain, tag, format,"Security_IAM_Func_Static_0102 fail " + 'authType:' + authType1[idx2] + 'trustlevel:' + level1 + 'e.code:' + e.code);
             expect((e.code == userAuth.UserAuthResultCode.NOT_ENROLLED) || (e.code == userAuth.UserAuthResultCode.TRUST_LEVEL_NOT_SUPPORT)).assertTrue();
             done();
@@ -107,7 +109,8 @@ export default function userauthTest_API9() {
         try {
           hilog.info(domain, tag, format,'Security_IAM_Func_Static_0102 authtype:' + authType2 + 'trustlevel:' + level1)
           userAuth.getAvailableStatus(authType2, level1);
-        } catch (e:BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.info(domain, tag, format,"Security_IAM_Func_Static_0102 fail " + 'authType:' + authType2 + 'trustlevel:' + level1 + 'e.code:' + e.code);
           expect((e.code == userAuth.UserAuthResultCode.TYPE_NOT_SUPPORT) ||
             (e.code == userAuth.UserAuthResultCode.NOT_ENROLLED) || (e.code == userAuth.UserAuthResultCode.TRUST_LEVEL_NOT_SUPPORT)).assertTrue();

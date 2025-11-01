@@ -58,7 +58,8 @@ export default function abilityTest() {
                 backupExt.onRestore(ver)
                 hilog.info(domain, tag, '%{public}s', 'backup-extension run ok');
                 done()
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', 'backupextension error:'+ JSON.stringify(error));
                 expect(false).assertTrue()
                 done()

@@ -62,7 +62,8 @@ export default function MultimodalMouseEventTest() {
           ExpectTrue(Action.ACTION_DOWN == 7);
           ExpectTrue(Action.ACTION_UP == 8);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -93,7 +94,8 @@ export default function MultimodalMouseEventTest() {
           ExpectTrue(Button.TASK == 7);
 
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -118,7 +120,8 @@ export default function MultimodalMouseEventTest() {
           ExpectTrue(Axis.SCROLL_HORIZONTAL == 1);
           ExpectTrue(Axis.PINCH == 2);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -146,7 +149,8 @@ export default function MultimodalMouseEventTest() {
           ExpectTrue(testAxisValue.axis == Axis.SCROLL_VERTICAL);
           ExpectTrue(testAxisValue.value == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -172,7 +176,8 @@ export default function MultimodalMouseEventTest() {
           ExpectTrue(ToolType.JOYSTICK == 2);
           ExpectTrue(ToolType.TOUCHPAD == 3);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -245,7 +250,8 @@ export default function MultimodalMouseEventTest() {
           ExpectTrue(testMouseEvent.scrollLock == true);
           ExpectTrue(testMouseEvent.toolType == ToolType.MOUSE);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();

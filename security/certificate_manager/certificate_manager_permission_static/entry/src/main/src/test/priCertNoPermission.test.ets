@@ -55,7 +55,8 @@ export default function priCertJsAPINoPermissionTestUnit() {
       try {
         await certManager.installPrivateCertificate(keystore, keystorePwd, certAlias);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(201);
       }
       done();
@@ -84,7 +85,8 @@ export default function priCertJsAPINoPermissionTestUnit() {
           })
         });
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(201);
       }
       done();
@@ -102,7 +104,8 @@ export default function priCertJsAPINoPermissionTestUnit() {
       try {
         await certManager.getPrivateCertificate("11111");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(201);
       }
       done();
@@ -128,7 +131,8 @@ export default function priCertJsAPINoPermissionTestUnit() {
           })
         });
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(201);
       }
       done();
@@ -157,7 +161,8 @@ export default function priCertJsAPINoPermissionTestUnit() {
           })
         });
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(201);
       }
       done();
@@ -178,7 +183,8 @@ export default function priCertJsAPINoPermissionTestUnit() {
       try {
         await certManager.init("111111", signSpec);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(201);
       }
       done();
@@ -206,7 +212,8 @@ export default function priCertJsAPINoPermissionTestUnit() {
           })
         });
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(201);
       }
       done();
@@ -226,7 +233,8 @@ export default function priCertJsAPINoPermissionTestUnit() {
       try {
         await certManager.update(handle, keyStore);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(201);
       }
       done();
@@ -254,7 +262,8 @@ export default function priCertJsAPINoPermissionTestUnit() {
           })
         });
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(201);
       }
       try {
@@ -268,7 +277,8 @@ export default function priCertJsAPINoPermissionTestUnit() {
           })
         });
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(201);
       }
       done();
@@ -288,7 +298,8 @@ export default function priCertJsAPINoPermissionTestUnit() {
       try {
         await certManager.finish(handle, keyStore);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(201);
       }
       done();
@@ -315,7 +326,8 @@ export default function priCertJsAPINoPermissionTestUnit() {
           })
         });
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(201);
       }
       done();
@@ -334,7 +346,8 @@ export default function priCertJsAPINoPermissionTestUnit() {
       try {
         await certManager.abort(handle);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(201);
       }
       done();
@@ -352,7 +365,8 @@ export default function priCertJsAPINoPermissionTestUnit() {
       try {
         await certManager.uninstallPrivateCertificate("111111");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(201);
       }
       done();
@@ -378,7 +392,8 @@ export default function priCertJsAPINoPermissionTestUnit() {
           })
         });
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(201);
       }
       done();
@@ -396,7 +411,8 @@ export default function priCertJsAPINoPermissionTestUnit() {
       try {
         await certManager.getAllAppPrivateCertificates();
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(201);
       }
       done();
@@ -422,7 +438,8 @@ export default function priCertJsAPINoPermissionTestUnit() {
           })
         });
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(201);
       }
       done();

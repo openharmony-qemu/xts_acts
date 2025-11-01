@@ -62,7 +62,8 @@ struct swiperPreloadItems {
               .catch((error: Error) => {
                 console.error('error preloadItems [2, 3] failed, error code: ' + error.code)
               })
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.error('error preloadItems [2, 3] failed, error code: ' + error.code)
           }
 
@@ -82,7 +83,8 @@ struct swiperPreloadItems {
                 console.error('error preloadItems [-1] failed, error code: ' + error.code + ', error message: ' +
                 error.message)
               })
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.error('error preloadItems [-1] failed, error code: ' + error.code + ', error message: ' +
             error.message)
           }
@@ -100,7 +102,8 @@ struct swiperPreloadItems {
               .catch((error: Error) => {
                 console.error('error preloadItems [2, 3] failed, error code: ' + error.code)
               })
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             this.textResult = JSON.stringify(error.code) 
             console.info('Get error code: %{public}s', JSON.stringify(error.code));
             console.error('error preloadItems [2, 3] failed, error code: ' + error.code + ', error message: ' +

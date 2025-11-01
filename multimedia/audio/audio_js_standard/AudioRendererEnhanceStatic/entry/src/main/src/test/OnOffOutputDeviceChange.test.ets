@@ -84,7 +84,8 @@ export default function audioRendererTest() {
         }).catch((err: Error) => {
           console.info('audioRendererEnhanceTest: AudioRender Created : ERROR : ' + err.message);
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info('audioRendererEnhanceTest: AudioRender Created : catch ERROR : ' + error.code + error.message);
       }
     })

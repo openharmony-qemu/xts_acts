@@ -76,7 +76,8 @@ struct webViewOnNavigationEntryCommitted {
               case 'emitWebViewOnNavigationEntryCommitted01': {
                 try {
                   this.controller.loadUrl('https://www.weibo.com')
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   let e:BusinessError = error as BusinessError;
                   console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
                 }

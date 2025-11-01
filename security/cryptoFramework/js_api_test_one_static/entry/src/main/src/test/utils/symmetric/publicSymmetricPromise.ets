@@ -48,7 +48,8 @@ function createGlobalParams(symAlgoName: string, paramType: string): cryptoFrame
       params = null;
     }
     return params;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     throw err as Error;
   }
 }
@@ -184,7 +185,8 @@ async function encryptAndDecryptNormalProcess(
     expect(symKeyGenerator != null).assertTrue();
     try {
       cipherGenerator = createSymCipher(cipherAlgoName);
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       reject(err as Error);
     }
     expect(cipherGenerator != null).assertTrue();

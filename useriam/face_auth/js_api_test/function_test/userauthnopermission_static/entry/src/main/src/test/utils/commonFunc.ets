@@ -32,7 +32,8 @@ function checkSupportOrNot(authTypeJudge:userAuth.UserAuthType) {
     userAuth.getAvailableStatus(authTypeJudge, userAuth.AuthTrustLevel.ATL1);
     hilog.info(domain, tag, format, "checkSupportOrNot : This device supports " + 'authType:' + authTypeJudge);
     return 0;
-  } catch (e:BusinessError) {
+  } catch (e) {
+    e = e as BusinessError;
     if (e.code == 12500005 || e.code == 5) {
       hilog.info(domain, tag, format, "checkSupportOrNot :This device not supports " + 'authType: ' + authTypeJudge);
       return -1;

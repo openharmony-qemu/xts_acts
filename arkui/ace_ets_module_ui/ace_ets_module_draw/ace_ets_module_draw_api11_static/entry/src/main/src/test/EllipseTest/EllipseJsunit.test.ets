@@ -67,7 +67,8 @@ export default function ellipseJsunit() {
           await CommonFunc.sleep(2000);
           
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push ellipse page error:" + err);
       }
     });
@@ -114,7 +115,8 @@ export default function ellipseJsunit() {
         } as events_emitter.InnerEvent
         console.info("[testEllipse_static_02] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testEllipse_static_02] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -145,7 +147,8 @@ export default function ellipseJsunit() {
         } as events_emitter.InnerEvent
         console.info("[testEllipse_static_03] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testEllipse_static_03] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -176,7 +179,8 @@ export default function ellipseJsunit() {
         } as events_emitter.InnerEvent
         console.info("[testEllipse_static_04] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testEllipse_static_04] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -207,7 +211,8 @@ export default function ellipseJsunit() {
         } as events_emitter.InnerEvent
         console.info("[testEllipse_static_05] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testEllipse_static_05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -239,7 +244,8 @@ export default function ellipseJsunit() {
         } as events_emitter.InnerEvent
         console.info("[testEllipse_static_06] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testEllipse_static_06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -270,7 +276,8 @@ export default function ellipseJsunit() {
         } as events_emitter.InnerEvent
         console.info("[testEllipse07_static] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testEllipse07_static] change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);

@@ -80,7 +80,8 @@ export default function PermissionTest(){
             });
             expect(false).assertTrue();
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             hilog.info(TAG, 'testTag',
               'Test case Permission_bindDriverWithDeviceId_001 catch err : ' + JSON.stringify(error));
             expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
@@ -106,7 +107,8 @@ export default function PermissionTest(){
             await deviceManager.unbindDriverWithDeviceId(TEST_DEVICE_ID);
             expect(false).assertTrue();
             done();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             hilog.info(TAG, 'testTag', 'Test case Permission_unbindDriverWithDeviceId catch err :' + JSON.stringify(error));
             expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
             done();
@@ -130,7 +132,8 @@ export default function PermissionTest(){
         try {
           deviceManager.queryDevices();
           expect(false).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(TAG, 'testTag', 'Test case Permission_queryDevices_001 catch err: ' + JSON.stringify(err));
           expect(err.code).assertEqual(PERMISSION_DENIED_CODE);
         }

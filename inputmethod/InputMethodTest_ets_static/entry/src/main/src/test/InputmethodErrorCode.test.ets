@@ -44,7 +44,8 @@ export default function inputMethodOnErrorTest() {
         inputMethodController.on('insertText',callback1 );
         hilog.info(domain, tag, `${CASE_NAME} insertText callback1 success`);
         expect().assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
         expect(error.code).assertEqual(12800009);
         done();
@@ -71,7 +72,8 @@ export default function inputMethodOnErrorTest() {
         inputMethodController.on('deleteLeft',callback1 );
         hilog.info(domain, tag, `${CASE_NAME} deleteLeft callback1 success`);
         expect().assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
         expect(error.code).assertEqual(12800009);
         done();
@@ -98,7 +100,8 @@ export default function inputMethodOnErrorTest() {
         inputMethodController.on('deleteRight',callback1 );
         hilog.info(domain, tag, `${CASE_NAME} deleteRight callback1 success`);
         expect().assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
         expect(error.code).assertEqual(12800009);
         done();
@@ -125,7 +128,8 @@ export default function inputMethodOnErrorTest() {
         inputMethodController.on('sendKeyboardStatus',callback1 );
         hilog.info(domain, tag, `${CASE_NAME} sendKeyboardStatus callback1 success`);
         expect().assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
         expect(error.code).assertEqual(12800009);
         done();
@@ -152,7 +156,8 @@ export default function inputMethodOnErrorTest() {
         inputMethodController.on('sendFunctionKey',callback1 );
         hilog.info(domain, tag, `${CASE_NAME} sendFunctionKey callback1 success`);
         expect().assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
         expect(error.code).assertEqual(12800009);
         done();
@@ -179,7 +184,8 @@ export default function inputMethodOnErrorTest() {
         inputMethodController.on('moveCursor',callback1 );
         hilog.info(domain, tag, `${CASE_NAME} moveCursor callback1 success`);
         expect().assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
         expect(error.code).assertEqual(12800009);
         done();
@@ -206,7 +212,8 @@ export default function inputMethodOnErrorTest() {
         inputMethodController.on('handleExtendAction',callback1 );
         hilog.info(domain, tag, `${CASE_NAME} handleExtendAction callback1 success`);
         expect().assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
         expect(error.code).assertEqual(12800009);
         done();
@@ -233,7 +240,8 @@ export default function inputMethodOnErrorTest() {
         inputMethodController.on('getLeftTextOfCursor',callback1 );
         hilog.info(domain, tag, `${CASE_NAME} getLeftTextOfCursor callback1 success`);
         expect().assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
         expect(error.code).assertEqual(12800009);
         done();
@@ -260,7 +268,8 @@ export default function inputMethodOnErrorTest() {
         inputMethodController.on('getRightTextOfCursor',callback1 );
         hilog.info(domain, tag, `${CASE_NAME} getRightTextOfCursor callback1 success`);
         expect().assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
         expect(error.code).assertEqual(12800009);
         done();
@@ -287,7 +296,8 @@ export default function inputMethodOnErrorTest() {
         inputMethodController.on('getTextIndexAtCursor',callback1 );
         hilog.info(domain, tag, `${CASE_NAME} getTextIndexAtCursor callback1 success`);
         expect().assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, `${CASE_NAME} catch error, error: [${error.code}, ${error.message}]`);
         expect(error.code).assertEqual(12800009);
         done();

@@ -59,7 +59,8 @@ export default function pasteBoardTest() {
       try {
         pasteData.addRecord("x".repeat(1025), ARRAY_BUFFER);
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         catchFlag = true;
         expect(err.code == 401).assertTrue();
@@ -88,7 +89,8 @@ export default function pasteBoardTest() {
       }
       try {
         pasteData.addRecord("stringRecord1000", ARRAY_BUFFER);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         expect(err != undefined).assertFail();
       }
@@ -116,7 +118,8 @@ export default function pasteBoardTest() {
         pasteData.setProperty(prop);
         let property: pasteboard.PasteDataProperty = pasteData.getProperty();
         expect(pasteboard.ShareOption.INAPP).assertEqual(property.shareOption);
-      } catch (err: BusinessError) {
+      } catch (err) {
+          err = err as BusinessError;
           console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
       }
@@ -138,7 +141,8 @@ export default function pasteBoardTest() {
         let uri = "file:///C:/Users/username/Documents/report.pdf";
         let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, uri);
         expect(pasteData.getRecord(0).uri).assertEqual(uri);
-      } catch (err: BusinessError) {
+      } catch (err) {
+          err = err as BusinessError;
           console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
       }
@@ -161,7 +165,8 @@ export default function pasteBoardTest() {
       try {
         pasteData.getRecord(1);
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         catchFlag = true;
         expect(err.code == 12900001).assertTrue();
@@ -187,7 +192,8 @@ export default function pasteBoardTest() {
       try {
         let pasteData: pasteboard.PasteData = pasteboard.createData("x".repeat(1025), ARRAY_BUFFER);
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         catchFlag = true;
         expect(err.code == 401).assertTrue();
@@ -214,7 +220,8 @@ export default function pasteBoardTest() {
       try {
         let pasteData: pasteboard.PasteData = pasteboard.createData("", ARRAY_BUFFER);
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         catchFlag = true;
         expect(err.code == 401).assertTrue();
@@ -241,7 +248,8 @@ export default function pasteBoardTest() {
         let pasteData: pasteboard.PasteData = pasteboard.createData('selfdefined', ARRAY_BUFFER);
         let count: number = pasteData.getRecordCount();
         expect(count).assertEqual(1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         expect().assertFail();
       }
@@ -262,7 +270,8 @@ export default function pasteBoardTest() {
       try {
         let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_URI, "file:///C:/Users/Documents/report.pdf");
         expect(pasteData != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         expect().assertFail();
       }
@@ -283,7 +292,8 @@ export default function pasteBoardTest() {
       try {
         let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "hello");
         expect(pasteData != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         expect().assertFail();
       }
@@ -304,7 +314,8 @@ export default function pasteBoardTest() {
       try {
         let pasteData: pasteboard.PasteData = pasteboard.createData(pasteboard.MIMETYPE_TEXT_HTML, HTMLTEXT);
         expect(pasteData != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         expect().assertFail();
       }
@@ -325,7 +336,8 @@ export default function pasteBoardTest() {
       try {
         let pasteData: pasteboard.PasteData = pasteboard.createData('text/want', OBJECTWANT);
         expect(pasteData != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         expect().assertFail();
       }
@@ -347,7 +359,8 @@ export default function pasteBoardTest() {
       try {
         let pasteData: pasteboard.PasteData = pasteboard.createData('pixelMap', pixelMap);
         expect(pasteData != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         expect().assertFail();
       }
@@ -374,7 +387,8 @@ export default function pasteBoardTest() {
       try {
         let pasteData: pasteboard.PasteData = pasteboard.createData(record);
         expect(pasteData != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         expect().assertFail();
       }
@@ -402,7 +416,8 @@ export default function pasteBoardTest() {
       try {
         let pasteData: pasteboard.PasteData = pasteboard.createData(record);
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         catchFlag = true;
         expect(err.code == 401).assertTrue();
@@ -435,7 +450,8 @@ export default function pasteBoardTest() {
       try {
         let pasteData: pasteboard.PasteData = pasteboard.createData(record);
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         catchFlag = true;
         expect(err.code == 401).assertTrue();
@@ -468,7 +484,8 @@ export default function pasteBoardTest() {
       try {
         let pasteData: pasteboard.PasteData = pasteboard.createData(record);
         expect(pasteData != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         expect().assertFail();
       }
@@ -489,7 +506,8 @@ export default function pasteBoardTest() {
       try {
         let pasteData: pasteboard.PasteData = pasteboard.createData("x".repeat(1023), ARRAY_BUFFER);
         expect(pasteData != null).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         expect().assertFail();
       }
@@ -511,7 +529,8 @@ export default function pasteBoardTest() {
       try {
         pasteData.addRecord('', ARRAY_BUFFER);
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         expect(err.code == 401).assertTrue();
       }
@@ -538,7 +557,8 @@ export default function pasteBoardTest() {
         pasteData.addRecord(pasteboard.MIMETYPE_TEXT_HTML, HTMLTEXT);
         let count: number = pasteData.getRecordCount();
         expect(count == 5).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         expect().assertFail();
       }
@@ -563,7 +583,8 @@ export default function pasteBoardTest() {
         pasteData.addRecord(record);
         let count: number = pasteData.getRecordCount();
         expect(count == 2).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         expect().assertFail();
       }
@@ -585,7 +606,8 @@ export default function pasteBoardTest() {
       try {
         pasteData.addRecord('x'.repeat(1023), ARRAY_BUFFER);
         expect(pasteData.getRecordCount()).assertEqual(2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         expect().assertFail();
       }
@@ -608,7 +630,8 @@ export default function pasteBoardTest() {
       try {
         pasteData.getRecord(-1);
         expect().assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
         catchFlag = true;
         expect(err.code == 12900001).assertTrue();
@@ -637,7 +660,8 @@ export default function pasteBoardTest() {
         pasteData.setProperty(prop);
         let property: pasteboard.PasteDataProperty = pasteData.getProperty();
         expect(pasteboard.ShareOption.LOCALDEVICE).assertEqual(property.shareOption);
-      } catch (err: BusinessError) {
+      } catch (err) {
+          err = err as BusinessError;
           console.error("SUB_Pasteboard_Local_Pasteboard_Static error is: " + err.message + "; " + err.code);
           expect(err).assertEqual(null);
       }

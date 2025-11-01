@@ -64,7 +64,8 @@ export default function LightWeightMapTest1() {
       try {
         let lightWeightMap = new LightWeightMap<string, number>();
         expect(String(lightWeightMap != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200012);
         expect(err.message).assertEqual("The LightWeightMap's constructor cannot be directly invoked");
@@ -1161,7 +1162,8 @@ export default function LightWeightMapTest1() {
       try {
         let res = lightWeightMap.getKeyAt(6);
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200001);
         expect(err.message)
@@ -1228,7 +1230,8 @@ export default function LightWeightMapTest1() {
       try {
         lightWeightMap.setValueAt(3, "a");
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200001);
         expect(err.message)
@@ -1254,7 +1257,8 @@ export default function LightWeightMapTest1() {
       try {
         lightWeightMap.getValueAt(6);
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200001);
         expect(err.message)

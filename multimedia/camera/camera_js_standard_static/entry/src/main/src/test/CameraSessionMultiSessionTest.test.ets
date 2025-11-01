@@ -104,7 +104,8 @@ export default function cameraSessionMultiSessionTest() {
         }
         try {
           firstSession.beginConfig();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_STATIC_0100 first session beginConfig FAILED" + err.code);
           expect().assertFail();
           done();
@@ -118,7 +119,8 @@ export default function cameraSessionMultiSessionTest() {
         }
         try {
           secondSession.beginConfig();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_MULTI_SESSION_CREATE_STATIC_0100 second session beginConfig FAILED" + err.code);
           expect().assertFail();
           done();

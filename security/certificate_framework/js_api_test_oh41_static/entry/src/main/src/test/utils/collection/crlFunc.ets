@@ -83,7 +83,8 @@ async function createCollection(certIndexArr: number[], crlIndexArr: number[], c
 
     return collection;
   }
-  catch (err: BusinessError) {
+  catch (err) {
+    err = err as BusinessError;
     console.error("createCertCRLCollection error");
     throw err as Error;
   }

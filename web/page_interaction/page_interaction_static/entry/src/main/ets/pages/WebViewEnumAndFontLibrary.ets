@@ -166,7 +166,8 @@ struct WebViewEnumAndFontLibrary {
             case 'back': {
               try {
                 this.getUIContext().getRouter().back()
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;

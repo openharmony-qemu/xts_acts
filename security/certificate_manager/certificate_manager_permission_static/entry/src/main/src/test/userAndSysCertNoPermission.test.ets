@@ -52,7 +52,8 @@ export default function userAndSysCertNoPermissionJsTestUnit() {
       try {
         await certManager.getAllUserTrustedCertificates();
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_UserCertJsApi_NoPermission_Func_static_0500 get error: ${err.code}`);
         expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
       }
@@ -71,7 +72,8 @@ export default function userAndSysCertNoPermissionJsTestUnit() {
       try {
         await certManager.getUserTrustedCertificate("aabbcc");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_UserCertJsApi_NoPermission_Func_static_0600 get error: ${err.code}`);
         expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
       }
@@ -90,7 +92,8 @@ export default function userAndSysCertNoPermissionJsTestUnit() {
       try {
         await certManager.getAllSystemAppCertificates();
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_SysCertJsApi_NoPermission_Func_static_0200 get error: ${err.code}`);
         expect(err.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_PERMISSION);
       }

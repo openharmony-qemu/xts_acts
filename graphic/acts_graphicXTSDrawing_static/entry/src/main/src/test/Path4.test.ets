@@ -113,7 +113,8 @@ export default function drawingTsPath4Test() {
         console.info(msg + 'getMatrix 11 successes flag7 is: ' + flag7 );
         expect(flag7).assertFalse();
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -141,7 +142,8 @@ export default function drawingTsPath4Test() {
           path.getMatrix(false, Math.random(), matrix, itemList[randomEnum])
         }
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -167,7 +169,8 @@ export default function drawingTsPath4Test() {
         path.conicTo(600, 400, -200, -600, 0);
         path.conicTo(maxVal, maxVal, maxVal, maxVal, 1);
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -191,7 +194,8 @@ export default function drawingTsPath4Test() {
           path.conicTo(Math.random(), Math.random(), Math.random(), Math.random(), Math.random())
         }
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -211,7 +215,8 @@ export default function drawingTsPath4Test() {
       try {
         path.conicTo(600, 400, 200, 600, -1);
         console.info(msg + `test error`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail();
       }
@@ -219,7 +224,8 @@ export default function drawingTsPath4Test() {
       try {
         path.conicTo(600, 400, 200, 600, 2);
         console.info(msg + `test error`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail();
       }
@@ -246,7 +252,8 @@ export default function drawingTsPath4Test() {
         path.rConicTo(600, 400, -200, -600, 0);
         path.rConicTo(maxVal, maxVal, maxVal, maxVal, 1);
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -268,7 +275,8 @@ export default function drawingTsPath4Test() {
           path.rConicTo(Math.random(), Math.random(), Math.random(), Math.random(), Math.random());
         }
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -288,7 +296,8 @@ export default function drawingTsPath4Test() {
       try {
         path.rConicTo(600, 400, 200, 600, -1);
         console.info(msg + `test error`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail();
       }
@@ -296,7 +305,8 @@ export default function drawingTsPath4Test() {
       try {
         path.rConicTo(600, 400, 200, 600, 2);
         console.info(msg + `test error`);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail();
       }
@@ -317,7 +327,8 @@ export default function drawingTsPath4Test() {
         path.rMoveTo(10.1, 10.1);
         path.rMoveTo(-1, -1);
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -339,7 +350,8 @@ export default function drawingTsPath4Test() {
           path.rMoveTo(Math.random(), Math.random());
         }
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -363,7 +375,8 @@ export default function drawingTsPath4Test() {
         path.rLineTo(10.1, 10.1);
         path.rLineTo(-1, -1);
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -385,7 +398,8 @@ export default function drawingTsPath4Test() {
           path.rLineTo(Math.random(), Math.random());
         }
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -410,7 +424,8 @@ export default function drawingTsPath4Test() {
         path.rQuadTo(-10, -15, 10, 10);
         path.rQuadTo(10, 15, -10, -10)
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -432,7 +447,8 @@ export default function drawingTsPath4Test() {
           path.rQuadTo(Math.random(), Math.random(), Math.random(), Math.random());
         }
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -458,7 +474,8 @@ export default function drawingTsPath4Test() {
         path.rCubicTo(10, 15, -10, -10, 90, 180);
         path.rCubicTo(10, 15, 10, 10, -10, -10);
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -480,7 +497,8 @@ export default function drawingTsPath4Test() {
           path.rCubicTo(Math.random(), Math.random(), Math.random(), Math.random(), Math.random(), Math.random());
         }
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -510,7 +528,8 @@ export default function drawingTsPath4Test() {
         path.offset(200, -200);
         path.offset(maxVal, maxVal);
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -534,7 +553,8 @@ export default function drawingTsPath4Test() {
           path.offset(Math.random(), Math.random());
         }
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -590,7 +610,8 @@ export default function drawingTsPath4Test() {
           x: 100, y: -400
         }], false);
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -620,7 +641,8 @@ export default function drawingTsPath4Test() {
           path1.addPolygon(points, false)
         }
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -652,7 +674,8 @@ export default function drawingTsPath4Test() {
           expect(result).assertEqual(true);
         }
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
@@ -684,7 +707,8 @@ export default function drawingTsPath4Test() {
           expect(result).assertEqual(true);
         }
         console.info(msg + 'reset successes');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `reset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }

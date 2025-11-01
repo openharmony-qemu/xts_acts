@@ -63,7 +63,8 @@ export default function inputMethodTest() {
                 await inputMethod.switchInputMethod(inputM);
                 expect().assertFail();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error('====>inputmethodNomal_test_switchInputMethod_static_001 switchInputMethod catch err' + JSON.stringify(err))
                 expect(err.code).assertEqual(201);
                 expect(err.message).assertContain("the permissions check fails");
@@ -95,7 +96,8 @@ export default function inputMethodTest() {
                         expect().assertFail();
                         done();
                     }
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.error("====>inputmethodNomal_test_switchInputMethod_static_002 catch err: " + JSON.stringify(err));
                     done();
                     console.info("====>inputmethodNomal_test_switchInputMethod_static_002 end");
@@ -126,7 +128,8 @@ export default function inputMethodTest() {
                         expect().assertFail();
                         done();
                     }
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.error("====>inputmethodNomal_test_hideSoftKeyboard_static_001 catch err: " + JSON.stringify(err));
                     expect().assertFail();
                     done();
@@ -151,7 +154,8 @@ export default function inputMethodTest() {
                 await inputMethodCtrl.hideSoftKeyboard();
                 expect().assertFail();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error('====>inputmethodNomal_test_hideSoftKeyboard_static_002 hideSoftKeyboard catch err' + JSON.stringify(err))
                 expect(err.code).assertEqual(201);
                 expect(err.message).assertContain("the permissions check fails");

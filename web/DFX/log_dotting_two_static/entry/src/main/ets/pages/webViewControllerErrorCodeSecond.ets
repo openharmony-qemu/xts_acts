@@ -81,7 +81,8 @@ struct webViewController {
                   isGetDefaultUserAgent = true
                 }
                 Utils.emitEvent(isGetDefaultUserAgent, 202503209);
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`testGetDefaultUserAgentError001 ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 202503209);
               }
@@ -100,7 +101,8 @@ struct webViewController {
                 if (postData !== undefined) {
                   Utils.emitEvent(this.test, 1555);
                 }
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`postUrl ErrorCode: ${error .code},
                        postUrl Message: ${error.message}`);
               }
@@ -173,7 +175,8 @@ struct webViewController {
                   } else {
                     console.log('[schemeHandler] onRequestStart has no http body stream');
                   }
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error .code}`);
                 }
 
@@ -185,7 +188,8 @@ struct webViewController {
             this.controller.setWebSchemeHandler('http', this.schemeHandler);
             this.controller.setWebSchemeHandler('resource', this.schemeHandler);
             webview.WebviewController.setServiceWorkerWebSchemeHandler('https', this.schemeHandler)
-          } catch (error:BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
           }
         })

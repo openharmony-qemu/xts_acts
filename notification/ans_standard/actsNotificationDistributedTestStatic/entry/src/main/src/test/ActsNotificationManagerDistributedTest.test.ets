@@ -41,7 +41,8 @@ export default function ActsNotificationManagerDistributedTest() {
             done()
           }
         })
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} isDistributedEnabled AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -85,7 +86,8 @@ export default function ActsNotificationManagerDistributedTest() {
         notificationManager.isNotificationEnabledSync()
         expect(true).assertTrue()
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()

@@ -205,14 +205,16 @@ export default function ActsCommonEventManagerTest() {
                   done()
                 }
               })
-            } catch (err:BusinessError) {
+            } catch (err) {
+              err = err as BusinessError;
               console.info(TAG+`subscribe_1 failed, code is ${err.code}, message is ${err.message}`)
             }
             expect(true).assertTrue()
             done()
           }
         })
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_0400 failed, code is ${err.code}, message is ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -568,7 +570,8 @@ export default function ActsCommonEventManagerTest() {
           });
         }, 1000);
 
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_1700 failed, catch error code: ${err.code}, message: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -699,7 +702,8 @@ export default function ActsCommonEventManagerTest() {
             }
           });
         }, 1000);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(TAG+`Sub_Notification_Ans_Subscriber_Subscribe_Static_1800 failed, catch error code: ${err.code}, message: ${err.message}`)
         expect(false).assertTrue()
         done()
