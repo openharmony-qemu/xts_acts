@@ -829,6 +829,8 @@ async function checkHasUnsupportedX509CrlCallback(flag: string): Promise<boolean
   try {
     let certExt: cert.CertExtension = await createX509CertExtensionNormalCallback(flag);
     let hasUnsupported: boolean = certExt.hasUnsupportedCriticalExtension();
+
+    return hasUnsupported;
   } catch (error: BusinessError) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;

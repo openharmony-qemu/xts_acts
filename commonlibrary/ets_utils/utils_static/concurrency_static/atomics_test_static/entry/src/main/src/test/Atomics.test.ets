@@ -28,7 +28,7 @@ import {
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 
-async function noParamNoReturnTask(): Promise<string> {
+async function noParamNoReturnTask(): Promise<void> {
   await new Promise<string>((resolve) => {
     resolve('success')
   })

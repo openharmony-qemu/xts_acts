@@ -92,7 +92,7 @@ export async function asyncLock3(a: AsyncLockTest1): Promise<void> {
   })
 }
 
-export async function printArgsPromise1(): Promise<number> {
+export async function printArgsPromise1(): Promise<void> {
   console.log('Executing task...');
 
   await new Promise<number>((resolve, reject): void => {
@@ -108,7 +108,7 @@ export async function printArgsPromise1(): Promise<number> {
 }
 
 
-export async function printArgsPromise2(): Promise<number> {
+export async function printArgsPromise2(): Promise<void> {
   console.log('Executing task...');
 
   await new Promise<number>((resolve, reject): void => {
@@ -123,7 +123,7 @@ export async function printArgsPromise2(): Promise<number> {
   console.log('Task completed successfully.');
 }
 
-export async function printArgsSetTime1(): Promise<number> {
+export async function printArgsSetTime1(): Promise<void> {
   console.log('Executing task...');
 
   await new Promise<number>((resolve, reject): void => {
@@ -139,7 +139,7 @@ export async function printArgsSetTime1(): Promise<number> {
 }
 
 
-export async function printArgsSetTime2(): Promise<number> {
+export async function printArgsSetTime2(): Promise<void> {
   console.log('Executing task...');
 
   await new Promise<number>((resolve, reject): void => {
@@ -154,21 +154,21 @@ export async function printArgsSetTime2(): Promise<number> {
   console.log('Task completed successfully.');
 }
 
-export async function printArgsPromise3(): Promise<never> {
+export async function printArgsPromise3(): Promise<void> {
   await asyncTask()
     .then((): void => {
       throw Error('then error')
     })
 }
 
-export async function printArgsPromise4(): Promise<never> {
+export async function printArgsPromise4(): Promise<void> {
   await asyncTask()
     .then((): void => {
       throw Error('then error2')
     })
 }
 
-export async function printArgsPromise5(): Promise<never> {
+export async function printArgsPromise5(): Promise<void> {
   try {
     await asyncTaskCatch()
   } catch(error: BusinessError) {
@@ -176,7 +176,7 @@ export async function printArgsPromise5(): Promise<never> {
   }
 }
 
-export async function printArgsPromise6(): Promise<never> {
+export async function printArgsPromise6(): Promise<void> {
   try {
     await asyncTaskCatch()
   } catch(error: BusinessError) {
@@ -184,7 +184,7 @@ export async function printArgsPromise6(): Promise<never> {
   }
 }
 
-export async function printArgsPromise7(): Promise<never> {
+export async function printArgsPromise7(): Promise<void> {
   await asyncTask()
 
     .finally((): void => {
@@ -192,7 +192,7 @@ export async function printArgsPromise7(): Promise<never> {
     })
 }
 
-export async function printArgsPromise8(): Promise<never> {
+export async function printArgsPromise8(): Promise<void> {
   await asyncTask()
 
     .finally((): void => {
@@ -200,7 +200,7 @@ export async function printArgsPromise8(): Promise<never> {
     })
 }
 
-export async function asyncWays1(): Promise<number> {
+export async function asyncWays1(): Promise<void> {
   console.log('Executing task...');
 
   await new Promise<number>((resolve, reject): void => {
@@ -215,7 +215,7 @@ export async function asyncWays1(): Promise<number> {
   console.log('Task completed successfully.');
 }
 
-export async function asyncWays2(): Promise<number> {
+export async function asyncWays2(): Promise<void> {
   console.log('Executing task...');
 
   await new Promise<number>((resolve, reject): void => {
@@ -240,7 +240,7 @@ export async function printArgsWaitB(a: AsyncLockTest1): Promise<void> {
 }
 
 
-export async function printArgsWaitC(a: AsyncLockTest2): Promise<never> {
+export async function printArgsWaitC(a: AsyncLockTest2): Promise<void> {
   await a.setCount(10).then((): void => {
     if (Math.random() < 1) {
       throw new Error('await error')
@@ -248,7 +248,7 @@ export async function printArgsWaitC(a: AsyncLockTest2): Promise<never> {
   })
 }
 
-export async function printArgsWaitD(a: AsyncLockTest2): Promise<never> {
+export async function printArgsWaitD(a: AsyncLockTest2): Promise<void> {
   await a.setCount(10).then((): void => {
     if (Math.random() < 1) {
       throw new Error('await error')
@@ -256,7 +256,7 @@ export async function printArgsWaitD(a: AsyncLockTest2): Promise<never> {
   })
 }
 
-export async function printArgsWaitE(a: AsyncLockTest2): Promise<never> {
+export async function printArgsWaitE(a: AsyncLockTest2): Promise<void> {
   try {
     await a.setCount(10).then((): void => {
       if (Math.random() < 1) {
@@ -270,7 +270,7 @@ export async function printArgsWaitE(a: AsyncLockTest2): Promise<never> {
   }
 }
 
-export async function printArgsWaitF(a: AsyncLockTest2): Promise<never> {
+export async function printArgsWaitF(a: AsyncLockTest2): Promise<void> {
   try {
     await a.setCount(10).then((): void => {
       if (Math.random() < 1) {
@@ -284,7 +284,7 @@ export async function printArgsWaitF(a: AsyncLockTest2): Promise<never> {
   }
 }
 
-export async function printArgsWaitG(a: AsyncLockTest2): Promise<never> {
+export async function printArgsWaitG(a: AsyncLockTest2): Promise<void> {
   try {
     await a.setCount(10).then((): void => {
     })
@@ -297,7 +297,7 @@ export async function printArgsWaitG(a: AsyncLockTest2): Promise<never> {
   }
 }
 
-export async function printArgsWaitH(a: AsyncLockTest2): Promise<never> {
+export async function printArgsWaitH(a: AsyncLockTest2): Promise<void> {
   try {
     await a.setCount(10).then((): void => {
     })
