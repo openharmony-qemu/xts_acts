@@ -33,7 +33,7 @@
             ]
           }
         ],
-        "name": "com.example.system1.MainAbility",
+        "name": ".MainAbility",
         "icon": "$media:icon",
         "description": "$string:mainability_description",
         "label": "$string:app_name",
@@ -90,7 +90,7 @@
             }
           ]
         },
-        "srcPath": "default",
+        "srcPath": "MainAbility",
         "srcLanguage": "js"
       }
     ],
@@ -112,7 +112,7 @@
         "pages": [
           "pages/index/index"
         ],
-        "name": "com.example.system1.MainAbility",
+        "name": ".MainAbility",
         "window": {
           "designWidth": 720,
           "autoDesignWidth": false
