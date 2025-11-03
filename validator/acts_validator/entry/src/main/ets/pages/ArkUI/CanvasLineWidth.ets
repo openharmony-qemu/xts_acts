@@ -51,10 +51,10 @@ struct SetCircle {
                 .blockBorderColor('#07B9A2')
                 .blockBorderWidth('1vp')
                 .onChange((value: number, mode: SliderChangeMode) => {
-                  this.context.clearRect(100, 100, 250, 200);
+                  this.context.clearRect(0, 0, 250, 200);
                   this.X = value;
                   this.context.lineWidth = (this.X) * 0.1;
-                  this.context.strokeRect(120, 120, 120, 120);
+                  this.context.strokeRect(50, 20, 100, 50);
                   if (value >= 100) {
                     this.Vue = true;
                   }
@@ -62,13 +62,13 @@ struct SetCircle {
             }
           }
           .width('70%')
-          .height('30%')
+          .height('20%')
 
           Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-            Text('边框粗细: ' + (this.X) * 0.1)
+            Text('边框粗细: ' + (this.X) * 0.1).fontSize(10).fontColor(Color.Black)
           }
           .width('100%')
-          .height('20%')
+          .height('10%')
 
           Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
             Canvas(this.context)
@@ -77,11 +77,11 @@ struct SetCircle {
               .backgroundColor('#ffffffff')
               .onReady(() => {
                 this.context.lineWidth = 1;
-                this.context.strokeRect(120, 120, 120, 120);
+                this.context.strokeRect(50, 20, 100, 50);
               })
           }
           .width('100%')
-          .height('50%')
+          .height('70%')
         }
       }
       .scrollBarWidth('6vp')

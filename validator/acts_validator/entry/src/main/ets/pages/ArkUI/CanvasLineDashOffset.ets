@@ -51,10 +51,10 @@ struct SetCircle {
                 .blockBorderWidth('1vp')
                 .onChange((value: number, mode: SliderChangeMode) => {
                   this.X = value;
-                  this.context.clearRect(100, 90, 250, 200);
+                  this.context.clearRect(0, 0, 250, 200);
                   this.context.setLineDash([20, 30]);
                   this.context.beginPath();
-                  this.context.arc(180, 150, 50, 0, 6.28);
+                  this.context.arc(100, 60, 40, 0, 6.28);
                   this.context.lineDashOffset = (this.X) * 0.4;
                   this.context.stroke();
                   if (value >= 100) {
@@ -64,13 +64,13 @@ struct SetCircle {
             }
           }
           .width('70%')
-          .height('25%')
+          .height('20%')
 
           Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-            Text('虚线偏移量: ' + (this.X) * 0.4)
+            Text('虚线偏移量: ' + (this.X) * 0.4).fontSize(10).fontColor(Color.Black)
           }
           .width('100%')
-          .height('20%')
+          .height('10%')
 
           Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
             Canvas(this.context)
@@ -80,13 +80,13 @@ struct SetCircle {
               .onReady(() => {
                 this.context.setLineDash([20, 30]);
                 this.context.beginPath();
-                this.context.arc(180, 150, 50, 0, 6.28);
+                this.context.arc(100, 60, 40, 0, 6.28);
                 this.context.lineDashOffset = (this.X) * 0.4;
                 this.context.stroke();
               })
           }
           .width('100%')
-          .height('55%')
+          .height('70%')
         }
       }
       .scrollBarWidth('6vp')
