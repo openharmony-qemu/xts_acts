@@ -30,9 +30,9 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import webView from '@ohos.web.webview';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
-import emitter from '@ohos.events.emitter';
+import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import image from '@ohos.multimedia.image'
@@ -57,26 +57,21 @@ struct WebInitTest {
   @State flag: boolean = false
 
   aboutToAppear() {
-    console.info('Entry aboutToAppear');
-    let valueChangeEvent: emitter.InnerEvent = {
+    let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
-      priority: emitter.EventPriority.LOW
+      priority: events_emitter.EventPriority.LOW
     }
-    emitter.on(valueChangeEvent, this.valueChangeCallBack)
-    console.info('Finish aboutToAppear ' + this.valueChangeCallBack);
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
-    console.info('web page valueChangeCallBack');
+  private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION value: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);
-        console.info('strValue has been updated to: ' + strValue);
         this.stringObj.str = strValue;
-        console.info('this.str has been updated to: ' + this.stringObj.str);
       }
     }
   }
@@ -87,6 +82,25 @@ struct WebInitTest {
         Button('WebInitTestButton').key('WebInitTestButton')
           .onClick((e: ClickEvent) => {
             switch (this.stringObj.str) {
+
+              case 'emitGetFavicon': {
+                try {
+                  setTimeout(() => {
+                    console.log('the result of pixelmap: test  start 0' );
+                    this.pixelmap = this.controller.getFavicon();
+                    console.log('the result of pixelmap: test  start 1 pixelmap: ' + this.pixelmap);
+                    if ( this.pixelmap != undefined) {
+                      Utils.emitEvent(true, 114)
+                    }
+                  }, 3000)
+                } catch (error) {
+                  error = error as BusinessError;
+                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+                  Utils.emitEvent(false, 114)
+                }
+                break;
+              }
+
               case 'emitContextMenuEditStateFlags': {
                 try {
                   Utils.emitEvent(ContextMenuEditStateFlags.NONE, 37);
@@ -142,7 +156,18 @@ struct WebInitTest {
         .javaScriptAccess(true)
         .geolocationAccess(true)
         .databaseAccess(true)
-
+        .onSearchResultReceive(ret => {
+          console.log('on search result receive:' + '[cur]' + ret.activeMatchOrdinal +
+            '[total]' + ret.numberOfMatches + '[isDone]' + ret.isDoneCounting);
+          this.searchResultCount = ret.numberOfMatches
+          let searchResult = ret.activeMatchOrdinal.toString() +
+          ret.numberOfMatches.toString();
+          console.log('searchResult' + searchResult);
+          if(this.flag){
+            this.controller.clearMatches();
+            this.flag=false
+          }
+        })
     }
   }
 }

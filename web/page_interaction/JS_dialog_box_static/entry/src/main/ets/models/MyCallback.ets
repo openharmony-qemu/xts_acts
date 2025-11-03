@@ -1,22 +1,21 @@
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
+ * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import { AsyncCallback, BusinessError, Callback, ErrorCallback } from '@ohos.base';
 import hilog from '@ohos.hilog';
 
-const SYNTAX_ERROR_CODE: double = 1002;
+const SYNTAX_ERROR_CODE: Int = 1002;
 
 export class MyCallback {
   static myCallback(callback: Callback<string>): void {
@@ -43,8 +42,8 @@ export class MyCallback {
     MyCallback.myCallback((data: string) => {
       hilog.info(0x0000, 'testTag', 'MyCallback' + data);
     })
-    MyCallback.myAsyncCallback((error: BusinessError<string>|null, result: string|undefined) => {
-      hilog.info(0x0000, 'testTag', `myAsyncCallback, error: ${error?.message}, result:${result}`);
+    MyCallback.myAsyncCallback((error: BusinessError<String>|null, data: String|undefined) => {
+      hilog.info(0x0000, 'testTag', `myAsyncCallback, error: ${error?.message}, result:${data}`);
     })
     MyCallback.myErrorCallback((error: BusinessError<string>) => {
       hilog.info(0x0000, 'testTag', `myAsyncCallback, error: ${error.message}`);

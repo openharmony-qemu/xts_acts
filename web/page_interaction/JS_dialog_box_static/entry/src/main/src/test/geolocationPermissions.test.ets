@@ -225,6 +225,14 @@ export default function geolocationPermissions() {
         done();
       })
 
+    /*
+  * @tc.number     : SUB_WEB_GETACCESSIBLEGEOLOCATION_STATIC_0300
+  * @tc.name       : testGetAccessibleGeolocationStatic003
+  * @tc.desc       : test getAccessibleGeolocation
+  * @tc.size       : MediumTest
+  * @tc.type       : Function
+  * @tc.level      : Level 3
+  */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000);

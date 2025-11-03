@@ -15,7 +15,7 @@
 import { AsyncCallback, BusinessError, Callback, ErrorCallback } from '@ohos.base';
 import hilog from '@ohos.hilog';
 
-const SYNTAX_ERROR_CODE: double = 1002;
+const SYNTAX_ERROR_CODE: Int = 1002;
 
 export class MyCallback {
   static myCallback(callback: Callback<string>): void {
@@ -42,8 +42,8 @@ export class MyCallback {
     MyCallback.myCallback((data: string) => {
       hilog.info(0x0000, 'testTag', 'MyCallback' + data);
     })
-    MyCallback.myAsyncCallback((error: BusinessError<string>|null, result: string|undefined) => {
-      hilog.info(0x0000, 'testTag', `myAsyncCallback, error: ${error?.message}, result:${result}`);
+    MyCallback.myAsyncCallback((error: BusinessError<String>|null, data: String|undefined) => {
+      hilog.info(0x0000, 'testTag', `myAsyncCallback, error: ${error?.message}, result:${data}`);
     })
     MyCallback.myErrorCallback((error: BusinessError<string>) => {
       hilog.info(0x0000, 'testTag', `myAsyncCallback, error: ${error.message}`);

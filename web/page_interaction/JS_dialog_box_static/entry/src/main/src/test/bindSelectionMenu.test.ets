@@ -60,6 +60,7 @@ export default function webViewSrollableJsunit() {
       buttonOne?.click()
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webcomponentSelectionMenu',10,'');
+      await Utils.msSleep(2000);
       done();
     })
 
@@ -74,14 +75,22 @@ export default function webViewSrollableJsunit() {
     it('bindSelectionMenuTypeStatic02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void):Promise<void> => {
       await Utils.msSleep(1000)
       Utils.emitEvent("bindSelectionMenuType02", 10)
-      await Utils.msSleep(1000)
+      await Utils.msSleep(2000)
       Utils.registerEvent("bindSelectionMenuType02",1,8302,done);
-      await Utils.msSleep(1000)
+      await Utils.msSleep(2000)
       inspector.sendEventByKey('webcomponentSelectionMenu',10,'');
-      await Utils.msSleep(1000)
+      await Utils.msSleep(5000)
       done();
     })
 
+    /*
+  * @tc.number     : SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_003
+  * @tc.name       : bindSelectionMenuTypeStatic03
+  * @tc.desc       : test bindSelectionMenuType02 interface when choose callback mode.
+  * @tc.size       : MediumTest
+  * @tc.type       : Function
+  * @tc.level      : Level 3
+  */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000);
