@@ -37,6 +37,7 @@ group("ActsAceEtsModuleImageTextTest") {
       "ace_ets_module_imageText_api12_static:ActsAceEtsModuleImageTextApi12StaticTest",
       "ace_ets_module_imageText_api19_static:ActsAceEtsModuleImageTextApi19StaticTest",
       "ace_ets_module_imageText_api20_static:ActsAceEtsModuleImageTextApi20StaticTest",
+      "ace_ets_module_imageText_api11_other_static:ActsAceEtsModuleImageTextApi11OtherStaticTest",
     ]
   } else {
     deps = [
@@ -73,6 +74,7 @@ group("ActsAceEtsModuleImageTextTest") {
       "ace_ets_module_imageText_api12_static:ActsAceEtsModuleImageTextApi12StaticTest",
       "ace_ets_module_imageText_api19_static:ActsAceEtsModuleImageTextApi19StaticTest",
       "ace_ets_module_imageText_api20_static:ActsAceEtsModuleImageTextApi20StaticTest",
+      "ace_ets_module_imageText_api11_other_static:ActsAceEtsModuleImageTextApi11OtherStaticTest",
     ]
   }
 }
