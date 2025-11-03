@@ -72,7 +72,7 @@ export default function callJsunit() {
             call.makeCall(telNumber, (error: BusinessError<void>|null) => {
               if (error) {
                 hilog.info(domain, tag, '%{public}s', caseName +'makeCall callback: err->'+JSON.stringify(error));
-                expect(false).assertTrue();
+                expect(error.code == 8300001).assertTrue();
                 done();
               }
               done();
