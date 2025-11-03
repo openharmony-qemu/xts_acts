@@ -21,7 +21,7 @@ import Utils from './Util.test';
 import connection from '@ohos.net.connection';
 import http from '@ohos.net.http';
 
-const baiduUrl: string = "http://www.baidu.com";
+const baiduUrl: string = "https://www.baidu.com";
 const baiduPinRight: string = 'Q6TCQAWqP4t+eq41xnKaUgJdrPWqyG5L+Ni2YzMhqdY=';
 const baiduPinWrong: string= 'AAAAQAWqP4t+eq41xnKaUgJdrPWqyG5L+Ni2YzMhqdY=';
 

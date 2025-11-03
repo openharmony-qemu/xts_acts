@@ -9,7 +9,7 @@ let tag: string = 'HttpTag'; //日志标识字符串,作为tag标识当前runner
 
 const ADDR_TEST_STREAM_HTTPS: string = "https://cn.bing.com/rp/Q5BJPjebyYN5QiqznkcMQmLrF9U.svg";
 
-const ADDR_TEST_DOMAIN_HTTPS: string = "https://httpbin.org/anything";
+const ADDR_TEST_DOMAIN_HTTPS: string = "https://www.baidu.com/";
 
 const ExpectFail = () => {
     try {
