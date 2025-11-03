@@ -634,6 +634,17 @@ export default function ActsCommonEventManagerSupportTest() {
       expect(commonEventManager.Support.COMMON_EVENT_RESTORE_END).assertEqual('usual.event.RESTORE_END')
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4000 END`)
     })
+
+    /*
+      * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4100
+      * @tc.name      : commonEventManager.Support
+      * @tc.desc      : tablet changed common event
+      */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4100', Level.LEVEL0, async function () {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4100 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_LID_MODE_CHANGED).assertEqual('usual.event.LID_MODE_CHANGED')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4100 END`)
+    })
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST END`)
   })
 
