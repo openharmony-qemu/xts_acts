@@ -14,6 +14,8 @@
  */
 
 import ActsNetConnectionAuth from './ActsNetConnectionAuth.test'
+import PingTraceRouteNDKTest from './PingTraceRouteNDKTest.test'
 export default function testsuite() {
   ActsNetConnectionAuth();
+  PingTraceRouteNDKTest();
 }
