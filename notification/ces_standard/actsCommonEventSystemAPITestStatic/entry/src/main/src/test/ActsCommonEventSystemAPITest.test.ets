@@ -1,4 +1,18 @@
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
+/**
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterEach } from "../../../hypium/index";
 import commonEventManager from '@ohos.commonEventManager'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -30,6 +44,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let testAbilityContext: common.UIAbilityContext;
 let bundleName: string = 'com.example.systemAPI.static'
+let count: int = 0;
 
 
 export default function ActsCommonEventSystemAPITest() {
@@ -49,11 +64,15 @@ export default function ActsCommonEventSystemAPITest() {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
+    afterEach(() =>{
+      await Utils.msSleep(500)
+    })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_5000
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_5000
-     * @tc.desc: test function publishAsBundle
+
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_5000
+     * @tc.name  Sub_Notification_Ans_Publish_Publish_Static_5000
+     * @tc.desc  test function publishAsBundle
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -75,10 +94,10 @@ export default function ActsCommonEventSystemAPITest() {
         console.info(Tag +`Sub_Notification_Ans_Publish_Publish_Static_5000 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_5100
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_5100
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_5100
+     * @tc.name  Sub_Notification_Ans_Publish_Publish_Static_5100
+     * @tc.desc  test function publishAsUser
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -105,10 +124,10 @@ export default function ActsCommonEventSystemAPITest() {
         console.info(Tag +`Sub_Notification_Ans_Publish_Publish_5100 END`);
       })
 
-    /*
-    * @tc.number: Sub_Notification_Ces_StaticEvent_Config_Static_1200
-    * @tc.name: Sub_Notification_Ces_StaticEvent_Config_Static_1200
-    * @tc.desc: test function removeStickyCommonEvent
+    /**
+    * @tc.number  Sub_Notification_Ces_StaticEvent_Config_Static_1200
+    * @tc.name  Sub_Notification_Ces_StaticEvent_Config_Static_1200
+    * @tc.desc  test function removeStickyCommonEvent
     */
     it('Sub_Notification_Ces_StaticEvent_Config_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -130,10 +149,10 @@ export default function ActsCommonEventSystemAPITest() {
         console.info(`${Tag} Sub_Notification_Ces_StaticEvent_Config_1200 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ces_StaticEvent_Config_Static_1300
-     * @tc.name: Sub_Notification_Ces_StaticEvent_Config_Static_1300
-     * @tc.desc: test function removeStickyCommonEvent
+    /**
+     * @tc.number  Sub_Notification_Ces_StaticEvent_Config_Static_1300
+     * @tc.name  Sub_Notification_Ces_StaticEvent_Config_Static_1300
+     * @tc.desc  test function removeStickyCommonEvent
      */
     it('Sub_Notification_Ces_StaticEvent_Config_Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -154,10 +173,10 @@ export default function ActsCommonEventSystemAPITest() {
       })
 
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279
+     * @tc.desc  test function publishAsUser
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -315,6 +334,7 @@ export default function ActsCommonEventSystemAPITest() {
           console.info(Tag + ' notificationRequest1600014 callback fail,result is :', JSON.stringify(err));
           expect(err?.code).assertEqual(1600014);
         });
+        await Utils.msSleep(1000);
         await notificationManager.publish(notificationRequest1600014).then(() => {
           console.info(Tag + " publish update success");
           expect(false).assertTrue()
@@ -327,10 +347,10 @@ export default function ActsCommonEventSystemAPITest() {
       })
 
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
-     * @tc.desc: test function publishAsUser
+  /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
+     * @tc.desc  test function publishAsUser
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280'
@@ -361,10 +381,10 @@ export default function ActsCommonEventSystemAPITest() {
     })
     
     
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
+     * @tc.desc  test function publishAsUser
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -441,6 +461,7 @@ export default function ActsCommonEventSystemAPITest() {
         }
 
         for (let index = 0; index <= 10; index++) {
+          count = 0;
           let notificationRequest: notificationManager.NotificationRequest = {
             id: index,
             content: {
@@ -464,7 +485,8 @@ export default function ActsCommonEventSystemAPITest() {
           }
           await notificationManager.publish(notificationRequest).then(() => {
             console.info(`${Tag} publish_${index} Promise success`)
-            expect(true).assertTrue()
+            count++;
+            expect(count).assertEqual(1);
           }).catch((err: BusinessError): void => {
             console.info(`${Tag} publish_${index} Promise err: ${err.code}, errMes: ${err.message}`)
             if (index == 10) {
@@ -489,12 +511,10 @@ export default function ActsCommonEventSystemAPITest() {
       async (done: () => void): Promise<void> => {
         let Tag: string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283'
         notificationManager.openNotificationSettings(testAbilityContext).then(() => {
-          expect(true).assertTrue();
           console.info(Tag + "Succeed to openNotificationSettings");
         }).catch((err: BusinessError): void => {
           console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
           if (err.code == 801) {
-            expect(true).assertTrue();
             done();
           } else if(err.code == 1600001){
             expect(err?.code).assertEqual(1600001);
@@ -514,7 +534,7 @@ export default function ActsCommonEventSystemAPITest() {
         }).catch((err: BusinessError): void => {
           console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
           if (err.code == 801) {
-            expect(true).assertTrue();
+            expect(err.code == 801).assertTrue();
             done();
           } else if(err.code == 1011){
             expect(err?.code).assertEqual(1011);
@@ -527,10 +547,10 @@ export default function ActsCommonEventSystemAPITest() {
         await Utils.msSleep(2000)
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287
-     * @tc.desc: test function publishAsUser
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287
+     * @tc.desc  test function publishAsUser
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -567,10 +587,10 @@ export default function ActsCommonEventSystemAPITest() {
         notificationSubscribe.remove(bundle, notificationKey, reason, removeCallback);
       });
 
-    /*
-     * @tc.number: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288
-     * @tc.name: Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288
-     * @tc.desc: test function publish
+    /**
+     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288
+     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288
+     * @tc.desc  test function publish
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

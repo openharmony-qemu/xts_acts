@@ -1,4 +1,4 @@
-/*
+/**
 * Copyright (c) 2022-2023 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
 */
 
 import notificationManager from '@ohos.notificationManager'
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterAll } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterAll, afterEach } from "../../../hypium/index";
 import Utils from './Util.test';
 import { BusinessError, RecordData } from '@ohos.base';
 import wantAgent from '@ohos.app.ability.wantAgent';
@@ -29,6 +29,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 let bundle_name:string = "com.example.actsnotificationpublish.static"
 let domain: int = 0x0000;
 let wantAgentData : Object = {}
+let count: int = 0;
 
 let parameters1 : Record<String,RecordData> = {
   "mykey0": 2222,
@@ -83,27 +84,34 @@ export default function ActsNotificationPublishTest() {
 
     beforeEach(() => {
       console.info(`${TAG} beforeEach START`)
+      count = 0;
       notificationManager.cancelAll((err: BusinessError | null) => {
         if (err) {
           console.info(`${TAG} cancelAll notification err: ${err.code}`)
           expect(false).assertTrue()
         } else {
           console.info(`${TAG} cancelAll notification success`)
-          expect(true).assertTrue()
+          count++;
+          expect(count).assertEqual(1);
         }
       })
       await Utils.msSleep(500)
       console.info(`${TAG} beforeEach END`)
     })
 
-    /*
-       * @tc.number    : Sub_Notification_Ans_Enable_Query_Static_2700
-       * @tc.name      : Sub_Notification_Ans_Enable_Query_Static_2700
-       * @tc.desc      : OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
+    afterEach(() =>{
+      await Utils.msSleep(500)
+    })
+
+    /**
+       * @tc.number  Sub_Notification_Ans_Enable_Query_Static_2700
+       * @tc.name    Sub_Notification_Ans_Enable_Query_Static_2700
+       * @tc.desc    OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
        */
     it('Sub_Notification_Ans_Enable_Query_Static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Enable_Query_Static_2700'
+        count = 0;
         notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
           if (err) {
             console.info(`Sub_Notification_Ans_Enable_Query_Static_2700 ===>requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
@@ -111,7 +119,8 @@ export default function ActsNotificationPublishTest() {
             done()
           } else {
             console.info("Sub_Notification_Ans_Enable_Query_Static_2700 ===>requestEnableNotification success");
-            expect(true).assertTrue()
+            count++;
+            expect(count).assertEqual(1);
             await Utils.msSleep(1000)
             console.info("Sub_Notification_Ans_Enable_Query_Static_2700 ===>requestEnableNotification success 1s");
             done()
@@ -137,20 +146,22 @@ export default function ActsNotificationPublishTest() {
         console.info(`${TAG} Sub_Notification_Ans_Enable_Query_Static_2700 END`)
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Enable_Query_Static_2800
-     * @tc.name      : Sub_Notification_Ans_Enable_Query_Static_2800
-     * @tc.desc      : OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
+    /**
+     * @tc.number  Sub_Notification_Ans_Enable_Query_Static_2800
+     * @tc.name    Sub_Notification_Ans_Enable_Query_Static_2800
+     * @tc.desc    OperationType.UNKNOWN_TYPE & WantAgentFlags.ONE_TIME_FLAG
      */
     it('Sub_Notification_Ans_Enable_Query_Static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Enable_Query_Static_2800'
+        count = 0;
         console.info(`Sub_Notification_Ans_Enable_Query_Static_2800 START`)
         await Utils.msSleep(2000);
         console.info(`${TAG} Sub_Notification_Ans_Enable_Query_2800 2s`)
         await notificationManager.requestEnableNotification(testAbilityContext).then(() => {
           console.info(`${TAG} requestEnableNotification Promise success`)
-          expect(true).assertTrue()
+          count++;
+          expect(count).assertEqual(1);
           done()
         }).catch((err: BusinessError): void => {
           console.info(`${TAG} requestEnableNotification Promise err: ${err.code}`)
@@ -160,15 +171,15 @@ export default function ActsNotificationPublishTest() {
         console.info(`Sub_Notification_Ans_Enable_Query_Static_2800 END`)
       })
 
-
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Publish_Static_8300
-     * @tc.name      : Sub_Notification_Ans_Publish_Publish_Static_8300
-     * @tc.desc      : Publishes a notification
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_8300
+     * @tc.name    Sub_Notification_Ans_Publish_Publish_Static_8300
+     * @tc.desc    Publishes a notification
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8300'
+      count = 0;
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8300 START`)
       let extendInfo1:Record<String,RecordData>= {
         'testKey': 'testValue'
@@ -201,6 +212,7 @@ export default function ActsNotificationPublishTest() {
         autoDeletedTime: 500,
         wantAgent: wantAgentData,
         extendInfo: extendInfo1,
+        extraInfo: extendInfo1
       }
 
       notificationManager.publish(notificationRequest, (err: BusinessError | null) => {
@@ -210,7 +222,8 @@ export default function ActsNotificationPublishTest() {
           done()
         } else {
           console.info(`${TAG} notification publish AsyncCallback success `)
-          expect(true).assertTrue()
+          count++;
+          expect(count).assertEqual(1);
           done()
         }
       })
@@ -218,13 +231,14 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8300 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Publish_Static_8350
-     * @tc.name      : Sub_Notification_Ans_Publish_Publish_Static_8350
-     * @tc.desc      : Publishes a notification
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_8350
+     * @tc.name    Sub_Notification_Ans_Publish_Publish_Static_8350
+     * @tc.desc    Publishes a notification
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_8350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8350'
+      count = 0;
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8350 START`)
       let extendInfo1:Record<String,RecordData>= {
         'testKey': 'testValue'
@@ -257,11 +271,13 @@ export default function ActsNotificationPublishTest() {
         autoDeletedTime: 500,
         wantAgent: wantAgentData,
         extendInfo: extendInfo1,
+        extraInfo: extendInfo1
       }
 
       notificationManager.publish(notificationRequest).then(() => {
         console.info(`${TAG} notification publish AsyncCallback success: `)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err:BusinessError):void => {
         console.info(`${TAG} notification publish AsyncCallback err: ${err.code}`)
@@ -272,13 +288,14 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8350 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Publish_Static_8400
-     * @tc.name      : Sub_Notification_Ans_Publish_Publish_Static_8400
-     * @tc.desc      : Publishes a notification
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_8400
+     * @tc.name    Sub_Notification_Ans_Publish_Publish_Static_8400
+     * @tc.desc    Publishes a notification
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8400'
+      count = 0;
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8400 START`)
       let extendInfo1:Record<String,RecordData>= {
         'testKey': 'testValue'
@@ -328,7 +345,7 @@ export default function ActsNotificationPublishTest() {
           done()
         } else {
           console.log(`${TAG} notification publish AsyncCallback success `)
-          expect(true).assertTrue()
+          expect(err).assertEqual(null);
           done()
         }
       })
@@ -336,13 +353,14 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8400 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Publish_Static_8450
-     * @tc.name      : Sub_Notification_Ans_Publish_Publish_Static_8450
-     * @tc.desc      : Publishes a notification
+    /**
+     * @tc.number     Sub_Notification_Ans_Publish_Publish_Static_8450
+     * @tc.name       Sub_Notification_Ans_Publish_Publish_Static_8450
+     * @tc.desc       Publishes a notification
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_8450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8450'
+      count = 0;
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8450 START`)
       let extendInfo1:Record<String,RecordData>= {
         'testKey': 'testValue'
@@ -387,7 +405,8 @@ export default function ActsNotificationPublishTest() {
 
       notificationManager.publish(notificationRequest).then(() => {
         console.log(`${TAG} notification publish AsyncCallback success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err:BusinessError):void => {
         console.info(`${TAG} notification publish AsyncCallback err: ${err.code}`)
@@ -398,10 +417,10 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8450 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Publish_Static_8500
-     * @tc.name      : Sub_Notification_Ans_Publish_Publish_Static_8500
-     * @tc.desc      : Publishes a notification
+    /**
+     * @tc.number     Sub_Notification_Ans_Publish_Publish_Static_8500
+     * @tc.name       Sub_Notification_Ans_Publish_Publish_Static_8500
+     * @tc.desc       Publishes a notification
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>{
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8500'
@@ -454,7 +473,7 @@ export default function ActsNotificationPublishTest() {
           done()
         } else {
           console.info(`${TAG} notification publish AsyncCallback success`)
-          expect(true).assertTrue()
+          expect(err).assertEqual(null);
           done()
         }
       })
@@ -462,13 +481,14 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8500 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Publish_Static_8550
-     * @tc.name      : Sub_Notification_Ans_Publish_Publish_Static_8550
-     * @tc.desc      : Publishes a notification
+    /**
+     * @tc.number     Sub_Notification_Ans_Publish_Publish_Static_8550
+     * @tc.name       Sub_Notification_Ans_Publish_Publish_Static_8550
+     * @tc.desc       Publishes a notification
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_8550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8550'
+      count = 0;
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8550 START`)
       let extendInfo1:Record<String,RecordData>= {
         'testKey': 'testValue'
@@ -513,7 +533,8 @@ export default function ActsNotificationPublishTest() {
 
       notificationManager.publish(notificationRequest).then(() => {
         console.info(`${TAG} notification publish AsyncCallback success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err:BusinessError):void  => {
         console.info(`${TAG} notification publish AsyncCallback err: ${err.code}`)
@@ -524,10 +545,10 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8550 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Publish_Static_8600
-     * @tc.name      : Sub_Notification_Ans_Publish_Publish_Static_8600
-     * @tc.desc      : Publishes a notification
+    /**
+     * @tc.number     Sub_Notification_Ans_Publish_Publish_Static_8600
+     * @tc.name       Sub_Notification_Ans_Publish_Publish_Static_8600
+     * @tc.desc       Publishes a notification
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_8600'
@@ -583,7 +604,7 @@ export default function ActsNotificationPublishTest() {
           done()
         } else {
           console.info(`${TAG} notification publish AsyncCallback success`)
-          expect(true).assertTrue()
+          expect(err).assertEqual(null);
           done()
         }
       })
@@ -591,13 +612,14 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_8600 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Publish_Static_0150
-     * @tc.name      : Sub_Notification_Ans_Publish_Publish_Static_0150
-     * @tc.desc      : Publishes a notification
+    /**
+     * @tc.number     Sub_Notification_Ans_Publish_Publish_Static_0150
+     * @tc.name       Sub_Notification_Ans_Publish_Publish_Static_0150
+     * @tc.desc       Publishes a notification
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_0150'
+      count = 0;
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_0150 START`)
       let extendInfo1:Record<String,RecordData>= {
         'testActionButtonKey': 'testActionButtonValue',
@@ -645,7 +667,8 @@ export default function ActsNotificationPublishTest() {
 
       notificationManager.publish(notificationRequest).then(() => {
         console.info(`${TAG} notification publish AsyncCallback success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err:BusinessError):void  => {
         console.info(`${TAG} notification publish AsyncCallback err: ${err.code}`)
@@ -656,13 +679,14 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_0150 END`)
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_PUBLISH_TEST_Static_01300
-     * @tc.name      : SUB_NOTIFICATION_ANS_PUBLISH_TEST_Static_01300
-     * @tc.desc      : Publishes a notification
+    /**
+     * @tc.number     SUB_NOTIFICATION_ANS_PUBLISH_TEST_Static_01300
+     * @tc.name       SUB_NOTIFICATION_ANS_PUBLISH_TEST_Static_01300
+     * @tc.desc       Publishes a notification
      */
     it('SUB_NOTIFICATION_ANS_PUBLISH_TEST_Static_01300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'SUB_NOTIFICATION_ANS_PUBLISH_TEST_Static_01300'
+      count = 0;
       console.info(`${TAG} SUB_NOTIFICATION_ANS_PUBLISH_TEST_Static_01300 START`)
       let extendInfo1:Record<String,RecordData>= {
         'testActionButtonKey': 'testActionButtonValue',
@@ -701,7 +725,8 @@ export default function ActsNotificationPublishTest() {
 
       notificationManager.publish(notificationRequest).then(() => {
         console.log(`${TAG} notification publish AsyncCallback success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err:BusinessError):void  => {
         console.info(`${TAG} notification publish AsyncCallback err: ${err.code}`)
@@ -712,11 +737,11 @@ export default function ActsNotificationPublishTest() {
       console.info(`${TAG} SUB_NOTIFICATION_ANS_PUBLISH_TEST_Static_01300 END`)
     })
 
-    /*
-         * @tc.number    : Sub_Notification_Ans_Publish_Cancel_Static_2850
-         * @tc.name      : Sub_Notification_Ans_Publish_Cancel_Static_2850
-         * @tc.desc      : Cancels a notification with the specified label and ID
-         */
+    /**
+      * @tc.number     Sub_Notification_Ans_Publish_Cancel_Static_2850
+      * @tc.name       Sub_Notification_Ans_Publish_Cancel_Static_2850
+      * @tc.desc       Cancels a notification with the specified label and ID
+      */
     it('Sub_Notification_Ans_Publish_Cancel_Static_2850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Cancel_Static_2850'
@@ -726,7 +751,7 @@ export default function ActsNotificationPublishTest() {
         notificationManager.cancel(id, label, (err: BusinessError | null) => {
           if (err) {
             console.info(`${TAG} cancel AsyncCallback err: ${err.code}`)
-            expect(true).assertTrue()
+            expect(err.code).assertEqual(1600007)
             done()
           } else {
             console.info(`${TAG} cancel AsyncCallback success`)
@@ -737,10 +762,10 @@ export default function ActsNotificationPublishTest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_Static_2850 END`)
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Cancel_Static_2900
-     * @tc.name      : Sub_Notification_Ans_Publish_Cancel_Static_2900
-     * @tc.desc      : Cancels a notification with the specified label and ID
+    /**
+     * @tc.number     Sub_Notification_Ans_Publish_Cancel_Static_2900
+     * @tc.name       Sub_Notification_Ans_Publish_Cancel_Static_2900
+     * @tc.desc       Cancels a notification with the specified label and ID
      */
     it('Sub_Notification_Ans_Publish_Cancel_Static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -754,7 +779,7 @@ export default function ActsNotificationPublishTest() {
           done()
         }).catch((err: BusinessError): void => {
           console.info(`${TAG} cancel Promise err: ${err.code}`)
-          expect(true).assertTrue()
+          expect(err.code).assertEqual(1600007)
           done()
         })
 
@@ -764,16 +789,16 @@ export default function ActsNotificationPublishTest() {
           done()
         }).catch((err: BusinessError): void => {
           console.info(`${TAG} cancel Promise_2 err: ${err.code}`)
-          expect(true).assertTrue()
+          expect(err.code).assertEqual(1600007)
           done()
         })
         console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_Static_2900 END`)
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Cancel_Static_2950
-     * @tc.name      : Sub_Notification_Ans_Publish_Cancel_Static_2950
-     * @tc.desc      : Cancels a notification with the specified ID
+    /**
+     * @tc.number     Sub_Notification_Ans_Publish_Cancel_Static_2950
+     * @tc.name       Sub_Notification_Ans_Publish_Cancel_Static_2950
+     * @tc.desc       Cancels a notification with the specified ID
      */
     it('Sub_Notification_Ans_Publish_Cancel_Static_2950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -783,7 +808,7 @@ export default function ActsNotificationPublishTest() {
         notificationManager.cancel(id, (err: BusinessError | null) => {
           if (err) {
             console.info(`${TAG} cancel id err: ${err.code}`)
-            expect(true).assertTrue()
+            expect(err.code).assertEqual(1600007)
             done()
           } else {
             console.info(`${TAG} cancel id success`)
@@ -794,11 +819,11 @@ export default function ActsNotificationPublishTest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_Static_2950 END`)
       })
 
-    /*
-         * @tc.number    : SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0500
-         * @tc.name      : SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0500
-         * @tc.desc      : Cancels a notification with the specified label and ID
-         */
+    /**
+      * @tc.number     SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0500
+      * @tc.name       SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0500
+      * @tc.desc       Cancels a notification with the specified label and ID
+      */
     it('SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0500'
@@ -811,16 +836,16 @@ export default function ActsNotificationPublishTest() {
           done()
         }).catch((err: BusinessError): void => {
           console.info(`${TAG} cancel Promise err: ${err.code}`)
-          expect(true).assertTrue()
+          expect(err.code).assertEqual(1600007)
           done()
         })
         console.info(`SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0500 END`)
       })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0600
-     * @tc.name      : SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0600
-     * @tc.desc      : Cancels a notification with the specified label and ID
+    /**
+     * @tc.number     SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0600
+     * @tc.name       SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0600
+     * @tc.desc       Cancels a notification with the specified label and ID
      */
     it('SUB_NOTIFICATION_ANS_CANCEL_TEST_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -831,7 +856,7 @@ export default function ActsNotificationPublishTest() {
         notificationManager.cancel(id, label, (err: BusinessError | null): void => {
           if (err) {
             console.info(`${TAG} cancel AsyncCallback err: ${err.code}`)
-            expect(true).assertTrue()
+            expect(err.code).assertEqual(1600007)
             done()
           } else {
             console.info(`${TAG} cancel AsyncCallback success`)
@@ -843,10 +868,10 @@ export default function ActsNotificationPublishTest() {
       })
 
 
-    /*
-    * @tc.number    : Sub_Notification_Ans_Publish_Cancel_Static_3000
-    * @tc.name      : Sub_Notification_Ans_Publish_Cancel_Static_3000
-    * @tc.desc      : Cancels all notifications of the current application
+    /**
+    * @tc.number     Sub_Notification_Ans_Publish_Cancel_Static_3000
+    * @tc.name       Sub_Notification_Ans_Publish_Cancel_Static_3000
+    * @tc.desc       Cancels all notifications of the current application
     */
     it('Sub_Notification_Ans_Publish_Cancel_Static_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -859,25 +884,27 @@ export default function ActsNotificationPublishTest() {
             done()
           } else {
             console.info(`${TAG} cancelAll AsyncCallback success`)
-            expect(true).assertTrue()
+            expect(err).assertEqual(null)
             done()
           }
         })
         console.info(`Sub_Notification_Ans_Publish_Cancel_Static_3000 END`)
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Cancel_Static_3050
-     * @tc.name      : Sub_Notification_Ans_Publish_Cancel_Static_3050
-     * @tc.desc      : Cancels all notifications of the current application
+    /**
+     * @tc.number     Sub_Notification_Ans_Publish_Cancel_Static_3050
+     * @tc.name       Sub_Notification_Ans_Publish_Cancel_Static_3050
+     * @tc.desc       Cancels all notifications of the current application
      */
     it('Sub_Notification_Ans_Publish_Cancel_Static_3050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
+        count = 0;
         let TAG:string = 'Sub_Notification_Ans_Publish_Cancel_Static_3050'
         console.info(`Sub_Notification_Ans_Publish_Cancel_Static_3050 START`)
         await notificationManager.cancelAll().then(() => {
           console.info(`${TAG} cancelAll Promise success`)
-          expect(true).assertTrue()
+          count++;
+          expect(count).assertEqual(1);
           done()
         }).catch((err: BusinessError): void => {
           console.info(`${TAG} cancelAll Promise err: ${err.code}`)
@@ -889,10 +916,10 @@ export default function ActsNotificationPublishTest() {
 
 
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Cancel_Static_2650
-     * @tc.name      : Sub_Notification_Ans_Publish_Cancel_Static_2650
-     * @tc.desc      : Cancel the notification of a specified group for this application
+    /**
+     * @tc.number     Sub_Notification_Ans_Publish_Cancel_Static_2650
+     * @tc.name       Sub_Notification_Ans_Publish_Cancel_Static_2650
+     * @tc.desc       Cancel the notification of a specified group for this application
      */
     it('Sub_Notification_Ans_Publish_Cancel_Static_2650', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -906,26 +933,28 @@ export default function ActsNotificationPublishTest() {
             done()
           } else {
             console.info(`${TAG} cancelGroup AsyncCallback success`)
-            expect(true).assertTrue()
+            expect(err).assertEqual(null)
             done()
           }
         })
         console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_Static_2650 END`)
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Publish_Cancel_Static_2750
-     * @tc.name      : Sub_Notification_Ans_Publish_Cancel_Static_2750
-     * @tc.desc      : Cancel the notification of a specified group for this application
+    /**
+     * @tc.number     Sub_Notification_Ans_Publish_Cancel_Static_2750
+     * @tc.name       Sub_Notification_Ans_Publish_Cancel_Static_2750
+     * @tc.desc       Cancel the notification of a specified group for this application
      */
     it('Sub_Notification_Ans_Publish_Cancel_Static_2750', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
+        count = 0;
         let TAG:string = 'Sub_Notification_Ans_Publish_Cancel_Static_2750'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_Static_2750 START`)
         let groupName = "groupName"
         notificationManager.cancelGroup(groupName).then(() => {
           console.info(`${TAG} cancelGroup Promise success`)
-          expect(true).assertTrue()
+          count++;
+          expect(count).assertEqual(1);
           done()
         }).catch((err: BusinessError): void => {
           console.info(`${TAG} cancelGroup Promise err: ${err.code}`)
@@ -935,18 +964,20 @@ export default function ActsNotificationPublishTest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_Static_2750 END`)
       })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0300
-     * @tc.name      : SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0300
-     * @tc.desc      : Cancel the notification of a specified group for this application
+    /**
+     * @tc.number     SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0300
+     * @tc.name       SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0300
+     * @tc.desc       Cancel the notification of a specified group for this application
      */
     it('SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
+        count = 0;
         let TAG:string = 'SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0300'
         console.info(`${TAG} SUB_NOTIFICATION_ANS_CANCEL_GROUP_TEST_Static_0300 START`)
         notificationManager.cancelGroup('2').then(() => {
           console.info(`${TAG} cancelGroup Promise success`)
-          expect(true).assertTrue()
+          count++;
+          expect(count).assertEqual(1);
           done()
         }).catch((err: BusinessError): void => {
           console.info(`${TAG} cancelGroup Promise err: ${err.code}`)
@@ -957,10 +988,10 @@ export default function ActsNotificationPublishTest() {
       })
 
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Distributed_Search_Static_0600
-     * @tc.name      : Sub_Notification_Ans_Distributed_Search_Static_0600
-     * @tc.desc      : Obtains the number of all active notifications
+    /**
+     * @tc.number     Sub_Notification_Ans_Distributed_Search_Static_0600
+     * @tc.name       Sub_Notification_Ans_Distributed_Search_Static_0600
+     * @tc.desc       Obtains the number of all active notifications
      */
     it('Sub_Notification_Ans_Distributed_Search_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -973,17 +1004,17 @@ export default function ActsNotificationPublishTest() {
             done()
           } else {
             console.info(`${TAG} getActiveNotificationCount AsyncCallback success`)
-            expect(true).assertTrue()
+            expect(data !== null).assertTrue()
             done()
           }
         })
         console.info(`${TAG} Sub_Notification_Ans_Distributed_Search_Static_0600 END`)
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Distributed_Search_Static_0700
-     * @tc.name      : Sub_Notification_Ans_Distributed_Search_Static_0700
-     * @tc.desc      : Obtains the number of all active notifications
+    /**
+     * @tc.number     Sub_Notification_Ans_Distributed_Search_Static_0700
+     * @tc.name       Sub_Notification_Ans_Distributed_Search_Static_0700
+     * @tc.desc       Obtains the number of all active notifications
      */
     it('Sub_Notification_Ans_Distributed_Search_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -991,7 +1022,7 @@ export default function ActsNotificationPublishTest() {
         console.info(`Sub_Notification_Ans_Distributed_Search_Static_0700 START`)
         await notificationManager.getActiveNotificationCount().then((data: long) => {
           console.info(`${TAG} getActiveNotificationCount Promise success :${data}`)
-          expect(true).assertTrue()
+          expect(data !== null).assertTrue()
           done()
         }).catch((err: BusinessError): void => {
           console.info(`${TAG} getActiveNotificationCount Promise err: ${err.code}`)
@@ -1001,11 +1032,11 @@ export default function ActsNotificationPublishTest() {
         console.info(`${TAG} Sub_Notification_Ans_Distributed_Search_Static_0700 END`)
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Distributed_Search_Static_0800
-     * @tc.name      : Sub_Notification_Ans_Distributed_Search_Static_0800
-     * @tc.desc      : Obtains an array of active notifications
-     * 未合入
+    /**
+     * @tc.number     Sub_Notification_Ans_Distributed_Search_Static_0800
+     * @tc.name       Sub_Notification_Ans_Distributed_Search_Static_0800
+     * @tc.desc       Obtains an array of active notifications
+     * 
      */
     it('Sub_Notification_Ans_Distributed_Search_Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1031,10 +1062,10 @@ export default function ActsNotificationPublishTest() {
         console.info(`Sub_Notification_Ans_Distributed_Search_Static_0800 END`)
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Distributed_Search_Static_0900
-     * @tc.name      : Sub_Notification_Ans_Distributed_Search_Static_0900
-     * @tc.desc      : Obtains an array of active notifications
+    /**
+     * @tc.number     Sub_Notification_Ans_Distributed_Search_Static_0900
+     * @tc.name       Sub_Notification_Ans_Distributed_Search_Static_0900
+     * @tc.desc       Obtains an array of active notifications
      */
     it('Sub_Notification_Ans_Distributed_Search_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1055,11 +1086,10 @@ export default function ActsNotificationPublishTest() {
       })
 
 
-
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0100
-     * @tc.name      : SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0100
-     * @tc.desc      : Obtains whether the template is supported by the system
+    /**
+     * @tc.number     SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0100
+     * @tc.name       SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0100
+     * @tc.desc       Obtains whether the template is supported by the system
      */
     it('SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1086,10 +1116,10 @@ export default function ActsNotificationPublishTest() {
         console.info(`${TAG} SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0100 END`)
       })
 
-    /*
-     * @tc.number    : Sub_Notification_Ans_Distributed_template_Static_0600
-     * @tc.name      : Sub_Notification_Ans_Distributed_template_Static_0600
-     * @tc.desc      : Obtains whether the template is supported by the system
+    /**
+     * @tc.number     Sub_Notification_Ans_Distributed_template_Static_0600
+     * @tc.name       Sub_Notification_Ans_Distributed_template_Static_0600
+     * @tc.desc       Obtains whether the template is supported by the system
      */
     it('Sub_Notification_Ans_Distributed_template_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1108,10 +1138,10 @@ export default function ActsNotificationPublishTest() {
         console.info(`${TAG} Sub_Notification_Ans_Distributed_template_Static_0600 END`)
       })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0300
-     * @tc.name      : SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0300
-     * @tc.desc      : Obtains whether the template is supported by the system
+    /**
+     * @tc.number     SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0300
+     * @tc.name       SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0300
+     * @tc.desc       Obtains whether the template is supported by the system
      */
     it('SUB_NOTIFICATION_ANS_SUPPORT_TEST_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -1120,7 +1150,7 @@ export default function ActsNotificationPublishTest() {
         let templateName:string = '2'
         notificationManager.isSupportTemplate(templateName).then((data:Boolean) => {
           console.info(`${TAG} isSupportTemplate Promise success :${JSON.stringify(data)}`)
-          expect(true).assertTrue()
+          expect(data).assertFalse()
           done()
         }).catch((err: BusinessError): void => {
           console.info(`${TAG} isSupportTemplate Promise err: ${err.code}`)
