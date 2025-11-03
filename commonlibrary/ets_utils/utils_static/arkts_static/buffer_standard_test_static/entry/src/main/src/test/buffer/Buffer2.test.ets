@@ -9089,7 +9089,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteBigInt64BE0006';
       try {
         let buf = buffer.alloc(10);
-        const res = buf.writeBigInt64BE(BigInt(0xfeedface));
+        const res = buf.writeBigInt64BE(BigInt(0xfeedface.toInt()));
         console.log(`${TAG} res: ${res}`);
         expect(String(res)).assertEqual('8');
         const result = buf.toString('hex')
@@ -9191,7 +9191,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteBigInt64BE0011';
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        const res = buf.writeBigInt64BE(BigInt(0xdecafafecacefade))
+        const res = buf.writeBigInt64BE(BigInt(-0x2135050135310522))
         expect(String(res)).assertEqual('8');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -9429,7 +9429,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteBigInt64LE0011';
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        let result = buf.writeBigInt64LE(BigInt(0xdecafafecacefade), 0);
+        let result = buf.writeBigInt64LE(BigInt(-0x2135050135310522), 0);
         expect(String(result)).assertEqual('8');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -10102,8 +10102,8 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteDoubleBE0010';
       try {
         let buf = buffer.allocUninitializedFromPool(8);
-        buf.writeDoubleBE(0xdecafafecacefade, 0);
-        expect(String(buf.writeDoubleBE(0xdecafafecacefade, 0))).assertEqual('8');
+        buf.writeDoubleBE(-0x2135050135310522, 0);
+        expect(String(buf.writeDoubleBE(-0x2135050135310522, 0))).assertEqual('8');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -10316,7 +10316,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteDoubleLE0010';
       try {
         let buf = buffer.allocUninitializedFromPool(3);
-        let result = buf.writeDoubleLE(0xdecafafecacefade, 0);
+        let result = buf.writeDoubleLE(-0x2135050135310522, 0);
         console.info("result = " + result);
         expect(false).assertFail();
       } catch (err:BusinessError) {
@@ -10529,8 +10529,8 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteFloatBE0010';
       try {
         let buf = buffer.alloc(16);
-	buf.writeFloatBE(0xdecafafecacefade, 0);
-        expect(String(buf.writeFloatBE(0xdecafafecacefade, 0))).assertEqual('4');
+	buf.writeFloatBE(-0x2135050135310522, 0);
+        expect(String(buf.writeFloatBE(-0x2135050135310522, 0))).assertEqual('4');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -10756,7 +10756,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteFloatLE0011';
       try {
         let buf = buffer.alloc(5);
-        expect(String(buf.writeFloatLE(0xdecafafecacefade, 0))).assertEqual('4');
+        expect(String(buf.writeFloatLE(-0x2135050135310522, 0))).assertEqual('4');
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
@@ -10861,7 +10861,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt80005';
       try {
         let buf = buffer.alloc(5);
-        buf.writeInt8(0xcafebabe, 0);
+        buf.writeInt8(0xcafebabe.toInt(), 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -10899,7 +10899,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt80007';
       try {
         let buf = buffer.alloc(5);
-        buf.writeInt8(0xdecafafecacefade, 0);
+        buf.writeInt8(-0x2135050135310522, 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -10978,7 +10978,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt80011';
       try {
         let buf = buffer.alloc(5);
-        buf.writeInt8(0xfeedface, 0);
+        buf.writeInt8(0xfeedface.toInt(), 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -11073,7 +11073,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt16BE0005';
       try {
         let buf = buffer.alloc(5);
-        buf.writeInt16BE(0xfeedface, 0);
+        buf.writeInt16BE(0xfeedface.toInt(), 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -11129,7 +11129,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt16BE0008';
       try {
         let buf = buffer.alloc(5);
-        buf.writeInt16BE(0xcafebabe, 0);
+        buf.writeInt16BE(0xcafebabe.toInt(), 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -11167,7 +11167,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt16BE0010';
       try {
         let buf = buffer.alloc(5);
-        buf.writeInt16BE(0xdecafafecacefade, 0);
+        buf.writeInt16BE(-0x2135050135310522, 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -11291,7 +11291,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt16LE0005';
       try {
         let buf = buffer.alloc(5);
-        buf.writeInt16LE(0xfeedface, 0);
+        buf.writeInt16LE(0xfeedface.toInt(), 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -11348,7 +11348,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt16LE0008';
       try {
         let buf = buffer.alloc(5);
-        buf.writeInt16LE(0xcafebabe, 0);
+        buf.writeInt16LE(0xcafebabe.toInt(), 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -11386,7 +11386,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt16LE0010';
       try {
         let buf = buffer.alloc(5);
-        buf.writeInt16LE(0xdecafafecacefade, 0);
+        buf.writeInt16LE(-0x2135050135310522, 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -11534,7 +11534,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt32BE0006';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        let result = buf.writeInt32BE(0xfeedfacefeedface, 0);
+        let result = buf.writeInt32BE(-0x0112053101120532, 0);
         console.info("result = " + result);
         expect(false).assertFail();
       } catch (err:BusinessError) {
@@ -11595,7 +11595,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt32BE0009';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        let result = buf.writeInt32BE(0xfeedfacefeedface, 0);
+        let result = buf.writeInt32BE(-0x0112053101120532, 0);
         console.info("result = " + result);
         expect(false).assertFail();
       } catch (err:BusinessError) {
@@ -11636,7 +11636,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt32BE0011';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        let result = buf.writeInt32BE(0xdecafafecacefade, 0);
+        let result = buf.writeInt32BE(-0x2135050135310522, 0);
         console.info("result = " + result);
         expect(false).assertFail();
       } catch (err:BusinessError) {
@@ -11766,7 +11766,7 @@ export default function bufferTest2() {
       try {
 
         let buf = buffer.allocUninitializedFromPool(4);
-        let result = buf.writeInt32LE(0xfeedfacefeedface, 0);
+        let result = buf.writeInt32LE(-0x0112053101120532, 0);
         console.info("result = " + result);
         expect(false).assertFail();
       } catch (err:BusinessError) {
@@ -11828,7 +11828,7 @@ export default function bufferTest2() {
       try {
 
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeInt32LE(0xfeedfacefeedface, 0);
+        buf.writeInt32LE(-0x0112053101120532, 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -11868,7 +11868,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteInt32LE0010';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeInt32LE(0xdecafafecacefade, 0);
+        buf.writeInt32LE(-0x2135050135310522, 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -12030,7 +12030,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt80006';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt8(0xfeedface, 3);
+        buf.writeUInt8(0xfeedface.toInt(), 3);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -12071,7 +12071,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt80008';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt8(0xcafebabe, 1);
+        buf.writeUInt8(0xcafebabe.toInt(), 1);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -12115,7 +12115,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt80010';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt8(0xdecafafecacefade, 1);
+        buf.writeUInt8(-0x2135050135310522, 1);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -12290,7 +12290,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt16BE0006';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt16BE(0xfeedface, 0);
+        buf.writeUInt16BE(0xfeedface.toInt(), 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -12350,7 +12350,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt16BE0009';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt16BE(0xcafebabe, 0);
+        buf.writeUInt16BE(0xcafebabe.toInt(), 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -12394,7 +12394,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt16BE0011';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt16BE(0xdeadbeef, 0);
+        buf.writeUInt16BE(0xdeadbeef.toInt(), 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -12522,7 +12522,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt16LE0005';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt16LE(0xfeedface, 0);
+        buf.writeUInt16LE(0xfeedface.toInt(), 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -12583,7 +12583,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt16LE0008';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt16LE(0xcafebabe, 0);
+        buf.writeUInt16LE(0xcafebabe.toInt(), 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -12623,7 +12623,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt16LE0010';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt16LE(0xdecafafecacefade, 0);
+        buf.writeUInt16LE(-0x2135050135310522, 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -12848,8 +12848,8 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt32BE0010';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt32BE(0xdecafafecacefade, 0);
-        expect(buf.writeUInt32BE(0xdecafafecacefade, 0)).assertEqual(4);
+        buf.writeUInt32BE(-0x2135050135310522, 0);
+        expect(buf.writeUInt32BE(-0x2135050135310522, 0)).assertEqual(4);
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
       }
@@ -13071,7 +13071,7 @@ export default function bufferTest2() {
       const TAG = 'testBufferWriteUInt32LE0010';
       try {
         let buf = buffer.allocUninitializedFromPool(4);
-        buf.writeUInt32LE(0xdecafafecacefade, 0);
+        buf.writeUInt32LE(-0x2135050135310522, 0);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);

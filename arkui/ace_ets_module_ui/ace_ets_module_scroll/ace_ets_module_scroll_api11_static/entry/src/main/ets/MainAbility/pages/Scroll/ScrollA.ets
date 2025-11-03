@@ -86,7 +86,7 @@ struct scroll_testcase {
                 .width(400)
                 .margin(10)
                 .height(70)
-                .backgroundColor(0xfff5deb3)
+                .backgroundColor(0xfff5deb3.toInt())
             },
             (item: number) => item.toString()
           )

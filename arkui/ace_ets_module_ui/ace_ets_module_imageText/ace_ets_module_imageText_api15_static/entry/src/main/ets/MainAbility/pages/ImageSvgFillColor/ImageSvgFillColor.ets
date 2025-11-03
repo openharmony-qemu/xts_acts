@@ -133,7 +133,7 @@ ColorContent.ORIGIN,],
 0),
 new FillColorCategory('app.media.comment_area_like', [
 0xffffff,
-0xffff0000,
+0xffff0000.toInt(),
 ColorContent.ORIGIN],
     ['#FFFFFFFF', '#FFFF0000', '#FF000000'],
 0),

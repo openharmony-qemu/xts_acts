@@ -110,7 +110,7 @@ it('ArkuiContext_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
           await CommonFunc.sleep(2000);
           if (atomicServiceBar != undefined) {
             hilog.info(0x0000, 'testTag', 'Get AtomServiceBar Successfully.');
-            atomicServiceBar.setBackgroundColor(0x88888888);
+            atomicServiceBar.setBackgroundColor(0x88888888.toInt());
             expect(true).assertTrue();
           } else {
             // no support AtomServiceBar

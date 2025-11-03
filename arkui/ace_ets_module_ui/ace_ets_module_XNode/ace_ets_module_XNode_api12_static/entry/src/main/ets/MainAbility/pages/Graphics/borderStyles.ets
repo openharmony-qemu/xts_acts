@@ -26,9 +26,10 @@ import { RenderNode, FrameNode, NodeController, borderStyles } from "@ohos.arkui
 const renderNode = new RenderNode();
 let borderStyleValue = renderNode.borderColor;
 renderNode.frame = { x: 0, y: 0, width: 150, height: 150 };
-renderNode.backgroundColor = 0XFF00FF00;
+renderNode.backgroundColor = 0XFF00FF00.toInt();
 renderNode.borderWidth = { left: 8, top: 8, right: 8, bottom: 8 };
-renderNode.borderColor = { left: 0xFF0000FF, top: 0xFF0000FF, right: 0xFF0000FF, bottom: 0xFF0000FF };
+renderNode.borderColor = { left: 0XFF00FF00.toInt(), top: 0xFF0000FF.toInt(),
+  right: 0xFF0000FF.toInt(), bottom: 0xFF0000FF.toInt() };
 renderNode.borderStyle = borderStyles(BorderStyle.Dotted);
 
 

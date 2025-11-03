@@ -39,7 +39,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 
 let renderNode = new RenderNode();
 renderNode.size = { width: 300, height: 300 };
-renderNode.backgroundColor = 0XFF00FF00;
+renderNode.backgroundColor = 0XFF00FF00.toInt();
 renderNode.opacity = 1.0;
 let opacity: number = renderNode.opacity;
 

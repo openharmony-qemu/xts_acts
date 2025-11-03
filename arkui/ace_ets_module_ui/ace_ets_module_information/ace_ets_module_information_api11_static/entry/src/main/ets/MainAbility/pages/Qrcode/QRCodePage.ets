@@ -43,8 +43,8 @@ struct QRCodePage {
       QRCode(this.QRvalue).width(200).height(200).backgroundColor(this.backColor).key('qr2')
 
       QRCode(this.QRvalue).width(200).height(200)
-        .color(0xFF000000)
-        .backgroundColor(0xFFFFFFFF)
+        .color(0xFF000000.toInt())
+        .backgroundColor(0xFFFFFFFF.toInt())
         .key('qrDefault')
     }.width('100%').margin({ top: 5 } as Margin)
   }

@@ -45,7 +45,7 @@ class MyRenderNode extends RenderNode {
 
 const renderNode = new MyRenderNode();
 renderNode.frame = { x: 100, y: 100, width: 200, height: 200 };
-renderNode.backgroundColor = 0xff0000ff;
+renderNode.backgroundColor = 0xff0000ff.toInt();
 renderNode.opacity = 0.5;
 renderNode.markNodeGroup = true;
 

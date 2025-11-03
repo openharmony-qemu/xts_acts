@@ -27,7 +27,7 @@ import { RenderNode, FrameNode, NodeController, borderRadiuses } from "@ohos.ark
 const renderNode = new RenderNode();
 let borderRadiusesValue = renderNode.borderRadius;
 renderNode.frame = { x: 0, y: 0, width: 150, height: 150 };
-renderNode.backgroundColor = 0XFF00FF00;
+renderNode.backgroundColor = 0XFF00FF00.toInt();
 renderNode.borderRadius = borderRadiuses(32);
 
 class MyNodeController extends NodeController {

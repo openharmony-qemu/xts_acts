@@ -3362,7 +3362,7 @@ export default function BufferTest() {
     it("testWriteBigUInt64BE0511", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.allocUninitializedFromPool(8);
       try {
-        let ref = buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 1);
+        let ref = buf.writeBigUInt64BE(BigInt(-0x2135050135310522), 1);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         expect(err.name).assertEqual('BusinessError');
@@ -3395,7 +3395,7 @@ export default function BufferTest() {
     it("testWriteBigUInt64LE0521", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.allocUninitializedFromPool(8);
       try {
-        let ref = buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 1);
+        let ref = buf.writeBigUInt64BE(BigInt(-0x2135050135310522), 1);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         expect(err.name).assertEqual('BusinessError');
