@@ -38,6 +38,7 @@ export default function imagePixelMapTest() {
   const TEST_DECODE_LARGE_IMAGE_JPEG = "big-30118x30118.jpg";
   const TEST_DECODE_LARGE_IMAGE_HEIC = "big-30000x30000.heic";
   const TEST_DECODE_LARGE_IMAGE_PNG  = "30009x30009_without_alpha.png";
+  const test_wbmp = 'test.wbmp';
 
   describe('imagePixelMapTest', () => {
     beforeAll(async () => {
@@ -102,6 +103,21 @@ export default function imagePixelMapTest() {
         logger.log("getImageInfo error is: " + JSON.stringify(error));
         return undefined;
       }
+    }
+
+    const checkPixelMap = async (
+      logger: Logger,
+      decodeOption: image.DecodingOptions,
+      originImageInfo: image.ImageInfo|undefined,
+      exceptedMimeType?: string
+    ): Promise<boolean> => {
+      let ret = false;
+      logger.log("originImageInfo is:" + JSON.stringify(originImageInfo));
+      ret = (decodeOption.desiredSize?.width  == originImageInfo!.size.width) &&
+            (decodeOption.desiredSize?.height == originImageInfo!.size.height) &&
+            (decodeOption.desiredPixelFormat  == originImageInfo!.pixelFormat) &&
+            (exceptedMimeType == undefined || exceptedMimeType == originImageInfo!.mimeType);
+      return ret;
     }
 
     /**
@@ -2889,5 +2905,94 @@ export default function imagePixelMapTest() {
       }
     })
 
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0100
+     * @tc.desc      : 1.create pixelMap object by imageSource
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 256, height: 256},
+     *                       desiredPixelFormat: RGBA_8888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0100', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0100");
+      let buffer: ESObject = await getBuffer(test_wbmp);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 256, height: 256 },
+        desiredPixelFormat: RGBA_8888
+      };
+      let imageInfo = await getImageInfo(logger, buffer, 'default', decodingOptions);
+      let ret = await checkPixelMap(logger, decodingOptions, imageInfo, "image/wbmp");
+      logger.log("checkPixelMap result is: " + ret);
+      expect(ret).assertTrue();
+      buffer = undefined;
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0200
+     * @tc.desc      : 1.create pixelMap object by imageSource
+     *                 2.do not set DecodingOptions
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0200', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_0200");
+      let buffer: ESObject = await getBuffer(test_wbmp);
+      let imageInfo = await getImageInfo(logger, buffer, 'default');
+      buffer = undefined;
+      logger.log("getImageInfo result is: " + (imageInfo != undefined) + ", info: " + JSON.stringify(imageInfo));
+      expect(imageInfo!.mimeType == "image/wbmp").assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0100
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0100
+     * @tc.desc      : 1.create pixelMap object by imageSource
+     *                 2.set DecodingOptions 
+     *                       desiredSize: {width: 256, height: 256},
+     *                       desiredPixelFormat: RGBA_8888
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0100', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0100");
+      let buffer: ESObject = await getBuffer(test_wbmp);
+      let decodingOptions: image.DecodingOptions = {
+        desiredSize: { width: 256, height: 256 },
+        desiredPixelFormat: RGBA_8888
+      };
+      let imageInfo = await getImageInfo(logger, buffer, 'sync', decodingOptions);
+      let ret = await checkPixelMap(logger, decodingOptions, imageInfo, "image/wbmp");
+      logger.log("checkPixelMap result is: " + ret);
+      expect(ret).assertTrue();
+      buffer = undefined;
+      done();
+    });
+
+    /**
+     * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0200
+     * @tc.name      : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0200
+     * @tc.desc      : 1.create pixelMap object by imageSource
+     *                 2.do not set DecodingOptions
+     * @tc.size      : MediumTest
+     * @tc.type      : Functional
+     * @tc.level     : Level 1
+     */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0200', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_WBMP_SYNC_0200");
+      let buffer: ESObject = await getBuffer(test_wbmp);
+      let imageInfo = await getImageInfo(logger, buffer, 'sync');
+      buffer = undefined;
+      logger.log("getImageInfo result is: " + (imageInfo != undefined) + ", info: " + JSON.stringify(imageInfo));
+      expect(imageInfo!.mimeType == "image/wbmp").assertTrue();
+      done();
+    })
   })
 }
