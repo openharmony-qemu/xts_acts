@@ -638,7 +638,7 @@ export default function ActsCommonEventManagerSupportTest() {
     /*
       * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4100
       * @tc.name      : commonEventManager.Support
-      * @tc.desc      : tablet changed common event
+      * @tc.desc      : lid mode common event
       */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4100', Level.LEVEL0, async function () {
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4100 START`)

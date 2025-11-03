@@ -771,7 +771,7 @@ export default function ActsCommonEventManagerSupportTest() {
     /*
      * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4100
      * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4100
-     * @tc.desc      : tablet mode changed common event
+     * @tc.desc      : lid mode changed common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
