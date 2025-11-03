@@ -2,7 +2,8 @@
   "src": [
     "testability/pages/Index",
     "testability/pages/webController",
-    "testability/pages/httpAuthHandler"
+    "testability/pages/httpAuthHandler",
+    "testability/pages/httpAuthHandlerEnhanced"
   ]
 }
 
