@@ -162,7 +162,7 @@ struct Index {
               this.cacheError = true;
               this.cacheMode = CacheMode.Only;
               await Utils.sleep(2000);
-              this.controller.loadUrl({ url: "https://www.openharmony.cn/mainPlay" });
+              this.controller.loadUrl({ url: "https://www.openharmony.cn" });
               break;
             }
             case "emitCacheModeDefault": {
