@@ -12,23 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 {
   "app": {
-    "signingConfigs": [
-      {
-        "name": "default",
-        "material": {
-          "certpath": "C:/Users/Administrator/.ohos/config/openharmony/default_unsys_20_mi1pSH5Ahaes3IwTBNvKLNWnLQaSsqZAad8LF5Z1Fzs=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001A0D28C26CA92F0C89CA88553642BFE5C1103A0D630F0A32EB1B062BB302B2108DC0E445BAEAA7",
-          "profile": "C:/Users/Administrator/.ohos/config/openharmony/default_unsys_20_mi1pSH5Ahaes3IwTBNvKLNWnLQaSsqZAad8LF5Z1Fzs=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "C:/Users/Administrator/.ohos/config/openharmony/default_unsys_20_mi1pSH5Ahaes3IwTBNvKLNWnLQaSsqZAad8LF5Z1Fzs=.p12",
-          "storePassword": "0000001A34BA153E5CA0EFA182B687945168BBBAFADA2268F22E04904A99CB4E397B35FB7A2EC009561C"
-        }
-      }
-    ],
+    "signingConfigs": [],
     "products": [
       {
         "name": "default",
