@@ -2131,6 +2131,7 @@ export default function requestConfigSavesTest() {
           arr.push(3);
           console.info("====>SUB_Request_Download_off_faultOccur_0100 task3 progress on arr: " + JSON.stringify(arr));
           expect(arr.join()).assertEqual(arr1.join());
+          expect(faults).assertEqual(request.agent.Faults.PROTOCOL);
           done();
         } catch (err) {
           console.info("====>SUB_Request_Download_off_faultOccur_0100 catch err: " + JSON.stringify(err));
@@ -2240,6 +2241,7 @@ export default function requestConfigSavesTest() {
           arr.push(3);
           console.info("====>SUB_Request_Download_on_faultOccur_0300 task3 progress on arr: " + JSON.stringify(arr));
           expect(arr.join()).assertEqual(arr1.join());
+          expect(faults).assertEqual(request.agent.Faults.PARAM);
           done();
         } catch (err) {
           console.info("====>SUB_Request_Download_on_faultOccur_0300 catch err: " + JSON.stringify(err));
