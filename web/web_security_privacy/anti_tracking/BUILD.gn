@@ -17,6 +17,7 @@ group("antiTracking") {
     deps = [
       "anti_tracking_one:ActsWebAntiTrackingOneTest",
       "anti_tracking_two:ActsWebAntiTrackingTwoTest",
+      "anti_tracking_two_static:ActsWebAntiTrackingTwoStaticTest",
     ]
   }
 }
