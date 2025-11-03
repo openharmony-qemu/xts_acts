@@ -33,7 +33,7 @@
             ]
           }
         ],
-        "name": "com.example.third1.MainAbility",
+        "name": ".MainAbility",
         "srcLanguage": "js",
         "visible": true,
         "icon": "$media:icon",
@@ -77,7 +77,7 @@
             "updateDuration": 1
           }
         ],
-        "srcPath": "default"
+        "srcPath": "MainAbility"
       },
       {
         "skills": [
@@ -101,7 +101,7 @@
           "voip",
           "taskKeeping"
         ],
-        "name": "com.example.third1.MainAbilityA",
+        "name": ".MainAbilityA",
         "srcLanguage": "js",
         "visible": true,
         "icon": "$media:icon",
@@ -117,7 +117,7 @@
         "pages": [
           "pages/index/index"
         ],
-        "name": "com.example.third1.MainAbility",
+        "name": ".MainAbility",
         "window": {
           "designWidth": 720,
           "autoDesignWidth": false
@@ -127,7 +127,7 @@
         "pages": [
           "pages/index/index"
         ],
-        "name": "com.example.third1.MainAbilityA",
+        "name": ".MainAbilityA",
         "window": {
           "designWidth": 720,
           "autoDesignWidth": false
