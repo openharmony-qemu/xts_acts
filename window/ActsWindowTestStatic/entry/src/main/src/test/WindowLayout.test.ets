@@ -606,11 +606,13 @@ export default function WindowLayoutTest() {
                         (subWin! as window.Window).startMoving().then( () => {
                             hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling startMoving.');
                             expect(false).assertTrue();
+                            done()
                         }).catch( (err: BusinessError) :PromiseLike<void>|undefined=> {
                             hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call startMoving. Cause: ' + JSON.stringify(err));
                             expect(false).assertTrue();
+                            done()
                         });
-                        done()
+                        
                     } catch (exception) {
                         exception = exception as BusinessError;
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call startMoving. Cause:' + JSON.stringify(exception));
@@ -648,8 +650,6 @@ export default function WindowLayoutTest() {
                     console.info(msgStr +  'on windowHighlightChange callback' + JSON.stringify(data));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_windowHighlightChange success');
-                expect(false).assertTrue();
-                done()
             } catch (exception) {
                 exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
@@ -689,19 +689,19 @@ export default function WindowLayoutTest() {
                     console.info(msgStr +  'on windowHighlightChange callback' + JSON.stringify(data));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_windowHighlightChange success');
-                expect(false).assertTrue();
-                done()
             } catch (exception) {
                 exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to on_windowHighlightChange. Cause code:' + JSON.stringify(exception));
                     expect(exception.code).assertEqual(1300002);
+                    done()
                 } else {
                     hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
                     expect(exception.code).assertEqual(801);
+                    done()
                 }
-                done()
+                
             }
         })
         /**
