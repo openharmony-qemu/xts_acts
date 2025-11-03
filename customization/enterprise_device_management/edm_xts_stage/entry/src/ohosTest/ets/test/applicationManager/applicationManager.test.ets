@@ -36,6 +36,7 @@ import adminManager from '@ohos.enterprise.adminManager';
 import applicationManager from '@ohos.enterprise.applicationManager';
 import Want from '@ohos.app.ability.Want';
 import sysDeviceInfo from '@ohos.deviceInfo';
+import common from '@ohos.enterprise.common';
 
 export default function applicationManagerTest() {
   describe('applicationManager_test', () => {
@@ -890,6 +891,536 @@ export default function applicationManagerTest() {
         expect(res.length == 0).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDFREEZEEXEMPTEDAPPS_001
+     * @tc.name      : test_addFreezeExemptedApps_001
+     * @tc.desc      : test addFreezeExemptedApps method with unActive admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_addFreezeExemptedApps_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        let freezeExemptedApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200001 || error.code == 801).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDFREEZEEXEMPTEDAPPS_002
+     * @tc.name      : test_addFreezeExemptedApps_002
+     * @tc.desc      : test addFreezeExemptedApps method with byod admin for !2in1
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_addFreezeExemptedApps_002", Level.LEVEL2, async (done: Function) => {
+      if (sysDeviceInfo.deviceType == '2in1') {
+        done();
+        return;
+      }
+      try {
+        let freezeExemptedApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDFREEZEEXEMPTEDAPPS_003
+     * @tc.name      : test_addFreezeExemptedApps_003
+     * @tc.desc      : test addFreezeExemptedApps method with byod admin for 2in1
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_addFreezeExemptedApps_003", Level.LEVEL2, async (done: Function) => {
+      if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+      }
+      try {
+        let freezeExemptedApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDFREEZEEXEMPTEDAPPS_004
+     * @tc.name      : test_addFreezeExemptedApps_004
+     * @tc.desc      : test addFreezeExemptedApps method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_addFreezeExemptedApps_004", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addFreezeExemptedApps(SELFWANT, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 401 || error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDFREEZEEXEMPTEDAPPS_005
+     * @tc.name      : test_addFreezeExemptedApps_005
+     * @tc.desc      : test addFreezeExemptedApps method with missing param
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_addFreezeExemptedApps_005", Level.LEVEL2, async (done: Function) => {
+      try {
+        let freezeExemptedApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 401 || error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDFREEZEEXEMPTEDAPPS_006
+     * @tc.name      : test_addFreezeExemptedApps_006
+     * @tc.desc      : test addFreezeExemptedApps method with invalid param
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_addFreezeExemptedApps_006", Level.LEVEL2, async (done: Function) => {
+      try {
+        let freezeExemptedApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"111",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200012 || error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDFREEZEEXEMPTEDAPPS_007
+     * @tc.name      : test_addFreezeExemptedApps_007
+     * @tc.desc      : test addFreezeExemptedApps method with overSize array
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_addFreezeExemptedApps_007", Level.LEVEL2, async (done: Function) => {
+      try {
+        let freezeExemptedApps: Array<common.ApplicationInstance> = [
+          {appIdentifier:"5765880207852919475", accountId:DEFAULT_USER_ID, appIndex:0},
+          {appIdentifier:"1207824849184017472", accountId:DEFAULT_USER_ID, appIndex:0},
+          {appIdentifier:"1164531384803416384", accountId:DEFAULT_USER_ID, appIndex:0},
+          {appIdentifier:"1173750081090759360", accountId:DEFAULT_USER_ID, appIndex:0},
+          {appIdentifier:"976752519134849856", accountId:DEFAULT_USER_ID, appIndex:0},
+          {appIdentifier:"1081898888199154560", accountId:DEFAULT_USER_ID, appIndex:0},
+          {appIdentifier:"5765880207853624761", accountId:DEFAULT_USER_ID, appIndex:0},
+          {appIdentifier:"5765880207853068793", accountId:DEFAULT_USER_ID, appIndex:0},
+          {appIdentifier:"1230215522310701824", accountId:DEFAULT_USER_ID, appIndex:0},
+          {appIdentifier:"5765880207854258995", accountId:DEFAULT_USER_ID, appIndex:0},
+          {appIdentifier:"1062865240531676032", accountId:DEFAULT_USER_ID, appIndex:0}
+        ];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 401 || error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEFREEZEEXEMPTEDAPPS_001
+     * @tc.name      : test_removeFreezeExemptedApps_001
+     * @tc.desc      : test removeFreezeExemptedApps method with unActive admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_removeFreezeExemptedApps_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        let freezeExemptedApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        applicationManager.removeFreezeExemptedApps(SELFWANT, freezeExemptedApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200001 || error.code == 801).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEFREEZEEXEMPTEDAPPS_002
+     * @tc.name      : test_removeFreezeExemptedApps_002
+     * @tc.desc      : test removeFreezeExemptedApps method with byod admin for !2in1
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_removeFreezeExemptedApps_002", Level.LEVEL2, async (done: Function) => {
+      if (sysDeviceInfo.deviceType == '2in1') {
+        done();
+        return;
+      }
+      try {
+        let freezeExemptedApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        applicationManager.removeFreezeExemptedApps(SELFWANT, freezeExemptedApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEFREEZEEXEMPTEDAPPS_003
+     * @tc.name      : test_removeFreezeExemptedApps_003
+     * @tc.desc      : test removeFreezeExemptedApps method with byod admin for 2in1
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_removeFreezeExemptedApps_003", Level.LEVEL2, async (done: Function) => {
+      if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+      }
+      try {
+        let freezeExemptedApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        applicationManager.removeFreezeExemptedApps(SELFWANT, freezeExemptedApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEFREEZEEXEMPTEDAPPS_004
+     * @tc.name      : test_removeFreezeExemptedApps_004
+     * @tc.desc      : test removeFreezeExemptedApps method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_removeFreezeExemptedApps_004", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeFreezeExemptedApps(SELFWANT, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 401 || error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEFREEZEEXEMPTEDAPPS_005
+     * @tc.name      : test_removeFreezeExemptedApps_005
+     * @tc.desc      : test removeFreezeExemptedApps method with missing param
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_removeFreezeExemptedApps_005", Level.LEVEL2, async (done: Function) => {
+      try {
+        let freezeExemptedApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.removeFreezeExemptedApps(SELFWANT, freezeExemptedApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 401 || error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEFREEZEEXEMPTEDAPPS_006
+     * @tc.name      : test_removeFreezeExemptedApps_006
+     * @tc.desc      : test removeFreezeExemptedApps method with different data
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_removeFreezeExemptedApps_006", Level.LEVEL2, async (done: Function) => {
+      try {
+        let freezeExemptedApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        let removeApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"5765880207854258995",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
+        applicationManager.removeFreezeExemptedApps(SELFWANT, removeApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200012 || error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEFREEZEEXEMPTEDAPPS_007
+     * @tc.name      : test_removeFreezeExemptedApps_007
+     * @tc.desc      : test removeFreezeExemptedApps method has different data
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_removeFreezeExemptedApps_007", Level.LEVEL2, async (done: Function) => {
+      try {
+        let freezeExemptedApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          },
+          {
+            appIdentifier:"5765880207854258995",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        let removeApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          },
+          {
+            appIdentifier:"1062865240531676032",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
+        applicationManager.removeFreezeExemptedApps(SELFWANT, removeApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200012 || error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETFREEZEEXEMPTEDAPPS_001
+     * @tc.name      : test_getFreezeExemptedApps_001
+     * @tc.desc      : test getFreezeExemptedApps method with unActive admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_getFreezeExemptedApps_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        applicationManager.getFreezeExemptedApps(SELFWANT);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200001 || error.code == 801).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETFREEZEEXEMPTEDAPPS_002
+     * @tc.name      : test_getFreezeExemptedApps_002
+     * @tc.desc      : test getFreezeExemptedApps method with byod admin for !2in1
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_getFreezeExemptedApps_002", Level.LEVEL2, async (done: Function) => {
+      if (sysDeviceInfo.deviceType == '2in1') {
+        done();
+        return;
+      }
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        applicationManager.getFreezeExemptedApps(SELFWANT);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETFREEZEEXEMPTEDAPPS_003
+     * @tc.name      : test_getFreezeExemptedApps_003
+     * @tc.desc      : test getFreezeExemptedApps method with byod admin for 2in1
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_getFreezeExemptedApps_003", Level.LEVEL2, async (done: Function) => {
+      if (sysDeviceInfo.deviceType != '2in1') {
+        done();
+        return;
+      }
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+        let res = applicationManager.getFreezeExemptedApps(SELFWANT);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETFREEZEEXEMPTEDAPPS_004
+     * @tc.name      : test_getFreezeExemptedApps_004
+     * @tc.desc      : test getFreezeExemptedApps method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_getFreezeExemptedApps_004", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        applicationManager.getFreezeExemptedApps(null);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 401 || error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETFREEZEEXEMPTEDAPPS_005
+     * @tc.name      : test_getFreezeExemptedApps_005
+     * @tc.desc      : test getFreezeExemptedApps method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_getFreezeExemptedApps_005", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let res = applicationManager.getFreezeExemptedApps(SELFWANT);
+        expect(res.length == 0).assertTrue();
+      } catch (error) {
+        expect(error.code == 801).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }

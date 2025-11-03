@@ -31,6 +31,7 @@ import adminManager from '@ohos.enterprise.adminManager';
 import applicationManager from '@ohos.enterprise.applicationManager';
 import Want from '@ohos.app.ability.Want';
 import sysDeviceInfo from '@ohos.deviceInfo';
+import common from '@ohos.enterprise.common';
 
 export default function applicationManagerTest() {
   describe('applicationManager_test', () => {
@@ -414,6 +415,83 @@ export default function applicationManagerTest() {
         expect(false).assertTrue();
       } catch (error) {
         expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDFREEZEEXEMPTEDAPPS_001
+     * @tc.name      : test_addFreezeExemptedApps_001
+     * @tc.desc      : test addFreezeExemptedApps method with normal admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_addFreezeExemptedApps_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        let freezeExemptedApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201 || error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEFREEZEEXEMPTEDAPPS_001
+     * @tc.name      : test_removeFreezeExemptedApps_001
+     * @tc.desc      : test removeFreezeExemptedApps method with normal admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_removeFreezeExemptedApps_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        let freezeExemptedApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.removeFreezeExemptedApps(SELFWANT, freezeExemptedApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201 || error.code == 801).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETFREEZEEXEMPTEDAPPS_001
+     * @tc.name      : test_getFreezeExemptedApps_001
+     * @tc.desc      : test getFreezeExemptedApps method with normal admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_getFreezeExemptedApps_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.getFreezeExemptedApps(SELFWANT);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201 || error.code == 801).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
       }
