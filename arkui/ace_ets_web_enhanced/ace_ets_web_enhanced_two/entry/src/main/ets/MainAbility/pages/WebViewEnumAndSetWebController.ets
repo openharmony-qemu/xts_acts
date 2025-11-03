@@ -130,7 +130,7 @@ struct WebViewEnumAndSetWebController {
               this.controller.removeCache(true);
               this.cacheError = true
               this.CacheMode = CacheMode.Only
-              this.controller.loadUrl("https://www.openharmony.cn/mainPlay")
+              this.controller.loadUrl("https://www.openharmony.cn")
               break;
             }
             case "emitCacheModeDefault": {
