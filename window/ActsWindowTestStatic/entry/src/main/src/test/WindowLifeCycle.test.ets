@@ -80,6 +80,7 @@ export default function WindowLifeCycleTest() {
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
+        let windowclassArr:Array<window.Window>;
         beforeAll(() => {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //hilog.info(0x0000, '[ANI]','windowTest context: ' + JSON.stringify(context))
@@ -95,6 +96,19 @@ export default function WindowLifeCycleTest() {
             hilog.info(domain, tag, '%{public}s', 'getANI windowStage = ' + JSON.stringify(windowStage));
             hilog.info(domain, tag, '%{public}s', 'getANI win = ' + JSON.stringify(win));
             hilog.info(domain, tag, '%{public}s', 'getANI context = ' + JSON.stringify(context));
+
+            try{
+                windowclassArr = await windowStage.getSubWindow();
+                hilog.info(domain, tag,`brforeAll getSubWindow success. Cause: ${JSON.stringify(windowclassArr)}`);
+                if(windowclassArr.length!=0){
+                    for(let i = 0;i<windowclassArr.length;i++){
+                        await windowclassArr[i].destroyWindow();
+                        hilog.info(domain, tag,`brforeAll destroyWindow windowclassArr ${i} success`);
+                    }
+                }
+            }catch (err) {
+                hilog.error(domain, tag,`brforeAll destroyWindow failed`+ err);
+            }
 
             //isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
             //hilog.info(0x0000, '[ANI]',`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
@@ -1774,7 +1788,255 @@ export default function WindowLifeCycleTest() {
                 });
 
         })
+/**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_static_3910
+         * @tc.name      : testCreateSubWindowWithOptions_Function_Promise_static
+         * @tc.desc      : Test the function value of createSubWindowWithOptions
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level0
+         */
+        it("testCreateSubWindowWithOptions_Function_Promise_static", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let msgStr:string = "testCreateSubWindowWithOptions_Function_Promise_static";
+            hilog.info(domain, tag,msgStr + " begin");
+            let windowClass: window.Window;
+            hilog.info(domain, tag,msgStr + " try begin")
+            let options: window.SubWindowOptions = {
+                title: 'title',
+                decorEnabled: true,
+                isModal: false,
+                maximizeSupported: false,
+                zLevel:11,
+                outlineEnabled:false
+            };
+            windowStage.createSubWindowWithOptions('testCreateSubWindowWithOptions_Function_Promise_static', options)
+                .then((data) => {
+                    windowClass = data;
+                    hilog.info(domain, tag,msgStr + 'Succeeded in creating the subwindow. Data: ' + data);
+                    done();
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    if (err.code != 1300002) {
+                        hilog.error(domain, tag,msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        hilog.info(domain, tag,msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                        hilog.info(domain, tag,msgStr + JSON.stringify(err))
+                        expect(err.code).assertEqual(1300002);
+                        done();
+                    }
+                });
+        })
 
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_CREATE_SUBWINDOW_WITH_OPTIONS_static_0400
+         * @tc.name      : testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY_static
+         * @tc.desc      : testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it("testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let msgStr:string = "testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY_static";
+            hilog.info(domain, tag,msgStr + " begin");
+            let windowClass: window.Window;
+            hilog.info(domain, tag,msgStr + " try begin")
+            let options: window.SubWindowOptions = {
+                title: 'title',
+                decorEnabled: true,
+                isModal: true,
+                modalityType: window.ModalityType.APPLICATION_MODALITY
+            };
+            try {
+                windowStage.createSubWindowWithOptions('testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY_static', options)
+                    .then((data) => {
+                        windowClass = data;
+                        hilog.info(domain, tag,msgStr + 'Succeeded in creating the subwindow. Data: ' + data);
+                        windowClass.destroyWindow();
+                        expect(true).assertTrue();
+                        done();
+                    })
+                    .catch((error: BusinessError):PromiseLike<void>|undefined => {
+                        hilog.info(domain, tag,msgStr + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+                        if (error.code == 1300002) {
+                            done();
+                        } else {
+                            expect(false).assertTrue();
+                            done();
+                        }
+                    });
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag,msgStr + ',error code:' + error.code);
+                if(error.code==801){
+                    hilog.info(domain, tag,msgStr + 'The device not support APPLICATION_MODALITY');
+                    done();
+                }else{
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+
+        })
+        /**
+         * @tc.number     : testCreateSubWindowWithOptionsPromiseErrCode1300002_static_0100
+         * @tc.name       : testCreateSubWindowWithOptionsPromiseErrCode1300002_static_0100
+         * @tc.desc       : testCreateSubWindowWithOptionsPromiseErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testCreateSubWindowWithOptionsPromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testCreateSubWindowWithOptionsPromiseErrCode1300002_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let param: window.SubWindowOptions = {
+                title: "aa",
+                decorEnabled: true
+            }
+            let subWin: window.Window = await windowStage.createSubWindow('testCreateSubWindowWithOptionsPromiseErrCode1300002_SubWindow_Promise_static')
+            await (subWin! as window.Window).destroyWindow();
+            try {
+
+                (subWin! as window.Window).createSubWindowWithOptions("name", param).then(() => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in calling createSubWindowWithOptions.');
+                    expect(false).assertTrue();
+                    done();
+                }).then((data) => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in creating the subwindow. Data: ' + data);
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,msgStr + 'Failed to call createSubWindowWithOptions. Cause: ' + JSON.stringify(err));
+                    if(err.code == 801){
+                        done();
+                    }else{
+                        expect(err.code).assertEqual(1300002);
+                        expect(err.message!=null).assertTrue();
+                        done()
+                    }
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+                expect(false).assertTrue();
+                done()
+            }
+        })
+        /**
+         * @tc.number     : testCreateSubWindowWithOptionsPromiseErrCode1300004_static_0100
+         * @tc.name       : testCreateSubWindowWithOptionsPromiseErrCode1300004_static_0100
+         * @tc.desc       : testCreateSubWindowWithOptionsPromiseErrCode1300004_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testCreateSubWindowWithOptionsPromiseErrCode1300004_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testCreateSubWindowWithOptionsPromiseErrCode1300004_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let config: window.Configuration = {
+                name: "testCreateSubWindowWithOptionsPromiseErrCode1300004_static_0100",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context
+            };
+            let subWindowClass: window.Window;
+            try {
+                subWindowClass = await window.createWindow(config);
+                expect(!!subWindowClass).assertTrue();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'window.createWindow ' + 'caught, err: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            try {
+                let param: window.SubWindowOptions = {
+                    title: "aa", decorEnabled: true
+                }
+                subWindowClass!.createSubWindowWithOptions("bb", param).then(() => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in calling createSubWindowWithOptions.');
+                    expect(false).assertTrue();
+                    done()
+                }).then((data) => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in creating the subwindow. Data: ' + data);
+                    expect(false).assertTrue();
+                    done();
+                }).catch(async (err: BusinessError) :PromiseLike<void>|undefined=> {
+                    hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(err.code)+` message:${err.message}`);
+                    await subWindowClass.destroyWindow();
+                    if(err.code == 801){
+                        done();
+                    }else{
+                        expect(err.code).assertEqual(1300004);
+                        expect(err.message!=null).assertTrue();
+                        done()
+                    }
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'Failed to set the call createSubWindowWithOptions. Cause:' +
+                JSON.stringify(exception));
+                if (exception.code === undefined) {
+                    hilog.info(domain, tag,msgStr + '此设备不支持createSubWindowWithOptions能力.');
+                    done()
+                } else {
+                    expect(exception.code).assertEqual(1300004);
+                    expect(exception.message!=null).assertTrue();
+                    done()
+                }
+
+            }
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_FUNCTION_GETSUBWINDOW_static_0100
+         * @tc.name      : testgetSubWindow0_promise_static
+         * @tc.desc      : Test the function value of getSubWindow
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it('testgetSubWindow0_promise_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testgetSubWindow0_promise_static';
+            try {
+                let windowclass:Array<window.Window> = await windowStage.getSubWindow();
+                console.log(`${caseName} getSubWindow success. Cause: ${JSON.stringify(windowclass)}`);
+                expect(windowclass.length).assertEqual(0)
+                done();
+            } catch (e) {
+                console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+                expect(false).assertTrue();
+                done();
+            }
+        });
+        /**
+         * @tc.number    : SUB_BASIC_WMS_FUNCTION_GETSUBWINDOW_static_0200
+         * @tc.name      : testgetSubWindow0_callback_static
+         * @tc.desc      : Test the function value of getSubWindow
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it('testgetSubWindow0_callback_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testgetSubWindow0_callback_static';
+            let windowclass:Array<window.Window>|undefined;
+            try {
+                windowStage.getSubWindow((err: BusinessError<void>|null, data: Array<window.Window>|undefined) => {
+                    const errCode: number = err!.code;
+                    if (errCode) {
+                        console.error(caseName + ` Failed to obtain the subwindow. Cause code: ${err!.code}, message: ${err!.message}`);
+                        expect(false).assertTrue();
+                        done();
+                    }else{
+                        windowclass = data;
+                        console.log(`${caseName} getSubWindow success. Cause: ${JSON.stringify(windowclass)}`);
+                        expect(windowclass!.length).assertEqual(0)
+                        done();
+                    }
+                });
+            } catch (e: BusinessError) {
+                console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+                expect(false).assertTrue();
+                done();
+            }
+        });
 
 
 
