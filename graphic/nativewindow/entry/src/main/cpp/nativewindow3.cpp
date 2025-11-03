@@ -13,14 +13,16 @@
  * limitations under the License.
  */
 
+#include "common/log_common.h"
+#include "nativewindow.h"
 #include "napi/native_api.h"
+#include <map>
 #include <cstdint>
 #include <hilog/log.h>
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <native_image/native_image.h>
 #include <native_window/external_window.h>
 #include <native_buffer/native_buffer.h>
-#include "nativewindow.h"
 #include "ace/xcomponent/native_interface_xcomponent.h"
 #include <string>
 
@@ -64,6 +66,7 @@
 #define CONSTANT_40001000 40001000
 #define CONSTANT_50002000 50002000
 #define CONSTANT_50102000 50102000
+#define CONSTANT_41209000 41209000
 #define CONSTANT_41211000 41211000
 #define CONSTANT_40601000 40601000
 #define CONSTANT_41210000 41210000
@@ -519,6 +522,286 @@ napi_value testNativeWindowCleanCacheLoopWhenBufferFlushed(napi_env env, napi_ca
         }
     }
     
+    delete initNative;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowPreAllocBufferAbNormalPra(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+
+    // 1.  create native window
+    InitNativeWindow *initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    if (nativeWindow == nullptr) {
+        napi_create_int32(env, CONSTANT_998899, &result);
+        return result;
+    }
+
+    // 2.PreAllocBuffer
+    OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
+    int32_t ret1 = OH_NativeWindow_PreAllocBuffers(nullptr, 3);
+    int32_t ret2 = OH_NativeWindow_PreAllocBuffers(nativeWindow, NULL);
+    if (ret1 != CONSTANT_40001000 || ret2 != CONSTANT_40001000) {
+        napi_create_int32(env, CONSTANT_2, &result);
+        return result;
+    }
+
+    delete initNative;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowPreAllocBufferAbNormalPra2(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    std::map<int32_t, std::int32_t> myMap;
+    myMap[0] = 0;
+    myMap[0] = CONSTANT_100;
+    myMap[CONSTANT_100] = 0;
+    int32_t usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA;
+    for (const auto &pair : myMap) {
+//        std::cout << pair.first << ": " << pair.second << std::endl;
+        OH_NativeImage *image = OH_ConsumerSurface_Create();
+        OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(image);
+        int32_t ret1 =
+            OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_BUFFER_GEOMETRY, pair.first, pair.second);
+        int32_t ret2 = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow, SET_USAGE, usage);
+        if (ret1 != 0 || ret2 != 0) {
+            napi_create_int32(env, CONSTANT_1, &result);
+            return result;
+        }
+        // buffer的width或height为0
+        int32_t ret3 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_3);
+        if (ret3 != CONSTANT_40001000) {
+            napi_create_int32(env, CONSTANT_2, &result);
+            return result;
+        }
+        OH_NativeWindow_DestroyNativeWindow(nativeWindow);
+        OH_NativeImage_Destroy(&image);
+    }
+    // 不设置buffer的width或height
+    OH_NativeImage *image = OH_ConsumerSurface_Create();
+    OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(image);
+    int32_t ret = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_3);
+    if (ret != CONSTANT_40001000) {
+        napi_create_int32(env, CONSTANT_3, &result);
+        return result;
+    }
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowPreAllocBufferBufferCnt(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t bufferCnt[] = {1, 2, 3, 10, static_cast<int32_t>(4294967295)};
+    int32_t errBufferCnt[] = {0, static_cast<int32_t>(4294967296)};
+
+    // 异常bufferCnt校验
+    for (int i = 0; i < sizeof(errBufferCnt) / sizeof(0); i++) {
+        // 1.  create native window
+        InitNativeWindow *initNative = new InitNativeWindow();
+        OHNativeWindow *nativeWindow = nullptr;
+        nativeWindow = initNative->returnNativeWindow();
+        if (nativeWindow == nullptr) {
+            napi_create_int32(env, CONSTANT_998899, &result);
+            return result;
+        }
+        int32_t ret = OH_NativeWindow_PreAllocBuffers(nativeWindow, errBufferCnt[i]);
+        if (ret != CONSTANT_40001000) {
+            napi_create_int32(env, CONSTANT_2, &result);
+            return result;
+        }
+        delete initNative;
+    }
+    // 正常bufferCnt校验
+    for (int i = 0; i < sizeof(bufferCnt) / sizeof(0); i++) {
+        // 1.  create native window
+        InitNativeWindow *initNative = new InitNativeWindow();
+        OHNativeWindow *nativeWindow = nullptr;
+        nativeWindow = initNative->returnNativeWindow();
+        if (nativeWindow == nullptr) {
+            napi_create_int32(env, CONSTANT_998899, &result);
+            return result;
+        }
+        int32_t ret = OH_NativeWindow_PreAllocBuffers(nativeWindow, bufferCnt[i]);
+        if (ret != 0) {
+            napi_create_int32(env, CONSTANT_3, &result);
+            return result;
+        }
+        delete initNative;
+    }
+
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowPreAllocBufferAbnormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    // 1.  create native window
+    InitNativeWindow *initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    OH_NativeImage *nativeImage = nullptr;
+    nativeImage = initNative->returnNativeImage();
+    if (nativeWindow == nullptr || nativeImage == nullptr) {
+        napi_create_int32(env, CONSTANT_998899, &result);
+        return result;
+    }
+    std::vector<OHNativeWindowBuffer *> WindowBufferArr;
+    RoundWindowBuffer *windowBuffer = new RoundWindowBuffer(nativeImage, nativeWindow);
+    // 先调用3次requestBuffer，申请出最大数量buffer再调用PreAllocBuffer
+    for (int i = 0; i < CONSTANT_3; i++) {
+        OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
+        int32_t ret1 = windowBuffer->RequestBuffer(&nativeWindowBuffer, CONSTANT_1);
+        if (ret1 != 0) {
+            napi_create_int32(env, CONSTANT_2, &result);
+            return result;
+        }
+        WindowBufferArr.push_back(nativeWindowBuffer);
+    }
+    int32_t ret2 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_3);
+    // flushBuffer1次后PreAllocBuffer
+    int32_t ret = windowBuffer->FlushBuffer(WindowBufferArr[CONSTANT_0]);
+    int32_t ret3 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_3);
+    // flushBuffer2次后PreAllocBuffer
+    ret = windowBuffer->FlushBuffer(WindowBufferArr[CONSTANT_1]);
+    ret = windowBuffer->FlushBuffer(WindowBufferArr[CONSTANT_2]);
+    int32_t ret4 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_3);
+    if (ret2 != CONSTANT_41209000 || ret3 != CONSTANT_41209000 || ret4 != CONSTANT_41209000) {
+        napi_create_int32(env, CONSTANT_3, &result);
+        return result;
+    }
+    delete initNative;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowPreAllocBufferDetachAttach(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    // 1.  create native window
+    InitNativeWindow *initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    OH_NativeImage *nativeImage = nullptr;
+    nativeImage = initNative->returnNativeImage();
+    if (nativeWindow == nullptr || nativeImage == nullptr) {
+        napi_create_int32(env, CONSTANT_998899, &result);
+        return result;
+    }
+    OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
+    std::vector<OHNativeWindowBuffer *> WindowBufferArr;
+    RoundWindowBuffer *windowBuffer = new RoundWindowBuffer(nativeImage, nativeWindow);
+    // 先调用3次requestBuffer，申请出最大数量buffer再调用PreAllocBuffer
+    for (int i = 0; i < CONSTANT_3; i++) {
+        OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
+        int32_t ret1 = windowBuffer->RequestBuffer(&nativeWindowBuffer, CONSTANT_1);
+        if (ret1 != 0) {
+            napi_create_int32(env, CONSTANT_2, &result);
+            return result;
+        }
+        WindowBufferArr.push_back(nativeWindowBuffer);
+    }
+    // Detach1个buffer后PreAlloc
+    int32_t ret2 = OH_NativeWindow_NativeWindowDetachBuffer(nativeWindow, WindowBufferArr[CONSTANT_0]);
+    int32_t ret3 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_3);
+    if (ret2 != 0 || ret3 != 0) {
+        napi_create_int32(env, CONSTANT_3, &result);
+        return result;
+    }
+    // 再次 Detach2个buffer后PreAlloc
+    int32_t ret4 = OH_NativeWindow_NativeWindowDetachBuffer(nativeWindow, WindowBufferArr[CONSTANT_1]);
+    int32_t ret5 = OH_NativeWindow_NativeWindowDetachBuffer(nativeWindow, WindowBufferArr[CONSTANT_2]);
+    int32_t ret6 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_3);
+    // buffer队列已满再次PreAlloc
+    int32_t ret7 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_1);
+    if (ret4 != 0 || ret5 != 0 || ret6 != 0 || ret7 != CONSTANT_41209000) {
+        napi_create_int32(env, CONSTANT_4, &result);
+        return result;
+    }
+    delete initNative;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowPreAllocBufferDetachAttach02(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    // 1.  create native window
+    InitNativeWindow *initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    OH_NativeImage *nativeImage = nullptr;
+    nativeImage = initNative->returnNativeImage();
+    if (nativeWindow == nullptr || nativeImage == nullptr) {
+        napi_create_int32(env, CONSTANT_998899, &result);
+        return result;
+    }
+    std::vector<OHNativeWindowBuffer *> WindowBufferArr;
+    RoundWindowBuffer *windowBuffer = new RoundWindowBuffer(nativeImage, nativeWindow);
+    // 先调用3次requestBuffer，申请出最大数量buffer再调用PreAllocBuffer
+    for (int i = 0; i < CONSTANT_3; i++) {
+        OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
+        int32_t ret1 = windowBuffer->RequestBuffer(&nativeWindowBuffer, CONSTANT_1);
+        if (ret1 != 0) {
+            napi_create_int32(env, CONSTANT_2, &result);
+            return result;
+        }
+        WindowBufferArr.push_back(nativeWindowBuffer);
+    }
+    // Attach 3个buffer后PreAlloc
+    OH_NativeWindow_NativeWindowDetachBuffer(nativeWindow, WindowBufferArr[CONSTANT_0]);
+    OH_NativeWindow_NativeWindowDetachBuffer(nativeWindow, WindowBufferArr[CONSTANT_1]);
+    OH_NativeWindow_NativeWindowDetachBuffer(nativeWindow, WindowBufferArr[CONSTANT_2]);
+    OH_NativeWindow_NativeWindowAttachBuffer(nativeWindow, WindowBufferArr[CONSTANT_0]);
+    OH_NativeWindow_NativeWindowAttachBuffer(nativeWindow, WindowBufferArr[CONSTANT_1]);
+    OH_NativeWindow_NativeWindowAttachBuffer(nativeWindow, WindowBufferArr[CONSTANT_2]);
+    int32_t ret8 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_3);
+    if (ret8 != CONSTANT_41209000) {
+        napi_create_int32(env, CONSTANT_3, &result);
+        return result;
+    }
+    delete initNative;
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
+}
+
+napi_value testNativeWindowPreAllocBufferNormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    // 1.  create native window
+    InitNativeWindow *initNative = new InitNativeWindow();
+    OHNativeWindow *nativeWindow = nullptr;
+    nativeWindow = initNative->returnNativeWindow();
+    OH_NativeImage *nativeImage = nullptr;
+    nativeImage = initNative->returnNativeImage();
+    if (nativeWindow == nullptr || nativeImage == nullptr) {
+        napi_create_int32(env, CONSTANT_998899, &result);
+        return result;
+    }
+    RoundWindowBuffer *windowBuffer = new RoundWindowBuffer(nativeImage, nativeWindow);
+    int32_t ret1 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_1);
+    int32_t ret2 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_2);
+    int32_t ret3 = OH_NativeWindow_PreAllocBuffers(nativeWindow, CONSTANT_3);
+    if (ret1 != 0 || ret2 != 0 || ret3 != CONSTANT_41209000) {
+        napi_create_int32(env, CONSTANT_1, &result);
+        return result;
+    }
+    int32_t callNum = 1000;
+    for (int i = 0; i < callNum; i++) {
+        // 先调用PreAllocBuffer，再调用requestBuffer
+        int32_t ret4 = windowBuffer->ProduceBuffer();
+        int32_t ret5 = windowBuffer->ConsumerBuffer();
+        if (ret4 != 0 || ret5 != 0) {
+            napi_create_int32(env, CONSTANT_2 * CONSTANT_1000 + callNum, &result);
+            return result;
+        }
+    }
     delete initNative;
     napi_create_int32(env, SUCCESS, &result);
     return result;
