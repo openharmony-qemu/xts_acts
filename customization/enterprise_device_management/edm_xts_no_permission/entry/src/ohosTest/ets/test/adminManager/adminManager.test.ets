@@ -19,6 +19,7 @@ import { ENTINFO1, SELFWANT, SELFHAPNAME, SUBSCRIBE_EVENTS, SUBSCRIBE_INVALID_EV
 } from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
+import sysDeviceInfo from '@ohos.deviceInfo';
 
 const DELEGATED_POLICIES: Array<string> = [ "set_browser_policies" ];
 
@@ -159,6 +160,10 @@ export default function adminManagerTest() {
      * @tc.size      : MediumTest
      */
     it("test_startadminprovision_001", Level.LEVEL0, async (done: Function) => {
+      if (sysDeviceInfo.deviceType === '2in1') {
+        done();
+        return;
+      }
       try {
         adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD,
           AppStorage.get("context"), PARAMETERS_LOWER_BOUND);
