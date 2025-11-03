@@ -17,8 +17,8 @@ group("actsNotificationThirdPartyWatchTestStatic") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "actsNotificationThirdPartyWatchPermissionTestStatic:actsNotificationThirdPartyWatchPermissionTestStatic",
-      "actsNotificationThirdPartyWatchWithoutAbilityTestStatic:actsNotificationThirdPartyWatchWithoutAbilityTestStatic",
+      "actsNotificationThirdPartyWatchPermissionTestStatic:actsNotificationThirdPartyWatchPermissionStaticTest",
+      "actsNotificationThirdPartyWatchWithoutAbilityTestStatic:actsNotificationThirdPartyWatchWithoutAbilityStaticTest",
     ]
   }
 }

@@ -47,7 +47,6 @@ group("ans_standard") {
       "notificationManager:notificationManager",
       "notificationManagerStatic:NotificationManagerStaticTest",
       "actsNotificationThirdPartyWatchTestStatic:actsNotificationThirdPartyWatchTestStatic",
-      "actsNotificationThirdPartyWatchTestStatic:actsNotificationThirdPartyWatchWithoutAbilityTestStatic",
     ]
   }
 }
