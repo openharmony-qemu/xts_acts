@@ -380,6 +380,7 @@ export default function fileIOLseek() {
       let offsetnum = 5;
       try {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
+        let fd = file.fd;
         fs.closeSync(file);
         fs.lseek(file.fd, offsetnum, fs.WhenceType.SEEK_CUR);
         expect(false).assertTrue();
