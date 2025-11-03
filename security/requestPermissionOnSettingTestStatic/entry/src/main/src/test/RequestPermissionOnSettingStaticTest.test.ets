@@ -51,7 +51,8 @@ function clickRequest(driver: Driver, name: string): boolean {
       return true;
     }
     return false;
-  } catch (error: BusinessError<void>) {
+  } catch (error) {
+    error = error as BusinessError;
     hilog.error(domain, tag, ` findcomponent error, ${ JSON.stringify(error) }`);
     return false;
   }
@@ -71,7 +72,8 @@ export default function requestPermissionOnSettingStaticTest() {
         let accessTokenId: long = bundleInfo.appInfo?.accessTokenId as long;
         tokenID = accessTokenId as int;
         hilog.info(domain, 'testTag', 'tokenID:' + tokenID);
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', 'AccessTokenTest getBundleInfoForSelf error is: ' + error.code);
       }
 
@@ -96,7 +98,8 @@ export default function requestPermissionOnSettingStaticTest() {
       try {
         
         await Utils.msSleep(2000)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, 'err.code - '+ err.code);
       }
       hilog.info(domain, tag, 'beforeAll end');
@@ -116,7 +119,8 @@ export default function requestPermissionOnSettingStaticTest() {
       let permissionList: Array<Permissions> = new Array<Permissions>("ohos.permission.CAMERA");
       try {
         await atManager.requestPermissionOnSetting(context, permissionList);
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, "Test_requestPermissionOnSetting_001 catch err" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
         done();
@@ -136,7 +140,8 @@ export default function requestPermissionOnSettingStaticTest() {
       let permissionList: Array<Permissions> = new Array<Permissions>();
       try {
         await atManager.requestPermissionOnSetting(testAbilityContext, permissionList);
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, "Test_requestPermissionOnSetting_002 catch err" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_ILLEGAL);
         done();
@@ -162,7 +167,8 @@ export default function requestPermissionOnSettingStaticTest() {
             expect(error.code).assertEqual(ERR_PARAM_INVALID);
             done();
           });
-        } catch (error: BusinessError<void>) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, "Test_requestPermissionOnSetting_003 catch err" + JSON.stringify(error));
           expect(false).assertFail();
           done();
@@ -188,7 +194,8 @@ export default function requestPermissionOnSettingStaticTest() {
             expect(error.code).assertEqual(ERR_PARAM_INVALID);
             done();
           });
-        } catch (error: BusinessError<void>) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, "Test_requestPermissionOnSetting_004 catch err" + JSON.stringify(error));
           expect(false).assertFail();
           done();
@@ -214,7 +221,8 @@ export default function requestPermissionOnSettingStaticTest() {
             expect(error.code).assertEqual(ERR_PARAM_INVALID);
             done();
           });
-        } catch (error: BusinessError<void>) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, "Test_requestPermissionOnSetting_005 catch err" + JSON.stringify(error));
           expect(false).assertFail();
           done();
@@ -240,7 +248,8 @@ export default function requestPermissionOnSettingStaticTest() {
             expect(error.code).assertEqual(ERR_PARAM_INVALID);
             done();
           });
-        } catch (error: BusinessError<void>) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, "Test_requestPermissionOnSetting_006 catch err" + JSON.stringify(error));
           expect(false).assertFail();
           done();
@@ -288,7 +297,8 @@ export default function requestPermissionOnSettingStaticTest() {
             await Utils.msSleep(3000);
             clickRequest(driver, '允许');
           });
-        } catch (error: BusinessError<void>) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, "Test_requestPermissionOnSetting_007 catch err" + JSON.stringify(error));
           expect(false).assertFail();
           done();
@@ -370,7 +380,8 @@ export default function requestPermissionOnSettingStaticTest() {
               }
             }
           });
-        } catch (error: BusinessError<void>) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, "Test_requestPermissionOnSetting_008 catch err" + JSON.stringify(error));
           expect(false).assertFail();
           done();
@@ -475,7 +486,8 @@ export default function requestPermissionOnSettingStaticTest() {
               clickRequest(driver1, '确定');
             }
           }
-        } catch (error: BusinessError<void>) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, "Test_requestPermissionOnSetting_009 catch err" + JSON.stringify(error));
           expect(false).assertFail();
           done();
@@ -534,7 +546,8 @@ export default function requestPermissionOnSettingStaticTest() {
               clickRequest(driver1, '取消');
             }
           }
-        } catch (error: BusinessError<void>) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, "Test_requestPermissionOnSetting_010 catch err" + JSON.stringify(error));
           expect(false).assertFail();
           done();
@@ -596,7 +609,8 @@ export default function requestPermissionOnSettingStaticTest() {
               clickRequest(driver1, '取消');
             }
           }
-        } catch (error: BusinessError<void>) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, "Test_requestPermissionOnSetting_010 catch err" + JSON.stringify(error));
           expect(false).assertFail();
           done();

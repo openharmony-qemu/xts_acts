@@ -143,7 +143,7 @@ describe('telephonyRadioNoPermissionPublicTest',  () => {
                     expect().assertFail();
                     hilog.info(domain, tag,`${caseName} test end`);
                     done();
-                } catch (error: Error) {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, `${caseName} Promise: err->${err}`);
                     ExpectTrue(err?.code === 201);
@@ -183,7 +183,7 @@ describe('telephonyRadioNoPermissionPublicTest',  () => {
                     expect().assertFail();
                     hilog.info(domain, tag,`${caseName} test end`);
                     done();
-                } catch (error: Error) {
+                } catch (error) {
                     let err = error as BusinessError;
                     hilog.info(domain, tag, `${caseName} Promise: err->${err}`);
                     ExpectTrue(err?.code === 201);

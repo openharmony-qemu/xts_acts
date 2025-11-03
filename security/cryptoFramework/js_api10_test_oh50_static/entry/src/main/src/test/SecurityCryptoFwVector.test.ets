@@ -66,7 +66,8 @@ export default function SecurityCryptoFwVectorTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -99,7 +100,8 @@ export default function SecurityCryptoFwVectorTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -134,7 +136,8 @@ export default function SecurityCryptoFwVectorTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -169,7 +172,8 @@ export default function SecurityCryptoFwVectorTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -210,7 +214,8 @@ export default function SecurityCryptoFwVectorTestUnit() {
             console.info("#################### algEncDecName:" + algEncDecName)
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         console.info("[FAILED] g_index:" + g_index + " g_vector_failed_index:" + g_vector_failed_index)
         expect(null).assertFail();
@@ -267,7 +272,8 @@ export default function SecurityCryptoFwVectorTestUnit() {
             console.info("################### algEncDecName:" + algEncDecName)
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         console.info("[FAILED] g_index:" + g_index + " g_vector_failed_index:" + g_vector_failed_index)
         expect(null).assertFail();
@@ -324,7 +330,8 @@ export default function SecurityCryptoFwVectorTestUnit() {
             expect(ret).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         console.info("[FAILED] g_index:" + g_index + " g_vector_failed_index:" + g_vector_failed_index)
         expect(null).assertFail();

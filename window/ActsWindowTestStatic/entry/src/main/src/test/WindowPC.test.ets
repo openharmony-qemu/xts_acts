@@ -65,7 +65,8 @@ async function terminateAbility(caseName: string) {
         }).catch((err: BusinessError):PromiseLike<void>|undefined => {
             console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
-    } catch (e: BusinessError) {
+    } catch (e) {
+        e = e as BusinessError;
         console.error(`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
     }
     await Utils.msSleep(1000)
@@ -132,7 +133,8 @@ export default function WindowPCTest() {
                             expect(err!.code).assertEqual(1300002);
                         });
                         done()
-                    } catch (exception: BusinessError) {
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call recover. Cause:' + JSON.stringify(exception));
                         expect(false).assertTrue();
                         done()
@@ -176,7 +178,8 @@ export default function WindowPCTest() {
                         done();
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + ' Failed to testRecover. 04Cause: ' + JSON.stringify(err))
                 expect(false).assertTrue();
                 done();
@@ -222,7 +225,8 @@ export default function WindowPCTest() {
                             expect(false).assertTrue();
                             done();
                         });
-                    } catch (exception: BusinessError) {
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call minimize. Cause:' + JSON.stringify(exception));
                         expect(false).assertTrue();
                         done()
@@ -263,7 +267,8 @@ export default function WindowPCTest() {
                             expect(err!.code).assertEqual(1300002);
                         });
                         done()
-                    } catch (exception: BusinessError) {
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call minimize. Cause:' + JSON.stringify(exception));
                         expect(false).assertTrue();
                         done()
@@ -307,7 +312,8 @@ export default function WindowPCTest() {
                             done()
                         });
                         
-                    } catch (exception: BusinessError) {
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call maximize. Cause:' + JSON.stringify(exception));
                         expect(false).assertTrue();
                         done()
@@ -355,7 +361,8 @@ export default function WindowPCTest() {
                     await (win! as window.Window).destroyWindow();
                     done()
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(0x0000, '[ANI]',msgStr + 'window.createWindow ' + 'catched, err: ' + JSON.stringify(err));
                 await (win! as window.Window).destroyWindow();
                 expect(false).assertTrue();
@@ -406,7 +413,8 @@ export default function WindowPCTest() {
                         done();
                     }
                 })
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,`${message} Failed to check whether the window support the rect auto-save. Cause code: ${exception.code}, message: ${exception.message}`)
                 if (exception.code == 801) {
                     done();
@@ -444,7 +452,8 @@ export default function WindowPCTest() {
                     done()
                 });
 
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(exception.code).assertEqual(1300002);
                 expect(exception.message!=null).assertTrue();
@@ -475,7 +484,8 @@ export default function WindowPCTest() {
                     expect(err.message!=null).assertTrue();
                 });
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(exception.code).assertEqual(1300002);
                 expect(exception.message!=null).assertTrue();
@@ -510,7 +520,8 @@ export default function WindowPCTest() {
                         done();
                     }
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed to set the call setWindowRectAutoSave. Cause:' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002);
                 done()
@@ -537,7 +548,8 @@ export default function WindowPCTest() {
                 console.error(msgStr + 'Succeeded in calling on windowStageClose.');
                 expect(false).assertTrue();
                 done()
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.log(msgStr + 'Failed to call on windowStageClose. Cause:' + JSON.stringify(e));
                 expect(e.code).assertEqual(1300002);
                 done()
@@ -566,7 +578,8 @@ export default function WindowPCTest() {
                 console.error(msgStr + 'Succeeded in calling on windowStageClose.');
                 expect(false).assertTrue();
                 done()
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.log(msgStr + 'Failed to call on windowStageClose. Cause:' + JSON.stringify(e));
                 if(e.code == 801){
                     done()
@@ -576,6 +589,71 @@ export default function WindowPCTest() {
                 }
                 
             }
+        })
+
+        /**
+         * @tc.number     : testRestorePromiseErrCode1300002_static_0100
+         * @tc.name       : testRestorePromiseErrCode1300002static__0100
+         * @tc.desc       : testRestorePromiseErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testRestorePromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = "testRestorePromiseErrCode1300002_static_0100";
+            let msgStr : string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let subWin: window.Window = await windowStage.createSubWindow('testRestorePromiseErrCode1300002_SubWindow_Promise')
+            hilog.info(domain, tag,msgStr + 'Succeeded in creating the window. Data:' + subWin);
+            await (subWin! as window.Window).destroyWindow();
+            try {
+                 (subWin! as window.Window).restore().then(() => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in calling restore.');
+                    expect(false).assertTrue();
+                    done()
+                }).catch(async (err: BusinessError):PromiseLike<void>|undefined  => {
+                    hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(err.code)+` message:${err.message}`);
+                    expect(err.code).assertEqual(1300002);
+                    expect(err.message!=null).assertTrue();
+                    done()
+                });
+
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'Failed to set the call restore. Cause:' + JSON.stringify(exception));
+                expect(false).assertTrue();
+                done()
+            }
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_static_1800
+         * @tc.name      : testRestoreBySubWindow_static
+         * @tc.desc      : After the app main window is minimized, if the Ability is not in the background state, you can restore app main window.
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it('testRestoreBySubWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName : string = 'testRestoreBySubWindow_static';
+            let subWindowClass = await windowStage.createSubWindow('TestRestoreBySubWindow');
+            hilog.info(domain, tag,`${caseName} Succeeded in creating the sub window.`);
+            await subWindowClass.setUIContent('pages/index2');
+            hilog.info(domain, tag,`${caseName} Succeeded in loading the sub window content.`);
+            await subWindowClass.showWindow();
+            subWindowClass.restore().then(() => {
+                hilog.info(domain, tag,`${caseName} Succeeded in restoring the window.`);
+                expect(false).assertTrue();
+                done();
+            }).catch(async (err: BusinessError):PromiseLike<void>|undefined => {
+                hilog.error(domain, tag,`${caseName} Unauthorized operation. Cause code: ${err.code}, message: ${err.message}`);
+                if(err.code == 801){
+                    done();
+                }else{
+                    expect(1300004).assertEqual(err.code);
+                    await subWindowClass.destroyWindow();
+                    done();
+                }
+
+            });
         })
 
 

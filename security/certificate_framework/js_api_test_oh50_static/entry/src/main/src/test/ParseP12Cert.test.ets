@@ -78,7 +78,8 @@ export default function certFrameworkParseP12CertTestUnit() {
           // });
         }
         expect(p12.otherCerts).assertEqual(undefined);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ParseP12Cert_Func_0100 idl ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -108,7 +109,8 @@ export default function certFrameworkParseP12CertTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ParseP12Cert_Func_0200 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -140,7 +142,8 @@ export default function certFrameworkParseP12CertTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ParseP12Cert_Func_0300 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -173,7 +176,8 @@ export default function certFrameworkParseP12CertTestUnit() {
         // } else {
         //   expect(null).assertFail();
         // }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ParseP12Cert_Func_0400 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -204,7 +208,8 @@ export default function certFrameworkParseP12CertTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ParseP12Cert_Func_0500 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -229,7 +234,8 @@ export default function certFrameworkParseP12CertTestUnit() {
           needsOtherCerts: true,
         };
         cert.parsePkcs12(p12_cert, conf);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ParseP12Cert_Func_0700 ${error}, error code: ${error.code}`);
         expect(error.code).assertEqual(19030001);
       }
@@ -259,7 +265,8 @@ export default function certFrameworkParseP12CertTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ParseP12Cert_Func_0900 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -289,7 +296,8 @@ export default function certFrameworkParseP12CertTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ParseP12Cert_Func_1000 ${error}, error code: ${error.code}`);
         expect(error.code).assertEqual(19030004);
       }
@@ -311,7 +319,8 @@ export default function certFrameworkParseP12CertTestUnit() {
           password: "654321"
         };
         cert.parsePkcs12(p12_cert, conf);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ParseP12Cert_Func_1100 ${error}, error code: ${error.code}`);
         expect(error.code).assertEqual(19030001);
       }
@@ -339,7 +348,8 @@ export default function certFrameworkParseP12CertTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`ParseP12Cert_Func_1200 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }

@@ -91,7 +91,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -159,7 +159,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -226,7 +226,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -293,7 +293,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -362,7 +362,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -431,7 +431,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -504,7 +504,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -571,7 +571,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -640,7 +640,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -707,7 +707,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -776,7 +776,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -844,7 +844,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -912,7 +912,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -972,7 +972,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -1032,7 +1032,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -1091,7 +1091,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -1150,7 +1150,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -1212,7 +1212,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -1274,7 +1274,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -1333,7 +1333,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -1392,7 +1392,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -1452,7 +1452,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();
@@ -1512,7 +1512,7 @@ export default function HttpRequestOnOffTest() {
             }
           }
         });
-      } catch (err:Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch ERROR-->:${JSON.stringify(err)}`);
         expect().assertFail();
         done();

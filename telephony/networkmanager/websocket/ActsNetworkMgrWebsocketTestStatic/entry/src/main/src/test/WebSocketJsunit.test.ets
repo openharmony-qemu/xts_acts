@@ -47,7 +47,8 @@ export default function webSocketCreateTest() {
         ExpectTrue(webSocketCloseOptions.reason == "test reason");
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -72,7 +73,8 @@ export default function webSocketCreateTest() {
         ExpectTrue(webSocketCloseOptions.reason == "test reason");
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -97,7 +99,8 @@ export default function webSocketCreateTest() {
         ExpectTrue(webSocketCloseOptions.code == 2);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -124,7 +127,8 @@ export default function webSocketCreateTest() {
         ExpectTrue(webSocketCloseResult.reason == '123456');
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
         ExpectTrue(false);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');

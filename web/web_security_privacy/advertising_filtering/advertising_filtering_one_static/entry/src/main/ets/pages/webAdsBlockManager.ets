@@ -86,7 +86,8 @@ struct webAdsBlockManager {
 
                   this.controller.refresh();
                   Utils.emitEvent(true, 1001)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   if(error.code == 801) {
                     console.log(`emitEnableAdsBlock The current device type does not support Cause code:${error.code},  Message: ${error.message}`)
@@ -105,7 +106,8 @@ struct webAdsBlockManager {
                   console.log(' isAdsBlockEnabled:  ', isBlocked);
 
                   Utils.emitEvent(true, 1002)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   if(error.code == 801) {
                     console.log(`emitIsAdsBlockEnabled The current device type does not support Cause code:${error.code},  Message: ${error.message}`)
@@ -124,7 +126,8 @@ struct webAdsBlockManager {
                   console.log(' isAdsBlockEnabledForCurPage:  ', isBlockedCurPage);
 
                   Utils.emitEvent(true, 1003)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   if(error.code == 801) {
                     console.log(`emitIsAdsBlockEnabledForCurPage The current device type does not support Cause code:${error.code},  Message: ${error.message}`)
@@ -152,7 +155,8 @@ struct webAdsBlockManager {
                   console.log(' isBlockedCurPageAfter :  ' + isBlockedCurPageAfter);
 
                   Utils.emitEvent(true, 1004)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   if(error.code == 801) {
                     console.log(`emitSetAdsBlockRules The current device type does not support Cause code:${error.code},  Message: ${error.message}`)
@@ -180,7 +184,8 @@ struct webAdsBlockManager {
                   console.log(' isBlockedCurPageAfter :  ' + isBlockedCurPageAfter);
 
                   Utils.emitEvent(true, 1005)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   if(error.code == 801) {
                     console.log(`emitSetAdsBlockRulesFalse The current device type does not support Cause code:${error.code},  Message: ${error.message}`)
@@ -208,7 +213,8 @@ struct webAdsBlockManager {
                   console.log(' addAdsBlockDisallowedList: isBlockedCurPageAfter :  ' + isBlockedCurPageAfter);
 
                   Utils.emitEvent(true, 1006)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   if(error.code == 801) {
                     console.log(`emitAddAdsBlockDisallowedList The current device type does not support Cause code:${error.code},  Message: ${error.message}`)
@@ -236,7 +242,8 @@ struct webAdsBlockManager {
                   console.log(' removeAdsBlockDisallowedList isBlockedCurPageAfter :  ' + isBlockedCurPageAfter);
 
                   Utils.emitEvent(true, 1007)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   if(error.code == 801) {
                     console.log(`emitRemoveAdsBlockDisallowedList The current device type does not support Cause code:${error.code},  Message: ${error.message}`)
@@ -260,7 +267,8 @@ struct webAdsBlockManager {
                   console.log('clearAdsBlockDisallowedList: isBlockedCurPageAfter :  ' + isBlockedCurPageAfter);
 
                   Utils.emitEvent(true, 1008)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   if(error.code == 801) {
                     console.log(`emitClearAdsBlockDisallowedList The current device type does not support Cause code:${error.code},  Message: ${error.message}`)
@@ -288,7 +296,8 @@ struct webAdsBlockManager {
                   console.log(' addAdsBlockAllowedList: isBlockedCurPageAfter :  ' + isBlockedCurPageAfter);
 
                   Utils.emitEvent(true, 1009)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   if(error.code == 801) {
                     console.log(`emitAddAdsBlockAllowedList The current device type does not support Cause code:${error.code},  Message: ${error.message}`)
@@ -316,7 +325,8 @@ struct webAdsBlockManager {
                   console.log(' removeAdsBlockAllowedList isBlockedCurPageAfter :  ' + isBlockedCurPageAfter);
 
                   Utils.emitEvent(true, 1010)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   if(error.code == 801) {
                     console.log(`emitRemoveAdsBlockAllowedList The current device type does not support Cause code:${error.code},  Message: ${error.message}`)
@@ -343,7 +353,8 @@ struct webAdsBlockManager {
                   this.controller.loadUrl('https://www.hao123.com/');
 
                   Utils.emitEvent(true, 1011)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   if(error.code == 801) {
                     console.log(`emitRemoveAdsBlockAllowedList The current device type does not support Cause code:${error.code},  Message: ${error.message}`)
@@ -366,7 +377,8 @@ struct webAdsBlockManager {
                   this.controller.refresh();
 
                   Utils.emitEvent(true, 1013)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   if(error.code == 801) {
                     console.log(`emitEnableAdsBlockFalse The current device type does not support Cause code:${error.code},  Message: ${error.message}`)
@@ -385,7 +397,8 @@ struct webAdsBlockManager {
                   console.log(' isAdsBlockEnabled:  ', isBlocked);
 
                   Utils.emitEvent(!isBlocked, 1014)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   if(error.code == 801) {
                     console.log(`emitIsAdsBlockEnabledCheck The current device type does not support Cause code:${error.code},  Message: ${error.message}`)

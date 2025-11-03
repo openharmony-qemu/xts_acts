@@ -96,7 +96,8 @@ struct WebComponent {
                 try {
                   console.log(this.webOptions.sharedRenderProcessToken)
                   Utils.emitEvent(true,1600)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 }
                 break;
@@ -109,7 +110,8 @@ struct WebComponent {
                     []
                   );
                   Utils.emitEvent(true,1601)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   Utils.emitEvent(false,1601)
                 }

@@ -49,7 +49,8 @@ export default function AccessTokenStaticTest() {
         let accessTokenId: long = bundleInfo.appInfo?.accessTokenId as long;
         tokenID = accessTokenId as int;
         hilog.info(domain, 'testTag', 'tokenID:' + tokenID);
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', 'AccessTokenStaticTest getBundleInfoForSelf error is: ' + error.code);
       }
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
@@ -71,7 +72,8 @@ export default function AccessTokenStaticTest() {
         let status = atManager.verifyAccessTokenSync(tokenID, permissionNameUser);
         expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_001 error" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -92,7 +94,8 @@ export default function AccessTokenStaticTest() {
         let status = atManager.verifyAccessTokenSync(tokenID, permissionNameSystem);
         expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED);
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_002 error" + JSON.stringify(error));
         expect(false).assertFail();
       }
@@ -112,7 +115,8 @@ export default function AccessTokenStaticTest() {
         atManager.verifyAccessTokenSync(0, permissionNameUser);
         expect(false).assertFail();
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_003 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
         done();
@@ -135,7 +139,8 @@ export default function AccessTokenStaticTest() {
         atManager.verifyAccessTokenSync(tokenID, permissionName);
         expect(false).assertFail();
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_004 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
         done();
@@ -158,7 +163,8 @@ export default function AccessTokenStaticTest() {
         atManager.verifyAccessTokenSync(tokenID, permissionName);
         expect(false).assertFail();
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_005 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
         done();
@@ -181,7 +187,8 @@ export default function AccessTokenStaticTest() {
         let status = atManager.verifyAccessTokenSync(noexistId, permissionNameSystem);
         expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_006 error" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -204,7 +211,8 @@ export default function AccessTokenStaticTest() {
         let status = atManager.verifyAccessTokenSync(tokenID, permissionName);
         expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_verifyAccessTokenSync_007 error" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -225,7 +233,8 @@ export default function AccessTokenStaticTest() {
         let status = atManager.checkAccessTokenSync(tokenID, permissionNameUser);
         expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_001 error" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -246,7 +255,8 @@ export default function AccessTokenStaticTest() {
         let status = atManager.checkAccessTokenSync(tokenID, permissionNameSystem);
         expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED);
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_002 error" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -267,7 +277,8 @@ export default function AccessTokenStaticTest() {
         atManager.checkAccessTokenSync(0, permissionNameUser);
         expect(false).assertFail();
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_003 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
         done();
@@ -290,7 +301,8 @@ export default function AccessTokenStaticTest() {
         atManager.checkAccessTokenSync(tokenID, permissionName);
         expect(false).assertFail();
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_004 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
         done();
@@ -313,7 +325,8 @@ export default function AccessTokenStaticTest() {
         atManager.checkAccessTokenSync(tokenID, permissionName);
         expect(false).assertFail();
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_005 error" + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
         done();
@@ -336,7 +349,8 @@ export default function AccessTokenStaticTest() {
         let status = atManager.checkAccessTokenSync(noexistId, permissionNameSystem);
         expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
         done();
-      } catch(error: BusinessError<void>) {
+      } catch(error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_006 error" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -359,7 +373,8 @@ export default function AccessTokenStaticTest() {
         let status = atManager.checkAccessTokenSync(tokenID, permissionName);
         expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
         done();
-      } catch(error: BusinessError<void>) {
+      } catch(error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_checkAccessTokenSync_007 error" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -380,7 +395,8 @@ export default function AccessTokenStaticTest() {
         let status = await atManager.checkAccessToken(tokenID, permissionNameUser);
         expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
         done();
-      } catch(error: BusinessError<void>) {
+      } catch(error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_checkAccessToken_Promise_001 error" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -401,7 +417,8 @@ export default function AccessTokenStaticTest() {
         let status = await atManager.checkAccessToken(tokenID, permissionNameSystem);
         expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED);
         done();
-      } catch(error: BusinessError<void>) {
+      } catch(error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_checkAccessToken_Promise_002 error" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -424,7 +441,8 @@ export default function AccessTokenStaticTest() {
           expect(error.code).assertEqual(ERR_PARAM_INVALID);
           done();
         });
-      } catch(error: BusinessError<void>) {
+      } catch(error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "catch Test_checkAccessToken_Promise_003 failed" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -449,7 +467,8 @@ export default function AccessTokenStaticTest() {
           expect(error.code).assertEqual(ERR_PARAM_INVALID);
           done();
         });
-      } catch(error: BusinessError<void>) {
+      } catch(error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "catch Test_checkAccessToken_Promise_004 failed" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -474,7 +493,8 @@ export default function AccessTokenStaticTest() {
           expect(error.code).assertEqual(ERR_PARAM_INVALID);
           done();
         });
-      } catch(error: BusinessError<void>) {
+      } catch(error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "catch Test_checkAccessToken_Promise_005 failed" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -498,7 +518,8 @@ export default function AccessTokenStaticTest() {
           expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
           done();
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_checkAccessToken_Promise_006 failed" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -522,7 +543,8 @@ export default function AccessTokenStaticTest() {
           expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
           done();
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_checkAccessToken_Promise_007 failed" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -745,7 +767,8 @@ export default function AccessTokenStaticTest() {
         let status = await atManager.verifyAccessToken(tokenID, permissionNameUser);
         expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
         done();
-      } catch(error: BusinessError<void>) {
+      } catch(error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_001 error" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -766,7 +789,8 @@ export default function AccessTokenStaticTest() {
         let status = await atManager.verifyAccessToken(tokenID, permissionNameSystem);
         expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_GRANTED);
         done();
-      } catch(error: BusinessError<void>) {
+      } catch(error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_002 error" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -787,7 +811,8 @@ export default function AccessTokenStaticTest() {
         let status = await atManager.verifyAccessToken(0, permissionNameUser);
         expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
         done();
-      } catch(error: BusinessError<void>) {
+      } catch(error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_003 error" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -810,7 +835,8 @@ export default function AccessTokenStaticTest() {
         let status = await atManager.verifyAccessToken(tokenID, permissionName);
         expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
         done();
-      } catch(error: BusinessError<void>) {
+      } catch(error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_003 error" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -833,7 +859,8 @@ export default function AccessTokenStaticTest() {
         let status = await atManager.verifyAccessToken(tokenID, permissionName);
         expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
         done();
-      } catch(error: BusinessError<void>) {
+      } catch(error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_003 error" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -857,7 +884,8 @@ export default function AccessTokenStaticTest() {
           expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
           done();
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_006 failed" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -881,7 +909,8 @@ export default function AccessTokenStaticTest() {
           expect(status).assertEqual(abilityAccessCtrl.GrantStatus.PERMISSION_DENIED);
           done();
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_verifyAccessToken_Promise_007 failed" + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -916,7 +945,8 @@ export default function AccessTokenStaticTest() {
         hilog.info(domain, 'testTag', 'Test_Off_001 success');
         expect(false).assertFail();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_Off_001 error" + JSON.stringify(error));
         expect(ERR_NOT_USE_TOGETHER).assertEqual(error.code);
         done();
@@ -947,7 +977,8 @@ export default function AccessTokenStaticTest() {
         hilog.info(domain, 'testTag', 'Test_Off_002 success');
         expect(false).assertFail();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_Off_002 error" + JSON.stringify(error));
         expect(ERR_NOT_USE_TOGETHER).assertEqual(error.code);
         done();
@@ -979,7 +1010,8 @@ export default function AccessTokenStaticTest() {
         hilog.info(domain, 'testTag', 'Test_On_001 success');
         expect(false).assertFail();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_On_001 error" + JSON.stringify(error));
         expect(ERR_PARAM_INVALID).assertEqual(error.code);
         done();
@@ -1010,7 +1042,8 @@ export default function AccessTokenStaticTest() {
         expect(false).assertFail();
         done();
 
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_On_002 error" + JSON.stringify(error));
         expect(ERR_NOT_USE_TOGETHER).assertEqual(error.code);
         done();
@@ -1039,7 +1072,8 @@ export default function AccessTokenStaticTest() {
         hilog.info(domain, 'testTag', 'Test_On_003 success');
         expect(false).assertFail();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_On_003 error" + JSON.stringify(error));
         expect(ERR_PARAM_INVALID).assertEqual(error.code);
         done();
@@ -1069,7 +1103,8 @@ export default function AccessTokenStaticTest() {
         hilog.info(domain, 'testTag', 'Test_On_004 success');
         expect(false).assertFail();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, 'testTag', "Test_On_004 error" + JSON.stringify(error));
         expect(ERR_REGISTERS_EXCEED_LIMITATION).assertEqual(error.code);
         done();
@@ -1121,7 +1156,8 @@ export default function AccessTokenStaticTest() {
       try {
         let permissionName: Permissions = "" as Permissions;
         let result = atManager.getSelfPermissionStatus(permissionName);
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, "Test_getSelfPermissionStatus_003 error " + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
         done();
@@ -1141,7 +1177,8 @@ export default function AccessTokenStaticTest() {
       try {
         let permissionName: Permissions = 'a'.repeat(257) as Permissions;
         let result = atManager.getSelfPermissionStatus(permissionName);
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, "Test_getSelfPermissionStatus_004 error code " + JSON.stringify(error));
         expect(error.code).assertEqual(ERR_PARAM_INVALID);
         done();

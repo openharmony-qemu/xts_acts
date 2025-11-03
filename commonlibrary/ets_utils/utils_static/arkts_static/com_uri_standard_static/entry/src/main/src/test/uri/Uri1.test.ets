@@ -43,7 +43,8 @@ export default function uriTest1() {
     it('testUriConstruction001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('#http://username:password@host:8080/directory/file?foo=1&bar=2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
@@ -60,7 +61,8 @@ export default function uriTest1() {
     it('testUriConstruction003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('ht/tp://username:pas sword@host:8080/directory/file?foo=1&bar=2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
@@ -77,7 +79,8 @@ export default function uriTest1() {
     it('testUriConstruction004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('http://username:password@[::]:8080/directory/file?Query#gaogao faofao');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.toString()).assertEqual("BusinessError: Syntax Error. Invalid Uri string");
         expect(err.code).assertEqual(10200002)
         expect(err.message).assertEqual("Syntax Error. Invalid Uri string");
@@ -96,7 +99,8 @@ export default function uriTest1() {
     it('testUriConstruction005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('http://username:password@host:8080/directory/file?foo^=1&bar=2#gaogaofaofao');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
@@ -113,7 +117,8 @@ export default function uriTest1() {
     it('testUriConstruction006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('1http://username:password@host:8080/directory/file?foo=1&bar=2#gaogaofaofao');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
@@ -130,7 +135,8 @@ export default function uriTest1() {
     it('testUriConstruction007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('ht@tp://username:password@host:8080/directory/file?foo=1&bar=2#gaogaofaofao');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
@@ -147,7 +153,8 @@ export default function uriTest1() {
     it('testUriConstruction008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('http://username:password@[::]:80r80/directory/file?foo=1&bar=2#gaogaofaofao');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
@@ -164,7 +171,8 @@ export default function uriTest1() {
     it('testUriConstruction009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('http://username:password@[::12:55:8080/directory/file?foo=1&bar=2#gaogaofaofao');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
@@ -181,7 +189,8 @@ export default function uriTest1() {
     it('testUriConstruction010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('http://username:pa^ssword@[::12:55]:8080/directory/file?foo=1&bar=2#gaogaofaofao');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
@@ -198,7 +207,8 @@ export default function uriTest1() {
     it('testUriConstruction011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('http://username:password@[::1你2:55]:8080/directory/file?foo=1&bar=2#gaogaofaofao');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
@@ -1960,7 +1970,8 @@ export default function uriTest1() {
       try {
         let route = new uri.URI('content://com.test.uri/files/a a');
         let segments = route.getSegment();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.toString()).assertEqual("BusinessError: Syntax Error. Invalid Uri string");
         expect(err.code).assertEqual(10200002);
         expect(err.message).assertEqual("Syntax Error. Invalid Uri string");
@@ -2185,7 +2196,8 @@ export default function uriTest1() {
       try {
         let route = new uri.URI('http://www.test.com/');
         let newRoute = route.addEncodedSegment("my files");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.toString()).assertEqual("BusinessError: Syntax Error. Invalid Uri string");
         expect(err.code).assertEqual(10200002);
         expect(err.message).assertEqual("Syntax Error. Invalid Uri string");
@@ -2766,7 +2778,8 @@ export default function uriTest1() {
     it('testUriConstruction032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('ht/tp://username:pas sword@host:8080/di[rectory/file?foo=1&bar=2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
@@ -2782,7 +2795,8 @@ export default function uriTest1() {
     it('testUriConstruction033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('http://username:password@[::]:8080/directory/file?Query#abc^de');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
@@ -2799,7 +2813,8 @@ export default function uriTest1() {
       try {
         let route = new uri.URI('content://com.test.uri/files/a^a');
         let segments = route.getSegment();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002);
       }
     })
@@ -2816,7 +2831,8 @@ export default function uriTest1() {
       try {
         let route = new uri.URI('http://www.test.com/');
         let newRoute = route.addEncodedSegment("my`files");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002);
       }
     })

@@ -89,13 +89,15 @@ export default function abilityTest() {
         hilog.info(domain, tag, '%{public}s', 'ErrCode1001 start');
         try {
           rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG1);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', 'getRdbStore errCode: ' + err.code);
           expect(err.code).assertEqual(14801001);
         }
         try {
           await relationalStore.deleteRdbStore(context, STORE_CONFIG1);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', 'deleteRdbStore errCode: ' + err.code);
           expect(err.code).assertEqual(14801001);
         }
@@ -116,13 +118,15 @@ export default function abilityTest() {
         hilog.info(domain, tag, '%{public}s', 'ErrCode1002 start');
         try {
           rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG2);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', 'getRdbStore errCode: ' + err.code);
           expect(err.code).assertEqual(14801002);
         }
         try {
           await relationalStore.deleteRdbStore(context, STORE_CONFIG2);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', 'deleteRdbStore errCode: ' + err.code);
           expect(err.code).assertEqual(14801002);
         }

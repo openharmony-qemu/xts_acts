@@ -93,7 +93,8 @@ export default function certFrameworkCertCsrTestUnit() {
           expect(csr.toString()).assertEqual(rsa_pkcs1_csr_pem)
         }
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_0100 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -129,7 +130,8 @@ export default function certFrameworkCertCsrTestUnit() {
           expect(csr.toString()).assertEqual(rsa_pkcs8_csr_pem)
         }
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_0200 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -165,7 +167,8 @@ export default function certFrameworkCertCsrTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_0300 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -201,7 +204,8 @@ export default function certFrameworkCertCsrTestUnit() {
         } else {
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_0400 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -241,7 +245,8 @@ export default function certFrameworkCertCsrTestUnit() {
           expect(null).assertFail();
         }
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_0500 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -277,7 +282,8 @@ export default function certFrameworkCertCsrTestUnit() {
           expect(null).assertFail();
         }
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_0600 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -314,7 +320,8 @@ export default function certFrameworkCertCsrTestUnit() {
         } else {
           expect(null).assertNull();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_0700 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -352,7 +359,8 @@ export default function certFrameworkCertCsrTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_0800 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -383,7 +391,8 @@ export default function certFrameworkCertCsrTestUnit() {
           console.info("##################### csr:" + csr.toString())
         }
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_0900 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -413,7 +422,8 @@ export default function certFrameworkCertCsrTestUnit() {
         }
         cert.generateCsr(keyInfo, conf)
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_1000 ${error}, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
@@ -449,7 +459,8 @@ export default function certFrameworkCertCsrTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_1100 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -482,7 +493,8 @@ export default function certFrameworkCertCsrTestUnit() {
         }
         cert.generateCsr(keyInfo, conf)
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_1200 ${error}, error code: ${error.code}`);
         expect(error.code).assertEqual(19030001);
       }
@@ -515,7 +527,8 @@ export default function certFrameworkCertCsrTestUnit() {
         }
         cert.generateCsr(keyInfo, conf)
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_1201 ${error}, error code: ${error.code}`);
         expect(error.code).assertEqual(19030001);
       }
@@ -547,7 +560,8 @@ export default function certFrameworkCertCsrTestUnit() {
         }
         cert.generateCsr(keyInfo, conf)
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_1300 ${error}, error code: ${error.code}`);
         expect(error.code).assertEqual(19030001);
       }
@@ -579,7 +593,8 @@ export default function certFrameworkCertCsrTestUnit() {
         }
         cert.generateCsr(keyInfo, conf)
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_1301 ${error}, error code: ${error.code}`);
         expect(error.code).assertEqual(19030001);
       }
@@ -612,7 +627,8 @@ export default function certFrameworkCertCsrTestUnit() {
         }
         cert.generateCsr(keyInfo, conf)
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_1400 ${error}, error code: ${error.code}`);
         expect(error.code).assertEqual(19030001);
       }
@@ -645,7 +661,8 @@ export default function certFrameworkCertCsrTestUnit() {
         }
         cert.generateCsr(keyInfo, conf)
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_1500 ${error}, error code: ${error.code}`);
         expect(error.code).assertEqual(19030001);
       }
@@ -678,7 +695,8 @@ export default function certFrameworkCertCsrTestUnit() {
         }
         cert.generateCsr(keyInfo, conf)
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_1501 ${error}, error code: ${error.code}`);
         expect(error.code).assertEqual(19030001);
       }
@@ -711,7 +729,8 @@ export default function certFrameworkCertCsrTestUnit() {
         }
         cert.generateCsr(keyInfo, conf)
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_1502 ${error}, error code: ${error.code}`);
         expect(error.code).assertEqual(19030001);
       }
@@ -743,7 +762,8 @@ export default function certFrameworkCertCsrTestUnit() {
         }
         cert.generateCsr(keyInfo, conf)
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_1600 ${error}, error code: ${error.code}`);
         expect(error.code).assertEqual(19030001);
       }
@@ -775,7 +795,8 @@ export default function certFrameworkCertCsrTestUnit() {
         }
         cert.generateCsr(keyInfo, conf)
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_1700 ${error}, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
@@ -807,7 +828,8 @@ export default function certFrameworkCertCsrTestUnit() {
         }
         cert.generateCsr(keyInfo, conf)
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_1701 ${error}, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
@@ -843,7 +865,8 @@ export default function certFrameworkCertCsrTestUnit() {
         } else {
           expect(null).assertFail();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_1800 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -880,7 +903,8 @@ export default function certFrameworkCertCsrTestUnit() {
           console.info("##################### csr:" + csr)
         }
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_1900 ${error}, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -912,7 +936,8 @@ export default function certFrameworkCertCsrTestUnit() {
         }
         cert.generateCsr(keyInfo, conf)
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`CertCsr_Func_2000 ${error}, error code: ${error.code}`);
         expect(error.code).assertEqual(19030001);
       }

@@ -144,7 +144,8 @@ let startAssistAbility = async (tag:string, done: ()=> void):Promise<void> => {
     if (obj.flag) {
       hilog.info(domain, testTag, '%{public}s', `${tag} no need to click button`);
     }
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     let code = (err as BusinessError).code;
     let message = (err as BusinessError).message;
     hilog.info(domain, testTag, '%{public}s', `${tag} startAbility failed, code is ${code}, message is ${message}`);
@@ -180,7 +181,8 @@ export default function abilitystaticTest() {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_Static beforeAll]';
       try {
         functionEnable = systemParameterEnhance.getSync('persist.sys.abilityms.start_options_with_process_option', 'false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, testTag, '%{public}s', `${tag} err is ${JSON.stringify(functionEnable)}`);
       }
       hilog.info(domain, testTag, '%{public}s', `${tag} functionEnable is ${functionEnable}`);

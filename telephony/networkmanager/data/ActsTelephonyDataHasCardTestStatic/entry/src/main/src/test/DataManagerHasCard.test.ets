@@ -11,14 +11,16 @@ let tag: string = 'DataTag'; //日志标识字符串,作为tag标识当前runner
 const ExpectFail = () => {
     try {
         expect().assertFail();
-    } catch (err: BusinessError) {
+    } catch (err) {
+        err = err as BusinessError;
         console.info("expectInfo", `test failed`);
     }
 }
 const ExpectTrue = (n: boolean) => {
     try {
         expect(n).assertTrue();
-    } catch (err: BusinessError) {
+    } catch (err) {
+        err = err as BusinessError;
         console.info("expectInfo", `test sucess`);
     }
 }
@@ -44,7 +46,8 @@ export default function dataManagerTest() {
                 hilog.info(domain, tag, '%{public}s', caseName +': cardSlot->'+JSON.stringify(cardSlot));
                 ExpectTrue(cardSlot == 0 || cardSlot ==1 );
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -84,7 +87,8 @@ export default function dataManagerTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -124,7 +128,8 @@ export default function dataManagerTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 }
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -153,7 +158,8 @@ export default function dataManagerTest() {
                         done();
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`${caseName} err->${JSON.stringify(err)}`);
                 ExpectFail();
                 done();
@@ -185,7 +191,8 @@ export default function dataManagerTest() {
                         done();
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
                 ExpectFail();
                 done();
@@ -217,7 +224,8 @@ export default function dataManagerTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(err));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -250,7 +258,8 @@ export default function dataManagerTest() {
                         done();
                     }
                 });
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
                 ExpectFail();
                 done();
@@ -275,7 +284,8 @@ export default function dataManagerTest() {
                 ExpectTrue(cardSlot ==0 || cardSlot == 1);
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
@@ -554,7 +564,8 @@ export default function dataManagerTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectTrue(err?.code === 8300001);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
@@ -586,7 +597,8 @@ export default function dataManagerTest() {
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
                 ExpectTrue(err.code === 8300001);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');

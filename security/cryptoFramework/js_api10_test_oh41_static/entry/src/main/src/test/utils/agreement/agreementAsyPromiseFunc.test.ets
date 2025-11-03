@@ -27,7 +27,8 @@ export async function normalProcess(cipherAlgName: string, isSpec:boolean, spec:
     await agreement.generateSecret(agreementKeyPair.priKey, agreementKeyPair.pubKey);
     console.log("[Promise] agreementPromiseNormalProcess agreement success.");
     return true;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.log("[Promise] agreementPromiseNormalProcess agreement fail.");
     throw err as Error;
   }
@@ -39,7 +40,8 @@ export async function keyPairProcess(cipherAlgName: string, agreementPriKey: cpF
     await agreement.generateSecret(agreementPriKey, agreementPubKey);
     console.log("[Promise] agreementPromiseNormalProcess agreement success.");
     return true;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.log("[Promise] agreementPromiseNormalProcess agreement fail.");
     throw err as Error;
   }

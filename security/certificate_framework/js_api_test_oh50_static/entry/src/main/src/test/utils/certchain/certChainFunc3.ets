@@ -103,7 +103,8 @@ async function createX509CertChain1(): Promise<cert.X509CertChain> {
   try {
     let x509CertChain: cert.X509CertChain = await cert.createX509CertChain(encodingBlob);
     return x509CertChain;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('createX509CertChain failed, errCode: ' + error.code + ', errMsg: ' + error.message);
     throw error as Error;
   }
@@ -157,7 +158,8 @@ async function createX509Cert(): Promise<cert.X509Cert> {
   try {
     let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
     return x509Cert;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('createX509Cert failed, errCode: ' + error.code + ', errMsg: ' + error.message);
     throw error as Error;
   }
@@ -203,7 +205,8 @@ async function createX509Cert1(): Promise<cert.X509Cert> {
   try {
     let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
     return x509Cert;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('createX509Cert1 failed, errCode: ' + error.code + ', errMsg: ' + error.message);
     throw error as Error;
   }
@@ -242,7 +245,8 @@ async function createX509Cert2(): Promise<cert.X509Cert> {
   try {
     let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
     return x509Cert;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('createX509Cert2 failed, errCode: ' + error.code + ', errMsg: ' + error.message);
     throw error as Error;
   }
@@ -274,7 +278,8 @@ async function createX509Crl(): Promise<cert.X509CRL> {
   try {
     let x509CRL: cert.X509CRL = await cert.createX509CRL(encodingBlob);
     return x509CRL;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('createX509Crl failed, errCode: ' + error.code + ', errMsg: ' + error.message);
     throw error as Error;
   }
@@ -298,7 +303,8 @@ async function createX509CrlEntryTest1(): Promise<cert.X509CRL> {
   try {
     let x509CRL: cert.X509CRL = await cert.createX509CRL(encodingBlob);
     return x509CRL;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('createX509CrlEntryTest1 failed, errCode: ' + error.code + ', errMsg: ' + error.message);
     throw error as Error;
   }
@@ -327,7 +333,8 @@ async function createX509CrlEntryTest2(): Promise<cert.X509CRL> {
   try {
     let x509CRL: cert.X509CRL = await cert.createX509CRL(encodingBlob);
     return x509CRL;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('createX509CrlEntryTest2 failed, errCode: ' + error.code + ', errMsg: ' + error.message);
     throw error as Error;
   }
@@ -418,7 +425,8 @@ async function createX509CrlEntryTest3(): Promise<cert.X509CRL> {
   try {
     let x509CRL: cert.X509CRL = await cert.createX509CRL(encodingBlob);
     return x509CRL;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('createX509CrlEntryTest3 failed, errCode: ' + error.code + ', errMsg: ' + error.message);
     throw error as Error;
   }

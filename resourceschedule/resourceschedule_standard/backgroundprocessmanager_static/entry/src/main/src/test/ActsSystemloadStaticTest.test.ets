@@ -41,7 +41,7 @@ export default function ActsSystemloadStaticTest() {
             hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_001 systemload SystemLoadLevel: ' + level);
             expect(level).assertEqual(0);
             done();
-          } catch (error: Error) {
+          } catch (error) {
             hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_001 aa error: %{public}s', JSON.stringify(error));
             expect(false).assertTrue();
             done();
@@ -66,7 +66,7 @@ export default function ActsSystemloadStaticTest() {
                 hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_002 systemload SystemLoadLevel: ' + level);
                 expect(level).assertEqual(1);
                 done();
-            } catch (error: Error) {
+            } catch (error) {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_002 aa error: %{public}s', JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -91,7 +91,7 @@ export default function ActsSystemloadStaticTest() {
                 hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_003 systemload SystemLoadLevel: ' + level);
                 expect(level).assertEqual(2);
                 done();
-            } catch (error: Error) {
+            } catch (error) {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_003 aa error: %{public}s', JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -116,7 +116,7 @@ export default function ActsSystemloadStaticTest() {
                 hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_004 systemload SystemLoadLevel: ' + level);
                 expect(level).assertEqual(3);
                 done();
-            } catch (error: Error) {
+            } catch (error) {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_004 aa error: %{public}s', JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -141,7 +141,7 @@ export default function ActsSystemloadStaticTest() {
                 hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_005 systemload SystemLoadLevel: ' + level);
                 expect(level).assertEqual(4);
                 done();
-            } catch (error: Error) {
+            } catch (error) {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_005 aa error: %{public}s', JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -166,7 +166,7 @@ export default function ActsSystemloadStaticTest() {
                 hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_006 systemload SystemLoadLevel: ' + level);
                 expect(level).assertEqual(5);
                 done();
-            } catch (error: Error) {
+            } catch (error) {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_006 aa error: %{public}s', JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -191,7 +191,7 @@ export default function ActsSystemloadStaticTest() {
                 hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_007 systemload SystemLoadLevel: ' + level);
                 expect(level).assertEqual(6);
                 done();
-            } catch (error: Error) {
+            } catch (error) {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_007 aa error: %{public}s', JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -216,7 +216,7 @@ export default function ActsSystemloadStaticTest() {
                 hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_008 systemload SystemLoadLevel: ' + level);
                 expect(level).assertEqual(7);
                 done();
-            } catch (error: Error) {
+            } catch (error) {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_008 aa error: %{public}s', JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -248,7 +248,7 @@ export default function ActsSystemloadStaticTest() {
 
                 expect(callbackFlag).assertEqual(1);
                 done();
-            } catch (error: Error) {
+            } catch (error) {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_009 aa error: %{public}s', JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -280,7 +280,7 @@ export default function ActsSystemloadStaticTest() {
 
                 expect(callbackFlag).assertEqual(1);
                 done();
-            } catch (error: Error) {
+            } catch (error) {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_010 aa error: %{public}s', JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -311,7 +311,7 @@ export default function ActsSystemloadStaticTest() {
                     expect(false).assertTrue();
                     done();
                 })
-            } catch (error: Error) {
+            } catch (error) {
                 hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_SYSTEMLOAD_STATIC_XTS_011 aa error: %{public}s', JSON.stringify(error));
                 expect(false).assertTrue();
                 done();

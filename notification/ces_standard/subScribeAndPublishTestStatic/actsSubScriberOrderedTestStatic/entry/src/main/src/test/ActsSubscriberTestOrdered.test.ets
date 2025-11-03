@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2021 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 let bundle_name:string = "com.example.actssubscribertestorder.static"
 let domain: int = 0x0000;
 let testAbilityContext:common.UIAbilityContext;
+let count: int = 0;
 
 let publishCallback=(err: BusinessError | null) =>{
   console.info('===============>publishCallback');
@@ -64,10 +65,10 @@ export default function ActsSubscriberTestOrder() {
     let commonEventSubscriber0501:commonEventManager.CommonEventSubscriber;
 
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Publish_CommonEvent_Static_0950
-     * @tc.name      : Sub_Notification_Ces_Publish_CommonEvent_Static_0950
-     * @tc.desc      : Check the subscriber can receive event "publish_event0100" type of the interface (by Promise)
+    /**
+     * @tc.number     Sub_Notification_Ces_Publish_CommonEvent_Static_0950
+     * @tc.name       Sub_Notification_Ces_Publish_CommonEvent_Static_0950
+     * @tc.desc       Check the subscriber can receive event "publish_event0100" type of the interface (by Promise)
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_0950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_0950'
@@ -187,10 +188,10 @@ export default function ActsSubscriberTestOrder() {
       console.info(`${TAG} Sub_Notification_Ces_Publish_CommonEvent_Static_0950 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Subscriber_Unsubscribe_Static_2100
-     * @tc.name      : Sub_Notification_Ces_Subscriber_Unsubscribe_Static_2100
-     * @tc.desc      : Check the subscriber can receive event "publish_event0200" type of the interface (by Promise)
+    /**
+     * @tc.number     Sub_Notification_Ces_Subscriber_Unsubscribe_Static_2100
+     * @tc.name       Sub_Notification_Ces_Subscriber_Unsubscribe_Static_2100
+     * @tc.desc       Check the subscriber can receive event "publish_event0200" type of the interface (by Promise)
      */
     it ('Sub_Notification_Ces_Subscriber_Unsubscribe_Static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Subscriber_Unsubscribe_Static_2100'
@@ -302,10 +303,10 @@ export default function ActsSubscriberTestOrder() {
       console.info(`${TAG} Sub_Notification_Ces_Subscriber_Unsubscribe_Static_2100 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Subscriber_Subscribe_Static_1000
-     * @tc.name      : Sub_Notification_Ces_Subscriber_Subscribe_Static_1000
-     * @tc.desc      : Check the subscriber can receive event "publish_event0301" type of the interface (by Promise)
+    /**
+     * @tc.number     Sub_Notification_Ces_Subscriber_Subscribe_Static_1000
+     * @tc.name       Sub_Notification_Ces_Subscriber_Subscribe_Static_1000
+     * @tc.desc       Check the subscriber can receive event "publish_event0301" type of the interface (by Promise)
      */
     it ('Sub_Notification_Ces_Subscriber_Subscribe_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Subscriber_Subscribe_Static_1000'
@@ -421,10 +422,10 @@ export default function ActsSubscriberTestOrder() {
       console.info(`${TAG} Sub_Notification_Ces_Subscriber_Subscribe_Static_1000 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Subscriber_Subscribe_Static_1100
-     * @tc.name      : Sub_Notification_Ces_Subscriber_Subscribe_Static_1100
-     * @tc.desc      : Check the subscriber can receive event "publish_eventOrder0400" type of the interface by promise
+    /**
+     * @tc.number     Sub_Notification_Ces_Subscriber_Subscribe_Static_1100
+     * @tc.name       Sub_Notification_Ces_Subscriber_Subscribe_Static_1100
+     * @tc.desc       Check the subscriber can receive event "publish_eventOrder0400" type of the interface by promise
      */
     it ('Sub_Notification_Ces_Subscriber_Subscribe_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Subscriber_Subscribe_Static_1100'
@@ -515,10 +516,10 @@ export default function ActsSubscriberTestOrder() {
       console.info(`${TAG} Sub_Notification_Ces_Subscriber_Subscribe_Static_1100 END`)
     })
 
-    /*
-     * @tc.number    : Sub_Notification_Ces_Subscriber_Subscribe_Static_1200
-     * @tc.name      : Sub_Notification_Ces_Subscriber_Subscribe_Static_1200
-     * @tc.desc      : Check the subscriber can receive event "publish_event0500" type of the interface (by promise)
+    /**
+     * @tc.number     Sub_Notification_Ces_Subscriber_Subscribe_Static_1200
+     * @tc.name       Sub_Notification_Ces_Subscriber_Subscribe_Static_1200
+     * @tc.desc       Check the subscriber can receive event "publish_event0500" type of the interface (by promise)
      */
     it ('Sub_Notification_Ces_Subscriber_Subscribe_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG:string = 'Sub_Notification_Ces_Subscriber_Subscribe_Static_1200'
@@ -614,13 +615,14 @@ export default function ActsSubscriberTestOrder() {
       console.info(`${TAG} Sub_Notification_Ces_Subscriber_Subscribe_Static_1200 END`)
     })
 
-    /*
-     * @tc.number: SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600
-     * @tc.name: SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600
-     * @tc.desc: createSubscriber
+    /**
+     * @tc.number SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600
+     * @tc.name SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600
+     * @tc.desc createSubscriber
      */
     it('SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = 'SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600'
+      count = 0;
       hilog.info(domain,TAG,`SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600 START`)
       let subscribeInfo : commonEventManager.CommonEventSubscribeInfo= {
         events: new Array<string>('event06')
@@ -628,7 +630,8 @@ export default function ActsSubscriberTestOrder() {
 
       commonEventManager.createSubscriber(subscribeInfo).then((commonEventSubscriber) => {
         hilog.info(domain,TAG,`SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600 success`)
-        expect(true).assertTrue()
+        count++;
+        expect(count).assertEqual(1);
         done()
       }).catch((err:BusinessError):void => {
         hilog.info(domain,TAG,`SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600 err `)

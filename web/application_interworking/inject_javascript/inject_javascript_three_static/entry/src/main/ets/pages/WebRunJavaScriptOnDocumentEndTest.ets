@@ -90,7 +90,8 @@ struct WebRunJavaScriptOnDocumentEndTest {
                     Utils.emitEvent(resultData,2025022101);
                   }, 2000)
                 })
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
             }

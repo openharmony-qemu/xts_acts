@@ -38,7 +38,8 @@ async function testSecurityRandomCallback(length: int): Promise<boolean> {
         );
         try {
           rand.setSeed(randData as cryptoFramework.DataBlob);
-        } catch (err1: BusinessError) {
+        } catch (err1) {
+          err1 = err1 as BusinessError;
           reject(err1 as Error);
         }
       }

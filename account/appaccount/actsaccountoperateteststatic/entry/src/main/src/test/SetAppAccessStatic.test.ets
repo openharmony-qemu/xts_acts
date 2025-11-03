@@ -91,7 +91,8 @@ export default function ActsAccountSetAppAccessStatic() {
           hilog.info(0x0000, tag, "====>delete account SetAppAccess_0200 start====");
           await accountManager.removeAccount("AppAccess_promise_itself");
           hilog.info(0x0000, tag, "====>ActsAccountSetAppAccess_0200 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>enableAppAccess 0200 err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, "====>delete account SetAppAccess_0200 start====");
           await accountManager.removeAccount("AppAccess_promise_itself");
@@ -154,7 +155,8 @@ export default function ActsAccountSetAppAccessStatic() {
           hilog.info(0x0000, tag, "====>delete account SetAppAccess_0400 start====");
           await accountManager.removeAccount("AppAccess_promise_NotExistBundle");
           hilog.info(0x0000, tag, "====>ActsAccountSetAppAccess_0400 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>enableAppAccess ActsAccountSetAppAccess_0400 err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, "====>delete account SetAppAccess_0400 start====");
           await accountManager.removeAccount("AppAccess_promise_NotExistBundle");
@@ -212,7 +214,8 @@ export default function ActsAccountSetAppAccessStatic() {
           await accountManager.setAppAccess(nonExistAccount, enableBundle, true);
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>enableAppAccess 0600 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
           hilog.info(0x0000, tag, "====>ActsAccountSetAppAccess_0600 end====");
@@ -276,14 +279,16 @@ export default function ActsAccountSetAppAccessStatic() {
         hilog.info(0x0000, tag, "====>add account SetAppAccess_0800 start====");
         try {
           await accountManager.createAccount("AppAccess_promise_account");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>createAccount SetAppAccess_0800 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
         hilog.info(0x0000, tag, "====>enableAppAccess ActsAccountSetAppAccess_0800 start====");
         try {
           await accountManager.setAppAccess("AppAccess_promise_account", enableBundle, true);
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>enableAppAccess ActsAccountSetAppAccess_0800 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -349,7 +354,8 @@ export default function ActsAccountSetAppAccessStatic() {
           await accountManager.setAppAccess(bigAccountName, enableBundle, true);
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>enableAppAccess 1000 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>ActsAccountSetAppAccess_1000 end====");
@@ -419,7 +425,8 @@ export default function ActsAccountSetAppAccessStatic() {
           await accountManager.setAppAccess("AppAccess_promise_bigBundleName", bigBundleName, true);
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>enableAppAccess 1200 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>delete account SetAppAccess_1200 start====");
@@ -485,7 +492,8 @@ export default function ActsAccountSetAppAccessStatic() {
           await accountManager.setAppAccess("AppAccess_promise_emptyBundleName", emptyBundleName, true);
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>enableAppAccess 1400 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300002);
           hilog.info(0x0000, tag, "====>delete account SetAppAccess_1400 start====");
@@ -541,7 +549,8 @@ export default function ActsAccountSetAppAccessStatic() {
         hilog.info(0x0000, tag, "====>add account SetAppAccess_1600 start====");
         try {
           await accountManager.createAccount("AppAccess_promise_account");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>createAccount SetAppAccess_1600 fail err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -550,7 +559,8 @@ export default function ActsAccountSetAppAccessStatic() {
           await accountManager.setAppAccess("AppAccess_promise_account", enableBundle, false);
           await accountManager.removeAccount("AppAccess_promise_account");
           hilog.info(0x0000, tag, "====>ActsAccountSetAppAccess_1600 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>disableAppAccess ActsAccountSetAppAccess_1800 err: " + JSON.stringify(err));
           await accountManager.removeAccount("AppAccess_promise_account");
           expect().assertFail();
@@ -609,7 +619,8 @@ export default function ActsAccountSetAppAccessStatic() {
           hilog.info(0x0000, tag, "====>delete account SetAppAccess_1800 start====");
           await accountManager.removeAccount("AppAccess_promise_notExistBundle");
           hilog.info(0x0000, tag, "====>ActsAccountSetAppAccess_1600 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>disableAppAccess ActsAccountSetAppAccess_1800 err: " + JSON.stringify(err));
           await accountManager.removeAccount("AppAccess_promise_account");
           expect().assertFail();
@@ -666,7 +677,8 @@ export default function ActsAccountSetAppAccessStatic() {
           await accountManager.setAppAccess(notExistAccount, enableBundle, false);
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>disableAppAccess ActsAccountSetAppAccess_2000 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
           hilog.info(0x0000, tag, "====>ActsAccountSetAppAccess_2000 end====");

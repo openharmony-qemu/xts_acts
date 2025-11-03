@@ -77,7 +77,8 @@ export default function GraphicTextClass() {
           paragraph.paint(canvas, 10, 10);
           console.info(msg + 'canvasConstructor successed');
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + `canvasConstructor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -103,7 +104,8 @@ export default function GraphicTextClass() {
           paragraph.paintOnPath(canvas, path, 0, 0);
           console.info(msg + 'canvasConstructor successed');
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + `canvasConstructor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }

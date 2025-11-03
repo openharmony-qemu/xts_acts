@@ -142,7 +142,8 @@ async function generateByCommonSpec(asyKeySpec: cryptoFramework.AsyKeySpec, stat
   return new Promise<boolean>((resolve, reject) => {
     try {
       asyKeyPairSpec = createAsyKeyGeneratorBySpec(asyKeySpec);
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       reject(err as Error);
     }
     generateSpecCommonAsyKeyPair(asyKeyPairSpec, state)
@@ -166,7 +167,8 @@ async function generateByKeyPairSpec(asyKeySpec: cryptoFramework.AsyKeySpec, sta
   return new Promise<void>((resolve, reject) => {
     try {
       asyKeyPairSpec = createAsyKeyGeneratorBySpec(asyKeySpec);
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       reject(err as Error);
     }
     generateSpecCommonAsyKeyPair(asyKeyPairSpec, state)
@@ -198,7 +200,8 @@ async function generateByPriKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec, stat
   return new Promise<boolean>((resolve, reject) => {
     try {
       asyKeyPairSpec = createAsyKeyGeneratorBySpec(asyKeySpec);
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       reject(err as Error);
     }
     asyKeyPairSpec.generatePriKey((err: BusinessError<void>|null, tmp: cryptoFramework.PriKey|undefined) => {
@@ -236,7 +239,8 @@ async function rsaPubGetAsyKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec): Prom
   return new Promise<void>((resolve, reject) => {
     try {
       asyKeyPairSpec = createAsyKeyGeneratorBySpec(asyKeySpec);
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       reject(err as Error);
     }
     asyKeyPairSpec.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
@@ -264,7 +268,8 @@ async function eccPubGetAsyKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec): Prom
   return new Promise<void>((resolve, reject) => {
     try {
       asyKeyPairSpec = createAsyKeyGeneratorBySpec(asyKeySpec);
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       reject(err as Error);
     }
     asyKeyPairSpec.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
@@ -328,7 +333,8 @@ async function dsaPriGetAsyKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec): Prom
   return new Promise<void>((resolve, reject) => {
     try {
       asyKeyPairSpec = createAsyKeyGeneratorBySpec(asyKeySpec);
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       reject(err as Error);
     }
     asyKeyPairSpec.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {
@@ -364,7 +370,8 @@ async function clearMemGetAsyKeySpec(asyKeySpec: cryptoFramework.AsyKeySpec): Pr
   return new Promise<void>((resolve, reject) => {
     try {
       asyKeyPairSpec = createAsyKeyGeneratorBySpec(asyKeySpec);
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       reject(err as Error);
     }
     asyKeyPairSpec.generateKeyPair((err: BusinessError<void>|null, tmp: cryptoFramework.KeyPair|undefined) => {

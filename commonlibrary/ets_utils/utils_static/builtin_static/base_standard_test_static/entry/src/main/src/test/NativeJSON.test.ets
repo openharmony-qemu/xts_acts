@@ -146,7 +146,8 @@ export default function NativeJsonTest() {
                     expect(obj4.deci + '>' + typeof obj4.deci).assertEqual('1122334455667789000>number');
                     expect(obj4.shortExp + '>' + typeof obj4.shortExp).assertEqual('1122334455667789000>number');
                     expect(obj4.longExp + '>' + typeof obj4.longExp).assertEqual('1122334455667789000>number');
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.error(`${TAG} failed, error: ${err.message}`);
                     expect(false).assertFail();
                 }
@@ -178,7 +179,8 @@ export default function NativeJsonTest() {
                     expect(obj1.greater2 + '>' + typeof obj1.greater2).assertEqual('-9007199254740991>number');
                     expect(obj1.greater4 + '>' + typeof obj1.greater4).assertEqual('-9007199254740992>number');
                     expect(obj1.equal2 + '>' + typeof obj1.equal2).assertEqual('-9007199254740992>number');
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.error(`${TAG} failed, error: ${err.message}`);
                     expect(false).assertFail();
                 }
@@ -202,7 +204,8 @@ export default function NativeJsonTest() {
                     let obj1 = JSON.parse(jsonText1) as text1;
                     expect(JSON.stringify(obj1))
                         .assertEqual("{\"person\":{\"name\":\"JohnDoe\",\"age\":30,\"gender\":\"male\",\"address\":{\"street\":\"123MainSt\",\"city\":\"Anytown\",\"state\":\"CA\",\"zip\":\"12345\"},\"phone_numbers\":[{\"type\":\"home\",\"number\":\"555-555-1234\"},{\"type\":\"work\",\"number\":\"555-555-5678\"},{\"type\":\"mobile\",\"number\":\"555-555-9012\"}],\"email_addresses\":[{\"type\":\"personal\",\"address\":\"john.doe@gmail.com\"},{\"type\":\"work\",\"address\":\"jdoe@acme.com\"}],\"job_history\":[{\"company\":\"AcmeInc\",\"title\":\"SoftwareEngineer\",\"start_date\":\"2010-01-01\",\"end_date\":\"2015-12-31\",\"responsibilities\":[\"Developedandmaintainedcompany'sflagshipproduct\",\"Managedatemof10developers\"]},{\"company\":\"XYZCorp.\",\"title\":\"SeniorSoftwareEngineer\",\"start_date\":\"2016-01-01\",\"end_date\":null,\"responsibilities\":[\"Designedandimplementednewfeaturesforcompany'splatform\",\"Mentoredjuniordevelopers\"]}]},\"company\":{\"name\":\"AcmeInc.\",\"address\":{\"street\":\"456MainSt\",\"city\":\"Anytown\",\"state\":\"CA\",\"zip\":\"12345\"},\"phone_number\":[{\"type\":\"main\",\"number\":\"555-555-6789\"},{\"type\":\"fax\",\"number\":\"555-555-4321\"}],\"email_addresses\":[{\"type\":\"general\",\"address\":\"info@acme.com\"},{\"type\":\"support\",\"address\":\"support@acme.com\"}],\"departments\":[{\"name\":\"Engineering\",\"employees\":[{\"name\":\"JaneSmith\",\"title\":\"LeadEngineer\",\"phone_number\":\"555-555-5555\",\"email_address\":\"jane.smith@acme.com\"},{\"name\":\"BobJohnson\",\"title\":\"SoftwareEngineer\",\"phone_number\":\"555-555-5556\",\"email_address\":\"bob.johnson@acme,com\"}]},{\"name\":\"Sales\",\"employees\":[{\"name\":\"SallyJones\",\"title\":\"SaleManager\",\"phone_number\":\"555-555-5557\",\"email_address\":\"sally.jones@acme.com\"},{\"name\":\"TomWilliams\",\"title\":\"SalesRepresentative\",\"phone_number\":\"555-555-5558\",\"email_address\":\"tom.williams@acme.com\"}]}]}}");
-                } catch (err: BusinessError) {
+                } catch (err) {
+                    err = err as BusinessError;
                     console.error(`${TAG} failed, error: ${err.message}`);
                     expect(false).assertFail();
                 }

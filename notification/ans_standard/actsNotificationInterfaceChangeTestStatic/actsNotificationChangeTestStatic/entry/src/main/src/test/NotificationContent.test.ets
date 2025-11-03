@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,17 +28,16 @@ export default function ActsNotificationContentTest() {
     const TAG = 'ActsNotificationContentTest ===>';
     let ctx: common.UIAbilityContext;
 
-    
     /**
-     * @tc.number: Acts_NotificationContent_Static_0100
-     * @tc.name: Acts_NotificationContent_Static_0100
-     * @tc.desc: Set notificationContentType attribute parameters
+     * @tc.number  Acts_NotificationContent_Static_0100
+     * @tc.name  Acts_NotificationContent_Static_0100
+     * @tc.desc  Set notificationContentType attribute parameters
      *           notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT.
      */
     it('Acts_NotificationContent_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME = 'Acts_NotificationContent_Static_0100';
-        ctx = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+        ctx = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
         notificationManager.requestEnableNotification(ctx, (err: BusinessError | null) => {
           if (err) {
             console.error(`Acts_NotificationContent_Static_0100 requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
@@ -76,7 +75,8 @@ export default function ActsNotificationContentTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish22 fail,result is : %{public}s', JSON.stringify(err));
           expect().assertFail();
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test22 case end`);
@@ -85,9 +85,9 @@ export default function ActsNotificationContentTest() {
       })
 
     /**
-     * @tc.number: Acts_NotificationContent_Static_0200
-     * @tc.name: Acts_NotificationContent_Static_0200
-     * @tc.desc: Set notificationContentType attribute parameters
+     * @tc.number  Acts_NotificationContent_Static_0200
+     * @tc.name Acts_NotificationContent_Static_0200
+     * @tc.desc Set notificationContentType attribute parameters
      *           notificationManager.ContentType.NOTIFICATION_CONTENT_LONG_TEXT.
      */
     it('Acts_NotificationContent_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -127,7 +127,8 @@ export default function ActsNotificationContentTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result1 is : %{public}s',
             JSON.stringify(err));
           expect(err.code).assertEqual(401);
@@ -137,9 +138,9 @@ export default function ActsNotificationContentTest() {
       })
 
     /**
-     * @tc.number: Acts_NotificationContent_Static_0300
-     * @tc.name: Acts_NotificationContent_Static_0300
-     * @tc.desc: Set notificationContentType attribute parameters
+     * @tc.number  Acts_NotificationContent_Static_0300
+     * @tc.name  Acts_NotificationContent_Static_0300
+     * @tc.desc  Set notificationContentType attribute parameters
      *           notificationManager.ContentType.NOTIFICATION_CONTENT_PICTURE.
      */
     it('Acts_NotificationContent_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -199,20 +200,21 @@ export default function ActsNotificationContentTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s',
             JSON.stringify(err));
-          expect(err.code).assertEqual(401);
+          expect().assertFail();
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
           done();
         }
       })
 
-    
+
     /**
-     * @tc.number: Acts_NotificationContent_Static_0400
-     * @tc.name: Acts_NotificationContent_Static_0400
-     * @tc.desc: Set notificationContentType attribute parameters
+     * @tc.number  Acts_NotificationContent_Static_0400
+     * @tc.name  Acts_NotificationContent_Static_0400
+     * @tc.desc  Set notificationContentType attribute parameters
      *           notificationManager.ContentType.NOTIFICATION_CONTENT_MULTILINE.
      */
     
@@ -255,7 +257,8 @@ export default function ActsNotificationContentTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result1 is : %{public}s',
             JSON.stringify(err));
           expect().assertFail();

@@ -284,7 +284,8 @@ export default function AsyKeyGeneratorBySpecTwoJsunit() {
         try {
           cryptoFramework.createAsyKeyGeneratorBySpec(genEccCommonSpecErr());
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(
             "Security_CryptoFramework_GeneratorBySpec_Func_1500 catch err " +
               err

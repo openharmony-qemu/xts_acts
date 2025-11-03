@@ -110,13 +110,15 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getString()
                         Utils.emitEvent(this.no_error, 30400)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                        error = error as BusinessError;
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30400)
                       }
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30400)
               }
@@ -138,13 +140,15 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getString()
                         Utils.emitEvent(this.no_error, 30401)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                        error = error as BusinessError;
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30401)
                       }
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30401)
               }
@@ -166,14 +170,16 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getString()
                         Utils.emitEvent(this.no_error, 30402)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                        error = error as BusinessError;
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30402)
                       }
                     }
                   });
 
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30402)
               }
@@ -195,14 +201,16 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getString()
                         Utils.emitEvent(this.no_error, 30403)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                         error = error as BusinessError;
                          
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30403)
                       }
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30403)
               }
@@ -224,13 +232,15 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getNumber()
                         Utils.emitEvent(this.no_error, 30410)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                        error = error as BusinessError;
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30410)
                       }
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30410)
               }
@@ -252,13 +262,15 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getNumber()
                         Utils.emitEvent(this.no_error, 30411)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                        error = error as BusinessError;
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30411)
                       }
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                 error = error as BusinessError;
                  
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30411)
@@ -281,13 +293,15 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getNumber()
                         Utils.emitEvent(this.no_error, 30412)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                        error = error as BusinessError;
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30412)
                       }
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30412)
               }
@@ -309,14 +323,16 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getNumber()
                         Utils.emitEvent(this.no_error, 30413)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                        error = error as BusinessError;
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30413)
                       }
                     }
                   });
 
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30413)
               }
@@ -338,13 +354,15 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getBoolean()
                         Utils.emitEvent(this.no_error, 30420)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                        error = error as BusinessError;
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30420)
                       }
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30420)
               }
@@ -366,13 +384,15 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getBoolean()
                         Utils.emitEvent(this.no_error, 30421)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                        error = error as BusinessError;
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30421)
                       }
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30421)
               }
@@ -394,14 +414,16 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getBoolean()
                         Utils.emitEvent(this.no_error, 30422)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                         error = error as BusinessError;
                          
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30422)
                       }
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30422)
               }
@@ -422,13 +444,15 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getBoolean()
                         Utils.emitEvent(this.no_error, 30423)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                        error = error as BusinessError;
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30423)
                       }
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30423)
               }
@@ -449,13 +473,15 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getArrayBuffer()
                         Utils.emitEvent(this.no_error, 30430)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                        error = error as BusinessError;
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30430)
                       }
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30430)
               }
@@ -477,13 +503,15 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getArrayBuffer()
                         Utils.emitEvent(this.no_error, 30431)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                        error = error as BusinessError;
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30431)
                       }
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30431)
               }
@@ -505,13 +533,15 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getArrayBuffer()
                         Utils.emitEvent(this.no_error, 30432)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                        error = error as BusinessError;
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30432)
                       }
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30432)
               }
@@ -533,13 +563,15 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getArrayBuffer()
                         Utils.emitEvent(this.no_error, 30433)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                        error = error as BusinessError;
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30433)
                       }
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30433)
               }
@@ -561,13 +593,15 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getArray()
                         Utils.emitEvent(this.no_error, 30440)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                        error = error as BusinessError;
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30440)
                       }
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30440)
               }
@@ -589,13 +623,15 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getArray()
                         Utils.emitEvent(this.no_error, 30441)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                        error = error as BusinessError;
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30441)
                       }
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30441)
               }
@@ -617,13 +653,15 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getArray()
                         Utils.emitEvent(this.no_error, 30442)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                        error = error as BusinessError;
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30442)
                       }
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30442)
               }
@@ -645,13 +683,15 @@ struct Index {
                         console.info(`get result :` + type)
                         result.getArray()
                         Utils.emitEvent(this.no_error, 30443)
-                      } catch (error:BusinessError) {
+                      } catch (error) {
+                        error = error as BusinessError;
                         console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                         Utils.emitEvent(String(error.code), 30443)
                       }
                     }
                   });
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(String(error.code), 30443)
               }

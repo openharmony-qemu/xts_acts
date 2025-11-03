@@ -114,7 +114,8 @@ struct webViewGetCertificate {
                     this.outputStr = ParseX509CertInfo(x509CertArray);
                   }
                 })
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               if ((this.outputStr).includes("failed")) {
@@ -134,7 +135,8 @@ struct webViewGetCertificate {
                 this.controller.getCertificate().then(x509CertArray => {
                   this.outputStr = ParseX509CertInfo(x509CertArray);
                 })
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               console.log("getCertificate result of this page: " + this.outputStr);

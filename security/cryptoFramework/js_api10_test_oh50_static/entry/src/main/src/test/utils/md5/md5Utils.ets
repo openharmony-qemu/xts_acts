@@ -23,7 +23,8 @@ async function genSymKey(algName: string): Promise<cryptoFramework.SymKey> {
     let symKey: cryptoFramework.SymKey = await aesGenerator.generateSymKey();
 
     return symKey;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`genSymKey “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -38,7 +39,8 @@ async function doHmac(symKeyName: string, macAlgName: string, message: cryptoFra
     let macResult: cryptoFramework.DataBlob = await mac.doFinal();
 
     return macResult;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doHmac “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -52,7 +54,8 @@ async function doHmacWithKey(key: cryptoFramework.SymKey, macAlgName: string, me
     let macResult: cryptoFramework.DataBlob = await mac.doFinal();
 
     return macResult;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doHmac “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -66,7 +69,8 @@ async function doHmacNoUpdate(symKeyName: string, macAlgName: string): Promise<c
     let macResult: cryptoFramework.DataBlob = await mac.doFinal();
 
     return macResult;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doHmac “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -85,7 +89,8 @@ async function doHmacWithSplit(macAlgName: string, key: cryptoFramework.SymKey,
     let macResult: cryptoFramework.DataBlob = await mac.doFinal();
 
     return macResult;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doHmacWithSplit “${error}“, error code: ${error.code}`);
     throw error as Error;
   }

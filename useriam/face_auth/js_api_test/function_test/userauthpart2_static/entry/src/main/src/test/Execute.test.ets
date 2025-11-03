@@ -67,7 +67,8 @@ function userAuthPromise(...args: (userAuth.AuthParam | userAuth.WidgetParam | s
       });
       userAuthInstance.start();
       await Utils.msSleep(2000);
-    } catch (e: BusinessError) {
+    } catch (e) {
+      e = e as BusinessError;
       hilog.info(domain, tag, format, `${args[2]} fail ${e.code}`);
       expect(null).assertFail();
       reject({});
@@ -101,7 +102,8 @@ function userAuthPromiseFace(...args: (userAuth.AuthParam | userAuth.WidgetParam
       });
       userAuthInstance.start();
       await Utils.msSleep(2000);
-    } catch (e: BusinessError) {
+    } catch (e) {
+      e = e as BusinessError;
       hilog.info(domain, tag, format, `${args[2]} fail ${e.code}`);
       expect(null).assertFail();
       reject({});
@@ -290,7 +292,8 @@ export default function signNormalAccessBiometricExecute() {
          });
          hilog.info(domain, tag, format,`Security_IAM_getUserAuthInstance_Func_Static_0088 step1 success`);
          expect(null).assertFail();
-       } catch (e:BusinessError) {
+       } catch (e) {
+         e = e as BusinessError;
          hilog.info(domain, tag, format,`Security_IAM_getUserAuthInstance_Func_Static_0088 step1 fail ${e.code}`);
          expect(e.code).assertEqual(12500002);
        }
@@ -312,7 +315,8 @@ export default function signNormalAccessBiometricExecute() {
         userAuthInstance.cancel();
         hilog.info(domain, tag, format,`Security_IAM_getUserAuthInstance_Func_Static_0089 success`);
         expect(null).assertFail();
-      } catch (e:BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, format,`Security_IAM_getUserAuthInstance_Func_Static_0089 fail ${e.code}`);
         expect(e.code).assertEqual(12500002);
       }

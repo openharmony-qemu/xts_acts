@@ -69,11 +69,13 @@ export default function abilityTest() {
               hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' isHDR value: ' + JSON.stringify(isHDR));
               hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' pixelmapFormat value: ' + JSON.stringify(pixelmapFormat));
               result = true;
-            } catch (err: BusinessError) {
+            } catch (err) {
+              err = err as BusinessError;
               hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' getImageInfo err ' + JSON.stringify(err));
             }
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(0x0000, 'testTag', '%{public}s', TAG + ' createPixelMap err ' + JSON.stringify(error));
         }
       }

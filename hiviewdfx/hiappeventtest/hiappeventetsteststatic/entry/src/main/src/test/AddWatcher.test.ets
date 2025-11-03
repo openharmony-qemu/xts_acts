@@ -81,7 +81,8 @@ export default function addWatcherTest() {
           done()
         }, 5000)
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSub70 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -146,7 +147,8 @@ export default function addWatcherTest() {
           done()
         }, 5000)
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSub71 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -174,7 +176,8 @@ export default function addWatcherTest() {
         holder.setRow(0);
         expect(false).assertTrue();
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSub72 > error code: ${err.code}, error msg: ${err.message}`);
         hiAppEvent.removeWatcher({
           name: "watcher72"
@@ -242,7 +245,8 @@ export default function addWatcherTest() {
           done()
         }, 5000)
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `testHiAppEventSub73 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -286,7 +290,8 @@ export default function addWatcherTest() {
             }
             hiAppEvent.removeWatcher({ name: "watcher2" })
             done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+            err = err as BusinessError;
             hilog.error(logDomain, tag, `testHiAppEventSetPam22 > error code: ${err.code}, error msg: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -324,7 +329,8 @@ export default function addWatcherTest() {
             });
             hiAppEvent.removeWatcher({ name: "watcher3" })
             done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+            err = err as BusinessError;
             hilog.error(logDomain, tag, `testHiAppEventSetPam23 > error code: ${err.code}, error msg: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -422,7 +428,8 @@ export default function addWatcherTest() {
           done()
         }, 10000)
 
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `HiAppEventSub67 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue();
         done();
@@ -491,7 +498,8 @@ export default function addWatcherTest() {
           hilog.info(logDomain, tag, 'HiAppEventSub68 end')
           done()
         }, 10000)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `HiAppEventSub68 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue();
         done();
@@ -562,7 +570,8 @@ export default function addWatcherTest() {
           hilog.info(logDomain, tag, 'HiAppEventSub69 end')
           done()
         }, 10000)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(logDomain, tag, `HiAppEventSub69 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue();
         done();
@@ -889,7 +898,8 @@ export default function addWatcherTest() {
           }
         })
         expect(result == null).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         expect(error.code).assertEqual(11102002);
       }
 
@@ -2250,7 +2260,8 @@ export default function addWatcherTest() {
       const MAX_LEN_OF_WATCHER = 32;
       try {
         hiAppEvent.removeWatcher({name:"a".repeat(MAX_LEN_OF_WATCHER - 1) + "_"});
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`testHiAppEventSub30  > error code: ${error.code}, error msg: ${error.message}`)
         expect(error.code == 11102001).assertTrue()
       }

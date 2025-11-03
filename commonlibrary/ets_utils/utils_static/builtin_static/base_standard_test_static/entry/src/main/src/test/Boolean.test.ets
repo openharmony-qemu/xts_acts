@@ -33,7 +33,8 @@ export default function booleanTest() {
       try {
         let result = new Boolean(0);
         expect(JSON.stringify(result.valueOf())).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -51,7 +52,8 @@ export default function booleanTest() {
       try {
         let result = new Boolean(null);
         expect(String(result.valueOf())).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -69,7 +71,8 @@ export default function booleanTest() {
       try {
         let result = new Boolean(undefined);
         expect(String(result.valueOf())).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -87,7 +90,8 @@ export default function booleanTest() {
       try {
         let result = new Boolean("");
         expect(String(result.valueOf())).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -107,7 +111,8 @@ export default function booleanTest() {
         let bfalse = new Boolean(false);
         expect(typeof bfalse).assertEqual("object");
         expect(String(Boolean(bfalse))).assertEqual("true");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -126,7 +131,8 @@ export default function booleanTest() {
         let value = true;
         let result = Boolean(value);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -145,7 +151,8 @@ export default function booleanTest() {
         let value = "true";
         let result = Boolean(value);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -164,7 +171,8 @@ export default function booleanTest() {
         let value = "false";
         let result = Boolean(value);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -202,7 +210,8 @@ export default function booleanTest() {
         let bObject = new Boolean({});
         let result = Boolean(bObject);
         expect(String(result)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -222,7 +231,8 @@ export default function booleanTest() {
         console.info(boo.toString());
         expect(String(boo)).assertEqual('false');
         ;
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -242,7 +252,8 @@ export default function booleanTest() {
         console.info(boo.toString());
         expect(String(boo)).assertEqual('false');
         ;
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -262,7 +273,8 @@ export default function booleanTest() {
         console.info(boo.toString());
         expect(String(boo)).assertEqual('false');
         ;
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -282,7 +294,8 @@ export default function booleanTest() {
         console.info(boo.toString());
         expect(String(boo)).assertEqual('false');
         ;
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -301,7 +314,8 @@ export default function booleanTest() {
         let boo = new Boolean(false);
         console.info(boo.toString());
         expect(String(boo)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -318,7 +332,8 @@ export default function booleanTest() {
       const TAG = 'testBoolean.prototype.toString0006';
       try {
         expect(String(Boolean(true))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -335,7 +350,8 @@ export default function booleanTest() {
       const TAG = 'textBoolean.prototype.toString0007';
       try {
         expect(String(Boolean("true"))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -352,7 +368,8 @@ export default function booleanTest() {
       const TAG = 'textBoolean.prototype.toString0008';
       try {
         expect(String(Boolean("false"))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -387,7 +404,8 @@ export default function booleanTest() {
       try {
         const result = new Boolean({});
         expect(result.toString()).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -405,7 +423,8 @@ export default function booleanTest() {
       try {
         let flag1 = new Boolean(0);
         expect(String(flag1.valueOf())).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -423,7 +442,8 @@ export default function booleanTest() {
       try {
         let flag1 = new Boolean(null);
         expect(String(flag1.valueOf())).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -441,7 +461,8 @@ export default function booleanTest() {
       try {
         let flag1 = new Boolean(undefined);
         expect(String(flag1.valueOf())).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -459,7 +480,8 @@ export default function booleanTest() {
       try {
         let flag1 = new Boolean("");
         expect(String(flag1.valueOf())).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -477,7 +499,8 @@ export default function booleanTest() {
       try {
         let flag = Boolean(true);
         expect(String(flag).valueOf()).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -495,7 +518,8 @@ export default function booleanTest() {
       try {
         let flag = new Boolean("true");
         expect(String(flag.valueOf())).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -513,7 +537,8 @@ export default function booleanTest() {
       try {
         let flag = new Boolean("false");
         expect(String(flag.valueOf())).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }

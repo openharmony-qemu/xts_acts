@@ -76,7 +76,8 @@ struct WebInitTest {
                 Utils.emitEvent(true, 114)
               }
                   }, 3000)
-                } catch (error:BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   Utils.emitEvent(false, 114)
                 }

@@ -141,7 +141,8 @@ export default function preferenceTest() {
           hilog.info(domain, tag, '%{public}s', `111 errInfo is :` + err);
           expect().assertFail();
         })
-      } catch (errInfo : BusinessError) {
+      } catch (errInfo) {
+        errInfo = errInfo as BusinessError;
         hilog.info(domain, tag, '%{public}s', `222 errInfo is :` + errInfo);
         expect().assertFail();
       }
@@ -197,7 +198,8 @@ export default function preferenceTest() {
           hilog.info(domain, tag, '%{public}s', `111 errInfo is :` + err);
           expect().assertFail();
         })
-      } catch (errInfo : BusinessError) {
+      } catch (errInfo) {
+        errInfo = errInfo as BusinessError;
         hilog.info(domain, tag, '%{public}s', `222 errInfo is :` + errInfo);
         expect().assertFail();
       }
@@ -536,7 +538,8 @@ export default function preferenceTest() {
       hilog.info(domain, tag, '%{public}s', "000000000000 .");
       try {
         mPreferences = dataPreferences.getPreferencesSync(context, Options);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', "BusinessError: " + err.message);
       }
       mPreferences.clearSync();
@@ -600,7 +603,8 @@ export default function preferenceTest() {
       try {
         mPreferences = dataPreferences.getPreferencesSync(context, Options);
         done();
-      } catch (errInfo : BusinessError) {
+      } catch (errInfo) {
+        errInfo = errInfo as BusinessError;
         expect().assertFail();
         done();
       }
@@ -954,7 +958,8 @@ export default function preferenceTest() {
 
         await Utils.msSleep(1000);
         done();
-      } catch (err : BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect().assertFail();
         done();
       }
@@ -986,7 +991,8 @@ export default function preferenceTest() {
         await mPreferences.flush();
         await Utils.msSleep(1000);
         done();
-      } catch (err : BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect().assertFail();
         done();
       }
@@ -1020,7 +1026,8 @@ export default function preferenceTest() {
         await Utils.msSleep(100);
         mPreferences.off('multiProcessChange', testObserver);
         done();
-      } catch (err : BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect().assertFail();
         done();
       }
@@ -1052,7 +1059,8 @@ export default function preferenceTest() {
         mPreferences.flushSync();
         await Utils.msSleep(1000);
         done();
-      } catch (err : BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect().assertFail();
         done();
       }
@@ -1084,7 +1092,8 @@ export default function preferenceTest() {
         await mPreferences.put(KEY_TEST_STRING_ELEMENT, "abc");
         mPreferences.flushSync();
         done();
-      } catch (err : BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect().assertFail();
         done();
       }
@@ -1117,7 +1126,8 @@ export default function preferenceTest() {
         mPreferences.flushSync();
         await Utils.msSleep(1000);
         done();
-      } catch (err : BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesOnMultiprocessErrPromiseTest0001 :" + err.code + err.message );
         expect(err.code).assertEqual(15500019);
         done();
@@ -1141,7 +1151,8 @@ export default function preferenceTest() {
         let ret = await mPreferences.get(MAX_KEY_LENGTH, "default");
         expect("abc").assertEqual(ret);
         done();
-      } catch(err : BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', TAG + "testPreferencesMxaKeyLengthPromiseTest0001 :" + err.code + err.message );
         expect().assertFail();
         done();

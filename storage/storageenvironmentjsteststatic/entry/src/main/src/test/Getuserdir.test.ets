@@ -41,7 +41,8 @@ export default function getUserDir() {
       try {
         let path = environment.getUserDesktopDir();
         expect(await Utils.isString(path)).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'environment_test_getUserDesktopDir_Static_001 has failed for' + e.message + ' code: ' + e.code);
         if (e.code == 801) {
           expect(e.code == 801 && e.message == "The device doesn't support this api").assertTrue();
@@ -65,7 +66,8 @@ export default function getUserDir() {
       try {
         let path = environment.getUserDocumentDir();
         expect(await Utils.isString(path)).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'environment_test_getUserDocumentDir_Static_001 has failed for' + e.message + ' code: ' + e.code);
         if (e.code == 801) {
           expect(e.code == 801 && e.message == "The device doesn't support this api").assertTrue();
@@ -89,7 +91,8 @@ export default function getUserDir() {
       try {
         let path = environment.getUserDownloadDir();
         expect(await Utils.isString(path)).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'environment_test_getUserDownloadDir_Static_001 has failed for' + e.message + ' code: ' + e.code);
         if (e.code == 801) {
           expect(e.code == 801 && e.message == "The device doesn't support this api").assertTrue();

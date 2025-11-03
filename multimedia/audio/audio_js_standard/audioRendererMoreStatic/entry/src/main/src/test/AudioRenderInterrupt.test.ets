@@ -154,7 +154,8 @@ export default function AudioRendererInterruptUnitTest() {
             try {
                 await render.start()
                 console.log(" start success.")
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 await release(render, done)
                 console.log(" start err:" + JSON.stringify(err))
                 expect(false).assertEqual(true)
@@ -216,7 +217,8 @@ export default function AudioRendererInterruptUnitTest() {
                 await release(render2, done)
                 done()
             }
-            catch (err: BusinessError) {
+            catch (err) {
+                err = err as BusinessError;
                 console.info('SUB_MULTIMEDIA_AUDIO_RENDERER_INTERRUPT_TEST_0100 err is ' + err.message)
             }
 
@@ -3636,7 +3638,8 @@ export default function AudioRendererInterruptUnitTest() {
                 await release(render1, done)
                 await release(render2, done)
                 done()
-              } catch (err: BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 expect(false).assertTrue();
                 done()
               }

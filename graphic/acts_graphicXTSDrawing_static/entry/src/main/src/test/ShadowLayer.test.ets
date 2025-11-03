@@ -57,7 +57,8 @@ export default function shadowLayerTest() {
           alpha: 0xFF, red: 0x00, green: 0xFF, blue: 0x00
         });
         console.info(msg + ' create successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -68,7 +69,8 @@ export default function shadowLayerTest() {
         };
         drawing.ShadowLayer.create(50.2, 100.2, 100.1, color);
         console.info(msg + ' create successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -78,7 +80,8 @@ export default function shadowLayerTest() {
           alpha: 0xFF, red: 0x00, green: 0xFF, blue: 0x00
         });
         console.info(msg + ' create successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -107,7 +110,8 @@ export default function shadowLayerTest() {
           };
           drawing.ShadowLayer.create(randomRadius, randomOffsetX, randomOffsetY, randomColor);
           console.info(`${msg} create successed for iteration ${i}`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(`${msg} create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -129,7 +133,8 @@ export default function shadowLayerTest() {
         drawing.ShadowLayer.create(50, 100, 100, {
           alpha: -1, red: 255, green: 0, blue: 255
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -138,7 +143,8 @@ export default function shadowLayerTest() {
         drawing.ShadowLayer.create(50, 100, 100, {
           alpha: 256, red: 255, green: 0, blue: 255
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -147,7 +153,8 @@ export default function shadowLayerTest() {
         drawing.ShadowLayer.create(50, 100, 100, {
           alpha: 255, red: -2, green: 0, blue: 255
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -156,7 +163,8 @@ export default function shadowLayerTest() {
         drawing.ShadowLayer.create(50, 100, 100, {
           alpha: 255, red: 256, green: 0, blue: 255
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -165,7 +173,8 @@ export default function shadowLayerTest() {
         drawing.ShadowLayer.create(50, 100, 100, {
           alpha: 255, red: 255, green: 256, blue: 255
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -174,7 +183,8 @@ export default function shadowLayerTest() {
         drawing.ShadowLayer.create(50, 100, 100, {
           alpha: 255, red: 255, green: -1, blue: 255
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -183,7 +193,8 @@ export default function shadowLayerTest() {
         drawing.ShadowLayer.create(50, 100, 100, {
           alpha: 255, red: 255, green: 0, blue: -1
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -192,7 +203,8 @@ export default function shadowLayerTest() {
         drawing.ShadowLayer.create(50, 100, 100, {
           alpha: 255, red: 255, green: 0, blue: 256
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }

@@ -61,7 +61,8 @@ export default function bluetoothProfilesTest() {
                         hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
                         hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
                     });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + err);
             }
             await Utils.msSleep(2000);
@@ -74,7 +75,8 @@ export default function bluetoothProfilesTest() {
             try {
                 await Utils.openBluetooth();
                 hilog.info(domain, tag, '%{public}s', 'beforeEach end');
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag, '%{public}s', 'beforeEach get failed, err: ' + err);
             }
         })
@@ -91,7 +93,8 @@ export default function bluetoothProfilesTest() {
             try {
                 let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
                 expect(true).assertEqual(a2dpProfile != null);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "createA2dpSrcProfile get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -119,7 +122,8 @@ export default function bluetoothProfilesTest() {
                 let devices: Array<string> = a2dpProfile.getConnectedDevices();
                 hilog.info(domain, tag, "address of connected devices list:" + devices);
                 expect(true).assertEqual(devices != null);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectedDevices get errCode:" + err.code + ",errMessage:" + err.message);
                 expect(Number(err.code)).assertEqual(2900099);
@@ -142,7 +146,8 @@ export default function bluetoothProfilesTest() {
                 let state : baseProfile.ProfileConnectionState = a2dpProfile.getConnectionState(deviceId);
                 hilog.info(domain, tag, "the connection state:" + state);
                 expect(true).assertEqual(state == 0 || state == 1 || state == 2);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectionState get errCode:" + err.code + ",errMessage:" + err.message);
                 expect(Number(err.code)).assertEqual(2900099);
@@ -162,7 +167,8 @@ export default function bluetoothProfilesTest() {
             try {
                 let hfpProfile: hfp.HandsFreeAudioGatewayProfile = hfp.createHfpAgProfile();
                 expect(true).assertEqual(hfpProfile != null);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "createHfpAgProfile get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -190,7 +196,8 @@ export default function bluetoothProfilesTest() {
                 let devices : Array<string> = hfpProfile.getConnectedDevices();
                 hilog.info(domain, tag, "address of connected devices list:" + devices);
                 expect(true).assertEqual(devices != null);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectedDevices_001 get errCode:" + err.code + ",errMessage:" + err.message);
                 expect(Number(err.code)).assertEqual(2900099);
@@ -213,7 +220,8 @@ export default function bluetoothProfilesTest() {
                 let state : baseProfile.ProfileConnectionState = hfpProfile.getConnectionState(deviceId);
                 hilog.info(domain, tag, "the connection state:" + state);
                 expect(true).assertEqual(state == 0 || state == 1 || state == 2);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectionStateTest_001 get errCode:" + err.code + ",errMessage:" + err.message);
                 expect(Number(err.code)).assertEqual(2900099);
@@ -233,7 +241,8 @@ export default function bluetoothProfilesTest() {
             try {
                 let hidProfile: hid.HidHostProfile = hid.createHidHostProfile();
                 expect(true).assertEqual(hidProfile != null);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "createHidHostProfile get errCode:" + err.code + ",errMessage:" + err.message);
                 if (err.code == 801) {
@@ -261,7 +270,8 @@ export default function bluetoothProfilesTest() {
                 let devices : Array<string> = hidProfile.getConnectedDevices();
                 hilog.info(domain, tag, "address of connected devices list:" + devices);
                 expect(true).assertEqual(devices != null);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectedDevices_001 get errCode:" + err.code + ",errMessage:" + err.message);
                 expect(Number(err.code)).assertEqual(2900099);
@@ -284,7 +294,8 @@ export default function bluetoothProfilesTest() {
                 let state : baseProfile.ProfileConnectionState = hidProfile.getConnectionState(deviceId);
                 hilog.info(domain, tag, "the connection state:" + state);
                 expect(true).assertEqual(state == 0 || state == 1 || state == 2);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "getConnectionStateTest_002 get errCode:" + err.code + ",errMessage:" + err.message);
                 expect(Number(err.code)).assertEqual(2900099);
@@ -315,7 +326,8 @@ export default function bluetoothProfilesTest() {
                 expect(connectFromCar).assertEqual(3);
                 expect(tooManyConnectedDevices).assertEqual(4);
                 expect(connectFailInternal).assertEqual(5);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "DisconnectCause get errCode:" + err.code + ",errMessage:" + err.message);
                 expect(true).assertFalse();

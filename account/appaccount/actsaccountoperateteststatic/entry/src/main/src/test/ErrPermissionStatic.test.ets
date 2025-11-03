@@ -91,7 +91,8 @@ export default function ActsAccountErrPermissionStatic() {
           await accountManager.setDataSyncEnabled("syncenable_promise_setnopermission", true);
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>setDataSyncEnabled 0200 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(ERR_PERMISSION_DENIED);
           hilog.info(0x0000, tag, "====>delete account ActsAccountErrPermission_0200 start====");
@@ -156,7 +157,8 @@ export default function ActsAccountErrPermissionStatic() {
           await accountManager.checkDataSyncEnabled("syncenable_promise_checknopermission");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>checkDataSyncEnable 0400 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(ERR_PERMISSION_DENIED);
           await accountManager.removeAccount("syncenable_promise_checknopermission");
@@ -235,7 +237,8 @@ export default function ActsAccountErrPermissionStatic() {
           hilog.info(0x0000, tag, "====>getAllAccounts 0600 err: " + JSON.stringify(data));
           await accountManager.removeAccount("accessibleAccount_promise_nopermission");
           hilog.info(0x0000, tag, "====>ActsAccountErrPermission_0600 end====");
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>getAllAccounts 0600 err: " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -303,7 +306,8 @@ export default function ActsAccountErrPermissionStatic() {
           let data: Array<account.AppAccountInfo> = await accountManager.getAccountsByOwner(selfBundle);
           hilog.info(0x0000, tag, "====>getAll_promise_nopermission data: " + data);
           expect(data.length).assertLarger(0);
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>getAccountsByOwner 0800 err: " + JSON.stringify(err));
           expect(err.code).assertEqual(ERR_PERMISSION_DENIED);
           await accountManager.removeAccount("getAll_promise_nopermission");

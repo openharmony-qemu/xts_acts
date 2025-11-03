@@ -183,7 +183,8 @@ export default function audioVoip() {
             try {
                 audioRen = await audio.createAudioRenderer(AudioRendererOptions);
                 console.info(`${TagRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`${TagRender}: AudioRender Created : ERROR : ${err.message}`);
                 resultFlag = false;
                 return resultFlag;
@@ -303,7 +304,8 @@ export default function audioVoip() {
             try {
                 audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
                 console.info(`${TagRec}: AudioCapturer Created : Success : Stream Type: SUCCESS`);
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.info(`${TagRec}: AudioCapturer Created : ERROR : ${err.message}`);
                 resultFlag = false;
                 return resultFlag;

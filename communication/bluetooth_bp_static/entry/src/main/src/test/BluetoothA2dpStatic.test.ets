@@ -47,7 +47,8 @@ export default function bluetoothA2dpTest() {
                   hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
                   hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
               });
-      } catch (err: BusinessError) {
+      } catch (err) {
+          err = err as BusinessError;
           hilog.error(domain, tag, '%{public}s', 'get failed, err: ' + err);
       }
       await Utils.msSleep(2000);
@@ -60,7 +61,8 @@ export default function bluetoothA2dpTest() {
       try {
         await Utils.openBluetooth();
         hilog.info(domain, tag, '%{public}s', 'beforeEach end');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', 'beforeEach get failed, err: ' + err);
       }
     })
@@ -80,7 +82,8 @@ export default function bluetoothA2dpTest() {
         let state: a2dp.PlayingState = a2dpSrc.getPlayingState(deviceId);
         hilog.info(domain, tag, "getPlayingState:" + state);
         expect(true).assertEqual(state == a2dp.PlayingState.STATE_NOT_PLAYING || state == a2dp.PlayingState.STATE_PLAYING);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "getPlayingState get errCode:" + err.code + ",errMessage:" + err.message);
         if (err.code == 801 || err.code == 2900004) {
@@ -109,7 +112,8 @@ export default function bluetoothA2dpTest() {
         let STATE_NOT_PLAYING: a2dp.PlayingState = a2dp.PlayingState.STATE_NOT_PLAYING;
         hilog.info(domain, tag, "STATE_NOT_PLAYING:" + STATE_NOT_PLAYING);
         expect(true).assertEqual(STATE_NOT_PLAYING == 0);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "PlayingState get errCode:" + err.code + ",errMessage:" + err.message);
         expect().assertFail();
@@ -150,7 +154,8 @@ export default function bluetoothA2dpTest() {
         let STATE_CODEC_TYPE_LDAC: a2dp.CodecType = a2dp.CodecType.CODEC_TYPE_LDAC;
         hilog.info(domain, tag, "STATE_CODEC_TYPE_LDAC:" + STATE_CODEC_TYPE_LDAC);
         expect(true).assertEqual(STATE_CODEC_TYPE_LDAC == 4);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "CodecType get errCode:" + err.code + ",errMessage:" + err.message);
         expect().assertFail();
@@ -179,7 +184,8 @@ export default function bluetoothA2dpTest() {
         let STATE_CODEC_CHANNEL_MODE_STEREO: a2dp.CodecChannelMode = a2dp.CodecChannelMode.CODEC_CHANNEL_MODE_STEREO;
         hilog.info(domain, tag, "STATE_CODEC_CHANNEL_MODE_STEREO:" + STATE_CODEC_CHANNEL_MODE_STEREO);
         expect(true).assertEqual(STATE_CODEC_CHANNEL_MODE_STEREO == 2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "CodecChannelMode get errCode:" + err.code + ",errMessage:" + err.message);
         expect().assertFail();
@@ -212,7 +218,8 @@ export default function bluetoothA2dpTest() {
         let STATE_CODEC_BITS_PER_SAMPLE_32: a2dp.CodecBitsPerSample = a2dp.CodecBitsPerSample.CODEC_BITS_PER_SAMPLE_32;
         hilog.info(domain, tag, "STATE_CODEC_BITS_PER_SAMPLE_32:" + STATE_CODEC_BITS_PER_SAMPLE_32);
         expect(true).assertEqual(STATE_CODEC_BITS_PER_SAMPLE_32 == 3);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "CodecBitsPerSample get errCode:" + err.code + ",errMessage:" + err.message);
         expect().assertFail();
@@ -257,7 +264,8 @@ export default function bluetoothA2dpTest() {
         let STATE_CODEC_SAMPLE_RATE_192000: a2dp.CodecSampleRate = a2dp.CodecSampleRate.CODEC_SAMPLE_RATE_192000;
         hilog.info(domain, tag, "STATE_CODEC_SAMPLE_RATE_192000:" + STATE_CODEC_SAMPLE_RATE_192000);
         expect(true).assertEqual(STATE_CODEC_SAMPLE_RATE_192000 == 6);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, "get error:" + JSON.stringify(err));
         hilog.info(domain, tag, "CodecSampleRate get errCode:" + err.code + ",errMessage:" + err.message);
         expect().assertFail();

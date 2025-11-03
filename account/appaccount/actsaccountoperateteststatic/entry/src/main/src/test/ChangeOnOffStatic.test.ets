@@ -587,7 +587,8 @@ export default function ActsAccountOnOffStatic() {
               done();
             });
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setCustomData fail err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -665,7 +666,8 @@ export default function ActsAccountOnOffStatic() {
                 });
             });
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setAssociatedData fail err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -841,7 +843,8 @@ export default function ActsAccountOnOffStatic() {
               done();
             });
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setCustomData fail err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -944,7 +947,8 @@ export default function ActsAccountOnOffStatic() {
               accountManager.offAccountChange();
               expect().assertFail();
             });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>on ActsAccountChangeOnOff_1300 err:" + JSON.stringify(err));
         }
         hilog.info(0x0000, tag, "====>setCustomData start====");
@@ -964,7 +968,8 @@ export default function ActsAccountOnOffStatic() {
               done();
             });
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setCustomData fail err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -1011,7 +1016,8 @@ export default function ActsAccountOnOffStatic() {
               done();
             });
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>setCustomData fail err: " + JSON.stringify(err));
           expect().assertFail();
           done();

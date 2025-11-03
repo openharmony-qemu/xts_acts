@@ -110,7 +110,8 @@ export default function getAlbumsTest() {
             expect(false).assertTrue();
           });
         done();
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, `${testNum} failed, error code: ${error.code}`);
         expect(error.code === 13900020 || error.code === 401).assertTrue();
         done();

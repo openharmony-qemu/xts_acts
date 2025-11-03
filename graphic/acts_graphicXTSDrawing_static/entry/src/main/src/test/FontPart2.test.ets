@@ -66,7 +66,8 @@ export default function fontPart2Test() {
         let resultNumber: number = font.countText('ABCDE');
         expect(resultNumber == 5).assertTrue();
         console.info(msg + ' countTextText successed,resultNumber correct');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` countTextText errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -75,7 +76,8 @@ export default function fontPart2Test() {
         let resultNumber: number = font.countText('你好');
         expect(resultNumber == 2).assertTrue();
         console.info(msg + ' countTextText successed,resultNumber correct');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` countTextText errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -84,7 +86,8 @@ export default function fontPart2Test() {
         let resultNumber: number = font.countText('！@#￥2223@##');
         expect(resultNumber == 11).assertTrue();
         console.info(msg + ' countTextText successed,resultNumber correct');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` countTextText errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -93,7 +96,8 @@ export default function fontPart2Test() {
         let resultNumber: number = font.countText('魑魅魍魉');
         expect(resultNumber == 4).assertTrue();
         console.info(msg + ' countTextText successed,resultNumber correct');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` countTextText errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -102,7 +106,8 @@ export default function fontPart2Test() {
         let resultNumber: number = font.countText('');
         expect(resultNumber == 0).assertTrue();
         console.info(msg + ' countTextText successed,resultNumber correct');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` countTextText errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -124,7 +129,8 @@ export default function fontPart2Test() {
           let resultNumber: number = font.countText('ABCDE');
           expect(resultNumber == 5).assertTrue();
           console.info(msg + ' countTextText successed,resultNumber correct');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` countTextText errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -148,7 +154,8 @@ export default function fontPart2Test() {
         let edging: drawing.FontEdging | undefined= font.getEdging();
         expect(edging == drawing.FontEdging.ALIAS).assertTrue();
         console.info(msg + ' setAndGetEdging successed,GetEdging:' + edging);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetEdging errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -158,7 +165,8 @@ export default function fontPart2Test() {
         let edging: drawing.FontEdging | undefined= font.getEdging();
         expect(edging == drawing.FontEdging.ANTI_ALIAS).assertTrue();
         console.info(msg + ' setAndGetEdging successed,GetEdging:' + edging);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetEdging errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -168,7 +176,8 @@ export default function fontPart2Test() {
         let edging: drawing.FontEdging | undefined= font.getEdging();
         expect(edging == drawing.FontEdging.SUBPIXEL_ANTI_ALIAS).assertTrue();
         console.info(msg + ' setAndGetEdging successed,GetEdging:' + edging);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetEdging errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -196,7 +205,8 @@ export default function fontPart2Test() {
           let edging: drawing.FontEdging | undefined= font.getEdging();
           console.info(msg + ' setAndGetEdging successed,GetEdging:' + edging);
           expect(edging == itemList[randomEnum]).assertTrue();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setAndGetEdging errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -207,7 +217,8 @@ export default function fontPart2Test() {
         try {
           font.setEdging(itemList[randomEnum]);
           console.info(msg + ' setEdging successed');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setEdging errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -217,7 +228,8 @@ export default function fontPart2Test() {
         try {
           let edging: drawing.FontEdging | undefined= font.getEdging();
           console.info(msg + ' getEdging successed,GetEdging:' + edging);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` getEdging errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -240,7 +252,8 @@ export default function fontPart2Test() {
         let hinting: drawing.FontHinting | undefined= font.getHinting();
         expect(hinting == drawing.FontHinting.NONE).assertTrue();
         console.info(msg + ' setAndGetHinting successed,getHinting:' + hinting);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetHinting errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -250,7 +263,8 @@ export default function fontPart2Test() {
         let hinting: drawing.FontHinting | undefined= font.getHinting();
         expect(hinting == drawing.FontHinting.SLIGHT).assertTrue();
         console.info(msg + ' setAndGetHinting successed,getHinting:' + hinting);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetHinting errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -260,7 +274,8 @@ export default function fontPart2Test() {
         let hinting: drawing.FontHinting | undefined= font.getHinting();
         expect(hinting == drawing.FontHinting.NORMAL).assertTrue();
         console.info(msg + ' setAndGetHinting successed,getHinting:' + hinting);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetHinting errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -270,7 +285,8 @@ export default function fontPart2Test() {
         let hinting: drawing.FontHinting | undefined= font.getHinting();
         expect(hinting == drawing.FontHinting.FULL).assertTrue();
         console.info(msg + ' setAndGetHinting successed,getHinting:' + hinting);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetHinting errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -299,7 +315,8 @@ export default function fontPart2Test() {
           let hinting: drawing.FontHinting | undefined= font.getHinting()
           console.info(msg + ' setAndGetHinting successed,getHinting:' + hinting);
           expect(hinting == itemList[randomEnum]).assertTrue();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setAndGetHinting errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -310,7 +327,8 @@ export default function fontPart2Test() {
         try {
           font.setHinting(itemList[randomEnum]);
           console.info(msg + ' setHinting successed');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setHinting errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -320,7 +338,8 @@ export default function fontPart2Test() {
         try {
           let hinting: drawing.FontHinting | undefined= font.getHinting();
           console.info(msg + ' getHinting successed,getHinting:' + hinting);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` getHinting errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -343,7 +362,8 @@ export default function fontPart2Test() {
         let scaleX: number = font.getScaleX();
         expect(scaleX == 2).assertTrue();
         console.info(msg + ' setAndGetScaleX successed,getScaleX:' + scaleX);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetScaleX errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -353,7 +373,8 @@ export default function fontPart2Test() {
         let scaleX: number = font.getScaleX();
         expect(scaleX == 0.5).assertTrue();
         console.info(msg + ' setAndGetScaleX successed,getScaleX:' + scaleX);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetScaleX errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -363,7 +384,8 @@ export default function fontPart2Test() {
         let scaleX: number = font.getScaleX();
         expect(scaleX == 0).assertTrue();
         console.info(msg + ' setAndGetScaleX successed,getScaleX:' + scaleX);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetScaleX errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -373,7 +395,8 @@ export default function fontPart2Test() {
         let scaleX: number = font.getScaleX();
         expect(scaleX == -1).assertTrue();
         console.info(msg + ' setAndGetScaleX successed,getScaleX:' + scaleX);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetScaleX errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -395,7 +418,8 @@ export default function fontPart2Test() {
           font.setScaleX(Math.random() * Number.MAX_VALUE);
           let scaleX: number = font.getScaleX();
           console.info(msg + ' setAndGetScaleX successed,getScaleX:' + scaleX);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setAndGetScaleX errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -405,7 +429,8 @@ export default function fontPart2Test() {
         try {
           font.setScaleX(Math.random() * Number.MAX_VALUE);
           console.info(msg + ' setScaleX successed');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setScaleX errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -415,7 +440,8 @@ export default function fontPart2Test() {
         try {
           let scaleX: number = font.getScaleX();
           console.info(msg + ' getScaleX successed,getScaleX:' + scaleX);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` getScaleX errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -439,7 +465,8 @@ export default function fontPart2Test() {
         let skewX: number = font.getSkewX();
         expect(skewX == 2).assertTrue();
         console.info(msg + ' setAndGetSkewX successed,getSkewX:' + skewX);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetSkewX errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -449,7 +476,8 @@ export default function fontPart2Test() {
         let skewX: number = font.getSkewX();
         expect(skewX == 0.5).assertTrue();
         console.info(msg + ' setAndGetSkewX successed,getSkewX:' + skewX);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetSkewX errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -459,7 +487,8 @@ export default function fontPart2Test() {
         let skewX: number = font.getSkewX();
         expect(skewX == 0).assertTrue();
         console.info(msg + ' setAndGetSkewX successed,getSkewX:' + skewX);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetSkewX errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -469,7 +498,8 @@ export default function fontPart2Test() {
         let skewX: number = font.getSkewX();
         expect(skewX == -1).assertTrue();
         console.info(msg + ' setAndGetSkewX successed,getSkewX:' + skewX);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndGetSkewX errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -491,7 +521,8 @@ export default function fontPart2Test() {
           font.setSkewX(Math.random() * Number.MAX_VALUE);
           let skewX: number = font.getSkewX();
           console.info(msg + ' setAndGetSkewX successed,getSkewX:' + skewX);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setAndGetSkewX errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -501,7 +532,8 @@ export default function fontPart2Test() {
         try {
           font.setSkewX(Math.random() * Number.MAX_VALUE);
           console.info(msg + ' setSkewX successed');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setSkewX errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -511,7 +543,8 @@ export default function fontPart2Test() {
         try {
           let skewX: number = font.getSkewX();
           console.info(msg + ' getSkewX successed,getSkewX:' + skewX);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` getSkewX errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -535,7 +568,8 @@ export default function fontPart2Test() {
         let subpixel: boolean = font.isSubpixel();
         expect(subpixel == true).assertTrue();
         console.info(msg + ' enableSubpixel successed,isSubpixel:' + subpixel);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` enableSubpixel errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -545,7 +579,8 @@ export default function fontPart2Test() {
         let subpixel: boolean = font.isSubpixel();
         expect(subpixel == false).assertTrue();
         console.info(msg + ' enableSubpixel successed,isSubpixel:' + subpixel);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` enableSubpixel errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -568,7 +603,8 @@ export default function fontPart2Test() {
           let subpixel: boolean = font.isSubpixel();
           expect(subpixel == false).assertTrue();
           console.info(msg + ' isSubpixel successed,isSubpixel:' + subpixel);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` isSubpixel errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -592,7 +628,8 @@ export default function fontPart2Test() {
         let linearMetrics: boolean = font.isLinearMetrics();
         expect(linearMetrics == true).assertTrue();
         console.info(msg + ' enableLinearMetrics successed,isSubpixel:' + linearMetrics);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` enableLinearMetrics errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -602,7 +639,8 @@ export default function fontPart2Test() {
         let linearMetrics: boolean = font.isLinearMetrics();
         expect(linearMetrics == false).assertTrue();
         console.info(msg + ' enableLinearMetrics successed,isSubpixel:' + linearMetrics);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` enableLinearMetrics errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -625,7 +663,8 @@ export default function fontPart2Test() {
           let linearMetrics: boolean = font.isLinearMetrics();
           expect(linearMetrics == false).assertTrue();
           console.info(msg + ' isLinearMetrics successed,linearMetrics:' + linearMetrics);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` isLinearMetrics errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -649,7 +688,8 @@ export default function fontPart2Test() {
         let embolden: boolean = font.isEmbolden();
         expect(embolden == true).assertTrue();
         console.info(msg + ' enableEmbolden successed,embolden:' + embolden);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` enableEmbolden errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -659,7 +699,8 @@ export default function fontPart2Test() {
         let embolden: boolean = font.isEmbolden();
         expect(embolden == false).assertTrue();
         console.info(msg + ' enableEmbolden successed,embolden:' + embolden);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` enableEmbolden errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -682,7 +723,8 @@ export default function fontPart2Test() {
           let embolden: boolean = font.isEmbolden();
           expect(embolden == false).assertTrue();
           console.info(msg + ' isEmbolden successed,embolden:' + embolden);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` isEmbolden errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -705,7 +747,8 @@ export default function fontPart2Test() {
         let width: number = font.measureSingleCharacter("你");
         expect(width == 12).assertTrue();
         console.info(msg + ' measureSingleCharacter successed,width:' + width);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` measureSingleCharacter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -714,7 +757,8 @@ export default function fontPart2Test() {
         let width: number = font.measureSingleCharacter("A");
         expect(width == 8).assertTrue();
         console.info(msg + ' measureSingleCharacter successed,width:' + width);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` measureSingleCharacter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -723,7 +767,8 @@ export default function fontPart2Test() {
         let width: number = font.measureSingleCharacter("1");
         expect(width == 7).assertTrue();
         console.info(msg + ' measureSingleCharacter successed,width:' + width);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` measureSingleCharacter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -746,7 +791,8 @@ export default function fontPart2Test() {
         try {
           let width: number = font.measureSingleCharacter(randomString+ '')
           console.info(msg + ' measureSingleCharacter successed,width:' + width);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` measureSingleCharacter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -768,7 +814,8 @@ export default function fontPart2Test() {
       try {
         let width = font.measureSingleCharacter("");
         console.info(msg + ' measureSingleCharacter successed,width:' + width);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` measureSingleCharacter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -776,7 +823,8 @@ export default function fontPart2Test() {
       try {
         let width = font.measureSingleCharacter("abdcdefg");
         console.info(msg + ' measureSingleCharacter successed,width:' + width);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` measureSingleCharacter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -798,7 +846,8 @@ export default function fontPart2Test() {
         let baselineSnap: boolean = font.isBaselineSnap();
         expect(baselineSnap == true).assertTrue();
         console.info(msg + ' setAndIsBaselineSnap successed,baselineSnap:' + baselineSnap);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndIsBaselineSnap errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -808,7 +857,8 @@ export default function fontPart2Test() {
         let baselineSnap: boolean = font.isBaselineSnap();
         expect(baselineSnap == true).assertTrue();
         console.info(msg + ' setAndIsBaselineSnap successed,baselineSnap:' + baselineSnap);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndIsBaselineSnap errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -818,7 +868,8 @@ export default function fontPart2Test() {
         let baselineSnap: boolean = font.isBaselineSnap();
         expect(baselineSnap == false).assertTrue();
         console.info(msg + ' setAndIsBaselineSnap successed,baselineSnap:' + baselineSnap);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndIsBaselineSnap errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -841,7 +892,8 @@ export default function fontPart2Test() {
           font.setBaselineSnap(randomBoolean);
           let baselineSnap: boolean = font.isBaselineSnap();
           console.info(msg + ' setAndIsBaselineSnap successed,baselineSnap:' + baselineSnap);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setAndIsBaselineSnap errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -852,7 +904,8 @@ export default function fontPart2Test() {
           const randomBoolean = Math.random() < 0.5;
           font.setBaselineSnap(randomBoolean);
           console.info(msg + ' setBaselineSnap successed');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setBaselineSnap errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -862,7 +915,8 @@ export default function fontPart2Test() {
         try {
           let baselineSnap: boolean = font.isBaselineSnap();
           console.info(msg + ' isBaselineSnap successed,baselineSnap:' + baselineSnap);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` isBaselineSnap errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -885,7 +939,8 @@ export default function fontPart2Test() {
         let forceAutoHinting: boolean = font.isForceAutoHinting();
         expect(forceAutoHinting == false).assertTrue();
         console.info(msg + ' SetAndIsForceAutoHinting successed,isForceAutoHinting:' + forceAutoHinting);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` SetAndIsForceAutoHinting errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -895,7 +950,8 @@ export default function fontPart2Test() {
         let forceAutoHinting: boolean = font.isForceAutoHinting();
         expect(forceAutoHinting == true).assertTrue();
         console.info(msg + ' SetAndIsForceAutoHinting successed,isForceAutoHinting:' + forceAutoHinting);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` SetAndIsForceAutoHinting errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -905,7 +961,8 @@ export default function fontPart2Test() {
         let forceAutoHinting: boolean = font.isForceAutoHinting();
         expect(forceAutoHinting == false).assertTrue();
         console.info(msg + ' SetAndIsForceAutoHinting successed,isForceAutoHinting:' + forceAutoHinting);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` SetAndIsForceAutoHinting errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -928,7 +985,8 @@ export default function fontPart2Test() {
           font.setForceAutoHinting(randomBoolean);
           let forceAutoHinting: boolean = font.isForceAutoHinting();
           console.info(msg + ' setAndIsForceAutoHinting successed,forceAutoHinting:' + forceAutoHinting);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setAndIsForceAutoHinting errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -939,7 +997,8 @@ export default function fontPart2Test() {
           const randomBoolean = Math.random() < 0.5;
           font.setForceAutoHinting(randomBoolean);
           console.info(msg + ' setForceAutoHinting successed');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setForceAutoHinting errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -949,7 +1008,8 @@ export default function fontPart2Test() {
         try {
           let forceAutoHinting: boolean = font.isForceAutoHinting();
           console.info(msg + ' isForceAutoHinting successed,forceAutoHinting:' + forceAutoHinting);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` isForceAutoHinting errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -972,7 +1032,8 @@ export default function fontPart2Test() {
         let embeddedBitmaps: boolean = font.isEmbeddedBitmaps();
         expect(embeddedBitmaps == false).assertTrue();
         console.info(msg + ' isEmbeddedBitmaps successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` isEmbeddedBitmaps errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -982,7 +1043,8 @@ export default function fontPart2Test() {
         let embeddedBitmaps: boolean = font.isEmbeddedBitmaps();
         expect(embeddedBitmaps == true).assertTrue();
         console.info(msg + ' setAndIsEmbeddedBitmaps successed,embeddedBitmaps:' + embeddedBitmaps);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndIsEmbeddedBitmaps errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -992,7 +1054,8 @@ export default function fontPart2Test() {
         let embeddedBitmaps: boolean = font.isEmbeddedBitmaps();
         expect(embeddedBitmaps == false).assertTrue();
         console.info(msg + ' setAndIsEmbeddedBitmaps successed,embeddedBitmaps:' + embeddedBitmaps);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` setAndIsEmbeddedBitmaps errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -1015,7 +1078,8 @@ export default function fontPart2Test() {
           font.setEmbeddedBitmaps(randomBoolean);
           let embeddedBitmaps: boolean = font.isEmbeddedBitmaps();
           console.info(msg + ' setAndIsEmbeddedBitmaps successed,embeddedBitmaps:' + embeddedBitmaps);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setAndIsEmbeddedBitmaps errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -1026,7 +1090,8 @@ export default function fontPart2Test() {
           const randomBoolean = Math.random() < 0.5;
           font.setEmbeddedBitmaps(randomBoolean);
           console.info(msg + ' setEmbeddedBitmaps successed');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` setEmbeddedBitmaps errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -1036,7 +1101,8 @@ export default function fontPart2Test() {
         try {
           let embeddedBitmaps: boolean = font.isEmbeddedBitmaps();
           console.info(msg + ' isEmbeddedBitmaps successed,embeddedBitmaps:' + embeddedBitmaps);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` isEmbeddedBitmaps errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }

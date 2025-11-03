@@ -64,7 +64,8 @@ export default function drawingTsCanvasTest() {
       try {
         new drawing.Canvas(pixel);
         console.info(msg + 'canvasConstructor successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `canvasConstructor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -85,7 +86,8 @@ export default function drawingTsCanvasTest() {
           new drawing.Canvas(pixel);
         }
         console.info(msg + 'canvasConstructor successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `canvasConstructor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -134,7 +136,8 @@ export default function drawingTsCanvasTest() {
         });
         canvas.detachPen();
         console.info(msg + 'drawRect successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -164,7 +167,8 @@ export default function drawingTsCanvasTest() {
         }
         canvas.detachPen();
         console.info(msg + 'drawRect successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -191,7 +195,8 @@ export default function drawingTsCanvasTest() {
         canvas.drawCircle(10.1, 10.1, 100.1);
         canvas.detachPen();
         console.info(msg + 'drawCircle successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawCircle errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -219,7 +224,8 @@ export default function drawingTsCanvasTest() {
         }
         canvas.detachPen();
         console.info(msg + 'drawCircle successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawCircle errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -242,7 +248,8 @@ export default function drawingTsCanvasTest() {
         canvas.drawImage(pixel, 100.2, 100.2, new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_LINEAR));
         canvas.drawImage(pixel, -100.2, -100, new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_LINEAR));
         console.info(msg + 'drawImage successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImage errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -261,7 +268,8 @@ export default function drawingTsCanvasTest() {
       try {
         canvas.drawImage(pixel, 100, 100, undefined);
         console.info(msg + 'drawImage successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImage errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -284,7 +292,8 @@ export default function drawingTsCanvasTest() {
             new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_NEAREST));
           console.info(msg + 'drawImage successed');
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImage errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -333,56 +342,64 @@ export default function drawingTsCanvasTest() {
         canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.COLOR);
         canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.LUMINOSITY);
         console.info(msg + 'drawColor successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try{
         canvas.drawColor(100, drawing.BlendMode.CLEAR);
         console.info(msg + 'drawColor 2 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawColor 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try{
         canvas.drawColor(2, drawing.BlendMode.CLEAR);
         console.info(msg + 'drawColor 3 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawColor 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try{
         canvas.drawColor(60000, drawing.BlendMode.CLEAR);
         console.info(msg + 'drawColor 4 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawColor 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try{
         canvas.drawColor(100);
         console.info(msg + 'drawColor 5 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawColor 5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try{
         canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF});
         console.info(msg + 'drawColor 6 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawColor 6 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try{
         canvas.drawColor(255, 0, 10, 10);
         console.info(msg + 'drawColor 7 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawColor 7 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try{
         canvas.drawColor(255, 0, 10, 10, drawing.BlendMode.CLEAR);
         console.info(msg + 'drawColor 8 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawColor 8 is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -401,7 +418,8 @@ export default function drawingTsCanvasTest() {
       try {
         canvas.drawColor({ alpha: 0x00, red: 0x00, green: 0x00, blue: 0x00}, undefined);
         console.info(msg + 'drawColor successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -428,7 +446,8 @@ export default function drawingTsCanvasTest() {
           canvas.drawColor(color, drawing.BlendMode.EXCLUSION);
         }
         console.info(msg + 'drawColor successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -448,7 +467,8 @@ export default function drawingTsCanvasTest() {
         canvas.drawColor({ alpha: -1, red: 0xFF, green: 0xFF, blue: 0xFF}, drawing.BlendMode.CLEAR);
         console.info(msg + 'drawColor successed');
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -456,7 +476,8 @@ export default function drawingTsCanvasTest() {
         canvas.drawColor({ alpha: 0xFF, red: -1, green: 0xFF, blue: 0xFF}, drawing.BlendMode.CLEAR);
         console.info(msg + 'drawColor successed');
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -464,7 +485,8 @@ export default function drawingTsCanvasTest() {
         canvas.drawColor({ alpha: 0xFF, red: 0xFF, green: -1, blue: 0xFF}, drawing.BlendMode.CLEAR);
         console.info(msg + 'drawColor successed');
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -472,7 +494,8 @@ export default function drawingTsCanvasTest() {
         canvas.drawColor({ alpha: 0xFF, red: 0xFF, green: 0xFF, blue: -1}, drawing.BlendMode.CLEAR);
         console.info(msg + 'drawColor successed');
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -480,7 +503,8 @@ export default function drawingTsCanvasTest() {
         canvas.drawColor({ alpha: 256, red: 0xFF, green: 0xFF, blue: 0xFF}, drawing.BlendMode.CLEAR);
         console.info(msg + 'drawColor successed');
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -488,7 +512,8 @@ export default function drawingTsCanvasTest() {
         canvas.drawColor({ alpha: 0xFF, red: 256, green: 0xFF, blue: 0xFF}, drawing.BlendMode.CLEAR);
         console.info(msg + 'drawColor successed');
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -496,7 +521,8 @@ export default function drawingTsCanvasTest() {
         canvas.drawColor({ alpha: 0xFF, red: 0xFF, green: 256, blue: 0xFF}, drawing.BlendMode.CLEAR);
         console.info(msg + 'drawColor successed');
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -504,7 +530,8 @@ export default function drawingTsCanvasTest() {
         canvas.drawColor({ alpha: 0xFF, red: 0xFF, green: 0xFF, blue: 256}, drawing.BlendMode.CLEAR);
         console.info(msg + 'drawColor successed');
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -530,7 +557,8 @@ export default function drawingTsCanvasTest() {
         canvas.drawPixelMapMesh(pixel, 1, 1, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180], 1 , [0xFFFFFFFF,0xFFEFFFFF,0xFFFFEFFF,0xFFFFFFEF,0xFFFFFF00], 1);
         canvas.detachBrush();
         console.info(msg + 'drawPixelMapMesh successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -553,7 +581,8 @@ export default function drawingTsCanvasTest() {
         canvas.drawPixelMapMesh(pixel, 2, 2, verts, 0, [0xFFFFFFFF,0xFFEFFFFF,0xFFFFEFFF,0xFFFFFFEF,0xFFFFFF00,0xFFEFFFF,0xFFEFFFF,0xFFEFFFF,0xFFEFFFF], 0);
         canvas.detachBrush();
         console.info(msg + 'drawPixelMapMesh 1 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawPixelMapMesh 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -563,7 +592,8 @@ export default function drawingTsCanvasTest() {
         canvas.drawPixelMapMesh(pixel, 2, 2, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], 0, [], 0);
         canvas.detachBrush();
         console.info(msg + 'drawPixelMapMesh 2 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawPixelMapMesh 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -588,7 +618,8 @@ export default function drawingTsCanvasTest() {
         }
         canvas.detachBrush();
         console.info(msg + 'drawPixelMapMesh successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -614,7 +645,8 @@ export default function drawingTsCanvasTest() {
         canvas.drawPoint(-10, -10);
         canvas.detachPen();
         console.info(msg + 'drawPoint successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawPoint errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -640,7 +672,8 @@ export default function drawingTsCanvasTest() {
         }
         canvas.detachPen();
         console.info(msg + 'drawPoint successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawPoint errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -668,7 +701,8 @@ export default function drawingTsCanvasTest() {
         canvas.drawPath(path);
         canvas.detachPen();
         console.info(msg + 'drawPath successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -698,7 +732,8 @@ export default function drawingTsCanvasTest() {
         }
         canvas.detachPen();
         console.info(msg + 'drawPath successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -725,7 +760,8 @@ export default function drawingTsCanvasTest() {
         canvas.drawLine(10, 15, -10, -10);
         canvas.detachPen();
         console.info(msg + 'drawLine successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawLine errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -751,7 +787,8 @@ export default function drawingTsCanvasTest() {
         }
         canvas.detachPen();
         console.info(msg + 'drawLine successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawLine errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }

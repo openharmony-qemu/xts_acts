@@ -62,7 +62,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
           }
         }
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -92,7 +93,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
           }
         }
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -125,7 +127,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let keyPair: cryptoFramework.KeyPair = generator.convertPemKeySync(pubKey, priKey);
         keyPair.priKey.clearMem();
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`“${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -157,7 +160,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
           keyPair.priKey.clearMem();
         }
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -189,7 +193,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
           keyPair.priKey.clearMem();
         }
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -218,7 +223,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
           keyPair.priKey.clearMem();
         }
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -247,7 +253,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
           keyPair.priKey.clearMem();
         }
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -276,7 +283,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
           keyPair.priKey.clearMem();
         }
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -305,7 +313,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
           keyPair.priKey.clearMem();
         }
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -337,7 +346,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
           keyPair.priKey.clearMem();
         }
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -369,7 +379,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
           keyPair.priKey.clearMem();
         }
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -401,7 +412,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
           keyPair.priKey.clearMem();
         }
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -438,7 +450,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
           expect(ret).assertTrue();
         }
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -458,19 +471,22 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
       let generator: cryptoFramework.AsyKeyGenerator;
       try {
         generator = cryptoFramework.createAsyKeyGenerator(algName);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} createAsyKeyGenerator “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
       try {
         await generator.convertPemKey(null, null);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} convertPemKey “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
       try {
         generator.convertPemKeySync(null, null);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} convertPemKeySync “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(401);
       }
@@ -499,7 +515,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let ret: boolean = commonUtils.compareDataBlob(secretA, secretB);
         keyPair.priKey.clearMem();
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -532,7 +549,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let ret = await verify.verify(msg, dataSign);
         keyPair.priKey.clearMem();
         expect(ret).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -558,7 +576,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         generator.convertPemKeySync(data.pubKey, data.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -584,7 +603,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -610,7 +630,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -636,7 +657,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         generator.convertPemKeySync(data.pubKey, data.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -662,7 +684,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         generator.convertPemKeySync(data.pubKey, data.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -688,7 +711,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -714,7 +738,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -740,7 +765,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -766,7 +792,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -791,7 +818,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -817,7 +845,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         let keyPair: cryptoFramework.KeyPair = await generator.convertPemKey(data.pubKey, data.priKey);
         keyPair.priKey.clearMem();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -843,7 +872,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -869,7 +899,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -895,7 +926,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -921,7 +953,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -947,7 +980,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -973,7 +1007,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -999,7 +1034,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -1025,7 +1061,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -1052,7 +1089,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let keyPair: cryptoFramework.KeyPair = await generator.convertPemKey(data.pubKey, data.priKey);
         keyPair.priKey.clearMem();
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1078,7 +1116,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -1104,7 +1143,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
         expect(null).assertFail();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }
@@ -1129,7 +1169,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         }
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(null).assertFail();
       }
@@ -1155,7 +1196,8 @@ export default function SecurityCryptoFwDataBlobToPemTestUnit() {
         let generator: cryptoFramework.AsyKeyGenerator = cryptoFramework.createAsyKeyGenerator(algName);
         await generator.convertPemKey(data.pubKey, data.priKey);
         expect(null).assertNull();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${algName} “${error}“, error code: ${error.code}`);
         expect(error.code).assertEqual(17630001);
       }

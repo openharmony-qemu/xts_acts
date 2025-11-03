@@ -311,7 +311,8 @@ export default function graphicImagePixelMap2() {
             let staticMetadata = pixelMap.getMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA);
             console.info(`www data getMetadata:${staticMetadata}`);
             expect().assertFail();
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.error('www data pixelmap create failed' + error);
             console.error('www data pixelmap create failed' + JSON.stringify(error));
           }

@@ -54,7 +54,8 @@ export default function SetGetUserPropertyTest() {
         expect(userPropertyValue3 == propertyValue).assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserProperty01 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -78,7 +79,8 @@ export default function SetGetUserPropertyTest() {
         expect(userPropertyValue == "testUserProperty1").assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserProperty02 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -102,7 +104,8 @@ export default function SetGetUserPropertyTest() {
         expect(userPropertyValue == "").assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserProperty03 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();
@@ -124,7 +127,8 @@ export default function SetGetUserPropertyTest() {
         expect(false).assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserProperty04 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -150,7 +154,8 @@ export default function SetGetUserPropertyTest() {
         expect(false).assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserProperty05 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -173,7 +178,8 @@ export default function SetGetUserPropertyTest() {
         expect(false).assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserProperty06 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -198,7 +204,8 @@ export default function SetGetUserPropertyTest() {
         hiAppEvent.setUserProperty("testName", propertyValue)
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserProperty07 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -220,7 +227,8 @@ export default function SetGetUserPropertyTest() {
         expect(false).assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserProperty08 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -246,7 +254,8 @@ export default function SetGetUserPropertyTest() {
         expect(false).assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserProperty09 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();
@@ -269,7 +278,8 @@ export default function SetGetUserPropertyTest() {
         expect(false).assertTrue()
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `testSetGetUserProperty10 > error code: ${err.code}, error msg: ${err.message}`);
         expect(err.code == 401).assertTrue()
         done();

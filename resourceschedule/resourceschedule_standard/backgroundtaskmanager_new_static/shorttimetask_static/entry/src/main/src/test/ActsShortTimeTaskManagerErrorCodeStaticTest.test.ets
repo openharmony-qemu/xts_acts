@@ -69,7 +69,8 @@ export default function LongTimeTaskManagerErrorCodeStaticTest() {
           let time = delayInfo.actualDelayTime;
           console.info("SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_001 The requestId2 is: " + id);
           console.info("SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_001 The actualDelayTime2 is: " + time);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_001 requestSuspendDelay2 failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
         };
 
@@ -93,7 +94,8 @@ export default function LongTimeTaskManagerErrorCodeStaticTest() {
           let time = delayInfo.actualDelayTime;
           console.info("SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_001 The requestId4 is: " + id);
           console.info("SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_001 The actualDelayTime4 is: " + time);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_001 requestSuspendDelay4 failed. code is ${error.code} message is ${error.message}`);
           expect((error.code) as number).assertEqual(9900002);
           done();
@@ -188,7 +190,8 @@ export default function LongTimeTaskManagerErrorCodeStaticTest() {
         let id = 123;
         try {
           backgroundTaskManager.cancelSuspendDelay(id);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_RESOURCESCHEDULE_SHORTTIME_ERR_TASK_STATIC_XTS_004 cancelSuspendDelay failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
           expect((error.code)).assertEqual(9900001);
           done();

@@ -123,14 +123,16 @@ export default function imagePackToData() {
               expect(data != undefined).assertTrue();
               console.info(`${testNum} success`);
               done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+              error = error as BusinessError;
               console.log(`${testNum} error:` + JSON.stringify(error));
               expect().assertFail();
               done();
             };
           }
         }
-    } catch (error: BusinessError) {
+    } catch (error) {
+        error = error as BusinessError;
         console.log("createpixelmap error: " + JSON.stringify(error));
         expect().assertFail();
         done();
@@ -170,7 +172,8 @@ export default function imagePackToData() {
                 let data: ArrayBuffer = await imagePackerApi.packToData(pixelmap, packOpts);
                 expect(false).assertTrue();
                 done();
-            } catch(error: BusinessError)  {
+            } catch(error) {
+              error = error as BusinessError;
               console.log(`${testNum} error:` + JSON.stringify(error));
               console.log(`${testNum} error.code:` + error.code);
               expect(error.code == ERROR_CODE).assertTrue();
@@ -178,7 +181,8 @@ export default function imagePackToData() {
             };
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log("createpixelmap error: " + JSON.stringify(error));
         expect().assertFail();
         done();
@@ -209,7 +213,8 @@ export default function imagePackToData() {
               console.info(`${testNum} success`);
               expect(data != undefined).assertTrue();
               done();
-            } catch(error: BusinessError) {
+            } catch(error) {
+              error = error as BusinessError;
               await imagePackerApi.release();
               await imageSourceApi.release();
               console.log(`${testNum} error.code:` + error.code + ` error.message: ` + error.message);
@@ -247,7 +252,8 @@ export default function imagePackToData() {
               console.info(`${testNum} failed`);
               expect(data == undefined).assertTrue();
               done();
-            } catch(error: BusinessError) {
+            } catch(error) {
+              error = error as BusinessError;
               console.log(`${testNum} error.code:` + error.code + ` error.message: ` + error.message);
               expect(error.code == ERROR_CODE).assertTrue();
               done();

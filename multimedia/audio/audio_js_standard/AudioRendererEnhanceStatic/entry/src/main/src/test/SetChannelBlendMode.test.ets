@@ -83,7 +83,8 @@ export default function audioRendererTest() {
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info('AudioFrameworkRenderLog: AudioRender Created : catch ERROR : ' + error.code + error.message);
       }
     })
@@ -144,7 +145,8 @@ export default function audioRendererTest() {
         try {
           await audioRen.setVolume(inputVolume);
           console.info(`${Tag}: setVolume to 0.5 : Success`);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${Tag}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
         }
 
@@ -175,7 +177,8 @@ export default function audioRendererTest() {
         console.info(`${Tag}: setChannelBlendMode :SUCCESS`);
         expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag}: setChannelBlendMode : error ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -196,7 +199,8 @@ export default function audioRendererTest() {
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
         expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag}:  setChannelBlendMode : error ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -217,7 +221,8 @@ export default function audioRendererTest() {
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
         expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag}:  setChannelBlendMode : error ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -238,7 +243,8 @@ export default function audioRendererTest() {
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
         expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag}:  setChannelBlendMode : error ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -274,7 +280,8 @@ export default function audioRendererTest() {
           try {
             let data = await audio.createAudioRenderer(AudioRendererOptions);
             audioRender = data;
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.info(`${Tag}: createAudioRenderer : ${testConst.StreamUsage[index]} ERROR : ${err.message}, ${err.code}`);
           }
           let keysArray: audio.ChannelBlendMode[] = [
@@ -288,7 +295,8 @@ export default function audioRendererTest() {
               audioRender.setChannelBlendMode(keysArray[index])
               await Utils.msSleep(20);
             }
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${Tag}: setChannelBlendMode : ${testConst.StreamUsage[index]} error ${error.message}, ${error.code}`);
             expect(false).assertTrue();
             done();
@@ -304,7 +312,8 @@ export default function audioRendererTest() {
         }
         expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag}: setChannelBlendMode : error ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -325,7 +334,8 @@ export default function audioRendererTest() {
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
         await renderPlay();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag}:  setChannelBlendMode : error ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();

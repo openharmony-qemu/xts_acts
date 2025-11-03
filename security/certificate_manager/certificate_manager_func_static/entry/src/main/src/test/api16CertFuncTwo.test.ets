@@ -315,11 +315,13 @@ export default function api16CertFuncTestTwoUnit() {
         try {
           certManager.uninstallUserTrustedCertificateSync(certUri ?? "");
           hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0015 uninstallUserTrustedCertificateSync success`);
-        } catch (e:BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0015 error.code: ${e.code}, message: ${e.message}`);
           expect(null).assertFail();
         }
-      } catch (error:BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0015 error.code: ${error.code}, message: ${error.message}`);
         expect(null).assertFail();
       }
@@ -368,11 +370,13 @@ export default function api16CertFuncTestTwoUnit() {
         try {
           certManager.uninstallUserTrustedCertificateSync(certUri ?? "");
           hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0016 uninstallUserTrustedCertificateSync success`);
-        } catch (e:BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0016 error.code: ${e.code}, message: ${e.message}`);
           expect(null).assertFail();
         }
-      } catch (error:BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_InstallUserTrustedCertificates_Static_0016 error.code: ${error.code}, message: ${error.message}`);
         expect(null).assertFail();
       }
@@ -402,13 +406,15 @@ export default function api16CertFuncTestTwoUnit() {
         try {
           certManager.uninstallUserTrustedCertificateSync(certUri ?? "");
           hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0012 uninstallUserTrustedCertificateSync success');
-        } catch (e:BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0012 error.code: ${e.code}, message: ${e.message}`);
           expect(null).assertFail();
         }
         certManager.uninstallUserTrustedCertificateSync(certUri ?? "");
         expect(null).assertFail();
-      } catch (error:BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0012 error.code: ${error.code}, message: ${error.message}`);
         expect(error.code).assertEqual(certManager.CMErrorCode.CM_ERROR_NO_FOUND);
       }
@@ -441,14 +447,16 @@ export default function api16CertFuncTestTwoUnit() {
         try {
           certManager.uninstallUserTrustedCertificateSync(certUri1 ?? "");
           expect(null).assertFail();
-        } catch (e:BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0013 error.code: ${e.code}, message: ${e.message}`);
           expect(e.code).assertEqual(certManager.CMErrorCode.CM_ERROR_INVALID_PARAMS);
         }
         certManager.uninstallUserTrustedCertificateSync(certUri ?? "");
         hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0013 uninstallUserTrustedCertificateSync success');
 
-      } catch (error:BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0013 error.code: ${error.code}, message: ${error.message}`);
         expect(null).assertFail();
       }
@@ -480,11 +488,13 @@ export default function api16CertFuncTestTwoUnit() {
         try {
           certManager.uninstallUserTrustedCertificateSync(certUri ?? "");
           hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0014 uninstallUserTrustedCertificateSync success');
-        } catch (e:BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0014 error.code: ${e.code}, message: ${e.message}`);
           expect(null).assertFail();
         }
-      } catch (error:BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0014 error.code: ${error.code}, message: ${error.message}`);
         expect(null).assertFail();
       }
@@ -515,11 +525,13 @@ export default function api16CertFuncTestTwoUnit() {
         try {
           certManager.uninstallUserTrustedCertificateSync(certUri ?? "");
           hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0015 uninstallUserTrustedCertificateSync success');
-        } catch (e:BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0015 error.code: ${e.code}, message: ${e.message}`);
           expect(null).assertFail();
         }
-      } catch (error:BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0015 error.code: ${error.code}, message: ${error.message}`);
         expect(null).assertFail();
       }
@@ -544,7 +556,8 @@ export default function api16CertFuncTestTwoUnit() {
         try {
           await certManagerDialog.openUninstallCertificateDialog(context, certificateType, uir)
           expect(null).assertFail();
-        } catch (err:BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0015 error.code: ${err.code}, message: ${err.message}`);
           expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_OPERATION_FAILED);
         }
@@ -586,13 +599,15 @@ export default function api16CertFuncTestTwoUnit() {
               .catch(() =>{
               });
             expect(null).assertFail();
-          } catch (e:BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0015 error.code: ${e.code}, message: ${e.message}`);
             expect(e.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_OPERATION_FAILED);
           }
           certManager.uninstallUserTrustedCertificateSync(certUri ?? "");
           hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenUninstallCertificateDialog_Static_0014 uninstallUserTrustedCertificateSync success`);
-        } catch (error:BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_UninstallUserTrustedCertificate_Static_0015 error.code: ${error.code}, message: ${error.message}`);
           expect(null).assertFail();
         }
@@ -617,7 +632,8 @@ export default function api16CertFuncTestTwoUnit() {
         try {
           await certManagerDialog.openUninstallCertificateDialog(context, certificateType, uir);
           expect(null).assertFail();
-        } catch (err:BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenUninstallCertificateDialog_Static_0015 e.code ${err.code}`);
           expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_DEVICE_NOT_SUPPORTED);
         }
@@ -646,7 +662,8 @@ export default function api16CertFuncTestTwoUnit() {
         try {
           await certManagerDialog.openCertificateDetailDialog(context, caCert1, property)
           expect(null).assertFail();
-        } catch (err:BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenCertificateDialog_Static_0030 e.code ${err.code}`);
           expect(err.code).assertEqual(29700003);
         }
@@ -672,7 +689,8 @@ export default function api16CertFuncTestTwoUnit() {
         try {
           await certManagerDialog.openCertificateDetailDialog(context, caCert, property)
           expect(null).assertFail();
-        } catch (err:BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenCertificateDialog_Static_0010 e.code ${err.code}`);
           expect(err.code).assertEqual(certManagerDialog.CertificateDialogErrorCode.ERROR_DEVICE_NOT_SUPPORTED);
         }
@@ -700,7 +718,8 @@ export default function api16CertFuncTestTwoUnit() {
         try {
           await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, caCert1)
           expect(null).assertFail()
-        } catch (err:BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_OpenInstallCertificateDialogCertJsApi_Func_Static_0100 e.code ${err.code}`);
           expect(err.code).assertEqual(29700003);
         }
@@ -721,7 +740,8 @@ export default function api16CertFuncTestTwoUnit() {
       try {
         let result: certManager.CMResult = certManager.installUserTrustedCertificateSync(caCertp7b, certManager.CertScope.CURRENT_USER);
         expect(null).assertFail();
-      } catch (error:BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}s', `SUB_Security_CertManager_InstallCaCert_Static_0107 error.code: ${error.code}, message: ${error.message}`);
         expect(error.code == 17500003).assertTrue();
       }
@@ -748,7 +768,8 @@ export default function api16CertFuncTestTwoUnit() {
       try {
         await certManagerDialog.openCertificateDetailDialog(context, caCertp7b, property)
         expect(null).assertFail();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         if (err.code === 29700004) {
           done();
         } else {

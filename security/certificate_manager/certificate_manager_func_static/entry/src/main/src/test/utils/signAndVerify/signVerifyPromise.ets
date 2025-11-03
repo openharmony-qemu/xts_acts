@@ -30,7 +30,8 @@ namespace signVerifyPromise {
       await certManager.update(verifyHandle.handle, srcData);
       let verifyResult: certManager.CMResult = await certManager.finish(verifyHandle.handle, signResult.outData);
       return verifyResult;
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       hilog.error(domain, tag, '%{public}s', "[Promise]signVerifyNormalProcess catch err: " + err);
       throw err as Error;
     }
@@ -64,7 +65,8 @@ namespace signVerifyPromise {
         default:
           throw new Error("wrong parameter");
       }
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       hilog.error(domain, tag, '%{public}s', "[Promise]verifyAbortProcess catch err: " + err);
       throw err as Error;
     }
@@ -92,7 +94,8 @@ namespace signVerifyPromise {
         default:
           throw new Error("wrong parameter");
       }
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       hilog.error(domain, tag, '%{public}s', "[Promise]signAbortProcess catch err: " + err);
       throw err as Error;
     }

@@ -49,7 +49,8 @@ export default function changeDatetest() {
         cloudSync.registerChange(uri, false, onCallback1);
         cloudSync.unregisterChange(uri);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_IsDirectory_static_001 has failed for ' + e.message + ', code: ' + e.code)
         expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
       }
@@ -76,7 +77,8 @@ export default function changeDatetest() {
         cloudSync.unregisterChange(uri);
         fs.rmdirSync(dpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_IsDirectory_static_002 has failed for ' + e.message + ', code: ' + e.code);
         fs.rmdirSync(dpath);
         expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
@@ -108,7 +110,8 @@ export default function changeDatetest() {
         cloudSync.registerChange(uri, false, onCallback1);
         cloudSync.unregisterChange(uri);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'cloudSync_test_ChangeData_Uris_static_003 has failed for ' + e.message + ', code: ' + e.code);
         expect(e.code == 401 && e.message == 'The input parameter is invalid').assertTrue();
       }

@@ -36,7 +36,8 @@ export default function SecurityRandomSyncJsunit() {
         try {
           let dataBlob: cryptoFrameworks.DataBlob = rand.generateRandomSync(12);
           expect(dataBlob != null).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("RandomSync 0 catch error:" + err);
           console.log("[RandomSync]: 0 error code: 401");
           expect(null).assertFail();
@@ -63,7 +64,8 @@ export default function SecurityRandomSyncJsunit() {
         try {
           rand.generateRandomSync(0);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log("[RandomSync]: 0 error code: 401");
           expect(err.code).assertEqual(401);
         }
@@ -71,7 +73,8 @@ export default function SecurityRandomSyncJsunit() {
         try {
           rand.generateRandomSync(-1);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log("[RandomSync]: -1 error code: 401");
           expect(err.code).assertEqual(401);
         }

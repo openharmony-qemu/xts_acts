@@ -140,7 +140,8 @@ export default function imageGetImageProperty() {
           }
           expect(true).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           logger.log("getImageProperties failed error: " + error);
           expect(error.code == GET_PROPERTIES_ERROR_CODE).assertTrue();
           done();
@@ -177,7 +178,8 @@ export default function imageGetImageProperty() {
           logger.log('getImageProperty args ' + args + ": " + propsValue);
           expect(data == propsValue).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           logger.log("getImageProperty failed error: " + error.code);
           expect(false).assertTrue();
           done();
@@ -215,7 +217,8 @@ export default function imageGetImageProperty() {
           console.info(`${testNum} ${args} ` + data);
           expect(data == loopCase).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${testNum} error: ` + error);
           console.log(`${testNum} error: ` + JSON.stringify(error));
           expect(error.code == 62980149).assertTrue();
@@ -256,7 +259,8 @@ export default function imageGetImageProperty() {
           }
           expect(data[image.PropertyKey.GIF_LOOP_COUNT] == loopCase).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log(`${testNum} error: ` + error);
           console.log(`${testNum} error: ` + JSON.stringify(error));
           expect(error.code == 62980096).assertTrue();

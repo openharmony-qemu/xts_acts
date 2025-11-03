@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@ export default function ActsNotificationSystemAPITest() {
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
       await Utils.msSleep(2000)
-      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
 
@@ -67,10 +67,10 @@ export default function ActsNotificationSystemAPITest() {
       }
     };
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4100
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4100
-     * @tc.desc: test function publish takes userId
+    /**
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4100
+     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4100
+     * @tc.desc  test function publish takes userId
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -110,7 +110,8 @@ export default function ActsNotificationSystemAPITest() {
               done()
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -119,10 +120,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_Static_4100 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4200
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4200
-     * @tc.desc: test function publishAsBundle
+    /**
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4200
+     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4200
+     * @tc.desc  test function publishAsBundle
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -165,10 +166,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`Sub_Notification_Ans_Publish_Publish_Static_4200 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4300
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4300
-     * @tc.desc: test function publishAsBundle
+    /**
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_4300
+     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4300
+     * @tc.desc  test function publishAsBundle
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -214,10 +215,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`Sub_Notification_Ans_Publish_Publish_Static_4300 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Cancel_Static_0150
-     * @tc.name: Sub_Notification_Ans_Publish_Cancel_Static_0150
-     * @tc.desc: test function cancelAsBundle
+    /**
+     * @tc.number Sub_Notification_Ans_Publish_Cancel_Static_0150
+     * @tc.name Sub_Notification_Ans_Publish_Cancel_Static_0150
+     * @tc.desc  test function cancelAsBundle
      */
     it('Sub_Notification_Ans_Publish_Cancel_Static_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -240,10 +241,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_Static_0150 END`);
       })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Publish_Cancel_Static_0160
-    * @tc.name: Sub_Notification_Ans_Publish_Cancel_Static_0160
-    * @tc.desc: test function cancelAsBundle
+    /**
+    * @tc.number Sub_Notification_Ans_Publish_Cancel_Static_0160
+    * @tc.name Sub_Notification_Ans_Publish_Cancel_Static_0160
+    * @tc.desc  test function cancelAsBundle
     */
     it('Sub_Notification_Ans_Publish_Cancel_Static_0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -267,10 +268,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Cancel_Static_0160 END`);
       })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Slot_CreateSlot_Static_3550
-    * @tc.name: Sub_Notification_Ans_Slot_CreateSlot_Static_3550
-    * @tc.desc: test function addSlot
+    /**
+    * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_3550
+    * @tc.name Sub_Notification_Ans_Slot_CreateSlot_Static_3550
+    * @tc.desc  test function addSlot
     */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_3550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -299,10 +300,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Slot_CreateSlot_3550 END`)
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Enable_SetEnable_Static_0700
-     * @tc.name: Sub_Notification_Ans_Enable_SetEnable_Static_0700
-     * @tc.desc: test function setNotificationEnable
+    /**
+     * @tc.number Sub_Notification_Ans_Enable_SetEnable_Static_0700
+     * @tc.name Sub_Notification_Ans_Enable_SetEnable_Static_0700
+     * @tc.desc  test function setNotificationEnable
      */
     it('Sub_Notification_Ans_Enable_SetEnable_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -328,10 +329,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`Sub_Notification_Ans_Enable_SetEnable_Static_0700 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Enable_Query_Static_0100
-     * @tc.name: Sub_Notification_Ans_Enable_Query_Static_0100
-     * @tc.desc: test function isNotificationEnabled
+    /**
+     * @tc.number Sub_Notification_Ans_Enable_Query_Static_0100
+     * @tc.name Sub_Notification_Ans_Enable_Query_Static_0100
+     * @tc.desc  test function isNotificationEnabled
      */
     it('Sub_Notification_Ans_Enable_Query_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -357,10 +358,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`Sub_Notification_Ans_Enable_Query_Static_0100 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Enable_Query_Static_0200
-     * @tc.name: Sub_Notification_Ans_Enable_Query_Static_0200
-     * @tc.desc: test function isNotificationEnabled no parameter
+    /**
+     * @tc.number Sub_Notification_Ans_Enable_Query_Static_0200
+     * @tc.name Sub_Notification_Ans_Enable_Query_Static_0200
+     * @tc.desc  test function isNotificationEnabled no parameter
      */
     it('Sub_Notification_Ans_Enable_Query_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -381,10 +382,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Enable_Query_Static_0200 END`);
       })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Enable_Query_Static_0300
-    * @tc.name: Sub_Notification_Ans_Enable_Query_Static_0300
-    * @tc.desc: test function isNotificationEnabled take userId
+    /**
+    * @tc.number Sub_Notification_Ans_Enable_Query_Static_0300
+    * @tc.name Sub_Notification_Ans_Enable_Query_Static_0300
+    * @tc.desc  test function isNotificationEnabled take userId
     */
     it('Sub_Notification_Ans_Enable_Query_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -406,10 +407,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`Sub_Notification_Ans_Enable_Query_Static_0300 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Corner_Query_Static_0100
-     * @tc.name: Sub_Notification_Ans_Corner_Query_Static_0100
-     * @tc.desc: test function displayBadge
+    /**
+     * @tc.number Sub_Notification_Ans_Corner_Query_Static_0100
+     * @tc.name Sub_Notification_Ans_Corner_Query_Static_0100
+     * @tc.desc  test function displayBadge
      */
     it('Sub_Notification_Ans_Corner_Query_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -439,10 +440,10 @@ export default function ActsNotificationSystemAPITest() {
 
         console.info(`${TAG} Sub_Notification_Ans_Corner_Query_Static_0100 END`);
       })
-    /*
-     * @tc.number: Sub_Notification_Ans_Slot_CreateSlot_Static_3700
-     * @tc.name: Sub_Notification_Ans_Slot_CreateSlot_Static_3700
-     * @tc.desc: test function isBadgeDisplayed
+    /**
+     * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_3700
+     * @tc.name Sub_Notification_Ans_Slot_CreateSlot_Static_3700
+     * @tc.desc  test function isBadgeDisplayed
      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -473,11 +474,11 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`Sub_Notification_Ans_Slot_CreateSlot_Static_3700 END`);
       })
 
-    /*
-        * @tc.number: Sub_Notification_Ans_Slot_CreateSlot_Static_3850
-        * @tc.name: Sub_Notification_Ans_Slot_CreateSlot_Static_3850
-        * @tc.desc: test function setSlotByBundle
-        */
+    /**
+      * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Static_3850
+      * @tc.name Sub_Notification_Ans_Slot_CreateSlot_Static_3850
+      * @tc.desc  test function setSlotByBundle
+      */
     it('Sub_Notification_Ans_Slot_CreateSlot_Static_3850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'Sub_Notification_Ans_Slot_CreateSlot_Static_3850'
@@ -516,11 +517,11 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Slot_CreateSlot_Static_3850 END`);
       })
 
-    /*
-  * @tc.number: Sub_Notification_Ans_Slot_GetSlot_Static_0900
-  * @tc.name: Sub_Notification_Ans_Slot_GetSlot_Static_0900
-  * @tc.desc: test function getSlotsByBundle
-  */
+    /**
+      * @tc.number Sub_Notification_Ans_Slot_GetSlot_Static_0900
+      * @tc.name Sub_Notification_Ans_Slot_GetSlot_Static_0900
+      * @tc.desc  test function getSlotsByBundle
+      */
     it('Sub_Notification_Ans_Slot_GetSlot_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         let TAG = 'Sub_Notification_Ans_Slot_GetSlot_Static_0900'
@@ -551,10 +552,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`Sub_Notification_Ans_Slot_GetSlot_Static_0900 END`);
       })
 
-    /*
-      * @tc.number: Sub_Notification_Ans_Slot_GetSlot_Static_1000
-      * @tc.name: Sub_Notification_Ans_Slot_GetSlot_Static_1000
-      * @tc.desc: test function getSlotNumByBundle
+    /**
+      * @tc.number Sub_Notification_Ans_Slot_GetSlot_Static_1000
+      * @tc.name Sub_Notification_Ans_Slot_GetSlot_Static_1000
+      * @tc.desc  test function getSlotNumByBundle
       */
     it('Sub_Notification_Ans_Slot_GetSlot_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -586,10 +587,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Slot_GetSlot_Static_1000 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Search_Static_2000
-     * @tc.name: Sub_Notification_Ans_Distributed_Search_Static_2000
-     * @tc.desc: test function getAllActiveNotifications
+    /**
+     * @tc.number Sub_Notification_Ans_Distributed_Search_Static_2000
+     * @tc.name Sub_Notification_Ans_Distributed_Search_Static_2000
+     * @tc.desc  test function getAllActiveNotifications
      */
     it('Sub_Notification_Ans_Distributed_Search_Static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -610,10 +611,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`Sub_Notification_Ans_Distributed_Search_Static_2000 END`);
       })
 
-    /*
-        * @tc.number: Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0100
-        * @tc.name: Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0100
-        * @tc.desc: test function removeGroupByBundle
+    /**
+        * @tc.number Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0100
+        * @tc.name Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0100
+        * @tc.desc  test function removeGroupByBundle
         */
     it('Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -639,10 +640,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0100 END`);
       })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_NoDistrub_SetTime_Static_0100
-    * @tc.name: Sub_Notification_Ans_NoDistrub_SetTime_Static_0100
-    * @tc.desc: test function setDoNotDisturbDate
+    /**
+    * @tc.number Sub_Notification_Ans_NoDistrub_SetTime_Static_0100
+    * @tc.name Sub_Notification_Ans_NoDistrub_SetTime_Static_0100
+    * @tc.desc  test function setDoNotDisturbDate
     */
     it('Sub_Notification_Ans_NoDistrub_SetTime_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -674,10 +675,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_NoDistrub_SetTime_Static_0100 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_NoDistrub_SetTime_Static_0200
-     * @tc.name: Sub_Notification_Ans_NoDistrub_SetTime_Static_0200
-     * @tc.desc: test function setDoNotDisturbDate take userId
+    /**
+     * @tc.number Sub_Notification_Ans_NoDistrub_SetTime_Static_0200
+     * @tc.name Sub_Notification_Ans_NoDistrub_SetTime_Static_0200
+     * @tc.desc  test function setDoNotDisturbDate take userId
      */
     it('Sub_Notification_Ans_NoDistrub_SetTime_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -709,10 +710,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_NoDistrub_SetTime_Static_0200 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_NoDistrub_GetTime_Static_0100
-     * @tc.name: Sub_Notification_Ans_NoDistrub_GetTime_Static_0100
-     * @tc.desc: test function getDoNotDisturbDate
+    /**
+     * @tc.number Sub_Notification_Ans_NoDistrub_GetTime_Static_0100
+     * @tc.name Sub_Notification_Ans_NoDistrub_GetTime_Static_0100
+     * @tc.desc  test function getDoNotDisturbDate
      */
     it('Sub_Notification_Ans_NoDistrub_GetTime_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -740,10 +741,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_NoDistrub_GetTime_Static_0100 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_NoDistrub_GetTime_Static_0200
-     * @tc.name: Sub_Notification_Ans_NoDistrub_GetTime_Static_0200
-     * @tc.desc: test function getDoNotDisturbDate take userId
+    /**
+     * @tc.number Sub_Notification_Ans_NoDistrub_GetTime_Static_0200
+     * @tc.name Sub_Notification_Ans_NoDistrub_GetTime_Static_0200
+     * @tc.desc  test function getDoNotDisturbDate take userId
      */
     it('Sub_Notification_Ans_NoDistrub_GetTime_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -771,10 +772,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_NoDistrub_GetTime_Static_0200 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_NoDistrub_Query_Static_0100
-     * @tc.name: Sub_Notification_Ans_NoDistrub_Query_Static_0100
-     * @tc.desc: test function isSupportDoNotDisturbMode
+    /**
+     * @tc.number Sub_Notification_Ans_NoDistrub_Query_Static_0100
+     * @tc.name Sub_Notification_Ans_NoDistrub_Query_Static_0100
+     * @tc.desc  test function isSupportDoNotDisturbMode
      */
     it('Sub_Notification_Ans_NoDistrub_Query_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -801,10 +802,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_NoDistrub_Query_0100 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Enable_Static_4300
-     * @tc.name: Sub_Notification_Ans_Distributed_Enable_Static_4300
-     * @tc.desc: test function setDistributedEnable
+    /**
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_Static_4300
+     * @tc.name Sub_Notification_Ans_Distributed_Enable_Static_4300
+     * @tc.desc  test function setDistributedEnable
      */
     it('Sub_Notification_Ans_Distributed_Enable_Static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -831,10 +832,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_4300 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Enable_Static_4400
-     * @tc.name: Sub_Notification_Ans_Distributed_Enable_Static_4400
-     * @tc.desc: test function setDistributedEnableByBundle
+    /**
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_Static_4400
+     * @tc.name Sub_Notification_Ans_Distributed_Enable_Static_4400
+     * @tc.desc  test function setDistributedEnableByBundle
      */
     it('Sub_Notification_Ans_Distributed_Enable_Static_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -864,10 +865,10 @@ export default function ActsNotificationSystemAPITest() {
 
         console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_4400 END`);
       })
-    /*
-    * @tc.number: Sub_Notification_Ans_Distributed_Enable_Static_4500
-    * @tc.name: Sub_Notification_Ans_Distributed_Enable_Static_4500
-    * @tc.desc: test function isDistributedEnabledByBundle
+    /**
+    * @tc.number Sub_Notification_Ans_Distributed_Enable_Static_4500
+    * @tc.name Sub_Notification_Ans_Distributed_Enable_Static_4500
+    * @tc.desc  test function isDistributedEnabledByBundle
     */
     it('Sub_Notification_Ans_Distributed_Enable_Static_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -898,10 +899,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_4500 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Enable_SetEnable_Static_9500
-     * @tc.name: Sub_Notification_Ans_Enable_SetEnable_Static_9500
-     * @tc.desc: test function getDeviceRemindType
+    /**
+     * @tc.number Sub_Notification_Ans_Enable_SetEnable_Static_9500
+     * @tc.name Sub_Notification_Ans_Enable_SetEnable_Static_9500
+     * @tc.desc  test function getDeviceRemindType
      */
     it('Sub_Notification_Ans_Enable_SetEnable_Static_9500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -929,10 +930,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_9500 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Enable_SetEnable_Static_9600
-     * @tc.name: Sub_Notification_Ans_Enable_SetEnable_Static_9600
-     * @tc.desc: test function setNotificationEnableSlot
+    /**
+     * @tc.number Sub_Notification_Ans_Enable_SetEnable_Static_9600
+     * @tc.name Sub_Notification_Ans_Enable_SetEnable_Static_9600
+     * @tc.desc  test function setNotificationEnableSlot
      */
     it('Sub_Notification_Ans_Enable_SetEnable_Static_9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -964,10 +965,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`Sub_Notification_Ans_Enable_SetEnable_Static_9600 END`);
       })
 
-    /*
-        * @tc.number: Sub_Notification_Ans_Enable_SetEnable_Static_9700
-        * @tc.name: Sub_Notification_Ans_Enable_SetEnable_Static_9700
-        * @tc.desc: test function isNotificationSlotEnabled
+    /**
+        * @tc.number Sub_Notification_Ans_Enable_SetEnable_Static_9700
+        * @tc.name Sub_Notification_Ans_Enable_SetEnable_Static_9700
+        * @tc.desc  test function isNotificationSlotEnabled
         */
     it('Sub_Notification_Ans_Enable_SetEnable_Static_9700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -999,10 +1000,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_Static_9700 END`);
       })
 
-    /*
-      * @tc.number: Sub_Notification_Ans_Enable_SetEnable_Static_0800
-      * @tc.name: Sub_Notification_Ans_Enable_SetEnable_Static_0800
-      * @tc.desc: test function setSyncNotificationEnabledWithoutApp
+    /**
+      * @tc.number Sub_Notification_Ans_Enable_SetEnable_Static_0800
+      * @tc.name Sub_Notification_Ans_Enable_SetEnable_Static_0800
+      * @tc.desc  test function setSyncNotificationEnabledWithoutApp
       */
     it('Sub_Notification_Ans_Enable_SetEnable_Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1029,10 +1030,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_0800 END`);
       })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Enable_SetEnable_Static_9800
-    * @tc.name: Sub_Notification_Ans_Enable_SetEnable_Static_9800
-    * @tc.desc: test function getSyncNotificationEnabledWithoutApp
+    /**
+    * @tc.number Sub_Notification_Ans_Enable_SetEnable_Static_9800
+    * @tc.name Sub_Notification_Ans_Enable_SetEnable_Static_9800
+    * @tc.desc  test function getSyncNotificationEnabledWithoutApp
     */
     it('Sub_Notification_Ans_Enable_SetEnable_Static_9800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1054,10 +1055,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_9800 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_Static_0100
-     * @tc.name: Sub_Notification_Ans_Subscriber_Subscribe_Static_0100
-     * @tc.desc: test function subscribe
+    /**
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_Static_0100
+     * @tc.name Sub_Notification_Ans_Subscriber_Subscribe_Static_0100
+     * @tc.desc  test function subscribe
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1079,10 +1080,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`Sub_Notification_Ans_Subscriber_Subscribe_Static_0100 END`);
       });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_Static_0200
-     * @tc.name: Sub_Notification_Ans_Subscriber_Subscribe_Static_0200
-     * @tc.desc: test function subscribe take NotificationSubscribeInfo
+    /**
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_Static_0200
+     * @tc.name Sub_Notification_Ans_Subscriber_Subscribe_Static_0200
+     * @tc.desc  test function subscribe take NotificationSubscribeInfo
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1108,10 +1109,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_Static_0200 END`);
       });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Subscribe_Static_0300
-     * @tc.name: Sub_Notification_Ans_Subscriber_Subscribe_Static_0300
-     * @tc.desc: test function subscribe take NotificationSubscribeInfo
+    /**
+     * @tc.number Sub_Notification_Ans_Subscriber_Subscribe_Static_0300
+     * @tc.name Sub_Notification_Ans_Subscriber_Subscribe_Static_0300
+     * @tc.desc  test function subscribe take NotificationSubscribeInfo
      */
     it('Sub_Notification_Ans_Subscriber_Subscribe_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1136,10 +1137,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Subscriber_Subscribe_Static_0300 END`);
       });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0100
-     * @tc.name: Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0100
-     * @tc.desc: test function unsubscribe
+    /**
+     * @tc.number Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0100
+     * @tc.name Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0100
+     * @tc.desc  test function unsubscribe
      */
     it('Sub_Notification_Ans_Subscriber_Unsubscribe_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1160,11 +1161,11 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Subscriber_Unsubscribe_0100 END`)
       })
 
-    /*
-         * @tc.number: Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0200
-         * @tc.name: Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0200
-         * @tc.desc: test function remove
-         */
+    /**
+    * @tc.number Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0200
+    * @tc.name Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0200
+    * @tc.desc  test function remove
+    */
     it('Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         let TAG = 'Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0200'
@@ -1192,10 +1193,10 @@ export default function ActsNotificationSystemAPITest() {
 
         console.info(`Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0200 END`);
       })
-    /*
-     * @tc.number: Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0300
-     * @tc.name: Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0300
-     * @tc.desc: test function remove
+    /**
+     * @tc.number Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0300
+     * @tc.name Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0300
+     * @tc.desc  test function remove
      */
     it('Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1217,10 +1218,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0300 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0400
-     * @tc.name: Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0400
-     * @tc.desc: test function removeAll take bundle
+    /**
+     * @tc.number Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0400
+     * @tc.name Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0400
+     * @tc.desc  test function removeAll take bundle
      */
     it('Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1246,10 +1247,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0400 END`);
       })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0500
-    * @tc.name: Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0500
-    * @tc.desc: test function removeAll
+    /**
+    * @tc.number Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0500
+    * @tc.name Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0500
+    * @tc.desc  test function removeAll
     */
     it('Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1271,10 +1272,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0500 END`);
       });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0600
-     * @tc.name: Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0600
-     * @tc.desc: test function removeAll take userId
+    /**
+     * @tc.number Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0600
+     * @tc.name Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0600
+     * @tc.desc  test function removeAll take userId
      */
     it('Sub_Notification_Ans_Delete_SpecifiedGroup_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1296,10 +1297,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Delete_SpecifiedGroup_0600 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_NoDistrub_GetTime_Promise_Static_0100
-     * @tc.name: Sub_Notification_Ans_NoDistrub_GetTime_Promise_Static_0100
-     * @tc.desc: test function getDoNotDisturbDate
+    /**
+     * @tc.number Sub_Notification_Ans_NoDistrub_GetTime_Promise_Static_0100
+     * @tc.name Sub_Notification_Ans_NoDistrub_GetTime_Promise_Static_0100
+     * @tc.desc  test function getDoNotDisturbDate
      * @tc.size: LargeTest
      * @tc.type: Function
      * @tc.level LEVEL3
@@ -1327,10 +1328,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_NoDistrub_GetTime_Promise_0100 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_NoDistrub_GetTime_Promise_Static_0200
-     * @tc.name: Sub_Notification_Ans_NoDistrub_GetTime_Promise_Static_0200
-     * @tc.desc: test function getDoNotDisturbDate take userId
+    /**
+     * @tc.number Sub_Notification_Ans_NoDistrub_GetTime_Promise_Static_0200
+     * @tc.name Sub_Notification_Ans_NoDistrub_GetTime_Promise_Static_0200
+     * @tc.desc  test function getDoNotDisturbDate take userId
      * @tc.size: LargeTest
      * @tc.type: Function
      * @tc.level LEVEL3
@@ -1362,10 +1363,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_NoDistrub_GetTime_Promise_0200 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Slot_GetSlot_Promise_Static_1000
-     * @tc.name: Sub_Notification_Ans_Slot_GetSlot_Promise_Static_1000
-     * @tc.desc: test function getSlotNumByBundle
+    /**
+     * @tc.number Sub_Notification_Ans_Slot_GetSlot_Promise_Static_1000
+     * @tc.name Sub_Notification_Ans_Slot_GetSlot_Promise_Static_1000
+     * @tc.desc  test function getSlotNumByBundle
      * @tc.size: LargeTest
      * @tc.type: Function
      * @tc.level LEVEL3
@@ -1397,10 +1398,10 @@ export default function ActsNotificationSystemAPITest() {
 
         console.info(`${TAG} Sub_Notification_Ans_Slot_GetSlot_Promise_1000 END`);
       })
-    /*
-        * @tc.number: Sub_Notification_Ans_Slot_CreateSlot_Promise_Static_3700
-        * @tc.name: Sub_Notification_Ans_Slot_CreateSlot_Promise_Static_3700
-        * @tc.desc: test function isBadgeDisplayed
+    /**
+        * @tc.number Sub_Notification_Ans_Slot_CreateSlot_Promise_Static_3700
+        * @tc.name Sub_Notification_Ans_Slot_CreateSlot_Promise_Static_3700
+        * @tc.desc  test function isBadgeDisplayed
         * @tc.size: LargeTest
         * @tc.type: Function
         * @tc.level LEVEL3
@@ -1433,10 +1434,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`Sub_Notification_Ans_Slot_CreateSlot_Promise_Static_3700 END`);
       })
 
-    /*
-       * @tc.number: Sub_Notification_Ans_Enable_SetEnable_Promise_Static_9700
-       * @tc.name: Sub_Notification_Ans_Enable_SetEnable_Promise_Static_9700
-       * @tc.desc: test function isNotificationSlotEnabled
+    /**
+       * @tc.number Sub_Notification_Ans_Enable_SetEnable_Promise_Static_9700
+       * @tc.name Sub_Notification_Ans_Enable_SetEnable_Promise_Static_9700
+       * @tc.desc  test function isNotificationSlotEnabled
        * @tc.size: LargeTest
        * @tc.type: Function
        * @tc.level LEVEL3
@@ -1472,10 +1473,10 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`Sub_Notification_Ans_Enable_SetEnable_Promise_Static_9700 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Enable_Promise_Static_4300
-     * @tc.name: Sub_Notification_Ans_Distributed_Enable_Promise_Static_4300
-     * @tc.desc: test function setDistributedEnable
+    /**
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_Promise_Static_4300
+     * @tc.name Sub_Notification_Ans_Distributed_Enable_Promise_Static_4300
+     * @tc.desc  test function setDistributedEnable
      * @tc.size: LargeTest
      * @tc.type: Function
      * @tc.level LEVEL3
@@ -1503,12 +1504,12 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_Promise_4300 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Distributed_Enable_Promise_Static_4400
-     * @tc.name: Sub_Notification_Ans_Distributed_Enable_Promise_Static_4400
-     * @tc.desc: test function setDistributedEnableByBundle
-     * @tc.size: LargeTest
-     * @tc.type: Function
+    /**
+     * @tc.number Sub_Notification_Ans_Distributed_Enable_Promise_Static_4400
+     * @tc.name Sub_Notification_Ans_Distributed_Enable_Promise_Static_4400
+     * @tc.desc  test function setDistributedEnableByBundle
+     * @tc.size  LargeTest
+     * @tc.type  Function
      * @tc.level LEVEL3
      */
     it('Sub_Notification_Ans_Distributed_Enable_Promise_Static_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -1540,12 +1541,12 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_Promise_4400 END`);
       })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_NoDistrub_SetTime_Promise_Static_0200
-    * @tc.name: Sub_Notification_Ans_NoDistrub_SetTime_Promise_Static_0200
-    * @tc.desc: test function setDoNotDisturbDate take userId
-    * @tc.size: LargeTest
-    * @tc.type: Function
+    /**
+    * @tc.number Sub_Notification_Ans_NoDistrub_SetTime_Promise_Static_0200
+    * @tc.name Sub_Notification_Ans_NoDistrub_SetTime_Promise_Static_0200
+    * @tc.desc  test function setDoNotDisturbDate take userId
+    * @tc.size  LargeTest
+    * @tc.type  Function
     * @tc.level LEVEL3
     */
     it('Sub_Notification_Ans_NoDistrub_SetTime_Promise_Static_0200',
@@ -1578,12 +1579,12 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`${TAG} Sub_Notification_Ans_NoDistrub_SetTime_Promise_0200 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Enable_SetEnable_Promise_Static_9600
-     * @tc.name: Sub_Notification_Ans_Enable_SetEnable_Promise_Static_9600
-     * @tc.desc: test function setNotificationEnableSlot
-     * @tc.size: LargeTest
-     * @tc.type: Function
+    /**
+     * @tc.number Sub_Notification_Ans_Enable_SetEnable_Promise_Static_9600
+     * @tc.name Sub_Notification_Ans_Enable_SetEnable_Promise_Static_9600
+     * @tc.desc  test function setNotificationEnableSlot
+     * @tc.size  LargeTest
+     * @tc.type  Function
      * @tc.level LEVEL3
      */
     it('Sub_Notification_Ans_Enable_SetEnable_Promise_Static_9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -1615,12 +1616,12 @@ export default function ActsNotificationSystemAPITest() {
         console.info(`Sub_Notification_Ans_Enable_SetEnable_Promise_Static_9600 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_NoDistrub_Query_Promise_Static_0100
-     * @tc.name: Sub_Notification_Ans_NoDistrub_Query_Promise_Static_0100
-     * @tc.desc: test function isSupportDoNotDisturbMode
-     * @tc.size: LargeTest
-     * @tc.type: Function
+    /**
+     * @tc.number Sub_Notification_Ans_NoDistrub_Query_Promise_Static_0100
+     * @tc.name Sub_Notification_Ans_NoDistrub_Query_Promise_Static_0100
+     * @tc.desc  test function isSupportDoNotDisturbMode
+     * @tc.size  LargeTest
+     * @tc.type  Function
      * @tc.level LEVEL3
      */
     it('Sub_Notification_Ans_NoDistrub_Query_Promise_Static_0100',

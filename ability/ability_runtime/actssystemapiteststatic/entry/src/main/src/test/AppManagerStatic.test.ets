@@ -79,7 +79,8 @@ export default function appManagerStaticTest() {
           expect(err.code).assertEqual(16000050);
           done();
         });
-      } catch (paramError: BusinessError) {
+      } catch (paramError) {
+        paramError = paramError as BusinessError;
         let code = (paramError as BusinessError).code;
         let message = (paramError as BusinessError).message;
         hilog.info(domain, tag, `System_API_Test_App_Manager_Static_1700 [appManager] error: ${code}, ${message}`);
@@ -106,7 +107,8 @@ export default function appManagerStaticTest() {
           expect(err.code).assertEqual(16000050);
           done();
         });
-      } catch (paramError: BusinessError) {
+      } catch (paramError) {
+        paramError = paramError as BusinessError;
         let code = (paramError as BusinessError).code;
         let message = (paramError as BusinessError).message;
         hilog.info(domain, tag, `System_API_Test_App_Manager_Static_1800 [appManager] error: ${code}, ${message}`);
@@ -151,7 +153,8 @@ export default function appManagerStaticTest() {
           expect().assertFail();
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, ' isRunningInStabilityTest error, errorCode: ' + err?.code);
         expect().assertFail();
         done();
@@ -175,7 +178,8 @@ export default function appManagerStaticTest() {
           expect(data).assertFalse();
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, ' isRunningInStabilityTest error, err: ' + err?.code);
         expect().assertFail();
         done();
@@ -203,7 +207,8 @@ export default function appManagerStaticTest() {
           expect(err?.code).assertEqual(201);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `isAppRunning error, errorCode: ${err?.code}`);
         expect().assertFail();
         done();
@@ -231,7 +236,8 @@ export default function appManagerStaticTest() {
           expect(err?.code).assertEqual(201);
           done();
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `isAppRunning error, errorCode: ${err?.code}`);
         expect().assertFail();
         done();
@@ -254,7 +260,8 @@ export default function appManagerStaticTest() {
           expect(typeof data).assertEqual('boolean');
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, 'isRunningInStabilityTest error, err: ' + err?.code);
         expect().assertFail();
         done();
@@ -280,7 +287,8 @@ export default function appManagerStaticTest() {
           expect().assertFail();
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, ' isRunningInStabilityTest error, err: ' + err?.code);
         expect().assertFail();
         done();
@@ -308,7 +316,8 @@ export default function appManagerStaticTest() {
           expect().assertFail();
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, ' isRunningInStabilityTest error, err: ' + err?.code);
         expect().assertFail();
         done();
@@ -332,7 +341,8 @@ export default function appManagerStaticTest() {
           expect(data).assertLarger(0);
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, 'isRunningInStabilityTest error, err: ' + err?.code);
         expect().assertFail();
         done();
@@ -354,7 +364,8 @@ export default function appManagerStaticTest() {
           const observerId = appManager.onApplicationStateChange(observer);
           hilog.info(domain, tag, `${itName} observerId: ${observerId}`);
           expect().assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect(`${err.code}`).assertEqual(`201`);
         }
@@ -378,7 +389,8 @@ export default function appManagerStaticTest() {
           const observerId = appManager.onApplicationStateChange(observer, bundleNameList);
           hilog.info(domain, tag, `${itName} observerId: ${observerId}`);
           expect().assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect(`${err.code}`).assertEqual(`201`);
         }
@@ -412,7 +424,8 @@ export default function appManagerStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect(`${err.code}`).assertEqual('401');
           done();
@@ -440,7 +453,8 @@ export default function appManagerStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect(`${err?.code}`).assertEqual('401');
           done();

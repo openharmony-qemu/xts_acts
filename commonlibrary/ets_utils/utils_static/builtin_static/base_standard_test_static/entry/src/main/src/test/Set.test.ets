@@ -33,7 +33,8 @@ export default function SetTest() {
           const odds: Set<string> = new Set<string>(["a", "b"]);
           let value: Set<String> = odds.add("c");
           expect(String(value.has("c"))).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -53,7 +54,8 @@ export default function SetTest() {
           const odds: Set<string> = new Set<string>(["a", "b"]);
           let value: Set<string> = odds.add("c");
           expect(String(value.has("d"))).assertEqual('false');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -77,7 +79,8 @@ export default function SetTest() {
           odds.add(4);
           let value = odds.add(5);
           expect(String(value.has(5))).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -102,7 +105,8 @@ export default function SetTest() {
           odds.add(4);
           let value = odds.add(5);
           expect(String(value.has(6))).assertEqual('false');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -148,7 +152,8 @@ export default function SetTest() {
           odds.clear();
           let value = odds.size
           expect(String(value)).assertEqual('0');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -170,7 +175,8 @@ export default function SetTest() {
           odds.clear();
           let value = odds.size
           expect(String(value)).assertEqual('0');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -192,7 +198,8 @@ export default function SetTest() {
           odds.clear();
           let value = odds.size
           expect(String(value)).assertEqual('0');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -215,7 +222,8 @@ export default function SetTest() {
           odds.add(3);
           expect(String(odds.delete(3))).assertEqual('true')
           expect(String(odds.size)).assertEqual('2');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -239,7 +247,8 @@ export default function SetTest() {
           odds.add(3);
           expect(String(odds.delete(4))).assertEqual('false')
           expect(String(odds.size)).assertEqual('3');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -260,7 +269,8 @@ export default function SetTest() {
           const odds = new Set<string>(["a", "b", "c"]);
           expect(String(odds.delete("c"))).assertEqual('true')
           expect(String(odds.size)).assertEqual('2');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -281,7 +291,8 @@ export default function SetTest() {
           const odds = new Set<string>(["a", "b", "c"]);
           expect(String(odds.delete("d"))).assertEqual('false')
           expect(String(odds.size)).assertEqual('3');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -311,7 +322,8 @@ export default function SetTest() {
           expect(JSON.stringify(set.next().value)).assertEqual('[5,5]')
           expect(JSON.stringify(set.next().value)).assertEqual('[7,7]')
           expect(JSON.stringify(set.next().value)).assertEqual('[9,9]');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -332,7 +344,8 @@ export default function SetTest() {
           const odds = new Set<undefined>([undefined]);
           let set = odds.entries();
           expect(JSON.stringify(set.next().value)).assertEqual('[null,null]');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -353,7 +366,8 @@ export default function SetTest() {
           const odds = new Set<null>([null]);
           let set = odds.entries();
           expect(JSON.stringify(set.next().value)).assertEqual('[null,null]');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -376,7 +390,8 @@ export default function SetTest() {
           odds.add(3);
           let value = odds.has(2);
           expect(String(value)).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -400,7 +415,8 @@ export default function SetTest() {
           odds.add(3);
           let value = odds.has(4);
           expect(String(value)).assertEqual('false');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -421,7 +437,8 @@ export default function SetTest() {
           let set1 = new Set<string>(['a', 'b', 'c']);
           let value = set1.has('b');
           expect(String(value)).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -442,7 +459,8 @@ export default function SetTest() {
           let set1 = new Set<string>(['a', 'b', 'c']);
           let value = set1.has('d');
           expect(String(value)).assertEqual('false');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -467,7 +485,8 @@ export default function SetTest() {
           expect(JSON.stringify(value1)).assertEqual('{"done":false,"value":"apple"}')
           expect(JSON.stringify(value2)).assertEqual('{"done":false,"value":"banana"}')
           expect(JSON.stringify(value3)).assertEqual('{"done":false,"value":"cat"}');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -489,7 +508,8 @@ export default function SetTest() {
           let setIter = mySet.keys();
           let value1 = setIter.next();
           expect(JSON.stringify(value1)).assertEqual('{"done":true}');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }

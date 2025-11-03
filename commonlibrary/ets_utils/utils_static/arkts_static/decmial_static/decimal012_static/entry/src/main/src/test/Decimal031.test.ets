@@ -295,7 +295,8 @@ export default function DecimalTest031() {
       try {
         test_atan_001('e1', 40, 4, 'NaN');
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e1`);
@@ -532,7 +533,8 @@ export default function DecimalTest031() {
       try {
         test_atan2_002('e11', 'e11', 6, 2, '0.232104');
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e11`);
@@ -676,7 +678,8 @@ export default function DecimalTest031() {
       try {
         test_atanh_003('e1', 10, 3, '-0.5681509051');
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e1`);
@@ -840,7 +843,8 @@ export default function DecimalTest031() {
       try {
         test_cbrt_004('e', 40, 4, 'NaN');
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);
@@ -982,7 +986,8 @@ export default function DecimalTest031() {
       try {
         test_ceil_006('e', 'e');
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);
@@ -1066,7 +1071,8 @@ export default function DecimalTest031() {
       try {
         test_clamp_007('e', 'e', 'e', 'e');
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);
@@ -1086,7 +1092,8 @@ export default function DecimalTest031() {
       try {
         test_clamp_008(0, 1, 0, '0');
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(10200001);
         expect(err.message).assertEqual(`The value of min is out of range. It must be <= 0. Received value is: 1`);
@@ -2972,7 +2979,8 @@ export default function DecimalTest031() {
       try {
         test_comparedTo_012('e', 'e', -1);
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);
@@ -3202,7 +3210,8 @@ export default function DecimalTest031() {
       try {
         test_cos_013('e', 40, 4, 'NaN');
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);
@@ -3436,7 +3445,8 @@ export default function DecimalTest031() {
       try {
         test_cosh_014('e1', 66, 6, '1.25516900563094301816467474099029711586260477992884178681185039895');
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e1`);
@@ -3600,7 +3610,8 @@ export default function DecimalTest031() {
       try {
         test_constructor_015('0', 'e1');
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e1`);

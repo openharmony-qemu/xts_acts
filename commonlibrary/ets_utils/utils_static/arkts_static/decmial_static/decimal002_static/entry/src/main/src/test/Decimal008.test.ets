@@ -478,7 +478,8 @@ export default function DecimalTest008() {
       try {
         test_hypot_001('e', 'e', 20, 4, 'NaN');
         expect(true).assertEqual(false);
-      } catch (err :BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);

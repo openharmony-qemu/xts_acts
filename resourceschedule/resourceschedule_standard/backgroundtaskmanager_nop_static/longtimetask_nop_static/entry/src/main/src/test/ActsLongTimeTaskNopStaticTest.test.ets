@@ -200,7 +200,8 @@ export default function ActsLongTimeTaskNopStaticTest() {
             expect(false).assertTrue();
             done();
           })
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           let e: BusinessError = error as BusinessError;
           hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_TASK_MANAGER_NOP_STATIC_XTS_003 aa error: %{public}s', JSON.stringify(error));
           expect(false).assertTrue();

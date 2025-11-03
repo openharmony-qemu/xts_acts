@@ -133,7 +133,8 @@ async function verifyX509CertCallback(certType: string, flag?: string): Promise<
     let res: string = await verifyX509Cert(gInstance, pubKey);
 
     return res;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -143,7 +144,8 @@ async function checkValidityX509CertCallback(certType: string, date: string): Pr
   try {
     let instance: cert.X509Cert = await createX509CertInstanceCallback(certType);
     instance.checkValidityWithDate(date);
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -245,7 +247,8 @@ async function getX509CertInfoCallback(certType: string, processType: string): P
       default:
         console.log("Invalid parameter !");
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -277,7 +280,8 @@ async function checkGetPublicKeyX509CertCallback(certType: string): Promise<void
     let publicKey: cryptoFramework.PubKey = gInstance.getPublicKey();
     console.warn("[callback] publicKey success, publicKey is:" + publicKey);
     expect(publicKey != null).assertTrue();
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -323,7 +327,8 @@ async function checkIsRevokedX509CrlCallback(crlInstance: cert.X509CRL, flag: st
     let status: boolean = crlInstance.isRevoked(certInstance);
 
     return status;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -485,7 +490,8 @@ async function getX509CrlInfoCallback(certType: string, processType: string): Pr
       default:
         console.log("Invalid parameter !");
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -500,7 +506,8 @@ async function checkGetRevokedCertWithCertX509CrlCallback(crlInstance: cert.X509
     console.warn("[num] getRevokedCertWithCert num is:" + num);
 
     return x509CrlEntry;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }

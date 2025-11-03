@@ -85,7 +85,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
         hilog.info(0x0000, tag, "====>Parameter_0200 start====");
         try {
           await accountManager.createAccount(name);
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>createAccount fail err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -145,7 +146,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
         let createAccountOptions: account.CreateAccountOptions = {}
         try {
           await accountManager.createAccount("account_name_promise_second", createAccountOptions);
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, tag, "====>createAccount fail err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -186,7 +188,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               hilog.info(0x0000, tag, "====>run in onRequestRedirected")
             }
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>Parameter_1300 err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, "====>Parameter_1300 end====");
           expect().assertFail()
@@ -232,7 +235,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               hilog.info(0x0000, tag, "====>Parameter_1400 onRequestContinued")
             }
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>Parameter_1400 err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, "====>Parameter_1400 end====");
           expect().assertFail()
@@ -273,7 +277,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               hilog.info(0x0000, tag, "====>Parameter_1700 onRequestContinued")
             }
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>Parameter_1700 err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, "====>Parameter_1700 end====");
           expect().assertFail()
@@ -317,7 +322,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               hilog.info(0x0000, tag, "====>Parameter_2000 onRequestContinued")
             }
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>Parameter_2000 err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, "====>Parameter_2000 end====");
           expect().assertFail()
@@ -360,7 +366,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               hilog.info(0x0000, tag, "====>Parameter_2300 onRequestContinued")
             }
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>Parameter_2300 err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, "====>Parameter_2300 end====");
           expect().assertFail()
@@ -405,7 +412,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               hilog.info(0x0000, tag, "====>Parameter_2600 onRequestContinued")
             }
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>Parameter_2600 err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, "====>Parameter_2600 end====");
           expect(null).assertFail()
@@ -448,7 +456,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               hilog.info(0x0000, tag, "====>Parameter_2900 onRequestContinued")
             }
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>Parameter_2900 err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, "====>Parameter_2900 end====");
           expect().assertFail()
@@ -494,7 +503,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               hilog.info(0x0000, tag, "====>Parameter_3200 onRequestContinued")
             }
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>Parameter_3200 err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, "====>Parameter_3200 end====");
           expect().assertFail()
@@ -540,7 +550,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               hilog.info(0x0000, tag, "====>Parameter_3500 onRequestContinued")
             }
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>Parameter_3500 err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, "====>Parameter_3500 end====");
           expect().assertFail()
@@ -577,7 +588,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               hilog.info(0x0000, tag, "====>onRequestRedirected")
             }
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>Parameter_3800 err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, "====>Parameter_3800 end====");
           expect().assertFail();
@@ -616,7 +628,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               hilog.info(0x0000, tag, "====>_onRequestContinued")
             }
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>Parameter_3900 err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, "====>Parameter_3900 end====");
           expect().assertFail()
@@ -661,7 +674,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               }
             });
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>Parameter_4200 err: " + JSON.stringify(err));
           expect().assertFail()
           done()
@@ -714,7 +728,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
                 hilog.info(0x0000, tag, "====>_onRequestContinued")
               }
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>Parameter_4300 err: " + JSON.stringify(err));
             expect().assertFail()
             done()
@@ -759,7 +774,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
                 hilog.info(0x0000, tag, "====>onRequestRedirected")
               }
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>Parameter_4600 err: " + JSON.stringify(err));
             expect().assertFail()
             done()
@@ -806,7 +822,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
                 hilog.info(0x0000, tag, "====>onRequestRedirected")
               }
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>Parameter_4900 err: " + JSON.stringify(err));
             expect().assertFail()
             done()
@@ -853,7 +870,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
                 hilog.info(0x0000, tag, "====>onRequestRedirected")
               }
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>Parameter_5200 err: " + JSON.stringify(err));
             expect().assertFail()
             done()
@@ -901,7 +919,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
                 hilog.info(0x0000, tag, "====>onRequestRedirected")
               }
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>Parameter_5500 err: " + JSON.stringify(err));
             expect().assertFail()
             done()
@@ -948,7 +967,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
                 hilog.info(0x0000, tag, "====>onRequestRedirected")
               }
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>Parameter_5800 err: " + JSON.stringify(err));
             expect().assertFail()
             done()
@@ -999,7 +1019,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
                 hilog.info(0x0000, tag, "====>onRequestRedirected")
               }
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>Parameter_6100 err: " + JSON.stringify(err));
             done()
           }
@@ -1048,7 +1069,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
                 hilog.info(0x0000, tag, "====>onRequestRedirected")
               }
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>Parameter_6400 err: " + JSON.stringify(err));
             expect().assertFail()
             done()
@@ -1098,7 +1120,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
                 hilog.info(0x0000, tag, "====>onRequestRedirected")
               }
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>Parameter_6700 err: " + JSON.stringify(err));
             expect().assertFail()
             done()
@@ -1142,7 +1165,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
                 hilog.info(0x0000, tag, "====>onRequestRedirected")
               }
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>Parameter_6800 err: " + JSON.stringify(err));
             expect().assertFail()
             done();
@@ -1197,7 +1221,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
                 hilog.info(0x0000, tag, "====>Parameter_6900 verifyCredential_onRequestContinued")
               }
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>Parameter_6900 err: " + JSON.stringify(err));
             expect().assertFail()
             done();
@@ -1246,7 +1271,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
                 hilog.info(0x0000, tag, "====>Parameter_7200 verifyCredential_onRequestContinued")
               }
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>Parameter_7200 err: " + JSON.stringify(err));
             expect().assertFail()
             done();
@@ -1298,7 +1324,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
                 hilog.info(0x0000, tag, "====>Parameter_7500 verifyCredential_onRequestContinued")
               }
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>Parameter_7500 err: " + JSON.stringify(err));
             expect().assertFail()
             done();
@@ -1350,7 +1377,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
                 hilog.info(0x0000, tag, "====>Parameter_7800 verifyCredential_onRequestContinued")
               }
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>Parameter_7800 err: " + JSON.stringify(err));
             expect().assertFail()
             done();
@@ -1440,7 +1468,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               expect().assertFail()
               done()
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>selectAccountsByOptions exception: " + JSON.stringify(err));
             done();
           }
@@ -1537,7 +1566,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               expect().assertFail()
               done()
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>selectAccountsByOptions exception: " + JSON.stringify(err));
             done();
           }
@@ -1635,7 +1665,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               expect().assertFail()
               done()
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>selectAccountsByOptions exception: " + JSON.stringify(err));
             expect().assertFail()
             done();
@@ -1731,7 +1762,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               expect().assertFail()
               done()
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>selectAccountsByOptions exception: " + JSON.stringify(err));
             expect().assertFail()
             done();
@@ -1826,7 +1858,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               expect().assertFail()
               done()
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>selectAccountsByOptions exception: " + JSON.stringify(err));
             expect().assertFail()
             done();
@@ -1925,7 +1958,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               expect().assertFail()
               done()
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>selectAccountsByOptions exception: " + JSON.stringify(err));
             expect().assertFail()
             done();
@@ -2024,7 +2058,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               expect().assertFail()
               done()
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>selectAccountsByOptions exception: " + JSON.stringify(err));
             expect().assertFail()
             done();
@@ -2119,7 +2154,8 @@ export default function ActsAppAccountOptionalParameterTestStatic() {
               expect().assertFail()
               done()
             });
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, "====>selectAccountsByOptions exception: " + JSON.stringify(err));
             expect().assertFail()
             done();

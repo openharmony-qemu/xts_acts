@@ -72,7 +72,8 @@ struct webViewController {
             case 'emitWebViewSetConnectionTimeoutZeroSeconds': {
               try {
                 webview.WebviewController.setConnectionTimeout(0);
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent('Error', 8001);
               }
@@ -81,7 +82,8 @@ struct webViewController {
             case 'emitWebViewSetConnectionTimeoutNegativeOneSeconds': {
               try {
                 webview.WebviewController.setConnectionTimeout(-1);
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent('Error', 8003);
               }

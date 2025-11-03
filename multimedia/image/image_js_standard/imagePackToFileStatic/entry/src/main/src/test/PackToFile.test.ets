@@ -311,7 +311,8 @@ export default function imagePackToFile() {
           expect(false).assertTrue();
           console.info(`${testNum} packToFile test`);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           fileio.closeSync(fd);
           console.log(`${testNum} packToFile error: ` + JSON.stringify(error));
           console.info(`${testNum} file size ${fileio.statSync(fPath).size}`);

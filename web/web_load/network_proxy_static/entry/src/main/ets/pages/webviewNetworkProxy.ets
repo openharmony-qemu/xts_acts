@@ -74,7 +74,8 @@ struct webviewNetworkProxy {
                     Utils.emitEvent(true, 202502181);
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -93,7 +94,8 @@ struct webviewNetworkProxy {
                     Utils.emitEvent(true, 202502182);
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -112,7 +114,8 @@ struct webviewNetworkProxy {
                     Utils.emitEvent(true, 202502183);
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -131,7 +134,8 @@ struct webviewNetworkProxy {
                     Utils.emitEvent(true, 202502184);
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -148,7 +152,8 @@ struct webviewNetworkProxy {
                     Utils.emitEvent(true, 202502185);
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -164,7 +169,8 @@ struct webviewNetworkProxy {
                     Utils.emitEvent(true, 202502186);
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -184,7 +190,8 @@ struct webviewNetworkProxy {
                   console.log('callbackFlag:' + this.callbackFlag);
                   Utils.emitEvent(this.callbackFlag, 202502187);
                 }, 3000)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -204,7 +211,8 @@ struct webviewNetworkProxy {
                   console.log('callbackFlag:' + this.callbackFlag);
                   Utils.emitEvent(this.callbackFlag, 202502188);
                 }, 3000)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -217,7 +225,8 @@ struct webviewNetworkProxy {
                 let isReverseBypass = this.proxyConfig.isReverseBypassEnabled();
                 console.log('isReverseBypass:' + isReverseBypass);
                 Utils.emitEvent(isReverseBypass, 202502189);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -233,7 +242,8 @@ struct webviewNetworkProxy {
                     Utils.emitEvent(true, 202502190);
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -252,7 +262,8 @@ struct webviewNetworkProxy {
                     Utils.emitEvent(true, 202502191);
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -265,7 +276,8 @@ struct webviewNetworkProxy {
                 let isReverseBypass = this.proxyConfig.isReverseBypassEnabled();
                 console.log('isReverseBypass:' + isReverseBypass);
                 Utils.emitEvent(isReverseBypass, 202502192);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -283,7 +295,8 @@ struct webviewNetworkProxy {
                     Utils.emitEvent(true, 202502193);
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -301,7 +314,8 @@ struct webviewNetworkProxy {
                     Utils.emitEvent(true, 202502194);
                   }
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -314,7 +328,8 @@ struct webviewNetworkProxy {
                   console.log('applyProxyOverride callback');
                   Utils.emitEvent(true, 202502195);
                 });
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;
@@ -330,7 +345,8 @@ struct webviewNetworkProxy {
                   console.log('removeProxyOverride callback');
                   Utils.emitEvent(true, 202502196);
                 });
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`Errorcode: ${error.code}, Message: ${error.message}`);
               }
               break;

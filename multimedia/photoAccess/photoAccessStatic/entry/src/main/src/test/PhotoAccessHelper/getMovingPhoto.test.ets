@@ -90,7 +90,8 @@ class ErrorHandlerMissingImageUri implements photoAccessHelper.MediaAssetDataHan
       await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(imageFileUri, videoFileUri);
       hilog.info(domain, tag, "ErrorHandlerMissingImageUri: requestContent should have thrown an error");
       expect(false).assertTrue();
-    } catch (error: BusinessError) {
+    } catch (error) {
+      error = error as BusinessError;
       hilog.info(domain, tag, `ErrorHandlerMissingImageUri get moving photo uri fail !`);
       expect(error.code).assertEqual(14000011);
     }
@@ -108,7 +109,8 @@ class ErrorHandlerMissingVideoUri implements photoAccessHelper.MediaAssetDataHan
       await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(imageFileUri, videoFileUri! as string);
       hilog.info(domain, tag, "ErrorHandlerMissingVideoUri: requestContent should have thrown an error");
       expect(false).assertTrue();
-    } catch (error: BusinessError) {
+    } catch (error) {
+      error = error as BusinessError;
       hilog.info(domain, tag, `ErrorHandlerMissingImageUri get moving photo uri fail !`);
       expect(error.code).assertEqual(401);
     }
@@ -124,7 +126,8 @@ class ErrorPhotoHandlerWrongImageuri implements photoAccessHelper.MediaAssetData
       await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(photoAccessHelper.ResourceType.IMAGE_RESOURCE, imageFileUri);
       hilog.info(domain, tag, "moving photo image content retrieved successfully");
       expect(false).assertTrue();
-    } catch (error: BusinessError) {
+    } catch (error) {
+      error = error as BusinessError;
       hilog.info(domain, tag, `ErrorPhotoHandlerWrongImageuri get moving photo uri fail !`);
       expect(error.code).assertEqual(14000011);
     }
@@ -141,7 +144,8 @@ class ErrorPhotoHandlerMissingImageuri implements photoAccessHelper.MediaAssetDa
       await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(photoAccessHelper.ResourceType.IMAGE_RESOURCE, filrUri! as string);
       hilog.info(domain, tag, "moving photo image content retrieved successfully");
       expect(false).assertTrue();
-    } catch (error: BusinessError) {
+    } catch (error) {
+      error = error as BusinessError;
       hilog.info(domain, tag, `ErrorPhotoHandlerMissingImageuri get moving photo uri fail !`);
       expect(error.code).assertEqual(401);
     }
@@ -155,7 +159,8 @@ class ErrorArrayBufferHandlerMissingType implements photoAccessHelper.MediaAsset
       let resourceType: photoAccessHelper.ResourceType | undefined = undefined;
       let buffer: ArrayBuffer = await (movingPhoto as photoAccessHelper.MovingPhoto).requestContent(resourceType! as photoAccessHelper.ResourceType);
       expect(false).assertTrue();
-    } catch (error: BusinessError) {
+    } catch (error) {
+      error = error as BusinessError;
       hilog.info(domain, tag, `ErrorArrayBufferHandlerMissingType get moving photo uri fail !`);
       expect(error.code).assertEqual(14000011);
     }
@@ -200,7 +205,8 @@ export default function getMovingPhotoTest() {
           done();
         }
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `getMovingPhotoTest::${testNum}:: failed to createMovingPhoto::${err.code}, ${err} !`);
         expect(false).assertTrue();
         done();
@@ -296,7 +302,8 @@ export default function getMovingPhotoTest() {
             await photoAccessHelper.MediaAssetManager.cancelRequest(testContext, requestId);
           }
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag,
             `${testNum}::failed to request moving photo, error code is ${err.code}, message is ${err.message}`);
           expect(false).assertTrue();
@@ -327,14 +334,15 @@ export default function getMovingPhotoTest() {
             done();
           }
         }).catch((err: Error) => {
-          const businessError = err as BusinessError<void>;
+          const businessError = err as BusinessError;
           hilog.info(domain, tag, `${testNum}::${filePathDir}::failed to get file count::
            ${businessError.message}, ${businessError.code} !`);
           expect(false).assertTrue();
           done();
         });
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag,
           `${testNum}::failed to request moving photo, error code is ${err.code}, message is ${err.message}`);
         expect(false).assertTrue();
@@ -416,7 +424,8 @@ export default function getMovingPhotoTest() {
           console.info(`${testNum} request cancelled successfully`);
           expect(false).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, `${testNum} failed with error: ${err.code}, ${err.message}`);
           expect(err.code).assertEqual(401);
           done();

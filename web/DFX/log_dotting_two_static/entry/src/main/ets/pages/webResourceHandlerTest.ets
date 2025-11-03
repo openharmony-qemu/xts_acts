@@ -100,7 +100,8 @@ struct webResourceHandlerTest {
                 if(this.webNavigationType = 1 ) {
                   Utils.emitEvent(true, 202503212)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`testWebNavigationType001 ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -116,7 +117,8 @@ struct webResourceHandlerTest {
                 if(this.webNavigationType = 2 ) {
                   Utils.emitEvent(true, 202503213)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`testWebNavigationType002 ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -131,7 +133,8 @@ struct webResourceHandlerTest {
                 if(this.webNavigationType = 3 ) {
                   Utils.emitEvent(true, 202503214)
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`testWebNavigationType003 ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -230,7 +233,8 @@ struct webResourceHandlerTest {
             this.controller.setWebSchemeHandler('http', this.schemeHandler);
             this.controller.setWebSchemeHandler('resource', this.schemeHandler);
             webview.WebviewController.setServiceWorkerWebSchemeHandler('https', this.schemeHandler)
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
           }
         })

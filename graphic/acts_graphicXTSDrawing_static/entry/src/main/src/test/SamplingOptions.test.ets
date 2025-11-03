@@ -51,7 +51,8 @@ export default function samplingOptionsTest() {
       try {
         new drawing.SamplingOptions();
         console.info(msg + ' SamplingOptions successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` SamplingOptions errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -59,7 +60,8 @@ export default function samplingOptionsTest() {
         new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_NEAREST);
         new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_LINEAR);
         console.info(msg + ' SamplingOptions successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` SamplingOptions errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -83,7 +85,8 @@ export default function samplingOptionsTest() {
         try {
           new drawing.SamplingOptions();
           console.info(`${msg} SamplingOptions succeeded`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(`${msg} SamplingOptions errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -94,7 +97,8 @@ export default function samplingOptionsTest() {
           const randomEnum = Math.round(Math.random()).toInt();
           new drawing.SamplingOptions(itemList[randomEnum]);
           console.info(`${msg} SamplingOptions with random enum value  succeeded`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(`${msg} SamplingOptions errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }

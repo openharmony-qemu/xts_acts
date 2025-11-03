@@ -47,7 +47,8 @@ export default function deleteAssets() {
           console.info(`${testNum} succeed to delete assets by uri`)
           expect(false).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed with error: ${error}, ${error.code}`);
           expect(error.code).assertEqual(401)
           done();
@@ -72,7 +73,8 @@ export default function deleteAssets() {
           console.info(`${testNum} succeed to delete assets,`);
           expect(false).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed with error: ${error}, ${error.code}`);
           expect(error.code).assertEqual(401)
           done();

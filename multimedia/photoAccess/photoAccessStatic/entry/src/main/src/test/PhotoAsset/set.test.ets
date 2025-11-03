@@ -50,7 +50,8 @@ export default function setTest() {
         let title: string = photoAccessHelper.PhotoKeys.TITLE.toString();
         photoAsset.set(title, 'newTitle');
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `${testNum} release failed. error: ${err.code}, ${err.message}`);
         expect(false).assertTrue();
         done();
@@ -71,7 +72,8 @@ export default function setTest() {
         let title: string = '';
         photoAsset.set(title, 'newTitle');
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `${testNum} release failed. error: ${err.code}, ${err.message}`);
         expect(err.code === 14000014).assertTrue();
         done();

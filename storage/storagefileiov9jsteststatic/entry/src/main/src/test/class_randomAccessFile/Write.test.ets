@@ -49,7 +49,8 @@ export default function fileIORandomAccessFileWrite() {
         expect(bytesWritten == length).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_000 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -75,7 +76,8 @@ export default function fileIORandomAccessFileWrite() {
         expect(bytesWritten == length).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_001 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -102,7 +104,8 @@ export default function fileIORandomAccessFileWrite() {
         randomaccessfile.close();
         fs.closeSync(file.fd);
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_002 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -128,7 +131,8 @@ export default function fileIORandomAccessFileWrite() {
         expect(bytesWritten == 10).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_003 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -162,7 +166,8 @@ export default function fileIORandomAccessFileWrite() {
         expect(readLength == len).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_004 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -188,7 +193,8 @@ export default function fileIORandomAccessFileWrite() {
         expect(bytesWritten == length).assertTrue();
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_005 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -211,7 +217,8 @@ export default function fileIORandomAccessFileWrite() {
         randomaccessfile.writeSync(new ArrayBuffer(4096), { offset: 5, length: 4095 });
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_006 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -235,7 +242,8 @@ export default function fileIORandomAccessFileWrite() {
         randomaccessfile.writeSync(new ArrayBuffer(length), { offset: length + 1 });
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_007 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -258,7 +266,8 @@ export default function fileIORandomAccessFileWrite() {
       try {
         randomaccessfile.writeSync(new ArrayBuffer(4096), { offset: -1 });
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_008 has failed for ' + JSON.stringify(err));
         randomaccessfile.close();
         fs.closeSync(file.fd);
@@ -284,7 +293,8 @@ export default function fileIORandomAccessFileWrite() {
         let length = 100;
         randomaccessfile.writeSync(new ArrayBuffer(length), { offset: 1, length: -1 });
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_009 has failed for ' + JSON.stringify(err));
         randomaccessfile.close();
         fs.unlinkSync(fpath);
@@ -309,7 +319,8 @@ export default function fileIORandomAccessFileWrite() {
         let length = 4096;
         randomaccessfile.writeSync(new ArrayBuffer(length), { length: length + 1 });
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_sync_static_010 has failed for ' + JSON.stringify(err));
         randomaccessfile.close();
         fs.unlinkSync(fpath);
@@ -343,7 +354,8 @@ export default function fileIORandomAccessFileWrite() {
           });
           done();
         });
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_000 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -372,7 +384,8 @@ export default function fileIORandomAccessFileWrite() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_001 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -398,7 +411,8 @@ export default function fileIORandomAccessFileWrite() {
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_002 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -424,7 +438,8 @@ export default function fileIORandomAccessFileWrite() {
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_003 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -459,7 +474,8 @@ export default function fileIORandomAccessFileWrite() {
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_004 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -486,7 +502,8 @@ export default function fileIORandomAccessFileWrite() {
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_005 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -511,7 +528,8 @@ export default function fileIORandomAccessFileWrite() {
         randomaccessfile.close();
         fs.unlinkSync(fpath);
         done();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_006 has failed for ' + JSON.stringify(err));
         randomaccessfile.close();
         fs.unlinkSync(fpath);
@@ -541,7 +559,8 @@ export default function fileIORandomAccessFileWrite() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_007 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }
@@ -564,7 +583,8 @@ export default function fileIORandomAccessFileWrite() {
       try {
         await randomaccessfile.write(new ArrayBuffer(4096), { offset: -1 });
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_008 has failed for ' + JSON.stringify(err));
         randomaccessfile.close();
         fs.closeSync(file.fd);
@@ -591,7 +611,8 @@ export default function fileIORandomAccessFileWrite() {
         let length = 100;
         await randomaccessfile.write(new ArrayBuffer(length), { offset: 1, length: -1 });
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_009 has failed for ' + JSON.stringify(err));
         randomaccessfile.close();
         fs.unlinkSync(fpath);
@@ -617,7 +638,8 @@ export default function fileIORandomAccessFileWrite() {
         let length = 4096;
         await randomaccessfile.write(new ArrayBuffer(length), { length: length + 1 });
         expect(false).assertTrue();
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_010 has failed for ' + JSON.stringify(err));
         randomaccessfile.close();
         fs.unlinkSync(fpath);
@@ -655,7 +677,8 @@ export default function fileIORandomAccessFileWrite() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_write_async_static_011 has failed for ' + JSON.stringify(err));
         expect(false).assertTrue();
       }

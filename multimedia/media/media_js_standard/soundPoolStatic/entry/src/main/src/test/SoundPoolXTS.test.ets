@@ -194,7 +194,8 @@ export default function soundPoolTest() {
             expectFalse();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: ${JSON.stringify(error)}`);
         expectFalse();
       }
@@ -215,7 +216,8 @@ export default function soundPoolTest() {
             console.info(`${TAG}: Test createSoundPool with invalid maxStream fail, create success!`);
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         let err: BusinessError = error as BusinessError
         if (err.code == 5400101) {
           console.info(`${TAG}: Test createSoundPool with invalid maxStream success, error: [${JSON.stringify(error)}]`);
@@ -251,7 +253,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -291,7 +294,8 @@ export default function soundPoolTest() {
           console.info(`${TAG}: load(uri) fail! catch error, error: [${JSON.stringify(error)}]`);
           expectFalse();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -330,7 +334,8 @@ export default function soundPoolTest() {
             expectFalse();
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -368,7 +373,8 @@ export default function soundPoolTest() {
           console.info(`${TAG}: load(fd, offset, length) fail! catch error, error: [${JSON.stringify(error)}]`);
           expectFalse();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -406,7 +412,8 @@ export default function soundPoolTest() {
           console.info(`${TAG}: load(fd, offset, length) fail! catch error, error: [${JSON.stringify(error)}]`);
           expectFalse();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -462,7 +469,8 @@ export default function soundPoolTest() {
         if (streamId != -1) {
           await soundPool!!.stop(streamId);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -518,7 +526,8 @@ export default function soundPoolTest() {
         if (streamId != -1) {
           await soundPool!!.stop(streamId);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -555,7 +564,8 @@ export default function soundPoolTest() {
             expectFalse();
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -592,7 +602,8 @@ export default function soundPoolTest() {
             expectFalse();
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -629,7 +640,8 @@ export default function soundPoolTest() {
             expectFalse();
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -671,7 +683,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -712,7 +725,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -754,7 +768,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -796,7 +811,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -856,7 +872,8 @@ export default function soundPoolTest() {
           await soundPool!!.stop(streamId);
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -916,7 +933,8 @@ export default function soundPoolTest() {
           await soundPool!!.stop(streamId);
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -957,7 +975,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -998,7 +1017,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -1039,7 +1059,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -1074,7 +1095,8 @@ export default function soundPoolTest() {
           console.info(`${TAG}: unload fail, error: [${JSON.stringify(error)}]`);
           expectFalse();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -1115,7 +1137,8 @@ export default function soundPoolTest() {
             expectFalse();
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -1155,7 +1178,8 @@ export default function soundPoolTest() {
             expectFalse();
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -1194,7 +1218,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -1238,7 +1263,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -1282,7 +1308,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -1327,7 +1354,8 @@ export default function soundPoolTest() {
           await sleep(5000);
           await soundPool!!.stop(streamId_);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -1367,7 +1395,8 @@ export default function soundPoolTest() {
             expectFalse();
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -1406,7 +1435,8 @@ export default function soundPoolTest() {
             expectFalse();
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -1451,7 +1481,8 @@ export default function soundPoolTest() {
           await sleep(5000);
           await soundPool!!.stop(streamId_);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -1490,7 +1521,8 @@ export default function soundPoolTest() {
             expectFalse();
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -1529,7 +1561,8 @@ export default function soundPoolTest() {
             expectFalse();
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -1576,7 +1609,8 @@ export default function soundPoolTest() {
           await sleep(5000);
           await soundPool!!.stop(streamId_);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -1623,7 +1657,8 @@ export default function soundPoolTest() {
           await sleep(5000);
           await soundPool!!.stop(streamId_);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -1670,7 +1705,8 @@ export default function soundPoolTest() {
           await sleep(5000);
           await soundPool!!.stop(streamId_);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -1717,7 +1753,8 @@ export default function soundPoolTest() {
           await sleep(5000);
           await soundPool!!.stop(streamId_);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -1764,7 +1801,8 @@ export default function soundPoolTest() {
           await sleep(5000);
           await soundPool!!.stop(streamId_);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -1814,7 +1852,8 @@ export default function soundPoolTest() {
           await soundPool!!.stop(streamId_);
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -1857,7 +1896,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(TAG + `catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -1900,7 +1940,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -1950,7 +1991,8 @@ export default function soundPoolTest() {
           await soundPool!!.stop(streamId_);
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -1993,7 +2035,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -2036,7 +2079,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -2088,7 +2132,8 @@ export default function soundPoolTest() {
           await soundPool!!.stop(streamId_);
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -2140,7 +2185,8 @@ export default function soundPoolTest() {
           await soundPool!!.stop(streamId_);
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -2192,7 +2238,8 @@ export default function soundPoolTest() {
           await soundPool!!.stop(streamId_);
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -2244,7 +2291,8 @@ export default function soundPoolTest() {
           await soundPool!!.stop(streamId_);
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -2296,7 +2344,8 @@ export default function soundPoolTest() {
           await soundPool!!.stop(streamId_);
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -2333,7 +2382,8 @@ export default function soundPoolTest() {
           console.info(`${TAG}: stop fail! error: [${JSON.stringify(error)}]`);
           expectFalse();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -2375,7 +2425,8 @@ export default function soundPoolTest() {
             expectFalse();
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -2417,7 +2468,8 @@ export default function soundPoolTest() {
             expectFalse();
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -2458,7 +2510,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -2504,7 +2557,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -2551,7 +2605,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -2591,7 +2646,8 @@ export default function soundPoolTest() {
         })
         await sleep(2000);
         await soundPool!!.stop(streamId);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -2636,7 +2692,8 @@ export default function soundPoolTest() {
         })
         await sleep(2000);
         await soundPool!!.stop(streamId);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -2682,7 +2739,8 @@ export default function soundPoolTest() {
         })
         await sleep(2000);
         await soundPool!!.stop(streamId);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -2726,7 +2784,8 @@ export default function soundPoolTest() {
         await sleep(2000);
         await soundPool!!.stop(streamId);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -2775,7 +2834,8 @@ export default function soundPoolTest() {
         await sleep(2000);
         await soundPool!!.stop(streamId);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -2825,7 +2885,8 @@ export default function soundPoolTest() {
         await sleep(2000);
         await soundPool!!.stop(streamId);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -2865,7 +2926,8 @@ export default function soundPoolTest() {
         })
         await sleep(2000);
         await soundPool!!.stop(streamId);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -2909,7 +2971,8 @@ export default function soundPoolTest() {
         })
         await sleep(2000);
         await soundPool!!.stop(streamId);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -2954,7 +3017,8 @@ export default function soundPoolTest() {
         })
         await sleep(2000);
         await soundPool!!.stop(streamId);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -3000,7 +3064,8 @@ export default function soundPoolTest() {
         })
         await sleep(2000);
         await soundPool!!.stop(streamId);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -3044,7 +3109,8 @@ export default function soundPoolTest() {
         await sleep(2000);
         await soundPool!!.stop(streamId);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -3092,7 +3158,8 @@ export default function soundPoolTest() {
         await sleep(2000);
         await soundPool!!.stop(streamId);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -3141,7 +3208,8 @@ export default function soundPoolTest() {
         await sleep(2000);
         await soundPool!!.stop(streamId);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -3190,7 +3258,8 @@ export default function soundPoolTest() {
         await sleep(2000);
         await soundPool!!.stop(streamId);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -3231,7 +3300,8 @@ export default function soundPoolTest() {
         })
         await sleep(2000);
         await soundPool!!.stop(streamId);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -3271,7 +3341,8 @@ export default function soundPoolTest() {
         })
         await sleep(2000);
         await soundPool!!.stop(streamId);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -3311,7 +3382,8 @@ export default function soundPoolTest() {
         })
         await sleep(2000);
         await soundPool!!.stop(streamId);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -3351,7 +3423,8 @@ export default function soundPoolTest() {
         })
         await sleep(2000);
         await soundPool!!.stop(streamId);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -3391,7 +3464,8 @@ export default function soundPoolTest() {
         })
         await sleep(2000);
         await soundPool!!.stop(streamId);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -3437,7 +3511,8 @@ export default function soundPoolTest() {
         })
         await sleep(2000);
         await soundPool!!.stop(streamId);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -3484,7 +3559,8 @@ export default function soundPoolTest() {
         })
         await sleep(2000);
         await soundPool!!.stop(streamId);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -3530,7 +3606,8 @@ export default function soundPoolTest() {
         await sleep(2000);
         await soundPool!!.stop(streamId);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -3574,7 +3651,8 @@ export default function soundPoolTest() {
         await sleep(2000);
         await soundPool!!.stop(streamId);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -3618,7 +3696,8 @@ export default function soundPoolTest() {
         await sleep(2000);
         await soundPool!!.stop(streamId);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -3662,7 +3741,8 @@ export default function soundPoolTest() {
         await sleep(2000);
         await soundPool!!.stop(streamId);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -3706,7 +3786,8 @@ export default function soundPoolTest() {
         await sleep(2000);
         await soundPool!!.stop(streamId);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -3756,7 +3837,8 @@ export default function soundPoolTest() {
         await sleep(2000);
         await soundPool!!.stop(streamId);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -3807,7 +3889,8 @@ export default function soundPoolTest() {
         await sleep(2000);
         await soundPool!!.stop(streamId);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -3839,7 +3922,8 @@ export default function soundPoolTest() {
           done();
         })
         soundId = (await soundPool!!.load(fd1, 0, length1)) as int;
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -3876,7 +3960,8 @@ export default function soundPoolTest() {
         streamId = (await soundPool!!.play(soundId)) as int;
         await sleep(2000);
         await soundPool!!.stop(streamId);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -3925,7 +4010,8 @@ export default function soundPoolTest() {
           console.info(`${TAG}: loadComplete off`);
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -3979,7 +4065,8 @@ export default function soundPoolTest() {
           console.info(`${TAG}: playFinished off`);
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -4017,7 +4104,8 @@ export default function soundPoolTest() {
             expectFalse();
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -4063,7 +4151,8 @@ export default function soundPoolTest() {
           soundId = -1;
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -4103,7 +4192,8 @@ export default function soundPoolTest() {
             expectFalse();
           }
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -4151,7 +4241,8 @@ export default function soundPoolTest() {
           }
           done();
         })
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
         done();
@@ -4195,7 +4286,8 @@ export default function soundPoolTest() {
           await soundPool!!.stop(streamId_[i]);
           await soundPool!!.unload(soundId_[i]);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -4263,7 +4355,8 @@ export default function soundPoolTest() {
           console.info(`${TAG}: four stream play fail! time: ${time}`);
           expectFalse();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -4333,7 +4426,8 @@ export default function soundPoolTest() {
           console.info(`${TAG}: two stream match fail! matchNum: ${matchNum}`);
           expectFalse();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -4415,7 +4509,8 @@ export default function soundPoolTest() {
           console.info(`${TAG}: two stream match fail! matchNum: ${matchNum}`);
           expectFalse();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -4509,7 +4604,8 @@ export default function soundPoolTest() {
           console.info(`${TAG}: four stream play fail! playTime1: ${playTime1}, playTime2: ${playTime2}`);
           expectFalse();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
         expectFalse();
       }
@@ -4547,7 +4643,8 @@ export default function soundPoolTest() {
           })
           await sleep(2000);
           await soundPool!!.stop(streamId);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
           expectFalse();
         }
@@ -4594,7 +4691,8 @@ export default function soundPoolTest() {
           })
           await sleep(2000);
           await soundPool!!.stop(streamId);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
           expectFalse();
         }
@@ -4642,7 +4740,8 @@ export default function soundPoolTest() {
           })
           await sleep(2000);
           await soundPool!!.stop(streamId);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
           expectFalse();
         }
@@ -4688,7 +4787,8 @@ export default function soundPoolTest() {
           await sleep(2000);
           await soundPool!!.stop(streamId);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
           expectFalse();
           done();
@@ -4740,7 +4840,8 @@ export default function soundPoolTest() {
           await sleep(2000);
           await soundPool!!.stop(streamId);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
           expectFalse();
           done();
@@ -4793,7 +4894,8 @@ export default function soundPoolTest() {
           await sleep(2000);
           await soundPool!!.stop(streamId);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${TAG}: catch error, error: [${JSON.stringify(error)}]`);
           expectFalse();
           done();

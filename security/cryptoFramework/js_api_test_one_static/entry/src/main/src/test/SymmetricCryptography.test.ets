@@ -387,14 +387,16 @@ export default function SymmetricCryptographyJsunit() {
         try {
           cryptoFramework.createSymKeyGenerator("AES257");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("err is :" + err.code);
           expect(err.code).assertEqual(801);
         }
         try {
           cryptoFramework.createSymKeyGenerator("AESNULL");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("err is :" + err.code);
           expect(err.code).assertEqual(801);
         }
@@ -414,14 +416,16 @@ export default function SymmetricCryptographyJsunit() {
         try {
           cryptoFramework.createCipher("AES128|NULL|PKCS7");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("err is :" + err.code);
           expect(err.code).assertEqual(801);
         }
         try {
           cryptoFramework.createCipher("AES128|ADF|PKCS7");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("err is :" + err.code);
           expect(err.code).assertEqual(801);
         }
@@ -441,14 +445,16 @@ export default function SymmetricCryptographyJsunit() {
         try {
           cryptoFramework.createCipher("AES128|GCM|NULL");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("err is :" + err.code);
           expect(err.code).assertEqual(801);
         }
         try {
           cryptoFramework.createCipher("AES128|GCM|CCCC");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("err is :" + err.code);
           expect(err.code).assertEqual(801);
         }
@@ -641,13 +647,15 @@ export default function SymmetricCryptographyJsunit() {
         try {
           cryptoFramework.createCipher("3DES192|null|PKCS7");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(801);
         }
         try {
           cryptoFramework.createCipher("3DES192|DDD|PKCS7");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(801);
         }
         done();
@@ -666,13 +674,15 @@ export default function SymmetricCryptographyJsunit() {
         try {
           cryptoFramework.createCipher("3DES192|ECB|null");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(801);
         }
         try {
           cryptoFramework.createCipher("3DES192|ECB|CCCCC");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(801);
         }
         done();

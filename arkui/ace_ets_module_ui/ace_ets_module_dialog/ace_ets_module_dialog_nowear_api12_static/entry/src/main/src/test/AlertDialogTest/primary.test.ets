@@ -90,7 +90,8 @@ export default function primary() {
           await CommonFunc.sleep(1000);
           console.info('primary_static_0100 END');
           done();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           expect().assertFail();
         }
       });
@@ -120,7 +121,8 @@ export default function primary() {
           await CommonFunc.sleep(1000);
           console.info('primary_static_0200 END');
           done();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           expect().assertFail();
         }
       });

@@ -48,7 +48,7 @@ export default function WebInitTest() {
         abilityDelegator.executeShellCommand('aa start -a EntryAbility -b com.DFX.test.static')
         await Utils.msSleep(2000)
         console.log('beforeAll end,%s', "Succeed!")
-      } catch (error: Error) {
+      } catch (error) {
         console.info(`beforeAll error: ${JSON.stringify(error)}`)
       }
     });

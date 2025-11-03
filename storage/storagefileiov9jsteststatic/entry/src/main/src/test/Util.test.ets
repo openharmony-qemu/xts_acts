@@ -54,7 +54,8 @@ export default class Utils{
         fs.closeSync(file)
         resolve(true);
       }
-      catch (e: BusinessError) {
+      catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'prepareFile has failed for' + JSON.stringify(e));
         resolve(false);
       }
@@ -75,7 +76,8 @@ export default class Utils{
         fs.closeSync(file)
         resolve(true);
       }
-      catch (e: BusinessError) {
+      catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'prepare200MFile has failed for' + JSON.stringify(e));
         resolve(false);
       }

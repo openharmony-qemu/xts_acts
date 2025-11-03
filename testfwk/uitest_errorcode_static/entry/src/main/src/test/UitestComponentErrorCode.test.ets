@@ -782,7 +782,8 @@ export default function uitestComponentErrorTest() {
             paste: true
           });
         }
-      }catch (e: BusinessError) {
+      }catch (e) {
+        e = e as BusinessError;
         console.log(`${TestTag}, test_inputTextMode_801_static error is: ${JSON.stringify(e)}`);
         expect(e.code).assertEqual(CapabilityCode);
       } finally {
@@ -815,7 +816,8 @@ export default function uitestComponentErrorTest() {
         }
         await driver.delayMs(waitUiReadyMs);
         expect().assertFail();
-      }catch (e: BusinessError) {
+      }catch (e) {
+        e = e as BusinessError;
         console.log(`${TestTag}, test_inputTextMode_17000004_static error is: ${JSON.stringify(e)}`);
         expect(e.code).assertEqual(InvisibleErrorCode);
       }

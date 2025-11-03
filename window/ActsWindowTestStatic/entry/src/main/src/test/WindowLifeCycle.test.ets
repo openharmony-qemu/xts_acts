@@ -64,7 +64,8 @@ async function terminateAbility(caseName: string) {
         }).catch((err: BusinessError):PromiseLike<void>|undefined => {
             console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
-    } catch (e: BusinessError) {
+    } catch (e) {
+        e = e as BusinessError;
         console.error(`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
     }
     await Utils.msSleep(1000)
@@ -79,6 +80,7 @@ export default function WindowLifeCycleTest() {
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
+        let windowclassArr:Array<window.Window>;
         beforeAll(() => {
             //context = AppStorage.get('context') as common.UIAbilityContext;
             //hilog.info(0x0000, '[ANI]','windowTest context: ' + JSON.stringify(context))
@@ -94,6 +96,19 @@ export default function WindowLifeCycleTest() {
             hilog.info(domain, tag, '%{public}s', 'getANI windowStage = ' + JSON.stringify(windowStage));
             hilog.info(domain, tag, '%{public}s', 'getANI win = ' + JSON.stringify(win));
             hilog.info(domain, tag, '%{public}s', 'getANI context = ' + JSON.stringify(context));
+
+            try{
+                windowclassArr = await windowStage.getSubWindow();
+                hilog.info(domain, tag,`brforeAll getSubWindow success. Cause: ${JSON.stringify(windowclassArr)}`);
+                if(windowclassArr.length!=0){
+                    for(let i = 0;i<windowclassArr.length;i++){
+                        await windowclassArr[i].destroyWindow();
+                        hilog.info(domain, tag,`brforeAll destroyWindow windowclassArr ${i} success`);
+                    }
+                }
+            }catch (err) {
+                hilog.error(domain, tag,`brforeAll destroyWindow failed`+ err);
+            }
 
             //isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
             //hilog.info(0x0000, '[ANI]',`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
@@ -127,7 +142,8 @@ export default function WindowLifeCycleTest() {
                     expect(false).assertTrue();
                     done();
                 })
-            } catch (exception:BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done();
@@ -161,7 +177,8 @@ export default function WindowLifeCycleTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in obtaining the top window. Data: ' + JSON.stringify(data));
                     done();
                 })
-            } catch (exception:BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain the top window. Cause: ' + JSON.stringify(exception));
             }
             ;
@@ -225,7 +242,8 @@ export default function WindowLifeCycleTest() {
                         done();
                     }
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.info(0x0000, '[ANI]',msgStr + 'Failed to testLoadContent_Callback_static_0200. Cause: ' + JSON.stringify(exception));
                 // expect(exception.code).assertEqual(1300002)
                 expect(false).assertTrue();
@@ -283,7 +301,8 @@ export default function WindowLifeCycleTest() {
                     expect(err.code).assertEqual(1300002);
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.info(0x0000, '[ANI]',msgStr + 'Failed to testLoadContent_Promise_static_0200. Cause: ' + JSON.stringify(exception));
                 // expect(exception.code).assertEqual(1300002)
                 expect(false).assertTrue();
@@ -386,7 +405,8 @@ export default function WindowLifeCycleTest() {
                 // hilog.info(0x0000, '[ANI]',msgStr + 'after uiContext: ' + JSON.stringify(uiContext));
                 expect(uiContext!=null).assertTrue();
                 done();
-            }catch (exception:BusinessError) {
+            }catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to getUIContext. Cause: ' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done()
@@ -413,7 +433,8 @@ export default function WindowLifeCycleTest() {
                 let uiContext: UIContext = win.getUIContext();
                 expect(false).assertTrue();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.info(0x0000, '[ANI]',msgStr + 'Failed to getUIContext. Cause: ' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002)
                 done()
@@ -440,7 +461,8 @@ export default function WindowLifeCycleTest() {
                     win.onWindowEvent((data:window.WindowEventType) => {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Window event happened. Event:' + JSON.stringify(data));
                     });
-                } catch (exception:BusinessError) {
+                } catch (exception) {
+                    exception = exception as BusinessError;
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(exception));
                     await win.destroyWindow();
                     expect(false).assertTrue();
@@ -460,7 +482,8 @@ export default function WindowLifeCycleTest() {
                     await win.destroyWindow();
                     expect(true).assertTrue();
                     done();
-                } catch (exception:BusinessError) {
+                } catch (exception) {
+                    exception = exception as BusinessError;
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Cause: ' + JSON.stringify(exception));
                     await win.destroyWindow();
                     expect(false).assertTrue();
@@ -493,7 +516,8 @@ export default function WindowLifeCycleTest() {
                 expect(window.WindowEventType.WINDOW_DESTROYED).assertEqual(7);
                 hilog.info(0x0000, '[ANI]','Succeeded in test_WindowEventType_enum.');
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(0x0000, '[ANI]',msgStr + 'Failed to test_WindowEventType_enum. Cause: ' + JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -519,7 +543,8 @@ export default function WindowLifeCycleTest() {
                 expect(window.WindowStatusType.SPLIT_SCREEN).assertEqual(5);
                 hilog.info(0x0000, '[ANI]','Succeeded in test_WindowStatusType_enum_static_0100.');
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(0x0000, '[ANI]',msgStr + 'Failed to test_WindowStatusType_enum_static_0100. Cause: ' + JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -542,7 +567,8 @@ export default function WindowLifeCycleTest() {
                 expect(16).assertEqual(window.WindowType.TYPE_DIALOG);
                 // expect(32).assertEqual(window.WindowType.TYPE_MAIN);
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(0x0000, '[ANI]','test Enum value of windowType error ' + JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -567,7 +593,8 @@ export default function WindowLifeCycleTest() {
                 expect(5).assertEqual(window.WindowStageEventType.RESUMED);
                 expect(6).assertEqual(window.WindowStageEventType.PAUSED);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(0x0000, '[ANI]','test enum value of windowStageEventType error ' + JSON.stringify(err));
                 expect(false).assertTrue();
                 done();
@@ -647,7 +674,8 @@ export default function WindowLifeCycleTest() {
                     expect(err!.code).assertEqual(1300002)
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to load the content. Cause: ' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(1300002)
                 done();
@@ -683,7 +711,8 @@ export default function WindowLifeCycleTest() {
                     }
 
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to load the content. Cause: ' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done();
@@ -717,7 +746,8 @@ export default function WindowLifeCycleTest() {
                     await (win as window.Window).destroyWindow();
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]','Failed to create the window3. Cause: ' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done();
@@ -756,7 +786,8 @@ export default function WindowLifeCycleTest() {
                         hilog.info(0x0000, '[ANI]','setUIContentTestCallBack1 assert result catch' + JSON.stringify(err));
                     }
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]','Failed callback to load the content. Cause:' + JSON.stringify(exception));
                 (winData as window.Window).destroyWindow();
                 expect(exception!.code).assertEqual(401);
@@ -782,7 +813,8 @@ export default function WindowLifeCycleTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'findWindow success');
                 expect(false).assertTrue();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to create the window. Cause: ' + exception.code + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002);
                 done();
@@ -811,7 +843,8 @@ export default function WindowLifeCycleTest() {
                 hilog.info(domain, tag,msgStr + 'window.isWindowShowing success');
                 expect(false).assertTrue();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(1300002);
                 done()
@@ -842,7 +875,8 @@ export default function WindowLifeCycleTest() {
                         hilog.error(0x0000, '[ANI]', msgStr + 'Succeeded in calling on noInteractionDetected.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e:BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.info(0x0000, '[ANI]', msgStr +' Failed to call on noInteractionDetected. Cause:' + JSON.stringify(e));
                         expect(e!.code).assertEqual(1300002);
                         done()
@@ -878,7 +912,8 @@ export default function WindowLifeCycleTest() {
                         hilog.error(0x0000, '[ANI]', msgStr + 'Succeeded in calling on noInteractionDetected.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e:BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.info(0x0000, '[ANI]', msgStr +' Failed to call on noInteractionDetected. Cause:' + JSON.stringify(e));
                         expect(e!.code).assertEqual(1300002);
                         done()
@@ -910,7 +945,8 @@ export default function WindowLifeCycleTest() {
                 });
                 expect(true).assertTrue();
                 done();
-            } catch (error:BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(0x0000, '[ANI]', msgStr +  'Failed to register callback. Cause: ' + JSON.stringify(error));
                 if (error!.code != 801) {
                     hilog.info(0x0000, '[ANI]', msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
@@ -941,7 +977,8 @@ export default function WindowLifeCycleTest() {
                 windowClass.offNoInteractionDetected();
                 expect(true).assertTrue();
                 done();
-            } catch (error:BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(0x0000, '[ANI]', msgStr +  'Failed to unregister callback. Cause: ' + JSON.stringify(error));
                 if (error!.code != 801) {
                     hilog.info(0x0000, '[ANI]', msgStr + 'Failed to unregister callback. Cause: ' + JSON.stringify(error));
@@ -983,7 +1020,8 @@ export default function WindowLifeCycleTest() {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling on subWindowClose.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e:BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call on subWindowClose. Cause:' + JSON.stringify(e));
                         expect(e!.code).assertEqual(1300002);
                         done()
@@ -1020,7 +1058,8 @@ export default function WindowLifeCycleTest() {
                         hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling on subWindowClose.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e:BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call on subWindowClose. Cause:' + JSON.stringify(e));
                         expect(e!.code).assertEqual(1300002);
                         done()
@@ -1056,7 +1095,8 @@ export default function WindowLifeCycleTest() {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on_subWindowClose.');
                     expect(false).assertTrue();
                     done();
-                } catch (exception:BusinessError) {
+                } catch (exception) {
+                    exception = exception as BusinessError;
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call on_subWindowClose. Cause:' + JSON.stringify(exception));
                     if (exception!.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + '此设备不支持on_subWindowClose能力.');
@@ -1101,7 +1141,8 @@ export default function WindowLifeCycleTest() {
                 hilog.info(domain, tag,msgStr + 'window.on_windowWillClose success');
                 expect(false).assertTrue();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to on_windowWillClose. Cause code:' + JSON.stringify(exception));
@@ -1137,7 +1178,8 @@ export default function WindowLifeCycleTest() {
                 hilog.info(domain, tag,msgStr + 'window.on_windowWillClose success');
                 expect(false).assertTrue();
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to off_windowWillClose. Cause code:' + JSON.stringify(exception));
@@ -1179,7 +1221,8 @@ export default function WindowLifeCycleTest() {
                 hilog.info(domain, tag,msgStr  + 'Succeeded on windowWillClose ');
                 expect(false).assertFail();
                 done()
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 hilog.info(domain, tag,msgStr + ' ' + 'catched, err: ' + JSON.stringify(e.code));
                 await windowClass.destroyWindow();
                 if(e.code == 801){
@@ -1222,7 +1265,8 @@ export default function WindowLifeCycleTest() {
                             expect(false).assertTrue();
                             done();
                         });
-                    } catch (exception: BusinessError) {
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                         expect(false).assertTrue();
                         done()
@@ -1254,7 +1298,8 @@ export default function WindowLifeCycleTest() {
                             expect(err!.code).assertEqual(1300006);
                         });
                         done()
-                    } catch (exception: BusinessError) {
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call createWindow. Cause:' + JSON.stringify(exception));
                         expect(false).assertTrue();
                         done()
@@ -1295,7 +1340,8 @@ export default function WindowLifeCycleTest() {
                             expect(!!data).assertTrue();
                             done();
                         });
-                    } catch (exception: BusinessError) {
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                         expect(false).assertTrue();
                         done()
@@ -1339,7 +1385,8 @@ export default function WindowLifeCycleTest() {
                             }
                         });
                         done()
-                    } catch (exception: BusinessError) {
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call createWindow. Cause:' + JSON.stringify(exception));
                         expect(false).assertTrue();
                         done()
@@ -1372,7 +1419,8 @@ export default function WindowLifeCycleTest() {
                     await data!.destroyWindow();
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]', msgStr + `Failed to create the subwindow. Cause code: ${exception!.code}, message: ${exception!.message}`);
                 expect(false).assertTrue();
                 done();
@@ -1402,7 +1450,8 @@ export default function WindowLifeCycleTest() {
                     expect(false).assertTrue();
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]', msgStr + `Failed to create the subwindow. Cause code: ${exception!.code}, message: ${exception!.message}`);
                 expect(false).assertTrue();
                 done();
@@ -1430,7 +1479,8 @@ export default function WindowLifeCycleTest() {
                 hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling on windowStageEvent.');
                 expect(false).assertTrue();
                 done()
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call on windowStageEvent. Cause:' + JSON.stringify(e));
                 expect(e!.code).assertEqual(1300002);
                 done()
@@ -1459,7 +1509,8 @@ export default function WindowLifeCycleTest() {
                 hilog.error(0x0000, '[ANI]', msgStr + 'Succeeded in calling off windowStageEvent.');
                 expect(false).assertTrue();
                 done()
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call off windowStageEvent. Cause:' + JSON.stringify(e));
                 expect(e!.code).assertEqual(1300002);
                 done()
@@ -1488,7 +1539,8 @@ export default function WindowLifeCycleTest() {
                 hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling on windowStageClose.');
                 expect(false).assertTrue();
                 done()
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call on windowStageClose. Cause:' + JSON.stringify(e));
                 expect(e!.code).assertEqual(1300002);
                 done()
@@ -1515,7 +1567,8 @@ export default function WindowLifeCycleTest() {
                 hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling off windowStageClose.');
                 expect(false).assertTrue();
                 done()
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call off windowStageClose. Cause:' + JSON.stringify(e));
                 expect(e!.code).assertEqual(1300002);
                 done()
@@ -1545,7 +1598,8 @@ export default function WindowLifeCycleTest() {
                         hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in calling getWindowStatus.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e: BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.error(0x0000, '[ANI]', msgStr + 'Failed to call getWindowStatus. Cause:' + JSON.stringify(e));
                         expect(e!.code).assertEqual(1300002);
                         done()
@@ -1588,7 +1642,8 @@ export default function WindowLifeCycleTest() {
                     }
                 });
 
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag,msgStr + 'Failed to testRemoveStartingWindow_Promise. Cause: ' + JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -1621,7 +1676,8 @@ export default function WindowLifeCycleTest() {
                     done()
                 });
 
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
                 expect(exception.code).assertEqual(1300002);
                 expect(exception.message!=null).assertTrue();
@@ -1668,7 +1724,8 @@ export default function WindowLifeCycleTest() {
                             }
 
                         });
-                    } catch (exception:  BusinessError) {
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         hilog.error(domain, tag,msgStr + 'Failed to call minimize. Cause:' + JSON.stringify(exception));
                         expect(false).assertTrue();
                         done()
@@ -1717,7 +1774,8 @@ export default function WindowLifeCycleTest() {
                             }
                         });
 
-                    } catch (exception: BusinessError) {
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         hilog.error(domain, tag,msgStr + 'Failed to set the call minimize. Cause:' + JSON.stringify(exception));
                         expect(false).assertTrue();
                         done()
@@ -1730,7 +1788,255 @@ export default function WindowLifeCycleTest() {
                 });
 
         })
+/**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_static_3910
+         * @tc.name      : testCreateSubWindowWithOptions_Function_Promise_static
+         * @tc.desc      : Test the function value of createSubWindowWithOptions
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level0
+         */
+        it("testCreateSubWindowWithOptions_Function_Promise_static", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let msgStr:string = "testCreateSubWindowWithOptions_Function_Promise_static";
+            hilog.info(domain, tag,msgStr + " begin");
+            let windowClass: window.Window;
+            hilog.info(domain, tag,msgStr + " try begin")
+            let options: window.SubWindowOptions = {
+                title: 'title',
+                decorEnabled: true,
+                isModal: false,
+                maximizeSupported: false,
+                zLevel:11,
+                outlineEnabled:false
+            };
+            windowStage.createSubWindowWithOptions('testCreateSubWindowWithOptions_Function_Promise_static', options)
+                .then((data) => {
+                    windowClass = data;
+                    hilog.info(domain, tag,msgStr + 'Succeeded in creating the subwindow. Data: ' + data);
+                    done();
+                })
+                .catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    if (err.code != 1300002) {
+                        hilog.error(domain, tag,msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
+                        expect(false).assertTrue();
+                        done();
+                    } else {
+                        hilog.info(domain, tag,msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager')
+                        hilog.info(domain, tag,msgStr + JSON.stringify(err))
+                        expect(err.code).assertEqual(1300002);
+                        done();
+                    }
+                });
+        })
 
+        /**
+         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_CREATE_SUBWINDOW_WITH_OPTIONS_static_0400
+         * @tc.name      : testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY_static
+         * @tc.desc      : testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it("testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let msgStr:string = "testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY_static";
+            hilog.info(domain, tag,msgStr + " begin");
+            let windowClass: window.Window;
+            hilog.info(domain, tag,msgStr + " try begin")
+            let options: window.SubWindowOptions = {
+                title: 'title',
+                decorEnabled: true,
+                isModal: true,
+                modalityType: window.ModalityType.APPLICATION_MODALITY
+            };
+            try {
+                windowStage.createSubWindowWithOptions('testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY_static', options)
+                    .then((data) => {
+                        windowClass = data;
+                        hilog.info(domain, tag,msgStr + 'Succeeded in creating the subwindow. Data: ' + data);
+                        windowClass.destroyWindow();
+                        expect(true).assertTrue();
+                        done();
+                    })
+                    .catch((error: BusinessError):PromiseLike<void>|undefined => {
+                        hilog.info(domain, tag,msgStr + 'Failed to create the subwindow. Cause: ' + JSON.stringify(error));
+                        if (error.code == 1300002) {
+                            done();
+                        } else {
+                            expect(false).assertTrue();
+                            done();
+                        }
+                    });
+            } catch (error: BusinessError) {
+                hilog.info(domain, tag,msgStr + ',error code:' + error.code);
+                if(error.code==801){
+                    hilog.info(domain, tag,msgStr + 'The device not support APPLICATION_MODALITY');
+                    done();
+                }else{
+                    expect(false).assertTrue();
+                    done();
+                }
+            }
+
+        })
+        /**
+         * @tc.number     : testCreateSubWindowWithOptionsPromiseErrCode1300002_static_0100
+         * @tc.name       : testCreateSubWindowWithOptionsPromiseErrCode1300002_static_0100
+         * @tc.desc       : testCreateSubWindowWithOptionsPromiseErrCode1300002_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testCreateSubWindowWithOptionsPromiseErrCode1300002_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testCreateSubWindowWithOptionsPromiseErrCode1300002_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let param: window.SubWindowOptions = {
+                title: "aa",
+                decorEnabled: true
+            }
+            let subWin: window.Window = await windowStage.createSubWindow('testCreateSubWindowWithOptionsPromiseErrCode1300002_SubWindow_Promise_static')
+            await (subWin! as window.Window).destroyWindow();
+            try {
+
+                (subWin! as window.Window).createSubWindowWithOptions("name", param).then(() => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in calling createSubWindowWithOptions.');
+                    expect(false).assertTrue();
+                    done();
+                }).then((data) => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in creating the subwindow. Data: ' + data);
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,msgStr + 'Failed to call createSubWindowWithOptions. Cause: ' + JSON.stringify(err));
+                    if(err.code == 801){
+                        done();
+                    }else{
+                        expect(err.code).assertEqual(1300002);
+                        expect(err.message!=null).assertTrue();
+                        done()
+                    }
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
+                expect(false).assertTrue();
+                done()
+            }
+        })
+        /**
+         * @tc.number     : testCreateSubWindowWithOptionsPromiseErrCode1300004_static_0100
+         * @tc.name       : testCreateSubWindowWithOptionsPromiseErrCode1300004_static_0100
+         * @tc.desc       : testCreateSubWindowWithOptionsPromiseErrCode1300004_static_0100
+         * @tc.size       : MediumTest
+         * @tc.type       : Function
+         * @tc.level      : Level 3
+         */
+        it('testCreateSubWindowWithOptionsPromiseErrCode1300004_static_0100', Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testCreateSubWindowWithOptionsPromiseErrCode1300004_static_0100";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            let config: window.Configuration = {
+                name: "testCreateSubWindowWithOptionsPromiseErrCode1300004_static_0100",
+                windowType: window.WindowType.TYPE_DIALOG,
+                ctx: context
+            };
+            let subWindowClass: window.Window;
+            try {
+                subWindowClass = await window.createWindow(config);
+                expect(!!subWindowClass).assertTrue();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'window.createWindow ' + 'caught, err: ' + JSON.stringify(err));
+                expect(false).assertTrue();
+                done()
+            }
+            try {
+                let param: window.SubWindowOptions = {
+                    title: "aa", decorEnabled: true
+                }
+                subWindowClass!.createSubWindowWithOptions("bb", param).then(() => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in calling createSubWindowWithOptions.');
+                    expect(false).assertTrue();
+                    done()
+                }).then((data) => {
+                    hilog.info(domain, tag,msgStr + 'Succeeded in creating the subwindow. Data: ' + data);
+                    expect(false).assertTrue();
+                    done();
+                }).catch(async (err: BusinessError) :PromiseLike<void>|undefined=> {
+                    hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(err.code)+` message:${err.message}`);
+                    await subWindowClass.destroyWindow();
+                    if(err.code == 801){
+                        done();
+                    }else{
+                        expect(err.code).assertEqual(1300004);
+                        expect(err.message!=null).assertTrue();
+                        done()
+                    }
+                });
+            } catch (exception: BusinessError) {
+                hilog.error(domain, tag,msgStr + 'Failed to set the call createSubWindowWithOptions. Cause:' +
+                JSON.stringify(exception));
+                if (exception.code === undefined) {
+                    hilog.info(domain, tag,msgStr + '此设备不支持createSubWindowWithOptions能力.');
+                    done()
+                } else {
+                    expect(exception.code).assertEqual(1300004);
+                    expect(exception.message!=null).assertTrue();
+                    done()
+                }
+
+            }
+        })
+        /**
+         * @tc.number    : SUB_BASIC_WMS_FUNCTION_GETSUBWINDOW_static_0100
+         * @tc.name      : testgetSubWindow0_promise_static
+         * @tc.desc      : Test the function value of getSubWindow
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it('testgetSubWindow0_promise_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testgetSubWindow0_promise_static';
+            try {
+                let windowclass:Array<window.Window> = await windowStage.getSubWindow();
+                console.log(`${caseName} getSubWindow success. Cause: ${JSON.stringify(windowclass)}`);
+                expect(windowclass.length).assertEqual(0)
+                done();
+            } catch (e) {
+                console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+                expect(false).assertTrue();
+                done();
+            }
+        });
+        /**
+         * @tc.number    : SUB_BASIC_WMS_FUNCTION_GETSUBWINDOW_static_0200
+         * @tc.name      : testgetSubWindow0_callback_static
+         * @tc.desc      : Test the function value of getSubWindow
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it('testgetSubWindow0_callback_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testgetSubWindow0_callback_static';
+            let windowclass:Array<window.Window>|undefined;
+            try {
+                windowStage.getSubWindow((err: BusinessError<void>|null, data: Array<window.Window>|undefined) => {
+                    const errCode: number = err!.code;
+                    if (errCode) {
+                        console.error(caseName + ` Failed to obtain the subwindow. Cause code: ${err!.code}, message: ${err!.message}`);
+                        expect(false).assertTrue();
+                        done();
+                    }else{
+                        windowclass = data;
+                        console.log(`${caseName} getSubWindow success. Cause: ${JSON.stringify(windowclass)}`);
+                        expect(windowclass!.length).assertEqual(0)
+                        done();
+                    }
+                });
+            } catch (e: BusinessError) {
+                console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+                expect(false).assertTrue();
+                done();
+            }
+        });
 
 
 

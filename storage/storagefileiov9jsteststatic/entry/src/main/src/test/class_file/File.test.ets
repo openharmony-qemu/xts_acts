@@ -49,7 +49,8 @@ export default function fileIOFileProperties() {
         expect(file.name === 'fileIO_test_open_file_static_000').assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_file_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -78,7 +79,8 @@ export default function fileIOFileProperties() {
         fs.closeSync(file);
         fs.closeSync(newFile);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_dup_file_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }

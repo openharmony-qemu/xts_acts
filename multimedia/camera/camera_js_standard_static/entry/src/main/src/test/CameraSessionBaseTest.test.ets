@@ -640,7 +640,8 @@ export default function cameraSessionTest() {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_ADD_REMOVE_OUTPUT_PROMISE_STATIC_0100 ends here");
           done();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log(`${TAG} SUB_MULTIMEDIA_CAMERA_SESSION_ADD_REMOVE_OUTPUT_PROMISE_STATIC_0100 err ${err.code}`)
       }
     })
@@ -704,7 +705,8 @@ export default function cameraSessionTest() {
           await releaseOutput();
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_OUTPUT_PROMISE_STATIC_0100 ends here");
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(`SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_OUTPUT_PROMISE_STATIC_0100 err + ${JSON.stringify(err)}`)
           console.log(`SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_OUTPUT_PROMISE_STATIC_0100 err + ${JSON.stringify(err.message)}`)
           console.log(`SUB_MULTIMEDIA_CAMERA_SESSION_CAN_ADD_OUTPUT_PROMISE_STATIC_0100 err + ${JSON.stringify(err.code)}`)
@@ -752,7 +754,8 @@ export default function cameraSessionTest() {
           console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_SESSION_COMMIT_CONFIG_STATIC_0100 PASSED");
           done();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log(`SUB_MULTIMEDIA_CAMERA_SESSION_COMMIT_CONFIG_STATIC_0100 err ${err.code}`)
         done();
       }

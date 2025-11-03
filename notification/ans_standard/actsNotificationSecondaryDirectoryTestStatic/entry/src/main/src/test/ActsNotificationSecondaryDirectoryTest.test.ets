@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2022 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let testAbilityContext: common.UIAbilityContext;
 let bundle_name: string = 'com.example.secondaryDirectory.static'
+let count: int = 0;
 
 export default function ActsNotificationSecondaryDirectoryTest() {
   describe('SUB_NOTIFICATION_ANS_SECONDARY_DIRECTORY_TEST', () => {
@@ -45,7 +46,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundle_name)
       await Utils.msSleep(2000)
-      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       let driver = Driver.create();
       await Utils.msSleep(1500);
       let button = await driver.findComponent(ON.type('Button').text('确定').within(ON.type('Dialog')));
@@ -66,14 +67,15 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       console.info(`${TAG} beforeEach END`)
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_3850
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_3850
-     * @tc.desc: use NotificationRequest type
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_3850
+     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_3850
+     * @tc.desc  use NotificationRequest type
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_3850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_3850 ===>'
+        count = 0;
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3850 START`);
         notificationManager.requestEnableNotification(testAbilityContext).then(() => {
           let basicContent: notificationManager.NotificationBasicContent = {
@@ -109,11 +111,13 @@ export default function ActsNotificationSecondaryDirectoryTest() {
                 done()
               } else {
                 console.info(`${TAG} publish AsyncCallback success`);
-                expect(true).assertTrue()
+                count++;
+                expect(count).assertEqual(1);
                 done()
               }
             });
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
             expect(false).assertTrue()
             done()
@@ -138,13 +142,14 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3850 END`);
       });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_3950
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_3950
-     * @tc.desc: use NotificationLongTextContent type
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_3950
+     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_3950
+     * @tc.desc  use NotificationLongTextContent type
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_3950', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        count = 0;
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_3950 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3950 START`);
 
@@ -186,11 +191,13 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             } else {
               console.info(`${TAG} publish AsyncCallback success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -198,13 +205,14 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_3950 END`);
       });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4050
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4050
-     * @tc.desc: use NotificationBasicContent type
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4050
+     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4050
+     * @tc.desc  use NotificationBasicContent type
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        count = 0;
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4050 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4050 START`);
 
@@ -243,11 +251,13 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             } else {
               console.info(`${TAG} publish AsyncCallback success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -255,13 +265,14 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4050 END`);
       });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4150
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4150
-     * @tc.desc: use NotificationMultiLineContent type
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4150
+     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4150
+     * @tc.desc  use NotificationMultiLineContent type
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        count = 0;
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4150 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4150 START`);
 
@@ -302,11 +313,13 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             } else {
               console.info(`${TAG} publish AsyncCallback success`)
-              expect(err).assertEqual(null)
+              count++;
+              expect(count).assertEqual(1);
               done()
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -314,13 +327,14 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4150 END`);
       });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4250
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4250
-     * @tc.desc: use NotificationActionButton type
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4250
+     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4250
+     * @tc.desc  use NotificationActionButton type
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        count = 0;
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4250 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4250 START`);
 
@@ -387,11 +401,13 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             } else {
               console.info(`${TAG} publish AsyncCallback success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -399,13 +415,14 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4250 END`);
       });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4350
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4350
-     * @tc.desc: use NotificationTemplate type
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4350
+     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4350
+     * @tc.desc  use NotificationTemplate type
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4350', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        count = 0;
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4350 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4350 START`);
 
@@ -456,11 +473,13 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             } else {
               console.info(`${TAG} publish AsyncCallback success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -468,13 +487,14 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4350 END`);
       });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4450
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4450
-     * @tc.desc: use DistributedOptions type
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4450
+     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4450
+     * @tc.desc  use DistributedOptions type
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4450', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        count = 0;
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4450 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4450 START`);
 
@@ -521,11 +541,13 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             } else {
               console.info(`${TAG} publish AsyncCallback success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -533,13 +555,14 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4450 END`);
       });
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4550
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4550
-     * @tc.desc: use NotificationBasicContent type
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4550
+     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4550
+     * @tc.desc  use NotificationBasicContent type
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4550', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
+        count = 0;
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4550 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4550 START`);
 
@@ -599,11 +622,13 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               done()
             } else {
               console.info(`${TAG} publish AsyncCallback success`)
-              expect(true).assertTrue()
+              count++;
+              expect(count).assertEqual(1);
               done()
             }
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -612,10 +637,10 @@ export default function ActsNotificationSecondaryDirectoryTest() {
       })
 
 
-    /*
-         * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4650
-         * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4650
-         * @tc.desc: use NotificationMultiLineContent type
+    /**
+         * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4650
+         * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4650
+         * @tc.desc  use NotificationMultiLineContent type
          */
     it('Sub_Notification_Ans_Publish_Publish_Static_4650', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -636,7 +661,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
                   console.info(`${TAG} NotificationSlot[${i}].notificationType:` + NotificationSlot[i].notificationType)
                   let num = NotificationSlot[i].notificationType as notificationManager.SlotType
                   if (num == notificationManager.SlotType.SOCIAL_COMMUNICATION) {
-                    expect(true).assertTrue()
+                    expect(num == notificationManager.SlotType.SOCIAL_COMMUNICATION).assertTrue()
                     done()
                   }else{
                     expect(false).assertTrue()
@@ -651,7 +676,8 @@ export default function ActsNotificationSecondaryDirectoryTest() {
               })
             }
           })
-        } catch (err:BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TAG} addSlot failed err: ${err.code}, errMes: ${err.message}`)
           expect(false).assertTrue()
           done()
@@ -659,10 +685,10 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4650 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4750
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4750
-     * @tc.desc: use BundleOption type
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4750
+     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4750
+     * @tc.desc  use BundleOption type
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4750', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -682,10 +708,10 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4750 END`);
       })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Publish_Publish_Static_4850
-     * @tc.name: Sub_Notification_Ans_Publish_Publish_Static_4850
-     * @tc.desc: use NotificationFlags type
+    /**
+     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_4850
+     * @tc.name Sub_Notification_Ans_Publish_Publish_Static_4850
+     * @tc.desc  use NotificationFlags type
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_4850', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

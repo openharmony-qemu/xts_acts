@@ -81,7 +81,8 @@ export default function WindowTitleTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.getMainWindow, tempWnd: ' + tempWnd);
                 expect(true).assertTrue()
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + ' Failed to get the height of window decor. Cause: ' + JSON.stringify(exception));
                 if (exception.code == 801 || exception.code == 1300002) {
                     expect(true).assertTrue()
@@ -116,7 +117,8 @@ export default function WindowTitleTest() {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowDecorVisible.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e: BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setWindowDecorVisible. Cause:' + JSON.stringify(e));
                         if(e!.code == 1300002){
                             done();
@@ -159,7 +161,8 @@ export default function WindowTitleTest() {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowDecorHeight.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e: BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setWindowDecorHeight. Cause:' + JSON.stringify(e));
                         expect(e.code).assertEqual(1300002);
                         done()
@@ -190,7 +193,8 @@ export default function WindowTitleTest() {
                 hilog.info(0x0000, '[ANI]',msgStr+ `Succeeded in setting the height of window decor`);
                 expect(true).assertTrue();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr+ `Failed to set the style of button. Cause code: ${exception.code}, message: ${exception.message}`);
                 if(exception.code = 801){
                     done();
@@ -225,7 +229,8 @@ export default function WindowTitleTest() {
                 windowClass.offWindowTitleButtonRectChange();
                 expect(true).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to enable the listener for window title buttons area changes. Cause: ' + JSON.stringify(err));
                 if (err!.code == 801) {
                     expect(true).assertTrue()
@@ -255,7 +260,8 @@ export default function WindowTitleTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window title buttons area changes');
                 expect(true).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to disable the listener for window title buttons area changes. Cause: ' + JSON.stringify(error));
                 if (error!.code == 1300002) {
                     expect(true).assertTrue()
@@ -291,7 +297,8 @@ export default function WindowTitleTest() {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling on windowTitleButtonRectChange.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e: BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call on windowTitleButtonRectChange. Cause:' + JSON.stringify(e));
                         expect(e!.code).assertEqual(1300002);
                         done()
@@ -328,7 +335,8 @@ export default function WindowTitleTest() {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setWindowTitleButtonVisible.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e: BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setWindowTitleButtonVisible. Cause:' + JSON.stringify(e));
                         expect(e!.code).assertEqual(1300002);
                         done()
@@ -369,7 +377,8 @@ export default function WindowTitleTest() {
                         expect(false).assertTrue();
                         await (subWin!! as window.Window).destroyWindow();
                         done();
-                    } catch (exception: BusinessError) {
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call setWindowTitleButtonVisible. Cause:' +
                         JSON.stringify(exception));
                         await (subWin!! as window.Window).destroyWindow();
@@ -415,7 +424,8 @@ export default function WindowTitleTest() {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling setDecorButtonStyle.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e: BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call setDecorButtonStyle. Cause:' + JSON.stringify(e));
                         expect(e!.code).assertEqual(1300002);
                         done()
@@ -466,7 +476,8 @@ export default function WindowTitleTest() {
                 await (tempWnd! as window.Window).destroyWindow();
                 expect(false).assertTrue();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call setDecorButtonStyle. Cause:' + JSON.stringify(exception));
                 await (tempWnd! as window.Window).destroyWindow();
                 if (exception!.code == 801) {
@@ -496,7 +507,8 @@ export default function WindowTitleTest() {
                 }
                 windowClass.setDecorButtonStyle(param);
                 hilog.info(domain, tag,`${msgStr} setDecorButtonStyle success.`);
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(domain, tag,msgStr + ' Failed. Cause:' + JSON.stringify(error));
                 if (error.code == 801) {
                     done();
@@ -527,7 +539,8 @@ export default function WindowTitleTest() {
                 }
                 windowClass.setDecorButtonStyle(param);
                 hilog.error(domain, tag,`${msgStr} setDecorButtonStyle success.`);
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(domain, tag,msgStr + ' Failed. Cause:' + JSON.stringify(error));
                 if (error.code == 801) {
                     done();
@@ -561,7 +574,8 @@ export default function WindowTitleTest() {
                 subWindowClass.getWindowDecorVisible();
                 expect(false).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error(msgStr + `Failed to getWindowDecorVisible. Cause code: ${err.code}, message: ${err.message}`);
                 if (err.code == 801) {
                     console.log(msgStr + '此设备不支持');
@@ -605,7 +619,8 @@ export default function WindowTitleTest() {
                 console.error(msgStr + 'Succeeded in calling setWindowTitleMoveEnabled.');
                 expect(false).assertTrue();
                 done()
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.log(msgStr + 'Failed to call setWindowTitleMoveEnabled. Cause:' + JSON.stringify(e));
                 expect(e.code).assertEqual(1300002);
                 done()
@@ -648,7 +663,8 @@ export default function WindowTitleTest() {
                 expect(false).assertTrue();
                 await (tempWnd! as window.Window).destroyWindow();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 console.error(msgStr + 'Failed to set the call setWindowTitleMoveEnabled. Cause:' +
                 JSON.stringify(exception));
                 await (tempWnd! as window.Window).destroyWindow();
@@ -782,7 +798,8 @@ export default function WindowTitleTest() {
                 await (tempWnd! as window.Window).destroyWindow();
                 expect(false).assertTrue();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 console.error(msgStr + 'Failed to set the call setDecorButtonStyle. Cause:' + JSON.stringify(exception));
                 await (tempWnd! as window.Window).destroyWindow();
                 if (exception.code == 801) {
@@ -823,7 +840,8 @@ export default function WindowTitleTest() {
                 console.error(msgStr + 'Succeeded in calling getDecorButtonStyle.');
                 expect(false).assertTrue();
                 done()
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.log(msgStr + 'Failed to call getDecorButtonStyle. Cause:' + JSON.stringify(e));
                 expect(e.code).assertEqual(1300002);
                 done()
@@ -863,7 +881,8 @@ export default function WindowTitleTest() {
             try {
                 (tempWnd! as window.Window).getDecorButtonStyle();
                 console.error(msgStr + 'Succeeded in calling getDecorButtonStyle.');
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 console.error(msgStr + 'Failed to set the call getDecorButtonStyle. Cause:' + JSON.stringify(exception.code));
                 if (exception.code == 801) {
                     done();
@@ -905,7 +924,8 @@ export default function WindowTitleTest() {
                 console.error(msgStr + 'Succeeded in calling getTitleButtonRect.' + JSON.stringify(res));
                 expect(false).assertTrue();
                 done()
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.log(msgStr + 'Failed to call getTitleButtonRect. Cause:' + JSON.stringify(e));
                 expect(e.code).assertEqual(1300002);
                 done()
@@ -941,7 +961,8 @@ export default function WindowTitleTest() {
                 console.error(msgStr + 'Succeeded in calling setWindowTitleButtonVisible.');
                 expect(false).assertTrue();
                 done()
-            } catch (e: BusinessError) {
+            } catch (e) {
+                e = e as BusinessError;
                 console.log(msgStr + 'Failed to call setWindowTitleButtonVisible. Cause:' + JSON.stringify(e));
                 expect(e.code).assertEqual(1300002);
                 done()
@@ -980,7 +1001,8 @@ export default function WindowTitleTest() {
                 expect(false).assertTrue();
                 await (subWin!! as window.Window).destroyWindow();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 console.error(msgStr + 'Failed to set the call setWindowTitleButtonVisible. Cause:' +
                 JSON.stringify(exception));
                 await (subWin!! as window.Window).destroyWindow();
@@ -1022,7 +1044,8 @@ export default function WindowTitleTest() {
                     done();
                 })
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 console.error(msgStr + 'Failed to set the call startMoving. Cause:' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002);
                 done()
@@ -1059,7 +1082,8 @@ export default function WindowTitleTest() {
                     done();
                 })
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 console.error(msgStr + 'Failed to set the call startMoving. Cause:' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002);
                 done()
@@ -1085,7 +1109,8 @@ export default function WindowTitleTest() {
                 expect(TitleButtonRect.height !== null).assertTrue();
                 expect(TitleButtonRect.width !== null).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(domain, tag,msgStr + 'Failed to get the area of title buttons. Cause: ' + JSON.stringify(error));
                 if (error.code == 801) {
                     expect(true).assertTrue()

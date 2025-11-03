@@ -118,7 +118,8 @@ export default function imagePackerExifTest() {
         let data = await newImageSource.getImageProperty(key);
         hilog.info(0x0000, tag, `propertyCompFalse failed ${fileName} ${key} imagePropertyNew: ${data}`);
         result = false
-      } catch(error: BusinessError) {
+      } catch(error) {
+        error = error as BusinessError;
         if (error.code != 62980123) {
           result = false
           hilog.info(0x0000, tag, `propertyCompFalse failed ${fileName} ${key} errorCode: ${error.code} errorMessage: ${error.message}`);

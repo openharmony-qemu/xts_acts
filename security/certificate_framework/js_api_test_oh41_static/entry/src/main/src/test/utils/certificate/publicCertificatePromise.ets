@@ -96,7 +96,8 @@ async function verifyX509CertPromise(certType: string, flag: string): Promise<vo
     expect(publicKey != null).assertTrue();
     console.log("[promise]  getPublickey success!");
     gInstance.verify(publicKey);
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`verifyX509CertPromise catch error: ${JSON.stringify(error)}`);
     throw error as Error;
   }
@@ -106,7 +107,8 @@ async function checkValidityX509CertPromise(certType: string, date: string): Pro
   try {
     let instance: cert.X509Cert = await createX509CertInstancePromise(certType);
     instance.checkValidityWithDate(date);
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`checkValidityX509CertPromise catch error: ${JSON.stringify(error)}`);
     throw error as Error;
   }
@@ -209,7 +211,8 @@ async function getX509CertInfoPromise(certType: string, processType: string): Pr
         console.log("Invalid parameter !");
         break;
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -220,7 +223,8 @@ async function checkGetEncodedX509CertPromise(certType: string): Promise<void> {
     let gInstance: cert.X509Cert = await createX509CertInstancePromise(certType)
     let encodedBlob = gInstance.getEncoded();
     expect(encodedBlob != null).assertTrue();
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -232,7 +236,8 @@ async function checkGetPublicKeyX509CertPromise(certType: string): Promise<void>
     let publicKey: cryptoFramework.PubKey = gInstance.getPublicKey();
     console.warn("[promise] publicKey success, publicKey is:" + publicKey);
     expect(publicKey != null).assertTrue();
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -266,7 +271,8 @@ async function checkIsRevokedX509CRLPromise(crlInstance: cert.X509CRL, flag: str
     let status: boolean = crlInstance.isRevoked(certInstance);
 
     return status;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     return false;
   }
@@ -277,7 +283,8 @@ async function checkGetEncodedX509CRLPromise(certType: string): Promise<void> {
     let gInstance: cert.X509CRL = await createX509CRLInstancePromise(certType);
     let encodedBlob = gInstance.getEncoded();
     expect(encodedBlob != null).assertTrue();
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -324,7 +331,8 @@ async function verifyX509CRLPromise(crlType: string, flag?: string | cryptoFrame
     let pubKey: cryptoFramework.PubKey = convertKeyPair.pubKey;
     globalCrlInstance.verify(pubKey);
     console.log("############################ 3");
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -398,7 +406,8 @@ async function getX509CRLInfoPromise(certType: string, processType: string): Pro
         console.log("Invalid parameter !");
         break;
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -413,7 +422,8 @@ async function checkGetRevokedCertWithCertX509CRLPromise(crlInstance: cert.X509C
     console.warn("[promise] getRevokedCertWithCert num is:" + num);
 
     return crlEntry;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -446,7 +456,8 @@ async function checkGetRevokedCertsX509CRLPromise(certType: string): Promise<voi
       let eData: cert.EncodingBlob = await certs[gIndex].getEncoded();
       expect(eData != null).assertTrue();
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -468,7 +479,8 @@ async function checkGetRevokedCertX509CRLPromise(certType: string): Promise<void
     console.log(
       "[Promise] cert certIssuer is: " + uInt8ArrayToString(certIssuer.data)
     );
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -529,7 +541,8 @@ async function checkValidateOfCertChainValidatorPromise(algName: string, flag: s
     };
     console.log("certChainData.data is: " + certChainData.data);
     validator.validate(certChainData)
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -564,7 +577,8 @@ async function createX509CRLExtensionsInstancePromise(certType: string, hasExten
     let crl: cert.X509CRL = await cert.createX509CRL(encodingBlob);
 
     return crl;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -576,7 +590,8 @@ async function checkGetX509CRLExtensionsPromise(certType: string, hasExtension: 
     let extension: cert.DataBlob = instance.getExtensions();
 
     return extension;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -591,7 +606,8 @@ async function checkGetX509CRLExtensionsStabilityPromise(certType: string, hasEx
     let extension = instance.getExtensions();
 
     return extension;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -626,7 +642,8 @@ async function createX509CRLEntryExtensionsInstancePromise(certType: string, has
     let data: cert.X509CRL = await cert.createX509CRL(encodingBlob)
 
     return data;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -644,7 +661,8 @@ async function checkGetX509CRLEntryExtensionsPromise(certType: string, hasExtens
     } else {
       return {data: new Uint8Array()} as cert.DataBlob
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -665,7 +683,8 @@ async function checkGetX509CRLEntryExtensionsStabilityPromise(certType: string, 
     } else {
       return {data: new Uint8Array()} as cert.DataBlob;
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -683,7 +702,8 @@ async function checkHasX509CRLEntryExtensionsPromise(extensions: string, hasExte
     } else {
       return false;
     }
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -725,7 +745,8 @@ async function createX509CertExtensionNormalPromise(flag: string): Promise<cert.
     let extensionObj: cert.CertExtension = await cert.createCertExtension(encodingBlob);
 
     return extensionObj;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -737,7 +758,8 @@ async function checkHasUnsupportedX509CrlPromise(flag: string): Promise<boolean>
     let hasUnsupported: boolean = certExt.hasUnsupportedCriticalExtension();
 
     return hasUnsupported;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -760,7 +782,8 @@ async function createX509CRLInstanceWithSerialNumberPromise(): Promise<cert.X509
     let data:cert.X509CRL = await cert.createX509CRL(encodingBlob);
 
     return data;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -775,7 +798,8 @@ async function checkX509CRLEntryGetSerialNumberPromise(certType: string): Promis
     const serialNumber: bigint = certs[0].getSerialNumber();
     expect(serialNumber !== null).assertTrue();
     expect(serialNumber === BigInt("22214312158469178443624022151750054219611905")).assertTrue();
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -786,7 +810,8 @@ async function checkX509CRLGetRevokedCertPromise(): Promise<void> {
     let instance: cert.X509CRL = await createX509CRLInstanceWithSerialNumberPromise()
     const crlEntry = instance.getRevokedCert(BigInt("22214312158469178443624022151750054219611905"));
     expect(crlEntry !== null).assertTrue();
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }

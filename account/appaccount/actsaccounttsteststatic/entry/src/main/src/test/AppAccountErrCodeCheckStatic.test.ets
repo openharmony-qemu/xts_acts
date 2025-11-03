@@ -191,7 +191,8 @@ export default function AppAccountErrCodeCheckStatic() {
           try {
             await accountManager.setAuthToken(name, "getSocialData" + i, "value" + i);
             hilog.info(0x0000, tag, logTag + "setAuthToken " + i);
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, logTag + "setAuthToken err: " + JSON.stringify(err));
             break
           }
@@ -246,7 +247,8 @@ export default function AppAccountErrCodeCheckStatic() {
           try {
             await accountManager.setAuthTokenVisibility(name, "getSocialData", owner + i, true);
             hilog.info(0x0000, tag, logTag + "setAuthTokenVisibility " + i);
-          } catch (err: BusinessError<void>) {
+          } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, logTag + "setAuthTokenVisibility err: " + JSON.stringify(err));
             break
           }
@@ -334,7 +336,8 @@ export default function AppAccountErrCodeCheckStatic() {
           await accountManager.deleteCredential(accountName, "PIN");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -394,7 +397,8 @@ export default function AppAccountErrCodeCheckStatic() {
           await accountManager.deleteCredential(accountName, "PIN");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300003);
@@ -453,7 +457,8 @@ export default function AppAccountErrCodeCheckStatic() {
           await accountManager.deleteCredential(name, "PIN");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300102);
@@ -547,7 +552,8 @@ export default function AppAccountErrCodeCheckStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -577,7 +583,8 @@ export default function AppAccountErrCodeCheckStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300003);
@@ -609,7 +616,8 @@ export default function AppAccountErrCodeCheckStatic() {
           await accountManager.removeAccount(name);
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           await accountManager.removeAccount(name);
           hilog.info(0x0000, tag, logTag + "end====");
@@ -673,7 +681,8 @@ export default function AppAccountErrCodeCheckStatic() {
           await accountManager.removeAccount(name);
           hilog.info(0x0000, tag, logTag + "end====");
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           await accountManager.removeAccount(name);
           expect().assertFail();
@@ -737,7 +746,8 @@ export default function AppAccountErrCodeCheckStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12400002);
@@ -767,7 +777,8 @@ export default function AppAccountErrCodeCheckStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300003);
@@ -797,7 +808,8 @@ export default function AppAccountErrCodeCheckStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -830,7 +842,8 @@ export default function AppAccountErrCodeCheckStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -859,7 +872,8 @@ export default function AppAccountErrCodeCheckStatic() {
           await accountManager.setCredential(accountName, "owner", "a");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300003);
@@ -923,7 +937,8 @@ export default function AppAccountErrCodeCheckStatic() {
           await accountManager.setCredential("accountName", credentialType, "a");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300003);
@@ -987,7 +1002,8 @@ export default function AppAccountErrCodeCheckStatic() {
           await accountManager.setCredential("accountName", "credentialType", credential);
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -1050,7 +1066,8 @@ export default function AppAccountErrCodeCheckStatic() {
           await accountManager.setCustomData(accountName, "owner", "a");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300003);
@@ -1113,7 +1130,8 @@ export default function AppAccountErrCodeCheckStatic() {
           await accountManager.setCustomData("accountName", key, "a");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -1176,7 +1194,8 @@ export default function AppAccountErrCodeCheckStatic() {
           await accountManager.setCustomData("accountName", "credentialType", value);
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -1240,7 +1259,8 @@ export default function AppAccountErrCodeCheckStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300003);
@@ -1305,7 +1325,8 @@ export default function AppAccountErrCodeCheckStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300003);
@@ -1370,7 +1391,8 @@ export default function AppAccountErrCodeCheckStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -1435,7 +1457,8 @@ export default function AppAccountErrCodeCheckStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -1535,7 +1558,8 @@ export default function AppAccountErrCodeCheckStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300003);
@@ -1604,7 +1628,8 @@ export default function AppAccountErrCodeCheckStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12400002);
@@ -1631,7 +1656,8 @@ export default function AppAccountErrCodeCheckStatic() {
             expect().assertFail();
             done();
           });
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -1661,7 +1687,8 @@ export default function AppAccountErrCodeCheckStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300003);
@@ -1726,7 +1753,8 @@ export default function AppAccountErrCodeCheckStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -1791,7 +1819,8 @@ export default function AppAccountErrCodeCheckStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300002);
@@ -1853,7 +1882,8 @@ export default function AppAccountErrCodeCheckStatic() {
           hilog.info(0x0000, tag, logTag + "data: " + JSON.stringify(data));
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           hilog.info(0x0000, tag, logTag + "end====");
           expect(err.code).assertEqual(12300108);
@@ -1908,7 +1938,8 @@ export default function AppAccountErrCodeCheckStatic() {
           accountManager.getCustomDataSync("test_no_account", "test_key");
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>ErrCode_4900 getCustomDataSync catch err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
           hilog.info(0x0000, tag, "====>ErrCode_4900 end====");

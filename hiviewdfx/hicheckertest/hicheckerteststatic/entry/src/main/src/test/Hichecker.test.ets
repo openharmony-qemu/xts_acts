@@ -162,7 +162,8 @@ export default function hicheckerTest() {
         expect(hichecker.containsCheckRule(hichecker.RULE_THREAD_CHECK_SLOW_PROCESS)).assertEqual(true);
         expect(hichecker.containsCheckRule(hichecker.RULE_CHECK_ABILITY_CONNECTION_LEAK)).assertEqual(true);
         expect(hichecker.containsCheckRule(hichecker.RULE_CAUTION_PRINT_LOG)).assertEqual(true);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}d', error.code);
         hilog.info(domain, tag, '%{public}s', error.message);
         expect(error.code == 401).assertEqual(true);
@@ -185,7 +186,8 @@ export default function hicheckerTest() {
         expect(hichecker.getRule() == tmp).assertEqual(true);
         hichecker.removeCheckRule(hichecker.RULE_CHECK_ABILITY_CONNECTION_LEAK | hichecker.RULE_CAUTION_PRINT_LOG);
         expect(hichecker.getRule() == 0n).assertEqual(true);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}d', error.code);
         hilog.info(domain, tag, '%{public}s', error.message);
         expect(error.code == 401).assertEqual(true);
@@ -206,7 +208,8 @@ export default function hicheckerTest() {
         expect(hichecker.containsCheckRule(hichecker.RULE_THREAD_CHECK_SLOW_PROCESS)).assertEqual(true);
         expect(hichecker.containsCheckRule(hichecker.RULE_CHECK_ABILITY_CONNECTION_LEAK)).assertEqual(true);
         expect(hichecker.containsCheckRule(hichecker.RULE_CAUTION_PRINT_LOG)).assertEqual(true);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}d', error.code);
         hilog.info(domain, tag, '%{public}s', error.message);
         expect(error.code == 401).assertEqual(true);
@@ -225,7 +228,8 @@ export default function hicheckerTest() {
         console.log('add rule success!');
         expect(hichecker.containsCheckRule(hichecker.RULE_THREAD_CHECK_SLOW_PROCESS)).assertEqual(true);
         expect(hichecker.containsCheckRule(hichecker.RULE_CHECK_ARKUI_PERFORMANCE)).assertEqual(true);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, '%{public}d', error.code);
         hilog.info(domain, tag, '%{public}s', error.message);
         expect(error.code == 401).assertEqual(true);

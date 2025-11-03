@@ -497,7 +497,8 @@ export default function cameraVideoQualityPrioritizationTest() {
           await startCameraSession(i);
           try {
             mCameraSession.setQualityPrioritization(cameraObj.QualityPrioritization.HIGH_QUALITY);
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.info(TAG +
               `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_STATIC_0200 error: ${err}, ${err.code}, ${err.message}`);
             expect().assertFail();
@@ -548,7 +549,8 @@ export default function cameraVideoQualityPrioritizationTest() {
           await startCameraSession(i);
           try {
             mCameraSession.setQualityPrioritization(cameraObj.QualityPrioritization.POWER_BALANCE);
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.info(TAG +
               `Entering SUB_MULTIMEDIA_CAMERA_VIDEO_SET_QUALITY_PRIORITIZATION_PROMISE_STATIC_0300 error: ${err}, ${err.code}, ${err.message}`);
             expect().assertFail();

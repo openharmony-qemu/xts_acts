@@ -88,7 +88,8 @@ struct WebRunJavaScriptOnHeadEndTest {
                     resultData = result;
                   }
                 })
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               setTimeout(() => {

@@ -94,7 +94,8 @@ export default function handleCameraPhotoTest() {
           expect(date_modified_after).assertEqual(date_modified_before);
           expect(size_after).assertEqual(size_before);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} :: handleCameraPhotoByExistPhotoAsset failed with error: ${error.code}, ${error.message}`);
           expect(false).assertTrue();
           done();
@@ -149,7 +150,8 @@ export default function handleCameraPhotoTest() {
         expect(size_before).assertEqual(size_after);
         expect(count_before).assertEqual(count_after);
         done()
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${testNum} :: saveCameraPhotoException failed with error: ${error.code}, ${error.message}`);
         expect(false).assertTrue();
         done();

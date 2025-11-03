@@ -1151,7 +1151,8 @@ export default function ActsGzipDecompressionTest() {
         await gzip.gzfwrite(bufferWithData, -1, 8).then(() => {
           expect().assertFail();
         });
-      } catch (errData: BusinessError) {
+      } catch (errData) {
+        errData = errData as BusinessError;
         expect(errData.code).assertEqual(401);
       }
 
@@ -1159,7 +1160,8 @@ export default function ActsGzipDecompressionTest() {
         await gzip.gzfwrite(bufferWithData, 2, -1).then(() => {
           expect().assertFail();
         });
-      } catch (errData: BusinessError) {
+      } catch (errData) {
+        errData = errData as BusinessError;
         expect(errData.code).assertEqual(401);
       }
       await gzip.gzclose();
@@ -1274,7 +1276,8 @@ export default function ActsGzipDecompressionTest() {
         await gzip.gzfread(bufferWithData, -1, 8).then(() => {
           expect().assertFail();
         });
-      } catch (errData: BusinessError) {
+      } catch (errData) {
+        errData = errData as BusinessError;
         expect(errData.code).assertEqual(401);
       }
 
@@ -1282,7 +1285,8 @@ export default function ActsGzipDecompressionTest() {
         await gzip.gzfread(bufferWithData, 2, -1).then(() => {
           expect().assertFail();
         });
-      } catch (errData: BusinessError) {
+      } catch (errData) {
+        errData = errData as BusinessError;
         expect(errData.code).assertEqual(401);
       }
       await gzip.gzclose();
@@ -1513,7 +1517,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzclosew().then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzclosew_0100 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800004);
         }
@@ -1539,7 +1544,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzcloser().then((num) => {
             expect(num).assertEqual(zlib.ReturnStatus.OK);
           })
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzcloser_normal_0100 errCode:${errData.code}  message:${errData.message}`);
           expect().assertFail();
         }
@@ -1564,7 +1570,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzcloser().then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzcloser_0100 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800004);
         }
@@ -1595,7 +1602,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzwrite(bufferWithData, 16).then((num) => {
             expect(num).assertEqual(16);
           })
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzwrite_normal_0100 errCode:${errData.code}  message:${errData.message}`);
           expect().assertFail();
         }
@@ -1622,7 +1630,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzwrite(bufferWithData, 1).then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzwrite_0100 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(401);
 
@@ -1654,7 +1663,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzwrite(bufferWithData, 0).then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzwrite_0400 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800009);
         }
@@ -1685,7 +1695,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzwrite(bufferWithData, 16).then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzwrite_0500 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800009);
         }
@@ -1712,7 +1723,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzungetc(1).then((resulit) => {
             expect(resulit).assertEqual(1);
           })
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzungetc_normal_0100 errCode:${errData.code}  message:${errData.message}`);
           expect().assertFail();
         }
@@ -1738,7 +1750,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzungetc(-1).then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzungetc_0200 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(401);
         }
@@ -1764,7 +1777,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzungetc(256).then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzungetc_0300 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(401);
         }
@@ -1790,7 +1804,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzungetc(1).then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzungetc_0500 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800009);
         }
@@ -1816,7 +1831,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gztell().then((num) => {
             expect(num).assertEqual(0);
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gztell_normal_0100 errCode:${errData.code}  message:${errData.message}`);
           expect().assertFail();
         }
@@ -1841,7 +1857,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gztell().then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gztell_0100 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800009);
         }
@@ -1883,7 +1900,8 @@ export default function ActsGzipDecompressionTest() {
             zlib.CompressStrategy.COMPRESS_STRATEGY_FIXED).then((errcode) => {
             expect(errcode).assertEqual(zlib.ReturnStatus.OK);
           })
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzsetparams_normal_0100 errCode:${errData.code}  message:${errData.message}`);
           expect().assertFail();
         }
@@ -1910,7 +1928,8 @@ export default function ActsGzipDecompressionTest() {
             zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY).then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzsetparams_0300 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800004);
         }
@@ -1936,7 +1955,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzseek(2, zlib.OffsetReferencePoint.SEEK_SET).then((resulit) => {
             expect(resulit).assertEqual(2);
           })
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzseek_normal_0100 errCode:${errData.code}  message:${errData.message}`);
           expect().assertFail();
         }
@@ -1965,7 +1985,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzseek(-2, zlib.OffsetReferencePoint.SEEK_CUR).then((resulit) => {
             expect(resulit).assertEqual(0);
           })
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzseek_normal_0200 errCode:${errData.code}  message:${errData.message}`);
           expect().assertFail();
         }
@@ -1990,7 +2011,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzseek(2, zlib.OffsetReferencePoint.SEEK_CUR).then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzseek_0300 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800009);
         }
@@ -2015,7 +2037,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzrewind().then((resulit) => {
             expect(resulit).assertEqual(zlib.ReturnStatus.OK);
           })
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzrewind_normal_0100 errCode:${errData.code}  message:${errData.message}`);
           expect().assertFail();
         }
@@ -2041,7 +2064,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzrewind().then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzrewind_0100 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800009);
         }
@@ -2076,7 +2100,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzread(bufferWithData).then((num) => {
             expect(num).assertEqual(16);
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzread_normal_0100 errCode:${errData.code}  message:${errData.message}`);
           expect().assertFail();
         }
@@ -2103,7 +2128,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzread(bufferWithData).then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzread_0100 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(401);
         }
@@ -2130,7 +2156,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzread(bufferWithData).then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzread_0400 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800009);
         }
@@ -2156,7 +2183,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzputs("hello").then((num) => {
             expect(num).assertEqual(5);
           })
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzputs_normal_0100 errCode:${errData.code}  message:${errData.message}`);
           expect().assertFail();
         }
@@ -2182,7 +2210,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzputs("").then((num) => {
             expect(num).assertEqual(0);
           })
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzputs_normal_0200 errCode:${errData.code}  message:${errData.message}`);
           expect().assertFail();
         }
@@ -2208,7 +2237,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzputs("hello").then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzputs_0300 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800009);
         }
@@ -2234,7 +2264,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzputc(0).then((num) => {
             expect(num).assertEqual(0);
           })
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzputc_normal_0100 errCode:${errData.code}  message:${errData.message}`);
           expect().assertFail();
         }
@@ -2260,7 +2291,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzputc(0).then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzputc_0400 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800009);
         }
@@ -2286,7 +2318,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzputc(-1).then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzputc_0500 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(401);
         }
@@ -2312,7 +2345,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzputc(256).then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzputc_0600 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(401);
         }
@@ -2338,7 +2372,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzprintf("name is %s, age is %d", "Tom", 23).then((len) => {
             expect(len).assertEqual(22);
           })
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzprintf_normal_0100 errCode:${errData.code}  message:${errData.message}`);
           expect().assertFail();
         }
@@ -2363,7 +2398,8 @@ export default function ActsGzipDecompressionTest() {
         await gzip.gzprintf("name is %s, age is %d", "Tom", 23).then(() => {
           expect().assertFail();
         });
-      } catch (errData: BusinessError<void>) {
+      } catch (errData) {
+        errData = errData as BusinessError;
         expect(errData.code).assertEqual(17800004);
       }
       await gzip.gzclose();
@@ -2388,7 +2424,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzoffset().then((result) => {
             expect(result).assertEqual(0);
           })
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzoffset_normal_0100 errCode:${errData.code}  message:${errData.message}`);
           expect().assertFail();
         }
@@ -2413,7 +2450,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzoffset().then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzoffset_0100 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800009);
         }
@@ -2442,7 +2480,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzgets(bufferWithData).then((resulit) => {
             expect(resulit).assertEqual("hello");
           })
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzgets_normal_0100 errCode:${errData.code}  message:${errData.message}`);
           expect().assertFail();
         }
@@ -2469,7 +2508,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzgets(bufferWithData).then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzgets_0100 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800009);
         }
@@ -2496,7 +2536,8 @@ export default function ActsGzipDecompressionTest() {
           await gzip.gzgets(bufferWithData).then(() => {
             expect().assertFail();
           });
-        } catch (errData: BusinessError<void>) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag, `Test_gzgets_0200 errCode:${errData.code}  message:${errData.message}`);
           expect(errData.code).assertEqual(17800009);
         }
@@ -2609,7 +2650,8 @@ export default function ActsGzipDecompressionTest() {
             expect(zlib.ReturnStatus.NEED_DICT).assertEqual(2);
             done();
           })
-        } catch (errData: BusinessError) {
+        } catch (errData) {
+          errData = errData as BusinessError;
           hilog.error(domain, tag,
             `GzipDecompressionAbilityTest_static_8900 gzflush failed with errCode:${errData.code}  message:${errData.message}`);
           expect().assertFail();

@@ -28,7 +28,8 @@ async function genRsa2048KeyPairSpec(): Promise<cryptoFramework.KeyPair> {
     let specGenerator: cryptoFramework.AsyKeyGeneratorBySpec = asyCommon.createAsyKeyGeneratorBySpec(asyKeySpec);
     let specKeyPair: cryptoFramework.KeyPair = await specGenerator.generateKeyPair();
     return specKeyPair;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     throw err as Error;
   }
 }
@@ -385,7 +386,8 @@ export default function SecurityCipherJsunit() {
       try {
         cryptoFramework.createCipher("ECC128|GCM|PKCS7");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("createCipherFail catch  error: " + err.code);
         expect(err.code).assertEqual(801);
       }
@@ -424,7 +426,8 @@ export default function SecurityCipherJsunit() {
           });
         });
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
       }
       await cipherGenerator.init(encryptMode, symKey, null);
@@ -463,14 +466,16 @@ export default function SecurityCipherJsunit() {
           });
         });
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
       }
       await cipherGenerator.init(encryptMode, gKeyPairSpec.pubKey, null);
       try {
         await cipherGenerator.doFinal(null);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
       }
       try {
@@ -484,7 +489,8 @@ export default function SecurityCipherJsunit() {
           });
         });
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
       }
       done();
@@ -549,7 +555,8 @@ export default function SecurityCipherJsunit() {
         let cipherGeneratorEncrypt: cryptoFramework.Cipher =
           cryptoFramework.createCipher("RSA1024|PKCS1");
         expect(cipherGeneratorEncrypt.algName == "RSA1024|PKCS1").assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log(
           "Security_CryptoFramework_Cipher_Func_2400 catch err" + err
         );

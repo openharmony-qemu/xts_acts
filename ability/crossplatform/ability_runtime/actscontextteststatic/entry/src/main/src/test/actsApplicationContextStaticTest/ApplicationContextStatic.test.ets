@@ -98,7 +98,8 @@ export default function ApplicationContextStatic() {
           console.log(`testGetRunningProcessInformationCb001 success`);
           done();
         })
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log(`testGetRunningProcessInformationCb001 fail ` + err);
         expect().assertFail();
         done();

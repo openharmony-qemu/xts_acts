@@ -91,7 +91,8 @@ export default function WindowOrientationTest() {
                 expect(16).assertEqual(window.Orientation.USER_ROTATION_LANDSCAPE_INVERTED);
                 expect(17).assertEqual(window.Orientation.FOLLOW_DESKTOP);
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(0x0000, '[ANI]',msgStr + 'test enum value of windowStageEventType error ' + JSON.stringify(err));
                 expect(false).assertTrue();
                 done();
@@ -124,7 +125,8 @@ export default function WindowOrientationTest() {
                 hilog.info(0x0000, '[ANI]',`window.RectChangeReason.DRAG_END: ${window.RectChangeReason.DRAG_END}`);
                 expect(6).assertEqual(window.RectChangeReason.DRAG_END);
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.info(0x0000, '[ANI]',msgStr + 'Failed to testRectChangeReason_enum' + JSON.stringify(error));
                 expect(false).assertTrue();
                 done();
@@ -159,7 +161,8 @@ export default function WindowOrientationTest() {
                     expect(err!.code).assertEqual(1300002);
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set window orientation. Cause: ' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(1300002);
                 done();
@@ -196,7 +199,8 @@ export default function WindowOrientationTest() {
                     expect(false).assertTrue();
                     done()
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set window orientation. Cause: ' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(1300002)
                 done()
@@ -222,7 +226,8 @@ export default function WindowOrientationTest() {
                 let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult => {}
                 subWindowClass.onRotationChange(rotationCallback);
                 done();
-            } catch (err:BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err!.code}, message: ${err!.message}`);
                 expect(err!.code).assertEqual(1300002);
                 done();
@@ -308,7 +313,8 @@ export default function WindowOrientationTest() {
                 };
                 subWindowClass.offRotationChange(rotationCallback);
                 done();
-            } catch (err:BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err!.code}, message: ${err!.message}`);
                 expect(err!.code).assertEqual(1300002);
                 done();
@@ -338,7 +344,8 @@ export default function WindowOrientationTest() {
                 await subWindowClass.destroyWindow()
                 expect(true).assertTrue();
                 done();
-            } catch (err:BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err!.code}, message: ${err!.message}`);
                 await subWindowClass.destroyWindow()
                 if (err!.code === 801) {
@@ -374,7 +381,8 @@ export default function WindowOrientationTest() {
                 await subWindowClass.destroyWindow()
                 expect(true).assertTrue();
                 done();
-            } catch (err:BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err!.code}, message: ${err!.message}`);
                 await subWindowClass.destroyWindow()
                 if (err!.code === 801) {
@@ -427,7 +435,8 @@ export default function WindowOrientationTest() {
                 let currentOrientation = windowClass.getPreferredOrientation();
                 expect(false).assertTrue();
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,`Failed to get window orientation. Cause code: ${exception.code}, message: ${exception.message}`);
                 expect(exception.code).assertEqual(1300002);
                 done()

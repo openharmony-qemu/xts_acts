@@ -81,7 +81,8 @@ struct Index {
                     Utils.emitEvent(cookie, 128)
                   }
                 })
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -98,7 +99,8 @@ struct Index {
                     console.log("emitFetchCookiePromise cookie = " + cookie);
                     Utils.emitEvent(cookie, 130)
                   })
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -109,7 +111,8 @@ struct Index {
                 this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
                 console.log("emitConfigCookieSync cookie = " + this.cookieResult);
                 Utils.emitEvent(this.cookieResult, 132)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -124,7 +127,8 @@ struct Index {
                 this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
                 console.log("emitConfigCookieCallback cookie = " + this.cookieResult);
                 Utils.emitEvent(this.cookieResult, 134)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -138,7 +142,8 @@ struct Index {
                 this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
                 console.log("emitConfigCookiePromise cookie = " + this.cookieResult);
                 Utils.emitEvent(this.cookieResult, 136)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -150,7 +155,8 @@ struct Index {
                 this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
                 console.log("emitClearAllCookiesSync cookie = " + this.cookieResult);
                 Utils.emitEvent(this.cookieResult, 138)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -166,7 +172,8 @@ struct Index {
                 this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
                 console.log("emitClearAllCookiesCallback cookie = " + this.cookieResult);
                 Utils.emitEvent(this.cookieResult, 140)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -181,7 +188,8 @@ struct Index {
                 this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
                 console.log("emitClearAllCookiesPromise cookie = " + this.cookieResult);
                 Utils.emitEvent(this.cookieResult, 142)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -193,7 +201,8 @@ struct Index {
                 this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
                 console.log("emitClearSessionCookieSync cookie = " + this.cookieResult);
                 Utils.emitEvent(this.cookieResult, 144)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -209,7 +218,8 @@ struct Index {
                 this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
                 console.log("emitClearSessionCookieCallback cookie = " + this.cookieResult);
                 Utils.emitEvent(this.cookieResult, 146)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -224,7 +234,8 @@ struct Index {
                 this.cookieResult = web_webview.WebCookieManager.fetchCookieSync('https://www.example.com');
                 console.log("emitClearSessionCookiePromise cookie = " + this.cookieResult);
                 Utils.emitEvent(this.cookieResult, 148)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;

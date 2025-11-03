@@ -68,7 +68,8 @@ export default function drawingTsCanvasPart7Test() {
       try {
         let isSuccess1 = canvas.quickRejectPath(path);
         expect(isSuccess1).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickRejectPath 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -77,7 +78,8 @@ export default function drawingTsCanvasPart7Test() {
       try {
         let isSuccess2 = canvas.quickRejectPath(path);
         expect(isSuccess2).assertEqual(false);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickRejectPath 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -87,7 +89,8 @@ export default function drawingTsCanvasPart7Test() {
       try {
         let isSuccess3 = canvas.quickRejectPath(path);
         expect(isSuccess3).assertEqual(false);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickRejectPath 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -98,7 +101,8 @@ export default function drawingTsCanvasPart7Test() {
       try {
         let isSuccess4 = canvas.quickRejectPath(path);
         expect(isSuccess4).assertEqual(false);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickRejectPath 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -107,7 +111,8 @@ export default function drawingTsCanvasPart7Test() {
       try {
         isSuccess = canvas.quickRejectPath(path);
         expect(isSuccess).assertEqual(false);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickRejectPath 5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -124,7 +129,8 @@ export default function drawingTsCanvasPart7Test() {
       try {
         isSuccess = canvas.quickRejectPath(path);
         expect(isSuccess).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickRejectPath 6 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -147,7 +153,8 @@ export default function drawingTsCanvasPart7Test() {
         try {
           let isSuccess = canvas.quickRejectPath(path);
           expect(isSuccess).assertEqual(false);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + `quickRejectPath ${i} errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -169,7 +176,8 @@ export default function drawingTsCanvasPart7Test() {
       try {
         let isSuccess1 = canvas.quickRejectRect(rectQuire);
         expect(isSuccess1).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickRejectRect 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -177,7 +185,8 @@ export default function drawingTsCanvasPart7Test() {
       try {
         let isSuccess2 = canvas.quickRejectRect(rectQuire);
         expect(isSuccess2).assertEqual(false);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickRejectRect 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -185,7 +194,8 @@ export default function drawingTsCanvasPart7Test() {
       try {
         let isSuccess3 = canvas.quickRejectRect(rectQuire);
         expect(isSuccess3).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickRejectRect 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -193,7 +203,8 @@ export default function drawingTsCanvasPart7Test() {
       try {
         let isSuccess4 = canvas.quickRejectRect(rectQuire);
         expect(isSuccess4).assertEqual(false);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickRejectRect 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -204,7 +215,8 @@ export default function drawingTsCanvasPart7Test() {
       try {
         let isSuccess5 = canvas.quickRejectRect(rectQuire);
         expect(isSuccess5).assertEqual(false);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickRejectRect 5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -214,7 +226,8 @@ export default function drawingTsCanvasPart7Test() {
       try {
         let isSuccess6 = canvas.quickRejectRect(rectQuire);
         expect(isSuccess6).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickRejectRect 6 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -223,7 +236,8 @@ export default function drawingTsCanvasPart7Test() {
       try {
         let isSuccess7 = canvas.quickRejectRect(rectQuire);
         expect(isSuccess7).assertEqual(false);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickRejectRect 7 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       };
@@ -231,7 +245,8 @@ export default function drawingTsCanvasPart7Test() {
       try {
         let isSuccess8 = canvas.quickRejectRect(rectQuire);
         expect(isSuccess8).assertEqual(false);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickRejectRect 8 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       };
@@ -254,7 +269,8 @@ export default function drawingTsCanvasPart7Test() {
         try {
           let isSuccess = canvas.quickRejectRect(rect);
           expect(isSuccess).assertEqual(false);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + `quickRejectPath ${i} errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -277,7 +293,8 @@ export default function drawingTsCanvasPart7Test() {
       try {
         let isSuccess1 = canvas.quickRejectRect(rect);
         expect(isSuccess1).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickRejectPath 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -287,7 +304,8 @@ export default function drawingTsCanvasPart7Test() {
       try {
         let isSuccess2 = canvas.quickRejectRect(rect);
         expect(isSuccess2).assertEqual(true);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickRejectPath 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -308,7 +326,8 @@ export default function drawingTsCanvasPart7Test() {
       };
       try {
         canvas.drawArcWithCenter(rect, 80, 280, true);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `quickRejectPath 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -317,7 +336,8 @@ export default function drawingTsCanvasPart7Test() {
       };
       try {
         canvas.drawArcWithCenter(rect, 0, 100, true);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawArcWithCenter 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -326,7 +346,8 @@ export default function drawingTsCanvasPart7Test() {
       };
       try {
         canvas.drawArcWithCenter(rect, 80, 280, false);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawArcWithCenter 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -335,73 +356,85 @@ export default function drawingTsCanvasPart7Test() {
       };
       try {
         canvas.drawArcWithCenter(rect, 0, 0, true);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawArcWithCenter 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
         canvas.drawArcWithCenter(rect, 0, 0, false);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawArcWithCenter 5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
         canvas.drawArcWithCenter(rect, 0, -90, true);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawArcWithCenter 6 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
         canvas.drawArcWithCenter(rect, 0, 90, false);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawArcWithCenter 7 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
         canvas.drawArcWithCenter(rect, 0, 360, false);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawArcWithCenter 8 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
         canvas.drawArcWithCenter(rect, -90, 0, true);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawArcWithCenter 9 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
         canvas.drawArcWithCenter(rect, 360, 0, true);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawArcWithCenter 10 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
         canvas.drawArcWithCenter(rect, -90, -200, false);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawArcWithCenter 11 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
         canvas.drawArcWithCenter(rect, 90, 200, true);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawArcWithCenter 12 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
         canvas.drawArcWithCenter(rect, 0, 380, true);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawArcWithCenter 13 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
         canvas.drawArcWithCenter(rect, 380, 60, false);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawArcWithCenter 14 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
         canvas.drawArcWithCenter(rect, 10000, 10000, true);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawArcWithCenter 14 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -424,7 +457,8 @@ export default function drawingTsCanvasPart7Test() {
         };
         try {
           canvas.drawArcWithCenter(rect, 0, 180, true);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + `drawArcWithCenter ${i} errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -447,7 +481,8 @@ export default function drawingTsCanvasPart7Test() {
       };
       try {
         canvas.drawArcWithCenter(rect, 0, 180, true);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawArcWithCenter 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -456,7 +491,8 @@ export default function drawingTsCanvasPart7Test() {
       };
       try {
         canvas.drawArcWithCenter(rect, 0, 180, true);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawArcWithCenter 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -476,7 +512,8 @@ export default function drawingTsCanvasPart7Test() {
       let dst: common2D.Rect = { left: -50, top: -50, right: 2000, bottom: 1600 };
       try {
         canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_NEAREST);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImageNine 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -484,7 +521,8 @@ export default function drawingTsCanvasPart7Test() {
       dst = { left: 0, top: 0, right: 200, bottom: 200 };
       try {
         canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImageNine 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -492,7 +530,8 @@ export default function drawingTsCanvasPart7Test() {
       dst = { left: 0, top: 0, right: 200, bottom: 200 };
       try {
         canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImageNine 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -500,7 +539,8 @@ export default function drawingTsCanvasPart7Test() {
       dst = { left: 0, top: 0, right: 800, bottom: 800 };
       try {
         canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_NEAREST);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImageNine 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -508,7 +548,8 @@ export default function drawingTsCanvasPart7Test() {
       dst = { left: 0, top: 0, right: 50.1, bottom: 50.1 };
       try {
         canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImageNine 5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -530,7 +571,8 @@ export default function drawingTsCanvasPart7Test() {
         let dst: common2D.Rect = { left: -50 + i * 0.01, top: -50 + i * 0.01, right: 2000 + i * 0.01, bottom: 1600 + i * 0.01 };
         try {
           canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + `drawImageNine ${i} errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -554,7 +596,8 @@ export default function drawingTsCanvasPart7Test() {
       let dst: common2D.Rect = { left: -50 , top: -50 , right: 2000 , bottom: 1600};
       try {
         canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImageNine 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -563,7 +606,8 @@ export default function drawingTsCanvasPart7Test() {
       };
       try {
         canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImageNine 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -573,7 +617,8 @@ export default function drawingTsCanvasPart7Test() {
       };
       try {
         canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImageNine 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -582,7 +627,8 @@ export default function drawingTsCanvasPart7Test() {
       };
       try {
         canvas.drawImageNine(pixel, center, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImageNine 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -606,7 +652,8 @@ export default function drawingTsCanvasPart7Test() {
       let dst: common2D.Rect = { left: 0, top: 0, right: 200, bottom: 200 };
       try {
         canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_NEAREST);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImageLattice 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -618,7 +665,8 @@ export default function drawingTsCanvasPart7Test() {
       dst = { left: 225, top:0, right: 425, bottom: 200 };
       try {
         canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImageLattice 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -637,7 +685,8 @@ export default function drawingTsCanvasPart7Test() {
       dst = { left: 450, top:0, right: 650, bottom: 200 };
       try {
         canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImageLattice 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -645,7 +694,8 @@ export default function drawingTsCanvasPart7Test() {
       dst = { left: 10.2, top: 550.1, right: 300.1, bottom: 850.1 };
       try {
         canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImageLattice 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -653,7 +703,8 @@ export default function drawingTsCanvasPart7Test() {
       dst = { left: -10, top: -60, right: 300000, bottom: 300000 };
       try {
         canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImageLattice 5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -679,7 +730,8 @@ export default function drawingTsCanvasPart7Test() {
         let dst: common2D.Rect = { left: 0+ i * 0.01, top: 0+ i * 0.01, right: 200+ i * 0.01, bottom: 200+ i * 0.01 };
         try {
           canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_LINEAR);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + `drawImageLattice 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -707,7 +759,8 @@ export default function drawingTsCanvasPart7Test() {
       };
       try {
         canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_NEAREST);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImageLattice 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -716,7 +769,8 @@ export default function drawingTsCanvasPart7Test() {
       };
       try {
         canvas.drawImageLattice(pixel, lattice, dst, drawing.FilterMode.FILTER_MODE_NEAREST);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawImageLattice 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }

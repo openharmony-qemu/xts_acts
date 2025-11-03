@@ -82,7 +82,8 @@ export default function imageFilterTest() {
         console.info(msg + ' createBlurImageFilter CLAMP successed,ImageFilter:' + JSON.stringify(imgFilter));
         imgFilter = drawing.ImageFilter.createBlurImageFilter(5, 10, drawing.TileMode.DECAL);
         console.info(msg + ' createBlurImageFilter CLAMP successed,ImageFilter:' + JSON.stringify(imgFilter));
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -94,7 +95,8 @@ export default function imageFilterTest() {
           console.info(msg + ' createBlurImageFilter REPEAT successed');
           console.info(msg + ' imgFilter:' + imgFilter + ' imgFilter1:' + imgFilter1);
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlurImageFilter REPEAT create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -102,7 +104,8 @@ export default function imageFilterTest() {
       try {
         let imgFilter = drawing.ImageFilter.createBlurImageFilter(1, 10, drawing.TileMode.CLAMP, null)
         console.info(msg + ' createBlurImageFilter CLAMP null successed,ImageFilter:' + JSON.stringify(imgFilter));
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -110,7 +113,8 @@ export default function imageFilterTest() {
       try {
         let imgFilter = drawing.ImageFilter.createBlurImageFilter(10, 1, drawing.TileMode.CLAMP, null);
         console.info(msg + ' createBlurImageFilter CLAMP null successed,ImageFilter:' + JSON.stringify(imgFilter));
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -132,7 +136,8 @@ export default function imageFilterTest() {
         try {
           let imgFilter = drawing.ImageFilter.createBlurImageFilter(randomNumber, randomNumber, drawing.TileMode.CLAMP);
           console.info(msg + ' createBlurImageFilter CLAMP successed,ImageFilter:' + JSON.stringify(imgFilter));
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -152,7 +157,8 @@ export default function imageFilterTest() {
       try {
         let imgFilter = drawing.ImageFilter.createBlurImageFilter(10, 10, drawing.TileMode.CLAMP, undefined);
         console.info(msg + ' createBlurImageFilter(null) succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlurImageFilter(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -171,7 +177,8 @@ export default function imageFilterTest() {
       try {
         let imgFilter = drawing.ImageFilter.createBlurImageFilter(0, 10, drawing.TileMode.CLAMP);
         console.info(msg + ' createBlurImageFilter succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlurImageFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -179,7 +186,8 @@ export default function imageFilterTest() {
       try {
         let imgFilter = drawing.ImageFilter.createBlurImageFilter(-1, 10, drawing.TileMode.CLAMP);
         console.info(msg + ' createBlurImageFilter succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlurImageFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -187,7 +195,8 @@ export default function imageFilterTest() {
       try {
         let imgFilter = drawing.ImageFilter.createBlurImageFilter(5, 0, drawing.TileMode.CLAMP);
         console.info(msg + ' createBlurImageFilter succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlurImageFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -195,7 +204,8 @@ export default function imageFilterTest() {
       try {
         let imgFilter = drawing.ImageFilter.createBlurImageFilter(5, -1, drawing.TileMode.CLAMP);
         console.info(msg + ' createBlurImageFilter(null) succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlurImageFilter(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -219,7 +229,8 @@ export default function imageFilterTest() {
           let imgFilter2 = drawing.ImageFilter.createFromColorFilter(colorFilter, imgFilter1);
           console.info(msg + ' createFromColorFilter successed,ImageFilter:' + JSON.stringify(imgFilter2));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createFromColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -230,7 +241,8 @@ export default function imageFilterTest() {
           let imgFilter2 = drawing.ImageFilter.createFromColorFilter(colorFilter, null);
           console.info(msg + ' createFromColorFilter successed,ImageFilter:' + JSON.stringify(imgFilter2));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createFromColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -240,7 +252,8 @@ export default function imageFilterTest() {
           let imgFilter3 = drawing.ImageFilter.createFromColorFilter(colorFilter3);
           console.info(msg + ' createFromColorFilter successed,ImageFilter:' + JSON.stringify(imgFilter3));
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createFromColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -265,7 +278,8 @@ export default function imageFilterTest() {
             let imgFilter2 = drawing.ImageFilter.createFromColorFilter(colorFilter, imgFilter1);
             console.info(msg + ' createFromColorFilter CLAMP successed,ImageFilter:' + JSON.stringify(imgFilter2));
           }
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` create errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -289,7 +303,8 @@ export default function imageFilterTest() {
           let imgFilter2 = drawing.ImageFilter.createFromColorFilter(colorFilter, undefined);
           console.info(msg + ' createFromColorFilter(null) succeeded');
         }
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createFromColorFilter(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }

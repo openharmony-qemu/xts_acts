@@ -130,7 +130,8 @@ struct ImageExample {
           try {
 
 
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             console.info('startDataLoading error:', e);
           }
         }, { disableDataPrefetch: this.disableDataPrefetch } as DropOptions)
@@ -143,7 +144,8 @@ struct ImageExample {
         .onClick((e: ClickEvent) => {
           try {
             this.getUIContext().getDragController().cancelDataLoading(this.udKey);
-          } catch (e: BusinessError) {
+          } catch (e) {
+            e = e as BusinessError;
             this.cancelResult = e.code;
             console.info('cancelDataLoading error:', e.code);
           }

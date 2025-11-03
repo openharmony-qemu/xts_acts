@@ -76,7 +76,8 @@ export default function abilityTest() {
                 await session!.destroy()
                 console.info('TestLog: Session Destroy SUCCESS');
                 console.info(`TestLog: AVSession :${session!.sessionId}destroyed successfully`);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Session Destroy error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };
@@ -133,7 +134,8 @@ export default function abilityTest() {
                 await session!.destroy()
                 console.info('TestLog: Session Destroy SUCCESS');
                 console.info(`TestLog: AVSession :${session?.sessionId}destroyed successfully`);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`TestLog: Session Destroy error: code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
             };

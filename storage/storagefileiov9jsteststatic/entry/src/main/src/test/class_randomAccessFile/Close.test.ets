@@ -44,7 +44,8 @@ export default function fileIORandomAccessFileClose() {
         let randomaccessfile = fs.createRandomAccessFileSync(fpath, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         randomaccessfile.close();
         fs.unlinkSync(fpath);
-      } catch(err: BusinessError) {
+      } catch(err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_randomaccessfile_close_sync_static_000 has failed for ' + err);
         expect(false).assertTrue();
       }

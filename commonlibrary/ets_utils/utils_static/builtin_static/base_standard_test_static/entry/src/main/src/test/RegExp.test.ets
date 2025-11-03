@@ -38,7 +38,8 @@ export default function RegExpTest() {
           console.log(`${TAG} result:` + new RegExp('a+b+c'));
           hilog.info(domain, '%{public}s', 'abilityTest001 three');
           expect(String(new RegExp('a+b+c'))).assertDeepEquals("/a+b+c/");
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -58,7 +59,8 @@ export default function RegExpTest() {
         try {
           console.log(`${TAG} result:` + new RegExp('a+b+c').toString());
           expect(new RegExp('a+b+c').toString()).assertEqual("/a+b+c/");
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -78,7 +80,8 @@ export default function RegExpTest() {
         try {
           console.log(`${TAG} result:` + new RegExp('bar', 'g').toString());
           expect(new RegExp('bar', 'g').toString()).assertEqual("/bar/g");
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -98,7 +101,8 @@ export default function RegExpTest() {
         try {
           console.log(`${TAG} result:` + new RegExp('\n', 'g').toString());
           expect(new RegExp('\n', 'g').toString()).assertEqual("/\n/g");
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -118,7 +122,8 @@ export default function RegExpTest() {
         try {
           console.log(`${TAG} result:` + new RegExp('\\n', 'g').toString());
           expect(new RegExp('\\n', 'g').toString()).assertEqual("/\\n/g");
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -137,7 +142,8 @@ export default function RegExpTest() {
         try {
           console.log(`${TAG} result:` + new RegExp("\n").toString());
           expect(new RegExp("\n").toString()).assertDeepEquals("/\n/");
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -159,7 +165,8 @@ export default function RegExpTest() {
           const regex = new RegExp('foo*');
           const globalRegex = new RegExp('foo*', 'g');
           expect(String(regex.test(str))).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -182,7 +189,8 @@ export default function RegExpTest() {
           const globalRegex = new RegExp('foo*', 'g');
           regex.test(str)
           expect(String(globalRegex.lastIndex)).assertEqual('0');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -206,7 +214,8 @@ export default function RegExpTest() {
           regex.test(str)
           globalRegex.lastIndex
           expect(String(globalRegex.test(str))).assertEqual('true');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -232,7 +241,8 @@ export default function RegExpTest() {
           globalRegex.test(str)
           console.log(`${TAG} result:` + globalRegex.lastIndex)
           expect(String(globalRegex.lastIndex)).assertEqual('9');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -258,7 +268,8 @@ export default function RegExpTest() {
           globalRegex.test(str)
           globalRegex.lastIndex
           expect(String(globalRegex.test(str))).assertEqual('false');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }
@@ -304,7 +315,8 @@ export default function RegExpTest() {
           expect(String(regex.test("foobarfoo"))).assertEqual('true')
           expect(String(regex.test("foobarfoo"))).assertEqual('true')
           expect(String(regex.test("foobarfoo"))).assertEqual('false');
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error(`${TAG} failed, error: ${err.message}`);
           expect(false).assertFail();
         }

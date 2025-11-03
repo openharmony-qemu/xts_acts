@@ -62,7 +62,8 @@ async function CreateCorruptDb() {
     fs.truncateSync(file.fd, 4);
     fs.fsyncSync(file.fd)
     fs.closeSync(file)
-  } catch (err:BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.info(tag, `CreateCorruptDb err.code ${err.code}, err.message ${err.message}`)
   }
   console.info(tag, `quit create corrupt store`);
@@ -116,7 +117,8 @@ export default function RelationStoreError17Test() {
         try {
           rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError17Test0001 err *************  ' + err.code);
           expect(err.code == 14800017).assertEqual(true);
@@ -146,7 +148,8 @@ export default function RelationStoreError17Test() {
           rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG3);
           await data_relationalStore.deleteRdbStore(context, STORE_CONFIG3);
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(domain, tag, '%{public}s',
             '************* RelationStoreError17Test0002 err *************  ' + err.code);
           expect(err.code == 14800017).assertEqual(true);

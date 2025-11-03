@@ -45,7 +45,8 @@ export default function removeProcessorTest() {
         hiAppEvent.removeProcessor(-1)
         done()
       }
-      catch (err: BusinessError) {
+      catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, `testRemoveProcessor01 > error code: ${err.code}, error msg: ${err.message}`);
         expect(false).assertTrue()
         done();

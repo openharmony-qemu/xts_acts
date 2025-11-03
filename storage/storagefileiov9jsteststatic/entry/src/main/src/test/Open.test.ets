@@ -51,7 +51,8 @@ export default function fileIOOpen() {
         expect(readLen == FILE_CONTENT.length).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -78,7 +79,8 @@ export default function fileIOOpen() {
         expect(bytesWritten == FILE_CONTENT.length).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -108,7 +110,8 @@ export default function fileIOOpen() {
         expect(bytesWritten == length).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -132,7 +135,8 @@ export default function fileIOOpen() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_003 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -159,7 +163,8 @@ export default function fileIOOpen() {
         expect(readLen == 0).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_004 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -189,7 +194,8 @@ export default function fileIOOpen() {
         expect(readLen == length + FILE_CONTENT.length).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_005 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -214,7 +220,8 @@ export default function fileIOOpen() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_006 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -238,7 +245,8 @@ export default function fileIOOpen() {
         let file = fs.openSync(dpath, fs.OpenMode.DIR);
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         fs.rmdirSync(dpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_007 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -262,7 +270,8 @@ export default function fileIOOpen() {
         let file = fs.openSync(fpath, fs.OpenMode.DIR);
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_008 has failed for' + JSON.stringify(e));
         expect(e.code == 13900018 && e.message == 'Not a directory').assertTrue();
@@ -288,7 +297,8 @@ export default function fileIOOpen() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_009 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -313,7 +323,8 @@ export default function fileIOOpen() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_010 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -336,7 +347,8 @@ export default function fileIOOpen() {
       try {
         let file = fs.openSync(dpath, fs.OpenMode.READ_WRITE);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.rmdirSync(dpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_011 has failed for' + JSON.stringify(e));
         expect(e.code == 13900019 && e.message == 'Is a directory').assertTrue();
@@ -365,7 +377,8 @@ export default function fileIOOpen() {
         expect(readLen == FILE_CONTENT.length).assertTrue();
         fs.writeSync(file.fd, new ArrayBuffer(4096));
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_012 has failed for' + JSON.stringify(e));
@@ -390,7 +403,8 @@ export default function fileIOOpen() {
       try {
         let file = fs.openSync(fpath1, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_013 has failed for' + JSON.stringify(e));
         expect(e.code == 13900030 && e.message == 'File name too long').assertTrue();
       }
@@ -419,7 +433,8 @@ export default function fileIOOpen() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_000 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -453,7 +468,8 @@ export default function fileIOOpen() {
             done();
           });
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_001 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -483,7 +499,8 @@ export default function fileIOOpen() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_002 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -518,7 +535,8 @@ export default function fileIOOpen() {
             done();
           });
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_003 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -540,7 +558,8 @@ export default function fileIOOpen() {
       try {
         await fs.open(fpath, fs.OpenMode.READ_WRITE);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_004 has failed for' + JSON.stringify(e));
         expect(e.code == 13900002 && e.message == 'No such file or directory').assertTrue();
         done();
@@ -568,7 +587,8 @@ export default function fileIOOpen() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_005 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -595,7 +615,8 @@ export default function fileIOOpen() {
           expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_006 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -620,7 +641,8 @@ export default function fileIOOpen() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_007 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -650,7 +672,8 @@ export default function fileIOOpen() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_008 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -679,7 +702,8 @@ export default function fileIOOpen() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_009 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -713,7 +737,8 @@ export default function fileIOOpen() {
             done();
           });
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_010 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -744,7 +769,8 @@ export default function fileIOOpen() {
           fs.unlinkSync(fpath);
         });
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_011 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -780,7 +806,8 @@ export default function fileIOOpen() {
           });
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_012 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -806,7 +833,8 @@ export default function fileIOOpen() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_013 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -837,7 +865,8 @@ export default function fileIOOpen() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_014 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -862,7 +891,8 @@ export default function fileIOOpen() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         fs.rmdirSync(dpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_015 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -892,7 +922,8 @@ export default function fileIOOpen() {
           fs.rmdirSync(dpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_016 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -915,7 +946,8 @@ export default function fileIOOpen() {
       try {
         await fs.open(fpath, fs.OpenMode.DIR);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_017 has failed for' + JSON.stringify(e));
         expect(e.code == 13900018 && e.message == 'Not a directory').assertTrue();
@@ -946,7 +978,8 @@ export default function fileIOOpen() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_018 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -975,7 +1008,8 @@ export default function fileIOOpen() {
           expect(err.code == 13900018 && err.message == 'Not a directory').assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_019 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1001,7 +1035,8 @@ export default function fileIOOpen() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_020 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1032,7 +1067,8 @@ export default function fileIOOpen() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_021 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1058,7 +1094,8 @@ export default function fileIOOpen() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_022 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1089,7 +1126,8 @@ export default function fileIOOpen() {
           fs.unlinkSync(fpath);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_023 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1112,7 +1150,8 @@ export default function fileIOOpen() {
       try {
         await fs.open(dpath, fs.OpenMode.READ_WRITE);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.rmdirSync(dpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_024 has failed for' + JSON.stringify(e));
         expect(e.code == 13900019 && e.message == 'Is a directory').assertTrue();
@@ -1143,7 +1182,8 @@ export default function fileIOOpen() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_025 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -1171,7 +1211,8 @@ export default function fileIOOpen() {
         expect(readLen == FILE_CONTENT.length).assertTrue();
         fs.writeSync(file.fd, new ArrayBuffer(4096));
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_026 has failed for' + JSON.stringify(e));
@@ -1197,7 +1238,8 @@ export default function fileIOOpen() {
       try {
         await fs.open(fpath1, fs.OpenMode.CREATE | fs.OpenMode.READ_WRITE);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_028 has failed for' + JSON.stringify(e));
         expect(e.code == 13900030 && e.message == 'File name too long').assertTrue();
         done();
@@ -1226,7 +1268,8 @@ export default function fileIOOpen() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_029 has failed for' + JSON.stringify(e));
         expect(false).assertTrue();
       }

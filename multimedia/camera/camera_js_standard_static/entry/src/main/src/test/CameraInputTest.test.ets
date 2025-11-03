@@ -169,7 +169,8 @@ let isEmpty08 = (data: BusinessError) => {
 
     try {
       mCameraSession = mCameraManager.createSession<cameraObj.VideoSession>(cameraObj.SceneMode.NORMAL_VIDEO);
-    } catch(err: BusinessError) {
+    } catch(err) {
+      err = err as BusinessError;
       console.info('createCaptureSession FAILED');
     }
 
@@ -406,7 +407,8 @@ let isEmpty08 = (data: BusinessError) => {
             mCameraInput.offError( mCameraDevicesArray[i]);
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100 off('reeor') SUCCESSFUL");
             done();
-          } catch (error:BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             let err = error as BusinessError
             console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_STATIC_0100 off('error') FAILED!");
             console.info(TAG + 'ERRORCODE: ' + error.code)

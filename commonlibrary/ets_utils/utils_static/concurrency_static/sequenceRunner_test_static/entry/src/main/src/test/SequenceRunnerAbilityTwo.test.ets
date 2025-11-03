@@ -159,7 +159,8 @@ export default function sequenceRunnerAbilityTest_2() {
             task3Count++;
             console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`${caseName}error message e: ${JSON.stringify(e)}+e`)
         }
         try {
@@ -174,7 +175,8 @@ export default function sequenceRunnerAbilityTest_2() {
             task4Count++;
             console.error(`error message error2: ${JSON.stringify(error)}`)
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`${caseName}error message e: ${JSON.stringify(e)}+e`)
         }
       }
@@ -223,7 +225,8 @@ export default function sequenceRunnerAbilityTest_2() {
             task3Count++;
             console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`${caseName}error message e: ${JSON.stringify(e)}+e`)
         }
         try {
@@ -238,7 +241,8 @@ export default function sequenceRunnerAbilityTest_2() {
             task4Count++;
             console.error(`error message error2: ${JSON.stringify(error)}`)
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`${caseName}error message e: ${JSON.stringify(e)}+e`)
         }
       }
@@ -287,7 +291,8 @@ export default function sequenceRunnerAbilityTest_2() {
             task3Count++;
             console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`${caseName}error message e: ${JSON.stringify(e)}+e`)
         }
         try {
@@ -302,7 +307,8 @@ export default function sequenceRunnerAbilityTest_2() {
             task4Count++;
             console.error(`error message error2: ${JSON.stringify(error)}`)
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`${caseName}error message e: ${JSON.stringify(e)}+e`)
         }
       }
@@ -351,7 +357,8 @@ export default function sequenceRunnerAbilityTest_2() {
             task3Count++;
             console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`${caseName}error message e: ${JSON.stringify(e)}+e`)
         }
         try {
@@ -366,7 +373,8 @@ export default function sequenceRunnerAbilityTest_2() {
             task4Count++;
             console.error(`error message error2: ${JSON.stringify(error)}`)
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`${caseName}error message e: ${JSON.stringify(e)}+e`)
         }
       }
@@ -416,7 +424,8 @@ export default function sequenceRunnerAbilityTest_2() {
             task3Count++;
             console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`${caseName}error message e: ${JSON.stringify(e)}+e`)
         }
         try {
@@ -431,7 +440,8 @@ export default function sequenceRunnerAbilityTest_2() {
             task4Count++;
             console.error(`error message error2: ${JSON.stringify(error)}`)
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`${caseName}error message e: ${JSON.stringify(e)}+e`)
         }
       }
@@ -481,7 +491,8 @@ export default function sequenceRunnerAbilityTest_2() {
             task3Count++;
             console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`${caseName}error message e: ${JSON.stringify(e)}+e`)
         }
         try {
@@ -496,7 +507,8 @@ export default function sequenceRunnerAbilityTest_2() {
             task4Count++;
             console.error(`error message error2: ${JSON.stringify(error)}`)
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`${caseName}error message e: ${JSON.stringify(e)}+e`)
         }
       }
@@ -549,7 +561,8 @@ export default function sequenceRunnerAbilityTest_2() {
             task3Count++;
             console.error(`${caseName}error message error1: ${JSON.stringify(error)}`)
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`${caseName}error message e: ${JSON.stringify(e)}+e`)
         }
         try {
@@ -564,7 +577,8 @@ export default function sequenceRunnerAbilityTest_2() {
             task4Count++;
             console.error(`error message error2: ${JSON.stringify(error)}`)
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`${caseName}error message e: ${JSON.stringify(e)}+e`)
         }
       }

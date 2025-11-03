@@ -65,7 +65,8 @@ struct webOnInterceptReqOne {
               try {
                 this.isOnInterceptRequestWebC = true
                 this.controller.loadUrl( 'resource://rawfile/index.html' );
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
                   if ((this.controller.getTitle()).includes('index')) {

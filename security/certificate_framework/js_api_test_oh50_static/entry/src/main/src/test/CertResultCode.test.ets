@@ -76,7 +76,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let pubKey: cryptoFramework.PubKey;
           await x509Cert.verify(pubKey);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_0100 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
@@ -102,7 +103,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let pubKey: cryptoFramework.PubKey;
           x509Cert.verify(pubKey, (err) => {});
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_0200 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
@@ -139,7 +141,8 @@ export default function certFrameworkResultCodeTestUnit() {
               expect(null).assertFail();
             }
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_0300 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -171,7 +174,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let pubKey: cryptoFramework.PubKey = x509Cert2.getPublicKey();
           await x509Cert1.verify(pubKey);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_0400 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -204,7 +208,8 @@ export default function certFrameworkResultCodeTestUnit() {
             console.info("########### format:" + data?.encodingFormat);
           });
           expect(serialNumber).assertEqual(serialNumberRes);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_0700 ${error}, error code: ${error.code}`);
           expect(null).assertFail();
         }
@@ -229,7 +234,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
           x509Cert.getPublicKey();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_1300 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -255,7 +261,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let date: string = "20360812124556+3600";
           x509Cert.checkValidityWithDate(date);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_1400 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -281,7 +288,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let date: string = "20250212124556+0800";
           x509Cert.checkValidityWithDate(date);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_1600 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CERT_NOT_YET_VALID);
         }
@@ -306,7 +314,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
           x509Cert.getNotBeforeTime();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_1800 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -331,7 +340,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
           x509Cert.getNotAfterTime();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_1900 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -356,7 +366,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
           x509Cert.getSignature();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_2000 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -381,13 +392,15 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           x509Cert.getSignatureAlgName();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_2100 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         try {
           x509Cert.getSignatureAlgParams();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           if (error.code == cert.CertResult.NOT_SUPPORT) {
             console.error(`Not Support ${error}, error code: ${error.code}`);
           }
@@ -413,7 +426,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
           x509Cert.getSignatureAlgOid();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_2200 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -437,7 +451,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           await cert.createX509Cert(encodingBlob);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_2300 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
@@ -462,7 +477,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
           x509Cert.getExtKeyUsage();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_2400 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -487,7 +503,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
           x509Cert.getExtKeyUsage();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_2500 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -512,7 +529,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
           x509Cert.getKeyUsage();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_2600 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -537,7 +555,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
           x509Cert.getSubjectAltNames();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_2700 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -562,7 +581,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let x509Cert: cert.X509Cert = await cert.createX509Cert(encodingBlob);
           x509Cert.getSubjectAltNames();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`SUB_Security_Cert_Framework_ErrorCode_Func_2800 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -587,7 +607,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           x509Cert.getItem(cert.CertItemType.CERT_ITEM_TYPE_PUBLIC_KEY);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Cert.getItem ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -612,7 +633,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           x509Cert.getCRLDistributionPoint();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Cert.getCRLDistributionPoint ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_RUNTIME_ERROR);
         }
@@ -637,7 +659,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           x509Cert.getCRLDistributionPoint();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Cert.getCRLDistributionPoint ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -663,7 +686,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let data = x509Cert.getIssuerX500DistinguishedName();
           data.getName()
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Cert.getIssuerX500DistinguishedName ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_OUT_OF_MEMORY);
         }
@@ -688,7 +712,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           x509Cert.getExtensionsObject();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Cert.getExtensionsObject ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -714,7 +739,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let data = x509Cert.getExtensionsObject();
           data.getOidList(cert.ExtensionOidType.EXTENSION_OID_TYPE_UNCRITICAL)
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Cert.getOidList ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -740,7 +766,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           data.getEntry(cert.ExtensionEntryType.EXTENSION_ENTRY_TYPE_ENTRY, {data: new Uint8Array()})
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Cert.getEntry ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
@@ -748,7 +775,8 @@ export default function certFrameworkResultCodeTestUnit() {
           data.getEntry(cert.ExtensionEntryType.EXTENSION_ENTRY_TYPE_ENTRY,
             {data: new Uint8Array([50,46,53,46,50,57,46,49,53])})
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Cert.getEntry ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_RUNTIME_ERROR);
         }
@@ -756,7 +784,8 @@ export default function certFrameworkResultCodeTestUnit() {
           data.getEntry(cert.ExtensionEntryType.EXTENSION_ENTRY_TYPE_ENTRY,
             {data: new Uint8Array([50,46,53,46,50,57,46,49,58])})
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Cert.getEntry ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
@@ -786,14 +815,16 @@ export default function certFrameworkResultCodeTestUnit() {
           // FoundExtMatchedNid[361]: Failed to get extension numbers
           // CfOpensslGetEntry[482]: no found target nid
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Cert.getEntry ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         try {
           data.checkCA();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`data.checkCA() ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -812,7 +843,8 @@ export default function certFrameworkResultCodeTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
         try {
           cert.createCertCRLCollection([], [])
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Cert.createCertCRLCollection ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -837,7 +869,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           x509Cert.getExtensionsObject();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Cert.getExtensionsObject ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -863,7 +896,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           data.checkCA(); // CheckBasicConstraints[546]: this cert pathlen is invalid
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`data.checkCA ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -889,7 +923,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           data.hasUnsupportedCriticalExtension();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`data.hasUnsupportedCriticalExtension ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -913,27 +948,31 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           await cert.createCertExtension(encodingBlob);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`createCertExtension Promise ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
         try {
           await createCertExtension(encodingBlob);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`createCertExtension CallBack ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
         try {
           await createCertExtension({data: new Uint8Array([45]), encodingFormat: cert.EncodingFormat.FORMAT_DER});
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`createCertExtension CallBack ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         try {
           await cert.createCertExtension({data: new Uint8Array([45]), encodingFormat: cert.EncodingFormat.FORMAT_DER});
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`createCertExtension Promise ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -959,7 +998,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let crlEntry = x509Crl.getRevokedCert(BigInt("0xDD15FE86AFFAD91249EF0EB713F39EBEAA987B6E6FD29FFFFFFFFFFFFFFFFFFF"));
           crlEntry.getSerialNumber();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Crl.getSerialNumber Promise ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
@@ -985,7 +1025,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let crlEntry = x509Crl.getRevokedCert(BigInt("0x03e8"));
           crlEntry.getRevocationDate();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Crl.getRevocationDate ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -1010,7 +1051,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           x509Crl.getIssuerX500DistinguishedName();
           expect(null).assertNull();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Crl.getIssuerX500DistinguishedName ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -1035,7 +1077,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           x509Crl.getIssuerName();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Crl.getIssuerName ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -1061,7 +1104,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           crlEntry.getCertIssuerX500DistinguishedName()
           expect(null).assertNull();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Crl.getRevocationDate ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_OUT_OF_MEMORY);
         }
@@ -1087,7 +1131,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           crlEntry.getExtensionsObject();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Crl.getExtensionsObject ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -1112,7 +1157,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           x509Crl.getLastUpdate();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Crl.getLastUpdate ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -1137,7 +1183,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           x509Crl.getNextUpdate();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Crl.getNextUpdate ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -1163,7 +1210,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           x509Crl.getRevokedCertWithCert(x509Cert);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Crl.isRevoked ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
@@ -1193,7 +1241,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           x509Crl.getRevokedCertWithCert(x509Cert);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Crl.getRevokedCertWithCert ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -1218,7 +1267,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           x509Crl.getSignature();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Crl.getSignature ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -1243,7 +1293,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           x509Crl.getSignatureAlgName();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Crl.getSignatureAlgName ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -1269,7 +1320,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let data = x509Crl.getSignatureAlgOid(); // 代码中对oid的内存写死了是127，不合理,资料限制
           console.info("##################### data:" + data.length)
           expect(null).assertNull();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`x509Crl.getSignatureAlgOid ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -1294,7 +1346,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           x509Crl.getExtensionsObject();
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`getExtensionsObject ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -1314,7 +1367,8 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           cert.createCertChainValidator("PKIX2")
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`createCertChainValidator ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.NOT_SUPPORT);
         }
@@ -1322,13 +1376,15 @@ export default function certFrameworkResultCodeTestUnit() {
         let data: cert.CertChainData;
         try {
           await validator.validate(data);
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`validator.validate Promise ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
         try {
           validator.validate(data, (err) => {});
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`validator.validate Callback ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
@@ -1357,14 +1413,16 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           await collection.selectCRLs(param);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`collection.selectCRLs Promise ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         try {
           await selectCRLs(param, collection);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`collection.selectCRLs Callback ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
@@ -1397,7 +1455,8 @@ export default function certFrameworkResultCodeTestUnit() {
           let res = await data.validate(param);
           console.info("############# res:" + res.trustAnchor)
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`createX509CertChain.validate ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
@@ -1421,7 +1480,8 @@ export default function certFrameworkResultCodeTestUnit() {
           }
           cert.parsePkcs12(pkcs12, conf);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`parsePkcs12 ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
@@ -1463,14 +1523,16 @@ export default function certFrameworkResultCodeTestUnit() {
         try {
           generator.doFinalSync(new Uint8Array(), options);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`p7 doFinalSync catch error: ${JSON.stringify(error)}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
         try {
           await generator.doFinal(new Uint8Array(), options);
           expect(null).assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`p7 doFinal catch error: ${JSON.stringify(error)}`);
           expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
         }
@@ -1503,7 +1565,8 @@ export default function certFrameworkResultCodeTestUnit() {
             outFormat: cert.EncodingBaseFormat.DER
           }
           cert.generateCsr(keyInfo, conf)
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`generateCsr ${error}, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_MAYBE_WRONG_PASSWORD);
         }

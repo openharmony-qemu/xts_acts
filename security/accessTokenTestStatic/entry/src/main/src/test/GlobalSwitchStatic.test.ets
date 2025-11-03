@@ -63,7 +63,8 @@ export default function GlobalSwitchStaticTest() {
       try {
         
         await Utils.msSleep(2000)
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, 'err.code - '+ err.code);
       }
       hilog.info(domain, tag, 'beforeAll end');
@@ -97,7 +98,8 @@ export default function GlobalSwitchStaticTest() {
             done();
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, "Test_requestGlobalSwitch_001 error " + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -129,7 +131,8 @@ export default function GlobalSwitchStaticTest() {
             done();
           }
         });
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, "Test_requestGlobalSwitch_002 error " + JSON.stringify(error));
         expect(false).assertFail();
         done();
@@ -178,7 +181,8 @@ export default function GlobalSwitchStaticTest() {
         
         hilog.info(domain, 'testTag', "Test_requestGlobalSwitch_003 click over");
         
-      } catch (error: BusinessError<void>) {
+      } catch (error) {
+        error = error as BusinessError;
         hilog.info(domain, tag, "Test_requestGlobalSwitch_003 error " + JSON.stringify(error));
         expect(false).assertFail();
         done();

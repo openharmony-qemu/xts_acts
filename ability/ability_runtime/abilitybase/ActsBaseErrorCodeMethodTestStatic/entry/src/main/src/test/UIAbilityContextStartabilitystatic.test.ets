@@ -724,7 +724,8 @@ export default function UiAbilityContextStartAbilityStatic() {
         await Utils.msSleep(1000);
         expect(g_code).assertEqual(16000050);
         done();
-      } catch (Error: BusinessError) {
+      } catch (Error) {
+        Error = Error as BusinessError;
         hilog.info(domain, tag, `startAbilityByType001 fail: ` + JSON.stringify(Error));
         expect().assertFail();
         done();
@@ -756,7 +757,8 @@ export default function UiAbilityContextStartAbilityStatic() {
         await Utils.msSleep(1000);
         expect(g_code).assertEqual(16000050);
         done();
-      } catch (Error: BusinessError) {
+      } catch (Error) {
+        Error = Error as BusinessError;
         hilog.info(domain, tag, `startAbilityByType002 fail: ` + JSON.stringify(Error));
         expect().assertFail();
         done();

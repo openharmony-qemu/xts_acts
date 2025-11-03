@@ -64,7 +64,8 @@ export default function pathEffectTest() {
       try {
         drawing.PathEffect.createDashPathEffect([10, 5], 5);
         console.info(msg + ' createDashPathEffect with [10, 5], 5 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createDashPathEffect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -72,7 +73,8 @@ export default function pathEffectTest() {
       try {
         drawing.PathEffect.createDashPathEffect([10, 5], 5.52);
         console.info(msg + ' createDashPathEffect with [10, 5], 5.52 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createDashPathEffect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -80,7 +82,8 @@ export default function pathEffectTest() {
       try {
         drawing.PathEffect.createDashPathEffect([10, 5], 0);
         console.info(msg + ' createDashPathEffect with [10, 5], 0 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createDashPathEffect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -88,7 +91,8 @@ export default function pathEffectTest() {
       try {
         drawing.PathEffect.createDashPathEffect([10.52, 5.522], 0);
         console.info(msg + ' createDashPathEffect with [10.52, 5.522], 0 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createDashPathEffect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -106,7 +110,8 @@ export default function pathEffectTest() {
       try {
         drawing.PathEffect.createDashPathEffect([], 5);
         console.info(msg + ' createDashPathEffect with [], 5 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createDashPathEffect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -129,7 +134,8 @@ export default function pathEffectTest() {
         try {
           drawing.PathEffect.createDashPathEffect(randomValues, randomValue);
           console.info(`${msg} createDashPathEffect with [${randomValues}], ${randomValue} succeeded`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(`${msg} createDashPathEffect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -148,14 +154,16 @@ export default function pathEffectTest() {
       try {
         drawing.PathEffect.createCornerPathEffect(1);
         console.info(msg + ' createCornerPathEffect with [10, 5], 5 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createCornerPathEffect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
       try {
         drawing.PathEffect.createCornerPathEffect(30.1);
         console.info(msg + ' createCornerPathEffect with [10, 5], 5.52 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createCornerPathEffect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -173,14 +181,16 @@ export default function pathEffectTest() {
       try {
         drawing.PathEffect.createCornerPathEffect(0);
         console.info(msg + ' createCornerPathEffect with [10, 5, 10, 5], 5, 5 successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createCornerPathEffect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
       try {
         drawing.PathEffect.createCornerPathEffect(-1);
         console.info(msg + ' createCornerPathEffect with [10, 5, 10, 5] successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createCornerPathEffect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -200,7 +210,8 @@ export default function pathEffectTest() {
         try {
           drawing.PathEffect.createCornerPathEffect(getRandomNumber(0, Number.MAX_SAFE_INTEGER));
           console.info(`${msg} createCornerPathEffect succeeded`);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(`${msg} createCornerPathEffect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }

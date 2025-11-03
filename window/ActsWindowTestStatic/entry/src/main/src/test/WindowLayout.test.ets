@@ -83,7 +83,8 @@ export default function WindowLayoutTest() {
             try {
                 (subWin as window.Window).onWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window status changes.');
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -96,7 +97,8 @@ export default function WindowLayoutTest() {
             try {
                 (subWin as window.Window).offWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister for window status changes.');
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -109,7 +111,8 @@ export default function WindowLayoutTest() {
             try {
                 (subWin as window.Window).offWindowStatusChange();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister all for window status changes');
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -142,7 +145,8 @@ export default function WindowLayoutTest() {
             try {
                 mainWin.onWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in enabling the listener for window status changes.');
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -155,7 +159,8 @@ export default function WindowLayoutTest() {
             try {
                 mainWin.offWindowStatusChange(callback);
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister for window status changes.');
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -168,7 +173,8 @@ export default function WindowLayoutTest() {
             try {
                 mainWin.offWindowStatusChange();
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in unregister all for window status changes');;
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to unregister callback. Cause code: ${exception.code}, message: ${exception.message}`);
                     expect(false).assertTrue();
@@ -323,7 +329,8 @@ export default function WindowLayoutTest() {
                     expect(err.code).assertEqual(1300002);
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
                 expect(exception.code).assertEqual(1300002);
                 done();
@@ -360,7 +367,8 @@ export default function WindowLayoutTest() {
                     expect(false).assertTrue();
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(1300002);
                 done()
@@ -393,7 +401,8 @@ export default function WindowLayoutTest() {
                     expect(err!.code).assertEqual(1300002);
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause: ' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(1300002);
                 done();
@@ -429,7 +438,8 @@ export default function WindowLayoutTest() {
                     expect(false).assertTrue();
                     done();
                 });
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to change the window size. Cause:' + JSON.stringify(exception));
                 expect(exception!.code).assertEqual(1300002);
                 done();
@@ -459,7 +469,8 @@ export default function WindowLayoutTest() {
                         hilog.error(0x0000, '[ANI]',msgStr + 'Succeeded in calling getGlobalRect.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e: BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.info(0x0000, '[ANI]',msgStr + 'Failed to call getGlobalRect. Cause:' + JSON.stringify(e));
                         expect(e!.code).assertEqual(1300002);
                         done()
@@ -491,7 +502,8 @@ export default function WindowLayoutTest() {
                 expect(rect.width).assertLarger(0);
                 expect(rect.height).assertLarger(0);
                 done();
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 if (exception!.code === 801) {
                     hilog.error(0x0000, '[ANI]',`${caseName} The current device type does not support to getting the global rect.`);
                     done();
@@ -526,7 +538,8 @@ export default function WindowLayoutTest() {
                     expect(err!.code).assertEqual(1300002);
                     done();
                 })
-            }catch (err:BusinessError) {
+            }catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, '[ANI]',CaseName + ' failed,casued: err.code '+err.code +' ,err.message: '+err.message);
                 expect(false).assertTrue();
                 done();
@@ -560,7 +573,8 @@ export default function WindowLayoutTest() {
                         done();
                     }
                 });
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err.code}, message: ${err.message}`);
                 expect(false).assertTrue();
                 done();
@@ -592,12 +606,15 @@ export default function WindowLayoutTest() {
                         (subWin! as window.Window).startMoving().then( () => {
                             hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling startMoving.');
                             expect(false).assertTrue();
+                            done()
                         }).catch( (err: BusinessError) :PromiseLike<void>|undefined=> {
                             hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call startMoving. Cause: ' + JSON.stringify(err));
                             expect(false).assertTrue();
+                            done()
                         });
-                        done()
-                    } catch (exception: BusinessError) {
+                        
+                    } catch (exception) {
+                        exception = exception as BusinessError;
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the call startMoving. Cause:' + JSON.stringify(exception));
                         expect(exception!.code).assertEqual(1300002);
                         done()
@@ -633,9 +650,8 @@ export default function WindowLayoutTest() {
                     console.info(msgStr +  'on windowHighlightChange callback' + JSON.stringify(data));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_windowHighlightChange success');
-                expect(false).assertTrue();
-                done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to on_windowHighlightChange. Cause code:' + JSON.stringify(exception));
@@ -673,18 +689,19 @@ export default function WindowLayoutTest() {
                     console.info(msgStr +  'on windowHighlightChange callback' + JSON.stringify(data));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_windowHighlightChange success');
-                expect(false).assertTrue();
-                done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call createWindow. Cause:' + JSON.stringify(exception));
                 if (exception.code != 801) {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to on_windowHighlightChange. Cause code:' + JSON.stringify(exception));
                     expect(exception.code).assertEqual(1300002);
+                    done()
                 } else {
                     hilog.error(0x0000, '[ANI]',msgStr + '当前设备类型不支持系统能力SystemCapability.Window.SessionManager' + JSON.stringify(exception));
                     expect(exception.code).assertEqual(801);
+                    done()
                 }
-                done()
+                
             }
         })
         /**
@@ -713,7 +730,8 @@ export default function WindowLayoutTest() {
                 });
                 await subWindowClass.moveWindowTo(300, 300);
                 hilog.info(0x0000, '[ANI]',`${caseName} Succeeded in moving the window.`);
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 if (error!.code == 1300002) {
                     hilog.error(0x0000, '[ANI]',`${caseName} This window state is abnormal`);
                     done();
@@ -753,7 +771,8 @@ export default function WindowLayoutTest() {
                 });
                 await subWindowClass.resize(500, 500);
                 hilog.info(0x0000, '[ANI]',`${caseName} Succeeded in changing the sub window size.`);
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(0x0000, '[ANI]',`${caseName}: Error: ${JSON.stringify(error)}`);
                 expect(false).assertTrue();
                 done();
@@ -778,7 +797,8 @@ export default function WindowLayoutTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded window rect changes');
                 expect(false).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error));
                 if (error!.code === 801) {
                     hilog.error(0x0000, '[ANI]',`${msgStr} The current device type does not support to windowRectChange`);
@@ -810,7 +830,8 @@ export default function WindowLayoutTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded window rect changes');
                 expect(false).assertTrue();
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to window rect changes.Data: ' + JSON.stringify(error));
                 if (error!.code === 801) {
                     hilog.error(0x0000, '[ANI]',`${msgStr} The current device type does not support to windowRectChange`);
@@ -862,7 +883,8 @@ export default function WindowLayoutTest() {
                             expect(err.code).assertEqual(801);
                             done();
                         })
-                    }catch (err: BusinessError){
+                    }catch (err) {
+                        err = err as BusinessError;
                         hilog.error(domain, tag,`${message} Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
                         await dialogWindowClass.destroyWindow();
                         await Utils.msSleep(1000);
@@ -874,7 +896,8 @@ export default function WindowLayoutTest() {
                     expect(err.code).assertEqual(801);
                     done();
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${message} Failed to test setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
                 expect(false).assertTrue();
                 done();
@@ -918,7 +941,8 @@ export default function WindowLayoutTest() {
                             expect(err.code == 801 || err.code ==1300002).assertTrue();
                             done();
                         })
-                    }catch (err: BusinessError) {
+                    }catch (err) {
+                        err = err as BusinessError;
                         hilog.error(domain, tag,`${message} Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
                         expect(false).assertTrue();
                         done();
@@ -928,7 +952,8 @@ export default function WindowLayoutTest() {
                     expect(err.code).assertEqual(801);
                     done();
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${message} Failed to test setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
                 expect(false).assertTrue();
                 done();
@@ -969,7 +994,8 @@ export default function WindowLayoutTest() {
                             expect(err.code == 801 || err.code ==1300004).assertTrue();
                             done();
                         })
-                    }catch (err: BusinessError) {
+                    }catch (err) {
+                        err = err as BusinessError;
                         hilog.error(domain, tag,`${message} Failed to setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
                         await subWindowClass.destroyWindow();
                         await Utils.msSleep(1000);
@@ -981,7 +1007,8 @@ export default function WindowLayoutTest() {
                     expect(err.code).assertEqual(801);
                     done();
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${message} Failed to test setSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
                 expect(false).assertTrue();
                 done();
@@ -1017,7 +1044,8 @@ export default function WindowLayoutTest() {
                         await dialogWindowClass.destroyWindow();
                         await Utils.msSleep(1000);
                         done();
-                    }catch (err: BusinessError) {
+                    }catch (err) {
+                        err = err as BusinessError;
                         hilog.error(domain, tag,`${message} Failed to assert isSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
                         await dialogWindowClass.destroyWindow();
                         await Utils.msSleep(1000);
@@ -1029,7 +1057,8 @@ export default function WindowLayoutTest() {
                     expect(err.code).assertEqual(801);
                     done();
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${message} Failed to test isSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
                 expect(false).assertTrue();
                 done();
@@ -1062,7 +1091,8 @@ export default function WindowLayoutTest() {
                         await Utils.msSleep(1000);
                         expect(false).assertTrue();
                         done();
-                    }catch (err: BusinessError) {
+                    }catch (err) {
+                        err = err as BusinessError;
                         hilog.error(domain, tag,`${message} Failed to assert isSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
                         await dialogWindowClass.destroyWindow();
                         hilog.info(domain, tag,`${message} after destroyWindow`);
@@ -1075,7 +1105,8 @@ export default function WindowLayoutTest() {
                     expect(err.code).assertEqual(801);
                     done();
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${message} Failed to test isSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
                 expect(false).assertTrue();
                 done();
@@ -1112,7 +1143,8 @@ export default function WindowLayoutTest() {
                         hilog.info(domain, tag,`${message} succeed assert isSystemAvoidAreaEnabled`);
                         expect(false).assertTrue();
                         done();
-                    }catch (err: BusinessError) {
+                    }catch (err) {
+                        err = err as BusinessError;
                         hilog.error(domain, tag,`${message} Failed to assert isSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
                         expect(err.code == 801 || err.code ==1300002).assertTrue();
                         done();
@@ -1122,7 +1154,8 @@ export default function WindowLayoutTest() {
                     expect(err.code).assertEqual(801);
                     done();
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${message} Failed to test isSystemAvoidAreaEnabled, Cause code ${err.code}, message ${err.message}`);
                 expect(false).assertTrue();
                 done();
@@ -1152,7 +1185,8 @@ export default function WindowLayoutTest() {
                         hilog.error(domain, tag,msgStr + 'Succeeded in calling getWindowSystemBarProperties.');
                         expect(false).assertTrue();
                         done()
-                    } catch (e: BusinessError) {
+                    } catch (e) {
+                        e = e as BusinessError;
                         hilog.error(domain, tag,msgStr + 'Failed. Cause:' + JSON.stringify(e.code)+` message:${e.message}`);
                         expect(e.code).assertEqual(1300002);
                         expect(e.message!=null).assertTrue();
@@ -1185,7 +1219,8 @@ export default function WindowLayoutTest() {
                 let systemBarProperty = (SubWindowClass as window.Window).getWindowSystemBarProperties();
                 hilog.info(domain, tag,msgStr + 'Success in obtaining system bar properties. Property: ' +
                 JSON.stringify(systemBarProperty));
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed to get system bar properties. Code: ' + JSON.stringify(err) + err.code);
                 expect(err.code).assertEqual(1300004)
                 done();
@@ -1214,7 +1249,8 @@ export default function WindowLayoutTest() {
                     expect(err.code).assertEqual(801);
                     done();
                 })
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(domain, tag,`${message} Failed to setStatusBarColor, Cause code ${err.code}, message ${err.message}`);
                 expect(false).assertTrue();
                 done();
@@ -1249,7 +1285,8 @@ export default function WindowLayoutTest() {
                     expect(err.message!=null).assertTrue();
                 });
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed2 to set the call setStatusBarColor. Cause:' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done()
@@ -1279,7 +1316,8 @@ export default function WindowLayoutTest() {
                 expect(false).assertTrue();
                 hilog.error(domain, tag,msgStr + 'Succeeded in calling getStatusBarProperty.');
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 hilog.error(domain, tag,msgStr + 'Failed2 to set the call getStatusBarProperty. Cause:' + JSON.stringify(exception.code) +',errMessage: '+ exception.message);
                 if (exception.code == 801){
                     done()
@@ -1323,7 +1361,8 @@ export default function WindowLayoutTest() {
                     expect(err.code).assertEqual(1300002);
                 });
                 done()
-            } catch (exception: BusinessError) {
+            } catch (exception) {
+                exception = exception as BusinessError;
                 console.error(msgStr + 'Failed to set the call startMoving. Cause:' + JSON.stringify(exception));
                 expect(false).assertTrue();
                 done()

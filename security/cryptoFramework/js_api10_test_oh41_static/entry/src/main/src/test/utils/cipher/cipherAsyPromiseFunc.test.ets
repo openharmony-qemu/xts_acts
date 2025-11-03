@@ -92,7 +92,8 @@ async function normalProcess(cipherAlgName: string, spec: cpFw.AsyKeySpec, param
     }
     return res;
   }
-  catch (err: BusinessError) {
+  catch (err) {
+    err = err as BusinessError;
     console.log("[Promise] cipherNormalProcess catch err:" + err);
     throw err as Error;
   }

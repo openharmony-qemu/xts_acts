@@ -209,7 +209,8 @@ export default function createAssetRequest() {
           console.info(`${testNum} succeed to create image with options`);
           expect(false).assertTrue()
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error}, ${error.code}`);
           expect(error.code).assertEqual(401)
           done();

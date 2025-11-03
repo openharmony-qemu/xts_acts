@@ -35,7 +35,8 @@ let getNameLimit = async () => {
     let login_max_max: string = parameter.getSync("persist.account.login_name_max");
     nameLimit = parseInt(login_max_max).toInt();
     hilog.info(0x0000, tag, "====>parameter.getSync login_name_max: " + JSON.stringify(nameLimit));
-  } catch (err: BusinessError<void>) {
+  } catch (err) {
+    err = err as BusinessError;
     hilog.info(0x0000, tag, "====>parameter.getSync catch err: " + JSON.stringify(err));
   }
 }
@@ -74,7 +75,8 @@ export default function ActsOsAccountTestStatic() {
           expect(localId).assertEqual(100);
           hilog.info(0x0000, tag, "====>GetForegroundOsAccountLocalId_0100 end====");
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>GetForegroundOsAccountLocalId_0100 catch err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -97,7 +99,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0300 domainInfo: " + domainInfo);
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0300 catch err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
           hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0300 end====");
@@ -121,7 +124,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0400 domainInfo: " + domainInfo);
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0400 catch err: " + JSON.stringify(err));
           expect(err.code).assertEqual(12300003);
           hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0400 end====");
@@ -146,7 +150,8 @@ export default function ActsOsAccountTestStatic() {
           expect(domainInfo == null).assertTrue();
           hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0500 end====");
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0500 catch err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -170,7 +175,8 @@ export default function ActsOsAccountTestStatic() {
           expect(domainInfo == null).assertTrue();
           hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0600 end====");
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, "====>GetOsAccountDomainInfo_0600 catch err: " + JSON.stringify(err));
           expect().assertFail();
           done();
@@ -318,7 +324,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: updateAccountInfo");
@@ -360,7 +367,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: updateAccountInfo");
@@ -398,7 +406,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: updateAccountInfo");
@@ -439,7 +448,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: updateAccountInfo");
@@ -472,7 +482,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: addServerConfig");
@@ -513,7 +524,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: addServerConfig");
@@ -560,7 +572,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: addServerConfig");
@@ -614,7 +627,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: addServerConfig");
@@ -647,7 +661,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: removeServerConfig");
@@ -684,7 +699,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: updateServerConfig");
@@ -721,7 +737,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: updateServerConfig");
@@ -755,7 +772,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: updateServerConfig");
@@ -788,7 +806,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: getServerConfig");
@@ -827,7 +846,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: getAccountServerConfig");
@@ -863,7 +883,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: getAccountServerConfig");
@@ -901,7 +922,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: getAccountServerConfig");
@@ -936,7 +958,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: getAccountServerConfig");
@@ -974,7 +997,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: getAccountServerConfig");
@@ -1009,7 +1033,8 @@ export default function ActsOsAccountTestStatic() {
           hilog.info(0x0000, tag, "====>run err");
           expect().assertFail();
           done();
-        } catch (err: BusinessError<void>) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
           if (err.code == 801) {
             hilog.info(0x0000, tag, logTag + "Current device not support API: getAccountServerConfig");

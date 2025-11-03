@@ -75,7 +75,8 @@ struct webViewController {
                   this.controller.loadUrl('resource://rawfile/HistoryItem.html');
                   let list: webview.BackForwardList = this.controller.getBackForwardEntries();
                   Utils.emitEvent(list.currentIndex, 31027)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   Utils.emitEvent(error.code, 31027)
                 }
@@ -88,7 +89,8 @@ struct webViewController {
                   this.controller.loadUrl('resource://rawfile/HistoryItem.html');
                   let list: webview.BackForwardList = this.controller.getBackForwardEntries();
                   Utils.emitEvent(list.size, 31028)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   Utils.emitEvent(error.code, 31028)
                 }

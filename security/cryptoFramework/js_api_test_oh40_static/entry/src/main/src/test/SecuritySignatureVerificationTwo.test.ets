@@ -237,7 +237,8 @@ export default function SecuritySignatureVerificationTwoJsunit() {
         try {
           cryptoFramework.createSign("RSA10000|PKCS1|SHA224");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(
             "Security_CryptoFramework_SignatureVerification_Func_2600 1 err" +
               err
@@ -250,7 +251,8 @@ export default function SecuritySignatureVerificationTwoJsunit() {
             "RSA1024PKCS1MD5RSA1024PKCS1MD5RSA1024PKCS1MD5"
           );
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(
             "Security_CryptoFramework_SignatureVerification_Func_2600 3 err" +
               err
@@ -279,25 +281,29 @@ export default function SecuritySignatureVerificationTwoJsunit() {
         try {
           await asyPromise.updateAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 1);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           await asyPromise.updateAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 2);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           await asyPromise.updateAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 3);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           await asyPromise.updateAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 4);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         done();
@@ -320,18 +326,21 @@ export default function SecuritySignatureVerificationTwoJsunit() {
       async (done: () => void): Promise<void> => {
         try {
           await asyCallback.signAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 1);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           await asyCallback.signAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 2);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           await asyCallback.signAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 3);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         done();
@@ -360,7 +369,8 @@ export default function SecuritySignatureVerificationTwoJsunit() {
             cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM,
             2147483447
           );
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(
             "Security_CryptoFramework_SignatureVerification_Func_3100 2 err" +
               err
@@ -387,7 +397,8 @@ export default function SecuritySignatureVerificationTwoJsunit() {
         try {
           cryptoFramework.createVerify("RSA10000|SHA224");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(
             "Security_CryptoFramework_SignatureVerification_Func_3200 1 catch err" +
               err
@@ -400,7 +411,8 @@ export default function SecuritySignatureVerificationTwoJsunit() {
             "RSA1024PKCS1MD5RSA1024PKCS1MD5RSA1024PKCS1MD5"
           );
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(
             "Security_CryptoFramework_SignatureVerification_Func_3200 3 catch err" +
               err
@@ -411,7 +423,8 @@ export default function SecuritySignatureVerificationTwoJsunit() {
         try {
           cryptoFramework.createVerify("DSA512|PKCS1|MD5");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(
             "Security_CryptoFramework_SignatureVerification_Func_3200 5 catch err" +
               err
@@ -469,7 +482,8 @@ export default function SecuritySignatureVerificationTwoJsunit() {
         try {
           await verifyGenerator.init(dsaKeyPair.pubKey);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         done();
@@ -494,25 +508,29 @@ export default function SecuritySignatureVerificationTwoJsunit() {
         try {
           await asyPromise.verifyUpdateAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 1);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           await asyPromise.verifyUpdateAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 2);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           await asyPromise.verifyUpdateAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 3);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           await asyPromise.verifyUpdateAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 4);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         done();
@@ -537,25 +555,29 @@ export default function SecuritySignatureVerificationTwoJsunit() {
         try {
           let status: boolean = await asyCallback.verifyAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 1);
           expect(status).assertFalse();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(null).assertFail();
         }
         try {
           let status: boolean = await asyCallback.verifyAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 2);
           expect(status).assertFalse();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           let status: boolean = await asyCallback.verifyAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 3);
           expect(status).assertFalse();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           let status: boolean = await asyCallback.verifyAbnormalParameterProcess(asyCommon.genRsa2048KeyPairSpec(), "RSA1024|PKCS1|SHA224", 4);
           expect(status).assertFalse();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(null).assertFail();
         }
         done();
@@ -588,7 +610,8 @@ export default function SecuritySignatureVerificationTwoJsunit() {
             0
           );
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
@@ -597,7 +620,8 @@ export default function SecuritySignatureVerificationTwoJsunit() {
             -1
           );
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
@@ -606,7 +630,8 @@ export default function SecuritySignatureVerificationTwoJsunit() {
             65535
           );
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         done();
@@ -633,7 +658,8 @@ export default function SecuritySignatureVerificationTwoJsunit() {
             cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM
           );
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(
             "Security_CryptoFramework_SignatureVerification_Func_3700 2 err" +
               err
@@ -664,7 +690,8 @@ export default function SecuritySignatureVerificationTwoJsunit() {
           expect(
             verifyGenerator.algName == "RSA1024|PKCS1|SHA512"
           ).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(
             "Security_CryptoFramework_SignatureVerification_Func_3800 catch err: " +
               err

@@ -54,7 +54,8 @@ export let activateAudioSession = async (strategy: audio.AudioSessionStrategy, d
     if (isDone) {
       done();
     }
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error(`ERROR: ${err}`);
     expect(err.code).assertEqual(SYS_EORRCODE);
     if (isDone) {
@@ -74,7 +75,8 @@ export let deactivateAudioSession = async (done: () => void, isDone: boolean)=> 
     if (isDone) {
       done();
     }
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error(`ERROR: ${err}`);
     expect(err.code).assertEqual(EORRCODE);
     if (isDone) {

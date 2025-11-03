@@ -27,7 +27,8 @@ async function genSymKeyPair(): Promise<cryptoFramework.SymKey> {
     let symGenerator: cryptoFramework.SymKeyGenerator = asyCommon.createSymKeyGenerator("SM4_128");
     let symKeyPair: cryptoFramework.SymKey = await symGenerator.generateSymKey();
     return symKeyPair;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     throw err as Error;
   }
 }
@@ -705,37 +706,43 @@ export default function SecurityCipherSM2SM4Jsunit() {
         try {
           cryptoFramework.createCipher("SM2257|SHA256");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(801);
         }
         try {
           cryptoFramework.createCipher("SM2_256|SHA257");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(801);
         }
         try {
           cryptoFramework.createCipher("SM2_256|NoHash");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         try {
           cryptoFramework.createCipher("SM2_256|C1C2C3|SHA512");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(801);
         }
         try {
           cryptoFramework.createCipher("SM4_192|CFB|PKCS5");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(801);
         }
         try {
           cryptoFramework.createCipher("SM4_256|CFB|PKCS5");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(801);
         }
         done();
@@ -756,14 +763,16 @@ export default function SecurityCipherSM2SM4Jsunit() {
         try {
           cryptoFramework.createSymKeyGenerator("SM2_256|SHA257");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("createCipherFail catch error: " + err);
           expect(err.code).assertEqual(801);
         }
         try {
           cryptoFramework.createSymKeyGenerator("SM2257|SHA256");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("createCipherFail catch error: " + err);
           expect(err.code).assertEqual(801);
         }
@@ -808,7 +817,8 @@ export default function SecurityCipherSM2SM4Jsunit() {
             });
           });
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         await cipherGenerator.init(encryptMode, symKeyPairSM4, null);
@@ -850,7 +860,8 @@ export default function SecurityCipherSM2SM4Jsunit() {
             });
           });
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
         }
         await cipherGenerator.init(encryptMode, symKeyPairSM4, null);
@@ -864,7 +875,8 @@ export default function SecurityCipherSM2SM4Jsunit() {
               }
             });
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(null).assertFail();
         }
         done();
@@ -883,7 +895,8 @@ export default function SecurityCipherSM2SM4Jsunit() {
         try {
           cryptoFramework.createSymKeyGenerator("SM4_257|SHA256");
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.error("createCipherFail catch error: " + err);
           expect(err.code).assertEqual(801);
         }
@@ -903,7 +916,8 @@ export default function SecurityCipherSM2SM4Jsunit() {
         try {
           let cipherGenerator: cryptoFramework.Cipher = cryptoFramework.createCipher("SM2_256|SM3");
           expect(cipherGenerator.algName == "SM2_256|SM3").assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(
             "Security_CryptoFramework_CipherSMX_Func_3300 catch err: " + err
           );

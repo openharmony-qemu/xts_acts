@@ -281,7 +281,8 @@ export default function audioRendererTest() {
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data)}`);
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data value: ${JSON.stringify(data)}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         let LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         let LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -403,7 +404,8 @@ export default function audioRendererTest() {
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data)}`);
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data value: ${JSON.stringify(data)}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         let LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         let LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -427,7 +429,8 @@ export default function audioRendererTest() {
       try {
         let audioParamsGet = audioRen.getStreamInfoSync();
         console.info(`${TagFrmwkRender}: Renderer getStreamInfo: ${JSON.stringify(audioParamsGet)}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log(`${TagFrmwkRender}: getStreamInfo :ERROR:  ${err.message}`);
         resultFlag = false;
       }
@@ -440,7 +443,8 @@ export default function audioRendererTest() {
       try {
         let audioParamsGet = audioRen.getRendererInfoSync();
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       }
@@ -459,7 +463,8 @@ export default function audioRendererTest() {
           console.info(`${TagFrmwkRender}: getRenderRate : RENDER_RATE_NORMAL : FAIL : ${renderRate}`);
           resultFlag = false;
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkAudioScene}: getRenderRate : RENDER_RATE_NORMAL : ERROR : ${err.message}`);
         resultFlag = false;
       }
@@ -507,7 +512,8 @@ export default function audioRendererTest() {
           try {
             let value = AUDIOMANAGER.getAudioSceneSync();
             console.info(`${TagFrmwkRender}:AudioFrameworkAudioScene: getAudioScene : Value : ${value}`);
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${TagFrmwkRender}:AudioFrameworkAudioScene: getAudioScene : ERROR : ${error.message}`);
             resultFlag = false;
           }
@@ -563,7 +569,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         let LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         let LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -628,7 +635,8 @@ export default function audioRendererTest() {
           let data = audioRen.getAudioTimeSync();
           audioTimeStart = data / 1000000000;
           console.info(`${TagFrmwkRender}: getAudioTime : After Start : Converted: ${audioTimeStart}`);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TagFrmwkRender}: getAudioTime : ERROR : ${err.message}`);
           resultFlag = false;
         }
@@ -683,7 +691,8 @@ export default function audioRendererTest() {
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data)}`);
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data value: ${JSON.stringify(data)}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         let LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         let LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -824,7 +833,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions)
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         let LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         let LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -941,7 +951,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         let LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         let LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -1057,7 +1068,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         let LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         let LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -1175,7 +1187,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         let LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         let LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -1275,7 +1288,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err : BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         let LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         let LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -1374,7 +1388,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         let LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         let LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -1474,7 +1489,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         let LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         let LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -1570,7 +1586,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         let LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         let LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -1674,7 +1691,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         let LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         let LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -1698,7 +1716,8 @@ export default function audioRendererTest() {
             console.log(`${TagFrmwk}: periodReach Event is called : ${position}`);
             resultFlag = false;
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.log(`${TagFrmwk}: periodReach Event is : ERROR : ${err.message}`);
           resultFlag = true;
         }
@@ -2468,7 +2487,8 @@ export default function audioRendererTest() {
       let audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
         audioRenderer.setSpeed(0.1);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TagFrmwkRender}: get Speed error: ` + JSON.stringify(error.code));
         expect(Number(error.code)).assertEqual(6800101)
         done();
@@ -2665,7 +2685,8 @@ export default function audioRendererTest() {
         expect(streamInfo.channelLayout).assertEqual(audio.AudioChannelLayout.CH_LAYOUT_UNKNOWN);
         audioRen.release();
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`ERROR: ${err}`);
         expect(false).assertTrue();
         done();
@@ -2779,17 +2800,20 @@ export default function audioRendererTest() {
         try {
           await audioRenderer.release();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
         }
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_SYNC_0200 OUT OF BORDER PROMISE: ERROR: ${err.message}`);
         expect(false).assertTrue();
         try {
           await audioRenderer.release();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
         }
         done();
@@ -2887,7 +2911,8 @@ export default function audioRendererTest() {
         await audioRen.release();
         await audioRen_interrupt.release();
       }
-      catch (error: BusinessError) {
+      catch (error) {
+        error = error as BusinessError;
         console.log("SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_AUDIO_0100 : error = " + error);
         expect(false).assertTrue();
       }
@@ -2983,7 +3008,8 @@ export default function audioRendererTest() {
         await audioRen.release();
         await audioRen_interrupt.release();
       }
-      catch (error: BusinessError) {
+      catch (error) {
+        error = error as BusinessError;
         console.log("SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_AUDIO_0100 : error = " + error);
         expect(false).assertTrue();
       }
@@ -3079,7 +3105,8 @@ export default function audioRendererTest() {
         await audioRen.release();
         await audioRen_interrupt.release();
       }
-      catch (error: BusinessError) {
+      catch (error) {
+        error = error as BusinessError;
         console.log("SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_AUDIO_0200 : error = " + error);
         expect(false).assertTrue();
       }
@@ -3175,7 +3202,8 @@ export default function audioRendererTest() {
         await audioRen.release();
         await audioRen_interrupt.release();
       }
-      catch (error: BusinessError) {
+      catch (error) {
+        error = error as BusinessError;
         console.log("SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_AUDIO_0300 : error = " + error);
         expect(false).assertTrue();
       }
@@ -3271,7 +3299,8 @@ export default function audioRendererTest() {
         await audioRen.release();
         await audioRen_interrupt.release();
       }
-      catch (error: BusinessError) {
+      catch (error) {
+        error = error as BusinessError;
         console.log("SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_0400 : error = " + error);
         expect(false).assertTrue();
       }
@@ -3366,7 +3395,8 @@ export default function audioRendererTest() {
         await audioRen_interrupt.release();
         expect(interrput_flag).assertFalse();
       }
-      catch (error: BusinessError) {
+      catch (error) {
+        error = error as BusinessError;
         console.log("SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_AUDIO_0500 : error = " + error);
         expect(false).assertTrue();
       }
@@ -3461,7 +3491,8 @@ export default function audioRendererTest() {
         await audioRen_interrupt.release();
         expect(interrput_flag).assertFalse();
       }
-      catch (error: BusinessError) {
+      catch (error) {
+        error = error as BusinessError;
         console.log("SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_AUDIO_0600 : error = " + error);
         expect(false).assertTrue();
       }
@@ -3557,7 +3588,8 @@ export default function audioRendererTest() {
         await audioRen.release();
         await audioRen_interrupt.release();
       }
-      catch (error: BusinessError) {
+      catch (error) {
+        error = error as BusinessError;
         console.log("SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_AUDIO_0700 : error = " + error);
         expect(false).assertTrue();
       }
@@ -3883,7 +3915,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -3892,11 +3925,13 @@ export default function audioRendererTest() {
           await audioRen.setVolume(inputVolume);
           expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0 : Success`);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
           expect(false).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_0100 : error = " + error);
         expect(false).assertTrue();
       }
@@ -3905,7 +3940,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -3941,7 +3977,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -3950,11 +3987,13 @@ export default function audioRendererTest() {
           await audioRen.setVolume(inputVolume);
           expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0.5 : Success`);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
           expect(false).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_0200 : error = " + error);
         expect(false).assertTrue();
       }
@@ -3963,7 +4002,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -3999,7 +4039,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -4008,7 +4049,8 @@ export default function audioRendererTest() {
           await audioRen.setVolume(inputVolume);
           expect(false).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 5 TEST: ERROR`);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           if (err.code == 6800104) {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 1.1 : OK`);
             expect(true).assertTrue();
@@ -4017,7 +4059,8 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_0300 : error = " + error);
         expect(false).assertTrue();
       }
@@ -4026,7 +4069,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -4062,7 +4106,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -4076,7 +4121,8 @@ export default function audioRendererTest() {
             expect(true).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_0500 : error = " + error);
         expect(false).assertTrue();
       }
@@ -4085,7 +4131,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -4121,7 +4168,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -4135,7 +4183,8 @@ export default function audioRendererTest() {
             expect(true).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_0600 : error = " + error);
         expect(false).assertTrue();
       }
@@ -4144,7 +4193,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -4180,7 +4230,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -4199,7 +4250,8 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_0700 : error = " + error);
         expect(false).assertTrue();
       }
@@ -4208,7 +4260,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -5977,7 +6030,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -6057,7 +6111,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -6139,7 +6194,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -6221,7 +6277,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -6303,7 +6360,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -6385,7 +6443,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -6467,7 +6526,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -6549,7 +6609,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch  (err: BusinessError) {
+      } catch  (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -6631,7 +6692,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -6713,7 +6775,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -6795,7 +6858,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err : BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -6877,7 +6941,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -6959,7 +7024,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -7041,7 +7107,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -7123,7 +7190,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -7205,7 +7273,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -7287,7 +7356,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -7369,7 +7439,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -7451,7 +7522,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -7533,7 +7605,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -7615,7 +7688,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -7697,7 +7771,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -7779,7 +7854,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -7861,7 +7937,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      }  catch (err: BusinessError) {
+      }  catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -7942,7 +8019,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -8016,7 +8094,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -8105,7 +8184,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -8196,7 +8276,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -8288,7 +8369,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -8395,7 +8477,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -8477,7 +8560,8 @@ export default function audioRendererTest() {
       try {
         audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -8514,7 +8598,8 @@ export default function audioRendererTest() {
       try {
         await audioRenderer.release()
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       await Utils.msSleep(1000);
@@ -8556,7 +8641,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -8653,7 +8739,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -8752,7 +8839,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -8851,7 +8939,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -9010,7 +9099,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -9173,7 +9263,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -9255,7 +9346,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS ${JSON.stringify(data)}`);
-      } catch (err : BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -9427,7 +9519,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -9436,11 +9529,13 @@ export default function audioRendererTest() {
           await audioRen.setVolume(inputVolume);
           expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0 : Success`);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
           expect(false).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_0900 : error = " + error);
         expect(false).assertTrue();
       }
@@ -9449,7 +9544,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -9485,7 +9581,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -9494,11 +9591,13 @@ export default function audioRendererTest() {
           await audioRen.setVolume(inputVolume);
           expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 1 : Success`);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
           expect(false).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_1100 : error = " + error);
         expect(false).assertTrue();
       }
@@ -9507,7 +9606,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -9543,7 +9643,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -9552,7 +9653,8 @@ export default function audioRendererTest() {
           await audioRen.setVolume(inputVolume);
           expect(false).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 1.1 TEST: ERROR`);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           if (err.code == 6800104) {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : SUCCESS : code: ${err.code}, mesage: ${err.message}`);
             expect(true).assertTrue();
@@ -9561,7 +9663,8 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_1200 : error = " + error);
         expect(false).assertTrue();
       }
@@ -9570,7 +9673,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -9606,7 +9710,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -9620,7 +9725,8 @@ export default function audioRendererTest() {
             expect(true).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_1400 : error = " + error);
         expect(false).assertTrue();
       }
@@ -9629,7 +9735,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -9665,7 +9772,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -9679,7 +9787,8 @@ export default function audioRendererTest() {
             expect(true).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_1600 : error = " + error);
         expect(false).assertTrue();
       }
@@ -9688,7 +9797,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -9724,7 +9834,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -9743,7 +9854,8 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_1700 : error = " + error);
         expect(false).assertTrue();
       }
@@ -9752,7 +9864,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -9788,7 +9901,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -9797,11 +9911,13 @@ export default function audioRendererTest() {
           await audioRen.setVolume(inputVolume);
           expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0 : Success`);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
           expect(false).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_1900 : error = " + error);
         expect(false).assertTrue();
       }
@@ -9810,7 +9926,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -9846,7 +9963,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -9855,7 +9973,8 @@ export default function audioRendererTest() {
           await audioRen.setVolume(inputVolume);
           expect(false).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to -1 TEST: ERROR`);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           if (err.code == 6800104) {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : SUCCESS : code: ${err.code}, mesage: ${err.message}`);
             expect(true).assertTrue();
@@ -9864,7 +9983,8 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_2000 : error = " + error);
         expect(false).assertTrue();
       }
@@ -9873,7 +9993,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -9909,7 +10030,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -9918,11 +10040,13 @@ export default function audioRendererTest() {
           await audioRen.setVolume(inputVolume);
           expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 1 : Success`);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
           expect(false).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_2100 : error = " + error);
         expect(false).assertTrue();
       }
@@ -9931,7 +10055,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -9967,7 +10092,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -9976,7 +10102,8 @@ export default function audioRendererTest() {
           await audioRen.setVolume(inputVolume);
           expect(false).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 16 TEST: ERROR`);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           if (err.code == 6800104) {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : SUCCESS : code: ${err.code}, mesage: ${err.message}`);
             expect(true).assertTrue();
@@ -9985,7 +10112,8 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
           }
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_2200 : error = " + error);
         expect(false).assertTrue();
       }
@@ -9994,7 +10122,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -10030,7 +10159,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -10044,7 +10174,8 @@ export default function audioRendererTest() {
             expect(true).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_2400 : error = " + error);
         expect(false).assertTrue();
       }
@@ -10053,7 +10184,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -10089,7 +10221,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -10108,7 +10241,8 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_2500 : error = " + error);
         expect(false).assertTrue();
       }
@@ -10117,7 +10251,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -10153,7 +10288,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -10167,7 +10303,8 @@ export default function audioRendererTest() {
             expect(true).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_2600 : error = " + error);
         expect(false).assertTrue();
       }
@@ -10176,7 +10313,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -10212,7 +10350,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -10231,7 +10370,8 @@ export default function audioRendererTest() {
             expect(false).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_SET_VOLUME_2700 : error = " + error);
         expect(false).assertTrue();
       }
@@ -10240,7 +10380,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -10344,7 +10485,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -10356,11 +10498,13 @@ export default function audioRendererTest() {
           let data = audioRen.getVolume();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0100 SUCCESS: ${data}`);
           expect(data).assertEqual(0);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
           expect(false).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0100 : error = " + error);
         expect(false).assertTrue();
       }
@@ -10369,7 +10513,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -10405,7 +10550,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -10417,11 +10563,13 @@ export default function audioRendererTest() {
           let data = audioRen.getVolume();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0200 SUCCESS: ${data}`);
           expect(data).assertEqual(0.5);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
           expect(false).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0200 : error = " + error);
         expect(false).assertTrue();
       }
@@ -10430,7 +10578,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -10466,7 +10615,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -10478,11 +10628,13 @@ export default function audioRendererTest() {
           let data = audioRen.getVolume();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0300 SUCCESS: ${data}`);
           expect(data).assertEqual(1);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
           expect(false).assertTrue();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0300 : error = " + error);
         expect(false).assertTrue();
       }
@@ -10491,7 +10643,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -10527,14 +10680,16 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
         let data = audioRen.getVolume();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0400 SUCCESS: ${data}`);
         expect(data).assertEqual(1);
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0300 : error = " + error);
         expect(false).assertTrue();
       }
@@ -10543,7 +10698,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -10579,7 +10735,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -10596,7 +10753,8 @@ export default function audioRendererTest() {
             expect(true).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0500 : error = " + error);
         expect(false).assertTrue();
       }
@@ -10605,7 +10763,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -10641,7 +10800,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -10658,7 +10818,8 @@ export default function audioRendererTest() {
             expect(true).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0600 : error = " + error);
         expect(false).assertTrue();
       }
@@ -10667,7 +10828,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -10703,7 +10865,8 @@ export default function audioRendererTest() {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
@@ -10720,7 +10883,8 @@ export default function audioRendererTest() {
             expect(true).assertTrue();
           }
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info("SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0700 : error = " + error);
         expect(false).assertTrue();
       }
@@ -10729,7 +10893,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
       done();
@@ -10768,7 +10933,8 @@ export default function audioRendererTest() {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
         LE24 = audio.AudioSampleFormat.SAMPLE_FORMAT_S24LE;
         LE32 = audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE;
@@ -10936,7 +11102,8 @@ export default function audioRendererTest() {
         await playbackWriteDataCallback_003(audioRendererOptions, filePath, done);
         await Utils.msSleep(100);
         await closeFileDescriptor();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`SUB_MULTIMEDIA_AUDIO_RENDERER_WRITE_DATA_TEST_STATIC_0300 : FAILED`);
         expect(false).assertTrue();
       }
@@ -10969,7 +11136,8 @@ export default function audioRendererTest() {
       let audioRenderer: audio.AudioRenderer;
       try {
         audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`AudioRenderer create : ERROR`);
         expect(false).assertTrue();
       }
@@ -10977,7 +11145,8 @@ export default function audioRendererTest() {
         audioRenderer.setSilentModeAndMixWithOthers(true);
         let data = audioRenderer.getSilentModeAndMixWithOthers();
         expect(data).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`AudioRenderer setSilentModeAndMixWithOthers or getSilentModeAndMixWithOthers : ERROR: ${err.code}`);
         expect(false).assertTrue();
       }
@@ -11016,7 +11185,8 @@ export default function audioRendererTest() {
       let audioRenderer: audio.AudioRenderer;
       try {
         audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`AudioRenderer create : ERROR`);
         expect(false).assertTrue();
       }
@@ -11024,7 +11194,8 @@ export default function audioRendererTest() {
         audioRenderer.setSilentModeAndMixWithOthers(false);
         let data = audioRenderer.getSilentModeAndMixWithOthers();
         expect(data).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`AudioRenderer setSilentModeAndMixWithOthers or getSilentModeAndMixWithOthers : ERROR: ${err.code}`);
         expect(false).assertTrue();
       }
@@ -11064,20 +11235,23 @@ export default function audioRendererTest() {
       try {
         audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
         console.info(`AudioRenderer create : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`AudioRenderer create : ERROR`);
         expect(false).assertTrue();
       }
       try {
         await audioRenderer.start();
         console.info(`AudioRenderer start : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`AudioRenderer start : ERROR`);
         expect(false).assertTrue();
       }
       try {
         await audioRenderer.setDefaultOutputDevice(audio.DeviceType.EARPIECE);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         if (err.code == 6800103) {
           console.info(`AudioRenderer setDefaultOutputDevice : SUCCESS`);
         } else {

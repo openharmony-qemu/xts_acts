@@ -68,7 +68,8 @@ struct customizeSchemes {
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
     try {
       webview.WebviewController.customizeSchemes(this.schemeList)
-    } catch (error: BusinessError) {
+    } catch (error) {
+      error = error as BusinessError;
       console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
     }
 
@@ -97,7 +98,8 @@ struct customizeSchemes {
               case "customizeSchemes0100": {
                 try {
                   webview.WebviewController.customizeSchemes(this.invalidSchemeList)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   Utils.emitEvent(error.code, 300);
                 }
@@ -106,7 +108,8 @@ struct customizeSchemes {
               case "customizeSchemes0200": {
                 try {
                   webview.WebviewController.customizeSchemes(this.outOfRangeSchemeList)
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                   Utils.emitEvent(error.code, 302);
                 }

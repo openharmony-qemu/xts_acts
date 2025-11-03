@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,17 +49,18 @@ export default function ActsNotificationEmitterTest() {
       console.info(`${TAG} afterEach END`)
     })
 
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_1100
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_1100
-     * @tc.desc   : test on interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_1100
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_1100
+     * @tc.desc    test on interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_1100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_1100';
+        let count: int = 0;
         let eventId11: string = 'eventId11'
         let option11: emitter.Options = {
           priority: emitter.EventPriority.IMMEDIATE
@@ -68,7 +69,8 @@ export default function ActsNotificationEmitterTest() {
         let eventData: emitter.EventData = { data: myDate }
         let onCallback11 = (): void => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on success');
-          expect(true).assertTrue();
+          count++;
+          expect(count).assertEqual(1);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done();
         }
@@ -94,13 +96,13 @@ export default function ActsNotificationEmitterTest() {
           done();
         }
       })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_1800
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_1800
-     * @tc.desc   : test once interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_1800
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_1800
+     * @tc.desc    test once interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_1800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME:string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_1800';
@@ -135,13 +137,14 @@ export default function ActsNotificationEmitterTest() {
         done();
       }
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_1900
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_1900
-     * @tc.desc   : test once interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_1900
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_1900
+     * @tc.desc    test once interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_1900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME:string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_1900';
@@ -179,13 +182,13 @@ export default function ActsNotificationEmitterTest() {
     })
 
     
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_2000
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_2000
-     * @tc.desc   : test once interface fail
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_2000
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_2000
+     * @tc.desc    test once interface fail
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_2000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME:string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_2000';
@@ -211,13 +214,14 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_2100
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_2100
-     * @tc.desc   : test once interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_2100
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_2100
+     * @tc.desc    test once interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_2100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME:string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_2100';
@@ -252,13 +256,14 @@ export default function ActsNotificationEmitterTest() {
         done();
       }
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_2200
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_2200
-     * @tc.desc   : test once interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 0
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_2200
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_2200
+     * @tc.desc    test once interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 0
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_2200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME:string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_2200';
@@ -301,13 +306,14 @@ export default function ActsNotificationEmitterTest() {
         done();
       }, 3000)
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_2300
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_2300
-     * @tc.desc   : test once interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_2300
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_2300
+     * @tc.desc    test once interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_2300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -358,21 +364,24 @@ export default function ActsNotificationEmitterTest() {
           done();
         }, 3000)
       })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_3800
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_3800
-     * @tc.desc   : test emit interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_3800
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_3800
+     * @tc.desc    test emit interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_3800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_3800';
+        let count: int = 0;
         let eventId38: string = 'eventId38'
         let onCallback38 = (): void => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on success');
-          expect(true).assertTrue();
+          count++;
+          expect(count).assertEqual(1);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done();
         }
@@ -398,20 +407,23 @@ export default function ActsNotificationEmitterTest() {
         emitter.emit(eventId38, option38, eventData)
         done()
       })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_4300
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_4300
-     * @tc.desc   : test emit interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_4300
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_4300
+     * @tc.desc    test emit interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_4300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_4300';
+        let count: int = 0;
         let eventId43: string = 'eventId43'
         let onCallback43 = (): void => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on success');
+          count++;
           expect(false).assertTrue();
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done();
@@ -441,28 +453,31 @@ export default function ActsNotificationEmitterTest() {
         await Utils.msSleep(1000)
         setTimeout(() => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' No subscription message');
-          expect(true).assertTrue();
+          expect(count).assertEqual(0);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done();
         }, 3000)
       })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_4400
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_4400
-     * @tc.desc   : test emit interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_4400
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_4400
+     * @tc.desc    test emit interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_4400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_4400';
+        let count: int = 0;
         let eventId44: string = 'eventId44'
         let innerEvent44: emitter.InnerEvent = {
           eventId: 44
         }
         let onCallback44 = (): void => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on success');
+          count++;
           expect(false).assertTrue();
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done();
@@ -500,29 +515,32 @@ export default function ActsNotificationEmitterTest() {
         await Utils.msSleep(1000)
         setTimeout(() => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' No subscription message');
-          expect(true).assertTrue();
+          expect(count).assertEqual(0);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done();
         }, 3000)
       })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5600
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5600
-     * @tc.desc   : test on interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_5600
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_5600
+     * @tc.desc    test on interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_5600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000)
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_5600';
+        let count: int = 0;
         let eventId56: string = 'eventId56'
         let innerEvent56: emitter.InnerEvent = {
           eventId: 56
         }
         let onCallback56 = (): void => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on success');
+          count++;
           expect(false).assertTrue();
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done()
@@ -550,26 +568,29 @@ export default function ActsNotificationEmitterTest() {
         await Utils.msSleep(1000)
         setTimeout(() => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' No subscription message');
-          expect(true).assertTrue();
+          expect(count).assertEqual(0);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done();
         }, 3000)
       })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_7300
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_7300
-     * @tc.desc   : test emit interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_7300
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_7300
+     * @tc.desc    test emit interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_7300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_7300';
+        let count: int = 0;
         let eventId73: string = 'eventId73'
         let onCallback173 = (): void => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on1 success');
-          expect(true).assertTrue();
+          count++;
+          expect(count).assertEqual(1);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done();
         }
@@ -595,13 +616,14 @@ export default function ActsNotificationEmitterTest() {
           done();
         }
       })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_7600
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_7600
-     * @tc.desc   : test emit interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_7600
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_7600
+     * @tc.desc    test emit interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_7600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -650,17 +672,19 @@ export default function ActsNotificationEmitterTest() {
           done();
         }, 3000)
       })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_7800
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_7800
-     * @tc.desc   : test emit interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_7800
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_7800
+     * @tc.desc    test emit interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_7800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_7800';
+        let count: int = 0;
         let eventId78: string = 'eventId78'
         let innerEvent78: emitter.InnerEvent = {
           eventId: 78
@@ -675,7 +699,8 @@ export default function ActsNotificationEmitterTest() {
         let data178: emitter.EventData = { data: myDate }
         let onCallback178 = (): void => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on1 success');
-          expect(true).assertTrue();
+          count++;
+          expect(count).assertEqual(1);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done();
         }
@@ -708,13 +733,14 @@ export default function ActsNotificationEmitterTest() {
           done();
         }
       })
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8000
-    * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8000
-    * @tc.desc   : test emit interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
+
+    /**
+    * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_8000
+    * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_8000
+    * @tc.desc    test emit interface success
+    * @tc.size    Large-scaleTest
+    * @tc.type    Interface
+    * @tc.level   Level 3
     */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_8000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -771,22 +797,24 @@ export default function ActsNotificationEmitterTest() {
         }, 3000)
       })
 
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8700
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8700
-     * @tc.desc   : test on interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_8700
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_8700
+     * @tc.desc    test on interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_8700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_8700';
+        let count: int = 0;
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
         try {
           emitter.onEventData("eventid", (): void => {
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' emit success,data is %{public}s');
-            expect(true).assertTrue();
+            count++;
+            expect(count).assertEqual(1);
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
             done();
           })
@@ -801,13 +829,13 @@ export default function ActsNotificationEmitterTest() {
         }
       })
 
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8800
-    * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8800
-    * @tc.desc   : test on interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
+    /**
+    * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_8800
+    * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_8800
+    * @tc.desc    test on interface success
+    * @tc.size    Large-scaleTest
+    * @tc.type    Interface
+    * @tc.level   Level 3
     */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_8800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -851,7 +879,7 @@ export default function ActsNotificationEmitterTest() {
           emitter.onEventData("eventid", (eventData: emitter.EventData): void => {
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on success,data is %{public}s',
               JSON.stringify(eventData));
-            expect(true).assertTrue();
+            expect(eventData !== null).assertTrue();
             hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
             done();
           })
@@ -866,14 +894,14 @@ export default function ActsNotificationEmitterTest() {
         }
       })
 
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8900
-    * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8900
-    * @tc.desc   : test on interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
-    */
+    /**
+      * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_8900
+      * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_8900
+      * @tc.desc    test on interface success
+      * @tc.size    Large-scaleTest
+      * @tc.type    Interface
+      * @tc.level   Level 3
+      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_8900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_8900';
@@ -909,14 +937,14 @@ export default function ActsNotificationEmitterTest() {
         }, 1000);
       })
 
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_9000
-    * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_9000
-    * @tc.desc   : test on interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
-    */
+    /**
+      * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_9000
+      * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_9000
+      * @tc.desc    test on interface success
+      * @tc.size    Large-scaleTest
+      * @tc.type    Interface
+      * @tc.level   Level 3
+      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_9000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_9000';
@@ -924,12 +952,11 @@ export default function ActsNotificationEmitterTest() {
         let oncallback1 = (data: emitter.EventData) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on1 success,data1 is %{public}s',
             JSON.stringify(data));
-          expect(true).assertTrue();
+          expect(data !== null).assertTrue();
           count++;
         };
         let oncallback2 = (data: emitter.EventData) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on2 success,data2 is %{public}s');
-          expect(true).assertTrue();
           count++;
         };
         const re = new RegExp("\\w+");
@@ -982,13 +1009,13 @@ export default function ActsNotificationEmitterTest() {
         }, 1000);
       })
 
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_9100
-    * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_9100
-    * @tc.desc   : test on interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 0
+    /**
+    * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_9100
+    * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_9100
+    * @tc.desc    test on interface success
+    * @tc.size    Large-scaleTest
+    * @tc.type    Interface
+    * @tc.level   Level 0
     */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_9100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -1000,12 +1027,10 @@ export default function ActsNotificationEmitterTest() {
         let eventData: emitter.EventData = { data: myDate }
         let oncallback1 = (data: emitter.EventData) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on1 success,data1 is %{public}s');
-          expect(true).assertTrue();
           count++;
         };
         let oncallback2 = (data: emitter.EventData) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on2 success,data2 is %{public}s');
-          expect(true).assertTrue();
           count++;
         };
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case start');
@@ -1028,13 +1053,13 @@ export default function ActsNotificationEmitterTest() {
         }, 1000);
       })
 
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_9200
-    * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_9200
-    * @tc.desc   : test on interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
+    /**
+    * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_9200
+    * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_9200
+    * @tc.desc    test on interface success
+    * @tc.size    Large-scaleTest
+    * @tc.type    Interface
+    * @tc.level   Level 3
     */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_9200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -1042,12 +1067,10 @@ export default function ActsNotificationEmitterTest() {
         let count: number = 0;
         let oncallback1 = (data1: emitter.EventData) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on1 success,data1 is %{public}s');
-          expect(true).assertTrue();
           count++;
         };
         let oncallback2 = (data2: emitter.EventData) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on2 success,data2 is %{public}s');
-          expect(true).assertTrue();
           count++;
         };
 
@@ -1081,13 +1104,13 @@ export default function ActsNotificationEmitterTest() {
         }, 1000);
       })
 
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_9300
-    * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_9300
-    * @tc.desc   : test on interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
+    /**
+    * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_9300
+    * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_9300
+    * @tc.desc    test on interface success
+    * @tc.size    Large-scaleTest
+    * @tc.type    Interface
+    * @tc.level   Level 3
     */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_9300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -1095,12 +1118,10 @@ export default function ActsNotificationEmitterTest() {
         let count: number = 0;
         let oncallback1 = (data1: emitter.EventData) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on1 success,data1 is %{public}s');
-          expect(true).assertTrue();
           count++;
         };
         let oncallback2 = (data2: emitter.EventData) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on2 success,data2 is %{public}s');
-          expect(true).assertTrue();
           count++;
         };
         let myDate: Record<String, RecordData> = {
@@ -1132,14 +1153,14 @@ export default function ActsNotificationEmitterTest() {
         }, 1000);
       })
 
-    /*
-   * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_9400
-   * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_9400
-   * @tc.desc   : test on interface success
-   * @tc.size   : Large-scaleTest
-   * @tc.type   : Interface
-   * @tc.level  : Level 3
-   */
+    /**
+      * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_9400
+      * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_9400
+      * @tc.desc    test on interface success
+      * @tc.size    Large-scaleTest
+      * @tc.type    Interface
+      * @tc.level   Level 3
+      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_9400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_9400';
@@ -1147,13 +1168,11 @@ export default function ActsNotificationEmitterTest() {
         let oncallback1 = (data1: emitter.EventData) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on1 success,data1 is %{public}s',
             JSON.stringify(data1));
-          expect(true).assertTrue();
           count++;
         };
         let oncallback2 = (data2: emitter.EventData) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on2 success,data2 is %{public}s',
             JSON.stringify(data2));
-          expect(true).assertTrue();
           count++;
         };
 
@@ -1187,14 +1206,14 @@ export default function ActsNotificationEmitterTest() {
         }, 1000);
       })
 
-    /*
-   * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_9500
-   * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_9500
-   * @tc.desc   : test on interface success
-   * @tc.size   : Large-scaleTest
-   * @tc.type   : Interface
-   * @tc.level  : Level 3
-   */
+    /**
+      * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_9500
+      * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_9500
+      * @tc.desc    test on interface success
+      * @tc.size    Large-scaleTest
+      * @tc.type    Interface
+      * @tc.level   Level 3
+      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_9500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_9500';
@@ -1202,13 +1221,11 @@ export default function ActsNotificationEmitterTest() {
         let oncallback1 = (data1: emitter.EventData) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on1 success,data1 is %{public}s',
             JSON.stringify(data1));
-          expect(true).assertTrue();
           count++;
         };
         let oncallback2 = (data2: emitter.EventData) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on2 success,data2 is %{public}s',
             JSON.stringify(data2));
-          expect(true).assertTrue();
           count++;
         };
         let birthday: Date = new Date(2025, 2, 24, 15, 53);
@@ -1246,13 +1263,13 @@ export default function ActsNotificationEmitterTest() {
         }, 1000);
       })
 
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_9600
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_9600
-     * @tc.desc   : test on interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_9600
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_9600
+     * @tc.desc    test on interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_9600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -1263,7 +1280,6 @@ export default function ActsNotificationEmitterTest() {
           let setValue: Set<Number> = dataValue["Sets"] as Set<Number>
           hilog.info(0x000, `${TAG}`,
             `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ` on1 success,data1 is %{public}s ${setValue}`,);
-          expect(true).assertTrue();
           count++;
         };
         let oncallback2 = (data2: emitter.EventData) => {
@@ -1271,7 +1287,6 @@ export default function ActsNotificationEmitterTest() {
           let MapValue: Map<Number, String> = dataValue["Map"] as Map<Number, String>
           hilog.info(0x000, `${TAG}`,
             `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + `on2 success,data2 is %{public}s ${MapValue}`,);
-          expect(true).assertTrue();
           count++;
         };
         const Sets: Set<Number> = new Set<Number>([1, 2, 3]);
@@ -1312,13 +1327,13 @@ export default function ActsNotificationEmitterTest() {
         }, 1000);
       })
 
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_9700
-    * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_9700
-    * @tc.desc   : test on interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
+    /**
+    * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_9700
+    * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_9700
+    * @tc.desc    test on interface success
+    * @tc.size    Large-scaleTest
+    * @tc.type    Interface
+    * @tc.level   Level 3
     */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_9700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -1327,13 +1342,11 @@ export default function ActsNotificationEmitterTest() {
         let oncallback1 = (data1: emitter.EventData) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on1 success,data1 is %{public}s',
             JSON.stringify(data1));
-          expect(true).assertTrue();
           count++;
         };
         let oncallback2 = (data2: emitter.EventData) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on2 success,data2 is %{public}s',
             JSON.stringify(data2));
-          expect(true).assertTrue();
           count++;
         };
         const errtypes = new Error('Whoops!');
@@ -1370,14 +1383,14 @@ export default function ActsNotificationEmitterTest() {
         }, 1000);
       })
 
-    /*
- * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_9800
- * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_9800
- * @tc.desc   : test on interface success
- * @tc.size   : Large-scaleTest
- * @tc.type   : Interface
- * @tc.level  : Level 3
- */
+    /**
+      * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_9800
+      * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_9800
+      * @tc.desc    test on interface success
+      * @tc.size    Large-scaleTest
+      * @tc.type    Interface
+      * @tc.level   Level 3
+      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_9800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_9800';
@@ -1385,13 +1398,11 @@ export default function ActsNotificationEmitterTest() {
         let oncallback1 = (data1: emitter.EventData) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on1 success,data1 is %{public}s',
             JSON.stringify(data1));
-          expect(true).assertTrue();
           count++;
         };
         let oncallback2 = (data2: emitter.EventData) => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on2 success,data2 is %{public}s',
             JSON.stringify(data2));
-          expect(true).assertTrue();
           count++;
         };
         const re = new RegExp('\\w+');
@@ -1427,13 +1438,13 @@ export default function ActsNotificationEmitterTest() {
         }, 1000);
       })
 
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_0600
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_0600
-     * @tc.desc   : test on interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_0600
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_0600
+     * @tc.desc    test on interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_0600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -1463,13 +1474,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       })
 
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_0700
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_0700
-     * @tc.desc   : test on interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_0700
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_0700
+     * @tc.desc    test on interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_0700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -1501,13 +1512,13 @@ export default function ActsNotificationEmitterTest() {
       })
 
     
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_0800
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_0800
-     * @tc.desc   : test on interface fail
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_0800
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_0800
+     * @tc.desc    test on interface fail
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_0800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME:string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_0800';
@@ -1534,13 +1545,13 @@ export default function ActsNotificationEmitterTest() {
       done();
     })
 
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_0900
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_0900
-     * @tc.desc   : test on interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_0900
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_0900
+     * @tc.desc    test on interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_0900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -1572,13 +1583,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       })
 
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_1000
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_1000
-     * @tc.desc   : test on interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_1000
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_1000
+     * @tc.desc    test on interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_1000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -1617,13 +1628,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       })
 
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_3000
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_3000
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_3000
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_3000
+     * @tc.desc    test off interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_3000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -1659,13 +1670,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       })
 
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_3100
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_3100
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_3100
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_3100
+     * @tc.desc    test off interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_3100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -1712,13 +1723,13 @@ export default function ActsNotificationEmitterTest() {
       })
 
     
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_3200
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_3200
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_3200
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_3200
+     * @tc.desc    test off interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_3200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME:string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_3200';
@@ -1747,13 +1758,13 @@ export default function ActsNotificationEmitterTest() {
       done();
     })
 
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_3300
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_3300
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_3300
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_3300
+     * @tc.desc    test off interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_3300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -1789,13 +1800,14 @@ export default function ActsNotificationEmitterTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
         done();
       })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_3400
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_3400
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 0
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_3400
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_3400
+     * @tc.desc    test off interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 0
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_3400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -1854,23 +1866,25 @@ export default function ActsNotificationEmitterTest() {
         done();
       })
 
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_4500
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_4500
-     * @tc.desc   : test emit interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_4500
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_4500
+     * @tc.desc    test emit interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_4500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_4500';
+        let count: int = 0;
         let eventId45: string = 'eventId45'
         let innerEvent45: emitter.InnerEvent = {
           eventId: 45
         }
         let onCallback45 = (): void => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on success');
+          count++;
           expect(false).assertTrue();
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done();
@@ -1901,28 +1915,31 @@ export default function ActsNotificationEmitterTest() {
         await Utils.msSleep(1000)
         setTimeout(() => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' No subscription message');
-          expect(true).assertTrue();
+          expect(count).assertEqual(0);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done();
         }, 3000)
       })
-    /*
-         * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_4600
-         * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_4600
-         * @tc.desc   : test emit interface success
-         * @tc.size   : Large-scaleTest
-         * @tc.type   : Interface
-         * @tc.level  : Level 3
-         */
+
+    /**
+      * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_4600
+      * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_4600
+      * @tc.desc    test emit interface success
+      * @tc.size    Large-scaleTest
+      * @tc.type    Interface
+      * @tc.level   Level 3
+      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_4600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_4600';
+        let count: int = 0;
         let eventId46: string = 'eventId46'
         let innerEvent46: emitter.InnerEvent = {
           eventId: 46
         }
         let onCallback46 = (): void => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on success');
+          count++;
           expect(false).assertTrue();
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done();
@@ -1953,18 +1970,19 @@ export default function ActsNotificationEmitterTest() {
         await Utils.msSleep(1000)
         setTimeout(() => {
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' No subscription message');
-          expect(true).assertTrue();
+          expect(count).assertEqual(0);
           hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
           done();
         }, 3000)
       })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5000
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5000
-     * @tc.desc   : test getListenerCount interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_5000
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_5000
+     * @tc.desc    test getListenerCount interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_5000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -1996,13 +2014,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       })
 
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5100
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5100
-     * @tc.desc   : test getListenerCount interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_5100
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_5100
+     * @tc.desc    test getListenerCount interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_5100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -2035,13 +2053,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       })
 
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5200
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5200
-     * @tc.desc   : test getListenerCount interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_5200
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_5200
+     * @tc.desc    test getListenerCount interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_5200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -2135,13 +2153,14 @@ export default function ActsNotificationEmitterTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
         done();
       })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5300
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5300
-     * @tc.desc   : test getListenerCount interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_5300
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_5300
+     * @tc.desc    test getListenerCount interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_5300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -2234,13 +2253,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       })
 
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5400
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5400
-     * @tc.desc   : test getListenerCount interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_5400
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_5400
+     * @tc.desc    test getListenerCount interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_5400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -2379,13 +2398,14 @@ export default function ActsNotificationEmitterTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
         done();
       })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5500
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5500
-     * @tc.desc   : test getListenerCount interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_5500
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_5500
+     * @tc.desc    test getListenerCount interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_5500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -2504,13 +2524,14 @@ export default function ActsNotificationEmitterTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
         done();
       })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5700
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5700
-     * @tc.desc   : test on interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_5700
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_5700
+     * @tc.desc    test on interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_5700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -2549,13 +2570,14 @@ export default function ActsNotificationEmitterTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
         done();
       })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5800
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5800
-     * @tc.desc   : test on interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_5800
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_5800
+     * @tc.desc    test on interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_5800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -2592,13 +2614,14 @@ export default function ActsNotificationEmitterTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
         done();
       })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5900
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_5900
-     * @tc.desc   : test once interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_5900
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_5900
+     * @tc.desc    test once interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_5900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME:string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_5900';
@@ -2637,13 +2660,14 @@ export default function ActsNotificationEmitterTest() {
         done();
       }, 3000)
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_6000
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_6000
-     * @tc.desc   : test once interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_6000
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_6000
+     * @tc.desc    test once interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_6000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME:string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_6000';
@@ -2689,13 +2713,14 @@ export default function ActsNotificationEmitterTest() {
         done();
       }, 3000)
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_6100
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_6100
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_6100
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_6100
+     * @tc.desc    test off interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_6100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -2742,13 +2767,14 @@ export default function ActsNotificationEmitterTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
         done();
       })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_6500
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_6500
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_6500
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_6500
+     * @tc.desc    test off interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_6500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -2787,13 +2813,14 @@ export default function ActsNotificationEmitterTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
         done();
       })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_6600
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_6600
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_6600
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_6600
+     * @tc.desc    test off interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_6600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -2856,13 +2883,13 @@ export default function ActsNotificationEmitterTest() {
       })
 
     
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_6700
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_6700
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_6700
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_6700
+     * @tc.desc    test off interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_6700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME:string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_6700';
@@ -2897,13 +2924,14 @@ export default function ActsNotificationEmitterTest() {
       hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
       done();
     })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_6800
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_6800
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_6800
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_6800
+     * @tc.desc    test off interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_6800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -2942,13 +2970,14 @@ export default function ActsNotificationEmitterTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
         done();
       })
-    /*
-     * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_6900
-     * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_6900
-     * @tc.desc   : test off interface success
-     * @tc.size   : Large-scaleTest
-     * @tc.type   : Interface
-     * @tc.level  : Level 3
+
+    /**
+     * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_6900
+     * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_6900
+     * @tc.desc    test off interface success
+     * @tc.size    Large-scaleTest
+     * @tc.type    Interface
+     * @tc.level   Level 3
      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_6900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -2997,14 +3026,15 @@ export default function ActsNotificationEmitterTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
         done();
       })
-    /*
-   * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8100
-   * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8100
-   * @tc.desc   : test getListenerCount interface success
-   * @tc.size   : Large-scaleTest
-   * @tc.type   : Interface
-   * @tc.level  : Level 3
-   */
+
+    /**
+      * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_8100
+      * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_8100
+      * @tc.desc    test getListenerCount interface success
+      * @tc.size    Large-scaleTest
+      * @tc.type    Interface
+      * @tc.level   Level 3
+      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_8100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_8100';
@@ -3042,13 +3072,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       })
 
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8200
-    * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8200
-    * @tc.desc   : test getListenerCount interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
+    /**
+    * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_8200
+    * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_8200
+    * @tc.desc    test getListenerCount interface success
+    * @tc.size    Large-scaleTest
+    * @tc.type    Interface
+    * @tc.level   Level 3
     */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_8200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -3143,13 +3173,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       })
 
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8300
-    * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8300
-    * @tc.desc   : test getListenerCount interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
+    /**
+    * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_8300
+    * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_8300
+    * @tc.desc    test getListenerCount interface success
+    * @tc.size    Large-scaleTest
+    * @tc.type    Interface
+    * @tc.level   Level 3
     */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_8300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -3188,13 +3218,13 @@ export default function ActsNotificationEmitterTest() {
         done();
       })
 
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8400
-    * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8400
-    * @tc.desc   : test getListenerCount interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
+    /**
+    * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_8400
+    * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_8400
+    * @tc.desc    test getListenerCount interface success
+    * @tc.size    Large-scaleTest
+    * @tc.type    Interface
+    * @tc.level   Level 3
     */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_8400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
@@ -3251,14 +3281,15 @@ export default function ActsNotificationEmitterTest() {
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' test case end');
         done();
       })
-    /*
-   * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8500
-   * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8500
-   * @tc.desc   : test getListenerCount interface success
-   * @tc.size   : Large-scaleTest
-   * @tc.type   : Interface
-   * @tc.level  : Level 3
-   */
+
+    /**
+      * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_8500
+      * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_8500
+      * @tc.desc    test getListenerCount interface success
+      * @tc.size    Large-scaleTest
+      * @tc.type    Interface
+      * @tc.level   Level 3
+      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_8500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_8500';
@@ -3448,14 +3479,14 @@ export default function ActsNotificationEmitterTest() {
         done();
       })
 
-    /*
-    * @tc.number : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8600
-    * @tc.name   : Sub_Notification_Emitter_Subscribe_Capabilities_Static_8600
-    * @tc.desc   : test off interface success
-    * @tc.size   : Large-scaleTest
-    * @tc.type   : Interface
-    * @tc.level  : Level 3
-    */
+    /**
+      * @tc.number  Sub_Notification_Emitter_Subscribe_Capabilities_Static_8600
+      * @tc.name    Sub_Notification_Emitter_Subscribe_Capabilities_Static_8600
+      * @tc.desc    test off interface success
+      * @tc.size    Large-scaleTest
+      * @tc.type    Interface
+      * @tc.level   Level 3
+      */
     it('Sub_Notification_Emitter_Subscribe_Capabilities_Static_8600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME: string = 'Sub_Notification_Emitter_Subscribe_Capabilities_Static_8600';

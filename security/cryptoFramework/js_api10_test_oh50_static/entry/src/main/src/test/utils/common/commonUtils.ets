@@ -153,7 +153,8 @@ async function createData(dataLen: int): Promise<cryptoFramework.DataBlob>{
     rawData.data[0] = 0 as number;
 
     return rawData;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }
@@ -165,7 +166,8 @@ async function createFullData(dataLen: int): Promise<cryptoFramework.DataBlob>{
     let rawData: cryptoFramework.DataBlob = await rand.generateRandom(dataLen);
 
     return rawData;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
   }

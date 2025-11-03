@@ -47,7 +47,8 @@ export default function cryptoHmacOptParaJsTestUnit() {
         let retData = await digCallback.HmacDigestProcess("SHA1", "HMAC|SHA1");
         let outputLength: number = retData.output.data.length;
         expect(outputLength == retData.macLength && retData.macLength == 20).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_0100 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -66,7 +67,8 @@ export default function cryptoHmacOptParaJsTestUnit() {
         let retData = await digCallback.HmacDigestProcess("SHA224", "HMAC|SHA224");
         let outputLength: number = retData.output.data.length;
         expect(outputLength == retData.macLength && retData.macLength == 28).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_0200 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -85,7 +87,8 @@ export default function cryptoHmacOptParaJsTestUnit() {
         let retData = await digCallback.HmacDigestProcess("SHA256", "HMAC|SHA256");
         let outputLength: number = retData.output.data.length;
         expect(outputLength == retData.macLength && retData.macLength == 32).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_0300 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -104,7 +107,8 @@ export default function cryptoHmacOptParaJsTestUnit() {
         let retData = await digCallback.HmacDigestProcess("SHA384", "HMAC|SHA384");
         let outputLength: number = retData.output.data.length;
         expect(outputLength == retData.macLength && retData.macLength == 48).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_0400 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -123,7 +127,8 @@ export default function cryptoHmacOptParaJsTestUnit() {
         let retData = await digCallback.HmacDigestProcess("SHA512", "HMAC|SHA512");
         let outputLength: number = retData.output.data.length;
         expect(outputLength == retData.macLength && retData.macLength == 64).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_0500 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -142,7 +147,8 @@ export default function cryptoHmacOptParaJsTestUnit() {
         let retData = await digCallback.HmacDigestProcess("SM3", "HMAC|SM3");
         let outputLength: number = retData.output.data.length;
         expect(outputLength == retData.macLength && retData.macLength == 32).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_0600 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -159,14 +165,16 @@ export default function cryptoHmacOptParaJsTestUnit() {
       try {
         await digCallback.HmacDigestProcess("SM3", "hmac|SM3");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_0700 catch error1: “${err}“, error code: ${err.code}`);
         expect(err.code).assertEqual(801);
       }
       try {
         await digCallback.HmacDigestProcess("sm3", "HMAC|SM3");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_0700 catch error2: “${err}“, error code: ${err.code}`);
         expect(err.code).assertEqual(401);
       }
@@ -188,7 +196,8 @@ export default function cryptoHmacOptParaJsTestUnit() {
         let retData = await digCallback.HmacAnyLengthKeyDigestProcess("SHA512", keyBlob);
         let outputLength: number = retData.output.data.length;
         expect(outputLength == retData.macLength && retData.macLength == 64).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_0800 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -216,7 +225,8 @@ export default function cryptoHmacOptParaJsTestUnit() {
       try {
         await digCallback.HmacAnyLengthKeyDigestProcess("SM3", keyBlob);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_0900 catch error: “${err}“, error code: ${err.code}`);
         expect(err.code).assertEqual(401);
       }
@@ -237,7 +247,8 @@ export default function cryptoHmacOptParaJsTestUnit() {
       try {
         await digCallback.HmacAnyLengthKeyDigestProcess("SM3", keyBlob);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_1000 catch error: “${err}“, error code: ${err.code}`);
         expect(err.code).assertEqual(401);
       }
@@ -256,7 +267,8 @@ export default function cryptoHmacOptParaJsTestUnit() {
         let retData = await digPromise.HmacDigestProcess("SHA1", "HMAC|SHA1");
         let outputLength: number = retData.output.data.length;
         expect(outputLength == retData.macLength && retData.macLength == 20).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_1100 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -275,7 +287,8 @@ export default function cryptoHmacOptParaJsTestUnit() {
         let retData = await digPromise.HmacDigestProcess("SHA224", "HMAC|SHA224");
         let outputLength: number = retData.output.data.length;
         expect(outputLength == retData.macLength && retData.macLength == 28).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_1200 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -294,7 +307,8 @@ export default function cryptoHmacOptParaJsTestUnit() {
         let retData = await digPromise.HmacDigestProcess("SHA256", "HMAC|SHA256");
         let outputLength: number = retData.output.data.length;
         expect(outputLength == retData.macLength && retData.macLength == 32).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_1300 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -313,7 +327,8 @@ export default function cryptoHmacOptParaJsTestUnit() {
         let retData = await digPromise.HmacDigestProcess("SHA384", "HMAC|SHA384");
         let outputLength: number = retData.output.data.length;
         expect(outputLength == retData.macLength && retData.macLength == 48).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_1400 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -332,7 +347,8 @@ export default function cryptoHmacOptParaJsTestUnit() {
         let retData = await digPromise.HmacDigestProcess("SHA512", "HMAC|SHA512");
         let outputLength: number = retData.output.data.length;
         expect(outputLength == retData.macLength && retData.macLength == 64).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_1500 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -351,7 +367,8 @@ export default function cryptoHmacOptParaJsTestUnit() {
         let retData = await digPromise.HmacDigestProcess("SM3", "HMAC|SM3");
         let outputLength: number = retData.output.data.length;
         expect(outputLength == retData.macLength && retData.macLength == 32).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_1600 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -368,14 +385,16 @@ export default function cryptoHmacOptParaJsTestUnit() {
       try {
         await digPromise.HmacDigestProcess("SM3", "HMAC|Sha256");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_0700 catch error1: “${err}“, error code: ${err.code}`);
         expect(err.code).assertEqual(801);
       }
       try {
         await digPromise.HmacDigestProcess("sha384", "HMAC|SHA384");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_1700 catch error2: “${err}“, error code: ${err.code}`);
         expect(err.code).assertEqual(401);
       }
@@ -397,7 +416,8 @@ export default function cryptoHmacOptParaJsTestUnit() {
         let retData = await digPromise.HmacAnyLengthKeyDigestProcess("SHA384", keyBlob);
         let outputLength: number = retData.output.data.length;
         expect(outputLength == retData.macLength && retData.macLength == 48).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_1800 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -425,7 +445,8 @@ export default function cryptoHmacOptParaJsTestUnit() {
       try {
         await digPromise.HmacAnyLengthKeyDigestProcess("SHA256", keyBlob);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_1900 catch error: “${err}“, error code: ${err.code}`);
         expect(err.code).assertEqual(401);
       }
@@ -446,7 +467,8 @@ export default function cryptoHmacOptParaJsTestUnit() {
       try {
         await digPromise.HmacAnyLengthKeyDigestProcess("SHA1", keyBlob);
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_HmacOptPara_Func_2000 catch error: “${err}“, error code: ${err.code}`);
         expect(err.code).assertEqual(401);
       }

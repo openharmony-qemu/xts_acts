@@ -56,7 +56,8 @@ export default function gridSettingsJsunit() {
 
 
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("push gridSettings page error:" + err);
       }
     });
@@ -129,7 +130,8 @@ export default function gridSettingsJsunit() {
         }
         console.info("[testGridSettings002] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings002] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -173,7 +175,8 @@ export default function gridSettingsJsunit() {
         }
         console.info("[testGridSettings003] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings003] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -216,7 +219,8 @@ export default function gridSettingsJsunit() {
         }
         console.info("[testGridSettings004] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings004] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -259,7 +263,8 @@ export default function gridSettingsJsunit() {
         }
         console.info("[testGridSettings005] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings005] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -319,7 +324,8 @@ export default function gridSettingsJsunit() {
         }
         console.info("[testGridSettings007] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings007] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -352,7 +358,8 @@ export default function gridSettingsJsunit() {
         }
         console.info("[testGridSettings008] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings008] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -385,7 +392,8 @@ export default function gridSettingsJsunit() {
         }
         console.info("[testGridSettings009] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings009] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -418,7 +426,8 @@ export default function gridSettingsJsunit() {
         }
         console.info("[testGridSettings010] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings010] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -467,7 +476,8 @@ export default function gridSettingsJsunit() {
         }
         console.info("[testGridSettings012] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings012] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -499,7 +509,8 @@ export default function gridSettingsJsunit() {
         }
         console.info("[testGridSettings013] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings013] change component data error: " + err.message);
       }
       await Utils.sleep(4000);
@@ -531,7 +542,8 @@ export default function gridSettingsJsunit() {
         }
         console.info("[testGridSettings014] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("[testGridSettings014] change component data error: " + err.message);
       }
       await Utils.sleep(4000);

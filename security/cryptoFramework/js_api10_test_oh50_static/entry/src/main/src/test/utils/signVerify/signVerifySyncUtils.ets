@@ -137,7 +137,8 @@ function doSignSync(algName: string, priKey: cryptoFramework.PriKey, msg: crypto
     let dataSign = sign.signSync(msg);
 
     return dataSign;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doSignSync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -150,7 +151,8 @@ async function doSignPromise(algName: string, priKey: cryptoFramework.PriKey, ms
     let dataSign = await sign.sign(msg);
 
     return dataSign;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doSignSync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -180,7 +182,8 @@ function doSignWithUpdateSync(algName: string, priKey: cryptoFramework.PriKey, m
     let dataSign = sign.signSync(null);
 
     return dataSign;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doSignWithUpdateSync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -210,7 +213,8 @@ async function doSignWithUpdatePromise(algName: string, priKey: cryptoFramework.
     let dataSign = await sign.sign(null);
 
     return dataSign;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doSignWithUpdateSync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -224,7 +228,8 @@ function doVerifySync(algName: string, pubKey: cryptoFramework.PubKey, msg: cryp
     let ret = verify.verifySync(msg, dataSign);
 
     return ret;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doVerifySync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -238,7 +243,8 @@ async function doVerifyPromise(algName: string, pubKey: cryptoFramework.PubKey, 
     let ret = await verify.verify(msg, dataSign);
 
     return ret;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doVerifySync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -268,7 +274,8 @@ function doVerifyWithUpdateSync(algName: string, pubKey: cryptoFramework.PubKey,
     let ret = verify.verifySync(null, dataSign);
 
     return ret;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doVerifyWithUpdateSync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -298,7 +305,8 @@ async function doVerifyWithUpdatePromise(algName: string, pubKey: cryptoFramewor
     let ret = await verify.verify(null, dataSign);
 
     return ret;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doVerifyWithUpdateSync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }
@@ -347,7 +355,8 @@ async function generateSignKey(algName: string): Promise<cryptoFramework.KeyPair
     }
 
     return keyPair;
-  } catch (error: BusinessError) {
+  } catch (error) {
+    error = error as BusinessError;
     console.error(`doVerifyWithUpdateSync “${error}“, error code: ${error.code}`);
     throw error as Error;
   }

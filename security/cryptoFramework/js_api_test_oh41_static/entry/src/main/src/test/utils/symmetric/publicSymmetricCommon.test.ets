@@ -20,7 +20,8 @@ function createSymKeyGenerator(symAlgoName: string): crypto.SymKeyGenerator {
     let symKeyGenerator: crypto.SymKeyGenerator = crypto.createSymKeyGenerator(symAlgoName);
     console.log("symKeyGenerator algName: " + symKeyGenerator.algName);
     return symKeyGenerator;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error("symKeyGenerator error:" + err);
     throw err as Error;
   }
@@ -31,7 +32,8 @@ function createSymCipher(cipherAlgoName: string): crypto.Cipher {
     let cipherGenerator: crypto.Cipher = crypto.createCipher(cipherAlgoName);
     console.log("cipherGenerator algName: " + cipherGenerator.algName);
     return cipherGenerator;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error("cipherGenerator error:" + err);
     throw err as Error;
   }

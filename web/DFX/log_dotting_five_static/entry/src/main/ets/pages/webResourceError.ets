@@ -79,7 +79,8 @@ struct webResourceError {
                   Utils.emitEvent(this.errorInfo, 36020)
                 }, 3000)
 
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;

@@ -132,7 +132,8 @@ async function encryptAndDecryptNormalProcess(symAlgoName: string, cipherAlgoNam
     } else {
       expect(updateOutputdata + uInt8ArrayToString(finalOutputDecry.data) == globalText).assertTrue();
     }
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     throw err as Error;
   }
 }

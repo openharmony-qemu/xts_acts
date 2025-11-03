@@ -45,7 +45,8 @@ export default function InfraredEmitterTest() {
           ifTransmitInfraredSuccess++;
           ExpectTrue(ifTransmitInfraredSuccess == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -75,7 +76,8 @@ export default function InfraredEmitterTest() {
           ifTransmitInfraredSuccess++;
           ExpectTrue(ifTransmitInfraredSuccess == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -102,7 +104,8 @@ export default function InfraredEmitterTest() {
           ifTransmitInfraredSuccess++;
           ExpectTrue(ifTransmitInfraredSuccess == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(error.code == 401);
           done();
@@ -129,7 +132,8 @@ export default function InfraredEmitterTest() {
           ifTransmitInfraredSuccess++;
           ExpectTrue(ifTransmitInfraredSuccess == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -156,7 +160,8 @@ export default function InfraredEmitterTest() {
           ifTransmitInfraredSuccess++;
           ExpectTrue(ifTransmitInfraredSuccess == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} transmitInfrared failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -183,7 +188,8 @@ export default function InfraredEmitterTest() {
           console.info(`${caseName} getInfraredFrequencies success, frequencies: ${JSON.stringify(frequencies)}`);
           ExpectTrue(Array.isArray(frequencies));
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${caseName} get infrared frequencies failed, error: ${JSON.stringify(error,
             [`code`, `message`])}`);
           ExpectFalse(true);

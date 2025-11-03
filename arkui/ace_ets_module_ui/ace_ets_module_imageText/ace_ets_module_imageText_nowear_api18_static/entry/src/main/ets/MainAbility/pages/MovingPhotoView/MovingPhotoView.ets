@@ -52,7 +52,8 @@ async function example111() {
     let videoFileUri = 'file://com.arkui.ace.imageText.nowear.api18/data/storage/el2/base/haps/entry/files/test_mov_1.mp4';
 
     console.info('load moving photo successfully');
-  } catch (err: BusinessError){
+  } catch (err) {
+    err = err as BusinessError;
     console.error(`load moving photo failed with error: ${err.code}, ${err.message}`);
   }
 }

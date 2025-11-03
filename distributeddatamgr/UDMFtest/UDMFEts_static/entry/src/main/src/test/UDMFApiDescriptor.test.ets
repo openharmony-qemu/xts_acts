@@ -38,7 +38,8 @@ export default function UDMFApiDescriptorTest() {
         let result = UTD.getUniformDataTypeByFilenameExtension(".xls");
         hilog.info(domain, tag, '%{public}s', "result=====>" + result);
         expect(result == "com.microsoft.excel.xls").assertEqual(true);
-      } catch (err : BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', "err message:" + err.message + ";err code:" + err.code);
         expect().assertFail();
       }
@@ -58,7 +59,8 @@ export default function UDMFApiDescriptorTest() {
         let result = UTD.getUniformDataTypeByFilenameExtension(".xls","general.composite-object");
         hilog.info(domain, tag, '%{public}s', "result=====>" + result);
         expect(result == "com.microsoft.excel.xls").assertEqual(true);
-      } catch (err : BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', "err message:" + err.message + ";err code:" + err.code);
         expect().assertFail();
       }

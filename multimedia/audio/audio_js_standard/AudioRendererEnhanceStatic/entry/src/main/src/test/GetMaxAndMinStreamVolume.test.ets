@@ -82,10 +82,12 @@ export default function audioRendererTest() {
           Object.keys(data));
           console.info('${TagFrmwkRender} audioRendererEnhanceTest: AudioRender Created : Stream Type:STREAM_USAGE_MUSIC SUCCESS data value: ' +
           JSON.stringify(data));
-        } catch(err: BusinessError) {
+        } catch(err) {
+          err = err as BusinessError;
           console.info('${TagFrmwkRender} audioRendererEnhanceTest: AudioRender Created : ERROR : ' + err.message);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info('${TagFrmwkRender} audioRendererEnhanceTest: AudioRender Created : catch ERROR : ' + error.code + error.message);
       }
     })
@@ -95,7 +97,8 @@ export default function audioRendererTest() {
       try {
         await audioRen.release();
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       }
     })
@@ -147,7 +150,8 @@ export default function audioRendererTest() {
         try {
           await audioRen.setVolume(inputVolume)
           console.info(`${TagFrmwkRender}: setVolume to 0.5 : Success`);
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info(`${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
         }
 
@@ -163,13 +167,15 @@ export default function audioRendererTest() {
               let data = await audioRen.getMinStreamVolume();
               console.info(`${TagFrmwkRender}: #####getMinStreamVolume :SUCCESS ${data}`);
               inputVolume = data;
-            } catch (error: BusinessError) {
+            } catch (error) {
+              error = error as BusinessError;
               console.log("#####getMinStreamVolume : error = " + error);
             }
             try {
               await audioRen.setVolume(inputVolume)
               console.info(`${TagFrmwkRender}: setVolume to ${inputVolume} : Success`);
-            } catch (err: BusinessError) {
+            } catch (err) {
+              err = err as BusinessError;
               console.info(`${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
             }
           }
@@ -179,13 +185,15 @@ export default function audioRendererTest() {
               let data = await audioRen.getMaxStreamVolume();
               console.info(`${TagFrmwkRender}: #####getMaxStreamVolume :SUCCESS ${data}`);
               inputVolume = data;
-            } catch (error: BusinessError) {
+            } catch (error) {
+              error = error as BusinessError;
               console.log("#####getMaxStreamVolume : error = " + error);
             }
             try {
               await audioRen.setVolume(inputVolume)
               console.info(`${TagFrmwkRender}: setVolume to ${inputVolume} : Success`);
-            } catch (err: BusinessError) {
+            } catch (err) {
+              err = err as BusinessError;
               console.info(`${TagFrmwkRender}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
             }
           }
@@ -211,7 +219,8 @@ export default function audioRendererTest() {
         console.info(`${TagFrmwkRender}: getMaxStreamVolume :SUCCESS ${value}`);
         expect(value).assertEqual(testConst.OUTPUT_NUMBER_1);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("getMaxStreamVolume : error = " + err);
         expect(false).assertTrue();
         done();
@@ -232,7 +241,8 @@ export default function audioRendererTest() {
         console.info(`${TagFrmwkRender}: getMaxStreamVolume :SUCCESS ${value}`);
         expect(value).assertEqual(testConst.OUTPUT_NUMBER_0);
         done();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.log("getMaxStreamVolume : error = " + err);
         expect(false).assertTrue();
         done();
@@ -254,12 +264,14 @@ export default function audioRendererTest() {
           console.info(`${TagFrmwkRender}: getMaxStreamVolume :SUCCESS ${data}`);
           expect(data).assertEqual(testConst.OUTPUT_NUMBER_1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log("getMaxStreamVolume : error = " + error);
           expect(false).assertTrue();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log("GETMAXSTREAMVOLUME catch error = " + error);
         expect(false).assertTrue();
         done();
@@ -282,12 +294,14 @@ export default function audioRendererTest() {
           console.info(`${TagFrmwkRender}: getMaxStreamVolume :SUCCESS ${data}`);
           expect(data).assertEqual(testConst.OUTPUT_NUMBER_1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log("getMaxStreamVolume : error = " + error);
           expect(false).assertTrue();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.log("GETMAXSTREAMVOLUME catch error = " + error);
         expect(false).assertTrue();
         done();
@@ -326,17 +340,20 @@ export default function audioRendererTest() {
               audioRender = data;
               console.info(`${TagFrmwkRender}:  AudioRender Created : Stream Type: ${testConst.StreamUsage[index]} SUCCESS data state: ` +
               Object.keys(data));
-            } catch (err: BusinessError) {
+            } catch (err) {
+              err = err as BusinessError;
               console.info(`${TagFrmwkRender}:  AudioRender Created : ERROR : ` + err.message);
             }
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${TagFrmwkRender}:  AudioRender Created : catch ERROR : ` + error.code + error.message);
           }
           try {
             let data = await audioRender.getMaxStreamVolume();
             console.info(`${TagFrmwkRender}: getMaxStreamVolume:Stream Type: ${testConst.StreamUsage[index]} SUCCESS ${data}`);
             expect(data).assertEqual(testConst.OUTPUT_NUMBER_1);
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${TagFrmwkRender}: getMaxStreamVolume:Stream Type: ${testConst.StreamUsage[index]} ERROR : code: ${error.code}, mesage: ${error.message}`);
             expect(false).assertTrue();
             done();
@@ -346,12 +363,14 @@ export default function audioRendererTest() {
           try {
             await audioRender.release();
             console.info(`${TagFrmwkRender}:  Renderer release : SUCCESS`);
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.info(`${TagFrmwkRender}:  Renderer release :ERROR : ${err.message}`);
           }
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TagFrmwkRender}: GETMAXSTREAMVOLUME Stream ERROR : code: ${error.code}, mesage: ${error.message}`);
       }
     });
@@ -375,18 +394,21 @@ export default function audioRendererTest() {
             console.info(`${TagFrmwkRender}:  setVolume to maxVolume Success! maxVolume: ${data}`);
             expect(true).assertTrue();
             done();
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.info(`${TagFrmwkRender}:  setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
             expect(false).assertTrue();
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${TagFrmwkRender}: getMaxStreamVolume : ERROR : code: ${error.code}, mesage: ${error.message}`);
           expect(false).assertTrue();
           done();
         }
 
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TagFrmwkRender}: GETMAXSTREAMVOLUME catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
         done();
@@ -408,12 +430,14 @@ export default function audioRendererTest() {
           console.info(`${TagFrmwkRender}: getMinStreamVolume :SUCCESS ${data}`);
           expect(data).assertEqual(testConst.OUTPUT_NUMBER_0);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${TagFrmwkRender}: getMinStreamVolume : ERROR : code: ${error.code}, mesage: ${error.message}`);
           expect(false).assertTrue();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TagFrmwkRender}: GETMINSTREAMVOLUME catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
         done();
@@ -436,12 +460,14 @@ export default function audioRendererTest() {
           console.info(`${TagFrmwkRender}: getMinStreamVolume :SUCCESS ${data}`);
           expect(data).assertEqual(testConst.OUTPUT_NUMBER_0);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${TagFrmwkRender}: getMinStreamVolume : ERROR : code: ${error.code}, mesage: ${error.message}`);
           expect(false).assertTrue();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TagFrmwkRender}: GETMINSTREAMVOLUME catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
         done();
@@ -480,17 +506,20 @@ export default function audioRendererTest() {
               audioRender = data;
               console.info(`${TagFrmwkRender}:  AudioRender Created : Stream Type: ${testConst.StreamUsage[index]} SUCCESS data state: ` +
               Object.keys(data));
-            } catch (err: BusinessError) {
+            } catch (err) {
+              err = err as BusinessError;
               console.info(`${TagFrmwkRender}:  AudioRender Created : ERROR : ` + err.message);
             }
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${TagFrmwkRender}:  AudioRender Created : catch ERROR : ` + error.code + error.message);
           }
           try {
             let data = await audioRender.getMinStreamVolume();
             console.info(`${TagFrmwkRender}: getMinStreamVolume:Stream Type: ${testConst.StreamUsage[index]} SUCCESS ${data}`);
             expect(data).assertEqual(testConst.OUTPUT_NUMBER_0);
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${TagFrmwkRender}: getMinStreamVolume:Stream Type: ${testConst.StreamUsage[index]} ERROR : code: ${error.code}, mesage: ${error.message}`);
             expect(false).assertTrue();
             done();
@@ -500,12 +529,14 @@ export default function audioRendererTest() {
           try {
             await audioRender.release();
             console.info(`${TagFrmwkRender}:  Renderer release : SUCCESS`);
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.info(`${TagFrmwkRender}:  Renderer release :ERROR : ${err.message}`);
           }
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TagFrmwkRender}: GETMINSTREAMVOLUME Stream ERROR : code: ${error.code}, mesage: ${error.message}`);
       }
     });
@@ -529,17 +560,20 @@ export default function audioRendererTest() {
             console.info(`${TagFrmwkRender}:  setVolume to minVolume Success! minVolume: ${data}`);
             expect(true).assertTrue();
             done();
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.info(`${TagFrmwkRender}:  setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
             expect(false).assertTrue();
             done();
           }
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.info(`${TagFrmwkRender}: getMinStreamVolume : ERROR : code: ${error.code}, mesage: ${error.message}`);
           expect(false).assertTrue();
           done();
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TagFrmwkRender}: GETMINSTREAMVOLUME catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
         done();
@@ -623,10 +657,12 @@ export default function audioRendererTest() {
               audioRender = data;
               console.info(`${TagFrmwkRender}:  AudioRender Created : Stream Type: ${testConst.StreamUsage[index]} SUCCESS data state: ` +
               Object.keys(data));
-            } catch (err: BusinessError) {
+            } catch (err) {
+              err = err as BusinessError;
               console.info(`${TagFrmwkRender}:  AudioRender Created : ERROR : ` + err.message);
             }
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${TagFrmwkRender}:  AudioRender Created : catch ERROR : ` + error.code + error.message);
           }
           audioRen.getMaxStreamVolume((err: BusinessError<void> | null, maxVolume: number | undefined) => {
@@ -645,12 +681,14 @@ export default function audioRendererTest() {
           try {
             await audioRender.release();
             console.info(`${TagFrmwkRender}:  Renderer release : SUCCESS`);
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.info(`${TagFrmwkRender}:  Renderer release :ERROR : ${err.message}`);
           }
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TagFrmwkRender}: getMaxStreamVolume: catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
         done();
@@ -679,7 +717,8 @@ export default function audioRendererTest() {
             console.info(`${TagFrmwkRender}:  setVolume to maxVolume Success! maxVolume: ${maxVolume}`);
             expect(true).assertTrue();
             done();
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.info(`${TagFrmwkRender}:  setVolume ERROR! : code: ${err.code}, mesage: ${err.message}`);
             expect(false).assertTrue();
             done();
@@ -766,10 +805,12 @@ export default function audioRendererTest() {
               audioRender = data;
               console.info(`${TagFrmwkRender}:  AudioRender Created : Stream Type: ${testConst.StreamUsage[index]} SUCCESS data state: ` +
               Object.keys(data));
-            } catch (err: BusinessError) {
+            } catch (err) {
+              err = err as BusinessError;
               console.info(`${TagFrmwkRender}:  AudioRender Created : ERROR : ` + err.message);
             }
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.info(`${TagFrmwkRender}:  AudioRender Created : catch ERROR : ` + error.code + error.message);
           }
           audioRen.getMinStreamVolume((err: BusinessError<void> | null, minVolume: number | undefined) => {
@@ -787,12 +828,14 @@ export default function audioRendererTest() {
           try {
             await audioRender.release()
             console.info(`${TagFrmwkRender}:  Renderer release : SUCCESS`);
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.info(`${TagFrmwkRender}:  Renderer release :ERROR : ${err.message}`);
           }
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TagFrmwkRender}: getMinStreamVolume: catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
         done();
@@ -821,7 +864,8 @@ export default function audioRendererTest() {
             await audioRen.setVolume(minVolume!);
             console.info(`${TagFrmwkRender}:  setVolume to minVolume Success! minVolume: ${minVolume}`);
             done();
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.info(`${TagFrmwkRender}:  setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
             expect(false).assertTrue();
             done();

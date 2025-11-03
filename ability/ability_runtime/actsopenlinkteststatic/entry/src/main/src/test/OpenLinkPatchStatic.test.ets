@@ -68,7 +68,8 @@ export default function openLinkPatchStaticTest() {
           expect(`${error.code}`).assertEqual('16000005');
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `AbilityRuntime_OpenLink_Static_1100 open fail : ` + err.code + err.message);
         expect().assertFail();
         done();
@@ -98,7 +99,8 @@ export default function openLinkPatchStaticTest() {
           expect(`${error.code}`).assertEqual('16000005');
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `AbilityRuntime_OpenLink_Static_1200 open fail : ` + err.code + err.message);
         expect().assertFail();
         done();
@@ -133,7 +135,8 @@ export default function openLinkPatchStaticTest() {
           expect(`${error.code}`).assertEqual('16000005');
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `AbilityRuntime_OpenLink_Static_1300 open fail : ` + err.code + err.message);
         expect().assertFail();
         done();
@@ -164,7 +167,8 @@ export default function openLinkPatchStaticTest() {
           expect(`${error.code}`).assertEqual('201');
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `AbilityRuntime_OpenLink_Static_1400 open fail : ` + err.code + err.message);
         expect().assertFail();
         done();
@@ -195,7 +199,8 @@ export default function openLinkPatchStaticTest() {
           expect(`${error.code}`).assertEqual('201');
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `AbilityRuntime_OpenLink_Static_1500 open fail : ` + err.code + err.message);
         expect().assertFail();
         done();
@@ -231,7 +236,8 @@ export default function openLinkPatchStaticTest() {
           expect(`${error.code}`).assertEqual('201');
           done();
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, `AbilityRuntime_OpenLink_Static_1600 open fail : ` + err.code + err.message);
         expect().assertFail();
         done();

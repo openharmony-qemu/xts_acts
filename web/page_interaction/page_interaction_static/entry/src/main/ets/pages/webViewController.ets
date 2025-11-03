@@ -84,7 +84,8 @@ struct webViewController {
                 setTimeout(() => {
                   Utils.emitEvent(this.onShowFileSelectorCallBack, 31029)
                 }, 2000)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 31029)
               }
@@ -103,7 +104,8 @@ struct webViewController {
                 setTimeout(() => {
                   Utils.emitEvent(this.FileSelectorParamGetTitle, 31030)
                 }, 2000)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 31030)
               }
@@ -125,7 +127,8 @@ struct webViewController {
                   Utils.emitEvent(FileSelectorMode.FILE_OPEN_FOLDER_MODE, 310313)
                   Utils.emitEvent(FileSelectorMode.FILE_SAVE_MODE, 310314)
                 }, 2000)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 31031)
               }
@@ -143,7 +146,8 @@ struct webViewController {
                 setTimeout(() => {
                   Utils.emitEvent(this.FileSelectorParamGetGetAcceptType[0], 31032)
                 }, 2000)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 31032)
               }
@@ -161,7 +165,8 @@ struct webViewController {
                 setTimeout(() => {
                   Utils.emitEvent(this.FileSelectorParamGetIsCapture, 31033)
                 }, 2000)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 31033)
               }
@@ -192,7 +197,8 @@ struct webViewController {
                       }, 2000)
                     }
                   });
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 31034)
               }
@@ -210,7 +216,8 @@ struct webViewController {
                 setTimeout(() => {
                   Utils.emitEvent(this.FileSelectorParamGetGetMimeTypes[0], 31035)
                 }, 2000)
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
                 Utils.emitEvent(error.code, 31032)
               }
@@ -220,7 +227,8 @@ struct webViewController {
             case 'back': {
               try {
                 this.getUIContext().getRouter().back()
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;

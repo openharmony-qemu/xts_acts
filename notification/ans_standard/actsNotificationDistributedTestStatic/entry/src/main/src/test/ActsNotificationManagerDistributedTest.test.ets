@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2022 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -21,10 +21,10 @@ export default function ActsNotificationManagerDistributedTest() {
     let TAG:string = 'SUB_NOTIFICATION_ANS_MANAGER_IS_DISTRIBUTED_ENABLED_TEST ===>'
     console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_IS_DISTRIBUTED_ENABLED_TEST START')
 
-    /*
-    * @tc.number    : Sub_Notification_Ans_Distributed_Enable_Static_4100
-    * @tc.name      : Sub_Notification_Ans_Distributed_Enable_Static_4100
-    * @tc.desc      : Obtains whether the device supports distributed notification
+    /**
+    * @tc.number  Sub_Notification_Ans_Distributed_Enable_Static_4100
+    * @tc.name    Sub_Notification_Ans_Distributed_Enable_Static_4100
+    * @tc.desc    Obtains whether the device supports distributed notification
     */
     it('Sub_Notification_Ans_Distributed_Enable_Static_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> =>  {
       let TAG:string = "Sub_Notification_Ans_Distributed_Enable_Static_4100"
@@ -41,7 +41,8 @@ export default function ActsNotificationManagerDistributedTest() {
             done()
           }
         })
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} isDistributedEnabled AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()
@@ -49,10 +50,10 @@ export default function ActsNotificationManagerDistributedTest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_4100 END`)
     })
 
-    /*
-    * @tc.number    : Sub_Notification_Ans_Distributed_Enable_Static_4200
-    * @tc.name      : Sub_Notification_Ans_Distributed_Enable_Static_4200
-    * @tc.desc      : Obtains whether the device supports distributed notification
+    /**
+    * @tc.number  Sub_Notification_Ans_Distributed_Enable_Static_4200
+    * @tc.name    Sub_Notification_Ans_Distributed_Enable_Static_4200
+    * @tc.desc    Obtains whether the device supports distributed notification
     */
     it('Sub_Notification_Ans_Distributed_Enable_Static_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = "Sub_Notification_Ans_Distributed_Enable_Static_4200"
@@ -70,22 +71,23 @@ export default function ActsNotificationManagerDistributedTest() {
       console.info(`${TAG} Sub_Notification_Ans_Distributed_Enable_4200 END`)
     })
 
-    /* *
-    * @tc.number    : Sub_Notification_Ans_Is_Notification_Enable_Static_0100
-    * @tc.name      : Sub_Notification_Ans_Is_Notification_Enable_Static_0100
-    * @tc.desc      : test function isNotificationEnabledSync
-    * @tc.size      : MediumTest
-    * @tc.type      : Function test
-    * @tc.level     : Level0
+    /**
+    * @tc.number  Sub_Notification_Ans_Is_Notification_Enable_Static_0100
+    * @tc.name    Sub_Notification_Ans_Is_Notification_Enable_Static_0100
+    * @tc.desc    test function isNotificationEnabledSync
+    * @tc.size    MediumTest
+    * @tc.type    Function test
+    * @tc.level   Level0
     */
     it('Sub_Notification_Ans_Is_Notification_Enable_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let TAG:string = "Sub_Notification_Ans_Is_Notification_Enable_Static_0100"
       console.info(`${TAG} Sub_Notification_Ans_Is_Notification_Enable_0100 START`);
       try {
-        notificationManager.isNotificationEnabledSync()
-        expect(true).assertTrue()
+        let notificationenable: boolean = notificationManager.isNotificationEnabledSync()
+        expect(notificationenable).assertFalse()
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.info(`${TAG} publish AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
         expect(false).assertTrue()
         done()

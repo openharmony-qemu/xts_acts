@@ -90,7 +90,8 @@ let header:Record<string,string> = {
 const ExpectFail = () => {
   try {
     expect().assertFail();
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.info("expectInfo", `test failed`);
   }
 }
@@ -3108,6 +3109,9 @@ export default function WebsocketTestStatic() {
       let isOnEvent = 0;
       hilog.info(domain, tag, `${caseName} test start`);
       try {
+        const options: webSocket.WebSocketRequestOptions = {
+          header: header
+        };
         const ws : webSocket.WebSocket = webSocket.createWebSocket();
         ws.onWebSocketError((err: BusinessError<void> | null) => {
           hilog.info(domain, tag, `${caseName} findError" + ${JSON.stringify(err)}`);
@@ -3194,10 +3198,19 @@ export default function WebsocketTestStatic() {
         ws.onWebSocketClose(onCloseCallback01);
         ws.onWebSocketClose(onCloseCallback02);
         ws.offWebSocketClose(onCloseCallback01);
-        ws.connect(availableWebSocketAddress, (error: BusinessError<void> | null, value: boolean | undefined) => {
-          hilog.info(domain, tag, `${caseName} test result error ${JSON.stringify(error)} and value is ${value}`);
+        ws.connect(availableWebSocketAddress, options).then(async (value: boolean) => {
+          hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
+          expectTrue(value as boolean);
+          await ws.close();
+          done();
+          hilog.info(domain, tag, `${caseName} test end`);
+        }).catch((err: Error) => {
+          hilog.info(domain, tag, `${caseName} test connect fail ${JSON.stringify(err)}`);
+          expectFail('test connect fail')
+          done();
+          hilog.info(domain, tag, `${caseName} test end`);
         })
-      } catch (err: Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch Error ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();
@@ -3218,6 +3231,9 @@ export default function WebsocketTestStatic() {
       let caseName: string = 'testNetworkMgrWebSocketOnOffCallback_static_0200';
       hilog.info(domain, tag, `${caseName} test start`);
       try {
+        const options: webSocket.WebSocketRequestOptions = {
+          header: header
+        };
         const ws : webSocket.WebSocket = webSocket.createWebSocket();
         let onErrorCallback01 = (err: BusinessError<void> | null) => {
           hilog.info(domain, tag, `${caseName} onErrorCallback01 get err is `+JSON.stringify(err))
@@ -3234,10 +3250,19 @@ export default function WebsocketTestStatic() {
         ws.onWebSocketError(onErrorCallback01);
         ws.onWebSocketError(onErrorCallback02);
         ws.offWebSocketError(onErrorCallback01);
-        ws.connect('ws://124.222.6.66:12423', (error: BusinessError<void> | null, value: boolean | undefined) => {
-          hilog.info(domain, tag, `${caseName} test result error ${JSON.stringify(error)} and value is ${value}`);
+        ws.connect(availableWebSocketAddress, options).then(async (value: boolean) => {
+          hilog.info(domain, tag, `${caseName} test connect success and value is ${value}`);
+          expectTrue(value as boolean);
+          await ws.close();
+          done();
+          hilog.info(domain, tag, `${caseName} test end`);
+        }).catch((err: Error) => {
+          hilog.info(domain, tag, `${caseName} test connect fail ${JSON.stringify(err)}`);
+          expectFail('test connect fail')
+          done();
+          hilog.info(domain, tag, `${caseName} test end`);
         })
-      } catch (err: Error) {
+      } catch (err) {
         hilog.info(domain, tag, `${caseName} catch Error ${JSON.stringify(err)}`);
         expectFail(`${caseName} fail,errInfo->${JSON.stringify(err)}`);
         done();

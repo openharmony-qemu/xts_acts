@@ -74,7 +74,8 @@ export default function MultimodalSetCustomCursorTest() {
                     ExpectTrue(ifSetCustomCursorSuccess == 1);
                     done();
                   });
-                } catch (error: BusinessError) {
+                } catch (error) {
+                  error = error as BusinessError;
                   console.info(`${caseName} setCustomCursor failed, error: ${JSON.stringify(error,
                     [`code`, `message`])}`);
                   ExpectTrue(error.code == 401);
@@ -120,7 +121,8 @@ export default function MultimodalSetCustomCursorTest() {
                     ifSetCustomCursorSyncSuccess++;
                     ExpectTrue(ifSetCustomCursorSyncSuccess == 1);
                     done();
-                  } catch (error: BusinessError) {
+                  } catch (error) {
+                    error = error as BusinessError;
                     console.info(`${caseName} setCustomCursor failed, error: ${JSON.stringify(error,
                       [`code`, `message`])}`);
                     ExpectTrue(error.code == 401);
@@ -172,7 +174,8 @@ export default function MultimodalSetCustomCursorTest() {
                   ExpectTrue(ifSetCustomCursorSuccess == 1);
                   done();
                 });
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.info(`${caseName} setCustomCursor failed, error: ${JSON.stringify(error,
                   [`code`, `message`])}`);
                 ExpectTrue(error.code == 401);

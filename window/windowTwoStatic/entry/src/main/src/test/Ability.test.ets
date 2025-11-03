@@ -74,14 +74,16 @@ export default function abilityTest() {
         try {
           win.onScreenshot(callback);
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.info(0x0000, '[ANI]', 'on screenshot fail.');
           expect(false).assertTrue();
         }
         try {
           win.offScreenshot(callback);
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.info(0x0000, '[ANI]', 'off screenshot fail.');
           expect(false).assertTrue();
         }
@@ -104,14 +106,16 @@ export default function abilityTest() {
         try {
           win.onWindowHighlightChange(callback);
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.info(0x0000, '[ANI]', 'on windowHighlightChange fail.');
           expect(e.code === 801).assertTrue();
         }
         try {
           win.offWindowHighlightChange(callback);
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.info(0x0000, '[ANI]', 'off windowHighlightChange fail.');
           expect(e.code === 801).assertTrue();
         }
@@ -134,14 +138,16 @@ export default function abilityTest() {
         try {
           win.onAvoidAreaChange(callback);
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.info(0x0000, '[ANI]', 'on avoidAreaChange fail.');
           expect(false).assertTrue();
         }
         try {
           win.offAvoidAreaChange(callback);
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.info(0x0000, '[ANI]', 'off avoidAreaChange fail.');
           expect(false).assertTrue();
         }
@@ -164,14 +170,16 @@ export default function abilityTest() {
         try {
           win.onWindowVisibilityChange(callback);
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.info(0x0000, '[ANI]', 'on windowVisibilityChange fail.');
           expect(e.code === 801).assertTrue();
         }
         try {
           win.offWindowVisibilityChange(callback);
           expect(true).assertTrue();
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           hilog.info(0x0000, '[ANI]', 'off windowVisibilityChange fail.');
           expect(e.code === 801).assertTrue();
         }
@@ -368,7 +376,8 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] isWindowShowing success. res: ${res}`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, '[ANI]', `finaltest [ANI] isWindowShowing Failed. message: ${err.code}`);
           expect(false).assertTrue();
           done();
@@ -391,7 +400,8 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] findWindow success. res: ${res}`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, '[ANI]', `finaltest [ANI] findWindow Failed. message: ${err.code}`);
           expect(false).assertTrue();
           done();
@@ -418,7 +428,8 @@ export default function abilityTest() {
           hilog.info(0x0000, '[ANI]', `finaltest [ANI] offWindowStageEventTest success.`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(0x0000, '[ANI]', `finaltest [ANI] onOffWindowStageEvent Failed. message: ${err.code}`);
           expect(false).assertTrue();
           done();
@@ -713,7 +724,8 @@ export default function abilityTest() {
           win.setPreferredOrientation(window.Orientation.LANDSCAPE);
           win.setPreferredOrientation(window.Orientation.PORTRAIT);
           expect(true).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           const errCode: number = err.code;
           if (errCode) {
             console.error(`on rotationChange failed. Cause code: ${err.code}, message: ${err.message}`);
@@ -722,7 +734,8 @@ export default function abilityTest() {
         try {
           win.offRotationChange(callback);
           expect(true).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           const errCode: number = err.code;
           if (errCode) {
             console.error(`off rotationChange failed. Cause code: ${err.code}, message: ${err.message}`);

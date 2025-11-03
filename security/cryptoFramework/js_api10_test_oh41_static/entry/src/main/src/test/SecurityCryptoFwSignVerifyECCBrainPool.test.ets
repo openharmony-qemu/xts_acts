@@ -59,7 +59,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.normalProcess(signVerifyAlg, false, spec, algName);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_0100: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_0100 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -88,7 +89,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.normalProcess(signVerifyAlg, false, spec, algName);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_0200: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_0200 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -117,7 +119,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.normalProcess(signVerifyAlg, false, spec, algName);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_0300: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_0300 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -146,7 +149,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.normalProcess(signVerifyAlg, false, spec, algName);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_0400: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_0400 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -175,7 +179,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.normalProcess(signVerifyAlg, false, spec, algName);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_0500: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_0500 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -204,7 +209,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.normalProcess(signVerifyAlg, false, spec, algName);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_0600: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_0600 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -233,7 +239,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.normalProcess(signVerifyAlg, false, spec, algName);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_0700: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_0700 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -262,7 +269,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.normalProcess(signVerifyAlg, false, spec, algName);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_0800: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_0800 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -291,7 +299,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.normalProcess(signVerifyAlg, false, spec, algName);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_0900: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_0900 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -320,7 +329,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.normalProcess(signVerifyAlg, false, spec, algName);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_1000: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_1000 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -349,7 +359,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.normalProcess(signVerifyAlg, false, spec, algName);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_1100: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_1100 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -378,7 +389,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.normalProcess(signVerifyAlg, false, spec, algName);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_1200: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_1200 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -407,7 +419,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.normalProcess(signVerifyAlg, false, spec, algName);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_1300: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_1300 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -436,7 +449,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
         let res: boolean = await signVerifyCallbackFunc.normalProcess(signVerifyAlg, false, spec, algName);
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_1400: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_1400 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -461,7 +475,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
         let res: boolean = await signVerifyPromiseFunc.normalProcess(signVerifyAlg, true, spec, "ECC");
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_1500: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_1500 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -493,7 +508,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
         let res: boolean = await signVerifyCallbackFunc.normalProcess(signVerifyAlg, true, spec, "ECC");
         expect(res).assertTrue();
         console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_1600: signVerify succeed`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_1600 catch error: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }
@@ -517,7 +533,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
           cryptoFramework.createSign(signVerifyAlg[i]);
           console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_1700: createSign succeed`);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
           console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_1700 catch error: “${err}“, error code: ${err.code}`);
         }
@@ -542,7 +559,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
           cryptoFramework.createVerify(signVerifyAlg[i]);
           console.log(`Security_CryptoFramework_SignVerify_BrainPool_Func_1800: createVerify succeed`);
           expect(null).assertFail();
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           expect(err.code).assertEqual(401);
           console.error(`Security_CryptoFramework_SignVerify_BrainPool_Func_1800 catch error: “${err}“, error code: ${err.code}`);
         }
@@ -568,7 +586,8 @@ export default function SecurityCryptoFwSignVerifyECCBrainPoolTestUnit() {
         let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signVerifyAlg);
         expect(sign.algName == signVerifyAlg).assertTrue();
         expect(verify.algName == signVerifyAlg).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(testNumber + `: “${err}“, error code: ${err.code}`);
         expect(null).assertFail();
       }

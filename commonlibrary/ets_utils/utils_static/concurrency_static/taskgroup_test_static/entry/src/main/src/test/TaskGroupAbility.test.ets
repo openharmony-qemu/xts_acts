@@ -195,7 +195,8 @@ export default function TaskGroupAbilityTest() {
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
             });
           promises.push(promise);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`error message e: ${JSON.stringify(e)}`)
         }
       }
@@ -244,7 +245,8 @@ export default function TaskGroupAbilityTest() {
             count++
             // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
           })
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`error message e: ${JSON.stringify(e)}`)
         }
       }
@@ -332,7 +334,8 @@ export default function TaskGroupAbilityTest() {
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
             });
           promises.push(promise);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`error message e: ${JSON.stringify(e)}`)
         }
       }
@@ -381,7 +384,8 @@ export default function TaskGroupAbilityTest() {
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
             });
           promises.push(promise);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`error message e: ${JSON.stringify(e)}`)
         }
       }
@@ -459,7 +463,8 @@ export default function TaskGroupAbilityTest() {
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
             });
           promises.push(promise);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`error message e: ${JSON.stringify(e)}`)
         }
       }
@@ -594,7 +599,8 @@ export default function TaskGroupAbilityTest() {
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
             });
           promises.push(promise);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`error message e: ${JSON.stringify(e)}`)
         }
       }
@@ -775,7 +781,8 @@ export default function TaskGroupAbilityTest() {
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
             });
           promises.push(promise);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`error message e: ${JSON.stringify(e)}`)
         }
       }
@@ -864,7 +871,8 @@ export default function TaskGroupAbilityTest() {
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
             });
           promises.push(promise);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`error message e: ${JSON.stringify(e)}`)
         }
       }
@@ -952,7 +960,8 @@ export default function TaskGroupAbilityTest() {
               // console.error(`error message error: ${JSON.stringify((error as BusinessError).message)}`)
             });
           promises.push(promise);
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.error(`error message e: ${JSON.stringify(e)}`)
         }
       }

@@ -139,7 +139,8 @@ export default function DigestAlgorithmJsunit() {
       try {
         cryptoFramework.createMd("SHA5");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
       }
       done();
@@ -170,7 +171,8 @@ export default function DigestAlgorithmJsunit() {
       try {
         let mdGenerator: cryptoFramework.Md = cryptoFramework.createMd("SHA224");
         await mdGenerator.digest();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error("err is " + err.code);
         expect(err.code).assertEqual(401);
       }
@@ -266,7 +268,8 @@ export default function DigestAlgorithmJsunit() {
       try {
         cryptoFramework.createMac("SHA5");
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(
           "[Promise]: error code: " + err.code + ", message is: " + err.message
         );
@@ -297,7 +300,8 @@ export default function DigestAlgorithmJsunit() {
         await macObj.init(symKey);
         await macObj.update(inBlob);
         await macObj.doFinal();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(null).assertFail();
       }
       done();

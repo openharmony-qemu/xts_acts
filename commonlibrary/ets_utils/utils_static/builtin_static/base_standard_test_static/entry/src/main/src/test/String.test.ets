@@ -39,7 +39,8 @@ export default function StringTest() {
       try {
         let result: string = String.fromCharCode();
         expect(result).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -58,7 +59,8 @@ export default function StringTest() {
       try {
         let result: string = String.fromCharCode(189, 43, 190, 61);
         expect(result).assertEqual("½+¾=");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -77,7 +79,8 @@ export default function StringTest() {
       try {
         let result: string = String.fromCharCode(65);
         expect(result).assertEqual("A");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -96,7 +99,8 @@ export default function StringTest() {
       try {
         let result: string = String.fromCharCode(65, 66);
         expect(result).assertEqual("AB");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -115,7 +119,8 @@ export default function StringTest() {
       try {
         let result: string = String.fromCharCode(65, 66, 67);
         expect(result).assertEqual("ABC");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -134,7 +139,8 @@ export default function StringTest() {
       try {
         let result: string = String.fromCharCode(0x2014);
         expect(result).assertEqual("—");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -153,7 +159,8 @@ export default function StringTest() {
       try {
         let result: string = String.fromCharCode(0x12014);
         expect(result).assertEqual("—");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -172,7 +179,8 @@ export default function StringTest() {
       try {
         let result: string = String.fromCharCode(8212);
         expect(result).assertEqual("—");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -193,7 +201,8 @@ export default function StringTest() {
         expect(result).assertEqual("￿");
         let res = encodeURI(result);
         expect(res).assertEqual("%EF%BF%BF");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -212,7 +221,8 @@ export default function StringTest() {
       try {
         let result = String.fromCodePoint();
         expect(result).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -231,7 +241,8 @@ export default function StringTest() {
       try {
         let result = String.fromCodePoint(42);
         expect(result).assertEqual("*");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -250,7 +261,8 @@ export default function StringTest() {
       try {
         let result = String.fromCodePoint(65, 90);
         expect(result).assertEqual("AZ");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -269,7 +281,8 @@ export default function StringTest() {
       try {
         let result = String.fromCodePoint(0x404);
         expect(result).assertEqual("Є");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -288,7 +301,8 @@ export default function StringTest() {
       try {
         let result = String.fromCodePoint(194564);
         expect(result).assertEqual("你");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -307,7 +321,8 @@ export default function StringTest() {
       try {
         let result = String.fromCodePoint(0x1d306, 0x61, 0x1d307);
         expect(result).assertEqual("𝌆a𝌇");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -500,7 +515,8 @@ export default function StringTest() {
         let index = 4;
         let flag1 = sentence.charAt(index);
         expect(flag1).assertEqual('q');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -521,7 +537,8 @@ export default function StringTest() {
         let index = 3;
         let flag1 = sentence.charAt(index);
         expect(flag1).assertEqual(' ');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -567,7 +584,8 @@ export default function StringTest() {
         let index = 0;
         let flag1 = sentence.charAt(index);
         expect(flag1).assertEqual("T");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -633,7 +651,8 @@ export default function StringTest() {
         const sentence = 'ABC';
         let flag1 = sentence.charCodeAt(0);
         expect(JSON.stringify(flag1)).assertEqual('65');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -653,7 +672,8 @@ export default function StringTest() {
         let flag1 = sentence.charCodeAt(1);
         hilog.info(domain, tag, '%{public}s', 'testCharCodeAt0002 lxl flag1 is:' + flag1);
         expect(String(flag1)).assertEqual('66');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -673,7 +693,8 @@ export default function StringTest() {
         let flag1 = sentence.charCodeAt(0);
         hilog.info(0x0000, TAG, '%{public}s', 'lxl testCharCodeAt0003 flag1:::' + flag1);
         expect(String(flag1)).assertEqual('27979');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -692,7 +713,8 @@ export default function StringTest() {
         const sentence = '测试';
         let flag1 = sentence.charCodeAt(1);
         expect(String(flag1)).assertEqual('35797');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -712,7 +734,8 @@ export default function StringTest() {
         const sentence = 'ABC';
         let flag1 = sentence.codePointAt(0);
         expect(String(flag1)).assertEqual('65');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -731,7 +754,8 @@ export default function StringTest() {
         const sentence = 'ABC';
         let flag1 = sentence.codePointAt(0)?.toString(16);
         expect(flag1).assertEqual("41");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -750,7 +774,8 @@ export default function StringTest() {
         const sentence = '😍';
         let flag1 = sentence.codePointAt(0);
         expect(String(flag1)).assertEqual('128525');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -769,7 +794,8 @@ export default function StringTest() {
         const sentence = '\ud83d\ude0d';
         let flag1 = sentence.codePointAt(0);
         expect(String(flag1)).assertEqual('128525');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} catch failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -788,7 +814,8 @@ export default function StringTest() {
         const sentence = '\ud83d\ude0d';
         let flag1 = sentence.codePointAt(0)?.toString(16);
         expect(flag1).assertEqual("1f60d");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -807,7 +834,8 @@ export default function StringTest() {
         const sentence = '😍';
         let flag1 = sentence.codePointAt(1);
         expect(JSON.stringify(flag1)).assertEqual('56845');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -826,7 +854,8 @@ export default function StringTest() {
         const sentence = '\ud83d\ude0d';
         let flag1 = sentence.codePointAt(1);
         expect(JSON.stringify(flag1)).assertEqual('56845');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -846,7 +875,8 @@ export default function StringTest() {
         let index = 1;
         let result8 = sentence.codePointAt(index)?.toString(16);
         expect(result8).assertEqual("de0d");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -866,7 +896,8 @@ export default function StringTest() {
         let index = 42;
         let result9 = sentence.codePointAt(index);
         expect(String(result9)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -886,7 +917,8 @@ export default function StringTest() {
         let index = 5;
         let result10 = sentence.codePointAt(index);
         expect(String(result10)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -906,7 +938,8 @@ export default function StringTest() {
         let index = -1;
         let result11 = sentence.codePointAt(index);
         expect(String(result11)).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -929,7 +962,8 @@ export default function StringTest() {
         let flag2 = str2.concat(str1);
         expect(flag1).assertEqual("HelloWorld");
         expect(flag2).assertEqual("WorldHello");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -953,7 +987,8 @@ export default function StringTest() {
         let flag2 = str2.concat(str1);
         console.log(flag2);
         expect(flag2).assertEqual("World");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -977,7 +1012,8 @@ export default function StringTest() {
         let flag2 = str2.concat(str1);
         console.log(flag2);
         expect(flag2).assertEqual("Hello");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -999,7 +1035,8 @@ export default function StringTest() {
         let flag1 = str3.concat(str1, str2);
         console.log(flag1);
         expect(flag1).assertEqual("PyTestHelloWorld");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1019,7 +1056,8 @@ export default function StringTest() {
         const str1 = 'my hello world';
         let flag1 = str1.endsWith("world");
         expect(flag1).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1038,7 +1076,8 @@ export default function StringTest() {
         const str1 = 'my hello world';
         let flag1 = str1.endsWith("hello");
         expect(flag1).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1057,7 +1096,8 @@ export default function StringTest() {
         const str1 = 'my hello world';
         let flag1 = str1.endsWith("test");
         expect(flag1).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1076,7 +1116,8 @@ export default function StringTest() {
         const str1 = 'my hello world';
         let flag1 = str1.endsWith('world，14');
         expect(flag1).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1095,7 +1136,8 @@ export default function StringTest() {
         const str1 = 'my hello world';
         let flag1 = str1.endsWith('world', 65536);
         expect(flag1).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1114,7 +1156,8 @@ export default function StringTest() {
         const str1 = 'my hello world';
         let flag1 = str1.endsWith('world', -1);
         expect(flag1).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1133,7 +1176,8 @@ export default function StringTest() {
         const str1 = 'my hello world';
         let flag1 = str1.endsWith('world', undefined);
         expect(flag1).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1152,7 +1196,8 @@ export default function StringTest() {
         const str1 = 'my hello world';
         let flag1 = str1.endsWith('my', 2);
         expect(flag1).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1171,7 +1216,8 @@ export default function StringTest() {
         const str1 = 'my hello world';
         let flag1 = str1.endsWith('my', 10);
         expect(flag1).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1190,7 +1236,8 @@ export default function StringTest() {
         const str1 = '';
         let flag1 = str1.endsWith('test');
         expect(flag1).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1210,7 +1257,8 @@ export default function StringTest() {
         const str1 = 'Hello world';
         let flag1 = str1.includes('world');
         expect(flag1).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1229,7 +1277,8 @@ export default function StringTest() {
         const str1 = 'Hello World';
         let flag1 = str1.includes('Hello');
         expect(flag1).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1248,7 +1297,8 @@ export default function StringTest() {
         const str1 = 'Hello World';
         let flag1 = str1.includes('WORLD');
         expect(flag1).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1267,7 +1317,8 @@ export default function StringTest() {
         const str1 = 'Hello World';
         let flag1 = str1.includes('hello');
         expect(flag1).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1286,7 +1337,8 @@ export default function StringTest() {
         const str1 = 'Hello World';
         let flag1 = str1.includes('');
         expect(flag1).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1305,7 +1357,8 @@ export default function StringTest() {
         const str1 = 'Hello World';
         let flag1 = str1.includes('world', 0);
         expect(flag1).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1324,7 +1377,8 @@ export default function StringTest() {
         const str1 = 'Hello World';
         let flag1 = str1.includes('world', 5);
         expect(flag1).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1343,7 +1397,8 @@ export default function StringTest() {
         const str1 = 'Hello World';
         let flag1 = str1.includes('world', 11);
         expect(flag1).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1362,7 +1417,8 @@ export default function StringTest() {
         const str1 = 'Hello World';
         let flag1 = str1.includes('world', undefined);
         expect(flag1).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1381,7 +1437,8 @@ export default function StringTest() {
         const str1 = 'Hello World';
         let flag1 = str1.includes('world', -1);
         expect(flag1).assertFalse();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1401,7 +1458,8 @@ export default function StringTest() {
         const str1 = 'Hello World';
         let flag1 = str1.indexOf('World');
         expect(String(flag1)).assertEqual('6');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1420,7 +1478,8 @@ export default function StringTest() {
         const str1 = 'HelloWorld';
         let flag1 = str1.lastIndexOf("World");
         expect(String(flag1)).assertEqual('5');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1441,7 +1500,8 @@ export default function StringTest() {
         const b = 'RESERVE';
         let flag1 = a.lastIndexOf(b);
         expect(String(flag1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1495,7 +1555,8 @@ export default function StringTest() {
         string1 = string1.normalize("NFD");
         let result = string1.length;
         expect(String(result)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1515,7 +1576,8 @@ export default function StringTest() {
         const str1 = 'Breaded Mushrooms';
         let flag1 = str1.padEnd(25, '.');
         expect(flag1).assertEqual("Breaded Mushrooms........");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1534,7 +1596,8 @@ export default function StringTest() {
         const str1 = '5';
         let flag1 = str1.padStart(2, '0');
         expect(flag1).assertEqual("05");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1553,7 +1616,8 @@ export default function StringTest() {
         const str = '1';
         let flag1 = str.repeat(3);
         expect(flag1).assertEqual("111");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1572,7 +1636,8 @@ export default function StringTest() {
         const str = '1';
         let flag1 = str.replace("1", "2");
         expect(flag1).assertEqual("2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1591,7 +1656,8 @@ export default function StringTest() {
         const str = "123321";
         let flag1 = str.replaceAll('1', '2');
         expect(flag1).assertEqual("223322");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1611,7 +1677,8 @@ export default function StringTest() {
         const regex = new RegExp('[^\\w\\s\']', 'g');
         let flag1 = paragraph.search(regex);
         expect(String(flag1)).assertEqual('41');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1630,7 +1697,8 @@ export default function StringTest() {
         const paragraph = "I think Ruth's dog is cuter than your dog.";
         let flag1 = paragraph.slice(-4);
         expect(flag1).assertEqual("dog.");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1650,7 +1718,8 @@ export default function StringTest() {
         let words = str.split(' ');
         let flag1 = words[3];
         expect(flag1).assertEqual("fox");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1669,7 +1738,8 @@ export default function StringTest() {
         const str = 'Saturday night plans';
         let result = str.startsWith('Sat');
         expect(result).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1688,7 +1758,8 @@ export default function StringTest() {
         const str = 'Mozilla';
         let result = str.substring(1, 3);
         expect(result).assertEqual("oz");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1709,7 +1780,8 @@ export default function StringTest() {
         let result: NullishType = iterator.next();
         console.log('String.prototypeSymbol result:' + JSON.stringify(result));
         expect(JSON.stringify(result)).assertEqual("{\"value\":\"T\",\"done\":false}");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1728,7 +1800,8 @@ export default function StringTest() {
         const str = 'İstanbul';
         let result = str.toLocaleLowerCase('en-US');
         expect(result).assertEqual("i̇stanbul");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1747,7 +1820,8 @@ export default function StringTest() {
         const str = 'istanbul';
         let result = str.toLocaleUpperCase('en-US');
         expect(result).assertEqual("ISTANBUL");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1766,7 +1840,8 @@ export default function StringTest() {
         const str = 'The quick brown fox jumps over the lazy dog.';
         let result = str.toLowerCase();
         expect(result).assertEqual("the quick brown fox jumps over the lazy dog.");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1785,7 +1860,8 @@ export default function StringTest() {
         const stringObj = new String('foo');
         let result = stringObj.toString();
         expect(result).assertEqual("foo");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1804,7 +1880,8 @@ export default function StringTest() {
         const sentence = "abc";
         let result: String = sentence.toUpperCase();
         expect(result).assertEqual("ABC");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1823,7 +1900,8 @@ export default function StringTest() {
         const sentence = "  abc  ";
         let result: String = sentence.trim();
         expect(result).assertEqual("abc");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1842,7 +1920,8 @@ export default function StringTest() {
         const sentence = "  abc  ";
         let result: String = sentence.trimEnd();
         expect(result).assertEqual("  abc");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1861,7 +1940,8 @@ export default function StringTest() {
         const sentence = "  abc  ";
         let result: String = sentence.trimStart();
         expect(result).assertEqual("abc  ");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1880,7 +1960,8 @@ export default function StringTest() {
         const stringObj = new String('foo');
         let result: String = stringObj.valueOf();
         expect(result).assertEqual("foo");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1900,7 +1981,8 @@ export default function StringTest() {
         const str = "hello world";
         let str1 = str.indexOf("");
         expect(String(str1)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1919,7 +2001,8 @@ export default function StringTest() {
         const str = "hello world";
         let str1 = str.indexOf("", 0);
         expect(String(str1)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1938,7 +2021,8 @@ export default function StringTest() {
         const str = "hello world";
         let str1 = str.indexOf("", -1);
         expect(String(str1)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1957,7 +2041,8 @@ export default function StringTest() {
         const str = "hello world";
         let str1 = str.indexOf("", 8);
         expect(String(str1)).assertEqual('8');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1976,7 +2061,8 @@ export default function StringTest() {
         const str = "hello world";
         let str1 = str.indexOf("", 11);
         expect(String(str1)).assertEqual('11');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -1995,7 +2081,8 @@ export default function StringTest() {
         const str = "hello world";
         let str1 = str.indexOf("", 13);
         expect(String(str1)).assertEqual('11');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2014,7 +2101,8 @@ export default function StringTest() {
       let str1 = str.indexOf("abc", undefined);
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2033,7 +2121,8 @@ export default function StringTest() {
         const str = "hello world";
         let str1 = str.indexOf("", 5);
         expect(String(str1)).assertEqual('5');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2052,7 +2141,8 @@ export default function StringTest() {
       let str1 = str.indexOf("w");
       try {
         expect(String(str1)).assertEqual('8');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2071,7 +2161,8 @@ export default function StringTest() {
       let str1 = str.indexOf("new");
       try {
         expect(String(str1)).assertEqual('6');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2090,7 +2181,8 @@ export default function StringTest() {
       let str1 = str.indexOf("cheddar");
       try {
         expect(String(str1)).assertEqual('19');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2109,7 +2201,8 @@ export default function StringTest() {
       let str1 = str.indexOf("cheddar");
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2128,7 +2221,8 @@ export default function StringTest() {
       let str1 = str.indexOf("Blue");
       try {
         expect(String(str1)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2147,7 +2241,8 @@ export default function StringTest() {
       let str1 = str.indexOf("Blute");
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2166,7 +2261,8 @@ export default function StringTest() {
       let str1 = str.indexOf("Whale", 0);
       try {
         expect(String(str1)).assertEqual('5');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2185,7 +2281,8 @@ export default function StringTest() {
       let str1 = str.indexOf("Whale", 5);
       try {
         expect(String(str1)).assertEqual('5');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2204,7 +2301,8 @@ export default function StringTest() {
       let str1 = str.indexOf("Whale", 7);
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2223,7 +2321,8 @@ export default function StringTest() {
       let str1 = str.indexOf("biue");
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2242,7 +2341,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("a");
       try {
         expect(String(str1)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2261,7 +2361,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("a", 2);
       try {
         expect(String(str1)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2280,7 +2381,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("a", 0);
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2299,7 +2401,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("x");
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2318,7 +2421,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("c", -5);
       try {
         expect(String(str1)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2337,7 +2441,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("c", 0);
       try {
         expect(String(str1)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2356,7 +2461,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("", 2);
       try {
         expect(String(str1)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2375,7 +2481,8 @@ export default function StringTest() {
         const str = "canal";
         let str1 = str.lastIndexOf("a", undefined);
         expect(String(str1)).assertEqual('3');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2394,7 +2501,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("", 2);
       try {
         expect(String(str1)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2413,7 +2521,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("A");
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2432,7 +2541,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("A", 2);
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2451,7 +2561,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("A", 0);
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2470,7 +2581,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("Blue");
       try {
         expect(String(str1)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2489,7 +2601,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("Blue", 2);
       try {
         expect(String(str1)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2508,7 +2621,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("Blue", 0);
       try {
         expect(String(str1)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2527,7 +2641,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("blue");
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2546,7 +2661,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("blue", 2);
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2565,7 +2681,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("blue", 0);
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2584,7 +2701,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("", 2);
       try {
         expect(String(str1)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2603,7 +2721,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("", 2);
       try {
         expect(String(str1)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2622,7 +2741,8 @@ export default function StringTest() {
       let str1 = str.lastIndexOf("Blue", undefined);
       try {
         expect(String(str1)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2641,7 +2761,8 @@ export default function StringTest() {
       let str1 = str.localeCompare("Apple");
       try {
         expect(String(str1)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2660,7 +2781,8 @@ export default function StringTest() {
       let str1 = str.localeCompare("Banana");
       try {
         expect(String(str1)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2679,7 +2801,8 @@ export default function StringTest() {
       let str1 = str.localeCompare("Grape");
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2698,7 +2821,8 @@ export default function StringTest() {
       let str1 = str.localeCompare("");
       try {
         expect(String(str1)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2717,7 +2841,8 @@ export default function StringTest() {
       let str1 = str.localeCompare("A");
       try {
         expect(String(str1)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2736,7 +2861,8 @@ export default function StringTest() {
       let str1 = str.localeCompare("B");
       try {
         expect(String(str1)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2755,7 +2881,8 @@ export default function StringTest() {
       let str1 = str.localeCompare("G");
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2774,7 +2901,8 @@ export default function StringTest() {
       let str1 = str.localeCompare("");
       try {
         expect(String(str1)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2793,7 +2921,8 @@ export default function StringTest() {
       let str1 = str.localeCompare("undefinded");
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2812,7 +2941,8 @@ export default function StringTest() {
       let str1 = str.localeCompare("z", "de");
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2831,7 +2961,8 @@ export default function StringTest() {
       let str1 = str.localeCompare("z", "sv");
       try {
         expect(String(str1)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2850,7 +2981,8 @@ export default function StringTest() {
       let str1 = str.localeCompare("10");
       try {
         expect(String(str1)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2869,7 +3001,8 @@ export default function StringTest() {
         const str = "2";
         let str1 = str.localeCompare("1");
         expect(String(str1)).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2890,7 +3023,8 @@ export default function StringTest() {
       });
       try {
         expect(str1).assertEqual(-1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2909,7 +3043,8 @@ export default function StringTest() {
       let str1 = str.localeCompare("10", "en-u-kn-true");
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2930,7 +3065,8 @@ export default function StringTest() {
       let str1 = JSON.stringify(found);
       try {
         expect(str1).assertEqual('["see Chapter 3.4.5.1","Chapter 3.4.5.1",".1"]');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2951,7 +3087,8 @@ export default function StringTest() {
       let str1 = JSON.stringify(found);
       try {
         expect(str1).assertEqual('["A","B","C","D","E","a","b","c","d","e"]');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2972,7 +3109,8 @@ export default function StringTest() {
       let str1 = JSON.stringify(found);
       try {
         expect(str1).assertEqual('["fox jumps over","fox"]');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -2991,7 +3129,8 @@ export default function StringTest() {
         const str = '123';
         const found = str.match("1,3");
         expect(String(found)).assertEqual('null');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3010,7 +3149,8 @@ export default function StringTest() {
         const str = "123";
         const found = str.match("1\\.3");
         expect(String(found)).assertEqual('null');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3030,7 +3170,8 @@ export default function StringTest() {
         const found = str.match("北风卷地白草折");
         let str1 = JSON.stringify(found);
         expect(str1).assertEqual('["北风卷地白草折"]');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3110,7 +3251,8 @@ export default function StringTest() {
       let str1 = JSON.stringify(value);
       try {
         expect(str1).assertEqual('["1 b","1 c"]');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3132,7 +3274,8 @@ export default function StringTest() {
       try {
         expect(str1).assertEqual(str2);
         expect(String(str1.length)).assertEqual(String(str2.length));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3154,7 +3297,8 @@ export default function StringTest() {
       try {
         expect(str1).assertEqual(str2);
         expect(String(str1.length)).assertEqual(String(str2.length));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3173,7 +3317,8 @@ export default function StringTest() {
       const TAG = 'testPrototypeNormalize0003';
       try {
         expect(str).assertEqual("ﬀ");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3194,7 +3339,8 @@ export default function StringTest() {
       str2.normalize();
       try {
         expect(String(str1.length)).assertEqual(String(str2.length));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3213,7 +3359,8 @@ export default function StringTest() {
       str = str.normalize("NFKC");
       try {
         expect(str).assertEqual("ṩ");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3232,7 +3379,8 @@ export default function StringTest() {
       str = str.padEnd(10);
       try {
         expect(str).assertEqual("test      ");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3251,7 +3399,8 @@ export default function StringTest() {
       str = str.padEnd(10, "foo");
       try {
         expect(str).assertEqual("testfoofoo");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3270,7 +3419,8 @@ export default function StringTest() {
       str = str.padEnd(6, "123456");
       try {
         expect(str).assertEqual("test12");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3289,7 +3439,8 @@ export default function StringTest() {
       str = str.padEnd(1);
       try {
         expect(str).assertEqual("test");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3308,7 +3459,8 @@ export default function StringTest() {
       str = str.padEnd(-1);
       try {
         expect(str).assertEqual("test");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3327,7 +3479,8 @@ export default function StringTest() {
       str = str.padStart(10);
       try {
         expect(str).assertEqual("       red");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3346,7 +3499,8 @@ export default function StringTest() {
       str = str.padStart(10, "foo");
       try {
         expect(str).assertEqual("foofoofred");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3365,7 +3519,8 @@ export default function StringTest() {
       str = str.padStart(6, "123456");
       try {
         expect(str).assertEqual("123red");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3384,7 +3539,8 @@ export default function StringTest() {
       str = str.padStart(8, "0");
       try {
         expect(str).assertEqual("00000red");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3403,7 +3559,8 @@ export default function StringTest() {
       str = str.padStart(1);
       try {
         expect(str).assertEqual("red");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3422,7 +3579,8 @@ export default function StringTest() {
       str = str.padStart(-1);
       try {
         expect(str).assertEqual("red");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3464,7 +3622,8 @@ export default function StringTest() {
       let str1 = str.repeat(0);
       try {
         expect(str1).assertEqual('');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3483,7 +3642,8 @@ export default function StringTest() {
       try {
         let str1 = string1.repeat(1);
         expect(str1).assertEqual('abc');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3502,7 +3662,8 @@ export default function StringTest() {
       try {
         let str1 = string1.repeat(2);
         expect(str1).assertEqual('abcabc');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3521,7 +3682,8 @@ export default function StringTest() {
       try {
         let str1 = string1.repeat(3.5);
         expect(str1).assertEqual('abcabcabc');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3563,7 +3725,8 @@ export default function StringTest() {
       let str1 = str.replace(new RegExp('(f)'), "$2");
       try {
         expect(str1).assertEqual("$2oo");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3582,7 +3745,8 @@ export default function StringTest() {
       let str1 = str.replace("f", "$1");
       try {
         expect(str1).assertEqual("$1oo");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3601,7 +3765,8 @@ export default function StringTest() {
       let str1: String = str.replace(new RegExp('(f)|(g)'), "$2");
       try {
         expect(str1).assertEqual("oo");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3620,7 +3785,8 @@ export default function StringTest() {
       let str1 = str.replaceAll("b", ".");
       try {
         expect(str1).assertEqual("aa..cc");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3639,7 +3805,8 @@ export default function StringTest() {
       let str1 = str.replaceAll(new RegExp('b', 'g'), ".");
       try {
         expect(str1).assertEqual("aa..cc");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3683,7 +3850,8 @@ export default function StringTest() {
       let str1 = str.search(re);
       try {
         expect(String(str1)).assertEqual('4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3703,7 +3871,8 @@ export default function StringTest() {
       let str1 = str.search(reDot);
       try {
         expect(String(str1)).assertEqual('-1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3722,7 +3891,8 @@ export default function StringTest() {
       let str1 = str.slice(1, 8);
       try {
         expect(str1).assertEqual("he morn");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3741,7 +3911,8 @@ export default function StringTest() {
       let str1 = str.slice(4, -2);
       try {
         expect(str1).assertEqual("morning is upon u");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3760,7 +3931,8 @@ export default function StringTest() {
       let str1 = str.slice(12);
       try {
         expect(str1).assertEqual("is upon us.");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3779,7 +3951,8 @@ export default function StringTest() {
       let str1 = str.slice(30);
       try {
         expect(str1).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3798,7 +3971,8 @@ export default function StringTest() {
       let str1 = str.slice(-3);
       try {
         expect(str1).assertEqual("us.");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3817,7 +3991,8 @@ export default function StringTest() {
       let str1 = str.slice(-3, -1);
       try {
         expect(str1).assertEqual("us");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3836,7 +4011,8 @@ export default function StringTest() {
       let str1 = str.slice(0, -1);
       try {
         expect(str1).assertEqual("The morning is upon us");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3855,7 +4031,8 @@ export default function StringTest() {
       let str1 = str.slice(4, -1);
       try {
         expect(str1).assertEqual("morning is upon us");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3874,7 +4051,8 @@ export default function StringTest() {
       let str1 = str.slice(-11, 16);
       try {
         expect(str1).assertEqual("is u");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3893,7 +4071,8 @@ export default function StringTest() {
       let str1 = str.slice(-11, -7);
       try {
         expect(str1).assertEqual("is u");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3912,7 +4091,8 @@ export default function StringTest() {
       let str1 = str.slice(-5, -1);
       try {
         expect(str1).assertEqual("n us");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3930,7 +4110,8 @@ export default function StringTest() {
       try {
         const str = 'Hello World. How are you doing?';
         expect(str.split(" ")[0]).assertEqual('Hello');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3948,7 +4129,8 @@ export default function StringTest() {
       try {
         const str = 'Hello World. How are you doing?';
         expect(str.split(" ", 10)[0]).assertEqual('Hello');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3966,7 +4148,8 @@ export default function StringTest() {
       try {
         const str = 'Hello World. How are you doing?';
         expect(String(str.split(" ", 10)[10])).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -3984,7 +4167,8 @@ export default function StringTest() {
       try {
         const str = 'Hello World. How are you doing?';
         expect(str.split("")[4]).assertEqual('o');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4002,7 +4186,8 @@ export default function StringTest() {
       try {
         const str = 'Hello World. How are you doing?';
         expect(String(str.split("", 3)[3])).assertEqual('undefined');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4020,7 +4205,8 @@ export default function StringTest() {
       try {
         const str = 'Hello World. How are you doing?';
         expect(str.split("", 3)[2]).assertEqual('l');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4040,7 +4226,8 @@ export default function StringTest() {
         const result = str.split("", 0);
         expect(String(Array.isArray(result))).assertEqual('true');
         expect(String(result.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4063,7 +4250,8 @@ export default function StringTest() {
         const result = str.split("");
         expect(String(Array.isArray(result))).assertEqual('true');
         expect(result.toString()).assertEqual(exp.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4081,7 +4269,8 @@ export default function StringTest() {
       try {
         const str = '';
         expect(str.split(" ")).assertContain("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4099,7 +4288,8 @@ export default function StringTest() {
       try {
         let str = '';
         expect(str.split("a")).assertContain("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4119,7 +4309,8 @@ export default function StringTest() {
         const result = str.split("");
         expect(String(Array.isArray(result))).assertEqual('true');
         expect(String(result.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4139,7 +4330,8 @@ export default function StringTest() {
         const result = str.split(new RegExp('(?:)'));
         expect(String(Array.isArray(result))).assertEqual('true');
         expect(String(result.length)).assertEqual('4');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4159,7 +4351,8 @@ export default function StringTest() {
         const result = str.split(new RegExp('(?:)', 'u'));
         expect(String(Array.isArray(result))).assertEqual('true');
         expect(String(result.length)).assertEqual('2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4179,7 +4372,8 @@ export default function StringTest() {
         let result1 = ["Harry Trump", "Fred Barney", "Helen Rigby", "Bill Abel", "Chris Hand", ""];
         let result2 = names.split(new RegExp('\\s*(?:;|$)\\s*'));
         expect(result2.toString()).assertEqual(result1.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4199,7 +4393,8 @@ export default function StringTest() {
         let expectedResult = ["Hello ", "1", " word. Sentence number ", "2", "."];
         let result = myString.split(new RegExp('(\\d)'));
         expect(result.toString()).assertEqual(expectedResult.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4217,7 +4412,8 @@ export default function StringTest() {
       try {
         const str1 = 'Saturday night plans';
         expect(String(str1.startsWith('Sat'))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4235,7 +4431,8 @@ export default function StringTest() {
       try {
         const str1 = 'Saturday night plans';
         expect(String(str1.startsWith('sat'))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4253,7 +4450,8 @@ export default function StringTest() {
       try {
         const str1 = 'Saturday night plans';
         expect(String(str1.startsWith('Sat', 0))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4271,7 +4469,8 @@ export default function StringTest() {
       try {
         const str1 = 'Saturday night plans';
         expect(String(str1.startsWith('Sat', 3))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4289,7 +4488,8 @@ export default function StringTest() {
       try {
         const str1 = 'Saturday night plans';
         expect(String(str1.startsWith('urday', 3))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4307,7 +4507,8 @@ export default function StringTest() {
       try {
         const str1 = 'Saturday night plans';
         expect(String(str1.startsWith(''))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4325,7 +4526,8 @@ export default function StringTest() {
       try {
         const str1 = 'undefined Saturday night plans';
         expect(String(str1.startsWith('undefined'))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4343,7 +4545,8 @@ export default function StringTest() {
       try {
         const str1 = 'undefined Saturday night plans';
         expect(String(str1.startsWith('Undefined'))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4362,7 +4565,8 @@ export default function StringTest() {
         const str1 = 'undefined Saturday night plans';
 
         expect(String(str1.startsWith(''))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4380,7 +4584,8 @@ export default function StringTest() {
       try {
         const str1 = "";
         expect(String(str1.startsWith('Sat'))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4398,7 +4603,8 @@ export default function StringTest() {
       try {
         const str1 = "";
         expect(String(str1.startsWith('Sat', 0))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4416,7 +4622,8 @@ export default function StringTest() {
       try {
         const str1 = "";
         expect(String(str1.startsWith('Sat', 3))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4434,7 +4641,8 @@ export default function StringTest() {
       try {
         const str1 = "";
         expect(String(str1.startsWith('urday', 3))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4452,7 +4660,8 @@ export default function StringTest() {
       try {
         const str1 = '';
         expect(String(str1.startsWith(''))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4470,7 +4679,8 @@ export default function StringTest() {
       try {
         const str = 'Mozilla';
         expect(str.substring(1, 3)).assertEqual('oz');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4488,7 +4698,8 @@ export default function StringTest() {
       try {
         const str = 'Mozilla';
         expect(str.substring(2)).assertEqual('zilla');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4506,7 +4717,8 @@ export default function StringTest() {
       try {
         const str = 'Mozilla';
         expect(str.substring(2, 2)).assertEqual('');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4524,7 +4736,8 @@ export default function StringTest() {
       try {
         const str = 'Mozilla';
         expect(str.substring(3, 1)).assertEqual('oz');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4542,7 +4755,8 @@ export default function StringTest() {
       try {
         const str = 'Mozilla';
         expect(str.substring(-1, 100)).assertEqual('Mozilla');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4560,7 +4774,8 @@ export default function StringTest() {
       try {
         const str = 'Mozilla';
         expect(str.substring(0)).assertEqual('Mozilla');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4578,7 +4793,8 @@ export default function StringTest() {
       try {
         const str = 'Mozilla';
         expect(str.substring(str.length - 4)).assertEqual('illa');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4597,7 +4813,8 @@ export default function StringTest() {
         const dotted = "İSTANBUL";
         const result = dotted.toLocaleLowerCase('en-US');
         expect(result).assertEqual("i̇stanbul");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4617,7 +4834,8 @@ export default function StringTest() {
         const lowerCaseDotted = dotted.toLocaleLowerCase('tr');
         console.log(`TR: ${lowerCaseDotted}`);
         expect(lowerCaseDotted).assertEqual('istanbul');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4637,7 +4855,8 @@ export default function StringTest() {
         const lowerCaseDotted = dotted.toLocaleLowerCase('en-US');
         console.log(`EN-US: ${lowerCaseDotted}`);
         expect(lowerCaseDotted).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4655,7 +4874,8 @@ export default function StringTest() {
       try {
         const dotted = '';
         expect(`${dotted.toLocaleLowerCase('tr')}`).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4673,7 +4893,8 @@ export default function StringTest() {
       try {
         const city = 'istanbul';
         expect(city.toLocaleUpperCase('en-US')).assertEqual('ISTANBUL');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4691,7 +4912,8 @@ export default function StringTest() {
       try {
         const city = 'istanbul';
         expect(city.toLocaleUpperCase('TR')).assertEqual("İSTANBUL");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4709,7 +4931,8 @@ export default function StringTest() {
       try {
         const city = '';
         expect(city.toLocaleUpperCase('en-US')).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4727,7 +4950,8 @@ export default function StringTest() {
       try {
         const city = '';
         expect(city.toLocaleUpperCase('TR')).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4745,7 +4969,8 @@ export default function StringTest() {
       try {
         const sentence = 'The quick brown fox jumps over the lazy dog.';
         expect(sentence.toLowerCase()).assertEqual("the quick brown fox jumps over the lazy dog.");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4764,7 +4989,8 @@ export default function StringTest() {
         const sentence = '';
         let result = sentence.toLowerCase();
         expect(result).assertEqual('');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4782,7 +5008,8 @@ export default function StringTest() {
       try {
         const stringObj = new String('foo');
         expect(stringObj.toString()).assertEqual('foo');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4801,7 +5028,8 @@ export default function StringTest() {
         const stringObj = new String('foo');
         let result = stringObj.toString();
         expect(result).assertEqual('foo');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4819,7 +5047,8 @@ export default function StringTest() {
       try {
         const stringObj = 123;
         expect(String(stringObj)).assertEqual('123');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4838,7 +5067,8 @@ export default function StringTest() {
         const stringObj = 123;
         let result = String(stringObj);
         expect(result).assertEqual("123");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4857,7 +5087,8 @@ export default function StringTest() {
         const city = 'istanbul';
         let result = city.toUpperCase();
         expect(result).assertEqual('ISTANBUL');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4877,7 +5108,8 @@ export default function StringTest() {
         const b = true;
         expect(a.toUpperCase()).assertEqual('ABCDEF');
         expect(String(b).toUpperCase()).assertEqual('TRUE');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4895,7 +5127,8 @@ export default function StringTest() {
       try {
         const city = '';
         expect(city.toUpperCase()).assertEqual('');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4913,7 +5146,8 @@ export default function StringTest() {
       try {
         const greeting = '   Hello world!   ';
         expect(greeting).assertEqual('   Hello world!   ');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4931,7 +5165,8 @@ export default function StringTest() {
       try {
         const greeting = '   Hello world!   ';
         expect(greeting.trim()).assertEqual('Hello world!');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4949,7 +5184,8 @@ export default function StringTest() {
       try {
         const str = "   foo  ";
         expect(str.trim()).assertEqual('foo');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4967,7 +5203,8 @@ export default function StringTest() {
       try {
         const str = "   ";
         expect(str.trim()).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -4985,7 +5222,8 @@ export default function StringTest() {
       try {
         const greeting = ' Hello world! ';
         expect(greeting).assertEqual(" Hello world! ");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5003,7 +5241,8 @@ export default function StringTest() {
       try {
         const greeting = ' Hello world! ';
         expect(greeting.trimEnd()).assertEqual(" Hello world!");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5021,7 +5260,8 @@ export default function StringTest() {
       try {
         const greeting = '  ';
         expect(greeting).assertEqual("  ");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5041,7 +5281,8 @@ export default function StringTest() {
         const result = greeting.trimEnd();
         const result1 = "";
         expect(String(result.length)).assertEqual(String(result1.length));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5059,7 +5300,8 @@ export default function StringTest() {
       try {
         const greeting = ' Hello world! ';
         expect(greeting).assertEqual(" Hello world! ");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5077,7 +5319,8 @@ export default function StringTest() {
       try {
         const greeting = "Hello World!";
         expect(greeting.trimStart()).assertEqual('Hello World!');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5095,7 +5338,8 @@ export default function StringTest() {
       try {
         const greeting = " ";
         expect(greeting).assertEqual(' ');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5113,7 +5357,8 @@ export default function StringTest() {
       try {
         const greeting = " ";
         expect(greeting.trimStart()).assertEqual('');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5132,7 +5377,8 @@ export default function StringTest() {
         const stringObject = new String("foo");
         const exp = new String("foo");
         expect(stringObject.toString()).assertEqual(exp.toString());
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5150,7 +5396,8 @@ export default function StringTest() {
       try {
         const stringObject = new String("foo");
         expect(stringObject.valueOf()).assertEqual('foo');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }
@@ -5168,7 +5415,8 @@ export default function StringTest() {
       try {
         const stringObject = new String("");
         expect(stringObject.valueOf()).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
         expect(false).assertFail();
       }

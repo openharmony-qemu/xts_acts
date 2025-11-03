@@ -41,7 +41,8 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
         hilog.info(domain, tag, '%{public}s', `isOpenHarmonyDevice is: ${isOpenHarmonyDeviceTag}`);
         await installPrivateCertificates();
         global_cmResult = await certManager.getAllAppPrivateCertificates();
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', `beforeAll get error1 is: ${err}`);
       }
       let global_cmResult1 = global_cmResult ?? {} as certManager.CMResult;
@@ -84,7 +85,8 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
           hilog.info(domain, tag, '%{public}s', `${global_cmResult1.appUidList}`);
           hilog.info(domain, tag, '%{public}s', `${global_cmResult1.uri}`);
           hilog.info(domain, tag, '%{public}s', `${global_cmResult1.outData}`);
-        } catch (err:BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.error(domain, tag, '%{public}s', `beforeAll get error2 is ${err}`);
           hilog.info(domain, tag, '%{public}s', "beforeAll waiting for opensource interface！");
         }
@@ -112,7 +114,8 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
             await certManager.uninstallPrivateCertificate(credentialList[i].keyUri);
           }
         }
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', `afterAll get error is: ${err}`);
       }
     })
@@ -214,7 +217,8 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
           });
         });
         expect(cmResult != undefined).assertTrue();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_0300 get err1: " + err.code);
         expect(null).assertFail();
       }
@@ -231,7 +235,8 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
             }
           });
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_0300 get err2: " + err.code);
         expect(null).assertFail();
       }
@@ -305,7 +310,8 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
             hilog.info(domain, tag, '%{public}s', `[Callback] cmResult2.certList[${i}] subjectName: ${certList[i].subjectName} `);
           }
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_0500 getPrivateCertificate err: " + err.code);
         expect(null).assertFail();
       }
@@ -376,7 +382,8 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
         await signVerifyPromise.signAbortProcess(gAppKeyUri2, keyStore, "after_init");
         await signVerifyPromise.signAbortProcess(gAppKeyUri2, keyStore, "after_update");
         await signVerifyPromise.signAbortProcess(gAppKeyUri2, keyStore, "after_finish");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_0800 get err: " + err.code);
         expect(null).assertFail();
       }
@@ -397,7 +404,8 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
         await signVerifyCallback.signAbortProcess(gAppKeyUri1, keyStore, "after_init");
         await signVerifyCallback.signAbortProcess(gAppKeyUri1, keyStore, "after_update");
         await signVerifyCallback.signAbortProcess(gAppKeyUri1, keyStore, "after_finish");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_0900 get err: " + err.code);
         expect(null).assertFail();
       }
@@ -418,7 +426,8 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
         await signVerifyPromise.verifyAbortProcess(gAppKeyUri2, keyStore, "after_verify_init");
         await signVerifyPromise.verifyAbortProcess(gAppKeyUri2, keyStore, "after_verify_update");
         await signVerifyPromise.verifyAbortProcess(gAppKeyUri2, keyStore, "after_verify_finish");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_1000 get err: " + err.code);
         expect(null).assertFail();
       }
@@ -439,7 +448,8 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
         await signVerifyCallback.verifyAbortProcess(gAppKeyUri1, keyStore, "after_verify_init");
         await signVerifyCallback.verifyAbortProcess(gAppKeyUri1, keyStore, "after_verify_update");
         await signVerifyCallback.verifyAbortProcess(gAppKeyUri1, keyStore, "after_verify_finish");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_1100 get err: " + err.code);
         expect(null).assertFail();
       }
@@ -469,7 +479,8 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
           hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_1300 cmResult.credentialList is undefined!");
           expect(null).assertFail();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_1300 get err: " + err.code);
         expect(null).assertFail();
       }
@@ -509,7 +520,8 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
             "or cmResult.credentialList is undefined!");
           expect(null).assertFail();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_Static_1400 get err: " + err.code);
         expect(null).assertFail();
       }
@@ -752,7 +764,8 @@ export default function certManagerPriCertJsAPIFunctionTestUnit() {
             "or keyStore.data is undefined!");
           expect(null).assertFail();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.error(domain, tag, '%{public}s', "Security_CertManager_PriCertJsApi_Func_2100 get err: " + err);
         expect(null).assertFail();
       }

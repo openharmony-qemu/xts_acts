@@ -61,7 +61,8 @@ export default function abilityTest() {
             try{
                 await avCastPicker.select(avCastPickerOptions);
                 console.info(`${TAG}: avCastPicker select successfully`);
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}: avCastPicker select failed with err: ${err.code}, ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -93,7 +94,8 @@ export default function abilityTest() {
             try{
                 await avCastPicker.select(avCastPickerOptions)
                 console.info('${TAG}: avCastPicker select successfully');
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}: avCastPicker select failed with err: ${err.code}, ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -130,7 +132,8 @@ export default function abilityTest() {
                     expect(false).assertTrue();
                 }
                 done();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
                 expect(false).assertTrue();
                 done();
@@ -153,7 +156,8 @@ export default function abilityTest() {
             try{
                 await avCastPicker.select(avCastPickerOptions)
                 console.info('${TAG}: avCastPicker select successfully');
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}: avCastPicker select failed with err: ${err.code}, ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -176,7 +180,8 @@ export default function abilityTest() {
             try{
                 await avCastPicker.select(avCastPickerOptions)
                 console.info('${TAG}: avCastPicker select successfully');
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}: avCastPicker select failed with err: ${err.code}, ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -199,7 +204,8 @@ export default function abilityTest() {
             try{
                 await avCastPicker.select(avCastPickerOptions)
                 console.info('${TAG}: avCastPicker select successfully');
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}: avCastPicker select failed with err: ${err.code}, ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -220,7 +226,8 @@ export default function abilityTest() {
             try{
                 await avCastPicker.select(avCastPickerOptions)
                 console.info('${TAG}: avCastPicker select successfully');
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}: avCastPicker select failed with err: ${err.code}, ${err.message}`);
                 expect(false).assertTrue();
             }
@@ -240,7 +247,8 @@ export default function abilityTest() {
             try{
                 await avCastPicker.select()
                 console.info('${TAG}: avCastPicker select successfully');
-            }catch(err: BusinessError){
+            }catch(err) {
+                err = err as BusinessError;
                 console.info(`${TAG}: avCastPicker select failed with err: ${err.code}, ${err.message}`);
                 expect(false).assertTrue();
             }

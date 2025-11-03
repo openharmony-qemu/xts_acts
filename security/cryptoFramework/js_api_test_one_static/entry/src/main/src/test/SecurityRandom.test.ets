@@ -80,7 +80,8 @@ export default function SecurityRandomJsunit() {
             }
           })
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
       }
       try {
@@ -93,7 +94,8 @@ export default function SecurityRandomJsunit() {
             }
           })
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
       }
       done();

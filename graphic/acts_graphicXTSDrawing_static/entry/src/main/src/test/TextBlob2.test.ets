@@ -66,7 +66,8 @@ export default function textBlob2Test() {
         let points: common2D.Point[] = [];
         drawing.TextBlob.makeFromPosText("drawing", points.length, points, font);
         console.info(msg + ' 1 makeFromString succeeded for empty string');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` 1 makeFromString failed for empty string, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -78,7 +79,8 @@ export default function textBlob2Test() {
         font.setSize(30);
         drawing.TextBlob.makeFromPosText("你好", points.length, points, font);
         console.info(msg + ' 2 makeFromString succeeded for empty string');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           ` 2 makeFromString failed for empty string, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
@@ -93,7 +95,8 @@ export default function textBlob2Test() {
         }];
         drawing.TextBlob.makeFromPosText("中文魑認識", points.length, points, font);
         console.info(msg + ' 3 makeFromString succeeded for empty string');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           `3 makeFromString failed for empty string, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
@@ -108,7 +111,8 @@ export default function textBlob2Test() {
         }];
         drawing.TextBlob.makeFromPosText("", points.length, points, font);
         console.info(msg + '4  makeFromString succeeded for empty string');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg +
           `4 makeFromString failed for empty string, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -134,7 +138,8 @@ export default function textBlob2Test() {
         }
 
         console.info(msg + ' test succeeded.');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` test failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -163,7 +168,8 @@ export default function textBlob2Test() {
         drawing.TextBlob.makeFromPosText("drawing", 1, points, font);
         console.info(msg + `test error`);
         expect().assertFail()
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
@@ -186,7 +192,8 @@ export default function textBlob2Test() {
           let id = textBlob.uniqueID();
         }
         console.info(msg + ' test 1 succeeded.');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` test 1 failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -196,7 +203,8 @@ export default function textBlob2Test() {
           let id = textBlob.uniqueID();
         }
         console.info(msg + ' 2 test succeeded.');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` 2 test failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }
@@ -222,7 +230,8 @@ export default function textBlob2Test() {
           }
         }
         console.info(msg + ' test succeeded.');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` test failed, errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect().assertFail();
       }

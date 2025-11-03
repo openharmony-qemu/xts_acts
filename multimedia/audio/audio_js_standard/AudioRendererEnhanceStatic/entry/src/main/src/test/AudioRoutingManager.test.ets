@@ -94,7 +94,8 @@ export default function AudioRoutingManagerTest() {
         expect(devices[0].channelMasks[0]).assertEqual(0);
         expect(devices?.[0]?.encodingTypes?.[0]).assertEqual(audio.AudioEncodingType.ENCODING_TYPE_RAW);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag}: getAvailableDevices error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -124,7 +125,8 @@ export default function AudioRoutingManagerTest() {
         expect(devices[0].channelMasks[0]).assertEqual(0);
         expect(devices?.[0]?.encodingTypes?.[0]).assertEqual(audio.AudioEncodingType.ENCODING_TYPE_RAW);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag}: getAvailableDevices error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -149,7 +151,8 @@ export default function AudioRoutingManagerTest() {
         expect(devices[1].deviceType > 0).assertTrue();
         expect(devices[1].displayName != "").assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag}: getAvailableDevices error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -175,7 +178,8 @@ export default function AudioRoutingManagerTest() {
         expect(devices[0].channelMasks[0]).assertEqual(0);
         expect(devices?.[0]?.encodingTypes?.[0]).assertEqual(audio.AudioEncodingType.ENCODING_TYPE_RAW);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag}: getAvailableDevices error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -204,7 +208,8 @@ export default function AudioRoutingManagerTest() {
         expect(devices[0].channelMasks[0]).assertEqual(0);
         expect(devices?.[0]?.encodingTypes?.[0]).assertEqual(audio.AudioEncodingType.ENCODING_TYPE_RAW);
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag}: getAvailableDevices error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -229,7 +234,8 @@ export default function AudioRoutingManagerTest() {
           expect(devices[i].displayName != "").assertTrue();
         }
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${Tag}: getAvailableDevices error ${error.message}, code ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -253,7 +259,8 @@ export default function AudioRoutingManagerTest() {
         });
         expect(true).assertTrue();
         done();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
         done();
@@ -284,7 +291,8 @@ export default function AudioRoutingManagerTest() {
           audioRoutingManager.offMicBlockStatusChanged()
         }
         expect(true).assertTrue();
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.error(`${Tag}:  on_micBlockStatusChanged ERROR: ${error.message}, ${error.code}`);
         expect(false).assertTrue();
       }

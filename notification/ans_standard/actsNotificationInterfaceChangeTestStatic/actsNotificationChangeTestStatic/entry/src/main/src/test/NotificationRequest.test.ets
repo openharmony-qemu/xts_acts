@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2023 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,9 +46,9 @@ export default function ActsNotificationRequestTest() {
 
     
     /**
-     * @tc.number: Acts_NotificationRequest_Static_0100
-     * @tc.name: Acts_NotificationRequest_Static_0100
-     * @tc.desc: Set notificationSlotType attribute parameters notificationManager.SlotType.SOCIAL_COMMUNICATION.
+     * @tc.number Acts_NotificationRequest_Static_0100
+     * @tc.name Acts_NotificationRequest_Static_0100
+     * @tc.desc Set notificationSlotType attribute parameters notificationManager.SlotType.SOCIAL_COMMUNICATION.
      */
     it('Acts_NotificationRequest_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -162,9 +162,9 @@ export default function ActsNotificationRequestTest() {
 
 
     /**
-     * @tc.number: Acts_NotificationRequest_Static_0200
-     * @tc.name: Acts_NotificationRequest_Static_0200
-     * @tc.desc: Set notificationSlotType attribute parameters notificationManager.SlotType.SERVICE_INFORMATION.
+     * @tc.number Acts_NotificationRequest_Static_0200
+     * @tc.name Acts_NotificationRequest_Static_0200
+     * @tc.desc Set notificationSlotType attribute parameters notificationManager.SlotType.SERVICE_INFORMATION.
      */
     it('Acts_NotificationRequest_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -203,7 +203,8 @@ export default function ActsNotificationRequestTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err:BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result1 is : %{public}s', JSON.stringify(err));
           expect(err.code).assertEqual(401);
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
@@ -212,9 +213,9 @@ export default function ActsNotificationRequestTest() {
       })
     
     /**
-     * @tc.number: Acts_NotificationRequest_Static_0300
-     * @tc.name: Acts_NotificationRequest_Static_0300
-     * @tc.desc: Set notificationSlotType attribute parameters notificationManager.SlotType.CONTENT_INFORMATION.
+     * @tc.number Acts_NotificationRequest_Static_0300
+     * @tc.name Acts_NotificationRequest_Static_0300
+     * @tc.desc Set notificationSlotType attribute parameters notificationManager.SlotType.CONTENT_INFORMATION.
      */
     it('Acts_NotificationRequest_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -274,7 +275,8 @@ export default function ActsNotificationRequestTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err:BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(err));
           expect().assertFail();
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
@@ -284,9 +286,9 @@ export default function ActsNotificationRequestTest() {
 
     
     /**
-     * @tc.number: Acts_NotificationRequest_Static_0400
-     * @tc.name: Acts_NotificationRequest_Static_0400
-     * @tc.desc: Set notificationSlotType attribute parameters notificationManager.SlotType.OTHER_TYPES.
+     * @tc.number Acts_NotificationRequest_Static_0400
+     * @tc.name Acts_NotificationRequest_Static_0400
+     * @tc.desc Set notificationSlotType attribute parameters notificationManager.SlotType.OTHER_TYPES.
      */
     it('Acts_NotificationRequest_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -326,7 +328,8 @@ export default function ActsNotificationRequestTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err:BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result1 is : %{public}s', JSON.stringify(err));
           expect().assertFail();
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
@@ -336,9 +339,9 @@ export default function ActsNotificationRequestTest() {
 
       
     /**
-     * @tc.number: Acts_NotificationRequest_Static_0600
-     * @tc.name: Acts_NotificationRequest_Static_0600
-     * @tc.desc: Construct the notificationRequest.
+     * @tc.number Acts_NotificationRequest_Static_0600
+     * @tc.name Acts_NotificationRequest_Static_0600
+     * @tc.desc Construct the notificationRequest.
      */
     it('Acts_NotificationRequest_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -395,7 +398,8 @@ export default function ActsNotificationRequestTest() {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
-        } catch (err:BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result1 is : %{public}s', JSON.stringify(err));
           expect().assertFail();
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);

@@ -57,7 +57,8 @@ export default function MultimodalTouchEventTest() {
           ExpectTrue(Action.MOVE == 2);
           ExpectTrue(Action.UP == 3);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -87,7 +88,8 @@ export default function MultimodalTouchEventTest() {
           ExpectTrue(ToolType.MOUSE == 6);
           ExpectTrue(ToolType.LENS == 7);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -112,7 +114,8 @@ export default function MultimodalTouchEventTest() {
           ExpectTrue(SourceType.PEN == 1);
           ExpectTrue(SourceType.TOUCH_PAD == 2);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -136,7 +139,8 @@ export default function MultimodalTouchEventTest() {
           ExpectTrue(FixedMode.NONE == 0);
           ExpectTrue(FixedMode.AUTO == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -200,7 +204,8 @@ export default function MultimodalTouchEventTest() {
           ExpectTrue(testTouch.fixedDisplayX == 1);
           ExpectTrue(testTouch.fixedDisplayY == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -261,7 +266,8 @@ export default function MultimodalTouchEventTest() {
           ExpectTrue(testTouchEvent.sourceType == SourceType.TOUCH_SCREEN);
           ExpectTrue(testTouchEvent.fixedMode == FixedMode.NONE);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();
@@ -295,7 +301,8 @@ export default function MultimodalTouchEventTest() {
           ExpectTrue(testInputEvent.screenId == 1);
           ExpectTrue(testInputEvent.windowId == 1);
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           hilog.info(domain, tag, `${caseName} failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
           ExpectFalse(true);
           done();

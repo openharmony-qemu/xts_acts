@@ -91,7 +91,8 @@ export default function colorFilterTest() {
         drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.COLOR);
         drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.LUMINOSITY);
         console.info(msg + ' createBlendModeColorFilter successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -147,7 +148,8 @@ export default function colorFilterTest() {
         try {
           drawing.ColorFilter.createBlendModeColorFilter(randomColor, itemList[i]);
           console.info(msg + ' createBlendModeColorFilter succeeded');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -169,7 +171,8 @@ export default function colorFilterTest() {
           alpha: -1, red: 255, green: 0, blue: 255
         }, drawing.BlendMode.SRC);
         console.info(msg + ' createBlendModeColorFilter succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -179,7 +182,8 @@ export default function colorFilterTest() {
           alpha: 255, red: 256, green: 0, blue: 255
         }, drawing.BlendMode.SRC);
         console.info(msg + ' createBlendModeColorFilter succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -189,7 +193,8 @@ export default function colorFilterTest() {
           alpha: 255, red: -1, green: 0, blue: 255
         }, drawing.BlendMode.SRC);
         console.info(msg + ' createBlendModeColorFilter succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -199,7 +204,8 @@ export default function colorFilterTest() {
           alpha: 255, red: 255, green: 256, blue: 255
         }, drawing.BlendMode.SRC);
         console.info(msg + ' createBlendModeColorFilter succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -209,7 +215,8 @@ export default function colorFilterTest() {
           alpha: 255, red: 255, green: -1, blue: 255
         }, drawing.BlendMode.SRC);
         console.info(msg + ' createBlendModeColorFilter succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -219,7 +226,8 @@ export default function colorFilterTest() {
           alpha: 255, red: 255, green: 0, blue: 256
         }, drawing.BlendMode.SRC);
         console.info(msg + ' createBlendModeColorFilter succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -229,7 +237,8 @@ export default function colorFilterTest() {
           alpha: 255, red: 255, green: 0, blue: -1
         }, drawing.BlendMode.SRC);
         console.info(msg + ' createBlendModeColorFilter succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -251,7 +260,8 @@ export default function colorFilterTest() {
           alpha: 255, red: 255, green: 0, blue: 0
         }, drawing.BlendMode.SRC);
         console.info(msg + ' createBlendModeColorFilter successed');
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -262,7 +272,8 @@ export default function colorFilterTest() {
           alpha: 255, red: 255, green: 0, blue: 0
         }, drawing.BlendMode.DST);
         console.info(msg + ' createBlendModeColorFilter successed');
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -272,7 +283,8 @@ export default function colorFilterTest() {
           drawing.ColorFilter.createComposeColorFilter(colorFilter1, colorFilter2);
           console.info(msg + ' createComposeColorFilter successed');
         }
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` createComposeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -283,7 +295,8 @@ export default function colorFilterTest() {
           drawing.ColorFilter.createComposeColorFilter(colorFilter1, colorFilter2);
           console.info(msg + ' createComposeColorFilter successed');
         }
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` createComposeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -294,7 +307,8 @@ export default function colorFilterTest() {
           drawing.ColorFilter.createComposeColorFilter(colorFilter1, colorFilter2);
           console.info(msg + ' createComposeColorFilter successed');
         }
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` createComposeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -306,7 +320,8 @@ export default function colorFilterTest() {
           drawing.ColorFilter.createComposeColorFilter(colorFilter1,colorFilter2 );
           console.info(msg + ' createComposeColorFilter successed');
         }
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` createComposeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -333,7 +348,8 @@ export default function colorFilterTest() {
           try {
             drawing.ColorFilter.createComposeColorFilter(randomFilter1, randomFilter2);
             console.info(msg + ' createComposeColorFilter succeeded');
-          } catch( e: BusinessError ) {
+          } catch(e) {
+            e = e as BusinessError ;
             console.info(msg + ` createComposeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
             expect().assertFail();
           }
@@ -354,7 +370,8 @@ export default function colorFilterTest() {
       try {
         drawing.ColorFilter.createLinearToSRGBGamma();
         console.info(msg + ' createLinearToSRGBGamma successed');
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` createLinearToSRGBGamma errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -375,7 +392,8 @@ export default function colorFilterTest() {
           drawing.ColorFilter.createLinearToSRGBGamma();
           console.info(msg + ' createLinearToSRGBGamma successed');
         }
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` createLinearToSRGBGamma errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -394,7 +412,8 @@ export default function colorFilterTest() {
       try {
         drawing.ColorFilter.createSRGBGammaToLinear();
         console.info(msg + ' createSRGBGammaToLinear successed');
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` createSRGBGammaToLinear errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -415,7 +434,8 @@ export default function colorFilterTest() {
           drawing.ColorFilter.createSRGBGammaToLinear();
           console.info(msg + ' createSRGBGammaToLinear successed');
         }
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` createSRGBGammaToLinear errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -434,7 +454,8 @@ export default function colorFilterTest() {
       try {
         drawing.ColorFilter.createLumaColorFilter();
         console.info(msg + ' createLumaColorFilter successed');
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` createLumaColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -455,7 +476,8 @@ export default function colorFilterTest() {
           drawing.ColorFilter.createLumaColorFilter();
           console.info(msg + ' createLumaColorFilter successed');
         }
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` createLumaColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -481,7 +503,8 @@ export default function colorFilterTest() {
         let colorFilter = drawing.ColorFilter.createMatrixColorFilter(matrix_);
         expect(colorFilter != null || colorFilter != undefined).assertTrue()
         console.info(msg + ' createMatrixColorFilter successed,colorFilter:' + colorFilter);
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` createMatrixColorFilter errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect().assertFail();
       }
@@ -507,7 +530,8 @@ export default function colorFilterTest() {
           let colorFilter = drawing.ColorFilter.createMatrixColorFilter(matrix);
           expect(colorFilter != null || colorFilter != undefined).assertTrue()
           console.info(msg + ' createMatrixColorFilter successed,colorFilter:' + colorFilter);
-        } catch( e: BusinessError ) {
+        } catch(e) {
+          e = e as BusinessError ;
           console.info(msg + ` createMatrixColorFilter errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
           expect().assertFail();
         }
@@ -528,7 +552,8 @@ export default function colorFilterTest() {
       try {
         drawing.ColorFilter.createMatrixColorFilter([]);
         console.info(msg + ' createMatrixColorFilter successed');
-      } catch( e: BusinessError ) {
+      } catch(e) {
+        e = e as BusinessError ;
         console.info(msg + ` createMatrixColorFilter errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }

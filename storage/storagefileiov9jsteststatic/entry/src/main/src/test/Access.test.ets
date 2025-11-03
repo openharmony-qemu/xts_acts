@@ -50,7 +50,8 @@ export default function fileIOAccess() {
         let readlen = fs.readSync(file.fd, new ArrayBuffer(4096));
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -72,7 +73,8 @@ export default function fileIOAccess() {
       try {
         let ret = fs.accessSync(fpath);
         expect(ret === false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -102,7 +104,8 @@ export default function fileIOAccess() {
         expect(readlen == FILE_CONTENT.length).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_003 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -132,7 +135,8 @@ export default function fileIOAccess() {
         expect(readlen == FILE_CONTENT.length).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_004 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -162,7 +166,8 @@ export default function fileIOAccess() {
         expect(readlen == FILE_CONTENT.length).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_005 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -192,7 +197,8 @@ export default function fileIOAccess() {
         expect(readlen == FILE_CONTENT.length).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_005 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -222,7 +228,8 @@ export default function fileIOAccess() {
         expect(readlen == FILE_CONTENT.length).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Sync_Static_007 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -253,7 +260,8 @@ export default function fileIOAccess() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -286,7 +294,8 @@ export default function fileIOAccess() {
           fs.unlinkSync(fpath);
         });
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -309,7 +318,8 @@ export default function fileIOAccess() {
         let ret = await fs.access(fpath);
         expect(ret === false).assertTrue();
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_002 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -333,7 +343,8 @@ export default function fileIOAccess() {
           expect(ret === false).assertTrue();
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_003 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -364,7 +375,8 @@ export default function fileIOAccess() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_006 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -395,7 +407,8 @@ export default function fileIOAccess() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_007 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -426,7 +439,8 @@ export default function fileIOAccess() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_008 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -457,7 +471,8 @@ export default function fileIOAccess() {
         fs.closeSync(file);
         fs.unlinkSync(fpath);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_009 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -487,7 +502,8 @@ export default function fileIOAccess() {
         expect(readlen == FILE_CONTENT.length).assertTrue();
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'test_FileIO_Access_Async_Static_010 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }

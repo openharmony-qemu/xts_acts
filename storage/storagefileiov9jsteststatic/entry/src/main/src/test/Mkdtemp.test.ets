@@ -46,7 +46,8 @@ export default function fileIOMkdtemp() {
         let res = fs.mkdtempSync(dpath);
         expect(fs.accessSync(res)).assertTrue();
         fs.rmdirSync(res);
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_mkdtemp_sync_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -68,7 +69,8 @@ export default function fileIOMkdtemp() {
       try {
         fs.mkdtempSync(dpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_mkdtemp_sync_static_001 end error' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
       }
@@ -93,7 +95,8 @@ export default function fileIOMkdtemp() {
         expect(fs.accessSync(res)).assertTrue();
         fs.rmdirSync(res);
         done();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_mkdtemp_async_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -120,7 +123,8 @@ export default function fileIOMkdtemp() {
           // fs.rmdirSync(res);
           done();
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_mkdtemp_async_static_001 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
@@ -142,7 +146,8 @@ export default function fileIOMkdtemp() {
       try {
         await fs.mkdtemp(dpath);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_mkdtemp_async_static_002 end error' + JSON.stringify(e));
         expect(e.code == 13900020 && e.message == 'Invalid argument').assertTrue();
         done();
@@ -170,7 +175,8 @@ export default function fileIOMkdtemp() {
             done();
           }
         });
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_mkdtemp_async_static_003 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }

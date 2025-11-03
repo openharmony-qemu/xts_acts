@@ -34,7 +34,8 @@ export default function HidebugJsTest() {
             try {
                 let heapSize = hidebug.getNativeHeapSize();
                 expect(heapSize >= BigInt(0)).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.info(0x0000, 'testTag', '%{public}s', JSON.stringify(err));
                 expect().assertFail();
             }
@@ -54,7 +55,8 @@ export default function HidebugJsTest() {
             try {
                 let heapAllocatedSize = hidebug.getNativeHeapAllocatedSize();
                 expect(heapAllocatedSize >= BigInt(0)).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 expect().assertFail();
             }
             hilog.info(0x0000, 'testTag', '*********** DFX_DFR_Hiprofiler_Interface_Static_0400 Test end***********');
@@ -73,7 +75,8 @@ export default function HidebugJsTest() {
             try {
                 let heapFreeSize = hidebug.getNativeHeapFreeSize();
                 expect(heapFreeSize >= BigInt(0)).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 expect().assertFail();
             }
             hilog.info(0x0000, 'testTag', '*********** DFX_DFR_Hiprofiler_Interface_Static_0500 Test end***********');
@@ -99,7 +102,8 @@ export default function HidebugJsTest() {
                     expect(tmp).assertLarger(pssValue);
                     pssValue = tmp;
                 }
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 expect().assertFail();
             }
             hilog.info(0x0000, 'testTag', '*********** DFX_DFR_Hiprofiler_Interface_Static_0800 Test end***********');
@@ -118,7 +122,8 @@ export default function HidebugJsTest() {
             try {
                 let temp = hidebug.getSharedDirty();
                 expect(temp >= BigInt(0)).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 expect().assertFail();
             }
             hilog.info(0x0000, 'testTag', '************* DFX_DFR_Hiprofiler_Interface_Static_1200 Test end*************');
@@ -137,7 +142,8 @@ export default function HidebugJsTest() {
             try {
                 let temp = hidebug.getPrivateDirty();
                 expect(temp>=BigInt(0)).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 expect().assertFail();
             }
             hilog.info(0x0000, 'testTag', '************* DFX_DFR_Hiprofiler_Interface_Static_0700 Test end*************');
@@ -164,7 +170,8 @@ export default function HidebugJsTest() {
                     }
                 }
                 expect(temp>=0 && temp<=1).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 expect().assertFail();
             }
             hilog.info(0x0000, 'testTag', '************* DFX_DFR_Hiprofiler_Interface_Static_1700 Test end*************');
@@ -208,7 +215,8 @@ export default function HidebugJsTest() {
                 expect(sysMemInfo.freeMem >= BigInt(0)).assertTrue();
                 expect(sysMemInfo.availableMem >= BigInt(0)).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, 'HIDEBUGTEST', "%{public}s", `testHiDebug01 > error code: ${err.code}, error msg: ${err.message}`);
                 expect().assertFail();
                 done();
@@ -245,7 +253,8 @@ export default function HidebugJsTest() {
                 ).assertTrue();
 
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, 'HIDEBUGTEST', "%{public}s", `testHiDebug02 > error code: ${err.code}, error msg: ${err.message}`);
                 expect().assertFail();
                 done();
@@ -268,7 +277,8 @@ export default function HidebugJsTest() {
                 expect(Number(nativeMemInfo.sharedClean) >= 0 &&
                     Number(nativeMemInfo.privateClean) >= 0).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, 'HIDEBUGTEST', "%{public}s", `SUB_DFX_DFT_HiDebug_Mem_Js_Static_0500 > error code: ${err.code}, error msg: ${err.message}`);
                 expect().assertFail();
                 done();
@@ -289,7 +299,8 @@ export default function HidebugJsTest() {
                 hilog.info(0x0000, 'HIDEBUGTEST', "%{public}s", `SUB_DFX_DFT_HiDebug_CPU_Js_0100 > sysCpuUsage =: ${sysCpuUsage}`)
                 expect(sysCpuUsage >= 0 && sysCpuUsage <= 1).assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, 'HIDEBUGTEST', "%{public}s", `SUB_DFX_DFT_HiDebug_CPU_Js_0100 > error code: ${err.code}, error msg: ${err.message}`);
                 expect().assertFail();
                 done();
@@ -315,7 +326,8 @@ export default function HidebugJsTest() {
                     expect(appThreadCpuUsage[ii].cpuUsage >= 0 && appThreadCpuUsage[ii].cpuUsage <= 100).assertTrue();
                 }
                 done()
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, 'HIDEBUGTEST', "%{public}s", `SUB_DFX_DFT_HiDebug_CPU_Js_0200 > error code: ${err.code}, error msg: ${err.message}`);
                 expect().assertFail();
                 done();
@@ -353,7 +365,8 @@ export default function HidebugJsTest() {
                     hilog.info(0x0000, 'HIDEBUGTEST', "%{public}s", `SUB_DFX_DFT_Trace_Collect_Js_0100 stop`)
                     done();
                 }, 1000)
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, 'HIDEBUGTEST', "%{public}s",
                     `SUB_DFX_DFT_Trace_Collect_Js_0100 > error code: ${err.code}, error msg: ${err.message}`);
                 expect().assertFail();
@@ -388,7 +401,8 @@ export default function HidebugJsTest() {
                 hilog.info(0x0000, 'HIDEBUGTEST', "%{public}s", `SUB_DFX_DFT_Trace_Collect_Js_0200 > path =: ${path}`)
                 expect(path != "").assertTrue();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, 'HIDEBUGTEST', "%{public}s",
                     `SUB_DFX_DFT_Trace_Collect_Js_0200 > error code: ${err.code}, error msg: ${err.message}`);
                 expect().assertFail();
@@ -415,7 +429,8 @@ export default function HidebugJsTest() {
                     `SUB_DFX_DFT_Trace_Collect_Js_0300 > path1 =: ${path1}`);
                 expect().assertFail();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, 'HIDEBUGTEST', "%{public}s",
                     `SUB_DFX_DFT_Trace_Collect_Js_0300 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(err.code == 401).assertTrue();
@@ -440,7 +455,8 @@ export default function HidebugJsTest() {
                 hilog.info(0x0000, 'HIDEBUGTEST', "%{public}s", `SUB_DFX_DFT_Trace_Collect_Js_0400 > path1 =: ${path1}`)
                 expect().assertFail();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, 'HIDEBUGTEST', "%{public}s",
                     `SUB_DFX_DFT_Trace_Collect_Js_0400 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(err.code == 401).assertTrue();
@@ -468,7 +484,8 @@ export default function HidebugJsTest() {
                 hilog.info(0x0000, 'HIDEBUGTEST', "%{public}s", `SUB_DFX_DFT_Trace_Collect_Js_0900 > path2 =: ${path2}`);
                 expect().assertFail();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, 'HIDEBUGTEST', "%{public}s",
                     `SUB_DFX_DFT_Trace_Collect_Js_0900 > error code: ${err.code}, error msg: ${err.message}`);
                 hidebug.stopAppTraceCapture();
@@ -491,7 +508,8 @@ export default function HidebugJsTest() {
                 hidebug.stopAppTraceCapture();
                 expect().assertFail();
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, 'HIDEBUGTEST', "%{public}s",
                     `SUB_DFX_DFT_Trace_Collect_Js_1000 > error code: ${err.code}, error msg: ${err.message}`);
                 expect(err.code == 11400105).assertTrue();
@@ -513,7 +531,8 @@ export default function HidebugJsTest() {
                 let result: number = await hidebug.getGraphicsMemory();
                 hilog.info(0x0000, 'HIDEBUGTEST', "result = %{public}d", result);
                 expect(result >= 0).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, 'HIDEBUGTEST', "%{public}s",
                     `SUB_DFX_DFT_Trace_Collect_Js_2100 > error code: ${err.code}, error msg: ${err.message}`);
                 expect().assertFail();
@@ -535,7 +554,8 @@ export default function HidebugJsTest() {
             try {
                 let result: number = hidebug.getGraphicsMemorySync();
                 expect(result >= 0).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 hilog.error(0x0000, 'HIDEBUGTEST', "%{public}s",
                     `SUB_DFX_DFT_Trace_Collect_Js_2200 > error code: ${err.code}, error msg: ${err.message}`);
             }
@@ -560,7 +580,8 @@ export default function HidebugJsTest() {
             try {
                 hidebug.getServiceDump(serviceId, file.fd, args)
                 expect().assertFail();
-            } catch (error: BusinessError) {
+            } catch (error) {
+                error = error as BusinessError;
                 console.info(error.code)
                 console.info(error.message)
                 expect(error.code == 11400101).assertTrue();
@@ -589,7 +610,8 @@ export default function HidebugJsTest() {
                     appMemoryLimit.vssLimit >= BigInt(0) &&
                     appMemoryLimit.vmHeapLimit >= BigInt(0) &&
                     appMemoryLimit.vmTotalHeapSize >= BigInt(0)).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 expect().assertFail();
             }
             console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1100 Test end*************');
@@ -613,7 +635,8 @@ export default function HidebugJsTest() {
                 expect(vmMemory.totalHeap >= BigInt(0) &&
                     vmMemory.heapUsed >= BigInt(0) &&
                     vmMemory.allArraySize >= BigInt(0)).assertTrue();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 expect().assertFail();
             }
             console.log('************* DFX_DFR_Hiprofiler_Interface_Static_2200 Test end*************');
@@ -633,7 +656,8 @@ export default function HidebugJsTest() {
                 let isDebugState = hidebug.isDebugState();
                 hilog.info(0x0000, 'HIDEBUGTEST', 'isDebugState=%{public}d', isDebugState);
                 expect(isDebugState).assertFalse();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 expect().assertFail();
             }
             console.log('************* DFX_DFR_Hiprofiler_Interface_Static_1300 Test end*************');
@@ -702,7 +726,8 @@ export default function HidebugJsTest() {
                     expect(false).assertTrue();
                 }
                 done();
-            } catch (err: BusinessError) {
+            } catch (err) {
+                err = err as BusinessError;
                 console.error('DFX_DFR_Hiprofiler_Interface_1800 has failed for ' + err);
                 expect(false).assertTrue();
                 done();

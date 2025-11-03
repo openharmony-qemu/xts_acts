@@ -47,7 +47,8 @@ function createGlobalParams(symAlgoName: string, paramType: string): cryptoFrame
       params = null;
     }
     return params;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     throw err as Error;
   }
 }

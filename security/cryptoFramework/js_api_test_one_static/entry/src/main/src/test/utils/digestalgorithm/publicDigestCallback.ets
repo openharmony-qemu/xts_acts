@@ -186,7 +186,8 @@ async function testMDDigestCallbackLen(MDAlgoName: string, DatablobLen: number):
     expect(digestBlob != null && mdLen != 0 && mdLen != null).assertTrue();
 
     return true;
-  } catch (err: BusinessError) {
+  } catch (err) {
+    err = err as BusinessError;
     console.error("testMDDigestCallback catch error: " + err);
     throw err as Error;
   }

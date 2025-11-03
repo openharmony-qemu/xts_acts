@@ -49,7 +49,8 @@ export default function ActsWorkschedulerManagerErrorCodeStaticTest() {
       }
       try{
         workScheduler.startWork(workInfo)
-      }catch(error: BusinessError){
+      }catch(error) {
+        error = error as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_ERR_TASK_STATIC_XTS_001 startWork failed. code is ${error.code} message is ${error.message}`);
         expect(Number(error.code)).assertEqual(9700004);
         done();
@@ -88,7 +89,8 @@ export default function ActsWorkschedulerManagerErrorCodeStaticTest() {
       try{
         workScheduler.startWork(workInfo)
         hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_WORKSCHEDULE_ERR_TASK_STATIC_XTS_002---startWork success---');
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_ERR_TASK_STATIC_XTS_002 failed. code is ${err.code} message is ${err.message}`);
         expect(Number(err.code)).assertEqual(9700005);
         done();
@@ -116,7 +118,8 @@ export default function ActsWorkschedulerManagerErrorCodeStaticTest() {
             console.info(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_ERR_TASK_STATIC_XTS_003 getWorkStatus success, ${JSON.stringify(res)}`);
           }
         });
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_ERR_TASK_STATIC_XTS_003 failed. code is ${err.code} message is ${err.message}`);
         done();
       }
@@ -139,7 +142,8 @@ export default function ActsWorkschedulerManagerErrorCodeStaticTest() {
           expect(Number(error.code)).assertEqual(9700004);
           done();
         })
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_ERR_TASK_STATIC_XTS_004 failed. code is ${err.code} message is ${err.message}`);
         expect(false).assertEqual(true);
         done();
@@ -165,7 +169,8 @@ export default function ActsWorkschedulerManagerErrorCodeStaticTest() {
           expect(Number(error.code)).assertEqual(9700004);
           done();
         });
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_ERR_TASK_STATIC_XTS_005 failed. code is ${err.code} message is ${err.message}`);
         done();
       }
@@ -190,7 +195,8 @@ export default function ActsWorkschedulerManagerErrorCodeStaticTest() {
           expect(Number(error.code)).assertEqual(9700004);
           done();
         });
-      }catch(err: BusinessError){
+      }catch(err) {
+        err = err as BusinessError;
         console.error(`SUB_RESOURCESCHEDULE_WORKSCHEDULE_ERR_TASK_STATIC_XTS_006 failed. code is ${err.code} message is ${err.message}`);
         done();
       }

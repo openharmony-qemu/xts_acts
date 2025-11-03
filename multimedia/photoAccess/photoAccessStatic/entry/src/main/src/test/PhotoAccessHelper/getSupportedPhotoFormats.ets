@@ -59,7 +59,8 @@ export default function getSupportedPhotoFormatsTest() {
           }
           expect(result).assertContain("jpg");
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error.code}  ${error.message}`);
           expect(false).assertTrue();
           done();

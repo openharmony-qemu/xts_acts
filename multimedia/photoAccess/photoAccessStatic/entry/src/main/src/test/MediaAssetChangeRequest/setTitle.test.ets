@@ -60,7 +60,8 @@ export default function setTitleChangeRequestTest() {
           await (helper as photoAccessHelper.PhotoAccessHelper).applyChanges(assetChangeRequest);
           expect(false).assertTrue();
           done();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(`${testNum} failed; error: ${error}`);
           expect(error.code).assertEqual(401);
           done();

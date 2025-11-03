@@ -83,10 +83,12 @@ export default function audioRendererTest() {
           Object.keys(data));
           console.info('audioRendererEnhanceTest: AudioRender Created : Success : Stream Type: SUCCESS data value: ' +
           JSON.stringify(data));
-        } catch (err: BusinessError) {
+        } catch (err) {
+          err = err as BusinessError;
           console.info('audioRendererEnhanceTest: AudioRender Created : ERROR : ' + err.message);
         }
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info('audioRendererEnhanceTest: AudioRender Created : catch ERROR : ' + error.code + error.message);
       }
     })
@@ -178,7 +180,8 @@ export default function audioRendererTest() {
           expect(false).assertTrue();
           done();
         });
-      } catch (error: BusinessError) {
+      } catch (error) {
+        error = error as BusinessError;
         console.info(`${TagFrmwkRender}: get current output deviceinfo unknown errro: [${error.code}, ${error.message}]`);
         if (error.code === 5400106) {
           expect(true).assertTrue();
@@ -220,7 +223,8 @@ export default function audioRendererTest() {
           }).catch((err: Error) => {
             console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.log("${TagFrmwkRender}: getCurrentOutputDevices : error = " + error);
           if (error.code === 6800301) {
             console.log("${TagFrmwkRender}: getCurrentOutputDevices : error.code = " + error.code);

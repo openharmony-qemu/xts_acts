@@ -69,7 +69,8 @@ struct WebOnBeforeUnload {
                 this.controller.runJavaScript("myRefresh()", (result) => {
                   console.log(`The myRefresh() return value is: ${result}`);
                 })
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -82,7 +83,8 @@ struct WebOnBeforeUnload {
                 this.controller.runJavaScript("myNewPage()", (result) => {
                   console.log(`The myNewPage() return value is: ${result}`);
                 })
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;

@@ -73,7 +73,8 @@ struct WebHttpBodyStream {
                 this.controller.refresh();
                 let postData = buffer.from(this.htmlData)
                 this.controller.postUrl('https://www.example.com', postData.buffer);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -84,7 +85,8 @@ struct WebHttpBodyStream {
                 this.controller.refresh();
                 let postData = buffer.from(this.htmlData)
                 this.controller.postUrl('https://www.example.com', postData.buffer);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -95,7 +97,8 @@ struct WebHttpBodyStream {
                 this.controller.refresh();
                 let postData = buffer.from(this.htmlData)
                 this.controller.postUrl('https://www.example.com', postData.buffer);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -106,7 +109,8 @@ struct WebHttpBodyStream {
                 this.controller.refresh();
                 let postData = buffer.from(this.htmlData)
                 this.controller.postUrl('https://www.example.com', postData.buffer);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -117,7 +121,8 @@ struct WebHttpBodyStream {
                 this.controller.refresh();
                 let postData = buffer.from(this.htmlData)
                 this.controller.postUrl('https://www.example.com', postData.buffer);
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -159,7 +164,8 @@ struct WebHttpBodyStream {
                 } else {
                   console.log("[schemeHandler] onRequestStart has no http body stream")
                 }
-              } catch (error: BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
 
@@ -171,7 +177,8 @@ struct WebHttpBodyStream {
             });
 
             this.controller.setWebSchemeHandler('https', this.schemeHandler);
-          } catch (error: BusinessError) {
+          } catch (error) {
+            error = error as BusinessError;
             console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
           }
         })

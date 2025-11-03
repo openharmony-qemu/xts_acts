@@ -118,7 +118,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try {
         await certManager.getPublicCertificate('');
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
       }
       done();
@@ -136,7 +137,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try {
         await certManager.getPublicCertificate('aabb');
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
       }
       done();
@@ -154,7 +156,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try {
         await certManager.isAuthorizedApp('');
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
       }
       done();
@@ -172,7 +175,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try {
         await certManager.isAuthorizedApp('aabb');
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
       }
       done();
@@ -210,7 +214,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try {
         let Result : certManager.CMResult = await certManager.getPrivateCertificates();
         hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_GetPriCertJsApi_Func_static_0010: Result = " + JSON.stringify(Result.credentialList));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_GetPriCertJsApi_Func_static_0010: e.code " + err.code);
         expect(null).assertFail()
       }
@@ -265,7 +270,8 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       try {
         await certManagerDialog.openInstallCertificateDialog(context, certificateType, certificateScope, caCert)
         expect(null).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_OpenInstallCertificateDialog_static_0011: e.code " + err.code);
         if (deviceInfo.deviceType === '2in1') {
           expect(err.code).assertEqual(29700005);

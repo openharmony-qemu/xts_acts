@@ -120,7 +120,8 @@ export default function abilityTest() {
           await rdbStore.insert("test", valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           console.info(`ReadonlyErrCode001 insert is successful`);
           expect().assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(TAG +
             `ReadonlyErrCode001 insert is failed, code is ${error.code},message is ${error.message}`);
           expect(error.code == 801).assertTrue();
@@ -128,7 +129,8 @@ export default function abilityTest() {
         try {
           await rdbStore.execute("INSERT INTO test (name, age, salary, blobType) VALUES (?, ?, ?, ?)");
           expect().assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(TAG +
             `ReadonlyErrCode001 execute is failed, code is ${error.code},message is ${error.message}`);
           expect(error.code == 801).assertTrue();
@@ -137,7 +139,8 @@ export default function abilityTest() {
           rdbStore.insertSync("test", valueBucket, relationalStore.ConflictResolution.ON_CONFLICT_REPLACE);
           console.info(TAG + `ReadonlyErrCode001 insertSync1 is successful`);
           expect().assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(TAG +
             `ReadonlyErrCode001 insertSync1 is failed, code is ${error.code},message is ${error.message}`);
           expect(error.code == 801).assertTrue();
@@ -158,7 +161,8 @@ export default function abilityTest() {
           let rowId: long = rdbStore.batchInsertSync("test", valueBuckets);
           console.info(TAG + `ReadonlyErrCode001 batchInsertSync is successful, rowId = ${rowId}`);
           expect().assertFail();
-        } catch (error: BusinessError) {
+        } catch (error) {
+          error = error as BusinessError;
           console.error(TAG +
             `ReadonlyErrCode001 batchInsertSync is failed, code is ${error.code},message is ${error.message}`);
           expect(error.code == 801).assertTrue();
