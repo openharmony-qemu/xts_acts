@@ -93,7 +93,7 @@ struct MyComponent {
         .id('PageInfo1_get')
         .onClick((e:ClickEvent) => {
           const uiContext: UIContext = this.getUIContext();
-          const uniqueId: long = this.getUniqueId();
+          const uniqueId: int = this.getUniqueId();
           const pageInfo: PageInfo = uiContext.getPageInfoByUniqueId(uniqueId);
           this.text1 = pageInfo.routerPageInfo?.name + ''
           this.text2 = pageInfo.navDestinationInfo?.name + ''

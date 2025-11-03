@@ -25,7 +25,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct APIgetFrameNodeByUniqueId {
   aboutToAppear() {
-    let uniqueId: long = (this.getUniqueId()).toLong();
+    let uniqueId: int = this.getUniqueId()
     let uiContext: UIContext = this.getUIContext();
     if (uiContext) {
       let node: FrameNode | null = uiContext.getFrameNodeByUniqueId(uniqueId);
