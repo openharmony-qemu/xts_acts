@@ -46,6 +46,7 @@ group("ans_standard") {
       "actsNotificationVibrationSoundTestStatic:ActsNotificationVibrationSoundStaticTest",
       "notificationManager:notificationManager",
       "notificationManagerStatic:NotificationManagerStaticTest",
+      "actsNotificationThirdPartyWatchTestStatic:actsNotificationThirdPartyWatchTestStatic",
     ]
   }
 }
