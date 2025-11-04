@@ -27,9 +27,6 @@ import EsJSONTest from "./EsJSON.test";
 import EsNaNTest from "./EsNaN.test";
 import EsMathTest from "./EsMath.test";
 export default function testsuite() {
-  EsArrayTest001();
-  EsArrayTest002();
-  EsArrayTest003();
   EsArrayBufferTest();
   EsBooleanTest();
   EsBigIntTest();
@@ -41,4 +38,7 @@ export default function testsuite() {
   EsJSONTest();
   EsNaNTest();
   EsMathTest();
+  EsArrayTest001();
+  EsArrayTest002();
+  EsArrayTest003();
 }
