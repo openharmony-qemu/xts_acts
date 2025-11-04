@@ -207,7 +207,6 @@ export default function networkManagerWithWifiTest() {
       let caseName: string = 'testNetworkMgrNetworkUnsubscribe0300';
       console.info(`${caseName} test start`);
       try {
-        network.subscribe();
         network.unsubscribe();
         done();
       } catch (err) {
