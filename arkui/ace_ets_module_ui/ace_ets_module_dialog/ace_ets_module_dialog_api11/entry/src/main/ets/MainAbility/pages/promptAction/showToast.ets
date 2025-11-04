@@ -13,23 +13,40 @@
  * limitations under the License.
  */
 import promptAction from '@ohos.promptAction'
+import { BusinessError } from '@kit.BasicServicesKit';
 
 @Entry
 @Component
 struct showToastExample {
-  private selectTime: Date = new Date('2020-12-25T08:30:00')
+  @State content: string = 'undefined'
 
   build() {
     Column() {
-      Button("showToast")
-        .id("showToast")
-        .margin(100)
-        .onClick(() => {
-          promptAction.showToast({
-            message: 'Message Info',
-            duration: 2000
-          });
-        })
+      Text(this.content)
+      Row() {
+        Button("showToast")
+          .id("showToastExample_showToast")
+          .onClick(() => {
+            promptAction.showToast({
+              message: 'Message Info',
+              duration: 2000
+            });
+          })
+
+        Button("showToast401error")
+          .id("showToastExample_ErrorCode")
+          .onClick(() => {
+            try {
+              promptAction.showToast(undefined);
+            } catch (error) {
+              let message = (error as BusinessError).message;
+              let code = (error as BusinessError).code;
+              this.content = code.toString();
+              console.error(`showToast args error code is ${code}, message is ${message}`);
+              AppStorage.SetOrCreate('showToastExample_ErrorCode', code);
+            };
+          })
+      }
     }.width('100%')
   }
 }
