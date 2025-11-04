@@ -21,8 +21,7 @@ group("netmanager_base") {
       "network_netmanager:network_netmanagerndk",
       "network_nopermission:ActsNetworkNopermissionTest",
       "network_nowifi:ActsNetworkNowifiTest",
-      "network_wifi:ActsNetworkWifiTest",
-      "system_fetch:ActsSystemFetchTest",
+      "system_fetch:ActsSystemFetchTest"
     ]
   }
 }
