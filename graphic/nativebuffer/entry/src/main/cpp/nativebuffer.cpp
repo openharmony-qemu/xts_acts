@@ -1311,7 +1311,7 @@ napi_value OHNativeBufferSetMetadataValue1(napi_env env, OH_NativeBuffer *native
         return result;
     }
     // 3. X=1 set调用成功 get调用成功 两者一致
-    X = 1;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+    X = 1;
     metaData[0] = static_cast<uint8_t>(X);
     flag = OH_NativeBuffer_SetMetadataValue(nativeBuffer, OH_HDR_METADATA_TYPE, X, metaData);
     if (flag != 0) {
@@ -1898,7 +1898,8 @@ napi_value OHNativeBufferSetMetadataValueREGION(napi_env env, napi_callback_info
     for (int i = 0; i < len; ++i) {
         metaData[i] = static_cast<uint8_t>(i);
     }
-    int32_t flag = OH_NativeBuffer_SetMetadataValue(nativeBuffer, OH_REGION_OF_INTEREST_METADATA, len, metaData);
+    int32_t flag = OH_NativeBuffer_SetMetadataValue(
+        nativeBuffer, OH_REGION_OF_INTEREST_METADATA, len, metaData);
     if (flag != 0) {
         napi_create_int32(env, NUMBER_4001, &result);
         return result;
