@@ -96,7 +96,7 @@ export default function RenderFitJsunit() {
           // console.info("push RenderFitJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push RenderFitJsunit page error: " + err);
         expect().assertFail();
       }

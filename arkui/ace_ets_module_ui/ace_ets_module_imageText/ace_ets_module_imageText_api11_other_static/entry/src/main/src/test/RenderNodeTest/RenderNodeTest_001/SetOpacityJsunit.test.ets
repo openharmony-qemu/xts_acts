@@ -66,7 +66,7 @@ export default function SetOpacityJsunit() {
           // console.info("push SetOpacityJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push SetOpacityJsunit page error:" + err);
       }
       console.info("SetOpacityJsunit beforeEach end");

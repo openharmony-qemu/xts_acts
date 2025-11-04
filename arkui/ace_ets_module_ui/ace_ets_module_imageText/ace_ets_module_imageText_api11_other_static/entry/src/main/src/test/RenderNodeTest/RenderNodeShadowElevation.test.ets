@@ -97,7 +97,7 @@ export default function RenderNodeShadowElevationJsSuit() {
           // console.info("push RenderNodeShadowElevationJsSuit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push RenderNodeShadowElevationJsSuit page error:" + err);
       }
 

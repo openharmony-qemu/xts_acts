@@ -66,7 +66,7 @@ export default function getSizeJsunit() {
           // console.info("push getSizeJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push getSizeJsunit page error:" + err);
       }
       console.info("getSizeJsunit beforeEach end");

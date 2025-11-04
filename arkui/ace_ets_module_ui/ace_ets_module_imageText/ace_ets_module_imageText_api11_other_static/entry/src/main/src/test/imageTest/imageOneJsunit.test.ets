@@ -96,7 +96,7 @@ export default function imageOneJsunit() {
           // console.info("push imageOneJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push imageOneJsunit page error:" + err);
         expect().assertFail();
       }

@@ -66,7 +66,7 @@ export default function getOpacityJsunit() {
           // console.info("push getOpacityJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push getOpacityJsunit page error:" + err);
       }
       console.info("getOpacityJsunit beforeEach end");

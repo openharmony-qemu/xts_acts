@@ -96,7 +96,7 @@ export default function translationTest() {
           // console.info("push translationTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push translationTest page error: " + err);
         expect().assertFail();
       }

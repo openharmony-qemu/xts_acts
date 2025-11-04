@@ -79,7 +79,7 @@ export default function RelativeChain4() {
           // console.info("push RelativeChain4 page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push RelativeChain4 page error:" + err);
       }
       console.info("RelativeChain4 foreEach end");

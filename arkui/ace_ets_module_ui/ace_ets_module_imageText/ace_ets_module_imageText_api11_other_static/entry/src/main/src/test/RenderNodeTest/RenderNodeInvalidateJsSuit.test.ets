@@ -72,7 +72,7 @@ export default function RenderNodeInvalidateJsSuit() {
           await CommonFunc.sleep(2000);
           // console.info("push MarqueeDynamicSyncSceneTest page result:" + JSON.stringify(result));
         }
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push MarqueeDynamicSyncSceneTest page error:" + err);
       }
       console.info("MarqueeDynamicSyncSceneTest beforeEach end");

@@ -48,7 +48,7 @@ export default function spanTest() {
           await Utils.sleep(2000);
           console.info("push span page result success");
         }
-      } catch (err: Error) {
+      } catch (err) {
         console.error("push span page error: " + err);
       }
     });
@@ -76,7 +76,7 @@ it('testSpanFontSize_static_01', Level.LEVEL0, async (done: () => void): Promise
 
       try {
         AppStorage.setOrCreate<number | string | Resource>("mFontSize", 68)
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -88,7 +88,7 @@ it('testSpanFontSize_static_01', Level.LEVEL0, async (done: () => void): Promise
 
       try {
         AppStorage.setOrCreate<number | string | Resource>('mFontSize','resources50')
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -122,7 +122,7 @@ it('testSpanfontFamily_static_02', Level.LEVEL0, async (done: () => void): Promi
 
       try {
         AppStorage.setOrCreate<string | Resource>('mFontFamily','Arial')
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -155,7 +155,7 @@ it('testSpanlineHeight_static_03', Level.LEVEL0, async (done: () => void): Promi
 
       try {
         AppStorage.setOrCreate<Length>('mLineHeight','80fp')
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -167,7 +167,7 @@ it('testSpanlineHeight_static_03', Level.LEVEL0, async (done: () => void): Promi
 
       try {
         AppStorage.setOrCreate<Length>('mLineHeight',50)
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -201,7 +201,7 @@ it('testSpanfontStyle_static_04', Level.LEVEL0, async (done: () => void): Promis
 
       try {
         AppStorage.setOrCreate<FontStyle>('mFontStyle',FontStyle.Italic)
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -233,7 +233,7 @@ it('testSpanfontWeight_static_05', Level.LEVEL0, async (done: () => void): Promi
 
       try {
         AppStorage.setOrCreate<int|FontWeight|string|undefined>('mFontWeight',FontWeight.Bold)
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -266,7 +266,7 @@ it('testSpantextCase_static_06', Level.LEVEL0, async (done: () => void): Promise
       try {
         AppStorage.setOrCreate<TextCase>('mTextCase',TextCase.UpperCase)
 
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -302,7 +302,7 @@ it('testSpandecoration_static_07', Level.LEVEL0, async (done: () => void): Promi
         AppStorage.setOrCreate<TextDecorationType>('mDecorationType',TextDecorationType.Underline)
         AppStorage.setOrCreate<ResourceColor>('mDecorationColor',Color.Red)
 
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -336,7 +336,7 @@ it('testSpanfontColor_static_08', Level.LEVEL0, async (done: () => void): Promis
 
       try {
         AppStorage.setOrCreate<ResourceColor>('mFontColor',0xFF00FF)
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -370,7 +370,7 @@ it('testSpanletterSpacing_static_09', Level.LEVEL0, async (done: () => void): Pr
 
       try {
         AppStorage.setOrCreate<number>('mLetterSpacing',5)
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -410,7 +410,7 @@ it('testSpanFont_static_10', Level.LEVEL0, async (done: () => void): Promise<voi
       try {
         AppStorage.setOrCreate<Font>('mFont',{ size: $r('app.float.50vp'), weight: FontWeight.Bold, family: $r('app.string.font_family_arial'), style: FontStyle.Italic })
 
-      } catch (err: Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);

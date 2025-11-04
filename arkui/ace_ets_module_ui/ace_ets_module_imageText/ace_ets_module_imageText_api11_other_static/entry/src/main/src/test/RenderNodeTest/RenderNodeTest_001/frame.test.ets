@@ -67,7 +67,7 @@ export default function frame() {
           // console.info("push frame page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push frame page error: " + err);
         expect().assertFail();
       }

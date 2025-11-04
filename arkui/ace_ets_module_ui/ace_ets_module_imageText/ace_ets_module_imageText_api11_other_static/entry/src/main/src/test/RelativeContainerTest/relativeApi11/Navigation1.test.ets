@@ -67,7 +67,7 @@ export default function Navigation1() {
           // console.info("push Navigation1 page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push Navigation1 page error: " + err);
         expect().assertFail();
       }

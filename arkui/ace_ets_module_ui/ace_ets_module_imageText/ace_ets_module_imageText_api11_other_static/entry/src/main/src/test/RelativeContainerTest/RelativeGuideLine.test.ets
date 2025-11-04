@@ -77,7 +77,7 @@ export default function RelativeGuideLine() {
           // console.info("push RelativeGuideLine page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push RelativeGuideLine page error:" + err);
       }
       console.info("RelativeGuideLine foreEach end");

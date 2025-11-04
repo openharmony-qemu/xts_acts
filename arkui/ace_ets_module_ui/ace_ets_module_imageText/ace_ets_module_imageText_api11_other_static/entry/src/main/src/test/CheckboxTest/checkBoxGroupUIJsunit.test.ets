@@ -98,7 +98,7 @@ export default function checkBoxGroupUIJsunit() {
           // console.info("push checkBoxGroupUIJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push checkBoxGroupUI page error:" + err);
         expect().assertFail();
       }

@@ -83,7 +83,7 @@ export default function button3Jsunit() {
           await CommonFunc.sleep(2000);
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push button page error: " + err);
       }
 
@@ -186,7 +186,7 @@ it('testButton_static_05', Level.LEVEL1, async (done: () => void): Promise<void>
         }
         console.info("[testButton_static_05] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testButton_static_05] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -219,7 +219,7 @@ it('testButton_static_06', Level.LEVEL1, async (done: () => void): Promise<void>
         }
         console.info("[testButton_static_06] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testButton_static_06] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -251,7 +251,7 @@ it('testButton_static_07', Level.LEVEL1, async (done: () => void): Promise<void>
         }
         console.info("[testButton_static_07] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testButton_static_07] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -286,7 +286,7 @@ it('testButton_static_08', Level.LEVEL1, async (done: () => void): Promise<void>
         }
         console.info("[testButton_static_08] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testButton_static_08] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -319,7 +319,7 @@ it('testButton_static_09', Level.LEVEL1, async (done: () => void): Promise<void>
         }
         console.info("[testButton_static_09] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testButton_static_09] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -350,7 +350,7 @@ it('testButton_static_10', Level.LEVEL1, async (done: () => void): Promise<void>
         }
         console.info("testButton_static_10 start to publish emit");
         events_emitter.emit(indexEventOne, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testButton_static_10 change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -365,7 +365,7 @@ it('testButton_static_10', Level.LEVEL1, async (done: () => void): Promise<void>
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("testButton_static_10 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("testButton_static_10 click result is: " + JSON.stringify(inspector.sendEventByKey('button3', 10, "")));
@@ -395,7 +395,7 @@ it('testButton_static_11', Level.LEVEL1, async (done: () => void): Promise<void>
         }
         console.info("testButton_static_11 start to publish emit");
         events_emitter.emit(indexEventOne, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testButton_static_11 change component data error: " + err.message);
       }
       await CommonFunc.sleep(1000);
@@ -410,7 +410,7 @@ it('testButton_static_11', Level.LEVEL1, async (done: () => void): Promise<void>
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("testButton_static_11 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("testButton_static_11 click result is: " + JSON.stringify(inspector.sendEventByKey('button2', 10, "")));
@@ -452,7 +452,7 @@ it('testButton_static_12', Level.LEVEL1, async (done: () => void): Promise<void>
           expect(Math.abs(UIContext.getFocusedUIContext()!.vp2px(ScreenY) - point.y + Number(AppStorage.get<number>("winTop"))) <= 1).assertTrue()
           expect(Math.trunc(JSON.parseJsonElement((eventData.data as ESObject).getProperty('event').toString()).getInteger('x'))).assertEqual(100)
           expect(Math.trunc(JSON.parseJsonElement((eventData.data as ESObject).getProperty('event').toString()).getInteger('y'))).assertEqual(50)
-        } catch (err:Error) {
+        } catch (err) {
           console.info("[testButton_static_12_] expection err : " + JSON.stringify(err));
           expect().assertFail();
         }
@@ -464,7 +464,7 @@ it('testButton_static_12', Level.LEVEL1, async (done: () => void): Promise<void>
       }
       try {
         events_emitter.on(innerEvent, callback)
-      } catch (err:Error) {
+      } catch (err) {
         console.info("[testButton_static_12] on events_emitter err : " + JSON.stringify(err));
       }
       console.info('[testButton_static_12] sendEventByKey ' + JSON.stringify(inspector.sendEventByKey('buttonClick', 10, "")));
@@ -495,7 +495,7 @@ it('testButton_static_13', Level.LEVEL1, async (done: () => void): Promise<void>
         }
         console.info("[testButton_static_13] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testButton_static_13] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -530,7 +530,7 @@ it('testButton_static_14', Level.LEVEL1, async (done: () => void): Promise<void>
         }
         console.info("[testButton_static_14] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("[testButton_static_14] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -564,7 +564,7 @@ it('testButton_static_15', Level.LEVEL1, async (done: () => void): Promise<void>
         }
         console.info("testButton_static_15 start to publish emit");
         events_emitter.emit(indexEventOne, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testButton_static_15 change component data error: " + err.message);
       }
       await CommonFunc.sleep(500);
@@ -581,7 +581,7 @@ it('testButton_static_15', Level.LEVEL1, async (done: () => void): Promise<void>
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("testButton_static_15 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("testButton_static_15 click result is: " + JSON.stringify(inspector.sendEventByKey('button4', 10, "")));

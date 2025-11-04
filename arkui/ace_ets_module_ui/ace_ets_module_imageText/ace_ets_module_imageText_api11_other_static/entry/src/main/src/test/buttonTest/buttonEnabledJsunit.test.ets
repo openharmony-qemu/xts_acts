@@ -96,7 +96,7 @@ export default function buttonEnabledJsunit() {
           // console.info("push buttonEnabledJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push buttonEnabledJsunit page error: " + err);
         expect().assertFail();
       }

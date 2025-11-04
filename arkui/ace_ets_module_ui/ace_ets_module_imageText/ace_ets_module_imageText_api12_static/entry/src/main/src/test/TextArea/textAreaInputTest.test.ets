@@ -94,7 +94,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
           await CommonFunc.sleep(500);
           await button1.click();
           await CommonFunc.sleep(500);
-        }catch(e: Error){
+        }catch(e){
           console.log('下一步 error')
         }
           await textArea1.longClick();
@@ -103,7 +103,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
             let button3 = await (driver.findComponent(ON.text('全选')) as Promise<Component>);
             await CommonFunc.sleep(500);
             await button3.click();
-          }catch(e: Error){
+          }catch(e){
             console.log('全选1 error')
           }
           console.info('textAreaInputTest0001 全选 success');
@@ -116,7 +116,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
             let button4 = await (driver.findComponent(ON.text('取消')) as Promise<Component>);
             await CommonFunc.sleep(500);
             await button4.click();
-          }catch(e: Error){
+          }catch(e){
             console.log('取消 error')
           }
           await CommonFunc.sleep(500);
@@ -128,7 +128,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
            let button5 = await (driver.findComponent(ON.text('全选')) as Promise<Component>);
            await CommonFunc.sleep(500);
            await button5.click();
-         }catch(e: Error){
+         }catch(e){
            console.log('全选2 error')
          }
           await CommonFunc.sleep(500);
@@ -137,7 +137,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
             let button6 = await (driver.findComponent(ON.text('复制')) as Promise<Component>);
             await CommonFunc.sleep(500);
             await button6.click();
-          }catch(e: Error){
+          }catch(e){
             console.log('复制 error')
           }
           await CommonFunc.sleep(500);
@@ -149,7 +149,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
             let button7 = await (driver.findComponent(ON.type('Button')) as Promise<Component>);
             await CommonFunc.sleep(500);
             await button7.click();
-          }catch(e: Error){
+          }catch(e){
             console.log('复制 error')
           }
         await CommonFunc.sleep(500);

@@ -83,7 +83,7 @@ export default function stageAnimatorTest() {
           // console.info("push stageAnimator page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push stageAnimator page error: " + err);
       }
 
@@ -116,7 +116,7 @@ it('testanimatorstage_static_0001', Level.LEVEL1, async (done: () => void): Prom
           expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString("width")).assertEqual("100.00vp");
           console.info("[testanimatorstage_static_0001] width value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString("width"));
           console.info('testanimatorstage_static_0001 END ');
-        } catch (err:Error) {
+        } catch (err) {
           expect().assertFail()
           console.info('testanimatorstage_static_0001 ERR  ' + JSON.stringify(err));
         }
@@ -147,7 +147,7 @@ it('testanimatorstage_static_0002', Level.LEVEL1, async (done: () => void): Prom
         };
         let result = animator.createAnimator(options)
         expect(typeof (result)).assertEqual('object');
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push button page error " + JSON.stringify(err));
       }
       console.info('testanimatorstage_static_0002 END');
@@ -177,7 +177,7 @@ it('testanimatorstage_static_0003', Level.LEVEL1, async (done: () => void): Prom
         };
         let result = animator.createAnimator(options)
         expect(typeof (result)).assertEqual('object');
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push button page error " + JSON.stringify(err));
       }
       console.info('testanimatorstage_static_0003 END');
@@ -197,7 +197,7 @@ it('testanimatorstage_static_0004', Level.LEVEL1, async (done: () => void): Prom
       try {
         // let options = animator.createAnimator(null)
         // expect(typeof (options)).assertEqual('object');
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push button page error " + JSON.stringify(err));
       }
       console.info('testanimatorstage_static_0004 END');
@@ -226,7 +226,7 @@ it('testanimatorstage_static_0005', Level.LEVEL1, async (done: () => void): Prom
           end: 1
         } as AnimatorOptions)
         expect(typeof (options)).assertEqual('object');
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push button page error " + JSON.stringify(err));
       }
       console.info('testanimatorstage_static_0005 END');
@@ -255,7 +255,7 @@ it('testanimatorstage_static_0006', Level.LEVEL1, async (done: () => void): Prom
           end: 1
         } as AnimatorOptions)
         expect(typeof (options)).assertEqual('object');
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push button page error " + JSON.stringify(err));
       }
       console.info('testanimatorstage_static_0006 END');

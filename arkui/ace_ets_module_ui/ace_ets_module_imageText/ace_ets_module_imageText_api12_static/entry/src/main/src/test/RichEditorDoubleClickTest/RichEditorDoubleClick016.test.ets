@@ -106,7 +106,7 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_static_025', Level.LEVEL0, 
       try{
         let copy = await (driver.findComponent(ON.text('复制')) as Promise<Component>);
         await copy.click();
-      }catch(e: Error){}
+      }catch(e){}
       await CommonFunc.sleep(500);
       let changeOrientation = await (driver.findComponent(ON.id('changeOrientation')) as Promise<Component>);
       await changeOrientation.click();
