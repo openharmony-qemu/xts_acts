@@ -56,7 +56,7 @@ struct richEditorApi5 {
           this.controller.setSelection(-1, -1)
         }).id('richEditorApi5_btn1')
         Button('getSelection').onClick((event: ClickEvent) => {
-          this.text1 = JSON.stringify(this.controller.getSelection().selection)
+          this.text1 = JSON.stringify(this.controller.getSelection()?.selection)
         }).id('richEditorApi5_btn2')
         Text('' + this.text1).key('richEditorApi5_text1')
 

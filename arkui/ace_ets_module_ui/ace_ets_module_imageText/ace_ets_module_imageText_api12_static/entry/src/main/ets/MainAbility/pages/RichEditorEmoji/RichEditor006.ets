@@ -56,13 +56,19 @@ build() {
     Column() {
       Column() {
         Button('光标定位 emoji 前面').onClick((e: ClickEvent) => {
-          this.controller.setCaretOffset(this.controller.getCaretOffset() - 4);
+          let caretOffset = this.controller.getCaretOffset();
+          if (caretOffset !== undefined) {
+            this.controller.setCaretOffset(caretOffset - 4);
+          }
         }).id('back')
 
         Text('' + this.pointPosition).id('position_text');
 
         Button('get Point Position').onClick((e: ClickEvent) => {
-          this.pointPosition = this.controller.getCaretOffset();
+          let caretOffset = this.controller.getCaretOffset();
+          if (caretOffset !== undefined) {
+            this.pointPosition = caretOffset;
+          }
           console.log('this.point_position:' + this.pointPosition);
         }).id('get_position')
       }

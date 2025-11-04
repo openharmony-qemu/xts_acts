@@ -72,8 +72,12 @@ build() {
       Button('get CustomSpanInfo')
         .onClick((e: ClickEvent) => {
           let richEditorStyledString = this.controller.getStyledString();
-          let styles = richEditorStyledString.getStyles(0, richEditorStyledString.length);
-          this.customSpanInfo = JSON.stringify(styles);
+          if (richEditorStyledString !== undefined) {
+            let styles = richEditorStyledString.getStyles(0, richEditorStyledString.length);
+            if (styles !== undefined) {
+              this.customSpanInfo = JSON.stringify(Array.from(styles));
+            }
+          }
         })
         .id('getCustomSpanInfo')
       RichEditor(this.options)

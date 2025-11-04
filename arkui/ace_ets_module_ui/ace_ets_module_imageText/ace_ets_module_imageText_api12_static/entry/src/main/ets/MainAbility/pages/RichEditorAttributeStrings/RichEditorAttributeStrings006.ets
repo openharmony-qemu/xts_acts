@@ -79,33 +79,38 @@ build() {
     Column() {
 
       Button('toStyledString 0,2').onClick((e: ClickEvent) => {
-        let str = this.controller.toStyledString({start: 0,
-          end: 2});
-        this.spans = str.getString();
+        let str = this.controller.toStyledString({start: 0, end: 2});
+        if (str !== undefined) {
+          this.spans = str.getString();
+        }
       }).id('toStyledString')
 
       Button('toStyledString 100,200').onClick((e: ClickEvent) => {
-        let str = this.controller.toStyledString({start: 100,
-          end: 200});
-        this.spans = str.getString();
+        let str = this.controller.toStyledString({start: 100, end: 200});
+        if (str !== undefined) {
+          this.spans = str.getString();
+        }
       }).id('toStyledString100')
 
       Button('toStyledString -1,-1').onClick((e: ClickEvent) => {
-        let str = this.controller.toStyledString({start: -1,
-          end: -1});
-        this.spans = str.getString();
+        let str = this.controller.toStyledString({start: -1, end: -1});
+        if (str !== undefined) {
+          this.spans = str.getString();
+        }
       }).id('toStyledString1')
 
       Button('toStyledString -1,0').onClick((e: ClickEvent) => {
-        let str = this.controller.toStyledString({start: -1,
-          end: 0});
-        this.spans = str.getString();
+        let str = this.controller.toStyledString({start: -1, end: 0});
+        if (str !== undefined) {
+          this.spans = str.getString();
+        }
       }).id('toStyledString2')
 
       Button('toStyledString -100,100').onClick((e: ClickEvent) => {
-        let str = this.controller.toStyledString({start: -100,
-          end: 100});
-        this.spans = str.getString();
+        let str = this.controller.toStyledString({start: -100, end: 100});
+        if (str !== undefined) {
+          this.spans = str.getString();
+        }
       }).id('toStyledString3')
 
       Text('spans:' + this.spans).id('spans')

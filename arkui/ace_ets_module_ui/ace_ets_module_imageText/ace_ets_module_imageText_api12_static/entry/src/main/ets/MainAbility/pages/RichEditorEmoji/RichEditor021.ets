@@ -59,7 +59,10 @@ build() {
         Text('' + this.pointPosition).id('position_text');
 
         Button('get Point Position').onClick((e: ClickEvent) => {
-          this.pointPosition = this.controller.getCaretOffset();
+          let caretOffset = this.controller.getCaretOffset();
+          if (caretOffset !== undefined) {
+            this.pointPosition = caretOffset;
+          }
           console.log('this.point_position:' + this.pointPosition);
         }).id('get_position')
 

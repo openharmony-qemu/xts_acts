@@ -57,7 +57,7 @@ struct RichEditorStringSpan005 {
   stringLength: number = 0;
   imagePixelMap: image.PixelMap | undefined = undefined;
   @State selection: string = '';
-  @State content: number = -1;
+  @State content: Int | undefined = undefined;
   @State range: string = '';
   @State replaceString: string = '';
   @State rangeBefore: string = '';
@@ -112,16 +112,19 @@ build() {
             verticalAlign: ImageSpanAlignment.TOP,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          this.richEditorStyledString = this.controller.getStyledString();
-          this.richEditorStyledString.appendStyledString(imageStyledString);
-          this.controller.setStyledString(this.richEditorStyledString);
-          this.controller.setCaretOffset(this.richEditorStyledString.length);
+          let currentString = this.controller.getStyledString();
+          if (currentString !== undefined) {
+            this.richEditorStyledString = currentString;
+            this.richEditorStyledString.appendStyledString(imageStyledString);
+            this.controller.setStyledString(this.richEditorStyledString);
+            this.controller.setCaretOffset(this.richEditorStyledString.length);
+          }
         }
       }).id('image_top')
 
       Button('get content').onClick((e: ClickEvent) => {
         // 获取组件展示的属性字符串
-        this.content = this.controller.getStyledString().length;
+        this.content = this.controller.getStyledString()?.length;
         console.log('RichEditorController this.content:' + this.content);
 
       }).id('get_content')
@@ -140,10 +143,13 @@ build() {
       Column() {
         Row() {
           Button('add text').onClick((e: ClickEvent) => {
-            this.richEditorStyledString = this.controller.getStyledString();
-            this.richEditorStyledString.appendStyledString(this.styledString);
-            this.controller.setStyledString(this.richEditorStyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
+            let currentString = this.controller.getStyledString();
+            if (currentString !== undefined) {
+              this.richEditorStyledString = currentString;
+              this.richEditorStyledString.appendStyledString(this.styledString);
+              this.controller.setStyledString(this.richEditorStyledString);
+              this.controller.setCaretOffset(this.richEditorStyledString.length);
+            }
           }).id('add_text')
         }
 

@@ -107,22 +107,33 @@ build() {
             verticalAlign: ImageSpanAlignment.CENTER,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          this.richEditorStyledString = this.controller.getStyledString();
-          this.richEditorStyledString.appendStyledString(imageStyledString);
-          this.controller.setStyledString(this.richEditorStyledString);
-          this.controller.setCaretOffset(this.richEditorStyledString.length);
+          let styledString = this.controller.getStyledString();
+          if (styledString !== undefined) {
+            this.richEditorStyledString = styledString;
+            this.richEditorStyledString.appendStyledString(imageStyledString);
+            this.controller.setStyledString(this.richEditorStyledString);
+            this.controller.setCaretOffset(this.richEditorStyledString.length);
+          }
         }
       }).id('addImage')
+      
       Button('clearStyles').onClick((e: ClickEvent) => {
-        this.richEditorStyledString = this.controller.getStyledString();
-        this.richEditorStyledString.clearStyles();
-        this.controller.setStyledString(this.richEditorStyledString);
+        let styledString = this.controller.getStyledString();
+        if (styledString !== undefined) {
+          this.richEditorStyledString = styledString;
+          this.richEditorStyledString.clearStyles();
+          this.controller.setStyledString(this.richEditorStyledString);
+        }
       }).id('clearStyles')
 
 
       Button('getStyles').onClick((e: ClickEvent) => {
-        this.richEditorStyledString = this.controller.getStyledString();
-        this.stylesInfo = JSON.stringify(this.richEditorStyledString.getStyles(0 , this.richEditorStyledString.length));
+        let styledString = this.controller.getStyledString();
+        if (styledString !== undefined) {
+          this.richEditorStyledString = styledString;
+          this.stylesInfo =
+            JSON.stringify(this.richEditorStyledString.getStyles(0, this.richEditorStyledString.length));
+        }
       }).id('getStyles')
 
       Text('stylesInfo:' + this.stylesInfo).id('stylesInfo')
@@ -139,17 +150,23 @@ build() {
       Column() {
         Row() {
           Button('add text').onClick((e: ClickEvent) => {
-            this.richEditorStyledString = this.controller.getStyledString();
-            this.richEditorStyledString.appendStyledString(this.styledString);
-            this.controller.setStyledString(this.richEditorStyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
+            let styledString = this.controller.getStyledString();
+            if (styledString !== undefined) {
+              this.richEditorStyledString = styledString;
+              this.richEditorStyledString.appendStyledString(this.styledString);
+              this.controller.setStyledString(this.richEditorStyledString);
+              this.controller.setCaretOffset(this.richEditorStyledString.length);
+            }
           }).id('addText')
 
           Button('add custom').onClick((e: ClickEvent) => {
-            this.richEditorStyledString = this.controller.getStyledString();
-            this.richEditorStyledString.appendStyledString(this.style1);
-            this.controller.setStyledString(this.richEditorStyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
+            let styledString = this.controller.getStyledString();
+            if (styledString !== undefined) {
+              this.richEditorStyledString = styledString;
+              this.richEditorStyledString.appendStyledString(this.style1);
+              this.controller.setStyledString(this.richEditorStyledString);
+              this.controller.setCaretOffset(this.richEditorStyledString.length);
+            }
           }).id('addCustom')
         }
 

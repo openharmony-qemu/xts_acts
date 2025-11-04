@@ -83,7 +83,7 @@ struct RichEditorTextStyleDemo {
         this.controller.getSpans({
           start: -1,
           end: -1
-        }).forEach(item => {
+        })?.forEach(item => {
           if(typeof((item as RichEditorImageSpanResult).imageStyle) != 'undefined'){
             this.content += (item as RichEditorImageSpanResult).valueResourceStr;
             this.content += '\n'
@@ -99,8 +99,11 @@ struct RichEditorTextStyleDemo {
       }).fontSize(10).height('5%').id('getSpans')
 
       Button('getTypingStyle').onClick((e:ClickEvent) => {
-        this.richEditorTextStyle = this.controller.getTypingStyle()
-        this.str = JSON.stringify(this.richEditorTextStyle.halfLeading)
+        let tempStyle = this.controller.getTypingStyle()
+        if (tempStyle !== undefined) {
+          this.richEditorTextStyle = tempStyle!
+          this.str = JSON.stringify(this.richEditorTextStyle.halfLeading)
+        }
       }).height('5%').fontSize(10).id('getTypingStyle')
       Row(){
         Button('setTypingStyle1')

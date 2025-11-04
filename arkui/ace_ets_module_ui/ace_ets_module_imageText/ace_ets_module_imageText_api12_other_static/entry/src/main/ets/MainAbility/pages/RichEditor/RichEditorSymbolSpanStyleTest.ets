@@ -94,7 +94,7 @@ struct RichEditorSymbolSpanStyleTest {
         .onClick((e: ClickEvent) => {
           this.controller.getSpans({
             start: 0,
-          }).forEach((item) => {
+          })?.forEach((item) => {
             
             if (item instanceof RichEditorImageSpanResult && item.imageStyle !== undefined) {
             } else {

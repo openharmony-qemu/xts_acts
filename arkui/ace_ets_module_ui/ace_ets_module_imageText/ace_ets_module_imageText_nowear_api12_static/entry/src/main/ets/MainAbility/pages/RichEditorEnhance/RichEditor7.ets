@@ -47,13 +47,15 @@ struct RichEditor7 {
             Button(item + '')
               .hitTestBehavior(HitTestMode.Block)
               .width('10%').onClick((e: ClickEvent) => {
-              let CaretOffset = this.controller.getCaretOffset()
-              this.controller.addTextSpan(item + '',
-                {
-                  offset: CaretOffset
-                })
-              this.controller.setCaretOffset(CaretOffset + 1)
-
+              let tempOffset = this.controller.getCaretOffset()
+              if (tempOffset !== undefined) {
+                let CaretOffset = tempOffset!
+                this.controller.addTextSpan(item + '',
+                  {
+                    offset: CaretOffset
+                  })
+                this.controller.setCaretOffset(CaretOffset + 1)
+              }
             })
           }
         })
@@ -91,7 +93,10 @@ struct RichEditor7 {
           })
           .onEditingChange((isEditing: boolean):void => {
             this.isEditing1 = isEditing
-            this.controllerIsEditing1 = this.controller.isEditing()
+            let tempIsEditing = this.controller.isEditing()
+            if (tempIsEditing !== undefined) {
+              this.controllerIsEditing1 = tempIsEditing!
+            }
             console.log('Juan Current Editing Status:' + isEditing)
             console.log('Juan this.controller.isEditable():' + this.controller.isEditing())
           })
@@ -158,7 +163,10 @@ struct RichEditor7 {
           })
           .onEditingChange((isEditing: boolean): void  => {
             this.isEditing2 = isEditing
-            this.controllerIsEditing2 = this.controller2.isEditing()
+            let tempIsEditing = this.controller2.isEditing()
+            if (tempIsEditing !== undefined) {
+              this.controllerIsEditing2 = tempIsEditing!
+            }
             console.log('Juan Current Editing Status:' + isEditing)
             console.log('Juan this.controller.isEditable():' + this.controller.isEditing())
           })

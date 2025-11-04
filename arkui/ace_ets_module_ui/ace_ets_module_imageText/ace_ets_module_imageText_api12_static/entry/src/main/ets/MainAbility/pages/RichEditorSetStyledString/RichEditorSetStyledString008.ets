@@ -117,17 +117,20 @@ struct RichEditorSetStyledString008 {
             verticalAlign: ImageSpanAlignment.TOP,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          this.richEditorStyledString = this.controller.getStyledString();
-          this.richEditorStyledString.appendStyledString(imageStyledString);
-          this.controller.setStyledString(this.richEditorStyledString as StyledString);
-          this.controller.setCaretOffset(this.richEditorStyledString.length);
+          let currentString = this.controller.getStyledString();
+          if (currentString !== undefined) {
+            this.richEditorStyledString = currentString;
+            this.richEditorStyledString.appendStyledString(imageStyledString);
+            this.controller.setStyledString(this.richEditorStyledString as StyledString);
+            this.controller.setCaretOffset(this.richEditorStyledString.length);
+          }
         }
       }).id('image_top')
 
       Text('lengthStr:' + this.lengthStr).id('lengthStr')
 
       Button('get length').onClick((e: ClickEvent) => {
-        this.lengthStr = this.controller.getStyledString().length + '';
+        this.lengthStr = this.controller.getStyledString()?.length + '';
       }).id('get_length')
 
       RichEditor(this.options)
@@ -142,11 +145,14 @@ struct RichEditorSetStyledString008 {
       Column() {
         Row() {
           Button('add text').onClick((e: ClickEvent) => {
-            this.richEditorStyledString = this.controller.getStyledString();
-            this.richEditorStyledString.insertStyledString(5, this.insertStyledString);
-            this.richEditorStyledString.insertStyledString(0, this.insertStyledString);
-            this.controller.setStyledString(this.richEditorStyledString as StyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
+            let currentString = this.controller.getStyledString();
+            if (currentString !== undefined) {
+              this.richEditorStyledString = currentString;
+              this.richEditorStyledString.insertStyledString(5, this.insertStyledString);
+              this.richEditorStyledString.insertStyledString(0, this.insertStyledString);
+              this.controller.setStyledString(this.richEditorStyledString as StyledString);
+              this.controller.setCaretOffset(this.richEditorStyledString.length);
+            }
           }).id('add_text')
         }
 

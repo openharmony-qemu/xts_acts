@@ -104,53 +104,69 @@ build() {
             layoutStyle: { borderRadius: LengthMetrics.vp(10) },
             verticalAlign: ImageSpanAlignment.TOP,
             objectFit: ImageFit.Contain
-          }as ImageAttachmentInterface ))
-          this.richEditorStyledString = this.controller.getStyledString();
-          this.richEditorStyledString.appendStyledString(imageStyledString);
-          this.controller.setStyledString(this.richEditorStyledString);
-          this.controller.setCaretOffset(this.richEditorStyledString.length);
+          } as ImageAttachmentInterface))
+          let styledString = this.controller.getStyledString();
+          if (styledString !== undefined) {
+            this.richEditorStyledString = styledString;
+            this.richEditorStyledString.appendStyledString(imageStyledString);
+            this.controller.setStyledString(this.richEditorStyledString);
+            this.controller.setCaretOffset(this.richEditorStyledString.length);
+          }
         }
       }).id('imageTop')
 
       Button('get content').onClick((e: ClickEvent) => {
         let richEditorStyledString = this.controller.getStyledString();
-        this.length = richEditorStyledString.getString().length + '';
+        if (richEditorStyledString !== undefined) {
+          this.length = richEditorStyledString.getString().length + '';
+        }
       }).id('getContent')
+
       Button('getStyles')
         .onClick((e: ClickEvent) => {
           let richEditorStyledString = this.controller.getStyledString();
-          let styles = richEditorStyledString.getStyles(0, richEditorStyledString.length);
-          this.stylesInfo += JSON.stringify(styles);
-          for (let i = 0; i < styles.length; i++) {
-            if (styles[i as int].styledKey === 0) {
-              let fontAttr = styles[i as int].styledValue as TextStyle;
-              this.stylesInfo += fontAttr.fontColor;
+          if (richEditorStyledString !== undefined) {
+            let styles = richEditorStyledString.getStyles(0, richEditorStyledString.length);
+            if (styles !== undefined) {
+              let stylesArray = Array.from(styles);
+              this.stylesInfo += JSON.stringify(stylesArray);
+              for (let i = 0; i < stylesArray.length; i++) {
+                if (stylesArray[i].styledKey === 0) {
+                  let fontAttr = stylesArray[i].styledValue as TextStyle;
+                  this.stylesInfo += fontAttr.fontColor;
+                }
+              }
             }
           }
         })
         .id('getStyles')
+
       Button('removeString').onClick((e: ClickEvent) => {
         let richEditorStyledString = this.controller.getStyledString();
-        richEditorStyledString.removeString(4, 1);
-        richEditorStyledString.removeString(2, 2);
-        this.controller.setStyledString(richEditorStyledString);
+        if (richEditorStyledString !== undefined) {
+          richEditorStyledString.removeString(4, 1);
+          richEditorStyledString.removeString(2, 2);
+          this.controller.setStyledString(richEditorStyledString);
+        }
       }).id('removeString')
 
       Button('replaceStyle').onClick((e: ClickEvent) => {
         let richEditorStyledString = this.controller.getStyledString();
-        richEditorStyledString.replaceStyle({
-          start: 0,
-          length: 2,
-          styledKey: StyledStringKey.FONT,
-          styledValue: this.fontStyleAttr1
-        });
-        richEditorStyledString.replaceStyle({
-          start: 3,
-          length: 1,
-          styledKey: StyledStringKey.CUSTOM_SPAN,
-          styledValue: this.customSpan2
-        });
-        this.controller.setStyledString(richEditorStyledString);
+        if (richEditorStyledString !== undefined) {
+          richEditorStyledString.replaceStyle({
+            start: 0,
+            length: 2,
+            styledKey: StyledStringKey.FONT,
+            styledValue: this.fontStyleAttr1
+          });
+          richEditorStyledString.replaceStyle({
+            start: 3,
+            length: 1,
+            styledKey: StyledStringKey.CUSTOM_SPAN,
+            styledValue: this.customSpan2
+          });
+          this.controller.setStyledString(richEditorStyledString);
+        }
       }).id('replaceStyle')
 
       Text('length:' + this.length).id('length')
@@ -168,10 +184,13 @@ build() {
       Column() {
         Row() {
           Button('add custom').onClick((e: ClickEvent) => {
-            this.richEditorStyledString = this.controller.getStyledString();
-            this.richEditorStyledString.appendStyledString(this.style1);
-            this.controller.setStyledString(this.richEditorStyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
+            let styledString = this.controller.getStyledString();
+            if (styledString !== undefined) {
+              this.richEditorStyledString = styledString;
+              this.richEditorStyledString.appendStyledString(this.style1);
+              this.controller.setStyledString(this.richEditorStyledString);
+              this.controller.setCaretOffset(this.richEditorStyledString.length);
+            }
           }).id('addCustom')
         }
 

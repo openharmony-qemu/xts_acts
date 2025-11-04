@@ -72,7 +72,10 @@ build() {
 
       Button('get')
         .onClick((e: ClickEvent)=>{
-          this.text1 = String(this.controller.getLayoutManager().getLineCount())
+          let layoutManager = this.controller.getLayoutManager();
+          if (layoutManager !== undefined) {
+            this.text1 = String(layoutManager.getLineCount())
+          }
         })
         .id('RichEditorGetLayoutManagerTest1_btn')
 

@@ -59,7 +59,7 @@ build() {
       Text('lineMetricsIndex:' + this.lineMetricsIndex).id('lineMetricsIndex')
       Button('get lineMetrics(0)').id('getFirst')
         .onClick((e: ClickEvent) => {
-          let layoutManager: LayoutManager = this.controller.getLayoutManager();
+          let layoutManager = this.controller.getLayoutManager();
           // let lineMetrics = layoutManager.getLineMetrics(0);
           // console.log('RichEditorController 0 lineMetrics:' + JSON.stringify(lineMetrics));
           // this.lineMetrics = JSON.stringify(lineMetrics);

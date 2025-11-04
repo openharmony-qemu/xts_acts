@@ -59,8 +59,11 @@ build() {
       Column() {
         Text('' + this.pointPosition).id('pointPosition');
         Button('get Point Position').onClick((e: ClickEvent) => {
-          this.pointPosition = this.controller.getCaretOffset();
-          console.log('this.pointPosition:' + this.pointPosition);
+          let caretOffset = this.controller.getCaretOffset();
+          if (caretOffset !== undefined) {
+            this.pointPosition = caretOffset;
+            console.log('this.pointPosition:' + this.pointPosition);
+          }
         }).id('getPosition')
       }
       .borderWidth(1)

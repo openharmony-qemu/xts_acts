@@ -112,18 +112,23 @@ build() {
       Text('lineCount:' + this.lineCount).id('lineCount')
       Button('get lineCount').id('getLineCount')
         .onClick((e: ClickEvent) => {
-          let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          this.lineCount = layoutManager.getLineCount()
+          let layoutManager = this.controller.getLayoutManager();
+          if (layoutManager !== undefined) {
+            this.lineCount = layoutManager.getLineCount();
+          }
         })
         .margin({ bottom: 20, top: 10 } as Margin)
       RichEditor(this.options)
         .onReady((): void => {
           // 设定组件展示的属性字符串
           this.controller.setStyledString(this.mutableStyledString);
-          this.richEditorStyledString = this.controller.getStyledString();
-          this.richEditorStyledString.appendStyledString(this.styledString);
-          this.controller.setStyledString(this.richEditorStyledString);
-          this.controller.setCaretOffset(this.richEditorStyledString.length);
+          let styledString = this.controller.getStyledString();
+          if (styledString !== undefined) {
+            this.richEditorStyledString = styledString;
+            this.richEditorStyledString.appendStyledString(this.styledString);
+            this.controller.setStyledString(this.richEditorStyledString);
+            this.controller.setCaretOffset(this.richEditorStyledString.length);
+          }
         })
         .height('20%')
         .width('100%')

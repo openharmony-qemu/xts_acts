@@ -61,13 +61,15 @@ build() {
       Button('get linebreak attributeValue').onClick((e: ClickEvent) => {
         let spanParagraphs = this.controller.getParagraphs({ start: -1, end: -1 })
         console.log('RichEditor getParagraphs:' + JSON.stringify(spanParagraphs))
-        spanParagraphs.forEach(item => {
-          if(typeof(item as RichEditorParagraphResult)?.style!= 'undefined'){
-            this.attributeValue = ''
-            console.info('lineBreakStrategy:'+ `${(item as RichEditorParagraphResult).style.lineBreakStrategy}`)
-            this.attributeValue += this.lineBreakOptionStr[Number(`${(item as RichEditorParagraphResult).style.lineBreakStrategy}`) as int];
-          }
-        })
+        if (spanParagraphs !== undefined) {
+          spanParagraphs.forEach(item => {
+            if(typeof(item as RichEditorParagraphResult)?.style!= 'undefined'){
+              this.attributeValue = ''
+              console.info('lineBreakStrategy:'+ `${(item as RichEditorParagraphResult).style.lineBreakStrategy}`)
+              this.attributeValue += this.lineBreakOptionStr[Number(`${(item as RichEditorParagraphResult).style.lineBreakStrategy}`) as int];
+            }
+          })
+        }
       }).id('getAttr')
 
       RichEditor({ controller: this.controller } as RichEditorOptions)

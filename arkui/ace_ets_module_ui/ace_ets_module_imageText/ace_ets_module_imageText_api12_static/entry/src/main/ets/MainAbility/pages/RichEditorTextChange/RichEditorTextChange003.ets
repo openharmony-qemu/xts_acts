@@ -69,7 +69,10 @@ struct RichEditorTextChange003 {
                   fontSize: 30
                 }
               })
-              this.controller.setCaretOffset(this.controller.getCaretOffset() + item.toString().length)
+                let caretOffset = this.controller.getCaretOffset();
+                if (caretOffset !== undefined) {
+                  this.controller.setCaretOffset(caretOffset + item.toString().length)
+                }
             })
           }
         })

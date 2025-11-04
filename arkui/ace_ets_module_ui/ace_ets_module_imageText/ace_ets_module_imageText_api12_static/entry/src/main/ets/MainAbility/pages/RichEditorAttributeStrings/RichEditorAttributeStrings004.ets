@@ -64,23 +64,29 @@ build() {
 
       Button('getSpans')
         .onClick((e: ClickEvent) => {
-          this.controller.getSpans({
+          let spans = this.controller.getSpans({
             start: 0,
             end: 7
-          }).forEach(item => {
-            this.spans += (item as RichEditorTextSpanResult).value + '\n';
-          })
+          });
+          if (spans !== undefined) {
+            spans.forEach(item => {
+              this.spans += (item as RichEditorTextSpanResult).value + '\n';
+            })
+          }
         })
         .id('getSpans')
 
       Button('getOtherSpans')
         .onClick((e: ClickEvent) => {
-          this.controller1.getSpans({
+          let spans = this.controller1.getSpans({
             start: 0,
             end: 7
-          }).forEach(item => {
-            this.spans += (item as RichEditorTextSpanResult).value + '\n';
-          })
+          });
+          if (spans !== undefined) {
+            spans.forEach(item => {
+              this.spans += (item as RichEditorTextSpanResult).value + '\n';
+            })
+          }
         })
         .id('getOtherSpans')
 

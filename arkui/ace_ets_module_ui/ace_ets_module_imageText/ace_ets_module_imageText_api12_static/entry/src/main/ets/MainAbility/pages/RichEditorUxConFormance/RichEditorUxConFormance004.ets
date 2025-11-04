@@ -70,28 +70,31 @@ build() {
 
       Button('get spans').onClick((e: ClickEvent) => {
         this.content = '';
-        this.controller.getSpans({
+        let spans = this.controller.getSpans({
           start: 0,
           end: 5
-        }).forEach(item => {
-          if ( (item as RichEditorImageSpanResult)?.imageStyle) {
-            this.content += (item as RichEditorImageSpanResult).valueResourceStr;
-            if ( ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
-              console.log('RichEditorController get imageStyle');
-            }
-            this.content += '\n'
-          } else {
-            if ( (item as RichEditorTextSpanResult)?.symbolSpanStyle) {
-              this.content += (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize;
+        });
+        if (spans !== undefined) {
+          spans.forEach(item => {
+            if ((item as RichEditorImageSpanResult)?.imageStyle) {
+              this.content += (item as RichEditorImageSpanResult).valueResourceStr;
+              if (((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
+                console.log('RichEditorController get imageStyle');
+              }
               this.content += '\n'
             } else {
-              console.log('RichEditorController textStyle:' + JSON.stringify((item as RichEditorTextSpanResult).textStyle));
-              this.colorInfo = JSON.stringify((item as RichEditorTextSpanResult).textStyle);
-              this.content += (item as RichEditorTextSpanResult).value;
-              this.content += '\n'
+              if ((item as RichEditorTextSpanResult)?.symbolSpanStyle) {
+                this.content += (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize;
+                this.content += '\n'
+              } else {
+                console.log('RichEditorController textStyle:' + JSON.stringify((item as RichEditorTextSpanResult).textStyle));
+                this.colorInfo = JSON.stringify((item as RichEditorTextSpanResult).textStyle);
+                this.content += (item as RichEditorTextSpanResult).value;
+                this.content += '\n'
+              }
             }
-          }
-        })
+          })
+        }
       }).id('get_spans')
 
       RichEditor({ controller: this.controller } as RichEditorOptions)

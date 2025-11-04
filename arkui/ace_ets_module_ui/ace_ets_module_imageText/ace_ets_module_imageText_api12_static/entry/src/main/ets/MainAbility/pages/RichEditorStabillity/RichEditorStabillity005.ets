@@ -63,7 +63,10 @@ struct RichEditorStabillity005 {
 build() {
     Column() {
       Button('get Position').onClick((e: ClickEvent) => {
-        this.pointPosition = this.controller.getCaretOffset();
+          let caretOffset = this.controller.getCaretOffset();
+          if (caretOffset !== undefined) {
+            this.pointPosition = caretOffset;
+          }
       }).id('getPosition')
       Text('' + this.pointPosition).id('pointPosition')
         RichEditor(this.options)

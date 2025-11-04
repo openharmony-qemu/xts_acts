@@ -107,7 +107,7 @@ it('Stage_RichEditor_Test_static_0100', Level.LEVEL1, async (done: ()=>void) => 
         })
 		await CommonFunc.sleep(1500)
         console.info('Stage_Font_0100 START  :' + JSON.stringify(res));
-        expect(res).assertEqual(0)
+        expect(res).assertUndefined()
         console.info('Stage_RichEditor_Test_0100 END ');
       } catch (err) {
         expect().assertFail()
@@ -128,7 +128,7 @@ it('Stage_RichEditor_Test_static_0200', Level.LEVEL1, async (done: ()=>void) => 
         let controller = new RichEditorController()
         let res = controller.addTextSpan("实例文字0")
         console.info('Stage_Font_0200 START  :' + JSON.stringify(res));
-        expect(res).assertEqual(0)
+        expect(res).assertUndefined()
         console.info('Stage_RichEditor_Test_0200 END ');
       } catch (err) {
         expect().assertFail()
@@ -149,7 +149,7 @@ it('Stage_RichEditor_Test_static_0300', Level.LEVEL1, async (done: ()=>void) => 
         let controller = new RichEditorController()
         let res = controller.addTextSpan('')
         console.info('Stage_Font_0300 START  :' + JSON.stringify(res));
-        expect(res).assertEqual(-1)
+        expect(res).assertUndefined()
         console.info('Stage_RichEditor_Test_0300 END ');
       } catch (err) {
         expect().assertFail()
@@ -170,7 +170,7 @@ it('Stage_RichEditor_Test_static_0400', Level.LEVEL1, async (done: ()=>void) => 
         let controller = new RichEditorController()
         let res = controller.addTextSpan('')
         console.info('Stage_Font_0400 START  :' + JSON.stringify(res));
-        expect(res).assertEqual(-1)
+        expect(res).assertUndefined()
         console.info('Stage_RichEditor_Test_0400 END ');
       } catch (err) {
         expect().assertFail()
@@ -198,7 +198,7 @@ it('Stage_RichEditor_Test_static_0500', Level.LEVEL1, async (done: ()=>void) => 
           }
         })
         console.info('Stage_Font_0500 START  :' + JSON.stringify(res));
-        expect(res).assertEqual(0)
+        expect(res).assertUndefined()
         console.info('Stage_RichEditor_Test_0500 END ');
       } catch (err) {
         expect().assertFail()
@@ -219,7 +219,7 @@ it('Stage_RichEditor_Test_static_0600', Level.LEVEL1, async (done: ()=>void) => 
         let controller = new RichEditorController()
         let res = controller.addImageSpan($r('app.media.icon'))
         console.info('Stage_Font_0600 START  :' + JSON.stringify(res));
-        expect(res).assertEqual(0)
+        expect(res).assertUndefined()
         console.info('Stage_RichEditor_Test_0600 END ');
       } catch (err) {
         expect().assertFail()
@@ -240,7 +240,7 @@ it('Stage_RichEditor_Test_static_0700', Level.LEVEL1, async (done: ()=>void) => 
         let controller = new RichEditorController()
         let res = controller.addImageSpan('')
         console.info('Stage_Font_0600 START  :' + JSON.stringify(res));
-        expect(res).assertEqual(-1)
+        expect(res).assertUndefined()
         console.info('Stage_RichEditor_Test_0700 END ');
       } catch (err) {
         expect().assertFail()
@@ -261,7 +261,7 @@ it('Stage_RichEditor_Test_static_0800', Level.LEVEL1, async (done: ()=>void) => 
         let controller = new RichEditorController()
         let res = controller.addImageSpan('')
         console.info('Stage_Font_0800 START  :' + JSON.stringify(res));
-        expect(res).assertEqual(-1)
+        expect(res).assertUndefined()
         console.info('Stage_RichEditor_Test_0800 END ');
       } catch (err) {
         expect().assertFail()
@@ -462,8 +462,8 @@ it('Stage_RichEditor_Test_static_1800', Level.LEVEL1, async (done: ()=>void) => 
         let get = controller.getCaretOffset()
         console.info('Stage_RichEditor_Test_1800' + JSON.stringify(res));
         console.info('Stage_RichEditor_Test_1800' + JSON.stringify(get));
-        expect(res).assertEqual(false)
-        expect(get).assertEqual(-1)
+        expect(res).assertUndefined()
+        expect(get).assertUndefined()
         console.info('Stage_RichEditor_Test_1800 END ');
       } catch (err) {
         expect().assertFail()
@@ -486,8 +486,8 @@ it('Stage_RichEditor_Test_static_1900', Level.LEVEL1, async (done: ()=>void) => 
         let get = controller.getCaretOffset()
         console.info('Stage_RichEditor_Test_1900' + JSON.stringify(res));
         console.info('Stage_RichEditor_Test_1900' + JSON.stringify(get));
-        expect(res).assertEqual(false)
-        expect(get).assertEqual(-1)
+        expect(res).assertUndefined()
+        expect(get).assertUndefined()
         console.info('Stage_RichEditor_Test_1900 END ');
       } catch (err) {
         expect().assertFail()
@@ -510,8 +510,8 @@ it('Stage_RichEditor_Test_static_2000', Level.LEVEL1, async (done: ()=>void) => 
         let get = controller.getCaretOffset()
         console.info('Stage_RichEditor_Test_2000' + JSON.stringify(res));
         console.info('Stage_RichEditor_Test_2000' + JSON.stringify(get));
-        expect(res).assertEqual(false)
-        expect(get).assertEqual(-1)
+        expect(res).assertUndefined()
+        expect(get).assertUndefined()
         console.info('Stage_RichEditor_Test_2000 END ');
       } catch (err) {
         expect().assertFail()

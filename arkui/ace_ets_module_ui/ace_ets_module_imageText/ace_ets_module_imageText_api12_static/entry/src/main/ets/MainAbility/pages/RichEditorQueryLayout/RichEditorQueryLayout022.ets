@@ -61,26 +61,29 @@ build() {
       Text('paragraphStyle:' + this.paragraphStyle).id('paragraphStyle')
 
       Button('getSpans').onClick((e: ClickEvent) => {
-        this.controller.getSpans({
+        let spans = this.controller.getSpans({
           start: 0,
           end: 7
-        }).forEach(item => {
-          if ( (item as RichEditorImageSpanResult)?.imageStyle) {
-            if ( ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
-              this.layoutStyle =
-                JSON.stringify(((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)
-                  .layoutStyle);
-              console.log('RichEditorController this.layoutStyle:' + this.layoutStyle);
-            }
-          } else {
-            if ( (item as RichEditorTextSpanResult)?.symbolSpanStyle) {
-              console.log('RichEditorController get content get symbolSpanStyle');
-            } else {
-              this.paragraphStyle += JSON.stringify((item as RichEditorTextSpanResult).paragraphStyle);
-              console.log('RichEditorController this.paragraphStyle:' + this.paragraphStyle);
-            }
-          }
         })
+        if (spans !== undefined) {
+          spans.forEach(item => {
+            if ( (item as RichEditorImageSpanResult)?.imageStyle) {
+              if ( ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
+                this.layoutStyle =
+                  JSON.stringify(((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)
+                    .layoutStyle);
+                console.log('RichEditorController this.layoutStyle:' + this.layoutStyle);
+              }
+            } else {
+              if ( (item as RichEditorTextSpanResult)?.symbolSpanStyle) {
+                console.log('RichEditorController get content get symbolSpanStyle');
+              } else {
+                this.paragraphStyle += JSON.stringify((item as RichEditorTextSpanResult).paragraphStyle);
+                console.log('RichEditorController this.paragraphStyle:' + this.paragraphStyle);
+              }
+            }
+          })
+        }
       }).id('get_content')
 
       RichEditor({ controller: this.controller } as RichEditorOptions)

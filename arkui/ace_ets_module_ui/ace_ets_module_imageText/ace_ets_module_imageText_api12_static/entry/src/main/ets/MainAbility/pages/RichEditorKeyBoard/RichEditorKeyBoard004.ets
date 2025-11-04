@@ -60,16 +60,18 @@ struct RichEditorKeyBoard004 {
           GridItem() {
             Button(item + '')
               .width(110).onClick((e: ClickEvent) => {
-              this.controller.addTextSpan(item + '', {
-                offset: this.controller.getCaretOffset(),
-                style:
-                {
-                  fontColor: Color.Orange,
-                  fontSize: 30
+                let caretOffset = this.controller.getCaretOffset();
+                if (caretOffset !== undefined) {
+                  this.controller.addTextSpan(item + '', {
+                    offset: caretOffset,
+                    style: {
+                      fontColor: Color.Orange,
+                      fontSize: 30
+                    }
+                  });
+                  this.controller.setCaretOffset(caretOffset + item.toString().length);
                 }
               })
-              this.controller.setCaretOffset(this.controller.getCaretOffset() + item.toString().length)
-            })
           }
         })
       }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)

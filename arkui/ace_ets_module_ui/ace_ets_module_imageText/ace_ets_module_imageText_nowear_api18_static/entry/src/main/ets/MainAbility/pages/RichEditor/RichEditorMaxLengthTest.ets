@@ -46,7 +46,7 @@ struct RichEditorMaxLengthTest {
           .onClick((e:ClickEvent) => {
             this.controller1.getSpans({
               start: 0,
-            }).forEach(item => {
+            })?.forEach(item => {
               
               if(item instanceof RichEditorImageSpanResult && item.imageStyle !== undefined){
               } else {

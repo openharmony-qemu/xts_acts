@@ -70,11 +70,17 @@ build() {
     Column() {
 
       Button('get spans').onClick((e: ClickEvent) => {
-        this.spans = this.controller.getStyledString().getString();
+        let styledString = this.controller.getStyledString();
+        if (styledString !== undefined) {
+          this.spans = styledString.getString();
+        }
       }).id('getSpans')
 
       Button('get final Spans').onClick((e: ClickEvent) => {
-        this.finalSpans = this.controller.getStyledString().getString();
+        let styledString = this.controller.getStyledString();
+        if (styledString !== undefined) {
+          this.finalSpans = styledString.getString();
+        }
       }).id('getFinalSpans')
 
       Button('set end').onClick((e: ClickEvent) => {

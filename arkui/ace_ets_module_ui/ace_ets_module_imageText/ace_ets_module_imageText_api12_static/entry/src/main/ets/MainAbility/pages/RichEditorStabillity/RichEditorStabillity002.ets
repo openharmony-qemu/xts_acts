@@ -63,18 +63,24 @@ build() {
         Text('' + this.pointPosition).id('pointPosition');
         Text('style:' + this.style).id('style');
         Button('get Point Position').onClick((e: ClickEvent) => {
-          this.pointPosition = this.controller.getCaretOffset();
-          console.log('this.pointPosition:' + this.pointPosition);
+          let caretOffset = this.controller.getCaretOffset();
+          if (caretOffset !== undefined) {
+            this.pointPosition = caretOffset;
+            console.log('this.pointPosition:' + this.pointPosition);
+          }
         }).id('getPosition')
         Button('get spans').onClick((e: ClickEvent) => {
           this.style = '';
-          this.controller.getSpans({
+          let spans = this.controller.getSpans({
             start: -1,
             end: -1
-          }).forEach(item => {
-            this.style = JSON.stringify((item as RichEditorTextSpanResult));
-            console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
-          })
+          });
+          if (spans !== undefined) {
+            spans.forEach(item => {
+              this.style = JSON.stringify((item as RichEditorTextSpanResult));
+              console.log('RichEditorController  this.style:' + JSON.stringify(this.style));
+            })
+          }
         }).id('getSpans')
         Button('UpdateSpanStyles').onClick((e: ClickEvent) => {
           setTimeout(() => {

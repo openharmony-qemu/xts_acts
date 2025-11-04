@@ -121,16 +121,16 @@ build() {
             .height('5%')
             .id("RichEditorFontFeature_GetSpansBtn")
             .onClick((e: ClickEvent) => {
-              this.controller.getSpans({
-                start: -1,
-                end: -1
-              }).forEach(item => {
-                if(typeof(item as RichEditorTextSpanResult)?.textStyle != 'undefined'){
-                  this.content=""
-                  this.content += (item as RichEditorTextSpanResult)?.textStyle.fontFeature;
-                  console.info("sddd"+ JSON.stringify((item as RichEditorTextSpanResult)?.textStyle.fontFeature))
-                }
-              })
+              let spans = this.controller.getSpans({start: -1, end: -1});
+              if (spans !== undefined) {
+                spans.forEach(item => {
+                  if(typeof(item as RichEditorTextSpanResult)?.textStyle != 'undefined'){
+                    this.content=""
+                    this.content += (item as RichEditorTextSpanResult)?.textStyle.fontFeature;
+                    console.info("sddd"+ JSON.stringify((item as RichEditorTextSpanResult)?.textStyle.fontFeature))
+                  }
+                })
+              }
             })
         }
       }

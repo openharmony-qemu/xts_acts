@@ -31,7 +31,9 @@ struct RichEditor11 {
       Button('getSelection')
         .onClick((e: ClickEvent)=>{
           let richEditorSelection = this.controller.getSelection()
-          this.len = richEditorSelection.selection[1] - richEditorSelection.selection[0]
+          if (richEditorSelection !== undefined) {
+            this.len = richEditorSelection.selection[1] - richEditorSelection.selection[0]
+          }
         }).margin({
           top:50
         } as Margin)

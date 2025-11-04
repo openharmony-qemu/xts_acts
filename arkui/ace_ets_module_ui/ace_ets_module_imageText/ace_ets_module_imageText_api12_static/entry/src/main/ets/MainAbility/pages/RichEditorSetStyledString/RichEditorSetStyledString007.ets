@@ -115,23 +115,29 @@ struct RichEditorSetStyledString007 {
             verticalAlign: ImageSpanAlignment.TOP,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          this.richEditorStyledString = this.controller.getStyledString();
-          this.richEditorStyledString.appendStyledString(imageStyledString as StyledString);
-          this.controller.setStyledString(this.richEditorStyledString as StyledString);
-          this.controller.setCaretOffset(this.richEditorStyledString.length);
+          let currentString = this.controller.getStyledString();
+          if (currentString !== undefined) {
+            this.richEditorStyledString = currentString;
+            this.richEditorStyledString.appendStyledString(imageStyledString as StyledString);
+            this.controller.setStyledString(this.richEditorStyledString as StyledString);
+            this.controller.setCaretOffset(this.richEditorStyledString.length);
+          }
         }
       }).id('image_top')
 
       Text('lengthStr:' + this.lengthStr).id('lengthStr')
 
       Button('get length').onClick((e: ClickEvent) => {
-        this.lengthStr = this.controller.getStyledString().length + '';
+        this.lengthStr = this.controller.getStyledString()?.length + '';
       }).id('get_length')
 
       Button('clear').onClick((e: ClickEvent) => {
-        this.richEditorStyledString = this.controller.getStyledString();
-        this.richEditorStyledString.clearStyles();
-        this.controller.setStyledString(this.richEditorStyledString as StyledString);
+        let currentString = this.controller.getStyledString();
+        if (currentString !== undefined) {
+          this.richEditorStyledString = currentString;
+          this.richEditorStyledString.clearStyles();
+          this.controller.setStyledString(this.richEditorStyledString as StyledString);
+        }
       }).id('clear')
 
       RichEditor(this.options)
@@ -146,10 +152,13 @@ struct RichEditorSetStyledString007 {
       Column() {
         Row() {
           Button('add text').onClick((e: ClickEvent) => {
-            this.richEditorStyledString = this.controller.getStyledString();
-            this.richEditorStyledString.appendStyledString(this.styledString);
-            this.controller.setStyledString(this.richEditorStyledString as StyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
+            let currentString = this.controller.getStyledString();
+            if (currentString !== undefined) {
+              this.richEditorStyledString = currentString;
+              this.richEditorStyledString.appendStyledString(this.styledString);
+              this.controller.setStyledString(this.richEditorStyledString as StyledString);
+              this.controller.setCaretOffset(this.richEditorStyledString.length);
+            }
           }).id('add_text')
         }
 

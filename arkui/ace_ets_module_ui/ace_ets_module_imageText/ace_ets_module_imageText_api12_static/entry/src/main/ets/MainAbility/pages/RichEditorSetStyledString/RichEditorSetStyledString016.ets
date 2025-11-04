@@ -99,10 +99,13 @@ struct RichEditorSetStyledString016 {
             verticalAlign: ImageSpanAlignment.CENTER,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          this.richEditorStyledString = this.controller.getStyledString();
-          this.richEditorStyledString.appendStyledString(imageStyledString);
-          this.controller.setStyledString(this.richEditorStyledString as StyledString);
-          this.controller.setCaretOffset(this.richEditorStyledString.length);
+          let currentString = this.controller.getStyledString();
+          if (currentString !== undefined) {
+            this.richEditorStyledString = currentString;
+            this.richEditorStyledString.appendStyledString(imageStyledString);
+            this.controller.setStyledString(this.richEditorStyledString as StyledString);
+            this.controller.setCaretOffset(this.richEditorStyledString.length);
+          }
         }
       }).id('image_center')
       Button('setSelection').onClick((e: ClickEvent) => {
@@ -110,7 +113,7 @@ struct RichEditorSetStyledString016 {
       }).id('setSelection')
       Button('getSelection').onClick((e: ClickEvent) => {
         let select = this.controller.getSelection();
-        this.content = 'start:' + select.start + ';end:' + select.end;
+        this.content = 'start:' + select?.start + ';end:' + select?.end;
       }).id('getSelection')
       Button('stopEditing').onClick((e: ClickEvent) => {
         this.controller.stopEditing();
