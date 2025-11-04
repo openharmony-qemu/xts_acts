@@ -24,8 +24,8 @@ struct showToastExample {
     Column() {
       Text(this.content)
       Row() {
-        Button("showToast")
-          .id("showToastExample_showToast")
+        Button('showToast')
+          .id('showToastExample_showToast')
           .onClick(() => {
             promptAction.showToast({
               message: 'Message Info',
@@ -33,8 +33,8 @@ struct showToastExample {
             });
           })
 
-        Button("showToast401error")
-          .id("showToastExample_ErrorCode")
+        Button('showToast401error')
+          .id('showToastExample_ErrorCode')
           .onClick(() => {
             try {
               promptAction.showToast(undefined);
