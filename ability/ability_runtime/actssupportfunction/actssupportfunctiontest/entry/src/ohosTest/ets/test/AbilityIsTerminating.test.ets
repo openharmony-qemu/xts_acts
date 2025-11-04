@@ -191,7 +191,7 @@ export default function AbilityIsTerminatingTest() {
                 }).catch((error: BusinessError) => {
                   console.log(TAG + "executeShellCommand error : " + JSON.stringify(error));
                 });
-            }, 1000);
+            }, 3000);
           }
 
           if (data.event == onDestroy) {
