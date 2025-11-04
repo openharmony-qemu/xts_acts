@@ -902,10 +902,10 @@ export function testReflect_get_113() {
 
 
 export function testReflect_get_114() {
-    if (typeof chrome === 'undefined') {
+    if (typeof ch === 'undefined') {
         return true;
     }
-    return 'runtime' in chrome ? typeof Reflect.get(chrome, 'runtime') === 'object' : true;
+    return 'runtime' in ch ? typeof Reflect.get(ch, 'runtime') === 'object' : true;
 }
 
 
