@@ -44,16 +44,16 @@ struct getLineMetricsText {
           .fontSize(25)
           .borderWidth(1)
           .onAreaChange(():void => {
-            let layoutManager: LayoutManager = this.controller.getLayoutManager()
-            this.lineCount = 'LineCount: ' + layoutManager.getLineCount()
+            let layoutManager: LayoutManager | undefined = this.controller.getLayoutManager()
+            this.lineCount = 'LineCount: ' + layoutManager?.getLineCount()
           })
           .height('5%')
 
         Text('GlyphPositionAtCoordinate').fontSize(9).fontColor(Color.Red).width('90%').padding(10)
         Button('getGlyphPositionAtCoordinate').id('position_get')
           .onClick((e:ClickEvent) => {
-            let layoutManager: LayoutManager = this.controller.getLayoutManager()
-            let position: PositionWithAffinity = layoutManager.getGlyphPositionAtCoordinate(150, 50)
+            let layoutManager: LayoutManager | undefined = this.controller.getLayoutManager()
+            let position: PositionWithAffinity | undefined = layoutManager?.getGlyphPositionAtCoordinate(150, 50)
             console.log('positionpositionposition',JSON.stringify(position))
             // this.glyphPositionAtCoordinate =
             //   'position: ' + position.position + ' affinity: ' +

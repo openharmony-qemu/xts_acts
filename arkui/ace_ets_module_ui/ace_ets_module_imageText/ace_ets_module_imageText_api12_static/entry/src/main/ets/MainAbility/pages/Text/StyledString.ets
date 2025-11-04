@@ -117,11 +117,13 @@ struct styled_string_StyleString {
         Button('查询其他文本样式').id('searchStyle')
           .onClick((e:ClickEvent) => {
             let styles = this.mutableStyledString2.getStyles(0, this.mutableStyledString2.length)
-            this.styledKey1 = styles[0].styledKey
-            this.styledKey2 = styles[1].styledKey
-            this.styledKey3 = styles[2].styledKey
-            this.styledKey4 = styles[3].styledKey
-            this.styledKey5 = styles[4].styledKey
+            if (styles) {
+              this.styledKey1 = styles[0].styledKey
+              this.styledKey2 = styles[1].styledKey
+              this.styledKey3 = styles[2].styledKey
+              this.styledKey4 = styles[3].styledKey
+              this.styledKey5 = styles[4].styledKey
+            }
           })
           .margin({ top: 10 } as Margin)
 

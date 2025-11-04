@@ -54,7 +54,7 @@ import common from '@ohos.app.ability.common';
 @Entry
 @Component
 struct RichEditorGetNumber008 {
-  @State lineCount: number = 0;
+  @State lineCount: Int | undefined = 0;
   stringLength: number = 0;
   imagePixelMap: image.PixelMap | undefined = undefined;
   richEditorStyledString: MutableStyledString = new MutableStyledString('');

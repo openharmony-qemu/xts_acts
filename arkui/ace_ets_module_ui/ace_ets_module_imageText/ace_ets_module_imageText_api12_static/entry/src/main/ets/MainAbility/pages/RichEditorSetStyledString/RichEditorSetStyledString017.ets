@@ -124,17 +124,19 @@ struct RichEditorSetStyledString017 {
           if (currentString !== undefined) {
             this.richEditorStyledString = currentString;
             let styles = this.richEditorStyledString.getStyles(0, this.richEditorStyledString.length);
-            for (let i = 0; i < styles.length; i++) {
-              console.info('StyledString style object start:' + styles[i].start)
-              console.info('StyledString style object length:' + styles[i].length)
-              console.info('StyledString style object key:' + styles[i].styledKey)
-              if (styles[i].styledKey === 0) {
-                let fontAttr = styles[i].styledValue as TextStyle;
-                this.colorStr += fontAttr.fontColor + ',';
-                this.sizeStr += fontAttr.fontSize + ',';
-                this.styleStr += fontAttr.fontStyle + ',';
-                this.weightStr += fontAttr.fontWeight + ',';
-                this.familyStr += fontAttr.fontFamily + ',';
+            if (styles) {
+              for (let i = 0; i < styles.length; i++) {
+                console.info('StyledString style object start:' + styles[i].start)
+                console.info('StyledString style object length:' + styles[i].length)
+                console.info('StyledString style object key:' + styles[i].styledKey)
+                if (styles[i].styledKey === 0) {
+                  let fontAttr = styles[i].styledValue as TextStyle;
+                  this.colorStr += fontAttr.fontColor + ',';
+                  this.sizeStr += fontAttr.fontSize + ',';
+                  this.styleStr += fontAttr.fontStyle + ',';
+                  this.weightStr += fontAttr.fontWeight + ',';
+                  this.familyStr += fontAttr.fontFamily + ',';
+                }
               }
             }
           }

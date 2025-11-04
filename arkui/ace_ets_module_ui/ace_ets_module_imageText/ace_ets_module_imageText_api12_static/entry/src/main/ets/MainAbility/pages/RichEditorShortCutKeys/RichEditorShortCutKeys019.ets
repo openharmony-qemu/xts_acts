@@ -52,7 +52,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Entry
 @Component
 struct RichEditorShortCutKeys019 {
-  @State content: string = '';
+  @State content: string | undefined = '';
   @State stylesInfo: string = '';
 
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
@@ -80,7 +80,7 @@ struct RichEditorShortCutKeys019 {
         let currentString = this.controller.getStyledString();
         if (currentString !== undefined) {
           this.richEditorStyledString = currentString;
-          this.content = this.richEditorStyledString.subStyledString(0, 6).getString();
+          this.content = this.richEditorStyledString.subStyledString(0, 6)?.getString();
           console.log('RichEditorController this.content:' + this.content);
         }
       }).id('getContent')

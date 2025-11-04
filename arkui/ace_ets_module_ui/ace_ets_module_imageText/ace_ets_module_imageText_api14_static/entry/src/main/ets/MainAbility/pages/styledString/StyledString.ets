@@ -15,7 +15,7 @@
 import { image } from '@kit.ImageKit'
 import { LengthMetrics } from '@kit.ArkUI'
 import { Entry, Component, TextController, TextStyle, MutableStyledString, StyledString, StyledStringKey, Row, $r, Resource, Text, TextAlign,
-  Column, Color, SubmitEvent, Search, Button, ClickEvent, TextArea, BackgroundColorStyle, ImageAttachment, ArrayBuffer} from '@ohos.arkui.component'
+  Column, Color, SubmitEvent, Search, Button, ClickEvent, TextArea, BackgroundColorStyle, ImageAttachment, ArrayBuffer, SpanStyle} from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
@@ -84,8 +84,8 @@ struct StyledStringDemo {
         Button('getStyles')
           .width('40%')
           .onClick((e: ClickEvent) => {
-            this.text = JSON.stringify(this.mutableStyledString1
-              .getStyles(0, 8,StyledStringKey.BACKGROUND_COLOR)[0].styledKey)
+            let style = this.mutableStyledString1?.getStyles(0, 8,StyledStringKey.BACKGROUND_COLOR) as Array<SpanStyle>
+            this.text = JSON.stringify(style[0].styledKey)
           }).margin(5).id('but3')
       }.height('15%')
       Text(undefined, { controller: this.controller2 }).height('10%')

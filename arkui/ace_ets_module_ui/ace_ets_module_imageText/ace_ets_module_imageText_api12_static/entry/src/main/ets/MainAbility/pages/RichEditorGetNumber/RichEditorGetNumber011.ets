@@ -52,7 +52,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Component
 struct RichEditorGetNumber011 {
   controller: RichEditorController = new RichEditorController();
-  @State lineCount: number = 0;
+  @State lineCount: Int | undefined = 0;
 
 build() {
 

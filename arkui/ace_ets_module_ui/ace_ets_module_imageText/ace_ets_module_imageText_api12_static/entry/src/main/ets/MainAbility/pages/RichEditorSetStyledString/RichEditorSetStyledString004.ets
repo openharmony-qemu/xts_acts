@@ -58,7 +58,7 @@ struct RichEditorSetStyledString004 {
   stringLength: number = 0;
   imagePixelMap: image.PixelMap | undefined = undefined;
   @State selection: string = '';
-  @State content: string = '';
+  @State content: string | undefined = '';
   @State range: string = '';
   @State replaceString: string = '';
   @State rangeBefore: string = '';
@@ -147,7 +147,7 @@ struct RichEditorSetStyledString004 {
         }
         Button('subString')
           .onClick((e: ClickEvent) => {
-            this.content = this.richEditorStyledString.subStyledString(0, 11).getString();
+            this.content = this.richEditorStyledString.subStyledString(0, 11)?.getString();
           }).id('subString')
         Button('get length')
           .onClick((e: ClickEvent) => {

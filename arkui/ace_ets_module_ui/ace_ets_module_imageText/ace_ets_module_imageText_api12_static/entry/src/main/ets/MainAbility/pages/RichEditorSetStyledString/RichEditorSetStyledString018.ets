@@ -99,7 +99,7 @@ struct RichEditorSetStyledString018 {
       Button('get text style')
         .onClick((e: ClickEvent) => {
           let styles = this.mutableStyledString1.getStyles(0, this.mutableStyledString1.length);
-          if (styles.length !== 0) {
+          if (styles && styles.length !== 0) {
             for (let i = 0; i < styles.length; i++) {
               if (styles[i as int].styledKey === 2) {
                 let baselineAttr = styles[i as int].styledValue as BaselineOffsetStyle;

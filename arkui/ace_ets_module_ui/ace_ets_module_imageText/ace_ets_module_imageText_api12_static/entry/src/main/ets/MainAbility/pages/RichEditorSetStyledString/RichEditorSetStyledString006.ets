@@ -126,17 +126,19 @@ struct RichEditorSetStyledString006 {
 
       Button('get content').onClick((e: ClickEvent) => {
         let imageArray = this.richEditorStyledString.getStyles(11, 1, StyledStringKey.IMAGE);
-        for (let i = 0; i < imageArray.length; ++i) {
-          if (imageArray[i].styledKey === 300) {
-            let attachment = imageArray[i].styledValue as ImageAttachment;
-            if (attachment.size !== undefined) {
-              this.content += 'width:' + attachment.size?.width + ';height:' + attachment.size?.height;
-            }
-            this.content += ';verticalAlign:' + attachment.verticalAlign;
-            this.content += ';objectFit:' + attachment.objectFit;
-            if (attachment.layoutStyle !== undefined) {
-              let radius = attachment?.layoutStyle?.borderRadius as BorderRadiuses
-              this.content += JSON.stringify(radius);
+        if (imageArray) {
+          for (let i = 0; i < imageArray.length; ++i) {
+            if (imageArray[i].styledKey === 300) {
+              let attachment = imageArray[i].styledValue as ImageAttachment;
+              if (attachment.size !== undefined) {
+                this.content += 'width:' + attachment.size?.width + ';height:' + attachment.size?.height;
+              }
+              this.content += ';verticalAlign:' + attachment.verticalAlign;
+              this.content += ';objectFit:' + attachment.objectFit;
+              if (attachment.layoutStyle !== undefined) {
+                let radius = attachment?.layoutStyle?.borderRadius as BorderRadiuses
+                this.content += JSON.stringify(radius);
+              }
             }
           }
         }

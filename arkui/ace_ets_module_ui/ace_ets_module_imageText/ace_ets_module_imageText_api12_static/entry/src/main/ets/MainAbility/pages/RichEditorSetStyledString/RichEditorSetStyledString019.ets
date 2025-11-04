@@ -133,8 +133,8 @@ struct RichEditorSetStyledString019 {
 
       Button('get paragraphStyle')
         .onClick((e: ClickEvent) => {
-          let styles: Array<SpanStyle> = this.styledString.getStyles(0, this.styledString.length);
-          if (styles.length !== 0) {
+          let styles: Array<SpanStyle> | undefined = this.styledString.getStyles(0, this.styledString.length);
+          if (styles && styles.length !== 0) {
             for (let i = 0; i < styles.length; i++) {
               if (styles[i].styledKey === 200) {
                 let paraAttr: ParagraphStyle = styles[i].styledValue as ParagraphStyle;

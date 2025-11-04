@@ -64,7 +64,7 @@ class MyNodeController11 extends NodeController {
         this.testStr = str
       }
 
-      static convertHtmlToStyledString(input: string): Promise<StyledString> {
+      static convertHtmlToStyledString(input: string): Promise<StyledString | undefined> {
         return StyledString.fromHtml(input)
       }
       

@@ -199,43 +199,48 @@ struct styled_string_imageAttachment {
           .id('getImage').height('5%')
           .onClick((e: ClickEvent) => {
             let imageArray = this.mutableStr.getStyles(0, 1, StyledStringKey.IMAGE)
-            for (let i = 0; i < imageArray.length; ++i) {
-              console.info('mutableStr start ' + imageArray[i].start + ' length ' + imageArray[i].length + ' type ' +
-              imageArray[i].styledKey)
-              if (imageArray[i].styledKey === 300) {
-                let attachment = imageArray[i].styledValue as ImageAttachment
-                this.imagePixelMap3 = attachment.value
-                console.info('mutableStr value ' + JSON.stringify(attachment.value))
-                if (attachment.size !== undefined) {
-                  console.info('mutableStr size width ' + attachment.size!.width + ' height ' + attachment.size!.height)
-                }
-                console.info('mutableStr vertical ' + attachment.verticalAlign)
-                console.info('mutableStr fit ' + attachment.objectFit)
-                if (attachment.layoutStyle !== undefined) {
-                  let radius = attachment.layoutStyle!.borderRadius as NodeBorderRadiuses
-                  console.info('mutableStr radius ' + JSON.stringify(radius))
-                  console.log('mutableStr margin ' + JSON.stringify(attachment.layoutStyle!.margin));
-                  console.log('mutableStr padding ' + JSON.stringify(attachment.layoutStyle!.padding));
-                  let margin = attachment.layoutStyle!.margin as Margin;
-                  console.log('mutableStr margin top ' + margin.top)
-                  AppStorage.setOrCreate<undefined | String | Double | Resource>('marginTop', margin.top)
-                  console.log('mutableStr margin right ' + margin.right)
-                  AppStorage.setOrCreate<undefined | String | Double | Resource>('marginRight', margin.right)
-                  console.log('mutableStr margin bottom ' + margin.bottom)
-                  AppStorage.setOrCreate<undefined | String | Double | Resource>('marginBottom', margin.bottom)
-                  console.log('mutableStr margin left ' + margin.left)
-                  AppStorage.setOrCreate<undefined | String | Double | Resource>('marginLeft', margin.left)
-                  let padding = attachment.layoutStyle!.padding as Padding;
-                  console.log('mutableStr padding top ' + padding.top)
-                  AppStorage.setOrCreate<undefined | String | Double | Resource>('paddingTop', padding.top)
-                  console.log('mutableStr padding right ' + padding.right)
-                  AppStorage.setOrCreate<undefined | String | Double | Resource>('paddingRight', padding.right)
-                  console.log('mutableStr padding bottom ' + padding.bottom)
-                  AppStorage.setOrCreate<undefined | String | Double | Resource>('paddingBottom', padding.bottom)
-                  console.log('mutableStr padding left ' + padding.left)
-                  AppStorage.setOrCreate<undefined | String | Double | Resource>('paddingLeft', padding.left)
+            if (imageArray) {
+              for (let i = 0; i < imageArray.length; ++i) {
+                console.info('mutableStr start ' + imageArray[i].start + ' length ' + imageArray[i].length + ' type ' +
+                imageArray[i].styledKey)
+                if (imageArray[i].styledKey === 300) {
+                  let attachment = imageArray[i].styledValue as ImageAttachment
+                  this.imagePixelMap3 = attachment.value
+                  console.info('mutableStr value ' + JSON.stringify(attachment.value))
+                  if (attachment.size !== undefined) {
+                    console.info('mutableStr size width ' + attachment.size!.width + ' height ' +
+                    attachment.size!.height)
+                  }
+                  console.info('mutableStr vertical ' + attachment.verticalAlign)
+                  console.info('mutableStr fit ' + attachment.objectFit)
+                  if (attachment.layoutStyle !== undefined) {
+                    let radius = attachment.layoutStyle!.borderRadius as NodeBorderRadiuses
+                    console.info('mutableStr radius ' + JSON.stringify(radius))
+                    console.log('mutableStr margin ' + JSON.stringify(attachment.layoutStyle!.margin));
+                    console.log('mutableStr padding ' + JSON.stringify(attachment.layoutStyle!.padding));
+                    let margin = attachment.layoutStyle!.margin as Margin;
+                    console.log('mutableStr margin top ' + margin.top)
+                    AppStorage.setOrCreate<undefined | String | Double | Resource>('marginTop', margin.top)
+                    console.log('mutableStr margin right ' + margin.right)
+                    AppStorage.setOrCreate<undefined | String | Double | Resource>('marginRight', margin.right)
+                    console.log('mutableStr margin bottom ' + margin.bottom)
+                    AppStorage.setOrCreate<undefined | String | Double | Resource>('marginBottom', margin.bottom)
+                    console.log('mutableStr margin left ' + margin.left)
+                    AppStorage.setOrCreate<undefined | String | Double | Resource>('marginLeft', margin.left)
+                    let padding = attachment.layoutStyle!.padding as Padding;
+                    console.log('mutableStr padding top ' + padding.top)
+                    AppStorage.setOrCreate<undefined | String | Double | Resource>('paddingTop', padding.top)
+                    console.log('mutableStr padding right ' + padding.right)
+                    AppStorage.setOrCreate<undefined | String | Double | Resource>('paddingRight', padding.right)
+                    console.log('mutableStr padding bottom ' + padding.bottom)
+                    AppStorage.setOrCreate<undefined | String | Double | Resource>('paddingBottom', padding.bottom)
+                    console.log('mutableStr padding left ' + padding.left)
+                    AppStorage.setOrCreate<undefined | String | Double | Resource>('paddingLeft', padding.left)
+                  }
                 }
               }
+            } else {
+              console.log('imageArray undefined')
             }
           })
       }

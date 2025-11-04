@@ -68,16 +68,16 @@ struct TextContentGetSelectionTest {
         .id('TextInput')
       Row(){
         Button('getSelectionTextArea').onClick((e:ClickEvent)=>{
-          AppStorage.setOrCreate('TextAreaSelectionStart', this.controller1.getSelection().start);
-          AppStorage.setOrCreate('TextAreaSelectionEnd', this.controller1.getSelection().end);
+          AppStorage.setOrCreate('TextAreaSelectionStart', this.controller1.getSelection()?.start);
+          AppStorage.setOrCreate('TextAreaSelectionEnd', this.controller1.getSelection()?.end);
         }).id('getTextArea').width('30%')
         Button('getSelectionSearch').onClick((e:ClickEvent)=>{
-          AppStorage.setOrCreate('SearchSelectionStart', this.controller2.getSelection().start);
-          AppStorage.setOrCreate('SearchSelectionEnd', this.controller2.getSelection().end);
+          AppStorage.setOrCreate('SearchSelectionStart', this.controller2.getSelection()?.start);
+          AppStorage.setOrCreate('SearchSelectionEnd', this.controller2.getSelection()?.end);
         }).id('getSearch').width('30%')
         Button('getSelectionTextInput').onClick((e:ClickEvent)=>{
-          AppStorage.setOrCreate('TextInputSelectionStart', this.controller3.getSelection().start);
-          AppStorage.setOrCreate('TextInputSelectionEnd', this.controller3.getSelection().end);
+          AppStorage.setOrCreate('TextInputSelectionStart', this.controller3.getSelection()?.start);
+          AppStorage.setOrCreate('TextInputSelectionEnd', this.controller3.getSelection()?.end);
         }).id('getTextInput').width('30%')
       }.height('5%').margin({top:25} as Margin)
     }.width('100%').height('100%')

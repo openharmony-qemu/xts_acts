@@ -90,7 +90,7 @@ struct UnmarshallingErrorCode401 {
           } else {
             console.info('Debug: 序列化')
             let resultBuffer = StyledString.marshalling(this.styledString)
-            this.buff = new Uint8Array(resultBuffer)
+            this.buff = new Uint8Array(resultBuffer as ArrayBuffer)
             this.textTitle = '调取encodeTlv接口后，序列化的结果显示：'
             this.textResult = this.buff.toString()
             console.info('Debug: buff = ' + this.buff.toString())

@@ -23,8 +23,8 @@ struct SearchGesture {
   @State changeValue2: string = '这是预置文本'
   @State caretIndexText: string = ''
   @State caretXText: string = ''
-  @State positionInfo: CaretOffset = { index: 0, x: 0, y: 0 } as CaretOffset
-  @State positionInfo2: CaretOffset = { index: 0, x: 0, y: 0 } as CaretOffset
+  @State positionInfo: CaretOffset | undefined = { index: 0, x: 0, y: 0 } as CaretOffset
+  @State positionInfo2: CaretOffset | undefined = { index: 0, x: 0, y: 0 } as CaretOffset
   controller: SearchController = new SearchController()
   controller2: SearchController = new SearchController()
 
@@ -62,13 +62,13 @@ struct SearchGesture {
           .onClick((): void => {
             this.controller.caretPosition(11)
             this.positionInfo = this.controller.getCaretOffset()
-            this.caretXText = Number(this.positionInfo.x).toFixed(2)
+            this.caretXText = Number(this.positionInfo?.x.toString()).toFixed(2)
           })
         Button('Get Caret')
           .key('GetCaret')
           .onClick((): void => {
             this.positionInfo2 = this.controller2.getCaretOffset()
-            this.caretIndexText = this.positionInfo2.index +  ''
+            this.caretIndexText = this.positionInfo2?.index +  ''
           })
       }.height('10%')
       Row(){

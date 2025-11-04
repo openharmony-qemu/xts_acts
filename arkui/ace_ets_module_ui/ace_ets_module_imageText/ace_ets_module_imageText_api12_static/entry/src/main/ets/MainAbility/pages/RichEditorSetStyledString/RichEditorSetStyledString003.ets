@@ -145,7 +145,7 @@ struct RichEditorSetStyledString003 {
         }
         Button('subString')
           .onClick((e: ClickEvent) => {
-            this.content += this.richEditorStyledString.subStyledString(0, 11).getString();
+            this.content += this.richEditorStyledString.subStyledString(0, 11)?.getString();
           }).id('subString')
         Text('content:' + this.content).id('content')
       }

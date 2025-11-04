@@ -63,8 +63,10 @@ struct StyledStringIndex {
         .key('getStyle')
         .onClick((e:ClickEvent) => {
           let styles = this.styledString1.getStyles(0, this.styledString1.length)
-          let fontAttr = styles[0].styledValue as TextStyle;
-          this.getStyle = '' + styles[0].start + styles[0].length + styles[0].styledKey + fontAttr.fontColor
+          if (styles) {
+            let fontAttr = styles[0].styledValue as TextStyle;
+            this.getStyle = '' + styles[0].start + styles[0].length + styles[0].styledKey + fontAttr.fontColor
+          }
         }).height('5%')
 
       Button('subStyledString')
@@ -80,8 +82,10 @@ struct StyledStringIndex {
             this.mutableStyledString1.replaceStyle(this.spanStyle1)
             this.controller2.setStyledString(this.mutableStyledString1)
             let styles = this.mutableStyledString1.getStyles(0, this.mutableStyledString1.length)
-            let fontAttr = styles[0].styledValue as TextStyle;
-            this.getStyle2 = '' + styles[0].start + styles[0].length + styles[0].styledKey + fontAttr.fontColor
+            if (styles) {
+              let fontAttr = styles[0].styledValue as TextStyle;
+              this.getStyle2 = '' + styles[0].start + styles[0].length + styles[0].styledKey + fontAttr.fontColor
+            }
           }).height('5%')
 
         Button('removeStyle')
@@ -99,8 +103,10 @@ struct StyledStringIndex {
             this.mutableStyledString1.replaceString(0,this.mutableStyledString1.length,'321')
             this.controller2.setStyledString(this.mutableStyledString1)
             let styles = this.mutableStyledString1.getStyles(0, this.mutableStyledString1.length)
-            let fontAttr = styles[0].styledValue as TextStyle;
-            this.getStyle2 = '' + styles[0].start + styles[0].length + styles[0].styledKey + fontAttr.fontColor
+            if (styles) {
+              let fontAttr = styles[0].styledValue as TextStyle;
+              this.getStyle2 = '' + styles[0].start + styles[0].length + styles[0].styledKey + fontAttr.fontColor
+            }
           }).height('5%')
         Button('insertString')
           .key('insertString')
@@ -108,8 +114,10 @@ struct StyledStringIndex {
             this.mutableStyledString1.insertString(0,'0')
             this.controller2.setStyledString(this.mutableStyledString1)
             let styles = this.mutableStyledString1.getStyles(0, this.mutableStyledString1.length)
-            let fontAttr = styles[0].styledValue as TextStyle;
-            this.getStyle2 = '' + styles[0].start + styles[0].length + styles[0].styledKey + fontAttr.fontColor
+            if (styles) {
+              let fontAttr = styles[0].styledValue as TextStyle;
+              this.getStyle2 = '' + styles[0].start + styles[0].length + styles[0].styledKey + fontAttr.fontColor
+            }
           }).height('5%')
       }
 
@@ -120,8 +128,10 @@ struct StyledStringIndex {
             this.mutableStyledString1.removeString(0,1)
             this.controller2.setStyledString(this.mutableStyledString1)
             let styles = this.mutableStyledString1.getStyles(0, this.mutableStyledString1.length)
-            let fontAttr = styles[0].styledValue as TextStyle;
-            this.getStyle2 = '' + styles[0].start + styles[0].length + styles[0].styledKey + fontAttr.fontColor
+            if (styles) {
+              let fontAttr = styles[0].styledValue as TextStyle;
+              this.getStyle2 = '' + styles[0].start + styles[0].length + styles[0].styledKey + fontAttr.fontColor
+            }
           }).height('5%')
       }
     }.width('100%')
