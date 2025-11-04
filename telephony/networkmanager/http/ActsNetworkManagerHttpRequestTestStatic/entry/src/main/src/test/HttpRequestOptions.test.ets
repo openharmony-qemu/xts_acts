@@ -30,7 +30,7 @@ const ExpectTrue = (n: boolean) => {
 }
 
 
-export default function httpRequestOptionsTest() {
+export default function HttpRequestOptionsTest() {
 
     describe("HttpRequestOptionsTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');

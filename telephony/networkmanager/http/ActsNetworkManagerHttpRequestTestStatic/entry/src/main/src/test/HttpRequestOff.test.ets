@@ -68,7 +68,7 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 
 
 export default function HttpRequestOffTest() {
-  describe("HttpRequestOnTest", () => {
+  describe("HttpRequestOffTest", () => {
     let XTS_TEST_HTTP_URL: string = 'http://www.baidu.com/';
     let XTS_TEST_STREAM_HTTPS_URL: string = "https://cn.bing.com/rp/Q5BJPjebyYN5QiqznkcMQmLrF9U.svg";
 

@@ -10,7 +10,7 @@ let tag: string = 'HttpTag'; //日志标识字符串,作为tag标识当前runner
 
 const ADDR_TEST_ILLEGAL: string = "abc";
 
-const ADDR_TEST_DOMAIN_HTTPS: string = "https://httpbin.org/anything";
+const ADDR_TEST_DOMAIN_HTTPS: string = "https://www.baidu.com";
 
 const ExpectFail = () => {
     try {
@@ -28,7 +28,7 @@ const ExpectTrue = (n: boolean) => {
 }
 
 
-export default function httpRequestDestroyTest() {
+export default function HttpRequestDestroyTest() {
 
     describe("HttpRequestDestroyTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');

@@ -29,7 +29,7 @@ let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 
 
 export default function HttpRequestOnOffTest() {
-  describe("HttpRequestOnTest", () => {
+  describe("HttpRequestOnOffTest", () => {
 
     /**
      * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_0100
