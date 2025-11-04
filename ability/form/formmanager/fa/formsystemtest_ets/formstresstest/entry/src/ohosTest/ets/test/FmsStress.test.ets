@@ -488,7 +488,7 @@ export default function test() {
             try {
                 const systemstatus = await formHostNew.isSystemReady();
                 console.info(`${tcNumber} systemstatus: ${JSON.stringify(systemstatus)}`);
-                expect(systemstatus).assertEqual(undefined);
+                expect().assertFail();
                 done();
             } catch(error) {
                 console.error(`${tcNumber} isSystemReady error: ${JSON.stringify(error)}`);
