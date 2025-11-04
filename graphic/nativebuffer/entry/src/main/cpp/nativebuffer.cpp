@@ -1904,7 +1904,7 @@ napi_value OHNativeBufferSetMetadataValueREGION(napi_env env, napi_callback_info
         napi_create_int32(env, NUMBER_4001, &result);
         return result;
     }
-    delete[] nativeBuffer;
+    OH_NativeBuffer_Unreference(nativeBuffer);
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
