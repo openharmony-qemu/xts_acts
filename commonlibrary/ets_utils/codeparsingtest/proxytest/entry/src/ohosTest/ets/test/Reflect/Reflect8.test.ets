@@ -198,7 +198,7 @@ export default function reflect8Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number SUB_BUILTINS_REFLECT8_TEST_00400
+     * @tc.number SUB_BUILTINS_REFLECT8_TEST_00100
      * @tc.name reflect8Test001
      * @tc.desc test reflect has
      * @tc.size MediumTest

@@ -179,7 +179,7 @@ export default function reflect12Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number SUB_BUILTINS_REFLECT12_TEST_00400
+     * @tc.number SUB_BUILTINS_REFLECT12_TEST_00100
      * @tc.name reflect12Test001
      * @tc.desc test reflect set
      * @tc.size MediumTest

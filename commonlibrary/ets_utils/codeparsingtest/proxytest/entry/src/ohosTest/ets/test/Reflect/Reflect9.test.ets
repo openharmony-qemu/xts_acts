@@ -193,7 +193,7 @@ export default function reflect9Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number SUB_BUILTINS_REFLECT9_TEST_00400
+     * @tc.number SUB_BUILTINS_REFLECT9_TEST_00100
      * @tc.name reflect9Test001
      * @tc.desc test reflect isExtensible
      * @tc.size MediumTest

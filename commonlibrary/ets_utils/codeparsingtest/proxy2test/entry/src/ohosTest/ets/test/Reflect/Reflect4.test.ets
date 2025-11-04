@@ -189,7 +189,7 @@ export default function reflect4Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number SUB_BUILTINS_REFLECT4_TEST_00400
+     * @tc.number SUB_BUILTINS_REFLECT4_TEST_00100
      * @tc.name reflect4Test001
      * @tc.desc test reflect deleteProperty
      * @tc.size MediumTest

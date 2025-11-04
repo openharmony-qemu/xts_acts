@@ -191,7 +191,7 @@ export default function reflect7Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number SUB_BUILTINS_REFLECT7_TEST_00400
+     * @tc.number SUB_BUILTINS_REFLECT7_TEST_00100
      * @tc.name reflect7Test001
      * @tc.desc test reflect getPrototypeOf
      * @tc.size MediumTest
