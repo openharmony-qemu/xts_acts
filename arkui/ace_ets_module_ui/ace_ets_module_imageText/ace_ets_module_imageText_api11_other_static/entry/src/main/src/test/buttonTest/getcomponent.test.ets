@@ -96,7 +96,7 @@ export default function ActsgetcomponentTest() {
           // console.info("push getcomponent page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push getcomponent page error: " + err);
       }
 

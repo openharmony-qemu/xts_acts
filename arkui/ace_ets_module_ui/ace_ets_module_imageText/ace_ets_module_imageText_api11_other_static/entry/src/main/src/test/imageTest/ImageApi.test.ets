@@ -77,7 +77,7 @@ export default function ImageApi() {
           // console.info("push ImageApi page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push ImageApi page error: " + err);
       }
 

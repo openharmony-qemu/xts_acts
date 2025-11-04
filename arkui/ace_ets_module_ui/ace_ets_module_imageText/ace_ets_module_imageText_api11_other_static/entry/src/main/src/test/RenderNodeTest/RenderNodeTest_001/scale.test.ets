@@ -67,7 +67,7 @@ export default function scale() {
           // console.info("push scale page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push scale page error: " + err);
         expect().assertFail();
       }

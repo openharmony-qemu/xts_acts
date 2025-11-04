@@ -86,7 +86,7 @@ export default function ImageAnimatorAdvancedTest() {
           // console.info(`push ${target} page result:` + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error(`push ${target} page error:` + err);
       }
     }

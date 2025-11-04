@@ -86,7 +86,7 @@ it('StyledStringKeyTest1_static_0100', Level.LEVEL0, async (done: () => void): P
       try{
         let btn = await driver.findComponent(ON.id('StyledStringKeyTest1_btn'));
         await (btn?.click() as Promise<void>);
-      }catch(e: Error){}
+      }catch(e){}
       await CommonFunc.sleep(1000);
       console.info("[StyledStringKeyTest1_text] btn click");
 

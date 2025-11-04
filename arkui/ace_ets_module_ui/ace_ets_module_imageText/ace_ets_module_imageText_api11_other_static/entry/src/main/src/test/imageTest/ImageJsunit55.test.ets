@@ -81,7 +81,7 @@ export default function imageJsunit55() {
           // console.info("push image page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push image page error:" + err);
       }
 

@@ -67,7 +67,7 @@ export default function getPosition() {
           // console.info("push getPosition page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push getPosition page error: " + err);
         expect().assertFail();
       }

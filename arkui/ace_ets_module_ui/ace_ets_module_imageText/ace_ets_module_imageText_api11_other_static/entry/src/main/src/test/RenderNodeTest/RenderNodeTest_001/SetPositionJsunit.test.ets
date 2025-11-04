@@ -66,7 +66,7 @@ export default function SetPositionJsunit() {
           // console.info("push SetPositionJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push SetPositionJsunit page error:" + err);
       }
       console.info("SetPositionJsunit beforeEach end");

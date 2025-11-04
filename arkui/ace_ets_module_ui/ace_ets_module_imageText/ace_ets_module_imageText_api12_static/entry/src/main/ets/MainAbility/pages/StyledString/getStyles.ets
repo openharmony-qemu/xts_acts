@@ -127,7 +127,7 @@ struct getStylesDemo {
           try {
             let styles = this.mutableStyledString.getStyles(20, 100)
           }
-          catch (e:Error) {
+          catch (e) {
             this.text = e.code + ' ';
           }
 
@@ -140,7 +140,7 @@ struct getStylesDemo {
           try {
             this.mutableStyledString.subStyledString(20, 100)
           }
-          catch (e:Error) {
+          catch (e) {
             this.text2 = e.code + ' ';
           }
         })

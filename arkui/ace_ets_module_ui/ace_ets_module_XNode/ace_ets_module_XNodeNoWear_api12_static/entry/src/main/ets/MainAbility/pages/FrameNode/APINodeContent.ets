@@ -82,7 +82,7 @@ struct APINodeContent {
               console.log('++++++++++1')
               let a = storage.get<number|undefined>('NodeContentFlagAPI')  //appDied
               console.log('++++++++++storage.get',a)
-            }catch(err:Error){
+            }catch(err){
               console.log("++++++++++err：",err)
             }
               // storage.setOrCreate<number>('NodeContentFlagAPI', 0 );

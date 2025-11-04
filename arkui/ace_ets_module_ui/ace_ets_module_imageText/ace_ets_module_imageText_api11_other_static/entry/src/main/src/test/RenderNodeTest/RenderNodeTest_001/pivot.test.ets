@@ -67,7 +67,7 @@ export default function pivot() {
           // console.info("push pivot page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push pivot page error: " + err);
         expect().assertFail();
       }

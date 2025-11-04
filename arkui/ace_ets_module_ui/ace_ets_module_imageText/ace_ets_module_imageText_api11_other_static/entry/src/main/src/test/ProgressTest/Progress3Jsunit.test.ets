@@ -82,7 +82,7 @@ export default function progressJsunit() {
           // console.info("push progress page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push progress page error " + err);
       }
 
@@ -117,7 +117,7 @@ it('testProgress_static_100', Level.LEVEL1, async (done: () => void): Promise<vo
         }
         console.info("testProgress_static_100 start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testProgress_static_100 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -170,7 +170,7 @@ it('testProgress_static_300', Level.LEVEL1, async (done: () => void): Promise<vo
         }
         console.info("testProgress_static_300 start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testProgress_static_300 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -222,7 +222,7 @@ it('testProgress_static_500', Level.LEVEL1, async (done: () => void): Promise<vo
         }
         console.info("testProgress_static_500 start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testProgress_static_500 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -274,7 +274,7 @@ it('testProgress_static_700', Level.LEVEL1, async (done: () => void): Promise<vo
         }
         console.info("testProgress_static_700 start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testProgress_static_700 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -310,7 +310,7 @@ it('testProgress_static_800', Level.LEVEL1, async (done: () => void): Promise<vo
         }
         console.info("testProgress_static_800 start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testProgress_static_800 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -346,7 +346,7 @@ it('testProgress_static_900', Level.LEVEL1, async (done: () => void): Promise<vo
         }
         console.info("testProgress_static_900 start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testProgress_static_900 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -382,7 +382,7 @@ it('testProgress_static_1000', Level.LEVEL1, async (done: () => void): Promise<v
         }
         console.info("testProgress_static_1000 start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testProgress_static_1000 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);
@@ -419,7 +419,7 @@ it('testProgress_static_1100', Level.LEVEL1, async (done: () => void): Promise<v
         }
         console.info("testProgress_static_1100 start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log("testProgress_static_1100 change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

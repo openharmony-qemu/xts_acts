@@ -68,7 +68,7 @@ export default function pixelRoundTest() {
           // console.info("push pixelRoundTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push pixelRoundTest page error: " + err);
         expect().assertFail();
       }

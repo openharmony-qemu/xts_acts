@@ -63,7 +63,7 @@ export default function relativeCTest() {
           // console.info("push relativeCTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push relativeCTest page error:" + err);
       }
       console.info("relativeCTest beforeEach end");

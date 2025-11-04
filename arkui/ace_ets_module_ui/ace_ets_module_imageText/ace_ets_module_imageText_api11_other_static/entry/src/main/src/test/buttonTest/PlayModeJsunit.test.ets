@@ -84,7 +84,7 @@ export default function playModeJsunit() {
           // console.info("push playMode page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push playMode page error:" + err);
       }
 
@@ -115,7 +115,7 @@ it('playModeTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<v
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("playModeTest_0100 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("playModeTest_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
