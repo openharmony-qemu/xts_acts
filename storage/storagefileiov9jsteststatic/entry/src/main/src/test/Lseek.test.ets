@@ -382,7 +382,7 @@ export default function fileIOLseek() {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
         let fd = file.fd;
         fs.closeSync(file);
-        fs.lseek(file.fd, offsetnum, fs.WhenceType.SEEK_CUR);
+        fs.lseek(fd, offsetnum, fs.WhenceType.SEEK_CUR);
         expect(false).assertTrue();
       } catch (e) {
         e = e as BusinessError;
