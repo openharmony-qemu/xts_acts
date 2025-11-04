@@ -99,13 +99,15 @@ struct CustomLayout {
   onMeasureSize(selfLayoutInfo: GeometryInfo, children: Array<Measurable>, constraint: ConstraintSizeOptions) {
     let size = 100;
     children.forEach((child) => {
-      let res: MeasureResult = child.measure({
+      let res: MeasureResult | undefined = child.measure({
         minHeight: size,
         minWidth: size,
         maxWidth: size,
         maxHeight: size
       })
-      size += res.width / 2;
+      if (res) {
+        size += res.width / 2;
+      }
     })
     this.result.width = 100;
     this.result.height = 400;
