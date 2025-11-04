@@ -317,5 +317,84 @@ export default function abilityTest() {
         }
       })
 
+
+
+
+    /**
+     * @tc.number: Sub_Notification_Ans_ThreePartyWatch_Static_1047
+     * @tc.name: Sub_Notification_Ans_ThreePartyWatch_Static_1047
+     * @tc.desc: Verify third-party app gets error 202 when calling getUserGrantedEnabledBundles
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 2
+     */
+    it('Sub_Notification_Ans_ThreePartyWatch_Static_1047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let TESTCASE = 'Sub_Notification_Ans_ThreePartyWatch_Static_1047';
+        let NAME = 'getUserGrantedEnabledBundles';
+        let wearableBundle: notificationExtensionSubscription.BundleOption =
+          createBundleWithoutUid(VALID_WEARABLE_BUNDLE.bundle);
+
+        try {
+          hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
+          notificationExtensionSubscription.getUserGrantedEnabledBundles(wearableBundle).then(() => {
+            hilog.info(0x0000, 'testTag', `${NAME} success`);
+            expect().assertFail();
+            done();
+          }).catch((e: Error) => {
+            let err = e as BusinessError;
+            hilog.error(0x0000, 'testTag', `${NAME} error, code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(202);
+            done();
+          });
+        } catch (err: BusinessError) {
+          hilog.error(0x0000, 'testTag', `${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
+
+    /**
+     * @tc.number: Sub_Notification_Ans_ThreePartyWatch_Static_1060
+     * @tc.name: Sub_Notification_Ans_ThreePartyWatch_Static_1060
+     * @tc.desc: Verify error 201 when calling setUserGrantedBundleState without NOTIFICATION_CONTROLLER permission
+     * @tc.size: MediumTest
+     * @tc.type: Function
+     * @tc.level: Level 2
+     */
+    it('Sub_Notification_Ans_ThreePartyWatch_Static_1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let TESTCASE = 'Sub_Notification_Ans_ThreePartyWatch_Static_1060';
+        let NAME = 'setUserGrantedBundleState';
+        let targetBundle: notificationExtensionSubscription.BundleOption =
+          createBundleWithoutUid(VALID_WEARABLE_BUNDLE.bundle);
+        let enabledBundles: notificationExtensionSubscription.BundleOption[] = [];
+        let testApps: notificationExtensionSubscription.BundleOption[] = [VALID_WEARABLE_BUNDLE];
+
+        try {
+          hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
+          for (let i: int = 0; i < testApps.length; i++) {
+            let app: notificationExtensionSubscription.BundleOption = testApps[i];
+            enabledBundles.push(createBundleWithoutUid(app.bundle));
+          }
+          let enabled: boolean = true;
+          notificationExtensionSubscription.setUserGrantedBundleState(targetBundle, enabledBundles, enabled).then(() => {
+            hilog.info(0x0000, 'testTag', `${NAME} success`);
+            expect().assertFail();
+            done();
+          }).catch((e: Error) => {
+            let err = e as BusinessError;
+            hilog.error(0x0000, 'testTag', `${NAME} error, code: ${err.code}, message: ${err.message}`);
+            expect(err.code).assertEqual(202);
+            done();
+          });
+        } catch (err: BusinessError) {
+          hilog.error(0x0000, 'testTag', `${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+          done();
+        }
+      })
+
   })
 }
