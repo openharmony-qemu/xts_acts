@@ -39,6 +39,7 @@ import ArraySliceTest from './array/ArraySlice.test';
 import ArraySomeTest from './array/ArraySome.test';
 import ArraySortTest from './array/ArraySortTest.test';
 import ArraySpliceTest from './array/ArraySplice.test';
+import ArrayCombinationTest from './array/ArrayCombinationTest.test';
 
 export default function testsuite() {
 
@@ -68,5 +69,6 @@ export default function testsuite() {
   ArraySomeTest();
   ArraySortTest();
   ArraySpliceTest();
+  ArrayCombinationTest();
 };
 

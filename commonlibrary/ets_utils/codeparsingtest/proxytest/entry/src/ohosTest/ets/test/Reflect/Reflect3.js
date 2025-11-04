@@ -1116,18 +1116,18 @@ export function test_defineProperty_145() {
 
 
 export function test_defineProperty_146() {
-    if (typeof chrome === 'undefined') {
+    if (typeof ch === 'undefined') {
         return true;
     }
-    return Reflect.defineProperty(chrome, 'extensionLoaded', { value: true });
+    return Reflect.defineProperty(ch, 'extensionLoaded', { value: true });
 }
 
 
 export function test_defineProperty_147() {
-    if (typeof safari === 'undefined') {
+    if (typeof sa=== 'undefined') {
         return true;
     }
-    return Reflect.defineProperty(safari, 'push', { value: 'notify' });
+    return Reflect.defineProperty(sa, 'push', { value: 'notify' });
 }
 
 export function test_defineProperty_148() {

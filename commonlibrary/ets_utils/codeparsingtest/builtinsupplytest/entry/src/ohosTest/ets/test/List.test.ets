@@ -62,6 +62,12 @@ import builtinsStringPrototypeTest from './BuiltinsStringPrototype.test';
 import builtinsStringPrototypebTest from './BuiltinsStringPrototypebTest.test';
 import BuiltinsStringPrototypeTest from './BuiltinsStringPrototypet.test';
 import builtinsRegExpEscapeTest from './RegExpEscape.test';
+import IsNaNTest from './Golebal/IsNaN.test';
+import IsFiniteTest from './Golebal/IsFinite.test';
+import NaNTest from './Golebal/NaN.test';
+import ParseIntTest from './Golebal/ParseInt.test';
+import ParseFloatTest from './Golebal/ParseFloat.test';
+
 
 export default function testsuite() {
   BuiltinsNumberConstructorTest();
@@ -114,4 +120,9 @@ export default function testsuite() {
   builtinsStringPrototypebTest();
   BuiltinsStringPrototypeTest();
   builtinsRegExpEscapeTest();
+  IsNaNTest();
+  IsFiniteTest();
+  NaNTest();
+  ParseIntTest();
+  ParseFloatTest();
 }

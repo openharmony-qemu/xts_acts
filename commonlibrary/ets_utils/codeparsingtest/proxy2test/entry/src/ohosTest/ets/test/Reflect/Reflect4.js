@@ -968,11 +968,11 @@ export function test_deleteProperty_119() {
 
 
 export function test_deleteProperty_120() {
-    if (typeof chrome === 'undefined') {
+    if (typeof ch === 'undefined') {
         return true;
     }
-    chrome.extensionLoaded = true;
-    return Reflect.deleteProperty(chrome, 'extensionLoaded');
+    ch.extensionLoaded = true;
+    return Reflect.deleteProperty(ch, 'extensionLoaded');
 }
 
 
