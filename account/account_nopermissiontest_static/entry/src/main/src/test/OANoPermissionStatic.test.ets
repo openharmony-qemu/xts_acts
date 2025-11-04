@@ -16,7 +16,7 @@
 import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import osAccount from '@ohos.account.osAccount'
 import hilog from '@ohos.hilog'
-import { BusinessError } from '@ohos.base'
+import { BusinessError, RecordData } from '@ohos.base'
 
 let tag: string = 'testTag';
 
@@ -266,7 +266,7 @@ export default function ActsOANoPermissionTestStatic() {
       async (done: () => void): Promise<void> => {
         let logTag: string = "====>SUB_Account_OsAccount_NoPermission_static_1900 ";
         hilog.info(0x0000, tag, logTag + "start====");
-        let configParams: Record<string, Object> = {
+        let configParams: Record<string, RecordData> = {
           'uri': 'test.example.com',
           'port': 100
         };
@@ -328,7 +328,7 @@ export default function ActsOANoPermissionTestStatic() {
         let logTag: string = "====>SUB_Account_OsAccount_NoPermission_static_2100 ";
         hilog.info(0x0000, tag, logTag + "start====");
         let configId: string = "configId";
-        let configParams: Record<string, Object> = {
+        let configParams: Record<string, RecordData> = {
           'uri': 'test.example.com',
           'port': 100
         };
