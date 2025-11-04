@@ -60,19 +60,14 @@ export default function OnWindowNewTest() {
 
 
     /**
-     * @tc.number     SUB_WEB_ONWINDOWNEW_0001
-     * @tc.name       emitonWindowNewMethod
+     * @tc.number     SUB_WEB_ONWINDOWNEW_0100
+     * @tc.name       testAllowWindowOpenMethod
      * @tc.desc       test onWindowNew
      * @tc.size       MediumTest
      * @tc.type       Function
      * @tc.level      Level 1
      */
 
-    // it('emitonWindowNewMethod', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-    //   Utils.emitEvent('emitonWindowNewMethod', 133850)
-    //   Utils.registerEvent('emitonWindowNewMethod', "isAlertfalseisUserTriggerfalsetargetUrlhttps://www.example.com/", 20251126, done);
-    //   sendEventByKey('webcomponentTwo', 10, '');
-    // })
 
     it('testAllowWindowOpenMethod',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       emitKey="emitonWindowNewMethod";
