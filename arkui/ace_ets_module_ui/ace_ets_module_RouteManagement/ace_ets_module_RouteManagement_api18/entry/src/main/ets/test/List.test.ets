@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import OnNewParamRouter from './OnNewParamRouter.test.ets'
+import RouterReplaceUrl401 from './RouterReplaceUrl401.test.ets'
 
 export default function testsuite() {
   OnNewParamRouter();
+  RouterReplaceUrl401();
 }
