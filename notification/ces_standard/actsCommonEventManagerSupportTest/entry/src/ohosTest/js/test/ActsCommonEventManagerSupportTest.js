@@ -638,11 +638,11 @@ export default function ActsCommonEventManagerSupportTest() {
     /*
       * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4100
       * @tc.name      : commonEventManager.Support
-      * @tc.desc      : lid mode common event
+      * @tc.desc      : lid state common event
       */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4100', Level.LEVEL0, async function () {
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4100 START`)
-      expect(commonEventManager.Support.COMMON_EVENT_LID_MODE_CHANGED).assertEqual('usual.event.LID_MODE_CHANGED')
+      expect(commonEventManager.Support.COMMON_EVENT_LID_STATE_CHANGED).assertEqual('usual.event.LID_STATE_CHANGED')
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4100 END`)
     })
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST END`)
