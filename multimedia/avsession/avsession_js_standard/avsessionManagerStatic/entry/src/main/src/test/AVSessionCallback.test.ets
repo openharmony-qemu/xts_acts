@@ -1504,8 +1504,7 @@ export default function abilityTest() {
                 wants : [
                     {
                         bundleName : 'com.example.myapplication.static',
-                        abilityName: 'EntryAbility',
-                        parameters: {"ohos.extra.param.key.appCloneIndex":0} as Record<String, Object>
+                        abilityName: 'EntryAbility'
                     }
                 ],
                 actionType: wantAgent.OperationType.START_ABILITIES,
@@ -1538,13 +1537,19 @@ export default function abilityTest() {
                 }
             });
             await Utils.msSleep(500);
-            await wantAgent.equal(agent, wantagent).then((bool) => {
-                if (bool) {
-                    console.info('AVSessionTest : Set LaunchAbility successfully');
-                } else {
-                    console.info('AVSessionTest : Set LaunchAbility failed');
-                }
-            });
+
+            let agentBundleName: string = await wantAgent.getBundleName(agent);
+            console.info(`TestLog: agentBundleName: ${agentBundleName}`);
+            let wantagentBundleName: string = await wantAgent.getBundleName(wantagent);
+            console.info(`TestLog: wantagentBundleName: ${wantagentBundleName}`);
+
+            if (agentBundleName == wantagentBundleName) {
+                console.info('AVSessionTest : Set LaunchAbility successfully');
+                expect(true).assertTrue();
+            } else {
+                console.info('AVSessionTest : Set LaunchAbility failed');
+                expect(false).assertTrue();
+            }
             done();
         })
 
