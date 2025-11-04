@@ -14,7 +14,8 @@
  */
 
 import webTwoJsunit from './WebTwoJsunit.test';
-
+import OnWindowNew from './OnWindowNew.test';
 export default function testsuite() {
   webTwoJsunit();
+  OnWindowNew();
 }
