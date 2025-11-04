@@ -182,7 +182,7 @@ struct TextInputExample {
           .key('textInput15')
 
         TextInput({ placeholder: 'textInput 16', text: this.text })
-          .type(InputType.Number)
+          .type(InputType.NUMBER)
           .enterKeyType(EnterKeyType.Go)
           .placeholderColor('#FFC0C0C0')
           .placeholderFont({ size: 30, weight: 400, family: 'Microsoft YaHei', style: FontStyle.Normal })
@@ -191,13 +191,13 @@ struct TextInputExample {
 
       Flex({ direction: FlexDirection.Row }) {
         TextInput({ placeholder: 'textInput 17', text: this.text })
-          .type(InputType.Number)
+          .type(InputType.NUMBER)
           .enterKeyType(EnterKeyType.Search)
           .placeholderColor('#FFC0C0C0')
           .placeholderFont({ size: 30, weight: 400, family: 'Microsoft YaHei', style: FontStyle.Normal })
           .key('textInput17')
         TextInput({ placeholder: 'textInput 18', text: this.text })
-          .type(InputType.Number)
+          .type(InputType.NUMBER)
           .enterKeyType(EnterKeyType.Send)
           .placeholderColor('#FFC0C0C0')
           .placeholderFont({ size: 30, weight: 400, family: 'Microsoft YaHei', style: FontStyle.Normal })
@@ -206,13 +206,13 @@ struct TextInputExample {
 
       Flex({ direction: FlexDirection.Row }) {
         TextInput({ placeholder: 'textInput 19', text: this.text })
-          .type(InputType.Number)
+          .type(InputType.NUMBER)
           .enterKeyType(EnterKeyType.Next)
           .placeholderColor('#FFC0C0C0')
           .placeholderFont({ size: 30, weight: 400, family: 'Microsoft YaHei', style: FontStyle.Normal })
           .key('textInput19')
         TextInput({ placeholder: 'textInput 20', text: this.text })
-          .type(InputType.Number)
+          .type(InputType.NUMBER)
           .enterKeyType(EnterKeyType.Done)
           .placeholderColor('#FFC0C0C0')
           .placeholderFont({ size: 30, weight: 400, family: 'Microsoft YaHei', style: FontStyle.Normal })
