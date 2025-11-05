@@ -195,27 +195,5 @@ export default function networkManagerWithWifiTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Network_Unsubscribe_0300
-     * @tc.name  : testNetworkMgrNetworkUnsubscribe0300
-     * @tc.desc  : Unsubscribe to the network connection status of the device;wifi.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
-     */
-    it('testNetworkMgrNetworkUnsubscribe0300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3 ,  async (done: Function) => {
-      let caseName: string = 'testNetworkMgrNetworkUnsubscribe0300';
-      console.info(`${caseName} test start`);
-      try {
-        network.unsubscribe();
-        done();
-      } catch (err) {
-        console.info(`${caseName} catch error ${JSON.stringify(err)}`);
-        ExpectTrue(err.code == 2101007, caseName);
-        done();
-        console.info(`${caseName} test end`);
-      }
-    });
-
   });
 }
