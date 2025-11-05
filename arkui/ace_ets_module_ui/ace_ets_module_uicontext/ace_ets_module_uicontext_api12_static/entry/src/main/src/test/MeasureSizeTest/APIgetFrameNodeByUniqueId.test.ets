@@ -46,11 +46,11 @@ export default function APIgetFrameNodeByUniqueId() {
         console.info("get APIgetFrameNodeByUniqueId state pages:" + JSON.stringify(pages));
         if (!("APIgetFrameNodeByUniqueId" == pages.name)) {
           console.info("get APIgetFrameNodeByUniqueId pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push APIgetFrameNodeByUniqueId page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push APIgetFrameNodeByUniqueId page error:" + err);

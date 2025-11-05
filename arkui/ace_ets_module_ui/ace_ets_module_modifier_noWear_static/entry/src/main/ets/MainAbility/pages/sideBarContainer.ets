@@ -16,7 +16,7 @@ import { Entry,Component,$r,Column,Stack,ColumnOptions,Select,Resource,ArrowPosi
 import {
   State,
   Link,
-  PropRef,
+  Prop,
 } from '@ohos.arkui.stateManagement';
 // import { SideBarContainerModifier } from "@ohos.arkui.modifier";
 //

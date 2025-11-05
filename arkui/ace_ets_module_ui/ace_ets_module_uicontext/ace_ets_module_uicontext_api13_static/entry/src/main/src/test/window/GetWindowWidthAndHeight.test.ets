@@ -42,13 +42,13 @@ export default function GetWindowWidthAndHeightTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get themePageToggleTest state pages:" + JSON.stringify(pages));
-        if (!("GetWindowWidthAndHeight" == pages.name)) {
+        if (!("MainAbility/pages/window/GetWindowWidthAndHeight" == pages.name)) {
           console.info("get themePageToggleTest pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push themePageToggleTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push themePageToggleTest page error:" + err);

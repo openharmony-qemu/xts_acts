@@ -16,7 +16,7 @@ import { Entry,Component,$r,Column,Stack,ColumnOptions,Select,Font,ArrowPosition
 import {
   State,
   Link,
-  PropRef,
+  Prop,
 } from '@ohos.arkui.stateManagement';
 // import { SelectModifier } from "@ohos.arkui.modifier";
 //

@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, TouchObject, TouchType } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-pluginsimport inspector from '@ohos.arkui.inspector'
 import { sendTouchEvent } from "@ohos.arkui.Test";
 

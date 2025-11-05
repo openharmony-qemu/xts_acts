@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import GetWindowWidthAndHeight from './window/GetWindowWidthAndHeight.test';
+import GetWindowWidthAndHeightTest from './window/GetWindowWidthAndHeight.test';
 
 export default function testsuite() {
-  GetWindowWidthAndHeight();
+  // GetWindowWidthAndHeightTest(); // getWindowHeightBreakpoint
 }

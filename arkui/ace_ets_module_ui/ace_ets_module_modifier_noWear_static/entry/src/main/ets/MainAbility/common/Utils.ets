@@ -18,8 +18,9 @@ import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { TouchObject, TouchType } from '@ohos.arkui.component';
-import { sendTouchEvent } from "@kit.ArkUI";
 import systemDateTime from '@ohos.systemDateTime';
+import { sendTouchEvent } from "@ohos.arkui.Test";
+
 export default class Utils {
   static rect_left: number;
   static rect_top: number;
@@ -125,6 +126,14 @@ export default class Utils {
     sendTouchEvent(upPoint)
     Utils.sleep(500)
   }
+  static getRectHorizontalCenterX(rect: RectValue): number {
+    return (rect.right - rect.left) / 2 + rect.left;
+  }
+
+  static getRectVerticalCenterY(rect: RectValue): number {
+    return (rect.bottom - rect.top) / 2 + rect.top;
+  }
+
   static getSystemTime(): number {
     return systemDateTime.getTime(true) / 1000
   }

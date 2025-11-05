@@ -16,18 +16,27 @@
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import window from '@ohos.window';
 import {
-  Entry, Component,
-  Column, ColumnOptions, Row,
-  Text, Button, FontWeight, ClickEvent, Margin, WidthBreakpoint, HeightBreakpoint,
+    Entry, Component,
+    Column, ColumnOptions, Row,TextSelectableMode,
+    Text, Button, FontWeight, ClickEvent, Margin, WidthBreakpoint, HeightBreakpoint,
 } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement';
-const uiContext = new UIContext()
+import { State,AppStorage } from '@ohos.arkui.stateManagement';
+import common from  '@ohos.app.ability.common'
+
+const uiContext = new UIContext();
+
 @Entry
 @Component
 struct Index {
     @State message:string = 'Hello World';
-    @State widthBp: WidthBreakpoint = -1 as WidthBreakpoint
-    @State heightBp: HeightBreakpoint = -1 as HeightBreakpoint
+    // @State widthBp: WidthBreakpoint = -1 as WidthBreakpoint
+    @State widthBp: WidthBreakpoint = WidthBreakpoint.WIDTH_XS
+    // @State heightBp: HeightBreakpoint = -1 as HeightBreakpoint
+    @State heightBp: HeightBreakpoint = HeightBreakpoint.HEIGHT_SM
+
+    // @State test: TextSelectableMode = TextSelectableMode.SELECTABLE_UNFOCUSABLE
+
+
 
     @State windowWidthBreakpoint: number = -1
     @State windowHeightBreakpoint: number = -1
@@ -36,56 +45,66 @@ struct Index {
         Row(){
             Column(){
                 Text(this.message)
-                .fontSize(30)
-                .fontWeight(FontWeight.Bold)
+                    .fontSize(30)
+                    .fontWeight(FontWeight.Bold)
                 Button('getWindowWidthBreakpoint').key('getWindowWidthBreakpointButton')
-                .onClick((e:ClickEvent)=>{
-                    let uiContext:UIContext = this.getUIContext();
-                    this.widthBp = uiContext.getWindowWidthBreakpoint();
-                    console.log(`sally----Window getWindowWidthBreakpoint is ${this.widthBp}`)
-                }).margin({top:4} as Margin)
+                    .onClick((e:ClickEvent)=>{
+                        console.log('++++++++++++++++++++++++1')
+                        let uiContext:UIContext = this.getUIContext();
+                        console.log('++++++++++++++++++++++++2')
+                        this.widthBp = uiContext.getWindowWidthBreakpoint();
+                        console.log('++++++++++++++++++++++++3')
+                        console.log(`sally----Window getWindowWidthBreakpoint is ${this.widthBp}`)
+                    }).margin({top:4} as Margin)
 
                 Button('getWindowHeightBreakpoint').key('getWindowHeightBreakpointButton')
-                .onClick((e:ClickEvent)=>{
-                    let uiContext:UIContext = this.getUIContext();
-                    this.heightBp = uiContext.getWindowHeightBreakpoint();
-                    console.log(`sally----Window getWindowHeightBreakpoint is ${this.heightBp}`)
-                }).margin({top:4} as Margin)
+                    .onClick((e:ClickEvent)=>{
+                        console.log('++++++++++++++++++++++++4')
+                        let uiContext:UIContext = this.getUIContext();
+                        console.log('++++++++++++++++++++++++5')
+                        this.heightBp = uiContext.getWindowHeightBreakpoint();
+                        console.log('++++++++++++++++++++++++6')
+                        console.log(`sally----Window getWindowHeightBreakpoint is ${this.heightBp}`)
+                    }).margin({top:4} as Margin)
 
                 Button('getWindowWidth').key('getWindowWidth')
-                .onClick((e:ClickEvent)=>{
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                    .onClick((e:ClickEvent)=>{
+                        console.log('++++++++++++++++++++++++7')
+                        console.log('++++++++uiContext',AppStorage.get<UIContext>('uiCOntext')!)
+                        let param = AppStorage.get<UIContext>('uiCOntext')!.getHostContext()! as common.BaseContext
+                        let  promise = window.getLastWindow(param);
+                        console.log('++++++++++++++++++++++++8')
+                        // let  promise = window.getLastWindow(this.getUIContext());
+                        promise.then((mainWindow:window.Window) => {
+                            let windowRect:window.Rect = mainWindow.getWindowProperties().windowRect;
+                            let windowWidthVP:number = uiContext.px2vp(windowRect.width);
+                            let windowHeightVp:number = uiContext.px2vp(windowRect.height);
 
-                }).margin({top:4} as Margin)
+                            let heightAndWidth = windowHeightVp/windowWidthVP;
+
+                            if (windowWidthVP < 320) {
+                                this.windowWidthBreakpoint = 0;
+                            } else if(windowWidthVP >= 320 && windowWidthVP < 600) {
+                                this.windowWidthBreakpoint = 1;
+                            } else if(windowWidthVP >= 600 && windowWidthVP < 840) {
+                                this.windowWidthBreakpoint = 2;
+                            } else if(windowWidthVP >= 840 && windowWidthVP < 1440) {
+                                this.windowWidthBreakpoint = 3;
+                            } else if(windowWidthVP >= 1440) {
+                                this.windowWidthBreakpoint = 4;
+                            }
+
+                            if (heightAndWidth < 0.8) {
+                                this.windowHeightBreakpoint = 0
+                            } else if(heightAndWidth >= 0.8 && heightAndWidth < 1.2) {
+                                this.windowHeightBreakpoint = 1;
+                            } else if(windowWidthVP >= 1.2) {
+                                this.windowHeightBreakpoint = 2;
+                            }
+
+                        })
+                        console.log('++++++++++++++++++++++++9')
+                    }).margin({top:4} as Margin)
 
                 Text(this.windowWidthBreakpoint + '').key('windowWidthBreakpoint')
                 Text(this.widthBp + '').key('widthBpValue')

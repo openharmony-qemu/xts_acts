@@ -17,7 +17,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 import {
   Entry, Component,
   Column, ColumnOptions, Row, Scroll, Image, Color, $r, HorizontalAlign,
-  Text, Button, FontWeight, ClickEvent, Margin, WidthBreakpoint, HeightBreakpoint,
+  Text, Button, FontWeight, ClickEvent, Margin, WidthBreakpoint, HeightBreakpoint,PixelMap
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -42,13 +42,11 @@ struct APIUIContextGetSync {
           .onClick((e:ClickEvent) => {
             try {
               let pixelmap = this.getUIContext().getComponentSnapshot().getSync("APIUIContextGetSync_root", {scale : 2, waitUntilRenderFinished : true})
-              if(pixelmap) {
-                    this.pixmap = pixelmap
-                    if(this.pixmap !== undefined) {
-                    this.text = 'end'
-                    }
-                }
-            } catch (error) {
+              this.pixmap = pixelmap as PixelMap
+              if(this.pixmap !== undefined){
+                this.text = 'end'
+              }
+            } catch (error:Error) {
               console.error("getSync errorCode: " + error!.code + " message: " + error!.message)
             }
           }).margin(10)
