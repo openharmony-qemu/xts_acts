@@ -282,7 +282,7 @@ export default function DeviceInfoTest() {
          * @tc.type      : Function
          * @tc.level     : Level 0
          */
-        it('device_info_test_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+        it('device_info_test_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testGetHardWareProfile01 start');
             let ret = false;
             let hardwareProfileInfo = deviceinfo.hardwareProfile;
