@@ -351,7 +351,7 @@ export default function appManagerStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           const observer = new CustomApplicationStateObserver();
-          const observerId = appManager.on("applicationState", observer);
+          const observerId = appManager.onApplicationStateChange(observer);
           hilog.info(domain, tag, `${itName} observerId: ${observerId}`);
           expect().assertFail();
         } catch (err: BusinessError) {
@@ -375,7 +375,7 @@ export default function appManagerStaticTest() {
         let bundleNameList = ['bundleName1', 'bundleName2'];
         try {
           const observer = new CustomApplicationStateObserver();
-          const observerId = appManager.on("applicationState", observer, bundleNameList);
+          const observerId = appManager.onApplicationStateChange(observer, bundleNameList);
           hilog.info(domain, tag, `${itName} observerId: ${observerId}`);
           expect().assertFail();
         } catch (err: BusinessError) {
@@ -400,7 +400,7 @@ export default function appManagerStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           hilog.info(domain, tag, `${itName} off applicationState`);
-          appManager.off('applicationState', 1).then(() => {
+          appManager.offApplicationStateChange(1).then(() => {
             hilog.info(domain, tag, `${itName} off success`);
             expect().assertFail();
             done();
@@ -434,7 +434,7 @@ export default function appManagerStaticTest() {
         hilog.info(domain, tag, `${itName} start`);
         try {
           hilog.info(domain, tag, `${itName} off applicationState`);
-          appManager.off('applicationState', 1, (err: BusinessError<void> | null): void => {
+          appManager.offApplicationStateChange(1, (err: BusinessError<void> | null): void => {
             hilog.info(domain, tag, `${itName} off err: code ${err?.code}, message ${err?.message}`);
             expect(`${err?.code}`).assertEqual('401');
             done();
