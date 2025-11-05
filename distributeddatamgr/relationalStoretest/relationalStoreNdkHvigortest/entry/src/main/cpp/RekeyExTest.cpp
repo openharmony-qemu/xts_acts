@@ -444,7 +444,8 @@ static napi_value OH_Rdb_RekeyEx0700(napi_env env, napi_callback_info)
     int pageSize = 2048;
     int errCode = 0;
     int loop = 3;
-    for(int i = 0; i < loop; i++){
+    for (int i = 0; i < loop; i++)
+    {
     OH_Rdb_ConfigV2 *rekeyTestConfig = CreateEncryptedConfig();
     NAPI_ASSERT(env, rekeyTestConfig != nullptr, "OH_Rdb_CreateConfig is fail.");
     OH_Rdb_CryptoParam *crypto1 = OH_Rdb_CreateCryptoParam();
@@ -480,7 +481,8 @@ static napi_value OH_Rdb_RekeyEx0700(napi_env env, napi_callback_info)
     errCode = OH_Rdb_DestroyCryptoParam(crypto2);
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DeleteStoreV2 is fail.");
     }
-    for(int j = 0; j < loop; j++){
+    for (int j = 0; j < loop; j++)
+    {
     OH_Rdb_ConfigV2 *rekeyTestConfig = CreateEncryptedConfig();
     NAPI_ASSERT(env, rekeyTestConfig != nullptr, "OH_Rdb_CreateConfig is fail.");
     OH_Rdb_CryptoParam *crypto1 = OH_Rdb_CreateCryptoParam();
@@ -516,7 +518,8 @@ static napi_value OH_Rdb_RekeyEx0700(napi_env env, napi_callback_info)
     errCode = OH_Rdb_DestroyCryptoParam(crypto2);
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DeleteStoreV2 is fail.");
     }
-    for(int k = 0; k < loop; k++){
+    for (int k = 0; k < loop; k++)
+    {
     OH_Rdb_ConfigV2 *rekeyTestConfig = CreateEncryptedConfig();
     NAPI_ASSERT(env, rekeyTestConfig != nullptr, "OH_Rdb_CreateConfig is fail.");
     OH_Rdb_CryptoParam *crypto1 = OH_Rdb_CreateCryptoParam();
