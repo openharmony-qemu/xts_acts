@@ -50,31 +50,19 @@
     ],
     "requestPermissions": [
       {
-        "name": "ohos.permission.PLACE_CALL"
+        "name": "ohos.permission.WRITE_CONTACTS"
       },
       {
-        "name": "ohos.permission.SET_TELEPHONY_STATE",
-        "usedScene": {
-          "when": "always",
-        }
+        "name": "ohos.permission.READ_CONTACTS"
+      },
+      {
+        "name": "ohos.permission.SET_TELEPHONY_STATE"
       },
       {
         "name": "ohos.permission.GET_TELEPHONY_STATE"
       },
       {
-        "name": "ohos.permission.INTERACT_ACROSS_LOCAL_ACCOUNTS"
-      },
-      {
-        "name": "ohos.permission.CLEAN_BACKGROUND_PROCESSES"
-      },
-      {
-        "name": "ohos.permission.GET_SENSITIVE_PERMISSIONS"
-      },
-      {
-        "name": "ohos.permission.GRANT_SENSITIVE_PERMISSIONS"
-      },
-      {
-        "name": "ohos.permission.GET_NETWORK_INFO"
+        "name": "ohos.permission.GET_PHONE_NUMBERS"
       }
     ]
   }
