@@ -1204,16 +1204,18 @@ export default function settingUiJsunit() {
      * @tc.desc: check open manager
      */
     it('open_manager_settings_static_119', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      try{
-        let value = settings.openNetworkManagerSettings(abilityContext);
-        expect(value).assertTrue();
-        done();
-      }catch (err) {
-        console.error("[open_manager_settings_static_119] error = " + err);
-        if ((err as BusinessError)?.code) {
-          expect(err?.code).assertEqual(14800000);
-        }
-      }
+      let value = settings.openNetworkManagerSettings(abilityContext)
+        .then((status)=>{
+          console.info("[open_manager_settings_static_119] value is:" + status);
+          expect(status).assertTrue();
+        })
+        .catch((err)=>{
+          console.error("[open_manager_settings_static_119] error = " + err);
+          if ((err as BusinessError)?.code) {
+            expect(err?.code).assertEqual(14800000);
+          }
+          done();
+        })
       done();
     });
 
