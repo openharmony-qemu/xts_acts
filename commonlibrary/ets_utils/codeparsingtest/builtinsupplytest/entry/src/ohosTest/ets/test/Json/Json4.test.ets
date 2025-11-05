@@ -106,6 +106,7 @@ interface Test19_Obj1 {
 interface NestedNewlineObj {
   level1: Test19_Obj1;
 }
+
 interface RenamePropObj {
   newKey: string;
 }
@@ -135,6 +136,7 @@ interface CharTypeCountCompare {
 }
 
 type Status = "active" | "inactive" | "pending";
+
 interface StatusMapObj {
   status: Status;
 }
@@ -153,6 +155,7 @@ interface ProductCompare {
   numbers: number[];
   product: number;
 }
+
 type NestedNumberArray = number | NestedNumberArray[];
 
 interface SensitiveDataObj {
@@ -208,9 +211,11 @@ interface Test39_Obj3 {
 interface Test39_Obj2 {
   logs: Test39_Obj3[];
 }
+
 interface ValidatedObj {
   score: number;
 }
+
 type UserMapArray = Map<string, string>[];
 
 interface Test44_Obj1 {
@@ -267,9 +272,11 @@ enum EnumStatus {
   Active = "ACTIVE",
   Inactive = "INACTIVE"
 }
+
 interface EnumMapObj {
   enumStatus: EnumStatus;
 }
+
 interface MultiPunctObj {
   en: string;
   de: string;
@@ -281,6 +288,7 @@ interface PropLimitObj {
   b: number;
   c?: number;
 }
+
 interface MatrixObj {
   rows: number;
   cols: number;
@@ -378,10 +386,12 @@ interface Test73_Obj1 {
 interface DeepEmptyArrFilterObj {
   level1: Test73_Obj1;
 }
+
 interface CircularSafeObj {
   name: string;
   parent?: CircularSafeObj;
 }
+
 interface MixedTypeKeyObj {
   a: string;
 }
@@ -561,21 +571,25 @@ class Product {
   public price: number;
 
   constructor(id: number, name: string, price: number) {
-  this.id = id;
-  this.name = name;
-  this.price = price;
-}
+    this.id = id;
+    this.name = name;
+    this.price = price;
+  }
+
   getTax(): number {
     return this.price * 0.1;
   }
 }
+
 interface ProductObj {
   item: Product;
 }
+
 interface VowelRatioCompare {
   strings: string[];
   ratios: number[];
 }
+
 interface Test109_Obj1 {
   id: string;
   age: number;
@@ -598,6 +612,7 @@ interface AbsoluteDiffsCompare {
   numbers: number[];
   diffs: number[];
 }
+
 interface Test113_Obj1 {
   value: number;
 }
@@ -813,6 +828,7 @@ interface RawData {
   user_name: string;
   user_email: string;
 }
+
 interface UserDTO {
   id: number;
   name: string;
@@ -851,6 +867,7 @@ interface RemoveVowelsCompare {
   strings: string[];
   consonants: string[];
 }
+
 interface TwoSumCompare {
   numbers: number[];
   target: number;
@@ -870,6 +887,7 @@ interface CharCountSortCompare {
   strings: string[];
   sorted: string[];
 }
+
 interface Test139_Obj2 {
   Dx23: number;
 }
@@ -1088,8 +1106,11 @@ export default function Json4Test() {
       const invalidJson: string = "[1,,2]";
       let hasError: boolean = false;
 
-      try { JSON.parse(invalidJson); }
-      catch (error) { hasError = error instanceof SyntaxError; }
+      try {
+        JSON.parse(invalidJson);
+      } catch (error) {
+        hasError = error instanceof SyntaxError;
+      }
 
       expect(hasError).assertEqual(true);
     });
@@ -1123,8 +1144,10 @@ export default function Json4Test() {
         container: { value: 123 }
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: RootNestedReplaceObj = JSON.parse(jsonStr, (key, value : string) => {
-        if (key === "container") return { value: "replaced" };
+      const parsedObj: RootNestedReplaceObj = JSON.parse(jsonStr, (key, value: string) => {
+        if (key === "container") {
+          return { value: "replaced" };
+        }
         return value;
       });
 
@@ -1144,8 +1167,11 @@ export default function Json4Test() {
       const invalidJson: string = '{"num": 1e-}';
       let hasError: boolean = false;
 
-      try { JSON.parse(invalidJson); }
-      catch (error) { hasError = error instanceof SyntaxError; }
+      try {
+        JSON.parse(invalidJson);
+      } catch (error) {
+        hasError = error instanceof SyntaxError;
+      }
 
       expect(hasError).assertEqual(true);
     });
@@ -1165,7 +1191,7 @@ export default function Json4Test() {
         bool: true,
         nil: null
       };
-      const jsonStr: string = JSON.stringify(originalObj, (value : string) =>
+      const jsonStr: string = JSON.stringify(originalObj, (value: string) =>
       typeof value === "number" || typeof value === "string" ? value : undefined
       );
       const parsedObj: TypePreserveObj = JSON.parse(jsonStr);
@@ -1218,7 +1244,7 @@ export default function Json4Test() {
     it('Json4Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalArr: [string, number][] = [["a", 1], ["b", 2]];
       const jsonStr: string = JSON.stringify(originalArr);
-      const parsedMap: Map<string, number> = JSON.parse(jsonStr, (key, value : [string, number][]) =>
+      const parsedMap: Map<string, number> = JSON.parse(jsonStr, (key, value: [string, number][]) =>
       key === "" ? new Map(value as [string, number][]) : value
       );
 
@@ -1286,8 +1312,11 @@ export default function Json4Test() {
     it('Json4Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const invalidJson: string = '{"valid": tru}';
       let hasError: boolean = false;
-      try { JSON.parse(invalidJson); }
-      catch (error) { hasError = error instanceof SyntaxError; }
+      try {
+        JSON.parse(invalidJson);
+      } catch (error) {
+        hasError = error instanceof SyntaxError;
+      }
       expect(hasError).assertEqual(true);
     });
 
@@ -1352,8 +1381,11 @@ export default function Json4Test() {
     it('Json4Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const invalidJson: string = "[() => {}]";
       let hasError: boolean = false;
-      try { JSON.parse(invalidJson); }
-      catch (error) { hasError = error instanceof SyntaxError; }
+      try {
+        JSON.parse(invalidJson);
+      } catch (error) {
+        hasError = error instanceof SyntaxError;
+      }
       expect(hasError).assertEqual(true);
     });
 
@@ -1417,8 +1449,11 @@ export default function Json4Test() {
       const invalidJson: string = '{"num": ++123}';
       let hasError: boolean = false;
 
-      try { JSON.parse(invalidJson); }
-      catch (error) { hasError = error instanceof SyntaxError; }
+      try {
+        JSON.parse(invalidJson);
+      } catch (error) {
+        hasError = error instanceof SyntaxError;
+      }
 
       expect(hasError).assertEqual(true);
     });
@@ -1452,7 +1487,7 @@ export default function Json4Test() {
      */
     it('Json4Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: Test20_Obj1 = { oldKey: "value" };
-      const jsonStr: string = JSON.stringify(originalObj, (key, value : Test20_Obj2) => {
+      const jsonStr: string = JSON.stringify(originalObj, (key, value: Test20_Obj2) => {
         if (key === "oldKey") {
           return { temp: value };
         }
@@ -1478,7 +1513,7 @@ export default function Json4Test() {
     it('Json4Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalArr: string[] = ["10", "20", "30"];
       const jsonStr: string = JSON.stringify(originalArr);
-      const parsedArr: number[] = JSON.parse(jsonStr, (key, value : string) =>
+      const parsedArr: number[] = JSON.parse(jsonStr, (key, value: string) =>
       key !== "" && typeof value === "string" ? parseInt(value, 10) : value
       );
 
@@ -1497,12 +1532,11 @@ export default function Json4Test() {
      */
     it('Json4Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const invalidJson: string = '{"a":1}}extra';
-      let hasError: boolean = false;
-
-      try { JSON.parse(invalidJson); }
-      catch (error) { hasError = error instanceof SyntaxError; }
-
-      expect(hasError).assertEqual(true);
+      try {
+        JSON.parse(invalidJson);
+      } catch (error) {
+        expect(error.name).assertEqual(SyntaxError);
+      }
     });
 
     /**
@@ -1539,7 +1573,7 @@ export default function Json4Test() {
         empty: {}
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: EmptyObjFilter = JSON.parse(jsonStr, (key, value : object) =>
+      const parsedObj: EmptyObjFilter = JSON.parse(jsonStr, (key, value: object) =>
       typeof value === "object" && value !== null && Object.keys(value).length === 0
         ? undefined
         : value
@@ -1560,8 +1594,11 @@ export default function Json4Test() {
       const invalidJson: string = '{"str": "test"string"}';
       let hasError: boolean = false;
 
-      try { JSON.parse(invalidJson); }
-      catch (error) { hasError = error instanceof SyntaxError; }
+      try {
+        JSON.parse(invalidJson);
+      } catch (error) {
+        hasError = error instanceof SyntaxError;
+      }
 
       expect(hasError).assertEqual(true);
     });
@@ -1583,7 +1620,9 @@ export default function Json4Test() {
           v.strings.forEach(s => {
             const chars: string[] = [];
             for (let i = 0; i < s.length; i++) {
-              if (!chars.includes(s[i])) chars.push(s[i]);
+              if (!chars.includes(s[i])) {
+                chars.push(s[i]);
+              }
             }
             c.push(chars.length);
           });
@@ -1607,7 +1646,7 @@ export default function Json4Test() {
     it('Json4Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: Test27_Obj1 = { status: 1 };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: StatusMapObj = JSON.parse(jsonStr, (key, value : number) => {
+      const parsedObj: StatusMapObj = JSON.parse(jsonStr, (key, value: number) => {
         if (key === "status") {
           const map: Record<number, Status> = { 0: "inactive", 1: "active", 2: "pending" };
           return map[value as number] || "inactive";
@@ -1631,8 +1670,11 @@ export default function Json4Test() {
       const invalidJson: string = "[1, undefined, 3]";
       let hasError: boolean = false;
 
-      try { JSON.parse(invalidJson); }
-      catch (error) { hasError = error instanceof SyntaxError; }
+      try {
+        JSON.parse(invalidJson);
+      } catch (error) {
+        hasError = error instanceof SyntaxError;
+      }
 
       expect(hasError).assertEqual(true);
     });
@@ -1669,7 +1711,7 @@ export default function Json4Test() {
      */
     it('Json4Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalArr: number[] = [1, 2, 3, 4, 5];
-      const jsonStr: string = JSON.stringify(originalArr, (key, value : Array<number>) => {
+      const jsonStr: string = JSON.stringify(originalArr, (key, value: Array<number>) => {
         if (key === "" && Array.isArray(value) && value.length > 3) {
           return value.slice(0, 3);
         }
@@ -1754,7 +1796,7 @@ export default function Json4Test() {
         password: "secret",
         email: "user@example.com"
       };
-      const jsonStr: string = JSON.stringify(originalObj, (key, value : string) =>
+      const jsonStr: string = JSON.stringify(originalObj, (key, value: string) =>
       key === "password" ? undefined : value
       );
       const parsedObj: SensitiveDataObj = JSON.parse(jsonStr);
@@ -1779,7 +1821,7 @@ export default function Json4Test() {
           auth: { token: "secret-token", role: "admin" }
         }
       };
-      const jsonStr: string = JSON.stringify(originalObj, (key, value : string) =>
+      const jsonStr: string = JSON.stringify(originalObj, (key, value: string) =>
       key === "token" ? undefined : value
       );
       const parsedObj: DeepSensitiveObj = JSON.parse(jsonStr);
@@ -1822,7 +1864,7 @@ export default function Json4Test() {
         age: 30
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: MergedObj = JSON.parse(jsonStr, (key, value:string) => {
+      const parsedObj: MergedObj = JSON.parse(jsonStr, (key, value: string) => {
         if (key === "") {
           return { fullInfo: value };
         }
@@ -1869,8 +1911,10 @@ export default function Json4Test() {
         ]
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: DateToTimestampObj = JSON.parse(jsonStr, (key, value : string) => {
-        if (key === "time") return new Date(value as string).getTime();
+      const parsedObj: DateToTimestampObj = JSON.parse(jsonStr, (key, value: string) => {
+        if (key === "time") {
+          return new Date(value as string).getTime();
+        }
         return value;
       });
 
@@ -1929,14 +1973,14 @@ export default function Json4Test() {
       let validResult: ValidatedObj | null = null;
       let invalidError: boolean = false;
 
-      validResult = JSON.parse(validJson, (key, value : number) => {
+      validResult = JSON.parse(validJson, (key, value: number) => {
         if (key === "score" && (value as number) > 100) {
           throw new Error("Score cannot exceed 100");
         }
         return value;
       });
       try {
-        JSON.parse(invalidJson, (key, value : number) => {
+        JSON.parse(invalidJson, (key, value: number) => {
           if (key === "score" && (value as number) > 100) {
             throw new Error("Score cannot exceed 100");
           }
@@ -2009,11 +2053,13 @@ export default function Json4Test() {
         ]
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: UniqueObjArr = JSON.parse(jsonStr, (key, value : Test45_Obj2[]) => {
+      const parsedObj: UniqueObjArr = JSON.parse(jsonStr, (key, value: Test45_Obj2[]) => {
         if (key === "items") {
           const seen = new Set<number>();
           return (value as Test45_Obj2[]).filter(item => {
-            if (seen.has(item.id)) return false;
+            if (seen.has(item.id)) {
+              return false;
+            }
             seen.add(item.id);
             return true;
           });
@@ -2074,10 +2120,10 @@ export default function Json4Test() {
         username: "user456",
         email: "user@example.com"
       };
-      const jsonStr: string = JSON.stringify(originalObj, (key, value : string) =>
+      const jsonStr: string = JSON.stringify(originalObj, (key, value: string) =>
       key === "email" ? (value as string).split("").reverse().join("") : value
       );
-      const parsedObj: EncryptedObj = JSON.parse(jsonStr, (key, value : string) =>
+      const parsedObj: EncryptedObj = JSON.parse(jsonStr, (key, value: string) =>
       key === "email" ? (value as string).split("").reverse().join("") : value
       );
 
@@ -2096,7 +2142,7 @@ export default function Json4Test() {
     it('Json4Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalArr: number[] = [1, 2, 2, 3, 3, 3];
       const jsonStr: string = JSON.stringify(originalArr);
-      const parsedObj: FrequencyObj = JSON.parse(jsonStr, (key, value : number[]) => {
+      const parsedObj: FrequencyObj = JSON.parse(jsonStr, (key, value: number[]) => {
         if (key === "") {
           const freq: Record<number, number> = {};
           (value as number[]).forEach(num => {
@@ -2148,7 +2194,7 @@ export default function Json4Test() {
         empty: []
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: EmptyArrFilterObj = JSON.parse(jsonStr, (key, value : Array<number>) =>
+      const parsedObj: EmptyArrFilterObj = JSON.parse(jsonStr, (key, value: Array<number>) =>
       Array.isArray(value) && value.length === 0 ? undefined : value
       );
 
@@ -2173,7 +2219,9 @@ export default function Json4Test() {
           v.strings.forEach(s => {
             let numStr = "";
             for (let i = 0; i < s.length; i++) {
-              if (!isNaN(parseInt(s[i]))) numStr += s[i];
+              if (!isNaN(parseInt(s[i]))) {
+                numStr += s[i];
+              }
             }
             total += parseInt(numStr);
           });
@@ -2194,7 +2242,7 @@ export default function Json4Test() {
     it('Json4Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: Test53_Obj1 = { enumStatus: "active" };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: EnumMapObj = JSON.parse(jsonStr, (key, value : string) => {
+      const parsedObj: EnumMapObj = JSON.parse(jsonStr, (key, value: string) => {
         if (key === "enumStatus") {
           const map: Record<string, EnumStatus> = {
             "active": EnumStatus.Active,
@@ -2240,7 +2288,7 @@ export default function Json4Test() {
      */
     it('Json4Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: PropLimitObj = { a: 1, b: 2, c: 3 };
-      const jsonStr: string = JSON.stringify(originalObj, (key, value : string) => {
+      const jsonStr: string = JSON.stringify(originalObj, (key, value: string) => {
         if (key === "" || ["a", "b"].includes(key)) {
           return value;
         }
@@ -2263,7 +2311,7 @@ export default function Json4Test() {
     it('Json4Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalArr: number[][] = [[1, 2], [3, 4], [5, 6]];
       const jsonStr: string = JSON.stringify(originalArr);
-      const parsedObj: MatrixObj = JSON.parse(jsonStr, (key, value : number[][]) => {
+      const parsedObj: MatrixObj = JSON.parse(jsonStr, (key, value: number[][]) => {
         if (key === "") {
           return {
             rows: (value as number[][]).length,
@@ -2312,14 +2360,14 @@ export default function Json4Test() {
       const invalidJson: string = '{"codes": ["A", "B"]}';
       let validResult: LengthValidatedObj | null = null;
       let invalidError: boolean = false;
-      validResult = JSON.parse(validJson, (key, value : string[]) => {
+      validResult = JSON.parse(validJson, (key, value: string[]) => {
         if (key === "codes" && (value as string[]).length !== 3) {
           throw new Error("codes must have 3 elements");
         }
         return value;
       });
       try {
-        JSON.parse(invalidJson, (key, value : string[]) => {
+        JSON.parse(invalidJson, (key, value: string[]) => {
           if (key === "codes" && (value as string[]).length !== 3) {
             throw new Error("codes must have 3 elements");
           }
@@ -2346,7 +2394,7 @@ export default function Json4Test() {
           level2: { valid: "value", empty: {} }
         }
       };
-      const jsonStr: string = JSON.stringify(originalObj, (key, value : DeepEmptyFilterObj) =>
+      const jsonStr: string = JSON.stringify(originalObj, (key, value: DeepEmptyFilterObj) =>
       typeof value === "object" && value !== null && Object.keys(value).length === 0
         ? undefined
         : value
@@ -2372,7 +2420,7 @@ export default function Json4Test() {
           { id: 2, name: "Eve", password: "pass2" }
         ]
       };
-      const jsonStr: string = JSON.stringify(originalObj, (key, value : string) =>
+      const jsonStr: string = JSON.stringify(originalObj, (key, value: string) =>
       key === "password" ? undefined : value
       );
       const parsedObj: ArrSensitiveObj = JSON.parse(jsonStr);
@@ -2414,13 +2462,13 @@ export default function Json4Test() {
         contact_email: "frank@example.com"
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: RestructuredObj = JSON.parse(jsonStr, (key, value : Test62_Obj3) => {
+      const parsedObj: RestructuredObj = JSON.parse(jsonStr, (key, value: Test62_Obj3) => {
         if (key === "") {
           return {
             user: ({
               id: value.user_id,
               name: value.user_name
-            } as Test62_Obj1) ,
+            } as Test62_Obj1),
             contact: ({ email: value.contact_email } as Test62_Obj2)
           };
         }
@@ -2440,7 +2488,7 @@ export default function Json4Test() {
      */
     it('Json4Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: Test63_Obj1 = { a: 10, b: 20, c: 30 };
-      const jsonStr: string = JSON.stringify(originalObj, (key, value : number) =>
+      const jsonStr: string = JSON.stringify(originalObj, (key, value: number) =>
       typeof value === "number" ? value.toString() : value
       );
       const parsedObj: NumToStringObj = JSON.parse(jsonStr);
@@ -2465,7 +2513,7 @@ export default function Json4Test() {
         }]
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: DeepDateObj = JSON.parse(jsonStr, (key, value : string) =>
+      const parsedObj: DeepDateObj = JSON.parse(jsonStr, (key, value: string) =>
       key === "time" ? new Date(value as string) : value
       );
 
@@ -2502,7 +2550,7 @@ export default function Json4Test() {
     it('Json4Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: FilteredArrObj = { numbers: [10, -5, 20, -30, 5] };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: FilteredArrObj = JSON.parse(jsonStr, (key, value : number[]) => {
+      const parsedObj: FilteredArrObj = JSON.parse(jsonStr, (key, value: number[]) => {
         if (key === "numbers") {
           return (value as number[]).filter(num => num >= 0);
         }
@@ -2523,7 +2571,7 @@ export default function Json4Test() {
      */
     it('Json4Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalSet: Set<number> = new Set([1, 2, 3, 2]);
-      const jsonStr: string = JSON.stringify(originalSet, (key, value : Set<number>) =>
+      const jsonStr: string = JSON.stringify(originalSet, (key, value: Set<number>) =>
       value instanceof Set ? Array.from(value) : value
       );
       const parsedArr: number[] = JSON.parse(jsonStr);
@@ -2554,7 +2602,9 @@ export default function Json4Test() {
         if (k === "") {
           const f: Test68_Obj2[] = [];
           v.products.forEach(p => {
-            if (p.price >= 18 && p.price <= 22 && p.inStock) f.push(p);
+            if (p.price >= 18 && p.price <= 22 && p.inStock) {
+              f.push(p);
+            }
           });
           return { products: v.products, filtered: f };
         }
@@ -2599,7 +2649,7 @@ export default function Json4Test() {
         phone: "13800138000",
         email: "user@example.com"
       };
-      const jsonStr: string = JSON.stringify(originalObj, (key, value : string) => {
+      const jsonStr: string = JSON.stringify(originalObj, (key, value: string) => {
         if (key === "phone" && typeof value === "string") {
           return value.replace(/(\d{3})\d*(\d{4})/, "$1****$2");
         }
@@ -2625,7 +2675,7 @@ export default function Json4Test() {
     it('Json4Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalArr: number[] = [10, 20, 30];
       const jsonStr: string = JSON.stringify(originalArr);
-      const parsedObj: StatsObj = JSON.parse(jsonStr, (key, value : number[]) => {
+      const parsedObj: StatsObj = JSON.parse(jsonStr, (key, value: number[]) => {
         if (key === "") {
           const data = value as number[];
           const sum = data.reduce((a, b) => a + b, 0);
@@ -2682,7 +2732,7 @@ export default function Json4Test() {
           }]
         }
       };
-      const parsedObj: DeepEmptyArrFilterObj = JSON.parse(JSON.stringify(originalObj), (key, value : number[]) =>
+      const parsedObj: DeepEmptyArrFilterObj = JSON.parse(JSON.stringify(originalObj), (key, value: number[]) =>
       Array.isArray(value) && value.length === 0 ? undefined : value
       );
 
@@ -2703,7 +2753,7 @@ export default function Json4Test() {
       const parent: CircularSafeObj = { name: "parent", parent: obj };
       obj.parent = parent;
       const seen = new Set<CircularSafeObj>();
-      const jsonStr: string = JSON.stringify(parent, (key, value : CircularSafeObj ) => {
+      const jsonStr: string = JSON.stringify(parent, (key, value: CircularSafeObj) => {
         if (value && typeof value === "object") {
           if (seen.has(value as CircularSafeObj)) {
             return "[Circular Reference]";
@@ -2731,7 +2781,11 @@ export default function Json4Test() {
       const parsed: RemoveElementCompare = JSON.parse(json, (k: string, v: RemoveElementCompare) => {
         if (k === "") {
           const c: string[] = [];
-          v.strings.forEach(s => { if (s !== "a") c.push(s); });
+          v.strings.forEach(s => {
+            if (s !== "a") {
+              c.push(s);
+            }
+          });
           return { strings: v.strings, cleaned: c };
         }
         return v;
@@ -2820,7 +2874,7 @@ export default function Json4Test() {
     it('Json4Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalArr: number[][] = [[1, 2], [3, 4], [5, 6]];
       const jsonStr: string = JSON.stringify(originalArr);
-      const parsedObj: TransposedMatrixObj = JSON.parse(jsonStr, (key, value : number[][]) => {
+      const parsedObj: TransposedMatrixObj = JSON.parse(jsonStr, (key, value: number[][]) => {
         if (key === "") {
           const matrix = value as number[][];
           return {
@@ -2952,9 +3006,13 @@ export default function Json4Test() {
         if (k === "") {
           const g: string[] = [];
           v.scores.forEach(s => {
-            if (s >= 80) g.push("A");
-            else if (s >= 60) g.push("B");
-            else g.push("C");
+            if (s >= 80) {
+              g.push("A");
+            } else if (s >= 60) {
+              g.push("B");
+            } else {
+              g.push("C");
+            }
           });
           return { scores: v.scores, grades: g };
         }
@@ -2975,7 +3033,7 @@ export default function Json4Test() {
      */
     it('Json4Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: StrLengthFilterObj = { long: "length6", short: "len4" };
-      const jsonStr: string = JSON.stringify(originalObj, (key, value : string) =>
+      const jsonStr: string = JSON.stringify(originalObj, (key, value: string) =>
       typeof value === "string" && value.length < 5 ? undefined : value
       );
       const parsedObj: StrLengthFilterObj = JSON.parse(jsonStr);
@@ -2997,7 +3055,7 @@ export default function Json4Test() {
         groups: [{ items: [{ value: 10 }, { value: 20 }] }]
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: DeepAggregateObj = JSON.parse(jsonStr, (key, value : Test87_Obj4[]) => {
+      const parsedObj: DeepAggregateObj = JSON.parse(jsonStr, (key, value: Test87_Obj4[]) => {
         if (key === "items") {
           const total = (value as Test87_Obj4[]).reduce((sum, item) => sum + item.value, 0);
           return { items: value, total };
@@ -3035,7 +3093,7 @@ export default function Json4Test() {
     it('Json4Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: EmptyStrArrFilterObj = { tags: ["js", "", "json", ""] };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: EmptyStrArrFilterObj = JSON.parse(jsonStr, (key, value : string[]) => {
+      const parsedObj: EmptyStrArrFilterObj = JSON.parse(jsonStr, (key, value: string[]) => {
         if (key === "tags") {
           return (value as string[]).filter(tag => tag !== "");
         }
@@ -3228,7 +3286,7 @@ export default function Json4Test() {
         level1: [{ level2: ["a", "", "b", ""] }]
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: DeepEmptyStrFilterObj = JSON.parse(jsonStr, (key, value : string[]) =>
+      const parsedObj: DeepEmptyStrFilterObj = JSON.parse(jsonStr, (key, value: string[]) =>
       Array.isArray(value) ? (value as string[]).filter(v => v !== "") : value
       );
       expect(JSON.stringify(parsedObj.level1[0].level2)).assertEqual(JSON.stringify(["a", "b"]));
@@ -3248,13 +3306,13 @@ export default function Json4Test() {
         new Set([1, 2]),
         [3, new Set([4, 5])]
       ];
-      const jsonStr: string = JSON.stringify(originalArr, (key, value :NestedSetArr ) =>
+      const jsonStr: string = JSON.stringify(originalArr, (key, value: NestedSetArr) =>
       value instanceof Set ? Array.from(value) : value
       );
       const parsedArr: number[][] = JSON.parse(jsonStr) as number[][];
 
-      expect(JSON.stringify(parsedArr[0])).assertEqual(JSON.stringify([1,2]));
-      expect(JSON.stringify(parsedArr[1])).assertEqual(JSON.stringify([3,[4,5]]));
+      expect(JSON.stringify(parsedArr[0])).assertEqual(JSON.stringify([1, 2]));
+      expect(JSON.stringify(parsedArr[1])).assertEqual(JSON.stringify([3, [4, 5]]));
     });
 
     /**
@@ -3273,7 +3331,7 @@ export default function Json4Test() {
         ]
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: PriorityMapObj = JSON.parse(jsonStr, (key, value : Priority) => {
+      const parsedObj: PriorityMapObj = JSON.parse(jsonStr, (key, value: Priority) => {
         if (key === "priority") {
           return Priority[value as Priority];
         }
@@ -3313,9 +3371,13 @@ export default function Json4Test() {
      */
     it('Json4Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: ValueClampObj = { score: 150, age: -5 };
-      const jsonStr: string = JSON.stringify(originalObj, (key, value : number) => {
-        if (key === "score") return Math.min(100, value as number);
-        if (key === "age") return Math.max(0, value as number);
+      const jsonStr: string = JSON.stringify(originalObj, (key, value: number) => {
+        if (key === "score") {
+          return Math.min(100, value as number);
+        }
+        if (key === "age") {
+          return Math.max(0, value as number);
+        }
         return value;
       });
       const parsedObj: ValueClampObj = JSON.parse(jsonStr);
@@ -3339,12 +3401,14 @@ export default function Json4Test() {
       arr.reduce((acc, val) => acc.concat(
         val.reduce((acc2, val2) => acc2.concat(val2), [] as number[])
       ), [] as number[]);
-      const parsedObj: Flatten3DObj = JSON.parse(jsonStr, (key, value : number[][][]) => {
-        if (key === "") return { flattened: flatten3D(value as number[][][]) };
+      const parsedObj: Flatten3DObj = JSON.parse(jsonStr, (key, value: number[][][]) => {
+        if (key === "") {
+          return { flattened: flatten3D(value as number[][][]) };
+        }
         return value;
       });
 
-      expect(JSON.stringify(parsedObj.flattened)).assertEqual(JSON.stringify([1,2,3,4,5]));
+      expect(JSON.stringify(parsedObj.flattened)).assertEqual(JSON.stringify([1, 2, 3, 4, 5]));
       expect(parsedObj.flattened.length).assertEqual(5);
     });
 
@@ -3382,7 +3446,7 @@ export default function Json4Test() {
           level2: { valid: "value", undef: undefined }
         }
       };
-      const jsonStr: string = JSON.stringify(originalObj, (key, value : string | undefined) =>
+      const jsonStr: string = JSON.stringify(originalObj, (key, value: string | undefined) =>
       value === undefined ? undefined : value
       );
       const parsedObj: DeepUndefinedFilterObj = JSON.parse(jsonStr);
@@ -3452,8 +3516,10 @@ export default function Json4Test() {
         price: 1000
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: ProductObj = JSON.parse(jsonStr, (key, value : Test107_Obj1) => {
-        if (key === "") return new Product(value.id, value.name, value.price);
+      const parsedObj: ProductObj = JSON.parse(jsonStr, (key, value: Test107_Obj1) => {
+        if (key === "") {
+          return new Product(value.id, value.name, value.price);
+        }
         return value;
       });
       expect(parsedObj.item instanceof Product).assertEqual(false);
@@ -3477,7 +3543,9 @@ export default function Json4Test() {
           v.strings.forEach(s => {
             let count = 0;
             for (let i = 0; i < s.length; i++) {
-              if (vowels.includes(s[i].toLowerCase())) count++;
+              if (vowels.includes(s[i].toLowerCase())) {
+                count++;
+              }
             }
             r.push(count / s.length);
           });
@@ -3485,7 +3553,7 @@ export default function Json4Test() {
         }
         return v;
       });
-      expect(parsed.ratios[0]).assertEqual(2/5);
+      expect(parsed.ratios[0]).assertEqual(2 / 5);
       expect(parsed.ratios[1]).assertEqual(0);
     });
 
@@ -3502,7 +3570,7 @@ export default function Json4Test() {
         users: [{ id: 1, age: 20 }, { id: 2, age: 30 }]
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: DeepPropConvertObj = JSON.parse(jsonStr, (key, value : number) =>
+      const parsedObj: DeepPropConvertObj = JSON.parse(jsonStr, (key, value: number) =>
       key === "id" ? value.toString() : value
       );
       expect(parsedObj.users[0].id).assertEqual("1");
@@ -3545,11 +3613,13 @@ export default function Json4Test() {
         ]
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: UniqueDeepObjArr = JSON.parse(jsonStr, (key, value : Test111_Obj3[] ) => {
+      const parsedObj: UniqueDeepObjArr = JSON.parse(jsonStr, (key, value: Test111_Obj3[]) => {
         if (key === "items") {
           const seen = new Set<number>();
           return (value as Test111_Obj3[]).filter(item => {
-            if (seen.has(item.id)) return false;
+            if (seen.has(item.id)) {
+              return false;
+            }
             seen.add(item.id);
             return true;
           });
@@ -3647,7 +3717,7 @@ export default function Json4Test() {
         cardNumber: "6222021234567890123",
         phone: "13800138000"
       };
-      const jsonStr: string = JSON.stringify(originalObj, (key, value : string) => {
+      const jsonStr: string = JSON.stringify(originalObj, (key, value: string) => {
         if (key === "cardNumber" && typeof value === "string") {
           return value.replace(/^(\d{4})\d*(\d{4})$/, "$1********$2");
         }
@@ -3675,7 +3745,7 @@ export default function Json4Test() {
       };
       const jsonStr: string = JSON.stringify(originalObj);
 
-      const parsedObj: DiffObj = JSON.parse(jsonStr, (key, value : Test116_Obj2) => {
+      const parsedObj: DiffObj = JSON.parse(jsonStr, (key, value: Test116_Obj2) => {
         if (key === "") {
           const changes = (value.items as Test116_Obj3[]).map(item => ({
             id: item.id,
@@ -3729,7 +3799,7 @@ export default function Json4Test() {
         }
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: DeepEmptyArrCleanObj = JSON.parse(jsonStr, (key, value : number[]) =>
+      const parsedObj: DeepEmptyArrCleanObj = JSON.parse(jsonStr, (key, value: number[]) =>
       Array.isArray(value) && value.length === 0 ? undefined : value
       );
       expect(parsedObj.level1.level2[0].valid.length).assertEqual(2);
@@ -3754,7 +3824,9 @@ export default function Json4Test() {
             let num = n;
             let count = 0;
             while (num > 0) {
-              if (num % 2 === 1) count++;
+              if (num % 2 === 1) {
+                count++;
+              }
               num = Math.floor(num / 2);
             }
             c.push(count);
@@ -3784,8 +3856,16 @@ export default function Json4Test() {
           const temp = [...v.words];
           temp.sort((a, b) => {
             let countA = 0, countB = 0;
-            a.split("").forEach(c => { if (vowels.includes(c)) countA++; });
-            b.split("").forEach(c => { if (vowels.includes(c)) countB++; });
+            a.split("").forEach(c => {
+              if (vowels.includes(c)) {
+                countA++;
+              }
+            });
+            b.split("").forEach(c => {
+              if (vowels.includes(c)) {
+                countB++;
+              }
+            });
             return countA - countB;
           });
           return { words: v.words, sorted: temp };
@@ -3824,7 +3904,7 @@ export default function Json4Test() {
      */
     it('Json4Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalArr: number[] = [5, 15, 25, 35];
-      const jsonStr: string = JSON.stringify(originalArr, (key, value : number) =>
+      const jsonStr: string = JSON.stringify(originalArr, (key, value: number) =>
       key !== "" && typeof value === "number" && value > 20 ? 20 : value
       );
       const parsedArr: number[] = JSON.parse(jsonStr);
@@ -3842,7 +3922,7 @@ export default function Json4Test() {
     it('Json4Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalArr: string[] = ["a", "b", "a", "c", "a", "b"];
       const jsonStr: string = JSON.stringify(originalArr);
-      const parsedObj: FrequencyDistObj = JSON.parse(jsonStr, (key, value : string[]) => {
+      const parsedObj: FrequencyDistObj = JSON.parse(jsonStr, (key, value: string[]) => {
         if (key === "") {
           return {
             distribution: (value as string[]).reduce((dist, item) => {
@@ -3895,7 +3975,7 @@ export default function Json4Test() {
           level2: { valid: "value", empty: "" }
         }
       };
-      const jsonStr: string = JSON.stringify(originalObj, (key, value : string) =>
+      const jsonStr: string = JSON.stringify(originalObj, (key, value: string) =>
       value === "" ? undefined : value
       );
       const parsedObj: DeepEmptyStrCleanObj = JSON.parse(jsonStr);
@@ -3920,12 +4000,14 @@ export default function Json4Test() {
         ]
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: DeepUniqueObjArr = JSON.parse(jsonStr, (key, value : Test126_Obj1[]) => {
+      const parsedObj: DeepUniqueObjArr = JSON.parse(jsonStr, (key, value: Test126_Obj1[]) => {
         if (key === "products") {
           const seen = new Set<string>();
           return (value as Test126_Obj1[]).filter(item => {
             const key = `${item.id}-${item.details.sku}`;
-            if (seen.has(key)) return false;
+            if (seen.has(key)) {
+              return false;
+            }
             seen.add(key);
             return true;
           });
@@ -3967,9 +4049,13 @@ export default function Json4Test() {
         data: { message: "success", timestamp: Date.now() }
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: ApiResponse = JSON.parse(jsonStr, (key, value : number | string) => {
-        if (key === "code" && typeof value !== "number") throw new Error("code must be number");
-        if (key === "message" && typeof value !== "string") throw new Error("message must be string");
+      const parsedObj: ApiResponse = JSON.parse(jsonStr, (key, value: number | string) => {
+        if (key === "code" && typeof value !== "number") {
+          throw new Error("code must be number");
+        }
+        if (key === "message" && typeof value !== "string") {
+          throw new Error("message must be string");
+        }
         return value;
       });
       expect(parsedObj.code).assertEqual(200);
@@ -3990,7 +4076,7 @@ export default function Json4Test() {
         phone: "12345"
       };
       const emailRegex = /^[\w.-]+@[a-zA-Z0-9-]+\.[a-zA-Z]+$/;
-      const jsonStr: string = JSON.stringify(originalObj, (key, value : string) =>
+      const jsonStr: string = JSON.stringify(originalObj, (key, value: string) =>
       typeof value === "string" && !emailRegex.test(value) ? undefined : value
       );
       const parsedObj: RegexFilterObj = JSON.parse(jsonStr);
@@ -4064,7 +4150,7 @@ export default function Json4Test() {
         ]
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: ValidObjFilterArr = JSON.parse(jsonStr, (key, value : Test132_Obj1[]) => {
+      const parsedObj: ValidObjFilterArr = JSON.parse(jsonStr, (key, value: Test132_Obj1[]) => {
         if (key === "users") {
           return (value as Test132_Obj1[]).filter(user => user.id !== undefined);
         }
@@ -4124,7 +4210,9 @@ export default function Json4Test() {
         if (k === "") {
           const u: string[] = [];
           v.items.forEach(item => {
-            if (!u.includes(item.category)) u.push(item.category);
+            if (!u.includes(item.category)) {
+              u.push(item.category);
+            }
           });
           return { items: v.items, uniqueCategories: u };
         }
@@ -4214,7 +4302,7 @@ export default function Json4Test() {
         }
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: ValidNumberFilterObj = JSON.parse(jsonStr, (key, value : Test138_Obj2[]) => {
+      const parsedObj: ValidNumberFilterObj = JSON.parse(jsonStr, (key, value: Test138_Obj2[]) => {
         if (key === "values") {
           return (value as Test138_Obj2[]).filter(item => item.num > 0);
         }
@@ -4281,7 +4369,7 @@ export default function Json4Test() {
         user_email: "diana@example.com"
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: UserDTO = JSON.parse(jsonStr, (key, value : RawData) => {
+      const parsedObj: UserDTO = JSON.parse(jsonStr, (key, value: RawData) => {
         if (key === "") {
           return {
             id: value.user_id,
@@ -4310,7 +4398,7 @@ export default function Json4Test() {
         otherObj: { id: 1 },
         str: "extra"
       };
-      const jsonStr: string = JSON.stringify(originalObj, (key, value : ObjectOnlyObj) =>
+      const jsonStr: string = JSON.stringify(originalObj, (key, value: ObjectOnlyObj) =>
       typeof value === "object" && value !== null ? value : undefined
       );
       const parsedObj: ObjectOnlyObj = JSON.parse(jsonStr);
@@ -4336,7 +4424,7 @@ export default function Json4Test() {
         ]
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: FormattedDateObj = JSON.parse(jsonStr, (key, value : number) => {
+      const parsedObj: FormattedDateObj = JSON.parse(jsonStr, (key, value: number) => {
         if (key === "time") {
           return new Date(value as number).toISOString().split("T")[0];
         }
@@ -4381,7 +4469,9 @@ export default function Json4Test() {
           const r: number[] = [];
           v.numbers.forEach(n => {
             let fact = 1;
-            for (let i = 2; i <= n; i++) fact *= i;
+            for (let i = 2; i <= n; i++) {
+              fact *= i;
+            }
             r.push(fact);
           });
           return { numbers: v.numbers, results: r };
@@ -4410,7 +4500,9 @@ export default function Json4Test() {
           v.strings.forEach(s => {
             let str = "";
             for (let i = 0; i < s.length; i++) {
-              if (!vowels.includes(s[i].toLowerCase())) str += s[i];
+              if (!vowels.includes(s[i].toLowerCase())) {
+                str += s[i];
+              }
             }
             c.push(str);
           });
