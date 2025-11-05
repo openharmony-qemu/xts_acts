@@ -108,6 +108,7 @@ export default function UiTest() {
                     expect(elementInfo.text == 'toast').assertTrue()
                     expect(elementInfo.type == 'Button').assertTrue()
                     expect(elementInfo.componentEventType == 1).assertTrue();
+                    expect(elementInfo.componentId).assertEqual('toastBtn');
                 } catch (err) {
                     console.log(`${TestTag}, testComponentEventOccurOptionsClickMonitor callback error ,${JSON.stringify(err)}`);
                 }
@@ -149,6 +150,7 @@ export default function UiTest() {
                     expect(elementInfo.text == '').assertTrue();
                     expect(elementInfo.type == 'Button').assertTrue();
                     expect(elementInfo.componentEventType == 2).assertTrue();
+                    expect(elementInfo.componentId).assertEqual('my-key');
                 } catch (err) {
                     console.log(`${TestTag}, testComponentEventOccurOptionsLongClickMonitor callback,${JSON.stringify(err)}`);
                 }
@@ -189,6 +191,7 @@ export default function UiTest() {
                     expect(elementInfo.text == 'toast').assertTrue()
                     expect(elementInfo.type == 'Button').assertTrue()
                     expect(elementInfo.componentEventType == 1).assertTrue();
+                    expect(elementInfo.componentId).assertEqual('toastBtn');
                 } catch (err) {
                     console.log(`${TestTag}, testComponentEventOccurOptionsWithInClickMonitor callback error ,${JSON.stringify(err)}`);
                 }
