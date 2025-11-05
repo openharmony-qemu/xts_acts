@@ -149,7 +149,7 @@ interface CaseConvertArr {
 
 interface Test12_Obj2 {
   "enable_ssl": boolean;
-  timeout_ms : number;
+  timeout_ms: number;
 }
 
 interface Test12_Obj1 {
@@ -210,6 +210,7 @@ interface Test17_Obj1 {
 interface EmojiArrObj {
   reactions: Test17_Obj1[];
 }
+
 interface SumCountCompare {
   numbers: number[];
   sum: number;
@@ -622,6 +623,7 @@ interface Test69_Obj2 {
 interface Test73_Obj2 {
   name: string;
 }
+
 interface TrimStrings {
   texts: string[];
   trimmed: string[];
@@ -726,6 +728,7 @@ interface MinValue {
   numbers: number[];
   min: number;
 }
+
 interface LowercaseCompare {
   words: string[];
   lowercase: string[];
@@ -745,14 +748,17 @@ interface ExtractIdCompare {
   users: Test94_Obj1[];
   ids: number[];
 }
+
 interface SquareCompare {
   numbers: number[];
   squares: number[];
 }
+
 interface ConcatCompare {
   parts: string[];
   combined: string[];
 }
+
 interface ExtractDayCompare {
   dates: string[];
   days: string[];
@@ -831,10 +837,12 @@ interface SortedCompare {
   items: Test108_Obj1[];
   sorted: Test108_Obj1[];
 }
+
 interface AbsoluteCompare {
   numbers: number[];
   absolute: number[];
 }
+
 interface ReplaceCharCompare {
   strings: string[];
   replaced: string[];
@@ -934,6 +942,7 @@ interface SquareRootCompare {
   numbers: number[];
   roots: number[];
 }
+
 interface CapitalFirstCompare {
   words: string[];
   capitalized: string[];
@@ -968,6 +977,7 @@ interface DoubleSumCompare {
   numbers: number[];
   doubledSum: number[];
 }
+
 interface ReverseArrayCompare {
   strings: string[];
   reversed: string[];
@@ -991,6 +1001,7 @@ interface AddIndexCompare {
   items: Test134_Obj1[];
   indexed: Test134_Obj2[];
 }
+
 interface CharIncludeCountCompare {
   strings: string[];
   counts: number[];
@@ -1116,10 +1127,10 @@ export default function Json5Test() {
     it('Json5Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       {
         const originalSet: Set<string> = new Set(["apple", "banana", "cherry"]);
-        const jsonStr: string = JSON.stringify(originalSet, (key, value : Set<string>)   => {
+        const jsonStr: string = JSON.stringify(originalSet, (key, value: Set<string>) => {
           return value instanceof Set ? Array.from(value) : value;
         });
-        const parsedObj: SetToKeyMap = JSON.parse(jsonStr, (key, value : string[]) => {
+        const parsedObj: SetToKeyMap = JSON.parse(jsonStr, (key, value: string[]) => {
           if (key === "") {
             return {
               exists: (value as string[]).reduce((map, item) => {
@@ -1168,12 +1179,12 @@ export default function Json5Test() {
      * @tc.level Level 1
      */
     it('Json5Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-        const originalArr: string[] = ["$100", "€50", "¥1000", "£20"];
-        const jsonStr: string = JSON.stringify(originalArr);
-        const parsedArr: string[] = JSON.parse(jsonStr);
-        expect(parsedArr[0]).assertEqual("$100");
-        expect(parsedArr[1]).assertEqual("€50");
-        expect(parsedArr[2]).assertEqual("¥1000");
+      const originalArr: string[] = ["$100", "€50", "¥1000", "£20"];
+      const jsonStr: string = JSON.stringify(originalArr);
+      const parsedArr: string[] = JSON.parse(jsonStr);
+      expect(parsedArr[0]).assertEqual("$100");
+      expect(parsedArr[1]).assertEqual("€50");
+      expect(parsedArr[2]).assertEqual("¥1000");
     });
 
     /**
@@ -1189,10 +1200,10 @@ export default function Json5Test() {
         new Map([["a", 1], ["b", 2]]),
         new Map([["c", 3]])
       ];
-      const jsonStr: string = JSON.stringify(originalArr, (key, value : Map<string, number>[]) =>
+      const jsonStr: string = JSON.stringify(originalArr, (key, value: Map<string, number>[]) =>
       value instanceof Map ? Array.from(value.entries()) : value
       );
-      const parsedObj: MapEntriesArr = JSON.parse(jsonStr, (key, value : [string, number][][]) => {
+      const parsedObj: MapEntriesArr = JSON.parse(jsonStr, (key, value: [string, number][][]) => {
         if (key === "") {
           return {
             entries: (value as [string, number][][]).flatMap(entries => entries)
@@ -1215,8 +1226,18 @@ export default function Json5Test() {
     it('Json5Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: Test5_Obj2 = {
         users: [
-          { id: 1, name: "Frank", age: 25, email: "f@x.com" },
-          { id: 2, name: "Grace", age: 30, email: "g@x.com" }
+          {
+            id: 1,
+            name: "Frank",
+            age: 25,
+            email: "f@x.com"
+          },
+          {
+            id: 2,
+            name: "Grace",
+            age: 30,
+            email: "g@x.com"
+          }
         ]
       };
       const filteredObj: FilteredPropsArr = {
@@ -1268,9 +1289,13 @@ export default function Json5Test() {
         }
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: DefaultValueDeepObj = JSON.parse(jsonStr, (key, value : string) => {
-        if (key === "layout") return value ?? "grid";
-        if (key === "timeout") return value ?? 3000;
+      const parsedObj: DefaultValueDeepObj = JSON.parse(jsonStr, (key, value: string) => {
+        if (key === "layout") {
+          return value ?? "grid";
+        }
+        if (key === "timeout") {
+          return value ?? 3000;
+        }
         return value;
       });
       expect(parsedObj.config.layout).assertEqual(undefined);
@@ -1362,8 +1387,10 @@ export default function Json5Test() {
         tags: ["js", "Json", "TypeScript"]
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: CaseConvertArr = JSON.parse(jsonStr, (key, value : string[]) => {
-        if (key === "tags") return (value as string[]).map(tag => tag.toUpperCase());
+      const parsedObj: CaseConvertArr = JSON.parse(jsonStr, (key, value: string[]) => {
+        if (key === "tags") {
+          return (value as string[]).map(tag => tag.toUpperCase());
+        }
         return value;
       });
 
@@ -1403,7 +1430,7 @@ export default function Json5Test() {
      */
     it('Json5Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalSet: Set<string> = new Set(["b", "a", "c"]);
-      const jsonStr: string = JSON.stringify(originalSet, (key, value : Set<string>) =>
+      const jsonStr: string = JSON.stringify(originalSet, (key, value: Set<string>) =>
       value instanceof Set ? Array.from(value) : value
       );
       const parsedArr: string[] = JSON.parse(jsonStr);
@@ -1448,7 +1475,7 @@ export default function Json5Test() {
         frequency: {}
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: ElementFrequencyObj = JSON.parse(jsonStr, (key, value : ElementFrequencyObj) => {
+      const parsedObj: ElementFrequencyObj = JSON.parse(jsonStr, (key, value: ElementFrequencyObj) => {
         if (key === "") {
           const freq = (value.numbers as number[]).reduce((map, num) => {
             map[num] = (map[num] || 0) + 1;
@@ -1483,7 +1510,7 @@ export default function Json5Test() {
         ]
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: DeepAvgObj = JSON.parse(jsonStr, (key, value : Test16_Obj5[]) => {
+      const parsedObj: DeepAvgObj = JSON.parse(jsonStr, (key, value: Test16_Obj5[]) => {
         if (key === "values") {
           const scores = (value as Test16_Obj5[]).map(v => v.score);
           const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
@@ -1602,13 +1629,14 @@ export default function Json5Test() {
         new Set(["c", "d", "e"])
       ];
       const originalObj: Test21_Obj1 = { sets };
-      const jsonStr: string = JSON.stringify(originalObj, (key, value : Set<string>) => {
+      const jsonStr: string = JSON.stringify(originalObj, (key, value: Set<string>) => {
         return value instanceof Set ? Array.from(value) : value;
       });
 
       interface ParsedSets {
         sets: string[][];
       }
+
       const parsedObj: SetUnionObj = JSON.parse(jsonStr, (key, value: ParsedSets) => {
         if (key === "") {
           const unionSet = new Set<string>();
@@ -1720,7 +1748,7 @@ export default function Json5Test() {
         settings: { volume: 120, brightness: -10 }
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: ValueRangeCheckObj = JSON.parse(jsonStr, (key, value : number) => {
+      const parsedObj: ValueRangeCheckObj = JSON.parse(jsonStr, (key, value: number) => {
         if (key === "volume" || key === "brightness") {
           return Math.max(0, Math.min(100, value as number));
         }
@@ -1742,7 +1770,10 @@ export default function Json5Test() {
       const originalObj: RegexPatternObj = {
         patterns: [
           { name: "Email", regex: "^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$" },
-          { name: "URL", regex: "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$" }
+          {
+            name: "URL",
+            regex: "^https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)$"
+          }
         ]
       };
       const jsonStr: string = JSON.stringify(originalObj);
@@ -1807,12 +1838,12 @@ export default function Json5Test() {
       const setA: Set<string> = new Set(["a", "b", "c"]);
       const setB: Set<string> = new Set(["b", "c", "d"]);
       const originalObj: Test30_Obj1 = { a: setA, b: setB };
-      const jsonStr: string = JSON.stringify(originalObj, (key, value : Set<string>) =>
+      const jsonStr: string = JSON.stringify(originalObj, (key, value: Set<string>) =>
       value instanceof Set ? Array.from(value) : value
       );
-      const parsedObj: SetSymmetricDiffObj = JSON.parse(jsonStr, (key, value : Test30_Obj1) => {
+      const parsedObj: SetSymmetricDiffObj = JSON.parse(jsonStr, (key, value: Test30_Obj1) => {
         if (key === "") {
-          const a = new Set(value.a as  Set<string>);
+          const a = new Set(value.a as Set<string>);
           const b = new Set(value.b as Set<string>);
           const diffA = Array.from(a).filter(x => !b.has(x));
           const diffB = Array.from(b).filter(x => !a.has(x));
@@ -1997,8 +2028,10 @@ export default function Json5Test() {
       const jsonStr: string = JSON.stringify(originalObj);
       const parsedObj: GraphqlQueryObj = JSON.parse(jsonStr);
 
-      expect(parsedObj.queries[0].query).assertEqual("query Users($limit: Int) { users(limit: $limit) { id name email } }");
-      expect(parsedObj.queries[1].query).assertEqual("mutation CreatePost($title: String!) { createPost(title: $title) { id } }");
+      expect(parsedObj.queries[0].query)
+        .assertEqual("query Users($limit: Int) { users(limit: $limit) { id name email } }");
+      expect(parsedObj.queries[1].query)
+        .assertEqual("mutation CreatePost($title: String!) { createPost(title: $title) { id } }");
     });
 
     /**
@@ -2018,9 +2051,10 @@ export default function Json5Test() {
         ]
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: TransportEmojiObj1 = JSON.parse(jsonStr, (key: string, value: string | object | string[] | number) => {
-        return value;
-      });
+      const parsedObj: TransportEmojiObj1 =
+        JSON.parse(jsonStr, (key: string, value: string | object | string[] | number) => {
+          return value;
+        });
       expect(parsedObj.vehicles[0].emoji).assertEqual("🚗");
       expect(parsedObj.vehicles[2].name).assertEqual("Plane");
     });
@@ -2040,7 +2074,7 @@ export default function Json5Test() {
         "$.store..price"
       ];
       const jsonStr: string = JSON.stringify(originalArr);
-      const parsedArr: string[] = JSON.parse(jsonStr, (key: string, value: string | string[] ) => {
+      const parsedArr: string[] = JSON.parse(jsonStr, (key: string, value: string | string[]) => {
         return value;
       });
 
@@ -2065,7 +2099,7 @@ export default function Json5Test() {
         }
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: MultiLangPunctObj = JSON.parse(jsonStr, (key: string, value: Test41_Obj1 ) => {
+      const parsedObj: MultiLangPunctObj = JSON.parse(jsonStr, (key: string, value: Test41_Obj1) => {
         return value;
       });
 
@@ -2089,7 +2123,7 @@ export default function Json5Test() {
         ]
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: DockerCommandObj = JSON.parse(jsonStr, (key: string, value: string | Test42_Obj1[] ) => {
+      const parsedObj: DockerCommandObj = JSON.parse(jsonStr, (key: string, value: string | Test42_Obj1[]) => {
         return value;
       });
 
@@ -2113,7 +2147,7 @@ export default function Json5Test() {
         ]
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: JavaAnnotationObj = JSON.parse(jsonStr, (key: string, value: string | Test43_Obj1[] ) => {
+      const parsedObj: JavaAnnotationObj = JSON.parse(jsonStr, (key: string, value: string | Test43_Obj1[]) => {
         return value;
       });
 
@@ -2166,9 +2200,10 @@ export default function Json5Test() {
         ]
       };
       const jsonStr: string = JSON.stringify(originalObj);
-      const parsedObj: TransportEmojiObj1 = JSON.parse(jsonStr, (key: string, value: string | object | string[] | number) => {
-        return value;
-      });
+      const parsedObj: TransportEmojiObj1 =
+        JSON.parse(jsonStr, (key: string, value: string | object | string[] | number) => {
+          return value;
+        });
 
       expect(parsedObj.vehicles[0].emoji).assertEqual("🚗");
       expect(parsedObj.vehicles[2].name).assertEqual("Plane");
@@ -2222,7 +2257,11 @@ export default function Json5Test() {
       const parsed: PositiveSumObj = JSON.parse(json, (k: string, v: PositiveSumObj) => {
         if (k === "") {
           let s = 0;
-          v.numbers.forEach((n: number) => { if (n >= 0) s += n; });
+          v.numbers.forEach((n: number) => {
+            if (n >= 0) {
+              s += n;
+            }
+          });
           return { numbers: v.numbers, sum: s };
         }
         return v;
@@ -2266,7 +2305,11 @@ export default function Json5Test() {
       const parsed: EvenNumbers = JSON.parse(json, (k: string, v: EvenNumbers) => {
         if (k === "") {
           const e: number[] = [];
-          v.data.forEach((n: number) => { if (n % 2 === 0) e.push(n); });
+          v.data.forEach((n: number) => {
+            if (n % 2 === 0) {
+              e.push(n);
+            }
+          });
           return { data: v.data, evens: e };
         }
         return v;
@@ -2354,7 +2397,11 @@ export default function Json5Test() {
       const parsed: LongStrings = JSON.parse(json, (k: string, v: LongStrings) => {
         if (k === "") {
           const l: string[] = [];
-          v.strings.forEach((s: string) => { if (s.length > 2) l.push(s); });
+          v.strings.forEach((s: string) => {
+            if (s.length > 2) {
+              l.push(s);
+            }
+          });
           return { strings: v.strings, long: l };
         }
         return v;
@@ -2398,7 +2445,11 @@ export default function Json5Test() {
       const parsed: PositiveCount = JSON.parse(json, (k: string, v: PositiveCount) => {
         if (k === "") {
           let c = 0;
-          v.numbers.forEach((n: number) => { if (n > 0) c++; });
+          v.numbers.forEach((n: number) => {
+            if (n > 0) {
+              c++;
+            }
+          });
           return { numbers: v.numbers, count: c };
         }
         return v;
@@ -2443,7 +2494,9 @@ export default function Json5Test() {
       const parsed: ReversedArr = JSON.parse(json, (k: string, v: ReversedArr) => {
         if (k === "") {
           const r: string[] = [];
-          for (let i = v.data.length - 1; i >= 0; i--) r.push(v.data[i]);
+          for (let i = v.data.length - 1; i >= 0; i--) {
+            r.push(v.data[i]);
+          }
           return { data: v.data, reversed: r };
         }
         return v;
@@ -2487,7 +2540,11 @@ export default function Json5Test() {
       const parsed: SubstringFilter = JSON.parse(json, (k: string, v: SubstringFilter) => {
         if (k === "") {
           const f: string[] = [];
-          v.strings.forEach((s: string) => { if (s.includes("b")) f.push(s); });
+          v.strings.forEach((s: string) => {
+            if (s.includes("b")) {
+              f.push(s);
+            }
+          });
           return { strings: v.strings, filtered: f };
         }
         return v;
@@ -2530,7 +2587,11 @@ export default function Json5Test() {
       const parsed: SumSkipZero = JSON.parse(json, (k: string, v: SumSkipZero) => {
         if (k === "") {
           let s = 0;
-          v.values.forEach((n: number) => { if (n !== 0) s += n; });
+          v.values.forEach((n: number) => {
+            if (n !== 0) {
+              s += n;
+            }
+          });
           return { values: v.values, sum: s };
         }
         return v;
@@ -2574,7 +2635,11 @@ export default function Json5Test() {
       const parsed: ThresholdFilter = JSON.parse(json, (k: string, v: ThresholdFilter) => {
         if (k === "") {
           const a: number[] = [];
-          v.numbers.forEach((n: number) => { if (n > 10) a.push(n); });
+          v.numbers.forEach((n: number) => {
+            if (n > 10) {
+              a.push(n);
+            }
+          });
           return { numbers: v.numbers, above: a };
         }
         return v;
@@ -2662,7 +2727,9 @@ export default function Json5Test() {
         if (k === "") {
           let c = 0;
           for (let i = 0; i < v.text.length; i++) {
-            if (v.text[i] === "a") c++;
+            if (v.text[i] === "a") {
+              c++;
+            }
           }
           return { text: v.text, count: c };
         }
@@ -2707,7 +2774,11 @@ export default function Json5Test() {
       const parsed: FilterObjects = JSON.parse(json, (k: string, v: FilterObjects) => {
         if (k === "") {
           const f: Test69_Obj2[] = [];
-          v.items.forEach((i: Test69_Obj2) => { if (i.id > 1) f.push(i); });
+          v.items.forEach((i: Test69_Obj2) => {
+            if (i.id > 1) {
+              f.push(i);
+            }
+          });
           return { items: v.items, filtered: f };
         }
         return v;
@@ -2727,7 +2798,9 @@ export default function Json5Test() {
       const obj: ArrayLength = { data: [1, 2, 3], length: 0 };
       const json = JSON.stringify(obj);
       const parsed: ArrayLength = JSON.parse(json, (k: string, v: ArrayLength) => {
-        if (k === "") return { data: v.data, length: v.data.length };
+        if (k === "") {
+          return { data: v.data, length: v.data.length };
+        }
         return v;
       });
       expect(parsed.length).assertEqual(3);
@@ -2768,7 +2841,11 @@ export default function Json5Test() {
       const parsed: RangeCheck = JSON.parse(json, (k: string, v: RangeCheck) => {
         if (k === "") {
           const i: number[] = [];
-          v.numbers.forEach((n: number) => { if (n >= 10 && n <= 20) i.push(n); });
+          v.numbers.forEach((n: number) => {
+            if (n >= 10 && n <= 20) {
+              i.push(n);
+            }
+          });
           return { numbers: v.numbers, inRange: i };
         }
         return v;
@@ -2834,7 +2911,11 @@ export default function Json5Test() {
       const parsed: MaxValue = JSON.parse(json, (k: string, v: MaxValue) => {
         if (k === "") {
           let m = v.numbers[0];
-          v.numbers.forEach((n: number) => { if (n > m) m = n; });
+          v.numbers.forEach((n: number) => {
+            if (n > m) {
+              m = n;
+            }
+          });
           return { numbers: v.numbers, max: m };
         }
         return v;
@@ -2856,7 +2937,11 @@ export default function Json5Test() {
       const parsed: UniqueElements = JSON.parse(json, (k: string, v: UniqueElements) => {
         if (k === "") {
           const u: number[] = [];
-          v.data.forEach((n: number) => { if (!u.includes(n)) u.push(n); });
+          v.data.forEach((n: number) => {
+            if (!u.includes(n)) {
+              u.push(n);
+            }
+          });
           return { data: v.data, unique: u };
         }
         return v;
@@ -2878,7 +2963,7 @@ export default function Json5Test() {
       const parsed: NumToStringArr = JSON.parse(json, (k: string, v: NumToStringArr | number[] | string[]) => {
         if (k === "") {
           const s: string[] = [];
-          ((v as NumToStringArr) .numbers as number[]).forEach(n => s.push(n.toString()));
+          ((v as NumToStringArr).numbers as number[]).forEach(n => s.push(n.toString()));
           return { numbers: (v as NumToStringArr).numbers, strings: s };
         }
         return v;
@@ -2903,7 +2988,11 @@ export default function Json5Test() {
       const parsed: FilterActiveUsers = JSON.parse(json, (k: string, v: FilterActiveUsers) => {
         if (k === "") {
           const a: Test78_Obj1[] = [];
-          v.users.forEach(u => { if (u.active) a.push(u); });
+          v.users.forEach(u => {
+            if (u.active) {
+              a.push(u);
+            }
+          });
           return { users: v.users, active: a };
         }
         return v;
@@ -2969,7 +3058,11 @@ export default function Json5Test() {
       const parsed: EvenLengthStrings = JSON.parse(json, (k: string, v: EvenLengthStrings) => {
         if (k === "") {
           const e: string[] = [];
-          v.strings.forEach(s => { if (s.length % 2 === 0) e.push(s); });
+          v.strings.forEach(s => {
+            if (s.length % 2 === 0) {
+              e.push(s);
+            }
+          });
           return { strings: v.strings, even: e };
         }
         return v;
@@ -3082,7 +3175,11 @@ export default function Json5Test() {
       const parsed: NegativeCount = JSON.parse(json, (k: string, v: NegativeCount) => {
         if (k === "") {
           let c = 0;
-          v.numbers.forEach(n => { if (n < 0) c++; });
+          v.numbers.forEach(n => {
+            if (n < 0) {
+              c++;
+            }
+          });
           return { numbers: v.numbers, count: c };
         }
         return v;
@@ -3106,7 +3203,9 @@ export default function Json5Test() {
           let j = "";
           for (let i = 0; i < v.words.length; i++) {
             j += v.words[i];
-            if (i < v.words.length - 1) j += "-";
+            if (i < v.words.length - 1) {
+              j += "-";
+            }
           }
           return { words: v.words, joined: j };
         }
@@ -3179,7 +3278,11 @@ export default function Json5Test() {
       const parsed: ConditionalSum = JSON.parse(json, (k: string, v: ConditionalSum) => {
         if (k === "") {
           let i = 0;
-          v.transactions.forEach(t => { if (t.type === "income") i += t.amount; });
+          v.transactions.forEach(t => {
+            if (t.type === "income") {
+              i += t.amount;
+            }
+          });
           return { transactions: v.transactions, income: i };
         }
         return v;
@@ -3200,7 +3303,11 @@ export default function Json5Test() {
       const parsed: MinValue = JSON.parse(json, (k: string, v: MinValue) => {
         if (k === "") {
           let m = v.numbers[0];
-          v.numbers.forEach(n => { if (n < m) m = n; });
+          v.numbers.forEach(n => {
+            if (n < m) {
+              m = n;
+            }
+          });
           return { numbers: v.numbers, min: m };
         }
         return v;
@@ -3244,7 +3351,11 @@ export default function Json5Test() {
       const parsed: EvenCompare = JSON.parse(json, (k: string, v: EvenCompare) => {
         if (k === "") {
           const e: number[] = [];
-          v.numbers.forEach(n => { if (n % 2 === 0) e.push(n); });
+          v.numbers.forEach(n => {
+            if (n % 2 === 0) {
+              e.push(n);
+            }
+          });
           return { numbers: v.numbers, evens: e };
         }
         return v;
@@ -3357,7 +3468,11 @@ export default function Json5Test() {
       const parsed: GreaterThanTenCompare = JSON.parse(json, (k: string, v: GreaterThanTenCompare) => {
         if (k === "") {
           const r: number[] = [];
-          v.numbers.forEach(n => { if (n > 10) r.push(n); });
+          v.numbers.forEach(n => {
+            if (n > 10) {
+              r.push(n);
+            }
+          });
           return { numbers: v.numbers, result: r };
         }
         return v;
@@ -3406,7 +3521,11 @@ export default function Json5Test() {
       const parsed: ActiveUserCompare = JSON.parse(json, (k: string, v: ActiveUserCompare) => {
         if (k === "") {
           const a: Test100_Obj1[] = [];
-          v.users.forEach(u => { if (u.active) a.push(u); });
+          v.users.forEach(u => {
+            if (u.active) {
+              a.push(u);
+            }
+          });
           return { users: v.users, active: a };
         }
         return v;
@@ -3452,7 +3571,9 @@ export default function Json5Test() {
           const r: string[] = [];
           v.strings.forEach(s => {
             let rev = "";
-            for (let i = s.length - 1; i >= 0; i--) rev += s[i];
+            for (let i = s.length - 1; i >= 0; i--) {
+              rev += s[i];
+            }
             r.push(rev);
           });
           return { strings: v.strings, reversed: r };
@@ -3476,7 +3597,11 @@ export default function Json5Test() {
       const parsed: DivisibleByFiveCompare = JSON.parse(json, (k: string, v: DivisibleByFiveCompare) => {
         if (k === "") {
           const r: number[] = [];
-          v.numbers.forEach(n => { if (n % 5 === 0) r.push(n); });
+          v.numbers.forEach(n => {
+            if (n % 5 === 0) {
+              r.push(n);
+            }
+          });
           return { numbers: v.numbers, result: r };
         }
         return v;
@@ -3503,7 +3628,8 @@ export default function Json5Test() {
         }
         return v;
       });
-      expect(JSON.stringify(parsed.withProp)).assertEqual(JSON.stringify([{ id: 1, type: "test" }, { id: 2, type: "test" }]));
+      expect(JSON.stringify(parsed.withProp))
+        .assertEqual(JSON.stringify([{ id: 1, type: "test" }, { id: 2, type: "test" }]));
     });
 
     /**
@@ -3564,7 +3690,11 @@ export default function Json5Test() {
       const parsed: LongStringsCompare = JSON.parse(json, (k: string, v: LongStringsCompare) => {
         if (k === "") {
           const l: string[] = [];
-          v.strings.forEach(s => { if (s.length > 2) l.push(s); });
+          v.strings.forEach(s => {
+            if (s.length > 2) {
+              l.push(s);
+            }
+          });
           return { strings: v.strings, long: l };
         }
         return v;
@@ -3592,7 +3722,9 @@ export default function Json5Test() {
           for (let i = 0; i < v.items.length; i++) {
             let minIdx = i;
             for (let j = i + 1; j < v.items.length; j++) {
-              if (v.items[j].value < v.items[minIdx].value) minIdx = j;
+              if (v.items[j].value < v.items[minIdx].value) {
+                minIdx = j;
+              }
             }
             const temp = v.items[i];
             v.items[i] = v.items[minIdx];
@@ -3603,7 +3735,8 @@ export default function Json5Test() {
         }
         return v;
       });
-      expect(JSON.stringify(parsed.sorted)).assertEqual(JSON.stringify([{ name: "A", value: 1 }, { name: "B", value: 2 }]));
+      expect(JSON.stringify(parsed.sorted))
+        .assertEqual(JSON.stringify([{ name: "A", value: 1 }, { name: "B", value: 2 }]));
     });
 
     /**
@@ -3689,7 +3822,11 @@ export default function Json5Test() {
       const parsed: UniqueCompare = JSON.parse(json, (k: string, v: UniqueCompare) => {
         if (k === "") {
           const u: number[] = [];
-          v.numbers.forEach(n => { if (!u.includes(n)) u.push(n); });
+          v.numbers.forEach(n => {
+            if (!u.includes(n)) {
+              u.push(n);
+            }
+          });
           return { numbers: v.numbers, unique: u };
         }
         return v;
@@ -3766,7 +3903,11 @@ export default function Json5Test() {
       const parsed: PriceFilterCompare = JSON.parse(json, (k: string, v: PriceFilterCompare) => {
         if (k === "") {
           const e: Test115_Obj1[] = [];
-          v.products.forEach(p => { if (p.price > 50) e.push(p); });
+          v.products.forEach(p => {
+            if (p.price > 50) {
+              e.push(p);
+            }
+          });
           return { products: v.products, expensive: e };
         }
         return v;
@@ -3812,7 +3953,9 @@ export default function Json5Test() {
           let j = "";
           for (let i = 0; i < v.words.length; i++) {
             j += v.words[i];
-            if (i < v.words.length - 1) j += ",";
+            if (i < v.words.length - 1) {
+              j += ",";
+            }
           }
           return { words: v.words, joined: [j] };
         }
@@ -3857,7 +4000,11 @@ export default function Json5Test() {
       const parsed: SubstrFilterCompare = JSON.parse(json, (k: string, v: SubstrFilterCompare) => {
         if (k === "") {
           const f: string[] = [];
-          v.strings.forEach(s => { if (s.includes("ap")) f.push(s); });
+          v.strings.forEach(s => {
+            if (s.includes("ap")) {
+              f.push(s);
+            }
+          });
           return { strings: v.strings, filtered: f };
         }
         return v;
@@ -3903,7 +4050,11 @@ export default function Json5Test() {
       const parsed: MinToArrayCompare = JSON.parse(json, (k: string, v: MinToArrayCompare) => {
         if (k === "") {
           let m = v.numbers[0];
-          v.numbers.forEach(n => { if (n < m) m = n; });
+          v.numbers.forEach(n => {
+            if (n < m) {
+              m = n;
+            }
+          });
           return { numbers: v.numbers, min: [m] };
         }
         return v;
@@ -3929,9 +4080,15 @@ export default function Json5Test() {
             let trim = "";
             let start = 0;
             let end = s.length - 1;
-            while (start <= end && s[start] === " ") start++;
-            while (end >= start && s[end] === " ") end--;
-            for (let i = start; i <= end; i++) trim += s[i];
+            while (start <= end && s[start] === " ") {
+              start++;
+            }
+            while (end >= start && s[end] === " ") {
+              end--;
+            }
+            for (let i = start; i <= end; i++) {
+              trim += s[i];
+            }
             t.push(trim);
           });
           return { strings: v.strings, trimmed: t };
@@ -3955,7 +4112,11 @@ export default function Json5Test() {
       const parsed: OddNumbersCompare = JSON.parse(json, (k: string, v: OddNumbersCompare) => {
         if (k === "") {
           const o: number[] = [];
-          v.numbers.forEach(n => { if (n % 2 !== 0) o.push(n); });
+          v.numbers.forEach(n => {
+            if (n % 2 !== 0) {
+              o.push(n);
+            }
+          });
           return { numbers: v.numbers, odds: o };
         }
         return v;
@@ -4076,7 +4237,11 @@ export default function Json5Test() {
       const parsed: NegativeNumbersCompare = JSON.parse(json, (k: string, v: NegativeNumbersCompare) => {
         if (k === "") {
           const n: number[] = [];
-          v.numbers.forEach(num => { if (num < 0) n.push(num); });
+          v.numbers.forEach(num => {
+            if (num < 0) {
+              n.push(num);
+            }
+          });
           return { numbers: v.numbers, negatives: n };
         }
         return v;
@@ -4123,7 +4288,11 @@ export default function Json5Test() {
       const parsed: AgeFilterCompare = JSON.parse(json, (k: string, v: AgeFilterCompare) => {
         if (k === "") {
           const a: Test130_Obj1[] = [];
-          v.people.forEach(p => { if (p.age > 30) a.push(p); });
+          v.people.forEach(p => {
+            if (p.age > 30) {
+              a.push(p);
+            }
+          });
           return { people: v.people, adults: a };
         }
         return v;
@@ -4167,7 +4336,9 @@ export default function Json5Test() {
       const parsed: ReverseArrayCompare = JSON.parse(json, (k: string, v: ReverseArrayCompare) => {
         if (k === "") {
           const r: string[] = [];
-          for (let i = v.strings.length - 1; i >= 0; i--) r.push(v.strings[i]);
+          for (let i = v.strings.length - 1; i >= 0; i--) {
+            r.push(v.strings[i]);
+          }
           return { strings: v.strings, reversed: r };
         }
         return v;
@@ -4189,7 +4360,11 @@ export default function Json5Test() {
       const parsed: DivisibleBySevenCompare = JSON.parse(json, (k: string, v: DivisibleBySevenCompare) => {
         if (k === "") {
           const r: number[] = [];
-          v.numbers.forEach(n => { if (n % 7 === 0) r.push(n); });
+          v.numbers.forEach(n => {
+            if (n % 7 === 0) {
+              r.push(n);
+            }
+          });
           return { numbers: v.numbers, result: r };
         }
         return v;
@@ -4210,7 +4385,7 @@ export default function Json5Test() {
       const json = JSON.stringify(obj);
       const parsed: AddIndexCompare = JSON.parse(json, (k: string, v: AddIndexCompare) => {
         if (k === "") {
-          const i:Test134_Obj2[] = [];
+          const i: Test134_Obj2[] = [];
           for (let idx = 0; idx < v.items.length; idx++) {
             i.push({ name: v.items[idx].name, index: idx });
           }
@@ -4218,7 +4393,8 @@ export default function Json5Test() {
         }
         return v;
       });
-      expect(JSON.stringify(parsed.indexed)).assertEqual(JSON.stringify([{ name: "A", index: 0 }, { name: "B", index: 1 }]));
+      expect(JSON.stringify(parsed.indexed))
+        .assertEqual(JSON.stringify([{ name: "A", index: 0 }, { name: "B", index: 1 }]));
     });
 
     /**
@@ -4238,7 +4414,9 @@ export default function Json5Test() {
           v.strings.forEach(s => {
             let count = 0;
             for (let i = 0; i < s.length; i++) {
-              if (s[i] === "a") count++;
+              if (s[i] === "a") {
+                count++;
+              }
             }
             c.push(count);
           });
@@ -4285,7 +4463,11 @@ export default function Json5Test() {
       const parsed: OddLengthCompare = JSON.parse(json, (k: string, v: OddLengthCompare) => {
         if (k === "") {
           const o: string[] = [];
-          v.strings.forEach(s => { if (s.length % 2 !== 0) o.push(s); });
+          v.strings.forEach(s => {
+            if (s.length % 2 !== 0) {
+              o.push(s);
+            }
+          });
           return { strings: v.strings, oddLength: o };
         }
         return v;
@@ -4308,7 +4490,9 @@ export default function Json5Test() {
         if (k === "") {
           const r: number[] = [];
           v.numbers.forEach(n => {
-            if (n % 3 === 0 && n % 5 === 0) r.push(n);
+            if (n % 3 === 0 && n % 5 === 0) {
+              r.push(n);
+            }
           });
           return { numbers: v.numbers, result: r };
         }
@@ -4377,7 +4561,11 @@ export default function Json5Test() {
       const parsed: UniqueSortedCompare = JSON.parse(json, (k: string, v: UniqueSortedCompare) => {
         if (k === "") {
           const u: number[] = [];
-          v.numbers.forEach(n => { if (!u.includes(n)) u.push(n); });
+          v.numbers.forEach(n => {
+            if (!u.includes(n)) {
+              u.push(n);
+            }
+          });
           for (let i = 0; i < u.length; i++) {
             for (let j = i + 1; j < u.length; j++) {
               if (u[i] > u[j]) {
@@ -4511,7 +4699,9 @@ export default function Json5Test() {
               m.push(s);
             } else {
               let masked = s[0];
-              for (let i = 1; i < s.length - 1; i++) masked += "*";
+              for (let i = 1; i < s.length - 1; i++) {
+                masked += "*";
+              }
               masked += s[s.length - 1];
               m.push(masked);
             }
@@ -4520,7 +4710,7 @@ export default function Json5Test() {
         }
         return v;
       });
-      expect(JSON.stringify(parsed.masked)).assertEqual(JSON.stringify(["a***e","b****a","c*t"]));
+      expect(JSON.stringify(parsed.masked)).assertEqual(JSON.stringify(["a***e", "b****a", "c*t"]));
     });
 
     /**
@@ -4567,7 +4757,9 @@ export default function Json5Test() {
                 break;
               }
             }
-            if (!hasNum) f.push(s);
+            if (!hasNum) {
+              f.push(s);
+            }
           });
           return { strings: v.strings, filtered: f };
         }
@@ -4598,7 +4790,8 @@ export default function Json5Test() {
         }
         return v;
       });
-      expect(JSON.stringify(parsed.updated)).assertEqual(JSON.stringify([{ id: 1, status: "shipped" }, { id: 2, status: "shipped" }]));
+      expect(JSON.stringify(parsed.updated))
+        .assertEqual(JSON.stringify([{ id: 1, status: "shipped" }, { id: 2, status: "shipped" }]));
     });
 
     /**
@@ -4615,7 +4808,11 @@ export default function Json5Test() {
       const parsed: TripleMaxCompare = JSON.parse(json, (k: string, v: TripleMaxCompare) => {
         if (k === "") {
           let m = v.numbers[0];
-          v.numbers.forEach(n => { if (n > m) m = n; });
+          v.numbers.forEach(n => {
+            if (n > m) {
+              m = n;
+            }
+          });
           return { numbers: v.numbers, result: [m * 3] };
         }
         return v;

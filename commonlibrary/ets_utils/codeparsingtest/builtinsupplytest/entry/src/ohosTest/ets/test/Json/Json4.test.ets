@@ -1531,8 +1531,8 @@ export default function Json4Test() {
      * @tc.level Level 1
      */
     it('Json4Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const invalidJson: string = '{"a":1}}extra';
       try {
+        const invalidJson: string = '{"a":1}}extra';
         JSON.parse(invalidJson);
       } catch (error) {
         expect(error.name).assertEqual(SyntaxError);

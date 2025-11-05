@@ -1241,7 +1241,9 @@ export default function SharedArrayBuffer1Test() {
       Atomics.store(view, 5, 10);
       Atomics.add(view, 5, 20);
       let sum = 0;
-      for (let i = 0; i < view.length; i++) sum += view[i];
+      for (let i = 0; i < view.length; i++) {
+        sum += view[i];
+      }
       expect(sum).assertEqual(30);
     });
 
@@ -1256,7 +1258,9 @@ export default function SharedArrayBuffer1Test() {
     it('SharedArrayBuffer1Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sab = new SharedArrayBuffer(80);
       const view = new Uint32Array(sab);
-      for (let i = 0; i < view.length; i++) view[i] = i * 10;
+      for (let i = 0; i < view.length; i++) {
+        view[i] = i * 10;
+      }
       expect(view[5]).assertEqual(50);
     });
 

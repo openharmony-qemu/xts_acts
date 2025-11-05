@@ -369,7 +369,7 @@ export default function ArrayBuffer1Test() {
      * @tc.level Level 1
      */
     it('arraybuffer1Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const overOneGBLength = 2^30+1;
+      const overOneGBLength = 2 ^ 30 + 1;
       if (overOneGBLength <= Number.MAX_SAFE_INTEGER) { // 确保不超安全整数
         const overOneGBBuffer = new ArrayBuffer(overOneGBLength);
         expect(overOneGBBuffer.byteLength).assertEqual(overOneGBLength);

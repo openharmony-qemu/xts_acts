@@ -80,7 +80,7 @@ export default function ArrayBuffer4Test() {
      */
     it('arraybuffer4Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const fullSliceBuffer = new ArrayBuffer(8);
-      const fullSliced = fullSliceBuffer.slice(3,5);
+      const fullSliced = fullSliceBuffer.slice(3, 5);
       expect(fullSliced.byteLength).assertEqual(2);
     });
 

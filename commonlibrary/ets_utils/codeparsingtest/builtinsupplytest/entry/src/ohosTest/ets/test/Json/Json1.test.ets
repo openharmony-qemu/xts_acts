@@ -123,10 +123,12 @@ export default function Json1Test() {
         name: string;
         age: number
       }
+
       interface NestedData {
         id: number;
         info: Info
       }
+
       const jsonStr: string = '{"id": 1, "info": {"name": "Alice", "age": 25}}';
       const result: NestedData = JSON.parse(jsonStr);
       expect(result.id).assertEqual(1);
@@ -145,6 +147,7 @@ export default function Json1Test() {
         negInt: number;
         negFloat: number;
       }
+
       const jsonStr: string = '{"negInt": -100, "negFloat": -15.7}';
       const result: NegNumData = JSON.parse(jsonStr);
       expect(result.negInt).assertEqual(-100);
@@ -261,6 +264,7 @@ export default function Json1Test() {
         title: string;
         content: string;
       }
+
       const jsonStr: string = '{"title": "测试"}';
       const result: ChineseData = JSON.parse(jsonStr);
       expect(result.title).assertEqual("测试");
@@ -292,6 +296,7 @@ export default function Json1Test() {
       interface FloatData {
         price: number;
       }
+
       const jsonStr: string = '{"price": 99.99}';
       const result: FloatData = JSON.parse(jsonStr);
       expect(result.price).assertEqual(99.99);
@@ -342,6 +347,7 @@ export default function Json1Test() {
       interface SciData {
         value: number;
       }
+
       const jsonStr: string = '{"value": 1.8e4}';
       const result: SciData = JSON.parse(jsonStr);
       expect(result.value).assertEqual(18000);
@@ -418,7 +424,11 @@ export default function Json1Test() {
     it('Json1Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[Infinity]';
       let isSyntaxError: boolean = false;
-      try { JSON.parse(jsonStr); } catch (e) { isSyntaxError = e instanceof SyntaxError; }
+      try {
+        JSON.parse(jsonStr);
+      } catch (e) {
+        isSyntaxError = e instanceof SyntaxError;
+      }
       expect(isSyntaxError).assertEqual(true);
     });
 
@@ -434,6 +444,7 @@ export default function Json1Test() {
       interface LongNum {
         num: number;
       }
+
       const jsonStr: string = '{"num": 9007199254740991}';
       const result: LongNum = JSON.parse(jsonStr);
       expect(result.num).assertEqual(9007199254740991);
@@ -450,7 +461,11 @@ export default function Json1Test() {
     it('Json1Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '{"a": 1 "b": 2}';
       let isSyntaxError: boolean = false;
-      try { JSON.parse(jsonStr); } catch (e) { isSyntaxError = e instanceof SyntaxError; }
+      try {
+        JSON.parse(jsonStr);
+      } catch (e) {
+        isSyntaxError = e instanceof SyntaxError;
+      }
       expect(isSyntaxError).assertEqual(true);
     });
 
@@ -467,6 +482,7 @@ export default function Json1Test() {
         x?: number;
         y: number;
       }
+
       const jsonStr: string = '{"x": 10, "y": 20}';
       const result: NoReturn = JSON.parse(jsonStr, (k) => k === "x" ? undefined : k);
       expect(result.x).assertEqual(undefined);
@@ -481,9 +497,10 @@ export default function Json1Test() {
      * @tc.level Level 1
      */
     it('Json1Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      interface Key{
-        key:String
+      interface Key {
+        key: String
       }
+
       const jsonStr: string = '[{}, {"key": "val"}]';
       const result: (object | Key)[] = JSON.parse(jsonStr);
       expect(Object.keys(result[0]).length).assertEqual(0);
@@ -499,7 +516,7 @@ export default function Json1Test() {
      */
     it('Json1Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "123";
-      const result: number = JSON.parse(jsonStr, (k : string, v : number) => k === "" ? (v as number) + 77 : v);
+      const result: number = JSON.parse(jsonStr, (k: string, v: number) => k === "" ? (v as number) + 77 : v);
       expect(result).assertEqual(200);
     });
 
@@ -516,6 +533,7 @@ export default function Json1Test() {
         id: number;
         name: string;
       }
+
       const jsonStr: string = '[{"id": 1, "name": "A"}, {"id": 2, "name": "B"}]';
       const result: ArrWithObj[] = JSON.parse(jsonStr);
       expect(result[1].name).assertEqual("B");
@@ -533,7 +551,9 @@ export default function Json1Test() {
       const jsonStr: string = '[5, 10]';
       let isStrKey: boolean = true;
       JSON.parse(jsonStr, (k) => {
-        if (k !== "" && typeof k !== "string") isStrKey = false;
+        if (k !== "" && typeof k !== "string") {
+          isStrKey = false;
+        }
         return k;
       });
       expect(isStrKey).assertEqual(true);
@@ -550,7 +570,11 @@ export default function Json1Test() {
     it('Json1Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "{'key': 'value'}";
       let isSyntaxError: boolean = false;
-      try { JSON.parse(jsonStr); } catch (e) { isSyntaxError = e instanceof SyntaxError; }
+      try {
+        JSON.parse(jsonStr);
+      } catch (e) {
+        isSyntaxError = e instanceof SyntaxError;
+      }
       expect(isSyntaxError).assertEqual(true);
     });
 
@@ -566,12 +590,14 @@ export default function Json1Test() {
       interface ObjToArr {
         data: (number | string)[];
       }
+
       interface VObj {
         id: number | string,
         name: number | string
       }
+
       const jsonStr: string = '{"data": {"id": 1, "name": "test"}}';
-      const result: ObjToArr = JSON.parse(jsonStr, (k : string, v : VObj) => k === "data" ? [v.id, v.name] : v);
+      const result: ObjToArr = JSON.parse(jsonStr, (k: string, v: VObj) => k === "data" ? [v.id, v.name] : v);
       expect(result.data[0]).assertEqual(1);
     });
 
@@ -602,6 +628,7 @@ export default function Json1Test() {
         zero: number;
         negZero: number;
       }
+
       const jsonStr: string = '{"zero": 0, "negZero": -0}';
       const result: ZeroVal = JSON.parse(jsonStr);
       expect(result.zero).assertEqual(0);
@@ -632,7 +659,10 @@ export default function Json1Test() {
     it('Json1Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '{"a": {"b": 1}}';
       let lastKey: string = "";
-      JSON.parse(jsonStr, (k) => { lastKey = k; return k; });
+      JSON.parse(jsonStr, (k) => {
+        lastKey = k;
+        return k;
+      });
       expect(lastKey).assertEqual("");
     });
 
@@ -662,8 +692,9 @@ export default function Json1Test() {
       interface BoolToNum {
         success: number;
       }
+
       const jsonStr: string = '{"success": true}';
-      const result: BoolToNum = JSON.parse(jsonStr, (k:string, v:number) => k === "success" ? (v ? 1 : 0) : v);
+      const result: BoolToNum = JSON.parse(jsonStr, (k: string, v: number) => k === "success" ? (v ? 1 : 0) : v);
       expect(result.success).assertEqual(1);
     });
 
@@ -679,6 +710,7 @@ export default function Json1Test() {
       interface EmptyStr {
         str: string;
       }
+
       const jsonStr: string = '{"str": ""}';
       const result: EmptyStr = JSON.parse(jsonStr);
       expect(result.str).assertEqual("");
@@ -707,18 +739,20 @@ export default function Json1Test() {
      * @tc.level Level 1
      */
     it('Json1Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      interface Level1{
-        level2:Level2
+      interface Level1 {
+        level2: Level2
       }
-      interface Level2{
-        level3 : number,
+
+      interface Level2 {
+        level3: number,
       }
+
       interface DeepNested {
         level1: Level1
       }
 
       const jsonStr: string = '{"level1": {"level2": {"level3": 5}}}';
-      const result: DeepNested = JSON.parse(jsonStr, (k : string,  v:number) => k === "level3" ? (v as number) * 4 : v);
+      const result: DeepNested = JSON.parse(jsonStr, (k: string, v: number) => k === "level3" ? (v as number) * 4 : v);
       expect(result.level1.level2.level3).assertEqual(20);
     });
 
@@ -748,6 +782,7 @@ export default function Json1Test() {
       interface InfStr {
         str: string;
       }
+
       const jsonStr: string = '{"str": "Infinity"}';
       const result: InfStr = JSON.parse(jsonStr);
       expect(result.str).assertEqual("Infinity");
@@ -764,7 +799,11 @@ export default function Json1Test() {
     it('Json1Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '{"key": "value"';
       let isSyntaxError: boolean = false;
-      try { JSON.parse(jsonStr); } catch (e) { isSyntaxError = e instanceof SyntaxError; }
+      try {
+        JSON.parse(jsonStr);
+      } catch (e) {
+        isSyntaxError = e instanceof SyntaxError;
+      }
       expect(isSyntaxError).assertEqual(true);
     });
 
@@ -808,6 +847,7 @@ export default function Json1Test() {
       interface FuncStr {
         code: string;
       }
+
       const jsonStr: string = '{"code": "function() {}"}';
       const result: FuncStr = JSON.parse(jsonStr);
       expect(result.code).assertEqual("function() {}");
@@ -825,6 +865,7 @@ export default function Json1Test() {
       interface ObjWithEmptyArr {
         list: never[];
       }
+
       const jsonStr: string = '{"list": []}';
       const result: ObjWithEmptyArr = JSON.parse(jsonStr);
       expect(result.list.length).assertEqual(0);
@@ -842,6 +883,7 @@ export default function Json1Test() {
       interface NullVal {
         data: null;
       }
+
       const jsonStr: string = '{"data": null}';
       const result: NullVal = JSON.parse(jsonStr);
       expect(result.data).assertEqual(null);
@@ -857,7 +899,11 @@ export default function Json1Test() {
     it('Json1Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '{"a": 1, "b": 2, }'; // 对象末尾多余逗号
       let isSyntaxError: boolean = false;
-      try { JSON.parse(jsonStr); } catch (e) { isSyntaxError = e instanceof SyntaxError; }
+      try {
+        JSON.parse(jsonStr);
+      } catch (e) {
+        isSyntaxError = e instanceof SyntaxError;
+      }
       expect(isSyntaxError).assertEqual(true);
     });
 
@@ -886,7 +932,11 @@ export default function Json1Test() {
     it('Json1Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '{key: "value", num: 123}';
       let isSyntaxError: boolean = false;
-      try { JSON.parse(jsonStr); } catch (e) { isSyntaxError = e instanceof SyntaxError; }
+      try {
+        JSON.parse(jsonStr);
+      } catch (e) {
+        isSyntaxError = e instanceof SyntaxError;
+      }
       expect(isSyntaxError).assertEqual(true);
     });
 
@@ -930,6 +980,7 @@ export default function Json1Test() {
       interface NaNStr {
         str: string;
       }
+
       const jsonStr: string = '{"str": "NaN"}';
       const result: NaNStr = JSON.parse(jsonStr);
       expect(result.str).assertEqual("NaN");
@@ -944,13 +995,16 @@ export default function Json1Test() {
      * @tc.level Level 1
      */
     it('Json1Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      interface B{}
-      interface A{
-        b:B
+      interface B {}
+
+      interface A {
+        b: B
       }
+
       interface NestedEmptyObj {
-        a:A
+        a: A
       }
+
       const jsonStr: string = '{"a": {"b": {}}}';
       const result: NestedEmptyObj = JSON.parse(jsonStr);
       expect(Object.keys(result.a.b).length).assertEqual(0);
@@ -967,7 +1021,11 @@ export default function Json1Test() {
     it('Json1Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[1, 2, 3';
       let isSyntaxError: boolean = false;
-      try { JSON.parse(jsonStr); } catch (e) { isSyntaxError = e instanceof SyntaxError; }
+      try {
+        JSON.parse(jsonStr);
+      } catch (e) {
+        isSyntaxError = e instanceof SyntaxError;
+      }
       expect(isSyntaxError).assertEqual(true);
     });
 
@@ -1037,11 +1095,13 @@ export default function Json1Test() {
      */
     it('Json1Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface A {
-        b:null
+        b: null
       }
+
       interface NestedNull {
-        a:A;
+        a: A;
       }
+
       const jsonStr: string = '{"a": {"b": null}}';
       const result: NestedNull = JSON.parse(jsonStr);
       expect(result.a.b).assertEqual(null);
@@ -1059,7 +1119,9 @@ export default function Json1Test() {
       const jsonStr: string = '["a", "b", "c"]';
       let isAllStrIdx: boolean = true;
       JSON.parse(jsonStr, (k) => {
-        if (k !== "" && isNaN(Number(k))) isAllStrIdx = false;
+        if (k !== "" && isNaN(Number(k))) {
+          isAllStrIdx = false;
+        }
         return k;
       });
       expect(isAllStrIdx).assertEqual(true);
@@ -1119,6 +1181,7 @@ export default function Json1Test() {
       interface RegexStr {
         pattern: string;
       }
+
       const jsonStr: string = '{"pattern": "/^[a-z]+$/"}';
       const result: RegexStr = JSON.parse(jsonStr);
       expect(result.pattern).assertEqual("/^[a-z]+$/");
@@ -1133,12 +1196,14 @@ export default function Json1Test() {
      * @tc.level Level 1
      */
     it('Json1Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      interface A{
+      interface A {
         b: never[]
       }
+
       interface ObjWithNestedEmptyArr {
         a: A;
       }
+
       const jsonStr: string = '{"a": {"b": []}}';
       const result: ObjWithNestedEmptyArr = JSON.parse(jsonStr);
       expect(result.a.b.length).assertEqual(0);
@@ -1153,9 +1218,9 @@ export default function Json1Test() {
      * @tc.level Level 1
      */
     it('Json1Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-        const jsonStr: string = '[1, null, 3, null, 5]';
-        const result: (number | null)[] = JSON.parse(jsonStr);
-        expect(result[3]).assertEqual(null);
+      const jsonStr: string = '[1, null, 3, null, 5]';
+      const result: (number | null)[] = JSON.parse(jsonStr);
+      expect(result[3]).assertEqual(null);
     });
 
     /**
@@ -1182,8 +1247,10 @@ export default function Json1Test() {
      */
     it('Json1Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[1, 2, 3, 4, 5, 6]';
-      const result: number[] = JSON.parse(jsonStr, (k : string, v :number[]) => {
-        if (k === "") return (v as number[]).filter(num => num % 2 === 0);
+      const result: number[] = JSON.parse(jsonStr, (k: string, v: number[]) => {
+        if (k === "") {
+          return (v as number[]).filter(num => num % 2 === 0);
+        }
         return v;
       });
       expect(result[1]).assertEqual(4);
@@ -1201,9 +1268,12 @@ export default function Json1Test() {
       interface CurrencyStr {
         amount: string;
       }
+
       const jsonStr: string = '{"amount": 1234.56}';
-      const result: CurrencyStr = JSON.parse(jsonStr, (k : string, v:number) => {
-        if (k === "amount") return `$${(v as number).toFixed(2)}`;
+      const result: CurrencyStr = JSON.parse(jsonStr, (k: string, v: number) => {
+        if (k === "amount") {
+          return `$${(v as number).toFixed(2)}`;
+        }
         return v;
       });
       expect(result.amount).assertEqual("$1234.56");
@@ -1221,6 +1291,7 @@ export default function Json1Test() {
       interface LongChineseStr {
         content: string;
       }
+
       const longContent: string = "这是一段用于测试JSON解析的超长中文字符串，包含多个汉字和标点符号。";
       const jsonStr: string = `{"content": "${longContent}"}`;
       const result: LongChineseStr = JSON.parse(jsonStr);
@@ -1237,14 +1308,16 @@ export default function Json1Test() {
      * @tc.level Level 1
      */
     it('Json1Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      interface Obj{
-        default :string
+      interface Obj {
+        default: string
       }
+
       interface EmptyObjAddProp {
         obj: Obj;
       }
+
       const jsonStr: string = '{"obj": {}}';
-      const result: EmptyObjAddProp = JSON.parse(jsonStr, (k : string, v : object) => {
+      const result: EmptyObjAddProp = JSON.parse(jsonStr, (k: string, v: object) => {
         if (k === "obj" && Object.keys(v as object).length === 0) {
           return { default: "default-value" };
         }
@@ -1277,8 +1350,10 @@ export default function Json1Test() {
      */
     it('Json1Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '[3, 1, 2]';
-      const result: number[] = JSON.parse(jsonStr, (k : string, v : number[]) => {
-        if (k === "") return (v as number[]).sort((a, b) => a - b);
+      const result: number[] = JSON.parse(jsonStr, (k: string, v: number[]) => {
+        if (k === "") {
+          return (v as number[]).sort((a, b) => a - b);
+        }
         return v;
       });
       expect(result[0]).assertEqual(1);
@@ -1295,7 +1370,11 @@ export default function Json1Test() {
     it('Json1Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '{user@id: "u123", price#tag: 99}';
       let isSyntaxError: boolean = false;
-      try { JSON.parse(jsonStr); } catch (e) { isSyntaxError = e instanceof SyntaxError; }
+      try {
+        JSON.parse(jsonStr);
+      } catch (e) {
+        isSyntaxError = e instanceof SyntaxError;
+      }
       expect(isSyntaxError).assertEqual(true);
     });
 
@@ -1462,7 +1541,7 @@ export default function Json1Test() {
      */
     it('Json1Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"hello"';
-      const result: string = JSON.parse(jsonStr, (k:string, v:string) => k === "" ? (v as string).toUpperCase() : v);
+      const result: string = JSON.parse(jsonStr, (k: string, v: string) => k === "" ? (v as string).toUpperCase() : v);
       expect(result).assertEqual("HELLO");
     });
 
@@ -1504,7 +1583,7 @@ export default function Json1Test() {
      */
     it('Json1Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "3.14";
-      const result: number = JSON.parse(jsonStr, (k : string, v : number) => k === "" ? Math.floor(v as number) : v);
+      const result: number = JSON.parse(jsonStr, (k: string, v: number) => k === "" ? Math.floor(v as number) : v);
       expect(result).assertEqual(3);
     });
 
@@ -1546,7 +1625,8 @@ export default function Json1Test() {
      */
     it('Json1Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"a\\nb"';
-      const result: string = JSON.parse(jsonStr, (k : string, v : string) => k === "" ? (v as string).replace("\n", " ") : v);
+      const result: string =
+        JSON.parse(jsonStr, (k: string, v: string) => k === "" ? (v as string).replace("\n", " ") : v);
       expect(result).assertEqual("a b");
     });
 
@@ -1562,6 +1642,7 @@ export default function Json1Test() {
       interface Result {
         k: number
       }
+
       const jsonStr: string = '[{"k":1}]';
       const result: Result[] = JSON.parse(jsonStr);
       expect(result[0].k).assertEqual(1);
@@ -1591,7 +1672,7 @@ export default function Json1Test() {
      */
     it('Json1Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = "1e3";
-      const result: number = JSON.parse(jsonStr, (k : string , v : number) => k === "" ? (v as number) + 500 : v);
+      const result: number = JSON.parse(jsonStr, (k: string, v: number) => k === "" ? (v as number) + 500 : v);
       expect(result).assertEqual(1500);
     });
 
@@ -1605,7 +1686,7 @@ export default function Json1Test() {
      */
     it('Json1Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const jsonStr: string = '"中文"';
-      const result: string = JSON.parse(jsonStr, (k:string, v:string) => k === "" ? `pre-${v}` : v);
+      const result: string = JSON.parse(jsonStr, (k: string, v: string) => k === "" ? `pre-${v}` : v);
       expect(result).assertEqual("pre-中文");
     });
 

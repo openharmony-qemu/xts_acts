@@ -276,6 +276,7 @@ export default function ArrayBuffer2Test() {
       interface NormalObj {
         options?: Record<string, number | string | boolean>;
       }
+
       const normalObj: NormalObj = {
         options: Object({ id: 1, value: "test" }) // options 是一个具有属性的对象
       };
@@ -384,7 +385,8 @@ export default function ArrayBuffer2Test() {
         type: String,
         payload: Array<Int8Array>
       }
-      const reduxAction : ReduxAction = Object({ type: "SET_DATA", payload: new Int32Array(new ArrayBuffer(4)) });
+
+      const reduxAction: ReduxAction = Object({ type: "SET_DATA", payload: new Int32Array(new ArrayBuffer(4)) });
       expect(ArrayBuffer.isView(reduxAction.payload)).assertEqual(true);
     });
 
@@ -502,7 +504,9 @@ export default function ArrayBuffer2Test() {
      * @tc.level Level 1
      */
     it('arraybuffer2Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      class CustomUint32Array extends Uint32Array {}
+      class CustomUint32Array extends Uint32Array {
+      }
+
       const customUint32Array = new CustomUint32Array(new ArrayBuffer(4));
       expect(ArrayBuffer.isView(customUint32Array)).assertEqual(true);
     });
@@ -516,7 +520,9 @@ export default function ArrayBuffer2Test() {
      * @tc.level Level 1
      */
     it('arraybuffer2Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      class CustomDataView extends DataView {}
+      class CustomDataView extends DataView {
+      }
+
       const customDataView = new CustomDataView(new ArrayBuffer(8));
       expect(ArrayBuffer.isView(customDataView)).assertEqual(true);
     });
@@ -535,7 +541,8 @@ export default function ArrayBuffer2Test() {
         byteLength: number,
         byteOffset: number
       }
-      const fakeView :FakeView = { buffer: new ArrayBuffer(4), byteLength: 4, byteOffset: 0 };
+
+      const fakeView: FakeView = { buffer: new ArrayBuffer(4), byteLength: 4, byteOffset: 0 };
       expect(ArrayBuffer.isView(fakeView)).assertEqual(false);
     });
 
@@ -671,7 +678,8 @@ export default function ArrayBuffer2Test() {
       interface ObjWithDataView {
         view: DataView
       }
-      const objWithDataView : ObjWithDataView = { view: new DataView(new ArrayBuffer(8)) };
+
+      const objWithDataView: ObjWithDataView = { view: new DataView(new ArrayBuffer(8)) };
       expect(ArrayBuffer.isView(objWithDataView.view)).assertEqual(true);
     });
 
@@ -686,10 +694,12 @@ export default function ArrayBuffer2Test() {
     it('arraybuffer2Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class ViewHolder {
         view: Float32Array;
+
         constructor() {
           this.view = new Float32Array(new ArrayBuffer(8));
         }
       }
+
       const viewHolder = new ViewHolder();
       expect(ArrayBuffer.isView(viewHolder.view)).assertEqual(true);
     });
@@ -708,6 +718,7 @@ export default function ArrayBuffer2Test() {
           return new DataView(new ArrayBuffer(4));
         }
       }
+
       const viewGenerator = new ViewGenerator();
       expect(ArrayBuffer.isView(viewGenerator.getView())).assertEqual(true);
     });
@@ -801,10 +812,11 @@ export default function ArrayBuffer2Test() {
      * @tc.level Level 1
      */
     it('arraybuffer2Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      interface ObjWithBuffer{
+      interface ObjWithBuffer {
         buffer: ArrayBuffer
       }
-      const objWithBuffer : ObjWithBuffer = { buffer: new ArrayBuffer(4) };
+
+      const objWithBuffer: ObjWithBuffer = { buffer: new ArrayBuffer(4) };
       expect(ArrayBuffer.isView(objWithBuffer)).assertEqual(false);
     });
 
@@ -856,7 +868,7 @@ export default function ArrayBuffer2Test() {
      * @tc.level Level 1
      */
     it('arraybuffer2Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const copyView = new Uint16Array([1,2,3,4]);
+      const copyView = new Uint16Array([1, 2, 3, 4]);
       copyView.copyWithin(0, 2);
       expect(ArrayBuffer.isView(copyView)).assertEqual(true);
     });
@@ -898,10 +910,9 @@ export default function ArrayBuffer2Test() {
      * @tc.level Level 1
      */
     it('arraybuffer2Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      interface Empty {
+      interface Empty {}
 
-      }
-      const emptyObj : Empty= {};
+      const emptyObj: Empty = {};
       expect(ArrayBuffer.isView(emptyObj)).assertEqual(false);
     });
 
@@ -914,10 +925,11 @@ export default function ArrayBuffer2Test() {
      * @tc.level Level 1
      */
     it('arraybuffer2Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      interface ObjWithByteLength{
-        byteLength : number
+      interface ObjWithByteLength {
+        byteLength: number
       }
-      const objWithByteLength :ObjWithByteLength = { byteLength: 4 };
+
+      const objWithByteLength: ObjWithByteLength = { byteLength: 4 };
       expect(ArrayBuffer.isView(objWithByteLength)).assertEqual(false);
     });
 
@@ -931,10 +943,11 @@ export default function ArrayBuffer2Test() {
      */
     it('arraybuffer2Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface ObjWithByteOffset {
-        byteOffset : number,
+        byteOffset: number,
         buffer: ArrayBuffer
       }
-      const objWithByteOffset : ObjWithByteOffset = { byteOffset: 0, buffer: new ArrayBuffer(4) };
+
+      const objWithByteOffset: ObjWithByteOffset = { byteOffset: 0, buffer: new ArrayBuffer(4) };
       expect(ArrayBuffer.isView(objWithByteOffset)).assertEqual(false);
     });
 
@@ -975,10 +988,11 @@ export default function ArrayBuffer2Test() {
      * @tc.level Level 1
      */
     it('arraybuffer2Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      interface ObjView{
+      interface ObjView {
         view: Int8Array
       }
-      const GeneratedDestructObj_1 : ObjView = { view: new Int8Array(new ArrayBuffer(4)) };
+
+      const GeneratedDestructObj_1: ObjView = { view: new Int8Array(new ArrayBuffer(4)) };
       const destructuredObjView = GeneratedDestructObj_1.view;
       expect(ArrayBuffer.isView(destructuredObjView)).assertEqual(true);
     });
@@ -1106,10 +1120,12 @@ export default function ArrayBuffer2Test() {
       interface level {
         level2: Int32Array
       }
+
       interface NestedObjWithView {
         level1: level
       }
-      const nestedObjWithView : NestedObjWithView = { level1: { level2: new Int32Array(new ArrayBuffer(8)) } };
+
+      const nestedObjWithView: NestedObjWithView = { level1: { level2: new Int32Array(new ArrayBuffer(8)) } };
       expect(ArrayBuffer.isView(nestedObjWithView.level1.level2)).assertEqual(true);
     });
 
@@ -1139,7 +1155,8 @@ export default function ArrayBuffer2Test() {
         a: Uint8Array,
         b: DataView
       }
-      const viewObj :ViewObj = { a: new Uint8Array(new ArrayBuffer(4)), b: new DataView(new ArrayBuffer(4)) };
+
+      const viewObj: ViewObj = { a: new Uint8Array(new ArrayBuffer(4)), b: new DataView(new ArrayBuffer(4)) };
       expect(ArrayBuffer.isView(Object.values(viewObj)[0])).assertEqual(true);
     });
 
@@ -1155,11 +1172,13 @@ export default function ArrayBuffer2Test() {
       const buffer = new ArrayBuffer(8);
       const dataView = new DataView(buffer);
       const int32Array = new Int32Array(buffer);
+
       interface ViewObj {
         name: string;
         view1: DataView;
         view2: Int32Array;
       }
+
       const viewObj: ViewObj = {
         name: 'bufferViews',
         view1: dataView,
@@ -1179,7 +1198,8 @@ export default function ArrayBuffer2Test() {
       interface ViewObj {
         a: Uint8Array
       }
-      const viewObj : ViewObj = { a: new Uint8Array(new ArrayBuffer(4)) };
+
+      const viewObj: ViewObj = { a: new Uint8Array(new ArrayBuffer(4)) };
       const objKey = Object.keys(viewObj)[0];
       expect(ArrayBuffer.isView(objKey)).assertEqual(false);
     });
@@ -1317,6 +1337,7 @@ export default function ArrayBuffer2Test() {
       class StaticViewClass {
         static staticView = new DataView(new ArrayBuffer(4));
       }
+
       expect(ArrayBuffer.isView(StaticViewClass.staticView)).assertEqual(true);
 
     });
@@ -1395,7 +1416,8 @@ export default function ArrayBuffer2Test() {
      * @tc.level Level 1
      */
     it('arraybuffer2Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const reduceViewResult = [new Uint8Array(new ArrayBuffer(4))].reduce((acc, view) => ArrayBuffer.isView(view), false);
+      const reduceViewResult =
+        [new Uint8Array(new ArrayBuffer(4))].reduce((acc, view) => ArrayBuffer.isView(view), false);
       expect(reduceViewResult).assertEqual(true);
     });
 
