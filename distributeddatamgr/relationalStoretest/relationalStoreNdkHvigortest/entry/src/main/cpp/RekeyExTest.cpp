@@ -584,6 +584,14 @@ static napi_value OH_Rdb_RekeyEx0800(napi_env env, napi_callback_info)
     OH_Rdb_CryptoParam *crypto2 = OH_Rdb_CreateCryptoParam();
     errCode = OH_Rdb_RekeyEx(store, crypto2);
     NAPI_ASSERT(env, errCode == RDB_E_ALREADY_CLOSED, "OH_Rdb_RekeyEx is fail.");
+    errCode = OH_Rdb_DeleteStoreV2(rekeyTestConfig);
+    NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DeleteStoreV2 is fail.");
+    errCode = OH_Rdb_DestroyConfig(rekeyTestConfig);
+    NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DeleteStoreV2 is fail.");
+    errCode = OH_Rdb_DestroyCryptoParam(crypto1);
+    NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DeleteStoreV2 is fail.");
+    errCode = OH_Rdb_DestroyCryptoParam(crypto2);
+    NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DeleteStoreV21 is fail.");
     napi_value result;
     napi_create_int32(env, 0, &result);
     return result;
