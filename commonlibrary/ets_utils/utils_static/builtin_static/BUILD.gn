@@ -30,6 +30,7 @@ group("builtin_static") {
       "typeArray_standard_test_static:ActsTypeArrayStaticTest",
       "base_standard_test_static:ActsBaseStaticTest",
       "esbuiltin001_standard_test_static:ActsEsBuiltin1StaticTest",
+      "esbuiltin002_standard_test_static:ActsEsBuiltin2StaticTest",
     ]
   }
 }
