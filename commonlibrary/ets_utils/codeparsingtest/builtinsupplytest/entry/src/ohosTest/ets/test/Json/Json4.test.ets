@@ -1534,8 +1534,9 @@ export default function Json4Test() {
       try {
         const invalidJson: string = '{"a":1}}extra';
         JSON.parse(invalidJson);
+        expect().assertFail();
       } catch (error) {
-        expect(error.name).assertEqual(SyntaxError);
+        expect(error.name).assertEqual('SyntaxError');
       }
     });
 

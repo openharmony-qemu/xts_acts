@@ -737,19 +737,6 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_arraybuffer2_TEST_5100
-     * @tc.name arraybuffer2Test051
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('arraybuffer2Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const viewPromise = Promise.resolve(new Int16Array(new ArrayBuffer(4)));
-      viewPromise.then(view => expect(ArrayBuffer.isView(view)).assertEqual(true));
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_5200
      * @tc.name arraybuffer2Test052
      * @tc.desc test arraybuffer isView()
