@@ -4165,7 +4165,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         await sleep(200);
         await dialogWindowClass.setUIContent('testability/pages/First/index2');
         await dialogWindowClass.showWindow();
-        await dialogWindowClass.setContentAspectRatio(1.0, false, false);
+        await dialogWindowClass.setContentAspectRatio(1.0, false);
         console.log(`${caseName} dialog window setContentAspectRatio succeed. `);
         await dialogWindowClass?.destroyWindow()
         expect().assertFail();
