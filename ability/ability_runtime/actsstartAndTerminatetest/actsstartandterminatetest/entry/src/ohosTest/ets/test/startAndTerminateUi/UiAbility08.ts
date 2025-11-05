@@ -37,7 +37,7 @@ export default class UiAbility08 extends UIAbility {
     setTimeout(()=>{
       // destroy
       globalThis.uiAbilityContext8.terminateSelf();
-    }, 500);
+    }, 1000);
   }
 
   onDestroy(): void {
