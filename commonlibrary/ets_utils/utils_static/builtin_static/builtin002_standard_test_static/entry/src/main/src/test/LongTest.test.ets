@@ -1609,8 +1609,8 @@ export default function builtinsLongPrototypebTest() {
         const positive = new Long(50);
         let result1 = negative.compareTo(positive);
         let result2 = positive.compareTo(negative);
-        expect(result1).assertEqual(1);
-        expect(result2).assertEqual(-1);
+        expect(result1).assertEqual(-1);
+        expect(result2).assertEqual(1);
         console.info(`${caseName}, test end`);
         Done();
       })
