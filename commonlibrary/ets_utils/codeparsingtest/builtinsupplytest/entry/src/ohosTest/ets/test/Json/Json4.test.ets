@@ -1613,7 +1613,7 @@ export default function Json4Test() {
      * @tc.level Level 1
      */
     it('Json4Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const obj: CharTypeCountCompare = { strings: ["aab", "abc", "aaa"], typesCount: [] };
+      const obj: CharTypeCountCompare = { strings: ["aab1", "abc", "aaa"], typesCount: [] };
       const json = JSON.stringify(obj);
       const parsed: CharTypeCountCompare = JSON.parse(json, (k: string, v: CharTypeCountCompare) => {
         if (k === "") {
@@ -1631,7 +1631,7 @@ export default function Json4Test() {
         }
         return v;
       });
-      expect(parsed.typesCount[0]).assertEqual(2);
+      expect(parsed.typesCount[0]).assertEqual(3);
       expect(parsed.typesCount[1]).assertEqual(3);
       expect(parsed.typesCount[2]).assertEqual(1);
     });
@@ -4608,7 +4608,7 @@ export default function Json4Test() {
      * @tc.level Level 1
      */
     it('Json4Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const obj: CharCountSortCompare = { strings: ["aab", "aaab", "ab"], sorted: [] };
+      const obj: CharCountSortCompare = { strings: ["aab1", "aaab", "ab"], sorted: [] };
       const json = JSON.stringify(obj);
       const parsed: CharCountSortCompare = JSON.parse(json, (k: string, v: CharCountSortCompare) => {
         if (k === "") {
