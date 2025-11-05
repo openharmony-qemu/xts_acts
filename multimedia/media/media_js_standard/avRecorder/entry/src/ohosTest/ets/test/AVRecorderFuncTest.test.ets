@@ -2337,6 +2337,62 @@ export default function avRecorderTest() {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0001 end');
       done();
     })
+
+    /* *
+        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0002
+        * @tc.name      : 003.test recording mp3 3 seconds to stop
+        * @tc.desc      : Local Video recording mp3 3 seconds to stop
+        * @tc.size      : MediumTest
+        * @tc.type      : Function test
+        * @tc.level     : Level2
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0002', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0002 start')
+      let timestamp = Date.now();
+      let filename = `avRecorder_${timestamp}.mp3`;
+      fdObject = await commonFun.getFd(filename);
+      fdPath = "fd://" + fdObject.fdNumber;
+      console.info('case fdPath is: ' + fdPath);
+      aacAudioConfig.url = fdPath;
+      aacAudioConfig.profile.aacProfile = media.AacProfile.AAC_HE;
+      console.info('avConfig.profile ' + JSON.stringify(avConfig.profile));
+      try{
+        commonFun.avRecorderWithCallBack3(aacAudioConfig, avRecorder, RECORDER_TIME, done);
+      } catch (error) {
+        console.error(`test aacProfile erro, error message: ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0002 end');
+      done();
+    })
+
+    /* *
+        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0003
+        * @tc.name      : 003.test recording mp3 3 seconds to stop
+        * @tc.desc      : Local Video recording mp3 3 seconds to stop
+        * @tc.size      : MediumTest
+        * @tc.type      : Function test
+        * @tc.level     : Level2
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0003', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0003 start')
+      let timestamp = Date.now();
+      let filename = `avRecorder_${timestamp}.mp3`;
+      fdObject = await commonFun.getFd(filename);
+      fdPath = "fd://" + fdObject.fdNumber;
+      console.info('case fdPath is: ' + fdPath);
+      aacAudioConfig.url = fdPath;
+      aacAudioConfig.profile.aacProfile = media.AacProfile.AAC_HE_V2;
+      console.info('avConfig.profile ' + JSON.stringify(avConfig.profile));
+      try{
+        commonFun.avRecorderWithCallBack3(aacAudioConfig, avRecorder, RECORDER_TIME, done);
+      } catch (error) {
+        console.error(`test aacProfile erro, error message: ${error.message}`);
+        expect().assertFail();
+      }
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AUDIO_AACPROFILE_SET_API_0003 end');
+      done();
+    })
   })
 }
 
