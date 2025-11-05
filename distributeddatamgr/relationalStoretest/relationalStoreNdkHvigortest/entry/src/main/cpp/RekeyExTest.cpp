@@ -612,7 +612,7 @@ static napi_value OH_Rdb_RekeyEx1000(napi_env env, napi_callback_info)
     errCode = OH_Rdb_CloseStore(store);
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_CloseStore is fail.");
     errCode = OH_Rdb_RekeyEx(nullptr, crypto2);
-    NAPI_ASSERT(env, errCode == RDB_E_ERROR , "OH_Rdb_RekeyEx is fail.");
+    NAPI_ASSERT(env, errCode == RDB_E_INVALID_ARGS , "OH_Rdb_RekeyEx is fail.");
     errCode = OH_Rdb_DeleteStoreV2(rekeyTestConfig);
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DeleteStoreV2 is fail.");
     errCode = OH_Rdb_DestroyConfig(rekeyTestConfig);
