@@ -218,6 +218,7 @@ export default function hidebughiperfTest() {
           expect(errcode == 11400301)
           console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 record end");
         }
+        done();
       } catch (err) {
         console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_0600 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();
