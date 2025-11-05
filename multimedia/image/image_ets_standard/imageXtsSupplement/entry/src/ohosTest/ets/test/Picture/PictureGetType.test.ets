@@ -16,28 +16,35 @@
 import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll } from '@ohos/hypium';
 import { image } from '@kit.ImageKit';
 import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import fileio from '@ohos.fileio'
 import { LOG_TAG } from '../common';
-import fs from '@ohos.file.fs';
+import { fileIo as fs, ReadOptions } from '@kit.CoreFileKit';
+
 
 const TAG = LOG_TAG + 'Picture.GetTypeSupp';
+let fdNumber: number;
 
 
 async function getAuxiliaryTypeTest(done: Function, testName: string, pathUri: string,
   AuxiliaryPictureType: image.AuxiliaryPictureType, callback: (res:image.AuxiliaryPictureType) => void,
 ) {
   try {
-    let Context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-    const resourceMgr = Context.resourceManager;
-    const rawFileFd = await resourceMgr.getRawFileContent('hdr.jpg');
-
-    let auxBuffer: ArrayBuffer = rawFileFd.buffer as ArrayBuffer;
+    let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
+    let array = new ArrayBuffer(300000000);
+    let path = `file://${testContext.filesDir}/${pathUri}`;
+    console.info(TAG, testName, `path: ${path}`);
+    const fd = await fs.open(path, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
+    console.info(TAG, testName, `open: ${fd.fd}`);
+    let readLength = await fs.read(fd.fd, array);
+    console.info(TAG, testName, `readLength: ${readLength}`);
+    await fs.close(fd);
     let auxSize: Size = {
       height: 180,
       width: 240
     };
     let auxType: image.AuxiliaryPictureType = AuxiliaryPictureType;
-    let auxPictureObj: image.AuxiliaryPicture | null = image.createAuxiliaryPicture(auxBuffer, auxSize, auxType);
-    console.info(TAG, testName, `createAuxiliaryPicture success`,JSON.stringify(auxPictureObj));
+    let auxPictureObj: image.AuxiliaryPicture | null = image.createAuxiliaryPicture(array, auxSize, auxType);
     if (auxPictureObj != undefined) {
       let type: image.AuxiliaryPictureType = auxPictureObj.getType();
       console.info(TAG,'Success get auxiliary picture type ' +  JSON.stringify(type));
@@ -87,7 +94,7 @@ export default function PictureGetTypeTestSupp() {
       const path = 'AllAuxiliaryPictures.jpg';
       let AuxiliaryPictureType = 1;
       await getAuxiliaryTypeTest(done, testName, path, AuxiliaryPictureType, (res:image.AuxiliaryPictureType) => {
-        expect(res).assertEqual(1);
+        expect(res).assertEqual(image.AuxiliaryPictureType.GAINMAP);
       });
     })
 
@@ -104,7 +111,7 @@ export default function PictureGetTypeTestSupp() {
       const path = 'AllAuxiliaryPictures.jpg';
       let AuxiliaryPictureType = 2;
       await getAuxiliaryTypeTest(done, testName, path, AuxiliaryPictureType, (res:image.AuxiliaryPictureType) => {
-        expect(res).assertEqual(2);
+        expect(res).assertEqual(image.AuxiliaryPictureType.DEPTH_MAP);
       });
     })
 
@@ -121,7 +128,7 @@ export default function PictureGetTypeTestSupp() {
       const path = 'AllAuxiliaryPictures.jpg';
       let AuxiliaryPictureType = 3;
       await getAuxiliaryTypeTest(done, testName, path, AuxiliaryPictureType, (res:image.AuxiliaryPictureType) => {
-        expect(res).assertEqual(3);
+        expect(res).assertEqual(image.AuxiliaryPictureType.UNREFOCUS_MAP);
       });
     })
 
@@ -138,7 +145,7 @@ export default function PictureGetTypeTestSupp() {
       const path = 'AllAuxiliaryPictures.jpg';
       let AuxiliaryPictureType = 4;
       await getAuxiliaryTypeTest(done, testName, path, AuxiliaryPictureType, (res:image.AuxiliaryPictureType) => {
-        expect(res).assertEqual(4);
+        expect(res).assertEqual(image.AuxiliaryPictureType.LINEAR_MAP);
       });
     })
 
@@ -155,7 +162,7 @@ export default function PictureGetTypeTestSupp() {
       const path = 'AllAuxiliaryPictures.jpg';
       let AuxiliaryPictureType = 5;
       await getAuxiliaryTypeTest(done, testName, path, AuxiliaryPictureType, (res:image.AuxiliaryPictureType) => {
-        expect(res).assertEqual(5);
+        expect(res).assertEqual(image.AuxiliaryPictureType.FRAGMENT_MAP);
       });
     })
 

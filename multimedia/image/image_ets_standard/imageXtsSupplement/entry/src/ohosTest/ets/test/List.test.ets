@@ -44,6 +44,7 @@ import ImageSourceCreatePixelMapListSupp from "./image/ImageSourceCreatePixelMap
 import ImageSourceGetDelayTimeListSupp from "./image/ImageSourceGetDelayTimeList.test";
 import getImagePropertySyncTest from "./image/ImageSourceGetImagePropertySync.test";
 import PictureGetTypeTestSupp from './Picture/PictureGetType.test';
+import ImagePropertyOptionTest from "./image/ImagePropertyOption.test";
 
 export default function testsuite() {
   ImagePropertyKeyTest();
@@ -77,4 +78,5 @@ export default function testsuite() {
   ImageSourceGetDelayTimeListSupp();
   getImagePropertySyncTest();
   PictureGetTypeTestSupp();
+  ImagePropertyOptionTest();
 }
