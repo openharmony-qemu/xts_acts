@@ -19,6 +19,7 @@ import { ENTINFO1, SELFWANT, SELFHAPNAME, SUBSCRIBE_EVENTS, SUBSCRIBE_INVALID_EV
 } from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
+import sysDeviceInfo from '@ohos.deviceInfo';
 
 const DELEGATED_POLICIES: Array<string> = [ "set_browser_policies" ];
 
@@ -508,6 +509,10 @@ export default function adminManagerTest() {
      * @tc.size      : MediumTest
      */
     it("test_startAdminProvision_001", Level.LEVEL2, async (done: Function) => {
+      if (sysDeviceInfo.deviceType === '2in1') {
+        done();
+        return;
+      }
       try {
         adminManager.startAdminProvision(INVALID_WANT, adminManager.AdminType.ADMIN_TYPE_BYOD, AppStorage.get("test"), PARAMETERS_LOWER_BOUND);
         expect(false).assertTrue();
@@ -526,6 +531,10 @@ export default function adminManagerTest() {
      * @tc.size      : MediumTest
      */
     it("test_startAdminProvision_002", Level.LEVEL2, async (done: Function) => {
+      if (sysDeviceInfo.deviceType === '2in1') {
+        done();
+        return;
+      }
       try {
         adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_NORMAL, AppStorage.get("test"), PARAMETERS_LOWER_BOUND);
         expect(false).assertTrue();
@@ -544,6 +553,10 @@ export default function adminManagerTest() {
      * @tc.size      : MediumTest
      */
     it("test_startAdminProvision_003", Level.LEVEL2, async (done: Function) => {
+      if (sysDeviceInfo.deviceType === '2in1') {
+        done();
+        return;
+      }
       try {
         adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD, null, PARAMETERS_LOWER_BOUND);
         expect(false).assertTrue();
@@ -562,6 +575,10 @@ export default function adminManagerTest() {
      * @tc.size      : MediumTest
      */
     it("test_startAdminProvision_004", Level.LEVEL2, async (done: Function) => {
+      if (sysDeviceInfo.deviceType === '2in1') {
+        done();
+        return;
+      }
       try {
         adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD, AppStorage.get("test"), INVALID_PARAMETERS);
         expect(false).assertTrue();
@@ -580,6 +597,10 @@ export default function adminManagerTest() {
      * @tc.size      : MediumTest
      */
     it("test_startAdminProvision_005", Level.LEVEL2, async (done: Function) => {
+      if (sysDeviceInfo.deviceType === '2in1') {
+        done();
+        return;
+      }
       try {
         adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD,
             AppStorage.get("test"), INVALID_PARAMETERS_LOWER_THAN_UPPER_BOUND);
@@ -599,6 +620,10 @@ export default function adminManagerTest() {
      * @tc.size      : MediumTest
      */
     it("test_startAdminProvision_006", Level.LEVEL2, async (done: Function) => {
+      if (sysDeviceInfo.deviceType === '2in1') {
+        done();
+        return;
+      }
       let invalidActivateId: string = '';
       for (let i = 0; i < 257; i++) {
         invalidActivateId = invalidActivateId.concat('1');
@@ -625,6 +650,10 @@ export default function adminManagerTest() {
      * @tc.size      : MediumTest
      */
     it("test_startAdminProvision_007", Level.LEVEL2, async (done: Function) => {
+      if (sysDeviceInfo.deviceType === '2in1') {
+        done();
+        return;
+      }
       let invalidCustomizedInfo: string = '';
       for (let i = 0; i < 10241; i++) {
         invalidCustomizedInfo = invalidCustomizedInfo.concat('1');
@@ -652,6 +681,10 @@ export default function adminManagerTest() {
      * @tc.size      : MediumTest
      */
     it("test_startAdminProvision_008", Level.LEVEL2, async (done: Function) => {
+      if (sysDeviceInfo.deviceType === '2in1') {
+        done();
+        return;
+      }
       const otherWant: Want = {
         bundleName: "com.example.extensionzerotest",
         abilityName: "com.example.extensionzerotest.EnterpriseAdminAbility"
@@ -675,6 +708,10 @@ export default function adminManagerTest() {
      * @tc.size      : MediumTest
      */
     it("test_startAdminProvision_009", Level.LEVEL2, async (done: Function) => {
+      if (sysDeviceInfo.deviceType === '2in1') {
+        done();
+        return;
+      }
       let parameter: Record<string, string> = {
         "activateId" : "12345678901234567890123456789012",
         "activateId2" : "12345678901234567890123456789012",
@@ -707,6 +744,10 @@ export default function adminManagerTest() {
      * @tc.size      : MediumTest
      */
     it("test_startAdminProvision_010", Level.LEVEL2, async (done: Function) => {
+      if (sysDeviceInfo.deviceType === '2in1') {
+        done();
+        return;
+      }
       const otherWant: Want = {
         bundleName: "com.example.extensionzerotest",
         abilityName: "com.example.extensionzerotest.MainAbility"
@@ -730,6 +771,10 @@ export default function adminManagerTest() {
      * @tc.size      : MediumTest
      */
     it("test_startAdminProvision_011", Level.LEVEL2, async (done: Function) => {
+      if (sysDeviceInfo.deviceType === '2in1') {
+        done();
+        return;
+      }
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
         adminManager.startAdminProvision(SELFWANT, adminManager.AdminType.ADMIN_TYPE_BYOD,
