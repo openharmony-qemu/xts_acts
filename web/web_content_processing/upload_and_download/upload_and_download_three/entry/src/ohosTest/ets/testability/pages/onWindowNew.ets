@@ -70,8 +70,8 @@ struct OnWindowNew {
       Row() {
         Button("web click").key('onWindowNew').onClick(async () => {
           console.info('key==>' + this.str)
-          await waitForExist(()=>this.isPageEnd, this.str, 0);
-          await waitForExist(()=>this.isReceive, this.str, 0);
+          await waitForExist(()=>this.isPageEnd, 'isPageEnd ' + this.str, 0);
+          await waitForExist(()=>this.isReceive, 'isReceive ' + this.str, 0);
           this.isReceive = -1;
           switch (this.str) {
             case "emitBlockNetWorkTrue": {
@@ -79,7 +79,7 @@ struct OnWindowNew {
                 this.block = true;
                 this.isPageEnd = -1;
                 this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
+                await waitForExist(()=>this.isPageEnd, 'refresh isPageEnd ' + this.str, 0);
                 this.controller.loadUrl('www.example.com');
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -91,10 +91,10 @@ struct OnWindowNew {
                 this.block = false;
                 this.isPageEnd = -1;
                 this.controller.refresh();
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
+                await waitForExist(()=>this.isPageEnd, 'refresh isPageEnd ' + this.str, 0);
                 this.isPageEnd = -1;
                 this.controller.loadUrl('www.example.com');
-                await waitForExist(()=>this.isPageEnd, this.str, 0);
+                await waitForExist(()=>this.isPageEnd, 'loadUrl isPageEnd ' + this.str, 0);
                 let testTitle = this.controller.getTitle();
                 console.log(`testTitle is: ${testTitle}`);
                 Utils.emitEvent(testTitle, 130610)
@@ -146,6 +146,7 @@ struct OnWindowNew {
         .onPageEnd((event) => {
           console.log('web pageEnd==>' + event.url);
           this.isPageEnd = 0;
+          console.log('this.isPageEnd==>' + this.isPageEnd);
         })
     }
   }
