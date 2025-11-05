@@ -504,6 +504,7 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         try {
           // openssl ocsp -port 5555 -index index.txt -CA ecdsa_intermediate.crt -rkey ecdsa_intermediate.key -rsigner ecdsa_intermediate.crt -text
+          // openssl ocsp -port 5553 -index index.txt -CA ecdsa_root.crt -rkey ecdsa_root.key -rsigner ecdsa_root.crt -text
           let x509CertChain: cert.X509CertChain = await createCertChain(interCertRevokedChain);
           let x509Cert: cert.X509Cert = await createX509Cert(interCertRevokedChainTrustCert);
           const param: cert.CertChainValidationParameters = {
