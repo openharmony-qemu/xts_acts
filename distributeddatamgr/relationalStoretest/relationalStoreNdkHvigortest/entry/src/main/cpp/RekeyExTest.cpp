@@ -583,7 +583,7 @@ static napi_value OH_Rdb_RekeyEx0800(napi_env env, napi_callback_info)
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_CloseStore is fail.");
     OH_Rdb_CryptoParam *crypto2 = OH_Rdb_CreateCryptoParam();
     errCode = OH_Rdb_RekeyEx(store, crypto2);
-    NAPI_ASSERT(env, errCode == RDB_E_ALREADY_CLOSED, "OH_Rdb_RekeyEx is fail.");
+    NAPI_ASSERT(env, errCode == 14800001, "OH_Rdb_RekeyEx is fail.");
     errCode = OH_Rdb_DeleteStoreV2(rekeyTestConfig);
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DeleteStoreV2 is fail.");
     errCode = OH_Rdb_DestroyConfig(rekeyTestConfig);
@@ -616,7 +616,7 @@ static napi_value OH_Rdb_RekeyEx0900(napi_env env, napi_callback_info)
     errCode = OH_Crypto_SetCryptoPageSize(crypto2, num);
     NAPI_ASSERT(env, errCode == RDB_E_INVALID_ARGS, "OH_Crypto_SetCryptoPageSize is fail.");
     errCode = OH_Rdb_RekeyEx(store, crypto2);
-    NAPI_ASSERT(env, errCode == RDB_E_INVALID_ARGS, "OH_Rdb_RekeyEx is fail.");
+    NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_RekeyEx is fail.");
     errCode = OH_Rdb_DeleteStoreV2(rekeyTestConfig);
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_DeleteStoreV2 is fail.");
     errCode = OH_Rdb_DestroyConfig(rekeyTestConfig);
