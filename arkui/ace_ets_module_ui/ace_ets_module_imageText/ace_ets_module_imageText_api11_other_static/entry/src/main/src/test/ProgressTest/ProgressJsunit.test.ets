@@ -97,7 +97,7 @@ export default function ProgressJsunit() {
           // console.info("push ProgressJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push ProgressJsunit page error: " + err);
         expect().assertFail();
       }

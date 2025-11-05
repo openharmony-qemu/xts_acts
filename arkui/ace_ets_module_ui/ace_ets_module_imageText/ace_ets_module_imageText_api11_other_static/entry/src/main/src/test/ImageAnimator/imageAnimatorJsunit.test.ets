@@ -99,7 +99,7 @@ export default function imageAniamtorJsunit() {
           // console.info("push imageAniamtorJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push imageAniamtorJsunit page error:" + err);
         expect().assertFail();
       }

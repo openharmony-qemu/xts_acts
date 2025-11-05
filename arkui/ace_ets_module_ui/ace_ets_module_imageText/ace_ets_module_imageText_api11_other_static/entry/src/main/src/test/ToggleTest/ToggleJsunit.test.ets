@@ -97,7 +97,7 @@ export default function ToggleJsunit() {
           // console.info("push Toggle page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push Toggle page error: " + err);
         expect().assertFail();
       }

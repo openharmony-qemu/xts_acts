@@ -67,7 +67,7 @@ export default function getColorTest() {
           // console.info("push getColorTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push getColorTest page error: " + err);
         expect().assertFail();
       }

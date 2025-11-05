@@ -68,7 +68,7 @@ export default function TextClockLongJsunit() {
           // console.info("push TextClock page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push TextClock page error: " + err);
         expect().assertFail();
       }

@@ -63,7 +63,7 @@ export default function arkuiNodeRenderTest() {
           // console.info("push arkuiNodeRenderTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push arkuiNodeRenderTest page error:" + err);
       }
       console.info("arkuiNodeRenderTest beforeEach end");

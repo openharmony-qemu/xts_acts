@@ -66,7 +66,7 @@ export default function SetSizeJsunit() {
           // console.info("push SetSizeJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push SetSizeJsunit page error:" + err);
       }
       console.info("SetSizeJsunit beforeEach end");

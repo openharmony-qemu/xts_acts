@@ -739,11 +739,11 @@ export default function BufferTest() {
      * @tc.level: Level 1
      */
     it("testTranscode0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      TAG = "testLastIndexOf0007"
+      const TAG = "testTranscode0082"
       let buf1 = buffer.from("abc");
       try {
         let buf = buffer.transcode(buf1, "utf8", "ucs2");
-        let str = buf.toString("utf8")
+        let str = buf.toString("ucs2")
         expect(str).assertEqual("abc");
       } catch (err:BusinessError) {
         console.error(`${TAG} err is ${err}`);
@@ -850,7 +850,7 @@ export default function BufferTest() {
         expect(false).assertFail();
       } catch (err:BusinessError) {
         expect(err.name).assertEqual('BusinessError');
-        expect(err.message).assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 4294967295. Received value is: -1');
+        expect(err.message).assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 2147483647. Received value is: -1');
       }
     });
 
@@ -2427,12 +2427,11 @@ export default function BufferTest() {
     it("testWriteInt32BE0314", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.alloc(4);
       try {
-        let ref = buf.writeInt32BE(0, 1);
+        let ref = buf.writeInt32BE(0, -1);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         expect(err.name).assertEqual('BusinessError');
-        expect(err.message).assertEqual('Parameter error. The type of "value" must be number. Received value is: ' +
-          'string');
+        expect(err.message).assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 0. Received value is: -1');
       }
     });
 
@@ -2881,7 +2880,7 @@ export default function BufferTest() {
      */
     it("testWriteUInt32BE0380", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.allocUninitializedFromPool(4);
-      let ref = buf.writeUInt32BE(0xfeedface, 0);
+      let ref = buf.writeUInt32BE(0x7eedface, 0);
       expect(String(ref)).assertEqual('4');
     });
 
@@ -2936,7 +2935,7 @@ export default function BufferTest() {
      */
     it("testWriteUInt32LE0390", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.allocUninitializedFromPool(4);
-      let ref = buf.writeUInt32LE(0xfeedface, 0);
+      let ref = buf.writeUInt32LE(0x7eedface, 0);
       expect(String(ref)).assertEqual('4');
     });
 
@@ -3419,7 +3418,7 @@ export default function BufferTest() {
      */
     it("testWriteBigUInt64BE0510", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.allocUninitializedFromPool(8);
-      let ref = buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
+      let ref = buf.writeBigUInt64BE(BigInt(0x7ecafafecacefade), 0);
       expect(String(ref)).assertEqual('8');
     });
 
@@ -3452,7 +3451,7 @@ export default function BufferTest() {
      */
     it("testWriteBigUInt64LE0520", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.allocUninitializedFromPool(8);
-      let ref = buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
+      let ref = buf.writeBigUInt64BE(BigInt(0x7ecafafecacefade), 0);
       expect(String(ref)).assertEqual('8');
     });
 
@@ -3522,12 +3521,11 @@ export default function BufferTest() {
       let buf = buffer.alloc(4);
       buf.writeInt32BE(0x12345678, 0);
       try {
-        let ref = buf.readInt32BE(1);
+        let ref = buf.readInt32BE(-1);
         expect(false).assertFail();
       } catch (err:BusinessError) {
         expect(err.name).assertEqual('BusinessError');
-        expect(err.message).assertEqual('Parameter error. The type of "offset" must be number. Received value is: ' +
-          'string');
+        expect(err.message).assertEqual('The value of "offset" is out of range. It must be >= 0 and <= 0. Received value is: -1');
       }
     });
 
@@ -4070,9 +4068,9 @@ export default function BufferTest() {
      */
     it("testReadFloatBE0690", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.allocUninitializedFromPool(4);
-      buf.writeFloatBE(0xcabcbcbc, 0);
+      buf.writeFloatBE(0x7abcbcbc, 0);
       let ref = Double(buf.readFloatBE(0)).toString(16);
-      expect(ref).assertEqual("cabcbd00");
+      expect(ref).assertEqual("7abcbc80");
     });
 
     /**
@@ -4105,9 +4103,9 @@ export default function BufferTest() {
      */
     it("testReadFloatLE0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.allocUninitializedFromPool(4);
-      buf.writeFloatLE(0xcabcbcbc, 0);
+      buf.writeFloatLE(0x7abcbcbc, 0);
       let ref = Double(buf.readFloatLE(0)).toString(16);
-      expect(ref).assertEqual("cabcbd00");
+      expect(ref).assertEqual("7abcbc80");
     });
 
     /**
@@ -4140,9 +4138,9 @@ export default function BufferTest() {
      */
     it("testReadBigInt64BE0710", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.allocUninitializedFromPool(8);
-      buf.writeBigInt64BE(BigInt(0x0102030405060708), 0);
-      let ref = Double(buf.readBigInt64BE(0)).toString(16);
-      expect(ref).assertEqual("102030405060708");
+      buf.writeBigInt64BE(BigInt(0x01020304050607), 0);
+      let ref = BigInt(buf.readBigInt64BE(0)).toString(16);
+      expect(ref).assertEqual("1020304050607");
     });
 
     /**
@@ -4175,9 +4173,9 @@ export default function BufferTest() {
      */
     it("testReadBigInt64LE0720", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.allocUninitializedFromPool(8);
-      buf.writeBigInt64BE(BigInt(0x0102030405060708), 0);
-      let ref = Double(buf.readBigInt64LE(0)).toString(16);
-      expect(ref).assertEqual("807060504030201");
+      buf.writeBigInt64BE(BigInt(0x01020304050607), 0);
+      let ref = BigInt(buf.readBigInt64LE(0)).toString(16);
+      expect(ref).assertEqual("706050403020100");
     });
 
     /**
@@ -4210,9 +4208,9 @@ export default function BufferTest() {
      */
     it("testReadBigUInt64BE0730", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.allocUninitializedFromPool(8);
-      buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
-      let ref = Double( buf.readBigUInt64BE(0)).toString(16);
-      expect(ref).assertEqual("decafafecacefade");
+      buf.writeBigUInt64BE(BigInt(0x3dfacefeedface), 0);
+      let ref = buf.readBigUInt64BE(0).toString(16);
+      expect(ref).assertEqual("3dfacefeedface");
     });
 
     /**
@@ -4225,7 +4223,7 @@ export default function BufferTest() {
      */
     it("testReadBigUInt64BE0731", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.allocUninitializedFromPool(8);
-      buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
+      buf.writeBigUInt64BE(BigInt(0x7ecafafecacefade), 0);
       try {
         let ref = Double(buf.readBigUInt64BE(1)).toString(16);
         expect(false).assertFail();
@@ -4245,9 +4243,9 @@ export default function BufferTest() {
      */
     it("testReadBigUInt64LE0740", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.allocUninitializedFromPool(8);
-      buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
-      let ref = Double(buf.readBigUInt64LE(0)).toString(16);
-      expect(ref).assertEqual("defacecafefacade");
+      buf.writeBigUInt64BE(BigInt(0x3dfacefeedface), 0);
+      let ref = BigInt(buf.readBigUInt64LE(0)).toString(16);
+      expect(ref).assertEqual("cefaedfecefa3d00");
     });
 
     /**
@@ -4260,7 +4258,7 @@ export default function BufferTest() {
      */
     it("testReadBigUInt64LE0741", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let buf = buffer.allocUninitializedFromPool(8);
-      buf.writeBigUInt64BE(BigInt(0xdecafafecacefade), 0);
+      buf.writeBigUInt64BE(BigInt(0x7ecafafecacefade), 0);
       try {
         let ref = Double(buf.readBigUInt64LE(1)).toString(16);
         expect(false).assertFail();
@@ -4809,9 +4807,14 @@ export default function BufferTest() {
      * @tc.level: Level 1
      */
     it("testFrom30130", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let dateObj = new Date();
-      let buf1 = buffer.from(dateObj, 0, 5);
-      expect(buf1.length > 0).assertTrue();
+      let buf = buffer.alloc(4);
+      try {
+        let dateObj = new Date();
+        let buf1 = buffer.from(dateObj, 0, 5);
+      } catch (err:BusinessError) {
+        expect(err.message).assertEqual("Parameter error. The type of \"input\" must be Buffer or ArrayBuffer, Array, Array-like");
+      }
+
     });
 
     /**

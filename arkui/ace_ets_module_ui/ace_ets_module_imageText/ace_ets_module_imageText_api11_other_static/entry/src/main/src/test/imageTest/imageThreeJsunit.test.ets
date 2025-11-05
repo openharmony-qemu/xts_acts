@@ -97,7 +97,7 @@ export default function imageThreeJsunit() {
           // console.info("push imageThreeJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push imageThreeJsunit page error:" + err);
         expect().assertFail();
       }

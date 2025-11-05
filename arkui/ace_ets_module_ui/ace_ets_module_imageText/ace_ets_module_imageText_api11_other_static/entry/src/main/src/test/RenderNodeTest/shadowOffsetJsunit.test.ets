@@ -95,7 +95,7 @@ export default function shadowOffsetJsunit() {
           // console.info("push shadowOffsetJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push shadowOffsetJsunit page error:" + err);
       }
 

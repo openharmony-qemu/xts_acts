@@ -1890,12 +1890,7 @@ export default function DisplayTest() {
                     hilog.info(domain, tag,caseName + 'Succeeded in creating ther virtual screen. Data: ' + JSON.stringify(screenId));
                      display.destroyVirtualScreen(screenId).then(() => {
                         hilog.info(domain, tag,caseName + 'Succeeded in destroyVirtualScreen1');
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
-                        hilog.info(domain, tag,caseName + 'Failed in destroyVirtualScreen1');
-                        expect(false).assertTrue();
-                        done();
-                    })
-                     display.destroyVirtualScreen(screenId).then(() => {
+                        display.destroyVirtualScreen(screenId).then(() => {
                         hilog.info(domain, tag,caseName + 'Succeeded in destroyVirtualScreen2');
                         expect(false).assertTrue();
                         done();
@@ -1904,6 +1899,12 @@ export default function DisplayTest() {
                         expect(err.code == 401);
                         done();
                     })
+                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                        hilog.info(domain, tag,caseName + 'Failed in destroyVirtualScreen1');
+                        expect(false).assertTrue();
+                        done();
+                    })
+                    
                 }).catch((err: BusinessError):PromiseLike<void>|undefined => {
                     hilog.info(domain, tag,caseName + 'failed to createVirtualScreen, err : ' + JSON.stringify(err));
                     expect(false).assertTrue();

@@ -77,7 +77,7 @@ export default function RelativePadding() {
           // console.info("push RelativePadding page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push RelativePadding page error:" + err);
       }
       console.info("RelativePadding foreEach end");

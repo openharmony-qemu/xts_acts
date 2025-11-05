@@ -16,7 +16,7 @@ import Want from '@ohos.app.ability.Want';
 import account from '@ohos.account.appAccount'
 import { describe, beforeAll, afterEach, it, expect, TestType, Hypium, Size, Level } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement'
@@ -118,12 +118,12 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
     it('AppAccountAuthenticatorStage2Stage_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>AuthenticatorStage2Stage_0200 start====");
-        let cData: Record<string, Object> =  {}
+        let cData: Record<string, RecordData> =  {}
         cData['prop1'] = 'remove';
         cData['prop2'] = 'createNewAccountName';
         let setOptions: account.SetPropertiesOptions = {}
         setOptions.properties = cData;
-        let dData: Record<string, Object> =  {}
+        let dData: Record<string, RecordData> =  {}
         dData['age'] = '18';
         let options: account.CreateAccountImplicitlyOptions = {
           authType: "PIN", requiredLabels: ['male', '30-40']
@@ -228,7 +228,7 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
     it('AppAccountAuthenticatorStage2Stage_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>AuthenticatorStage2Stage_0400 start====");
-        let options: Record<string, Object> = {
+        let options: Record<string, RecordData> = {
           "authType": "PIN", "requiredLabels": ['male', '30-40'], "parameters": ['sex', 'age']
         };
         hilog.info(0x0000, tag, "====>start auth");
@@ -377,7 +377,7 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
     it('AppAccountAuthenticatorStage2Stage_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>AuthenticatorStage2Stage_0800 start====");
-        let cData: Record<string, Object> =  {}
+        let cData: Record<string, RecordData> =  {}
         cData['prop1'] = 'value1';
         cData['prop2'] = 'value2';
         let options: account.SetPropertiesOptions = {}
@@ -668,7 +668,7 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
         let logTag: string = "====>AuthenticateErrCodeCheck_1300 "
         hilog.info(0x0000, tag, logTag + "start====");
         let accountName: string = 'i';
-        let dData: Record<string, Object> =  {}
+        let dData: Record<string, RecordData> =  {}
         dData['age'] = '18';
         let options: account.CreateAccountImplicitlyOptions = {
           authType: "PIN", requiredLabels: ['male', '30-40']
@@ -708,7 +708,7 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
         let logTag: string = "====>AuthenticateErrCodeCheck_1400 "
         hilog.info(0x0000, tag, logTag + "start====");
         let accountName: string = '';
-        let dData: Record<string, Object> =  {}
+        let dData: Record<string, RecordData> =  {}
         dData['age'] = '18';
         let options: account.CreateAccountImplicitlyOptions = {
           authType: "PIN", requiredLabels: ['male', '30-40']
@@ -747,7 +747,7 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
       async (done: () => void): Promise<void> => {
         let logTag: string = "====>AuthenticateErrCodeCheck_1500 "
         hilog.info(0x0000, tag, logTag + "start====");
-        let cData: Record<string, Object> =  {}
+        let cData: Record<string, RecordData> =  {}
         cData['prop1'] = 'remove';
         cData['prop2'] = 'createNewAccountName';
         let setOptions: account.SetPropertiesOptions = {}
@@ -809,12 +809,12 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
       async (done: () => void): Promise<void> => {
         let logTag: string = "====>AuthenticateErrCodeCheck_1600 "
         hilog.info(0x0000, tag, logTag + "start====");
-        let cData: Record<string, Object> =  {}
+        let cData: Record<string, RecordData> =  {}
         cData['prop1'] = 'remove';
         cData['prop2'] = 'createNewAccountName';
         let setOptions: account.SetPropertiesOptions = {}
         setOptions.properties = cData;
-        let dData: Record<string, Object> =  {}
+        let dData: Record<string, RecordData> =  {}
         dData['age'] = '18';
         let createOptions: account.CreateAccountImplicitlyOptions = {
           authType: "PIN", requiredLabels: ['male', '30-40']
@@ -956,7 +956,7 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
         for (let i: int = 0; i < 512; i++) {
           name += 'i';
         }
-        let options: Record<string, Object> = {
+        let options: Record<string, RecordData> = {
           "authType": "PIN", "requiredLabels": ['male', '30-40'], "parameters": ['sex', 'age']
         };
         hilog.info(0x0000, tag, logTag + "start auth");
@@ -993,7 +993,7 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
         let logTag: string = "====>AuthenticateErrCodeCheck_2000 "
         hilog.info(0x0000, tag, logTag + "start====");
         let name: string = '';
-        let options: Record<string, Object> = {
+        let options: Record<string, RecordData> = {
           "authType": "PIN", "requiredLabels": ['male', '30-40'], "parameters": ['sex', 'age']
         };
         hilog.info(0x0000, tag, logTag + "start auth");
@@ -1064,7 +1064,7 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
         let logTag: string = "====>AuthenticateErrCodeCheck_2200 "
         hilog.info(0x0000, tag, logTag + "start====");
         let name1: string = 'notExistAccount';
-        let options: Record<string, Object> = {
+        let options: Record<string, RecordData> = {
           "authType": "PIN", "requiredLabels": ['male', '30-40'], "parameters": ['sex', 'age']
         };
         hilog.info(0x0000, tag, logTag + "start auth");
@@ -1492,7 +1492,7 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
         for (let i: int = 0; i < 1025; i++) {
           owner += 'i';
         }
-        let cData: Record<string, Object> =  {}
+        let cData: Record<string, RecordData> =  {}
         cData['prop1'] = 'value1';
         cData['prop2'] = 'value2';
         let options: account.SetPropertiesOptions = {}
@@ -1568,7 +1568,7 @@ export default function AppAccountAuthenticatorStage2StageStatic() {
         let logTag: string = "====>AuthenticateErrCodeCheck_3600 "
         hilog.info(0x0000, tag, logTag + "start====");
         let owner: string = 'i';
-        let cData: Record<string, Object> =  {}
+        let cData: Record<string, RecordData> =  {}
         cData['prop1'] = 'value1';
         cData['prop2'] = 'value2';
         let options: account.SetPropertiesOptions = {}

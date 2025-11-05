@@ -95,7 +95,7 @@ export default function RenderNodeShadowRadiusJsSuit() {
           // console.info("push RenderNodeShadowRadiusJsSuit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push RenderNodeShadowRadiusJsSuit page error:" + err);
       }
 

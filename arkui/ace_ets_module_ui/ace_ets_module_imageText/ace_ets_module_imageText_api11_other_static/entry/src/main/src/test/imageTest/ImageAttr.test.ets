@@ -76,7 +76,7 @@ export default function ImageAttr() {
           // console.info("push ImageAttr page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push ImageAttr page error: " + err);
       }
 

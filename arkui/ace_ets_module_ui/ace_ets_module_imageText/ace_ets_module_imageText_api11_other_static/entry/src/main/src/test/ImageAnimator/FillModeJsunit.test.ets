@@ -82,7 +82,7 @@ export default function fillModeJsunit() {
           // console.info("push fillMode page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error('beforeEach push fillMode page error:' + err);
       }
 
@@ -113,7 +113,7 @@ it('fillModeTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<v
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("fillModeTest_static_0100 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("fillModeTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button', 10, "")));
@@ -142,7 +142,7 @@ it('fillModeTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<v
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("fillModeTest_static_0200 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("fillModeTest_static_0200 click result is: " + JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
@@ -171,7 +171,7 @@ it('fillModeTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<v
       }
       try {
         events_emitter.on(indexEvent, callback);
-      } catch (err:Error) {
+      } catch (err) {
         console.info("fillModeTest_static_0300 on events_emitter err : " + JSON.stringify(err));
       }
       console.info("fillModeTest_static_0300 click result is: " + JSON.stringify(inspector.sendEventByKey('button2', 10, "")));

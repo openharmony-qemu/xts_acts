@@ -66,7 +66,7 @@ class MyAuthenticator extends account.Authenticator {
     });
   }
 
-  auth(name: string, authType: string, options: RecordData, callback: account.AuthCallback) {
+  auth(name: string, authType: string, options: Record<string, RecordData>, callback: account.AuthCallback) {
     hilog.info(0x0000, tag, '====>[Authenticator] name: ' + name);
     hilog.info(0x0000, tag, '====>[Authenticator] authType: ' + authType);
     hilog.info(0x0000, tag, '====>[Authenticator] options: ' + JSON.stringify(options));
@@ -161,7 +161,7 @@ class MyAuthenticator extends account.Authenticator {
   setProperties(options: account.SetPropertiesOptions, callback: account.AuthCallback) {
     hilog.info(0x0000, tag, '====>[Authenticator] options: ' + JSON.stringify(options));
     try {
-      let prop = options.properties as Record<string, Object>;
+      let prop = options.properties as Record<string, RecordData>;
       let prop1 = prop['prop1'] as string;
       let prop2 = prop['prop2'] as string;
       if (prop1 == 'remove') {

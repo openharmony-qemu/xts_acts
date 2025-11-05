@@ -96,7 +96,7 @@ export default function transformTest() {
           // console.info("push transformTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push transformTest page error: " + err);
         expect().assertFail();
       }

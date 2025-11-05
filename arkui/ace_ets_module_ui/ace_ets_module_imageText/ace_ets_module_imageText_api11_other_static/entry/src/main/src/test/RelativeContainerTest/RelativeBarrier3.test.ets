@@ -77,7 +77,7 @@ export default function RelativeBarrier3() {
           // console.info("push RelativeBarrier3 page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push RelativeBarrier3 page error:" + err);
       }
       console.info("RelativeBarrier3 foreEach end");

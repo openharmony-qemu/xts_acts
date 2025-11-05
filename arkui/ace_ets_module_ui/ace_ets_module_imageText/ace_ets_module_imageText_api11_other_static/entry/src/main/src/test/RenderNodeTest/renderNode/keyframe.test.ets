@@ -67,7 +67,7 @@ export default function keyframeTest() {
           // console.info("push keyframeTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push keyframeTest page error: " + err);
         expect().assertFail();
       }
