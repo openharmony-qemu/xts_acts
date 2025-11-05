@@ -67,7 +67,7 @@ export default function arkuiNodeTest() {
           // console.info("push arkuinode page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push arkuinode page error:" + err);
       }
       console.info("arkuinode beforeEach end");

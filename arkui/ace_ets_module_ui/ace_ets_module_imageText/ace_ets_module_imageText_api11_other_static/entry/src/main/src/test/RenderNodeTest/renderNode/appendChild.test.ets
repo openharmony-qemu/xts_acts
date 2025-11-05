@@ -67,7 +67,7 @@ export default function appendChildTest() {
           // console.info("push appendChildTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push appendChildTest page error: " + err);
         expect().assertFail();
       }

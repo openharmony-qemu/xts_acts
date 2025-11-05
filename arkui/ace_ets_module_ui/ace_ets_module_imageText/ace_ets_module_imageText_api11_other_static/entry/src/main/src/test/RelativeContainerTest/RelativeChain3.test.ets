@@ -77,7 +77,7 @@ export default function RelativeChain3() {
           // console.info("push RelativeChain3 page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push RelativeChain3 page error:" + err);
       }
       console.info("RelativeChain3 foreEach end");

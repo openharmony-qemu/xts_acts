@@ -94,7 +94,7 @@ it('textInputEnterKeyType_static_0100', Level.LEVEL0, async (done: () => void): 
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -135,7 +135,7 @@ it('textInputEnterKeyType_static_0200', Level.LEVEL0, async (done: () => void): 
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -176,7 +176,7 @@ it('textInputEnterKeyType_static_0300', Level.LEVEL0, async (done: () => void): 
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -217,7 +217,7 @@ it('textInputEnterKeyType_static_0400', Level.LEVEL0, async (done: () => void): 
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -258,7 +258,7 @@ it('textInputEnterKeyType_static_0500', Level.LEVEL0, async (done: () => void): 
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err:Error) {
+      } catch (err) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);

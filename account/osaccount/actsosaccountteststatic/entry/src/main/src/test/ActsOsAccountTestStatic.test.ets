@@ -16,7 +16,7 @@
 import osAccount from '@ohos.account.osAccount'
 import commonEventManager from '@ohos.commonEventManager'
 import { describe, beforeAll, beforeEach, afterEach, it, expect, TestType, Hypium, Size, Level } from "../../../hypium/index";
-import { BusinessError } from '@ohos.base'
+import { BusinessError, RecordData } from '@ohos.base'
 import deviceInfo from '@ohos.deviceInfo';
 import hilog from '@ohos.hilog'
 import common from '@ohos.app.ability.common';
@@ -472,7 +472,7 @@ export default function ActsOsAccountTestStatic() {
       async (done: () => void): Promise<void> => {
         let logTag: string = "====>OsAccountParamCheck_1700 ";
         hilog.info(0x0000, tag, logTag + "start====");
-        let configParams: Record<string, Object> = {
+        let configParams: Record<string, RecordData> = {
           'uri': 'test.example.com',
           'port': 100
         };
@@ -507,13 +507,13 @@ export default function ActsOsAccountTestStatic() {
         let logTag: string = "====>OsAccountParamCheck_1800 ";
         hilog.info(0x0000, tag, logTag + "start====");
 
-        let adConfigData: Record<string, Object> = {
+        let adConfigData: Record<string, RecordData> = {
           'adDomain': 'test.example.com'
         }
-        let pJson: Record<string, Object> = {
+        let pJson: Record<string, RecordData> = {
           'adConfig': adConfigData
         }
-        let configParams: Record<string, Object> = {
+        let configParams: Record<string, RecordData> = {
           'accountName': '123456',
           'authServerName': 'CHINA',
           'parameters': pJson
@@ -549,7 +549,7 @@ export default function ActsOsAccountTestStatic() {
         let logTag: string = "====>OsAccountParamCheck_1900 ";
         hilog.info(0x0000, tag, logTag + "start====");
 
-        let ldapConfigData: Record<string, Object> = {
+        let ldapConfigData: Record<string, RecordData> = {
           'authServerAddress': 'test.example.com',
           'authenProtocol': 'GSSAPI/Kerberos',
           'kdcAddress': 'test.example.com',
@@ -558,10 +558,10 @@ export default function ActsOsAccountTestStatic() {
           'ldapPort': '389',
           'baseDN': ''
         }
-        let pJson: Record<string, Object> = {
+        let pJson: Record<string, RecordData> = {
           'ldapConfig': ldapConfigData
         }
-        let configParams: Record<string, Object> = {
+        let configParams: Record<string, RecordData> = {
           'accountName': '123456',
           'authServerName': 'CHINA',
           'parameters': pJson
@@ -597,7 +597,7 @@ export default function ActsOsAccountTestStatic() {
         let logTag: string = "====>OsAccountParamCheck_2000 ";
         hilog.info(0x0000, tag, logTag + "start====");
 
-        let oauthConfig: Record<string, Object> = {
+        let oauthConfig: Record<string, RecordData> = {
           'userAuthenRequestUri': 'https://www.test.com/login',
           'authorizationRequestUri': 'https://www.test.com/login',
           'tokenRequestUri': 'https://www.test.com/fortest',
@@ -608,15 +608,15 @@ export default function ActsOsAccountTestStatic() {
           'accountIdAttributeName': 'fakeId',
           'accountNameAttributeName': 'fakeAccountName'
         }
-        let iDaasConfig: Record<string, Object> = {
+        let iDaasConfig: Record<string, RecordData> = {
           'authProtocol': 'OAuth 2.0',
           'oauthConfig': oauthConfig,
         }
-        let map: Record<string, Object> = {
+        let map: Record<string, RecordData> = {
           'serverType': 'IDass',
           'idaasConfig': iDaasConfig
         }
-        let configParams: Record<string, Object> = {
+        let configParams: Record<string, RecordData> = {
           'accountName': '123456',
           'authServerName': 'CHINA',
           'parameters': map
@@ -689,7 +689,7 @@ export default function ActsOsAccountTestStatic() {
         for (let i: int = 0; i < 512; i++) {
           serverConfigId += 'i';
         }
-        let configParams: Record<string, Object> = {
+        let configParams: Record<string, RecordData> = {
           'uri': 'test.example.com',
           'port': 100
         };
@@ -727,7 +727,7 @@ export default function ActsOsAccountTestStatic() {
         for (let i: int = 0; i < 513; i++) {
           serverConfigId += 'i';
         }
-        let configParams: Record<string, Object> = {
+        let configParams: Record<string, RecordData> = {
           'uri': 'test.example.com',
           'port': 100
         };
@@ -762,7 +762,7 @@ export default function ActsOsAccountTestStatic() {
         let logTag: string = "====>OsAccountParamCheck_2400 ";
         hilog.info(0x0000, tag, logTag + "start====");
         let serverConfigId: string = '';
-        let configParams: Record<string, Object> = {
+        let configParams: Record<string, RecordData> = {
           'uri': 'test.example.com',
           'port': 100
         };

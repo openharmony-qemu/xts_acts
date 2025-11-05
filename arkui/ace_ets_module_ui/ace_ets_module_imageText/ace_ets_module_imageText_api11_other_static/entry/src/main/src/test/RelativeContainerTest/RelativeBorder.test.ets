@@ -77,7 +77,7 @@ export default function RelativeBorder() {
           // console.info("push RelativeBorder page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push RelativeBorder page error:" + err);
       }
       console.info("RelativeBorder foreEach end");

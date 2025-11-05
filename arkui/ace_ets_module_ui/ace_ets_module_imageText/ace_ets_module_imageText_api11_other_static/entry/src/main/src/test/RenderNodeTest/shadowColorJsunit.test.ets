@@ -95,7 +95,7 @@ export default function shadowColorJsunit() {
           // console.info("push shadowColorJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push shadowColorJsunit page error:" + err);
       }
 

@@ -66,7 +66,7 @@ export default function getClipToFrameJsunit() {
           // console.info("push getClipToFrameJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push getClipToFrameJsunit page error:" + err);
       }
       console.info("getClipToFrameJsunit beforeEach end");

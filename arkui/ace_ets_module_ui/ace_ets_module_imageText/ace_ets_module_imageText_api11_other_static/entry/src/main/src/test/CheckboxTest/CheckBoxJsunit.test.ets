@@ -97,7 +97,7 @@ export default function checkBoxJsunit() {
           // console.info("push checkBoxJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push checkBoxJsunit page error:" + err);
         expect().assertFail();
       }

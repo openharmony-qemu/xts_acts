@@ -98,7 +98,7 @@ export default function imageTwoJsunit() {
           // console.info("push imageTwoJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push imageTwoJsunit page error:" + err);
         expect().assertFail();
       }

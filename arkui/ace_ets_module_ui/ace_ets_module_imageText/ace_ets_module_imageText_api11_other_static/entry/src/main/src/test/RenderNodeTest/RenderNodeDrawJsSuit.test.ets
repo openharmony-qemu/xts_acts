@@ -95,7 +95,7 @@ export default function RenderNodeDrawJsSuit() {
           // console.info("push RenderNodeDrawJsSuit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push RenderNodeDrawJsSuit page error:" + err);
       }
 

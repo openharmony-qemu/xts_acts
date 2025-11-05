@@ -59,7 +59,7 @@ const ExpectTrue = (n: boolean) => {
 }
 
 
-export default function httpRequestErrorCodeTest() {
+export default function HttpRequestErrorCodeTest() {
 
     describe("HttpRequestErrorCodeTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');

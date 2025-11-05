@@ -95,7 +95,7 @@ export default function shadowAlphaJsunit() {
           // console.info("push shadowAlphaJsunit page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push shadowAlphaJsunit page error:" + err);
       }
 

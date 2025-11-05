@@ -97,7 +97,7 @@ export default function TextTimerJsunit() {
           // console.info("push TextTimer page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push TextTimer page error: " + err);
         expect().assertFail();
       }

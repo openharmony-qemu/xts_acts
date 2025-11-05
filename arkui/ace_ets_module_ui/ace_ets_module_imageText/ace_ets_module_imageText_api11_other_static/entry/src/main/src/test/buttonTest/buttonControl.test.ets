@@ -89,7 +89,7 @@ export default function buttonControlTest() {
           // console.info("push buttonControlTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push buttonControlSize page error:" + err);
       }
       console.info("buttonControlSize beforeEach end");

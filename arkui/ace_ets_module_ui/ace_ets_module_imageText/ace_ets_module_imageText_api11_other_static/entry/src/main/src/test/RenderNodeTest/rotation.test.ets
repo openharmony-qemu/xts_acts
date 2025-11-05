@@ -96,7 +96,7 @@ export default function rotationTest() {
           // console.info("push rotationTest page result:" + JSON.stringify(result));
         }
 
-      } catch (err:Error) {
+      } catch (err) {
         console.error("push rotationTest page error: " + err);
         expect().assertFail();
       }

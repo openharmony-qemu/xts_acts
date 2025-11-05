@@ -101,7 +101,7 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_THREESTRIKES_static_0015', Level.LEVEL0
       try{
         let copy = await (driver.findComponent(ON.text('复制')) as Promise<Component>);
         await copy.click();
-      }catch(e: Error){}
+      }catch(e){}
       await CommonFunc.sleep(1000);
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();

@@ -15,7 +15,7 @@
 
 import deviceInfo from '@ohos.deviceInfo';
 import account from '@ohos.account.distributedAccount'
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { describe, beforeEach, afterEach, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 
@@ -779,9 +779,9 @@ export default function ActsDAGetSetTestStatic() {
     it('setOsAccountDistributedInfo_test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         let accountAbility: account.DistributedAccountAbility = account.getDistributedAccountAbility();
-        let limitInfo: Record<number, number> = {};
+        let limitInfo: Record<string, RecordData> = {};
         for (let i: number = 0; i < 513; i++) {
-          limitInfo[i] = i;
+          limitInfo[i.toString()] = i;
         }
         let obj: account.DistributedInfo = {
           id: '12345',
@@ -817,9 +817,9 @@ export default function ActsDAGetSetTestStatic() {
     it('setOsAccountDistributedInfo_test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         let accountAbility: account.DistributedAccountAbility = account.getDistributedAccountAbility();
-        let limitInfo: Record<number, number> = {};
+        let limitInfo: Record<string, RecordData> = {};
         for (let i: number = 0; i < 513; i++) {
-          limitInfo[i] = i;
+          limitInfo[i.toString()] = i;
         }
         let obj: account.DistributedInfo = {
           id: '12345',

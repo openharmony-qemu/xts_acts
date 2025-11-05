@@ -381,7 +381,7 @@ it('testTextInput_static_160', Level.LEVEL1, async (done: ()=>void) => {
       let strJson = inspector.getInspectorByKey('textInput16');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInput16] get inspector value is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.Number');
+      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.NUMBER');
       expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Go');
       console.info('testTextInput160 End');
       done();
@@ -399,7 +399,7 @@ it('testTextInput_static_170', Level.LEVEL1, async (done: ()=>void) => {
       let strJson = inspector.getInspectorByKey('textInput17');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInput17] get inspector value is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.Number');
+      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.NUMBER');
       expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Search');
       console.info('testTextInput170 End');
       done();
@@ -417,7 +417,7 @@ it('testTextInput_static_180', Level.LEVEL1, async (done: ()=>void) => {
       let strJson = inspector.getInspectorByKey('textInput18');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInput18] get inspector value is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.Number');
+      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.NUMBER');
       expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Send');
       console.info('testTextInput180 End');
       done();
@@ -435,7 +435,7 @@ it('testTextInput_static_190', Level.LEVEL1, async (done: ()=>void) => {
       let strJson = inspector.getInspectorByKey('textInput19');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInput19] get inspector value is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.Number');
+      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.NUMBER');
       expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Next');
       console.info('testTextInput190 End');
       done();
@@ -453,7 +453,7 @@ it('testTextInput_static_200', Level.LEVEL1, async (done: ()=>void) => {
       let strJson = inspector.getInspectorByKey('textInput20');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInput20] get inspector value is: " + JSON.stringify(obj));
-      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.Number');
+      expect(obj.getElement('$attrs').getString('type')).assertEqual('InputType.NUMBER');
       expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Done');
       console.info('testTextInput200 End');
       done();
