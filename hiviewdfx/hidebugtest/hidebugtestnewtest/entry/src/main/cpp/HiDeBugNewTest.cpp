@@ -293,7 +293,7 @@ static napi_value Start(napi_env env, napi_callback_info info) {
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get params  %{public}d  %{public}d", value0,value1 );
         auto code = OH_HiDebug_RequestThreadLiteSampling(&config, [](const char *stack) {
             std::string stacks(stack);
-            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}lu",
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks start %{public}lu",
                              stacks.size());
             if (stacks.empty()) {
                 return;
@@ -301,16 +301,16 @@ static napi_value Start(napi_env env, napi_callback_info info) {
             size_t start = 0;
             size_t end = 0;
             while ((end = stacks.find('\n', start)) != std::string::npos) {
-                 OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}s",
+                 OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks in %{public}s",
                              stacks.substr(start, end - start).data());
                 start = end + 1;
             }
             if (start < stacks.size()) {
-                 OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}s",
+                 OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks end %{public}s",
                              stacks.substr(start, end - start).data());
             }
         });
-        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get Errcode %{public}d", code );
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get Errcode done %{public}d", code );
     napi_create_double(env, code, &sum);
     return sum;
     return nullptr;
