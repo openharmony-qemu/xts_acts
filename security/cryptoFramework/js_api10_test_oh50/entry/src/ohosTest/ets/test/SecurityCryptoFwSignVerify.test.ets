@@ -896,10 +896,10 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
         let keyPair = await signVerifySyncUtils.generateSignKey(algName);
         let sign: cryptoFramework.Sign = cryptoFramework.createSign(signAlgName);
         sign.initSync(keyPair.priKey);
-        let dataSign = sign.signSync(null);
+        let dataSign: cryptoFramework.DataBlob = sign.signSync(null);
         let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signAlgName);
         verify.initSync(keyPair.pubKey);
-        let ret = verify.verifySync(null, dataSign);
+        let ret: boolean = verify.verifySync(null, dataSign);
         expect(ret).assertTrue();
       } catch (error) {
         console.error(`SignVerify “${error}“, error code: ${error.code}`);
@@ -1809,5 +1809,92 @@ export default function SecurityCryptoFwSignVerifySyncTestUnit() {
       }
       done();
     });
+
+    /**
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_4300
+     * @tc.name SUB_Security_CryptoFramework_SignVerifySync_Func_4300
+     * @tc.desc algorithm is Sign and verify
+     * @tc.size Medium
+     * @tc.type Func
+     * @tc.level Level3
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let algName: string = "RSA1024";
+        let signAlgName: string = "RSA1024|PSS|SHA384|MGF1_SHA256";
+        let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+        let sign: cryptoFramework.Sign = cryptoFramework.createSign(signAlgName);
+        sign.initSync(keyPair.priKey);
+        let dataSign: cryptoFramework.DataBlob = await sign.sign(null);
+        let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signAlgName);
+        verify.initSync(keyPair.pubKey);
+        let ret: boolean = await verify.verify(null, dataSign);
+        expect(ret).assertTrue();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_4400
+     * @tc.name SUB_Security_CryptoFramework_SignVerifySync_Func_4400
+     * @tc.desc algorithm is Sign and verify
+     * @tc.size Medium
+     * @tc.type Func
+     * @tc.level Level3
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let algName: string = "RSA1024";
+        let signAlgName: string = "RSA1024|PSS|SHA384|MGF1_SHA256";
+        let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+        let sign: cryptoFramework.Sign = cryptoFramework.createSign(signAlgName);
+        sign.initSync(keyPair.priKey);
+        let dataSign: cryptoFramework.DataBlob = await sign.sign(null);
+        let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signAlgName);
+        verify.initSync(keyPair.pubKey);
+        // 篡改签名
+        dataSign.data[0]++;
+        let ret: boolean = await verify.verify(null, dataSign);
+        expect(ret).assertFalse();
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Security_CryptoFramework_SignVerifySync_Func_4500
+     * @tc.name SUB_Security_CryptoFramework_SignVerifySync_Func_4500
+     * @tc.desc algorithm is Sign and verify
+     * @tc.size Medium
+     * @tc.type Func
+     * @tc.level Level3
+     */
+    it("SUB_Security_CryptoFramework_SignVerifySync_Func_4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      try {
+        let algName: string = "RSA1024";
+        let signAlgName: string = "RSA1024|PSS|SHA384|MGF1_SHA256";
+        let keyPair = await signVerifySyncUtils.generateSignKey(algName);
+        let sign: cryptoFramework.Sign = cryptoFramework.createSign(signAlgName);
+        sign.initSync(keyPair.priKey);
+        let dataSign: cryptoFramework.DataBlob = await sign.sign(null);
+        let verify: cryptoFramework.Verify = cryptoFramework.createVerify(signAlgName);
+        verify.initSync(keyPair.pubKey);
+        // 篡改签名
+        dataSign.data[0]++;
+        verify.verify(null, dataSign, (err, ret) => {
+          expect(ret).assertFalse();
+        });
+      } catch (error) {
+        console.error(`SignVerify “${error}“, error code: ${error.code}`);
+        expect(null).assertFail();
+      }
+      done();
+    });
+
   });
 }
