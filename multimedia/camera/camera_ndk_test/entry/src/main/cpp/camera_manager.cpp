@@ -1040,11 +1040,44 @@ Camera_ErrorCode NDKCamera::SessionGetPreviewRotation(int rotation)
     return ret;
 }
 
+Camera_ImageRotation GetCameraImageRotation(int rotation)
+{
+    Camera_ImageRotation testRotation = static_cast<Camera_ImageRotation>(-1);
+    switch (rotation) {
+        case IMAGE_0:
+            testRotation = IAMGE_ROTATION_0;
+            break;
+        case IMAGE_90:
+            testRotation = IAMGE_ROTATION_90;
+            break;
+        case IMAGE_180:
+            testRotation = IAMGE_ROTATION_180;
+            break;
+        case IMAGE_270:
+            testRotation = IAMGE_ROTATION_270;
+            break;
+        case ROTATION_0:
+            testRotation = CAMERA_IMAGE_ROTATION_0;
+            break;
+        case ROTATION_90:
+            testRotation = CAMERA_IMAGE_ROTATION_90;
+            break;
+        case ROTATION_180:
+            testRotation = CAMERA_IMAGE_ROTATION_180;
+            break;
+        case ROTATION_270:
+            testRotation = CAMERA_IMAGE_ROTATION_270;
+            break;
+        default: break;
+    }
+    return testRotation;
+}
+
 Camera_ErrorCode NDKCamera::SessionSetPreviewRotation(int rotation, bool isDisplayLocked)
 {
     LOG("SetPreviewRotation begin.");
 ////问题14
-    Camera_ImageRotation testRotation = static_cast<Camera_ImageRotation>(rotation);
+    Camera_ImageRotation testRotation = GetCameraImageRotation(rotation);
     Camera_ErrorCode ret = OH_PreviewOutput_SetPreviewRotation(previewOutput_, testRotation, isDisplayLocked);
     if (ret == CAMERA_OK) {
         LOG("SessionSetPreviewRotation success.");
@@ -2464,6 +2497,12 @@ Camera_ErrorCode NDKCamera::TorchMode(int useCaseCode)
         torchMode_ = ON;
     } else if (useCaseCode == PARAMETER2_ERROR) {
         torchMode_ = AUTO;
+    } else if (useCaseCode == TORCH_MODE_OFF) {
+        torchMode_ = CAMERA_TORCH_MODE_OFF;
+    } else if (useCaseCode == TORCH_MODE_ON) {
+        torchMode_ = CAMERA_TORCH_MODE_ON;
+    } else if (useCaseCode == TORCH_MODE_AUTO) {
+        torchMode_ = CAMERA_TORCH_MODE_AUTO;
     }
     if (ret_ != CAMERA_OK) {
         LOG("OH_CameraManager_IsTorchSupported failed.");
@@ -2540,10 +2579,13 @@ Camera_ErrorCode NDKCamera::SetSmoothZoom(int useCaseCode)
 {
     float targetZoom = TARGET_ZOOM;
     Camera_SmoothZoomMode smoothZoomMode = NORMAL;
+    Camera_SmoothZoomMode cameraSmoothZoomMode = CAMERA_SMOOTH_ZOOM_MODE_NORMAL;
     if (useCaseCode == PARAMETER_OK) {
         ret_ = OH_CaptureSession_SetSmoothZoom(captureSession_, targetZoom, smoothZoomMode);
     } else if (useCaseCode == PARAMETER1_ERROR) {
         ret_ = OH_CaptureSession_SetSmoothZoom(nullptr, targetZoom, smoothZoomMode);
+    } else if (useCaseCode == SMOOTH_ZOOM_MODE_NORMAL) {
+        ret_ = OH_CaptureSession_SetSmoothZoom(captureSession_, targetZoom, cameraSmoothZoomMode);
     }
     if (ret_ != CAMERA_OK) {
         LOG("OH_CaptureSession_SetSmoothZoom failed.");
