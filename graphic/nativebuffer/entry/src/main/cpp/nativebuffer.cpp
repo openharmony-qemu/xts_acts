@@ -744,8 +744,11 @@ napi_value OHNativeBufferUnreferenceNormal(napi_env env, napi_callback_info info
     };
     OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&nativeBufferConfig);
     int32_t ret = OH_NativeBuffer_Unreference(nativeBuffer);
-    napi_create_int32(env, ret, &result);
-    OH_NativeBuffer_Unreference(nativeBuffer);
+    if (ret != 0) {
+        napi_create_int32(env, NUMBER_4001, &result);
+        return result;
+    }
+    napi_create_int32(env, SUCCESS, &result);
     return result;
 }
 napi_value OHNativeBuffeUnmapNullptr(napi_env env, napi_callback_info info)
