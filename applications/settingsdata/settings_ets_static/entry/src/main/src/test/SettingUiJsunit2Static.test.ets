@@ -158,6 +158,28 @@ export default function settingUiJsunit() {
         done();
       }
     });
+
+    /**
+     * @tc.number: settings_set_value_127
+     * @tc.name: settings_set_value_127
+     * @tc.desc: check set value sync
+     */
+    it('settings_set_value_127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness127';//关键字
+      let obj = '323445.00';//值
+      let domainName = settings.domainName.DEVICE_SHARED;
+      try{
+        let value = settings.setValueSync(abilityContext, name, obj, domainName);
+        expect(value).assertTrue();
+        done();
+      }catch (err) {
+        console.error("[settings_set_value_127] error = " + err);
+        expect().assertFail();
+        done();
+      }
+      done();
+    });
+
     /**
      * @tc.number: settings_get_value_static_035
      * @tc.name: settings_get_value_static_035
@@ -187,6 +209,33 @@ export default function settingUiJsunit() {
         console.error("[settings_set_value_35] error = " + err);
         expect().assertFail();
         done();
+      }
+    });
+
+    /**
+     * @tc.number: settings_set_value_113
+     * @tc.name: settings_set_value_113
+     * @tc.desc: check setValueSync
+     */
+    it('settings_set_value_113',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness113';//关键字
+      let value = 'brightness113'//值
+      try{
+        settings.setValue(abilityContext, name, value)
+          .then((data)=>{
+            expect(data).assertTrue();
+            done();
+          })
+          .catch((err)=>{
+            console.info("[settings_set_value_113] error is:" + err);
+            expect().assertFail();
+            done();
+          })
+      }catch(err){
+        console.info("[settings_set_value_113] error is:" + err);
+        expect().assertFail();
+        done();
+        return;
       }
     });
 
@@ -1128,7 +1177,7 @@ export default function settingUiJsunit() {
      */
     it('settings_get_value_static_122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let name = 'settings.screen.brightness122';//关键字
-      let domainName = 'global';
+      let domainName = settings.domainName.DEVICE_SHARED;
       try{
         let value = settings.registerKeyObserver(abilityContext, name, domainName, (err, ret) => {
           if (err) {
@@ -1154,18 +1203,19 @@ export default function settingUiJsunit() {
      * @tc.name: open_manager_settings_static_119
      * @tc.desc: check open manager
      */
-    // it('open_manager_settings_static_119', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   let context = null;
-    //   try{
-    //     let value = settings.openNetworkManagerSettings(context);
-    //     expect(value).assertTrue();
-    //     done();
-    //   }catch (err) {
-    //     console.error("[open_manager_settings_static_119] error = " + err);
-    //     expect(err.code).assertEqual(14800000);
-    //   }
-    //   done();
-    // });
+    it('open_manager_settings_static_119', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      try{
+        let value = settings.openNetworkManagerSettings(abilityContext);
+        expect(value).assertTrue();
+        done();
+      }catch (err) {
+        console.error("[open_manager_settings_static_119] error = " + err);
+        if ((err as BusinessError)?.code) {
+          expect(err?.code).assertEqual(14800000);
+        }
+      }
+      done();
+    });
 
     /**
      * @tc.number: open_manager_settings_static_120
@@ -1180,8 +1230,8 @@ export default function settingUiJsunit() {
           })
           .catch((err)=>{
             console.error("[open_manager_settings_static_120] error = " + err);
-            if ((err as BusinessError).code) {
-              expect(err.code).assertEqual(14800010);
+            if ((err as BusinessError)?.code) {
+              expect(err?.code).assertEqual(14800010);
             }
             done();
           })
