@@ -1502,6 +1502,11 @@ export default function applicationManagerTest() {
         let autoStartApps: Array<Want> = [AUTOSTARTAPP1, AUTOSTARTAPP2];
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         applicationManager.addAutoStartApps(SELFWANT, autoStartApps, DEFAULT_USER_ID, true);
+        let ret = applicationManager.isModifyAutoStartAppsDisallowed(SELFWANT, AUTOSTARTAPP1, DEFAULT_USER_ID);
+        expect(ret).assertTrue();
+        applicationManager.addAutoStartApps(SELFWANT, autoStartApps, DEFAULT_USER_ID, false);
+        let ret2 = applicationManager.isModifyAutoStartAppsDisallowed(SELFWANT, AUTOSTARTAPP1, DEFAULT_USER_ID);
+        expect(ret2).assertFalse();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -2474,6 +2479,28 @@ export default function applicationManagerTest() {
         expect(error.code == 9200002).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ISMODITYKEEPALIVEAPP_004
+     * @tc.name      : test_isModifyKeepAliveAppsDisallowed_004
+     * @tc.desc      : test isModifyKeepAliveAppsDisallowed method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_isModifyKeepAliveAppsDisallowed_004", Level.LEVEL2, async (done: Function) => {
+      try {
+        let keepAliveApp: string = TEST_BUNDLENAME;
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let disallowModifty = applicationManager.isModifyKeepAliveAppsDisallowed(SELFWANT, DEFAULT_USER_ID, keepAliveApp);
+        expect(disallowModifty).assertFalse();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
     })
