@@ -156,6 +156,12 @@ struct FatherControlChild {
           .onActionUpdate((event: GestureEvent)=>{
             console.log('cccc'+this.childRecognizer.isBuiltIn())
             console.log('aaaa'+this.childRecognizer.getState())
+            AppStorage.setOrCreate('READY',GestureRecognizerState.READY)
+            AppStorage.setOrCreate('DETECTING',GestureRecognizerState.DETECTING)
+            AppStorage.setOrCreate('PENDING',GestureRecognizerState.PENDING)
+            AppStorage.setOrCreate('BLOCKED',GestureRecognizerState.BLOCKED)
+            AppStorage.setOrCreate('SUCCESSFUL',GestureRecognizerState.SUCCESSFUL)
+            AppStorage.setOrCreate('FAILED',GestureRecognizerState.FAILED)
             AppStorage.setOrCreate('getState4',this.childRecognizer.getState())
             AppStorage.setOrCreate('isBuiltIn',this.childRecognizer.isBuiltIn())
             AppStorage.setOrCreate('isValid',this.childRecognizer.isValid())
