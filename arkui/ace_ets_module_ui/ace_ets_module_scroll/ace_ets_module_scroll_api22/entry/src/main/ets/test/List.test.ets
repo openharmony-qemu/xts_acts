@@ -16,6 +16,10 @@
 import ContentOffset from './ListTest/ContentOffset.test';
 import scrollSnapAnimationSpeedModifier from './ListTest/scrollSnapAnimationSpeedModifier.test'; 
 import scrollSnapAnimationSpeed from './ListTest/scrollSnapAnimationSpeed.test'; 
+import listScrollbarColor from './ListTest/listScrollbarColor.test'; 
+import scrollScrollbarColor from './ScrollTest/scrollScrollbarColor.test'; 
+import gridScrollbarColor from './GridTest/gridScrollbarColor.test'; 
+import scrollbarColor from './WaterFlowTest/scrollbarColor.test';
 import ListFillPolicy from './ListTest/ListFillPolicy.test';
 import GridFillPolicy from './GridTest/GridFillPolicy.test';
 import WaterFlowFillPolicy from './WaterFlowTest/WaterFlowFillPolicy.test';
@@ -24,6 +28,10 @@ export default function testsuite() {
   ContentOffset();
   scrollSnapAnimationSpeedModifier();
   scrollSnapAnimationSpeed();
+  listScrollbarColor();
+  scrollScrollbarColor();
+  gridScrollbarColor();
+  scrollbarColor();
   ListFillPolicy();
   GridFillPolicy();
   WaterFlowFillPolicy();
