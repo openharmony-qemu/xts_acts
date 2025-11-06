@@ -430,9 +430,9 @@ export default function windowPropertiesTest() {
      * @tc.desc      : test_getAllWindowLayoutInfo_mainWindow
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.level     : LEVEL0
      */
-    it('test_getAllWindowLayoutInfo_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('test_getAllWindowLayoutInfo_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_getAllWindowLayoutInfo_mainWindow';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -470,9 +470,9 @@ export default function windowPropertiesTest() {
         * @tc.desc      : getWindowDensityInfo
         * @tc.size      : MediumTest
         * @tc.type      : Function
-        * @tc.level     : Level3
+        * @tc.level     : LEVEL0
         */
-        it('testGetWindowDensityInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        it('testGetWindowDensityInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let caseName: string = 'test_testGetWindowDensityInfo';
         let msgStr: string = 'jsUnittest ' + caseName + ' ';
         console.log(msgStr + 'begin');
@@ -539,9 +539,9 @@ export default function windowPropertiesTest() {
         * @tc.desc      : 有效左边界校验
         * @tc.size      : MediumTest
         * @tc.type      : Function
-        * @tc.level     : Level3
+        * @tc.level     : LEVEL0
         */
-        it('testSetCustomDensityParamCheck1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        it('testSetCustomDensityParamCheck1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let caseName: string = 'test_testSetCustomDensityParamCheck1';
         let msgStr: string = 'jsUnittest ' + caseName + ' ';
         console.log(msgStr + 'begin');
@@ -569,9 +569,9 @@ export default function windowPropertiesTest() {
         * @tc.desc      : effective right boundary
         * @tc.size      : MediumTest
         * @tc.type      : Function
-        * @tc.level     : Level3
+        * @tc.level     : LEVEL0
         */
-        it('testSetCustomDensityParamCheck2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        it('testSetCustomDensityParamCheck2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let caseName: string = 'test_testSetCustomDensityParamCheck2';
         let msgStr: string = 'jsUnittest ' + caseName + ' ';
         console.log(msgStr + 'begin');
@@ -7387,7 +7387,7 @@ export default function windowPropertiesTest() {
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('testSnapShotSync_subWindow_Privacy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testSnapShotSync_subWindow_Privacy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testSnapShotSync_subWindow_Privacy';
       let subWindow = await windowStage.createSubWindow('testSnapShotSync_subWindow_Privacy');
       console.info(`${caseName} Succeeded in creating the subwindow. Data: ` + JSON.stringify(subWindow));
@@ -7428,7 +7428,7 @@ export default function windowPropertiesTest() {
      * @tc.type      : Function
      * @tc.level     : Level 2
      */
-    it('testSnapShotSync_dialogWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testSnapShotSync_dialogWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testSnapShotSync_dialogWindow';
       let config : window.Configuration = {
         name: "testSnapShotSync_dialogWindow",

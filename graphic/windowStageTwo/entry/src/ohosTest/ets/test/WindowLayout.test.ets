@@ -525,9 +525,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
      * @tc.desc       : test_subWindow_setFollowParentMultiScreenPolicy_true
      * @tc.size       : MediumTest
      * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.level      : LEVEL0
      */
-    it('test_subWindow_setFollowParentMultiScreenPolicy_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('test_subWindow_setFollowParentMultiScreenPolicy_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "test_subWindow_setFollowParentMultiScreenPolicy_true";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
@@ -567,9 +567,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
      * @tc.desc       : test_subWindow_setFollowParentMultiScreenPolicy_false
      * @tc.size       : MediumTest
      * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.level      : LEVEL0
      */
-    it('test_subWindow_setFollowParentMultiScreenPolicy_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('test_subWindow_setFollowParentMultiScreenPolicy_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "test_subWindow_setFollowParentMultiScreenPolicy_false";
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin.');
@@ -664,9 +664,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
      * @tc.desc      : Test the function value of testRectChangeOptions
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it("testRectChangeOptions_off", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it("testRectChangeOptions_off", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "testRectChangeOptions_off";
       console.log(msgStr + "begin");
       try {
@@ -786,9 +786,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
          * @tc.desc      : Test the function value of testRectChangeOptions
          * @tc.size      : MediumTest
          * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.level     : Level1
          */
-    it("testRectChangeOptions_on_moveWindowTo", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it("testRectChangeOptions_on_moveWindowTo", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let msgStr = "testRectChangeOptions_on_moveWindowTo";
       console.log(msgStr + "begin");
       try {
@@ -1025,10 +1025,10 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
          * @tc.desc      : test_on_windowRectChange
          * @tc.size      : MediumTest
          * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.level     : LEVEL0
          */
 
-    it("test_on_windowRectChange", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it("test_on_windowRectChange", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "test_on_windowRectChange";
       console.log(msgStr + "begin");
       let windowClass = await windowStage.getMainWindow();
@@ -1508,9 +1508,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
      * @tc.desc       : test the err.code = 401
      * @tc.size       : MediumTest
      * @tc.type       : Function
-     * @tc.level      : Level1
+     * @tc.level      : LEVEL0
      */
-    it('testWindowEnableDragNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testWindowEnableDragNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let windowClass: window.Window;
       let config: window.Configuration = {
         name: 'dialog',
@@ -3646,9 +3646,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
      * @tc.desc      : 验证moveWindowToGlobalDisplay接口窗口状态异常调用
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.level     : LEVEL0
      */
-    it('testMoveWindowToGlobalDisplaywithDestoryedWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testMoveWindowToGlobalDisplaywithDestoryedWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testMoveWindowToGlobalDisplaywithDestoryedWindow';
       console.log(caseName + 'begin.');
       let windowClass = await windowStage.createSubWindow('testMoveWindowToGlobalDisplaywithDestoryedWindow')
@@ -4228,9 +4228,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
      * @tc.desc      : setContentAspectRatio全屏调用
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.level     : LEVEL0
      */
-    it('testSetContentAspectRatio_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('testSetContentAspectRatio_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetContentAspectRatio_0600';
       console.log(caseName + 'begin.');
       if (isPCStatus != '' || isAutoWindow == 'true') {

@@ -80,13 +80,6 @@ export default function DeviceKvStoreReturnValueDisData(){
         expect(null).assertFail();
       });
 
-      await sleep(3000);
-      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore);
-      await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore);
-      kvStore = null;
-      console.info(TAG + 'beforeAll end');
-      await sleep(2000);
-
       for (let i = 0; i < 10; i++) {
         let key = 'batch_test_string_key';
         let entry = {
@@ -99,8 +92,22 @@ export default function DeviceKvStoreReturnValueDisData(){
         entries.push(entry);
       }
       console.info(TAG + `entries: ${entries}`);
+      await sleep(2000);
 
-      done();
+      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore).then(async () => {
+        console.info('afterEach closeKVStore success');
+        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
+            console.info('afterEach deleteKVStore success');
+            kvStore = null;
+            done();
+        }).catch((err) => {
+            console.info('afterEach deleteKVStore err ' + err);
+            done();
+        });
+      }).catch((err) => {
+          console.info('afterEach closeKVStore err ' + err);
+          done();
+      });
 
     });
 
@@ -109,27 +116,29 @@ export default function DeviceKvStoreReturnValueDisData(){
       await kvManager.getKVStore(TEST_STORE_ID, options).then((store) => {
         kvStore = store;
         console.info(TAG + 'beforeEach getKVStore success');
+        done();
       }).catch((err) => {
         console.error(TAG + 'beforeEach getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
+        done();
       });
-      done();
+
     });
     afterEach(async (done) =>  {
       console.info(TAG + 'afterEach');
 
-      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore).then(() => {
-        console.info(TAG + ' afterEach Succeeded closeKVStore');
-        kvStore = null;
+      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore).then(async () => {
+        console.info('afterEach closeKVStore success');
+        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
+            console.info('afterEach deleteKVStore success');
+            kvStore = null;
+            done();
+        }).catch((err) => {
+            console.info('afterEach deleteKVStore err ' + err);
+            done();
+        });
       }).catch((err) => {
-        console.error(TAG + `afterEach Failed closeKVStore.code is ${err.code},message is ${err.message}`);
-      });
-
-      await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
-        console.info(TAG + ' afterEach Succeeded deleteKVStore');
-        done();
-      }).catch((err) => {
-        console.error(TAG + `afterEach Failed deleteKVStore .code is ${err.code},message is ${err.message}`);
-        done();
+          console.info('afterEach closeKVStore err ' + err);
+          done();
       });
 
     });
@@ -1577,8 +1586,6 @@ export default function DeviceKvStoreReturnValueDisData(){
         done();
       }
     })
-
-
 
     console.info(TAG + '-------------------describe KvStoreReturnValue  end-------------------');
   })

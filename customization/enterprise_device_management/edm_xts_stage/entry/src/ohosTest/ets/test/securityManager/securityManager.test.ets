@@ -2143,9 +2143,56 @@ function testSetPermissionManagedState() {
   it("test_set_permission_managed_state_0800", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
+      securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, securityManager.PermissionManagedState.DENIED)
+      let managedState: securityManager.PermissionManagedState = securityManager.getPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_1);
+      expect(managedState == securityManager.PermissionManagedState.DENIED).assertTrue();
+    } catch(error) {
+      expect(error.code == 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_0900
+   * @tc.name      : test_set_permission_managed_state_0900
+   * @tc.desc      : test securityManager setPermissionManagedState set granted state
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_permission_managed_state_0900", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, securityManager.PermissionManagedState.DENIED)
+      securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, securityManager.PermissionManagedState.DEFAULT)
+      let managedState: securityManager.PermissionManagedState = securityManager.getPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_1);
+      expect(managedState == securityManager.PermissionManagedState.DEFAULT).assertTrue();
+    } catch(error) {
+      expect(error.code == 9200012).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_PERMISSION_MANAGED_STATE_JS_1000
+   * @tc.name      : test_set_permission_managed_state_1000
+   * @tc.desc      : test securityManager setPermissionManagedState set granted state
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_permission_managed_state_1000", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
       securityManager.setPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_LIST_1, securityManager.PermissionManagedState.GRANTED)
       let managedState: securityManager.PermissionManagedState = securityManager.getPermissionManagedState(SELFWANT, TEST_APP_INSTANCE, TEST_PERMISSION_1);
       expect(managedState == securityManager.PermissionManagedState.GRANTED).assertTrue();
+    } catch(error) {
+      expect(error.code == 9200012).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }

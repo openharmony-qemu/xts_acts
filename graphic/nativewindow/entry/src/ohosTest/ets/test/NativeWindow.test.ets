@@ -1669,5 +1669,110 @@ export default function nativeWindowTest() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2100
+     * @tc.name       : testNativeWindowPreAllocBufferAbNormalPra
+     * @tc.desc       : testNativeWindowPreAllocBufferAbNormalPra
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeWindowPreAllocBufferAbNormalPra', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowPreAllocBufferAbNormalPra();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2101
+     * @tc.name       : testNativeWindowPreAllocBufferAbNormalPra2
+     * @tc.desc       : testNativeWindowPreAllocBufferAbNormalPra2
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeWindowPreAllocBufferAbNormalPra2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowPreAllocBufferAbNormalPra2();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2102
+     * @tc.name       : testNativeWindowPreAllocBufferBufferCnt
+     * @tc.desc       : testNativeWindowPreAllocBufferBufferCnt
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeWindowPreAllocBufferBufferCnt', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowPreAllocBufferBufferCnt();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2103
+     * @tc.name       : testNativeWindowPreAllocBufferAbnormal
+     * @tc.desc       : testNativeWindowPreAllocBufferAbnormal
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeWindowPreAllocBufferAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowPreAllocBufferAbnormal();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2104
+     * @tc.name       : testNativeWindowPreAllocBufferDetachAttach
+     * @tc.desc       : testNativeWindowPreAllocBufferDetachAttach
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeWindowPreAllocBufferDetachAttach', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowPreAllocBufferDetachAttach();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2105
+     * @tc.name       : testNativeWindowPreAllocBufferDetachAttach02
+     * @tc.desc       : testNativeWindowPreAllocBufferDetachAttach02
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeWindowPreAllocBufferDetachAttach02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowPreAllocBufferDetachAttach02();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2106
+     * @tc.name       : testNativeWindowPreAllocBufferNormal
+     * @tc.desc       : testNativeWindowPreAllocBufferNormal
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testNativeWindowPreAllocBufferNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowPreAllocBufferNormal();
+        expect(result).assertEqual(0);
+        done();
+      });
   })
 }

@@ -51,7 +51,7 @@ namespace OHOS {
     {
         printf("------start ActsVulkanMonolithic5Test------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
-            system("/data/local/tmp/vulkan/vk-default/deqp_vk_execute "
+            system("/data/local/tmp/deqp_vk_execute "
                 "--deqp-caselist-file=/data/local/tmp/vulkan/vk-default/pipeline/monolithic5.txt "
                 "--deqp-log-filename=ActsVulkanMonolithic5Test.qpa");
         }

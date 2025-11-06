@@ -200,9 +200,9 @@ export default function WindowLifecycle() {
      * @tc.desc      : Test the function value of getSubWindow
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testgetSubWindow0_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testgetSubWindow0_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testgetSubWindow0_callback';
       try {
 
@@ -281,7 +281,7 @@ export default function WindowLifecycle() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('test_findWindow_subWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('test_findWindow_subWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'test_findWindow_subWindow';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -372,9 +372,9 @@ export default function WindowLifecycle() {
      * @tc.desc      : test_findWindow_mainWindow
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('test_findWindow_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('test_findWindow_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'test_findWindow_mainWindow';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -543,9 +543,9 @@ export default function WindowLifecycle() {
      * @tc.desc      : To verify the widow isshowing
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testIsWindowShowingTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
+    it('testIsWindowShowingTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('windowTest testIsWindowShowingTest begin');
       // let wnd: window.Window | undefined = undefined;
       let msgStr = "testIsWindowShowingTest";
@@ -1632,9 +1632,9 @@ export default function WindowLifecycle() {
      * @tc.desc      : Enable this window to listen for status change events
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.level     : LEVEL0
      */
-    it('testWindowOffWindowVisibilityChange_UnregisteredOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('testWindowOffWindowVisibilityChange_UnregisteredOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName: string = 'testWindowOffWindowVisibilityChange_UnregisteredOff';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -1725,9 +1725,9 @@ export default function WindowLifecycle() {
      * @tc.desc      : window type windowVisibilityChange
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it("testWindowVisibilityChange_on_Function_Callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it("testWindowVisibilityChange_on_Function_Callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msgStr = "testWindowVisibilityChange_on_Function_Callback";
       console.log(msgStr + "begin");
       try {
@@ -1759,9 +1759,9 @@ export default function WindowLifecycle() {
      * @tc.desc      : window type windowVisibilityChange
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it("testWindowVisibilityChange_off_Function_Callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it("testWindowVisibilityChange_off_Function_Callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msgStr = "testWindowVisibilityChange_off_Function_Callback";
       console.log(msgStr + "begin");
       try {
@@ -1838,9 +1838,9 @@ export default function WindowLifecycle() {
      * @tc.desc      : testRemoveStartingWindow_Promise
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.level     : LEVEL0
      */
-    it("testRemoveStartingWindow_Promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    it("testRemoveStartingWindow_Promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msgStr = "testRemoveStartingWindow_Promise";
       console.log(msgStr + "begin");
       try {
@@ -1896,9 +1896,9 @@ export default function WindowLifecycle() {
      * @tc.desc      : test_loadContentByName
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.level     : LEVEL0
      */
-    it("test_loadContentByName", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it("test_loadContentByName", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msgStr = "test_loadContentByName";
       console.log(msgStr + "begin");
       try {
@@ -2344,9 +2344,9 @@ export default function WindowLifecycle() {
      * @tc.desc      : Test the function value of preferredOrientation
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('SUB_BASIC_WMS_WindowStageEvent_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_BASIC_WMS_WindowStageEvent_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_BASIC_WMS_WindowStageEvent_0100';
       // 1、拉起另一个Abllity主窗
       try {

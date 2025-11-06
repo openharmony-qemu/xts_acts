@@ -74,6 +74,12 @@ export default function IsvalidRecognizerTest() {
       expect(AppStorage.get('isValid')).assertEqual(true);
       expect(AppStorage.get('isBuiltIn')).assertEqual(true);
       expect(AppStorage.get('getState4')).assertEqual(4);
+      expect(AppStorage.get('READY')).assertEqual(0);
+      expect(AppStorage.get('DETECTING')).assertEqual(1);
+      expect(AppStorage.get('PENDING')).assertEqual(2);
+      expect(AppStorage.get('BLOCKED')).assertEqual(3);
+      expect(AppStorage.get('SUCCESSFUL')).assertEqual(4);
+      expect(AppStorage.get('FAILED')).assertEqual(5);
 
       let Column = await driver.findComponent(ON.id('button'));
       await Column.click();

@@ -43,7 +43,7 @@ namespace OHOS {
     {
         printf("------start ActsVulkanProtectedmemoryTest------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
-            system("/data/local/tmp/vulkan/vk-default/deqp_vk_execute "
+            system("/data/local/tmp/deqp_vk_execute "
                 "--deqp-caselist-file=/data/local/tmp/vulkan/vk-default/protected-memory.txt "
                 "--deqp-log-filename=ActsVulkanProtectedmemoryTest.qpa");
         }

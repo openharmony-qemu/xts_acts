@@ -22,7 +22,7 @@ import systemParameterEnhance from '@ohos.systemParameterEnhance';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
-const START_ABILITY_TIMEOUT_TWO_THOUSAND = 2000;
+const START_ABILITY_TIMEOUT_FIVE_HUNDRED = 500;
 
 export default function BackgroundCallback() {
   describe("BackgroundCallback", () => {
@@ -35,7 +35,7 @@ export default function BackgroundCallback() {
       });
       setTimeout(()=>{
         done();
-      }, START_ABILITY_TIMEOUT_TWO_THOUSAND)
+      }, START_ABILITY_TIMEOUT_FIVE_HUNDRED)
     });
 
     /**
@@ -55,63 +55,61 @@ export default function BackgroundCallback() {
         done();
         return;
       }
-      setTimeout(() => {
-        abilityDelegator.startAbility({
-          abilityName: "Main4Ability",
-          bundleName: "com.example.crossplatformcallback",
-          moduleName: "entry_test",
-        }, () => {
-          setTimeout(() => {
-            abilityDelegator.getCurrentTopAbility((err: BusinessError, ability1: UIAbility) => {
-              abilityDelegator.printSync(
-                "ACTS_DO_ABILITY_BACKGROUND_CALLBACK_0001 Main4Ability: " +
-                ability1.context.abilityInfo.name
-              );
-              abilityDelegator.startAbility({
-                abilityName: "Main3Ability",
-                bundleName: "com.example.crossplatformcallback",
-                moduleName: "entry_test",
-              }, () => {
-                setTimeout(() => {
-                  abilityDelegator.getCurrentTopAbility(
-                    (err: BusinessError, ability2: UIAbility) => {
-                      abilityDelegator.printSync(
-                        "ACTS_DO_ABILITY_BACKGROUND_CALLBACK_0001 Main3Ability: " +
-                        ability2.context.abilityInfo.name
-                      );
-                      abilityDelegator.doAbilityBackground(
-                        ability2,
-                        (err: BusinessError) => {
-                          setTimeout(() => {
-                            try {
-                              let stateNum =
-                                abilityDelegator.getAbilityState(ability2);
-                              abilityDelegator.printSync(
-                                "ACTS_DO_ABILITY_BACKGROUND_CALLBACK_0001 getAbilityState stateNum :" +
-                                  stateNum
-                              );
-                              expect(stateNum).assertEqual(3);
-                              abilityDelegator.printSync(
-                                "ACTS_DO_ABILITY_BACKGROUND_CALLBACK_0001 pass"
-                              );
-                            } catch (error) {
-                              abilityDelegator.printSync(
-                                "ACTS_DO_ABILITY_BACKGROUND_CALLBACK_0001 error:" +
-                                  error
-                              );
-                            }
-                            done();
-                          }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
-                        }
-                      );
-                    }
-                  );
-                }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
-              });
+      abilityDelegator.startAbility({
+        abilityName: "Main4Ability",
+        bundleName: "com.example.crossplatformcallback",
+        moduleName: "entry_test",
+      }, () => {
+        setTimeout(() => {
+          abilityDelegator.getCurrentTopAbility((err: BusinessError, ability1: UIAbility) => {
+            abilityDelegator.printSync(
+              "ACTS_DO_ABILITY_BACKGROUND_CALLBACK_0001 Main4Ability: " +
+              ability1.context.abilityInfo.name
+            );
+            abilityDelegator.startAbility({
+              abilityName: "Main3Ability",
+              bundleName: "com.example.crossplatformcallback",
+              moduleName: "entry_test",
+            }, () => {
+              setTimeout(() => {
+                abilityDelegator.getCurrentTopAbility(
+                  (err: BusinessError, ability2: UIAbility) => {
+                    abilityDelegator.printSync(
+                      "ACTS_DO_ABILITY_BACKGROUND_CALLBACK_0001 Main3Ability: " +
+                      ability2.context.abilityInfo.name
+                    );
+                    abilityDelegator.doAbilityBackground(
+                      ability2,
+                      (err: BusinessError) => {
+                        setTimeout(() => {
+                          try {
+                            let stateNum =
+                              abilityDelegator.getAbilityState(ability2);
+                            abilityDelegator.printSync(
+                              "ACTS_DO_ABILITY_BACKGROUND_CALLBACK_0001 getAbilityState stateNum :" +
+                                stateNum
+                            );
+                            expect(stateNum).assertEqual(3);
+                            abilityDelegator.printSync(
+                              "ACTS_DO_ABILITY_BACKGROUND_CALLBACK_0001 pass"
+                            );
+                          } catch (error) {
+                            abilityDelegator.printSync(
+                              "ACTS_DO_ABILITY_BACKGROUND_CALLBACK_0001 error:" +
+                                error
+                            );
+                          }
+                          done();
+                        }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
+                      }
+                    );
+                  }
+                );
+              }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
             });
-          }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
-        });
-      }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+          });
+        }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
+      });
     });
 
     /**
@@ -190,10 +188,10 @@ export default function BackgroundCallback() {
                     }
                   }
                 );
-              }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+              }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
             });
           });
-        }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+        }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
       }
     );*/
 
@@ -261,7 +259,7 @@ export default function BackgroundCallback() {
                 }
               );
             }
-          }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+          }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
         });
       });
     });
@@ -340,15 +338,15 @@ export default function BackgroundCallback() {
                               done();
                             }
                           );
-                        }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+                        }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
                       }
                     );
                   }
                 );
-              }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+              }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
             });
           });
-        }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+        }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
       });
     });
 
@@ -405,11 +403,11 @@ export default function BackgroundCallback() {
                         );
                       }
                       done();
-                    }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+                    }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
                   });
                 }
               );
-            }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+            }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
           });
         });
       }

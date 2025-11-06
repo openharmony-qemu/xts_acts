@@ -30,6 +30,6 @@ cp -rf "$root_vulkan_path/test/xts/acts/graphic/vktest/genlocal.py" "suites/acts
 cp -rf "graphic/graphic_2d/libdeqp_ohos_platform.z.so" "suites/acts/acts/testcases/vulkandata"
 cp -rf "graphic/graphic_2d/librosen_context.z.so" "suites/acts/acts/testcases/vulkandata"
 cp -rf "xts/acts/libdeqp_amber.z.so" "suites/acts/acts/testcases/vulkandata"
-cp -rf "graphic/graphic_2d/libdeqp_spirv.z.so" "suites/acts/acts/testcases/vulkandata"
-cp -rf "graphic/graphic_2d/libdeqp_spvremapper.z.so" "suites/acts/acts/testcases/vulkandata"
+cp -rf "thirdparty/glslang/libdeqp_spirv.z.so" "suites/acts/acts/testcases/vulkandata"
+cp -rf "thirdparty/glslang/libdeqp_spvremapper.z.so" "suites/acts/acts/testcases/vulkandata"
 cp -rf "thirdparty/skia/libskia_canvaskit.z.so" "suites/acts/acts/testcases/vulkandata"

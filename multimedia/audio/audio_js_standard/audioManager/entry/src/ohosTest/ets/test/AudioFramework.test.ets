@@ -4465,6 +4465,13 @@ export default function audioFramework() {
             };
             data.on('stateChange', stateChangeCallback);
             data.off('stateChange', stateChangeCallback);
+            let readDataCallback = (value: ArrayBuffer) => {
+                console.info(`read valus: ${value}`);
+              };
+            data.on('readData', readDataCallback);
+            console.info('Capturer readData on success.');
+            data.off('readData', readDataCallback);
+            console.info('Capturer readData of success.');
             data.release().then(() => {
               console.info('AudioFrameworkRecLog: ---------RELEASE RECORD---------');
               console.info('AudioFrameworkRecLog: Capturer release : SUCCESS');
@@ -4479,6 +4486,7 @@ export default function audioFramework() {
           });
           done();
       })
+
     /**
      * @tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_ISACTIVE_0100
      * @tc.name      : isActive - Media - Promise

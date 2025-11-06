@@ -79,9 +79,9 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
      * @tc.desc      : Verify the scenario of creating the application type window
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testCreateWindow_Type_Dialog', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
+    it('testCreateWindow_Type_Dialog', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
       let caseName = 'testCreateWindow_Type_Dialog';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -306,9 +306,9 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
      * @tc.desc      : Obtain the area that the window content avoids
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testGetWindowAvoidArea_Type_System', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+    it('testGetWindowAvoidArea_Type_System', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetWindowAvoidArea_Type_System';
       let msgStr = 'jsunittest ' + caseName + ' ';
       try {
@@ -342,9 +342,9 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
      * @tc.desc      : Obtain the area that the window content avoids
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testGetWindowAvoidArea_Type_CutOut', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+    it('testGetWindowAvoidArea_Type_CutOut', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetWindowAvoidArea_Type_CutOut';
       let msgStr = 'jsunittest ' + caseName + ' ';
       try {
@@ -378,9 +378,9 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
      * @tc.desc      : Obtain the area that the window content avoids
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testGetWindowAvoidArea_Type_System_Gesture', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+    it('testGetWindowAvoidArea_Type_System_Gesture', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetWindowAvoidArea_Type_System_Gesture';
       let msgStr = 'jsunittest ' + caseName + ' ';
       try {
@@ -413,9 +413,9 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
      * @tc.desc      : Obtain the area that the window content avoids
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testGetWindowAvoidArea_Type_Keyboard', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+    it('testGetWindowAvoidArea_Type_Keyboard', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetWindowAvoidArea_Type_Keyboard';
       let msgStr = 'jsunittest ' + caseName + ' ';
       try {
@@ -448,9 +448,9 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
      * @tc.desc      : Gets the properties of the current window
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testGetWindowPropertiesTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+    it('testGetWindowPropertiesTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName = 'testGetWindowPropertiesTest';
       let msgStr = 'jsunittest ' + caseName + ' ';
       try {
@@ -493,9 +493,9 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
      * @tc.desc      : Get the final show window
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testGetLastWindow_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
+    it('testGetLastWindow_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
       let caseName = 'testGetLastWindow_Promise';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -553,9 +553,9 @@ export default function displayAndWindowRefactorInterfaceTest(context: common.UI
      * @tc.desc      : show window
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testShowWindowTest_Callback_Form', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
+    it('testShowWindowTest_Callback_Form', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
       let caseName = 'testShowWindowTest_Callback_Form';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');

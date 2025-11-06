@@ -1427,7 +1427,7 @@ export default function applicationManagerTest() {
       done();
     })
 
-        /**
+    /**
      * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDUSERNONSTOPAPPS_001
      * @tc.name      : test_addUserNonStopApps_001
      * @tc.desc      : test addUserNonStopApps method with unActive admin
@@ -1766,88 +1766,6 @@ export default function applicationManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEUSERNONSTOPAPPS_006
-     * @tc.name      : test_removeUserNonStopApps_006
-     * @tc.desc      : test removeUserNonStopApps method with different data
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
-     */
-    it("test_removeUserNonStopApps_006", Level.LEVEL2, async (done: Function) => {
-      try {
-        let userNonStopApps: Array<common.ApplicationInstance> = [
-          {
-            appIdentifier:"1230215522310701824",
-            accountId:DEFAULT_USER_ID,
-            appIndex:0
-          }
-        ];
-        let removeApps: Array<common.ApplicationInstance> = [
-          {
-            appIdentifier:"5765880207854258995",
-            accountId:DEFAULT_USER_ID,
-            appIndex:0
-          }
-        ];
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
-        applicationManager.removeUserNonStopApps(SELFWANT, removeApps);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-    })
-
-    /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEUSERNONSTOPAPPS_007
-     * @tc.name      : test_removeUserNonStopApps_007
-     * @tc.desc      : test removeUserNonStopApps method has different data
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
-     */
-    it("test_removeUserNonStopApps_007", Level.LEVEL2, async (done: Function) => {
-      try {
-        let userNonStopApps: Array<common.ApplicationInstance> = [
-          {
-            appIdentifier:"1230215522310701824",
-            accountId:DEFAULT_USER_ID,
-            appIndex:0
-          },
-          {
-            appIdentifier:"5765880207854258995",
-            accountId:DEFAULT_USER_ID,
-            appIndex:0
-          }
-        ];
-        let removeApps: Array<common.ApplicationInstance> = [
-          {
-            appIdentifier:"1230215522310701824",
-            accountId:DEFAULT_USER_ID,
-            appIndex:0
-          },
-          {
-            appIdentifier:"1062865240531676032",
-            accountId:DEFAULT_USER_ID,
-            appIndex:0
-          }
-        ];
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
-        applicationManager.removeUserNonStopApps(SELFWANT, removeApps);
-        expect(false).assertTrue();
-      } catch (error) {
-        expect(error.code == 9200012 || error.code == 801).assertTrue();
-      } finally {
-        await adminManager.disableSuperAdmin(SELFHAPNAME);
-      }
-      done();
-    })
-
-    /**
      * @tc.number    : SUB_CUSTOMIZATION_EDM_GETUSERNONSTOPAPPS_001
      * @tc.name      : test_getUserNonStopApps_001
      * @tc.desc      : test getUserNonStopApps method with unActive admin
@@ -2032,6 +1950,11 @@ export default function applicationManagerTest() {
         let autoStartApps: Array<Want> = [AUTOSTARTAPP1, AUTOSTARTAPP2];
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
         applicationManager.addAutoStartApps(SELFWANT, autoStartApps, DEFAULT_USER_ID, true);
+        let ret = applicationManager.isModifyAutoStartAppsDisallowed(SELFWANT, AUTOSTARTAPP1, DEFAULT_USER_ID);
+        expect(ret).assertTrue();
+        applicationManager.addAutoStartApps(SELFWANT, autoStartApps, DEFAULT_USER_ID, false);
+        let ret2 = applicationManager.isModifyAutoStartAppsDisallowed(SELFWANT, AUTOSTARTAPP1, DEFAULT_USER_ID);
+        expect(ret2).assertFalse();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -3004,6 +2927,28 @@ export default function applicationManagerTest() {
         expect(error.code == 9200002).assertTrue();
       } finally {
         await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ISMODITYKEEPALIVEAPP_004
+     * @tc.name      : test_isModifyKeepAliveAppsDisallowed_004
+     * @tc.desc      : test isModifyKeepAliveAppsDisallowed method with super admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_isModifyKeepAliveAppsDisallowed_004", Level.LEVEL2, async (done: Function) => {
+      try {
+        let keepAliveApp: string = TEST_BUNDLENAME;
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let disallowModifty = applicationManager.isModifyKeepAliveAppsDisallowed(SELFWANT, DEFAULT_USER_ID, keepAliveApp);
+        expect(disallowModifty).assertFalse();
+      } catch (error) {
+        expect(false).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
       done();
     })

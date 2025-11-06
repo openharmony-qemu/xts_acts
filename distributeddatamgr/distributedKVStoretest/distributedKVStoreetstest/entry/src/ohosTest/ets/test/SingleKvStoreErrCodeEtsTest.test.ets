@@ -45,6 +45,10 @@ const options1: distributedKVStore.Options = {
   securityLevel: distributedKVStore.SecurityLevel.S2,
 };
 
+function sleep(ms:number) {
+  return new Promise<ESObject>(resolve => setTimeout(resolve, ms));
+}
+
 export default function SingleKvStoreErrCodeTest(){
   describe('SingleKvStoreErrCodeTest', () => {
     beforeAll(async (done: Function) => {
@@ -63,11 +67,12 @@ export default function SingleKvStoreErrCodeTest(){
       await kvManager?.getKVStore(TEST_STORE_ID, options).then((store: distributedKVStore.SingleKVStore) => {
         kvStore = store;
         console.info(TAG + 'beforeEach getKVStore success');
+        done();
       }).catch((err: BusinessError) => {
         console.error(TAG + 'beforeEach getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
+        done();
       });
-      console.info(TAG + 'beforeEach end');
-      done();
+
     });
     afterEach(async (done: Function) => {
       console.info(TAG + 'afterEach');
@@ -75,16 +80,19 @@ export default function SingleKvStoreErrCodeTest(){
         console.info(TAG + 'afterEach closeKVStore success');
         await kvManager?.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
           console.info(TAG + 'afterEach deleteKVStore success');
+          kvStore = undefined;
+          done();
         }).catch((err: BusinessError) => {
           console.error(TAG + 'afterEach deleteKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
-          expect().assertFail()
+          expect().assertFail();
+          done();
         });
       }).catch((err: BusinessError) => {
         console.error(TAG + 'afterEach closeKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
-        expect().assertFail()
+        expect().assertFail();
+        done();
       });
-      kvStore = undefined;
-      done();
+
     });
     afterAll(async (done: Function) => {
       console.info(TAG + 'afterAll');
@@ -1890,6 +1898,7 @@ export default function SingleKvStoreErrCodeTest(){
             await kvStore?.closeResultSet(resultSet6);
             await kvStore?.closeResultSet(resultSet7);
             console.info(TAG + 'Succeeded in close result set');
+            await sleep(2000);
             done();
           }else {
             resultSet8 = result;
@@ -1941,6 +1950,7 @@ export default function SingleKvStoreErrCodeTest(){
         await kvStore?.closeResultSet(resultSet6);
         await kvStore?.closeResultSet(resultSet7);
         console.info(TAG + 'Succeeded in close result set');
+        await sleep(2000);
         done();
       }
 
@@ -1988,6 +1998,7 @@ export default function SingleKvStoreErrCodeTest(){
               await kvStore?.closeResultSet(resultSet6);
               await kvStore?.closeResultSet(resultSet7);
               console.info(TAG + 'Succeeded in close result set');
+              await sleep(2000);
               done();
             }else {
               resultSet = result;
@@ -2042,6 +2053,7 @@ export default function SingleKvStoreErrCodeTest(){
         await kvStore?.closeResultSet(resultSet6);
         await kvStore?.closeResultSet(resultSet7);
         console.info(TAG + 'Succeeded in close result set');
+        await sleep(2000);
         done();
       }
     });

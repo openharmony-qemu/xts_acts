@@ -53,6 +53,8 @@ describe('kvManagerCallbackTest', function () {
 
     afterAll(async function (done) {
         console.info('afterAll');
+        kvManager = null;
+        kvStore = null;
         done();
     })
 
@@ -63,14 +65,20 @@ describe('kvManagerCallbackTest', function () {
 
     afterEach(async function (done) {
         console.info('afterEach');
-        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore, async function () {
-            console.info('afterEach closeKVStore success');
-            await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, function () {
-                console.info('afterEach deleteKVStore success');
-                done();
+        try {
+            await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore, async function (err, data) {
+                console.info('afterEach closeKVStore success. err=' + err);
+                await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, function (err, data) {
+                    console.info('afterEach deleteKVStore success. err=' + err);
+                    kvStore = null;
+                    done();
+                });
             });
-        });
-        kvStore = null;
+        } catch (e) {
+            console.error('afterEach catch e ' + `, error code is ${e.code}, message is ${e.message}`);
+            done();
+        }
+        
     })
 
     /**
@@ -91,8 +99,9 @@ describe('kvManagerCallbackTest', function () {
                 kvStore.getSecurityLevel().then((data) => {
                     console.info('testKVManagerGetKVStore101 securityLevel = ' + data);
                     expect((data == factory.SecurityLevel.S2)).assertTrue();
+                    done();
                 });
-                done();
+                
             });
         } catch (e) {
             console.info('testKVManagerGetKVStore101 getKVStore e ' + e);
@@ -836,19 +845,22 @@ describe('kvManagerCallbackTest', function () {
                 console.info('testKVManagerCloseKVStore104 getKVStore success');
                 kvStore = store;
                 await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore);
+                console.info('testKVManagerCloseKVStore104 closeKVStore redo.');
+                await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore, function (err, data) {
+                    console.info('testKVManagerCloseKVStore104 closeKVStore twice ' + err);
+                    if (err != undefined) {
+                        expect(null).assertFail();
+                    }
+                    done();
+                });
             });
-            console.info('testKVManagerCloseKVStore104 closeKVStore redo.');
-            await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore, function (err, data) {
-                console.info('testKVManagerCloseKVStore104 closeKVStore twice ' + err);
-                if (err == undefined) {
-                    expect(null).assertFail();
-                }
-            });
+
         } catch (e) {
             console.info('testKVManagerCloseKVStore104 closeKVStore twice e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
+        
     })
 
     /**

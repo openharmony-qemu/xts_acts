@@ -101,14 +101,21 @@ describe('singleKvStoreCallbackTest', function () {
 
     afterEach(async function (done) {
         console.info('afterEach');
-        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore, async function (err, data) {
-            console.info('afterEach closeKVStore success');
-            await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, function (err, data) {
-                console.info('afterEach deleteKVStore success');
-                done();
+        try {
+            await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore, async function (err, data) {
+                console.info('afterEach closeKVStore success. err=' + err);
+                await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, function (err, data) {
+                    console.info('afterEach deleteKVStore success. err=' + err);
+                    kvStore = null;
+                    done();
+                });
             });
-        });
-        kvStore = null;
+    
+        } catch (e) {
+            console.error('afterEach closeKVStore err ' + `, error code is ${e.code}, message is ${e.message}`);
+            done();
+        }
+
     })
 
     /**
@@ -508,7 +515,6 @@ describe('singleKvStoreCallbackTest', function () {
                     expect((err == undefined) && (floatValue == data)).assertTrue();
                     done();
                 })
-                done();
             });
         }catch(e) {
             console.info('testSingleKvStorePutFloat102 e' + e);
@@ -537,7 +543,6 @@ describe('singleKvStoreCallbackTest', function () {
                     expect((err == undefined) && (floatValue == data)).assertTrue();
                     done();
                 })
-                done();
             });
         }catch(e) {
             console.info('testSingleKvStorePutFloat103 e' + e);
@@ -566,7 +571,6 @@ describe('singleKvStoreCallbackTest', function () {
                     expect((err == undefined) && (floatValue == data)).assertTrue();
                     done();
                 })
-                done();
             });
         }catch(e) {
             console.info('testSingleKvStorePutFloat104 e' + e);
@@ -2641,12 +2645,11 @@ describe('singleKvStoreCallbackTest', function () {
                     done();
                 });
             });
-            console.info('testSingleKvStoreGetEntries101 success');
         }catch(e) {
             console.info('testSingleKvStoreGetEntries101 e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
     })
 
     /**
@@ -2688,13 +2691,12 @@ describe('singleKvStoreCallbackTest', function () {
                     done();
                 });
             });
-            console.info('testSingleKvStoreGetEntries101 success');
-            console.info('testSingleKvStoreGetEntries102 success');
         }catch(e) {
             console.info('testSingleKvStoreGetEntries102 e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
+        
     })
 })
 }

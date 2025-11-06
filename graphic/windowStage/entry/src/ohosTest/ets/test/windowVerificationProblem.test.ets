@@ -136,9 +136,9 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
      * @tc.desc      : Set the screen brightness value
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowBrightness_MainWin_DefaultValue_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
+    it('testSetWindowBrightness_MainWin_DefaultValue_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
       let caseName = 'testSetWindowBrightness_MainWin_DefaultValue_Promise';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -163,9 +163,9 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
      * @tc.desc      : Set the screen brightness value
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowBrightness_MainWin_DefaultValue_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
+    it('testSetWindowBrightness_MainWin_DefaultValue_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName = 'testSetWindowBrightness_NotAppWin_Callback';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');

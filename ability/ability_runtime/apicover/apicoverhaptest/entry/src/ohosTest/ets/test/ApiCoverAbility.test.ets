@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -62,14 +62,6 @@ export default function ApiCoverTest() {
         console.info("ApiCoverTestTest beforeAll create driver error" );
       }
     })
-    afterEach(async (done: Function) => {
-      try{
-        await driver1.delayMs(2500);
-        done();
-      }catch{
-        console.info("ApiCoverTestTest afterEach delayMs error" );
-      }
-    })
     /*
      * @tc.number  SUB_AA_ABILITY_Extension_API_001
      * @tc.name    StartServiceExtensionAbility with incorrect abilityName.
@@ -79,7 +71,6 @@ export default function ApiCoverTest() {
      * @tc.level   3
      */
     it('SUB_AA_ABILITY_Extension_API_001', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
       let want: Want = {
         bundleName: "com.example.extensionapitest",
         abilityName: "FirstExtension1"
@@ -105,7 +96,6 @@ export default function ApiCoverTest() {
      * @tc.level   3
      */
     it('SUB_AA_ABILITY_Extension_API_002', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
       let want: Want = {
         bundleName: "com.example.extensionapitest1",
         abilityName: "FirstExtension"
@@ -219,7 +209,6 @@ export default function ApiCoverTest() {
      * @tc.level   3
      */
     it('SUB_AA_ABILITY_Extension_API_006', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
       let want: Want = {
         bundleName: "com.example.extensionapitest1",
         abilityName: "FirstExtension"
@@ -662,51 +651,6 @@ export default function ApiCoverTest() {
       })
     })
 
-    /*
-     * @tc.number  SUB_AA_FMS_AcquireForm_0100
-     * @tc.name    Test startAbility in FormExtensionContext.
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
-     */
-    it('SUB_AA_FMS_AcquireForm_0100', Level.LEVEL0, async (done: Function) => {
-      let subscriber: commonEventManager.CommonEventSubscriber;
-      let formExtensionContext: common.FormExtensionContext
-      let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ["Form_StartAbility"]
-      }
-
-      commonEvent.createSubscriber(subscribeInfo, (err, data) => {
-        console.info("SUB_AA_FMS_AcquireForm_0100 ===CreateSubscriberCallback===");
-        subscriber = data;
-        commonEvent.subscribe(subscriber, async (err, data) => {
-          console.info("SUB_AA_FMS_AcquireForm_0100 ===SubscribeInfoCallback===" + JSON.stringify(data));
-          expect(data.parameters?.Life).assertEqual("onForeground");
-          commonEvent.unsubscribe(subscriber, () => {
-            console.info("SUB_AA_FMS_AcquireForm_0100 ===UnSubscribeInfoCallback===");
-          })
-          await sleep(4000);
-          done();
-        })
-      })
-      let formWant: Want = {
-        deviceId: "",
-        bundleName: "com.example.apicoverhaptest",
-        abilityName: "CreateFormAbility",
-        parameters: {
-          "createForm": true
-        }
-      }
-      AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(formWant, (err, data) => {
-        if (err.code == 0) {
-          console.info("SUB_AA_FMS_AcquireForm_0100 ===acquireFormState=== " + JSON.stringify(data));
-        } else {
-          expect().assertFail();
-          done();
-        }
-      })
-    })
 
     /*
      * @tc.number  SUB_AA_AbilityAppManager_0100
@@ -1185,7 +1129,7 @@ export default function ApiCoverTest() {
               }).then(data => {
                 console.debug('====>SUB_Ability_AbilityRuntime_ProcessCache_3000 startAbility err:' + JSON.stringify(data));
               });
-      sleep(1500);
+      await sleep(1500);
       await appManagerNew.getRunningProcessInformation().then((data : Array<appManagerNew.ProcessInformation>) => {
         console.log(`The running process information is: ${JSON.stringify(data)}`);
         data.forEach(item =>{
@@ -1224,7 +1168,7 @@ export default function ApiCoverTest() {
               }).then(data => {
                 console.debug('====>SUB_Ability_AbilityRuntime_ProcessCache_3100 startAbility err:' + JSON.stringify(data));
               });
-      sleep(1500);
+      await sleep(1500);
       await appManagerNew.getRunningProcessInformation().then((data : Array<appManagerNew.ProcessInformation>) => {
         console.log(`The running process information is: ${JSON.stringify(data)}`);
         data.forEach(item =>{
@@ -1272,5 +1216,50 @@ export default function ApiCoverTest() {
         done();
       }
     });
+
+    /*
+     * @tc.number  SUB_AA_FMS_AcquireForm_0100
+     * @tc.name    Test startAbility in FormExtensionContext.
+     * @tc.desc    Function test
+     * @tc.size:   MediumTest
+     * @tc.type:   Function
+     * @tc.level   3
+     */
+    it('SUB_AA_FMS_AcquireForm_0100', Level.LEVEL0, async (done: Function) => {
+      let subscriber: commonEventManager.CommonEventSubscriber;
+      let formExtensionContext: common.FormExtensionContext
+      let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ["Form_StartAbility"]
+      }
+
+      commonEvent.createSubscriber(subscribeInfo, (err, data) => {
+        console.info("SUB_AA_FMS_AcquireForm_0100 ===CreateSubscriberCallback===");
+        subscriber = data;
+        commonEvent.subscribe(subscriber, async (err, data) => {
+          console.info("SUB_AA_FMS_AcquireForm_0100 ===SubscribeInfoCallback===" + JSON.stringify(data));
+          expect(data.parameters?.Life).assertEqual("onForeground");
+          commonEvent.unsubscribe(subscriber, () => {
+            console.info("SUB_AA_FMS_AcquireForm_0100 ===UnSubscribeInfoCallback===");
+            done();
+          })
+        })
+      })
+      let formWant: Want = {
+        deviceId: "",
+        bundleName: "com.example.apicoverhaptest",
+        abilityName: "CreateFormAbility",
+        parameters: {
+          "createForm": true
+        }
+      }
+      AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(formWant, (err, data) => {
+        if (err.code == 0) {
+          console.info("SUB_AA_FMS_AcquireForm_0100 ===acquireFormState=== " + JSON.stringify(data));
+        } else {
+          expect().assertFail();
+          done();
+        }
+      })
+    })
   })
 }

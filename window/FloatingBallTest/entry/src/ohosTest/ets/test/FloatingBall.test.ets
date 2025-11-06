@@ -152,9 +152,9 @@ export default function abilityTest() {
      * @tc.desc      : test_Create_oneFloatingBall
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('test_Create_oneFloatingBall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('test_Create_oneFloatingBall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let CaseName:string = 'test_Create_oneFloatingBall';
       let config: floatingBall.FloatingBallConfiguration = {
         context: context,
@@ -727,9 +727,9 @@ export default function abilityTest() {
      * @tc.desc      : test_startFloatingBall_STATIC_5_Params
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('test_startFloatingBall_STATIC_5_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('test_startFloatingBall_STATIC_5_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_STATIC_5_Params';
       let config: floatingBall.FloatingBallConfiguration = {
         context: context,
@@ -1178,9 +1178,9 @@ export default function abilityTest() {
      * @tc.desc      : test_startFloatingBall_EMPHATIC_3_Params
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('test_startFloatingBall_EMPHATIC_3_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('test_startFloatingBall_EMPHATIC_3_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_EMPHATIC_3_Params';
       let config: floatingBall.FloatingBallConfiguration = {
         context: context,
@@ -1312,9 +1312,9 @@ export default function abilityTest() {
      * @tc.desc      : test_startFloatingBall_SIMPLE_4_Params
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('test_startFloatingBall_SIMPLE_4_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('test_startFloatingBall_SIMPLE_4_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_SIMPLE_4_Params';
       let config: floatingBall.FloatingBallConfiguration = {
         context: context,

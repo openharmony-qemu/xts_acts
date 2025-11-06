@@ -44,7 +44,7 @@ async function clickMatchingButton(texts: Array<string>) {
 };
 
 async function handlePermissionPrompt() {
-  let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
+  let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), 2000);
   hilog.info(0x0000, TAG, '%{public}s',
     `${TEST_SUITE_NAME}#${TEST_CASE_NAME} no need to click button=allowed== ${allowed} `);
   if (allowed) {

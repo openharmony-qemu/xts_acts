@@ -636,9 +636,9 @@ export default function windowManageTest() {
      * @tc.desc      : Set the window to be top most.
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowTopmost', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetWindowTopmost', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetWindowTopmost';
       try {
         windowClass.setWindowTopmost(false).then(() => {
@@ -667,9 +667,9 @@ export default function windowManageTest() {
      * @tc.desc      : Set the window to be top most.
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.level     : LEVEL0
      */
-    it('testSetWindowTopmostInSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('testSetWindowTopmostInSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'TestSetWindowTopmostInSubWindow';
       let subWindowClass = await windowStage.createSubWindow('subWindow');
       console.info(`${caseName} Succeeded in creating the sub window.`);

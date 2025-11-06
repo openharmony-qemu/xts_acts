@@ -91,18 +91,22 @@ export default function KVStoreResultSetReturnValue(){
           await kvStore.getResultSet('batch_test_string_key').then((result) => {
             console.info(TAG +'beforeEach getResultSet success');
             resultSet = result;
+            done();
           }).catch((err: BusinessError) => {
             console.error(TAG +'beforeEach getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
+            done();
           });
         } catch (e) {
           let error = e as BusinessError;
           console.error(TAG +`An unexpected error occurred.code is ${error.code},message is ${error.message} `);
+          done();
         }
       }).catch((err: BusinessError) => {
         console.error(TAG + 'beforeEach getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
+        done();
       });
 
-      done();
+
     });
     afterEach(async (done:Function) =>  {
       console.info(TAG + 'afterEach');
@@ -114,20 +118,21 @@ export default function KVStoreResultSetReturnValue(){
         });
       }
 
-      kvStore = null;
-      await kvManager!.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
-        console.info(TAG + ' afterEach Succeeded closeKVStore');
-      }).catch((err: BusinessError) => {
-        console.error(TAG + `afterEach Failed closeKVStore.code is ${err.code},message is ${err.message}`);
+      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(async () => {
+        console.info('afterEach closeKVStore success');
+        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
+            console.info('afterEach deleteKVStore success');
+            kvStore = null;
+            done();
+        }).catch((err) => {
+            console.info('afterEach deleteKVStore err ' + err);
+            done();
+        });
+      }).catch((err) => {
+          console.info('afterEach closeKVStore err ' + err);
+          done();
       });
 
-      await kvManager!.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
-        console.info(TAG + ' afterEach Succeeded deleteKVStore');
-        done();
-      }).catch((err: BusinessError) => {
-        console.error(TAG + `afterEach Failed deleteKVStore .code is ${err.code},message is ${err.message}`);
-        done();
-      });
     });
 
     afterAll(async (done:Function) => {

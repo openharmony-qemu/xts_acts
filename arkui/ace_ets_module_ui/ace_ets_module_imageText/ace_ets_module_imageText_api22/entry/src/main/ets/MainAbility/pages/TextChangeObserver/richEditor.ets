@@ -26,11 +26,9 @@ struct Page {
   build() {
     Row(){
       Column(){
-        Text(this.globalOutput).id('globalOutputRichEditor').fontSize(24).width('80%').margin({ bottom: 10 })
-
-        Text(this.localOutput).id('localOutputRichEditor').fontSize(24).width('80%').margin({ bottom: 10 })
-
-        Text('监听textChange开关按钮').fontSize(18).fontWeight(FontWeight.Bold).margin({ bottom: 10 })
+        Text('global:' + this.globalOutput).id('globalOutputRichEditor').fontSize(24).width('80%').height('5%')
+        Text('local:' + this.localOutput).id('localOutputRichEditor').fontSize(24).width('80%').height('5%')
+        Text('监听textChange开关按钮').fontSize(18).fontWeight(FontWeight.Bold).height('6%')
 
         Row(){
           Button('全局监听(开)')
@@ -52,7 +50,7 @@ struct Page {
             .onClick(()=>{
               this.observer.off('textChange');
             })
-        }.margin({ bottom: 10 })
+        }.height('7%')
 
         Row(){
           Button('局部richEditor(开)')
@@ -74,17 +72,18 @@ struct Page {
             .onClick(()=>{
               this.observer.off('textChange', { id: 'richEditor' });
             })
-        }.margin({ bottom: 10 })
+        }.height('7%')
 
-        Text('RichEditor').margin({ bottom: 5 })
+        Text('RichEditor').height('5%')
         RichEditor({ controller: this.controller })
 		  .id('richEditor')
           .width('80%')
+		  .height('15%')
           .draggable(true)
           .draggable(true)
           .onDragStart(()=>{})
           .margin({ bottom: 10 })
-          .placeholder('默认输入文本')
+          .placeholder('')
       }
       .width('100%')
     }

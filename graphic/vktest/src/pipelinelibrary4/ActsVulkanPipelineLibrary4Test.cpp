@@ -51,7 +51,7 @@ namespace OHOS {
     {
         printf("------start ActsVulkanPipelineLibrary4Test------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
-            system("/data/local/tmp/vulkan/vk-default/deqp_vk_execute "
+            system("/data/local/tmp/deqp_vk_execute "
                 "--deqp-caselist-file=/data/local/tmp/vulkan/vk-default/pipeline/pipeline-library4.txt "
                 "--deqp-log-filename=ActsVulkanPipelineLibrary4Test.qpa");
         }

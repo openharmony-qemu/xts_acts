@@ -119,15 +119,15 @@ export default function abilityTest() {
     console.info("-----------------LifecycleTest is start----------------")
     beforeEach(async (done: Function) => {
       console.info('LifeCycleTest before each called');
-      await sleep(1000);
+      await sleep(500);
       done()
     });
 
     afterEach(async (done: Function) => {
-      await sleep(1000);
       console.info('LifeCycleTest after each called');
       if (!("Multihap_WindowStageLifecycleTest_007" == TAG ||
         "Multihap_WindowStageLifecycleTest_010" == TAG || "Multihap_WindowStageLifecycleTest_006" == TAG)) {
+        await sleep(500);
         let eventCallback = (event: string) => {
           console.log(TAG + " eventCallback, event is :" + event);
           if (event === 'MainAbility4onDestroy') {
