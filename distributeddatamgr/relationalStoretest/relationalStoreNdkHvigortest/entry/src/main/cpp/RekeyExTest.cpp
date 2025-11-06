@@ -584,6 +584,7 @@ static napi_value OH_Rdb_RekeyEx0800(napi_env env, napi_callback_info)
     OH_Rdb_Store *store = OH_Rdb_CreateOrOpen(rekeyTestConfig, &errCode);
     NAPI_ASSERT(env, store != nullptr, "OH_Rdb_CreateOrOpen is fail.");
     errCode = OH_Rdb_CloseStore(store);
+    NAPI_ASSERT(env, store != nullptr, "OH_Rdb_CloseStore111 is fail.");
     NAPI_ASSERT(env, errCode == RDB_OK, "OH_Rdb_CloseStore is fail.");
     OH_Rdb_CryptoParam *crypto2 = OH_Rdb_CreateCryptoParam();
     errCode = OH_Rdb_RekeyEx(store, crypto2);
