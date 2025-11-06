@@ -77,8 +77,10 @@ build() {
             fontStyle: FontStyle.Italic,
             decoration: { type: TextDecorationType.Underline, color: Color.Green }
           })
-        this.controller.setCaretOffset(this.controller.getCaretOffset() - 3)
-
+        let caretOffset = this.controller.getCaretOffset();
+        if (caretOffset !== undefined) {
+          this.controller.setCaretOffset(caretOffset - 3);
+        }
       }).id('set_style')
 
       RichEditor({ controller: this.controller } as RichEditorOptions)

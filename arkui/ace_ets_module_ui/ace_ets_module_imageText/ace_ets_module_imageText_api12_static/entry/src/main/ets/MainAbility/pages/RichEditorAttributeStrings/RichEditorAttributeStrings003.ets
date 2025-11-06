@@ -60,12 +60,15 @@ build() {
     Column() {
 
       Button('get spans').onClick((e: ClickEvent) => {
-        this.controller.getSpans({
+        let spans = this.controller.getSpans({
           start: 0,
           end: 9
-        }).forEach(item => {
-          this.spans += (item as RichEditorTextSpanResult).value + '\n';
-        })
+        });
+        if (spans !== undefined) {
+          spans.forEach(item => {
+            this.spans += (item as RichEditorTextSpanResult).value + '\n';
+          })
+        }
       }).id('getSpans')
 
       Button('set care').onClick((e: ClickEvent) => {

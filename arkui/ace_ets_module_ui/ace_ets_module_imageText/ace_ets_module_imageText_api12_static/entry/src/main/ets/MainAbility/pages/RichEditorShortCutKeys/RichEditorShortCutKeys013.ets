@@ -88,13 +88,16 @@ build() {
 
       Button('get spans').onClick((e: ClickEvent) => {
         this.style = '';
-        this.controller.getSpans({
+        let spans = this.controller.getSpans({
           start: 0,
           end: 6
-        }).forEach(item => {
-          this.style = JSON.stringify((item as RichEditorTextSpanResult));
-          console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
-        })
+        });
+        if (spans !== undefined) {
+          spans.forEach(item => {
+            this.style = JSON.stringify((item as RichEditorTextSpanResult));
+            console.log('RichEditorController  this.style:' + JSON.stringify(this.style));
+          })
+        }
       }).id('getSpans')
 
       Text('style:' + this.style).id('style')

@@ -54,7 +54,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Component
 struct RichEditorSetStyledString015 {
   @State onWillChangeCall: boolean = false;
-  @State careNum: number = 0;
+  @State careNum: Int | undefined = 0;
   @State textStyle: string = '';
   imagePixelMap: image.PixelMap | undefined = undefined;
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
@@ -100,10 +100,13 @@ struct RichEditorSetStyledString015 {
             verticalAlign: ImageSpanAlignment.CENTER,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          this.richEditorStyledString = this.controller.getStyledString();
-          this.richEditorStyledString.appendStyledString(imageStyledString);
-          this.controller.setStyledString(this.richEditorStyledString as StyledString);
-          this.controller.setCaretOffset(this.richEditorStyledString.length);
+          let currentString = this.controller.getStyledString();
+          if (currentString !== undefined) {
+            this.richEditorStyledString = currentString;
+            this.richEditorStyledString.appendStyledString(imageStyledString);
+            this.controller.setStyledString(this.richEditorStyledString as StyledString);
+            this.controller.setCaretOffset(this.richEditorStyledString.length);
+          }
         }
       }).id('image_top')
 
@@ -139,7 +142,7 @@ struct RichEditorSetStyledString015 {
         this.controller.closeSelectionMenu();
       }).id('close_menu')
 
-      Text('careNum:' + this.careNum).id('careNum')
+      Text('careNum:' + (this.careNum !== undefined ? this.careNum : '')).id('careNum')
       Text('textStyle:' + this.textStyle).id('textStyle')
       RichEditor(this.options)
         .onReady((): void => {

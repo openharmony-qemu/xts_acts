@@ -74,15 +74,16 @@ struct RichEditorApi6 {
           GridItem() {
             Button(item + "")
               .width(110).onClick((e: ClickEvent) => {
+              let caretOffset = this.controller.getCaretOffset();
               this.controller.addTextSpan(item + '', {
-                offset: this.controller.getCaretOffset(),
+                offset: caretOffset,
                 style:
                 {
                   fontColor: Color.Orange,
                   fontSize: 30
                 }
               })
-              this.controller.setCaretOffset(this.controller.getCaretOffset() + String(item).length)
+              this.controller.setCaretOffset((caretOffset ?? 0) + String(item).length)
             })
           }
         })

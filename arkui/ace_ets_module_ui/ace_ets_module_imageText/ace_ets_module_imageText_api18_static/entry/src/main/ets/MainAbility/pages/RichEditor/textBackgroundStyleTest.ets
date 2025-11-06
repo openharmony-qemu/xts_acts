@@ -112,7 +112,7 @@ struct textBackgroundStyleTest {
         this.controller.getSpans({
           start: -1,
           end: -1
-        }).forEach(item => {
+        })?.forEach(item => {
           if(typeof((item as RichEditorImageSpanResult).imageStyle) != 'undefined'){
           } else {
             if(typeof((item as RichEditorTextSpanResult).symbolSpanStyle) != 'undefined') {

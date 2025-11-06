@@ -66,12 +66,17 @@ build() {
         })
       Button('linebreak').onClick((e: ClickEvent) => {
         let spanParagraphs = this.controller.getParagraphs({ start: -1, end: -1 })
-        spanParagraphs.forEach(item => {
-          if(typeof(item as RichEditorParagraphResult)?.style != 'undefined'){
-            console.info('lineBreakStrategy:'+ `${item?.style?.lineBreakStrategy}`)
-            this.text = Number(`${item?.style?.lineBreakStrategy}`);
-          }
-        })
+        if (spanParagraphs !== undefined) {
+          spanParagraphs.forEach(item => {
+            if(typeof(item as RichEditorParagraphResult)?.style != 'undefined'){
+              let lineBreakStrategy = item?.style?.lineBreakStrategy;
+              if (lineBreakStrategy !== undefined) {
+                console.info('lineBreakStrategy:'+ `${lineBreakStrategy}`)
+                this.text = Number(`${lineBreakStrategy}`);
+              }
+            }
+          })
+        }
       })
     }
     .width('100%')

@@ -116,17 +116,20 @@ build() {
             Button("getSpans")
               .id("RichEditorTextStyle_GetSpansBtn")
               .onClick((e: ClickEvent) => {
-              this.controller.getSpans({
+              let spans = this.controller.getSpans({
                 start: this.start,
                 end: this.end
-              }).forEach(item => {
-                if(typeof(item as RichEditorTextSpanResult)?.textStyle != 'undefined'){
-                  this.content_H=""
-                  this.content_L=""
-                  this.content_H = "LineHeight_" + (item as RichEditorTextSpanResult)?.textStyle.lineHeight;
-                  this.content_L = "LetterSpacing_" + (item as RichEditorTextSpanResult)?.textStyle.letterSpacing;
-                }
               })
+              if (spans !== undefined) {
+                spans.forEach(item => {
+                  if(typeof(item as RichEditorTextSpanResult)?.textStyle != 'undefined'){
+                    this.content_H=""
+                    this.content_L=""
+                    this.content_H = "LineHeight_" + (item as RichEditorTextSpanResult)?.textStyle.lineHeight;
+                    this.content_L = "LetterSpacing_" + (item as RichEditorTextSpanResult)?.textStyle.letterSpacing;
+                  }
+                })
+              }
             })
           }
         }

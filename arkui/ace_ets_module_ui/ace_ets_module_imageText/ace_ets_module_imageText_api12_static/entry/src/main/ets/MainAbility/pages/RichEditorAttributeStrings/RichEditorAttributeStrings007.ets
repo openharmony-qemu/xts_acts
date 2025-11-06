@@ -70,21 +70,24 @@ build() {
     Column() {
 
       Button('toStyledString 0,500').onClick((e: ClickEvent) => {
-        let str = this.controller.toStyledString({start: 0,
-          end: 500});
-        this.spans = str.getString();
+        let str = this.controller.toStyledString({start: 0, end: 500});
+        if (str !== undefined) {
+          this.spans = str.getString();
+        }
       }).id('toStyledString')
 
       Button('toStyledString 2,2').onClick((e: ClickEvent) => {
-        let str = this.controller.toStyledString({start: 2,
-          end: 2});
-        this.spans = str.getString();
+        let str = this.controller.toStyledString({start: 2, end: 2});
+        if (str !== undefined) {
+          this.spans = str.getString();
+        }
       }).id('toStyledString1')
 
       Button('toStyledString 2,1').onClick((e: ClickEvent) => {
-        let str = this.controller.toStyledString({start: 2,
-          end: 1});
-        this.spans = str.getString();
+        let str = this.controller.toStyledString({start: 2, end: 1});
+        if (str !== undefined) {
+          this.spans = str.getString();
+        }
       }).id('toStyledString2')
 
       Button('toStyledString undefined').onClick((e: ClickEvent) => {

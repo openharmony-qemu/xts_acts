@@ -61,7 +61,10 @@ build() {
         .margin(15)
         .backgroundColor(Color.Blue)
         .onClick((e: ClickEvent) => {
-          this.positionNum = this.controller.getCaretOffset();
+          let caretOffset = this.controller.getCaretOffset();
+          if (caretOffset !== undefined) {
+            this.positionNum = caretOffset;
+          }
         })
 
       RichEditor({ controller: this.controller } as RichEditorOptions)

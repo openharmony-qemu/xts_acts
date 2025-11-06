@@ -36,7 +36,7 @@ struct RichEditor3 {
           this.layoutStyleMargin = '';
           this.paragraphStyleTextAlign = '';
           this.paragraphStyleLeadingMargin = '';
-          this.controller.getSpans({ start: -1, end: -1 }).forEach((item,index) => {
+          this.controller.getSpans({ start: -1, end: -1 })?.forEach((item,index) => {
             
             
             
@@ -55,8 +55,8 @@ struct RichEditor3 {
           this.layoutStyleMargin = '';
           this.paragraphStyleTextAlign = '';
           this.paragraphStyleLeadingMargin = '';
-          let selection = this.controller.getSelection().spans;
-          selection.forEach((item,index) => {
+          let selection = this.controller.getSelection()?.spans;
+          selection?.forEach((item,index) => {
             
             
             

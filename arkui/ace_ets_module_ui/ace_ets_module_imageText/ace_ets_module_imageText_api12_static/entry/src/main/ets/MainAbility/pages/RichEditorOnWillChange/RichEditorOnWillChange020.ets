@@ -71,7 +71,10 @@ build() {
       Text('ondid rangeAfter:' + this.onDidRangeAfter).id('ondid_rangeAfter')
 
       Button('光标定位').onClick((e: ClickEvent) => {
-        this.controller.setCaretOffset(this.controller.getCaretOffset() - 1);
+        let caretOffset = this.controller.getCaretOffset();
+        if (caretOffset !== undefined) {
+          this.controller.setCaretOffset(caretOffset - 1);
+        }
       }).id('back')
 
       RichEditor({ controller: this.controller } as RichEditorOptions)

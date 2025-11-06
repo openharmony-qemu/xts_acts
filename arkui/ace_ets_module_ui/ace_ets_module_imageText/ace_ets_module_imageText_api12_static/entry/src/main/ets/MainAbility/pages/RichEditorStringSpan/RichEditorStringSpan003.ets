@@ -103,10 +103,13 @@ build() {
     Column() {
       Button('remove').onClick((e: ClickEvent) => {
         // 获取组件展示的属性字符串
-        this.richEditorStyledString = this.controller.getStyledString();
-        this.richEditorStyledString.clearStyles();
-        // 使删除内容后的属性字符串展示在组件上
-        this.controller.setStyledString(this.richEditorStyledString);
+        let currentString = this.controller.getStyledString();
+        if (currentString !== undefined) {
+          this.richEditorStyledString = currentString;
+          this.richEditorStyledString.clearStyles();
+          // 使删除内容后的属性字符串展示在组件上
+          this.controller.setStyledString(this.richEditorStyledString);
+        }
       }).id('remove')
 
       Button('get content').onClick((e: ClickEvent) => {
@@ -130,10 +133,13 @@ build() {
       Column() {
         Row() {
           Button('add text').onClick((e: ClickEvent) => {
-            this.richEditorStyledString = this.controller.getStyledString();
-            this.richEditorStyledString.appendStyledString(this.styledString);
-            this.controller.setStyledString(this.richEditorStyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
+            let currentString = this.controller.getStyledString();
+            if (currentString !== undefined) {
+              this.richEditorStyledString = currentString;
+              this.richEditorStyledString.appendStyledString(this.styledString);
+              this.controller.setStyledString(this.richEditorStyledString);
+              this.controller.setCaretOffset(this.richEditorStyledString.length);
+            }
           }).id('add_text')
         }
 

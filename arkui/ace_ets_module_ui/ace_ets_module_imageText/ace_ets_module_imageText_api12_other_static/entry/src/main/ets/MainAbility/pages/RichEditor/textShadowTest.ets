@@ -167,7 +167,7 @@ struct textShadowTest {
         this.controller.getSpans({
           start: -1,
           end: -1
-        }).forEach(item => {
+        })?.forEach(item => {
           
           if (item instanceof RichEditorImageSpanResult && item.imageStyle !== undefined) {
           } else {

@@ -35,7 +35,10 @@ struct RichEditor6 {
           RichEditor({ controller: this.controller } as RichEditorOptions)
             .onEditingChange((isEditing: boolean): void => {
               this.isEditing = isEditing
-              this.controllerIsEditing = (this.controller as TextEditControllerEx).isEditing()
+              let tempIsEditing = (this.controller as TextEditControllerEx).isEditing()
+              if (tempIsEditing !== undefined) {
+                this.controllerIsEditing = tempIsEditing!
+              }
               console.log("Juan Current Editing Status:" + isEditing)
               console.log("Juan this.controller.isEditable():" + this.controller.isEditing())
             })

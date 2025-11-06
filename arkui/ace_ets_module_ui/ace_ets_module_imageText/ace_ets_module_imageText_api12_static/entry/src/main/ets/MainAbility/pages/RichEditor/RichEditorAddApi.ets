@@ -113,9 +113,12 @@ build() {
         .borderColor(Color.Red)
 
       Button('text').onClick((event: ClickEvent) => {
-        let value: string = this.controller.getPreviewText().value
-        if (!value) {
-          this.text = 'true'
+        let previewText = this.controller.getPreviewText();
+        if (previewText !== undefined) {
+          let value: string = previewText.value
+          if (!value) {
+            this.text = 'true'
+          }
         }
       }).key('RichEditorAddApiBt')
     }

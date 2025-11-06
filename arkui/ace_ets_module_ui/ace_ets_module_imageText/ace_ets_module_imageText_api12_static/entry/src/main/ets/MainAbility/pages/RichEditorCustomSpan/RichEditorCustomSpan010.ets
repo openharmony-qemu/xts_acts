@@ -104,35 +104,46 @@ build() {
             verticalAlign: ImageSpanAlignment.TOP,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          this.richEditorStyledString = this.controller.getStyledString();
-          this.richEditorStyledString.appendStyledString(imageStyledString);
-          this.controller.setStyledString(this.richEditorStyledString);
-          this.controller.setCaretOffset(this.richEditorStyledString.length);
+          let styledString = this.controller.getStyledString();
+          if (styledString !== undefined) {
+            this.richEditorStyledString = styledString;
+            this.richEditorStyledString.appendStyledString(imageStyledString);
+            this.controller.setStyledString(this.richEditorStyledString);
+            this.controller.setCaretOffset(this.richEditorStyledString.length);
+          }
         }
       }).id('imageTop')
 
       Button('getStyles')
         .onClick((e: ClickEvent) => {
           let richEditorStyledString = this.controller.getStyledString();
-          let styles = richEditorStyledString.getStyles(0, richEditorStyledString.length);
-          for (let i = 0; i < styles.length; i++) {
-            if (styles[i as int].styledKey === 0) {
-              let fontAttr = styles[i as int].styledValue as TextStyle;
-              this.stylesInfo += 'fontColor:' + fontAttr.fontColor + ',';
-              this.stylesInfo += 'fontSize:' + fontAttr.fontSize + ',';
+          if (richEditorStyledString !== undefined) {
+            let styles = richEditorStyledString.getStyles(0, richEditorStyledString.length);
+            if (styles !== undefined) {
+              let stylesArray = Array.from(styles);
+              for (let i = 0; i < stylesArray.length; i++) {
+                if (stylesArray[i].styledKey === 0) {
+                  let fontAttr = stylesArray[i].styledValue as TextStyle;
+                  this.stylesInfo += 'fontColor:' + fontAttr.fontColor + ',';
+                  this.stylesInfo += 'fontSize:' + fontAttr.fontSize + ',';
+                }
+              }
             }
           }
         })
         .id('getStyles')
+
       Button('setStyle').onClick((e: ClickEvent) => {
         let richEditorStyledString = this.controller.getStyledString();
-        richEditorStyledString.setStyle({
-          start: 0,
-          length: 4,
-          styledKey: StyledStringKey.FONT,
-          styledValue: this.fontStyleAttr1
-        })
-        this.controller.setStyledString(richEditorStyledString);
+        if (richEditorStyledString !== undefined) {
+          richEditorStyledString.setStyle({
+            start: 0,
+            length: 4,
+            styledKey: StyledStringKey.FONT,
+            styledValue: this.fontStyleAttr1
+          })
+          this.controller.setStyledString(richEditorStyledString);
+        }
       }).id('setStyle')
 
       Text('stylesInfo:' + this.stylesInfo).id('stylesInfo')
@@ -149,10 +160,13 @@ build() {
       Column() {
         Row() {
           Button('add custom').onClick((e: ClickEvent) => {
-            this.richEditorStyledString = this.controller.getStyledString();
-            this.richEditorStyledString.appendStyledString(this.style1);
-            this.controller.setStyledString(this.richEditorStyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
+            let styledString = this.controller.getStyledString();
+            if (styledString !== undefined) {
+              this.richEditorStyledString = styledString;
+              this.richEditorStyledString.appendStyledString(this.style1);
+              this.controller.setStyledString(this.richEditorStyledString);
+              this.controller.setCaretOffset(this.richEditorStyledString.length);
+            }
           }).id('addCustom')
         }
 

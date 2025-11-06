@@ -56,7 +56,7 @@ struct SXsymbolSpanStyle {
         .height('50%')
       Button('get').key('SXsymbolSpanStyleButton')
         .onClick((e:ClickEvent) => {
-          this.controller.getSpans({ start: 0, end: 6 }).forEach((item) => {
+          this.controller.getSpans({ start: 0, end: 6 })?.forEach((item) => {
             this.text2  +=  (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize
           })
         }).height('10%')

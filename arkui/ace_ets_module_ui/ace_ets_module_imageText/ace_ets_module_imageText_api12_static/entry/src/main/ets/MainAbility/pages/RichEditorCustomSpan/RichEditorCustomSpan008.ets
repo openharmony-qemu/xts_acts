@@ -73,13 +73,17 @@ build() {
       Button('get CustomSpanInfo')
         .onClick((e: ClickEvent) => {
           let richEditorStyledString = this.controller.getStyledString();
-          this.length = richEditorStyledString.getString().length + '';
+          if (richEditorStyledString !== undefined) {
+            this.length = richEditorStyledString.getString().length + '';
+          }
         })
         .id('getCustomSpanInfo')
       Button('removeString').onClick((e: ClickEvent) => {
         let richEditorStyledString = this.controller.getStyledString();
-        richEditorStyledString.removeString(0, 1);
-        this.controller.setStyledString(richEditorStyledString);
+        if (richEditorStyledString !== undefined) {
+          richEditorStyledString.removeString(0, 1);
+          this.controller.setStyledString(richEditorStyledString);
+        }
       }).id('removeString')
       RichEditor(this.options)
         .onReady((): void => {

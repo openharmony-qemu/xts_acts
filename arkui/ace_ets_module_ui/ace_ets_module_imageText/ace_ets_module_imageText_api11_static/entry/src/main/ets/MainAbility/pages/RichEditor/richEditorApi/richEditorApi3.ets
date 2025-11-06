@@ -62,13 +62,15 @@ struct richEditorApi3 {
       }).height('10%').id('richEditorApi3_btn1')
       Button('get').onClick((event: ClickEvent) => {
         let getParagraphs = this.controller.getParagraphs({ start: -1, end: -1 })
-        let textAlign = getParagraphs[0].style.textAlign
-        let size = getParagraphs[0].style.leadingMargin
-        AppStorage.setOrCreate('getParagraphs_textAlign',textAlign)
-        AppStorage.setOrCreate('getParagraphs_size',size)
-        this.controller.getParagraphs({ start: -1, end: -1 }).forEach((item) => {
-          this.text1  +=  JSON.stringify((item as RichEditorParagraphResult).style)
-        })
+        if (getParagraphs !== undefined) {
+          let textAlign = getParagraphs[0].style.textAlign
+          let size = getParagraphs[0].style.leadingMargin
+          AppStorage.setOrCreate('getParagraphs_textAlign',textAlign)
+          AppStorage.setOrCreate('getParagraphs_size',size)
+          this.controller.getParagraphs({ start: -1, end: -1 })?.forEach((item) => {
+            this.text1  +=  JSON.stringify((item as RichEditorParagraphResult).style)
+          })
+        }
       }).height('10%').id('richEditorApi3_btn2')
 
       Text('' + this.text1).key('richEditorApi3_text1').height('10%').textAlign(TextAlign.Center)

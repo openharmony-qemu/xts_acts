@@ -70,7 +70,7 @@ struct RichEditor01 {
           this.controller.getSpans({
             start: this.start,
             end: this.end
-          }).forEach(item => {
+          })?.forEach(item => {
             if(typeof((item as RichEditorImageSpanResult).imageStyle) != 'undefined'){
               this.content += (item as RichEditorImageSpanResult).valueResourceStr;
               this.content += "\n"
@@ -101,7 +101,10 @@ struct RichEditor01 {
           this.text = JSON.stringify(JSON.parseJsonElement(strJson))
         })
         Button("获取光标位置").onClick((e:ClickEvent) => {
-          this.content = this.controller.getCaretOffset() +''
+          let offset = this.controller.getCaretOffset()
+          if (offset !== undefined) {
+            this.content = offset + ''
+          }
         }).key('getCaretOffset')
 
       }

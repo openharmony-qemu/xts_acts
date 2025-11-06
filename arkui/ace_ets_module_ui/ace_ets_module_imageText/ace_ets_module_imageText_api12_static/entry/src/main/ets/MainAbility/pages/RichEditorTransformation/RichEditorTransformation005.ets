@@ -51,7 +51,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 struct RichEditorTransformation005 {
   controller: RichEditorController = new RichEditorController();
   @State textStyle: string = '';
-  @State length: number = -1;
+  @State length: Int | undefined = undefined;
   private myOffset: int | undefined = undefined
   private myBuilder: CustomBuilder = ()=>{}
 

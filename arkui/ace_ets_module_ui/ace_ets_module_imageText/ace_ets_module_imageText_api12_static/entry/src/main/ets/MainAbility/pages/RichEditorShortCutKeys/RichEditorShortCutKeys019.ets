@@ -77,32 +77,37 @@ struct RichEditorShortCutKeys019 {
     Column() {
 
       Button('get content').onClick((e: ClickEvent) => {
-        this.richEditorStyledString = this.controller.getStyledString();
-        this.content = this.richEditorStyledString.subStyledString(0, 6).getString();
-        console.log('RichEditorController this.content:' + this.content);
-
+        let currentString = this.controller.getStyledString();
+        if (currentString !== undefined) {
+          this.richEditorStyledString = currentString;
+          this.content = this.richEditorStyledString.subStyledString(0, 6).getString();
+          console.log('RichEditorController this.content:' + this.content);
+        }
       }).id('getContent')
       Button('getStyles')
         .onClick((e: ClickEvent) => {
-          let richEditorStyledString = this.controller.getStyledString();
-          let styles = richEditorStyledString.getStyles(0, richEditorStyledString.length)
-          if (styles.length !== 0) {
-            for (let i = 0; i < styles.length; i++) {
-              console.info('mutableStyledString1 style object start:' + styles[i as int].start)
-              console.info('mutableStyledString1 style object length:' + styles[i as int].length)
-              console.info('mutableStyledString1 style object key:' + styles[i as int].styledKey)
-              this.stylesInfo += 'start:' + styles[i as int].start + ',';
-              this.stylesInfo += 'length:' + styles[i as int].length + ',';
-              this.stylesInfo += 'styledKey:' + styles[i as int].styledKey + ',';
-              if (styles[i as int].styledKey === 0) {
-                let fontAttr = styles[i as int].styledValue as TextStyle;
-                this.stylesInfo += 'fontWeight:' + fontAttr.fontWeight + ',';
-                this.stylesInfo += 'fontStyle:' + fontAttr.fontStyle + ',';
-              }
-              if (styles[i as int].styledKey === 1) {
-                let decoAttr = styles[i as int].styledValue as DecorationStyle;
-                this.stylesInfo += 'decoration type:' + decoAttr.type + ',';
-                this.stylesInfo += 'decoration color:' + decoAttr.color;
+          let styledString = this.controller.getStyledString();
+          if (styledString !== undefined) {
+            this.richEditorStyledString = styledString;
+            let styles = this.richEditorStyledString.getStyles(0, this.richEditorStyledString.length)
+            if (styles !== undefined && styles.length > 0) {
+              for (let i: int = 0; i < styles.length; i++) {
+                console.info('mutableStyledString1 style object start:' + styles[i].start)
+                console.info('mutableStyledString1 style object length:' + styles[i].length)
+                console.info('mutableStyledString1 style object key:' + styles[i].styledKey)
+                this.stylesInfo += 'start:' + styles[i].start + ',';
+                this.stylesInfo += 'length:' + styles[i].length + ',';
+                this.stylesInfo += 'styledKey:' + styles[i].styledKey + ',';
+                if (styles[i].styledKey === 0) {
+                  let fontAttr = styles[i].styledValue as TextStyle;
+                  this.stylesInfo += 'fontWeight:' + fontAttr.fontWeight + ',';
+                  this.stylesInfo += 'fontStyle:' + fontAttr.fontStyle + ',';
+                }
+                if (styles[i].styledKey === 1) {
+                  let decoAttr = styles[i].styledValue as DecorationStyle;
+                  this.stylesInfo += 'decoration type:' + decoAttr.type + ',';
+                  this.stylesInfo += 'decoration color:' + decoAttr.color;
+                }
               }
             }
           }

@@ -87,21 +87,24 @@ build() {
 
       Button('get spans').onClick((e: ClickEvent) => {
         this.style = '';
-        this.controller.getSpans({
+        let spans = this.controller.getSpans({
           start: 0,
           end: 6
-        }).forEach(item => {
-          if (typeof (item as RichEditorTextSpanResult)?.textStyle != 'undefined') {
-            let span = item as RichEditorTextSpanResult
-            let spanPosition = JSON.stringify(span.spanPosition);
-            let value = JSON.stringify(span.value);
-            let textStyle = JSON.stringify(span.textStyle);
-            this.style += 'spanPosition:' + spanPosition + ',';
-            this.style += 'value:' + value + ',';
-            this.style += 'textStyle:' + textStyle + ',';
-            console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
-          }
-        })
+        });
+        if (spans !== undefined) {
+          spans.forEach(item => {
+            if (typeof (item as RichEditorTextSpanResult)?.textStyle != 'undefined') {
+              let span = item as RichEditorTextSpanResult
+              let spanPosition = JSON.stringify(span.spanPosition);
+              let value = JSON.stringify(span.value);
+              let textStyle = JSON.stringify(span.textStyle);
+              this.style += 'spanPosition:' + spanPosition + ',';
+              this.style += 'value:' + value + ',';
+              this.style += 'textStyle:' + textStyle + ',';
+              console.log('RichEditorController  this.style:' + JSON.stringify(this.style));
+            }
+          })
+        }
       }).id('getSpans')
 
       Button('set select').onClick((e: ClickEvent) => {

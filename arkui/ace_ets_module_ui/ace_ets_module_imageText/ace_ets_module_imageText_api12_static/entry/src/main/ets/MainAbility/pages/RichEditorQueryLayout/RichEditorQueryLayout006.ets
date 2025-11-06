@@ -59,30 +59,33 @@ build() {
 
       Button('get spans').onClick((e: ClickEvent) => {
         this.content = '';
-        this.controller.getSpans({
+        let spans = this.controller.getSpans({
           start: 0,
           end: 6
-        }).forEach(item => {
-          if ( (item as RichEditorImageSpanResult)?.imageStyle) {
-            this.content += (item as RichEditorImageSpanResult).valueResourceStr;
-            if ( ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
-              this.style =
-                JSON.stringify(((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)
-                  .layoutStyle);
-            }
-            this.content += '\n'
-          } else {
-            if ( (item as RichEditorTextSpanResult)?.symbolSpanStyle) {
-              console.log('get content get symbolSpanStyle');
-              this.content += (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize;
+        })
+        if (spans !== undefined) {
+          spans.forEach(item => {
+            if ( (item as RichEditorImageSpanResult)?.imageStyle) {
+              this.content += (item as RichEditorImageSpanResult).valueResourceStr;
+              if ( ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
+                this.style =
+                  JSON.stringify(((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)
+                    .layoutStyle);
+              }
               this.content += '\n'
             } else {
-              console.log('get content no layoutStyle');
-              this.content += (item as RichEditorTextSpanResult).value;
-              this.content += '\n'
+              if ( (item as RichEditorTextSpanResult)?.symbolSpanStyle) {
+                console.log('get content get symbolSpanStyle');
+                this.content += (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize;
+                this.content += '\n'
+              } else {
+                console.log('get content no layoutStyle');
+                this.content += (item as RichEditorTextSpanResult).value;
+                this.content += '\n'
+              }
             }
-          }
-        })
+          })
+        }
       }).id('get_content')
 
       RichEditor({ controller: this.controller } as RichEditorOptions)

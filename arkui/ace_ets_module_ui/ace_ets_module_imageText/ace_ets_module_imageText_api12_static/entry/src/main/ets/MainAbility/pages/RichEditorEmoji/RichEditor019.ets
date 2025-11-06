@@ -59,12 +59,18 @@ build() {
         Text('' + this.pointPosition).id('position_text');
 
         Button('get Point Position').onClick((e: ClickEvent) => {
-          this.pointPosition = this.controller.getCaretOffset();
-          console.log('this.pointPosition:' + this.pointPosition);
+          let caretOffset = this.controller.getCaretOffset();
+          if (caretOffset !== undefined) {
+            this.pointPosition = caretOffset;
+          }
+          console.log('this.point_position:' + this.pointPosition);
         }).id('get_position')
 
         Button('put point back emoji').onClick((e: ClickEvent) => {
-          this.controller.setCaretOffset(this.controller.getCaretOffset() - 4);
+          let caretOffset = this.controller.getCaretOffset();
+          if (caretOffset !== undefined) {
+            this.controller.setCaretOffset(caretOffset - 4);
+          }
         }).id('back')
       }
       .borderWidth(1)

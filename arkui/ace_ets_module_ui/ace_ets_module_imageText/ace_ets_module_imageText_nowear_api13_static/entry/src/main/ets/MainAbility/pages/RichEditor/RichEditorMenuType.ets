@@ -97,11 +97,14 @@ struct RichEditorMenuType1 {
 
   aboutToAppear() {
     if (this.controller) {
-      let richEditorSelection = this.controller.getSelection()
-      if (richEditorSelection) {
+      let richEditorSelection: RichEditorSelection | undefined = this.controller.getSelection()
+      if (richEditorSelection !== undefined) {
         let start = richEditorSelection.selection[0]
         let end = richEditorSelection.selection[1]
-        if (start === 0 && this.controller.getSpans({ start: end + 1, end: end + 1 }).length === 0) {
+        let spans = this.controller.getSpans({ start: end + 1, end: end + 1 })
+        if (spans === undefined) {
+          this.visibilityValue = Visibility.None
+        } else if (start === 0 && spans.length === 0) {
           this.visibilityValue = Visibility.None
         } else {
           this.visibilityValue = Visibility.Visible
@@ -216,8 +219,11 @@ struct RichEditorMenuType1 {
     let start = richEditorSelection.selection[0]
     let end = richEditorSelection.selection[1]
     if (start == end && this.controller) {
-      start = this.controller.getCaretOffset()
-      end = this.controller.getCaretOffset()
+      let offset = this.controller.getCaretOffset()
+      if (offset !== undefined) {
+        start = offset!
+        end = offset!
+      }
     }
     let moveOffset = 0
     let sysBoard = pasteboard.getSystemPasteboard()
@@ -314,111 +320,119 @@ struct RichEditorMenuType1 {
             if (index == 0) {
               this.sliderShow = false
               if (this.controller) {
-                let selection = this.controller.getSelection();
-                let spans = selection.spans
-                spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
-                  if (typeof (item as RichEditorTextSpanResult).textStyle!= 'undefined') {
-                    let span = item as RichEditorTextSpanResult
-                    this.textStyle = span.textStyle as RichEditorTextStyle
-                    let start = span.offsetInSpan[0]
-                    let end = span.offsetInSpan[1]
-                    let offset = span.spanPosition.spanRange[0]
-                    if (this.textStyle.fontWeight != 11) {
-                      this.textStyle.fontWeight = FontWeight.Bolder
-                    } else {
-                      this.textStyle.fontWeight = FontWeight.Normal
+                let selection: RichEditorSelection | undefined = this.controller.getSelection();
+                if (selection !== undefined) {
+                  let spans = selection.spans
+                  spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
+                    if (typeof (item as RichEditorTextSpanResult).textStyle!= 'undefined') {
+                      let span = item as RichEditorTextSpanResult
+                      this.textStyle = span.textStyle as RichEditorTextStyle
+                      let start = span.offsetInSpan[0]
+                      let end = span.offsetInSpan[1]
+                      let offset = span.spanPosition.spanRange[0]
+                      if (this.textStyle.fontWeight != 11) {
+                        this.textStyle.fontWeight = FontWeight.Bolder
+                      } else {
+                        this.textStyle.fontWeight = FontWeight.Normal
+                      }
+                      this.controller.updateSpanStyle({
+                        start: offset + start,
+                        end: offset + end,
+                        textStyle: this.textStyle
+                      } as RichEditorUpdateTextSpanStyleOptions)
                     }
-                    this.controller.updateSpanStyle({
-                      start: offset + start,
-                      end: offset + end,
-                      textStyle: this.textStyle
-                    } as RichEditorUpdateTextSpanStyleOptions)
-                  }
-                })
+                  })
+                }
               }
             } else if (index == 1) {
               this.sliderShow = false
               if (this.controller) {
-                let selection = this.controller.getSelection();
-                let spans = selection.spans
-                spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
-                  if (typeof (item as RichEditorTextSpanResult).textStyle != 'undefined') {
-                    let span = item as RichEditorTextSpanResult
-                    this.textStyle = span.textStyle as RichEditorTextStyle
-                    let start = span.offsetInSpan[0]
-                    let end = span.offsetInSpan[1]
-                    let offset = span.spanPosition.spanRange[0]
-                    if (this.textStyle.fontStyle == FontStyle.Italic) {
-                      this.textStyle.fontStyle = FontStyle.Normal
-                    } else {
-                      this.textStyle.fontStyle = FontStyle.Italic
+                let selection: RichEditorSelection | undefined = this.controller.getSelection();
+                if (selection !== undefined) {
+                  let spans = selection.spans
+                  spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
+                    if (typeof (item as RichEditorTextSpanResult).textStyle != 'undefined') {
+                      let span = item as RichEditorTextSpanResult
+                      this.textStyle = span.textStyle as RichEditorTextStyle
+                      let start = span.offsetInSpan[0]
+                      let end = span.offsetInSpan[1]
+                      let offset = span.spanPosition.spanRange[0]
+                      if (this.textStyle.fontStyle == FontStyle.Italic) {
+                        this.textStyle.fontStyle = FontStyle.Normal
+                      } else {
+                        this.textStyle.fontStyle = FontStyle.Italic
+                      }
+                      this.controller.updateSpanStyle({
+                        start: offset + start,
+                        end: offset + end,
+                        textStyle: this.textStyle
+                      } as RichEditorUpdateTextSpanStyleOptions)
                     }
-                    this.controller.updateSpanStyle({
-                      start: offset + start,
-                      end: offset + end,
-                      textStyle: this.textStyle
-                    } as RichEditorUpdateTextSpanStyleOptions)
-                  }
-                })
+                  })
+                }
               }
             } else if (index == 2) {
               this.sliderShow = false
               if (this.controller) {
-                let selection = this.controller.getSelection();
-                let spans = selection.spans
-                spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
-                  if (typeof (item as RichEditorTextSpanResult).textStyle != 'undefined') {
-                    let span = item as RichEditorTextSpanResult
-                    this.textStyle = span!.textStyle as RichEditorTextStyle
-                    let start = span.offsetInSpan[0]
-                    let end = span.offsetInSpan[1]
-                    let offset = span.spanPosition.spanRange[0]
-                    if (this.textStyle!.decoration) {
-                      if (this.textStyle!.decoration!.type == TextDecorationType.Underline) {
-                        this.textStyle!.decoration!.type = TextDecorationType.None
+                let selection: RichEditorSelection | undefined = this.controller.getSelection();
+                if (selection !== undefined) {
+                  let spans = selection.spans
+                  spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
+                    if (typeof (item as RichEditorTextSpanResult).textStyle != 'undefined') {
+                      let span = item as RichEditorTextSpanResult
+                      this.textStyle = span!.textStyle as RichEditorTextStyle
+                      let start = span.offsetInSpan[0]
+                      let end = span.offsetInSpan[1]
+                      let offset = span.spanPosition.spanRange[0]
+                      if (this.textStyle!.decoration) {
+                        if (this.textStyle!.decoration!.type == TextDecorationType.Underline) {
+                          this.textStyle!.decoration!.type = TextDecorationType.None
+                        } else {
+                          this.textStyle!.decoration!.type = TextDecorationType.Underline
+                        }
                       } else {
-                        this.textStyle!.decoration!.type = TextDecorationType.Underline
+                        this.textStyle.decoration = {
+                            type: TextDecorationType.Underline,
+                            color: Color.Black,
+                            style: TextDecorationStyle.SOLID }
                       }
-                    } else {
-                      this.textStyle.decoration = {
-                          type: TextDecorationType.Underline,
-                          color: Color.Black,
-                          style: TextDecorationStyle.SOLID }
+                      this.controller.updateSpanStyle({
+                        start: offset + start,
+                        end: offset + end,
+                        textStyle: this.textStyle
+                      } as RichEditorUpdateTextSpanStyleOptions)
                     }
-                    this.controller.updateSpanStyle({
-                      start: offset + start,
-                      end: offset + end,
-                      textStyle: this.textStyle
-                    } as RichEditorUpdateTextSpanStyleOptions)
-                  }
-                })
+                  })
+                }
               }
             } else if (index == 3) {
               this.sliderShow = !this.sliderShow
             } else if (index == 4) {
               this.sliderShow = false
               if (this.controller) {
-                let selection = this.controller.getSelection();
-                let spans = selection.spans
-                spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
-                  if (typeof (item as RichEditorTextSpanResult).textStyle != 'undefined') {
-                    let span = item as RichEditorTextSpanResult
-                    this.textStyle = span.textStyle as RichEditorTextStyle
-                    let start = span.offsetInSpan[0]
-                    let end = span.offsetInSpan[1]
-                    let offset = span.spanPosition.spanRange[0]
-                    if (this.textStyle.fontColor == Color.Orange || this.textStyle.fontColor == '#FFFFA500') {
-                      this.textStyle.fontColor = Color.Black
-                    } else {
-                      this.textStyle.fontColor = Color.Orange
+                let selection: RichEditorSelection | undefined = this.controller.getSelection();
+                if (selection !== undefined) {
+                  let spans = selection.spans
+                  spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
+                    if (typeof (item as RichEditorTextSpanResult).textStyle != 'undefined') {
+                      let span = item as RichEditorTextSpanResult
+                      this.textStyle = span.textStyle as RichEditorTextStyle
+                      let start = span.offsetInSpan[0]
+                      let end = span.offsetInSpan[1]
+                      let offset = span.spanPosition.spanRange[0]
+                      if (this.textStyle.fontColor == Color.Orange || this.textStyle.fontColor == '#FFFFA500') {
+                        this.textStyle.fontColor = Color.Black
+                      } else {
+                        this.textStyle.fontColor = Color.Orange
+                      }
+                      this.controller.updateSpanStyle({
+                        start: offset + start,
+                        end: offset + end,
+                        textStyle: this.textStyle
+                      } as RichEditorUpdateTextSpanStyleOptions)
                     }
-                    this.controller.updateSpanStyle({
-                      start: offset + start,
-                      end: offset + end,
-                      textStyle: this.textStyle
-                    } as RichEditorUpdateTextSpanStyleOptions)
-                  }
-                })
+                  })
+                }
               }
             }
           })
@@ -464,20 +478,24 @@ struct RichEditorMenuType1 {
                 if (!this.controller) {
                   return
                 }
-                let richEditorSelection = this.controller.getSelection()
-                this.PushDataToPasteboard(richEditorSelection);
-                this.controller.deleteSpans({
-                  start: richEditorSelection.selection[0],
-                  end: richEditorSelection.selection[1]
-                })
+                let richEditorSelection: RichEditorSelection | undefined = this.controller.getSelection()
+                if (richEditorSelection !== undefined) {
+                  this.PushDataToPasteboard(richEditorSelection);
+                  this.controller.deleteSpans({
+                    start: richEditorSelection.selection[0],
+                    end: richEditorSelection.selection[1]
+                  })
+                }
               })
             MenuItem({ startIcon: this.theme.copyIcon, content: "复制", labelInfo: "Ctrl+C" } as MenuItemOptions)
               .onClick((e:ClickEvent) => {
                 if (!this.controller) {
                   return
                 }
-                let richEditorSelection = this.controller.getSelection()
-                this.PushDataToPasteboard(richEditorSelection);
+                let richEditorSelection: RichEditorSelection | undefined = this.controller.getSelection()
+                if (richEditorSelection !== undefined) {
+                  this.PushDataToPasteboard(richEditorSelection);
+                }
                 this.controller.closeSelectionMenu()
               })
             MenuItem({ startIcon: this.theme.pasteIcon, content: "粘贴", labelInfo: "Ctrl+V" } as MenuItemOptions)
@@ -486,8 +504,10 @@ struct RichEditorMenuType1 {
                 if (!this.controller) {
                   return
                 }
-                let richEditorSelection = this.controller.getSelection()
-                this.PopDataFromPasteboard(richEditorSelection)
+                let richEditorSelection: RichEditorSelection | undefined = this.controller.getSelection()
+                if (richEditorSelection !== undefined) {
+                  this.PopDataFromPasteboard(richEditorSelection)
+                }
               })
             MenuItem({ startIcon: this.theme.selectAllIcon, content: "全选", labelInfo: "Ctrl+A" } as MenuItemOptions)
               .visibility(this.visibilityValue)
@@ -511,13 +531,18 @@ struct RichEditorMenuType1 {
         if (!this.controller) {
           return
         }
-        let richEditorSelection = this.controller.getSelection()
-        let start = richEditorSelection.selection[0]
-        let end = richEditorSelection.selection[1]
-        if (start === 0 && this.controller.getSpans({ start: end + 1, end: end + 1 }).length === 0) {
-          this.visibilityValue = Visibility.None
-        } else {
-          this.visibilityValue = Visibility.Visible
+        let richEditorSelection: RichEditorSelection | undefined = this.controller.getSelection()
+        if (richEditorSelection !== undefined) {
+          let start = richEditorSelection.selection[0]
+          let end = richEditorSelection.selection[1]
+          let spans = this.controller.getSpans({ start: end + 1, end: end + 1 })
+          if (spans === undefined) {
+            this.visibilityValue = Visibility.None
+          } else if (start === 0 && spans.length === 0) {
+            this.visibilityValue = Visibility.None
+          } else {
+            this.visibilityValue = Visibility.Visible
+          }
         }
       })
       .radius(this.theme.containerBorderRadius)
@@ -536,27 +561,29 @@ struct RichEditorMenuType1 {
           .width(210)
           .onChange((value: number, mode: SliderChangeMode) => {
             if (this.controller) {
-              let selection = this.controller.getSelection();
-              if (mode == SliderChangeMode.End) {
-                if (this.textSize == undefined) {
-                  this.textSize = 0
-                }
-                let spans = selection.spans
-                spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
-                  if (typeof (item as RichEditorTextSpanResult).textStyle != 'undefined') {
-                    this.textSize = Math.max(this.textSize, (item as RichEditorTextSpanResult).textStyle.fontSize)
+              let selection: RichEditorSelection | undefined = this.controller.getSelection();
+              if (selection !== undefined) {
+                if (mode == SliderChangeMode.End) {
+                  if (this.textSize == undefined) {
+                    this.textSize = 0
                   }
-                })
-              }
-              if (mode == SliderChangeMode.Moving || mode == SliderChangeMode.Click) {
-                this.start = selection.selection[0]
-                this.end = selection.selection[1]
-                this.textSize = value
-                this.controller.updateSpanStyle({
-                  start: this.start,
-                  end: this.end,
-                  textStyle: { fontSize: this.textSize }
-                } as RichEditorUpdateTextSpanStyleOptions)
+                  let spans = selection.spans
+                  spans.forEach((item: RichEditorTextSpanResult | RichEditorImageSpanResult, index) => {
+                    if (typeof (item as RichEditorTextSpanResult).textStyle != 'undefined') {
+                      this.textSize = Math.max(this.textSize, (item as RichEditorTextSpanResult).textStyle.fontSize)
+                    }
+                  })
+                }
+                if (mode == SliderChangeMode.Moving || mode == SliderChangeMode.Click) {
+                  this.start = selection.selection[0]
+                  this.end = selection.selection[1]
+                  this.textSize = value
+                  this.controller.updateSpanStyle({
+                    start: this.start,
+                    end: this.end,
+                    textStyle: { fontSize: this.textSize }
+                  } as RichEditorUpdateTextSpanStyleOptions)
+                }
               }
             }
           })

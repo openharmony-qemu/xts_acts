@@ -114,18 +114,21 @@ build() {
         Button('getParagraphs')
           .id('RichEditorWordBreak_getParagraphs')
           .onClick((e: ClickEvent) => {
-            this.spanParagraphs = this.controller.getParagraphs({ start: -1, end: -1 })
-            console.log('RichEditor getParagraphs:' + JSON.stringify(this.spanParagraphs))
-            this.spanParagraphs.forEach((item: RichEditorParagraphResult) => {
+            let paragraphs = this.controller.getParagraphs({start: -1, end: -1});
+            if (paragraphs !== undefined) {
+              this.spanParagraphs = paragraphs
               console.log('RichEditor getParagraphs:' + JSON.stringify(this.spanParagraphs))
-              if(typeof(item as RichEditorParagraphResult)?.style != 'undefined'){
-                this.content = ''
-                console.log('wordBreakIndex get before')
-                let wordBreakIndex = Number(`${item.style.wordBreak}`)
-                console.log('wordBreakIndex' + `${item.style.wordBreak}`)
-                this.content += this.wordBreakOptionStr[wordBreakIndex as int];
-              }
-            })
+              this.spanParagraphs.forEach((item: RichEditorParagraphResult) => {
+                console.log('RichEditor getParagraphs:' + JSON.stringify(this.spanParagraphs))
+                if(typeof(item as RichEditorParagraphResult)?.style != 'undefined'){
+                  this.content = ''
+                  console.log('wordBreakIndex get before')
+                  let wordBreakIndex = Number(`${item.style.wordBreak}`)
+                  console.log('wordBreakIndex' + `${item.style.wordBreak}`)
+                  this.content += this.wordBreakOptionStr[wordBreakIndex as int];
+                }
+              })
+           }
           })
           .height('5%')
       }
