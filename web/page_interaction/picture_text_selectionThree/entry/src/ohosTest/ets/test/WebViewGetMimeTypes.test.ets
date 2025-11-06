@@ -60,9 +60,9 @@ export default function WebViewGetMimeTypes() {
 
 
     /*
-    * @tc.number     : SUB_WEB_GETCONTEXTMENUMEDIATYPE_0100
-    * @tc.name       : testContextMenuMediaTypeVideo
-    * @tc.desc       : test getContextMenuMediaType
+    * @tc.number     : SUB_WEB_WEBVIEWGETMIMETYPES_0100
+    * @tc.name       : testWebViewGetMimeTypes01
+    * @tc.desc       : test onShowFileSelector
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 1
@@ -74,9 +74,9 @@ export default function WebViewGetMimeTypes() {
     })
 
     /*
-    * @tc.number     : SUB_WEB_GETCONTEXTMENUMEDIATYPE_0100
-    * @tc.name       : testContextMenuMediaTypeVideo
-    * @tc.desc       : test getContextMenuMediaType
+    * @tc.number     : SUB_WEB_WEBVIEWGETMIMETYPES_0200
+    * @tc.name       : testWebViewGetMimeTypes02
+    * @tc.desc       : test onShowFileSelector
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 1

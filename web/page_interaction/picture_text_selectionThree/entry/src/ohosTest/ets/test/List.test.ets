@@ -15,7 +15,9 @@
 
 import WebViewContextMenuMediaType from './WebViewContextMenuMediaType.test'
 import WebViewGetMimeTypes from './WebViewGetMimeTypes.test'
+import WebViewIsCapture from  './WebViewIsCapture.test'
 export default function testsuite() {
   WebViewContextMenuMediaType()
   WebViewGetMimeTypes()
+  WebViewIsCapture()
 }
