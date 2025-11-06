@@ -51,6 +51,7 @@
     "requestPermissions": [
       {
         "name": "ohos.permission.WRITE_CONTACTS",
+        "reason": "$string:module_desc",
          "usedScene": {	
           "when": "always",	
         }
@@ -60,6 +61,7 @@
       },
       {
         "name": "ohos.permission.SET_TELEPHONY_STATE",
+        "reason": "$string:module_desc",
          "usedScene": {	
           "when": "always",	
         }
