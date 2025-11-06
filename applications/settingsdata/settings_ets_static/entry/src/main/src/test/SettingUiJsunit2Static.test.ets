@@ -1211,8 +1211,8 @@ export default function settingUiJsunit() {
         })
         .catch((err)=>{
           console.error("[open_manager_settings_static_119] error = " + err);
-          if ((err as BusinessError)?.code) {
-            expect(err?.code).assertEqual(14800000);
+          if ((err as BusinessError).code) {
+            expect(err.code).assertEqual(14800000);
           }
           done();
         })
@@ -1232,8 +1232,8 @@ export default function settingUiJsunit() {
           })
           .catch((err)=>{
             console.error("[open_manager_settings_static_120] error = " + err);
-            if ((err as BusinessError)?.code) {
-              expect(err?.code).assertEqual(14800010);
+            if ((err as BusinessError).code) {
+              expect(err.code).assertEqual(14800010);
             }
             done();
           })
