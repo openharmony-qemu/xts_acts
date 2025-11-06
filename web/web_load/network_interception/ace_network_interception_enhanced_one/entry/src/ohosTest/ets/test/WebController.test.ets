@@ -13,8 +13,9 @@
  * limitations under the License.
  */
 
-import { beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeAll, beforeEach, expect, describe, it , TestType, Size, Level } from '@ohos/hypium';
 import router from '@ohos.router';
+import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver, ON } from '@kit.TestKit';
