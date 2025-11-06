@@ -499,6 +499,83 @@ export default function applicationManagerTest() {
     })
 
     /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDUSERNONSTOPAPPS_001
+     * @tc.name      : test_addUserNonStopApps_001
+     * @tc.desc      : test addUserNonStopApps method with normal admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_addUserNonStopApps_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        let userNonStopApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEUSERNONSTOPAPPS_001
+     * @tc.name      : test_removeUserNonStopApps_001
+     * @tc.desc      : test removeUserNonStopApps method with normal admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_removeUserNonStopApps_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        let userNonStopApps: Array<common.ApplicationInstance> = [
+          {
+            appIdentifier:"1230215522310701824",
+            accountId:DEFAULT_USER_ID,
+            appIndex:0
+          }
+        ];
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.removeUserNonStopApps(SELFWANT, userNonStopApps);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETUSERNONSTOPAPPS_001
+     * @tc.name      : test_getUserNonStopApps_001
+     * @tc.desc      : test getUserNonStopApps method with normal admin
+     * @tc.level     : Level 2
+     * @tc.type      : Function
+     * @tc.size      : MediumTest
+     */
+    it("test_getUserNonStopApps_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        applicationManager.getUserNonStopApps(SELFWANT);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
      * @tc.number    : SUB_CUSTOMIZATION_EDM_CLEARUPAPPLICATIONDATA
      * @tc.name      : test_clearUpApplicationData
      * @tc.desc      : test clearUpApplicationData method with normal admin
