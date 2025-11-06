@@ -164,21 +164,21 @@ export default function settingUiJsunit() {
      * @tc.name: settings_set_value_127
      * @tc.desc: check set value sync
      */
-    // it('settings_set_value_127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   let name = 'settings.screen.brightness127';//关键字
-    //   let obj = '323445.00';//值
-    //   let domainName = settings.domainName.DEVICE_SHARED;
-    //   try{
-    //     let value = settings.setValueSync(abilityContext, name, obj, domainName);
-    //     expect(value).assertTrue();
-    //     done();
-    //   }catch (err) {
-    //     console.error("[settings_set_value_127] error = " + err);
-    //     expect().assertFail();
-    //     done();
-    //   }
-    //   done();
-    // });
+    it('settings_set_value_127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness127';//关键字
+      let defaultValue = '323445.00';//值
+      let domainName = settings.domainName.DEVICE_SHARED;
+      try{
+        let value = settings.setValueSync(abilityContext, name, defaultValue, domainName);
+        expect(value).assertTrue();
+        done();
+      }catch (err) {
+        console.error("[settings_set_value_127] error = " + err);
+        expect().assertFail();
+        done();
+      }
+      done();
+    });
 
     /**
      * @tc.number: settings_get_value_static_035
@@ -217,27 +217,27 @@ export default function settingUiJsunit() {
      * @tc.name: settings_set_value_113
      * @tc.desc: check setValueSync
      */
-    // it('settings_set_value_113',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
-    //   let name = 'settings.screen.brightness113';//关键字
-    //   let value = 'brightness113'//值
-    //   try{
-    //     settings.setValue(abilityContext, name, value)
-    //       .then((data)=>{
-    //         expect(data).assertTrue();
-    //         done();
-    //       })
-    //       .catch((err)=>{
-    //         console.info("[settings_set_value_113] error is:" + err);
-    //         expect().assertFail();
-    //         done();
-    //       })
-    //   }catch(err){
-    //     console.info("[settings_set_value_113] error is:" + err);
-    //     expect().assertFail();
-    //     done();
-    //     return;
-    //   }
-    // });
+    it('settings_set_value_113',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
+      let name = 'settings.screen.brightness113';//关键字
+      let value = 'brightness113'//值
+      try{
+        settings.setValue(abilityContext, name, value)
+          .then((data)=>{
+            expect(data).assertTrue();
+            done();
+          })
+          .catch((err)=>{
+            console.info("[settings_set_value_113] error is:" + err);
+            expect().assertFail();
+            done();
+          })
+      }catch(err){
+        console.info("[settings_set_value_113] error is:" + err);
+        expect().assertFail();
+        done();
+        return;
+      }
+    });
 
 
     /**
