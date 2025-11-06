@@ -51,7 +51,6 @@ export default function fontPart3Test() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-//----用例报错----待和开发确认
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2000
      * @tc.name      : testFontTextToGlyphsNormalStatic
@@ -125,7 +124,6 @@ export default function fontPart3Test() {
         expect(e.code).assertEqual(401);
       }
     });
-//---用例报错---待和开发确认
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_2003
      * @tc.name      : testFontTextToGlyphsMultipleCallsStatic

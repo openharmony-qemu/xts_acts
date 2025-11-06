@@ -371,8 +371,6 @@ export default function drawingTsPath2Test() {
         expect().assertFail()
       }
     })
-
-    // -----用例执行报错---待和开发确认
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_1004
      * @tc.name      : testPathAddOvalAbNormalStatic

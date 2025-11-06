@@ -641,15 +641,14 @@ export default function drawingTsMatrixTest() {
         console.info(msg + ` SetAndGetMatrix 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
-//-----执行报错crash---待和开发确认
-//       try {
-//         let matrix = new drawing.Matrix();
-//         matrix.getValue(9);
-//         console.info(msg + ' SetAndGetMatrix 4 successed');
-//       } catch (e: BusinessError) {
-//         console.info(msg + ` SetAndGetMatrix 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-//         expect(e.code).assertEqual(401);
-//       }
+      try {
+        let matrix = new drawing.Matrix();
+        matrix.getValue(9);
+        console.info(msg + ' SetAndGetMatrix 4 successed');
+      } catch (e: BusinessError) {
+        console.info(msg + ` SetAndGetMatrix 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
     })
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_MATRIX_STATIC_0600
