@@ -71,7 +71,7 @@ export default function RichEditorOnWillChange017() {
       await CommonFunc.sleep(1000);
 
       let add_text_span = await driver.findComponent(ON.id('add_text_span'));
-      add_text_span.click();
+      await add_text_span.click();
       await CommonFunc.sleep(500);
 
       let onDidChange_rangeBefore = await driver.findComponent(ON.id('onDidChange_rangeBefore'));

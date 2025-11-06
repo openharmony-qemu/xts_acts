@@ -70,7 +70,7 @@ export default function RichEditorStabillity001() {
       await driver.click(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(500);
       let getPosition = await driver.findComponent(ON.id('getPosition'));
-      getPosition.click();
+      await getPosition.click();
       await CommonFunc.sleep(500);
       let pointPosition = await driver.findComponent(ON.id('pointPosition'));
       let pointPositionText = await pointPosition.getText();

@@ -98,7 +98,7 @@ export default function RichEditorOnWillChange008() {
       expect(rangeText).assertEqual('range_text:[0,3][2,3]');
 
       let back = await driver.findComponent(ON.id('move_back'));
-      back.click();
+      await back.click();
       await CommonFunc.sleep(500);
 
 

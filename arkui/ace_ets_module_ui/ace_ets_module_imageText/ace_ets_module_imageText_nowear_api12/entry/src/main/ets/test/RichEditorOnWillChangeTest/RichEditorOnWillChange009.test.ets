@@ -85,7 +85,7 @@ export default function RichEditorOnWillChange009() {
       expect(didText).assertEqual('onDidChange_callback:true');
 
       let set_style = await driver.findComponent(ON.id('set_style'));
-      set_style.click();
+      await set_style.click();
       await CommonFunc.sleep(500);
 
       await driver.triggerKey(KeyCode.KEYCODE_A);
