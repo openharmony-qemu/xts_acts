@@ -50,7 +50,10 @@
     ],
     "requestPermissions": [
       {
-        "name": "ohos.permission.WRITE_CONTACTS"
+        "name": "ohos.permission.WRITE_CONTACTS",
+         "usedScene": {	
+          "when": "always",	
+        }
       },
       {
         "name": "ohos.permission.READ_CONTACTS"
