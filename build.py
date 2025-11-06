@@ -20,6 +20,7 @@ import sys
 import subprocess
 import shutil
 import logging
+import importlib.util
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -153,29 +154,32 @@ class XtsBuild:
             shutil.rmtree(autogen_apiobjs_dir)
 
         # 拼接编译命令
-        build_command = "./build.sh"
-        for i in self._args:
-            build_command = "{} --{} {}".format(build_command, i, self._args.get(i))
-        for i in self._gn_args:
-            build_command = "{} --gn-args {}={}".format(build_command, i, self._gn_args.get(i))
-        for i in self._build_target:
-            build_command = "{} --build-target {}".format(build_command, i)
-        for i in self._other_args:
-            build_command = "{} --{}={}".format(build_command, i, self._other_args.get(i))
+        build_command = ["./build.sh"]
+        for k, v in self._args.items():
+            build_command.extend([f"--{k}", v])
+        for k, v in self._gn_args.items():
+            build_command.extend(["--gn-args", f"{k}={v}"])
+        for k, v in self._other_args.items():
+            build_command.append(f"--{k}={v}")
+        for tgt in self._build_target:
+            build_command.extend(["--build-target", tgt])
         if self._arkts_static:
-            build_command = "{} {}".format(build_command, "--prebuilts-sdk-gn-args sdk_build_arkts=true")
-        logging.info("build_command: {}".format(build_command))
+            build_command.extend(["--prebuilts-sdk-gn-args", "sdk_build_arkts=true"])
 
         # 执行编译命令
-        os.chdir(self._code_root_dir)
-        ret = subprocess.run(build_command.split())
-        if ret.returncode:
-            logging.info("subprocess.run ret={}".format(ret))
+        accurate_dir = os.path.join(self._code_root_dir, "test/xts/tools/ci")
+        sys.path.append(accurate_dir)
+        spec = importlib.util.spec_from_file_location(
+            "xts_accurate_build",
+            os.path.join(accurate_dir, "xts_accurate_build.py")
+        )
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        rc = mod.xts_accurate_build(self._code_root_dir, build_command)
 
         if os.path.exists(autogen_apiobjs_dir):
             shutil.rmtree(autogen_apiobjs_dir)
-
-        return ret.returncode
+        return rc
 
     def build(self):
         func_list = [
