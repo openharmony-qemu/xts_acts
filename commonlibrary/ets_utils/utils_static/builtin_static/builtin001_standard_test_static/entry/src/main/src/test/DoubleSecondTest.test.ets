@@ -1177,7 +1177,7 @@ export default function builtinsDoubleSecondPrototypebTest() {
         const a = new Double(5.8);
         const b = new Double(5.2);
         const result = a.compareTo(b);
-        expect(result).assertEqual(0);
+        expect(result).assertEqual(1);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1217,7 +1217,7 @@ export default function builtinsDoubleSecondPrototypebTest() {
         const a = new Double(NaN);
         const b = new Double(1.0);
         const result = a.compareTo(b);
-        expect(result).assertEqual(0);
+        expect(result).assertEqual(1);
         console.info(`${caseName}, test end`);
         Done();
       })
