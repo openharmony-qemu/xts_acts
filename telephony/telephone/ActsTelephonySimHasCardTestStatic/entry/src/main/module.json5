@@ -57,7 +57,11 @@
         }
       },
       {
-        "name": "ohos.permission.READ_CONTACTS"
+        "name": "ohos.permission.READ_CONTACTS",
+        "reason": "$string:module_desc",
+         "usedScene": {	
+          "when": "always",	
+        }
       },
       {
         "name": "ohos.permission.SET_TELEPHONY_STATE",
