@@ -75,7 +75,7 @@ struct TapGestureExample {
         value: $value,
         name: $name,
         Vue: $Vue,
-      })
+      }).margin({ bottom: '20vp' })
     }
     .width('100%')
     .height('100%')
