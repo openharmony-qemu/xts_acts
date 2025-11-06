@@ -68,7 +68,7 @@ struct webResourceResponseSet {
   @State isMainFrameValue: boolean = true
   @State isRedirectValue: boolean = true
   @State getRequestMethodValue: string = ''
-  @State getResponseDataValue: string = ''
+  @State getResponseDataValue: string = '123'
   @State getResponseEncodingValue: string = ''
   @State getResponseMimeTypeValue: string = ''
   @State getReasonMessageValue: string = ''
@@ -101,15 +101,20 @@ struct webResourceResponseSet {
     Column() {
       Row() {
         Button("WebResourceResponseSet click").key('WebResourceResponseSetButton').onClick((e: ClickEvent) => {
+          this.onHttpErrorReceive = true
+          this.controller.loadUrl('http://1.1.1.123/index.html');
           console.info("key==>" + this.stringObj.str)
           switch (this.stringObj.str) {
             case "testSetResponseData001": {
               try {
+                setTimeout(() => {
                 this.onHttpErrorReceive = true
                 this.controller.loadUrl('http://1.1.1.123/index.html');
+                }, 3000)
                 setTimeout(() => {
-                  Utils.emitEvent(this.getResponseDataValue == "", 36010);
-                }, 5000)
+                  console.log('getResponseData:' + this.getResponseDataValue);
+                  Utils.emitEvent(this.getResponseDataValue == '""', 36010);
+                }, 6000)
 
               } catch (error) {
                 error = error as BusinessError;
@@ -120,11 +125,13 @@ struct webResourceResponseSet {
 
             case "testSetResponseEncoding001": {
               try {
-                this.onHttpErrorReceive = true
-                this.controller.loadUrl('http://1.1.1.123/index.html');
+                setTimeout(() => {
+                this.onHttpErrorReceive = true;
+                  this.controller.loadUrl('http://1.1.1.123/index.html');
+                }, 3000)
                 setTimeout(() => {
                   Utils.emitEvent(this.getResponseEncodingValue, 36011);
-                }, 5000)
+                }, 6000)
 
               } catch (error) {
                 error = error as BusinessError;
@@ -213,12 +220,10 @@ struct webResourceResponseSet {
         })
       }
 
-
       Web({ src: 'resource://rawfile/index.html', controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .onInterceptRequest((event) => {
           if (event) {
-            console.log('url:' + event.request.getRequestUrl())
             let head1: Header = {
               headerKey: "Connection",
               headerValue: "keep-alive"
@@ -235,7 +240,7 @@ struct webResourceResponseSet {
             this.responseWeb.setResponseEncoding('utf-8')
             this.responseWeb.setResponseMimeType('text/html')
             this.responseWeb.setResponseCode(this.setResponseCode)
-            this.responseWeb.setReasonMessage('Forbidden')
+            this.responseWeb.setReasonMessage('OK')
             this.responseWeb.setResponseIsReady(this.setResponseIsReady)
           }
           return this.responseWeb
@@ -247,7 +252,6 @@ struct webResourceResponseSet {
               this.getRequestUrlValue = event.request.getRequestUrl()
               console.log('isMainFrame:' + event.request.isMainFrame());
               this.isMainFrameValue = event.request.isMainFrame()
-
               console.log('isRedirect:' + event.request.isRedirect());
               this.isRedirectValue = event.request.isRedirect()
               console.log('isRequestGesture:' + event.request.isRequestGesture());
