@@ -101,9 +101,9 @@ struct CustomLayout {
     let startPos = 300;
 
     children.forEach((child) => {
-      this.getMargin = JSON.stringify(child.getMargin().top)
-      this.getPadding = JSON.stringify(child.getPadding().top)
-      this.getBorderWidth = JSON.stringify(child.getBorderWidth().top)
+      this.getMargin = JSON.stringify(child.getMargin()?.top)
+      this.getPadding = JSON.stringify(child.getPadding()?.top)
+      this.getBorderWidth = JSON.stringify(child.getBorderWidth()?.top)
       let pos = startPos - child.measureResult.height;
       child.layout({ x: pos, y: pos })
     })
@@ -112,12 +112,18 @@ struct CustomLayout {
   onMeasureSize(selfLayoutInfo: GeometryInfo, children: Array<Measurable>, constraint: ConstraintSizeOptions) {
     let size = 50;
     children.forEach((child) => {
-      this.getMargin2 = JSON.stringify(child.getMargin().top)
-      this.getPadding2 = JSON.stringify(child.getPadding().top)
-      this.getBorderWidth2 = JSON.stringify(child.getBorderWidth().top)
-      let result: MeasureResult = child.measure({ minHeight: size, minWidth: size, maxWidth: size, maxHeight: size })
-      size += 40
-      ;
+      this.getMargin2 = JSON.stringify(child.getMargin()?.top)
+      this.getPadding2 = JSON.stringify(child.getPadding()?.top)
+      this.getBorderWidth2 = JSON.stringify(child.getBorderWidth()?.top)
+      let result: MeasureResult | undefined = child.measure({
+        minHeight: size,
+        minWidth: size,
+        maxWidth: size,
+        maxHeight: size
+      })
+      if (result) {
+       size += 40;
+     };
     })
     return this.result;
   }
