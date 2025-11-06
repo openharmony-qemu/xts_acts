@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import actsNotificationThirdPartyWatchWithoutAbilityTest from "./actsNotificationThirdPartyWatchWithoutAbilityTest.test";
+import actsNotificationThirdPartyWatchWithoutAbilityTest from "./ActsNotificationThirdPartyWatchWithoutAbilityTest.test";
 export default function testsuite() {
   actsNotificationThirdPartyWatchWithoutAbilityTest();
 }
