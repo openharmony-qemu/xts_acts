@@ -1203,41 +1203,41 @@ export default function settingUiJsunit() {
      * @tc.name: open_manager_settings_static_119
      * @tc.desc: check open manager
      */
-    // it('open_manager_settings_static_119', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   let value = settings.openNetworkManagerSettings(abilityContext)
-    //     .then((status)=>{
-    //       console.info("[open_manager_settings_static_119] value is:" + status);
-    //       expect(status).assertTrue();
-    //     })
-    //     .catch((err)=>{
-    //       console.error("[open_manager_settings_static_119] error = " + err);
-    //       if ((err as BusinessError)?.code) {
-    //         expect(err?.code).assertEqual(14800000);
-    //       }
-    //       done();
-    //     })
-    //   done();
-    // });
+    it('open_manager_settings_static_119', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let value = settings.openNetworkManagerSettings(abilityContext)
+        .then((status)=>{
+          console.info("[open_manager_settings_static_119] value is:" + status);
+          expect(status).assertTrue();
+        })
+        .catch((err)=>{
+          console.error("[open_manager_settings_static_119] error = " + err);
+          if ((err as BusinessError)?.code) {
+            expect(err?.code).assertEqual(14800000);
+          }
+          done();
+        })
+      done();
+    });
 
     /**
      * @tc.number: open_manager_settings_static_120
      * @tc.name: open_manager_settings_static_120
      * @tc.desc: check open manager
      */
-  //   it('open_manager_settings_static_120', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-  //       let value = settings.openNetworkManagerSettings(abilityContext)
-  //         .then((status)=>{
-  //           console.info("[open_manager_settings_static_120] value is:" + status);
-  //           expect(status).assertTrue();
-  //         })
-  //         .catch((err)=>{
-  //           console.error("[open_manager_settings_static_120] error = " + err);
-  //           if ((err as BusinessError)?.code) {
-  //             expect(err?.code).assertEqual(14800010);
-  //           }
-  //           done();
-  //         })
-  //     done();
-  //   });
+    it('open_manager_settings_static_120', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let value = settings.openNetworkManagerSettings(abilityContext)
+          .then((status)=>{
+            console.info("[open_manager_settings_static_120] value is:" + status);
+            expect(status).assertTrue();
+          })
+          .catch((err)=>{
+            console.error("[open_manager_settings_static_120] error = " + err);
+            if ((err as BusinessError)?.code) {
+              expect(err?.code).assertEqual(14800010);
+            }
+            done();
+          })
+      done();
+    });
   })
 }
