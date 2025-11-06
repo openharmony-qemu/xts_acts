@@ -46,7 +46,7 @@ import { Callback, RecordData } from '@ohos.base'
 import inspector from '@ohos.arkui.inspector';
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 export enum ThreatType {
   UNKNOWN = -1,

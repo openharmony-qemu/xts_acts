@@ -21,7 +21,7 @@ import { State } from '@ohos.arkui.stateManagement'
 import { Button, ClickEvent, Column, Component, Entry, Row, Web, RecordData } from '@ohos.arkui.component'
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 @Entry

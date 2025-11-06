@@ -28,7 +28,7 @@ import emitter from '@ohos.events.emitter';
 import webView from '@ohos.web.webview';
 import { Callback, RecordData } from '@ohos.base'
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 @Entry
 @Component

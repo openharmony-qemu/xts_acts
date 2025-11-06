@@ -35,7 +35,7 @@ import events_emitter from '@ohos.events.emitter';
 import { Callback,RecordData } from '@ohos.base'
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 @Entry

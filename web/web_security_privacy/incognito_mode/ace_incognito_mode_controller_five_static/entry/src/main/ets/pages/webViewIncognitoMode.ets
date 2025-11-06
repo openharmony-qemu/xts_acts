@@ -40,7 +40,7 @@ import { Callback, RecordData } from '@ohos.base'
 import inspector from '@ohos.arkui.inspector';
 import hilog from '@ohos.hilog';
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 @Entry
 @Component

@@ -23,7 +23,7 @@ import { Callback, RecordData} from '@ohos.base'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import inspector from '@ohos.arkui.inspector';
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 @Entry
