@@ -209,6 +209,7 @@ static void InitPushDisplay(napi_property_descriptor* desc)
 
 static void InitPushWindow2(napi_property_descriptor* desc)
 {
+    int32_t offset = 123;
     napi_property_descriptor descTemp[] = {
         XL("test_OH_WindowManager_GetAllMainWindowInfo_0200",
             Window::Test_OH_WindowManager_GetAllMainWindowInfo_0200),
@@ -228,7 +229,7 @@ static void InitPushWindow2(napi_property_descriptor* desc)
             Window::Test_OH_WindowManager_GetMainWindowSnapshot_0800),
     };
     for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
-        desc[index] = descTemp[index];
+        desc[index + offset] = descTemp[index];
     }
 }
 
@@ -239,7 +240,7 @@ static napi_value Init(napi_env env, napi_value exports)
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "env or exports is null");
         return nullptr;
     }
-    napi_property_descriptor desc[123] = {};
+    napi_property_descriptor desc[131] = {};
     InitPushWindow(desc);
     InitPushWindowPip1(desc);
     InitPushWindowPip2(desc);
