@@ -22,11 +22,6 @@ group("testfwk") {
       "uitestScene:ActsUiTestScene",
       "uitestStatic:ActsUiStaticTest",
     ]
-  } else if (arkxtest_product_feature == "pc") {
-     deps = [
-     "uitest_pc:ActsUiPCTest",
-     "uitestScene:ActsUiTestScene",
-    ]
   } else {
     deps = [
       "uitest:ActsUiTest",
@@ -39,5 +34,11 @@ group("testfwk") {
       "perftest:ActsPerfTestTest",
       "perftestScene:ActsPerfTestScene",
     ]
+  }
+  if (arkxtest_product_feature == "pc") {
+    deps = [
+     "uitest_pc:ActsUiPCTest",
+     "uitestScene:ActsUiTestScene",
+    ]  
   }
 }
