@@ -28,6 +28,7 @@
 #include <vector>
 #include <hilog/log.h>
 #include "common/log_common.h"
+#include "nativebuffer.h"
 
 const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 
@@ -104,7 +105,7 @@ static OH_NativeBuffer *getBuffer()
     OH_NativeBuffer *buffer = OH_NativeBuffer_Alloc(&config);
     return buffer;
 }
-static napi_value OHNativeBufferAlloc(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferAlloc(napi_env env, napi_callback_info info)
 {
 
     napi_value result = nullptr;
@@ -117,7 +118,7 @@ static napi_value OHNativeBufferAlloc(napi_env env, napi_callback_info info)
     OH_NativeBuffer_Unreference(buffer);
     return result;
 }
-static napi_value OHNativeBufferAllocAbnormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferAllocAbnormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     int backInfo = FAIL;
@@ -130,7 +131,7 @@ static napi_value OHNativeBufferAllocAbnormal(napi_env env, napi_callback_info i
     OH_NativeBuffer_Unreference(buffer);
     return result;
 }
-static napi_value OHNativeBufferReference(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferReference(napi_env env, napi_callback_info info)
 {
     int backInfo = FAIL;
     OH_NativeBuffer *buffer = getBuffer();
@@ -143,7 +144,7 @@ static napi_value OHNativeBufferReference(napi_env env, napi_callback_info info)
     OH_NativeBuffer_Unreference(buffer);
     return result;
 }
-static napi_value OHNativeBufferReferenceAbnormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferReferenceAbnormal(napi_env env, napi_callback_info info)
 {
     int backInfo = FAIL;
     int32_t ret = OH_NativeBuffer_Reference(nullptr);
@@ -154,7 +155,7 @@ static napi_value OHNativeBufferReferenceAbnormal(napi_env env, napi_callback_in
     napi_create_int32(env, backInfo, &result);
     return result;
 }
-static napi_value OHNativeBufferUnreference(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferUnreference(napi_env env, napi_callback_info info)
 {
     int backInfo = FAIL;
     OH_NativeBuffer *buffer = getBuffer();
@@ -168,8 +169,7 @@ static napi_value OHNativeBufferUnreference(napi_env env, napi_callback_info inf
     OH_NativeBuffer_Unreference(buffer);
     return result;
 }
-
-static napi_value OHNativeBufferUnreferenceAbnormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferUnreferenceAbnormal(napi_env env, napi_callback_info info)
 {
     int backInfo = FAIL;
 
@@ -181,8 +181,7 @@ static napi_value OHNativeBufferUnreferenceAbnormal(napi_env env, napi_callback_
     napi_create_int32(env, backInfo, &result);
     return result;
 }
-
-static napi_value OHNativeBufferGetConfig(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferGetConfig(napi_env env, napi_callback_info info)
 {
     int backInfo = FAIL;
     OH_NativeBuffer *buffer = getBuffer();
@@ -202,8 +201,7 @@ static napi_value OHNativeBufferGetConfig(napi_env env, napi_callback_info info)
     OH_NativeBuffer_Unreference(buffer);
     return result;
 }
-
-static napi_value OHNativeBufferMap(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferMap(napi_env env, napi_callback_info info)
 {
     int backInfo = FAIL;
     OH_NativeBuffer *buffer = getBuffer();
@@ -218,7 +216,7 @@ static napi_value OHNativeBufferMap(napi_env env, napi_callback_info info)
     OH_NativeBuffer_Unreference(buffer);
     return result;
 }
-static napi_value OHNativeBufferMapAbnormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferMapAbnormal(napi_env env, napi_callback_info info)
 {
     int backInfo = FAIL;
     void *virAddr = nullptr;
@@ -230,7 +228,7 @@ static napi_value OHNativeBufferMapAbnormal(napi_env env, napi_callback_info inf
     napi_create_int32(env, backInfo, &result);
     return result;
 }
-static napi_value OHNativeBufferUnmap(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferUnmap(napi_env env, napi_callback_info info)
 {
     int backInfo = FAIL;
     OH_NativeBuffer *buffer = getBuffer();
@@ -244,7 +242,7 @@ static napi_value OHNativeBufferUnmap(napi_env env, napi_callback_info info)
     OH_NativeBuffer_Unreference(buffer);
     return result;
 }
-static napi_value OHNativeBufferUnmapAbnormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferUnmapAbnormal(napi_env env, napi_callback_info info)
 {
     int backInfo = FAIL;
     int32_t ret = OH_NativeBuffer_Unmap(nullptr);
@@ -255,7 +253,7 @@ static napi_value OHNativeBufferUnmapAbnormal(napi_env env, napi_callback_info i
     napi_create_int32(env, backInfo, &result);
     return result;
 }
-static napi_value OHNativeBufferGetSeqNum(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferGetSeqNum(napi_env env, napi_callback_info info)
 {
     int backInfo = FAIL;
     OH_NativeBuffer *buffer = getBuffer();
@@ -271,7 +269,7 @@ static napi_value OHNativeBufferGetSeqNum(napi_env env, napi_callback_info info)
     OH_NativeBuffer_Unreference(buffer);
     return result;
 }
-static napi_value OHNativeBufferGetSeqNumAbnormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferGetSeqNumAbnormal(napi_env env, napi_callback_info info)
 {
     int backInfo = FAIL;
     uint32_t id = OH_NativeBuffer_GetSeqNum(nullptr);
@@ -282,8 +280,7 @@ static napi_value OHNativeBufferGetSeqNumAbnormal(napi_env env, napi_callback_in
     napi_create_int32(env, backInfo, &result);
     return result;
 }
-
-static napi_value OHNativeBufferAllocNullptr(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferAllocNullptr(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer *ptr = OH_NativeBuffer_Alloc(nullptr);
@@ -308,7 +305,7 @@ void nativeBufferConfigArrTest(napi_env &env, napi_value &result,
         napi_set_element(env, result, index, resultIndex);
     }
 }
-static napi_value OHNativeBufferAllocNormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferAllocNormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     napi_create_array_with_length(env, NUMBER_7, &result);
@@ -357,7 +354,7 @@ static napi_value OHNativeBufferAllocNormal(napi_env env, napi_callback_info inf
     nativeBufferConfigArrTest(env, result, nativeBufferConfigArr);
     return result;
 }
-static napi_value OHNativeBufferAllocAbormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferAllocAbormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     napi_create_array_with_length(env, NUMBER_7, &result);
@@ -403,8 +400,7 @@ static napi_value OHNativeBufferAllocAbormal(napi_env env, napi_callback_info in
     }
     return result;
 }
-
-static napi_value OHNativeBufferAllocMuch(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferAllocMuch(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config nativeBufferConfig = {
@@ -428,8 +424,7 @@ static napi_value OHNativeBufferAllocMuch(napi_env env, napi_callback_info info)
     }
     return result;
 }
-
-static napi_value OHNativeBufferFromNativeWindowBufferNullptr(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferFromNativeWindowBufferNullptr(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     napi_create_array_with_length(env, NUMBER_2, &result);
@@ -467,9 +462,8 @@ static napi_value OHNativeBufferFromNativeWindowBufferNullptr(napi_env env, napi
     OH_NativeImage_Destroy(&_image);
     return result;
 }
-
 // 失败
-static napi_value OHNativeBufferFromNativeWindowBufferNormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferFromNativeWindowBufferNormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     napi_create_array_with_length(env, NUMBER_3, &result);
@@ -510,8 +504,7 @@ static napi_value OHNativeBufferFromNativeWindowBufferNormal(napi_env env, napi_
     OH_NativeImage_Destroy(&_image);
     return result;
 }
-
-static napi_value OHNativeBufferGetConfigNullptr(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferGetConfigNullptr(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
 
@@ -526,8 +519,7 @@ static napi_value OHNativeBufferGetConfigNullptr(napi_env env, napi_callback_inf
 
     return result;
 }
-
-static napi_value OHNativeBufferGetConfigNormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferGetConfigNormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config nativeBufferConfig = {
@@ -560,16 +552,14 @@ static napi_value OHNativeBufferGetConfigNormal(napi_env env, napi_callback_info
     OH_NativeBuffer_Unreference(nativeBuffer);
     return result;
 }
-
-static napi_value OHNativeBufferGetSeqNumNullptr(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferGetSeqNumNullptr(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     uint32_t ret = OH_NativeBuffer_GetSeqNum(nullptr);
     napi_create_int32(env, ret, &result);
     return result;
 }
-
-static napi_value OHNativeBufferGetSeqNumNormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferGetSeqNumNormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config nativeBufferConfig = {
@@ -589,14 +579,14 @@ static napi_value OHNativeBufferGetSeqNumNormal(napi_env env, napi_callback_info
     OH_NativeBuffer_Unreference(nativeBuffer);
     return result;
 }
-static napi_value OHNativeBuffeMapNullptr(napi_env env, napi_callback_info info)
+napi_value OHNativeBuffeMapNullptr(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     uint32_t ret = OH_NativeBuffer_Map(nullptr, nullptr);
     napi_create_int32(env, ret, &result);
     return result;
 }
-static napi_value OHNativeBufferMapNormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferMapNormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     //
@@ -617,7 +607,7 @@ static napi_value OHNativeBufferMapNormal(napi_env env, napi_callback_info info)
     OH_NativeBuffer_Unreference(nativeBuffer);
     return result;
 }
-static napi_value OHNativeBuffeMapPlanesNullptr(napi_env env, napi_callback_info info)
+napi_value OHNativeBuffeMapPlanesNullptr(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     napi_value result1 = nullptr;
@@ -640,7 +630,7 @@ static napi_value OHNativeBuffeMapPlanesNullptr(napi_env env, napi_callback_info
     OH_NativeBuffer_Unreference(nativeBuffer);
     return result;
 }
-static napi_value OHNativeBufferMapPlanesAbNormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferMapPlanesAbNormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     napi_create_array_with_length(env, NUMBER_3, &result);
@@ -663,8 +653,7 @@ static napi_value OHNativeBufferMapPlanesAbNormal(napi_env env, napi_callback_in
     OH_NativeBuffer_Unreference(nativeBuffer);
     return result;
 }
-
-static napi_value OHNativeBufferMapPlanesNormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferMapPlanesNormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     napi_create_array_with_length(env, NUMBER_3, &result);
@@ -695,21 +684,21 @@ static napi_value OHNativeBufferMapPlanesNormal(napi_env env, napi_callback_info
     }
     return result;
 }
-static napi_value OHNativeBuffeReferenceNullptr(napi_env env, napi_callback_info info)
+napi_value OHNativeBuffeReferenceNullptr(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     int32_t ret = OH_NativeBuffer_Reference(nullptr);
     napi_create_int32(env, ret, &result);
     return result;
 }
-static napi_value OHNativeBuffeUnreferenceNullptr(napi_env env, napi_callback_info info)
+napi_value OHNativeBuffeUnreferenceNullptr(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     int32_t ret = OH_NativeBuffer_Unreference(nullptr);
     napi_create_int32(env, ret, &result);
     return result;
 }
-static napi_value OHNativeBufferReferenceNormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferReferenceNormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config nativeBufferConfig = {
@@ -724,7 +713,7 @@ static napi_value OHNativeBufferReferenceNormal(napi_env env, napi_callback_info
     OH_NativeBuffer_Unreference(nativeBuffer);
     return result;
 }
-static napi_value OHNativeBufferReferenceMax(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferReferenceMax(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config nativeBufferConfig = {
@@ -744,7 +733,7 @@ static napi_value OHNativeBufferReferenceMax(napi_env env, napi_callback_info in
     OH_NativeBuffer_Unreference(nativeBuffer);
     return result;
 }
-static napi_value OHNativeBufferUnreferenceNormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferUnreferenceNormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config nativeBufferConfig = {
@@ -755,18 +744,21 @@ static napi_value OHNativeBufferUnreferenceNormal(napi_env env, napi_callback_in
     };
     OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&nativeBufferConfig);
     int32_t ret = OH_NativeBuffer_Unreference(nativeBuffer);
-    napi_create_int32(env, ret, &result);
-    OH_NativeBuffer_Unreference(nativeBuffer);
+    if (ret != 0) {
+        napi_create_int32(env, NUMBER_4001, &result);
+        return result;
+    }
+    napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-static napi_value OHNativeBuffeUnmapNullptr(napi_env env, napi_callback_info info)
+napi_value OHNativeBuffeUnmapNullptr(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     int32_t ret = OH_NativeBuffer_Unmap(nullptr);
     napi_create_int32(env, ret, &result);
     return result;
 }
-static napi_value OHNativeBufferUnmapNormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferUnmapNormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config nativeBufferConfig = {
@@ -781,7 +773,7 @@ static napi_value OHNativeBufferUnmapNormal(napi_env env, napi_callback_info inf
     OH_NativeBuffer_Unreference(nativeBuffer);
     return result;
 }
-static napi_value OHNativeBufferGetColorSpaceFirst(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferGetColorSpaceFirst(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config nativeBufferConfig = {
@@ -801,7 +793,7 @@ static napi_value OHNativeBufferGetColorSpaceFirst(napi_env env, napi_callback_i
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-static napi_value OHNativeBufferSetColorSpaceNormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferSetColorSpaceNormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config nativeBufferConfig = {
@@ -833,8 +825,7 @@ static napi_value OHNativeBufferSetColorSpaceNormal(napi_env env, napi_callback_
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
-static napi_value OHNativeBufferSetColorSpaceNullptr(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferSetColorSpaceNullptr(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer_ColorSpace colorSpace = OH_NativeBuffer_ColorSpace::OH_COLORSPACE_ADOBERGB_LIMIT;
@@ -842,7 +833,7 @@ static napi_value OHNativeBufferSetColorSpaceNullptr(napi_env env, napi_callback
     napi_create_int32(env, ret, &result);
     return result;
 }
-static napi_value OHNativeBufferSetColorSpaceAbnormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferSetColorSpaceAbnormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config nativeBufferConfig = {
@@ -858,7 +849,7 @@ static napi_value OHNativeBufferSetColorSpaceAbnormal(napi_env env, napi_callbac
     OH_NativeBuffer_Unreference(nativeBuffer);
     return result;
 }
-static napi_value OHNativeBufferGetColorSpaceNullptr(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferGetColorSpaceNullptr(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     napi_value result1 = nullptr;
@@ -887,7 +878,7 @@ static napi_value OHNativeBufferGetColorSpaceNullptr(napi_env env, napi_callback
     OH_NativeBuffer_Unreference(nativeBuffer);
     return result;
 }
-static napi_value OHNativeBufferGetMetadataValueFirst(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferGetMetadataValueFirst(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config nativeBufferConfig = {
@@ -909,7 +900,6 @@ static napi_value OHNativeBufferGetMetadataValueFirst(napi_env env, napi_callbac
     OH_NativeBuffer_Unreference(nativeBuffer);
     return result;
 }
-
 napi_value OHNativeBufferSetDynamicMetadataValue1(napi_env env, OH_NativeBuffer *nativeBuffer)
 {
     napi_value result = nullptr;
@@ -958,7 +948,6 @@ napi_value OHNativeBufferSetDynamicMetadataValue1(napi_env env, OH_NativeBuffer 
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
 napi_value OHNativeBufferSetDynamicMetadataValue2(napi_env env, OH_NativeBuffer *nativeBuffer)
 {
     napi_value result = nullptr;
@@ -1006,7 +995,6 @@ napi_value OHNativeBufferSetDynamicMetadataValue2(napi_env env, OH_NativeBuffer 
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
 napi_value OHNativeBufferSetDynamicMetadataValue3(napi_env env, OH_NativeBuffer *nativeBuffer)
 {
     napi_value result = nullptr;
@@ -1057,8 +1045,7 @@ napi_value OHNativeBufferSetDynamicMetadataValue3(napi_env env, OH_NativeBuffer 
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
-static napi_value OHNativeBufferSetDynamicMetadataValue(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferSetDynamicMetadataValue(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config nativeBufferConfig = {
@@ -1087,7 +1074,7 @@ static napi_value OHNativeBufferSetDynamicMetadataValue(napi_env env, napi_callb
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-static napi_value OHNativeBufferSetMetadataValueTimes(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferSetMetadataValueTimes(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config nativeBufferConfig = {
@@ -1124,7 +1111,6 @@ static napi_value OHNativeBufferSetMetadataValueTimes(napi_env env, napi_callbac
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
 napi_value OHNativeBufferSetStaticMetadataValue1(napi_env env, OH_NativeBuffer *nativeBuffer)
 {
     napi_value result = nullptr;
@@ -1173,7 +1159,6 @@ napi_value OHNativeBufferSetStaticMetadataValue1(napi_env env, OH_NativeBuffer *
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
 napi_value OHNativeBufferSetStaticMetadataValue2(napi_env env, OH_NativeBuffer *nativeBuffer)
 {
     napi_value result = nullptr;
@@ -1221,7 +1206,6 @@ napi_value OHNativeBufferSetStaticMetadataValue2(napi_env env, OH_NativeBuffer *
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
 napi_value OHNativeBufferSetStaticMetadataValue3(napi_env env, OH_NativeBuffer *nativeBuffer)
 {
     napi_value result = nullptr;
@@ -1272,8 +1256,7 @@ napi_value OHNativeBufferSetStaticMetadataValue3(napi_env env, OH_NativeBuffer *
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
-static napi_value OHNativeBufferSetStaticMetadataValue(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferSetStaticMetadataValue(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     napi_create_array_with_length(env, NUMBER_20, &result);
@@ -1301,7 +1284,6 @@ static napi_value OHNativeBufferSetStaticMetadataValue(napi_env env, napi_callba
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
 napi_value OHNativeBufferSetMetadataValue1(napi_env env, OH_NativeBuffer *nativeBuffer)
 {
     napi_value result = nullptr;
@@ -1352,7 +1334,6 @@ napi_value OHNativeBufferSetMetadataValue1(napi_env env, OH_NativeBuffer *native
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
 napi_value OHNativeBufferSetMetadataValue2(napi_env env, OH_NativeBuffer *nativeBuffer)
 {
     napi_value result = nullptr;
@@ -1401,7 +1382,6 @@ napi_value OHNativeBufferSetMetadataValue2(napi_env env, OH_NativeBuffer *native
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
 napi_value OHNativeBufferSetMetadataValue3(napi_env env, OH_NativeBuffer *nativeBuffer)
 {
     napi_value result = nullptr;
@@ -1446,7 +1426,6 @@ napi_value OHNativeBufferSetMetadataValue3(napi_env env, OH_NativeBuffer *native
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
 napi_value OHNativeBufferSetMetadataValue4(napi_env env, OH_NativeBuffer *nativeBuffer)
 {
     napi_value result = nullptr;
@@ -1472,8 +1451,7 @@ napi_value OHNativeBufferSetMetadataValue4(napi_env env, OH_NativeBuffer *native
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
-static napi_value OHNativeBufferSetMetadataValue(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferSetMetadataValue(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     napi_create_array_with_length(env, NUMBER_20, &result);
@@ -1506,7 +1484,7 @@ static napi_value OHNativeBufferSetMetadataValue(napi_env env, napi_callback_inf
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-static napi_value OHNativeBufferSetNullMetadataValue(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferSetNullMetadataValue(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config nativeBufferConfig = {
@@ -1524,7 +1502,7 @@ static napi_value OHNativeBufferSetNullMetadataValue(napi_env env, napi_callback
     OH_NativeBuffer_Unreference(nativeBuffer);
     return result;
 }
-static napi_value OHNativeBufferSetMetadataValueNullptr(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferSetMetadataValueNullptr(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     napi_value result1 = nullptr;
@@ -1548,7 +1526,7 @@ static napi_value OHNativeBufferSetMetadataValueNullptr(napi_env env, napi_callb
     OH_NativeBuffer_Unreference(nativeBuffer);
     return result;
 }
-static napi_value OHNativeBufferGetMetadataValueAbnormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferGetMetadataValueAbnormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     napi_value result1 = nullptr;
@@ -1572,7 +1550,7 @@ static napi_value OHNativeBufferGetMetadataValueAbnormal(napi_env env, napi_call
     OH_NativeBuffer_Unreference(nativeBuffer);
     return result;
 }
-static napi_value OHNativeBufferGetMetadataValueNullptr(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferGetMetadataValueNullptr(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     napi_value result1 = nullptr;
@@ -1617,7 +1595,7 @@ static napi_value OHNativeBufferGetMetadataValueNullptr(napi_env env, napi_callb
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-static napi_value OHNativeBufferY8Y16USAGEandAlloc(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferY8Y16USAGEandAlloc(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer_Config Config = {
@@ -1650,8 +1628,7 @@ static napi_value OHNativeBufferY8Y16USAGEandAlloc(napi_env env, napi_callback_i
     OH_NativeBuffer_Unreference(nativeBuffer);
     return result;
 }
-
-static napi_value OHNativeBufferMapWaitFence0ms(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferMapWaitFence0ms(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer *nativeBuffer = getBuffer();
@@ -1696,8 +1673,7 @@ static napi_value OHNativeBufferMapWaitFence0ms(napi_env env, napi_callback_info
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
-static napi_value OHNativeBufferMapWaitFence100ms(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferMapWaitFence100ms(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer *nativeBuffer = getBuffer();
@@ -1746,8 +1722,7 @@ static napi_value OHNativeBufferMapWaitFence100ms(napi_env env, napi_callback_in
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
-static napi_value OHNativeBufferMapWaitFence5000ms(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferMapWaitFence5000ms(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer *nativeBuffer = getBuffer();
@@ -1792,8 +1767,7 @@ static napi_value OHNativeBufferMapWaitFence5000ms(napi_env env, napi_callback_i
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
-static napi_value OHNativeBufferMapWaitFenceNullptr(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferMapWaitFenceNullptr(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer *nativeBuffer = getBuffer();
@@ -1836,8 +1810,7 @@ static napi_value OHNativeBufferMapWaitFenceNullptr(napi_env env, napi_callback_
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
-static napi_value OHNativeBufferMapWaitFenceAbnormal(napi_env env, napi_callback_info info)
+napi_value OHNativeBufferMapWaitFenceAbnormal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
     OH_NativeBuffer *nativeBuffer = getBuffer();
@@ -1880,7 +1853,6 @@ static napi_value OHNativeBufferMapWaitFenceAbnormal(napi_env env, napi_callback
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
 napi_value OHNativeBufferSetMetadataValueEnumTraversal(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -1916,146 +1888,26 @@ napi_value OHNativeBufferSetMetadataValueEnumTraversal(napi_env env, napi_callba
     napi_create_int32(env, SUCCESS, &result);
     return result;
 }
-
-napi_value NativeBufferInit(napi_env env, napi_value exports)
+napi_value OHNativeBufferSetMetadataValueREGION(napi_env env, napi_callback_info info)
 {
-    napi_property_descriptor desc[] = {
-        {"oHNativeBufferAlloc", nullptr, OHNativeBufferAlloc, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHNativeBufferReference", nullptr, OHNativeBufferReference, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHNativeBufferUnreference", nullptr, OHNativeBufferUnreference, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
-        {"oHNativeBufferGetConfig", nullptr, OHNativeBufferGetConfig, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHNativeBufferMap", nullptr, OHNativeBufferMap, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHNativeBufferUnmap", nullptr, OHNativeBufferUnmap, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHNativeBufferGetSeqNum", nullptr, OHNativeBufferGetSeqNum, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHNativeBufferAllocAbnormal", nullptr, OHNativeBufferAllocAbnormal, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
-        {"oHNativeBufferReferenceAbnormal", nullptr, OHNativeBufferReferenceAbnormal, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferUnreferenceAbnormal", nullptr, OHNativeBufferUnreferenceAbnormal, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferMapAbnormal", nullptr, OHNativeBufferMapAbnormal, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
-        {"oHNativeBufferUnmapAbnormal", nullptr, OHNativeBufferUnmapAbnormal, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
-        {"oHNativeBufferGetSeqNumAbnormal", nullptr, OHNativeBufferGetSeqNumAbnormal, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferAllocNullptr", nullptr, OHNativeBufferAllocNullptr, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
-        {"oHNativeBufferAllocNormal", nullptr, OHNativeBufferAllocNormal, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
-        {"oHNativeBufferMapWaitFence0ms", nullptr, OHNativeBufferMapWaitFence0ms, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferMapWaitFence100ms", nullptr, OHNativeBufferMapWaitFence100ms, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferMapWaitFence5000ms", nullptr, OHNativeBufferMapWaitFence5000ms, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferMapWaitFenceNullptr", nullptr, OHNativeBufferMapWaitFenceNullptr, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferMapWaitFenceAbnormal", nullptr, OHNativeBufferMapWaitFenceAbnormal,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHNativeBufferSetMetadataValueEnumTraversal", nullptr, OHNativeBufferSetMetadataValueEnumTraversal,
-         nullptr, nullptr, nullptr, napi_default, nullptr},
-    };
-    napi_define_properties(env, exports, sizeof(desc) / sizeof(napi_property_descriptor), desc);
-    return exports;
+    napi_value result = nullptr;
+    OH_NativeBuffer *nativeBuffer = getBuffer();
+    if (nativeBuffer == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+        return result;
+    }
+    int32_t len = NUMBER_60;
+    uint8_t metaData[len];
+    for (int i = 0; i < len; ++i) {
+        metaData[i] = static_cast<uint8_t>(i);
+    }
+    int32_t flag = OH_NativeBuffer_SetMetadataValue(
+        nativeBuffer, OH_REGION_OF_INTEREST_METADATA, len, metaData);
+    if (flag != 0) {
+        napi_create_int32(env, NUMBER_4001, &result);
+        return result;
+    }
+    OH_NativeBuffer_Unreference(nativeBuffer);
+    napi_create_int32(env, SUCCESS, &result);
+    return result;
 }
-
-napi_value NativeBufferInit2(napi_env env, napi_value exports)
-{
-    napi_property_descriptor desc[] = {
-        {"oHNativeBufferAllocAbormal", nullptr, OHNativeBufferAllocAbormal, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
-        {"oHNativeBufferAllocMuch", nullptr, OHNativeBufferAllocMuch, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHNativeBufferFromNativeWindowBufferNullptr", nullptr, OHNativeBufferFromNativeWindowBufferNullptr, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"oHNativeBufferFromNativeWindowBufferNormal", nullptr, OHNativeBufferFromNativeWindowBufferNormal, nullptr,
-         nullptr, nullptr, napi_default, nullptr},
-        {"oHNativeBufferGetConfigNullptr", nullptr, OHNativeBufferGetConfigNullptr, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferGetConfigNormal", nullptr, OHNativeBufferGetConfigNormal, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferGetSeqNumNullptr", nullptr, OHNativeBufferGetSeqNumNullptr, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferGetSeqNumNormal", nullptr, OHNativeBufferGetSeqNumNormal, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBuffeMapNullptr", nullptr, OHNativeBuffeMapNullptr, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHNativeBufferMapNormal", nullptr, OHNativeBufferMapNormal, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"oHNativeBuffeMapPlanesNullptr", nullptr, OHNativeBuffeMapPlanesNullptr, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferMapPlanesAbNormal", nullptr, OHNativeBufferMapPlanesAbNormal, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferMapPlanesNormal", nullptr, OHNativeBufferMapPlanesNormal, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBuffeReferenceNullptr", nullptr, OHNativeBuffeReferenceNullptr, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBuffeUnreferenceNullptr", nullptr, OHNativeBuffeUnreferenceNullptr, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferReferenceNormal", nullptr, OHNativeBufferReferenceNormal, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferReferenceMax", nullptr, OHNativeBufferReferenceMax, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
-        {"oHNativeBufferUnreferenceNormal", nullptr, OHNativeBufferUnreferenceNormal, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-    };
-    napi_define_properties(env, exports, sizeof(desc) / sizeof(napi_property_descriptor), desc);
-    return exports;
-}
-
-EXTERN_C_START
-static napi_value Init(napi_env env, napi_value exports)
-{
-    NativeBufferInit(env, exports);
-    NativeBufferInit2(env, exports);
-    napi_property_descriptor desc[] = {
-        {"oHNativeBuffeUnmapNullptr", nullptr, OHNativeBuffeUnmapNullptr, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
-        {"oHNativeBufferUnmapNormal", nullptr, OHNativeBufferUnmapNormal, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
-        {"oHNativeBufferGetColorSpaceFirst", nullptr, OHNativeBufferGetColorSpaceFirst, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferSetColorSpaceNormal", nullptr, OHNativeBufferSetColorSpaceNormal, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferSetColorSpaceNullptr", nullptr, OHNativeBufferSetColorSpaceNullptr, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferSetColorSpaceAbnormal", nullptr, OHNativeBufferSetColorSpaceAbnormal, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferGetColorSpaceNullptr", nullptr, OHNativeBufferGetColorSpaceNullptr, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferGetMetadataValueFirst", nullptr, OHNativeBufferGetMetadataValueFirst, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferSetDynamicMetadataValue", nullptr, OHNativeBufferSetDynamicMetadataValue, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"oHNativeBufferSetMetadataValueTimes", nullptr, OHNativeBufferSetMetadataValueTimes, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferSetStaticMetadataValue", nullptr, OHNativeBufferSetStaticMetadataValue, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"oHNativeBufferSetMetadataValue", nullptr, OHNativeBufferSetMetadataValue, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferSetNullMetadataValue", nullptr, OHNativeBufferSetNullMetadataValue, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"oHNativeBufferSetMetadataValueNullptr", nullptr, OHNativeBufferSetMetadataValueNullptr, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"oHNativeBufferGetMetadataValueAbnormal", nullptr, OHNativeBufferGetMetadataValueAbnormal, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"oHNativeBufferGetMetadataValueNullptr", nullptr, OHNativeBufferGetMetadataValueNullptr, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-        {"oHNativeBufferY8Y16USAGEandAlloc", nullptr, OHNativeBufferY8Y16USAGEandAlloc, nullptr, nullptr,
-         nullptr, napi_default, nullptr},
-    };
-    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
-    return exports;
-}
-EXTERN_C_END
-
-static napi_module demoModule = {
-    .nm_version = 1,
-    .nm_flags = 0,
-    .nm_filename = nullptr,
-    .nm_register_func = Init,
-    .nm_modname = "nativebuffer",
-    .nm_priv = ((void *)0),
-    .reserved = {0},
-};
-
-extern "C" __attribute__((constructor)) void RegisterModule(void) { napi_module_register(&demoModule); };

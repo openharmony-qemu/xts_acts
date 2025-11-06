@@ -7,5 +7,5 @@ set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${NATIVERENDER_ROOT_PATH}
                     ${NATIVERENDER_ROOT_PATH}/include)
 
-add_library(nativebuffer SHARED nativebuffer.cpp)
+add_library(nativebuffer SHARED nativebuffer.cpp NativeBufferTest.cpp)
 target_link_libraries(nativebuffer PUBLIC libhilog_ndk.z.so libace_napi.z.so  libnative_buffer.so libnative_window.so libnative_image.so libEGL.so libGLESv3.so libipc_capi.so)
