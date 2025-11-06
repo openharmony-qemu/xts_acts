@@ -23,8 +23,8 @@ import notificationExtensionSubscription from '@ohos.notificationExtensionSubscr
 import common from '@ohos.app.ability.common';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
-let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
-let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
+let domain: int = 0x0000;
+let tag: string = 'testTag';
 
 let context: common.UIAbilityContext;
 
@@ -36,9 +36,9 @@ function createBundleWithoutUid(bundle: string): notificationExtensionSubscripti
   return { bundle: bundle };
 }
 
-export default function abilityTest() {
+export default function ActsNotificationThirdPartyWatchPermissionTest() {
 
-  describe("abilityTest", (): void => {
+  describe("ActsNotificationThirdPartyWatchPermissionTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     beforeAll(() => {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
@@ -57,12 +57,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : Sub_Notification_Ans_ThreePartyWatch_Static_1000
-     * @tc.name      : Notification_Ans_ThreePartyWatch_Static_1000
-     * @tc.desc      : test openSubscriptionSettings Permission denied 201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     Sub_Notification_Ans_ThreePartyWatch_Static_1000
+     * @tc.name       Sub_Notification_Ans_ThreePartyWatch_Static_1000
+     * @tc.desc       test openSubscriptionSettings Permission denied 201
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it("Notification_Ans_ThreePartyWatch_Static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -71,17 +71,17 @@ export default function abilityTest() {
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
           notificationExtensionSubscription.openSubscriptionSettings(context).then(() => {
-            hilog.info(0x0000, 'testTag', `${NAME} success`);
+            hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
             expect().assertFail();
             done();
           }).catch((e: Error) => {
             let err = e as BusinessError;
-            hilog.error(0x0000, 'testTag', `${NAME} error, code: ${err.code}, message: ${err.message}`);
+            hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
             expect(err.code).assertEqual(201);
             done();
           });
         } catch (err: BusinessError) {
-          hilog.error(0x0000, 'testTag', `${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
         }
@@ -89,12 +89,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number    : Sub_Notification_Ans_ThreePartyWatch_Static_1013
-     * @tc.name      : Notification_Ans_ThreePartyWatch_Static_1013
-     * @tc.desc      : test unsubscribe Permission denied 201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     Sub_Notification_Ans_ThreePartyWatch_Static_1013
+     * @tc.name       Sub_Notification_Ans_ThreePartyWatch_Static_1013
+     * @tc.desc       test unsubscribe Permission denied 201
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it("Notification_Ans_ThreePartyWatch_Static_1013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -103,29 +103,29 @@ export default function abilityTest() {
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE}  start`);
           notificationExtensionSubscription.unsubscribe().then(() => {
-            hilog.info(0x0000, 'testTag', `${NAME} success`);
+            hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
             expect().assertFail();
             done();
           }).catch((e: Error) => {
             let err = e as BusinessError;
-            hilog.error(0x0000, 'testTag', `${NAME} error, code: ${err.code}, message: ${err.message}`);
+            hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
             expect(err.code).assertEqual(201);
             done();
           });
         } catch (err: BusinessError) {
-          hilog.error(0x0000, 'testTag', `${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
         }
       })
 
     /**
-     * @tc.number    : Sub_Notification_Ans_ThreePartyWatch_Static_1016
-     * @tc.name      : Notification_Ans_ThreePartyWatch_Static_1016
-     * @tc.desc      : test getSubscribeInfo Permission denied 201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     Sub_Notification_Ans_ThreePartyWatch_Static_1016
+     * @tc.name       Sub_Notification_Ans_ThreePartyWatch_Static_1016
+     * @tc.desc       test getSubscribeInfo Permission denied 201
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it("Notification_Ans_ThreePartyWatch_Static_1016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -135,30 +135,30 @@ export default function abilityTest() {
           hilog.info(0x0000, 'testTag', `${TESTCASE}  start`);
           notificationExtensionSubscription.getSubscribeInfo()
             .then((data: notificationExtensionSubscription.NotificationExtensionSubscriptionInfo[]) => {
-              hilog.info(0x0000, 'testTag', `${NAME} success. data: ${JSON.stringify(data)}`);
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success. data: ${JSON.stringify(data)}`);
               expect().assertFail();
               done();
             })
             .catch((e: Error) => {
               let err = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${NAME} error, code: ${err.code}, message: ${err.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
               expect(err.code).assertEqual(201);
               done();
             });
         } catch (err: BusinessError) {
-          hilog.error(0x0000, 'testTag', `${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
         }
       })
 
     /**
-     * @tc.number    : Sub_Notification_Ans_ThreePartyWatch_Static_1019
-     * @tc.name      : Notification_Ans_ThreePartyWatch_Static_1019
-     * @tc.desc      : test getAllSubscriptionBundles Permission denied 201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     Sub_Notification_Ans_ThreePartyWatch_Static_1019
+     * @tc.name       Sub_Notification_Ans_ThreePartyWatch_Static_1019
+     * @tc.desc       test getAllSubscriptionBundles Permission denied 201
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it("Notification_Ans_ThreePartyWatch_Static_1019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -168,30 +168,30 @@ export default function abilityTest() {
           hilog.info(0x0000, 'testTag', `${TESTCASE}  start`);
           notificationExtensionSubscription.getAllSubscriptionBundles()
             .then((data: notificationExtensionSubscription.BundleOption[]) => {
-              hilog.info(0x0000, 'testTag', `${NAME} success. data: ${JSON.stringify(data)}`);
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success. data: ${JSON.stringify(data)}`);
               expect().assertFail();
               done();
             })
             .catch((e: Error) => {
               let err = e as BusinessError;
-              hilog.error(0x0000, 'testTag', `${NAME} error, code: ${err.code}, message: ${err.message}`);
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
               expect(err.code).assertEqual(202);
               done();
             });
         } catch (err: BusinessError) {
-          hilog.error(0x0000, 'testTag', `${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
         }
       })
 
     /**
-     * @tc.number    : Sub_Notification_Ans_ThreePartyWatch_Static_1022
-     * @tc.name      : Notification_Ans_ThreePartyWatch_Static_1022
-     * @tc.desc      : test getAllSubscriptionBundles Permission denied 201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     Sub_Notification_Ans_ThreePartyWatch_Static_1022
+     * @tc.name       Sub_Notification_Ans_ThreePartyWatch_Static_1022
+     * @tc.desc       test getAllSubscriptionBundles Permission denied 201
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it("Sub_Notification_Ans_ThreePartyWatch_Static_1022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -200,29 +200,29 @@ export default function abilityTest() {
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE}  start`);
           notificationExtensionSubscription.isUserGranted().then((data: boolean) => {
-            hilog.info(0x0000, 'testTag', `${NAME} success. data: ${JSON.stringify(data)}`);
+            hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success. data: ${JSON.stringify(data)}`);
             expect().assertFail();
             done();
           }).catch((e: Error) => {
             let err = e as BusinessError;
-            hilog.error(0x0000, 'testTag', `${NAME} error, code: ${err.code}, message: ${err.message}`);
+            hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
             expect(err.code).assertEqual(201);
             done();
           });
         } catch (err: BusinessError) {
-          hilog.error(0x0000, 'testTag', `${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
         }
       })
 
     /**
-     * @tc.number    : Sub_Notification_Ans_ThreePartyWatch_Static_1025
-     * @tc.name      : Notification_Ans_ThreePartyWatch_Static_1025
-     * @tc.desc      : test getUserGrantedState Permission denied 201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     Sub_Notification_Ans_ThreePartyWatch_Static_1025
+     * @tc.name       Sub_Notification_Ans_ThreePartyWatch_Static_1025
+     * @tc.desc       test getUserGrantedState Permission denied 201
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it("Sub_Notification_Ans_ThreePartyWatch_Static_1025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -234,29 +234,29 @@ export default function abilityTest() {
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE}  start`);
           notificationExtensionSubscription.getUserGrantedState(targetBundle).then((data: boolean) => {
-            hilog.info(0x0000, 'testTag', `${NAME} success. data: ${JSON.stringify(data)}`);
+            hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success. data: ${JSON.stringify(data)}`);
             expect().assertFail();
             done();
           }).catch((e: Error) => {
             let err = e as BusinessError;
-            hilog.error(0x0000, 'testTag', `${NAME} error, code: ${err.code}, message: ${err.message}`);
+            hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
             expect(err.code).assertEqual(202);
             done();
           });
         } catch (err: BusinessError) {
-          hilog.error(0x0000, 'testTag', `${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
         }
       })
 
     /**
-     * @tc.number    : Sub_Notification_Ans_ThreePartyWatch_Static_1034
-     * @tc.name      : Notification_Ans_ThreePartyWatch_Static_1034
-     * @tc.desc      : test setUserGrantedState Permission denied 201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number     Sub_Notification_Ans_ThreePartyWatch_Static_1034
+     * @tc.name       Sub_Notification_Ans_ThreePartyWatch_Static_1034
+     * @tc.desc       test setUserGrantedState Permission denied 201
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it("Sub_Notification_Ans_ThreePartyWatch_Static_1034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -269,29 +269,29 @@ export default function abilityTest() {
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE}  start`);
           notificationExtensionSubscription.setUserGrantedState(targetBundle, true).then(() => {
-            hilog.info(0x0000, 'testTag', `${NAME} success.`);
+            hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success.`);
             expect().assertFail();
             done();
           }).catch((e: Error) => {
             let err = e as BusinessError;
-            hilog.error(0x0000, 'testTag', `${NAME} error, code: ${err.code}, message: ${err.message}`);
+            hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
             expect(err.code).assertEqual(202);
             done();
           });
         } catch (err: BusinessError) {
-          hilog.error(0x0000, 'testTag', `${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
         }
       })
 
     /**
-     * @tc.number: Sub_Notification_Ans_ThreePartyWatch_Static_1056
-     * @tc.name: Sub_Notification_Ans_ThreePartyWatch_Static_1056
-     * @tc.desc: Verify third-party app without NOTIFICATION_CONTROLLER permission gets error 201
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.number     Sub_Notification_Ans_ThreePartyWatch_Static_1056
+     * @tc.name       Sub_Notification_Ans_ThreePartyWatch_Static_1056
+     * @tc.desc       Verify third-party app without NOTIFICATION_CONTROLLER permission gets error 201
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
      */
     it('Sub_Notification_Ans_ThreePartyWatch_Static_1056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -301,32 +301,30 @@ export default function abilityTest() {
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
           notificationExtensionSubscription.getUserGrantedEnabledBundles().then(() => {
-            hilog.info(0x0000, 'testTag', `${NAME} success`);
+            hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
             expect().assertFail();
             done();
           }).catch((e: Error) => {
             let err = e as BusinessError;
-            hilog.error(0x0000, 'testTag', `${NAME} error, code: ${err.code}, message: ${err.message}`);
+            hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
             expect(err.code).assertEqual(201);
             done();
           });
         } catch (err: BusinessError) {
-          hilog.error(0x0000, 'testTag', `${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
         }
       })
 
 
-
-
     /**
-     * @tc.number: Sub_Notification_Ans_ThreePartyWatch_Static_1047
-     * @tc.name: Sub_Notification_Ans_ThreePartyWatch_Static_1047
-     * @tc.desc: Verify third-party app gets error 202 when calling getUserGrantedEnabledBundles
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.number   Sub_Notification_Ans_ThreePartyWatch_Static_1047
+     * @tc.name     Sub_Notification_Ans_ThreePartyWatch_Static_1047
+     * @tc.desc     Verify third-party app gets error 202 when calling getUserGrantedEnabledBundles
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.leve     lLevel 2
      */
     it('Sub_Notification_Ans_ThreePartyWatch_Static_1047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -338,17 +336,17 @@ export default function abilityTest() {
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
           notificationExtensionSubscription.getUserGrantedEnabledBundles(wearableBundle).then(() => {
-            hilog.info(0x0000, 'testTag', `${NAME} success`);
+            hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
             expect().assertFail();
             done();
           }).catch((e: Error) => {
             let err = e as BusinessError;
-            hilog.error(0x0000, 'testTag', `${NAME} error, code: ${err.code}, message: ${err.message}`);
+            hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
             expect(err.code).assertEqual(202);
             done();
           });
         } catch (err: BusinessError) {
-          hilog.error(0x0000, 'testTag', `${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
         }
@@ -356,12 +354,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number: Sub_Notification_Ans_ThreePartyWatch_Static_1060
-     * @tc.name: Sub_Notification_Ans_ThreePartyWatch_Static_1060
-     * @tc.desc: Verify error 201 when calling setUserGrantedBundleState without NOTIFICATION_CONTROLLER permission
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.number    Sub_Notification_Ans_ThreePartyWatch_Static_1060
+     * @tc.name      Sub_Notification_Ans_ThreePartyWatch_Static_1060
+     * @tc.desc      Verify error 201 when calling setUserGrantedBundleState without NOTIFICATION_CONTROLLER permission
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
      */
     it('Sub_Notification_Ans_ThreePartyWatch_Static_1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -379,18 +377,20 @@ export default function abilityTest() {
             enabledBundles.push(createBundleWithoutUid(app.bundle));
           }
           let enabled: boolean = true;
-          notificationExtensionSubscription.setUserGrantedBundleState(targetBundle, enabledBundles, enabled).then(() => {
-            hilog.info(0x0000, 'testTag', `${NAME} success`);
-            expect().assertFail();
-            done();
-          }).catch((e: Error) => {
-            let err = e as BusinessError;
-            hilog.error(0x0000, 'testTag', `${NAME} error, code: ${err.code}, message: ${err.message}`);
-            expect(err.code).assertEqual(202);
-            done();
-          });
+          notificationExtensionSubscription.setUserGrantedBundleState(targetBundle, enabledBundles, enabled)
+            .then(() => {
+              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
+              expect().assertFail();
+              done();
+            })
+            .catch((e: Error) => {
+              let err = e as BusinessError;
+              hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} error, code: ${err.code}, message: ${err.message}`);
+              expect(err.code).assertEqual(202);
+              done();
+            });
         } catch (err: BusinessError) {
-          hilog.error(0x0000, 'testTag', `${NAME} failed, code: ${err.code}, message: ${err.message}`);
+          hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
           expect().assertFail();
           done();
         }
