@@ -223,7 +223,7 @@ struct hoverScaleInterruption {
       .backgroundColor(Color.Black)
 
     }.width('100%')
-    .height('100%')
+    .height('80%')
     .backgroundColor('#F1F3F5')
   }
 }
