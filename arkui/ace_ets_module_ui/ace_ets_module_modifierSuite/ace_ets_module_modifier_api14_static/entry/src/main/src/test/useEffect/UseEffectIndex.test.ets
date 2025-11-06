@@ -33,7 +33,7 @@ export default function UseEffectIndexTest() {
       console.info("alphabetIndexerTest beforeEach start");
 
       await UtilsTest.msSleep(4000);
-      await startAbility("com.open.harmony.acetest14", "EntryAbility");
+      await startAbility("com.open.harmony.acetest14.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
 
@@ -58,26 +58,33 @@ export default function UseEffectIndexTest() {
       }
     });
 
-    /**
-     * @tc.number
-    * @tc.name      GetWindowWidthBreakpoint_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   UseEffectIndex_static_0100
+     * @tc.name     UseEffectIndex_static_0100
+     * @tc.desc     UseEffectIndex_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('UseEffectIndex_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('UseEffectIndex_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
 
-      console.info('[UseEffectIndex] START');
-      let strJson1 = inspector.getInspectorByKey('windowEffect');
-      let strJson2 = inspector.getInspectorByKey('windowDefault');
-      console.info("[UseEffectIndex] JSON.parseJsonElement(strJson1) is : " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs')));
-      console.info("[UseEffectIndex] JSON.parseJsonElement(strJson2) is : " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs')));
+      try {
+        console.info('[UseEffectIndex_static_0100] START');
+        let strJson1 = inspector.getInspectorByKey('windowEffect');
+        await UtilsTest.msSleep(2000);
+        let strJson2 = inspector.getInspectorByKey('windowDefault');
+        await UtilsTest.msSleep(2000);
+        console.info("[UseEffectIndex_static_0100] JSON.parseJsonElement(strJson1) is : " + JSON.parseJsonElement(strJson1).getString('$attrs'));
+        console.info("[UseEffectIndex_static_0100] JSON.parseJsonElement(strJson2) is : " + JSON.parseJsonElement(strJson2).getString('$attrs'));
 
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('useEffectType')).assertEqual('EffectType.WINDOW_EFFECT');
-      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('useEffectType')).assertEqual('EffectType.DEFAULT');
-      console.info('[UseEffectIndex] END');
-      done();
+        expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('useEffectType')).assertEqual('EffectType.WINDOW_EFFECT');
+        expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('useEffectType')).assertEqual('EffectType.DEFAULT');
+        console.info('[UseEffectIndex_static_0100] END');
+        done();
+      } catch(e: Error){
+        console.log('[UseEffectIndex_static_0100] catch error',JSON.stringify(e))
+        expect(true).assertFalse()
+        done();
+      }
     });
   })
 }

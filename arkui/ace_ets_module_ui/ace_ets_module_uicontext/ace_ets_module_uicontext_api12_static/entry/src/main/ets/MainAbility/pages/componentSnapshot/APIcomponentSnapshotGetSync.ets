@@ -12,12 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+// import { componentSnapshot } from '@kit.ArkUI';
 import { image } from '@kit.ImageKit';
 import {
   Entry, Component, $r,
   Column, ColumnOptions, Row, Scroll, Image, Color, HorizontalAlign,
-  Text, Button, FontWeight, ClickEvent, Margin, WidthBreakpoint, HeightBreakpoint,
+  Text, Button, FontWeight, ClickEvent, Margin, WidthBreakpoint, HeightBreakpoint,PixelMap
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import componentSnapshot from '@ohos.arkui.componentSnapshot'
@@ -43,11 +43,11 @@ struct APIcomponentSnapshotGetSync {
           .onClick((e:ClickEvent) => {
             try {
               let pixelmap = componentSnapshot.getSync("APIcomponentSnapshotGetSync_root", {scale : 2, waitUntilRenderFinished : true})
-              this.pixmap = pixelmap
+              this.pixmap = pixelmap as PixelMap
               if(this.pixmap !== undefined){
                 this.text = 'end'
               }
-            } catch (error) {
+            } catch (error:Error) {
               console.error("getSync errorCode: " + error!.code + " message: " + error!.message)
             }
           }).margin(10)

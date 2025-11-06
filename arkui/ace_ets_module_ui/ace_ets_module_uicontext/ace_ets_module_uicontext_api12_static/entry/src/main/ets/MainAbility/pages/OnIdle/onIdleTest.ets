@@ -20,8 +20,8 @@ import {
 } from '@ohos.arkui.component'
 import { State, LocalStorage, LocalStorageLink, SubscribedAbstractProperty } from '@ohos.arkui.stateManagement';
 
-
-
+// let para: Record<string, string> = { 'message': 'init' }
+// let storage: LocalStorage = new LocalStorage(para);
 let storage: LocalStorage = new LocalStorage();
 storage.setOrCreate<string>('message', 'init');
 

@@ -25,10 +25,10 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct APIgetFrameNodeByUniqueId {
   aboutToAppear() {
-    let uniqueId: int = this.getUniqueId()
+    let uniqueId: number = this.getUniqueId();
     let uiContext: UIContext = this.getUIContext();
     if (uiContext) {
-      let node: FrameNode | null = uiContext.getFrameNodeByUniqueId(uniqueId);
+      let node: FrameNode | null = uiContext.getFrameNodeByUniqueId(uniqueId as Int);
     }
   }
   build(){

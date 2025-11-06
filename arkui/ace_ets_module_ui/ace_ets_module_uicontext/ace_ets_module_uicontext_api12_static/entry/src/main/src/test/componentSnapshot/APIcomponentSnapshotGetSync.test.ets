@@ -42,11 +42,11 @@ export default function APIcomponentSnapshotGetSync() {
         console.info("get APIcomponentSnapshotGetSync state pages:" + JSON.stringify(pages));
         if (!("APIcomponentSnapshotGetSync" == pages.name)) {
           console.info("get APIcomponentSnapshotGetSync pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push APIcomponentSnapshotGetSync page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push APIcomponentSnapshotGetSync page error:" + err);

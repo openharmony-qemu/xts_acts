@@ -16,9 +16,8 @@ import { Entry,Component,$r,Column,Stack,ColumnOptions,Position,RowSplit,EffectT
 import {
   State,
   Link,
-  PropRef,
+  Prop,
 } from '@ohos.arkui.stateManagement';
-import { AppStorage } from '@ohos.arkui.stateManagement';
 // import { RowSplitModifier } from "@ohos.arkui.modifier";
 //
 // class CustomModifier extends RowSplitModifier {

@@ -42,11 +42,11 @@ export default function APIUIContextGetSync() {
         console.info("get APIUIContextGetSync state pages:" + JSON.stringify(pages));
         if (!("APIUIContextGetSync" == pages.name)) {
           console.info("get APIUIContextGetSync pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push APIUIContextGetSync page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push APIUIContextGetSync page error:" + err);

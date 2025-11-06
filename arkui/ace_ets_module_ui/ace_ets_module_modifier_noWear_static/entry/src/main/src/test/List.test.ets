@@ -12,13 +12,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import swiperTest from './SwiperJsunit.test';
-import alphabetIndexerTest from './AlphabetIndexerJsunit.test';
-import scrollOnScrollBeginJsunit from './Scroll.test';
+import calendarPickerJsunit from './CalendarPicker.test';
+import columnSplitJsunit from './ColumnSplitJsunit.test';
+import rowSplitJsunit from './RowSplitJsunit.test';
+import selectJsunit from './SelectJsunit.test';
+import sideBarContainerJsunit from './SideBarContainerJsunit.test';
+import waterFlowViewJsunit from './WaterFlowView.test';
+import waterflowNestedScrollJsunit from './WaterFlowNestedScroll.test';
 
 export default function testsuite() {
-  swiperTest();
-  alphabetIndexerTest();
-  scrollOnScrollBeginJsunit();
+  calendarPickerJsunit(); //modifier接口未交付 注释导致3用例断言失败 已注释
+  columnSplitJsunit(); //modifier接口未交付 注释导致2用例断言失败 已注释
+  rowSplitJsunit(); //modifier接口未交付 注释导致1用例断言失败 已注释
+  selectJsunit(); //modifier接口未交付 注释导致15用例断言失败 已注释
+  sideBarContainerJsunit(); //modifier接口未交付 注释导致7用例断言失败 已注释
+  waterflowNestedScrollJsunit();//unKnow 注释导致用例断言失败 1已注释
+  waterFlowViewJsunit();//modifier接口未交付 注释导致8用例断言失败 已注释
 
 }

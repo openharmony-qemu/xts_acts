@@ -39,7 +39,6 @@ import {
   SelectOption,
   NavDestination,
   AvoidanceMode,
-  
   ArrowPosition,
   FlexAlign,
   VerticalAlign,
@@ -64,7 +63,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 export class MyMenuAvoidanceModifier implements AttributeModifier<SelectAttribute> {
   public avoidanceModeArr: (AvoidanceMode | undefined)[] =
     [undefined,  AvoidanceMode.COVER_TARGET, AvoidanceMode.AVOID_AROUND_TARGET] as (AvoidanceMode | undefined)[];
-  public modeIndex: Int = 0;
+  public modeIndex: int = 0;
 
   constructor() {
   }
@@ -177,8 +176,8 @@ export struct ModifierPage {
     let mainWindow = AppStorage.get<window.Window>('mainWindow');
     let windowProp = mainWindow?.getWindowProperties();
     const uiContext = new UIContext()
-    this.displayWidth = UIContext.getFocusedUIContext()!.px2vp(windowProp?.windowRect?.width ?? 0) ?? 0.0;
-    this.displayHeight = UIContext.getFocusedUIContext()!.px2vp(windowProp?.windowRect?.height ?? 0) ?? 0.0;
+    this.displayWidth = uiContext.px2vp(windowProp?.windowRect?.width ?? 0) ?? 0.0;
+    this.displayHeight = uiContext.px2vp(windowProp?.windowRect?.height ?? 0) ?? 0.0;
   }
 
   private getVoidModeText(mode?: AvoidanceMode): string {
@@ -215,7 +214,7 @@ export struct ModifierPage {
               });
             })
             .onClick((e: ClickEvent) => {
-              let tmp: Int = ++this.myModifier.modeIndex;
+              let tmp: int = ++this.myModifier.modeIndex;
               this.myModifier.modeIndex = tmp % this.myModifier.avoidanceModeArr.length;
             })
         }

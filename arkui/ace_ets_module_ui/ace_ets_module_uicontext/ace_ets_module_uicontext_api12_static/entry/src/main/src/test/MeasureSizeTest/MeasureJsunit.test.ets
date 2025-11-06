@@ -43,11 +43,11 @@ export default function MeasureJsunit() {
         console.info("get MeasureJsunit state pages:" + JSON.stringify(pages));
         if (!("measureSize" == pages.name)) {
           console.info("get MeasureJsunit pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push MeasureJsunit page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push MeasureJsunit page error:" + err);
@@ -86,7 +86,7 @@ it('ArkUI_Stage_Measure_static_0200', Level.LEVEL0, async (done: () => void): Pr
       await CommonFunc.sleep(500);
       let testForTextIndentButton = await driver.findComponent(ON.id('testForTextIndent'));
       await CommonFunc.sleep(500);
-      (testForTextIndentButton?.click() as Promise<void>);
+      await (testForTextIndentButton?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
       let strJsonMaxLine2 = inspector.getInspectorByKey('textSizeMaxLine2');
       let strJsonMaxLine3 = inspector.getInspectorByKey('textSizeMaxLine3');
@@ -110,7 +110,7 @@ it('ArkUI_Stage_Measure_static_0300', Level.LEVEL0, async (done: () => void): Pr
       await CommonFunc.sleep(500);
       let resetButton = await driver.findComponent(ON.id('reset'));
       await CommonFunc.sleep(500);
-      (resetButton?.click() as Promise<void>);
+      await (resetButton?.click() as Promise<void>);  // Error in APIcomponentSnapshotGetSync_static_0100, undefined cannot be cast to Promise<Component|null>
       await CommonFunc.sleep(2000);
       let strJsonMaxLine2 = inspector.getInspectorByKey('textSizeMaxLine2');
       let strJsonMaxLine3 = inspector.getInspectorByKey('textSizeMaxLine3');
@@ -142,7 +142,7 @@ it('ArkUI_Stage_Measure_static_0400', Level.LEVEL0, async (done: () => void): Pr
       await CommonFunc.sleep(500);
       let resetButton = await driver.findComponent(ON.id('resetInChinese'));
       await CommonFunc.sleep(500);
-      (resetButton?.click() as Promise<void>);
+      await (resetButton?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
       let strJsonMaxLine2 = inspector.getInspectorByKey('textSizeMaxLine2');
       let strJsonMaxLine3 = inspector.getInspectorByKey('textSizeMaxLine3');
@@ -165,11 +165,11 @@ it('ArkUI_Stage_Measure_static_0500', Level.LEVEL0, async (done: () => void): Pr
       await CommonFunc.sleep(500);
       let resetButton = await driver.findComponent(ON.id('resetInChinese'));
       await CommonFunc.sleep(500);
-      (resetButton?.click() as Promise<void>);
+      await (resetButton?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
       let testForTextIndentButton = await driver.findComponent(ON.id('testForTextIndentInChinese'));
       await CommonFunc.sleep(500);
-      (testForTextIndentButton?.click() as Promise<void>);
+      await (testForTextIndentButton?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
       let strJsonMaxLine2 = inspector.getInspectorByKey('textSizeMaxLine2');
       let strJsonMaxLine3 = inspector.getInspectorByKey('textSizeMaxLine3');

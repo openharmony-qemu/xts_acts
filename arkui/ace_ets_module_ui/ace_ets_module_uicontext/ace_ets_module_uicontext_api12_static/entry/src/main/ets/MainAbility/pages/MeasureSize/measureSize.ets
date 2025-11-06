@@ -60,7 +60,7 @@ struct Index {
         Text('' + this.textSizeMaxLine3.height).key('textSizeMaxLine3')
         Button('testForTextIndent')
           .id('testForTextIndent')
-          .onClick((e:ClickEvent)=>{
+          .onClick((e:ClickEvent)=>{ //执行后页面变白
             this.textIndent = 40;
             this.textSizeMaxLine2 = this.measure.measureTextSize({
               textContent: this.message,

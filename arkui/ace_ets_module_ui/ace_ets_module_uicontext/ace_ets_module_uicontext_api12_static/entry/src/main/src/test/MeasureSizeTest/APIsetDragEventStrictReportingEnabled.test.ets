@@ -66,11 +66,11 @@ export default function APIsetDragEventStrictReportingEnabled() {
         console.info("get APIsetDragEventStrictReportingEnabled state pages:" + JSON.stringify(pages));
         if (!("APIsetDragEventStrictReportingEnabled" == pages.name)) {
           console.info("get APIsetDragEventStrictReportingEnabled pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push APIsetDragEventStrictReportingEnabled page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push APIsetDragEventStrictReportingEnabled page error:" + err);

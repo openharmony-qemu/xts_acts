@@ -40,7 +40,6 @@ import {
   AvoidanceMode,
   NavDestination,
   AvoidanceMode,
-  
   ArrowPosition,
   FlexAlign,
   VerticalAlign,
@@ -191,7 +190,7 @@ export struct CustomSelectionPage {
   private listener: mediaquery.MediaQueryListener = mediaquery.matchMediaSync('(orientation: landscape)') // 监听横屏事件
   private avoidanceModeArr: (AvoidanceMode | undefined)[] =
     [ undefined, AvoidanceMode.COVER_TARGET, AvoidanceMode.AVOID_AROUND_TARGET] as (AvoidanceMode | undefined)[];
-  @State private modeIndex: Int = 0;
+  @State private modeIndex: int = 0;
 
   aboutToAppear(): void {
     try {
@@ -208,8 +207,8 @@ export struct CustomSelectionPage {
     let mainWindow = AppStorage.get<window.Window>('mainWindow');
     let windowProp = mainWindow?.getWindowProperties();
     const uiContext = new UIContext()
-    this.displayWidth = UIContext.getFocusedUIContext()!.px2vp(windowProp?.windowRect?.width ?? 0) ?? 0.0;
-    this.displayHeight = UIContext.getFocusedUIContext()!.px2vp(windowProp?.windowRect?.height ?? 0) ?? 0.0;
+    this.displayWidth = uiContext.px2vp(windowProp?.windowRect?.width ?? 0) ?? 0.0;
+    this.displayHeight = uiContext.px2vp(windowProp?.windowRect?.height ?? 0) ?? 0.0;
   }
 
   private getVoidModeText(mode?: AvoidanceMode): string {

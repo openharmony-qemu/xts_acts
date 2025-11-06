@@ -1,5 +1,9 @@
-import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent } from '@ohos.arkui.component'  
-import { State} from '@ohos.arkui.stateManagement' 
+
+import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
+import { State} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+
 import hilog from '@ohos.hilog'
 
 @Entry
@@ -7,6 +11,16 @@ import hilog from '@ohos.hilog'
 struct MyStateSample {
   @State stateVar: string = 'state var';
   message: string = 'var';
+
+  aboutToAppear(){
+    try {
+      let router1 = this.getUIContext().getRouter();
+      AppStorage.setOrCreate<Router>('router', router1);
+    } catch (error) {
+      console.log('error ' + error);
+    }
+  }
+
   changeValue() {
     this.stateVar+='~'
   }

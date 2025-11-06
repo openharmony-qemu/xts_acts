@@ -42,11 +42,11 @@ export default function PageInfo1() {
         console.info("get PageInfo1 state pages:" + JSON.stringify(pages));
         if (!("PageInfo1" == pages.name)) {
           console.info("get PageInfo1 pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push PageInfo1 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push PageInfo1 page error:" + err);

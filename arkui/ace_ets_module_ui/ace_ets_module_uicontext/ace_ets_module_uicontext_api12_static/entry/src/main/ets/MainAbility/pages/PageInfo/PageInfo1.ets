@@ -14,7 +14,6 @@
  */
 
 import { UIContext, PageInfo } from '@ohos.arkui.UIContext';
-
 import {
   Entry, Component,
   Column, ColumnOptions, Row, NavPathStack, NavDestination, Navigation, Builder, NavPathInfo,
@@ -22,26 +21,12 @@ import {
 } from '@ohos.arkui.component'
 import { State, Provide } from '@ohos.arkui.stateManagement';
 
-
 @Entry
 @Component
 struct PageInfo1 {
-  
+  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack();  // 这是原代码，去掉了('pageInfos')
   @Provide pageInfos: NavPathStack = new NavPathStack();
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
 
   @Builder
   pageOneTmp() {
@@ -64,17 +49,18 @@ struct PageInfo1 {
       Navigation(this.pageInfos) {
         Button('pushPath pageOne')
           .onClick((e:ClickEvent)=>{
-            
+            // this.pageInfos.pushPath({name: 'pageOne', param: 'str'});  //报错说NavPathInfo需要new
             this.pageInfos.pushPath(new NavPathInfo( 'pageOne', 'str'));
           })
           .id('PageInfo1_pageOne')
       }.id('navigation')
       .mode(NavigationMode.Stack)
       .title('NavIndex')
+      // .navDestination(this.PageMap)
       .navDestination(():void=> {
         this.PageMap
       })
-      
+      // 源码为  navDestination(this.PageMap) 报错 Type '(name: String, param: Object) => void' is not compatible with type '(name: String, param: Object|null|undefined) => void|undefined' at index 1
     }
   }
 }
@@ -93,12 +79,12 @@ struct MyComponent {
         .id('PageInfo1_get')
         .onClick((e:ClickEvent) => {
           const uiContext: UIContext = this.getUIContext();
-          const uniqueId: int = this.getUniqueId();
-          const pageInfo: PageInfo = uiContext.getPageInfoByUniqueId(uniqueId);
+          const uniqueId: number = this.getUniqueId();
+          const pageInfo: PageInfo = uiContext.getPageInfoByUniqueId(uniqueId as Int);
           this.text1 = pageInfo.routerPageInfo?.name + ''
           this.text2 = pageInfo.navDestinationInfo?.name + ''
           console.info('pageInfo: ' + JSON.stringify(pageInfo));
-          console.info('navigationInfo: ' + JSON.stringify(uiContext.getNavigationInfoByUniqueId(uniqueId)));
+          console.info('navigationInfo: ' + JSON.stringify(uiContext.getNavigationInfoByUniqueId(uniqueId as Int)));
         })
     }
     .width('100%')
