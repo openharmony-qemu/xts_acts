@@ -56,7 +56,7 @@
         "name": "ohos.permission.READ_CONTACTS"
       },
       {
-        "name": "ohos.permission.SET_TELEPHONY_STATE"，
+        "name": "ohos.permission.SET_TELEPHONY_STATE",
         "usedScene": {	
           "when": "always",	
         }
