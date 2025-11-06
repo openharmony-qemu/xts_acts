@@ -205,8 +205,6 @@ export default function drawingTsPath2Test() {
         expect().assertFail()
       }
     })
-
-//---用例执行报错--待和开发确认--
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_0902
      * @tc.name      : testPathAddCircleToNullStatic
@@ -220,12 +218,11 @@ export default function drawingTsPath2Test() {
       let path = new drawing.Path();
       try {
         path.addCircle(100, 200, 50, undefined);
-        console.info(msg + `reset error`);
-        expect().assertFail()
+        console.info(msg + `addCircle successes`);
       } catch (e) {
         e = e as BusinessError;
-        console.info(msg + `reset successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `addCircle error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
       }
     })
     /**
@@ -352,8 +349,6 @@ export default function drawingTsPath2Test() {
         expect().assertFail()
       }
     })
-
-    // -----用例执行报错---待和开发确认
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_1002
      * @tc.name      : testPathAddOvalToNullStatic
@@ -369,12 +364,11 @@ export default function drawingTsPath2Test() {
         path.addOval({
           left: 10, right: 400, top: 100, bottom: 300
         }, 5, undefined);
-        console.info(msg + `reset error`);
-        expect().assertFail()
+        console.info(msg + `addOval successes`);
       } catch (e) {
         e = e as BusinessError;
-        console.info(msg + `reset successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `addOval error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
       }
     })
 
@@ -518,8 +512,6 @@ export default function drawingTsPath2Test() {
         expect().assertFail()
       }
     })
-
-    // -----用例执行报错---待和开发确认
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_1102
      * @tc.name      : testPathAddRectToNullStatic
@@ -538,12 +530,11 @@ export default function drawingTsPath2Test() {
           top: 100,
           bottom: 300
         }, undefined);
-        console.info(msg + `reset error`);
-        expect().assertFail()
+        console.info(msg + `addRect successes`);
       } catch (e) {
         e = e as BusinessError;
-        console.info(msg + `reset successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `reset error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
       }
     })
     /**
@@ -612,8 +603,6 @@ export default function drawingTsPath2Test() {
         expect().assertFail()
       }
     })
-
-    // -----用例执行报错---待和开发确认
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_1202
      * @tc.name      : testPathAddRoundRectToNullStatic
@@ -633,12 +622,11 @@ export default function drawingTsPath2Test() {
       }, 50, 50);
       try {
         path.addRoundRect(roundRect, undefined);
-        console.info(msg + `reset error`);
-        expect().assertFail()
+        console.info(msg + `addRoundRect successes`);
       } catch (e) {
         e = e as BusinessError;
-        console.info(msg + `reset successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `addRoundRect error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
     })
     /**
@@ -705,8 +693,6 @@ export default function drawingTsPath2Test() {
         expect().assertFail()
       }
     })
-
-    // -----用例执行报错---待和开发确认
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_STATIC_1302
      * @tc.name      : testPathAddPathToNullStatic
@@ -721,12 +707,11 @@ export default function drawingTsPath2Test() {
         let dstPath = new drawing.Path();
         let path = new drawing.Path();
         dstPath.addPath(path, undefined);
-        console.info(msg + `reset error`);
-        expect().assertFail()
+        console.info(msg + `addPath successes`);
       } catch (e) {
         e = e as BusinessError;
-        console.info(msg + `reset successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `addPath error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
     })
 

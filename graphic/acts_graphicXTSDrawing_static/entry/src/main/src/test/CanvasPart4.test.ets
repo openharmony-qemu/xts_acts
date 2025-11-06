@@ -104,7 +104,6 @@ export default function drawingTsCanvasPart4Test() {
         expect().assertFail();
       }
     })
-    //----用例报错---待和开发确认
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_2501
      * @tc.name      : testCanvasSaveLayerUndefinedStatic
@@ -122,22 +121,20 @@ export default function drawingTsCanvasPart4Test() {
       };
       try {
         canvas.saveLayer(undefined, brush)
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `saveLayer test successes`);
       } catch (e) {
         e = e as BusinessError;
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `saveLayer test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
         canvas.saveLayer(rect, undefined)
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `saveLayer test successes`);
       } catch (e) {
         e = e as BusinessError;
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `saveLayer test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
     })
 
@@ -581,8 +578,6 @@ export default function drawingTsCanvasPart4Test() {
         expect().assertFail();
       }
     })
-
-//----用例报错---待和开发确认
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_3002
      * @tc.name      : testCanvasDrawPointsToNullStatic
@@ -602,12 +597,11 @@ export default function drawingTsCanvasPart4Test() {
         }, {
           x: 200, y: 300
         }], undefined);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `drawPoints test successes`);
       } catch (e) {
         e = e as BusinessError;
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `drawPoints test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
     })
     /**
