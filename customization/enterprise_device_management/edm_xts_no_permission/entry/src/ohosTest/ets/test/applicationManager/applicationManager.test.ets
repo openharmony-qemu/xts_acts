@@ -498,7 +498,7 @@ export default function applicationManagerTest() {
       done();
     })
 
-        /**
+    /**
      * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDUSERNONSTOPAPPS_001
      * @tc.name      : test_addUserNonStopApps_001
      * @tc.desc      : test addUserNonStopApps method with normal admin
