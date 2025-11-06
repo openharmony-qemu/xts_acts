@@ -80,7 +80,10 @@ export default function webController() {
     */
     it('testLoadUrlWithHeaderErrorCode01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitLoadUrlWithHeaderErrorCode01", EVENT_ID_SET_EIMIT_KEY)
-      Utils.registerEvent("testLoadUrlWithHeaderErrorCode01", 401, 2025110603, done);
+      Utils.registerBaseEvent("testLoadUrlWithHeaderErrorCode01", 401, 2025110602,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
       Utils.waitAndClickComponent(driver, "WebControllerButton");
     })
     /**
@@ -93,7 +96,10 @@ export default function webController() {
      */
     it('testLoadUrlWithHeaderErrorCode02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitLoadUrlWithHeaderErrorCode02", EVENT_ID_SET_EIMIT_KEY)
-      Utils.registerEvent("testLoadUrlWithHeaderErrorCode02", 401, 2025110603, done);
+      Utils.registerBaseEvent("testLoadUrlWithHeaderErrorCode02", 401, 2025110603,
+        done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
       Utils.waitAndClickComponent(driver, "WebControllerButton");
     })
 
