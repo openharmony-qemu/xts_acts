@@ -337,7 +337,7 @@ export default function BatteryInfoTest() {
           hilog.info(domain, tag,
             `${TAG} estimatedRemainingChargeTimeInfo type: ${typeof estimatedRemainingChargeTimeInfo}`);
           expect(estimatedRemainingChargeTimeInfo).assertEqual(-1);
-          expect(typeof estimatedRemainingChargeTimeInfo).assertEqual('int');
+          expect(typeof estimatedRemainingChargeTimeInfo).assertEqual('long');
           done();
         } catch (e) {
           e = e as BusinessError;
