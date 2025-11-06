@@ -33,6 +33,7 @@ struct webViewSdkSchemeHandlerEnhancedThree {
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
   @State isMainFrame: boolean = false;
+  @State isSchemeHandler: number = -1;
   requests:webview.WebSchemeHandlerRequest[] = []
   htmlData: string = '<html><body bgcolor=\"white\">Source:<pre>source</pre></body></html>';
   
@@ -108,6 +109,18 @@ struct webViewSdkSchemeHandlerEnhancedThree {
                 await waitForAssert(()=>this.isMainFrame, check, true, 2025102110, this.emitKey);
                 break;
               }
+              case 'emitWebViewSdkSchemeHandler_getHttpBodyStream_null': {
+                this.isPageEnd = -1;
+                this.controller.loadUrl('resource://rawfile/index.html');
+                await Utils.waitForExist(()=>this.isPageEnd, this.emitKey, 1, 1000);
+                await Utils.waitForExist(()=>this.isSchemeHandler, this.emitKey, 1, 1000);
+                if (this.isSchemeHandler == 1 && this.httpBodyStream === null ) {
+                  Utils.emitEvent(true,2025110601);
+                } else {
+                  Utils.emitEvent(false,2025110601)
+                }
+                break;
+              }
             }
           })
       }
@@ -121,6 +134,8 @@ struct webViewSdkSchemeHandlerEnhancedThree {
                 console.log('onRequestStart request.isMainFrame():' + request.isMainFrame() );
                 this.isMainFrame = request.isMainFrame();
                 this.httpBodyStream = request.getHttpBodyStream();
+                this.isSchemeHandler = 1;
+                console.log('isSchemeHandler:' + this.isSchemeHandler);
                 console.log('this.httpBodyStream:' + this.httpBodyStream);
                 console.log('this.httpBodyStream isChunked:' + this.httpBodyStream?.isChunked());
                 console.log('this.httpBodyStream isEof:' + this.httpBodyStream?.isEof());
