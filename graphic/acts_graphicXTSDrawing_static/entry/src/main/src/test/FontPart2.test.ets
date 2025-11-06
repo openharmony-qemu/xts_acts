@@ -1108,106 +1108,105 @@ export default function fontPart2Test() {
         }
       }
     });
-//-----以下用例执行crash----待和开发确认
-//     /**
-//      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_1904
-//      * @tc.name      : testFontGetTextPathForCharacterNormal1Static
-//      * @tc.desc      : Test for testFontGetTextPathForCharacterNormal1Static
-//      * @tc.size      : SmallTest
-//      * @tc.type      : Function
-//      * @tc.level     : Level 0
-//      */
-//     it('testFontGetTextPathForCharacterNormal1Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-//       const msg = 'testFontGetTextPathForCharacterNormal1Static';
-//       let font = new drawing.Font();
-//       let myString: string = "Hello, TypeScript!";
-//       let path: drawing.Path | undefined = undefined;
-//       try {
-//         path = font.getTextPath(myString, buffer.from(myString).length, 0, 200);
-//         expect(path).not().assertNull();
-//         if (path) {
-//           let result = path.getLength(false);
-//           expect(result).assertLarger(0);
-//         }
-//         console.info(msg + ' getTextPath successed');
-//       } catch (e: BusinessError) {
-//         console.info(msg + ' getTextPath failed');
-//         expect().assertFail();
-//       }
-//     });
-//
-//     /**
-//      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_1905
-//      * @tc.name      : testFontGetTextPathForCharacterNormal2Static
-//      * @tc.desc      : Test for testFontGetTextPathForCharacterNormal2Static
-//      * @tc.size      : SmallTest
-//      * @tc.type      : Function
-//      * @tc.level     : Level 0
-//      */
-//     it('testFontGetTextPathForCharacterNormal2Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-//       const msg = 'testFontGetTextPathForCharacterNormal2Static';
-//       let font = new drawing.Font();
-//       try {
-//         let myString: string = " ";
-//         let path = font.getTextPath(myString, buffer.from(myString).length, 0, 200);
-//         expect(path).not().assertNull();
-//         if (path) {
-//           let result = path.getLength(false);
-//           expect(result == 0).assertTrue();
-//           console.info(msg + ' GetTextPath successed,path length:' + result);
-//         }
-//       } catch (e: BusinessError) {
-//         console.info(msg + ` GetTextPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-//         expect().assertFail();
-//       }
-//     });
-//
-//     /**
-//      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_1906
-//      * @tc.name      : testFontGetTextPathForCharacterNormal3Static
-//      * @tc.desc      : Test for testFontGetTextPathForCharacterNormal3Static
-//      * @tc.size      : SmallTest
-//      * @tc.type      : Function
-//      * @tc.level     : Level 0
-//      */
-//     it('testFontGetTextPathForCharacterNormal3Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-//       const msg = 'testFontGetTextPathForCharacterNormal3Static';
-//       let font = new drawing.Font();
-//       try {
-//         let myString: string = "Hello, TypeScript!";
-//         let path = font.getTextPath(myString, buffer.from(myString).length, -1, -1);
-//         expect(path).not().assertNull();
-//         console.info(msg + ' GetTextPath successed');
-//       } catch (e: BusinessError) {
-//         console.info(msg + ` GetTextPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-//         expect().assertFail();
-//       }
-//     });
-//
-//     /**
-//      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_1907
-//      * @tc.name      : testFontGetTextPathForCharacterNormal4Static
-//      * @tc.desc      : Test for testFontGetTextPathForCharacterNormal4Static
-//      * @tc.size      : SmallTest
-//      * @tc.type      : Function
-//      * @tc.level     : Level 0
-//      */
-//     it('testFontGetTextPathForCharacterNormal4Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-//       const msg = 'testFontGetTextPathForCharacterNormal4Static';
-//       let font = new drawing.Font();
-//       try {
-//         let myString: string = "Hello, TypeScript!";
-//         let path = font.getTextPath(myString, buffer.from(myString).length, 0, 200);
-//         expect(path).not().assertNull();
-//         if (path) {
-//           let result: number = path.getLength(false);
-//           expect(result >= 0).assertEqual(true);
-//         }
-//         console.info(msg + ' GetTextPath successed');
-//       } catch (e: BusinessError) {
-//         console.info(msg + ` GetTextPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
-//         expect().assertFail();
-//       }
-//     });
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_1904
+     * @tc.name      : testFontGetTextPathForCharacterNormal1Static
+     * @tc.desc      : Test for testFontGetTextPathForCharacterNormal1Static
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testFontGetTextPathForCharacterNormal1Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const msg = 'testFontGetTextPathForCharacterNormal1Static';
+      let font = new drawing.Font();
+      let myString: string = "Hello, TypeScript!";
+      let path: drawing.Path | undefined = undefined;
+      try {
+        path = font.getTextPath(myString, buffer.from(myString).length, 0, 200);
+        expect(path).not().assertNull();
+        if (path) {
+          let result = path.getLength(false);
+          expect(result).assertLarger(0);
+        }
+        console.info(msg + ' getTextPath successed');
+      } catch (e: BusinessError) {
+        console.info(msg + ' getTextPath failed');
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_1905
+     * @tc.name      : testFontGetTextPathForCharacterNormal2Static
+     * @tc.desc      : Test for testFontGetTextPathForCharacterNormal2Static
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testFontGetTextPathForCharacterNormal2Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const msg = 'testFontGetTextPathForCharacterNormal2Static';
+      let font = new drawing.Font();
+      try {
+        let myString: string = " ";
+        let path = font.getTextPath(myString, buffer.from(myString).length, 0, 200);
+        expect(path).not().assertNull();
+        if (path) {
+          let result = path.getLength(false);
+          expect(result == 0).assertTrue();
+          console.info(msg + ' GetTextPath successed,path length:' + result);
+        }
+      } catch (e: BusinessError) {
+        console.info(msg + ` GetTextPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_1906
+     * @tc.name      : testFontGetTextPathForCharacterNormal3Static
+     * @tc.desc      : Test for testFontGetTextPathForCharacterNormal3Static
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testFontGetTextPathForCharacterNormal3Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const msg = 'testFontGetTextPathForCharacterNormal3Static';
+      let font = new drawing.Font();
+      try {
+        let myString: string = "Hello, TypeScript!";
+        let path = font.getTextPath(myString, buffer.from(myString).length, -1, -1);
+        expect(path).not().assertNull();
+        console.info(msg + ' GetTextPath successed');
+      } catch (e: BusinessError) {
+        console.info(msg + ` GetTextPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_STATIC_1907
+     * @tc.name      : testFontGetTextPathForCharacterNormal4Static
+     * @tc.desc      : Test for testFontGetTextPathForCharacterNormal4Static
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testFontGetTextPathForCharacterNormal4Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const msg = 'testFontGetTextPathForCharacterNormal4Static';
+      let font = new drawing.Font();
+      try {
+        let myString: string = "Hello, TypeScript!";
+        let path = font.getTextPath(myString, buffer.from(myString).length, 0, 200);
+        expect(path).not().assertNull();
+        if (path) {
+          let result: number = path.getLength(false);
+          expect(result >= 0).assertEqual(true);
+        }
+        console.info(msg + ' GetTextPath successed');
+      } catch (e: BusinessError) {
+        console.info(msg + ` GetTextPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
   });
 }

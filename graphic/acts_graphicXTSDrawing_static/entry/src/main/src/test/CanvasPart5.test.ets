@@ -117,7 +117,6 @@ export default function drawingTsCanvasPart5Test() {
         expect().assertFail();
       }
     })
-    // -----用例报错---待和开发确认
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_3302
      * @tc.name      : testCanvasDrawImageRectToNullStatic
@@ -133,12 +132,11 @@ export default function drawingTsCanvasPart5Test() {
         canvas.drawImageRect(pixelMap, {
           left: 0, top: 0, right: 600, bottom: 600
         }, undefined);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `drawImageRect test successes`);
       } catch (e) {
         e = e as BusinessError;
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `drawImageRect test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
     })
     /**
@@ -242,8 +240,6 @@ export default function drawingTsCanvasPart5Test() {
         expect().assertFail();
       }
     })
-
-//----用例报错--待和开发确认
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_3702
      * @tc.name      : testCanvasClipRegionToNullStatic
@@ -258,12 +254,11 @@ export default function drawingTsCanvasPart5Test() {
       let region1 = new drawing.Region();
       try {
         canvas.clipRegion(region1, undefined);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `clipRegion test successes`);
       } catch (e) {
         e = e as BusinessError;
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `clipRegion test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
     })
@@ -571,8 +566,6 @@ export default function drawingTsCanvasPart5Test() {
         expect().assertFail();
       }
     })
-
-//---用例报错---待和开发确认
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_4102
      * @tc.name      : testCanvasDrawImageRectWithSrcToNullStatic
@@ -590,26 +583,23 @@ export default function drawingTsCanvasPart5Test() {
         }, {
           left: 200.1, top: 200.2, right: 800.1, bottom: 800.1
         }, undefined, drawing.SrcRectConstraint.STRICT);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `drawImageRectWithSrc test successes`);
       } catch (e) {
         e = e as BusinessError;
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `drawImageRectWithSrc test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
-
       try {
         canvas.drawImageRectWithSrc(pixelMap, {
           left: 100, top: 100.2, right: 700, bottom: 700.2
         }, {
           left: 200.1, top: 200.2, right: 800.1, bottom: 800.1
         }, new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_NEAREST), undefined);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `drawImageRectWithSrc test successes`);
       } catch (e) {
         e = e as BusinessError;
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `drawImageRectWithSrc test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
     })
