@@ -73,6 +73,7 @@ struct webViewController {
               try {
                  let icon: image.PixelMap | undefined = undefined;
                 this.controller.loadUrl("resource://rawfile/HistoryItem.html");
+                setTimeout(() => {
                   let list = this.controller.getBackForwardEntries();
                   let historyItem = list.getItemAtIndex(list.currentIndex);
                   console.log("HistoryItem: " + JSON.stringify(historyItem));
@@ -80,6 +81,7 @@ struct webViewController {
                   if (icon != undefined) {
                     Utils.emitEvent(true, 31023)
                   }
+                  }, 3000)
               } catch (error) {
                 error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
