@@ -28,8 +28,8 @@ struct GetDarkModeTest {
       '1、点击按钮ALWAYS_DARK\n' +
       '2、点击按钮ALWAYS_LIGHT\n' +
       '预期结果：\n' +
-      '1、控制台打印日志信息: getDarkMode value: 0\n' +
-      '2、控制台打印日志信息: getDarkMode value: 1';
+      '1、文本信息显示为: getDarkMode dark: true\n' +
+      '2、文本信息显示为: getDarkMode light: true';
   @State isVue: boolean = false;
   @State active: boolean = false;
   @State intervalNum: number = 0;
@@ -191,8 +191,8 @@ struct GetDarkModeTest {
             }
           })
 
-        Text(this.isDarkMode + '')
-        Text(this.isLightMode + '')
+        Text('getDarkMode dark:' + this.isDarkMode + '')
+        Text('getDarkMode light:' + this.isLightMode + '')
 
       }.height('80%')
       .width('100%')
