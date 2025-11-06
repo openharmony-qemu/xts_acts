@@ -161,10 +161,10 @@ class XtsBuild:
             build_command.extend(["--gn-args", f"{k}={v}"])
         for k, v in self._other_args.items():
             build_command.append(f"--{k}={v}")
-        if self._arkts_static:
-            build_command.extend(["--prebuilts-sdk-gn-args", "sdk_build_arkts=true"])
         for tgt in self._build_target:
             build_command.extend(["--build-target", tgt])
+        if self._arkts_static:
+            build_command.extend(["--prebuilts-sdk-gn-args", "sdk_build_arkts=true"])
 
         # 执行编译命令
         accurate_dir = os.path.join(self._code_root_dir, "test/xts/tools/ci")
