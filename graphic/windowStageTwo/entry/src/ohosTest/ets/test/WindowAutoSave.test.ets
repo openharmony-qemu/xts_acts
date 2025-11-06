@@ -1094,9 +1094,9 @@ export default function windowAutoSaveTest() {
      * @tc.desc      : test_setWindowRectAutoSave_801
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.level     : LEVEL0
      */
-    it('test_setWindowRectAutoSave_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('test_setWindowRectAutoSave_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_setWindowRectAutoSave_801';
       console.log(caseName + 'begin');
       try{

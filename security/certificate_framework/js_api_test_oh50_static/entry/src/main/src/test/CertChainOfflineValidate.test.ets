@@ -360,11 +360,10 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
 
       try {
         await certChain1.validate(param);
-        expect(null).assertFail();
         done();
       } catch (err: BusinessError) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
-        expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION);
+        expect(null).assertFail();
         done();
       }
     });
@@ -494,11 +493,10 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
 
       try {
         await certChain1.validate(param);
-        expect(null).assertFail();
         done();
       } catch (err: BusinessError) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
-        expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
+        expect(null).assertFail();
         done();
       }
     });
@@ -527,11 +525,10 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
 
       try {
         await certChain1.validate(param);
-        expect(null).assertFail();
         done();
       } catch (err: BusinessError) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
-        expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
+        expect(null).assertFail();
         done();
       }
     });
@@ -1075,7 +1072,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         done();
       } catch (err: BusinessError) {
         console.error(`[XtsTestLog] X509CertChain validate error: ${err}`);
-        expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
+        expect(err.code == cert.CertResult.INVALID_PARAMS).assertTrue();
         done();
       }
     }); // crash

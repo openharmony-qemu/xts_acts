@@ -810,12 +810,14 @@ export default function FaSetDisplayOrientationTest() {
             if (data.event == onActive) {
               lifeList = data?.parameters?.lifeList;
 
-              commonEvent.unsubscribe(subscriber, async (err, data) => {
-                  console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
-                  expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));
-                  expect(status1).assertTrue();
-                  done();
-                });
+              setTimeout(async () => {	
+                commonEvent.unsubscribe(subscriber, async (err, data) => {
+                  console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));	
+                  expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));	
+                  expect(status1).assertTrue();	
+                  done();	
+                });	
+              }, 1000);
             }
           });
         })
@@ -876,12 +878,14 @@ export default function FaSetDisplayOrientationTest() {
             if (data.event == onActive) {
               lifeList = data?.parameters?.lifeList;
 
-              commonEvent.unsubscribe(subscriber, async (err, data) => {
-                  console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
-                  expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));
-                  expect(status1).assertTrue();
-                  done();
-                });
+              setTimeout(async () => {	
+                commonEvent.unsubscribe(subscriber, async (err, data) => {
+                  console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));	
+                  expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));	
+                  expect(status1).assertTrue();	
+                  done();	
+                });	
+              }, 1000);
             }
           });
         })
@@ -942,12 +946,14 @@ export default function FaSetDisplayOrientationTest() {
             if (data.event == onActive) {
               lifeList = data?.parameters?.lifeList;
 
-              commonEvent.unsubscribe(subscriber, async (err, data) => {
-                  console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
-                  expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));
-                  expect(status1).assertTrue();
-                  done();
-                });
+              setTimeout(async () => {	
+                commonEvent.unsubscribe(subscriber, async (err, data) => {
+                  console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));	
+                  expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));	
+                  expect(status1).assertTrue();	
+                  done();	
+                });	
+              }, 1000);
             }
           });
         })

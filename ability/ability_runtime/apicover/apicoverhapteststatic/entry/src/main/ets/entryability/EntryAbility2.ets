@@ -56,8 +56,9 @@ class EntryAbility2 extends UIAbility {
     AppStorage.setOrCreate<Want>('lastRequestWant', this.lastRequestWant)
   }
 
-  onDestroy() {
+  onDestroy(): Promise<void> | undefined {
     hilog.info(0x0000, 'testTag  EntryAbility2', 'EntryAbility2 onDestroy');
+    return undefined;
   }
 
   onBackground() {

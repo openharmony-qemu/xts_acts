@@ -389,6 +389,13 @@ export default function audioFramework() {
         };
         data.onStateChange(stateChangeCallback);
         data.offStateChange(stateChangeCallback);
+        let readDataCallback = (value: ArrayBuffer) => {
+          console.info(`read valus: ${value}`);
+        };
+        data.onReadData(readDataCallback);
+        console.info('Capturer readData on success.');
+        data.offReadData(readDataCallback);
+        console.info('Capturer readData of success.');
         data.release().then(() => {
           console.info('AudioFrameworkRecLog: ---------RELEASE RECORD---------');
           console.info('AudioFrameworkRecLog: Capturer release : SUCCESS');

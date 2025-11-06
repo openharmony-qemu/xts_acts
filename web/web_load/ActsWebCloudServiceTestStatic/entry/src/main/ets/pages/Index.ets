@@ -1,4 +1,3 @@
-import { memo, __memo_context_type, __memo_id_type } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import { Entry, Web, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent,
   OnProgressChangeEvent, WebResourceResponse, WebResourceRequest, SslErrorHandler,
   JsResult, HttpAuthHandler, DataResubmissionHandler, ConsoleMessage, ClientAuthenticationHandler,

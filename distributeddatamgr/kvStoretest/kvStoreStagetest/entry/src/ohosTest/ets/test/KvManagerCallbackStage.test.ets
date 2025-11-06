@@ -54,6 +54,8 @@ export default function kvManagerCallbackStageTest(){
     afterAll(async function (done) {
       console.info('afterAll');
       await sleep(500);
+      kvManager = null;
+      kvStore = null;
       done();
     })
 
@@ -64,14 +66,21 @@ export default function kvManagerCallbackStageTest(){
 
     afterEach(async function (done) {
       console.info('afterEach');
-      await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore, async function () {
-        console.info('afterEach closeKVStore success');
-        await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, function () {
-          console.info('afterEach deleteKVStore success');
-          done();
+      try {
+        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, async function (err, data) {
+          console.info('afterEach closeKVStore success: function err is: '+err);
+          await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, function (err, data) {
+            console.info('afterEach deleteKVStore success: function err is: '+err);
+            kvStore = null;
+            done();
+          });
         });
-      });
-      kvStore = null;
+
+      } catch (e) {
+        console.error('afterEach closeKVStore err ' + `, error code is ${e.code}, message is ${e.message}`);
+        done();
+      }
+
     })
 
     /**
@@ -828,17 +837,19 @@ export default function kvManagerCallbackStageTest(){
           console.info('testKVManagerCloseKVStore104 getKVStore success');
           kvStore = store;
           await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore);
+          console.info('testKVManagerCloseKVStore104 closeKVStore redo.');
+          await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore, function (err, data) {
+            console.info('testKVManagerCloseKVStore104 closeKVStore twice ' + err);
+            done();
+          });
         });
-        console.info('testKVManagerCloseKVStore104 closeKVStore redo.');
-        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore, function (err, data) {
-          console.info('testKVManagerCloseKVStore104 closeKVStore twice ' + err);
-        });
-        done();
+
       } catch (e) {
-        console.info('testKVManagerCloseKVStore104 closeKVStore twice e ' + e);
+        console.info('testKVManagerCloseKVStore104 catch  e ' + e);
         expect(e != null).assertTrue();
+        done();
       }
-      done();
+      
     })
 
     /**
@@ -1013,7 +1024,6 @@ export default function kvManagerCallbackStageTest(){
             done();
           });
         });
-        done();
       } catch (e) {
         console.info('testKVStorePut100 callback e ' + e);
         expect(e != null).assertTrue();

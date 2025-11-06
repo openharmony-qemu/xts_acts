@@ -79,11 +79,12 @@ describe('singleKvStorePromiseTest', function () {
         await factory.createKVManager(config).then((manager) => {
             kvManager = manager;
             console.info('beforeAll createKVManager success');
+            done();
         }).catch((err) => {
             console.info('beforeAll createKVManager err ' + err);
+            done();
         });
-        console.info('beforeAll end');
-        done();
+
     })
 
     afterAll(async function (done) {
@@ -98,11 +99,12 @@ describe('singleKvStorePromiseTest', function () {
         await kvManager.getKVStore(TEST_STORE_ID, options).then((store) => {
             kvStore = store;
             console.info('beforeEach getKVStore success');
+            done();
         }).catch((err) => {
             console.info('beforeEach getKVStore err ' + err);
+            done();
         });
-        console.info('beforeEach end');
-        done();
+
     })
 
     afterEach(async function (done) {
@@ -111,14 +113,17 @@ describe('singleKvStorePromiseTest', function () {
             console.info('afterEach closeKVStore success');
             await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
                 console.info('afterEach deleteKVStore success');
+                kvStore = null;
+                done();
             }).catch((err) => {
                 console.info('afterEach deleteKVStore err ' + err);
+                done();
             });
         }).catch((err) => {
             console.info('afterEach closeKVStore err ' + err);
+            done();
         });
-        kvStore = null;
-        done();
+
     })
 
     /**
@@ -514,15 +519,18 @@ describe('singleKvStorePromiseTest', function () {
             await kvStore.put(KEY_TEST_FLOAT_ELEMENT, VALUE_TEST_FLOAT_ELEMENT).then((data) => {
                 console.info('testSingleKvStorePutFloat001 put success');
                 expect(data == undefined).assertTrue();
+                done();
             }).catch((err) => {
                 console.info('testSingleKvStorePutFloat001 put fail ' + err);
                 expect(null).assertFail();
+                done();
             });
         } catch (e) {
             console.info('testSingleKvStorePutFloat001 put e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
+
     })
 
     /**
@@ -543,19 +551,23 @@ describe('singleKvStorePromiseTest', function () {
                 await kvStore.get(KEY_TEST_FLOAT_ELEMENT).then((data) => {
                     console.info('testSingleKvStoreGetFloat001 get success');
                     expect(floatValue == data).assertTrue();
+            done();
                 }).catch((err) => {
                     console.info('testSingleKvStoreGetFloat001 get fail ' + err);
                     expect(null).assertFail();
+            done();
                 });
             }).catch((err) => {
                 console.info('testSingleKvStoreGetFloat001 put fail ' + err);
                 expect(null).assertFail();
+          done();
             });
         } catch (e) {
             console.info('testSingleKvStoreGetFloat001 put e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
+        
     })
 
     /**
@@ -576,19 +588,22 @@ describe('singleKvStorePromiseTest', function () {
                 await kvStore.get(KEY_TEST_FLOAT_ELEMENT).then((data) => {
                     console.info('testSingleKvStoreGetFloat002 get success');
                     expect(floatValue == data).assertTrue();
+                    done();
                 }).catch((err) => {
                     console.info('testSingleKvStoreGetFloat002 get fail ' + err);
                     expect(null).assertFail();
+                    done();
                 });
             }).catch((err) => {
                 console.info('testSingleKvStoreGetFloat002 put fail ' + err);
                 expect(null).assertFail();
+                done();
             });
         } catch (e) {
             console.info('testSingleKvStoreGetFloat002 put e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
     })
 
     /**
@@ -609,19 +624,23 @@ describe('singleKvStorePromiseTest', function () {
                 await kvStore.get(KEY_TEST_FLOAT_ELEMENT).then((data) => {
                     console.info('testSingleKvStoreGetFloat003 get success');
                     expect(floatValue == data).assertTrue();
+                    done();
                 }).catch((err) => {
                     console.info('testSingleKvStoreGetFloat003 get fail ' + err);
                     expect(null).assertFail();
+                    done();
                 });
             }).catch((err) => {
                 console.info('testSingleKvStoreGetFloat003 put fail ' + err);
                 expect(null).assertFail();
+                done();
             });
         } catch (e) {
             console.info('testSingleKvStoreGetFloat003 put e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
+        
     })
 
     /**
@@ -642,19 +661,22 @@ describe('singleKvStorePromiseTest', function () {
                 await kvStore.delete(KEY_TEST_STRING_ELEMENT).then((data) => {
                     console.info('testSingleKvStoreDeleteString001 delete success');
                     expect(data == undefined).assertTrue();
+                    done();
                 }).catch((err) => {
                     console.info('testSingleKvStoreDeleteString001 delete fail ' + err);
                     expect(null).assertFail();
+                    done();
                 });
             }).catch((err) => {
                 console.info('testSingleKvStoreDeleteString001 put fail ' + err);
                 expect(null).assertFail();
+                done();
             });
         } catch (e) {
             console.info('testSingleKvStoreDeleteString001 put e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
     })
 
     /**
@@ -678,19 +700,22 @@ describe('singleKvStorePromiseTest', function () {
                 await kvStore.delete(KEY_TEST_STRING_ELEMENT).then((data) => {
                     console.info('testSingleKvStoreDeleteString002 delete success');
                     expect(data == undefined).assertTrue();
+                    done();
                 }).catch((err) => {
                     console.info('testSingleKvStoreDeleteString002 delete fail ' + err);
                     expect(null).assertFail();
+                    done();
                 });
             }).catch((err) => {
                 console.info('testSingleKvStoreDeleteString002 put fail ' + err);
                 expect(null).assertFail();
+                done();
             });
         } catch (e) {
             console.info('testSingleKvStoreDeleteString002 put e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
     })
 
     /**
@@ -707,15 +732,17 @@ describe('singleKvStorePromiseTest', function () {
             await kvStore.delete(KEY_TEST_STRING_ELEMENT).then((data) => {
                 console.info('testSingleKvStoreDeleteString003 delete success');
                 expect(data == undefined).assertTrue();
+                done();
             }).catch((err) => {
                 console.info('testSingleKvStoreDeleteString003 delete fail ' + err);
                 expect(null).assertFail();
+                done();
             });
         } catch (e) {
             console.info('testSingleKvStoreDeleteString003 put e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
     })
 
     /**
@@ -735,19 +762,22 @@ describe('singleKvStorePromiseTest', function () {
                 await kvStore.delete(KEY_TEST_INT_ELEMENT).then((data) => {
                     console.info('testSingleKvStoreDeleteInt001 delete success');
                     expect(data == undefined).assertTrue();
+                    done();
                 }).catch((err) => {
                     console.info('testSingleKvStoreDeleteInt001 delete fail ' + err);
                     expect(null).assertFail();
+                    done();
                 });
             }).catch((err) => {
                 console.info('testSingleKvStoreDeleteInt001 put fail ' + err);
                 expect(null).assertFail();
+                done();
             });
         } catch (e) {
             console.info('testSingleKvStoreDeleteInt001 put e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
     })
 
     /**
@@ -767,19 +797,22 @@ describe('singleKvStorePromiseTest', function () {
                 await kvStore.delete(KEY_TEST_FLOAT_ELEMENT).then((data) => {
                     console.info('testSingleKvStoreDeleteFloat001 delete success');
                     expect(data == undefined).assertTrue();
+                    done();
                 }).catch((err) => {
                     console.info('testSingleKvStoreDeleteFloat001 delete fail ' + err);
                     expect(null).assertFail();
+                    done();
                 });
             }).catch((err) => {
                 console.info('testSingleKvStoreDeleteFloat001 put fail ' + err);
                 expect(null).assertFail();
+                done();
             });
         } catch (e) {
             console.info('testSingleKvStoreDeleteFloat001 put e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
     })
 
     /**
@@ -799,19 +832,22 @@ describe('singleKvStorePromiseTest', function () {
                 await kvStore.delete(KEY_TEST_BOOLEAN_ELEMENT).then((data) => {
                     console.info('testSingleKvStoreDeleteBool001 delete success');
                     expect(data == undefined).assertTrue();
+                    done();
                 }).catch((err) => {
                     console.info('testSingleKvStoreDeleteBool001 delete fail ' + err);
                     expect(null).assertFail();
+                    done();
                 });
             }).catch((err) => {
                 console.info('testSingleKvStoreDeleteBool001 put fail ' + err);
                 expect(null).assertFail();
+                done();
             });
         } catch (e) {
             console.info('testSingleKvStoreDeleteBool001 put e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
     })
 
     /**
@@ -831,15 +867,17 @@ describe('singleKvStorePromiseTest', function () {
             await kvStore.put(KEY_TEST_FLOAT_ELEMENT, VALUE_TEST_FLOAT_ELEMENT).then((data) => {
                 console.info('testSingleKvStoreOnChange001 put success');
                 expect(data == undefined).assertTrue();
+                done();
             }).catch((error) => {
                 console.info('testSingleKvStoreOnChange001 put fail ' + error);
                 expect(null).assertFail();
+                done();
             });
         }catch(e) {
             console.info('testSingleKvStoreOnChange001 put e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
     })
 
     /**
@@ -859,15 +897,17 @@ describe('singleKvStorePromiseTest', function () {
             await kvStore.put(KEY_TEST_FLOAT_ELEMENT, VALUE_TEST_FLOAT_ELEMENT).then((data) => {
                 console.info('testSingleKvStoreOnChange002 put success');
                 expect(data == undefined).assertTrue();
+                done();
             }).catch((error) => {
                 console.info('testSingleKvStoreOnChange002 put fail ' + error);
                 expect(null).assertFail();
+                done();
             });
         }catch(e) {
             console.info('testSingleKvStoreOnChange002 put e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
     })
 
     /**
@@ -887,15 +927,17 @@ describe('singleKvStorePromiseTest', function () {
             await kvStore.put(KEY_TEST_FLOAT_ELEMENT, VALUE_TEST_FLOAT_ELEMENT).then((data) => {
                 console.info('testSingleKvStoreOnChange003 put success');
                 expect(data == undefined).assertTrue();
+                done();
             }).catch((error) => {
                 console.info('testSingleKvStoreOnChange003 put fail ' + error);
                 expect(null).assertFail();
+                done();
             });
         }catch(e) {
             console.info('testSingleKvStoreOnChange003 put e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
     })
 
     /**
@@ -2772,15 +2814,17 @@ describe('singleKvStorePromiseTest', function () {
             await kvStore.getResultSize(query).then((resultSize) => {
                 console.info('testSingleKvStoreGetResultSize001 getResultSet success');
                 expect(resultSize == 10).assertTrue();
+                done();
             }).catch((err) => {
                 console.info('testSingleKvStoreGetResultSize001 getResultSet fail ' + err);
                 expect(null).assertFail();
+                done();
             });
         }catch(e) {
             console.info('testSingleKvStoreGetResultSize001 e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
     })
 
     /**
@@ -2818,15 +2862,18 @@ describe('singleKvStorePromiseTest', function () {
             await kvStore.getResultSize(query).then((resultSize) => {
                 console.info('testSingleKvStoreGetResultSize001 getResultSet success');
                 expect(resultSize == 10).assertTrue();
+                done();
             }).catch((err) => {
                 console.info('testSingleKvStoreGetResultSize001 getResultSet fail ' + err);
                 expect(null).assertFail();
+                done();
             });
         }catch(e) {
             console.info('testSingleKvStoreGetResultSize001 e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
+        
     })
 
     /**
@@ -2863,20 +2910,23 @@ describe('singleKvStorePromiseTest', function () {
                     console.info('testSingleKvStoreGetEntries001 getEntries success');
                     expect(entrys.length == 10).assertTrue();
                     expect(entrys[0].value.value.toString() == arr.toString()).assertTrue();
+                    done();
                 }).catch((err) => {
                     console.info('testSingleKvStoreGetEntries001 getEntries fail ' + err);
                     expect(null).assertFail();
+                    done();
                 });
             }).catch((err) => {
                 console.info('testSingleKvStoreGetEntries001 putBatch fail ' + err);
                 expect(null).assertFail();
+                done();
             });
-            console.info('testSingleKvStoreGetEntries001 success');
         }catch(e) {
             console.info('testSingleKvStoreGetEntries001 e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
+        
     })
 
     /**
@@ -2913,20 +2963,23 @@ describe('singleKvStorePromiseTest', function () {
                     console.info('testSingleKvStoreGetEntries002 getEntries success');
                     expect(entrys.length == 10).assertTrue();
                     expect(entrys[0].value.value.toString() == arr.toString()).assertTrue();
+                    done();
                 }).catch((err) => {
                     console.info('testSingleKvStoreGetEntries002 getEntries fail ' + err);
                     expect(null).assertFail();
+                    done();
                 });
             }).catch((err) => {
                 console.info('testSingleKvStoreGetEntries002 putBatch fail ' + err);
                 expect(null).assertFail();
+                done();
             });
-            console.info('testSingleKvStoreGetEntries002 success');
         }catch(e) {
             console.info('testSingleKvStoreGetEntries002 e ' + e);
             expect(null).assertFail();
+            done();
         }
-        done();
+        
     })
 
     /**
@@ -2949,10 +3002,12 @@ describe('singleKvStorePromiseTest', function () {
         await getInsertEntries.then(function(insertEntries){
             console.info('testSingleKvStoreChangeNotification101 getInsertEntries' + JSON.stringify(insertEntries));
             expect(insertEntries).assertNotNull();
+            done();
         }).catch((error) => {
             console.info('testSingleKvStoreChangeNotification101 can NOT getInsertEntries, fail:' + error);
+            done();
         });
-        done();
+        
     })
 	
     /**
@@ -2978,10 +3033,12 @@ describe('singleKvStorePromiseTest', function () {
         await getUpdateEntries.then(function(updateEntries){
             console.info('testSingleKvStoreChangeNotification102 getUpdateEntries' + JSON.stringify(updateEntries));
             expect(updateEntries).assertNotNull();
+            done();
         }).catch((error) => {
             console.info('testSingleKvStoreChangeNotification102 can NOT getUpdateEntries, fail:' + error);
+            done();
         });
-        done();
+        
     })
 	
     /**
@@ -3007,10 +3064,12 @@ describe('singleKvStorePromiseTest', function () {
         await getdeleteEntries.then(function(deleteEntries){
             console.info('testSingleKvStoreChangeNotification103 deleteEntries' + JSON.stringify(getdeleteEntries));
             expect(deleteEntries != null).assertNotNull();
+            done();
         }).catch((error) => {
             console.info('testSingleKvStoreChangeNotification103 can NOT getdeleteEntries, fail:' + error);
+            done();
         });
-        done();
+        
     })
 })
 }

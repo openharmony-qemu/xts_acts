@@ -704,9 +704,9 @@ export default function windowRichSceneTest(context: common.UIAbilityContext, wi
      * @tc.desc      : Gets the current window gamut mode
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testGetWindowColorSpace_Invoke_Interface_Two_Times', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testGetWindowColorSpace_Invoke_Interface_Two_Times', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testGetWindowColorSpace_Invoke_Interface_Two_Times';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -1636,9 +1636,9 @@ export default function windowRichSceneTest(context: common.UIAbilityContext, wi
      * @tc.desc      : Gets the main window under the WindowStage instance
      * @tc.size      : MediumTest
      * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.level     : LEVEL0
      */
-    it('testGetMainWindowSync_Invoke_Interface_Two_Times', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testGetMainWindowSync_Invoke_Interface_Two_Times', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testGetMainWindowSync_Invoke_Interface_Two_Times';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');

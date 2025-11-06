@@ -109,14 +109,17 @@ describe('schemaTest', function() {
             await ddm.createKVManager(config).then((manager) => {
                 kvManager = manager;
                 console.info('beforeAll createKVManager success');
+                done();
             }).catch((err) => {
                 console.info('beforeAll createKVManager err ' + err);
+                done();
             });
         } catch (e) {
             console.info("fail on exception: " + e);
             expect(null).assertFail();
+            done();
         }
-        done();
+        
     })
 
     afterAll(async function (done) {
@@ -137,14 +140,17 @@ describe('schemaTest', function() {
             console.info('afterEach closeKVStore success');
             await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
                 console.info('afterEach deleteKVStore success');
+                kvStore = null;
+                done();
             }).catch((err) => {
                 console.info('afterEach deleteKVStore err ' + err);
+                done();
             });
         }).catch((err) => {
             console.info('afterEach closeKVStore err ' + err);
+            done();
         });
-        kvStore = null;
-        done();
+
     })
 
     /**

@@ -49,6 +49,8 @@ describe('kvManagerCallbackTest', function () {
 
     afterAll(async function (done) {
         console.info('afterAll');
+        kvManager = null;
+        kvStore = null;
         done();
     })
 
@@ -59,14 +61,21 @@ describe('kvManagerCallbackTest', function () {
 
     afterEach(async function (done) {
         console.info('afterEach');
-        await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, kvStore, async function () {
-            console.info('afterEach closeKVStore success');
-            await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, function () {
-                console.info('afterEach deleteKVStore success');
+        try {
+            await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, async function (err, data) {
+              console.info('afterEach closeKVStore success: function err is: '+err);
+              await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID, function (err, data) {
+                console.info('afterEach deleteKVStore success: function err is: '+err);
+                kvStore = null;
                 done();
+              });
             });
-        });
-        kvStore = null;
+    
+          } catch (e) {
+            console.error('afterEach closeKVStore err ' + `, error code is ${e.code}, message is ${e.message}`);
+            done();
+          }
+
     })
 
     /**
@@ -87,8 +96,9 @@ describe('kvManagerCallbackTest', function () {
                 kvStore.getSecurityLevel().then((data) => {
                     console.info('SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0100 securityLevel = ' + data);
                     expect((data == factory.SecurityLevel.S2)).assertTrue();
+                    done();
                 });
-                done();
+                
             });
         } catch (e) {
             console.error('SUB_DDM_DKV_KVMANAGER_GETKVSTORE_0100 getKVStore e ' + `, error code is ${e.code}, message is ${e.message}`);

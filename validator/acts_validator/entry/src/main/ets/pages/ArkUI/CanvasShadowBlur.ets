@@ -50,22 +50,22 @@ struct SetCircle {
                 .blockBorderColor('#07B9A2')
                 .blockBorderWidth('1vp')
                 .onChange((value: number, mode: SliderChangeMode) => {
-                  this.context.clearRect(0, 0, 600, 500);
+                  this.context.clearRect(0, 0, 250, 200);
                   this.X = value;
                   this.context.shadowBlur = this.X;
                   this.context.shadowColor = 'rgb(0,0,0)';
                   this.context.fillStyle = 'rgb(255,0,0)';
-                  this.context.fillRect(150, 150, 100, 100);
+                  this.context.fillRect(50, 50, 100, 50);
                   if (value >= 100) {
                     this.Vue = true;
                   }
                 })
             }
-          }.width('70%').height('25%')
+          }.width('70%').height('15%')
 
           Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-            Text('阴影模糊: ' + this.X)
-          }.width('100%').height('20%')
+            Text('阴影模糊: ' + this.X).fontSize(10).fontColor(Color.Black)
+          }.width('100%').height('10%')
 
           Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
             Canvas(this.context)
@@ -76,11 +76,11 @@ struct SetCircle {
                 this.context.shadowBlur = 0;
                 this.context.shadowColor = 'rgb(0,0,0)';
                 this.context.fillStyle = 'rgb(255,0,0)';
-                this.context.fillRect(150, 150, 100, 100);
+                this.context.fillRect(50, 50, 100, 50);
               })
           }
           .width('100%')
-          .height('55%')
+          .height('75%')
         }
       }
       .scrollBarWidth('6vp')

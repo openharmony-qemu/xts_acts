@@ -102,7 +102,7 @@ export default function abilityTest() {
           }
           done()
         })
-      }, 15000)
+      }, 5000)
     })
 
     /*
@@ -152,7 +152,7 @@ export default function abilityTest() {
           }
           done()
         })
-      }, 15000)
+      }, 5000)
     })
   })
 }
