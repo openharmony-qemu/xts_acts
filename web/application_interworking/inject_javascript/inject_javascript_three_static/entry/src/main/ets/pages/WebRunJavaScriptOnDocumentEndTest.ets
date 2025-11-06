@@ -31,7 +31,7 @@ import { Callback, RecordData } from '@ohos.base'
 import { ScriptItem } from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 class StringFields {
-  private str: string = 'emitWebRunJavaScriptOnDocumentEnd001';
+  public str: string = 'emitWebRunJavaScriptOnDocumentEnd001';
 }
 @Entry
 @Component

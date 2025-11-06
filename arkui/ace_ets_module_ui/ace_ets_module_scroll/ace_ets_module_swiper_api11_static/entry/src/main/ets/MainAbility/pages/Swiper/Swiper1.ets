@@ -55,7 +55,7 @@ import {
 import { State } from '@ohos.arkui.stateManagement';
 
 export class MyDataSource implements IDataSource<number> {
-  private list: number[] = []
+  public list: number[] = []
   private listener?: DataChangeListener = undefined
 
   constructor(list: number[]) {

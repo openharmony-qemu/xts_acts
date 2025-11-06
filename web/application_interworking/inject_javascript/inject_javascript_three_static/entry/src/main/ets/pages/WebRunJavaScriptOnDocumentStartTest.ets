@@ -34,7 +34,7 @@ import { Callback, RecordData } from '@ohos.base'
 import image from '@ohos.multimedia.image';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 @Entry
 @Component
