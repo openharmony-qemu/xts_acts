@@ -1,5 +1,5 @@
-/*
- *  Copyright (c) 2024 Huawei Device Co., Ltd.
+  /*
+ *  Copyright (c) 2025 Huawei Device Co., Ltd.
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { http } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
-import { hilog } from '@kit.PerformanceAnalysisKit';
+import hilog from '@ohos.hilog';
 
 const ExpectFail = () => {
   try {
@@ -501,7 +501,7 @@ export default function HttpRequestInterceptor() {
             } else {
               hilog.info(0x0000, 'testTag', `${caseName} res:${JSON.stringify(res)}`);
               httpRequest.destroy();
-              ExpectTrue(true);
+              ExpectTrue(res.responseCode === 200);
               done();
             }
           });
