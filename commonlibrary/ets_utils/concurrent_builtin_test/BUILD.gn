@@ -20,6 +20,8 @@ group("concurrent_builtin_test") {
       "concurrent_baselib_test:ActsConcurrentBaselibTest",
       "concurrent_global_test:ActsConcurrentGlobalTest",
       "concurrent_builtins_test:ActsConcurrentBuiltinsTest",
+      "concurrent_atomics_test:ActsConcurrentAtomicsTest",
+      "concurrent_async_test:ActsConcurrentAsyncTest",
     ]
   }
 }
