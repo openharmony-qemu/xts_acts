@@ -119,6 +119,58 @@ export default function WindowLifeCycleTest() {
             //hilog.info(0x0000, '[ANI]',`beforeAll isPCStatus: `+ isPCStatus);
         })
         /**
+         * @tc.number    : SUB_BASIC_WMS_FUNCTION_GETSUBWINDOW_static_0100
+         * @tc.name      : testgetSubWindow0_promise_static
+         * @tc.desc      : Test the function value of getSubWindow
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it('testgetSubWindow0_promise_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testgetSubWindow0_promise_static';
+            try {
+                let windowclass:Array<window.Window> = await windowStage.getSubWindow();
+                console.log(`${caseName} getSubWindow success. Cause: ${JSON.stringify(windowclass)}`);
+                expect(windowclass.length).assertEqual(0)
+                done();
+            } catch (e) {
+                console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+                expect(false).assertTrue();
+                done();
+            }
+        });
+        /**
+         * @tc.number    : SUB_BASIC_WMS_FUNCTION_GETSUBWINDOW_static_0200
+         * @tc.name      : testgetSubWindow0_callback_static
+         * @tc.desc      : Test the function value of getSubWindow
+         * @tc.size      : MediumTest
+         * @tc.type      : Function
+         * @tc.level     : Level3
+         */
+        it('testgetSubWindow0_callback_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName:string = 'testgetSubWindow0_callback_static';
+            let windowclass:Array<window.Window>|undefined;
+            try {
+                windowStage.getSubWindow((err: BusinessError<void>|null, data: Array<window.Window>|undefined) => {
+                    const errCode: number = err!.code;
+                    if (errCode) {
+                        console.error(caseName + ` Failed to obtain the subwindow. Cause code: ${err!.code}, message: ${err!.message}`);
+                        expect(false).assertTrue();
+                        done();
+                    }else{
+                        windowclass = data;
+                        console.log(`${caseName} getSubWindow success. Cause: ${JSON.stringify(windowclass)}`);
+                        expect(windowclass!.length).assertEqual(0)
+                        done();
+                    }
+                });
+            } catch (e: BusinessError) {
+                console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+                expect(false).assertTrue();
+                done();
+            }
+        });
+        /**
          * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_GETLASTWINDOW_API_0100
          * @tc.name      : testGetLastWindow_Promise_static_0100
          * @tc.desc      : Get the final show window
@@ -1813,6 +1865,8 @@ export default function WindowLifeCycleTest() {
                 .then((data) => {
                     windowClass = data;
                     hilog.info(domain, tag,msgStr + 'Succeeded in creating the subwindow. Data: ' + data);
+                    windowClass.destroyWindow();
+                    expect(true).assertTrue();
                     done();
                 })
                 .catch((err: BusinessError):PromiseLike<void>|undefined => {
@@ -1985,58 +2039,7 @@ export default function WindowLifeCycleTest() {
 
             }
         })
-        /**
-         * @tc.number    : SUB_BASIC_WMS_FUNCTION_GETSUBWINDOW_static_0100
-         * @tc.name      : testgetSubWindow0_promise_static
-         * @tc.desc      : Test the function value of getSubWindow
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
-        it('testgetSubWindow0_promise_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            let caseName:string = 'testgetSubWindow0_promise_static';
-            try {
-                let windowclass:Array<window.Window> = await windowStage.getSubWindow();
-                console.log(`${caseName} getSubWindow success. Cause: ${JSON.stringify(windowclass)}`);
-                expect(windowclass.length).assertEqual(0)
-                done();
-            } catch (e) {
-                console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-                expect(false).assertTrue();
-                done();
-            }
-        });
-        /**
-         * @tc.number    : SUB_BASIC_WMS_FUNCTION_GETSUBWINDOW_static_0200
-         * @tc.name      : testgetSubWindow0_callback_static
-         * @tc.desc      : Test the function value of getSubWindow
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
-        it('testgetSubWindow0_callback_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            let caseName:string = 'testgetSubWindow0_callback_static';
-            let windowclass:Array<window.Window>|undefined;
-            try {
-                windowStage.getSubWindow((err: BusinessError<void>|null, data: Array<window.Window>|undefined) => {
-                    const errCode: number = err!.code;
-                    if (errCode) {
-                        console.error(caseName + ` Failed to obtain the subwindow. Cause code: ${err!.code}, message: ${err!.message}`);
-                        expect(false).assertTrue();
-                        done();
-                    }else{
-                        windowclass = data;
-                        console.log(`${caseName} getSubWindow success. Cause: ${JSON.stringify(windowclass)}`);
-                        expect(windowclass!.length).assertEqual(0)
-                        done();
-                    }
-                });
-            } catch (e: BusinessError) {
-                console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
-                expect(false).assertTrue();
-                done();
-            }
-        });
+        
 
 
 
