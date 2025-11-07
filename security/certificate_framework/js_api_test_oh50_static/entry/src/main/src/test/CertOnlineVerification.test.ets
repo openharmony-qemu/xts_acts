@@ -29,7 +29,11 @@ import { createCertChain, createX509Cert,
   caChainWithOcsp3,
   caChainWithOcsp4,
   caTrustCertWithOcsp4,
-  caInter
+  caInter,
+  interCertRevokedChain,
+  interCertRevokedChainTrustCert,
+  leafCertRevokedChainTrustCert,
+  leafCertRevokedChain
 } from "./utils/crl/crl";
 
 
@@ -483,6 +487,77 @@ export default function certFrameworkCertCheckOnlineCaTestUnit() {
           expect(null).assertFail();
         } catch (error: BusinessError) {
           console.error(`[XTS] CheckCa_Func_1300 “${error}“, error code: ${error.code}`);
+          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+        }
+        done();
+      });
+
+      /**
+     * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_1400
+     * @tc.name SUB_Security_Cert_Framework_Online_CheckCa_Func_1400
+     * @tc.desc The Online CRL, Promise Type
+     * @tc.size MediumTest
+     * @tc.level Level1
+     * @tc.type Function
+     */
+    it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1400",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        try {
+          // openssl ocsp -port 5555 -index index.txt -CA ecdsa_intermediate.crt -rkey ecdsa_intermediate.key -rsigner ecdsa_intermediate.crt -text
+          // openssl ocsp -port 5553 -index index.txt -CA ecdsa_root.crt -rkey ecdsa_root.key -rsigner ecdsa_root.crt -text
+          let x509CertChain: cert.X509CertChain = await createCertChain(interCertRevokedChain);
+          let x509Cert: cert.X509Cert = await createX509Cert(interCertRevokedChainTrustCert);
+          const param: cert.CertChainValidationParameters = {
+            trustAnchors: [{
+              CACert: x509Cert
+            }],
+            revocationCheckParam: {
+              options: [
+                cert.RevocationCheckOptions.REVOCATION_CHECK_OPTION_ACCESS_NETWORK,
+                cert.RevocationCheckOptions.REVOCATION_CHECK_OPTION_PREFER_OCSP,
+                cert.RevocationCheckOptions.REVOCATION_CHECK_OPTION_CHECK_INTERMEDIATE_CA_ONLINE
+              ],
+            }
+          };
+          await x509CertChain.validate(param);
+          expect(null).assertFail();
+        } catch (error: BusinessError) {
+          console.error(`[XTS] CheckCa_Func_1400 “${error}“, error code: ${error.code}`);
+          expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
+        }
+        done();
+      });
+
+    /**
+     * @tc.number SUB_Security_Cert_Framework_Online_CheckCa_Func_1500
+     * @tc.name SUB_Security_Cert_Framework_Online_CheckCa_Func_1500
+     * @tc.desc The Online CRL, Promise Type
+     * @tc.size MediumTest
+     * @tc.level Level1
+     * @tc.type Function
+     */
+    it("SUB_Security_Cert_Framework_Online_CheckCa_Func_1500",
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        try {
+          // openssl ocsp -port 5554 -index index.txt -CA ecdsa_intermediate.crt -rkey ecdsa_intermediate.key -rsigner ecdsa_intermediate.crt -text
+          let x509CertChain: cert.X509CertChain = await createCertChain(leafCertRevokedChain);
+          let x509Cert: cert.X509Cert = await createX509Cert(leafCertRevokedChainTrustCert);
+          const param: cert.CertChainValidationParameters = {
+            trustAnchors: [{
+              CACert: x509Cert
+            }],
+            revocationCheckParam: {
+              options: [
+                cert.RevocationCheckOptions.REVOCATION_CHECK_OPTION_ACCESS_NETWORK,
+                cert.RevocationCheckOptions.REVOCATION_CHECK_OPTION_PREFER_OCSP,
+              ],
+              ocspResponderCert: x509Cert
+            }
+          };
+          await x509CertChain.validate(param);
+          expect(null).assertFail();
+        } catch (error: BusinessError) {
+          console.error(`[XTS] CheckCa_Func_1500 “${error}“, error code: ${error.code}`);
           expect(error.code).assertEqual(cert.CertResult.ERR_CRYPTO_OPERATION);
         }
         done();
