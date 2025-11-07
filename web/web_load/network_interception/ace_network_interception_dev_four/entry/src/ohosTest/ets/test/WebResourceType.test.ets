@@ -229,7 +229,7 @@ export default function WebResourceTypeTest() {
     */
     it('testWebResourceTypeMedia', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testWebResourceTypeMedia", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("testWebResourceTypeMedia", 0, 25110700, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.registerBaseEvent("testWebResourceTypeMedia", 0, 25110708, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.MEDIA);
       });
       sendEventByKey('WebResourceTypeButton', 10, '');
