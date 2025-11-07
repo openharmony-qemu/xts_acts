@@ -95,7 +95,7 @@ export default function RichEditorOnWillChange005() {
 
 
       let delete_span = await driver.findComponent(ON.id('delete_span'));
-      delete_span.click();
+      await delete_span.click();
       await CommonFunc.sleep(500);
 
       let onWillChange_rangeBefore = await driver.findComponent(ON.id('onWillChange_rangeBefore'));
