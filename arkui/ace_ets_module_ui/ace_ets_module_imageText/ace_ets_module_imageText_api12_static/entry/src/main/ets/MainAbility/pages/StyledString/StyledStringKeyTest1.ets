@@ -68,10 +68,12 @@ struct StyledStringKeyTest1 {
       Text(undefined, { controller: this.controller })
       Button("get user data")
         .id('StyledStringKeyTest1_btn')
-        .onClick((e:ClickEvent) => {
+        .onClick((e: ClickEvent) => {
           let arr = this.styleString.getStyles(0, this.styleString.length)
-          let userDataSpan = arr[0].styledValue as MyUserDateSpan
-          this.name = userDataSpan.name
+          if (arr) {
+            let userDataSpan = arr[0].styledValue as MyUserDateSpan
+            this.name = userDataSpan.name
+          }
         })
       Text(this.name).id('StyledStringKeyTest1_text')
     }.width('100%')

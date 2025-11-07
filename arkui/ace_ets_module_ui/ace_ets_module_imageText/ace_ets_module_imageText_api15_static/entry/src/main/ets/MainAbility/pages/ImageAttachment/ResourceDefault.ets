@@ -100,28 +100,32 @@ struct ResourceDefault {
           .id('get_default_styles')
           .onClick((e: ClickEvent) => {
             let imageArray = this.mutableStyledString1.getStyles(0, this.mutableStyledString1.length)
-            for (let i = 0; i < imageArray.length; ++i) {
-              if (imageArray[i].styledKey === 300) {
-                let attachment = imageArray[i].styledValue as ImageAttachment
-                console.info('ImageAttachment value  ' + JSON.stringify(attachment.value))
-                this.resourceValue = '' + JSON.stringify(attachment.value)
-                console.info('ImageAttachment size  ' + JSON.stringify(attachment.size))
-                this.size1 = '' + JSON.stringify(attachment.size)
-                console.info('ImageAttachment verticalAlign  ' + JSON.stringify(attachment.verticalAlign))
-                this.verticalAlign = '' + JSON.stringify(attachment.verticalAlign)
-                console.info('ImageAttachment objectFit  ' + JSON.stringify(attachment.objectFit))
-                this.objectFit = '' + JSON.stringify(attachment.objectFit)
-                console.info('ImageAttachment layoutStyle  ' + JSON.stringify(attachment.layoutStyle))
-                this.layoutStyle = '' + JSON.stringify(attachment.layoutStyle)
-                if (attachment.colorFilter) {
-                  this.DrawingColorFilterFirst = attachment.colorFilter as ColorFilter | undefined
-                  console.info('ImageAttachment colorFilter1  ' + JSON.stringify(attachment.colorFilter))
-                  this.colorFilter = '' + JSON.stringify(attachment.colorFilter)
-                } else {
-                  console.info('ImageAttachment colorFilter2  ' + JSON.stringify(attachment.colorFilter))
-                  this.colorFilter = 'undefined'
+            if (imageArray) {
+              for (let i = 0; i < imageArray.length; ++i) {
+                if (imageArray[i].styledKey === 300) {
+                  let attachment = imageArray[i].styledValue as ImageAttachment
+                  console.info('ImageAttachment value  ' + JSON.stringify(attachment.value))
+                  this.resourceValue = '' + JSON.stringify(attachment.value)
+                  console.info('ImageAttachment size  ' + JSON.stringify(attachment.size))
+                  this.size1 = '' + JSON.stringify(attachment.size)
+                  console.info('ImageAttachment verticalAlign  ' + JSON.stringify(attachment.verticalAlign))
+                  this.verticalAlign = '' + JSON.stringify(attachment.verticalAlign)
+                  console.info('ImageAttachment objectFit  ' + JSON.stringify(attachment.objectFit))
+                  this.objectFit = '' + JSON.stringify(attachment.objectFit)
+                  console.info('ImageAttachment layoutStyle  ' + JSON.stringify(attachment.layoutStyle))
+                  this.layoutStyle = '' + JSON.stringify(attachment.layoutStyle)
+                  if (attachment.colorFilter) {
+                    this.DrawingColorFilterFirst = attachment.colorFilter as ColorFilter | undefined
+                    console.info('ImageAttachment colorFilter1  ' + JSON.stringify(attachment.colorFilter))
+                    this.colorFilter = '' + JSON.stringify(attachment.colorFilter)
+                  } else {
+                    console.info('ImageAttachment colorFilter2  ' + JSON.stringify(attachment.colorFilter))
+                    this.colorFilter = 'undefined'
+                  }
                 }
               }
+            } else {
+              console.info('imageArray undefined')
             }
           })
           .height(35)

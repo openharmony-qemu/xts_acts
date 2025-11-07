@@ -139,7 +139,7 @@ struct StyledStringApi1 {
         Button('查询其他文本样式')
           .onClick((e:ClickEvent) => {
             let styles = this.paragraphStyledString1.getStyles(0, this.paragraphStyledString1.length)
-            if (styles.length !== 0) {
+            if (styles && styles.length !== 0) {
               for (let i = 0; i < styles.length; i++) {
                 console.info('mutableStyledString2 style object start:' + styles[i].start)
                 console.info('mutableStyledString2 style object length:' + styles[i].length)

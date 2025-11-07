@@ -38,9 +38,9 @@ struct TextAreaExample2 {
   @State fontColor: string = "#FF182432";
   @State fontSize: number = 30;
   @State textAlign: TextAlign = TextAlign.Center;
-  @State caretIndex: number = 9999;
+  @State caretIndex: int | undefined = 9999;
   @State text2: string = '';
-  @State positionInfo: CaretOffset = { index: 9999, x: 0, y: 0 } as CaretOffset;
+  @State positionInfo: CaretOffset | undefined = { index: 9999, x: 0, y: 0 } as CaretOffset;
   controller: TextAreaController = new TextAreaController();
 
   onPageShow() {
@@ -136,8 +136,8 @@ struct TextAreaExample2 {
           console.info('text length:' + this.text2.length)
           this.controller.caretPosition(this.text2.length)
           this.positionInfo = this.controller.getCaretOffset()
-          console.info("index:" + this.positionInfo.index)
-          this.caretIndex = this.positionInfo.index
+          console.info("index:" + this.positionInfo?.index)
+          this.caretIndex = this.positionInfo?.index
         })
         .key('caretOffsetBtn1')
 

@@ -32,9 +32,9 @@ struct SearchExample {
   @State copyOption:CopyOptions = CopyOptions.LocalDevice
   controller: SearchController= new SearchController()
   controller2: SearchController= new SearchController()
-  @State caretIndex : number = 9999
+  @State caretIndex: undefined | int = 9999
   @State text: string = ''
-  @State positionInfo: CaretOffset = { index: 9999, x: 0, y: 0 } as CaretOffset
+  @State positionInfo: CaretOffset | undefined = { index: 9999, x: 0, y: 0 } as CaretOffset
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("search page state change called:" + JSON.stringify(eventData));
@@ -110,8 +110,8 @@ struct SearchExample {
           console.info('text length:' + this.text.length)
           this.controller2.caretPosition(this.text.length)
           this.positionInfo = this.controller2.getCaretOffset()
-          console.info("index:" + this.positionInfo.index)
-          this.caretIndex = this.positionInfo.index
+          console.info("index:" + this.positionInfo?.index)
+          this.caretIndex = this.positionInfo?.index
         })
         .key('caretOffsetBtn')
 

@@ -33,7 +33,7 @@ struct TextInputCaret {
   @State submitValue: string = ''
   @State text: string = ''
   @State text1: string = ''
-  @State positionInfo: CaretOffset = { index: 0, x: 0, y: 0 } as CaretOffset
+  @State positionInfo: CaretOffset | undefined = { index: 0, x: 0, y: 0 } as CaretOffset
   controller: TextInputController = new TextInputController()
 
   build() {
@@ -44,7 +44,7 @@ struct TextInputCaret {
 
       Button('getCaret').onClick((event: ClickEvent) => {
         this.positionInfo = this.controller.getCaretOffset()
-        this.text = this.positionInfo.index + ''
+        this.text = this.positionInfo?.index + ''
       }).key('inputGetCaret')
 
     }.width('100%')

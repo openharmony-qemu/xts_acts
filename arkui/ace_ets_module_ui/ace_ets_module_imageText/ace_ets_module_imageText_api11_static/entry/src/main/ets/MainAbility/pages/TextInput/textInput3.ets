@@ -42,9 +42,9 @@ struct TextAreaExample2 {
   @State fontSize: number = 16;
   @State fontColor: Color = Color.Black;
   @State textAlign: TextAlign = TextAlign.Start;
-  @State caretIndex: number = 9999
+  @State caretIndex: int | undefined = 9999;
   @State text2: string = ''
-  @State positionInfo: CaretOffset = { index: 9999, x: 0, y: 0 } as CaretOffset
+  @State positionInfo: CaretOffset | undefined = { index: 9999, x: 0, y: 0 } as CaretOffset;
   controller: TextInputController = new TextInputController()
   controller2: TextInputController = new TextInputController()
 
@@ -126,8 +126,8 @@ struct TextAreaExample2 {
           this.controller2.caretPosition(this.text2.length)
           console.info('getCaretOffset')
           this.positionInfo = this.controller2.getCaretOffset()
-          console.info("index:" + this.positionInfo.index)
-          this.caretIndex = this.positionInfo.index
+          console.info("index:" + this.positionInfo?.index)
+          this.caretIndex = this.positionInfo?.index
         })
         .key('caretOffsetBtn2')
 

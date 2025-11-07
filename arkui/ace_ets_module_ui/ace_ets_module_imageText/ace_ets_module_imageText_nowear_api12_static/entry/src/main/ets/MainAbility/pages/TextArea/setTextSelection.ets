@@ -61,20 +61,20 @@ struct setTextSelectionTest {
         .onClick((e:ClickEvent) => {
           this.controller.setTextSelection(-1, -1, {menuPolicy: MenuPolicy.HIDE})
           this.controller2.setTextSelection(-1, -1, {menuPolicy: MenuPolicy.HIDE})
-          AppStorage.setOrCreate('textAreaStart', this.controller.getSelection().start)
-          AppStorage.setOrCreate('textAreaEnd', this.controller.getSelection().end)
-          AppStorage.setOrCreate('textInputStart', this.controller2.getSelection().start)
-          AppStorage.setOrCreate('textInputEnd', this.controller2.getSelection().end)
+          AppStorage.setOrCreate('textAreaStart', this.controller.getSelection()?.start)
+          AppStorage.setOrCreate('textAreaEnd', this.controller.getSelection()?.end)
+          AppStorage.setOrCreate('textInputStart', this.controller2.getSelection()?.start)
+          AppStorage.setOrCreate('textInputEnd', this.controller2.getSelection()?.end)
         }).id('but1')
 
       Button('setTextSelection 0 3')
         .onClick((e:ClickEvent) => {
           this.controller.setTextSelection(0, 3, {menuPolicy: MenuPolicy.DEFAULT})
           this.controller2.setTextSelection(0, 3, {menuPolicy: MenuPolicy.DEFAULT})
-          AppStorage.setOrCreate('textAreaStart', this.controller.getSelection().start)
-          AppStorage.setOrCreate('textAreaEnd', this.controller.getSelection().end)
-          AppStorage.setOrCreate('textInputStart', this.controller2.getSelection().start)
-          AppStorage.setOrCreate('textInputEnd', this.controller2.getSelection().end)
+          AppStorage.setOrCreate('textAreaStart', this.controller.getSelection()?.start)
+          AppStorage.setOrCreate('textAreaEnd', this.controller.getSelection()?.end)
+          AppStorage.setOrCreate('textInputStart', this.controller2.getSelection()?.start)
+          AppStorage.setOrCreate('textInputEnd', this.controller2.getSelection()?.end)
         }).id('but2')
 
       
@@ -101,10 +101,10 @@ struct setTextSelectionTest {
         .onClick((e:ClickEvent) => {
           this.controller.setTextSelection(0, 4, {menuPolicy: MenuPolicy.HIDE})
           this.controller2.setTextSelection(0, 4, {menuPolicy: MenuPolicy.HIDE})
-          AppStorage.setOrCreate('textAreaStart', this.controller.getSelection().start)
-          AppStorage.setOrCreate('textAreaEnd', this.controller.getSelection().end)
-          AppStorage.setOrCreate('textInputStart', this.controller2.getSelection().start)
-          AppStorage.setOrCreate('textInputEnd', this.controller2.getSelection().end)
+          AppStorage.setOrCreate('textAreaStart', this.controller.getSelection()?.start)
+          AppStorage.setOrCreate('textAreaEnd', this.controller.getSelection()?.end)
+          AppStorage.setOrCreate('textInputStart', this.controller2.getSelection()?.start)
+          AppStorage.setOrCreate('textInputEnd', this.controller2.getSelection()?.end)
         }).id('but5')
 
     }

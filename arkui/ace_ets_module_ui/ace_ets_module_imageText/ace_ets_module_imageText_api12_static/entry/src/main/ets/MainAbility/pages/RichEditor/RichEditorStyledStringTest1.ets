@@ -53,7 +53,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 struct RichEditorStyledStringTest1 {
   stringLength: number = 0;
   @State selection: string = '';
-  @State content: string = '';
+  @State content: string | undefined = '';
   @State range: string = '';
   @State replaceString: string = '';
   @State rangeBefore: string = '';
@@ -192,7 +192,7 @@ build() {
             if (styledString !== undefined) {
               this.richEditorStyledString = styledString;
               this.selection = '[ ' + start + ' , ' + end + ' ]';
-              this.content = this.richEditorStyledString.subStyledString(Number(start) as int, Number(end - start) as int).getString();
+              this.content = this.richEditorStyledString.subStyledString(Number(start) as int, Number(end - start) as int)?.getString();
             }
           }).height('5%')
           Button('更新选中样式').onClick((e: ClickEvent) => {
