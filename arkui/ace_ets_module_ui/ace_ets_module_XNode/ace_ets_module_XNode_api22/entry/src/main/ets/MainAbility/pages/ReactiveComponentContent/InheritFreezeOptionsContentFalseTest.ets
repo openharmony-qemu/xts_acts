@@ -36,7 +36,7 @@ class TextNodeController extends NodeController {
       UIUtils.makeBinding<number>(() => {
         return this.count
       }));
-    this.contentNode.inheritFreezeOptions(true);
+    this.contentNode.inheritFreezeOptions(false);
     if (this.rootNode !== null) {
       this.rootNode.addComponentContent(this.contentNode);
     }
@@ -82,7 +82,6 @@ struct MyNavigationTestStack {
             .id('btn_nextPage1_id')
             .width('80%')
             .height(40)
-            .margin(20)
             .onClick(() => {
               this.pageInfo.pushPath({ name: 'pageOne' }); // 将name指定的NavDestination页面信息入栈
             })
@@ -106,16 +105,15 @@ struct pageOneStack { // 页面一
       Column() {
         NavigationContentMsgStack({ message: this.message, index: this.index, logNumber: this.logNumber })
         Button('Next Page', { stateEffect: true, type: ButtonType.Capsule }) // 切换至页面二
+          .id('btn_nextPage2_id')
           .width('80%')
           .height(40)
-          .margin(20)
           .onClick(() => {
             this.pageInfo.pushPathByName('pageTwo', null);
           })
         Button('Back Page', { stateEffect: true, type: ButtonType.Capsule }) // 返回主页面
           .width('80%')
           .height(40)
-          .margin(20)
           .onClick(() => {
             this.pageInfo.pop();
           })
@@ -141,11 +139,10 @@ struct pageTwoStack { // 页面二
         NavigationContentMsgStack({ message: this.message, index: this.index, logNumber: this.logNumber })
         Text('BuilderNode处于冻结')
           .fontWeight(FontWeight.Bold)
-          .margin({ top: 48, bottom: 48 })
         Button('Back Page', { stateEffect: true, type: ButtonType.Capsule }) // 返回至页面一
+          .id('btn_backPage3_id')
           .width('80%')
           .height(40)
-          .margin(20)
           .onClick(() => {
             this.pageInfo.pop();
           })
@@ -187,9 +184,8 @@ struct TextBuilder {
     Row() {
       Column() {
         Text(`${this.message}`)
-          .id('textBuilderLogCount')
+          .id('textBuilderLogCount1')
           .fontWeight(FontWeight.Bold)
-          .margin({ top: 48, bottom: 48 })
       }
     }
   }

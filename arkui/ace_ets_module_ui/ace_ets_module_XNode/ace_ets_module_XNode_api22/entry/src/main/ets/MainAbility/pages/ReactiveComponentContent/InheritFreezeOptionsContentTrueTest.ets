@@ -13,42 +13,41 @@
  * limitations under the License.
  */
 
-import { ReactiveBuilderNode, FrameNode, NodeController, Binding, UIUtils } from '@kit.ArkUI';
+
+import { ReactiveComponentContent, FrameNode, NodeController, Binding, UIUtils } from '@kit.ArkUI';
 
 @Builder
+// builder组件
 function buildText(count: Binding<number>) {
+
   Column() {
     TextBuilder({ message: count.value })
   }
 }
 
-// 继承NodeController实现自定义textNode控制器
 class TextNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
-  private textNode: ReactiveBuilderNode<[Binding<number>]> | null = null;
+  private contentNode: ReactiveComponentContent<[Binding<number>]> | null = null;
   private count: number = 0;
 
   makeNode(context: UIContext): FrameNode | null {
     this.rootNode = new FrameNode(context);
-    this.textNode = new ReactiveBuilderNode(context, { selfIdealSize: { width: 150, height: 150 } });
-    this.textNode.build(wrapBuilder<[Binding<number>]>(buildText), {}, UIUtils.makeBinding<number>(() => {
-      return this.count
-    }));
-    this.textNode.inheritFreezeOptions(true);
-    const rootRenderNode = this.rootNode!.getRenderNode();
+    this.contentNode = new ReactiveComponentContent(context, wrapBuilder<[Binding<number>]>(buildText), {},
+      UIUtils.makeBinding<number>(() => {
+        return this.count
+      }));
+    this.contentNode.inheritFreezeOptions(true);
     if (this.rootNode !== null) {
-      this.rootNode.appendChild(this.textNode.getFrameNode());
+      this.rootNode.addComponentContent(this.contentNode);
     }
-    rootRenderNode?.appendChild(this.textNode!.getFrameNode()!.getRenderNode());
     return this.rootNode;
   }
 
   update(): void {
-    if (this.textNode !== null) {
+    if (this.contentNode !== null) {
       this.count += 1;
-      this.textNode.flushState(); // 更新BuilderNode中的数据，可以触发Log
+      this.contentNode.flushState();
     }
-
   }
 }
 
@@ -72,8 +71,8 @@ struct MyNavigationTestStack {
 
   build() {
     Column() {
-      Button('update builderNode')
-        .id('btn_updateBuilderNode')
+      Button('update ComponentContent')
+        .id('btn_updateComponentContent')
         .onClick(() => {
           textNodeController.update();
         })
@@ -83,7 +82,6 @@ struct MyNavigationTestStack {
             .id('btn_nextPage1_id')
             .width('80%')
             .height(40)
-            .margin(20)
             .onClick(() => {
               this.pageInfo.pushPath({ name: 'pageOne' }); // 将name指定的NavDestination页面信息入栈
             })
@@ -107,16 +105,15 @@ struct pageOneStack { // 页面一
       Column() {
         NavigationContentMsgStack({ message: this.message, index: this.index, logNumber: this.logNumber })
         Button('Next Page', { stateEffect: true, type: ButtonType.Capsule }) // 切换至页面二
+          .id('btn_nextPage2_id')
           .width('80%')
           .height(40)
-          .margin(20)
           .onClick(() => {
             this.pageInfo.pushPathByName('pageTwo', null);
           })
         Button('Back Page', { stateEffect: true, type: ButtonType.Capsule }) // 返回主页面
           .width('80%')
           .height(40)
-          .margin(20)
           .onClick(() => {
             this.pageInfo.pop();
           })
@@ -142,11 +139,10 @@ struct pageTwoStack { // 页面二
         NavigationContentMsgStack({ message: this.message, index: this.index, logNumber: this.logNumber })
         Text('BuilderNode处于冻结')
           .fontWeight(FontWeight.Bold)
-          .margin({ top: 48, bottom: 48 })
         Button('Back Page', { stateEffect: true, type: ButtonType.Capsule }) // 返回至页面一
+          .id('btn_backPage3_id')
           .width('80%')
           .height(40)
-          .margin(20)
           .onClick(() => {
             this.pageInfo.pop();
           })
@@ -159,7 +155,8 @@ struct pageTwoStack { // 页面二
   }
 }
 
-@Component({ freezeWhenInactive: true }) // 设置冻结策略为不活跃冻结
+@Component({ freezeWhenInactive: true })
+  // 设置冻结策略为不活跃冻结
 struct NavigationContentMsgStack {
   @Link message: number;
   @Link index: number;
@@ -174,27 +171,21 @@ struct NavigationContentMsgStack {
   }
 }
 
-@Component({ freezeWhenInactive: true }) // 设置冻结策略为不活跃冻结
+@Component({ freezeWhenInactive: true })
+  // 设置冻结策略为不活跃冻结
 struct TextBuilder {
   @Prop @Watch('info') message: number = 0;
-  @State count : number = 0;
 
   info() {
-    this.count++;
-    console.info(`freeze-test TextBuilder message callback change time ${this.count}`); // 根据message内容变化来打印日志来判断是否冻结
-    console.info(`freeze-test TextBuilder message callback change massage ${this.message}`); // 根据message内容变化来打印日志来判断是否冻结
+    console.info(`freeze-test TextBuilder message callback ${this.message}`); // 根据message内容变化来打印日志来判断是否冻结
   }
 
   build() {
     Row() {
       Column() {
-        Text(`文本更新内容： ${this.message}`)
+        Text(`${this.message}`)
+          .id('textBuilderLogCount2')
           .fontWeight(FontWeight.Bold)
-          .margin({ top: 48, bottom: 48 })
-        Text(`${this.count}`)
-          .id('textBuilderLogCount')
-          .fontWeight(FontWeight.Bold)
-          .margin({ top: 48, bottom: 48 })
       }
     }
   }
