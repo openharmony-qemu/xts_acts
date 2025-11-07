@@ -19,7 +19,7 @@ import emitter from '@ohos.events.emitter';
 import events_emitter from '@ohos.events.emitter';
 import { Entry, Component, Column, Row, Button, ClickEvent, Web, WebResourceResponse } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
-import { Callback, BusinessError } from '@ohos.base'
+import { Callback, BusinessError, RecordData } from '@ohos.base'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 @Entry
@@ -44,8 +44,8 @@ struct WebDataBase {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      if (eventData.data != null && (eventData.data as Record<string , object>)?.['ACTION'] != null) {
-        this.str = '' + (eventData.data as Record<string , object>)?.['ACTION'];
+      if (eventData.data != null && (eventData.data as Record<string , RecordData>)?.['ACTION'] != null) {
+        this.str = '' + (eventData.data as Record<string , RecordData>)?.['ACTION'];
       }
     }
   }

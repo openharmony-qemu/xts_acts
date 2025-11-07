@@ -17,7 +17,7 @@ import { Text,BlurOnKeyboardHideMode,$rawfile,OnConsoleEvent,Entry, Component, C
 import { State } from "@ohos.arkui.stateManagement"
 import web_webview from '@ohos.web.webview';
 import Utils from '../../src/test/Util.test';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { Driver, ON } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
@@ -49,7 +49,7 @@ struct WebComponent {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data["ACTION"] != null) {
         console.info('Received ACTION value: ' + data["ACTION"]);
         let strValue: string = String(data["ACTION"]);

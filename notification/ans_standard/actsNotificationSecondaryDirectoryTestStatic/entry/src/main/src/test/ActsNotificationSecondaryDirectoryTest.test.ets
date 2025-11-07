@@ -21,7 +21,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import wantagent from '@ohos.app.ability.wantAgent';
-import { BusinessError } from '@ohos.base'
+import { BusinessError, RecordData } from '@ohos.base'
 import Utils from './Util.test';
 import hilog from '@ohos.hilog';
 import { Component, Driver, ON } from '@ohos.UiTest'
@@ -343,6 +343,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
             }
           ],
           actionType: wantAgent.OperationType.SEND_COMMON_EVENT,
+          requestCode: 0,
           actionFlags: [wantAgent.WantAgentFlags.ONE_TIME_FLAG]
         };
 
@@ -420,7 +421,7 @@ export default function ActsNotificationSecondaryDirectoryTest() {
         let TAG:string = 'Sub_Notification_Ans_Publish_Publish_Static_4350 ===>'
         console.info(`${TAG} Sub_Notification_Ans_Publish_Publish_4350 START`);
 
-        let data1: Record<string, Object> = {
+        let data1: Record<string, RecordData> = {
           "title": 'file',
           "fileName": 'music.mp4',
           "progressValue": 45
@@ -717,8 +718,8 @@ export default function ActsNotificationSecondaryDirectoryTest() {
             = ${flags.soundEnabled},${flags.vibrationEnabled}`);
         console.info(`${TAG} NotificationFlags soundEnabled:vibrationEnabled1
             = ${typeof flags.soundEnabled},${typeof flags.vibrationEnabled}`);
-        expect(typeof flags.soundEnabled == 'number').assertTrue()
-        expect(typeof flags.vibrationEnabled == 'number').assertTrue()
+        expect(typeof flags.soundEnabled).assertEqual('int')
+        expect(typeof flags.vibrationEnabled).assertEqual('int')
         let num1 = flags.soundEnabled as notificationManager.NotificationFlagStatus
         let num2 = flags.vibrationEnabled as notificationManager.NotificationFlagStatus
         expect(num1 == 1).assertTrue()
