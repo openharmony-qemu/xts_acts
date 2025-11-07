@@ -42,7 +42,7 @@ export default function ActsCallbackTest() {
       console.info(`${tag} testAbilityContext 2`)
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
       console.info(`${tag} testAbilityContext 3`)
-      await Utils.msSleep(2000)
+      await Utils.msSleep(4000)
       console.info(`${tag} testAbilityContext 4`)
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
