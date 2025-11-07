@@ -56,6 +56,7 @@ export default function webResourceError() {
       done();
     })
 
+
     /*
     * @tc.number     : SUB_WEB_GETERRORCODE_0100
     * @tc.name       : testGetErrorCode001
