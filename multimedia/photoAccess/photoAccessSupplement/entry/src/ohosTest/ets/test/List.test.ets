@@ -19,6 +19,7 @@ import ShowAssetsCreationDialogSuppTest from './photoAccess/showAssetsCreationDi
 import getAllObjectsTest from './photoAccess/getAllObjects.test';
 import getSupportedPhotoFormatsTest from './photoAccess/getSupportedPhotoFormats.test';
 import IsAfterLastTest from './photoAccess/isAfterLast.test';
+import PhotoAccessHelperAssetsCloseTest from "./photoAccess/PhotoAccessHelperAssetsClose.test";
 
 export default function testsuite() {
   PhotoAccessMediaAssetChangeRequestSuppTest();
@@ -42,4 +43,5 @@ export default function testsuite() {
   getAllObjectsTest();
   getSupportedPhotoFormatsTest();
   IsAfterLastTest ();
+  PhotoAccessHelperAssetsCloseTest();
 }
