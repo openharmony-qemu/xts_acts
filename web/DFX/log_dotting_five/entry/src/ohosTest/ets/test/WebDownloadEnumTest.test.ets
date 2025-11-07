@@ -18,7 +18,12 @@ import router from '@ohos.router';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest';
-const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
+import { Driver,ON } from '@ohos.UiTest';
+import {waitForExist} from '../test/WaitTest';
+let driver = Driver.create();
+let emitKey = "";
+
+  const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
 export default function webDownloadEnumTest() {
@@ -69,10 +74,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum001", 119110)
-      Utils.registerEvent("testWebDownloadEnum001", 0, 119120, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
-
+      emitKey = "testWebDownloadEnum001";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum001", 0, 119120,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -84,9 +92,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum002", 119110)
-      Utils.registerEvent("testWebDownloadEnum002", 1, 119130, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum002";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum002", 1, 119130,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -98,9 +110,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum003", 119110)
-      Utils.registerEvent("testWebDownloadEnum003", 2, 119140, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum003";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum003", 2, 119140,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -112,9 +128,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum004", 119110)
-      Utils.registerEvent("testWebDownloadEnum004", 3, 119150, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum004";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum004", 3, 119150,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -126,9 +146,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum005", 119110)
-      Utils.registerEvent("testWebDownloadEnum005", 5, 119160, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum005";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum005", 5, 119160,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -140,9 +164,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum006", 119110)
-      Utils.registerEvent("testWebDownloadEnum006", 6, 119170, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum006";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum006", 6, 119170,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -154,9 +182,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum007", 119110)
-      Utils.registerEvent("testWebDownloadEnum007", 10, 119180, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum007";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum007", 10, 119180,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -168,9 +200,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum008", 119110)
-      Utils.registerEvent("testWebDownloadEnum008", 11, 119190, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum008";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum008", 11, 119190,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -182,9 +218,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum009", 119110)
-      Utils.registerEvent("testWebDownloadEnum009", 13, 119200, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum009";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum009", 13, 119200,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -196,9 +236,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum010", 119110)
-      Utils.registerEvent("testWebDownloadEnum010", 14, 119210, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum010";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum010", 14, 119210,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -210,9 +254,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum011", 119110)
-      Utils.registerEvent("testWebDownloadEnum011", 15, 119220, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum011";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum011", 15, 119220,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -224,9 +272,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum012", 119110)
-      Utils.registerEvent("testWebDownloadEnum012", 20, 119230, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum012";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum012", 20, 119230,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -238,9 +290,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum013", 119110)
-      Utils.registerEvent("testWebDownloadEnum013", 21, 119240, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum013";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum013", 21, 119240,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -252,9 +308,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum014", 119110)
-      Utils.registerEvent("testWebDownloadEnum014", 22, 119250, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum014";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum014", 22, 119250,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -266,9 +326,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum015", 119110)
-      Utils.registerEvent("testWebDownloadEnum015", 23, 119260, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum015";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum015", 23, 119260,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -280,9 +344,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum016", 119110)
-      Utils.registerEvent("testWebDownloadEnum016", 24, 119270, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum016";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum016", 24, 119270,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -294,9 +362,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum017", 119110)
-      Utils.registerEvent("testWebDownloadEnum017", 30, 119280, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum017";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum017", 30, 119280,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -308,9 +380,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum018", 119110)
-      Utils.registerEvent("testWebDownloadEnum018", 31, 119290, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum018";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum018", 31, 119290,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -322,9 +398,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum019", 119110)
-      Utils.registerEvent("testWebDownloadEnum019", 33, 119300, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum019";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum019", 33, 119300,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -336,9 +416,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum020", 119110)
-      Utils.registerEvent("testWebDownloadEnum020", 34, 119310, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum020";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum020", 34, 119310,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -350,9 +434,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum021", 119110)
-      Utils.registerEvent("testWebDownloadEnum021", 35, 119320, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum021";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum021", 35, 119320,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -364,9 +452,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum022", 119110)
-      Utils.registerEvent("testWebDownloadEnum022", 36, 119330, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum022";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum022", 36, 119330,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -378,9 +470,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum023", 119110)
-      Utils.registerEvent("testWebDownloadEnum023", 37, 119340, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum023";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum023", 37, 119340,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -392,9 +488,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum024", 119110)
-      Utils.registerEvent("testWebDownloadEnum024", 38, 119350, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum024";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum024", 38, 119350,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -406,9 +506,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum025", 119110)
-      Utils.registerEvent("testWebDownloadEnum025", 39, 119360, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum025";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum025", 39, 119360,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -420,9 +524,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum026", 119110)
-      Utils.registerEvent("testWebDownloadEnum026", 40, 119370, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum026";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum026", 40, 119370,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -434,9 +542,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum027", 119110)
-      Utils.registerEvent("testWebDownloadEnum027", 41, 119380, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum027";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum027", 41, 119380,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -448,9 +560,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum028", 119110)
-      Utils.registerEvent("testWebDownloadEnum028", 50, 119390, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum028";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum028", 50, 119390,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -462,9 +578,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum029", 119110)
-      Utils.registerEvent("testWebDownloadEnum029", 0, 119400, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum029";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum029", 0, 119400,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -476,9 +596,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum030", 119110)
-      Utils.registerEvent("testWebDownloadEnum030", 1, 119410, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum030";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum030", 1, 119410,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -490,9 +614,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum031", 119110)
-      Utils.registerEvent("testWebDownloadEnum031", 2, 119420, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum031";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum031", 2, 119420,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -504,9 +632,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum032", 119110)
-      Utils.registerEvent("testWebDownloadEnum032", 3, 119430, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum032";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum032", 3, 119430,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -518,9 +650,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum033", 119110)
-      Utils.registerEvent("testWebDownloadEnum033", 4, 119440, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum033";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum033", 4, 119440,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -532,9 +668,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum034", 119110)
-      Utils.registerEvent("testWebDownloadEnum034", 5, 119450, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum034";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum034", 5, 119450,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
 
     /*
@@ -546,9 +686,13 @@ export default function webDownloadEnumTest() {
     * @tc.level       : Level 1
     */
     it('testWebDownloadEnum035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("testWebDownloadEnum035", 119110)
-      Utils.registerEvent("testWebDownloadEnum035", 6, 119460, done);
-      sendEventByKey('WebDownloadEnumTestButton', 10, '');
+      emitKey = "testWebDownloadEnum035";
+      Utils.emitEvent(emitKey, 119110)
+      let isReturn = false;
+      Utils.registerEvent("testWebDownloadEnum035", 6, 119460,() => { isReturn = true });
+      await Utils.waitAndClickComponent(driver, "WebDownloadEnumTestButton", emitKey);
+      await waitForExist(() => isReturn, emitKey + '_returnCheck', true, 500);
+      done();
     })
   })
 }
