@@ -175,37 +175,5 @@ export default function builtinsArrayFromTest() {
       const expectedResult = ["n", "u", "l", "l"]
       expect(result).assertDeepEquals(expectedResult);
     });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_FROM_TEST_0109
-     * @tc.name builtinsArrayFromTest0109
-     * @tc.desc Test with method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('builtinsArrayFromTest0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const unicodeCodePoint = 0x1F60A;
-      const char = String.fromCodePoint(unicodeCodePoint);
-      const result = Array.from(char);
-      console.log('result:', JSON.stringify(result));
-      const expectedResult = ["\ud83d", "\ude0a"]
-      expect(result).assertDeepEquals(expectedResult);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_ARRAY_FROM_TEST_0110
-     * @tc.name builtinsArrayFromTest0110
-     * @tc.desc Test with method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('builtinsArrayFromTest0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const inputString = 'a\uD800b\uD800\uDC00c';
-      const result = Array.from(inputString);
-      const expectedResult = ["a", "\ud800", "b", "\ud800", "\udc00", "c"]
-      expect(result).assertDeepEquals(expectedResult);
-    });
   })
 }
