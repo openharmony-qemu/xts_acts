@@ -22,9 +22,9 @@ const ExpectTrue = (n: boolean) => {
   }
 }
 
-export default function webSocketCreateTest() {
+export default function webSocketJsunit() {
 
-  describe("WebSocketCreateTest", (): void => {
+  describe("webSocketJsunit", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
    /*
