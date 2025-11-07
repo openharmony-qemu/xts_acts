@@ -20,6 +20,78 @@ import fs from '@ohos.file.fs';
 import common from '@ohos.app.ability.common';
 import hdrCapability from '@ohos.graphics.hdrCapability';
 import display from '@ohos.display';
+import taskpool from '@ohos.taskpool';
+
+class Logger {
+  testNum: string;
+
+  constructor(testNum: string) {
+    this.testNum = testNum;
+  }
+
+  log(msg: string) {
+    hilog.info(0x0000, "imagePixelMapForDMA", 'case: %{public}s msg:%{public}s', this.testNum, msg);
+  }
+}
+
+interface exceptDecodeOptions {
+  expectedWidth: number;
+  expectedHeight: number;
+  expectedPixelFormat: image.PixelMapFormat;
+}
+
+async function createPixelMapSyncDmaInTaskPool(
+  logger: Logger,
+  filePath: string,
+  decodingOptions: image.DecodingOptions,
+  allocatorType: image.AllocatorType,
+  expectedDecodeOpts: exceptDecodeOptions
+): Promise<boolean> {
+  logger.log("taskpool start");
+  try {
+    let task = new taskpool.Task(pixelTest, filePath, decodingOptions, allocatorType, expectedDecodeOpts);
+    let ret = (await taskpool.execute(task)) as boolean;
+    logger.log("taskpool ret: " + ret);
+    return ret;
+  } catch (error) {
+    logger.log('taskpool: taskpool execute error is ' + error);
+    return false;
+  }
+}
+
+@Concurrent
+async function pixelTest(
+  filePath: string,
+  decodingOptions: image.DecodingOptions,
+  allocatorType: image.AllocatorType,
+  expectedDecodeOpts: exceptDecodeOptions
+): Promise<boolean> {
+  console.info("asynchronous blocking start!");
+  // 模拟异步操作
+  return await new Promise<boolean>((resolve) => {
+    setTimeout(() => {
+      console.log('asynchronous blocking: filePath: ' + filePath);
+      console.log('asynchronous blocking: decodingOptions: ' + JSON.stringify(decodingOptions));
+      console.log('asynchronous blocking: allocatorType: ' + allocatorType);
+      console.log('asynchronous blocking: expectedDecodeOpts: ' + JSON.stringify(expectedDecodeOpts));
+
+      const src = image.createImageSource(filePath);
+      console.log("asynchronous blocking: createImageSource end!");
+      let pm: image.PixelMap = src.createPixelMapUsingAllocatorSync(decodingOptions, allocatorType);
+      console.log("asynchronous blocking: createPixelMapSync end!");
+      const imageInfo = pm.getImageInfoSync();
+      console.log("asynchronous blocking: getImageInfoSync end, Info is:" + JSON.stringify(imageInfo));
+      let ret = (imageInfo.size.width == expectedDecodeOpts.expectedWidth) &&
+                (imageInfo.size.height == expectedDecodeOpts.expectedHeight) &&
+                (imageInfo.pixelFormat == expectedDecodeOpts.expectedPixelFormat);
+      console.log("asynchronous blocking: ret is: " + ret);
+      pm.release();
+      src.release();
+      console.log('asynchronous blocking end!');
+      resolve(ret);
+    }, 15000);
+  });
+}
 
 export default function imagePixelmap() {
   let filesDir: string | undefined;
@@ -78,16 +150,9 @@ export default function imagePixelmap() {
       hilog.info(0x0000, 'testTag', '%{public}s', 'afterEach case');
     });
 
-    class Logger {
-      testNum: string;
-
-      constructor(testNum: string) {
-        this.testNum = testNum;
-      }
-
-      log(msg: string) {
-        hilog.info(0x0000, "imagePixelMapForDMA", 'case: %{public}s msg:%{public}s', this.testNum, msg);
-      }
+    const getFilePath = (fileName: string): string => {
+      const filePath = filesDir + '/' + fileName;
+      return filePath;
     }
 
     const getBuffer = async (fileName: string) => {
@@ -5568,27 +5633,22 @@ export default function imagePixelmap() {
         done();
         return;
       }
-      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_PNG);
+      let filePath = getFilePath(TEST_DECODE_LARGE_IMAGE_PNG);
       let decodingOptions: image.DecodingOptions = {
         desiredSize: { width: 4096, height: 4096 },
         desiredRegion: { size: { width: 1500, height: 1500 }, x: 0, y: 0 },
         desiredPixelFormat: RGBA_8888,
         cropAndScaleStrategy: CROP_FIRST
       };
-      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
-      if (pixelMap != undefined) {
-        let imageInfo = pixelMap.getImageInfoSync();
-        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
-        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGBA_8888);
-        expect(ret).assertTrue();
-        await pixelMap?.release();
-        buffer = undefined;
-        done();
-      } else {
-        logger.log("pixelMap is undefined!");
-        expect().assertFail();
-        done();
+
+      let verifyDecodeOpts: exceptDecodeOptions = {
+        expectedWidth: 4096,
+        expectedHeight: 4096,
+        expectedPixelFormat: RGBA_8888
       }
+      let ret = await createPixelMapSyncDmaInTaskPool(logger, filePath, decodingOptions, DMA, verifyDecodeOpts);
+      expect(ret).assertTrue();
+      done();
     });
 
     /**
@@ -5609,26 +5669,21 @@ export default function imagePixelmap() {
         done();
         return;
       }
-      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_PNG);
+      let filePath = getFilePath(TEST_DECODE_LARGE_IMAGE_PNG);
       let decodingOptions: image.DecodingOptions = {
         desiredSize: { width: 4096, height: 4096 },
         desiredPixelFormat: RGB_565
       };
-      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
-      if (pixelMap != undefined) {
-        let imageInfo = pixelMap.getImageInfoSync();
-        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
-        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGB_565);
-        expect(ret).assertTrue();
-        await pixelMap?.release();
-        buffer = undefined;
-        done();
-      } else {
-        logger.log("pixelMap is undefined!");
-        expect().assertFail();
-        done();
+
+      let verifyDecodeOpts: exceptDecodeOptions = {
+        expectedWidth: 4096,
+        expectedHeight: 4096,
+        expectedPixelFormat: RGB_565
       }
-    })
+      let ret = await createPixelMapSyncDmaInTaskPool(logger, filePath, decodingOptions, DMA, verifyDecodeOpts);
+      expect(ret).assertTrue();
+      done();
+    });
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0300
@@ -5648,26 +5703,21 @@ export default function imagePixelmap() {
         done();
         return;
       }
-      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_PNG);
+      let filePath = getFilePath(TEST_DECODE_LARGE_IMAGE_PNG);
       let decodingOptions: image.DecodingOptions = {
         desiredSize: { width: 4096, height: 4096 },
         desiredPixelFormat: RGBA_8888
       };
-      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
-      if (pixelMap != undefined) {
-        let imageInfo = pixelMap.getImageInfoSync();
-        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
-        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGBA_8888);
-        expect(ret).assertTrue();
-        await pixelMap?.release();
-        buffer = undefined;
-        done();
-      } else {
-        logger.log("pixelMap is undefined!");
-        expect().assertFail();
-        done();
+
+      let verifyDecodeOpts: exceptDecodeOptions = {
+        expectedWidth: 4096,
+        expectedHeight: 4096,
+        expectedPixelFormat: RGBA_8888
       }
-    })
+      let ret = await createPixelMapSyncDmaInTaskPool(logger, filePath, decodingOptions, DMA, verifyDecodeOpts);
+      expect(ret).assertTrue();
+      done();
+    });
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_0400
@@ -5687,25 +5737,20 @@ export default function imagePixelmap() {
         done();
         return;
       }
-      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_PNG);
+      let filePath = getFilePath(TEST_DECODE_LARGE_IMAGE_PNG);
       let decodingOptions: image.DecodingOptions = {
         desiredSize: { width: 4096, height: 4096 },
         desiredPixelFormat: BGRA_8888
       };
-      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
-      if (pixelMap != undefined) {
-        let imageInfo = pixelMap.getImageInfoSync();
-        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
-        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == BGRA_8888);
-        expect(ret).assertTrue();
-        await pixelMap?.release();
-        buffer = undefined;
-        done();
-      } else {
-        logger.log("pixelMap is undefined!");
-        expect().assertFail();
-        done();
+
+      let verifyDecodeOpts: exceptDecodeOptions = {
+        expectedWidth: 4096,
+        expectedHeight: 4096,
+        expectedPixelFormat: BGRA_8888
       }
+      let ret = await createPixelMapSyncDmaInTaskPool(logger, filePath, decodingOptions, SHARE_MEMORY, verifyDecodeOpts);
+      expect(ret).assertTrue();
+      done();
     })
 
     /**
@@ -5725,25 +5770,20 @@ export default function imagePixelmap() {
         done();
         return;
       }
-      let buffer: ESObject = await getBuffer(TEST_DECODE_LARGE_IMAGE_PNG);
+      let filePath = getFilePath(TEST_DECODE_LARGE_IMAGE_PNG);
       let decodingOptions: image.DecodingOptions = {
         desiredSize: { width: 4096, height: 4096 }
       };
-      let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions);
-      if (pixelMap != undefined) {
-        let imageInfo = pixelMap.getImageInfoSync();
-        logger.log("imageInfo is: " + JSON.stringify(imageInfo));
-        let ret = (imageInfo.size.width == 4096) && (imageInfo.size.height == 4096) && (imageInfo.pixelFormat == RGBA_8888);
-        expect(ret).assertTrue();
-        await pixelMap?.release();
-        buffer = undefined;
-        done();
-      } else {
-        logger.log("pixelMap is undefined!");
-        expect().assertFail();
-        done();
+
+      let verifyDecodeOpts: exceptDecodeOptions = {
+        expectedWidth: 4096,
+        expectedHeight: 4096,
+        expectedPixelFormat: RGBA_8888
       }
-    })
+      let ret = await createPixelMapSyncDmaInTaskPool(logger, filePath, decodingOptions, AUTO, verifyDecodeOpts);
+      expect(ret).assertTrue();
+      done();
+    });
 
     /**
      * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATE_PIXELMAP_DMA_FOR_LARGE_IMAGE_SYNC_PNG_ERROR_0100
