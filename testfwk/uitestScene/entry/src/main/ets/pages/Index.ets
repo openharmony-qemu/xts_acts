@@ -32,6 +32,7 @@ struct ScrollExample {
         Scroll(this.scroller) {
           Column() {
             Button('toast').fontSize(25).fontWeight(FontWeight.Bold)
+              .id('toastBtn')
               .onClick(() => {
                 try {
                   console.info('toastShow start')
@@ -46,6 +47,7 @@ struct ScrollExample {
               })
 
             Button('dialog').fontSize(25).fontWeight(FontWeight.Bold)
+              .id('dialogBtn')
               .onClick(() => {
                 console.info('dialog start')
                 AlertDialog.show(
@@ -97,6 +99,7 @@ struct ScrollExample {
                 .fontSize(25)
                 .fontWeight(FontWeight.Bold)
             }
+            .id('twiceBtn')
             .type(ButtonType.Capsule)
             .margin({ top: 20 })
             .gesture(
@@ -163,6 +166,7 @@ struct ScrollExample {
                 .fontSize(25)
                 .fontWeight(FontWeight.Bold)
             }
+            .id('scrollBtn')
             .type(ButtonType.Capsule)
             .margin({ top: 20 })
             .onClick(() => {
@@ -176,6 +180,7 @@ struct ScrollExample {
                   .fontSize(25)
                   .fontWeight(FontWeight.Bold)
               }
+              .id('wearListBtn')
               .type(ButtonType.Capsule)
               .margin({ top: 20 })
               .onClick(() => {
