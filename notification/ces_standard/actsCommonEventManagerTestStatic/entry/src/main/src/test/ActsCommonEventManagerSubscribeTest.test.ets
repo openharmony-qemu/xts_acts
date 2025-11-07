@@ -513,7 +513,7 @@ export default function ActsCommonEventManagerSubscribeTest() {
               count++;
               expect(count).assertEqual(1);
             done()
-          }).catch((err) => {
+          }).catch((err: Error) => {
             console.info(TAG+ `finishCommonEvent_12 err, error code: ${err.code}, message: ${err.message}`)
             expect(false).assertTrue()
             done()
