@@ -14,12 +14,13 @@
 */
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , TestType, Size, Level } from '@ohos/hypium';
-import { Driver } from '@ohos.UiTest'
 import Utils from './Utils';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import { waitForComponent } from './WaitTest';
 import { accessibility, config } from '@kit.AccessibilityKit';
+import { Driver,ON } from '@ohos.UiTest';
+let driver = Driver.create();
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
@@ -70,7 +71,8 @@ export default function EnableBackForwardCacheTest() {
         (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('setBackForwardCacheOptions', 10, '');
+      let component = await driver.findComponent(ON.id("setBackForwardCacheOptions"));
+      await component.click();
     })
   })
 }

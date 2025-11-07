@@ -55,7 +55,6 @@ struct WebDownloadEnumTest {
         Button('WebDownloadEnumTestButton').key('WebDownloadEnumTestButton')
           .onClick(async () => {
             await waitForExist(()=>this.isReceive, 'WebDownloadEnumTestButtonIsReceive', 0);
-            await waitForExist(()=>this.isPageEnd, 'WebDownloadEnumTestButtonIsPageEnd', 0);
             console.info('key==>' + this.str);
             this.isReceive = -1;
             switch (this.str) {
