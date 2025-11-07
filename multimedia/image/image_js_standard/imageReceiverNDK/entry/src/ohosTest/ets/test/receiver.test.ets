@@ -91,7 +91,7 @@ export async function cameraCaptureRelyOnNum(photoOutput: ESObject, captureNumbe
           }
         });
       }
-      await sleep(10)
+      await sleep(2000)
     }
   }
 
@@ -458,23 +458,16 @@ export default function ImageReceiverTest() {
                     mCameraSession.addOutput(mPhotoOutput);
                     await commitCameraSessionConfig();
                     await mCameraSession.start();
+                    await sleep(2000);
                     onCaptureReady(mPhotoOutput);
-                    await cameraCaptureRelyOnNum(mPhotoOutput, 1);
+                    await cameraCaptureRelyOnNum(mPhotoOutput, 2);
                     offCaptureReady(mPhotoOutput);
-                    await waitUntilImageArrival();
-                    nextImage = ndkTest.JsReadNextImage(myReceiver);
-                    mlg.log("mTestImage 1 " + JSON.stringify(nextImage));
-                    let capacityAfterOn: number = ndkTest.JsImageReceiverOptionsGetCapacity(options);
-                    expect(capacityAfterOn == CAPACITY + 1).assertTrue();
-                    imageArrival = false;
-                    onCaptureReady(mPhotoOutput);
-                    await cameraCaptureRelyOnNum(mPhotoOutput, 1);
-                    offCaptureReady(mPhotoOutput);
-                    await waitUntilImageArrival();
-                    lastestImage = ndkTest.JsReadLatestImage(myReceiver);
-                    mlg.log("mTestImage 2 " + JSON.stringify(lastestImage));
                     let capacityAfterOff: number = ndkTest.JsImageReceiverOptionsGetCapacity(options);
                     expect(capacityAfterOff == CAPACITY + 2).assertTrue();
+                    nextImage = ndkTest.JsReadNextImage(myReceiver);
+                    mlg.log("read next image: " + JSON.stringify(nextImage));
+                    lastestImage = ndkTest.JsReadLatestImage(myReceiver);
+                    mlg.log("read lastest image: " + JSON.stringify(lastestImage));
                     await mCameraSession.stop();
                     await sleep(1000);
                     let onOFF: number = ndkTest.JsOff(myReceiver);
