@@ -13,7 +13,6 @@
 * limitations under the License.
 */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
-import { TestClass } from '../../testability/pages/SequenceRunnerSendableTest';
 import { sleep } from '../../testability/pages/Utils';
 import { ClassTest, PropsSelector } from './LiteralAsUnion';
 
