@@ -190,7 +190,7 @@ public:
     OH_AVFormat *sourceFormat = nullptr;
     OH_AVBuffer *videoAvBuffer = nullptr;
     int32_t g_trackCount;
-    std::atomic<bool> isStarted_{ false };  
+    std::atomic<bool> isStarted_{ false };
     bool NocaleHash = false;
 private:
     std::unique_ptr<std::ifstream> inFile_;
