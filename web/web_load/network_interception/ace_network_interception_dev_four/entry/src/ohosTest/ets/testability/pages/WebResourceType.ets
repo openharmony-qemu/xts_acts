@@ -17,7 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils.test';
 import webview from '@ohos.web.webview';
 import { BusinessError } from '@ohos.base';
-import { CommonConstants } from '../../test/constant.test'
+import { CommonConstants } from '../../test/CommonConstants.test'
 
 const EVENT_ID_SET_EMIT_KEY = 251107;
 
@@ -78,7 +78,7 @@ struct WebResourceType {
           }
           this.isReceive = -1;
           switch (this.str) {
-            case 'webResourceTypeMainFrame': {
+            case 'testWebResourceTypeMainFrame': {
               try {
                 Utils.emitEvent(this.webResourceTypeMainFrame, 25110700)
               } catch (error) {
@@ -86,7 +86,7 @@ struct WebResourceType {
               }
               break;
             }
-            case 'webResourceTypeSubFrame': {
+            case 'testWebResourceTypeSubFrame': {
               this.isPageEnd = 0
               try {
                 this.controller.loadUrl($rawfile('iframe1.html'))
@@ -97,7 +97,7 @@ struct WebResourceType {
               }
               break;
             }
-            case 'webResourceTypeStyleSheet': {
+            case 'testWebResourceTypeStyleSheet': {
               try {
                 Utils.emitEvent(this.webResourceTypeStyleSheet, 25110702)
               } catch (error) {
@@ -105,7 +105,7 @@ struct WebResourceType {
               }
               break;
             }
-            case 'webResourceTypeScript': {
+            case 'testWebResourceTypeScript': {
               try {
                 Utils.emitEvent(this.webResourceTypeScript, 25110703)
               } catch (error) {
@@ -113,7 +113,7 @@ struct WebResourceType {
               }
               break;
             }
-            case 'webResourceTypeImage': {
+            case 'testWebResourceTypeImage': {
               try {
                 Utils.emitEvent(this.webResourceTypeImage, 25110704)
               } catch (error) {
@@ -121,7 +121,7 @@ struct WebResourceType {
               }
               break;
             }
-            case 'webResourceTypeFontResource': {
+            case 'testWebResourceTypeFontResource': {
               try {
                 Utils.emitEvent(this.webResourceTypeFontResource, 25110705)
               } catch (error) {
@@ -129,7 +129,7 @@ struct WebResourceType {
               }
               break;
             }
-            case 'webResourceTypeMedia': {
+            case 'testWebResourceTypeMedia': {
               this.isPageEnd = 0
               try {
                 this.controller.loadUrl($rawfile('webResourceType.html'))
@@ -140,7 +140,7 @@ struct WebResourceType {
               }
               break;
             }
-            case 'webResourceFavicon': {
+            case 'testWebResourceFavicon': {
               try {
                 Utils.emitEvent(this.webResourceFavicon, 25110712)
               } catch (error) {
@@ -148,7 +148,7 @@ struct WebResourceType {
               }
               break;
             }
-            case 'webResourceTypeXhr': {
+            case 'testWebResourceTypeXhr': {
               try {
                 Utils.emitEvent(this.webResourceTypeXhr, 25110713)
               } catch (error) {
@@ -156,7 +156,7 @@ struct WebResourceType {
               }
               break;
             }
-            case 'webResourceTypePing': {
+            case 'testWebResourceTypePing': {
               try {
                 Utils.emitEvent(this.webResourceTypePing, 25110714)
               } catch (error) {
@@ -164,7 +164,7 @@ struct WebResourceType {
               }
               break;
             }
-            case 'webResourceTypeServiceWorker': {
+            case 'testWebResourceTypeServiceWorker': {
               try {
                 Utils.emitEvent(this.webResourceTypeServiceWorker, 25110715)
               } catch (error) {

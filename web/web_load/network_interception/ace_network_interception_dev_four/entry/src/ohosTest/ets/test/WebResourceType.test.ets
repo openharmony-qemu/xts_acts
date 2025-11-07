@@ -61,15 +61,15 @@ export default function WebResourceTypeTest() {
 
     /*
     * @tc.number     : SUB_WEBVIEW_WebResourceType_MAIN_FRAME
-    * @tc.name       : WebResourceType_MAIN_FRAME
-    * @tc.desc       : test WebResourceType_MAIN_FRAME
+    * @tc.name       : testWebResourceTypeMainFrame
+    * @tc.desc       : test WebResourceTypeMainFrame
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 0
     */
-    it('WebResourceType_MAIN_FRAME', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      Utils.emitEvent("WebResourceType_MAIN_FRAME", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("WebResourceType_MAIN_FRAME", 0, 25110700, done, (backData: events_emitter.EventData, expected: Object) => {
+    it('testWebResourceTypeMainFrame', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent("testWebResourceTypeMainFrame", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testWebResourceTypeMainFrame", 0, 25110700, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.MAIN_FRAME);
       });
       sendEventByKey('WebResourceTypeButton', 10, '');
@@ -77,15 +77,15 @@ export default function WebResourceTypeTest() {
 
     /*
     * @tc.number     : SUB_WEBVIEW_WebResourceType_STYLE_SHEET
-    * @tc.name       : WebResourceType_STYLE_SHEET
-    * @tc.desc       : test WebResourceType_STYLE_SHEET
+    * @tc.name       : testWebResourceTypeStyleSheet
+    * @tc.desc       : test WebResourceTypeStyleSheet
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 2
     */
-    it('WebResourceType_STYLE_SHEET', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("WebResourceType_STYLE_SHEET", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("WebResourceType_STYLE_SHEET", 0, 25110702, done, (backData: events_emitter.EventData, expected: Object) => {
+    it('testWebResourceTypeStyleSheet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testWebResourceTypeStyleSheet", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testWebResourceTypeStyleSheet", 0, 25110702, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.STYLE_SHEET);
       });
       sendEventByKey('WebResourceTypeButton', 10, '');
@@ -93,15 +93,15 @@ export default function WebResourceTypeTest() {
 
     /*
     * @tc.number     : SUB_WEBVIEW_WebResourceType_SCRIPT
-    * @tc.name       : WebResourceType_SCRIPT
-    * @tc.desc       : test WebResourceType_SCRIPT
+    * @tc.name       : testWebResourceTypeScript
+    * @tc.desc       : test WebResourceTypeScript
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 2
     */
-    it('WebResourceType_SCRIPT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("WebResourceType_SCRIPT", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("WebResourceType_SCRIPT", 0, 25110703, done, (backData: events_emitter.EventData, expected: Object) => {
+    it('testWebResourceTypeScript', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testWebResourceTypeScript", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testWebResourceTypeScript", 0, 25110703, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.SCRIPT);
       });
       sendEventByKey('WebResourceTypeButton', 10, '');
@@ -109,15 +109,15 @@ export default function WebResourceTypeTest() {
 
     /*
     * @tc.number     : SUB_WEBVIEW_WebResourceType_IMAGE
-    * @tc.name       : WebResourceType_IMAGE
-    * @tc.desc       : test WebResourceType_IMAGE
+    * @tc.name       : testWebResourceTypeImage
+    * @tc.desc       : test WebResourceTypeImage
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 2
     */
-    it('WebResourceType_IMAGE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("WebResourceType_IMAGE", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("WebResourceType_IMAGE", 0, 25110704, done, (backData: events_emitter.EventData, expected: Object) => {
+    it('testWebResourceTypeImage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testWebResourceTypeImage", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testWebResourceTypeImage", 0, 25110704, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.IMAGE);
       });
       sendEventByKey('WebResourceTypeButton', 10, '');
@@ -125,15 +125,15 @@ export default function WebResourceTypeTest() {
 
     /*
     * @tc.number     : SUB_WEBVIEW_WebResourceType_FONT_RESOURCE
-    * @tc.name       : WebResourceType_FONT_RESOURCE
-    * @tc.desc       : test WebResourceType_FONT_RESOURCE
+    * @tc.name       : testWebResourceTypeFontResource
+    * @tc.desc       : test WebResourceTypeFontResource
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 2
     */
-    it('WebResourceType_FONT_RESOURCE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("WebResourceType_FONT_RESOURCE", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("WebResourceType_FONT_RESOURCE", 0, 25110705, done, (backData: events_emitter.EventData, expected: Object) => {
+    it('testWebResourceTypeFontResource', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testWebResourceTypeFontResource", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testWebResourceTypeFontResource", 0, 25110705, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.FONT_RESOURCE);
       });
       sendEventByKey('WebResourceTypeButton', 10, '');
@@ -141,15 +141,15 @@ export default function WebResourceTypeTest() {
 
     /*
     * @tc.number     : SUB_WEBVIEW_WebResourceType_FAVICON
-    * @tc.name       : WebResourceType_FAVICON
-    * @tc.desc       : test WebResourceType_FAVICON
+    * @tc.name       : testWebResourceFavicon
+    * @tc.desc       : test tWebResourceFavicon
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 2
     */
-    it('WebResourceType_FAVICON', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("WebResourceType_FAVICON", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("WebResourceType_FAVICON", 0, 25110712, done, (backData: events_emitter.EventData, expected: Object) => {
+    it('testWebResourceFavicon', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testWebResourceFavicon", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testWebResourceFavicon", 0, 25110712, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.FAVICON);
       });
       sendEventByKey('WebResourceTypeButton', 10, '');
@@ -157,15 +157,15 @@ export default function WebResourceTypeTest() {
 
     /*
     * @tc.number     : SUB_WEBVIEW_WebResourceType_XHR
-    * @tc.name       : WebResourceType_XHR
-    * @tc.desc       : test WebResourceType_XHR
+    * @tc.name       : testWebResourceTypeXhr
+    * @tc.desc       : test WebResourceTypeXhr
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 2
     */
-    it('WebResourceType_XHR', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("WebResourceType_XHR", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("WebResourceType_XHR", 0, 25110713, done, (backData: events_emitter.EventData, expected: Object) => {
+    it('testWebResourceTypeXhr', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testWebResourceTypeXhr", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testWebResourceTypeXhr", 0, 25110713, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.XHR);
       });
       sendEventByKey('WebResourceTypeButton', 10, '');
@@ -173,15 +173,15 @@ export default function WebResourceTypeTest() {
 
     /*
     * @tc.number     : SUB_WEBVIEW_WebResourceType_PING
-    * @tc.name       : WebResourceType_PING
-    * @tc.desc       : test WebResourceType_PING
+    * @tc.name       : testWebResourceTypePing
+    * @tc.desc       : test WebResourceTypePing
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 2
     */
-    it('WebResourceType_PING', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("WebResourceType_PING", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("WebResourceType_PING", 0, 25110714, done, (backData: events_emitter.EventData, expected: Object) => {
+    it('testWebResourceTypePing', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testWebResourceTypePing", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testWebResourceTypePing", 0, 25110714, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.PING);
       });
       sendEventByKey('WebResourceTypeButton', 10, '');
@@ -189,15 +189,15 @@ export default function WebResourceTypeTest() {
 
     /*
     * @tc.number     : SUB_WEBVIEW_WebResourceType_SERVICE_WORKER
-    * @tc.name       : WebResourceType_SERVICE_WORKER
-    * @tc.desc       : test WebResourceType_SERVICE_WORKER
+    * @tc.name       : testWebResourceTypeServiceWorker
+    * @tc.desc       : test WebResourceTypeServiceWorker
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 2
     */
-    it('WebResourceType_SERVICE_WORKER', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("WebResourceType_SERVICE_WORKER", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("WebResourceType_SERVICE_WORKER", 0, 25110715, done, (backData: events_emitter.EventData, expected: Object) => {
+    it('testWebResourceTypeServiceWorker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testWebResourceTypeServiceWorker", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testWebResourceTypeServiceWorker", 0, 25110715, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.SERVICE_WORKER);
       });
       sendEventByKey('WebResourceTypeButton', 10, '');
@@ -205,15 +205,15 @@ export default function WebResourceTypeTest() {
 
     /*
     * @tc.number     : SUB_WEBVIEW_WebResourceType_SUB_FRAME
-    * @tc.name       : WebResourceType_SUB_FRAME
-    * @tc.desc       : test WebResourceType_SUB_FRAME
+    * @tc.name       : testWebResourceTypeSubFrame
+    * @tc.desc       : test WebResourceTypeSubFrame
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 2
     */
-    it('WebResourceType_SUB_FRAME', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("WebResourceType_SUB_FRAME", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("WebResourceType_SUB_FRAME", 0, 25110701, done, (backData: events_emitter.EventData, expected: Object) => {
+    it('testWebResourceTypeSubFrame', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testWebResourceTypeSubFrame", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testWebResourceTypeSubFrame", 0, 25110701, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.SUB_FRAME);
       });
       sendEventByKey('WebResourceTypeButton', 10, '');
@@ -221,15 +221,15 @@ export default function WebResourceTypeTest() {
 
     /*
     * @tc.number     : SUB_WEBVIEW_WebResourceType_MEDIA
-    * @tc.name       : WebResourceType_MEDIA
-    * @tc.desc       : test WebResourceType_MEDIA
+    * @tc.name       : testWebResourceTypeMedia
+    * @tc.desc       : test WebResourceTypeMedia
     * @tc.size       : MediumTest
     * @tc.type       : Function
     * @tc.level      : Level 2
     */
-    it('WebResourceType_MEDIA', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("WebResourceType_MEDIA", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("WebResourceType_MEDIA", 0, 25110700, done, (backData: events_emitter.EventData, expected: Object) => {
+    it('testWebResourceTypeMedia', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testWebResourceTypeMedia", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testWebResourceTypeMedia", 0, 25110700, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.MEDIA);
       });
       sendEventByKey('WebResourceTypeButton', 10, '');
