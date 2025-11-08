@@ -17,7 +17,9 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import emitter from '@ohos.events.emitter';
-import { waitForComponent } from './WaitTest';
+import { Driver, ON } from '@kit.TestKit';
+
+const driver = Driver.create();
 // @ts-nocheck
 let emitKey = ""
 
@@ -40,7 +42,8 @@ export default function ActsAceWebSafeBrowsing() {
       } catch (err) {
         console.error("push webSafeBrowsing page error:" + err);
       }
-      await waitForComponent("webViewSdkSchemeHandler");
+      await driver.waitForComponent(ON.id("webViewSdkSchemeHandler"), 10000);
+      console.log("waitForComponent webViewSdkSchemeHandler");
       done()
     });
 
@@ -62,7 +65,7 @@ export default function ActsAceWebSafeBrowsing() {
       emitKey = "emitEnableSafeBrowsingTrue"
       Utils.emitEvent(emitKey, 160740);
       Utils.registerEvent("testEnableSafeBrowsingTrue", true, 160750, done);
-      sendEventByKey('webViewSdkSchemeHandler', 10, '');
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandler");
     })
 
     /*
@@ -77,7 +80,7 @@ export default function ActsAceWebSafeBrowsing() {
       emitKey = "emitEnableSafeBrowsingFalse"
       Utils.emitEvent(emitKey, 160740);
       Utils.registerEvent("testEnableSafeBrowsingFalse", true, 160760, done);
-      sendEventByKey('webViewSdkSchemeHandler', 10, '');
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandler");
     })
 
     /*
@@ -92,7 +95,7 @@ export default function ActsAceWebSafeBrowsing() {
       emitKey = "emitIsSafeBrowsingEnabledTrue"
       Utils.emitEvent(emitKey, 160740);
       Utils.registerEvent("testIsSafeBrowsingEnabledTrue", true, 160770, done);
-      sendEventByKey('webViewSdkSchemeHandler', 10, '');
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandler");
     })
 
     /*
@@ -107,7 +110,7 @@ export default function ActsAceWebSafeBrowsing() {
       emitKey = "emitIsSafeBrowsingEnabledFalse"
       Utils.emitEvent(emitKey, 160740);
       Utils.registerEvent("testIsSafeBrowsingEnabledFalse", true, 160780, done);
-      sendEventByKey('webViewSdkSchemeHandler', 10, '');
+      await Utils.waitAndClickComponent(driver, "webViewSdkSchemeHandler");
     })
 
   })
