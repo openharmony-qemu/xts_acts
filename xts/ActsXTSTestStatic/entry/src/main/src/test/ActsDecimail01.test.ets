@@ -423,7 +423,8 @@ export default function DecimalTest001() {
         test_toBinary_002('0b1.10110111p-1', '0.857421875', 40, 4);
         test_toBinary_002('0b1.10110111p-1', '0.857421875', 9, 4);
         test_toBinary_002('0b1.001010101110101p-4', '0b1.001010101110101p-4', 16, 1);
-        expect(true).assertEqual(true);
+        let sss: string = 'testTag';
+        expect(sss).assertEqual("123");
     });
       /**
        * @tc.number: Decimal_toDecimalPlaces_Func_002
@@ -895,7 +896,8 @@ export default function DecimalTest001() {
         test_toDecimalPlaces_006('7259090494485579718152684060350290000000000000000000000000000000000000000000000000000000000', '7259090494485579718152684060350290000000000000000000000000000000000000000000000000000000000.5', 0, 8);
         test_toDecimalPlaces_006('50', '50.5', 0, 8);
         test_toDecimalPlaces_006('-336051', '-336050.5', 0, 8);
-        expect(true).assertEqual(true);
+        let sss: string = 'testTag';
+        expect(sss).assertEqual("123");
     });
       /**
        * @tc.number: Decimal_toDecimalPlaces_Func_003
@@ -916,7 +918,8 @@ export default function DecimalTest001() {
         });
         try {
             test_toDecimalPlaces_006('50', '50.5', 1e10, 8);
-            expect(true).assertEqual(false);
+            let sss: string = 'testTag';
+            expect(sss).assertEqual("123");
         } catch (err) {
             expect(err.name).assertEqual(`BusinessError`);
             expect(err.code).assertEqual(10200001);
@@ -1368,7 +1371,8 @@ export default function DecimalTest001() {
         test_toExponential_009('1.00e-2', '0.01', 2);
         test_toExponential_009('1e+2', '123', 0);
         test_toExponential_009('1e+2', '123', -0);
-        expect(true).assertEqual(true);
+        let sss: string = 'testTag';
+        expect(sss).assertEqual("123");
     });
       /**
        * @tc.number: Decimal_toExponential_Func_005
@@ -1389,7 +1393,8 @@ export default function DecimalTest001() {
         });
         try {
             test_toExponential_009('1e+2', '123', 1e10);
-            expect(true).assertEqual(false);
+            let sss: string = 'testTag';
+            expect(sss).assertEqual("123");
         } catch (err) {
             expect(err.name).assertEqual(`BusinessError`);
             expect(err.code).assertEqual(10200001);
@@ -1460,7 +1465,8 @@ export default function DecimalTest001() {
         test_exp_011('-0.9', '0.4', 2, 1);
         test_exp_011('-0.00000000009', '0.99999', 5, 1);
         test_exp_011('0.9', '2.45960311115694966380012656360247069542177230644', 48, 1);
-        expect(true).assertEqual(true);
+        let sss: string = 'testTag';
+        expect(sss).assertEqual("123");
     });
       /**
        * @tc.number: Decimal_exp_Func_007
@@ -1533,7 +1539,8 @@ export default function DecimalTest001() {
         test_exp_011('8.82661445434039879925209590467500361019097244359748402', '6.813181388774733211e+3', 19, 6);
         test_exp_011('9.02366224E-9', '1.00000000902366228071324023326175156155718e+0', 43, 6);
         test_exp_011('-4.4768686752786086271180252E+574398129049502', '0e+0', 15, 3);
-        expect(true).assertEqual(true);
+        let sss: string = 'testTag';
+        expect(sss).assertEqual("123");
     });
       /**
        * @tc.number: Decimal_exp_Func_008
@@ -1554,7 +1561,8 @@ export default function DecimalTest001() {
         });
         try {
             test_exp_011('e', '111', 2, 1);
-            expect(true).assertEqual(false);
+            let sss: string = 'testTag';
+            expect(sss).assertEqual("123");
         } catch (err) {
             expect(err.name).assertEqual(`BusinessError`);
             expect(err.code).assertEqual(401);
@@ -1695,7 +1703,8 @@ export default function DecimalTest001() {
         test_min_012(0, Decimal.min(1, '1e-9000000000000001', 1e-200).valueOf());
         test_min_012(-0, Decimal.min(1, '-1e-9000000000000001', 1e-200).valueOf());
         test_min_012(-3, Decimal.min(1, '2', 3, '-1', -2, '-3').valueOf());
-        expect(true).assertEqual(true);
+        let sss: string = 'testTag';
+        expect(sss).assertEqual("123");
     });
       /**
        * @tc.number: Decimal_minAndMax_Func_01000
@@ -1715,8 +1724,10 @@ export default function DecimalTest001() {
             maxE: 9e15
         });
         try {
+
             Decimal.min('-9.99998e+9000000000000000', '-9.999999e+9000000000000000', '9e+8999999999999999', '1.01e+9000000000000000', 'e1');
-            expect(true).assertEqual(false);
+            let sss: string = 'testTag';
+            expect(sss).assertEqual("123");
         } catch (err) {
             expect(err.name).assertEqual(`BusinessError`);
             expect(err.code).assertEqual(401);
