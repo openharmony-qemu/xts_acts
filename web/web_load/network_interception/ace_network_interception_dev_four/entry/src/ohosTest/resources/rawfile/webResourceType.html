@@ -10,5 +10,10 @@ Hello world!
     <source id="mp4" type="video/mp4" src="https://www.w3cschool.cn/statics/demosource/movie.mp4">
   </video>
 </body>
+<script type="text/javascript">
+  window.onload = function() {
+    navigator.sendBeacon('https://www.example.com/ping');
+  };
+</script>
 
 </html>

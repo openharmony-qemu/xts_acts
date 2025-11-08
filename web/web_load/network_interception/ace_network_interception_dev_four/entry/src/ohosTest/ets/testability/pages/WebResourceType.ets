@@ -80,7 +80,71 @@ struct WebResourceType {
           switch (this.str) {
             case 'testWebResourceTypeMainFrame': {
               try {
+                await Utils.waitForExist(()=>this.webResourceTypeMainFrame, 'webResourceTypeMainFrame', 0, 1000);
                 Utils.emitEvent(this.webResourceTypeMainFrame, 25110700)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testWebResourceTypeStyleSheet': {
+              try {
+                await Utils.waitForExist(()=>this.webResourceTypeStyleSheet, 'webResourceTypeStyleSheet', 2, 1000);
+                Utils.emitEvent(this.webResourceTypeStyleSheet, 25110702)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testWebResourceTypeScript': {
+              try {
+                await Utils.waitForExist(()=>this.webResourceTypeScript, 'webResourceTypeScript', 3, 1000);
+                Utils.emitEvent(this.webResourceTypeScript, 25110703)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testWebResourceTypeImage': {
+              try {
+                await Utils.waitForExist(()=>this.webResourceTypeImage, 'webResourceTypeImage', 4, 1000);
+                Utils.emitEvent(this.webResourceTypeImage, 25110704)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testWebResourceTypeFontResource': {
+              try {
+                await Utils.waitForExist(()=>this.webResourceTypeFontResource, 'webResourceTypeFontResource', 5, 1000);
+                Utils.emitEvent(this.webResourceTypeFontResource, 25110705)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testWebResourceFavicon': {
+              try {
+                await Utils.waitForExist(()=>this.webResourceFavicon, 'webResourceFavicon', 12, 1000);
+                Utils.emitEvent(this.webResourceFavicon, 25110712)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testWebResourceTypeXhr': {
+              try {
+                await Utils.waitForExist(()=>this.webResourceTypeXhr, 'webResourceTypeXhr', 13, 1000);
+                Utils.emitEvent(this.webResourceTypeXhr, 25110713)
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testWebResourceTypeServiceWorker': {
+              try {
+                await Utils.waitForExist(()=>this.webResourceTypeServiceWorker, 'webResourceTypeServiceWorker', 15, 3000, 30);
+                Utils.emitEvent(this.webResourceTypeServiceWorker, 25110715)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -90,40 +154,9 @@ struct WebResourceType {
               this.isPageEnd = 0
               try {
                 this.controller.loadUrl($rawfile('iframe1.html'))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webResourceTypeSubFrame', 2, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, 'testWebResourceTypeSubFrame', 2, 1000);
+                await Utils.waitForExist(()=>this.webResourceTypeSubFrame, 'webResourceTypeSubFrame', 1, 1000);
                 Utils.emitEvent(this.webResourceTypeSubFrame, 25110701)
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
-              break;
-            }
-            case 'testWebResourceTypeStyleSheet': {
-              try {
-                Utils.emitEvent(this.webResourceTypeStyleSheet, 25110702)
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
-              break;
-            }
-            case 'testWebResourceTypeScript': {
-              try {
-                Utils.emitEvent(this.webResourceTypeScript, 25110703)
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
-              break;
-            }
-            case 'testWebResourceTypeImage': {
-              try {
-                Utils.emitEvent(this.webResourceTypeImage, 25110704)
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
-              break;
-            }
-            case 'testWebResourceTypeFontResource': {
-              try {
-                Utils.emitEvent(this.webResourceTypeFontResource, 25110705)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -133,40 +166,21 @@ struct WebResourceType {
               this.isPageEnd = 0
               try {
                 this.controller.loadUrl($rawfile('webResourceType.html'))
-                await Utils.waitForExist(()=>this.isPageEnd, 'webResourceTypeMedia', 2, 1000);
+                await Utils.waitForExist(()=>this.isPageEnd, 'testWebResourceTypeMedia', 2, 1000);
+                await Utils.waitForExist(()=>this.webResourceTypeMedia, 'webResourceTypeMedia', 8, 1000);
                 Utils.emitEvent(this.webResourceTypeMedia, 25110708)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
             }
-            case 'testWebResourceFavicon': {
-              try {
-                Utils.emitEvent(this.webResourceFavicon, 25110712)
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
-              break;
-            }
-            case 'testWebResourceTypeXhr': {
-              try {
-                Utils.emitEvent(this.webResourceTypeXhr, 25110713)
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
-              break;
-            }
             case 'testWebResourceTypePing': {
+              this.isPageEnd = 0
               try {
+                this.controller.loadUrl($rawfile('webResourceType.html'))
+                await Utils.waitForExist(()=>this.isPageEnd, 'testWebResourceTypePing', 2, 1000);
+                await Utils.waitForExist(()=>this.webResourceTypePing, 'webResourceTypePing', 14, 1000);
                 Utils.emitEvent(this.webResourceTypePing, 25110714)
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-              }
-              break;
-            }
-            case 'testWebResourceTypeServiceWorker': {
-              try {
-                Utils.emitEvent(this.webResourceTypeServiceWorker, 25110715)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -188,36 +202,47 @@ struct WebResourceType {
                 console.log('[schemeHandler] onRequestStart getRequestUrl:' + request.getRequestUrl())
                 console.log('[schemeHandler] onRequestStart resource type:' + request.getRequestResourceType())
                 if (request.getRequestResourceType() === webview.WebResourceType.MAIN_FRAME) {
+                    console.log('[schemeHandler] onRequestStart webview.WebResourceType.MAIN_FRAME')
                     this.webResourceTypeMainFrame = request.getRequestResourceType()
                 }
                 if (request.getRequestResourceType() === webview.WebResourceType.SUB_FRAME) {
+                    console.log('[schemeHandler] onRequestStart webview.WebResourceType.SUB_FRAME')
                     this.webResourceTypeSubFrame = request.getRequestResourceType()
                 }
                 if (request.getRequestResourceType() === webview.WebResourceType.STYLE_SHEET) {
+                    console.log('[schemeHandler] onRequestStart webview.WebResourceType.STYLE_SHEET')
                     this.webResourceTypeStyleSheet = request.getRequestResourceType()
                 }
                 if (request.getRequestResourceType() === webview.WebResourceType.SCRIPT) {
+                    console.log('[schemeHandler] onRequestStart webview.WebResourceType.SCRIPT')
                     this.webResourceTypeScript = request.getRequestResourceType()
                 }
                 if (request.getRequestResourceType() === webview.WebResourceType.IMAGE) {
+                    console.log('[schemeHandler] onRequestStart webview.WebResourceType.IMAGE')
                     this.webResourceTypeImage = request.getRequestResourceType()
                 }
                 if (request.getRequestResourceType() === webview.WebResourceType.FONT_RESOURCE) {
+                    console.log('[schemeHandler] onRequestStart webview.WebResourceType.FONT_RESOURCE')
                     this.webResourceTypeFontResource = request.getRequestResourceType()
                 }
                 if (request.getRequestResourceType() === webview.WebResourceType.MEDIA) {
+                    console.log('[schemeHandler] onRequestStart webview.WebResourceType.MEDIA')
                     this.webResourceTypeMedia = request.getRequestResourceType()
                 }
                 if (request.getRequestResourceType() === webview.WebResourceType.FAVICON) {
+                    console.log('[schemeHandler] onRequestStart webview.WebResourceType.FAVICON')
                     this.webResourceFavicon = request.getRequestResourceType()
                 }
                 if (request.getRequestResourceType() === webview.WebResourceType.XHR) {
+                    console.log('[schemeHandler] onRequestStart webview.WebResourceType.XHR')
                     this.webResourceTypeXhr = request.getRequestResourceType()
                 }
                 if (request.getRequestResourceType() === webview.WebResourceType.PING) {
+                    console.log('[schemeHandler] onRequestStart webview.WebResourceType.PING')
                     this.webResourceTypePing = request.getRequestResourceType()
                 }
                 if (request.getRequestResourceType() === webview.WebResourceType.SERVICE_WORKER) {
+                    console.log('[schemeHandler] onRequestStart webview.WebResourceType.SERVICE_WORKER')
                     this.webResourceTypeServiceWorker = request.getRequestResourceType()
                 }
 

@@ -172,22 +172,6 @@ export default function WebResourceTypeTest() {
     })
 
     /*
-    * @tc.number     : SUB_WEBVIEW_WebResourceType_PING
-    * @tc.name       : testWebResourceTypePing
-    * @tc.desc       : test WebResourceTypePing
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
-    it('testWebResourceTypePing', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testWebResourceTypePing", EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("testWebResourceTypePing", 0, 25110714, done, (backData: events_emitter.EventData, expected: Object) => {
-        expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.PING);
-      });
-      sendEventByKey('WebResourceTypeButton', 10, '');
-    })
-
-    /*
     * @tc.number     : SUB_WEBVIEW_WebResourceType_SERVICE_WORKER
     * @tc.name       : testWebResourceTypeServiceWorker
     * @tc.desc       : test WebResourceTypeServiceWorker
@@ -231,6 +215,22 @@ export default function WebResourceTypeTest() {
       Utils.emitEvent("testWebResourceTypeMedia", EVENT_ID_SET_EMIT_KEY);
       Utils.registerBaseEvent("testWebResourceTypeMedia", 0, 25110708, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.MEDIA);
+      });
+      sendEventByKey('WebResourceTypeButton', 10, '');
+    })
+
+    /*
+    * @tc.number     : SUB_WEBVIEW_WebResourceType_PING
+    * @tc.name       : testWebResourceTypePing
+    * @tc.desc       : test WebResourceTypePing
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 2
+    */
+    it('testWebResourceTypePing', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testWebResourceTypePing", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testWebResourceTypePing", 0, 25110714, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.PING);
       });
       sendEventByKey('WebResourceTypeButton', 10, '');
     })
