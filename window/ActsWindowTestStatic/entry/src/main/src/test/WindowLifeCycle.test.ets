@@ -1862,7 +1862,7 @@ export default function WindowLifeCycleTest() {
                 outlineEnabled:false
             };
             windowStage.createSubWindowWithOptions('testCreateSubWindowWithOptions_Function_Promise_static', options)
-                .then((data) => {
+                .then((data:window.Window) => {
                     windowClass = data;
                     hilog.info(domain, tag,msgStr + 'Succeeded in creating the subwindow. Data: ' + data);
                     windowClass.destroyWindow();
@@ -1904,7 +1904,7 @@ export default function WindowLifeCycleTest() {
             };
             try {
                 windowStage.createSubWindowWithOptions('testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY_static', options)
-                    .then((data) => {
+                    .then((data:window.Window) => {
                         windowClass = data;
                         hilog.info(domain, tag,msgStr + 'Succeeded in creating the subwindow. Data: ' + data);
                         windowClass.destroyWindow();
