@@ -1015,7 +1015,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNormal, Functio
     OH_PixelmapNative* pixelMapNative = nullptr;
     ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative); 
+    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
     uint32_t meshWidth = 2;
     uint32_t meshHeight = 2;
     uint32_t vertOffest = 2;
@@ -1031,7 +1031,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNormal, Functio
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits parameters normally.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
     OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -1072,7 +1072,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNull01, Functio
     OH_PixelmapNative* pixelMapNative = nullptr;
     ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative); 
+    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
     uint32_t meshWidth = 2;
     uint32_t meshHeight = 2;
     uint32_t vertOffest = 1;
@@ -1085,15 +1085,15 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNull01, Functio
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits null.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(nullptr, pixelMap, 
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(nullptr, pixelMap,
         meshWidth, meshHeight, vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
     OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, nullptr, 
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, nullptr,
         meshWidth, meshHeight, vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
     OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         0, meshHeight, vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
     OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -1134,7 +1134,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNull02, Functio
     OH_PixelmapNative* pixelMapNative = nullptr;
     ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative); 
+    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
     uint32_t meshWidth = 2;
     uint32_t meshHeight = 2;
     uint32_t vertOffest = 1;
@@ -1147,15 +1147,15 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNull02, Functio
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits null.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, 0, vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
     OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, nullptr, vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
     OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, vertices.data(), 0, vertOffest, colors.data(), colors.size(), colorOffest);
     OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
@@ -1196,7 +1196,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNull03, Functio
     OH_PixelmapNative* pixelMapNative = nullptr;
     ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative); 
+    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
     uint32_t meshWidth = 1;
     uint32_t meshHeight = 1;
     uint32_t vertOffest = 1;
@@ -1209,15 +1209,15 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNull03, Functio
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits null.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, vertices.data(), vertices.size(), 0, colors.data(), colors.size(), colorOffest);
     OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, vertices.data(), vertices.size(), vertOffest, nullptr, colors.size(), colorOffest);
     OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, vertices.data(), vertices.size(), vertOffest, colors.data(), 0, colorOffest);
     OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
@@ -1258,7 +1258,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNull04, Functio
     OH_PixelmapNative* pixelMapNative = nullptr;
     ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative); 
+    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
     uint32_t meshWidth = 1;
     uint32_t meshHeight = 1;
     uint32_t vertOffest = 1;
@@ -1270,7 +1270,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNull04, Functio
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits null.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), 0);
     OH_Drawing_CanvasDetachBrush(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
@@ -1311,7 +1311,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshBindAndUnbind, 
     OH_PixelmapNative* pixelMapNative = nullptr;
     ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative); 
+    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
     uint32_t meshWidth = 1;
     uint32_t meshHeight = 1;
     uint32_t vertOffest = 1;
@@ -1324,11 +1324,11 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshBindAndUnbind, 
     OH_Drawing_Pen *pen = OH_Drawing_PenCreate();
     OH_Drawing_CanvasAttachPen(canvas, pen);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits null.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
     OH_Drawing_CanvasDetachPen(canvas);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 3. Destroy objects.
@@ -1368,7 +1368,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshAbnormal01, Fun
     OH_PixelmapNative* pixelMapNative = nullptr;
     ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative); 
+    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
     uint32_t meshWidth = 1;
     uint32_t meshHeight = 1;
     uint32_t vertOffest = 1;
@@ -1381,10 +1381,10 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshAbnormal01, Fun
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits negative number.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         -1, meshHeight, vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, -1, vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     OH_Drawing_CanvasDetachBrush(canvas);
@@ -1425,7 +1425,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshAbnormal02, Fun
     OH_PixelmapNative* pixelMapNative = nullptr;
     ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative); 
+    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
     uint32_t meshWidth = 1;
     uint32_t meshHeight = 1;
     uint32_t vertOffest = 1;
@@ -1438,10 +1438,10 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshAbnormal02, Fun
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits negative number.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, vertices.data(), -1, vertOffest, colors.data(), colors.size(), colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, vertices.data(), vertices.size(), vertOffest, colors.data(), -1, colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     OH_Drawing_CanvasDetachBrush(canvas);
@@ -1482,7 +1482,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshAbnormal03, Fun
     OH_PixelmapNative* pixelMapNative = nullptr;
     ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative); 
+    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
     uint32_t meshWidth = 1;
     uint32_t meshHeight = 1;
     uint32_t vertOffest = 1;
@@ -1495,10 +1495,10 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshAbnormal03, Fun
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits negative number.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, vertices.data(), vertices.size(), -1, colors.data(), colors.size(), colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), -1);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     OH_Drawing_CanvasDetachBrush(canvas);
@@ -1539,7 +1539,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshAbnormal04, Fun
     OH_PixelmapNative* pixelMapNative = nullptr;
     ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative); 
+    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
     uint32_t meshWidth = 1;
     uint32_t meshHeight = 1;
     uint32_t vertOffest = 1;
@@ -1552,10 +1552,10 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshAbnormal04, Fun
     OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     // 2. The interface OH_Drawing_CanvasDrawPixelMapMesh transmits a number greater than the actual quantity.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, vertices.data(), 11, vertOffest, colors.data(), colors.size(), colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
-    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, 
+    errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, vertices.data(), vertices.size(), vertOffest, colors.data(), 6, colorOffest);
     EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     OH_Drawing_CanvasDetachBrush(canvas);
@@ -1596,7 +1596,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshMultipleCalls, 
     OH_PixelmapNative* pixelMapNative = nullptr;
     ret = OH_PixelmapNative_CreatePixelmap((uint8_t*)buffer, bufferSize, createOps, &pixelMapNative);
     // 1. Creating pixelMap by OH_Drawing_PixelMapGetFromOhPixelMapNative.
-    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative); 
+    OH_Drawing_PixelMap* pixelMap = OH_Drawing_PixelMapGetFromOhPixelMapNative(pixelMapNative);
     uint32_t meshWidth = 1;
     uint32_t meshHeight = 1;
     uint32_t vertOffest = 1;
