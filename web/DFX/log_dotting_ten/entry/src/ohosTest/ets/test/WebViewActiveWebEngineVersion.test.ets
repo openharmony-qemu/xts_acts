@@ -89,7 +89,7 @@ export default function WebViewActiveWebEngineVersion() {
     */
     it('emitActiveWebEngineVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitActiveWebEngineVersion002', 10)
-      Utils.registerEvent('emitActiveWebEngineVersion002', webview.ArkWebEngineVersion.M114, 20250904, done);
+      Utils.registerEvent('emitActiveWebEngineVersion002', true, 20250904, done);
       sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
     })
 

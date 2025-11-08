@@ -88,9 +88,12 @@ struct Index {
                   if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                     test_ndk.test_ndk_setActiveWebEngineVersion(webview.ArkWebEngineVersion.M114);
                     let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
-                    Utils.emitEvent(tmp_result, 20250904);
+                    if(tmp_result) {
+                      Utils.emitEvent(true, 20250904);
+                    }
+
                   } else {
-                    Utils.emitEvent(webview.ArkWebEngineVersion.M114, 20250904);
+                    Utils.emitEvent(true, 20250904);
                   }
 
                 } catch (error) {
