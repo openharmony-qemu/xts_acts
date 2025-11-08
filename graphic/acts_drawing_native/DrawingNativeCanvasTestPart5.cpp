@@ -1096,7 +1096,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNull01, Functio
     errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         0, meshHeight, vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
     OH_Drawing_CanvasDetachBrush(canvas);
-    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     // 3. Destroy objects.
     OH_Drawing_CanvasDestroy(canvas);
     OH_Drawing_BrushDestroy(brush);
@@ -1150,7 +1150,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshNull02, Functio
     OH_Drawing_ErrorCode errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, 0, vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
     OH_Drawing_CanvasDetachBrush(canvas);
-    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
     errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap,
         meshWidth, meshHeight, nullptr, vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
     OH_Drawing_CanvasDetachBrush(canvas);
@@ -1613,7 +1613,7 @@ HWTEST_F(DrawingNativeCanvasPart5Test, testCanvasDrawPixelMapMeshMultipleCalls, 
     for (int i = 0; i < 10; i++) {
         errorCode = OH_Drawing_CanvasDrawPixelMapMesh(canvas, pixelMap, meshWidth, meshHeight,
             vertices.data(), vertices.size(), vertOffest, colors.data(), colors.size(), colorOffest);
-        EXPECT_EQ(errorCode, OH_DRAWING_ERROR_INCORRECT_PARAMETER);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
     }
     OH_Drawing_CanvasDetachBrush(canvas);
     // 3. Destroy objects.
