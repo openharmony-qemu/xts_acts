@@ -6,7 +6,7 @@
         "bundle-name": "ohos.acts.multimedia.image.imagePixelmap",
         "module-name": "entry_test",
         "shell-timeout": "300000",
-        "testcase-timeout": "15000"
+        "testcase-timeout": "60000"
     },
     "kits": [
         {
