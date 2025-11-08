@@ -145,7 +145,7 @@ export default function TagABFVTest() {
         hilog.info(domain, tag1, '%{public}s', 'describe start11');
 
         /**
-         * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0100
+         * @tc.number SUB_COMMUNICATION_NFC_TagABFV_static_0100
          * @tc.name getSak
          * @tc.desc Check whether the NFC function is enabled.
          * @tc.size since 7

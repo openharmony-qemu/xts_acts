@@ -75,7 +75,7 @@ export default function nfcMifareClassicTagTest() {
     hilog.info(domain, tag1, '%{public}s', 'describe start11');
 
     /**
-     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0100
+     * @tc.number SUB_COMMUNICATION_NFC_MifareClassicTag_static_0100
      * @tc.name authenticateSector
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7

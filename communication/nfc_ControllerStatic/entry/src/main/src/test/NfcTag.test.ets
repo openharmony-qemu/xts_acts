@@ -533,7 +533,7 @@ export default function nfcTagTest() {
         expect(nfcTagtest instanceof Object).assertTrue();
       }catch(error: BusinessError){
         hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1200 Nfcget taginfo error:  ' + error);
-        expect(true).assertTrue();
+        expect().assertFail();
       }
       console.info('[NFC_test] tag13 test TagInfo data>:' + nfcTagtest);
       done();

@@ -322,7 +322,7 @@ export default function nfcATagSessionTest() {
       })
 
       /**
-       * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0800
+       * @tc.number SUB_COMMUNICATION_NFC_TagSession_static_0800
        * @tc.name getMaxTransmitSize
        * @tc.desc Check whether the NFC function is enabled.
        * @tc.size since 7

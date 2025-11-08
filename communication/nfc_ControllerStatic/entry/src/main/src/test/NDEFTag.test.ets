@@ -196,36 +196,36 @@ export default function nfcNDEFTagTest() {
     })
 
     /**
-     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_1400
+     * @tc.number SUB_COMMUNICATION_NFC_NDEFTag_static_1400
      * @tc.name readNdef
      * @tc.desc Check whether the NFC function is enabled.
      * @tc.size since 7
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('SUB_COMMUNICATION_NFC_Tag_static_1400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('SUB_COMMUNICATION_NFC_NDEFTag_static_1400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
         if (ndefTag != null && ndefTag != undefined) {
           let AsyncCallback:(error: BusinessError<void> | null, data: tag.NdefMessage | undefined) => void = (
             error:BusinessError<void> | null, data: tag.NdefMessage | undefined) => {
-            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 readNdef finish ');
+            hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1400 readNdef finish ');
           }
           try {
             ndefTag.readNdef(AsyncCallback);
           } catch (error: BusinessError) {
             if (error.code == 201) {
-              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 isExtendedApduSupported error is ' + error.code + " - " + error);
+              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1400 isExtendedApduSupported error is ' + error.code + " - " + error);
               expect(201).assertEqual(error.code);
             } else if (error.code == 401) {
-              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 isExtendedApduSupported error is ' + error.code + " - " + error);
-              expect(true).assertTrue();
+              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1400 isExtendedApduSupported error is ' + error.code + " - " + error);
+              expect(401).assertEqual(error.code);
             } else if (error.code == 3100201) {
-              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 isExtendedApduSupported error is ' + error.code + " - " + error);
+              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1400 isExtendedApduSupported error is ' + error.code + " - " + error);
               expect(3100201).assertEqual(error.code);
             } else if (error.code == 3100204) {
-              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 isExtendedApduSupported error is ' + error.code + " - " + error);
+              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1400 isExtendedApduSupported error is ' + error.code + " - " + error);
               expect(3100204).assertEqual(error.code);
             } else {
-              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_Tag_static_1400 isExtendedApduSupported error is ' + error.code + " - " + error);
+              hilog.info(domain, tag1, '%{public}s', '[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1400 isExtendedApduSupported error is ' + error.code + " - " + error);
               expect().assertFail();
             }
           }
