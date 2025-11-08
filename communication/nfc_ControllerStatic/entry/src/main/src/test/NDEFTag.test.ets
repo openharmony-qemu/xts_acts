@@ -43,7 +43,6 @@ let ndefTagInfo: tag.TagInfo = {
     {
       "NdefMsg": "D4010354787473", "NdefForumType": 1, "NdefTagLength":255, "NdefTagMode": 1,
     }
-    //"NdefMsg": "D4010354787473", "NdefForumType": 1, "NdefTagLength":255, "NdefTagMode": 1,
   ],
   "tagRfDiscId": 1,
   "remoteTagService": remoteTagService,

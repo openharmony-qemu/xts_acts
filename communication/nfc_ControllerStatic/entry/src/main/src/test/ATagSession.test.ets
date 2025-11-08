@@ -30,6 +30,7 @@ let tag1: string = 'testTag'; //日志标识字符串,作为tag标识当前runne
 let remoteTagService: rpc.RemoteObject = new rpc.RemoteObject("rpcTestAbility");
 
 let nfcAtag: tag.NfcATag;
+let nfcTagSession: tag.TagSession;
 
 let aTag: tag.TagInfo = {
   "uid": [0x01, 0x02, 0x03, 0x04],
