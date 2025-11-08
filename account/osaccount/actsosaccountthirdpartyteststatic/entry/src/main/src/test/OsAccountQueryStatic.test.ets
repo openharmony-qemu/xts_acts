@@ -372,7 +372,7 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
                 let serialIntercept: string = serialNumberStr.substring(8);
                 hilog.info(0x0000, tag, "====>truncate the last eight characters: " + serialIntercept);
                 accountManager.getOsAccountLocalIdForSerialNumber(serialNumber, (err: BusinessError<void> | null, localId: int | undefined): void => {
-                  hilog.info(0x0000, tag, "====>ger localId err: "+ JSON.stringify(err));
+                  hilog.info(0x0000, tag, "====>get localId err: "+ JSON.stringify(err));
                   hilog.info(0x0000, tag, "====>get localId: "+ localId + " by serialNumber: " + serialNumber);
                   try {
                     if (err) {
@@ -456,7 +456,7 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
                 hilog.info(0x0000, tag, "====>truncate the last eight characters: " + serialIntercept);
                 expect(serialIntercept).assertEqual("00000000");
                 accountManager.getOsAccountLocalIdForSerialNumber(serialNumber, (err: BusinessError<void> | null, localId: int | undefined): void => {
-                  hilog.info(0x0000, tag, "====>ger localId err: "+ JSON.stringify(err));
+                  hilog.info(0x0000, tag, "====>get localId err: "+ JSON.stringify(err));
                   hilog.info(0x0000, tag, "====>get localId: "+ localId + " by serialNumber: " + serialNumber);
                   let tempId: int = 0;
                   try {
@@ -464,13 +464,8 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
                       hilog.info(0x0000, tag, "====>run err");
                       expect().assertFail();
                     } else {
-                      if (localId) {
-                        expect(localId).assertEqual(tempId);
-                        hilog.info(0x0000, tag, "====>ActsOsAccountQueryLocalIdSerial_0300 end====");
-                      } else {
-                        hilog.info(0x0000, tag, "====>run err");
-                        expect().assertFail();
-                      }
+                      expect(localId).assertEqual(tempId);
+                      hilog.info(0x0000, tag, "====>ActsOsAccountQueryLocalIdSerial_0300 end====");
                     }
                   } catch (err) {
                     hilog.info(0x0000, tag, '====>Assert Fail, err: ' + JSON.stringify(err));
@@ -541,7 +536,7 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
               } else {
                 if (serialNumber) {
                   accountManager.getOsAccountLocalIdForSerialNumber(serialNumber, (err: BusinessError<void> | null, getlocalId: int | undefined): void => {
-                    hilog.info(0x0000, tag, "====>ger localId err: "+ JSON.stringify(err));
+                    hilog.info(0x0000, tag, "====>get localId err: "+ JSON.stringify(err));
                     hilog.info(0x0000, tag, "====>get localId: "+ getlocalId + " by serialNumber: " + serialNumber);
                     try {
                       if (err) {
@@ -624,7 +619,7 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
                 } else {
                   if (serialNumber) {
                     accountManager.getOsAccountLocalIdForSerialNumber(serialNumber, (err: BusinessError<void> | null, getlocalId: int | undefined): void => {
-                      hilog.info(0x0000, tag, "====>ger localId err: "+ JSON.stringify(err));
+                      hilog.info(0x0000, tag, "====>get localId err: "+ JSON.stringify(err));
                       hilog.info(0x0000, tag, "====>get localId: "+ getlocalId + " by serialNumber: " + serialNumber);
                       try {
                         if (err) {
