@@ -100,6 +100,10 @@ function validateMediaDescriptionKey(track: media.MediaDescription): void{
   validateType(track, media.MediaDescriptionKey.MD_KEY_AUD_CHANNEL_COUNT, 'number', composeKeys([BinaryKeys.get("AUD")!]))
   validateType(track, media.MediaDescriptionKey.MD_KEY_AUD_SAMPLE_RATE, 'number', composeKeys([BinaryKeys.get("AUD")!]))
   validateType(track, media.MediaDescriptionKey.MD_KEY_HDR_TYPE, 'number', composeKeys([BinaryKeys.get("VID")!]))
+  validateType(track, media.MediaDescriptionKey.MD_KEY_BITRATE, 'number', composeKeys([BinaryKeys.get("AUD")!]))
+  validateType(track, media.MediaDescriptionKey.MD_KEY_AUD_SAMPLE_DEPTH, 'number', composeKeys([BinaryKeys.get("AUD")!]))
+  validateType(track, media.MediaDescriptionKey.MD_KEY_ORIGINAL_WIDTH, 'number', composeKeys([BinaryKeys.get("VID")!]))
+  validateType(track, media.MediaDescriptionKey.MD_KEY_ORIGINAL_HEIGHT, 'number', composeKeys([BinaryKeys.get("VID")!]))
 }
 
 export default function AVMetadata() {
@@ -1228,6 +1232,85 @@ export default function AVMetadata() {
       expect(media.MediaType.MEDIA_TYPE_DATA).assertEqual(4);
       expect(media.MediaType.MEDIA_TYPE_TIMED_METADATA).assertEqual(5);
       expect(media.MediaType.MEDIA_TYPE_AUXILIARY).assertEqual(6);
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      avMetadataExtractor.release();
+      done();
+    });
+
+     /* *
+     * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHMETADATA_PROMISE_FUNCTION_0200
+     * @tc.name      : SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHMETADATA_PROMISE_FUNCTION_0200
+     * @tc.desc      : By fetchMetadata to get original width info test
+     * @tc.size      : MediumTest
+     * @tc.type      : Function Test
+     * @tc.level     : Level0
+     */
+     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHMETADATA_PROMISE_FUNCTION_0200', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      let metadata = await avMetadataExtractor.fetchMetadata();
+      if (metadata.tracks != undefined) {
+        if (metadata.trackCount != undefined) {
+          const trackCount = parseInt(metadata.trackCount);
+          const array_size = metadata.tracks.length;
+          expect(trackCount).assertEqual(array_size);
+        }
+        for (let i = 0; i < metadata.tracks.length; i++) {
+          const element = metadata.tracks[i];
+          if (element[media.MediaDescriptionKey.MD_KEY_TRACK_TYPE] == media.MediaType.MEDIA_TYPE_VID) {
+            const value = element[media.MediaDescriptionKey.MD_KEY_ORIGINAL_WIDTH] as string;
+            expect(value.toString).assertEqual("640");
+          }
+          else {
+            const value = element[media.MediaDescriptionKey.MD_KEY_ORIGINAL_WIDTH] as string;
+            expect(value).assertUndefined();
+          }
+        }
+      } else {
+        console.error('get avmetadata tracks failed');
+        expect().assertFail();
+      }
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      avMetadataExtractor.release();
+      done();
+    });
+
+    /* *
+     * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHMETADATA_PROMISE_FUNCTION_0300
+     * @tc.name      : SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHMETADATA_PROMISE_FUNCTION_0300
+     * @tc.desc      : By fetchMetadata to get original height info test
+     * @tc.size      : MediumTest
+     * @tc.type      : Function Test
+     * @tc.level     : Level0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHMETADATA_PROMISE_FUNCTION_0300', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      let metadata = await avMetadataExtractor.fetchMetadata();
+      if (metadata.tracks != undefined) {
+        if (metadata.trackCount != undefined) {
+          const trackCount = parseInt(metadata.trackCount);
+          const array_size = metadata.tracks.length;
+          expect(trackCount).assertEqual(array_size);
+        }
+        for (let i = 0; i < metadata.tracks.length; i++) {
+          const element = metadata.tracks[i];
+          if (element[media.MediaDescriptionKey.MD_KEY_TRACK_TYPE] == media.MediaType.MEDIA_TYPE_VID) {
+            const value = element[media.MediaDescriptionKey.MD_KEY_ORIGINAL_HEIGHT] as string;
+            expect(value.toString).assertEqual("480");
+          }
+          else {
+            const value = element[media.MediaDescriptionKey.MD_KEY_ORIGINAL_HEIGHT] as string;
+            expect(value).assertUndefined();
+          }
+          validateMediaDescriptionKey(element)
+        }
+      } else {
+        console.error('get avmetadata tracks failed');
+        expect().assertFail();
+      }
       await mediaTestBase.msleepAsync(SLEEP_TIME);
       avMetadataExtractor.release();
       done();
