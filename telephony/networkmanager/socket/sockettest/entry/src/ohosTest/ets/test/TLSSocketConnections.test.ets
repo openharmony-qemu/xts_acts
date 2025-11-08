@@ -1204,5 +1204,134 @@ export default function TLSSocketConnectionsTest() {
         done();
       }
     });
+
+   /* *
+     * @tc.number:  SUB_Network_Socket_TLSSocketConnection_Timeout_0100
+     * @tc.name  :  testNetworkSocketTLSSocketConnectionTimeout0100
+     * @tc.desc  :  Check whether the TLS timeout connection is normal.
+     * @tc.size  :  MediumTest
+     * @tc.type  :  Function
+     * @tc.level :  level 3
+     */
+    it('testNetworkSocketTLSSocketConnectionTimeout0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
+      let caseName: string = 'testNetworkSocketTLSSocketConnectionTimeout0100';
+      let tlsServer1: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+      let tlsClient1: socket.TLSSocket = socket.constructTLSSocketInstance();
+      console.info(`${caseName} test start`);
+      try {
+        let addr1: socket.NetAddress = {
+            address: '127.0.0.1',
+            port: 8001,
+            family: 1
+        };
+        let tlsTimeOutOptions1: socket.TLSConnectOptions = {
+          address: addr1,
+          secureOptions: {
+            ca: server_ca,
+            key: client_key,
+            cert: client_ca,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256",
+          },
+          ALPNProtocols: ["spdy/1", "http/1.1"],
+          timeout: 1
+        };
+         tlsServer1.listen(ServerOptions).then(() => {
+          console.info(`${caseName} listen success`);
+          expectTrue(true);
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} listen err:${JSON.stringify(err)}`);
+          expectFail();
+          done();
+        });
+        tlsClient1.bind(addr1).then(() => {
+          console.info(`${caseName} bind success`);
+          tlsClient1.connect(tlsTimeOutOptions1).then(() => {
+            console.info(`${caseName} connect successfully`);
+            expectFail();
+            done();
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} connect fail: ${JSON.stringify(err)}`);
+            expectTrue(err.code == 2303501);
+            done();
+          })
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} bind fail:${JSON.stringify(err)}`);
+          expectFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectTrue(false)
+        done();
+      }
+    });
+     /* *
+     * @tc.number:  SUB_Network_Socket_TLSSocketConnection_Timeout_0200
+     * @tc.name  :  testNetworkSocketTLSSocketConnectionTimeout0200
+     * @tc.desc  :  Check whether the TLS timeout connection is normal.
+     * @tc.size  :  MediumTest
+     * @tc.type  :  Function
+     * @tc.level :  level 3
+     */
+    it('testNetworkSocketTLSSocketConnectionTimeout0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: Function) => {
+      let caseName: string = 'testNetworkSocketTLSSocketConnectionTimeout0200';
+      let tlsServer1: socket.TLSSocketServer = socket.constructTLSSocketServerInstance();
+      let tlsClient1: socket.TLSSocket = socket.constructTLSSocketInstance();
+      console.info(`${caseName} test start`);
+      try {
+        let addr1: socket.NetAddress = {
+            address: '127.0.0.1',
+            port: 8001,
+            family: 1
+        };
+        let tlsTimeOutOptions1: socket.TLSConnectOptions = {
+          address: addr1,
+          secureOptions: {
+            ca: server_ca,
+            key: client_key,
+            cert: client_ca,
+            protocols: [socket.Protocol.TLSv12],
+            useRemoteCipherPrefer: true,
+            signatureAlgorithms: "rsa_pss_rsae_sha256:ECDSA+SHA256",
+            cipherSuite: "AES256-SHA256",
+          },
+          ALPNProtocols: ["spdy/1", "http/1.1"],
+          timeout: 0
+        };
+         tlsServer1.listen(ServerOptions).then(() => {
+          console.info(`${caseName} listen success`);
+          expectTrue(true);
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} listen err:${JSON.stringify(err)}`);
+          expectFail();
+          done();
+        });
+        tlsClient1.bind(addr1).then(() => {
+          console.info(`${caseName} bind success`);
+          tlsClient1.connect(tlsTimeOutOptions1).then(() => {
+            console.info(`${caseName} connect successfully`);
+            done();
+          }).catch((err: BusinessError) => {
+            console.info(`${caseName} connect fail: ${JSON.stringify(err)}`);
+            expectFail();
+            done();
+          })
+        }).catch((err: BusinessError) => {
+          console.info(`${caseName} bind fail:${JSON.stringify(err)}`);
+          expectFail();
+          done();
+        });
+      } catch (err) {
+        console.info(`${caseName} err: ${JSON.stringify(err)}`);
+        console.info(`${caseName} test end`);
+        expectTrue(false)
+        done();
+      }
+    });
+   
   });
 }
