@@ -175,7 +175,7 @@ export default function nfcNDEFTagTest() {
               expect(201).assertEqual(error.code);
             } else if (error.code == 401) {
               console.info("[NFC_test]ndef7 readNdef1 err: " + error + error.code);
-              expect(true).assertTrue();
+              expect(401).assertEqual(error.code);
             } else if (error.code == 3100201) {
               hilog.info(domain, tag1,'%{public}s','[NFC_test] SUB_COMMUNICATION_NFC_NDEFTag_static_1300 isExtendedApduSupported error is ' + error.code + " - " + error);
               expect(3100201).assertEqual(error.code);
