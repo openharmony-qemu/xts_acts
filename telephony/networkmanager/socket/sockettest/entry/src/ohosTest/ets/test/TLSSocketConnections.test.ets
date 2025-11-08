@@ -1244,6 +1244,7 @@ export default function TLSSocketConnectionsTest() {
         }).catch((err: BusinessError) => {
           console.info(`${caseName} listen err:${JSON.stringify(err)}`);
           expectFail();
+          tlsServer1.close();
           done();
         });
         tlsClient1.bind(addr1).then(() => {
@@ -1251,15 +1252,18 @@ export default function TLSSocketConnectionsTest() {
           tlsClient1.connect(tlsTimeOutOptions1).then(() => {
             console.info(`${caseName} connect successfully`);
             expectFail();
+            tlsServer1.close();
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} connect fail: ${JSON.stringify(err)}`);
             expectTrue(err.code == 2303501);
+            tlsServer1.close();
             done();
           })
         }).catch((err: BusinessError) => {
           console.info(`${caseName} bind fail:${JSON.stringify(err)}`);
           expectFail();
+          tlsServer1.close();
           done();
         });
       } catch (err) {
@@ -1308,21 +1312,25 @@ export default function TLSSocketConnectionsTest() {
         }).catch((err: BusinessError) => {
           console.info(`${caseName} listen err:${JSON.stringify(err)}`);
           expectFail();
+          tlsServer1.close();
           done();
         });
         tlsClient1.bind(addr1).then(() => {
           console.info(`${caseName} bind success`);
           tlsClient1.connect(tlsTimeOutOptions1).then(() => {
             console.info(`${caseName} connect successfully`);
+            tlsServer1.close();
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} connect fail: ${JSON.stringify(err)}`);
             expectFail();
+            tlsServer1.close();
             done();
           })
         }).catch((err: BusinessError) => {
           console.info(`${caseName} bind fail:${JSON.stringify(err)}`);
           expectFail();
+          tlsServer1.close();
           done();
         });
       } catch (err) {
