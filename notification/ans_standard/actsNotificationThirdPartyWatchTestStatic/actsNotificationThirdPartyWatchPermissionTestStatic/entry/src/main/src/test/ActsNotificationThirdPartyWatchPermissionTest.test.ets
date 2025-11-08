@@ -64,7 +64,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it("Notification_Ans_ThreePartyWatch_Static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it("Sub_Notification_Ans_ThreePartyWatch_Static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TESTCASE = "Sub_Notification_Ans_ThreePartyWatch_Static_1000";
         let NAME = "openSubscriptionSettings";
@@ -96,7 +96,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it("Notification_Ans_ThreePartyWatch_Static_1013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it("Sub_Notification_Ans_ThreePartyWatch_Static_1013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TESTCASE = "Sub_Notification_Ans_ThreePartyWatch_Static_1013";
         let NAME = "unsubscribe";
@@ -127,7 +127,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it("Notification_Ans_ThreePartyWatch_Static_1016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it("Sub_Notification_Ans_ThreePartyWatch_Static_1016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TESTCASE = "Sub_Notification_Ans_ThreePartyWatch_Static_1016";
         let NAME = "getSubscribeInfo";
@@ -160,7 +160,7 @@ export default function ActsNotificationThirdPartyWatchPermissionTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it("Notification_Ans_ThreePartyWatch_Static_1019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it("Sub_Notification_Ans_ThreePartyWatch_Static_1019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TESTCASE = "Sub_Notification_Ans_ThreePartyWatch_Static_1019";
         let NAME = "getAllSubscriptionBundles";

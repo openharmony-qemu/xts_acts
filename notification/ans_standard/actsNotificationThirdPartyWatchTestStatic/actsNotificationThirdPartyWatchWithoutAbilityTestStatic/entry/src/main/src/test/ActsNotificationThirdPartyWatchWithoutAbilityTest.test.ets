@@ -57,7 +57,7 @@ export default function actsNotificationThirdPartyWatchWithoutAbilityTest() {
      * @tc.type       Function
      * @tc.level      Level 2
      */
-    it("Notification_Ans_ThreePartyWatch_Static_1002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it("Sub_Notification_Ans_ThreePartyWatch_Static_1002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TESTCASE = "Sub_Notification_Ans_ThreePartyWatch_Static_1002";
         let NAME = "openSubscriptionSettings";
