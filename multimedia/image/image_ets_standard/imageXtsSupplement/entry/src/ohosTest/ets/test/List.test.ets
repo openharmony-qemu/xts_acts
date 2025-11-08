@@ -45,6 +45,24 @@ import ImageSourceGetDelayTimeListSupp from "./image/ImageSourceGetDelayTimeList
 import getImagePropertySyncTest from "./image/ImageSourceGetImagePropertySync.test";
 import PictureGetTypeTestSupp from './Picture/PictureGetType.test';
 import ImagePropertyOptionTest from "./image/ImagePropertyOption.test";
+import ImagePropertyKeySyncEnum1 from "./image/ImagePropertyKeySyncEnum1.test";
+import ImagePropertyKeySyncEnum2 from "./image/ImagePropertyKeySyncEnum2.test";
+import ImagePropertyKeySyncEnum3 from "./image/ImagePropertyKeySyncEnum3.test";
+import ImagePropertyKeySyncEnum4 from "./image/ImagePropertyKeySyncEnum4.test";
+import ImagePropertyKeySyncEnum5 from "./image/ImagePropertyKeySyncEnum5.test";
+import ImagePropertyKeySyncEnum6 from "./image/ImagePropertyKeySyncEnum6.test";
+import ImagePropertyKeySyncEnum7 from "./image/ImagePropertyKeySyncEnum7.test";
+import ImagePropertyKeySyncEnum8 from "./image/ImagePropertyKeySyncEnum8.test";
+import ImagePropertyKeySyncEnum9 from "./image/ImagePropertyKeySyncEnum9.test";
+import ImagePropertyKeySyncEnum10 from "./image/ImagePropertyKeySyncEnum10.test";
+import ImagePropertyKeySyncEnum11 from "./image/ImagePropertyKeySyncEnum11.test";
+import ImagePropertyKeySyncEnum12 from "./image/ImagePropertyKeySyncEnum12.test";
+import ImageEnumSupp from "./image/ImageEnum.test";
+import PictureSetMetadataTestSupp from "./picture/PictureSetGetMetadata.test";
+import ImagePropertyKeySyncEnum1 from "./image/ImageGetImagePropertySyncEnum1A.test";
+import ImagePropertyKeySyncEnum2 from "./image/ImageGetImagePropertySyncEnum2A.test";
+import ImagePropertyKeySyncEnum3 from "./image/ImageGetImagePropertySyncEnum3A.test";
+import ImagePropertyKeySyncEnum4 from "./image/ImageGetImagePropertySyncEnum4A.test";
 
 export default function testsuite() {
   ImagePropertyKeyTest();
@@ -79,4 +97,22 @@ export default function testsuite() {
   getImagePropertySyncTest();
   PictureGetTypeTestSupp();
   ImagePropertyOptionTest();
+  ImagePropertyKeySyncEnum1();
+  ImagePropertyKeySyncEnum2();
+  ImagePropertyKeySyncEnum3();
+  ImagePropertyKeySyncEnum4();
+  ImagePropertyKeySyncEnum5();
+  ImagePropertyKeySyncEnum6();
+  ImagePropertyKeySyncEnum7();
+  ImagePropertyKeySyncEnum8();
+  ImagePropertyKeySyncEnum9();
+  ImagePropertyKeySyncEnum10();
+  ImagePropertyKeySyncEnum11();
+  ImagePropertyKeySyncEnum12();
+  ImageEnumSupp();
+  PictureSetMetadataTestSupp();
+  ImagePropertyKeySyncEnum2A();
+  ImagePropertyKeySyncEnum1A();
+  ImagePropertyKeySyncEnum3A();
+  ImagePropertyKeySyncEnum4A();
 }
