@@ -88,11 +88,14 @@ protected:
     }
 };
 
-/*
- * @tc.name: SUB_SEC_AppSEC_PermissionMgmt_PMS_5000
- * @tc.desc: revoke permissions to large and small PIDs
- * @tc.type: FUNC
- * @tc.require: AR000E07N7
+/**
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_5000
+ * @tc.number testSecPMPMS_5000
+ * @tc.desc   revoke permissions to large and small PIDs
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5000, Function | MediumTest | Level3)
 {
@@ -112,11 +115,14 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5000, Function | MediumTest | Le
     DeletePermissions(TEST_APP_ID);
 }
 
-/*
- * @tc.name: SUB_SEC_AppSEC_PermissionMgmt_PMS_5100
- * @tc.desc: revoke permissions while not load permiossion
- * @tc.type: FUNC
- * @tc.require: AR000F4FSI
+/**
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_5100
+ * @tc.number testSecPMPMS_5100
+ * @tc.desc   revoke permissions while not load permiossion
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5100, Function | MediumTest | Level2)
 {
@@ -128,11 +134,14 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5100, Function | MediumTest | Le
     DeletePermissions(TEST_APP_ID);
 }
 
-/*
- * @tc.name: SUB_SEC_AppSEC_PermissionMgmt_PMS_5200
- * @tc.desc: revoke runtime app permissions
- * @tc.type: FUNC
- * @tc.require: AR000F4FSI
+/**
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_5200
+ * @tc.number testSecPMPMS_5200
+ * @tc.desc   revoke runtime app permissions
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5200, Function | MediumTest | Level0)
 {
@@ -146,11 +155,14 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5200, Function | MediumTest | Le
     DeletePermissions(TEST_APP_ID);
 }
 
-/*
- * @tc.name: SUB_SEC_AppSEC_PermissionMgmt_PMS_5300
- * @tc.desc: revoke permissions without request
- * @tc.type: FUNC
- * @tc.require: AR000F4FSI
+/**
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_5300
+ * @tc.number testSecPMPMS_5300
+ * @tc.desc   revoke permissions without request
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5300, Function | MediumTest | Level2)
 {
@@ -164,11 +176,14 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5300, Function | MediumTest | Le
     DeletePermissions(TEST_APP_ID);
 }
 
-/*
- * @tc.name: SUB_SEC_AppSEC_PermissionMgmt_PMS_5400
- * @tc.desc: revoke system_grant permissions
- * @tc.type: FUNC
- * @tc.require: AR000F4FSI
+/**
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_5400
+ * @tc.number testSecPMPMS_5400
+ * @tc.desc   revoke system_grant permissions
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5400, Function | MediumTest | Level2)
 {
@@ -182,11 +197,14 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5400, Function | MediumTest | Le
     DeletePermissions(TEST_APP_ID);
 }
 
-/*
- * @tc.name: SUB_SEC_AppSEC_PermissionMgmt_PMS_5500
- * @tc.desc: revoke user_grant permissions
- * @tc.type: FUNC
- * @tc.require: AR000F4FSI
+/**
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_5500
+ * @tc.number testSecPMPMS_5500
+ * @tc.desc   revoke user_grant permissions
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5500, Function | MediumTest | Level1)
 {
@@ -203,11 +221,14 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5500, Function | MediumTest | Le
     DeletePermissions(TEST_APP_ID);
 }
 
-/*
- * @tc.name: SUB_SEC_AppSEC_PermissionMgmt_PMS_5600
- * @tc.desc: revoke unknown permissions
- * @tc.type: FUNC
- * @tc.require: AR000F4FSI
+/**
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_5600
+ * @tc.number testSecPMPMS_5600
+ * @tc.desc   revoke unknown permissions
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5600, Function | MediumTest | Level3)
 {
@@ -221,11 +242,14 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5600, Function | MediumTest | Le
     DeletePermissions(TEST_APP_ID);
 }
 
-/*
- * @tc.name: SUB_SEC_AppSEC_PermissionMgmt_PMS_5700
- * @tc.desc: revoke runtime permissions after revoke permission
- * @tc.type: FUNC
- * @tc.require: AR000F4FSI
+/**
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_5700
+ * @tc.number testSecPMPMS_5700
+ * @tc.desc   revoke runtime permissions after revoke permission
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5700, Function | MediumTest | Level3)
 {
@@ -241,11 +265,14 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5700, Function | MediumTest | Le
     DeletePermissions(TEST_APP_ID);
 }
 
-/*
- * @tc.name: SUB_SEC_AppSEC_PermissionMgmt_PMS_5800
- * @tc.desc: revoke runtime permissions after grant permission
- * @tc.type: FUNC
- * @tc.require: AR000F4FSI
+/**
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_5800
+ * @tc.number testSecPMPMS_5800
+ * @tc.desc   revoke runtime permissions after grant permission
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5800, Function | MediumTest | Level2)
 {
@@ -260,11 +287,14 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5800, Function | MediumTest | Le
     DeletePermissions(TEST_APP_ID);
 }
 
-/*
- * @tc.name: SUB_SEC_AppSEC_PermissionMgmt_PMS_5900
- * @tc.desc: revoke runtime permissions continuously
- * @tc.type: FUNC
- * @tc.require: AR000F4FSI
+/**
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_5900
+ * @tc.number testSecPMPMS_5900
+ * @tc.desc   revoke runtime permissions continuously
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5900, Function | MediumTest | Level2)
 {
@@ -284,11 +314,14 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_5900, Function | MediumTest | Le
     DeletePermissions(TEST_APP_ID);
 }
 
-/*
- * @tc.name: SUB_SEC_AppSEC_PermissionMgmt_PMS_6000
- * @tc.desc: revoke permissions of unnormal task
- * @tc.type: FUNC
- * @tc.require: AR000F4FSI
+/**
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_6000
+ * @tc.number testSecPMPMS_6000
+ * @tc.desc   revoke permissions of unnormal task
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_6000, Function | MediumTest | Level3)
 {
@@ -296,11 +329,14 @@ HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_6000, Function | MediumTest | Le
     EXPECT_EQ(ret, PERM_ERRORCODE_TASKID_NOT_EXIST) << "revoke ret = " << ret << endl;
 }
 
-/*
- * @tc.name: SUB_SEC_AppSEC_PermissionMgmt_PMS_6100
- * @tc.desc: revoke permissions of unnormal permission
- * @tc.type: FUNC
- * @tc.require: AR000F4FSI
+/**
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_6100
+ * @tc.number testSecPMPMS_6100
+ * @tc.desc   revoke permissions of unnormal permission
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(ActsPMSRevokeRuntimeTest, testSecPMPMS_6100, Function | MediumTest | Level4)
 {

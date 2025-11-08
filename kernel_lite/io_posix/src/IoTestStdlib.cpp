@@ -23,9 +23,13 @@
 using namespace testing::ext;
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testGcvt
  * @tc.number SUB_KERNEL_IO_STDLIB_0100
- * @tc.name   gcvt basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testGcvt, Function | MediumTest | Level1)
 {
@@ -44,9 +48,13 @@ HWTEST_F(IoTest, testGcvt, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testFcvt
  * @tc.number SUB_KERNEL_IO_STDLIB_0200
- * @tc.name   fcvt basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testFcvt, Function | MediumTest | Level1)
 {
@@ -63,9 +71,13 @@ HWTEST_F(IoTest, testFcvt, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSwab
  * @tc.number SUB_KERNEL_IO_STDLIB_0300
- * @tc.name   swab basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSwab, Function | MediumTest | Level1)
 {
@@ -85,9 +97,13 @@ HWTEST_F(IoTest, testSwab, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testStrtof
  * @tc.number SUB_KERNEL_IO_STDLIB_0400
- * @tc.name   strtof basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testStrtof, Function | MediumTest | Level1)
 {
@@ -110,9 +126,13 @@ HWTEST_F(IoTest, testStrtof, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testStrtod
  * @tc.number SUB_KERNEL_IO_STDLIB_0500
- * @tc.name   strtod basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testStrtod, Function | MediumTest | Level1)
 {
@@ -135,9 +155,13 @@ HWTEST_F(IoTest, testStrtod, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testStrtold
  * @tc.number SUB_KERNEL_IO_STDLIB_0600
- * @tc.name   strtold basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testStrtold, Function | MediumTest | Level1)
 {
@@ -161,9 +185,13 @@ HWTEST_F(IoTest, testStrtold, Function | MediumTest | Level1)
 
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testStrtol
  * @tc.number SUB_KERNEL_IO_STDLIB_0700
- * @tc.name   strtol basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testStrtol, Function | MediumTest | Level1)
 {
@@ -217,9 +245,13 @@ HWTEST_F(IoTest, testStrtol, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testStrtoul
  * @tc.number SUB_KERNEL_IO_STDLIB_0800
- * @tc.name   strtoul basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testStrtoul, Function | MediumTest | Level1)
 {
@@ -264,9 +296,13 @@ HWTEST_F(IoTest, testStrtoul, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testStrtoll
  * @tc.number SUB_KERNEL_IO_STDLIB_0900
- * @tc.name   strtoll basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testStrtoll, Function | MediumTest | Level1)
 {
@@ -316,9 +352,13 @@ HWTEST_F(IoTest, testStrtoll, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testStrtoull
  * @tc.number SUB_KERNEL_IO_STDLIB_1000
- * @tc.name   strtoull basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testStrtoull, Function | MediumTest | Level1)
 {
@@ -364,9 +404,13 @@ HWTEST_F(IoTest, testStrtoull, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testA64l
  * @tc.number SUB_KERNEL_IO_STDLIB_1100
- * @tc.name   a64l basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testA64l, Function | MediumTest | Level1)
 {

@@ -89,9 +89,13 @@ protected:
 };
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0200
- * @tc.name       The application is unloaded and the permission data is deleted
- * @tc.desc       [C- SECURITY -0800]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0200
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0200
+ * @tc.desc   [C- SECURITY -0800]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0200, Function | MediumTest | Level0)
 {
@@ -103,9 +107,13 @@ HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0200, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0210
- * @tc.name       Unload unknown applications
- * @tc.desc       [C- SECURITY -0800]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0210
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0210
+ * @tc.desc   [C- SECURITY -0800]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0210, Function | MediumTest | Level2)
 {
@@ -120,9 +128,13 @@ HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0210, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0230
- * @tc.name       Delete multiple application permissions
- * @tc.desc       [C- SECURITY -0800]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0230
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0230
+ * @tc.desc   [C- SECURITY -0800]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0230, Function | MediumTest | Level3)
 {
@@ -139,9 +151,13 @@ HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0230, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0250
- * @tc.name       After the application permissions are loaded, the permissions can be deleted
- * @tc.desc       [C- SECURITY -0800]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0250
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0250
+ * @tc.desc   [C- SECURITY -0800]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0250, Function | MediumTest | Level3)
 {
@@ -157,9 +173,13 @@ HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0250, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0260
- * @tc.name       After the application permissions are unloaded, the permissions can be deleted
- * @tc.desc       [C- SECURITY -0800]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0260
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0260
+ * @tc.desc   [C- SECURITY -0800]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0260, Function | MediumTest | Level2)
 {
@@ -175,9 +195,13 @@ HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0260, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0270
- * @tc.name       After the application permissions are checked, the permissions can be deleted
- * @tc.desc       [C- SECURITY -0800]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0270
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0270
+ * @tc.desc   [C- SECURITY -0800]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0270, Function | MediumTest | Level2)
 {
@@ -198,9 +222,13 @@ HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0270, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0280
- * @tc.name       After the application permissions are queryed, the permissions can be deleted
- * @tc.desc       [C- SECURITY -0800]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0280
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0280
+ * @tc.desc   [C- SECURITY -0800]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0280, Function | MediumTest | Level4)
 {
@@ -213,9 +241,13 @@ HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0280, Function | MediumTest | Level4)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0290
- * @tc.name       After the application permissions are granted, the permissions can be deleted
- * @tc.desc       [C- SECURITY -0800]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0290
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0290
+ * @tc.desc   [C- SECURITY -0800]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0290, Function | MediumTest | Level2)
 {
@@ -231,9 +263,13 @@ HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0290, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0300
- * @tc.name       After the application permissions are revoked, the permissions can be deleted
- * @tc.desc       [C- SECURITY -0800]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0300
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0300
+ * @tc.desc   [C- SECURITY -0800]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0300, Function | MediumTest | Level2)
 {
@@ -249,9 +285,13 @@ HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0300, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0310
- * @tc.name       Another application permission change does not affect delete permission
- * @tc.desc       [C- SECURITY -0800]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0310
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0310
+ * @tc.desc   [C- SECURITY -0800]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0310, Function | MediumTest | Level3)
 {
@@ -269,9 +309,13 @@ HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0310, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0420
- * @tc.name       The permission file is abnormal and can be deleted
- * @tc.desc       [C- SECURITY -0800]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0420
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0420
+ * @tc.desc   [C- SECURITY -0800]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0420, Function | MediumTest | Level4)
 {
@@ -292,9 +336,13 @@ HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0420, Function | MediumTest | Level4)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0500
- * @tc.name       Can delete application permission with long and short package names
- * @tc.desc       [C- SECURITY -0800]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0500
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0500
+ * @tc.desc   [C- SECURITY -0800]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSDeleteTest, testSecPMPMS_0500, Function | MediumTest | Level2)
 {

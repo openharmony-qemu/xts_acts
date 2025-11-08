@@ -20,12 +20,6 @@
 #define ACTS_DEVATTEST_INIT      (-2)
 #define ACTS_DEVATTEST_SUCCESS   0
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is dfx
- * @param        : module name is dfxlite
- * @param        : test suit name is DfxFuncTestSuite
- */
 LITE_TEST_SUIT(device_attest, device_attest_lite, DeviceAttestFuncTestSuite);
 
 /**
@@ -95,12 +89,13 @@ BOOL AttestStatusValid(AttestResultInfo attestResultInfo)
 }
 
 /**
- * @tc.number    : SUB_Device_Attest_0100
- * @tc.name      : StartDevAttestTask test
- * @tc.desc      : [C- SOFTWARE -0200]
- * @tc.size      : MEDIUM
- * @tc.type      : RELI
- * @tc.level     : Level 0
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   subDeviceAttest0100
+ * @tc.number SUB_Device_Attest_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  请输入文本
  */
 LITE_TEST_CASE(DeviceAttestFuncTestSuite, subDeviceAttest0100, LEVEL0)
 {
@@ -110,12 +105,13 @@ LITE_TEST_CASE(DeviceAttestFuncTestSuite, subDeviceAttest0100, LEVEL0)
 };
 
 /**
- * @tc.number    : SUB_Device_Attest_0200
- * @tc.name      : GetAttestStatus test
- * @tc.desc      : [C- SOFTWARE -0200]
- * @tc.size      : MEDIUM
- * @tc.type      : RELI
- * @tc.level     : Level 0
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   subDeviceAttest0200
+ * @tc.number SUB_Device_Attest_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  请输入文本
  */
 LITE_TEST_CASE(DeviceAttestFuncTestSuite, subDeviceAttest0200, LEVEL0)
 {

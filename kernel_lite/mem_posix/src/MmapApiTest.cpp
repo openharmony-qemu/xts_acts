@@ -36,9 +36,13 @@ class MmapApiTest : public testing::Test {
 };
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapAnonPrivate
  * @tc.number SUB_KERNEL_MEM_MMAP_0100
- * @tc.name   mmap function anonymous private map and read and write permission test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MmapApiTest, testMmapAnonPrivate, Function | MediumTest | Level3)
 {
@@ -76,9 +80,13 @@ HWTEST_F(MmapApiTest, testMmapAnonPrivate, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapAnonShare
  * @tc.number SUB_KERNEL_MEM_MMAP_0200
- * @tc.name   mmap function anonymous share map and read and write permission test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MmapApiTest, testMmapAnonShare, Function | MediumTest | Level3)
 {
@@ -110,9 +118,13 @@ HWTEST_F(MmapApiTest, testMmapAnonShare, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapAnonShareOnlyRead
  * @tc.number SUB_KERNEL_MEM_MMAP_0300
- * @tc.name   mmap function anonymous share map and only read permission test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(MmapApiTest, testMmapAnonShareOnlyRead, Function | MediumTest | Level1)
 {
@@ -139,9 +151,13 @@ HWTEST_F(MmapApiTest, testMmapAnonShareOnlyRead, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapAnonShareOnlyWrite
  * @tc.number SUB_KERNEL_MEM_MMAP_0400
- * @tc.name   mmap function anonymous share map and only write permission test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MmapApiTest, testMmapAnonShareOnlyWrite, Function | MediumTest | Level3)
 {
@@ -170,9 +186,13 @@ HWTEST_F(MmapApiTest, testMmapAnonShareOnlyWrite, Function | MediumTest | Level3
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapAnonPrivateExec
  * @tc.number SUB_KERNEL_MEM_MMAP_0500
- * @tc.name   mmap function anonymous private map and execute permission test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(MmapApiTest, testMmapAnonPrivateExec, Function | MediumTest | Level4)
 {
@@ -218,9 +238,13 @@ HWTEST_F(MmapApiTest, testMmapAnonPrivateExec, Function | MediumTest | Level4)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapAnonShareExec
  * @tc.number SUB_KERNEL_MEM_MMAP_0600
- * @tc.name   mmap function anonymous share map and execute permission test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(MmapApiTest, testMmapAnonShareExec, Function | MediumTest | Level4)
 {
@@ -267,9 +291,13 @@ HWTEST_F(MmapApiTest, testMmapAnonShareExec, Function | MediumTest | Level4)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapAnonShareNoExec
  * @tc.number SUB_KERNEL_MEM_MMAP_0700
- * @tc.name   mmap function anonymous share map and NO execute permission test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MmapApiTest, testMmapAnonShareNoExec, Function | MediumTest | Level2)
 {
@@ -308,9 +336,13 @@ HWTEST_F(MmapApiTest, testMmapAnonShareNoExec, Function | MediumTest | Level2)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapFilePrivate
  * @tc.number SUB_KERNEL_MEM_MMAP_0800
- * @tc.name   mmap function file private map and read and write permission test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MmapApiTest, testMmapFilePrivate, Function | MediumTest | Level3)
 {
@@ -354,9 +386,13 @@ HWTEST_F(MmapApiTest, testMmapFilePrivate, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapFileShare
  * @tc.number SUB_KERNEL_MEM_MMAP_0900
- * @tc.name   mmap function file share map and read and write permission test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MmapApiTest, testMmapFileShare, Function | MediumTest | Level3)
 {
@@ -400,9 +436,13 @@ HWTEST_F(MmapApiTest, testMmapFileShare, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapFileShareOnlyRead
  * @tc.number SUB_KERNEL_MEM_MMAP_1000
- * @tc.name   mmap function file share map and only read permission test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(MmapApiTest, testMmapFileShareOnlyRead, Function | MediumTest | Level1)
 {
@@ -441,9 +481,13 @@ HWTEST_F(MmapApiTest, testMmapFileShareOnlyRead, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapFileShareOnlyWrite
  * @tc.number SUB_KERNEL_MEM_MMAP_1100
- * @tc.name   mmap function file share map and only write permission test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MmapApiTest, testMmapFileShareOnlyWrite, Function | MediumTest | Level3)
 {
@@ -484,9 +528,13 @@ HWTEST_F(MmapApiTest, testMmapFileShareOnlyWrite, Function | MediumTest | Level3
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapFilePrivateExec
  * @tc.number SUB_KERNEL_MEM_MMAP_1200
- * @tc.name   mmap function file private map and execute permission test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(MmapApiTest, testMmapFilePrivateExec, Function | MediumTest | Level4)
 {
@@ -531,9 +579,13 @@ HWTEST_F(MmapApiTest, testMmapFilePrivateExec, Function | MediumTest | Level4)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapFileShareExec
  * @tc.number SUB_KERNEL_MEM_MMAP_1300
- * @tc.name   mmap function file share map and execute permission test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(MmapApiTest, testMmapFileShareExec, Function | MediumTest | Level4)
 {
@@ -578,9 +630,13 @@ HWTEST_F(MmapApiTest, testMmapFileShareExec, Function | MediumTest | Level4)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapFileShareNoExec
  * @tc.number SUB_KERNEL_MEM_MMAP_1400
- * @tc.name   mmap function file share map and NO execute permission test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MmapApiTest, testMmapFileShareNoExec, Function | MediumTest | Level2)
 {
@@ -622,9 +678,13 @@ HWTEST_F(MmapApiTest, testMmapFileShareNoExec, Function | MediumTest | Level2)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapOverlay
  * @tc.number SUB_KERNEL_MEM_MMAP_1500
- * @tc.name   mmap function overlay map test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MmapApiTest, testMmapOverlay, Function | MediumTest | Level3)
 {
@@ -693,9 +753,13 @@ HWTEST_F(MmapApiTest, testMmapOverlay, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapWriteBack
  * @tc.number SUB_KERNEL_MEM_MMAP_1600
- * @tc.name   mmap function write back to the file test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MmapApiTest, testMmapWriteBack, Function | MediumTest | Level3)
 {
@@ -755,9 +819,13 @@ HWTEST_F(MmapApiTest, testMmapWriteBack, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapEACCES
  * @tc.number SUB_KERNEL_MEM_MMAP_1700
- * @tc.name   mmap function errno for EACCES test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MmapApiTest, testMmapEACCES, Function | MediumTest | Level3)
 {
@@ -796,9 +864,13 @@ HWTEST_F(MmapApiTest, testMmapEACCES, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapEBADF
  * @tc.number SUB_KERNEL_MEM_MMAP_1800
- * @tc.name   mmap function errno for EBADF test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MmapApiTest, testMmapEBADF, Function | MediumTest | Level3)
 {
@@ -825,9 +897,13 @@ HWTEST_F(MmapApiTest, testMmapEBADF, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapEINVAL
  * @tc.number SUB_KERNEL_MEM_MMAP_1900
- * @tc.name   mmap function errno for EINVAL test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MmapApiTest, testMmapEINVAL, Function | MediumTest | Level3)
 {
@@ -901,9 +977,13 @@ HWTEST_F(MmapApiTest, testMmapEINVAL, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMmapENOMEM
  * @tc.number SUB_KERNEL_MEM_MMAP_2000
- * @tc.name   mmap function errno for ENOMEM test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MmapApiTest, testMmapENOMEM, Function | MediumTest | Level3)
 {
@@ -941,9 +1021,13 @@ HWTEST_F(MmapApiTest, testMmapENOMEM, Function | MediumTest | Level3)
 
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMunmapEINVAL
  * @tc.number SUB_KERNEL_MEM_MUNMAP_0100
- * @tc.name   munmap function errno for EINVAL test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MmapApiTest, testMunmapEINVAL, Function | MediumTest | Level3)
 {

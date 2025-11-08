@@ -28,9 +28,13 @@ class ExecveTest : public testing::Test {
 };
 
 /**
- * @tc.number   SUB_KERNEL_DL_ELF_0100
- * @tc.name     execve fixed address elf, non-pie elf
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testExecFixedAddressELF
+ * @tc.number SUB_KERNEL_DL_ELF_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ExecveTest, testExecFixedAddressELF, Function | MediumTest | Level1)
 {
@@ -40,9 +44,13 @@ HWTEST_F(ExecveTest, testExecFixedAddressELF, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number   SUB_KERNEL_DL_ELF_0200
- * @tc.name     execve static link elf
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testExecStaticELF
+ * @tc.number SUB_KERNEL_DL_ELF_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ExecveTest, testExecStaticELF, Function | MediumTest | Level1)
 {
@@ -53,9 +61,13 @@ HWTEST_F(ExecveTest, testExecStaticELF, Function | MediumTest | Level1)
 
 
 /**
- * @tc.number   SUB_KERNEL_DL_Execve_fname_0100
- * @tc.name     execve parameter1 fname test
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testParaFilename
+ * @tc.number SUB_KERNEL_DL_Execve_fname_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ExecveTest, testParaFilename, Function | MediumTest | Level1)
 {
@@ -103,9 +115,13 @@ HWTEST_F(ExecveTest, testParaFilename, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number   SUB_KERNEL_DL_Execve_argv_0100
- * @tc.name     execve parameter2 argv test
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testParaArgv
+ * @tc.number SUB_KERNEL_DL_Execve_argv_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ExecveTest, testParaArgv, Function | MediumTest | Level1)
 {
@@ -128,9 +144,13 @@ HWTEST_F(ExecveTest, testParaArgv, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number   SUB_KERNEL_DL_Execve_envp_0100
- * @tc.name     execve parameter3 envp test
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testParaEnvp
+ * @tc.number SUB_KERNEL_DL_Execve_envp_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ExecveTest, testParaEnvp, Function | MediumTest | Level1)
 {

@@ -129,9 +129,13 @@ static BOOL ServiceTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterService_0010
- * @tc.name      : Valid service can be registered
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testRegisterService0010
+ * @tc.number DMSLite_SAMGR_RegisterService_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ServiceTestSuite, testRegisterService0010, Function | MediumTest | Level1)
 {
@@ -142,9 +146,13 @@ LITE_TEST_CASE(ServiceTestSuite, testRegisterService0010, Function | MediumTest 
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterService_0020
- * @tc.name      : Service which is NULL failed to register 
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testRegisterService0020
+ * @tc.number DMSLite_SAMGR_RegisterService_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(ServiceTestSuite, testRegisterService0020, Function | MediumTest | Level2)
 {
@@ -153,9 +161,13 @@ LITE_TEST_CASE(ServiceTestSuite, testRegisterService0020, Function | MediumTest 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterService_0030
- * @tc.name      : Service which already exist in samgr failed to register 
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testRegisterService0030
+ * @tc.number DMSLite_SAMGR_RegisterService_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(ServiceTestSuite, testRegisterService0030, Function | MediumTest | Level2)
 {
@@ -166,9 +178,13 @@ LITE_TEST_CASE(ServiceTestSuite, testRegisterService0030, Function | MediumTest 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterService_0010
- * @tc.name      : Service can be unregistered 
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnregisterService0010
+ * @tc.number DMSLite_SAMGR_UnregisterService_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0010, Function | MediumTest | Level2)
 {
@@ -180,9 +196,13 @@ LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0010, Function | MediumTes
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterService_0020
- * @tc.name      : Service which contains NULL failed to unregister
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnregisterService0020
+ * @tc.number DMSLite_SAMGR_UnregisterService_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0020, Function | MediumTest | Level2)
 {
@@ -194,9 +214,13 @@ LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0020, Function | MediumTes
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterService_0030
- * @tc.name      : Service which does not exist in samgr failed to unregister
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnregisterService0030
+ * @tc.number DMSLite_SAMGR_UnregisterService_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0030, Function | MediumTest | Level2)
 {
@@ -205,9 +229,13 @@ LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0030, Function | MediumTes
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterService_0040
- * @tc.name      : Service which contains api failed to unregister
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnregisterService0040
+ * @tc.number DMSLite_SAMGR_UnregisterService_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0040, Function | MediumTest | Level2)
 {
@@ -222,9 +250,13 @@ LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0040, Function | MediumTes
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterService_0050
- * @tc.name      : Service which contains feature failed to unregister
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnregisterService0050
+ * @tc.number DMSLite_SAMGR_UnregisterService_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0050, Function | MediumTest | Level2)
 {
@@ -239,9 +271,13 @@ LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0050, Function | MediumTes
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterService_0060
- * @tc.name      : Register and unregister service repeatedly, no memory leak
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnregisterService0060
+ * @tc.number DMSLite_SAMGR_UnregisterService_0060
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0060, Function | MediumTest | Level2)
 {
@@ -256,9 +292,13 @@ LITE_TEST_CASE(ServiceTestSuite, testUnregisterService0060, Function | MediumTes
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Bootstrap_0010
- * @tc.name      : Restart SAMGR service function is normal.
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testBootstrap0010
+ * @tc.number DMSLite_SAMGR_Bootstrap_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(ServiceTestSuite, testBootstrap0010, Function | MediumTest | Level2)
 {

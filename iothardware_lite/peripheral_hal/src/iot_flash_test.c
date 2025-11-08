@@ -30,12 +30,6 @@ unsigned int (*g_ioTFlashErase)(unsigned int flashOffset, unsigned int size);
 unsigned int (*g_ioTFlashInit)(void);
 unsigned int (*g_ioTFlashDeinit)(void);
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is wifiiot
- * @param        : module name is wifiiotlite
- * @param        : test suite name is UtilsFileFuncTestSuite
- */
 LITE_TEST_SUIT(wifiiot, wifiiotlite, IotFlashTestSuite);
 
 /**
@@ -58,9 +52,13 @@ static BOOL IotFlashTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_0100
- * @tc.name      : Flash operation with IoTFlashInit
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testIotFlash001
+ * @tc.number SUB_UTILS_WIFIIOT_API_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotFlashTestSuite, testIotFlash001, Function | MediumTest | Level1)
 {
@@ -68,9 +66,13 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash001, Function | MediumTest | Level
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_0200
- * @tc.name      : Flash operation with IoTFlashWrite
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testIotFlash002
+ * @tc.number SUB_UTILS_WIFIIOT_API_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotFlashTestSuite, testIotFlash002, Function | MediumTest | Level1)
 {
@@ -79,9 +81,13 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash002, Function | MediumTest | Level
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_0300
- * @tc.name      : Flash operation with IoTFlashRead
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testIotFlash003
+ * @tc.number SUB_UTILS_WIFIIOT_API_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotFlashTestSuite, testIotFlash003, Function | MediumTest | Level1)
 {
@@ -89,9 +95,13 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash003, Function | MediumTest | Level
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_0400
- * @tc.name      : Flash operation with IoTFlashErase
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testIotFlash004
+ * @tc.number SUB_UTILS_WIFIIOT_API_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotFlashTestSuite, testIotFlash004, Function | MediumTest | Level1)
 {
@@ -99,9 +109,13 @@ LITE_TEST_CASE(IotFlashTestSuite, testIotFlash004, Function | MediumTest | Level
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_0500
- * @tc.name      : Flash operation with IoTFlashDeinit
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testIotFlash005
+ * @tc.number SUB_UTILS_WIFIIOT_API_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotFlashTestSuite, testIotFlash005, Function | MediumTest | Level1)
 {

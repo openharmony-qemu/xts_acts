@@ -89,9 +89,13 @@ protected:
 };
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0510
- * @tc.name       Can load application permission with long and short package names
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0510
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0510
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0510, Function | MediumTest | Level2)
 {
@@ -108,9 +112,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0510, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0520
- * @tc.name       Load unauthorized permissions
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0520
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0520
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0520, Function | MediumTest | Level1)
 {
@@ -126,9 +134,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0520, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0530
- * @tc.name       Load authorized permissions
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0530
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0530
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0530, Function | MediumTest | Level1)
 {
@@ -147,9 +159,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0530, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0540
- * @tc.name       Load system_grant permissions
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0540
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0540
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0540, Function | MediumTest | Level1)
 {
@@ -164,9 +180,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0540, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0550
- * @tc.name       Load user_grant permissions
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0550
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0550
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0550, Function | MediumTest | Level0)
 {
@@ -186,9 +206,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0550, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0560
- * @tc.name       Load permissions to large and small PIDs
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0560
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0560
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0560, Function | MediumTest | Level0)
 {
@@ -203,9 +227,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0560, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0570
- * @tc.name       Load nonexistent application permissions
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0570
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0570
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0570, Function | MediumTest | Level2)
 {
@@ -214,9 +242,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0570, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0580
- * @tc.name       Load loaded application permissions
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0580
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0580
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0580, Function | MediumTest | Level2)
 {
@@ -230,9 +262,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0580, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0630
- * @tc.name       Duplicate load application permissions
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0630
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0630
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0630, Function | MediumTest | Level2)
 {
@@ -247,9 +283,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0630, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0650
- * @tc.name       Load multiple application permissions
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0650
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0650
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0650, Function | MediumTest | Level2)
 {
@@ -266,9 +306,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0650, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0670
- * @tc.name       Load immediately after saving permissions
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0670
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0670
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0670, Function | MediumTest | Level2)
 {
@@ -280,9 +324,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0670, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0680
- * @tc.name       Load immediately after updating permissions
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0680
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0680
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0680, Function | MediumTest | Level2)
 {
@@ -297,9 +345,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0680, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0690
- * @tc.name       Load immediately after deleting permissions
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0690
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0690
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0690, Function | MediumTest | Level3)
 {
@@ -314,9 +366,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0690, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0700
- * @tc.name       Duplicate load after deleting permissions
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0700
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0700
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0700, Function | MediumTest | Level3)
 {
@@ -332,9 +388,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0700, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0710
- * @tc.name       Load immediately after querying permissions
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0710
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0710
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0710, Function | MediumTest | Level4)
 {
@@ -350,9 +410,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0710, Function | MediumTest | Level4)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0720
- * @tc.name       Load permission after grant runtime permissions
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0720
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0720
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0720, Function | MediumTest | Level2)
 {
@@ -366,9 +430,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0720, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0730
- * @tc.name       Load immediately after granting permissions
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0730
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0730
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0730, Function | MediumTest | Level2)
 {
@@ -383,9 +451,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0730, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0740
- * @tc.name       Load immediately after revoking permissions
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0740
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0740
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0740, Function | MediumTest | Level2)
 {
@@ -401,9 +473,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0740, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0830
- * @tc.name       Another application permission change does not affect load permission
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0830
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0830
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0830, Function | MediumTest | Level3)
 {
@@ -423,9 +499,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0830, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0850
- * @tc.name       Permission to load exception package names
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0850
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0850
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0850, Function | MediumTest | Level4)
 {
@@ -442,9 +522,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0850, Function | MediumTest | Level4)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0860
- * @tc.name       Permission to load exception pid
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0860
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0860
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0860, Function | MediumTest | Level3)
 {
@@ -456,9 +540,13 @@ HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0860, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_0880
- * @tc.name       Permission to load exception data
- * @tc.desc       [C- SECURITY -0900]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_0880
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_0880
+ * @tc.desc   [C- SECURITY -0900]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(ActsPMSLoadTest, testSecPMPMS_0880, Function | MediumTest | Level4)
 {

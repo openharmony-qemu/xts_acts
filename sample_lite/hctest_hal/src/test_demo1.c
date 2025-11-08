@@ -44,9 +44,13 @@ static BOOL IntTestSuiteTearDown()
 }
 
 /**
- * @tc.number    : Test_Case_100
- * @tc.name      : Verify int check function
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   TestCase001
+ * @tc.number Test_Case_100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IntTestSuite, TestCase001, Function | MediumTest | Level1)
 {
@@ -54,9 +58,13 @@ LITE_TEST_CASE(IntTestSuite, TestCase001, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : Test_Case_200
- * @tc.name      : Verify int check function
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   TestCase002
+ * @tc.number Test_Case_200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IntTestSuite, TestCase002, Function | MediumTest | Level2)
 {

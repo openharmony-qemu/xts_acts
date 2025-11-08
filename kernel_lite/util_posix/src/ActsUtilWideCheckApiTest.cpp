@@ -46,10 +46,14 @@ protected:
 };
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_0100
-* @tc.name       test iswalnum api with num
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswalnum0100
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswalnum0100, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -61,10 +65,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswalnum0100, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_0200
-* @tc.name       test iswalnum api with upper alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswalnum0200
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswalnum0200, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -76,10 +84,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswalnum0200, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_0300
-* @tc.name       test iswalnum api with lower alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswalnum0300
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswalnum0300, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -91,10 +103,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswalnum0300, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_0400
-* @tc.name       test iswalnum api with space
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswalnum0400
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswalnum0400, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -106,10 +122,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswalnum0400, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_0500
-* @tc.name       test iswalnum api with LF
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswalnum0500
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswalnum0500, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -121,10 +141,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswalnum0500, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_L_0600
-* @tc.name       test iswalnum_l api with num
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswalnumL0600
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_L_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswalnumL0600, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -136,10 +160,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswalnumL0600, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_L_0700
-* @tc.name       test iswalnum_l api with upper alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswalnumL0700
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_L_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswalnumL0700, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -151,10 +179,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswalnumL0700, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_L_0800
-* @tc.name       test iswalnum_l api with lower alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswalnumL0800
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_L_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswalnumL0800, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -166,10 +198,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswalnumL0800, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_L_0900
-* @tc.name       test iswalnum_l api with space
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswalnumL0900
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_L_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswalnumL0900, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -181,10 +217,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswalnumL0900, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_L_1000
-* @tc.name       test iswalnum_l api with LF
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswalnumL1000
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWALNUM_L_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswalnumL1000, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -196,10 +236,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswalnumL1000, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWALPHA_1100
-* @tc.name       test iswalpha api with lower alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswalpha1100
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWALPHA_1100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswalpha1100, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -211,10 +255,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswalpha1100, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWALPHA_1200
-* @tc.name       test iswalpha api with upper alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswalpha1200
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWALPHA_1200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswalpha1200, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -226,10 +274,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswalpha1200, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWALPHA_1300
-* @tc.name       test iswalpha api with space
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswalpha1300
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWALPHA_1300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswalpha1300, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -241,10 +293,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswalpha1300, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWALPHA_1400
-* @tc.name       test iswalpha api with LF
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswalpha1400
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWALPHA_1400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswalpha1400, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -256,10 +312,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswalpha1400, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWALPHA_L_1500
-* @tc.name       test iswalpha_l api with lower alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswalphaL1500
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWALPHA_L_1500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswalphaL1500, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -271,10 +331,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswalphaL1500, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWALPHA_L_1600
-* @tc.name       test iswalpha_l api with upper alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswalphaL1600
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWALPHA_L_1600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswalphaL1600, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -286,10 +350,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswalphaL1600, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWALPHA_L_1700
-* @tc.name       test iswalpha_l api with space
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswalphaL1700
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWALPHA_L_1700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswalphaL1700, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -301,10 +369,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswalphaL1700, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWALPHA_L_1800
-* @tc.name       test iswalpha_l api with LF
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswalphaL1800
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWALPHA_L_1800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswalphaL1800, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -316,10 +388,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswalphaL1800, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWBLANK_1900
-* @tc.name       test iswblank api with space
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswblank1900
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWBLANK_1900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswblank1900, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -331,10 +407,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswblank1900, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWBLANK_2000
-* @tc.name       test iswblank api with alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswblank2000
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWBLANK_2000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswblank2000, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -346,10 +426,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswblank2000, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWBLANK_L_2100
-* @tc.name       test iswblank_l api with space
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswblankL2100
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWBLANK_L_2100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswblankL2100, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -361,10 +445,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswblankL2100, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWBLANK_L_2200
-* @tc.name       test iswblank_l api with alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswblankL2200
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWBLANK_L_2200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswblankL2200, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -376,10 +464,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswblankL2200, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWCNTRL_2300
-* @tc.name       test iswcntrl api with LF
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswcntrl2300
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWCNTRL_2300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswcntrl2300, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -391,10 +483,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswcntrl2300, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWCNTRL_2400
-* @tc.name       test iswcntrl api with alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswcntrl2400
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWCNTRL_2400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswcntrl2400, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -406,10 +502,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswcntrl2400, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWCNTRL_L_2500
-* @tc.name       test iswcntrl_l api with LF
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswcntrlL2500
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWCNTRL_L_2500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswcntrlL2500, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -421,10 +521,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswcntrlL2500, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWCNTRL_L_2600
-* @tc.name       test iswcntrl_l api with alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswcntrlL2600
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWCNTRL_L_2600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswcntrlL2600, Function | MediumTest | Level1) {
     wint_t paraVal;
     int returnVal;
@@ -436,10 +540,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswcntrlL2600, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWCTYPE_2700
-* @tc.name       test iswctype api with alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswctype2700
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWCTYPE_2700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswctype2700, Function | MediumTest | Level1) {
     wint_t wideChar;
     wctype_t paraDesc;
@@ -453,10 +561,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswctype2700, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWCTYPE_2800
-* @tc.name       test iswctype api with digit
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswctype2800
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWCTYPE_2800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswctype2800, Function | MediumTest | Level1) {
     wint_t wideChar;
     wctype_t paraDesc;
@@ -470,10 +582,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswctype2800, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWCTYPE_L_2900
-* @tc.name       test iswctype_l api with alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswctypeL2900
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWCTYPE_L_2900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswctypeL2900, Function | MediumTest | Level1) {
     wint_t wideChar;
     wctype_t paraDesc;
@@ -487,10 +603,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswctypeL2900, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWCTYPE_L_3000
-* @tc.name       test iswctype_l api with digit
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswctypeL3000
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWCTYPE_L_3000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswctypeL3000, Function | MediumTest | Level1) {
     wint_t wideChar;
     wctype_t paraDesc;
@@ -504,10 +624,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswctypeL3000, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWDIGIT_3100
-* @tc.name       test iswdigit api with digit
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswdigit3100
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWDIGIT_3100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswdigit3100, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -519,10 +643,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswdigit3100, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWDIGIT_3200
-* @tc.name       test iswdigit api with alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswdigit3200
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWDIGIT_3200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswdigit3200, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -534,10 +662,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswdigit3200, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWDIGIT_L_3300
-* @tc.name       test iswdigit_l api with digit
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswdigitL3300
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWDIGIT_L_3300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswdigitL3300, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -549,10 +681,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswdigitL3300, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWDIGIT_L_3400
-* @tc.name       test iswdigit api with alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswdigitL3400
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWDIGIT_L_3400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswdigitL3400, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -564,10 +700,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswdigitL3400, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWGRAPH_3500
-* @tc.name       test iswgraph api with alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswgraph3500
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWGRAPH_3500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswgraph3500, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -579,10 +719,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswgraph3500, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWGRAPH_3600
-* @tc.name       test iswgraph api with LF
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswgraph3600
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWGRAPH_3600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswgraph3600, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -594,10 +738,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswgraph3600, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWGRAPH_L_3700
-* @tc.name       test iswgraph_l api with alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswgraphL3700
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWGRAPH_L_3700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswgraphL3700, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -609,10 +757,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswgraphL3700, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWGRAPH_L_3800
-* @tc.name       test iswgraph_l api with LF
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswgraphL3800
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWGRAPH_L_3800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswgraphL3800, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -624,10 +776,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswgraphL3800, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWLOWER_3900
-* @tc.name       test iswlower api with upper alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswlower3900
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWLOWER_3900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswlower3900, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -639,10 +795,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswlower3900, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWLOWER_4000
-* @tc.name       test islower api with lower alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswlower4000
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWLOWER_4000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswlower4000, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -654,10 +814,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswlower4000, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWLOWER_4100
-* @tc.name       test islower api with digit
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswlower4100
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWLOWER_4100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswlower4100, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -669,10 +833,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswlower4100, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWLOWER_L_4200
-* @tc.name       test iswlower_l api with upper alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswlowerL4200
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWLOWER_L_4200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswlowerL4200, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -684,10 +852,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswlowerL4200, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWLOWER_L_4300
-* @tc.name       test iswlower_l api with lower alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswlowerL4300
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWLOWER_L_4300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswlowerL4300, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -699,10 +871,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswlowerL4300, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWLOWER_L_4400
-* @tc.name       test iswlower_l api with digit
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswlowerL4400
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWLOWER_L_4400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswlowerL4400, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -714,10 +890,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswlowerL4400, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWPRINT_4500
-* @tc.name       test iswprint api with alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswprint4500
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWPRINT_4500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswprint4500, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -729,10 +909,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswprint4500, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWPRINT_4600
-* @tc.name       test iswprint api with LF
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswprint4600
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWPRINT_4600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswprint4600, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -744,10 +928,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswprint4600, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWPRINT_L_4700
-* @tc.name       test iswprint_l api with alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswprintL4700
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWPRINT_L_4700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswprintL4700, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -759,10 +947,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswprintL4700, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWPRINT_L_4800
-* @tc.name       test iswprint_l api with LF
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswprintL4800
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWPRINT_L_4800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswprintL4800, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -774,10 +966,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswprintL4800, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWPUNCT_4900
-* @tc.name       test iswpunct api with space
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswpunct4900
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWPUNCT_4900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswpunct4900, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -789,10 +985,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswpunct4900, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWPUNCT_5000
-* @tc.name       test iswpunct api with alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswpunct5000
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWPUNCT_5000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswpunct5000, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -804,10 +1004,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswpunct5000, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWPUNCT_5100
-* @tc.name       test iswpunct api with digit
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswpunct5100
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWPUNCT_5100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswpunct5100, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -819,10 +1023,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswpunct5100, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWPUNCT_5200
-* @tc.name       test iswpunct api with LF
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswpunct5200
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWPUNCT_5200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswpunct5200, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -834,10 +1042,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswpunct5200, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWPUNCT_L_5300
-* @tc.name       test iswpunct_l api with space
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswpunctL5300
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWPUNCT_L_5300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswpunctL5300, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -849,10 +1061,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswpunctL5300, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWPUNCT_L_5400
-* @tc.name       test iswpunct_l api with alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswpunctL5400
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWPUNCT_L_5400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswpunctL5400, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -864,10 +1080,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswpunctL5400, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWPUNCT_L_5500
-* @tc.name       test iswpunct_l api with digit
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswpunctL5500
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWPUNCT_L_5500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswpunctL5500, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -879,10 +1099,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswpunctL5500, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWPUNCT_L_5600
-* @tc.name       test iswpunct_l api with LF
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswpunctL5600
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWPUNCT_L_5600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswpunctL5600, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -894,10 +1118,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswpunctL5600, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_5700
-* @tc.name       test iswspace api with alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswspace5700
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_5700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswspace5700, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -909,10 +1137,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswspace5700, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_5800
-* @tc.name       test iswspace api with space
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswspace5800
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_5800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswspace5800, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -924,10 +1156,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswspace5800, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_5900
-* @tc.name       test iswspace api with LF
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswspace5900
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_5900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswspace5900, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -939,10 +1175,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswspace5900, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_6000
-* @tc.name       test iswspace api with CR
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswspace6000
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_6000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswspace6000, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -954,10 +1194,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswspace6000, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_6100
-* @tc.name       test iswspace api with form-feed
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswspace6100
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_6100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswspace6100, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -969,10 +1213,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswspace6100, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_6200
-* @tc.name       test iswspace api with horizontal tab
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswspace6200
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_6200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswspace6200, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -984,10 +1232,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswspace6200, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_6300
-* @tc.name       test iswspace api with vertical tab
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswspace6300
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_6300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswspace6300, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -999,10 +1251,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswspace6300, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_L_6400
-* @tc.name       test iswspace_l api with alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswspaceL6400
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_L_6400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswspaceL6400, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -1014,10 +1270,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswspaceL6400, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_L_6500
-* @tc.name       test iswspace_l api with space
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswspaceL6500
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_L_6500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswspaceL6500, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -1029,10 +1289,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswspaceL6500, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_L_6600
-* @tc.name       test iswspace_l api with LF
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswspaceL6600
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_L_6600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswspaceL6600, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -1044,10 +1308,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswspaceL6600, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_L_6700
-* @tc.name       test iswspace_l api with CR
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswspaceL6700
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_L_6700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswspaceL6700, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -1059,10 +1327,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswspaceL6700, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_L_6800
-* @tc.name       test iswspace_l api with form-feed
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswspaceL6800
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_L_6800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswspaceL6800, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -1074,10 +1346,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswspaceL6800, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_L_6900
-* @tc.name       test iswspace_l api with horizontal tab
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswspaceL6900
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_L_6900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswspaceL6900, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -1089,10 +1365,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswspaceL6900, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_L_7000
-* @tc.name       test iswspace_l api with vertical tab
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswspaceL7000
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWSPACE_L_7000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswspaceL7000, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -1104,10 +1384,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswspaceL7000, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWUPPER_7100
-* @tc.name       test iswupper api with upper alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswupper7100
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWUPPER_7100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswupper7100, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -1119,10 +1403,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswupper7100, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWUPPER_7200
-* @tc.name       test iswupper api with lower alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswupper7200
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWUPPER_7200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswupper7200, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -1134,10 +1422,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswupper7200, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWUPPER_7300
-* @tc.name       test iswupper api with digit
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswupper7300
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWUPPER_7300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswupper7300, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -1149,10 +1441,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswupper7300, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWUPPER_7400
-* @tc.name       test iswupper api with LF
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswupper7400
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWUPPER_7400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswupper7400, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -1164,10 +1460,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswupper7400, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWUPPER_L_7500
-* @tc.name       test iswupper_l api with upper alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswupperL7500
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWUPPER_L_7500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswupperL7500, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -1179,10 +1479,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswupperL7500, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWUPPER_L_7600
-* @tc.name       test iswupper_l api with lower alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswupperL7600
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWUPPER_L_7600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswupperL7600, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -1194,10 +1498,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswupperL7600, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWUPPER_L_7700
-* @tc.name       test iswupper_l api with digit
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswupperL7700
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWUPPER_L_7700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswupperL7700, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -1209,10 +1517,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswupperL7700, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWUPPER_L_7800
-* @tc.name       test iswupper_l api with LF
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswupperL7800
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWUPPER_L_7800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswupperL7800, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -1224,10 +1536,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswupperL7800, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWXDIGIT_7900
-* @tc.name       test iswxdigit api with xdigit F
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswxdigit7900
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWXDIGIT_7900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswxdigit7900, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -1239,10 +1555,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswxdigit7900, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWXDIGIT_8000
-* @tc.name       test iswxdigit api with alpha G
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswxdigit8000
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWXDIGIT_8000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswxdigit8000, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -1254,10 +1574,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswxdigit8000, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWXDIGIT_L_8100
-* @tc.name       test iswxdigit_l api with xdigit F
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswxdigitL8100
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWXDIGIT_L_8100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswxdigitL8100, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;
@@ -1269,10 +1593,14 @@ HWTEST_F(ActsUtilWideCheckApiTest, testIswxdigitL8100, Function | MediumTest | L
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_WIDECHECK_ISWXDIGIT_L_8200
-* @tc.name       test iswxdigit_l api with alpha G
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testIswxdigitL8200
+ * @tc.number SUB_KERNEL_UTIL_WIDECHECK_ISWXDIGIT_L_8200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilWideCheckApiTest, testIswxdigitL8200, Function | MediumTest | Level1) {
     wint_t wideChar;
     int returnVal;

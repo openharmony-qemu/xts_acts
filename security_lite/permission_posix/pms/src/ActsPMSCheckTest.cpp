@@ -89,9 +89,13 @@ protected:
 };
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_1390
- * @tc.name       check permissions to large and small PIDs
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_1390
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_1390
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSCheckTest, testSecPMPMS_1390, Function | MediumTest | Level2)
 {
@@ -110,9 +114,13 @@ HWTEST_F(ActsPMSCheckTest, testSecPMPMS_1390, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_1400
- * @tc.name       check system_grant permissions
- * @tc.desc       [C- SECURITY -1100]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_1400
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_1400
+ * @tc.desc   [C- SECURITY -1100]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ActsPMSCheckTest, testSecPMPMS_1400, Function | MediumTest | Level0)
 {
@@ -126,9 +134,13 @@ HWTEST_F(ActsPMSCheckTest, testSecPMPMS_1400, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_1410
- * @tc.name       check granted user_grant permissions
- * @tc.desc       [C- SECURITY -1100]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_1410
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_1410
+ * @tc.desc   [C- SECURITY -1100]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ActsPMSCheckTest, testSecPMPMS_1410, Function | MediumTest | Level0)
 {
@@ -142,9 +154,13 @@ HWTEST_F(ActsPMSCheckTest, testSecPMPMS_1410, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_1420
- * @tc.name       check user_grant permissions
- * @tc.desc       [C- SECURITY -1100]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testSecPMPMS_1420
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_1420
+ * @tc.desc   [C- SECURITY -1100]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ActsPMSCheckTest, testSecPMPMS_1420, Function | MediumTest | Level0)
 {

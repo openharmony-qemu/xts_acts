@@ -358,10 +358,14 @@ protected:
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendSharedRequest_0010
- * @tc.name      : Feature can send a message by SendSharedRequest
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testSendSharedRequest0010
+ * @tc.number DMSLite_SAMGR_SendSharedRequest_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(SendShareRequestTest, testSendSharedRequest0010, Function | MediumTest | Level2) {
     DemoApi *demoApi = GetIUnknown("S_sendShareReq", "feature02");
     if (demoApi == nullptr) {
@@ -396,10 +400,14 @@ HWTEST_F(SendShareRequestTest, testSendSharedRequest0010, Function | MediumTest 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendSharedDirectRequest_0010
- * @tc.name      : Feature can send a message by SendSharedDirectRequest
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testSendSharedDirectRequest0010
+ * @tc.number DMSLite_SAMGR_SendSharedDirectRequest_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(SendShareRequestTest, testSendSharedDirectRequest0010, Function | MediumTest | Level2) {
     DemoApi *demoApi = GetIUnknown("S_sendShareReq", "feature02");
     if (demoApi == nullptr) {

@@ -111,9 +111,13 @@ static void TestAieClientRelease(bool isAsync, bool isPerformProcess)
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientRelease_0100
- * @tc.name   : 01. algorithmInfo中isAsync=false，不执行算法，调用AieClientRelease返回成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testAieClientReleaseFunction001
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientRelease_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(AieClientReleaseFunctionTest, testAieClientReleaseFunction001, Function | MediumTest | Level2)
 {
@@ -122,9 +126,13 @@ HWTEST_F(AieClientReleaseFunctionTest, testAieClientReleaseFunction001, Function
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientRelease_0200
- * @tc.name   : 02. algorithmInfo中isAsync=true，不执行算法，调用AieClientRelease返回成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testAieClientReleaseFunction002
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientRelease_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientReleaseFunctionTest, testAieClientReleaseFunction002, Function | MediumTest | Level3)
 {
@@ -133,9 +141,13 @@ HWTEST_F(AieClientReleaseFunctionTest, testAieClientReleaseFunction002, Function
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientRelease_0300
- * @tc.name   : 03. 同步执行算法之后，调用AieClientRelease返回成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testAieClientReleaseFunction003
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientRelease_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientReleaseFunctionTest, testAieClientReleaseFunction003, Function | MediumTest | Level3)
 {
@@ -144,9 +156,13 @@ HWTEST_F(AieClientReleaseFunctionTest, testAieClientReleaseFunction003, Function
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientRelease_0400
- * @tc.name   : 04. 异步执行算法之后，调用AieClientRelease返回成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testAieClientReleaseFunction004
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientRelease_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientReleaseFunctionTest, testAieClientReleaseFunction004, Function | MediumTest | Level3)
 {

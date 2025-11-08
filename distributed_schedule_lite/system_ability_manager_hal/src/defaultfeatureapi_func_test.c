@@ -87,9 +87,13 @@ static BOOL DefaultFeatureApiTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterDefaultFeatureApi_0010
- * @tc.name      : Valid API can be registered under default feature
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testRegisterDefaultFeatureApi0010
+ * @tc.number DMSLite_SAMGR_RegisterDefaultFeatureApi_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DefaultFeatureApiTestSuite, testRegisterDefaultFeatureApi0010, Function | MediumTest | Level1)
 {
@@ -100,9 +104,13 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testRegisterDefaultFeatureApi0010, Fu
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterDefaultFeatureApi_0020
- * @tc.name      : API failed to register if the specified service is null
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testRegisterDefaultFeatureApi0020
+ * @tc.number DMSLite_SAMGR_RegisterDefaultFeatureApi_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(DefaultFeatureApiTestSuite, testRegisterDefaultFeatureApi0020, Function | MediumTest | Level2)
 {
@@ -111,9 +119,13 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testRegisterDefaultFeatureApi0020, Fu
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterDefaultFeatureApi_0030
- * @tc.name      : API failed to register if the specified service does not exist
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testRegisterDefaultFeatureApi0030
+ * @tc.number DMSLite_SAMGR_RegisterDefaultFeatureApi_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(DefaultFeatureApiTestSuite, testRegisterDefaultFeatureApi0030, Function | MediumTest | Level2)
 {
@@ -122,9 +134,13 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testRegisterDefaultFeatureApi0030, Fu
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterDefaultFeatureApi_0040
- * @tc.name      : API failed to register if the target API is NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testRegisterDefaultFeatureApi0040
+ * @tc.number DMSLite_SAMGR_RegisterDefaultFeatureApi_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(DefaultFeatureApiTestSuite, testRegisterDefaultFeatureApi0040, Function | MediumTest | Level2) 
 {
@@ -133,9 +149,13 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testRegisterDefaultFeatureApi0040, Fu
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterDefaultFeatureApi_0050
- * @tc.name      : API failed to register for the target API already exist
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testRegisterDefaultFeatureApi0050
+ * @tc.number DMSLite_SAMGR_RegisterDefaultFeatureApi_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(DefaultFeatureApiTestSuite, testRegisterDefaultFeatureApi0050, Function | MediumTest | Level2)
 {
@@ -147,9 +167,13 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testRegisterDefaultFeatureApi0050, Fu
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_GetDefaultFeatureApi_0010
- * @tc.name      : API can be queried out from service
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testGetDefaultFeatureApi0010
+ * @tc.number DMSLite_SAMGR_GetDefaultFeatureApi_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DefaultFeatureApiTestSuite, testGetDefaultFeatureApi0010, Function | MediumTest | Level1)
 {
@@ -162,9 +186,13 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testGetDefaultFeatureApi0010, Functio
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_GetDefaultFeatureApi_0020
- * @tc.name      : It's NULL result if the specified service name is NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testGetDefaultFeatureApi0020
+ * @tc.number DMSLite_SAMGR_GetDefaultFeatureApi_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(DefaultFeatureApiTestSuite, testGetDefaultFeatureApi0020, Function | MediumTest | Level2)
 {
@@ -177,9 +205,13 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testGetDefaultFeatureApi0020, Functio
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_GetDefaultFeatureApi_0030
- * @tc.name      : The query result is NULL for the specified service does not exist
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testGetDefaultFeatureApi0030
+ * @tc.number DMSLite_SAMGR_GetDefaultFeatureApi_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(DefaultFeatureApiTestSuite, testGetDefaultFeatureApi0030, Function | MediumTest | Level2)
 {
@@ -192,9 +224,13 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testGetDefaultFeatureApi0030, Functio
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_GetDefaultFeatureApi_0040
- * @tc.name      : The query result is the same for multi query operations
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testGetDefaultFeatureApi0040
+ * @tc.number DMSLite_SAMGR_GetDefaultFeatureApi_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(DefaultFeatureApiTestSuite, testGetDefaultFeatureApi0040, Function | MediumTest | Level2)
 {
@@ -208,9 +244,13 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testGetDefaultFeatureApi0040, Functio
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterDefaultFeatureApi_0010
- * @tc.name      : Default feature API can be unregistered
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnregisterDefaultFeatureApi0010
+ * @tc.number DMSLite_SAMGR_UnregisterDefaultFeatureApi_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DefaultFeatureApiTestSuite, testUnregisterDefaultFeatureApi0010, Function | MediumTest | Level1)
 {
@@ -221,9 +261,13 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testUnregisterDefaultFeatureApi0010, 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterDefaultFeatureApi_0020
- * @tc.name      : The unregister operation failed if serviceName is NULL or space
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnregisterDefaultFeatureApi0020
+ * @tc.number DMSLite_SAMGR_UnregisterDefaultFeatureApi_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(DefaultFeatureApiTestSuite, testUnregisterDefaultFeatureApi0020, Function | MediumTest | Level2)
 {
@@ -239,9 +283,13 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testUnregisterDefaultFeatureApi0020, 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterDefaultFeatureApi_0030
- * @tc.name      : The unregister operation failed if the specified service does not exist
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnregisterDefaultFeatureApi0030
+ * @tc.number DMSLite_SAMGR_UnregisterDefaultFeatureApi_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(DefaultFeatureApiTestSuite, testUnregisterDefaultFeatureApi0030, Function | MediumTest | Level2)
 {
@@ -250,9 +298,13 @@ LITE_TEST_CASE(DefaultFeatureApiTestSuite, testUnregisterDefaultFeatureApi0030, 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterDefaultFeatureApi_0040
- * @tc.name      : Register and unregister default api repeatedly, no memory leak
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnregisterDefaultFeatureApi0040
+ * @tc.number DMSLite_SAMGR_UnregisterDefaultFeatureApi_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(DefaultFeatureApiTestSuite, testUnregisterDefaultFeatureApi0040, Function | MediumTest | Level2)
 {

@@ -371,9 +371,13 @@ static void ExecHksMacTest002(void const *argument)
 }
 
 /**
- * @tc.name: HksMacTest.HksMacTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   HksMacTest001
+ * @tc.number HksMacTest001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksMacTest, HksMacTest001, Level1)
 {   
@@ -394,9 +398,13 @@ LITE_TEST_CASE(HksMacTest, HksMacTest001, Level1)
 
 #ifndef _CUT_AUTHENTICATE_
 /**
- * @tc.name: HksMacTest.HksMacTest002
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   HksMacTest002
+ * @tc.number HksMacTest002
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksMacTest, HksMacTest002, Level1)
 {   

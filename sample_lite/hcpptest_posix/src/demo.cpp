@@ -46,9 +46,13 @@ static int Sum(int n)
 }
 
 /**
- * @tc.number    : TEST_CASE_100 
- * @tc.name      : Demo test
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   Negative
+ * @tc.number TEST_CASE_100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(Demo, Negative, Function | MediumTest | Level0) {
     EXPECT_EQ(NUM0, Sum(NG_NUM5));
@@ -56,18 +60,26 @@ HWTEST_F(Demo, Negative, Function | MediumTest | Level0) {
 }
 
 /**
- * @tc.number    : TEST_CASE_200
- * @tc.name      : Demo test
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   Zero
+ * @tc.number TEST_CASE_200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(Demo, Zero, Function | MediumTest | Level0) {
     EXPECT_EQ(NUM0, Sum(NUM0));
 }
 
 /**
- * @tc.number    : TEST_CASE_300
- * @tc.name      : Demo test
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   Positive
+ * @tc.number TEST_CASE_300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(Demo, Positive, Function | MediumTest | Level0) {
     EXPECT_EQ(NUM1, Sum(NUM1));

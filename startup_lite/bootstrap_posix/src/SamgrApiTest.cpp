@@ -327,9 +327,13 @@ protected:
 };
 
 /**
- * @tc.number    : SUB_START_Bootstrap_Samgr_0100
- * @tc.name      : check total init index
- * @tc.desc      : check total init index, return success
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Bootstrap_Samgr_0100
+ * @tc.number SUB_START_Bootstrap_Samgr_0100
+ * @tc.desc   check total init index, return success
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(SamgrApiTest, SUB_START_Bootstrap_Samgr_0100, Function | MediumTest | Level0)
 {
@@ -338,9 +342,13 @@ HWTEST_F(SamgrApiTest, SUB_START_Bootstrap_Samgr_0100, Function | MediumTest | L
 }
 
 /**
- * @tc.number    : SUB_START_Bootstrap_Samgr_0200
- * @tc.name      : check core init index
- * @tc.desc      : check core init, return success
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Bootstrap_Samgr_0200
+ * @tc.number SUB_START_Bootstrap_Samgr_0200
+ * @tc.desc   check core init, return success
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(SamgrApiTest, SUB_START_Bootstrap_Samgr_0200, Function | MediumTest | Level0)
 {
@@ -355,9 +363,13 @@ HWTEST_F(SamgrApiTest, SUB_START_Bootstrap_Samgr_0200, Function | MediumTest | L
 }
 
 /**
- * @tc.number    : SUB_START_Bootstrap_Samgr_0300
- * @tc.name      : check system service init index
- * @tc.desc      : check system service init, return success
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Bootstrap_Samgr_0300
+ * @tc.number SUB_START_Bootstrap_Samgr_0300
+ * @tc.desc   check system service init, return success
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(SamgrApiTest, SUB_START_Bootstrap_Samgr_0300, Function | MediumTest | Level0)
 {
@@ -372,9 +384,13 @@ HWTEST_F(SamgrApiTest, SUB_START_Bootstrap_Samgr_0300, Function | MediumTest | L
 }
 
 /**
- * @tc.number    : SUB_START_Bootstrap_Samgr_0400
- * @tc.name      : check system feature init index
- * @tc.desc      : check system feature init, return success
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Bootstrap_Samgr_0400
+ * @tc.number SUB_START_Bootstrap_Samgr_0400
+ * @tc.desc   check system feature init, return success
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(SamgrApiTest, SUB_START_Bootstrap_Samgr_0400, Function | MediumTest | Level0)
 {
@@ -389,9 +405,13 @@ HWTEST_F(SamgrApiTest, SUB_START_Bootstrap_Samgr_0400, Function | MediumTest | L
 }
 
 /**
- * @tc.number    : SUB_START_Bootstrap_Samgr_0500
- * @tc.name      : check system extend service and app service init index
- * @tc.desc      : check system extend service and app service init, return success
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Bootstrap_Samgr_0500
+ * @tc.number SUB_START_Bootstrap_Samgr_0500
+ * @tc.desc   check system extend service and app service init, return success
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(SamgrApiTest, SUB_START_Bootstrap_Samgr_0500, Function | MediumTest | Level0)
 {
@@ -414,9 +434,13 @@ HWTEST_F(SamgrApiTest, SUB_START_Bootstrap_Samgr_0500, Function | MediumTest | L
 }
 
 /**
- * @tc.number    : SUB_START_Bootstrap_Samgr_0600
- * @tc.name      : check system extend feature and app feature init index
- * @tc.desc      : check system extend feature and app feature init, return success
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Bootstrap_Samgr_0600
+ * @tc.number SUB_START_Bootstrap_Samgr_0600
+ * @tc.desc   check system extend feature and app feature init, return success
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(SamgrApiTest, SUB_START_Bootstrap_Samgr_0600, Function | MediumTest | Level0)
 {
@@ -439,9 +463,13 @@ HWTEST_F(SamgrApiTest, SUB_START_Bootstrap_Samgr_0600, Function | MediumTest | L
 }
 
 /**
- * @tc.number    : SUB_START_Bootstrap_Samgr_0700
- * @tc.name      : check system run index
- * @tc.desc      : check system run, return success
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Bootstrap_Samgr_0700
+ * @tc.number SUB_START_Bootstrap_Samgr_0700
+ * @tc.desc   check system run, return success
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(SamgrApiTest, SUB_START_Bootstrap_Samgr_0700, Function | MediumTest | Level0)
 {

@@ -58,10 +58,14 @@ void ResDescTest::TearDown()
     HILOG_DEBUG("ResDescTest teardown");
 }
 
-/*
- * @tc.name: ResDescFuncTest001
- * @tc.desc: Test IsRef function, non file case.
- * @tc.type: FUNC
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   ResDescFuncTest001
+ * @tc.number ResDescFuncTest001
+ * @tc.desc   Test IsRef function, non file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResDescTest, ResDescFuncTest001, TestSize.Level1)
 {
@@ -122,10 +126,14 @@ void TestKeyParam(KeyType keyType, int value, std::string expectStr)
     EXPECT_EQ(expectStr, keyParam.str_);
 }
 
-/*
- * @tc.name: ResDescFuncTest002
- * @tc.desc: Test IsRef function, non file case.
- * @tc.type: FUNC
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   ResDescFuncTest002
+ * @tc.number ResDescFuncTest002
+ * @tc.desc   Test IsRef function, non file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResDescTest, ResDescFuncTest002, TestSize.Level1)
 {

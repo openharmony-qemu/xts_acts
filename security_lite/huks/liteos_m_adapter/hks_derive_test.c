@@ -279,9 +279,13 @@ static void ExecHksDeriveTest003(void const *argument)
 
 #ifndef _CUT_AUTHENTICATE_
 /**
- * @tc.name: HksDeriveTest.HksDeriveTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   HksDeriveTest001
+ * @tc.number HksDeriveTest001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksDeriveTest, HksDeriveTest001, Level1)
 {
@@ -300,9 +304,13 @@ LITE_TEST_CASE(HksDeriveTest, HksDeriveTest001, Level1)
     LiteTestPrint("HksDeriveTest001 End2!\n");
 }
 /**
- * @tc.name: HksDeriveTest.HksDeriveTest003
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   HksDeriveTest003
+ * @tc.number HksDeriveTest003
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksDeriveTest, HksDeriveTest003, Level1)
 {
@@ -323,9 +331,13 @@ LITE_TEST_CASE(HksDeriveTest, HksDeriveTest003, Level1)
 #endif /* _CUT_AUTHENTICATE_ */
 
 /**
- * @tc.name: HksDeriveTest.HksDeriveTest002
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   HksDeriveTest002
+ * @tc.number HksDeriveTest002
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksDeriveTest, HksDeriveTest002, Level1)
 {

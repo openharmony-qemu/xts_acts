@@ -30,9 +30,13 @@ class SemTest : public::testing::Test {
 };
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SEM_INIT_0100
- * @tc.name     Use sem_init initialize the semaphore with 0
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSemInitA
+ * @tc.number SUB_KERNEL_IPC_SEM_INIT_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(SemTest, testSemInitA, Function | MediumTest | Level2)
 {
@@ -47,9 +51,13 @@ HWTEST_F(SemTest, testSemInitA, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SEM_INIT_0110
- * @tc.name     Use sem_init initialize the semaphore with 1
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSemInitB
+ * @tc.number SUB_KERNEL_IPC_SEM_INIT_0110
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(SemTest, testSemInitB, Function | MediumTest | Level2)
 {
@@ -64,9 +72,13 @@ HWTEST_F(SemTest, testSemInitB, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SEM_INIT_0120
- * @tc.name     Use sem_init initialize the semaphore with 100
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSemInitC
+ * @tc.number SUB_KERNEL_IPC_SEM_INIT_0120
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(SemTest, testSemInitC, Function | MediumTest | Level2)
 {
@@ -81,9 +93,13 @@ HWTEST_F(SemTest, testSemInitC, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SEM_POST_0100
- * @tc.name     sem_post increases the semaphore count
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSemPost
+ * @tc.number SUB_KERNEL_IPC_SEM_POST_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(SemTest, testSemPost, Function | MediumTest | Level2)
 {
@@ -107,9 +123,13 @@ HWTEST_F(SemTest, testSemPost, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SEM_WAIT_0100
- * @tc.name     sem_wait get semaphore
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSemWait
+ * @tc.number SUB_KERNEL_IPC_SEM_WAIT_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(SemTest, testSemWait, Function | MediumTest | Level2)
 {
@@ -133,9 +153,13 @@ HWTEST_F(SemTest, testSemWait, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SEM_TRYWAIT_0100
- * @tc.name     sem_trywait get semaphore
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSemTryWait
+ * @tc.number SUB_KERNEL_IPC_SEM_TRYWAIT_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(SemTest, testSemTryWait, Function | MediumTest | Level2)
 {
@@ -158,9 +182,13 @@ HWTEST_F(SemTest, testSemTryWait, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SEM_DESTROY_0100
- * @tc.name     check sem_destroy function
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSemdestroy
+ * @tc.number SUB_KERNEL_IPC_SEM_DESTROY_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(SemTest, testSemdestroy, Function | MediumTest | Level3)
 {
@@ -181,9 +209,13 @@ void *ThreadChat(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SEM_CHAT_0100
- * @tc.name     Inter-thread communication, check sem_wait function
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testThreadChat
+ * @tc.number SUB_KERNEL_IPC_SEM_CHAT_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(SemTest, testThreadChat, Function | MediumTest | Level3)
 {
@@ -232,9 +264,13 @@ void *ThreadSemTryWait(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SEM_CHAT_0200
- * @tc.name     basic function test : Inter-thread communication, check sem_trywait function
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testThreadSemTryWait
+ * @tc.number SUB_KERNEL_IPC_SEM_CHAT_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(SemTest, testThreadSemTryWait, Function | MediumTest | Level3)
 {
@@ -292,9 +328,13 @@ void *ThreadSemTimedWait(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SEM_CHAT_0300
- * @tc.name     Inter-thread communication, check sem_timedwait function
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testThreadSemTimedWait
+ * @tc.number SUB_KERNEL_IPC_SEM_CHAT_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(SemTest, testThreadSemTimedWait, Function | MediumTest | Level3)
 {
@@ -352,9 +392,13 @@ void *ThreadNThreadWait2(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SEM_CHAT_0400
- * @tc.name     N threads wait, main thread post
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testNThreadWait
+ * @tc.number SUB_KERNEL_IPC_SEM_CHAT_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(SemTest, testNThreadWait, Function | MediumTest | Level4)
 {
@@ -424,9 +468,13 @@ void *ThreadNThreadPost2(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SEM_CHAT_0500
- * @tc.name     N threads post, main thread wait
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testNThreadPost
+ * @tc.number SUB_KERNEL_IPC_SEM_CHAT_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(SemTest, testNThreadPost, Function | MediumTest | Level4)
 {

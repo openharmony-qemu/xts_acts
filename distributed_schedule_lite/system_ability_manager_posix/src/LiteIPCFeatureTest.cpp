@@ -187,10 +187,14 @@ protected:
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCFeature_0010
- * @tc.name      : Feature which cross process should be inited ok
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testIPCFeature0010
+ * @tc.number DMSLite_SAMGR_IPCFeature_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(LiteIPCFeatureTest, testIPCFeature0010, Function | MediumTest | Level2)
 {
     ASSERT_EQ((&g_service)->serviceStatus, TRUE);
@@ -198,10 +202,14 @@ HWTEST_F(LiteIPCFeatureTest, testIPCFeature0010, Function | MediumTest | Level2)
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCFeature_0020
- * @tc.name      : Feature which cross process also can be accessed as LPC
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testIPCFeature0020
+ * @tc.number DMSLite_SAMGR_IPCFeature_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(LiteIPCFeatureTest, testIPCFeature0020, Function | MediumTest | Level2)
 {
     DemoFeatureApi *demoApi = nullptr;
@@ -220,10 +228,14 @@ HWTEST_F(LiteIPCFeatureTest, testIPCFeature0020, Function | MediumTest | Level2)
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCFeature_0030
- * @tc.name      : For inside caller, Feature which cross process can not be accessed as IPC
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testIPCFeature0030
+ * @tc.number DMSLite_SAMGR_IPCFeature_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(LiteIPCFeatureTest, testIPCFeature0030, Function | MediumTest | Level2)
 {
     IClientProxy *demoApi = nullptr;
@@ -236,10 +248,14 @@ HWTEST_F(LiteIPCFeatureTest, testIPCFeature0030, Function | MediumTest | Level2)
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCFeature_0040
- * @tc.name      : Feature which cross process can be unregistered
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testIPCFeature0040
+ * @tc.number DMSLite_SAMGR_IPCFeature_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(LiteIPCFeatureTest, testIPCFeature0040, Function | MediumTest | Level2)
 {
     IUnknown *iUnknown = SAMGR_GetInstance()->UnregisterFeatureApi(SERVICE_NAME, FEATURE_NAME);

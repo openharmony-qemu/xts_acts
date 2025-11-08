@@ -55,9 +55,13 @@ void HksAesTest::TearDown()
 
 #ifndef _CUT_AUTHENTICATE_
 /**
- * @tc.name: HksCipherTest.HksCipherTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   HksAesTest001
+ * @tc.number HksAesTest001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksAesTest, HksAesTest001, TestSize.Level1)
 {
@@ -65,9 +69,13 @@ HWTEST_F(HksAesTest, HksAesTest001, TestSize.Level1)
 }
 
 /**
- * @tc.name: HksCipherTest.HksCipherTest002
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   HksAesTest002
+ * @tc.number HksAesTest002
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksAesTest, HksAesTest002, TestSize.Level1)
 {
@@ -75,9 +83,13 @@ HWTEST_F(HksAesTest, HksAesTest002, TestSize.Level1)
 }
 
 /**
- * @tc.name: HksCipherTest.HksCipherTest003
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   HksAesTest003
+ * @tc.number HksAesTest003
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksAesTest, HksAesTest003, TestSize.Level1)
 {
@@ -86,9 +98,13 @@ HWTEST_F(HksAesTest, HksAesTest003, TestSize.Level1)
 #endif /* _CUT_AUTHENTICATE_ */
 
 /**
- * @tc.name: HksCipherTest.HksCipherTest003
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   HksAesTest004
+ * @tc.number HksAesTest004
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksAesTest, HksAesTest004, TestSize.Level1)
 {

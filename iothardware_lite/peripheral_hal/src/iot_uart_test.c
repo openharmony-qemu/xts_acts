@@ -21,12 +21,6 @@
 const unsigned int INIT_UART_BAUD_RATE = 115200;
 const unsigned int COMPILABILITY_TEST_UART_PORT = 0xFFFFFFFF;
 
-/**
- * @tc.desc      : this suite is used to test basic flow and interface dependency(Compile overlay)
- * @param        : subsystem name is wifiiot
- * @param        : module name is wifiiotlite
- * @param        : test suit name is UtilsFileFuncTestSuite
- */
 LITE_TEST_SUIT(wifiiot, wifiiotlite, IotUartTestSuite);
 
 /**
@@ -49,9 +43,13 @@ static BOOL IotUartTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_5000
- * @tc.name      : UART operation with IoTUartInit
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testIotUart001
+ * @tc.number SUB_UTILS_WIFIIOT_API_5000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotUartTestSuite, testIotUart001, Function | MediumTest | Level1)
 {
@@ -68,9 +66,13 @@ LITE_TEST_CASE(IotUartTestSuite, testIotUart001, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_5100
- * @tc.name      : UART operation with IoTUartWrite
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testIotUart002
+ * @tc.number SUB_UTILS_WIFIIOT_API_5100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotUartTestSuite, testIotUart002, Function | MediumTest | Level1)
 {
@@ -79,9 +81,13 @@ LITE_TEST_CASE(IotUartTestSuite, testIotUart002, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_5200
- * @tc.name      : UART operation with IoTUartRead
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testIotUart003
+ * @tc.number SUB_UTILS_WIFIIOT_API_5200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotUartTestSuite, testIotUart003, Function | MediumTest | Level1)
 {
@@ -90,9 +96,13 @@ LITE_TEST_CASE(IotUartTestSuite, testIotUart003, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_5300
- * @tc.name      : UART operation with IoTUartSetFlowCtrl
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testIotUart004
+ * @tc.number SUB_UTILS_WIFIIOT_API_5300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotUartTestSuite, testIotUart004, Function | MediumTest | Level1)
 {
@@ -100,9 +110,13 @@ LITE_TEST_CASE(IotUartTestSuite, testIotUart004, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_5400
- * @tc.name      : UART operation with IoTUartDeinit
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testIotUart005
+ * @tc.number SUB_UTILS_WIFIIOT_API_5400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotUartTestSuite, testIotUart005, Function | MediumTest | Level1)
 {

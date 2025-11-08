@@ -59,11 +59,6 @@ protected:
 };
 struct timespec ClockTimeTest::mTestStatTime;
 
-/**
- * @tc.number SUB_KERNEL_TIME_API_CLOCK_GETRES_0100
- * @tc.name   test all supported clockid of clock_getres
- * @tc.desc   [C- SOFTWARE -0200]
- */
 HWTEST_P(SupportedClockIDTest, testClockGetresAll, Function | MediumTest | Level1)
 {
     clockid_t cid = GetParam();
@@ -82,11 +77,6 @@ HWTEST_P(SupportedClockIDTest, testClockGetresAll, Function | MediumTest | Level
     }
 }
 
-/**
- * @tc.number SUB_KERNEL_TIME_API_CLOCK_GETTIME_0100
- * @tc.name   test all supported clockid of clock_gettime
- * @tc.desc   [C- SOFTWARE -0200]
- */
 HWTEST_P(SupportedClockIDTest, testClockGettimeAll, Function | MediumTest | Level1)
 {
     clockid_t cid = GetParam();
@@ -106,9 +96,13 @@ INSTANTIATE_TEST_CASE_P(ClockTimeTest, SupportedClockIDTest, ALL_SUPPORTED_IDS);
 
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testClockSettime
  * @tc.number SUB_KERNEL_TIME_API_CLOCK_SETTIME_0100
- * @tc.name   test clock_settime basic
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ClockTimeTest, testClockSettime, Function | MediumTest | Level1)
 {
@@ -128,9 +122,13 @@ HWTEST_F(ClockTimeTest, testClockSettime, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testFtime
  * @tc.number SUB_KERNEL_TIME_API_FTIME_0100
- * @tc.name   test ftime basic
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ClockTimeTest, testFtime, Function | MediumTest | Level1)
 {
@@ -154,9 +152,13 @@ HWTEST_F(ClockTimeTest, testFtime, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testStime
  * @tc.number SUB_KERNEL_TIME_API_STIME_0100
- * @tc.name   test stime basic
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ClockTimeTest, testStime, Function | MediumTest | Level1)
 {
@@ -176,9 +178,13 @@ HWTEST_F(ClockTimeTest, testStime, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testTime
  * @tc.number SUB_KERNEL_TIME_API_TIME_0100
- * @tc.name   test time basic
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ClockTimeTest, testTime, Function | MediumTest | Level1)
 {
@@ -210,9 +216,13 @@ HWTEST_F(ClockTimeTest, testTime, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testTimes
  * @tc.number SUB_KERNEL_TIME_API_TIMES_0100
- * @tc.name   test times basic
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ClockTimeTest, testTimes, Function | MediumTest | Level1)
 {
@@ -257,10 +267,14 @@ HWTEST_F(ClockTimeTest, testTimes, Function | MediumTest | Level1)
 }
 
 /**
-* @tc.number     SUB_KERNEL_TIME_API_GETTIMEOFDAY_0100
-* @tc.name       test gettimeofday api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testGettimeofday
+ * @tc.number SUB_KERNEL_TIME_API_GETTIMEOFDAY_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ClockTimeTest, testGettimeofday, Function | MediumTest | Level1) {
     int sleepSec = 1;
     struct timeval tvalStart = {0};
@@ -279,10 +293,14 @@ HWTEST_F(ClockTimeTest, testGettimeofday, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_TIME_API_SETTIMEOFDAY_0100
-* @tc.name       test settimeofday api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testSettimeofday
+ * @tc.number SUB_KERNEL_TIME_API_SETTIMEOFDAY_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ClockTimeTest, testSettimeofday, Function | MediumTest | Level1) {
     int setSec = 100;
     int sleepSec = 2;
@@ -306,10 +324,14 @@ HWTEST_F(ClockTimeTest, testSettimeofday, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_TIME_API_LOCALTIME_0100
-* @tc.name       test localtime api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testLocaltime
+ * @tc.number SUB_KERNEL_TIME_API_LOCALTIME_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ClockTimeTest, testLocaltime, Function | MediumTest | Level1) {
     char cTime[32];
     time_t tStart;
@@ -333,10 +355,14 @@ HWTEST_F(ClockTimeTest, testLocaltime, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_TIME_API_LOCALTIMER_0100
-* @tc.name       test localtime_r api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testLocaltimer
+ * @tc.number SUB_KERNEL_TIME_API_LOCALTIMER_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ClockTimeTest, testLocaltimer, Function | MediumTest | Level1) {
     char cTime[32];
     time_t tStart;
@@ -368,10 +394,14 @@ HWTEST_F(ClockTimeTest, testLocaltimer, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_TIME_API_GETDATE_0100
-* @tc.name       test getdate api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testGetdateBasic
+ * @tc.number SUB_KERNEL_TIME_API_GETDATE_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ClockTimeTest, testGetdateBasic, Function | MediumTest | Level1) {
     // set DATEMSK env
     FILE *fp = nullptr;
@@ -404,10 +434,14 @@ HWTEST_F(ClockTimeTest, testGetdateBasic, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_TIME_API_GETDATE_0200
-* @tc.name       getdate error test
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testGetdateError
+ * @tc.number SUB_KERNEL_TIME_API_GETDATE_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ClockTimeTest, testGetdateError, Function | MediumTest | Level2) {
     // no env
     struct tm *retTm = nullptr;

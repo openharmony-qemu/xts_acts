@@ -123,9 +123,13 @@ static BOOL HksExistTestTearDown(void)
 }
 
 /**
- * @tc.name: HksExistTest.HksExistTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   HksExistTest001
+ * @tc.number HksExistTest001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksExistTest, HksExistTest001, Level1)
 {

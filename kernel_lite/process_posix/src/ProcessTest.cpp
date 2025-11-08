@@ -32,9 +32,13 @@ class ProcessTest : public::testing::Test {
 };
 
 /**
- * @tc.number   SUB_KERNEL_PROCESS_LINE_BIGEXIT_0100
- * @tc.name     Basic test about _Exit
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testLineBigExit
+ * @tc.number SUB_KERNEL_PROCESS_LINE_BIGEXIT_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ProcessTest, testLineBigExit, Function | MediumTest | Level2)
 {
@@ -56,9 +60,13 @@ HWTEST_F(ProcessTest, testLineBigExit, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PROCESS_LINE_BIGEXIT_0200
- * @tc.name     Test _Exit about IO flush
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testLineBigExitFlush
+ * @tc.number SUB_KERNEL_PROCESS_LINE_BIGEXIT_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ProcessTest, testLineBigExitFlush, Function | MediumTest | Level3)
 {
@@ -112,9 +120,13 @@ void AtexitCallback0(void)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PROCESS_LINE_BIGEXIT_0300
- * @tc.name     Test _Exit about call functions registered with atexit
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testLineBigExitAtexit
+ * @tc.number SUB_KERNEL_PROCESS_LINE_BIGEXIT_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ProcessTest, testLineBigExitAtexit, Function | MediumTest | Level3)
 {
@@ -142,9 +154,13 @@ HWTEST_F(ProcessTest, testLineBigExitAtexit, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PROCESS_LINE_EXIT_0100
- * @tc.name     Basic test about _exit
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testLineExit
+ * @tc.number SUB_KERNEL_PROCESS_LINE_EXIT_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ProcessTest, testLineExit, Function | MediumTest | Level2)
 {
@@ -166,9 +182,13 @@ HWTEST_F(ProcessTest, testLineExit, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PROCESS_LINE_EXIT_0200
- * @tc.name     Test _exit about IO flush
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testLineExitFlush
+ * @tc.number SUB_KERNEL_PROCESS_LINE_EXIT_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ProcessTest, testLineExitFlush, Function | MediumTest | Level3)
 {
@@ -222,9 +242,13 @@ void AtexitCallback1(void)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PROCESS_LINE_EXIT_0300
- * @tc.name     Test _exit about call functions registered with atexit
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testLineExitAtexit
+ * @tc.number SUB_KERNEL_PROCESS_LINE_EXIT_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ProcessTest, testLineExitAtexit, Function | MediumTest | Level3)
 {
@@ -252,9 +276,13 @@ HWTEST_F(ProcessTest, testLineExitAtexit, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PROCESS_EXIT_0100
- * @tc.name     Basic test about exit
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testExit
+ * @tc.number SUB_KERNEL_PROCESS_EXIT_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ProcessTest, testExit, Function | MediumTest | Level2)
 {
@@ -275,9 +303,13 @@ HWTEST_F(ProcessTest, testExit, Function | MediumTest | Level2)
     }
 }
 /**
- * @tc.number   SUB_KERNEL_PROCESS_ASSERT_0100
- * @tc.name     Basic test about assert true
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testAssertTrue
+ * @tc.number SUB_KERNEL_PROCESS_ASSERT_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ProcessTest, testAssertTrue, Function | MediumTest | Level3)
 {
@@ -314,9 +346,13 @@ int FunctionAssertFalse(void)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PROCESS_ASSERT_0200
- * @tc.name     Basic test about assert false
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testAssertFalse
+ * @tc.number SUB_KERNEL_PROCESS_ASSERT_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ProcessTest, testAssertFalse, Function | MediumTest | Level3)
 {
@@ -351,9 +387,13 @@ void AtexitCallback(void)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PROCESS_ATEXIT_0100
- * @tc.name     Basic test about atexit
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testAtexit
+ * @tc.number SUB_KERNEL_PROCESS_ATEXIT_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ProcessTest, testAtexit, Function | MediumTest | Level3)
 {
@@ -380,9 +420,13 @@ HWTEST_F(ProcessTest, testAtexit, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number     SUB_KERNEL_PROCESS_WAIT_0100
- * @tc.name       test wait return
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWaitReturn
+ * @tc.number SUB_KERNEL_PROCESS_WAIT_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ProcessTest, testWaitReturn, Function | MediumTest | Level3)
 {
@@ -405,9 +449,13 @@ HWTEST_F(ProcessTest, testWaitReturn, Function | MediumTest | Level3)
 
 
 /**
- * @tc.number     SUB_KERNEL_PROCESS_WAIT_0200
- * @tc.name       test wait parameter
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWaitTest
+ * @tc.number SUB_KERNEL_PROCESS_WAIT_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ProcessTest, testWaitTest, Function | MediumTest | Level3)
 {
@@ -428,9 +476,13 @@ HWTEST_F(ProcessTest, testWaitTest, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number     SUB_KERNEL_PROCESS_WAIT_0300
- * @tc.name       test wait killed by SIGABRT
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWaitKilled
+ * @tc.number SUB_KERNEL_PROCESS_WAIT_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ProcessTest, testWaitKilled, Function | MediumTest | Level3)
 {
@@ -450,9 +502,13 @@ HWTEST_F(ProcessTest, testWaitKilled, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number     SUB_KERNEL_PROCESS_WAITPID_0100
- * @tc.name       waitpid basic test
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWaitPidBasic
+ * @tc.number SUB_KERNEL_PROCESS_WAITPID_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ProcessTest, testWaitPidBasic, Function | MediumTest | Level3)
 {
@@ -473,9 +529,13 @@ HWTEST_F(ProcessTest, testWaitPidBasic, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number     SUB_KERNEL_PROCESS_WAITPID_0200
- * @tc.name       test waitpid with WNOHANG
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWaitPidTest
+ * @tc.number SUB_KERNEL_PROCESS_WAITPID_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ProcessTest, testWaitPidTest, Function | MediumTest | Level3)
 {

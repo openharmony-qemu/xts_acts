@@ -28,12 +28,6 @@
 #define STORE_FULL_PATH ""
 static KVStoreHandle g_KVStoreHandle = NULL;
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is utils
- * @param        : module name is kvStore
- * @param        : test suit name is DBMKvStoreFuncTestSuite
- */
 LITE_TEST_SUIT(utils, kvStore, DBMKvStoreFuncTestSuite);
 
 /**
@@ -210,9 +204,13 @@ static BOOL DeleteKVs(int num, const char* key)
 }
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_0100
- * @tc.name      : DBM_Put parameter legal test
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreSetValue001
+ * @tc.number SUB_UTILS_KV_STORE_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue001, Function | MediumTest | Level1)
 {
@@ -242,9 +240,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue001, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_0200
- * @tc.name      : DBM_Put parameter legal test using key with underline
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreSetValue002
+ * @tc.number SUB_UTILS_KV_STORE_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue002, Function | MediumTest | Level1)
 {
@@ -266,9 +268,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue002, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_0300
- * @tc.name      : DBM_Put parameter legal test when key contains only number
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreSetValue003
+ * @tc.number SUB_UTILS_KV_STORE_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue003, Function | MediumTest | Level1)
 {
@@ -290,9 +296,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue003, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_0400
- * @tc.name      : DBM_Put parameter legal test when key is equal to 31 Byte
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreSetValue004
+ * @tc.number SUB_UTILS_KV_STORE_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue004, Function | MediumTest | Level1)
 {
@@ -314,9 +324,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue004, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_0500
- * @tc.name      : DBM_Put parameter Illegal test when key is equal to 32 Byte
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreSetValue005
+ * @tc.number SUB_UTILS_KV_STORE_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue005, Function | MediumTest | Level1)
 {
@@ -335,9 +349,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue005, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_0600
- * @tc.name      : DBM_Put parameter Illegal test when key is gteater than 32 Byte
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreSetValue006
+ * @tc.number SUB_UTILS_KV_STORE_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue006, Function | MediumTest | Level1)
 {
@@ -356,9 +374,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue006, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_0700
- * @tc.name      : DBM_Put parameter Illegal test when key contains uppercase
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreSetValue007
+ * @tc.number SUB_UTILS_KV_STORE_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue007, Function | MediumTest | Level1)
 {
@@ -377,9 +399,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue007, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_0800
- * @tc.name      : DBM_Put parameter Illegal test when key contains horizontal line
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreSetValue008
+ * @tc.number SUB_UTILS_KV_STORE_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue008, Function | MediumTest | Level1)
 {
@@ -398,9 +424,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue008, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_0900
- * @tc.name      : DBM_Put parameter Illegal test when key contains plus sign
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreSetValue009
+ * @tc.number SUB_UTILS_KV_STORE_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue009, Function | MediumTest | Level1)
 {
@@ -419,9 +449,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue009, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_1000
- * @tc.name      : DBM_Put parameter Illegal test when key contains asterisk
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreSetValue010
+ * @tc.number SUB_UTILS_KV_STORE_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue010, Function | MediumTest | Level1)
 {
@@ -440,9 +474,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue010, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_1100
- * @tc.name      : DBM_Put parameter legal test when Value is equal to 512 characters
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreSetValue011
+ * @tc.number SUB_UTILS_KV_STORE_1100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue011, Function | MediumTest | Level1)
 {
@@ -464,9 +502,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue011, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_1200
- * @tc.name      : DBM_Put parameter Illegal test when Value is equal to 513 characters
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreSetValue012
+ * @tc.number SUB_UTILS_KV_STORE_1200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue012, Function | MediumTest | Level1)
 {
@@ -485,9 +527,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue012, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_1300
- * @tc.name      : DBM_Put parameter Illegal test when Value greater than 512 characters
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreSetValue013
+ * @tc.number SUB_UTILS_KV_STORE_1300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue013, Function | MediumTest | Level1)
 {
@@ -506,9 +552,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue013, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_1400
- * @tc.name      : Value greater than 512 characters and key is an invalid character
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreSetValue014
+ * @tc.number SUB_UTILS_KV_STORE_1400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue014, Function | MediumTest | Level1)
 {
@@ -527,9 +577,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue014, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_1500
- * @tc.name      : DBM_Put parameter legal test with Special characters
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreSetValue015
+ * @tc.number SUB_UTILS_KV_STORE_1500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue015, Function | MediumTest | Level1)
 {
@@ -551,9 +605,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue015, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_1600
- * @tc.name      : DBM_Put parameter Illegal test when key contains blank
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreSetValue016
+ * @tc.number SUB_UTILS_KV_STORE_1600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue016, Function | MediumTest | Level1)
 {
@@ -572,9 +630,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue016, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_1700
- * @tc.name      : DBM_Put parameter legal test when value contains only blank
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreSetValue017
+ * @tc.number SUB_UTILS_KV_STORE_1700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue017, Function | MediumTest | Level1)
 {
@@ -596,9 +658,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreSetValue017, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_1800
- * @tc.name      : Use the interface to get the kv value
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreGetValue001
+ * @tc.number SUB_UTILS_KV_STORE_1800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreGetValue001, Function | MediumTest | Level1)
 {
@@ -629,9 +695,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreGetValue001, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_1900
- * @tc.name      : Use the interface to get the kv value when key contains only number
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreGetValue002
+ * @tc.number SUB_UTILS_KV_STORE_1900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreGetValue002, Function | MediumTest | Level1)
 {
@@ -662,9 +732,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreGetValue002, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_2000
- * @tc.name      : Use the interface to get the kv value after value is updated
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreGetValue003
+ * @tc.number SUB_UTILS_KV_STORE_2000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreGetValue003, Function | MediumTest | Level1)
 {
@@ -706,9 +780,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreGetValue003, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_2100
- * @tc.name      : DBM_Get parameter Illegal test
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreGetValue004
+ * @tc.number SUB_UTILS_KV_STORE_2100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreGetValue004, Function | MediumTest | Level1)
 {
@@ -726,9 +804,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreGetValue004, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_2200
- * @tc.name      : Get the kv value when key contains only special characters and value contains only blank
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreGetValue005
+ * @tc.number SUB_UTILS_KV_STORE_2200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreGetValue005, Function | MediumTest | Level1)
 {
@@ -759,9 +841,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreGetValue005, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_2300
- * @tc.name      : DBM_Delete parameter Illegal test
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreDeleteValue
+ * @tc.number SUB_UTILS_KV_STORE_2300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreDeleteValue, Function | MediumTest | Level1)
 {
@@ -773,9 +859,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreDeleteValue, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_2900
- * @tc.name      : Specification test when MaxKeyNum
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreMaxSize001
+ * @tc.number SUB_UTILS_KV_STORE_2900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreMaxSize001, Function | MediumTest | Level1)
 {
@@ -802,9 +892,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreMaxSize001, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_3000
- * @tc.name      : Specification test when MaxKeyNum is 200
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreMaxSize002
+ * @tc.number SUB_UTILS_KV_STORE_3000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreMaxSize002, Function | MediumTest | Level1)
 {
@@ -830,9 +924,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreMaxSize002, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_3100
- * @tc.name      : Specification test when MaxKeyNum
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreMaxSize003
+ * @tc.number SUB_UTILS_KV_STORE_3100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreMaxSize003, Function | MediumTest | Level1)
 {
@@ -859,9 +957,13 @@ LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreMaxSize003, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_UTILS_KV_STORE_3200
- * @tc.name      : Specification test using InvalidKeyNum
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testKvStoreMaxSize004
+ * @tc.number SUB_UTILS_KV_STORE_3200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(DBMKvStoreFuncTestSuite, testKvStoreMaxSize004, Function | MediumTest | Level1)
 {

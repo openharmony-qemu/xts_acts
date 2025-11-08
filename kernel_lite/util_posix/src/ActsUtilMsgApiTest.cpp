@@ -42,10 +42,14 @@ protected:
 };
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_MSG_FMTMSG_0100
-* @tc.name       test fmtmsg api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testFmtmsg0100
+ * @tc.number SUB_KERNEL_UTIL_MSG_FMTMSG_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilMsgApiTest, testFmtmsg0100, Function | MediumTest | Level1) {
     int returnVal = 0;
 

@@ -27,12 +27,6 @@ osSemaphoreId_t  g_cmsisSemSema;
 #define SEMAPHHORE_COUNT_INT10    10
 
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is utils
- * @param        : module name is utilsFile
- * @param        : test suit name is CmsisTaskFuncTestSuite
- */
 LITE_TEST_SUIT(Cmsis, CmsisSem, CmsisSemFuncTestSuite);
 
 /**
@@ -55,9 +49,13 @@ static BOOL CmsisSemFuncTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_0100
- * @tc.name      : semaphore operation for creat when Semaphhore count = 1 and 0
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreNew001
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreNew001, Function | MediumTest | Level1)
 {
@@ -68,9 +66,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreNew001, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_0200
- * @tc.name      : semaphore operation for creat when Semaphhore count = 10 and 1
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreNew002
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreNew002, Function | MediumTest | Level1)
 {
@@ -81,9 +83,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreNew002, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_0300
- * @tc.name      : semaphore operation for creat when Semaphhore count = 0 and 10
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreNew003
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreNew003, Function | MediumTest | Level1)
 {
@@ -92,9 +98,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreNew003, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_0400
- * @tc.name      : semaphore operation for creat when Semaphhore count = 0 and 0
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreNew004
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreNew004, Function | MediumTest | Level1)
 {
@@ -105,9 +115,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreNew004, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_0500
- * @tc.name      : semaphore operation for creat when Semaphhore count = 1 and 1
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreNew005
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreNew005, Function | MediumTest | Level1)
 {
@@ -118,9 +132,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreNew005, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_0600
- * @tc.name      : semaphore operation for creat when Semaphhore count = 10 and 10
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreNew006
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreNew006, Function | MediumTest | Level1)
 {
@@ -131,9 +149,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreNew006, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_0700
- * @tc.name      : semaphore operation for creat when Semaphhore count = 0xFE and 0
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreNew007
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreNew007, Function | MediumTest | Level1)
 {
@@ -144,9 +166,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreNew007, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_0800
- * @tc.name      : semaphore operation for creat when Semaphhore count = 0 and 0xFE
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreNew008
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreNew008, Function | MediumTest | Level1)
 {
@@ -155,9 +181,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreNew008, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_0900
- * @tc.name      : semaphore operation for delete
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreDelete001
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreDelete001, Function | MediumTest | Level1)
 {
@@ -170,9 +200,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreDelete001, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_1000
- * @tc.name      : semaphore delete operation twice
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreDelete002
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreDelete002, Function | MediumTest | Level1)
 {
@@ -188,9 +222,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreDelete002, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_1100
- * @tc.name      : semaphore delete operation with semaphore_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreDelete003
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_1100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreDelete003, Function | MediumTest | Level1)
 {
@@ -201,9 +239,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreDelete003, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_1200
- * @tc.name      : semaphore operation for acquire when Semaphhore count = 1 and 1
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreAcquire001
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_1200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreAcquire001, Function | MediumTest | Level1)
 {
@@ -218,9 +260,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreAcquire001, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_1300
- * @tc.name      : semaphore operation for acquire when Semaphhore count = 1 and 0
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreAcquire002
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_1300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreAcquire002, Function | MediumTest | Level1)
 {
@@ -235,9 +281,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreAcquire002, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_1400
- * @tc.name      : semaphore operation for acquire when Semaphhore count = 0 and 1
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreAcquire003
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_1400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreAcquire003, Function | MediumTest | Level1)
 {
@@ -247,9 +297,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreAcquire003, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_1500
- * @tc.name      : semaphore acquire operation with semaphore_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreAcquire004
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_1500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreAcquire004, Function | MediumTest | Level1)
 {
@@ -260,9 +314,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreAcquire004, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_1600
- * @tc.name      : semaphore operation for release
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreRelease001
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_1600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreRelease001, Function | MediumTest | Level1)
 {
@@ -281,9 +339,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreRelease001, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_1700
- * @tc.name      : semaphore release operation twice
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreRelease002
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_1700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreRelease002, Function | MediumTest | Level1)
 {
@@ -301,9 +363,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreRelease002, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_1800
- * @tc.name      : semaphore operation for release after semaphore acquire
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreRelease003
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_1800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreRelease003, Function | MediumTest | Level1)
 {
@@ -327,9 +393,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreRelease003, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_1900
- * @tc.name      : semaphore release operation with semaphore_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreRelease004
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_1900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreRelease004, Function | MediumTest | Level1)
 {
@@ -340,9 +410,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreRelease004, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_2000
- * @tc.name      : semaphore operation for get count when Semaphhore count = 1 or 0xFE
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreGetCount001
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_2000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreGetCount001, Function | MediumTest | Level1)
 {
@@ -363,9 +437,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreGetCount001, Function | Med
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_2100
- * @tc.name      : semaphore operation for get count when Semaphhore count = 1 or 0
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreGetCount002
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_2100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreGetCount002, Function | MediumTest | Level1)
 {
@@ -382,9 +460,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreGetCount002, Function | Med
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_2200
- * @tc.name      : semaphore operation for get count
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreGetCount003
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_2200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreGetCount003, Function | MediumTest | Level1)
 {
@@ -401,9 +483,13 @@ LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreGetCount003, Function | Med
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_SEM_OPERATION_2300
- * @tc.name      : semaphore get count operation with semaphore_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsSemaphoreGetCount004
+ * @tc.number SUB_KERNEL_CMSIS_SEM_OPERATION_2300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisSemFuncTestSuite, testOsSemaphoreGetCount004, Function | MediumTest | Level1)
 {

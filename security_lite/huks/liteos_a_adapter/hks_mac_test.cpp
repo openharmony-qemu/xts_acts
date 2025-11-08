@@ -180,9 +180,13 @@ static int32_t BaseTestMac(uint32_t index)
 }
 
 /**
- * @tc.name: HksMacTest.HksMacTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   HksMacTest001
+ * @tc.number HksMacTest001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksMacTest, HksMacTest001, TestSize.Level1)
 {
@@ -192,9 +196,13 @@ HWTEST_F(HksMacTest, HksMacTest001, TestSize.Level1)
 
 #ifndef _CUT_AUTHENTICATE_
 /**
- * @tc.name: HksMacTest.HksMacTest002
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   HksMacTest002
+ * @tc.number HksMacTest002
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksMacTest, HksMacTest002, TestSize.Level1)
 {

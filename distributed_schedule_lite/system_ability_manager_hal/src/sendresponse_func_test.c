@@ -345,9 +345,13 @@ static BOOL SendResponseTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendResponse_0010
- * @tc.name      : Receiver send response successfully
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testSendResponse0010
+ * @tc.number DMSLite_SAMGR_SendResponse_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0010, Function | MediumTest | Level2)
 {
@@ -377,9 +381,13 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0010, Function | MediumTes
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendResponse_0020
- * @tc.name      : Receiver can not send response if sender has not register callback
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testSendResponse0020
+ * @tc.number DMSLite_SAMGR_SendResponse_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0020, Function | MediumTest | Level2)
 {
@@ -409,9 +417,13 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0020, Function | MediumTes
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendResponse_0030
- * @tc.name      : Receiver send response to itself successfully
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testSendResponse0030
+ * @tc.number DMSLite_SAMGR_SendResponse_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0030, Function | MediumTest | Level2)
 {
@@ -441,9 +453,13 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponse0030, Function | MediumTes
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendResponseByIdentity_0010
- * @tc.name      : Receiver forward message successfully
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testSendResponseByIdentity0010
+ * @tc.number DMSLite_SAMGR_SendResponseByIdentity_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0010, Function | MediumTest | Level2)
 {
@@ -475,9 +491,13 @@ LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0010, Function |
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendResponseByIdentity_0020
- * @tc.name      : Receiver can not forward message if the sender has not registered handler
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testSendResponseByIdentity0020
+ * @tc.number DMSLite_SAMGR_SendResponseByIdentity_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(SendResponseTestSuite, testSendResponseByIdentity0020, Function | MediumTest | Level2)
 {

@@ -26,9 +26,13 @@
 using namespace testing::ext;
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_ATTR_SETDETACHSTATE_0100
- * @tc.name     basic test about pthread_attr_setdetachstate
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadAttrSetdetachstate
+ * @tc.number SUB_KERNEL_PTHREAD_ATTR_SETDETACHSTATE_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadAttrSetdetachstate, Function | MediumTest | Level3)
 {
@@ -71,9 +75,13 @@ void *ThreadPthreadAttrSetscope(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_ATTR_SCOPE_ALL_0100
- * @tc.name     Comprehensivetest test about competitive scope
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadAttrSetscope
+ * @tc.number SUB_KERNEL_PTHREAD_ATTR_SCOPE_ALL_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadAttrSetscope, Function | MediumTest | Level3)
 {
@@ -111,9 +119,13 @@ void *ThreadPthreadAttrSetguardsize(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_ATTR_SETGUARDSIZE_0100
- * @tc.name     basic test about pthread_attr_setguardsize
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadAttrSetguardsize
+ * @tc.number SUB_KERNEL_PTHREAD_ATTR_SETGUARDSIZE_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadAttrSetguardsize, Function | MediumTest | Level3)
 {
@@ -154,9 +166,13 @@ void *ThreadPthreadAttrSetstacksize(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_ATTR_SETSTACKSIZE_0100
- * @tc.name     basic test about pthread_attr_setstacksize
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadAttrSetstacksize
+ * @tc.number SUB_KERNEL_PTHREAD_ATTR_SETSTACKSIZE_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadAttrSetstacksize, Function | MediumTest | Level3)
 {
@@ -181,9 +197,13 @@ HWTEST_F(PthreadTest, testPthreadAttrSetstacksize, Function | MediumTest | Level
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_ATTR_SETSTACKSIZE_0200
- * @tc.name     test pthread_attr_setstacksize EINVAL
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadAttrSetstacksizeEINVAL
+ * @tc.number SUB_KERNEL_PTHREAD_ATTR_SETSTACKSIZE_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadAttrSetstacksizeEINVAL, Function | MediumTest | Level3)
 {
@@ -211,9 +231,13 @@ void *ThreadPthreadAttrSetstack(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_ATTR_SETSTACK_0100
- * @tc.name     basic test about pthread_attr_setstack
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadAttrSetstack
+ * @tc.number SUB_KERNEL_PTHREAD_ATTR_SETSTACK_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadAttrSetstack, Function | MediumTest | Level3)
 {
@@ -246,9 +270,13 @@ HWTEST_F(PthreadTest, testPthreadAttrSetstack, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_ATTR_GETSTACK_0100
- * @tc.name     test pthread_attr_setstack about return EINVAL
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadAttrGetstackEINVAL
+ * @tc.number SUB_KERNEL_PTHREAD_ATTR_GETSTACK_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadAttrGetstackEINVAL, Function | MediumTest | Level3)
 {
@@ -287,9 +315,13 @@ void *ThreadPthreadGetattrNp(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_PTHREAD_GETATTR_NP_0100
- * @tc.name     basic about about pthread_getattr_np
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadGetattrNp
+ * @tc.number SUB_KERNEL_PTHREAD_GETATTR_NP_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PthreadTest, testPthreadGetattrNp, Function | MediumTest | Level3)
 {

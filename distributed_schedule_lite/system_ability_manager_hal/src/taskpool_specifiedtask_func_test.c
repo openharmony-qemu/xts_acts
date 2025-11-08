@@ -261,9 +261,13 @@ static BOOL SpecifiedTaskFuncTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Taskpool_SpecifiedTask_0010
- * @tc.name      : Service share taskpool by the same level, the first task function is ok
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testSpecifiedTask0010
+ * @tc.number DMSLite_SAMGR_Taskpool_SpecifiedTask_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(SpecifiedTaskFuncTestSuite, testSpecifiedTask0010, Function | MediumTest | Level2)
 {
@@ -312,9 +316,13 @@ LITE_TEST_CASE(SpecifiedTaskFuncTestSuite, testSpecifiedTask0010, Function | Med
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_Taskpool_SpecifiedTask_0020
- * @tc.name      : Service share taskpool by the same level, the second task function is ok
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testSpecifiedTask0020
+ * @tc.number DMSLite_SAMGR_Taskpool_SpecifiedTask_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(SpecifiedTaskFuncTestSuite, testSpecifiedTask0020, Function | MediumTest | Level2)
 {
@@ -363,9 +371,13 @@ LITE_TEST_CASE(SpecifiedTaskFuncTestSuite, testSpecifiedTask0020, Function | Med
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_Taskpool_SpecifiedTask_0030
- * @tc.name      : Service share taskpool by the same level, the thread id is the same
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testSpecifiedTask0030
+ * @tc.number DMSLite_SAMGR_Taskpool_SpecifiedTask_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(SpecifiedTaskFuncTestSuite, testSpecifiedTask0030, Function | MediumTest | Level2)
 {

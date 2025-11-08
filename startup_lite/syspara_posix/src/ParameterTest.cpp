@@ -70,9 +70,13 @@ protected:
 };
 
 /**
- * @tc.number    : SUB_START_Para_Setting_Legal_0010 
- * @tc.name      : SetParameter legal test with Lowercase alphanumeric, underscore, dot
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Para_Setting_Legal_0010
+ * @tc.number SUB_START_Para_Setting_Legal_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ParameterTest, SUB_START_Para_Setting_Legal_0010, Function | MediumTest | Level0)
 {
@@ -85,9 +89,13 @@ HWTEST_F(ParameterTest, SUB_START_Para_Setting_Legal_0010, Function | MediumTest
 }
 
 /**
- * @tc.number    : SUB_START_Para_Setting_Legal_0020 
- * @tc.name      : SetParameter legal test with key 31 bytes, value 127 bytes
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Para_Setting_Legal_0020
+ * @tc.number SUB_START_Para_Setting_Legal_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ParameterTest, SUB_START_Para_Setting_Legal_0020, Function | MediumTest | Level0)
 {
@@ -105,9 +113,13 @@ HWTEST_F(ParameterTest, SUB_START_Para_Setting_Legal_0020, Function | MediumTest
 }
 
 /**
- * @tc.number    : SUB_START_Para_Setting_ilLegal_0010 
- * @tc.name      : SetParameter legal test with key is nullptr, value is nullptr
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Para_Setting_ilLegal_0010
+ * @tc.number SUB_START_Para_Setting_ilLegal_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParameterTest, SUB_START_Para_Setting_ilLegal_0010, Function | MediumTest | Level2)
 {
@@ -123,9 +135,13 @@ HWTEST_F(ParameterTest, SUB_START_Para_Setting_ilLegal_0010, Function | MediumTe
 }
 
 /**
- * @tc.number    : SUB_START_Para_Setting_ilLegal_0020 
- * @tc.name      : SetParameter legal test with key is NULL, value is NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Para_Setting_ilLegal_0020
+ * @tc.number SUB_START_Para_Setting_ilLegal_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParameterTest, SUB_START_Para_Setting_ilLegal_0020, Function | MediumTest | Level2)
 {
@@ -134,9 +150,13 @@ HWTEST_F(ParameterTest, SUB_START_Para_Setting_ilLegal_0020, Function | MediumTe
 }
 
 /**
- * @tc.number    : SUB_START_Para_Setting_ilLegal_key_0010 
- * @tc.name      : SetParameter legal test with key 96 or more than 96 bytes
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Para_Setting_ilLegal_key_0010
+ * @tc.number SUB_START_Para_Setting_ilLegal_key_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParameterTest, SUB_START_Para_Setting_ilLegal_key_0010, Function | MediumTest | Level2)
 {
@@ -154,9 +174,13 @@ HWTEST_F(ParameterTest, SUB_START_Para_Setting_ilLegal_key_0010, Function | Medi
 }
 
 /**
- * @tc.number    : SUB_START_Para_Setting_ilLegal_key_0030 
- * @tc.name      : SetParameter legal test with illegal characters
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Para_Setting_ilLegal_key_0030
+ * @tc.number SUB_START_Para_Setting_ilLegal_key_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParameterTest, SUB_START_Para_Setting_ilLegal_key_0030, Function | MediumTest | Level2)
 {
@@ -169,9 +193,13 @@ HWTEST_F(ParameterTest, SUB_START_Para_Setting_ilLegal_key_0030, Function | Medi
 }
 
 /**
- * @tc.number    : SUB_START_Para_Setting_ilLegal_value_0010 
- * @tc.name      : SetParameter legal test with value is 96 or more than 96 bytes
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Para_Setting_ilLegal_value_0010
+ * @tc.number SUB_START_Para_Setting_ilLegal_value_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParameterTest, SUB_START_Para_Setting_ilLegal_value_0010, Function | MediumTest | Level2)
 {
@@ -189,9 +217,13 @@ HWTEST_F(ParameterTest, SUB_START_Para_Setting_ilLegal_value_0010, Function | Me
 }
 
 /**
- * @tc.number    : SUB_START_Para_Getting_Legal_0010 
- * @tc.name      : GetParameter legal test with Lowercase alphanumeric, underscore, dot
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Para_Getting_Legal_0010
+ * @tc.number SUB_START_Para_Getting_Legal_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ParameterTest, SUB_START_Para_Getting_Legal_0010, Function | MediumTest | Level0)
 {
@@ -207,9 +239,13 @@ HWTEST_F(ParameterTest, SUB_START_Para_Getting_Legal_0010, Function | MediumTest
 }
 
 /**
- * @tc.number    : SUB_START_Para_Getting_Legal_0020 
- * @tc.name      : GetParameter legal test with defaut value point is nullptr
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Para_Getting_Legal_0020
+ * @tc.number SUB_START_Para_Getting_Legal_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ParameterTest, SUB_START_Para_Getting_Legal_0020, Function | MediumTest | Level0)
 {
@@ -225,9 +261,13 @@ HWTEST_F(ParameterTest, SUB_START_Para_Getting_Legal_0020, Function | MediumTest
 }
 
 /**
- * @tc.number    : SUB_START_Para_Getting_Legal_0030 
- * @tc.name      : GetParameter legal test with length is 95 bytes, value is 95 bytes
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Para_Getting_Legal_0030
+ * @tc.number SUB_START_Para_Getting_Legal_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ParameterTest, SUB_START_Para_Getting_Legal_0030, Function | MediumTest | Level0)
 {
@@ -251,9 +291,13 @@ HWTEST_F(ParameterTest, SUB_START_Para_Getting_Legal_0030, Function | MediumTest
 }
 
 /**
- * @tc.number    : SUB_START_Para_Getting_ilLegal_0010 
- * @tc.name      : GetParameter legal test with value length is too short
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Para_Getting_ilLegal_0010
+ * @tc.number SUB_START_Para_Getting_ilLegal_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParameterTest, SUB_START_Para_Getting_ilLegal_0010, Function | MediumTest | Level2)
 {
@@ -266,9 +310,13 @@ HWTEST_F(ParameterTest, SUB_START_Para_Getting_ilLegal_0010, Function | MediumTe
 }
 
 /**
- * @tc.number    : SUB_START_Para_Getting_ilLegal_0020 
- * @tc.name      : GetParameter legal test with value point is nullptr
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Para_Getting_ilLegal_0020
+ * @tc.number SUB_START_Para_Getting_ilLegal_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParameterTest, SUB_START_Para_Getting_ilLegal_0020, Function | MediumTest | Level2)
 {
@@ -280,9 +328,13 @@ HWTEST_F(ParameterTest, SUB_START_Para_Getting_ilLegal_0020, Function | MediumTe
 }
 
 /**
- * @tc.number    : SUB_START_Para_Getting_ilLegal_0030 
- * @tc.name      : GetParameter legal test with key is not exist and vlan len is too short
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Para_Getting_ilLegal_0030
+ * @tc.number SUB_START_Para_Getting_ilLegal_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParameterTest, SUB_START_Para_Getting_ilLegal_0030, Function | MediumTest | Level2)
 {
@@ -301,9 +353,13 @@ HWTEST_F(ParameterTest, SUB_START_Para_Getting_ilLegal_0030, Function | MediumTe
 }
 
 /**
- * @tc.number    : SUB_START_Para_Getting_ilLegal_0040 
- * @tc.name      : GetParameter legal test with key is 96 bytes
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Para_Getting_ilLegal_0040
+ * @tc.number SUB_START_Para_Getting_ilLegal_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParameterTest, SUB_START_Para_Getting_ilLegal_0040, Function | MediumTest | Level2)
 {
@@ -316,9 +372,13 @@ HWTEST_F(ParameterTest, SUB_START_Para_Getting_ilLegal_0040, Function | MediumTe
 }
 
 /**
- * @tc.number    : SUB_START_Para_Getting_ilLegal_0050 
- * @tc.name      : GetParameter legal test with key is nullptr
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Para_Getting_ilLegal_0050
+ * @tc.number SUB_START_Para_Getting_ilLegal_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParameterTest, SUB_START_Para_Getting_ilLegal_0050, Function | MediumTest | Level2)
 {
@@ -330,9 +390,13 @@ HWTEST_F(ParameterTest, SUB_START_Para_Getting_ilLegal_0050, Function | MediumTe
 }
 
 /**
- * @tc.number    : SUB_START_Para_Getting_ilLegal_0060 
- * @tc.name      : GetParameter legal test with key is illegal with Special characters
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Para_Getting_ilLegal_0060
+ * @tc.number SUB_START_Para_Getting_ilLegal_0060
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ParameterTest, SUB_START_Para_Getting_ilLegal_0060, Function | MediumTest | Level2)
 {
@@ -345,9 +409,13 @@ HWTEST_F(ParameterTest, SUB_START_Para_Getting_ilLegal_0060, Function | MediumTe
 }
 
 /**
- * @tc.number    : SUB_START_Para_Getting_ReadOnly_0010 
- * @tc.name      : GetParameter read only parameter legal test
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   SUB_START_Para_Getting_ReadOnly_0010
+ * @tc.number SUB_START_Para_Getting_ReadOnly_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ParameterTest, SUB_START_Para_Getting_ReadOnly_0010, Function | MediumTest | Level0)
 {

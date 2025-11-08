@@ -40,9 +40,13 @@
 using namespace testing::ext;
 
 /**
- * @tc.number   SUB_KERNEL_FS_OTHER_0100
- * @tc.name     basic function test : get dirname
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPath
+ * @tc.number SUB_KERNEL_FS_OTHER_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(FileSystemTest, testPath, Function | MediumTest | Level1)
 {
@@ -59,9 +63,13 @@ HWTEST_F(FileSystemTest, testPath, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_OTHER_0110
- * @tc.name     basic function test : get current dir name
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testGetCurrentDirName
+ * @tc.number SUB_KERNEL_FS_OTHER_0110
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(FileSystemTest, testGetCurrentDirName, Function | MediumTest | Level1)
 {
@@ -79,9 +87,13 @@ HWTEST_F(FileSystemTest, testGetCurrentDirName, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_OTHER_0120
- * @tc.name     basic function test : get basename
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testBasename
+ * @tc.number SUB_KERNEL_FS_OTHER_0120
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(FileSystemTest, testBasename, Function | MediumTest | Level1)
 {
@@ -132,9 +144,13 @@ int FtwCheckDirTree(const char *path, const struct stat *sb, int flag)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_OTHER_0200
- * @tc.name     basic function test : use ftw check file tree
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testFtw
+ * @tc.number SUB_KERNEL_FS_OTHER_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testFtw, Function | MediumTest | Level3)
 {
@@ -177,9 +193,13 @@ int NftwCheckDirTree(const char *path, const struct stat *sb, int flag, struct F
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_OTHER_0210
- * @tc.name     basic function test : use nftw check file tree
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testNftw
+ * @tc.number SUB_KERNEL_FS_OTHER_0210
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testNftw, Function | MediumTest | Level3)
 {
@@ -188,9 +208,13 @@ HWTEST_F(FileSystemTest, testNftw, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_OTHER_0300
- * @tc.name     basic function test : use statvfs and statfs check file system information.
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testStatvfs
+ * @tc.number SUB_KERNEL_FS_OTHER_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FileSystemTest, testStatvfs, Function | MediumTest | Level2)
 {
@@ -230,9 +254,13 @@ HWTEST_F(FileSystemTest, testStatvfs, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_OTHER_0400
- * @tc.name     basic function test : Use glob function and globfree function for path generation and release
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testGlob
+ * @tc.number SUB_KERNEL_FS_OTHER_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testGlob, Function | MediumTest | Level3)
 {

@@ -29,9 +29,13 @@ class DlopenApiTest : public testing::Test {
 #define DYLOAD_TEST_DIR "/storage/data/"
 
 /**
- * @tc.number   SUB_KERNEL_DL_API_DLOPEN_0100
- * @tc.name     the dlopen current main elf
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testDlopenSelf
+ * @tc.number SUB_KERNEL_DL_API_DLOPEN_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DlopenApiTest, testDlopenSelf, Function | MediumTest | Level1)
 {
@@ -42,9 +46,13 @@ HWTEST_F(DlopenApiTest, testDlopenSelf, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number   SUB_KERNEL_DL_API_DLOPEN_0200
- * @tc.name     dlopen error test
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testDlopenError
+ * @tc.number SUB_KERNEL_DL_API_DLOPEN_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DlopenApiTest, testDlopenError, Function | MediumTest | Level3)
 {
@@ -61,9 +69,13 @@ HWTEST_F(DlopenApiTest, testDlopenError, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_DL_API_DLSYM_0100
- * @tc.name     find self symbol use RTLD_DEFAULT.
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testDlsymSelf
+ * @tc.number SUB_KERNEL_DL_API_DLSYM_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DlopenApiTest, testDlsymSelf, Function | MediumTest | Level1)
 {
@@ -74,9 +86,13 @@ HWTEST_F(DlopenApiTest, testDlsymSelf, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number   SUB_KERNEL_DL_API_DLSYM_0200
- * @tc.name     find symbol in next so use RTLD_NEXT.
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testDlsymNext
+ * @tc.number SUB_KERNEL_DL_API_DLSYM_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DlopenApiTest, testDlsymNext, Function | MediumTest | Level1)
 {

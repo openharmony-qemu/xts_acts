@@ -121,9 +121,13 @@ static BOOL Broadcast01TestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_AddTopic_0010
- * @tc.name      : Valid topic can be added successfully
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testAddTopic0010
+ * @tc.number DMSLite_SAMGR_AddTopic_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(Broadcast01TestSuite, testAddTopic0010, Function | MediumTest | Level1)
 {
@@ -144,9 +148,13 @@ LITE_TEST_CASE(Broadcast01TestSuite, testAddTopic0010, Function | MediumTest | L
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_AddTopic_0020
- * @tc.name      : Topic which is NULL or already existing can not be added
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testAddTopic0020
+ * @tc.number DMSLite_SAMGR_AddTopic_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(Broadcast01TestSuite, testAddTopic0020, Function | MediumTest | Level2)
 {
@@ -172,9 +180,13 @@ LITE_TEST_CASE(Broadcast01TestSuite, testAddTopic0020, Function | MediumTest | L
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Subscribe_0010
- * @tc.name      : Consumer can subscribe to a topic
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testSubscribe0010
+ * @tc.number DMSLite_SAMGR_Subscribe_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(Broadcast01TestSuite, testSubscribe0010, Function | MediumTest | Level1)
 {
@@ -199,9 +211,13 @@ LITE_TEST_CASE(Broadcast01TestSuite, testSubscribe0010, Function | MediumTest | 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Subscribe_0020
- * @tc.name      : Consumer can not subscribe to the topic which is NULL or does not exist
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testSubscribe0020
+ * @tc.number DMSLite_SAMGR_Subscribe_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(Broadcast01TestSuite, testSubscribe0020, Function | MediumTest | Level2)
 {
@@ -224,9 +240,13 @@ LITE_TEST_CASE(Broadcast01TestSuite, testSubscribe0020, Function | MediumTest | 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Subscribe_0030
- * @tc.name      : Consumer which is NULL can not subscribe to a topic
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testSubscribe0030
+ * @tc.number DMSLite_SAMGR_Subscribe_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(Broadcast01TestSuite, testSubscribe0030, Function | MediumTest | Level2)
 {
@@ -251,9 +271,13 @@ LITE_TEST_CASE(Broadcast01TestSuite, testSubscribe0030, Function | MediumTest | 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Subscribe_0040
- * @tc.name      : Consumer can not subscribe to the same topic twice
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testSubscribe0040
+ * @tc.number DMSLite_SAMGR_Subscribe_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(Broadcast01TestSuite, testSubscribe0040, Function | MediumTest | Level2)
 {
@@ -279,9 +303,13 @@ LITE_TEST_CASE(Broadcast01TestSuite, testSubscribe0040, Function | MediumTest | 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnSubscribe_0010
- * @tc.name      : Consumer can unsubscribe a topic
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnsubscribe0010
+ * @tc.number DMSLite_SAMGR_UnSubscribe_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(Broadcast01TestSuite, testUnsubscribe0010, Function | MediumTest | Level1)
 {
@@ -307,9 +335,13 @@ LITE_TEST_CASE(Broadcast01TestSuite, testUnsubscribe0010, Function | MediumTest 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnSubscribe_0020
- * @tc.name      : Consumer can not unsubscribe a topic if the specified topic-comsumer relationship is NULL 
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnsubscribe0020
+ * @tc.number DMSLite_SAMGR_UnSubscribe_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(Broadcast01TestSuite, testUnsubscribe0020, Function | MediumTest | Level2)
 {
@@ -338,9 +370,13 @@ LITE_TEST_CASE(Broadcast01TestSuite, testUnsubscribe0020, Function | MediumTest 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnSubscribe_0030
- * @tc.name      : Consumer can not unsubscribe a topic if the specified topic-comsumer relationship not exist 
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnsubscribe0030
+ * @tc.number DMSLite_SAMGR_UnSubscribe_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(Broadcast01TestSuite, testUnsubscribe0030, Function | MediumTest | Level2)
 {
@@ -367,9 +403,13 @@ LITE_TEST_CASE(Broadcast01TestSuite, testUnsubscribe0030, Function | MediumTest 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_ModifyConsumer_0010
- * @tc.name      : Consumer can modify subscription relationship
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testModifyConsumer0010
+ * @tc.number DMSLite_SAMGR_ModifyConsumer_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0010, Function | MediumTest | Level2)
 {
@@ -397,9 +437,13 @@ LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0010, Function | MediumTe
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_ModifyConsumer_0020
- * @tc.name      : Consumer can not modify subscription relationship if the input parameter is NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testModifyConsumer0020
+ * @tc.number DMSLite_SAMGR_ModifyConsumer_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0020, Function | MediumTest | Level2)
 {
@@ -433,9 +477,13 @@ LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0020, Function | MediumTe
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_ModifyConsumer_0030
- * @tc.name      : Consumer can not modify subscription relationship if the specified topic not exist
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testModifyConsumer0030
+ * @tc.number DMSLite_SAMGR_ModifyConsumer_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0030, Function | MediumTest | Level2)
 {
@@ -464,9 +512,13 @@ LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0030, Function | MediumTe
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_ModifyConsumer_0040
- * @tc.name      : Consumer can not modify subscription relationship if the specified old consumer not exist
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testModifyConsumer0040
+ * @tc.number DMSLite_SAMGR_ModifyConsumer_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0040, Function | MediumTest | Level2)
 {
@@ -495,9 +547,13 @@ LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0040, Function | MediumTe
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_ModifyConsumer_0050
- * @tc.name      : Consumer can modify subscription relationship if the new consumer is the same as old consumer 
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testModifyConsumer0050
+ * @tc.number DMSLite_SAMGR_ModifyConsumer_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(Broadcast01TestSuite, testModifyConsumer0050, Function | MediumTest | Level2)
 {

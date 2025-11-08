@@ -83,10 +83,14 @@ protected:
 
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCClient_0010
- * @tc.name      : Client can get api of other process
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testIPCClient0010
+ * @tc.number DMSLite_SAMGR_IPCClient_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(LiteIPCClientTest, testIPCClient0010, Function | MediumTest | Level1)
 {
     IClientProxy *demoApi = NULL;
@@ -99,10 +103,14 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0010, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCClient_0020
- * @tc.name      : Client can not get api if service name or feature name not exist in the system
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testIPCClient0020
+ * @tc.number DMSLite_SAMGR_IPCClient_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(LiteIPCClientTest, testIPCClient0020, Function | MediumTest | Level2)
 {
     IUnknown *iUnknown = SAMGR_GetInstance()->GetDefaultFeatureApi("notExistService");
@@ -116,10 +124,14 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0020, Function | MediumTest | Level2)
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCClient_0040
- * @tc.name      : Client can send request to other process
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testIPCClient0040
+ * @tc.number DMSLite_SAMGR_IPCClient_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(LiteIPCClientTest, testIPCClient0040, Function | MediumTest | Level1)
 {
     IClientProxy *remoteApi = GetRemoteIUnknown("abilityms", "AmsFeature");
@@ -140,10 +152,14 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0040, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCClient_0050
- * @tc.name      : User can send request which is null to other process
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testIPCClient0050
+ * @tc.number DMSLite_SAMGR_IPCClient_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(LiteIPCClientTest, testIPCClient0050, Function | MediumTest | Level2)
 {
     IClientProxy *remoteApi = GetRemoteIUnknown("abilityms", "AmsFeature");
@@ -159,10 +175,14 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0050, Function | MediumTest | Level2)
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCClient_0060
- * @tc.name      : User can send request without processing receipts
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testIPCClient0060
+ * @tc.number DMSLite_SAMGR_IPCClient_0060
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(LiteIPCClientTest, testIPCClient0060, Function | MediumTest | Level2)
 {
     IClientProxy *remoteApi = GetRemoteIUnknown("abilityms", "AmsInnerFeature");
@@ -183,10 +203,14 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0060, Function | MediumTest | Level2)
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCClient_0070
- * @tc.name      : User can not send request which longer than 2048 bytes
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testIPCClient0070
+ * @tc.number DMSLite_SAMGR_IPCClient_0070
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(LiteIPCClientTest, testIPCClient0070, Function | MediumTest | Level2)
 {
     IClientProxy *remoteApi = GetRemoteIUnknown("abilityms", "AmsInnerFeature");
@@ -208,10 +232,14 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0070, Function | MediumTest | Level2)
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCClient_0100
- * @tc.name      : User can get IPC address of remote service
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testIPCClient0100
+ * @tc.number DMSLite_SAMGR_IPCClient_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(LiteIPCClientTest, testIPCClient0100, Function | MediumTest | Level2)
 {
     IUnknown *iUnknown = SAMGR_GetInstance()->GetFeatureApi("abilityms", "AmsFeature");
@@ -222,10 +250,14 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0100, Function | MediumTest | Level2)
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCClient_0110
- * @tc.name      : User can get an invalid IPC address if input para is nullptr
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testIPCClient0110
+ * @tc.number DMSLite_SAMGR_IPCClient_0110
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(LiteIPCClientTest, testIPCClient0110, Function | MediumTest | Level2)
 {
     SvcIdentity svcIdentity = SAMGR_GetRemoteIdentity(nullptr, "AmsFeature");
@@ -236,10 +268,14 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0110, Function | MediumTest | Level2)
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCClient_0120
- * @tc.name      : User can get an invalid IPC address if has not called GetFeatureApi first
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testIPCClient0120
+ * @tc.number DMSLite_SAMGR_IPCClient_0120
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(LiteIPCClientTest, testIPCClient0120, Function | MediumTest | Level2)
 {
     SvcIdentity svcIdentity = SAMGR_GetRemoteIdentity("samgr", nullptr);
@@ -247,10 +283,14 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0120, Function | MediumTest | Level2)
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCClient_0130
- * @tc.name      : User get an invalid IPC address if service not exist
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testIPCClient0130
+ * @tc.number DMSLite_SAMGR_IPCClient_0130
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(LiteIPCClientTest, testIPCClient0130, Function | MediumTest | Level2)
 {
     SvcIdentity svcIdentity = SAMGR_GetRemoteIdentity("noExistService", "noExistFeature");
@@ -259,10 +299,14 @@ HWTEST_F(LiteIPCClientTest, testIPCClient0130, Function | MediumTest | Level2)
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCClient_0140
- * @tc.name      : User can register a proxy for remote api
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testIPCClient0140
+ * @tc.number DMSLite_SAMGR_IPCClient_0140
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(LiteIPCClientTest, testIPCClient0140, Function | MediumTest | Level2)
 {
     auto creatClient = [] (const char *service, const char *feature, uint32 size) -> void * {

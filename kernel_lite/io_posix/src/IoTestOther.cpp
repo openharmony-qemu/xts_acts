@@ -27,9 +27,13 @@
 using namespace testing::ext;
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testToupper
  * @tc.number SUB_KERNEL_IO_OTHER_0400
- * @tc.name   toupper basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testToupper, Function | MediumTest | Level1)
 {
@@ -40,9 +44,13 @@ HWTEST_F(IoTest, testToupper, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testStrtuimax
  * @tc.number SUB_KERNEL_IO_OTHER_0500
- * @tc.name   strtoimax basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testStrtuimax, Function | MediumTest | Level1)
 {
@@ -92,9 +100,13 @@ HWTEST_F(IoTest, testStrtuimax, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testStrtoumax
  * @tc.number SUB_KERNEL_IO_OTHER_0600
- * @tc.name   strtoumax basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testStrtoumax, Function | MediumTest | Level1)
 {
@@ -140,9 +152,13 @@ HWTEST_F(IoTest, testStrtoumax, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testWritev
  * @tc.number SUB_KERNEL_IO_OTHER_0700
- * @tc.name   writev basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testWritev, Function | MediumTest | Level1)
 {
@@ -181,9 +197,13 @@ HWTEST_F(IoTest, testWritev, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testPread
  * @tc.number SUB_KERNEL_IO_OTHER_0800
- * @tc.name   pread basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testPread, Function | MediumTest | Level1)
 {
@@ -206,9 +226,13 @@ HWTEST_F(IoTest, testPread, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testStrptime
  * @tc.number SUB_KERNEL_IO_OTHER_0900
- * @tc.name   strptime basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testStrptime, Function | MediumTest | Level1)
 {
@@ -235,9 +259,13 @@ HWTEST_F(IoTest, testStrptime, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testIconv
  * @tc.number SUB_KERNEL_IO_OTHER_1000
- * @tc.name   iconv basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testIconv, Function | MediumTest | Level1)
 {

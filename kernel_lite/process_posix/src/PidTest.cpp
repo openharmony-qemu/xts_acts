@@ -31,9 +31,13 @@ protected:
 };
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testGetPpid
  * @tc.number SUB_KERNEL_PM_PID_Getppid_0100
- * @tc.name   getpid and getppid test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(PidTest, testGetPpid, Function | MediumTest | Level1)
 {
@@ -54,9 +58,13 @@ HWTEST_F(PidTest, testGetPpid, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOrphanProcess
  * @tc.number SUB_KERNEL_PM_PID_Getppid_0200
- * @tc.name   test that a orphaned process will inherite by init.
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(PidTest, testOrphanProcess, Function | MediumTest | Level1)
 {
@@ -117,9 +125,13 @@ HWTEST_F(PidTest, testOrphanProcess, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testSetGetPgrp
  * @tc.number SUB_KERNEL_PM_PID_SetGetPgrp_0100
- * @tc.name   setpgrp and getpgrp test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(PidTest, testSetGetPgrp, Function | MediumTest | Level1)
 {
@@ -146,9 +158,13 @@ HWTEST_F(PidTest, testSetGetPgrp, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testSetGetPgid
  * @tc.number SUB_KERNEL_PM_PID_SetGetPgid_0100
- * @tc.name   setpgid and getpgid basic test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(PidTest, testSetGetPgid, Function | MediumTest | Level1)
 {
@@ -188,9 +204,13 @@ HWTEST_F(PidTest, testSetGetPgid, Function | MediumTest | Level1)
     }
 }
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testSetGetSiblingPgid
  * @tc.number SUB_KERNEL_PM_PID_SetGetPgid_0200
- * @tc.name   setpgid and getpgid test for sibling process
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(PidTest, testSetGetSiblingPgid, Function | MediumTest | Level1)
 {
@@ -235,9 +255,13 @@ HWTEST_F(PidTest, testSetGetSiblingPgid, Function | MediumTest | Level1)
     }
 }
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testGetpgidFail
  * @tc.number SUB_KERNEL_PM_PID_SetGetPgid_0300
- * @tc.name   getpgid fail test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PidTest, testGetpgidFail, Function | MediumTest | Level3)
 {
@@ -269,9 +293,13 @@ HWTEST_F(PidTest, testGetpgidFail, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testSetpgidFail
  * @tc.number SUB_KERNEL_PM_PID_SetGetPgid_0400
- * @tc.name   setpgid fail test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PidTest, testSetpgidFail, Function | MediumTest | Level3)
 {
@@ -337,9 +365,13 @@ HWTEST_F(PidTest, testSetpgidFail, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testSetpgidFailEACCES
  * @tc.number SUB_KERNEL_PM_PID_SetGetPgid_0500
- * @tc.name   setpgid fail test: EACCES
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PidTest, testSetpgidFailEACCES, Function | MediumTest | Level3)
 {

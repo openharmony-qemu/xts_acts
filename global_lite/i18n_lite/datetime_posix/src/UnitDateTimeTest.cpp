@@ -58,11 +58,6 @@ static int GetLocaleIndex(LocaleInfo locale, vector<LocaleInfo> locales)
     return -1;
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_FORMAT_0100
- * @tc.name     test datetimeFormat,zoneInfo is positive number
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_Format_0100, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -88,11 +83,6 @@ HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_Format_0100, Function | MediumTest 
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_FORMAT_0200
- * @tc.name     test datetimeFormat,zoneInfo is zero number
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_Format_0200, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -118,11 +108,6 @@ HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_Format_0200, Function | MediumTest 
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_FORMAT_0300
- * @tc.name     test datetimeFormat,zoneInfo is negative number
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_Format_0300, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -148,11 +133,6 @@ HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_Format_0300, Function | MediumTest 
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_GETWEEKNAME_0100
- * @tc.name     test GetWeekName,DateTimeDataType is FORMAT_ABBR,index is -1
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetWeekName_0100, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -162,11 +142,6 @@ HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetWeekName_0100, Function | Medium
     EXPECT_EQ(formatWeekName, "");
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_GETWEEKNAME_0200
- * @tc.name     test GetWeekName,DateTimeDataType is FORMAT_ABBR,index is 7
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetWeekName_0200, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -176,11 +151,6 @@ HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetWeekName_0200, Function | Medium
     EXPECT_EQ(formatWeekName, "");
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_GETWEEKNAME_0300
- * @tc.name     test GetWeekName,DateTimeDataType is FORMAT_ABBR,index is 0-6
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetWeekName_0300, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -192,11 +162,6 @@ HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetWeekName_0300, Function | Medium
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_GETWEEKNAME_0400
- * @tc.name     test GetWeekName,DateTimeDataType is FORMAT_WIDE
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetWeekName_0400, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -208,11 +173,6 @@ HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetWeekName_0400, Function | Medium
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_GETWEEKNAME_0500
- * @tc.name     test GetWeekName,DateTimeDataType is STANDALONE_ABBR
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetWeekName_0500, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -224,11 +184,6 @@ HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetWeekName_0500, Function | Medium
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_GETWEEKNAME_0600
- * @tc.name     test GetWeekName,DateTimeDataType is STANDALONE_WIDE
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetWeekName_0600, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -240,11 +195,6 @@ HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetWeekName_0600, Function | Medium
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_GETMONTHNAME_0100
- * @tc.name     test GetMonthName,index is illegal,index is -1
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetMonthName_0100, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -254,11 +204,6 @@ HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetMonthName_0100, Function | Mediu
     EXPECT_EQ(formatMonthName, "");
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_GETMONTHNAME_0200
- * @tc.name     test GetMonthName,index is illegal,index is 12
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetMonthName_0200, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -268,11 +213,6 @@ HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetMonthName_0200, Function | Mediu
     EXPECT_EQ(formatMonthName, "");
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_GETMONTHNAME_0300
- * @tc.name     test GetMonthName,index is legal,type is FORMAT_ABBR
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetMonthName_0300, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -284,11 +224,6 @@ HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetMonthName_0300, Function | Mediu
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_GETMONTHNAME_0400
- * @tc.name     test GetMonthName,index is legal,type is FORMAT_WIDE
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetMonthName_0400, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -300,11 +235,6 @@ HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetMonthName_0400, Function | Mediu
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_GETMONTHNAME_0500
- * @tc.name     test GetMonthName,index is legal,type is STANDALONE_ABBR
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetMonthName_0500, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -316,11 +246,6 @@ HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetMonthName_0500, Function | Mediu
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_GETMONTHNAME_0600
- * @tc.name     test GetMonthName,index is legal,type is STANDALONE_WIDE
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetMonthName_0600, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -332,11 +257,6 @@ HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetMonthName_0600, Function | Mediu
     }
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_GETAMPMMARKERS_0100
- * @tc.name     test GetAmPmMarkers ,index is -1
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetAmPmMarkers_0100, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -345,11 +265,6 @@ HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetAmPmMarkers_0100, Function | Med
     EXPECT_EQ(infoAmPm, "");
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_GETAMPMMARKERS_0200
- * @tc.name     test GetAmPmMarkers ,index is 2
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetAmPmMarkers_0200, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -359,11 +274,6 @@ HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetAmPmMarkers_0200, Function | Med
     EXPECT_EQ(infoAmPm, "");
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_GETAMPMMARKERS_0300
- * @tc.name     test GetAmPmMarkers ,index is 0
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetAmPmMarkers_0300, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -374,11 +284,6 @@ HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetAmPmMarkers_0300, Function | Med
     EXPECT_EQ(infoAmPm, g_amPmMarkers[localeIndex][0]);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_GETAMPMMARKERS_0400
- * @tc.name     test GetAmPmMarkers ,index is 1
- * @tc.desc     [C- SOFTWARE -0200]
- */
 HWTEST_P(DateTimeTest, GLOBAL_DateTimeFormat_GetAmPmMarkers_0400, Function | MediumTest | Level0)
 {
     LocaleInfo localeInfo = GetParam();
@@ -399,10 +304,14 @@ INSTANTIATE_TEST_CASE_P(AllDateTimeTest, DateTimeTest,
     LocaleInfo("zh", "Hans", "MO"), LocaleInfo("zh", "Hant", "TW")));
 
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0100
- * @tc.name     test ApplyPattern api,requestPattern is HOUR12_MINUTE_SECOND
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_0100
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0100, Function | MediumTest | Level0)
 {
@@ -418,10 +327,14 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0100, Func
     EXPECT_EQ(appendTo, testing::g_dataTimeFormatPositive[localeIndex][0]);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0200
- * @tc.name     test ApplyPattern api,requestPattern is HOUR24_MINUTE_SECOND
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_0200
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0200, Function | MediumTest | Level0)
 {
@@ -437,10 +350,14 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0200, Func
     EXPECT_EQ(appendTo, testing::g_dataTimeFormatPositive[localeIndex][1]);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0300
- * @tc.name     test ApplyPattern api,requestPattern is HOUR_MINUTE_SECOND
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_0300
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0300, Function | MediumTest | Level0)
 {
@@ -456,10 +373,14 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0300, Func
     EXPECT_EQ(appendTo, testing::g_dataTimeFormatPositive[localeIndex][2]);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0400
- * @tc.name     test ApplyPattern api,requestPattern is HOUR12_MINUTE
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_0400
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0400, Function | MediumTest | Level0)
 {
@@ -475,10 +396,14 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0400, Func
     EXPECT_EQ(appendTo, testing::g_dataTimeFormatPositive[localeIndex][3]);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0500
- * @tc.name     test ApplyPattern api,requestPattern is HOUR24_MINUTE
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_0500
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0500, Function | MediumTest | Level0)
 {
@@ -494,10 +419,14 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0500, Func
     EXPECT_EQ(appendTo, testing::g_dataTimeFormatPositive[localeIndex][4]);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0600
- * @tc.name     test ApplyPattern api,requestPattern is HOUR_MINUTE
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_0600
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0600, Function | MediumTest | Level0)
 {
@@ -513,10 +442,14 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0600, Func
     EXPECT_EQ(appendTo, testing::g_dataTimeFormatPositive[localeIndex][5]);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0700
- * @tc.name     test ApplyPattern api,requestPattern is ABBR_MONTH_WEEKDAY_DAY
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_0700
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0700, Function | MediumTest | Level0)
 {
@@ -532,10 +465,14 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0700, Func
     EXPECT_EQ(appendTo, testing::g_dataTimeFormatPositive[localeIndex][6]);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0800
- * @tc.name     test ApplyPattern api,requestPattern is ABBR_MONTH_DAY
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_0800
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0800, Function | MediumTest | Level0)
 {
@@ -551,10 +488,14 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0800, Func
     EXPECT_EQ(appendTo, testing::g_dataTimeFormatPositive[localeIndex][7]);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0900
- * @tc.name     test ApplyPattern api,requestPattern is YEAR_ABBR_MONTH_ABBR_WEEKDAY_DAY
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_0900
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0900, Function | MediumTest | Level0)
 {
@@ -570,10 +511,14 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_0900, Func
     EXPECT_EQ(appendTo, testing::g_dataTimeFormatPositive[localeIndex][8]);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1000
- * @tc.name     test ApplyPattern api,requestPattern is YEAR_WIDE_MONTH_ABBR_WEEKDAY_DAY
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_1000
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1000, Function | MediumTest | Level0)
 {
@@ -589,10 +534,14 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1000, Func
     EXPECT_EQ(appendTo, testing::g_dataTimeFormatPositive[localeIndex][9]);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1100
- * @tc.name     test ApplyPattern api,requestPattern is YEAR_SHORT_MONTH_WIDE_WEEKDAY_DAY
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_1100
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1100, Function | MediumTest | Level0)
 {
@@ -608,10 +557,14 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1100, Func
     EXPECT_EQ(appendTo, testing::g_dataTimeFormatPositive[localeIndex][10]);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1200
- * @tc.name     test ApplyPattern api,requestPattern is YEAR_SHORT_MONTH_ABBR_WEEKDAY_DAY
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_1200
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1200, Function | MediumTest | Level0)
 {
@@ -627,10 +580,14 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1200, Func
     EXPECT_EQ(appendTo, testing::g_dataTimeFormatPositive[localeIndex][11]);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1300
- * @tc.name     test ApplyPattern api,requestPattern is YEAR_ABBR_MONTH_WIDE_WEEKDAY_DAY
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_1300
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1300, Function | MediumTest | Level0)
 {
@@ -646,10 +603,14 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1300, Func
     EXPECT_EQ(appendTo, testing::g_dataTimeFormatPositive[localeIndex][12]);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1400
- * @tc.name     test ApplyPattern api,requestPattern is YEAR_WIDE_MONTH_DAY
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_1400
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1400, Function | MediumTest | Level0)
 {
@@ -665,10 +626,14 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1400, Func
     EXPECT_EQ(appendTo, testing::g_dataTimeFormatPositive[localeIndex][13]);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1500
- * @tc.name     test ApplyPattern api,requestPattern is FULL
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_1500
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1500, Function | MediumTest | Level0)
 {
@@ -684,10 +649,14 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1500, Func
     EXPECT_EQ(appendTo, testing::g_dataTimeFormatPositive[localeIndex][14]);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1600
- * @tc.name     test ApplyPattern api,requestPattern is MEDIUM
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_1600
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1600, Function | MediumTest | Level0)
 {
@@ -703,10 +672,14 @@ HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1600, Func
     EXPECT_EQ(appendTo, testing::g_dataTimeFormatPositive[localeIndex][15]);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1700
- * @tc.name     test ApplyPattern api,requestPattern is SHORT
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GLOBAL_DateTimeFormat_ApplyPattern_1700
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_DATETIMEFORMAT_APPLYPATTERN_1700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DateTimeApplyPatternTest, GLOBAL_DateTimeFormat_ApplyPattern_1700, Function | MediumTest | Level0)
 {

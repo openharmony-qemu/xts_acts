@@ -19,12 +19,6 @@
 
 void (*g_watchDogfunc)(void);
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is wifiiot
- * @param        : module name is wifiiotlite
- * @param        : test suit name is UtilsFileFuncTestSuite
- */
 LITE_TEST_SUIT(wifiiot, wifiiotlite, IotWatchDogTestSuite);
 
 /**
@@ -47,9 +41,13 @@ static BOOL IotWatchDogTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_6000
- * @tc.name      : UART operation with IoTWatchDogEnable
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testIotWatchDog001
+ * @tc.number SUB_UTILS_WIFIIOT_API_6000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog001, Function | MediumTest | Level1)
 {
@@ -57,9 +55,13 @@ LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog001, Function | MediumTest |
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_6100
- * @tc.name      : UART operation with IoTWatchDogKick
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testIotWatchDog002
+ * @tc.number SUB_UTILS_WIFIIOT_API_6100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog002, Function | MediumTest | Level1)
 {
@@ -67,9 +69,13 @@ LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog002, Function | MediumTest |
 };
 
 /**
- * @tc.number    : SUB_UTILS_WIFIIOT_API_6200
- * @tc.name      : UART operation with IoTWatchDogDisable
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testIotWatchDog003
+ * @tc.number SUB_UTILS_WIFIIOT_API_6200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(IotWatchDogTestSuite, testIotWatchDog003, Function | MediumTest | Level1)
 {

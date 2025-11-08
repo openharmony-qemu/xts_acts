@@ -156,9 +156,13 @@ static void ExecHksGenerateKeyTest001(void const *argument)
 }
 
 /**
- * @tc.name: HksGenerateKeyTest.HksGenerateKeyTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   HksGenerateKeyTest001
+ * @tc.number HksGenerateKeyTest001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksGenerateKeyTest, HksGenerateKeyTest001, Level1)
 {

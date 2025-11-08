@@ -31,11 +31,6 @@ class SleepParamTest : public testing::TestWithParam<int> {
 class SleepTest : public testing::Test {
 };
 
-/**
- * @tc.number SUB_KERNEL_TIME_API_CLOCK_NANOSLEEP_0200
- * @tc.name   clock_nanosleep fail test - non-support clock_id
- * @tc.desc   [C- SOFTWARE -0200]
- */
 HWTEST_P(AllClockIDTest, testClockNanosleepInvalidID, Reliability | SmallTest | Level2)
 {
     clockid_t cid = GetParam();
@@ -51,9 +46,13 @@ HWTEST_P(AllClockIDTest, testClockNanosleepInvalidID, Reliability | SmallTest | 
 INSTANTIATE_TEST_CASE_P(SleepTest, AllClockIDTest, ALL_CLOCK_IDS);
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testClockNanosleepInvalidPara
  * @tc.number SUB_KERNEL_TIME_API_CLOCK_NANOSLEEP_0300
- * @tc.name   clock_nanosleep fail test - invalid parameter
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   RELIABILITY
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(SleepTest, testClockNanosleepInvalidPara, Reliability | SmallTest | Level2)
 {

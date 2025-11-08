@@ -37,9 +37,13 @@ const char ShmTest::SHM_TEST_STR[] = "hello shmem";
 const int ShmTest::SHM_TEST_STR_LEN = sizeof(SHM_TEST_STR);
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SHM_ALL_0100
- * @tc.name     basic function test : hello world
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testShmBasic
+ * @tc.number SUB_KERNEL_IPC_SHM_ALL_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ShmTest, testShmBasic, Function | MediumTest | Level0)
 {
@@ -95,9 +99,13 @@ HWTEST_F(ShmTest, testShmBasic, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SHM_ALL_0300
- * @tc.name     Single-process test
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testShmSingleProcess
+ * @tc.number SUB_KERNEL_IPC_SHM_ALL_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ShmTest, testShmSingleProcess, Function | MediumTest | Level1)
 {
@@ -122,9 +130,13 @@ HWTEST_F(ShmTest, testShmSingleProcess, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SHM_SHMGET_0100
- * @tc.name     shmat basic function test
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testShmget
+ * @tc.number SUB_KERNEL_IPC_SHM_SHMGET_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ShmTest, testShmget, Function | MediumTest | Level0)
 {
@@ -170,9 +182,13 @@ HWTEST_F(ShmTest, testShmget, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SHM_SHMAT_0100
- * @tc.name     shmat: SHM_REMAP function test
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testShmatSHM_REMAP
+ * @tc.number SUB_KERNEL_IPC_SHM_SHMAT_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ShmTest, testShmatSHM_REMAP, Function | MediumTest | Level1)
 {
@@ -234,9 +250,13 @@ HWTEST_F(ShmTest, testShmatSHM_REMAP, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SHM_SHMAT_0200
- * @tc.name     shmat: SHM_RDONLY function test
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testShmatSHM_RDONLY
+ * @tc.number SUB_KERNEL_IPC_SHM_SHMAT_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ShmTest, testShmatSHM_RDONLY, Function | MediumTest | Level0)
 {
@@ -287,9 +307,13 @@ HWTEST_F(ShmTest, testShmatSHM_RDONLY, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SHM_SHMAT_0300
- * @tc.name     shmat: SHM_RND function test
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testShmatSHM_RND
+ * @tc.number SUB_KERNEL_IPC_SHM_SHMAT_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ShmTest, testShmatSHM_RND, Function | MediumTest | Level0)
 {
@@ -323,9 +347,13 @@ HWTEST_F(ShmTest, testShmatSHM_RND, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SHM_SHMCTL_0100
- * @tc.name     shmctl: IPC_STAT and IPC_SET function test
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testShmctl
+ * @tc.number SUB_KERNEL_IPC_SHM_SHMCTL_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ShmTest, testShmctl, Function | MediumTest | Level1)
 {
@@ -379,9 +407,13 @@ HWTEST_F(ShmTest, testShmctl, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_SHM_SHMCTL_0200
- * @tc.name     shmctl: IPC_INFO and SHM_INFO function test
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testShmctlINFO
+ * @tc.number SUB_KERNEL_IPC_SHM_SHMCTL_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(ShmTest, testShmctlINFO, Function | MediumTest | Level0)
 {

@@ -31,12 +31,6 @@ UINT16 g_cmsisTestEventCount;
 #define TIMEOUT_NUM_10 10
 #define INVALID_FLAG_OPTION 0x00000004U
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is utils
- * @param        : module name is utilsFile
- * @param        : test suit name is CmsisEventFuncTestSuite
- */
 LITE_TEST_SUIT(Cmsis, Cmsisevent, CmsisEventFuncTestSuite);
 
 /**
@@ -96,9 +90,13 @@ static void CmsisEventFlagsClearFunc001(void const *argument)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_EVENT_OPERATION_0100
- * @tc.name      : event operation for creat
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsEventFlagsNew001
+ * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsNew001, Function | MediumTest | Level1)
 {
@@ -108,9 +106,13 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsNew001, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_EVENT_OPERATION_0200
- * @tc.name      : event operation for delete
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsEventFlagsDelete001
+ * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsDelete001, Function | MediumTest | Level1)
 {
@@ -123,9 +125,13 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsDelete001, Function | Me
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_EVENT_OPERATION_0300
- * @tc.name      : event delete operation with EventFlagsId = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsEventFlagsDelete002
+ * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsDelete002, Function | MediumTest | Level1)
 {
@@ -136,9 +142,13 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsDelete002, Function | Me
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_EVENT_OPERATION_0400
- * @tc.name      : event operation for flags set
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsEventFlagsSet001
+ * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsSet001, Function | MediumTest | Level1)
 {
@@ -152,9 +162,13 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsSet001, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_EVENT_OPERATION_0500
- * @tc.name      : event reliability test for flags set
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsEventFlagsSet002
+ * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsSet002, Function | MediumTest | Level1)
 {
@@ -194,9 +208,13 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsSet002, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_EVENT_OPERATION_0600
- * @tc.name      : event flags set operation with EventFlagsId = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsEventFlagsSet003
+ * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsSet003, Function | MediumTest | Level1)
 {
@@ -207,9 +225,13 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsSet003, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_EVENT_OPERATION_0700
- * @tc.name      : event operation for wait
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsEventFlagsWait001
+ * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsWait001, Function | MediumTest | Level1)
 {
@@ -243,9 +265,13 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsWait001, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_EVENT_OPERATION_0800
- * @tc.name      : event operation for invalid option
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsEventFlagsWait002
+ * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsWait002, Function | MediumTest | Level1)
 {
@@ -261,9 +287,13 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsWait002, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_EVENT_OPERATION_0900
- * @tc.name      : event wait operation with EventFlagsId = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsEventFlagsWait003
+ * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsWait003, Function | MediumTest | Level1)
 {
@@ -274,9 +304,13 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsWait003, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_EVENT_OPERATION_1000
- * @tc.name      : event operation for flags get
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsEventFlagsGet001
+ * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsGet001, Function | MediumTest | Level1)
 {
@@ -294,9 +328,13 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsGet001, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_EVENT_OPERATION_1100
- * @tc.name      : event flags get operation with EventFlagsId = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsEventFlagsGet002
+ * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_1100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsGet002, Function | MediumTest | Level1)
 {
@@ -306,9 +344,13 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsGet002, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_EVENT_OPERATION_1200
- * @tc.name      : event operation for flags clear
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsEventFlagsClear001
+ * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_1200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsClear001, Function | MediumTest | Level1)
 {
@@ -345,9 +387,13 @@ LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsClear001, Function | Med
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_EVENT_OPERATION_1300
- * @tc.name      : event flags clear operation with EventFlagsId = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsEventFlagsClear002
+ * @tc.number SUB_KERNEL_CMSIS_EVENT_OPERATION_1300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisEventFuncTestSuite, testOsEventFlagsClear002, Function | MediumTest | Level1)
 {

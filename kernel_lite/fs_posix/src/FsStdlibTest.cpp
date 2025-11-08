@@ -34,9 +34,13 @@
 
 using namespace testing::ext;
 /**
- * @tc.number   SUB_KERNEL_FS_STDLIB_0400
- * @tc.name     basic function test : mktemp create a temporary file name, mkdtemp create a directory
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMktempMkdtemp
+ * @tc.number SUB_KERNEL_FS_STDLIB_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FileSystemTest, testMktempMkdtemp, Function | MediumTest | Level2)
 {
@@ -51,9 +55,13 @@ HWTEST_F(FileSystemTest, testMktempMkdtemp, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_STDLIB_0500
- * @tc.name     basic function test : Use the realpath function to obtain the path.
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testRealpath
+ * @tc.number SUB_KERNEL_FS_STDLIB_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testRealpath, Function | MediumTest | Level3)
 {

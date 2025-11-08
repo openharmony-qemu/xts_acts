@@ -55,9 +55,13 @@ void HksOthersTest::TearDown()
 }
 
 /**
- * @tc.name: HksOthersTest.HksOthersTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   HksOthersTest001
+ * @tc.number HksOthersTest001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksOthersTest, HksOthersTest001, TestSize.Level1)
 {
@@ -66,9 +70,13 @@ HWTEST_F(HksOthersTest, HksOthersTest001, TestSize.Level1)
 }
 
 /**
- * @tc.name: HksOthersTest.HksOthersTest002
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   HksOthersTest002
+ * @tc.number HksOthersTest002
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksOthersTest, HksOthersTest002, TestSize.Level1)
 {
@@ -77,9 +85,13 @@ HWTEST_F(HksOthersTest, HksOthersTest002, TestSize.Level1)
 }
 
 /**
- * @tc.name: HksOthersTest.HksOthersTest003
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   HksOthersTest003
+ * @tc.number HksOthersTest003
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksOthersTest, HksOthersTest003, TestSize.Level1)
 {
@@ -88,9 +100,13 @@ HWTEST_F(HksOthersTest, HksOthersTest003, TestSize.Level1)
 }
 
 /**
- * @tc.name: HksOthersTest.HksOthersTest004
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   HksOthersTest004
+ * @tc.number HksOthersTest004
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksOthersTest, HksOthersTest004, TestSize.Level1)
 {
@@ -99,9 +115,13 @@ HWTEST_F(HksOthersTest, HksOthersTest004, TestSize.Level1)
 }
 
 /**
- * @tc.name: HksOthersTest.HksOthersTest005
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   HksOthersTest005
+ * @tc.number HksOthersTest005
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksOthersTest, HksOthersTest005, TestSize.Level1)
 {
@@ -110,9 +130,13 @@ HWTEST_F(HksOthersTest, HksOthersTest005, TestSize.Level1)
 }
 
 /**
- * @tc.name: HksOthersTest.HksOthersTest006
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   HksOthersTest006
+ * @tc.number HksOthersTest006
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksOthersTest, HksOthersTest006, TestSize.Level1)
 {
@@ -121,9 +145,13 @@ HWTEST_F(HksOthersTest, HksOthersTest006, TestSize.Level1)
 }
 
 /**
- * @tc.name: HksOthersTest.HksOthersTest006
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   HksOthersTest007
+ * @tc.number HksOthersTest007
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksOthersTest, HksOthersTest007, TestSize.Level1)
 {
@@ -132,9 +160,13 @@ HWTEST_F(HksOthersTest, HksOthersTest007, TestSize.Level1)
 }
 
 /**
- * @tc.name: HksOthersTest.HksOthersTest008
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   HksOthersTest008
+ * @tc.number HksOthersTest008
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksOthersTest, HksOthersTest008, TestSize.Level1)
 {

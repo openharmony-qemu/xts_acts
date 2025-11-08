@@ -43,9 +43,13 @@ void *ThreadMutex(void *arg)
 }
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_MUTEX_ALL_0100
- * @tc.name       basic test of pthread_mutex
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadMutex
+ * @tc.number SUB_KERNEL_FUTEX_MUTEX_ALL_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadMutex, Function | MediumTest | Level3)
 {
@@ -89,9 +93,13 @@ void *ThreadMtrylock2(void *arg)
 }
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_MUTEX_ALL_0200
- * @tc.name       basic test of pthread_mutex_trylock
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadMtrylock
+ * @tc.number SUB_KERNEL_FUTEX_MUTEX_ALL_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadMtrylock, Function | MediumTest | Level3)
 {
@@ -164,9 +172,13 @@ void *PthreadConsume(void *arg)
 }
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_MUTEX_ALL_0300
- * @tc.name       test pthread_mutex with condition variable, produce and consume
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadMutexCond
+ * @tc.number SUB_KERNEL_FUTEX_MUTEX_ALL_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadMutexCond, Function | MediumTest | Level3)
 {
@@ -201,9 +213,13 @@ void *ThreadPthreadMtimedlockOut(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FUTEX_PTHREAD_TIMEDLOCK_0100
- * @tc.name     test pthread_mutex_timedlock whith timeout
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadMtimedlockOut
+ * @tc.number SUB_KERNEL_FUTEX_PTHREAD_TIMEDLOCK_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadMtimedlockOut, Function | MediumTest | Level3)
 {
@@ -238,9 +254,13 @@ void *ThreadPthreadMtimedlockNoOut(void *arg)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FUTEX_PTHREAD_TIMEDLOCK_0200
- * @tc.name     test pthread_mutex_timedlock with no timeout
- * @tc.desc     [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadMtimedlockNoOut
+ * @tc.number SUB_KERNEL_FUTEX_PTHREAD_TIMEDLOCK_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadMtimedlockNoOut, Function | MediumTest | Level3)
 {
@@ -260,9 +280,13 @@ HWTEST_F(FutexTest, testPthreadMtimedlockNoOut, Function | MediumTest | Level3)
 /********************************************* Test case dividing line ***********************************************/
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_MTYPE_ALL_0100
- * @tc.name       test pthread_mutexattr_init api
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadMattrType
+ * @tc.number SUB_KERNEL_FUTEX_MTYPE_ALL_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(FutexTest, testPthreadMattrType, Function | MediumTest | Level1)
 {
@@ -305,9 +329,13 @@ void *ThreadMattrTypeRecursive1(void *arg)
 }
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_MTYPE_ALL_0200
- * @tc.name       type is PTHREAD_MUTEX_RECURSIVE, unlock when not in use
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadMattrTypeRecursive1
+ * @tc.number SUB_KERNEL_FUTEX_MTYPE_ALL_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FutexTest, testPthreadMattrTypeRecursive1, Function | MediumTest | Level2)
 {
@@ -339,9 +367,13 @@ HWTEST_F(FutexTest, testPthreadMattrTypeRecursive1, Function | MediumTest | Leve
 /********************************************* Test case dividing line ***********************************************/
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_MTYPE_ALL_0300
- * @tc.name       type is PTHREAD_MUTEX_RECURSIVE, lock when locked
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadMattrTypeRecursive2
+ * @tc.number SUB_KERNEL_FUTEX_MTYPE_ALL_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FutexTest, testPthreadMattrTypeRecursive2, Function | MediumTest | Level2)
 {
@@ -382,9 +414,13 @@ void *ThreadMattrTypeRecursive3(void *arg)
 }
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_MTYPE_ALL_0400
- * @tc.name       type is PTHREAD_MUTEX_ERRORCHECK, unlock when not in use
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadMattrTypeRecursive3
+ * @tc.number SUB_KERNEL_FUTEX_MTYPE_ALL_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FutexTest, testPthreadMattrTypeRecursive3, Function | MediumTest | Level2)
 {
@@ -416,9 +452,13 @@ HWTEST_F(FutexTest, testPthreadMattrTypeRecursive3, Function | MediumTest | Leve
 /********************************************* Test case dividing line ***********************************************/
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_MTYPE_ALL_0500
- * @tc.name       type is PTHREAD_MUTEX_ERRORCHECK, lock when locked
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadMattrTypeRecursive4
+ * @tc.number SUB_KERNEL_FUTEX_MTYPE_ALL_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FutexTest, testPthreadMattrTypeRecursive4, Function | MediumTest | Level2)
 {
@@ -450,9 +490,13 @@ HWTEST_F(FutexTest, testPthreadMattrTypeRecursive4, Function | MediumTest | Leve
 /********************************************* Test case dividing line ***********************************************/
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_MTYPE_ALL_0600
- * @tc.name       type is PTHREAD_MUTEX_NORMAL, lock when locked
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadMattrTypeRecursive5
+ * @tc.number SUB_KERNEL_FUTEX_MTYPE_ALL_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FutexTest, testPthreadMattrTypeRecursive5, Function | MediumTest | Level2)
 {
@@ -497,9 +541,13 @@ void *ThreadSpinlock(void *arg)
 }
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_SPINLOCK_ALL_0100
- * @tc.name       basic test of pthread_spin_lock
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadSpinlock
+ * @tc.number SUB_KERNEL_FUTEX_SPINLOCK_ALL_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadSpinlock, Function | MediumTest | Level3)
 {
@@ -543,9 +591,13 @@ void *ThreadSpinTrylock2(void *arg)
 }
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_SPINLOCK_ALL_0200
- * @tc.name       basic test of pthread_spin_trylock
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadSpinTrylock
+ * @tc.number SUB_KERNEL_FUTEX_SPINLOCK_ALL_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadSpinTrylock, Function | MediumTest | Level3)
 {

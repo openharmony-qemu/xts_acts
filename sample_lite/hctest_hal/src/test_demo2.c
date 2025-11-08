@@ -44,9 +44,13 @@ static BOOL StringTestSuiteTearDown()
 }
 
 /**
- * @tc.number    : Test_Case_300
- * @tc.name      : Verify string check function
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   TestCase003
+ * @tc.number Test_Case_300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(StringTestSuite, TestCase003, Function | MediumTest | Level1)
 {
@@ -55,9 +59,13 @@ LITE_TEST_CASE(StringTestSuite, TestCase003, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : Test_Case_400
- * @tc.name      : Verify string check function
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   TestCase004
+ * @tc.number Test_Case_400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(StringTestSuite, TestCase004, Function | MediumTest | Level2)
 {

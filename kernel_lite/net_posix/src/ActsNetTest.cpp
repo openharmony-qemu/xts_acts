@@ -684,9 +684,13 @@ static int PollServerForFork(int timeoutSec)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_0100
- * @tc.name      : sample test tcp
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testTcpSample
+ * @tc.number SUB_KERNEL_NET_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testTcpSample, Function | MediumTest | Level2)
 {
@@ -711,9 +715,13 @@ HWTEST_F(ActsNetTest, testTcpSample, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_0200
- * @tc.name      : test tcp concurrent connect
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testTcpConcurrentConnect
+ * @tc.number SUB_KERNEL_NET_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testTcpConcurrentConnect, Function | MediumTest | Level2)
 {
@@ -749,9 +757,13 @@ HWTEST_F(ActsNetTest, testTcpConcurrentConnect, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_0300
- * @tc.name      : sample test upd
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testUdpSample
+ * @tc.number SUB_KERNEL_NET_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testUdpSample, Function | MediumTest | Level2)
 {
@@ -810,9 +822,13 @@ HWTEST_F(ActsNetTest, testUdpSample, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_0400
- * @tc.name      : test inter-process network communication
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInterProcessComm
+ * @tc.number SUB_KERNEL_NET_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInterProcessComm, Function | MediumTest | Level2)
 {
@@ -847,9 +863,13 @@ HWTEST_F(ActsNetTest, testInterProcessComm, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_0500
- * @tc.name      : test select timeout
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSelectTimeout
+ * @tc.number SUB_KERNEL_NET_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testSelectTimeout, Function | MediumTest | Level2)
 {
@@ -870,9 +890,13 @@ HWTEST_F(ActsNetTest, testSelectTimeout, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_0510
- * @tc.name      : test select with one client
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSelectOneClient
+ * @tc.number SUB_KERNEL_NET_0510
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testSelectOneClient, Function | MediumTest | Level2)
 {
@@ -907,9 +931,13 @@ HWTEST_F(ActsNetTest, testSelectOneClient, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_0520
- * @tc.name      : test select with multi clients
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSelectMultiClients
+ * @tc.number SUB_KERNEL_NET_0520
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testSelectMultiClients, Function | MediumTest | Level2)
 {
@@ -961,9 +989,13 @@ HWTEST_F(ActsNetTest, testSelectMultiClients, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_0600
- * @tc.name      : test poll timeout
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testPollTimeout
+ * @tc.number SUB_KERNEL_NET_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testPollTimeout, Function | MediumTest | Level2)
 {
@@ -984,9 +1016,13 @@ HWTEST_F(ActsNetTest, testPollTimeout, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_0610
- * @tc.name      : test poll with one client
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testPollOneClient
+ * @tc.number SUB_KERNEL_NET_0610
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testPollOneClient, Function | MediumTest | Level2)
 {
@@ -1021,9 +1057,13 @@ HWTEST_F(ActsNetTest, testPollOneClient, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_0620
- * @tc.name      : test poll with multi clients
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testPollMultiClients
+ * @tc.number SUB_KERNEL_NET_0620
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testPollMultiClients, Function | MediumTest | Level2)
 {
@@ -1079,9 +1119,13 @@ HWTEST_F(ActsNetTest, testPollMultiClients, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_0700
- * @tc.name      : test ioctl SIOCGIFCONF
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testIoctlIfconf
+ * @tc.number SUB_KERNEL_NET_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testIoctlIfconf, Function | MediumTest | Level2)
 {
@@ -1107,9 +1151,13 @@ HWTEST_F(ActsNetTest, testIoctlIfconf, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_0710
- * @tc.name      : test ioctl get set delete IFADDR,FIONREAD, localhost
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testIoctlIfnetAddrLocal
+ * @tc.number SUB_KERNEL_NET_0710
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testIoctlIfnetAddrLocal, Function | MediumTest | Level2)
 {
@@ -1158,9 +1206,13 @@ HWTEST_F(ActsNetTest, testIoctlIfnetAddrLocal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_0720
- * @tc.name      : test ioctl get and set IFADDR others
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testIoctlIfnetAddrOthers
+ * @tc.number SUB_KERNEL_NET_0720
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testIoctlIfnetAddrOthers, Function | MediumTest | Level2)
 {
@@ -1215,9 +1267,13 @@ HWTEST_F(ActsNetTest, testIoctlIfnetAddrOthers, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_0730
- * @tc.name      : test ioctl get and set IFHWADDR
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testIoctlIfhwAddr
+ * @tc.number SUB_KERNEL_NET_0730
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testIoctlIfhwAddr, Function | MediumTest | Level2)
 {
@@ -1263,9 +1319,13 @@ HWTEST_F(ActsNetTest, testIoctlIfhwAddr, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_1000
- * @tc.name      : test socket operation
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSocketOpt
+ * @tc.number SUB_KERNEL_NET_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testSocketOpt, Function | MediumTest | Level2)
 {
@@ -1317,9 +1377,13 @@ HWTEST_F(ActsNetTest, testSocketOpt, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_1100
- * @tc.name      : test getsockname and getpeername invalid input
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testGetSocketNameInvalidInput
+ * @tc.number SUB_KERNEL_NET_1100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsNetTest, testGetSocketNameInvalidInput, Function | MediumTest | Level3)
 {
@@ -1352,9 +1416,13 @@ HWTEST_F(ActsNetTest, testGetSocketNameInvalidInput, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_1200
- * @tc.name      : test domain name compress and expand normally
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testDnCompExpandNormal
+ * @tc.number SUB_KERNEL_NET_1200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testDnCompExpandNormal, Function | MediumTest | Level2)
 {
@@ -1386,9 +1454,13 @@ HWTEST_F(ActsNetTest, testDnCompExpandNormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_1300
- * @tc.name      : test domain name compress and expand abnormally
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testDnCompExpandAbnormal
+ * @tc.number SUB_KERNEL_NET_1300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsNetTest, testDnCompExpandAbnormal, Function | MediumTest | Level3)
 {
@@ -1417,9 +1489,13 @@ HWTEST_F(ActsNetTest, testDnCompExpandAbnormal, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_1400
- * @tc.name      : test convert 48 bit Ethernet host address normally
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testEtherConvertNormal
+ * @tc.number SUB_KERNEL_NET_1400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testEtherConvertNormal, Function | MediumTest | Level2)
 {
@@ -1446,9 +1522,13 @@ HWTEST_F(ActsNetTest, testEtherConvertNormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_1500
- * @tc.name      : test convert 48 bit Ethernet host address abnormally
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testEtherConvertAbnormal
+ * @tc.number SUB_KERNEL_NET_1500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsNetTest, testEtherConvertAbnormal, Function | MediumTest | Level3)
 {
@@ -1459,9 +1539,13 @@ HWTEST_F(ActsNetTest, testEtherConvertAbnormal, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_1600
- * @tc.name      : test thread safe convert 48 bit Ethernet host address normally
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testEtherConvertNormalWithThreadSafe
+ * @tc.number SUB_KERNEL_NET_1600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testEtherConvertNormalWithThreadSafe, Function | MediumTest | Level2)
 {
@@ -1500,9 +1584,13 @@ HWTEST_F(ActsNetTest, testEtherConvertNormalWithThreadSafe, Function | MediumTes
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_1700
- * @tc.name      : test get protocals by normal name and number
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testGetProtoByNormal
+ * @tc.number SUB_KERNEL_NET_1700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testGetProtoByNormal, Function | MediumTest | Level2)
 {
@@ -1529,9 +1617,13 @@ HWTEST_F(ActsNetTest, testGetProtoByNormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_1800
- * @tc.name      : test get protocals by invalid name and number
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testGetProtoByAbNormal
+ * @tc.number SUB_KERNEL_NET_1800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testGetProtoByAbNormal, Function | MediumTest | Level2)
 {
@@ -1550,9 +1642,13 @@ HWTEST_F(ActsNetTest, testGetProtoByAbNormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_1900
- * @tc.name      : test getprotoent
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testGetProtoent
+ * @tc.number SUB_KERNEL_NET_1900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testGetProtoent, Function | MediumTest | Level2)
 {
@@ -1576,9 +1672,13 @@ HWTEST_F(ActsNetTest, testGetProtoent, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_2000
- * @tc.name      : test setprotoent
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSetProtoent
+ * @tc.number SUB_KERNEL_NET_2000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testSetProtoent, Function | MediumTest | Level2)
 {
@@ -1623,9 +1723,13 @@ HWTEST_F(ActsNetTest, testSetProtoent, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_2100
- * @tc.name      : test herror,no output and return value, so no check point
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testHerror
+ * @tc.number SUB_KERNEL_NET_2100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testHerror, Function | MediumTest | Level2)
 {
@@ -1663,9 +1767,13 @@ Address not available\nherror msg: Unknown error\nherror msg: Unknown error\nher
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_2200
- * @tc.name      : test hstrerror normal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testHstrerrorNormal
+ * @tc.number SUB_KERNEL_NET_2200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testHstrerrorNormal, Function | MediumTest | Level2)
 {
@@ -1678,9 +1786,13 @@ HWTEST_F(ActsNetTest, testHstrerrorNormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_2300
- * @tc.name      : test hstrerror abnormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testHstrerrorAbnormal
+ * @tc.number SUB_KERNEL_NET_2300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testHstrerrorAbnormal, Function | MediumTest | Level2)
 {
@@ -1691,9 +1803,13 @@ HWTEST_F(ActsNetTest, testHstrerrorAbnormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_2400
- * @tc.name      : test convert value from host to network byte order
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testHostToNetwork
+ * @tc.number SUB_KERNEL_NET_2400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testHostToNetwork, Function | MediumTest | Level2)
 {
@@ -1724,9 +1840,13 @@ HWTEST_F(ActsNetTest, testHostToNetwork, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_2500
- * @tc.name      : test convert value from network to host byte order
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testNetworkToHost
+ * @tc.number SUB_KERNEL_NET_2500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testNetworkToHost, Function | MediumTest | Level2)
 {
@@ -1756,9 +1876,13 @@ HWTEST_F(ActsNetTest, testNetworkToHost, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_2600
- * @tc.name      : test inet_pton IPv4 normal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetPtonIpv4Normal
+ * @tc.number SUB_KERNEL_NET_2600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetPtonIpv4Normal, Function | MediumTest | Level2)
 {
@@ -1784,9 +1908,13 @@ HWTEST_F(ActsNetTest, testInetPtonIpv4Normal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_2700
- * @tc.name      : test inet_pton IPv4 abnormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetPtonIpv4Abnormal
+ * @tc.number SUB_KERNEL_NET_2700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetPtonIpv4Abnormal, Function | MediumTest | Level2)
 {
@@ -1801,9 +1929,13 @@ HWTEST_F(ActsNetTest, testInetPtonIpv4Abnormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_2800
- * @tc.name      : test inet_pton IPv6 normal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetPtonIpv6Normal
+ * @tc.number SUB_KERNEL_NET_2800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetPtonIpv6Normal, Function | MediumTest | Level2)
 {
@@ -1818,9 +1950,13 @@ HWTEST_F(ActsNetTest, testInetPtonIpv6Normal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_2900
- * @tc.name      : test inet_pton IPv6 abnormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetPtonIpv6Abnormal
+ * @tc.number SUB_KERNEL_NET_2900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetPtonIpv6Abnormal, Function | MediumTest | Level2)
 {
@@ -1835,9 +1971,13 @@ HWTEST_F(ActsNetTest, testInetPtonIpv6Abnormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_3000
- * @tc.name      : test inet_pton with invalid family
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetPtonInvalidFamily
+ * @tc.number SUB_KERNEL_NET_3000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetPtonInvalidFamily, Function | MediumTest | Level2)
 {
@@ -1849,9 +1989,13 @@ HWTEST_F(ActsNetTest, testInetPtonInvalidFamily, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_3100
- * @tc.name      : test inet_ntop IPv4 normal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetNtopIpv4Normal
+ * @tc.number SUB_KERNEL_NET_3100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetNtopIpv4Normal, Function | MediumTest | Level2)
 {
@@ -1883,9 +2027,13 @@ HWTEST_F(ActsNetTest, testInetNtopIpv4Normal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_3200
- * @tc.name      : test inet_ntop IPv4 boundary input
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetNtopIpv4Abnormal
+ * @tc.number SUB_KERNEL_NET_3200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetNtopIpv4Abnormal, Function | MediumTest | Level2)
 {
@@ -1903,9 +2051,13 @@ HWTEST_F(ActsNetTest, testInetNtopIpv4Abnormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_3300
- * @tc.name      : test inet_ntop IPv6 normal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetNtopIpv6Normal
+ * @tc.number SUB_KERNEL_NET_3300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetNtopIpv6Normal, Function | MediumTest | Level2)
 {
@@ -1932,9 +2084,13 @@ HWTEST_F(ActsNetTest, testInetNtopIpv6Normal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_3400
- * @tc.name      : test inet_ntop IPv6 boundary input
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetNtopIpv6Abnormal
+ * @tc.number SUB_KERNEL_NET_3400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetNtopIpv6Abnormal, Function | MediumTest | Level2)
 {
@@ -1954,9 +2110,13 @@ HWTEST_F(ActsNetTest, testInetNtopIpv6Abnormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_3500
- * @tc.name      : test inet_ntop with invalid family
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetNtopInvalidFamily
+ * @tc.number SUB_KERNEL_NET_3500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetNtopInvalidFamily, Function | MediumTest | Level2)
 {
@@ -1974,9 +2134,13 @@ HWTEST_F(ActsNetTest, testInetNtopInvalidFamily, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_3600
- * @tc.name      : test inet_addr normal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetAddrNormal
+ * @tc.number SUB_KERNEL_NET_3600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetAddrNormal, Function | MediumTest | Level2)
 {
@@ -1992,9 +2156,13 @@ HWTEST_F(ActsNetTest, testInetAddrNormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_3700
- * @tc.name      : test inet_addr abnormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetAddrAbnormal
+ * @tc.number SUB_KERNEL_NET_3700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetAddrAbnormal, Function | MediumTest | Level2)
 {
@@ -2008,9 +2176,13 @@ HWTEST_F(ActsNetTest, testInetAddrAbnormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_3800
- * @tc.name      : test inet_aton normal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetAtonNormal
+ * @tc.number SUB_KERNEL_NET_3800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetAtonNormal, Function | MediumTest | Level2)
 {
@@ -2028,9 +2200,13 @@ HWTEST_F(ActsNetTest, testInetAtonNormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_3900
- * @tc.name      : test inet_aton abnormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetAtonAbnormal
+ * @tc.number SUB_KERNEL_NET_3900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetAtonAbnormal, Function | MediumTest | Level2)
 {
@@ -2044,9 +2220,13 @@ HWTEST_F(ActsNetTest, testInetAtonAbnormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_4000
- * @tc.name      : test inet_ntoa normal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetNtoaNormal
+ * @tc.number SUB_KERNEL_NET_4000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetNtoaNormal, Function | MediumTest | Level2)
 {
@@ -2067,9 +2247,13 @@ HWTEST_F(ActsNetTest, testInetNtoaNormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_4100
- * @tc.name      : test inet_ntoa boundary input
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetNtoaAbnormal
+ * @tc.number SUB_KERNEL_NET_4100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetNtoaAbnormal, Function | MediumTest | Level2)
 {
@@ -2085,9 +2269,13 @@ HWTEST_F(ActsNetTest, testInetNtoaAbnormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_4200
- * @tc.name      : test inet_network normal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetNetworkNormal
+ * @tc.number SUB_KERNEL_NET_4200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetNetworkNormal, Function | MediumTest | Level2)
 {
@@ -2103,9 +2291,13 @@ HWTEST_F(ActsNetTest, testInetNetworkNormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_4300
- * @tc.name      : test inet_network abnormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetNetworkAbnormal
+ * @tc.number SUB_KERNEL_NET_4300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetNetworkAbnormal, Function | MediumTest | Level2)
 {
@@ -2119,9 +2311,13 @@ HWTEST_F(ActsNetTest, testInetNetworkAbnormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_4400
- * @tc.name      : test inet_lnaof normal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetLnaofNormal
+ * @tc.number SUB_KERNEL_NET_4400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetLnaofNormal, Function | MediumTest | Level2)
 {
@@ -2139,9 +2335,13 @@ HWTEST_F(ActsNetTest, testInetLnaofNormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_4500
- * @tc.name      : test inet_netof normal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetNetofNormal
+ * @tc.number SUB_KERNEL_NET_4500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetNetofNormal, Function | MediumTest | Level2)
 {
@@ -2159,9 +2359,13 @@ HWTEST_F(ActsNetTest, testInetNetofNormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_4600
- * @tc.name      : test inet_makeaddr normal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInetMakeaddrNormal
+ * @tc.number SUB_KERNEL_NET_4600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsNetTest, testInetMakeaddrNormal, Function | MediumTest | Level2)
 {
@@ -2177,9 +2381,13 @@ HWTEST_F(ActsNetTest, testInetMakeaddrNormal, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_NET_4700
- * @tc.name      : test invalid parameter
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testInvalidParameter
+ * @tc.number SUB_KERNEL_NET_4700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(ActsNetTest, testInvalidParameter, Function | MediumTest | Level3)
 {

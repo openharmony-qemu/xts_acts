@@ -70,10 +70,14 @@ static void *ThreadFunc(void* arg)
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_PROCESS_LONGJMP_0100
-* @tc.name       test _longjmp api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testLongjmp0100
+ * @tc.number SUB_KERNEL_NDKAPI_PROCESS_LONGJMP_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsProcessApiTest, testLongjmp0100, Function | MediumTest | Level1) {
     int flagVal = 1;
 
@@ -90,10 +94,14 @@ HWTEST_F(ActsProcessApiTest, testLongjmp0100, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_PROCESS_LONGJMP_0200
-* @tc.name       test longjmp api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testLongjmp0200
+ * @tc.number SUB_KERNEL_NDKAPI_PROCESS_LONGJMP_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsProcessApiTest, testLongjmp0200, Function | MediumTest | Level1) {
     int flagVal = 1;
 
@@ -110,10 +118,14 @@ HWTEST_F(ActsProcessApiTest, testLongjmp0200, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_PROCESS_SETJMP_0100
-* @tc.name       test _setjmp api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testSetjmp0100
+ * @tc.number SUB_KERNEL_NDKAPI_PROCESS_SETJMP_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsProcessApiTest, testSetjmp0100, Function | MediumTest | Level1) {
     int returnVal;
 
@@ -131,10 +143,14 @@ HWTEST_F(ActsProcessApiTest, testSetjmp0100, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_PROCESS_SETJMP_0200
-* @tc.name       test setjmp api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testSetjmp0200
+ * @tc.number SUB_KERNEL_NDKAPI_PROCESS_SETJMP_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsProcessApiTest, testSetjmp0200, Function | MediumTest | Level1) {
     int returnVal;
 
@@ -152,10 +168,14 @@ HWTEST_F(ActsProcessApiTest, testSetjmp0200, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_PROCESS_PTHREAD_SETNAME_NP_0100
-* @tc.name       test pthread_setname_np api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadSetnameNp0100
+ * @tc.number SUB_KERNEL_NDKAPI_PROCESS_PTHREAD_SETNAME_NP_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsProcessApiTest, testPthreadSetnameNp0100, Function | MediumTest | Level1) {
     pthread_t thisThread;
     int returnVal;
@@ -175,10 +195,14 @@ HWTEST_F(ActsProcessApiTest, testPthreadSetnameNp0100, Function | MediumTest | L
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_PROCESS_PTHREAD_SETNAME_NP_1000
-* @tc.name       test pthread_setname_np api para stringlong
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadSetnameNp1000
+ * @tc.number SUB_KERNEL_NDKAPI_PROCESS_PTHREAD_SETNAME_NP_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsProcessApiTest, testPthreadSetnameNp1000, Function | MediumTest | Level1) {
     pthread_t thisThread;
     int returnVal;
@@ -202,10 +226,14 @@ HWTEST_F(ActsProcessApiTest, testPthreadSetnameNp1000, Function | MediumTest | L
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_PROCESS_PTHREAD_SETNAME_NP_1100
-* @tc.name       test pthread_setname_np api para notsupport
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadSetnameNp1100
+ * @tc.number SUB_KERNEL_NDKAPI_PROCESS_PTHREAD_SETNAME_NP_1100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsProcessApiTest, testPthreadSetnameNp1100, Function | MediumTest | Level1) {
     pthread_t newThread;
     int returnVal;
@@ -227,10 +255,14 @@ HWTEST_F(ActsProcessApiTest, testPthreadSetnameNp1100, Function | MediumTest | L
 }
 
 /**
-* @tc.number     SUB_KERNEL_NDKAPI_PROCESS_PTHREAD_ATTR_GETGUARDSIZE_0100
-* @tc.name       test pthread_attr_getguardsize api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadAttrGetguardsize0100
+ * @tc.number SUB_KERNEL_NDKAPI_PROCESS_PTHREAD_ATTR_GETGUARDSIZE_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsProcessApiTest, testPthreadAttrGetguardsize0100, Function | MediumTest | Level1) {
     pthread_t newThread;
     pthread_attr_t threadAttr = {};

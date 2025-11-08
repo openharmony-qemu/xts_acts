@@ -27,10 +27,14 @@ class MathApiTest : public testing::Test {
 };
 
 /**
-* @tc.number     SUB_KERNEL_MATH_MATH_CEIL_0100
-* @tc.name       ceil basic function test
-* @tc.desc       [C- SOFTWARE -0100]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testCeil
+ * @tc.number SUB_KERNEL_MATH_MATH_CEIL_0100
+ * @tc.desc   [C- SOFTWARE -0100]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(MathApiTest, testCeil, Function | MediumTest | Level1) {
     const int testCount = 3;
     double testValues[] = {-5.9, 0, 123.45};
@@ -43,10 +47,14 @@ HWTEST_F(MathApiTest, testCeil, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_MATH_MATH_CEILF_0100
-* @tc.name       ceilf basic function test
-* @tc.desc       [C- SOFTWARE -0100]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testCeilf
+ * @tc.number SUB_KERNEL_MATH_MATH_CEILF_0100
+ * @tc.desc   [C- SOFTWARE -0100]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(MathApiTest, testCeilf, Function | MediumTest | Level1) {
     const int testCount = 3;
     float testValues[] = {-5.9, 0, 123.45};
@@ -59,10 +67,14 @@ HWTEST_F(MathApiTest, testCeilf, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number SUB_KERNEL_MATH_MATH_FINITE_0100
-* @tc.name test finite api
-* @tc.desc [C- SOFTWARE -0100]
-**/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testfinite
+ * @tc.number SUB_KERNEL_MATH_MATH_FINITE_0100
+ * @tc.desc   [C- SOFTWARE -0100]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(MathApiTest, testfinite, Function | MediumTest | Level1) {
     const int testCount = 7;
     double testValues[7] = {1.0000001, 0.0/0.0, 1.0000001/0.0, 1.79769e+308, NAN};
@@ -77,10 +89,14 @@ HWTEST_F(MathApiTest, testfinite, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number SUB_KERNEL_MATH_MATH_FINITEF_0100
-* @tc.name test finitef api
-* @tc.desc [C- SOFTWARE -0100]
-**/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testfinitef
+ * @tc.number SUB_KERNEL_MATH_MATH_FINITEF_0100
+ * @tc.desc   [C- SOFTWARE -0100]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(MathApiTest, testfinitef, Function | MediumTest | Level1) {
     const int testCount = 6;
     float testValues[6] = {1, -1, 3.40282e+038, NAN};
@@ -95,10 +111,14 @@ HWTEST_F(MathApiTest, testfinitef, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number SUB_KERNEL_MATH_MATH_NAN_0100
-* @tc.name test nan api
-* @tc.desc [C- SOFTWARE -0100]
-**/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testnan
+ * @tc.number SUB_KERNEL_MATH_MATH_NAN_0100
+ * @tc.desc   [C- SOFTWARE -0100]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(MathApiTest, testnan, Function | MediumTest | Level1) {
     const int testCount = 3;
     const char *testValues[] = {"1", "99", "abc"};
@@ -110,10 +130,14 @@ HWTEST_F(MathApiTest, testnan, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number SUB_KERNEL_MATH_MATH_NANF_0100
-* @tc.name test nanf api
-* @tc.desc [C- SOFTWARE -0100]
-**/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testnanf
+ * @tc.number SUB_KERNEL_MATH_MATH_NANF_0100
+ * @tc.desc   [C- SOFTWARE -0100]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(MathApiTest, testnanf, Function | MediumTest | Level1) {
     const int testCount = 3;
     const char *testValues[] = {"abc", "99", " "};
@@ -125,10 +149,14 @@ HWTEST_F(MathApiTest, testnanf, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number SUB_KERNEL_MATH_MATH_NANL_0100
-* @tc.name test nanl api
-* @tc.desc [C- SOFTWARE -0100]
-**/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testnanl
+ * @tc.number SUB_KERNEL_MATH_MATH_NANL_0100
+ * @tc.desc   [C- SOFTWARE -0100]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(MathApiTest, testnanl, Function | MediumTest | Level1) {
     const int testCount = 3;
     const char *testValues[] = {"abc", "99", " "};
@@ -140,10 +168,14 @@ HWTEST_F(MathApiTest, testnanl, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_MATH_MATH_POW10F_0100
-* @tc.name       test pow10f api
-* @tc.desc       [C- SOFTWARE -0100]
-**/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testpowf10
+ * @tc.number SUB_KERNEL_MATH_MATH_POW10F_0100
+ * @tc.desc   [C- SOFTWARE -0100]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(MathApiTest, testpowf10, Function | MediumTest | Level1) {
     const int testCount = 3;
     float testValues[] = {0.0, 1.111111, -1.111111, 3.40282e+038};
@@ -156,10 +188,14 @@ HWTEST_F(MathApiTest, testpowf10, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_MATH_MATH_POW10L_0100
-* @tc.name       test pow10l api
-* @tc.desc       [C- SOFTWARE -0100]
-**/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testpowl10
+ * @tc.number SUB_KERNEL_MATH_MATH_POW10L_0100
+ * @tc.desc   [C- SOFTWARE -0100]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(MathApiTest, testpowl10, Function | MediumTest | Level1) {
     const int testCount = 3;
     long double testValues[] = {0.0000000000000000, 1.1111111111111111111, -1.1111111111111111111};
@@ -172,10 +208,14 @@ HWTEST_F(MathApiTest, testpowl10, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_MATH_MATH_SIGNBIT_0100
-* @tc.name       test signbit api
-* @tc.desc       [C- SOFTWARE -0100]
-**/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testsignbit
+ * @tc.number SUB_KERNEL_MATH_MATH_SIGNBIT_0100
+ * @tc.desc   [C- SOFTWARE -0100]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(MathApiTest, testsignbit, Function | MediumTest | Level1) {
     const int testCount = 3;
     float testValues[] = {3.000001, -3.000001, 0.0};
@@ -188,10 +228,14 @@ HWTEST_F(MathApiTest, testsignbit, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number     SUB_KERNEL_MATH_MATH_SIGNIFICAND_0100
-* @tc.name       test significand api
-* @tc.desc       [C- SOFTWARE -0100]
-**/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testsignificand
+ * @tc.number SUB_KERNEL_MATH_MATH_SIGNIFICAND_0100
+ * @tc.desc   [C- SOFTWARE -0100]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(MathApiTest, testsignificand, Function | MediumTest | Level1) {
     const int testCount = 4;
     double testValues[] = {3.0000001, -3.0000001, 0.0000000, 3.40282e+038};
@@ -204,10 +248,14 @@ HWTEST_F(MathApiTest, testsignificand, Function | MediumTest | Level1) {
 }
 
 /**
-* @tc.number SUB_KERNEL_MATH_MATH_SIGNIFICANDF_0100
-* @tc.name test significandf api
-* @tc.desc [C- SOFTWARE -0100]
-**/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testsignificandf
+ * @tc.number SUB_KERNEL_MATH_MATH_SIGNIFICANDF_0100
+ * @tc.desc   [C- SOFTWARE -0100]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(MathApiTest, testsignificandf, Function | MediumTest | Level1) {
     const int testCount = 4;
     float testValues[] = {3.000001, -3.000001, 0.000000, 3.40282e+038};

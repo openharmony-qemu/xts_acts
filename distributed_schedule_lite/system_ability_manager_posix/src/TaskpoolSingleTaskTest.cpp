@@ -343,10 +343,14 @@ protected:
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_Taskpool_SingleTask_0010
- * @tc.name      : Service with PRI_LOW priority function is ok
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testSingleTask0010
+ * @tc.number DMSLite_SAMGR_Taskpool_SingleTask_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(TaskpoolSingleTaskTest, testSingleTask0010, Function | MediumTest | Level2)
 {
     // test featureApi function
@@ -404,10 +408,14 @@ HWTEST_F(TaskpoolSingleTaskTest, testSingleTask0010, Function | MediumTest | Lev
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_Taskpool_SingleTask_0020
- * @tc.name      : Service with PRI_BELOW_NORMAL priority function is ok
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testSingleTask0020
+ * @tc.number DMSLite_SAMGR_Taskpool_SingleTask_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(TaskpoolSingleTaskTest, testSingleTask0020, Function | MediumTest | Level2)
 {
     DemoApi *demoApi = GetIUnknown("SingleTS02", "featureName501");
@@ -459,10 +467,14 @@ HWTEST_F(TaskpoolSingleTaskTest, testSingleTask0020, Function | MediumTest | Lev
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_Taskpool_SingleTask_0030
- * @tc.name      : Service with PRI_NORMAL priority function is ok
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testSingleTask0030
+ * @tc.number DMSLite_SAMGR_Taskpool_SingleTask_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(TaskpoolSingleTaskTest, testSingleTask0030, Function | MediumTest | Level2)
 {
     DemoApi *demoApi = GetIUnknown("SingleTS03", "featureName501");
@@ -514,10 +526,14 @@ HWTEST_F(TaskpoolSingleTaskTest, testSingleTask0030, Function | MediumTest | Lev
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_Taskpool_SingleTask_0040
- * @tc.name      : Service with PRI_ABOVE_NORMAL priority function is ok
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testSingleTask0040
+ * @tc.number DMSLite_SAMGR_Taskpool_SingleTask_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(TaskpoolSingleTaskTest, testSingleTask0040, Function | MediumTest | Level2)
 {
     DemoApi *demoApi = GetIUnknown("SingleTS04", "featureName501");
@@ -568,12 +584,16 @@ HWTEST_F(TaskpoolSingleTaskTest, testSingleTask0040, Function | MediumTest | Lev
     ASSERT_EQ(g_service[INDEX3].serviceCalledCount == 1, TRUE);
 };
 
-/**
- * @tc.number    : DMSLite_SAMGR_Taskpool_SingleTask_0050
- * @tc.name      : Service initialization order depends on service priority
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
 #ifndef __LINUX__
+/**
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testSingleTask0050
+ * @tc.number testSingleTask0050
+ * @tc.desc   testSingleTask0050
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(TaskpoolSingleTaskTest, testSingleTask0050, Function | MediumTest | Level2)
 {
     for (int i = 0; i < VECTOR_Num(&g_nodeVector); i++) {

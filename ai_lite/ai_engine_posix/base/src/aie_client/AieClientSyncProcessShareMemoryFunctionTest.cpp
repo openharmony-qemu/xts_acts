@@ -113,9 +113,13 @@ static void TestAieClientSyncProcess(bool isAsync, bool isSyncProcessInputInfoNu
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSyncProcessShareMemory_0100
- * @tc.name   : 01. algorithmInfo中isAsync=false，inputInfo不为空，调用AieClientSyncProcess返回成功_共享内存传大数据
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testAieClientSyncProcessShareMemoryFunction0101
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiAPI_AIEClient_AieClientSyncProcessShareMemory_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(AieClientSyncProcessShareMemoryFunctionTest, testAieClientSyncProcessShareMemoryFunction0101,
     Function | MediumTest | Level3)

@@ -61,10 +61,14 @@ protected:
 };
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0010
- * @tc.name      : Normal package with bundle name and ability name can be parsed correctly
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0010
+ * @tc.number DMSLite_DMS_MsgParserFunc_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0010, Function | MediumTest | Level1) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01, 0x02, 0x14, 0x63, 0x6f, 0x6d, 0x2e, 0x6f,
@@ -90,10 +94,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0010, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0020
- * @tc.name      : When parse abnormal package with null payload user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0020
+ * @tc.number DMSLite_DMS_MsgParserFunc_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0020, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01, 0x02, 0x14, 0x63, 0x6f, 0x6d, 0x2e, 0x68,
@@ -113,10 +121,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0020, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0030
- * @tc.name      : When parse abnormal package that size less than min user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0030
+ * @tc.number DMSLite_DMS_MsgParserFunc_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0030, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01
@@ -131,10 +143,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0030, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0040
- * @tc.name      : When parse abnormal package longer than max length user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0040
+ * @tc.number DMSLite_DMS_MsgParserFunc_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0040, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01, 0x02, 0x14, 0x63, 0x6f, 0x6d, 0x2e, 0x68,
@@ -154,10 +170,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0040, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0050
- * @tc.name      : When parse abnormal package lack of COMMAND_ID node user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0050
+ * @tc.number DMSLite_DMS_MsgParserFunc_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0050, Function | MediumTest | Level2) {
     uint8_t buffer[] = { };
 
@@ -171,10 +191,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0050, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0060
- * @tc.name      : When parse abnormal package lack of BUNDLE_NAME node user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0060
+ * @tc.number DMSLite_DMS_MsgParserFunc_0060
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0060, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01,
@@ -189,10 +213,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0060, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0070
- * @tc.name      : When parse abnormal package lack of ABILITY_NAME node user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0070
+ * @tc.number DMSLite_DMS_MsgParserFunc_0070
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0070, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01, 0x02, 0x14, 0x63, 0x6f, 0x6d, 0x2e, 0x68,
@@ -209,10 +237,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0070, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0080
- * @tc.name      : When parse abnormal package lack of SIGNATURE node user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0080
+ * @tc.number DMSLite_DMS_MsgParserFunc_0080
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0080, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01, 0x02, 0x14, 0x63, 0x6f, 0x6d, 0x2e, 0x68,
@@ -230,10 +262,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0080, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0090
- * @tc.name      : When parse abnormal package with an additional node user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0090
+ * @tc.number DMSLite_DMS_MsgParserFunc_0090
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0090, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01, 0x02, 0x14, 0x63, 0x6f, 0x6d, 0x2e, 0x68,
@@ -253,10 +289,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0090, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0100
- * @tc.name      : When parse abnormal package with node type sequence in non-continuous order user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0100
+ * @tc.number DMSLite_DMS_MsgParserFunc_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0100, Function | MediumTest | Level2) {
     // this sequence is: node1 node2 node4
     uint8_t buffer[] = {
@@ -275,10 +315,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0100, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0110
- * @tc.name      : When parse abnormal package with node type sequence in disorder user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0110
+ * @tc.number DMSLite_DMS_MsgParserFunc_0110
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0110, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x02, 0x14, 0x63, 0x6f, 0x6d, 0x2e, 0x68, 0x75, 0x61, 0x77,
@@ -296,10 +340,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0110, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0120
- * @tc.name      : When parse abnormal package with duplicated COMMAND_ID node user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0120
+ * @tc.number DMSLite_DMS_MsgParserFunc_0120
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0120, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01, 0x01, 0x01, 0x00, 0x02, 0x14, 0x63, 0x6f,
@@ -319,10 +367,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0120, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0130
- * @tc.name      : When parse abnormal package with duplicated BUNDLE_NAME node user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0130
+ * @tc.number DMSLite_DMS_MsgParserFunc_0130
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0130, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01,
@@ -344,10 +396,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0130, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0140
- * @tc.name      : When parse abnormal package with duplicated ABILITY_NAME node user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0140
+ * @tc.number DMSLite_DMS_MsgParserFunc_0140
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0140, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01,
@@ -369,10 +425,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0140, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0150
- * @tc.name      : When parse abnormal package with duplicated SIGNATURE node user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0150
+ * @tc.number DMSLite_DMS_MsgParserFunc_0150
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0150, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01,
@@ -393,10 +453,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0150, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0160
- * @tc.name      : When parse abnormal package which BUNDLE_NAME lack of length attribute user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0160
+ * @tc.number DMSLite_DMS_MsgParserFunc_0160
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0160, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01, 0x02
@@ -412,10 +476,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0160, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0170
- * @tc.name      : When parse abnormal package which ABILITY_NAME lack of length attribute user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0170
+ * @tc.number DMSLite_DMS_MsgParserFunc_0170
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0170, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01, 0x02, 0x14, 0x63, 0x6f, 0x6d, 0x2e, 0x68,
@@ -433,10 +501,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0170, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0180
- * @tc.name      : When parse abnormal package which CALLER_SIGNATURE lack of length attribute user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0180
+ * @tc.number DMSLite_DMS_MsgParserFunc_0180
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0180, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01, 0x02, 0x14, 0x63, 0x6f, 0x6d, 0x2e, 0x68,
@@ -456,10 +528,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0180, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0190
- * @tc.name      : When parse abnormal package with COMMAND_ID length 0 user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0190
+ * @tc.number DMSLite_DMS_MsgParserFunc_0190
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0190, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x00, 0x02, 0x14, 0x63, 0x6f, 0x6d, 0x2e, 0x68,
@@ -480,10 +556,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0190, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0200
- * @tc.name      : When parse abnormal package with BUNDLE_NAME length 0 user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0200
+ * @tc.number DMSLite_DMS_MsgParserFunc_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0200, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01,
@@ -502,10 +582,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0200, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0210
- * @tc.name      : When parse abnormal package with ABILITY_NAME length 0 user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0210
+ * @tc.number DMSLite_DMS_MsgParserFunc_0210
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0210, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01, 
@@ -525,10 +609,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0210, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0220
- * @tc.name      : When parse abnormal package with SIGNATURE length 0 user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0220
+ * @tc.number DMSLite_DMS_MsgParserFunc_0220
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0220, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01, 0x02, 0x14, 0x63, 0x6f, 0x6d, 0x2e, 0x68,
@@ -548,10 +636,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0220, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0230
- * @tc.name      : When parse abnormal package that COMMAND_ID lake of value user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0230
+ * @tc.number DMSLite_DMS_MsgParserFunc_0230
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0230, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01
@@ -565,10 +657,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0230, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0240
- * @tc.name      : When parse abnormal package that BUNDLE_NAME lake of value user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0240
+ * @tc.number DMSLite_DMS_MsgParserFunc_0240
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0240, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01, 0x02, 0x14
@@ -585,10 +681,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0240, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0250
- * @tc.name      : When parse abnormal package that ABILITY_NAME lake of value user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0250
+ * @tc.number DMSLite_DMS_MsgParserFunc_0250
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0250, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01, 0x02, 0x14, 0x63, 0x6f, 0x6d, 0x2e, 0x68,
@@ -607,10 +707,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0250, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0260
- * @tc.name      : When parse abnormal package that CALLER_SIGNATURE lake of value user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0260
+ * @tc.number DMSLite_DMS_MsgParserFunc_0260
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0260, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01, 0x02, 0x14, 0x63, 0x6f, 0x6d, 0x2e, 0x68,
@@ -631,10 +735,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0260, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0270
- * @tc.name      : When parse abnormal package which BUNDLE_NAME value is not string user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0270
+ * @tc.number DMSLite_DMS_MsgParserFunc_0270
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0270, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01,
@@ -654,10 +762,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0270, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0280
- * @tc.name      : When parse abnormal package which ABILITY_NAME value is not string user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0280
+ * @tc.number DMSLite_DMS_MsgParserFunc_0280
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0280, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01,
@@ -677,10 +789,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0280, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0290
- * @tc.name      : When parse abnormal package which SIGNATURE value is not string user get error code
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0290
+ * @tc.number DMSLite_DMS_MsgParserFunc_0290
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0290, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01,
@@ -700,10 +816,14 @@ HWTEST_F(MsgParserFuncTest, testMsgParserFunc0290, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserFunc_0300
- * @tc.name      : Normal package with 255 bytes long bundle name can be parsed
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserFunc0300
+ * @tc.number DMSLite_DMS_MsgParserFunc_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserFuncTest, testMsgParserFunc0300, Function | MediumTest | Level2) {
     uint8_t buffer[] = {
         0x01, 0x01, 0x01, 0x02, 0x82, 0x00, 0x63, 0x6f, 0x6d, 0x2e, 0x61,

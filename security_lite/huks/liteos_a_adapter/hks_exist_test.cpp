@@ -61,9 +61,13 @@ const struct HksTestKeyExistParams g_testKeyExistParams[] = {
 };
 
 /**
- * @tc.name: HksExistTest.HksExistTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   HksExistTest001
+ * @tc.number HksExistTest001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksExistTest, HksExistTest001, TestSize.Level1)
 {

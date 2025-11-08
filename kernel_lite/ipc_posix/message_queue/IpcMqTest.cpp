@@ -26,10 +26,14 @@
 
 using namespace testing::ext;
 
-/* *
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testMqOneLevelCom
  * @tc.number SUB_KERNEL_IPC_MQ_0100
- * @tc.name   mq_send and mq_receive function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(IpcMqTest, testMqOneLevelCom, Function | MediumTest | Level0)
 {
@@ -60,10 +64,14 @@ HWTEST_F(IpcMqTest, testMqOneLevelCom, Function | MediumTest | Level0)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testMqTimedOneLevelCom
  * @tc.number SUB_KERNEL_IPC_MQ_0200
- * @tc.name   mq_timedsend and mq_timedreceive function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IpcMqTest, testMqTimedOneLevelCom, Function | MediumTest | Level1)
 {
@@ -100,10 +108,14 @@ HWTEST_F(IpcMqTest, testMqTimedOneLevelCom, Function | MediumTest | Level1)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testMqAllOneLevelCom
  * @tc.number SUB_KERNEL_IPC_MQ_0300
- * @tc.name   all send and all receive function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqAllOneLevelCom, Function | MediumTest | Level2)
 {
@@ -167,10 +179,14 @@ HWTEST_F(IpcMqTest, testMqAllOneLevelCom, Function | MediumTest | Level2)
                                        << " errno = " << errno << " strerror(errno) = " << strerror(errno);
 }
 
-/* *
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testMqTwoLevelCom
  * @tc.number SUB_KERNEL_IPC_MQ_0400
- * @tc.name   mq_send and mq_receive function test in child and parent process
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IpcMqTest, testMqTwoLevelCom, Function | MediumTest | Level1)
 {
@@ -226,10 +242,14 @@ FINISH:
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testMqTimedTwoLevelCom
  * @tc.number SUB_KERNEL_IPC_MQ_0500
- * @tc.name   mq_timedsend and mq_timedreceive function test in child and parent process
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IpcMqTest, testMqTimedTwoLevelCom, Function | MediumTest | Level1)
 {
@@ -292,10 +312,14 @@ FINISH:
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testMqAllTwoLevelCom
  * @tc.number SUB_KERNEL_IPC_MQ_0600
- * @tc.name   all send and all receive function test in child and parent process
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IpcMqTest, testMqAllTwoLevelCom, Function | MediumTest | Level1)
 {
@@ -371,10 +395,14 @@ static void *PthreadCom(void *arg)
     return nullptr;
 }
 
-/* *
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testMqTwoThreadCom
  * @tc.number SUB_KERNEL_IPC_MQ_0700
- * @tc.name   mq_send and mq_receive function test in thread and process
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IpcMqTest, testMqTwoThreadCom, Function | MediumTest | Level1)
 {
@@ -433,10 +461,14 @@ static void *PthreadTimedCom(void *arg)
     return nullptr;
 }
 
-/* *
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testMqTimedTwoThreadCom
  * @tc.number SUB_KERNEL_IPC_MQ_0800
- * @tc.name   mq_timedsend and mq_timedreceive function test in thread and process
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IpcMqTest, testMqTimedTwoThreadCom, Function | MediumTest | Level1)
 {
@@ -500,10 +532,14 @@ static void *PthreadAllCom(void *arg)
     return nullptr;
 }
 
-/* *
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testMqAllTwoThreadCom
  * @tc.number SUB_KERNEL_IPC_MQ_0900
- * @tc.name   all send and all receive function test in thread and process
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IpcMqTest, testMqAllTwoThreadCom, Function | MediumTest | Level1)
 {
@@ -537,10 +573,14 @@ HWTEST_F(IpcMqTest, testMqAllTwoThreadCom, Function | MediumTest | Level1)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testMqThreeLevelCom
  * @tc.number SUB_KERNEL_IPC_MQ_1000
- * @tc.name   all send and all receive function test in more process
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqThreeLevelCom, Function | MediumTest | Level2)
 {
@@ -623,10 +663,14 @@ FINISH:
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testMqMinMaxLen
  * @tc.number SUB_KERNEL_IPC_MQ_1100
- * @tc.name   mq_send and mq_receive max packet function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqMinMaxLen, Function | MediumTest | Level2)
 {
@@ -656,10 +700,14 @@ HWTEST_F(IpcMqTest, testMqMinMaxLen, Function | MediumTest | Level2)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testMqSetGetAttr
  * @tc.number SUB_KERNEL_IPC_MQ_1200
- * @tc.name   mq_setattr set and clean mq_flags for O_NONBLOCK function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IpcMqTest, testMqSetGetAttr, Function | MediumTest | Level1)
 {

@@ -37,9 +37,13 @@ protected:
 };
 
 /**
- * @tc.number    : Sub_Dfx_Dft_HiLog_Cortexaapi_0100
- * @tc.name      : HiLog_DEBUG parameter legal test (Cortex-A, C)
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   subDfxDftHiLogCortexaapi0100
+ * @tc.number Sub_Dfx_Dft_HiLog_Cortexaapi_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi0100, Function | MediumTest | Level0)
 {
@@ -48,9 +52,13 @@ HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi0100, Function | MediumTest | Level0
 
 
 /**
- * @tc.number    : Sub_Dfx_Dft_HiLog_Cortexaapi_0200
- * @tc.name      : HILOG_INFO parameter legal test (Cortex-A, C)
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   subDfxDftHiLogCortexaapi0200
+ * @tc.number Sub_Dfx_Dft_HiLog_Cortexaapi_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi0200, Function | MediumTest | Level1)
 {
@@ -58,9 +66,13 @@ HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi0200, Function | MediumTest | Level1
 }
 
 /**
- * @tc.number    : Sub_Dfx_Dft_HiLog_Cortexaapi_0300
- * @tc.name      : HILOG_WARN parameter legal test (Cortex-A, C)
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   subDfxDftHiLogCortexaapi0300
+ * @tc.number Sub_Dfx_Dft_HiLog_Cortexaapi_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi0300, Function | MediumTest | Level1)
 {
@@ -68,9 +80,13 @@ HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi0300, Function | MediumTest | Level1
 }
 
 /**
- * @tc.number    : Sub_Dfx_Dft_HiLog_Cortexaapi_0400
- * @tc.name      : HILOG_ERROR parameter legal test (Cortex-A, C)
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   subDfxDftHiLogCortexaapi0400
+ * @tc.number Sub_Dfx_Dft_HiLog_Cortexaapi_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi0400, Function | MediumTest | Level1)
 {
@@ -78,9 +94,13 @@ HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi0400, Function | MediumTest | Level1
 }
 
 /**
- * @tc.number    : Sub_Dfx_Dft_HiLog_Cortexaapi_0500
- * @tc.name      : HILOG_FATAL parameter legal test (Cortex-A, C)
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   subDfxDftHiLogCortexaapi0500
+ * @tc.number Sub_Dfx_Dft_HiLog_Cortexaapi_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi0500, Function | MediumTest | Level1)
 {
@@ -88,9 +108,13 @@ HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi0500, Function | MediumTest | Level1
 }
 
 /**
- * @tc.number    : Sub_Dfx_Dft_HiLog_Cortexaapi_0600
- * @tc.name      : HiLog::Debug parameter legal test (Cortex-A, C)
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   subDfxDftHiLogCortexaapi0600
+ * @tc.number Sub_Dfx_Dft_HiLog_Cortexaapi_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi0600, Function | MediumTest | Level1)
 {
@@ -100,9 +124,13 @@ HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi0600, Function | MediumTest | Level1
 }
 
 /**
- * @tc.number    : Sub_Dfx_Dft_HiLog_Cortexaapi_0700
- * @tc.name      : HiLog::Error parameter legal test (Cortex-A, C)
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   subDfxDftHiLogCortexaapi0700
+ * @tc.number Sub_Dfx_Dft_HiLog_Cortexaapi_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi0700, Function | MediumTest | Level1)
 {
@@ -112,9 +140,13 @@ HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi0700, Function | MediumTest | Level1
 }
 
 /**
- * @tc.number    : Sub_Dfx_Dft_HiLog_Cortexaapi_0800
- * @tc.name      : HiLog::Fatal parameter legal test (Cortex-A, C)
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   subDfxDftHiLogCortexaapi0800
+ * @tc.number Sub_Dfx_Dft_HiLog_Cortexaapi_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi0800, Function | MediumTest | Level1)
 {
@@ -124,9 +156,13 @@ HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi0800, Function | MediumTest | Level1
 }
 
 /**
- * @tc.number    : Sub_Dfx_Dft_HiLog_Cortexaapi_0900
- * @tc.name      : HiLog::Info parameter legal test (Cortex-A, C)
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   subDfxDftHiLogCortexaapi0900
+ * @tc.number Sub_Dfx_Dft_HiLog_Cortexaapi_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi0900, Function | MediumTest | Level1)
 {
@@ -136,9 +172,13 @@ HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi0900, Function | MediumTest | Level1
 }
 
 /**
- * @tc.number    : Sub_Dfx_Dft_HiLog_Cortexaapi_1000
- * @tc.name      : HiLog::Warn parameter legal test (Cortex-A, C)
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   subDfxDftHiLogCortexaapi1000
+ * @tc.number Sub_Dfx_Dft_HiLog_Cortexaapi_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HiLogTest, subDfxDftHiLogCortexaapi1000, Function | MediumTest | Level1)
 {

@@ -93,10 +93,14 @@ protected:
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterDefaultFeatureApi_0010
- * @tc.name      : Valid API can be registered under default feature
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testRegisterDefaultFeatureApi0010
+ * @tc.number DMSLite_SAMGR_RegisterDefaultFeatureApi_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(DefaultFeatureApiTest, testRegisterDefaultFeatureApi0010, Function | MediumTest | Level1) {
     BOOL result = SAMGR_GetInstance()->RegisterDefaultFeatureApi("serviceName301", (IUnknown *)&g_api);
     ASSERT_EQ(result, TRUE);
@@ -105,40 +109,56 @@ HWTEST_F(DefaultFeatureApiTest, testRegisterDefaultFeatureApi0010, Function | Me
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterDefaultFeatureApi_0020
- * @tc.name      : API failed to register if the specified service is null
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testRegisterDefaultFeatureApi0020
+ * @tc.number DMSLite_SAMGR_RegisterDefaultFeatureApi_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(DefaultFeatureApiTest, testRegisterDefaultFeatureApi0020, Function | MediumTest | Level2) {
     BOOL result = SAMGR_GetInstance()->RegisterDefaultFeatureApi(NULL, (IUnknown *)&g_api);
     ASSERT_EQ(result, FALSE);
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterDefaultFeatureApi_0030
- * @tc.name      : API failed to register if the specified service does not exist
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testRegisterDefaultFeatureApi0030
+ * @tc.number DMSLite_SAMGR_RegisterDefaultFeatureApi_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(DefaultFeatureApiTest, testRegisterDefaultFeatureApi0030, Function | MediumTest | Level2) {
     BOOL result = SAMGR_GetInstance()->RegisterDefaultFeatureApi("noExistService", (IUnknown *)&g_api);
     ASSERT_EQ(result, FALSE);
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterDefaultFeatureApi_0040
- * @tc.name      : API failed to register if the target API is nullptr
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testRegisterDefaultFeatureApi0040
+ * @tc.number DMSLite_SAMGR_RegisterDefaultFeatureApi_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(DefaultFeatureApiTest, testRegisterDefaultFeatureApi0040, Function | MediumTest | Level2) {
     BOOL result = SAMGR_GetInstance()->RegisterDefaultFeatureApi("serviceName301", nullptr);
     ASSERT_EQ(result, FALSE);
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterDefaultFeatureApi_0050
- * @tc.name      : API failed to register for the target API already exist
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testRegisterDefaultFeatureApi0050
+ * @tc.number DMSLite_SAMGR_RegisterDefaultFeatureApi_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(DefaultFeatureApiTest, testRegisterDefaultFeatureApi0050, Function | MediumTest | Level2) {
     SAMGR_GetInstance()->RegisterDefaultFeatureApi("serviceName301", (IUnknown *)&g_api);
     BOOL result = SAMGR_GetInstance()->RegisterDefaultFeatureApi("serviceName301", (IUnknown *)&g_api);
@@ -148,10 +168,14 @@ HWTEST_F(DefaultFeatureApiTest, testRegisterDefaultFeatureApi0050, Function | Me
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_GetDefaultFeatureApi_0010
- * @tc.name      : API can be queried out from service
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testGetDefaultFeatureApi0010
+ * @tc.number DMSLite_SAMGR_GetDefaultFeatureApi_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(DefaultFeatureApiTest, testGetDefaultFeatureApi0010, Function | MediumTest | Level2) {
     SAMGR_GetInstance()->RegisterDefaultFeatureApi("serviceName301", (IUnknown *)&g_api);
 
@@ -162,10 +186,14 @@ HWTEST_F(DefaultFeatureApiTest, testGetDefaultFeatureApi0010, Function | MediumT
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_GetDefaultFeatureApi_0020
- * @tc.name      : It's nullptr result for nullptr service
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testGetDefaultFeatureApi0020
+ * @tc.number DMSLite_SAMGR_GetDefaultFeatureApi_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(DefaultFeatureApiTest, testGetDefaultFeatureApi0020, Function | MediumTest | Level2) {
     SAMGR_GetInstance()->RegisterDefaultFeatureApi("serviceName301", (IUnknown *)&g_api);
 
@@ -176,10 +204,14 @@ HWTEST_F(DefaultFeatureApiTest, testGetDefaultFeatureApi0020, Function | MediumT
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_GetDefaultFeatureApi_0030
- * @tc.name      : The query result is nullptr for the specified service not exist
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testGetDefaultFeatureApi0030
+ * @tc.number DMSLite_SAMGR_GetDefaultFeatureApi_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(DefaultFeatureApiTest, testGetDefaultFeatureApi0030, Function | MediumTest | Level2) {
     SAMGR_GetInstance()->RegisterDefaultFeatureApi("serviceName301", (IUnknown *)&g_api);
 
@@ -190,10 +222,14 @@ HWTEST_F(DefaultFeatureApiTest, testGetDefaultFeatureApi0030, Function | MediumT
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_GetDefaultFeatureApi_0040
- * @tc.name      : The query result is the same for multi query operations
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testGetDefaultFeatureApi0040
+ * @tc.number DMSLite_SAMGR_GetDefaultFeatureApi_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(DefaultFeatureApiTest, testGetDefaultFeatureApi0040, Function | MediumTest | Level2) {
     SAMGR_GetInstance()->RegisterDefaultFeatureApi("serviceName301", (IUnknown *)&g_api);
 
@@ -205,10 +241,14 @@ HWTEST_F(DefaultFeatureApiTest, testGetDefaultFeatureApi0040, Function | MediumT
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterDefaultFeatureApi_0010
- * @tc.name      : Default feature API can be unregistered
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testUnregisterDefaultFeatureApi0010
+ * @tc.number DMSLite_SAMGR_UnregisterDefaultFeatureApi_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(DefaultFeatureApiTest, testUnregisterDefaultFeatureApi0010, Function | MediumTest | Level2) {
     SAMGR_GetInstance()->RegisterDefaultFeatureApi("serviceName301", (IUnknown *)&g_api);
 
@@ -217,10 +257,14 @@ HWTEST_F(DefaultFeatureApiTest, testUnregisterDefaultFeatureApi0010, Function | 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterDefaultFeatureApi_0020
- * @tc.name      : The unregister operation failed if serviceName is nullptr or empty
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testUnregisterDefaultFeatureApi0020
+ * @tc.number DMSLite_SAMGR_UnregisterDefaultFeatureApi_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(DefaultFeatureApiTest, testUnregisterDefaultFeatureApi0020, Function | MediumTest | Level2) {
     SAMGR_GetInstance()->RegisterDefaultFeatureApi("serviceName301", (IUnknown *)&g_api);
 
@@ -234,20 +278,28 @@ HWTEST_F(DefaultFeatureApiTest, testUnregisterDefaultFeatureApi0020, Function | 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterDefaultFeatureApi_0030
- * @tc.name      : The unregister operation failed if the specified service does not exist
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testUnregisterDefaultFeatureApi0030
+ * @tc.number DMSLite_SAMGR_UnregisterDefaultFeatureApi_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(DefaultFeatureApiTest, testUnregisterDefaultFeatureApi0030, Function | MediumTest | Level2) {
     IUnknown *resultIUnknown = SAMGR_GetInstance()->UnregisterDefaultFeatureApi("noExistService");
     ASSERT_EQ(resultIUnknown == nullptr, TRUE);
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterDefaultFeatureApi_0040
- * @tc.name      : Register and unregister default api repeatedly, no memory leak
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testUnregisterDefaultFeatureApi0040
+ * @tc.number DMSLite_SAMGR_UnregisterDefaultFeatureApi_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(DefaultFeatureApiTest, testUnregisterDefaultFeatureApi0040, Function | MediumTest | Level2) {
     // RegisterService and unregister default api over and over again, if there is memory leak samgr will crash
     for (int i = 0; i < PRESSURE_BASE; i++) {

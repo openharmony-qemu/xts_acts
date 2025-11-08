@@ -51,9 +51,13 @@ void *PthreadRWlockWW2(void *arg)
 }
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_RWLOCK_ALL_0100
- * @tc.name       test rdlock and wrlock, write - write
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadRWlockWW
+ * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadRWlockWW, Function | MediumTest | Level3)
 {
@@ -93,9 +97,13 @@ void *PthreadRWlockWR2(void *arg)
 }
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_RWLOCK_ALL_0200
- * @tc.name       test rdlock and wrlock, write - read
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadRWlockWR
+ * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadRWlockWR, Function | MediumTest | Level3)
 {
@@ -135,9 +143,13 @@ void *PthreadRWlockRR2(void *arg)
 }
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_RWLOCK_ALL_0300
- * @tc.name       test rdlock and wrlock, read - read
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadRWlockRR
+ * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadRWlockRR, Function | MediumTest | Level3)
 {
@@ -177,9 +189,13 @@ void *PthreadRWlockRW2(void *arg)
 }
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_RWLOCK_ALL_0400
- * @tc.name       test rdlock and wrlock, read - write
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadRWlockRW
+ * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadRWlockRW, Function | MediumTest | Level3)
 {
@@ -218,9 +234,13 @@ void *PthreadRWtrylockWR2(void *arg)
 }
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_RWLOCK_ALL_0500
- * @tc.name       test tryrdlock and trywrlock, write - read
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadRWtrylockWR
+ * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadRWtrylockWR, Function | MediumTest | Level3)
 {
@@ -259,9 +279,13 @@ void *PthreadRWtrylockRW2(void *arg)
 }
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_RWLOCK_ALL_0600
- * @tc.name       test tryrdlock and trywrlock, read - write
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadRWtrylockRW
+ * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadRWtrylockRW, Function | MediumTest | Level3)
 {
@@ -303,9 +327,13 @@ void *PthreadTimdNoOutRWlockWR2(void *arg)
 }
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_RWLOCK_ALL_0700
- * @tc.name       test pthread_rwlock_timedrdlock with no timeout , write - read
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadTimdNoOutRWlockWR
+ * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadTimdNoOutRWlockWR, Function | MediumTest | Level3)
 {
@@ -353,9 +381,13 @@ void *PthreadTimdOutRWlockWR2(void *arg)
 }
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_RWLOCK_ALL_0800
- * @tc.name       test pthread_rwlock_timedrdlock with timeout, write - read
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadTimdOutRWlockWR
+ * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadTimdOutRWlockWR, Function | MediumTest | Level3)
 {
@@ -403,9 +435,13 @@ void *PthreadTimdOutRWlockWW2(void *arg)
 }
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_RWLOCK_ALL_0900
- * @tc.name       test pthread_rwlock_timedwrlock with timeout, write - write
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadTimdOutRWlockWW
+ * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadTimdOutRWlockWW, Function | MediumTest | Level3)
 {
@@ -447,9 +483,13 @@ void *PthreadTimdNoOutRWlockWW2(void *arg)
 }
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_RWLOCK_ALL_1000
- * @tc.name       test pthread_rwlock_timedwrlock with no timeout, write - write
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadTimdNoOutRWlockWW
+ * @tc.number SUB_KERNEL_FUTEX_RWLOCK_ALL_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FutexTest, testPthreadTimdNoOutRWlockWW, Function | MediumTest | Level3)
 {
@@ -469,9 +509,13 @@ HWTEST_F(FutexTest, testPthreadTimdNoOutRWlockWW, Function | MediumTest | Level3
 /********************************************* Test case dividing line ***********************************************/
 
 /**
- * @tc.number     SUB_KERNEL_FUTEX_RWLOCKATTR_0100
- * @tc.name       test pthread_rwlockattr_init api
- * @tc.desc       [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPthreadRwlockAttr
+ * @tc.number SUB_KERNEL_FUTEX_RWLOCKATTR_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(FutexTest, testPthreadRwlockAttr, Function | MediumTest | Level1)
 {

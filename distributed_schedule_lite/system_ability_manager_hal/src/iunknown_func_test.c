@@ -142,9 +142,13 @@ static BOOL IUnknownTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_GetIUnknown_0010
- * @tc.name      : Use this macro GET_IUNKNOWN user can obtain the IUnknown interface from the subclass object
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testGetIUnknown0010
+ * @tc.number DMSLite_SAMGR_GetIUnknown_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IUnknownTestSuite, testGetIUnknown0010, Function | MediumTest | Level2)
 {
@@ -153,9 +157,13 @@ LITE_TEST_CASE(IUnknownTestSuite, testGetIUnknown0010, Function | MediumTest | L
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_GetObject_0010
- * @tc.name      : Use this macro GET_OBJECT user can obtain an outside object
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testGetObject0010
+ * @tc.number DMSLite_SAMGR_GetObject_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IUnknownTestSuite, testGetObject0010, Function | MediumTest | Level2)
 {
@@ -169,9 +177,13 @@ LITE_TEST_CASE(IUnknownTestSuite, testGetObject0010, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_QueryInterface_0010
- * @tc.name      : Use this api QueryInterface user can convert the object to the required subclass type
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testQueryInterface0010
+ * @tc.number DMSLite_SAMGR_QueryInterface_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0010, Function | MediumTest | Level2)
 {
@@ -188,9 +200,13 @@ LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0010, Function | MediumTest 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_QueryInterface_0020
- * @tc.name      : User can not get the required subclass type if the version does not have permission
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testQueryInterface0020
+ * @tc.number DMSLite_SAMGR_QueryInterface_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0020, Function | MediumTest | Level2)
 {
@@ -205,9 +221,13 @@ LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0020, Function | MediumTest 
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_QueryInterface_0030
- * @tc.name      : User can rewrite this api QueryInterface
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testQueryInterface0030
+ * @tc.number DMSLite_SAMGR_QueryInterface_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(IUnknownTestSuite, testQueryInterface0030, Function | MediumTest | Level2)
 {

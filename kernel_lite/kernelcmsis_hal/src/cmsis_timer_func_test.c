@@ -27,12 +27,6 @@ UINT16 g_cmsisTestTimeCount;
 #define TIMER_PERIODIC_COUNT 2
 
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is utils
- * @param        : module name is utilsFile
- * @param        : test suit name is CmsisTaskFuncTestSuite
- */
 LITE_TEST_SUIT(Cmsis, Cmsistimer, CmsisTimerFuncTestSuite);
 
 /**
@@ -68,9 +62,13 @@ static void CmsisTimerFunc002(void const *argument)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_0100
- * @tc.name      : timer operation for creat with parameter osTimerOnce
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerNew001
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerNew001, Function | MediumTest | Level1)
 {
@@ -83,9 +81,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerNew001, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_0200
- * @tc.name      : timer operation for creat with parameter osTimerPeriodic
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerNew002
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerNew002, Function | MediumTest | Level1)
 {
@@ -98,9 +100,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerNew002, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_0300
- * @tc.name      : timer creat operation with NULL func and parameter osTimerOnce
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerNew003
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerNew003, Function | MediumTest | Level1)
 {
@@ -112,9 +118,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerNew003, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_0400
- * @tc.name      : timer creat operation with NULL func and parameter osTimerPeriodic
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerNew004
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerNew004, Function | MediumTest | Level1)
 {
@@ -126,9 +136,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerNew004, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_0500
- * @tc.name      : timer operation for invalid timer type
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerNew005
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerNew005, Function | MediumTest | Level1)
 {
@@ -140,9 +154,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerNew005, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_0600
- * @tc.name      : timer operation for start with parameter osTimerOnce
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerStart001
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart001, Function | MediumTest | Level1)
 {
@@ -158,9 +176,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart001, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_0700
- * @tc.name      : timer operation for start with parameter osTimerPeriodic
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerStart002
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart002, Function | MediumTest | Level1)
 {
@@ -176,9 +198,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart002, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_0800
- * @tc.name      : timer operation for start with callback func and parameter osTimerOnce
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerStart003
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart003, Function | MediumTest | Level1)
 {
@@ -198,9 +224,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart003, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_0900
- * @tc.name      : timer operation for start with callback func and parameter osTimerPeriodic
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerStart004
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart004, Function | MediumTest | Level1)
 {
@@ -220,9 +250,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart004, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_1000
- * @tc.name      : timer start operation with ticks = 0 and parameter osTimerOnce
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerStart005
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart005, Function | MediumTest | Level1)
 {
@@ -237,9 +271,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart005, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_1100
- * @tc.name      : timer start operation with ticks = 0 and parameter osTimerPeriodic
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerStart006
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart006, Function | MediumTest | Level1)
 {
@@ -254,9 +292,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart006, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_1200
- * @tc.name      : timer start operation with timer_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerStart007
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart007, Function | MediumTest | Level1)
 {
@@ -267,9 +309,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStart007, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_1300
- * @tc.name      : timer operation for delete with parameter osTimerOnce
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerDelete001
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerDelete001, Function | MediumTest | Level1)
 {
@@ -285,9 +331,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerDelete001, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_1400
- * @tc.name      : timer operation for delete with parameter osTimerPeriodic
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerDelete002
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerDelete002, Function | MediumTest | Level1)
 {
@@ -303,9 +353,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerDelete002, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_1500
- * @tc.name      : timer operation for delete after osTimerStart with parameter osTimerOnce
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerDelete003
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerDelete003, Function | MediumTest | Level1)
 {
@@ -323,9 +377,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerDelete003, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_1600
- * @tc.name      : timer operation for delete after osTimerStart with parameter osTimerPeriodic
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerDelete004
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerDelete004, Function | MediumTest | Level1)
 {
@@ -343,9 +401,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerDelete004, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_1700
- * @tc.name      : timer delete operation with timer_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerDelete005
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerDelete005, Function | MediumTest | Level1)
 {
@@ -355,9 +417,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerDelete005, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_1800
- * @tc.name      : timer operation for stop after osTimerStart with parameter osTimerOnce
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerStop001
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStop001, Function | MediumTest | Level1)
 {
@@ -376,9 +442,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStop001, Function | MediumTes
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_1900
- * @tc.name      : timer operation for stop after osTimerStart with parameter osTimerPeriodic
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerStop002
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_1900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStop002, Function | MediumTest | Level1)
 {
@@ -397,9 +467,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStop002, Function | MediumTes
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_2000
- * @tc.name      : timer operation for stop with parameter osTimerOnce
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerStop003
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStop003, Function | MediumTest | Level1)
 {
@@ -416,9 +490,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStop003, Function | MediumTes
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_2100
- * @tc.name      : timer operation for stop with parameter osTimerPeriodic
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerStop004
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStop004, Function | MediumTest | Level1)
 {
@@ -435,9 +513,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStop004, Function | MediumTes
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_2200
- * @tc.name      : timer stop operation with timer_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerStop005
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStop005, Function | MediumTest | Level1)
 {
@@ -447,9 +529,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerStop005, Function | MediumTes
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_2300
- * @tc.name      : timer operation for running
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerIsRunning001
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning001, Function | MediumTest | Level1)
 {
@@ -465,9 +551,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning001, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_2400
- * @tc.name      : timer operation for running after osTimerStart
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerIsRunning002
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning002, Function | MediumTest | Level1)
 {
@@ -485,9 +575,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning002, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_2500
- * @tc.name      : timer operation for running after osTimerStart and osTimerStop
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerIsRunning003
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning003, Function | MediumTest | Level1)
 {
@@ -507,9 +601,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning003, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_2600
- * @tc.name      : timer operation for running after osTimerStart and osTimerDelete
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerIsRunning004
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning004, Function | MediumTest | Level1)
 {
@@ -527,9 +625,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning004, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_2700
- * @tc.name      : timer operation for running with parameter osTimerPeriodic
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerIsRunning005
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning005, Function | MediumTest | Level1)
 {
@@ -545,9 +647,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning005, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_2800
- * @tc.name      : timer operation for running after osTimerStart with parameter osTimerPeriodic
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerIsRunning006
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning006, Function | MediumTest | Level1)
 {
@@ -565,9 +671,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning006, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_2900
- * @tc.name      : timer operation for running after osTimerStart and osTimerStop with parameter osTimerPeriodic
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerIsRunning007
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_2900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning007, Function | MediumTest | Level1)
 {
@@ -587,9 +697,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning007, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_3000
- * @tc.name      : timer operation for running after osTimerStart and osTimerDelete with parameter osTimerPeriodic
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerIsRunning008
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_3000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning008, Function | MediumTest | Level1)
 {
@@ -607,9 +721,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning008, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_3100
- * @tc.name      : timer running inquiry with timer_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsTimerIsRunning009
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_3100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning009, Function | MediumTest | Level1)
 {
@@ -619,9 +737,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsTimerIsRunning009, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_3200
- * @tc.name      : os operation for get tick freq
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsKernelGetTickFreq001
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_3200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsKernelGetTickFreq001, Function | MediumTest | Level1)
 {
@@ -631,9 +753,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsKernelGetTickFreq001, Function | M
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_3300
- * @tc.name      : os operation for get sys time freq
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsKernelGetSysTimerFreq001
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_3300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsKernelGetSysTimerFreq001, Function | MediumTest | Level1)
 {
@@ -643,9 +769,13 @@ LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsKernelGetSysTimerFreq001, Function
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TIMER_OPERATION_3400
- * @tc.name      : os operation for get sys time count
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOsKernelGetSysTimerCount001
+ * @tc.number SUB_KERNEL_CMSIS_TIMER_OPERATION_3400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTimerFuncTestSuite, testOsKernelGetSysTimerCount001, Function | MediumTest | Level1)
 {

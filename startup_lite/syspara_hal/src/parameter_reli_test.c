@@ -21,13 +21,6 @@
 
 #define QUERY_TIMES 50
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow
- * and interface dependency
- * @param        : subsystem name is utils
- * @param        : module name is parameter
- * @param        : test suit name is ParameterReliTestSuite
- */
 LITE_TEST_SUIT(utils, parameter, ParameterReliTestSuite);
 
 /**
@@ -50,9 +43,13 @@ static BOOL ParameterReliTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_5800
- * @tc.name      : Obtaining ProductType for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli001
+ * @tc.number SUB_UTILS_PARAMETER_5800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli001,
@@ -67,9 +64,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_5900
- * @tc.name      : Obtaining Manufacture for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli002
+ * @tc.number SUB_UTILS_PARAMETER_5900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli002,
@@ -84,9 +85,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_6000
- * @tc.name      : Obtaining Brand for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli003
+ * @tc.number SUB_UTILS_PARAMETER_6000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli003,
@@ -101,9 +106,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_6100
- * @tc.name      : Obtaining MarketName for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli004
+ * @tc.number SUB_UTILS_PARAMETER_6100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli004,
@@ -118,9 +127,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_6200
- * @tc.name      : Obtaining ProductSeries for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli005
+ * @tc.number SUB_UTILS_PARAMETER_6200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli005,
@@ -135,9 +148,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_6300
- * @tc.name      : Obtaining ProductModel for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli006
+ * @tc.number SUB_UTILS_PARAMETER_6300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli006,
@@ -152,9 +169,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_6400
- * @tc.name      : Obtaining HardwareModel for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli007
+ * @tc.number SUB_UTILS_PARAMETER_6400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli007,
@@ -169,9 +190,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_6500
- * @tc.name      : Obtaining HardwareProfile for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli008
+ * @tc.number SUB_UTILS_PARAMETER_6500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli008,
@@ -186,9 +211,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_6600
- * @tc.name      : Obtaining Serial for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli009
+ * @tc.number SUB_UTILS_PARAMETER_6600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli009,
@@ -206,9 +235,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_6700
- * @tc.name      : Obtaining OsName for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli010
+ * @tc.number SUB_UTILS_PARAMETER_6700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli010,
@@ -223,9 +256,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_6800
- * @tc.name      : Obtaining DisplayVersion for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli011
+ * @tc.number SUB_UTILS_PARAMETER_6800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli011,
@@ -240,9 +277,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_6900
- * @tc.name      : Obtaining BootloaderVersion for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli012
+ * @tc.number SUB_UTILS_PARAMETER_6900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli012,
@@ -257,9 +298,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_7000
- * @tc.name      : Obtaining SecurityPatchTag for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli013
+ * @tc.number SUB_UTILS_PARAMETER_7000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli013,
@@ -274,9 +319,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_7100
- * @tc.name      : Obtaining AbiList for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli014
+ * @tc.number SUB_UTILS_PARAMETER_7100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli014,
@@ -291,9 +340,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_7200
- * @tc.name      : Obtaining FirstApiLevel for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli015
+ * @tc.number SUB_UTILS_PARAMETER_7200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli015,
@@ -309,9 +362,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_7300
- * @tc.name      : Obtaining IncrementalVersion for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli016
+ * @tc.number SUB_UTILS_PARAMETER_7300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli016,
@@ -326,9 +383,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_7400
- * @tc.name      : Obtaining VersionId for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli017
+ * @tc.number SUB_UTILS_PARAMETER_7400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli017,
@@ -343,9 +404,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_7500
- * @tc.name      : Obtaining BuildType for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli018
+ * @tc.number SUB_UTILS_PARAMETER_7500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli018,
@@ -360,9 +425,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_7600
- * @tc.name      : Obtaining BuildUser for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli019
+ * @tc.number SUB_UTILS_PARAMETER_7600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli019,
@@ -377,9 +446,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_7700
- * @tc.name      : Obtaining BuildHost for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli020
+ * @tc.number SUB_UTILS_PARAMETER_7700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli020,
@@ -394,9 +467,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_7800
- * @tc.name      : Obtaining BuildTime for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli021
+ * @tc.number SUB_UTILS_PARAMETER_7800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli021,
@@ -411,9 +488,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_7900
- * @tc.name      : Obtaining BuildRootHash for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli022
+ * @tc.number SUB_UTILS_PARAMETER_7900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli022,
@@ -428,9 +509,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_8000
- * @tc.name      : Obtaining SoftwareModel for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli023
+ * @tc.number SUB_UTILS_PARAMETER_8000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli023,
@@ -445,9 +530,13 @@ LITE_TEST_CASE(ParameterReliTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_8100
- * @tc.name      : Obtaining SdkApiLevel for multiple times
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   testObtainSysParaReli024
+ * @tc.number SUB_UTILS_PARAMETER_8100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterReliTestSuite,
                testObtainSysParaReli024,

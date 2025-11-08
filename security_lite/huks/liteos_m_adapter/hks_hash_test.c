@@ -171,9 +171,13 @@ static void ExecHksHashTest003(void const *argument)
 }
 
 /**
- * @tc.name: HksHashTest.HksHashTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   HksHashTest001
+ * @tc.number HksHashTest001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksHashTest, HksHashTest001, Level1)
 {
@@ -192,9 +196,13 @@ LITE_TEST_CASE(HksHashTest, HksHashTest001, Level1)
     LiteTestPrint("HksMacTest001 End2!\n");
 }
 /**
- * @tc.name: HksHashTest.HksHashTest002
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   HksHashTest002
+ * @tc.number HksHashTest002
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksHashTest, HksHashTest002, Level1)
 {
@@ -213,9 +221,13 @@ LITE_TEST_CASE(HksHashTest, HksHashTest002, Level1)
     LiteTestPrint("HksMacTest001 End2!\n");
 }
 /**
- * @tc.name: HksHashTest.HksHashTest003
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   HksHashTest003
+ * @tc.number HksHashTest003
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksHashTest, HksHashTest003, Level1)
 {

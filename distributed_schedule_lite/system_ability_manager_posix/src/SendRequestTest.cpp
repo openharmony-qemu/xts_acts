@@ -343,10 +343,14 @@ protected:
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_SyncCall_0010
- * @tc.name      : Service support synchronous call
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testSyncCall0010
+ * @tc.number DMSLite_SAMGR_SyncCall_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(SendRequestTest, testSyncCall0010, Function | MediumTest | Level1) {
     DemoApi *demoApi = GetIUnknown(S_SERVICE, S_FEATURE);
     if (demoApi == nullptr) {
@@ -371,10 +375,14 @@ HWTEST_F(SendRequestTest, testSyncCall0010, Function | MediumTest | Level1) {
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendRequest_0010
- * @tc.name      : Service support asynchronous call
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testSendRequest0010
+ * @tc.number DMSLite_SAMGR_SendRequest_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(SendRequestTest, testSendRequest0010, Function | MediumTest | Level1) {
     DemoApi *demoApi = GetIUnknown(S_SERVICE, S_FEATURE);
     if (demoApi == nullptr) {
@@ -411,10 +419,14 @@ HWTEST_F(SendRequestTest, testSendRequest0010, Function | MediumTest | Level1) {
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendRequest_0020
- * @tc.name      : Feature can send an asynchronous message to itself
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testSendRequest0020
+ * @tc.number DMSLite_SAMGR_SendRequest_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(SendRequestTest, testSendRequest0020, Function | MediumTest | Level2) {
     DemoApi *demoApi = GetIUnknown(S_SERVICE, S_FEATURE);
     if (demoApi == nullptr) {
@@ -450,10 +462,14 @@ HWTEST_F(SendRequestTest, testSendRequest0020, Function | MediumTest | Level2) {
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendRequest_0030
- * @tc.name      : Feature failed to send an asynchronous message if the specified identity does not exist
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testSendRequest0030
+ * @tc.number DMSLite_SAMGR_SendRequest_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(SendRequestTest, testSendRequest0030, Function | MediumTest | Level2) {
     DemoApi *demoApi = GetIUnknown(S_SERVICE, S_FEATURE);
     if (demoApi == nullptr) {
@@ -483,10 +499,14 @@ HWTEST_F(SendRequestTest, testSendRequest0030, Function | MediumTest | Level2) {
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendRequest_0040
- * @tc.name      : Feature can send an asynchronous message which length is 0
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testSendRequest0040
+ * @tc.number DMSLite_SAMGR_SendRequest_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(SendRequestTest, testSendRequest0040, Function | MediumTest | Level2) {
     DemoApi *demoApi = GetIUnknown(S_SERVICE, S_FEATURE);
     if (demoApi == nullptr) {
@@ -523,10 +543,14 @@ HWTEST_F(SendRequestTest, testSendRequest0040, Function | MediumTest | Level2) {
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendRequest_0050
- * @tc.name      : Feature failed to send an asynchronous message if id or request is nullptr
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testSendRequest0050
+ * @tc.number DMSLite_SAMGR_SendRequest_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(SendRequestTest, testSendRequest0050, Function | MediumTest | Level2) {
     DemoApi *demoApi = GetIUnknown(S_SERVICE, S_FEATURE);
     if (demoApi == nullptr) {
@@ -561,10 +585,14 @@ HWTEST_F(SendRequestTest, testSendRequest0050, Function | MediumTest | Level2) {
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendRequest_0060
- * @tc.name      : Samgr will not check the matching relationship between len and data
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testSendRequest0060
+ * @tc.number DMSLite_SAMGR_SendRequest_0060
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(SendRequestTest, testSendRequest0060, Function | MediumTest | Level2) {
     DemoApi *demoApi = GetIUnknown(S_SERVICE, S_FEATURE);
     if (demoApi == nullptr) {
@@ -612,10 +640,14 @@ HWTEST_F(SendRequestTest, testSendRequest0060, Function | MediumTest | Level2) {
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendRequest_0070
- * @tc.name      : Feature send an asynchronous message and register handler then can receive response
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testSendRequest0070
+ * @tc.number DMSLite_SAMGR_SendRequest_0070
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(SendRequestTest, testSendRequest0070, Function | MediumTest | Level2) {
     DemoApi *demoApi = GetIUnknown(S_SERVICE, S_FEATURE);
     if (demoApi == nullptr) {
@@ -658,10 +690,14 @@ HWTEST_F(SendRequestTest, testSendRequest0070, Function | MediumTest | Level2) {
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendRequest_0080
- * @tc.name      : Feature send an asynchronous message repeatedly, no memory leak
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testSendRequest0080
+ * @tc.number DMSLite_SAMGR_SendRequest_0080
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(SendRequestTest, testSendRequest0080, Function | MediumTest | Level2) {
     for (int i = 0; i < PRESSURE_L0; i++) {
         DemoApi *demoApi = GetIUnknown(S_SERVICE, S_FEATURE);
@@ -698,10 +734,14 @@ HWTEST_F(SendRequestTest, testSendRequest0080, Function | MediumTest | Level2) {
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_SendRequest_0090
- * @tc.name      : Feature send an asynchronous message with 0 len repeatedly, no memory leak
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   testSendRequest0090
+ * @tc.number DMSLite_SAMGR_SendRequest_0090
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(SendRequestTest, testSendRequest0090, Function | MediumTest | Level2) {
     for (int i = 0; i < PRESSURE_L0; i++) {
         DemoApi *demoApi = GetIUnknown(S_SERVICE, S_FEATURE);

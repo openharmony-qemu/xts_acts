@@ -38,9 +38,13 @@ protected:
 };
 
 /**
- * @tc.number    : SUB_Upgrade_API_0200
- * @tc.name      : Sets the switch for using the default upgrade package format
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   subUpgradeAPI0200
+ * @tc.number SUB_Upgrade_API_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(UpdateTest, subUpgradeAPI0200, Function | MediumTest | Level1)
 {
@@ -51,9 +55,13 @@ HWTEST_F(UpdateTest, subUpgradeAPI0200, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_Upgrade_API_0300
- * @tc.name      : Sets the switch for using the non default upgrade package format
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   subUpgradeAPI0300
+ * @tc.number SUB_Upgrade_API_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(UpdateTest, subUpgradeAPI0300, Function | MediumTest | Level1)
 {
@@ -64,9 +72,13 @@ HWTEST_F(UpdateTest, subUpgradeAPI0300, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_Upgrade_API_0400
- * @tc.name      : Sets the switch for using the default upgrade package format fail
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   subUpgradeAPI0400
+ * @tc.number SUB_Upgrade_API_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(UpdateTest, subUpgradeAPI0400, Function | MediumTest | Level1)
 {
@@ -77,9 +89,13 @@ HWTEST_F(UpdateTest, subUpgradeAPI0400, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : SUB_Upgrade_API_0500
- * @tc.name      : Obtains the index of the A or B partition to be upgraded
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   subUpgradeAPI0500
+ * @tc.number SUB_Upgrade_API_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(UpdateTest, subUpgradeAPI0500, Function | MediumTest | Level1)
 {

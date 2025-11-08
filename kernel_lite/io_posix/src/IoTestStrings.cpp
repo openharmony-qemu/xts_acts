@@ -20,9 +20,13 @@
 using namespace testing::ext;
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testFfsl
  * @tc.number SUB_KERNEL_IO_STRINGS_0100
- * @tc.name   ffsl basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testFfsl, Function | MediumTest | Level1)
 {
@@ -40,9 +44,13 @@ HWTEST_F(IoTest, testFfsl, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testStrncasecmp
  * @tc.number SUB_KERNEL_IO_STRINGS_0200
- * @tc.name   strncasecmp basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testStrncasecmp, Function | MediumTest | Level1)
 {
@@ -57,9 +65,13 @@ HWTEST_F(IoTest, testStrncasecmp, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testStrcasecmp
  * @tc.number SUB_KERNEL_IO_STRINGS_0300
- * @tc.name   strcasecmp basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testStrcasecmp, Function | MediumTest | Level1)
 {
@@ -74,9 +86,13 @@ HWTEST_F(IoTest, testStrcasecmp, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testIndex
  * @tc.number SUB_KERNEL_IO_STRINGS_0400
- * @tc.name   index basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testIndex, Function | MediumTest | Level1)
 {
@@ -96,9 +112,13 @@ HWTEST_F(IoTest, testIndex, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testRindex
  * @tc.number SUB_KERNEL_IO_STRINGS_0500
- * @tc.name   rindex basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testRindex, Function | MediumTest | Level1)
 {

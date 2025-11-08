@@ -28,9 +28,13 @@ class MemApiTest : public testing::Test {
 };
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMallocRandom
  * @tc.number SUB_KERNEL_MEM_MALLOC_0100
- * @tc.name   malloc function alloc random bytes test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(MemApiTest, testMallocRandom, Function | MediumTest | Level1)
 {
@@ -47,9 +51,13 @@ HWTEST_F(MemApiTest, testMallocRandom, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMallocZero
  * @tc.number SUB_KERNEL_MEM_MALLOC_0200
- * @tc.name   malloc function alloc 0 bytes test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MemApiTest, testMallocZero, Function | MediumTest | Level2)
 {
@@ -66,9 +74,13 @@ HWTEST_F(MemApiTest, testMallocZero, Function | MediumTest | Level2)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMallocENOMEM
  * @tc.number SUB_KERNEL_MEM_MALLOC_0300
- * @tc.name   malloc function errno for ENOMEM test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemApiTest, testMallocENOMEM, Function | MediumTest | Level3)
 {
@@ -94,9 +106,13 @@ HWTEST_F(MemApiTest, testMallocENOMEM, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testFreeNULL
  * @tc.number SUB_KERNEL_MEM_FREE_0100
- * @tc.name   free function ptr is NULL test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(MemApiTest, testFreeNULL, Function | MediumTest | Level1)
 {
@@ -111,9 +127,13 @@ HWTEST_F(MemApiTest, testFreeNULL, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testReallocMem
  * @tc.number SUB_KERNEL_MEM_REALLOC_0100
- * @tc.name   realloc function realloc memory test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemApiTest, testReallocMem, Function | MediumTest | Level3)
 {
@@ -161,9 +181,13 @@ HWTEST_F(MemApiTest, testReallocMem, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testReallocNULL
  * @tc.number SUB_KERNEL_MEM_REALLOC_0200
- * @tc.name   realloc function parameter is NULL test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemApiTest, testReallocNULL, Function | MediumTest | Level3)
 {
@@ -196,9 +220,13 @@ HWTEST_F(MemApiTest, testReallocNULL, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testReallocENOMEM
  * @tc.number SUB_KERNEL_MEM_REALLOC_0300
- * @tc.name   realloc function errno for ENOMEM test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemApiTest, testReallocENOMEM, Function | MediumTest | Level3)
 {
@@ -220,9 +248,13 @@ HWTEST_F(MemApiTest, testReallocENOMEM, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testCallocRandom
  * @tc.number SUB_KERNEL_MEM_CALLOC_0100
- * @tc.name   calloc function alloc random size memory block test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemApiTest, testCallocRandom, Function | MediumTest | Level3)
 {
@@ -245,9 +277,13 @@ HWTEST_F(MemApiTest, testCallocRandom, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testCallocZero
  * @tc.number SUB_KERNEL_MEM_CALLOC_0200
- * @tc.name   calloc function alloc zero size and zero memory block test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MemApiTest, testCallocZero, Function | MediumTest | Level2)
 {
@@ -270,9 +306,13 @@ HWTEST_F(MemApiTest, testCallocZero, Function | MediumTest | Level2)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testCallocENOMEM
  * @tc.number SUB_KERNEL_MEM_CALLOC_0300
- * @tc.name   calloc function errno for ENOMEM test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemApiTest, testCallocENOMEM, Function | MediumTest | Level3)
 {
@@ -299,9 +339,13 @@ HWTEST_F(MemApiTest, testCallocENOMEM, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testVallocBytes
  * @tc.number SUB_KERNEL_MEM_VALLOC_0100
- * @tc.name   valloc function alloc more than 4096 bytes test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemApiTest, testVallocBytes, Function | MediumTest | Level3)
 {
@@ -320,9 +364,13 @@ HWTEST_F(MemApiTest, testVallocBytes, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testVallocZero
  * @tc.number SUB_KERNEL_MEM_VALLOC_0200
- * @tc.name   valloc function alloc 0 byte test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MemApiTest, testVallocZero, Function | MediumTest | Level2)
 {
@@ -339,9 +387,13 @@ HWTEST_F(MemApiTest, testVallocZero, Function | MediumTest | Level2)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testVallocENOMEM
  * @tc.number SUB_KERNEL_MEM_VALLOC_0300
- * @tc.name   valloc function errno for ENOMEM test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemApiTest, testVallocENOMEM, Function | MediumTest | Level3)
 {
@@ -367,9 +419,13 @@ HWTEST_F(MemApiTest, testVallocENOMEM, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMemalignTwoAlign
  * @tc.number SUB_KERNEL_MEM_MEMALIHN_0100
- * @tc.name   memalign function alloc memory for 2 ^ n align test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MemApiTest, testMemalignTwoAlign, Function | MediumTest | Level2)
 {
@@ -388,9 +444,13 @@ HWTEST_F(MemApiTest, testMemalignTwoAlign, Function | MediumTest | Level2)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMemalignEINVAL
  * @tc.number SUB_KERNEL_MEM_MEMALIHN_0200
- * @tc.name   memalign function errno for EINVAL test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemApiTest, testMemalignEINVAL, Function | MediumTest | Level3)
 {
@@ -413,9 +473,13 @@ HWTEST_F(MemApiTest, testMemalignEINVAL, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMemalignENOMEM
  * @tc.number SUB_KERNEL_MEM_MEMALIHN_0300
- * @tc.name   memalign function errno for ENOMEM test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemApiTest, testMemalignENOMEM, Function | MediumTest | Level3)
 {
@@ -442,9 +506,13 @@ HWTEST_F(MemApiTest, testMemalignENOMEM, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPosixMemalignTwoAlign
  * @tc.number SUB_KERNEL_MEM_POSIX_MEMALIGN_0100
- * @tc.name   posix_memalign function alloc memory for 2 ^ n align test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemApiTest, testPosixMemalignTwoAlign, Function | MediumTest | Level3)
 {
@@ -468,9 +536,13 @@ HWTEST_F(MemApiTest, testPosixMemalignTwoAlign, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPosixMemalignZero
  * @tc.number SUB_KERNEL_MEM_POSIX_MEMALIGN_0200
- * @tc.name   posix_memalign function alloc 0 byte test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MemApiTest, testPosixMemalignZero, Function | MediumTest | Level2)
 {
@@ -489,9 +561,13 @@ HWTEST_F(MemApiTest, testPosixMemalignZero, Function | MediumTest | Level2)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPosixMemalignEINVAL
  * @tc.number SUB_KERNEL_MEM_POSIX_MEMALIGN_0300
- * @tc.name   posix_memalign function errno for EINVAL test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemApiTest, testPosixMemalignEINVAL, Function | MediumTest | Level3)
 {
@@ -522,9 +598,13 @@ HWTEST_F(MemApiTest, testPosixMemalignEINVAL, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testPosixMemalignENOMEM
  * @tc.number SUB_KERNEL_MEM_POSIX_MEMALIGN_0400
- * @tc.name   posix_memalign function errno for ENOMEM test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemApiTest, testPosixMemalignENOMEM, Function | MediumTest | Level3)
 {
@@ -550,9 +630,13 @@ HWTEST_F(MemApiTest, testPosixMemalignENOMEM, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testOpenMemstreamBase
  * @tc.number SUB_KERNEL_MEM_OPEN_MEMSTREAM_0100
- * @tc.name   open_memstream function test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MemApiTest, testOpenMemstreamBase, Function | MediumTest | Level2)
 {
@@ -604,9 +688,13 @@ HWTEST_F(MemApiTest, testOpenMemstreamBase, Function | MediumTest | Level2)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMemset
  * @tc.number SUB_KERNEL_MEM_MEMSET_0100
- * @tc.name   memset function set buffer value test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(MemApiTest, testMemset, Function | MediumTest | Level1)
 {
@@ -631,9 +719,13 @@ HWTEST_F(MemApiTest, testMemset, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMemcpy
  * @tc.number SUB_KERNEL_MEM_MEMCPY_0100
- * @tc.name   memcpy function copy buffer test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MemApiTest, testMemcpy, Function | MediumTest | Level2)
 {
@@ -660,9 +752,13 @@ HWTEST_F(MemApiTest, testMemcpy, Function | MediumTest | Level2)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMemcpyOverlay
  * @tc.number SUB_KERNEL_MEM_MEMCPY_0200
- * @tc.name   memcpy function overlay copy test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemApiTest, testMemcpyOverlay, Function | MediumTest | Level3)
 {
@@ -693,9 +789,13 @@ HWTEST_F(MemApiTest, testMemcpyOverlay, Function | MediumTest | Level3)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMemmove
  * @tc.number SUB_KERNEL_MEM_MEMMOVE_0100
- * @tc.name   memmove function move buffer test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MemApiTest, testMemmove, Function | MediumTest | Level2)
 {
@@ -722,9 +822,13 @@ HWTEST_F(MemApiTest, testMemmove, Function | MediumTest | Level2)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMemmoveOverlay
  * @tc.number SUB_KERNEL_MEM_MEMMOVE_0200
- * @tc.name   memmove function overlay move buffer test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemApiTest, testMemmoveOverlay, Function | MediumTest | Level3)
 {
@@ -753,9 +857,13 @@ HWTEST_F(MemApiTest, testMemmoveOverlay, Function | MediumTest | Level3)
 
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMemcmp
  * @tc.number SUB_KERNEL_MEM_MEMCMP_0100
- * @tc.name   memmove function move buffer test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MemApiTest, testMemcmp, Function | MediumTest | Level2)
 {
@@ -781,9 +889,13 @@ HWTEST_F(MemApiTest, testMemcmp, Function | MediumTest | Level2)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMemrchr
  * @tc.number SUB_KERNEL_MEM_MEMRCHR_0100
- * @tc.name   memrchr function find the last value in the string test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MemApiTest, testMemrchr, Function | MediumTest | Level2)
 {

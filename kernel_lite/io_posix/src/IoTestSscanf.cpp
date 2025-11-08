@@ -19,10 +19,14 @@
 
 using namespace testing::ext;
 
- /**
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSscanfFloat
  * @tc.number SUB_KERNEL_IO_SSCANF_0100
- * @tc.name   sscanf basic function test of float
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSscanfFloat, Function | MediumTest | Level1)
 {
@@ -45,10 +49,14 @@ HWTEST_F(IoTest, testSscanfFloat, Function | MediumTest | Level1)
     EXPECT_FLOAT_EQ(f, 1.66666);
 }
 
- /**
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSscanfFloatE
  * @tc.number SUB_KERNEL_IO_SSCANF_0200
- * @tc.name   sscanf basic function test of float with format E
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSscanfFloatE, Function | MediumTest | Level1)
 {
@@ -79,10 +87,14 @@ HWTEST_F(IoTest, testSscanfFloatE, Function | MediumTest | Level1)
     EXPECT_FLOAT_EQ(f, 1.100000);
 }
 
- /**
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSscanfFloatG
  * @tc.number SUB_KERNEL_IO_SSCANF_0300
- * @tc.name   sscanf basic function test of float with format G
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSscanfFloatG, Function | MediumTest | Level1)
 {
@@ -105,10 +117,14 @@ HWTEST_F(IoTest, testSscanfFloatG, Function | MediumTest | Level1)
     EXPECT_FLOAT_EQ(f1, 1.2300001e-07);
 }
 
- /**
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSscanfFloatA
  * @tc.number SUB_KERNEL_IO_SSCANF_0400
- * @tc.name   sscanf basic function test of float with format A
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSscanfFloatA, Function | MediumTest | Level1)
 {
@@ -139,10 +155,14 @@ HWTEST_F(IoTest, testSscanfFloatA, Function | MediumTest | Level1)
     EXPECT_FLOAT_EQ(f, 1.0625);
 }
 
- /**
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSscanfChar
  * @tc.number SUB_KERNEL_IO_SSCANF_0500
- * @tc.name   sscanf basic function test of char
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSscanfChar, Function | MediumTest | Level1)
 {
@@ -166,10 +186,14 @@ HWTEST_F(IoTest, testSscanfChar, Function | MediumTest | Level1)
     EXPECT_EQ(c1, 'b');
 }
 
- /**
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSscanfString
  * @tc.number SUB_KERNEL_IO_SSCANF_0600
- * @tc.name   sscanf basic function test of string
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSscanfString, Function | MediumTest | Level1)
 {
@@ -191,10 +215,14 @@ HWTEST_F(IoTest, testSscanfString, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "world");
 }
 
- /**
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSscanfIntD
  * @tc.number SUB_KERNEL_IO_SSCANF_0700
- * @tc.name   sscanf basic function test of int
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSscanfIntD, Function | MediumTest | Level1)
 {
@@ -233,10 +261,14 @@ HWTEST_F(IoTest, testSscanfIntD, Function | MediumTest | Level1)
     EXPECT_EQ(intU, 42949U);
 }
 
- /**
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSscanfIntHhd
  * @tc.number SUB_KERNEL_IO_SSCANF_0800
- * @tc.name   sscanf basic function test of signed char
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSscanfIntHhd, Function | MediumTest | Level1)
 {
@@ -275,10 +307,14 @@ HWTEST_F(IoTest, testSscanfIntHhd, Function | MediumTest | Level1)
     EXPECT_EQ(intHhu, 25);
 }
 
- /**
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSscanfIntHd
  * @tc.number SUB_KERNEL_IO_SSCANF_0900
- * @tc.name   sscanf basic function test of short int
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSscanfIntHd, Function | MediumTest | Level1)
 {
@@ -317,10 +353,14 @@ HWTEST_F(IoTest, testSscanfIntHd, Function | MediumTest | Level1)
     EXPECT_EQ(intHu, 655);
 }
 
- /**
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSscanfIntLd
  * @tc.number SUB_KERNEL_IO_SSCANF_1000
- * @tc.name   sscanf basic function test of long int
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSscanfIntLd, Function | MediumTest | Level1)
 {
@@ -359,10 +399,14 @@ HWTEST_F(IoTest, testSscanfIntLd, Function | MediumTest | Level1)
     EXPECT_EQ(intUl, 42949UL);
 }
 
- /**
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSscanfIntLld
  * @tc.number SUB_KERNEL_IO_SSCANF_1100
- * @tc.name   sscanf basic function test of long long int
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSscanfIntLld, Function | MediumTest | Level1)
 {
@@ -401,10 +445,14 @@ HWTEST_F(IoTest, testSscanfIntLld, Function | MediumTest | Level1)
     EXPECT_EQ(intUll, 18446ULL);
 }
 
- /**
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSscanfIntMax
  * @tc.number SUB_KERNEL_IO_SSCANF_1200
- * @tc.name   sscanf basic function test of intmax_t and uintmax_t
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSscanfIntMax, Function | MediumTest | Level1)
 {
@@ -444,9 +492,13 @@ HWTEST_F(IoTest, testSscanfIntMax, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSscanfSizeT
  * @tc.number SUB_KERNEL_IO_SSCANF_1300
- * @tc.name   sscanf basic function test of size_t
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSscanfSizeT, Function | MediumTest | Level1)
 {
@@ -469,9 +521,13 @@ HWTEST_F(IoTest, testSscanfSizeT, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSscanfPtrdiffT
  * @tc.number SUB_KERNEL_IO_SSCANF_1400
- * @tc.name   sscanf basic function test of ptrdiff_t
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSscanfPtrdiffT, Function | MediumTest | Level1)
 {
@@ -494,9 +550,13 @@ HWTEST_F(IoTest, testSscanfPtrdiffT, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSscanfPointer
  * @tc.number SUB_KERNEL_IO_SSCANF_1500
- * @tc.name   sscanf basic function test of pointer
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSscanfPointer, Function | MediumTest | Level1)
 {
@@ -514,10 +574,14 @@ HWTEST_F(IoTest, testSscanfPointer, Function | MediumTest | Level1)
     EXPECT_EQ(i, 65535);
 }
 
- /**
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSscanfIntHexOct
  * @tc.number SUB_KERNEL_IO_SSCANF_1600
- * @tc.name   sscanf basic function test of hex and oct
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSscanfIntHexOct, Function | MediumTest | Level1)
 {
@@ -560,9 +624,13 @@ HWTEST_F(IoTest, testSscanfIntHexOct, Function | MediumTest | Level1)
 }
 
 /**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSscanfRegexp
  * @tc.number SUB_KERNEL_IO_SSCANF_1700
- * @tc.name   sscanf basic function test of regexp
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSscanfRegexp, Function | MediumTest | Level1)
 {
@@ -588,10 +656,14 @@ HWTEST_F(IoTest, testSscanfRegexp, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "DEF");
 }
 
- /**
+/**
+ * @generated.time 2025-11-09 00:50:53
+ * @tc.name   testSscanfReturnValue
  * @tc.number SUB_KERNEL_IO_SSCANF_1800
- * @tc.name   sscanf basic function test of return value
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSscanfReturnValue, Function | MediumTest | Level1)
 {

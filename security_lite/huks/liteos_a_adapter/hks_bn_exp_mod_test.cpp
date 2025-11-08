@@ -92,9 +92,13 @@ static int32_t TestValue()
 }
 
 /**
- * @tc.name: HksBnExpModTest.HksBnExpModTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @generated.time 2025-11-09 00:50:54
+ * @tc.name   HksBnExpModTest001
+ * @tc.number HksBnExpModTest001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksBnExpModTest, HksBnExpModTest001, TestSize.Level1)
 {

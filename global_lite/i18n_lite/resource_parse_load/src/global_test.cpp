@@ -75,10 +75,14 @@ int GetResId(const std::string &name, ResType resType)
     return ret;
 }
 
-/*
- * @tc.name: GlobalFuncTest001
- * @tc.desc: Test GLOBAL_ConfigLanguage function, file case.
- * @tc.type: FUNC
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GlobalFuncTest001
+ * @tc.number GlobalFuncTest001
+ * @tc.desc   Test GLOBAL_ConfigLanguage function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(GlobalTest, GlobalFuncTest001, TestSize.Level1)
 {
@@ -123,10 +127,14 @@ HWTEST_F(GlobalTest, GlobalFuncTest001, TestSize.Level1)
     ASSERT_EQ(std::string("en"), lan);
 }
 
-/*
- * @tc.name: GlobalFuncTest002
- * @tc.desc: Test GLOBAL_GetValueByName function, file case.
- * @tc.type: FUNC
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GlobalFuncTest002
+ * @tc.number GlobalFuncTest002
+ * @tc.desc   Test GLOBAL_GetValueByName function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(GlobalTest, GlobalFuncTest002, TestSize.Level1)
 {
@@ -139,10 +147,14 @@ HWTEST_F(GlobalTest, GlobalFuncTest002, TestSize.Level1)
     free(values);
 }
 
-/*
- * @tc.name: GlobalFuncTest003
- * @tc.desc: Test GLOBAL_GetValueById function, file case.
- * @tc.type: FUNC
+/**
+ * @generated.time 2025-11-09 00:50:51
+ * @tc.name   GlobalFuncTest003
+ * @tc.number GlobalFuncTest003
+ * @tc.desc   Test GLOBAL_GetValueById function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(GlobalTest, GlobalFuncTest003, TestSize.Level1)
 {

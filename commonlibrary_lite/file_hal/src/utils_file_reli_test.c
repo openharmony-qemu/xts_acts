@@ -28,12 +28,6 @@
 
 static const char* g_def = "utils_file_operation implement.";
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is utils
- * @param        : module name is utilsFile
- * @param        : test suit name is UtilsFileReliTestSuite
- */
 LITE_TEST_SUIT(utils, utilsFile, UtilsFileReliTestSuite);
 
 /**
@@ -56,9 +50,13 @@ static BOOL UtilsFileReliTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : SUB_UTILS_FILE_OPERATION_5200
- * @tc.name      : Create file after max files opened
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testCreateFileAfterMaxFilesOpened
+ * @tc.number SUB_UTILS_FILE_OPERATION_5200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(UtilsFileReliTestSuite, testCreateFileAfterMaxFilesOpened, Function | MediumTest | Level1)
 {
@@ -100,9 +98,13 @@ LITE_TEST_CASE(UtilsFileReliTestSuite, testCreateFileAfterMaxFilesOpened, Functi
 };
 
 /**
- * @tc.number    : SUB_UTILS_FILE_OPERATION_5300
- * @tc.name      : Delete file after max files opened
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testDeleteFileAfterMaxFilesOpened
+ * @tc.number SUB_UTILS_FILE_OPERATION_5300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(UtilsFileReliTestSuite, testDeleteFileAfterMaxFilesOpened, Function | MediumTest | Level1)
 {
@@ -139,9 +141,13 @@ LITE_TEST_CASE(UtilsFileReliTestSuite, testDeleteFileAfterMaxFilesOpened, Functi
 };
 
 /**
- * @tc.number    : SUB_UTILS_FILE_OPERATION_5400
- * @tc.name      : Copy file after max files opened
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testCopyFileAfterMaxFilesOpened
+ * @tc.number SUB_UTILS_FILE_OPERATION_5400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(UtilsFileReliTestSuite, testCopyFileAfterMaxFilesOpened, Function | MediumTest | Level1)
 {
@@ -187,9 +193,13 @@ LITE_TEST_CASE(UtilsFileReliTestSuite, testCopyFileAfterMaxFilesOpened, Function
 };
 
 /**
- * @tc.number    : SUB_UTILS_FILE_OPERATION_5500
- * @tc.name      : Move file after max files opened
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMoveFileAfterMaxFilesOpened
+ * @tc.number SUB_UTILS_FILE_OPERATION_5500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(UtilsFileReliTestSuite, testMoveFileAfterMaxFilesOpened, Function | MediumTest | Level1)
 {
@@ -235,9 +245,13 @@ LITE_TEST_CASE(UtilsFileReliTestSuite, testMoveFileAfterMaxFilesOpened, Function
 };
 
 /**
- * @tc.number    : SUB_UTILS_FILE_OPERATION_5600
- * @tc.name      : File operation flow for copied file
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testFileOperFlow001
+ * @tc.number SUB_UTILS_FILE_OPERATION_5600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(UtilsFileReliTestSuite, testFileOperFlow001, Function | MediumTest | Level1)
 {
@@ -272,9 +286,13 @@ LITE_TEST_CASE(UtilsFileReliTestSuite, testFileOperFlow001, Function | MediumTes
 };
 
 /**
- * @tc.number    : SUB_UTILS_FILE_OPERATION_5700
- * @tc.name      : File operation flow for moved file
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testFileOperFlow002
+ * @tc.number SUB_UTILS_FILE_OPERATION_5700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(UtilsFileReliTestSuite, testFileOperFlow002, Function | MediumTest | Level1)
 {
@@ -315,9 +333,13 @@ LITE_TEST_CASE(UtilsFileReliTestSuite, testFileOperFlow002, Function | MediumTes
 };
 
 /**
- * @tc.number    : SUB_UTILS_FILE_OPERATION_5800
- * @tc.name      : File operation flow for copied empty file
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testEmptyFileOperFlow001
+ * @tc.number SUB_UTILS_FILE_OPERATION_5800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(UtilsFileReliTestSuite, testEmptyFileOperFlow001, Function | MediumTest | Level1)
 {
@@ -350,9 +372,13 @@ LITE_TEST_CASE(UtilsFileReliTestSuite, testEmptyFileOperFlow001, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_UTILS_FILE_OPERATION_5900
- * @tc.name      : File operation flow for moved empty file
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testEmptyFileOperFlow002
+ * @tc.number SUB_UTILS_FILE_OPERATION_5900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(UtilsFileReliTestSuite, testEmptyFileOperFlow002, Function | MediumTest | Level1)
 {

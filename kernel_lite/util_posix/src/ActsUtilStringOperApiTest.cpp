@@ -48,10 +48,14 @@ protected:
 };
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_FFS_0100
-* @tc.name       test fss api with digit 1
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testFss0100
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_FFS_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testFss0100, Function | MediumTest | Level1) {
     int paraValue;
     int returnVal;
@@ -63,10 +67,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testFss0100, Function | MediumTest | Level1)
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_FFS_0200
-* @tc.name       test fss api with digit 0
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testFss0200
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_FFS_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testFss0200, Function | MediumTest | Level1) {
     int paraValue;
     int returnVal;
@@ -78,10 +86,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testFss0200, Function | MediumTest | Level1)
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_FFS_0300
-* @tc.name       test fss api with xdigit
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testFss0300
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_FFS_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testFss0300, Function | MediumTest | Level1) {
     int paraValue;
     int returnVal;
@@ -93,10 +105,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testFss0300, Function | MediumTest | Level1)
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_FFSL_0400
-* @tc.name       test fssl api with digit 1
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testFssl0400
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_FFSL_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testFssl0400, Function | MediumTest | Level1) {
     long int paraValue;
     int returnVal;
@@ -108,10 +124,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testFssl0400, Function | MediumTest | Level1
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_FFSL_0500
-* @tc.name       test fssl api with digit 0
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testFssl0500
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_FFSL_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testFssl0500, Function | MediumTest | Level1) {
     long int paraValue;
     int returnVal;
@@ -123,10 +143,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testFssl0500, Function | MediumTest | Level1
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_FFSL_0600
-* @tc.name       test fssl api with xdigit
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testFssl0600
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_FFSL_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testFssl0600, Function | MediumTest | Level1) {
     long int paraValue;
     int returnVal;
@@ -138,10 +162,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testFssl0600, Function | MediumTest | Level1
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_FFSLL_0700
-* @tc.name       test fssll api with digit 1
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testFssll0700
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_FFSLL_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testFssll0700, Function | MediumTest | Level1) {
     long long int paraValue;
     int returnVal;
@@ -153,10 +181,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testFssll0700, Function | MediumTest | Level
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_FFSLL_0800
-* @tc.name       test fssll api with digit 0
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testFssll0800
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_FFSLL_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testFssll0800, Function | MediumTest | Level1) {
     long long int paraValue;
     int returnVal;
@@ -168,10 +200,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testFssll0800, Function | MediumTest | Level
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_FFSLL_0900
-* @tc.name       test fssll api with xdigit
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testFssll0900
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_FFSLL_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testFssll0900, Function | MediumTest | Level1) {
     long long int paraValue;
     int returnVal;
@@ -183,10 +219,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testFssll0900, Function | MediumTest | Level
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCWIDTH_1000
-* @tc.name       test wcwidth api with null wide character
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcwidth1000
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCWIDTH_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcwidth1000, Function | MediumTest | Level1) {
     wchar_t wideChar;
     int returnVal;
@@ -198,10 +238,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcwidth1000, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCWIDTH_1100
-* @tc.name       test wcwidth api with upper alpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcwidth1100
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCWIDTH_1100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcwidth1100, Function | MediumTest | Level1) {
     wchar_t wideChar;
     int returnVal;
@@ -213,10 +257,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcwidth1100, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCTYPE_1200
-* @tc.name       test wctype api with alnum
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWctype1200
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCTYPE_1200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWctype1200, Function | MediumTest | Level1) {
     const char *paraVal = "alnum";
     wctype_t returnVal;
@@ -227,10 +275,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWctype1200, Function | MediumTest | Leve
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCTYPE_1300
-* @tc.name       test wctype api with alnumalpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWctype1300
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCTYPE_1300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWctype1300, Function | MediumTest | Level1) {
     const char *paraVal = "alnumalpha";
     wctype_t returnVal;
@@ -241,10 +293,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWctype1300, Function | MediumTest | Leve
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCTYPE_L_1400
-* @tc.name       test wctype_l api with alnum
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWctypeL1400
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCTYPE_L_1400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWctypeL1400, Function | MediumTest | Level1) {
     const char *paraVal = "alnum";
     wctype_t returnVal;
@@ -255,10 +311,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWctypeL1400, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCTYPE_L_1500
-* @tc.name       test wctype_l api with alnumalpha
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWctypeL1500
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCTYPE_L_1500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWctypeL1500, Function | MediumTest | Level1) {
     const char *paraVal = "alnumalpha";
     wctype_t returnVal;
@@ -269,10 +329,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWctypeL1500, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_MBLEN_1600
-* @tc.name       test mblen api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMblen1600
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_MBLEN_1600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testMblen1600, Function | MediumTest | Level1) {
     const char *paraVal = nullptr;
     size_t sizeVal;
@@ -286,10 +350,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testMblen1600, Function | MediumTest | Level
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_MBLEN_1700
-* @tc.name       test mbrlen api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testMbrlen1700
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_MBLEN_1700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testMbrlen1700, Function | MediumTest | Level1) {
     const char *paraVal = nullptr;
     size_t sizeVal;
@@ -304,10 +372,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testMbrlen1700, Function | MediumTest | Leve
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCPCPY_1800
-* @tc.name       test wcpcpy api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcpcpy1800
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCPCPY_1800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcpcpy1800, Function | MediumTest | Level1) {
     wchar_t paraDest[10];
     const wchar_t *paraSrc = L"abcde";
@@ -320,10 +392,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcpcpy1800, Function | MediumTest | Leve
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCPNCPY_1900
-* @tc.name       test wcpncpy api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcpncpy1900
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCPNCPY_1900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcpncpy1900, Function | MediumTest | Level1) {
     wchar_t paraDest[10];
     const wchar_t *paraSrc = L"abcde";
@@ -338,10 +414,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcpncpy1900, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSCASECMP_2000
-* @tc.name       test wcscasecmp api with para1 is lower case of para2
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcscasecmp2000
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSCASECMP_2000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcscasecmp2000, Function | MediumTest | Level1) {
     const wchar_t *strVal1 = L"abcde";
     const wchar_t *strVal2 = L"ABCDE";
@@ -353,10 +433,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcscasecmp2000, Function | MediumTest | 
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSCASECMP_2100
-* @tc.name       test wcscasecmp api with same string
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcscasecmp2100
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSCASECMP_2100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcscasecmp2100, Function | MediumTest | Level1) {
     const wchar_t *strVal1 = L"abcde";
     const wchar_t *strVal2 = L"abcde";
@@ -368,10 +452,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcscasecmp2100, Function | MediumTest | 
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSCASECMP_L_2000
-* @tc.name       test wcscasecmp_l api with para1 is lower case of para2
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcscasecmpL2200
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSCASECMP_L_2000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcscasecmpL2200, Function | MediumTest | Level1) {
     const wchar_t *strVal1 = L"abcde";
     const wchar_t *strVal2 = L"ABCDE";
@@ -383,10 +471,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcscasecmpL2200, Function | MediumTest |
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSCASECMP_L_2100
-* @tc.name       test wcscasecmp_l api with same string
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcscasecmpL2300
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSCASECMP_L_2100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcscasecmpL2300, Function | MediumTest | Level1) {
     const wchar_t *strVal1 = L"abcde";
     const wchar_t *strVal2 = L"abcde";
@@ -398,10 +490,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcscasecmpL2300, Function | MediumTest |
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSNCASECMP_2400
-* @tc.name       test wcsncasecmp api with para1 is lower case of para2
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcsncasecmp2400
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSNCASECMP_2400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcsncasecmp2400, Function | MediumTest | Level1) {
     const wchar_t *strVal1 = L"abcde";
     const wchar_t *strVal2 = L"ABCDE";
@@ -415,10 +511,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcsncasecmp2400, Function | MediumTest |
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSNCASECMP_2500
-* @tc.name       test wcsncasecmp api with same string
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcsncasecmp2500
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSNCASECMP_2500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcsncasecmp2500, Function | MediumTest | Level1) {
     const wchar_t *strVal1 = L"abcde";
     const wchar_t *strVal2 = L"abcde";
@@ -432,10 +532,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcsncasecmp2500, Function | MediumTest |
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSNCASECMP_L_2600
-* @tc.name       test wcsncasecmp_l api with para1 is lower case of para2
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcsncasecmpL2600
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSNCASECMP_L_2600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcsncasecmpL2600, Function | MediumTest | Level1) {
     const wchar_t *strVal1 = L"abcde";
     const wchar_t *strVal2 = L"ABCDE";
@@ -449,10 +553,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcsncasecmpL2600, Function | MediumTest 
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSNCASECMP_L_2700
-* @tc.name       test wcsncasecmp_l api with same string
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcsncasecmpL2700
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSNCASECMP_L_2700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcsncasecmpL2700, Function | MediumTest | Level1) {
     const wchar_t *strVal1 = L"abcde";
     const wchar_t *strVal2 = L"abcde";
@@ -466,10 +574,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcsncasecmpL2700, Function | MediumTest 
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSNLEN_2800
-* @tc.name       test wcsnlen api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcsnlen2800
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSNLEN_2800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcsnlen2800, Function | MediumTest | Level1) {
     const wchar_t *paraVal = L"abcde";
     size_t maxLen;
@@ -482,10 +594,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcsnlen2800, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSWIDTH_2900
-* @tc.name       test wcswidth api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcswidth2900
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSWIDTH_2900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcswidth2900, Function | MediumTest | Level1) {
     const wchar_t *paraVal = L"abcde";
     size_t lenVal;
@@ -498,10 +614,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcswidth2900, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSCAT_3000
-* @tc.name       test wcscat api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcscat3000
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSCAT_3000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcscat3000, Function | MediumTest | Level1) {
     wchar_t paraDest[10];
     wchar_t paraSrc[5];
@@ -515,10 +635,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcscat3000, Function | MediumTest | Leve
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSNCAT_3100
-* @tc.name       test wcsncat api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcsncat3100
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSNCAT_3100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcsncat3100, Function | MediumTest | Level1) {
     wchar_t paraDest[10];
     wchar_t paraSrc[5];
@@ -532,10 +656,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcsncat3100, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSCHR_3200
-* @tc.name       test wcschr api with wc in wcs
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcschr3200
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSCHR_3200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcschr3200, Function | MediumTest | Level1) {
     const wchar_t *paraWcs;
     wchar_t paraWc;
@@ -549,10 +677,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcschr3200, Function | MediumTest | Leve
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSCHR_3300
-* @tc.name       test wcschr api with wc not in wcs
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcschr3300
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSCHR_3300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcschr3300, Function | MediumTest | Level1) {
     const wchar_t *paraWcs;
     wchar_t paraWc;
@@ -566,10 +698,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcschr3300, Function | MediumTest | Leve
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSRCHR_3400
-* @tc.name       test wcsrchr api with wc in wcs
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcsrchr3400
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSRCHR_3400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcsrchr3400, Function | MediumTest | Level1) {
     const wchar_t *paraWcs;
     wchar_t paraWc;
@@ -583,10 +719,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcsrchr3400, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSCHR_3500
-* @tc.name       test wcsrchr api with wc not in wcs
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcsrchr3500
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSCHR_3500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcsrchr3500, Function | MediumTest | Level1) {
     const wchar_t *paraWcs;
     wchar_t paraWc;
@@ -600,10 +740,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcsrchr3500, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSDUP_3600
-* @tc.name       test wcsdup api
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcsdup3600
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSDUP_3600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcsdup3600, Function | MediumTest | Level1) {
     const wchar_t *paraWcs;
     wchar_t *returnVal;
@@ -616,10 +760,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcsdup3600, Function | MediumTest | Leve
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSCOLL_3700
-* @tc.name       test wcscoll api with para1 is equal to para2
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcscoll3700
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSCOLL_3700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcscoll3700, Function | MediumTest | Level1) {
     const wchar_t *paraWcs1;
     const wchar_t *paraWcs2;
@@ -633,10 +781,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcscoll3700, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSCOLL_3800
-* @tc.name       test wcscoll api with para1 is greater than para2
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcscoll3800
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSCOLL_3800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcscoll3800, Function | MediumTest | Level1) {
     const wchar_t *paraWcs1;
     const wchar_t *paraWcs2;
@@ -650,10 +802,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcscoll3800, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSCOLL_3900
-* @tc.name       test wcscoll api with para1 is less than para2
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcscoll3900
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSCOLL_3900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcscoll3900, Function | MediumTest | Level1) {
     const wchar_t *paraWcs1;
     const wchar_t *paraWcs2;
@@ -667,10 +823,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcscoll3900, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSCOLL_L_4000
-* @tc.name       test wcscoll_l api with para1 is equal to para2
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcscollL4000
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSCOLL_L_4000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcscollL4000, Function | MediumTest | Level1) {
     const wchar_t *paraWcs1;
     const wchar_t *paraWcs2;
@@ -684,10 +844,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcscollL4000, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSCOLL_L_4100
-* @tc.name       test wcscoll_l api with para1 is greater than para2
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcscollL4100
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSCOLL_L_4100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcscollL4100, Function | MediumTest | Level1) {
     const wchar_t *paraWcs1;
     const wchar_t *paraWcs2;
@@ -701,10 +865,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcscollL4100, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSCOLL_L_4200
-* @tc.name       test wcscoll_l api with para1 is less than para2
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcscollL4200
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSCOLL_L_4200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcscollL4200, Function | MediumTest | Level1) {
     const wchar_t *paraWcs1;
     const wchar_t *paraWcs2;
@@ -718,10 +886,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcscollL4200, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSCSPN_4300
-* @tc.name       test wcscspn api with para2 is included in para1
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcscspn4300
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSCSPN_4300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcscspn4300, Function | MediumTest | Level1) {
     const wchar_t *paraWcs;
     const wchar_t *paraRjct;
@@ -735,10 +907,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcscspn4300, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSCSPN_4400
-* @tc.name       test wcscspn api with para2 is not included in para1
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcscspn4400
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSCSPN_4400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcscspn4400, Function | MediumTest | Level1) {
     const wchar_t *paraWcs;
     const wchar_t *paraRjct;
@@ -752,10 +928,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcscspn4400, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSSPN_4500
-* @tc.name       test wcsspn api with para2 is included in para1
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcsspn4500
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSSPN_4500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcsspn4500, Function | MediumTest | Level1) {
     const wchar_t *paraWcs;
     const wchar_t *paraAcpt;
@@ -769,10 +949,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcsspn4500, Function | MediumTest | Leve
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSSPN_4600
-* @tc.name       test wcscspn api with para2 is not included in para1
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcsspn4600
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSSPN_4600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcsspn4600, Function | MediumTest | Level1) {
     const wchar_t *paraWcs;
     const wchar_t *paraAcpt;
@@ -786,10 +970,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcsspn4600, Function | MediumTest | Leve
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSPBRK_4700
-* @tc.name       test wcspbrk api with para2 is included in para1
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcspbrk4700
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSPBRK_4700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcspbrk4700, Function | MediumTest | Level1) {
     const wchar_t *paraWcs;
     const wchar_t *paraAcpt;
@@ -803,10 +991,14 @@ HWTEST_F(ActsUtilStringOperApiTest, testWcspbrk4700, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_STRINGOPER_WCSPBRK_4800
-* @tc.name       test wcspbrk api with para2 is not included in para1
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:52
+ * @tc.name   testWcspbrk4800
+ * @tc.number SUB_KERNEL_UTIL_STRINGOPER_WCSPBRK_4800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilStringOperApiTest, testWcspbrk4800, Function | MediumTest | Level1) {
     const wchar_t *paraWcs;
     const wchar_t *paraAcpt;

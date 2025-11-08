@@ -60,10 +60,14 @@ protected:
 };
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserLen_0010
- * @tc.name      : Package which node has 127 bytes value can be parsed correctly
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserLen0010
+ * @tc.number DMSLite_DMS_MsgParserLen_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserLenFuncTest, testMsgParserLen0010, Function | MediumTest | Level2) {
     std::string tLenStr = GetStringByLen(BYTE_CAPA - 1);  // - \0
     std::string bundleName = tLenStr;
@@ -93,10 +97,14 @@ HWTEST_F(MsgParserLenFuncTest, testMsgParserLen0010, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserLen_0020
- * @tc.name      : Package which node has 128 bytes can be parsed correctly
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserLen0020
+ * @tc.number DMSLite_DMS_MsgParserLen_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserLenFuncTest, testMsgParserLen0020, Function | MediumTest | Level2) {
     // > 127, length need 2 bytes
     std::string tLenStr = GetStringByLen(BYTE_CAPA);
@@ -127,10 +135,14 @@ HWTEST_F(MsgParserLenFuncTest, testMsgParserLen0020, Function | MediumTest | Lev
 }
 
 /**
- * @tc.number    : DMSLite_DMS_MsgParserLen_0030
- * @tc.name      : Package which node has 1010 bytes can be parsed correctly
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testMsgParserLen0030
+ * @tc.number DMSLite_DMS_MsgParserLen_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(MsgParserLenFuncTest, testMsgParserLen0030, Function | MediumTest | Level2) {
     std::string bundleName = GetStringByLen(NODE_MAX_LENGTH);
     std::string abilityName = "a";

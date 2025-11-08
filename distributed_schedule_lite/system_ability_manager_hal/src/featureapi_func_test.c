@@ -124,9 +124,13 @@ static BOOL FeatureApiTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterFeatureApi_0010
- * @tc.name      : Api can be registered under a feature
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testRegisterFeatureApi0010
+ * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0010, Function | MediumTest | Level2)
 {
@@ -143,9 +147,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0010, Function | Mediu
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterFeatureApi_0020
- * @tc.name      : API failed to register if the specified service name is null or space
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testRegisterFeatureApi0020
+ * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0020, Function | MediumTest | Level2)
 {
@@ -163,9 +171,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0020, Function | Mediu
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterFeatureApi_0030
- * @tc.name      : API failed to register if the specified feature is space
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testRegisterFeatureApi0030
+ * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0030, Function | MediumTest | Level2)
 {
@@ -180,9 +192,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0030, Function | Mediu
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterFeatureApi_0040
- * @tc.name      : API failed to register if the api is null
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testRegisterFeatureApi0040
+ * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0040, Function | MediumTest | Level2)
 {
@@ -197,9 +213,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0040, Function | Mediu
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterFeatureApi_0050
- * @tc.name      : If the specified feature is null api will be registered as default feature api
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testRegisterFeatureApi0050
+ * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0050, Function | MediumTest | Level2)
 {
@@ -218,9 +238,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0050, Function | Mediu
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterFeatureApi_0060
- * @tc.name      : API failed to register if the specified service name does not exist
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testRegisterFeatureApi0060
+ * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0060
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0060, Function | MediumTest | Level2)
 {
@@ -235,9 +259,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0060, Function | Mediu
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterFeatureApi_0070
- * @tc.name      : API failed to register if the specified feature name does not exist
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testRegisterFeatureApi0070
+ * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0070
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0070, Function | MediumTest | Level2)
 {
@@ -252,9 +280,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0070, Function | Mediu
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterFeatureApi_0080
- * @tc.name      : feature api can not be registered twice
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testRegisterFeatureApi0080
+ * @tc.number DMSLite_SAMGR_RegisterFeatureApi_0080
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0080, Function | MediumTest | Level2)
 {
@@ -272,9 +304,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testRegisterFeatureApi0080, Function | Mediu
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_GetFeatureApi_0010
- * @tc.name      : Service can query API by serverName-featureName
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testGetFeatureApi0010
+ * @tc.number DMSLite_SAMGR_GetFeatureApi_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0010, Function | MediumTest | Level2)
 {
@@ -291,9 +327,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0010, Function | MediumTest
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_GetFeatureApi_0020
- * @tc.name      : If the specified serviceName is NULL or space GetFeatureApi return NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testGetFeatureApi0020
+ * @tc.number DMSLite_SAMGR_GetFeatureApi_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0020, Function | MediumTest | Level2)
 {
@@ -312,9 +352,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0020, Function | MediumTest
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_GetFeatureApi_0030
- * @tc.name      : If the specified featureName is NULL or space GetFeatureApi return NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testGetFeatureApi0030
+ * @tc.number DMSLite_SAMGR_GetFeatureApi_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0030, Function | MediumTest | Level2)
 {
@@ -333,9 +377,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0030, Function | MediumTest
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_GetFeatureApi_0040
- * @tc.name      : If the specified featureName does not exist GetFeatureApi return NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testGetFeatureApi0040
+ * @tc.number DMSLite_SAMGR_GetFeatureApi_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0040, Function | MediumTest | Level2)
 {
@@ -352,9 +400,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0040, Function | MediumTest
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_GetFeatureApi_0050
- * @tc.name      : If no API under the specified feature GetFeatureApi return NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testGetFeatureApi0050
+ * @tc.number DMSLite_SAMGR_GetFeatureApi_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0050, Function | MediumTest | Level2)
 {
@@ -369,9 +421,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0050, Function | MediumTest
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_GetFeatureApi_0060
- * @tc.name      : The results of multiple queries are the same for GetFeatureApi 
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testGetFeatureApi0060
+ * @tc.number DMSLite_SAMGR_GetFeatureApi_0060
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0060, Function | MediumTest | Level2)
 {
@@ -389,9 +445,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testGetFeatureApi0060, Function | MediumTest
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterFeatureApi_0010
- * @tc.name      : FeatureApi can be unregistered
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnregisterFeatureApi0010
+ * @tc.number DMSLite_SAMGR_UnregisterFeatureApi_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApi0010, Function | MediumTest | Level2)
 {
@@ -407,9 +467,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApi0010, Function | Med
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterFeatureApi_0020
- * @tc.name      : FeatureApi failed to unregister if the specified serviceName is NULL or space
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnregisterFeatureApi0020
+ * @tc.number DMSLite_SAMGR_UnregisterFeatureApi_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApi0020, Function | MediumTest | Level2)
 {
@@ -428,9 +492,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApi0020, Function | Med
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterFeatureApi_0030
- * @tc.name      : FeatureApi failed to unregister if the specified featureName is space
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnregisterFeatureApi0030
+ * @tc.number DMSLite_SAMGR_UnregisterFeatureApi_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApi0030, Function | MediumTest | Level2)
 {
@@ -447,9 +515,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApi0030, Function | Med
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterFeatureApi_0040
- * @tc.name      : FeatureApi failed to unregister if the specified serviceName does not exist
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnregisterFeatureApi0040
+ * @tc.number DMSLite_SAMGR_UnregisterFeatureApi_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApi0040, Function | MediumTest | Level2)
 {
@@ -466,9 +538,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApi0040, Function | Med
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterFeatureApi_0050
- * @tc.name      : FeatureApi failed to unregister if the specified featureName does not exist
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnregisterFeatureApi0050
+ * @tc.number DMSLite_SAMGR_UnregisterFeatureApi_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApi0050, Function | MediumTest | Level2)
 {
@@ -485,9 +561,13 @@ LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApi0050, Function | Med
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterFeatureApi_0060
- * @tc.name      : Register and unregister feature api repeatedly, no memory leak
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @generated.time 2025-11-09 00:50:50
+ * @tc.name   testUnregisterFeatureApi0060
+ * @tc.number DMSLite_SAMGR_UnregisterFeatureApi_0060
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(FeatureApiTestSuite, testUnregisterFeatureApi0060, Function | MediumTest | Level2)
 {
