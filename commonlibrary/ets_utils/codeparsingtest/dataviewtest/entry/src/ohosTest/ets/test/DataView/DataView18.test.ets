@@ -1890,6 +1890,7 @@ export default function DataView18Test() {
       const dv124 = new DataView(buffer124);
       dv124.setInt16(0, 1000, false);
       const i16View124 = new Int16Array(buffer124);
+      expect(i16View124.toString()).assertEqual("-6141");
     });
 
     /**
