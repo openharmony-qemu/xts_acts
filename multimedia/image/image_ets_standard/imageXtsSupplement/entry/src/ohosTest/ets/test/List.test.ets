@@ -58,11 +58,11 @@ import ImagePropertyKeySyncEnum10 from "./image/ImageGetImagePropertySyncEnum10.
 import ImagePropertyKeySyncEnum11 from "./image/ImageGetImagePropertySyncEnum11.test";
 import ImagePropertyKeySyncEnum12 from "./image/ImageGetImagePropertySyncEnum12.test";
 import ImageEnumSupp from "./image/ImageEnum.test";
-import PictureSetMetadataTestSupp from "./picture/PictureSetGetMetadata.test";
 import ImagePropertyKeySyncEnum1A from "./image/ImageGetImagePropertySyncEnum1A.test";
 import ImagePropertyKeySyncEnum2A from "./image/ImageGetImagePropertySyncEnum2A.test";
 import ImagePropertyKeySyncEnum3A from "./image/ImageGetImagePropertySyncEnum3A.test";
 import ImagePropertyKeySyncEnum4A from "./image/ImageGetImagePropertySyncEnum4A.test";
+import PictureSetMetadataTestSupp from './Picture/PictureSetGetMetadata.test';
 
 export default function testsuite() {
   ImagePropertyKeyTest();
