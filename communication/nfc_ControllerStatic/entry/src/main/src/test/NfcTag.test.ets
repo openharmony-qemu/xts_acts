@@ -87,7 +87,15 @@ export default function nfcTagTest() {
       done();
     })
 
-    it('SUB_COMMUNICATION_NFC_Tag_static_0201', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+    /**
+     * @tc.number SUB_COMMUNICATION_NFC_Tag_static_0101
+     * @tc.name SUB_COMMUNICATION_NFC_Tag_static_0101
+     * @tc.desc Check whether the NFC function is enabled.
+     * @tc.size since 7
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('SUB_COMMUNICATION_NFC_Tag_static_0101', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[nfc_test]22 TNF_EMPTY Enumerated value test pass:' + tag.TnfType.TNF_EMPTY);
       expect(tag.TnfType.TNF_EMPTY).assertEqual(0x0);
       console.info('[nfc_test]23 TNF_WELL_KNOWN Enumerated value test pass:' + tag.TnfType.TNF_WELL_KNOWN);
