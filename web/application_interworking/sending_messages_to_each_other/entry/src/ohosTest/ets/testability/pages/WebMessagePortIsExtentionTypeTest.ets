@@ -35,6 +35,7 @@ struct WebMessagePortIsExtentionTypeTest {
   @State javaScriptAccess: boolean = true;
   @State databaseAccess: boolean = true;
   @State isReceive: number = -1;
+  @State isPageEnd: number = -1;
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -76,6 +77,7 @@ struct WebMessagePortIsExtentionTypeTest {
       Column() {
         Button("IsExtentionType click").key('IsExtentionTypeButton').onClick(async () => {
           await waitForExist(()=>this.isReceive, 'WebMessageExtButtonIsReceive', 0);
+          await waitForExist(()=>this.isPageEnd, 'WebMessageExtButtonIsPageEnd', 0);
           console.info("key==>" + this.str);
           this.isReceive = -1;
           switch (this.str) {
@@ -88,6 +90,29 @@ struct WebMessagePortIsExtentionTypeTest {
                 this.ports[0].postMessageEventExt(this.message);
               } catch (error) {
                 Utils.emitEvent(error.code, 170370)
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testCreateWebMessagePortsReturnArrayLengthEqual0': {
+              try {
+                let webMessagePorts:webView.WebMessagePort[] = this.controller.createWebMessagePorts();
+                webMessagePorts.splice(0)
+                console.log('[createWebMessagePorts] WebMessagePort length:' + webMessagePorts.length)
+                Utils.emitEvent(webMessagePorts.length, 2510228)
+              } catch (error) {
+                Utils.emitEvent(error.code, 2510228)
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case 'testCreateWebMessagePortsReturnArrayLengthLarger0': {
+              try {
+                let webMessagePorts:webView.WebMessagePort[] = this.controller.createWebMessagePorts(true);
+                console.log('[createWebMessagePorts] WebMessagePort length:' + webMessagePorts.length)
+                Utils.emitEvent(webMessagePorts.length, 25102209)
+              } catch (error) {
+                Utils.emitEvent(error.code, 25102209)
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
@@ -117,6 +142,7 @@ struct WebMessagePortIsExtentionTypeTest {
                 }
               });
               console.log('url:' + event.url)
+              this.isPageEnd = 0
             }
           })
           .databaseAccess(this.databaseAccess)

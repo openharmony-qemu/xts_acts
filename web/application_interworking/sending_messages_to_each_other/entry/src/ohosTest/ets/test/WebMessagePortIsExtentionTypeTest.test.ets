@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { afterEach, beforeAll, beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
+import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { accessibility, config } from '@kit.AccessibilityKit';
@@ -75,6 +76,39 @@ export default function webMessagePortIsExtentionTypeTest() {
       Utils.registerEvent("testIsExtentionType001", "401", 170370, done);
       sendEventByKey('IsExtentionTypeButton', 10, '');
     })
+
+    /*
+    * @tc.number      : SUB_WEB_CREATEWEBMESSAGEPORTS_RETURN_ARRAY_0100
+    * @tc.name        : testCreateWebMessagePortsReturnArrayLengthEqual0
+    * @tc.desc        : test createWebMessagePorts return array length equal 0
+    * @tc.size        : MediumTest
+    * @tc.type        : Function
+    * @tc.level       : Level 2
+    */
+    it('testCreateWebMessagePortsReturnArrayLengthEqual0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testCreateWebMessagePortsReturnArrayLengthEqual0", 170360)
+      Utils.registerBaseEvent('testCreateWebMessagePortsReturnArrayLengthEqual0', 0, 2510228, done, (backData: events_emitter.EventData, expected: Object) => {
+            expect(backData?.data?.ACTION).assertEqual(0)
+        })
+      sendEventByKey('IsExtentionTypeButton', 10, '');
+    })
+
+    /*
+    * @tc.number      : SUB_WEB_CREATEWEBMESSAGEPORTS_RETURN_ARRAY_0200
+    * @tc.name        : testCreateWebMessagePortsReturnArrayLengthLarger0
+    * @tc.desc        : test createWebMessagePorts return array length larger 0
+    * @tc.size        : MediumTest
+    * @tc.type        : Function
+    * @tc.level       : Level 2
+    */
+    it('testCreateWebMessagePortsReturnArrayLengthLarger0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testCreateWebMessagePortsReturnArrayLengthLarger0", 170360)
+      Utils.registerBaseEvent('testCreateWebMessagePortsReturnArrayLengthLarger0', 0, 25102209, done, (backData: events_emitter.EventData, expected: Object) => {
+            expect(backData?.data?.ACTION).assertLarger(0)
+        })
+      sendEventByKey('IsExtentionTypeButton', 10, '');
+    })
+
 
   })
 }
