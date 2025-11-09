@@ -85,14 +85,15 @@ export default function softwareTest() {
       done()
     })
 
-    /*
-    * @tc.number: G-SOFTWARE-0402
-    * @tc.name: testBackToLastPage0100
-    * @tc.desc: 【G-SOFTWARE-0402】应实现一个可让用户轻松切换到前一个 FA 的快捷方式
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testBackToLastPage0100
+     * @tc.number G-SOFTWARE-0402
+     * @tc.desc   【G-SOFTWARE-0402】应实现一个可让用户轻松切换到前一个 FA 的快捷方式
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBackToLastPage0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(await AbilityUtils.startAbility('com.acts.pcs.arktstest', 'EntryAbility', abilityContext)).assertTrue()
       let driver = Driver.create()
@@ -113,14 +114,15 @@ export default function softwareTest() {
       done()
     })
 
-    /*
-    * @tc.number: G-SOFTWARE-0606
-    * @tc.name: testResourceReferenceRulesNotChange0100
-    * @tc.desc: 【G-SOFTWARE-0606】禁止修改支持多语言、定义资源文件和引用资源的规则
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testResourceReferenceRulesNotChange0100
+     * @tc.number G-SOFTWARE-0606
+     * @tc.desc   【G-SOFTWARE-0606】禁止修改支持多语言、定义资源文件和引用资源的规则
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testResourceReferenceRulesNotChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(await AbilityUtils.startAbility('com.acts.pcs.arktstest', 'EntryAbility', abilityContext)).assertTrue()
       let driver = Driver.create()
@@ -154,15 +156,15 @@ export default function softwareTest() {
       done()
     })
 
-    /*
-    * @tc.number: STD-SOFTWARE-0300
-    * @tc.name: testCoreApplicationWants0100
-    * @tc.desc: 【STD-SOFTWARE-0300】任何替代 ohos 核心应用程序的版本都必须遵守 ohos 核心应用程序提供的相同 want，系统实现者必须支持 ohos SDK 提供的所有 want。
-    *           【STD-SOFTWARE-0301】系统实现者不应对使用 ohos SDK 提供的 want 的系统应用附加任何特权，不应阻止三方应用绑定并承担对这些 want 的控制。
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testCoreApplicationWants0100
+     * @tc.number STD-SOFTWARE-0300
+     * @tc.desc   【STD-SOFTWARE-0300】任何替代 ohos 核心应用程序的版本都必须遵守 ohos 核心应用程序提供的相同 want，系统实现者必须支持 ohos SDK 提供的所有 want。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testCoreApplicationWants0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let driver = Driver.create()
       let filepickerWantInfo1: Want = {
@@ -189,13 +191,14 @@ export default function softwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: G-SOFTWARE-0503
-     * @tc.name: testForbidSilentInstall0100
-     * @tc.desc: 【G-SOFTWARE-0503】禁止在没有任何用户提示的情况下静默安装应用。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testForbidSilentInstall0100
+     * @tc.number G-SOFTWARE-0503
+     * @tc.desc   【G-SOFTWARE-0503】禁止在没有任何用户提示的情况下静默安装应用。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testForbidSilentInstall0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let hapFilePath = '/data/storage/el2/base/haps/entry/files/'
@@ -210,13 +213,14 @@ export default function softwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: G-SOFTWARE-0504
-     * @tc.name: testForbidSilentUninstall0100
-     * @tc.desc: 【G-SOFTWARE-0504】针对显式安装的应用，禁止在没有用户确认的情况下静默卸载应用。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testForbidSilentUninstall0100
+     * @tc.number G-SOFTWARE-0504
+     * @tc.desc   【G-SOFTWARE-0504】针对显式安装的应用，禁止在没有用户确认的情况下静默卸载应用。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testForbidSilentUninstall0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -230,14 +234,14 @@ export default function softwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: STD-SOFTWARE-0303
-     * @tc.name: testCommonEventNotChanged0100
-     * @tc.desc: 【STD-SOFTWARE-0303】系统实现者不应在 commonevent 命名空间中添加新的公共事件类型，
-     *            不应更改或扩展 ohos 核心应用使用的任何公共事件。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testCommonEventNotChanged0100
+     * @tc.number STD-SOFTWARE-0303
+     * @tc.desc   【STD-SOFTWARE-0303】系统实现者不应在 commonevent 命名空间中添加新的公共事件类型，
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCommonEventNotChanged0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.log(`testCommonEventNotChanged0100 start`)

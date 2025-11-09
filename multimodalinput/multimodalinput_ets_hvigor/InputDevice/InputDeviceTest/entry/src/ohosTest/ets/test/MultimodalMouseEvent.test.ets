@@ -35,12 +35,13 @@ export default function MultimodalMouseEventTest() {
     }
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_mouseEvent_ACTION_DOWN_0100
-     * @tc.name: SUB_MMI_Input_Api_mouseEvent_ACTION_DOWN_0100
-     * @tc.desc: Test ACTION_DOWN.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_mouseEvent_ACTION_DOWN_0100
+     * @tc.number SUB_MMI_Input_Api_mouseEvent_ACTION_DOWN_0100
+     * @tc.desc   Test ACTION_DOWN.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_mouseEvent_ACTION_DOWN_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_mouseEvent_ACTION_DOWN_0100";
@@ -57,12 +58,13 @@ export default function MultimodalMouseEventTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_mouseEvent_ACTION_UP_0100
-     * @tc.name: SUB_MMI_Input_Api_mouseEvent_ACTION_UP_0100
-     * @tc.desc: Test ACTION_UP.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_mouseEvent_ACTION_UP_0100
+     * @tc.number SUB_MMI_Input_Api_mouseEvent_ACTION_UP_0100
+     * @tc.desc   Test ACTION_UP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_mouseEvent_ACTION_UP_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_mouseEvent_ACTION_UP_0100";
@@ -79,12 +81,13 @@ export default function MultimodalMouseEventTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_mouseEvent_UNKNOWN_0100
-     * @tc.name: SUB_MMI_Input_Api_mouseEvent_UNKNOWN_0100
-     * @tc.desc: Test ToolType.UNKNOWN.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_mouseEvent_UNKNOWN_0100
+     * @tc.number SUB_MMI_Input_Api_mouseEvent_UNKNOWN_0100
+     * @tc.desc   Test ToolType.UNKNOWN.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_mouseEvent_UNKNOWN_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_mouseEvent_UNKNOWN_0100";
@@ -101,12 +104,13 @@ export default function MultimodalMouseEventTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_mouseEvent_JOYSTICK_0100
-     * @tc.name: SUB_MMI_Input_Api_mouseEvent_JOYSTICK_0100
-     * @tc.desc: Test ToolType.JOYSTICK.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_mouseEvent_JOYSTICK_0100
+     * @tc.number SUB_MMI_Input_Api_mouseEvent_JOYSTICK_0100
+     * @tc.desc   Test ToolType.JOYSTICK.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_mouseEvent_JOYSTICK_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_mouseEvent_JOYSTICK_0100";
@@ -123,12 +127,13 @@ export default function MultimodalMouseEventTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_mouseEvent_TOUCHPAD_0100
-     * @tc.name: SUB_MMI_Input_Api_mouseEvent_TOUCHPAD_0100
-     * @tc.desc: Test ToolType.TOUCHPAD.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   SUB_MMI_Input_Api_mouseEvent_TOUCHPAD_0100
+     * @tc.number SUB_MMI_Input_Api_mouseEvent_TOUCHPAD_0100
+     * @tc.desc   Test ToolType.TOUCHPAD.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MMI_Input_Api_mouseEvent_TOUCHPAD_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = "SUB_MMI_Input_Api_mouseEvent_TOUCHPAD_0100";

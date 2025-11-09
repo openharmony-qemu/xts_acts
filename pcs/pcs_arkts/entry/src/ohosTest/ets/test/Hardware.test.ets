@@ -67,26 +67,28 @@ export default function hardwareTest() {
     })
 
 
-    /*
-     * @tc.number: STD-HARDWARE-0100
-     * @tc.name: testNetworkSupportAtLeastOneType0100
-     * @tc.desc: 【STD-HARDWARE-0100】设备必须提供至少一种数据网络形式的支持，比如 WiFi/蜂窝/以太网/蓝牙
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testNetworkSupportAtLeastOneType0100
+     * @tc.number STD-HARDWARE-0100
+     * @tc.desc   【STD-HARDWARE-0100】设备必须提供至少一种数据网络形式的支持，比如 WiFi/蜂窝/以太网/蓝牙
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkSupportAtLeastOneType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       expect(isWlanSupported || isCellularSupported || isEthernetSupported || isBluetoothSupported).assertTrue()
       done()
     })
 
-    /*
-     * @tc.number: STD-HARDWARE-0101
-     * @tc.name: testNetworkCompleteImplementation0100
-     * @tc.desc: 【STD-HARDWARE-0101】如果设备支持多种数据网络，必须提供网络管理能力的完整实现
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testNetworkCompleteImplementation0100
+     * @tc.number STD-HARDWARE-0101
+     * @tc.desc   【STD-HARDWARE-0101】如果设备支持多种数据网络，必须提供网络管理能力的完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkCompleteImplementation0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let networkSupportedCount = 0
@@ -111,13 +113,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: G-HARDWARE-0202
-     * @tc.name: testWlanSupport2.4G0100
-     * @tc.desc: 【G-HARDWARE-0202】必须支持 IEEE 802.11b/g/n
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testWlanSupport2.4G0100
+     * @tc.number G-HARDWARE-0202
+     * @tc.desc   【G-HARDWARE-0202】必须支持 IEEE 802.11b/g/n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWlanSupport2.4G0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isWlanSupported) {
@@ -126,13 +129,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: STD-HARDWARE-0203
-     * @tc.name: testWlanSupport5G0100
-     * @tc.desc: 【STD-HARDWARE-0203】必须支持 IEEE 802.11ac
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testWlanSupport5G0100
+     * @tc.number STD-HARDWARE-0203
+     * @tc.desc   【STD-HARDWARE-0203】必须支持 IEEE 802.11ac
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWlanSupport5G0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isWlanSupported) {
@@ -141,13 +145,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: G-HARDWARE-0203
-     * @tc.name: testWlanSupportSTAAndAP0100
-     * @tc.desc: 【G-HARDWARE-0203】必须支持 STA 和 AP 模式
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testWlanSupportSTAAndAP0100
+     * @tc.number G-HARDWARE-0203
+     * @tc.desc   【G-HARDWARE-0203】必须支持 STA 和 AP 模式
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWlanSupportSTAAndAP0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isWlanSupported) {
@@ -158,13 +163,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: STD-HARDWARE-0203
-     * @tc.name: testWlanSupportP2P0100
-     * @tc.desc: 【STD-HARDWARE-0203】必须支持 P2P 模式
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testWlanSupportP2P0100
+     * @tc.number STD-HARDWARE-0203
+     * @tc.desc   【STD-HARDWARE-0203】必须支持 P2P 模式
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWlanSupportP2P0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isWlanSupported) {
@@ -174,13 +180,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-ALL-HARDWARE-0904
-     * @tc.name: testCameraSupportAutoExposure0100
-     * @tc.desc: 【C-ALL-HARDWARE-0904】必须支持 3A（Auto Exposure/Auto Focus/Auto White Balance）调节
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testCameraSupportAutoExposure0100
+     * @tc.number C-ALL-HARDWARE-0904
+     * @tc.desc   【C-ALL-HARDWARE-0904】必须支持 3A（Auto Exposure/Auto Focus/Auto White Balance）调节
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCameraSupportAutoExposure0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isCameraSupported) {
@@ -215,13 +222,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-ALL-HARDWARE-0904
-     * @tc.name: testCameraSupportAutoFocus0100
-     * @tc.desc: 【C-ALL-HARDWARE-0904】必须支持 3A（Auto Exposure/Auto Focus/Auto White Balance）调节
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testCameraSupportAutoFocus0100
+     * @tc.number C-ALL-HARDWARE-0904
+     * @tc.desc   【C-ALL-HARDWARE-0904】必须支持 3A（Auto Exposure/Auto Focus/Auto White Balance）调节
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCameraSupportAutoFocus0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isCameraSupported) {
@@ -259,13 +267,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-S|STD-SOFTWARE-0900
-     * @tc.name: testCameraInformationQuery0100
-     * @tc.desc: 【C-S|STD-SOFTWARE-0900】必须提供摄像头设备能力查询功能，包含摄像头个数，方向，类型，宽高比和分辨率信息
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testCameraInformationQuery0100
+     * @tc.number C-S|STD-SOFTWARE-0900
+     * @tc.desc   【C-S|STD-SOFTWARE-0900】必须提供摄像头设备能力查询功能，包含摄像头个数，方向，类型，宽高比和分辨率信息
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCameraInformationQuery0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isCameraSupported) {
@@ -306,14 +315,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-S|STD-SOFTWARE-0901
-     * @tc.name: testCameraDataStreamCollect0100
-     * @tc.desc: 【C-S|STD-SOFTWARE-0901】必须提供摄像头数据流采集功能，包含预览流、录像流和拍照流。
-     *             预览流、录像流必须支持YUV420SP格式，拍照流必须支持 JPEG 编码格式
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testCameraDataStreamCollect0100
+     * @tc.number C-S|STD-SOFTWARE-0901
+     * @tc.desc   【C-S|STD-SOFTWARE-0901】必须提供摄像头数据流采集功能，包含预览流、录像流和拍照流。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCameraDataStreamCollect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isCameraSupported) {
@@ -353,13 +362,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number:C-ALL-HARDWARE-0801
-     * @tc.name: testAudioSupportCapturer0100
-     * @tc.desc: 【C-ALL-HARDWARE-0801】必须支持单或双 MIC 输入或 Line-In 输入的一种或多种方式
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testAudioSupportCapturer0100
+     * @tc.number C-ALL-HARDWARE-0801
+     * @tc.desc   【C-ALL-HARDWARE-0801】必须支持单或双 MIC 输入或 Line-In 输入的一种或多种方式
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAudioSupportCapturer0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isMicrophoneSupported) {
@@ -396,13 +406,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-ALL-HARDWARE-0802
-     * @tc.name: testAudioCapturerSupport16bit0100
-     * @tc.desc: 【C-ALL-HARDWARE-0802】必须支持 16bit 音频输入
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testAudioCapturerSupport16bit0100
+     * @tc.number C-ALL-HARDWARE-0802
+     * @tc.desc   【C-ALL-HARDWARE-0802】必须支持 16bit 音频输入
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAudioCapturerSupport16bit0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isMicrophoneSupported) {
@@ -438,13 +449,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-S|STD-SOFTWARE-0800
-     * @tc.name: testAudioRendererSupportSamplingRates0100
-     * @tc.desc: 【C-S|STD-SOFTWARE-0800】音频播放必须支持 16K，44.1K，48K 采样率音频
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testAudioRendererSupportSamplingRates0100
+     * @tc.number C-S|STD-SOFTWARE-0800
+     * @tc.desc   【C-S|STD-SOFTWARE-0800】音频播放必须支持 16K，44.1K，48K 采样率音频
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAudioRendererSupportSamplingRates0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isAoutSupported) {
@@ -481,13 +493,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-S|STD-SOFTWARE-0800
-     * @tc.name: testAudioRendererSupportSamplingRates0200
-     * @tc.desc: 【C-S|STD-SOFTWARE-0800】音频播放必须支持 16K，44.1K，48K 采样率音频
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testAudioRendererSupportSamplingRates0200
+     * @tc.number C-S|STD-SOFTWARE-0800
+     * @tc.desc   【C-S|STD-SOFTWARE-0800】音频播放必须支持 16K，44.1K，48K 采样率音频
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAudioRendererSupportSamplingRates0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isAoutSupported) {
@@ -524,13 +537,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-S|STD-SOFTWARE-0800
-     * @tc.name: testAudioRendererSupportSamplingRates0300
-     * @tc.desc: 【C-S|STD-SOFTWARE-0800】音频播放必须支持 16K，44.1K，48K 采样率音频
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testAudioRendererSupportSamplingRates0300
+     * @tc.number C-S|STD-SOFTWARE-0800
+     * @tc.desc   【C-S|STD-SOFTWARE-0800】音频播放必须支持 16K，44.1K，48K 采样率音频
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAudioRendererSupportSamplingRates0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isAoutSupported) {
@@ -567,13 +581,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-S|STD-SOFTWARE-0801
-     * @tc.name: testAudioRendererSupportChannels0100
-     * @tc.desc: 【C-S|STD-SOFTWARE-0801】音频播放必须支持单声道和双声道音频
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testAudioRendererSupportChannels0100
+     * @tc.number C-S|STD-SOFTWARE-0801
+     * @tc.desc   【C-S|STD-SOFTWARE-0801】音频播放必须支持单声道和双声道音频
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAudioRendererSupportChannels0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isAoutSupported) {
@@ -610,14 +625,15 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
- * @tc.number: C-S|STD-SOFTWARE-0801
- * @tc.name: testAudioRendererSupportChannels0200
- * @tc.desc: 【C-S|STD-SOFTWARE-0801】音频播放必须支持单声道和双声道音频
- * @tc.size: MediumTest
- * @tc.type: Function
- * @tc.level: Level 0
- */
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testAudioRendererSupportChannels0200
+     * @tc.number C-S|STD-SOFTWARE-0801
+     * @tc.desc   【C-S|STD-SOFTWARE-0801】音频播放必须支持单声道和双声道音频
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAudioRendererSupportChannels0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isAoutSupported) {
         let audioStreamInfo: audio.AudioStreamInfo = {
@@ -653,13 +669,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-S|STD-SOFTWARE-0802
-     * @tc.name: testAudioRendererSupportEncodings0100
-     * @tc.desc: 【C-S|STD-SOFTWARE-0802】音频播放必须支持 16 位 PCM 编码格式音频
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testAudioRendererSupportEncodings0100
+     * @tc.number C-S|STD-SOFTWARE-0802
+     * @tc.desc   【C-S|STD-SOFTWARE-0802】音频播放必须支持 16 位 PCM 编码格式音频
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAudioRendererSupportEncodings0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isAoutSupported) {
@@ -695,13 +712,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-S|STD-SOFTWARE-0803
-     * @tc.name: testAudioCapturerSupportRule0100
-     * @tc.desc: 【C-S|STD-SOFTWARE-0803】音频采集必须支持单声道、编码格式为 16 位 PCM、采样率为 16K，48K 的音频
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testAudioCapturerSupportRule0100
+     * @tc.number C-S|STD-SOFTWARE-0803
+     * @tc.desc   【C-S|STD-SOFTWARE-0803】音频采集必须支持单声道、编码格式为 16 位 PCM、采样率为 16K，48K 的音频
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAudioCapturerSupportRule0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isMicrophoneSupported) {
@@ -736,13 +754,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-S|STD-SOFTWARE-0803
-     * @tc.name: testAudioCapturerSupportRule0200
-     * @tc.desc: 【C-S|STD-SOFTWARE-0803】音频采集必须支持单声道、编码格式为 16 位 PCM、采样率为 16K，48K 的音频
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testAudioCapturerSupportRule0200
+     * @tc.number C-S|STD-SOFTWARE-0803
+     * @tc.desc   【C-S|STD-SOFTWARE-0803】音频采集必须支持单声道、编码格式为 16 位 PCM、采样率为 16K，48K 的音频
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAudioCapturerSupportRule0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isMicrophoneSupported) {
@@ -777,13 +796,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-ALL-HARDWARE-0500
-     * @tc.name: testUsbSupportConnect0100
-     * @tc.desc: 【C-ALL-HARDWARE-0500】端口必须可连接到具有标准 A 型或 C 型的主机模式的USB 端口
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testUsbSupportConnect0100
+     * @tc.number C-ALL-HARDWARE-0500
+     * @tc.desc   【C-ALL-HARDWARE-0500】端口必须可连接到具有标准 A 型或 C 型的主机模式的USB 端口
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSupportConnect0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isUsbSupported) {
@@ -794,13 +814,14 @@ export default function hardwareTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-ALL-HARDWARE-0502
-     * @tc.name: testUsbSupportHost0100
-     * @tc.desc: 【C-ALL-HARDWARE-0502】必须支持连接标准 USB 外围设备
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   testUsbSupportHost0100
+     * @tc.number C-ALL-HARDWARE-0502
+     * @tc.desc   【C-ALL-HARDWARE-0502】必须支持连接标准 USB 外围设备
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSupportHost0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isUsbSupported) {

@@ -40,12 +40,13 @@ export default function DisplayPowerManagerServiceTest() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   DisplayPowerManagerServiceTest_0100
      * @tc.number SUB_PowerSystem_DisplayPowerManagerServiceTest_JSTest_0010
-     * @tc.name testDisplayPowerManagerServiceTest_0100
-     * @tc.desc DisplayPowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   DisplayPowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('DisplayPowerManagerServiceTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'DisplayPowerManagerServiceTest_0100';
@@ -60,12 +61,13 @@ export default function DisplayPowerManagerServiceTest() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:29
+     * @tc.name   DisplayPowerManagerServiceTest_0200
      * @tc.number SUB_PowerSystem_DisplayPowerManagerServiceTest_JSTest_0020
-     * @tc.name testDisplayPowerManagerServiceTest_0200
-     * @tc.desc DisplayPowerManagerService stop test
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   DisplayPowerManagerService stop test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('DisplayPowerManagerServiceTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'DisplayPowerManagerServiceTest_0200';

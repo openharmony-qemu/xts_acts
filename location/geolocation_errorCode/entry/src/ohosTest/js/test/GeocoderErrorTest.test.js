@@ -86,12 +86,13 @@ export default function geolocationTest_GeoErr() {
 
 
         /**
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_HSS_LocationSystem_GeoErr_0400
          * @tc.number SUB_HSS_LocationSystem_GeoErr_0400
-         * @tc.name testGetAddressesFromLocation
-         * @tc.desc Incorrect input parameters are used to invoke the reverse geocoding service.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Incorrect input parameters are used to invoke the reverse geocoding service.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_GeoErr_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -115,12 +116,13 @@ export default function geolocationTest_GeoErr() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_HSS_LocationSystem_GeoErr_0500
          * @tc.number SUB_HSS_LocationSystem_GeoErr_0500
-         * @tc.name testGetAddressesFromLocation
-         * @tc.desc Incorrect input parameters are used to invoke the reverse geocoding service.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Incorrect input parameters are used to invoke the reverse geocoding service.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_GeoErr_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             (async () => {
@@ -138,12 +140,13 @@ export default function geolocationTest_GeoErr() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_HSS_LocationSystem_GeoErr_0600
          * @tc.number SUB_HSS_LocationSystem_GeoErr_0600
-         * @tc.name testGetAddressesFromLocationName
-         * @tc.desc Invoke the geocoding service with incorrect input parameters.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_GeoErr_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -167,12 +170,13 @@ export default function geolocationTest_GeoErr() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_HSS_LocationSystem_GeoErr_0700
          * @tc.number SUB_HSS_LocationSystem_GeoErr_0700
-         * @tc.name testGetAddressesFromLocationName
-         * @tc.desc Invoke the geocoding service with incorrect input parameters.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_GeoErr_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             (async () => {
@@ -190,12 +194,13 @@ export default function geolocationTest_GeoErr() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_HSS_Addbeaconfence_0100
          * @tc.number SUB_HSS_Addbeaconfence_0100
-         * @tc.name SUB_HSS_Addbeaconfence_0100
-         * @tc.desc Invoke the geocoding service with incorrect input parameters.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_Addbeaconfence_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -242,12 +247,13 @@ export default function geolocationTest_GeoErr() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_HSS_Addbeaconfence_0200
          * @tc.number SUB_HSS_Addbeaconfence_0200
-         * @tc.name SUB_HSS_Addbeaconfence_0200
-         * @tc.desc Invoke the geocoding service with incorrect input parameters.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_Addbeaconfence_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -300,12 +306,13 @@ export default function geolocationTest_GeoErr() {
         })
 
         /**
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_HSS_Removebeaconfence_0100
          * @tc.number SUB_HSS_Removebeaconfence_0100
-         * @tc.name SUB_HSS_Removebeaconfence_0100
-         * @tc.desc Invoke the geocoding service with incorrect input parameters.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_Removebeaconfence_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -344,12 +351,13 @@ export default function geolocationTest_GeoErr() {
         
 
         /**
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_HSS_isBeaconFenceSupported_0100
          * @tc.number SUB_HSS_isBeaconFenceSupported_0100
-         * @tc.name SUB_HSS_isBeaconFenceSupported_0100
-         * @tc.desc Invoke the geocoding service with incorrect input parameters.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Invoke the geocoding service with incorrect input parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_isBeaconFenceSupported_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {

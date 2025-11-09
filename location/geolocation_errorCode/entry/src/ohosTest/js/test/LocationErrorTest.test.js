@@ -174,14 +174,15 @@ export default function geolocationTest_LocErr(){
     
     
     
-        /**
-         * @tc.number SUB_HSS_LocationSystem_SingleLocErr_0100
-         * @tc.name Test getCurrentLocation
-         * @tc.desc Initiate a single location request in a specified scenario and set the navigation scenario.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 2
-         */
+         /**
+          * @generated.time 2025-11-09 20:53:27
+          * @tc.name   SUB_HSS_LocationSystem_SingleLocErr_0100
+          * @tc.number SUB_HSS_LocationSystem_SingleLocErr_0100
+          * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL2
+          */
          it('SUB_HSS_LocationSystem_SingleLocErr_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 let currentLocationRequest = 1;
@@ -204,12 +205,13 @@ export default function geolocationTest_LocErr(){
         })
     
         /**
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_HSS_LocationSystem_SingleLocErr_0200
          * @tc.number SUB_HSS_LocationSystem_SingleLocErr_0200
-         * @tc.name Test getCurrentLocation
-         * @tc.desc Initiate a single location request in a specified scenario and set the navigation scenario.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Initiate a single location request in a specified scenario and set the navigation scenario.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_SingleLocErr_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             (async () => {
@@ -227,12 +229,13 @@ export default function geolocationTest_LocErr(){
         })
     
         /**
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_HSS_SendCommandErr_0100
          * @tc.number SUB_HSS_SendCommandErr_0100
-         * @tc.name Test sendCommand
-         * @tc.desc An incorrect extended command is sent to each component of the location service subsystem.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   An incorrect extended command is sent to each component of the location service subsystem.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_SendCommandErr_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let requestInfo = "lbstest";
@@ -254,12 +257,13 @@ export default function geolocationTest_LocErr(){
         })
     
         /**
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_HSS_SendCommandErr_0200
          * @tc.number SUB_HSS_SendCommandErr_0200
-         * @tc.name Test sendCommand
-         * @tc.desc An incorrect extended command is sent to each component of the location service subsystem.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   An incorrect extended command is sent to each component of the location service subsystem.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_SendCommandErr_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let requestInfo = "test";
@@ -277,12 +281,13 @@ export default function geolocationTest_LocErr(){
         })
     
         /**
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_HSS_LocationSystem_BatchingErr_0100
          * @tc.number SUB_HSS_LocationSystem_BatchingErr_0100
-         * @tc.name Test getCachedGnssLocationsSize
-         * @tc.desc An incorrect parameter is used to obtain the number of GNSS cache locations reported at a time.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   An incorrect parameter is used to obtain the number of GNSS cache locations reported at a time.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_BatchingErr_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -312,12 +317,13 @@ export default function geolocationTest_LocErr(){
         })
     
         /**
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_HSS_LocationSystem_BatchingErr_0400
          * @tc.number SUB_HSS_LocationSystem_BatchingErr_0400
-         * @tc.name Test flushCachedGnssLocations
-         * @tc.desc All prepared GNSS locations are returned to the application and the underlying buffers are cleared.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   All prepared GNSS locations are returned to the application and the underlying buffers are cleared.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_BatchingErr_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -347,12 +353,13 @@ export default function geolocationTest_LocErr(){
         })
     
         /**
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   SUB_HSS_LocationSystem_BatchingErr_0500
          * @tc.number SUB_HSS_LocationSystem_BatchingErr_0500
-         * @tc.name Test flushCachedGnssLocations
-         * @tc.desc All prepared GNSS locations are returned to the application and the underlying buffers are cleared.
-         * @tc.size MEDIUM
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   All prepared GNSS locations are returned to the application and the underlying buffers are cleared.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_HSS_LocationSystem_BatchingErr_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Gnss");
@@ -376,14 +383,15 @@ export default function geolocationTest_LocErr(){
             }
         })
         
-       /**
-        * @tc.number    : SUB_HSS_LOCATIONSYSTEM_Config_0001
-        * @tc.name      : testGeolocationManagerConfig001
-        * @tc.desc      : Test Config value.
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 2
-        */
+        /**
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   testGeolocationManagerConfig001
+         * @tc.number SUB_HSS_LOCATIONSYSTEM_Config_0001
+         * @tc.desc   Test Config value.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testGeolocationManagerConfig001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             expect(true).assertEqual(request_scenario_UNSET == 0x300)
             expect(true).assertEqual(request_scenario_NAVIGATION == 0x301)
@@ -450,12 +458,13 @@ export default function geolocationTest_LocErr(){
         })
 
         /**
-         * @tc.number    : SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0500
-         * @tc.name      : testAddGnssGeofence04
-         * @tc.desc      : Test the function of locating the validity period of the fence.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 1
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   testAddGnssGeofence05
+         * @tc.number SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0500
+         * @tc.desc   Test the function of locating the validity period of the fence.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testAddGnssGeofence05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             let geofenceUnsupportFlag = 0;
@@ -509,12 +518,13 @@ export default function geolocationTest_LocErr(){
         })
 
         /**
-         * @tc.number    : SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0600
-         * @tc.name      : testAddGnssGeofence06
-         * @tc.desc      : Test the function of locating the validity period of the fence.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 1
+         * @generated.time 2025-11-09 20:53:27
+         * @tc.name   testRemoveGnssGeofence06
+         * @tc.number SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0600
+         * @tc.desc   Test the function of locating the validity period of the fence.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('testRemoveGnssGeofence06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             var isAcessToken = canIUse("SystemCapability.Location.Location.Geofence");

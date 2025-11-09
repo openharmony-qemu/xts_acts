@@ -129,14 +129,15 @@ export default function inputMethodEngineJSUnit() {
       await driver.click(cursor_x, cursor_y)
     }
 
-    /*
-    * @tc.number  inputMethodEngine_test_getInputMethodEngine_001
-    * @tc.name   inputMethodEngine_test_getInputMethodEngine_001
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level0
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_getInputMethodEngine_001
+     * @tc.number inputMethodEngine_test_getInputMethodEngine_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('inputMethodEngine_test_getInputMethodEngine_001', Level.LEVEL0, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -200,14 +201,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_getKeyboardDelegate_001
-    * @tc.name   inputMethodEngine_test_getKeyboardDelegate_001
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_getKeyboardDelegate_001
+     * @tc.number inputMethodEngine_test_getKeyboardDelegate_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_getKeyboardDelegate_001', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -270,14 +272,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_028
-    * @tc.name   inputMethodEngine_test_028
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_028
+     * @tc.number inputMethodEngine_test_028
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_028', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -341,14 +344,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_029
-    * @tc.name   inputMethodEngine_test_029
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_029
+     * @tc.number inputMethodEngine_test_029
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_029', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -412,14 +416,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_030
-    * @tc.name   inputMethodEngine_test_030
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_030
+     * @tc.number inputMethodEngine_test_030
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_030', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -483,14 +488,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_031
-    * @tc.name   inputMethodEngine_test_031
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_031
+     * @tc.number inputMethodEngine_test_031
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_031', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -554,14 +560,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_032
-    * @tc.name   inputMethodEngine_test_032
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_032
+     * @tc.number inputMethodEngine_test_032
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_032', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -625,14 +632,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_033
-    * @tc.name   inputMethodEngine_test_033
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_033
+     * @tc.number inputMethodEngine_test_033
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_033', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -696,14 +704,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_034
-    * @tc.name   inputMethodEngine_test_034
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_034
+     * @tc.number inputMethodEngine_test_034
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_034', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -767,14 +776,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_035
-    * @tc.name   inputMethodEngine_test_035
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_035
+     * @tc.number inputMethodEngine_test_035
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_035', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -838,14 +848,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_036
-    * @tc.name   inputMethodEngine_test_036
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_036
+     * @tc.number inputMethodEngine_test_036
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_036', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -909,14 +920,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_037
-    * @tc.name   inputMethodEngine_test_037
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_037
+     * @tc.number inputMethodEngine_test_037
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_037', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -980,14 +992,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_038
-    * @tc.name   inputMethodEngine_test_038
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_038
+     * @tc.number inputMethodEngine_test_038
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_038', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1051,14 +1064,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_039
-    * @tc.name   inputMethodEngine_test_039
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_039
+     * @tc.number inputMethodEngine_test_039
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_039', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1122,14 +1136,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_040
-    * @tc.name   inputMethodEngine_test_040
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_040
+     * @tc.number inputMethodEngine_test_040
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_040', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1193,14 +1208,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_041
-    * @tc.name   inputMethodEngine_test_041
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_041
+     * @tc.number inputMethodEngine_test_041
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_041', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1264,14 +1280,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_042
-    * @tc.name   inputMethodEngine_test_042
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_042
+     * @tc.number inputMethodEngine_test_042
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_042', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1335,13 +1352,14 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-     * @tc.number  inputMethodEngine_test_043
+    /**
+     * @generated.time 2025-11-09 20:53:27
      * @tc.name   inputMethodEngine_test_043
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level2
+     * @tc.number inputMethodEngine_test_043
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputMethodEngine_test_043', Level.LEVEL2, async (done: Function) => {
 
@@ -1406,14 +1424,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_049
-    * @tc.name   inputMethodEngine_test_049
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_049
+     * @tc.number inputMethodEngine_test_049
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_049', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1477,14 +1496,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_050
-    * @tc.name   inputMethodEngine_test_050
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_050
+     * @tc.number inputMethodEngine_test_050
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_050', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1548,14 +1568,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_071
-    * @tc.name   inputMethodEngine_test_071
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_071
+     * @tc.number inputMethodEngine_test_071
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_071', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1619,14 +1640,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_072
-    * @tc.name   inputMethodEngine_test_072
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_072
+     * @tc.number inputMethodEngine_test_072
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_072', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1695,14 +1717,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_073
-    * @tc.name   inputMethodEngine_test_073
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_073
+     * @tc.number inputMethodEngine_test_073
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_073', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1776,14 +1799,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_074
-    * @tc.name   inputMethodEngine_test_074
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_074
+     * @tc.number inputMethodEngine_test_074
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_074', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1849,14 +1873,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_076
-    * @tc.name   inputMethodEngine_test_076
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_076
+     * @tc.number inputMethodEngine_test_076
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_076', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1925,14 +1950,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  inputMethodEngine_test_077
-    * @tc.name   inputMethodEngine_test_077
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   inputMethodEngine_test_077
+     * @tc.number inputMethodEngine_test_077
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethodEngine_test_077', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -1996,14 +2022,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  Sub_InputMethod_IME_VisualInput_0500
-    * @tc.name   Sub_InputMethod_IME_VisualInput_0500
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_InputMethod_IME_VisualInput_0500
+     * @tc.number Sub_InputMethod_IME_VisualInput_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_InputMethod_IME_VisualInput_0500', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2068,14 +2095,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  Sub_InputMethod_IME_VisualInput_0600
-    * @tc.name   Sub_InputMethod_IME_VisualInput_0600
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_InputMethod_IME_VisualInput_0600
+     * @tc.number Sub_InputMethod_IME_VisualInput_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_InputMethod_IME_VisualInput_0600', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2140,13 +2168,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_sendKeyFunction_0100
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_sendKeyFunction_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_sendKeyFunction_0100
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_sendKeyFunction_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_sendKeyFunction_0100', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2211,13 +2240,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_sendKeyFunction_0200
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_sendKeyFunction_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_sendKeyFunction_0200
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_sendKeyFunction_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_sendKeyFunction_0200', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2282,13 +2312,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_deleteForward_0100
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_deleteForward_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_deleteForward_0100
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_deleteForward_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_deleteForward_0100', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2353,13 +2384,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_deleteForward_0200
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_deleteForward_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_deleteForward_0200
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_deleteForward_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_deleteForward_0200', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2424,13 +2456,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_insertText_0100
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_insertText_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_insertText_0100
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_insertText_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_insertText_0100', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2495,13 +2528,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_insertText_0200
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_insertText_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_insertText_0200
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_insertText_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_insertText_0200', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2566,13 +2600,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_getForward_0100
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_getForward_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getForward_0100
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_getForward_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_getForward_0100', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2637,13 +2672,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_getForward_0200
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_getForward_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getForward_0200
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_getForward_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_getForward_0200', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2708,13 +2744,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_getBackward_0100
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_getBackward_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getBackward_0100
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_getBackward_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_getBackward_0100', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2779,13 +2816,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_getBackward_0200
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_getBackward_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getBackward_0200
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_getBackward_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_getBackward_0200', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2850,13 +2888,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_moveCursor_0100
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_moveCursor_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_moveCursor_0100
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_moveCursor_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_moveCursor_0100', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2921,13 +2960,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_moveCursor_0200
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_moveCursor_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_moveCursor_0200
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_moveCursor_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_moveCursor_0200', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -2992,13 +3032,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_selectByRange_0100
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_selectByRange_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_selectByRange_0100
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_selectByRange_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_selectByRange_0100', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3063,13 +3104,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_selectByRange_0200
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_selectByRange_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_selectByRange_0200
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_selectByRange_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_selectByRange_0200', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3134,13 +3176,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_selectByMovement_0100
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_selectByMovement_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_selectByMovement_0100
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_selectByMovement_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_selectByMovement_0100', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3205,13 +3248,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_selectByMovement_0200
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_selectByMovement_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_selectByMovement_0200
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_selectByMovement_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_selectByMovement_0200', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3276,13 +3320,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_sendPrivateCommand_0200
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_sendPrivateCommand_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_sendPrivateCommand_0200
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_sendPrivateCommand_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_sendPrivateCommand_0200', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3347,13 +3392,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_InputMethod_IMF_SecurityKeyboard_0601
-    * @tc.name    Sub_InputMethod_IMF_SecurityKeyboard_0601
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_InputMethod_IMF_SecurityKeyboard_0601
+     * @tc.number Sub_InputMethod_IMF_SecurityKeyboard_0601
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_InputMethod_IMF_SecurityKeyboard_0601', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3418,13 +3464,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_deleteBackward_0100
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_deleteBackward_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_deleteBackward_0100
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_deleteBackward_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_deleteBackward_0100', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3489,13 +3536,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_deleteBackward_0200
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_deleteBackward_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_deleteBackward_0200
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_deleteBackward_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_deleteBackward_0200', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3560,25 +3608,27 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  SUB_InputMethod_IME_PrivateDateTransferred_1101
-    * @tc.name    SUB_InputMethod_IME_PrivateDateTransferred_1101
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   SUB_InputMethod_IME_PrivateDateTransferred_1101
+     * @tc.number SUB_InputMethod_IME_PrivateDateTransferred_1101
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_InputMethod_IME_PrivateDateTransferred_1101', Level.LEVEL2, async (done: Function) => {
       testTemplate('SUB_InputMethod_IME_PrivateDateTransferred_1101', 102, done);
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_sendExtendAction_0100
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_sendExtendAction_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_sendExtendAction_0100
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_sendExtendAction_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_sendExtendAction_0100', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3643,13 +3693,14 @@ export default function inputMethodEngineJSUnit() {
     });
 
     /**
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_sendExtendAction_0200
-    * @tc.name    Sub_Misc_inputMethodEngine_InputClient_sendExtendAction_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_sendExtendAction_0200
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_sendExtendAction_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_sendExtendAction_0200', Level.LEVEL2, async (done: Function) => {
 
       let unSubscriberCallback = (err: BusinessError) => {
@@ -3713,14 +3764,15 @@ export default function inputMethodEngineJSUnit() {
       })
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0100
-    * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0100
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0100', Level.LEVEL2, async (done: Function) => {
       let beforePublish = async () => {
         await inputMethod.getController().detach();
@@ -3735,14 +3787,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0100', 103, done, beforePublish);
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0200
-    * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0200
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0200', Level.LEVEL2, async (done: Function) => {
       let beforePublish = async () => {
         await inputMethod.getController().detach();
@@ -3757,14 +3810,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0200', 104, done, beforePublish);
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0300
-    * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0300
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0300
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0300', Level.LEVEL2, async (done: Function) => {
       let beforePublish = async () => {
         await inputMethod.getController().detach();
@@ -3779,14 +3833,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0300', 105, done, beforePublish);
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0400
-    * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0400
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0400
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0400', Level.LEVEL2, async (done: Function) => {
       let beforePublish = async () => {
         await inputMethod.getController().detach();
@@ -3801,14 +3856,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0400', 106, done, beforePublish);
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0500
-    * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0500
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0500
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0500', Level.LEVEL2, async (done: Function) => {
       let beforePublish = async () => {
         await inputMethod.getController().detach();
@@ -3824,14 +3880,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0500', 111, done, beforePublish);
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0600
-    * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0600
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0600
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0600', Level.LEVEL2, async (done: Function) => {
       let beforePublish = async () => {
         await inputMethod.getController().detach();
@@ -3847,14 +3904,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0600', 112, done, beforePublish);
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0700
-    * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0700
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0700
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0700', Level.LEVEL2, async (done: Function) => {
       let beforePublish = async () => {
         await inputMethod.getController().detach();
@@ -3870,14 +3928,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0700', 113, done, beforePublish);
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0800
-    * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0800
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0800
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0800', Level.LEVEL2, async (done: Function) => {
       let beforePublish = async () => {
         await inputMethod.getController().detach();
@@ -3893,14 +3952,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_Misc_inputMethodEngine_InputClient_getAttachOptions_0800', 114, done, beforePublish);
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_onAttachOptionsDidChange_0100
-    * @tc.name   Sub_Misc_inputMethodEngine_InputClient_onAttachOptionsDidChange_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_onAttachOptionsDidChange_0100
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_onAttachOptionsDidChange_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_onAttachOptionsDidChange_0100', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -3924,14 +3984,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_Misc_inputMethodEngine_InputClient_onAttachOptionsDidChange_0100', 107, done, beforePublish, afterPublish);
     });
     
-    /*
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_onAttachOptionsDidChange_0200
-    * @tc.name   Sub_Misc_inputMethodEngine_InputClient_onAttachOptionsDidChange_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_onAttachOptionsDidChange_0200
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_onAttachOptionsDidChange_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_onAttachOptionsDidChange_0200', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -3955,14 +4016,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_Misc_inputMethodEngine_InputClient_onAttachOptionsDidChange_0200', 108, done, beforePublish, afterPublish);
     });
     
-    /*
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_offAttachOptionsDidChange_0100
-    * @tc.name   Sub_Misc_inputMethodEngine_InputClient_offAttachOptionsDidChange_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_offAttachOptionsDidChange_0100
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_offAttachOptionsDidChange_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_offAttachOptionsDidChange_0100', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -3992,14 +4054,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_Misc_inputMethodEngine_InputClient_offAttachOptionsDidChange_0100', 109, done, beforePublish, afterPublish);
     });
     
-    /*
-    * @tc.number  Sub_Misc_inputMethodEngine_InputClient_offAttachOptionsDidChange_0200
-    * @tc.name   Sub_Misc_inputMethodEngine_InputClient_offAttachOptionsDidChange_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_Misc_inputMethodEngine_InputClient_offAttachOptionsDidChange_0200
+     * @tc.number Sub_Misc_inputMethodEngine_InputClient_offAttachOptionsDidChange_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethodEngine_InputClient_offAttachOptionsDidChange_0200', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -4029,14 +4092,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_Misc_inputMethodEngine_InputClient_offAttachOptionsDidChange_0200', 110, done, beforePublish, afterPublish);
     });
 
-    /*
-    * @tc.number  Sub_InputMethod_IMF_CapitalizeMode_0100
-    * @tc.name    Sub_InputMethod_IMF_CapitalizeMode_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_InputMethod_IMF_CapitalizeMode_0100
+     * @tc.number Sub_InputMethod_IMF_CapitalizeMode_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_InputMethod_IMF_CapitalizeMode_0100', Level.LEVEL2, async (done: Function) => {
       let beforePublish = async () => {
         await inputMethod.getController().detach();
@@ -4052,14 +4116,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_InputMethod_IMF_CapitalizeMode_0100', 115, done, beforePublish);
     });
 
-    /*
-    * @tc.number  Sub_InputMethod_IMF_CapitalizeMode_0200
-    * @tc.name    Sub_InputMethod_IMF_CapitalizeMode_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_InputMethod_IMF_CapitalizeMode_0200
+     * @tc.number Sub_InputMethod_IMF_CapitalizeMode_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_InputMethod_IMF_CapitalizeMode_0200', Level.LEVEL2, async (done: Function) => {
       let beforePublish = async () => {
         await inputMethod.getController().detach();
@@ -4075,14 +4140,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_InputMethod_IMF_CapitalizeMode_0200', 116, done, beforePublish);
     });
 
-    /*
-    * @tc.number  Sub_InputMethod_IMF_CapitalizeMode_0300
-    * @tc.name    Sub_InputMethod_IMF_CapitalizeMode_0300
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_InputMethod_IMF_CapitalizeMode_0300
+     * @tc.number Sub_InputMethod_IMF_CapitalizeMode_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_InputMethod_IMF_CapitalizeMode_0300', Level.LEVEL2, async (done: Function) => {
       let beforePublish = async () => {
         await inputMethod.getController().detach();
@@ -4098,14 +4164,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_InputMethod_IMF_CapitalizeMode_0300', 117, done, beforePublish);
     });
 
-    /*
-    * @tc.number  Sub_InputMethod_IMF_CapitalizeMode_0400
-    * @tc.name    Sub_InputMethod_IMF_CapitalizeMode_0400
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_InputMethod_IMF_CapitalizeMode_0400
+     * @tc.number Sub_InputMethod_IMF_CapitalizeMode_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_InputMethod_IMF_CapitalizeMode_0400', Level.LEVEL2, async (done: Function) => {
       let beforePublish = async () => {
         await inputMethod.getController().detach();
@@ -4121,14 +4188,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_InputMethod_IMF_CapitalizeMode_0400', 118, done, beforePublish);
     });
 
-    /*
-    * @tc.number  Sub_InputMethod_IMF_CapitalizeMode_0500
-    * @tc.name    Sub_InputMethod_IMF_CapitalizeMode_0500
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_InputMethod_IMF_CapitalizeMode_0500
+     * @tc.number Sub_InputMethod_IMF_CapitalizeMode_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_InputMethod_IMF_CapitalizeMode_0500', Level.LEVEL2, async (done: Function) => {
       let beforePublish = async () => {
         await inputMethod.getController().detach();
@@ -4143,14 +4211,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_InputMethod_IMF_CapitalizeMode_0500', 119, done, beforePublish);
     });
 
-    /*
-    * @tc.number  Sub_InputMethod_IMF_Placeholder_0100
-    * @tc.name    Sub_InputMethod_IMF_Placeholder_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_InputMethod_IMF_Placeholder_0100
+     * @tc.number Sub_InputMethod_IMF_Placeholder_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_InputMethod_IMF_Placeholder_0100', Level.LEVEL2, async (done: Function) => {
       let beforePublish = async () => {
         await inputMethod.getController().detach();
@@ -4165,14 +4234,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_InputMethod_IMF_Placeholder_0100', 120, done, beforePublish);
     });
 
-    /*
-    * @tc.number  Sub_InputMethod_IMF_Placeholder_0200
-    * @tc.name    Sub_InputMethod_IMF_Placeholder_0200
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_InputMethod_IMF_Placeholder_0200
+     * @tc.number Sub_InputMethod_IMF_Placeholder_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_InputMethod_IMF_Placeholder_0200', Level.LEVEL2, async (done: Function) => {
       let beforePublish = async () => {
         await inputMethod.getController().detach();
@@ -4192,14 +4262,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_InputMethod_IMF_Placeholder_0200', 121, done, beforePublish);
     });
 
-    /*
-    * @tc.number  Sub_InputMethod_IMF_Placeholder_0300
-    * @tc.name    Sub_InputMethod_IMF_Placeholder_0300
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_InputMethod_IMF_Placeholder_0300
+     * @tc.number Sub_InputMethod_IMF_Placeholder_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_InputMethod_IMF_Placeholder_0300', Level.LEVEL2, async (done: Function) => {
       let beforePublish = async () => {
         await inputMethod.getController().detach();
@@ -4219,14 +4290,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_InputMethod_IMF_Placeholder_0300', 122, done, beforePublish);
     });
 
-    /*
-    * @tc.number  Sub_InputMethod_IMF_Placeholder_0400
-    * @tc.name    Sub_InputMethod_IMF_Placeholder_0400
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_InputMethod_IMF_Placeholder_0400
+     * @tc.number Sub_InputMethod_IMF_Placeholder_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_InputMethod_IMF_Placeholder_0400', Level.LEVEL2, async (done: Function) => {
       let beforePublish = async () => {
         await inputMethod.getController().detach();
@@ -4246,14 +4318,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_InputMethod_IMF_Placeholder_0400', 123, done, beforePublish);
     });
 
-    /*
-    * @tc.number  Sub_InputMethod_IMF_Placeholder_0600
-    * @tc.name    Sub_InputMethod_IMF_Placeholder_0600
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_InputMethod_IMF_Placeholder_0600
+     * @tc.number Sub_InputMethod_IMF_Placeholder_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_InputMethod_IMF_Placeholder_0600', Level.LEVEL2, async (done: Function) => {
       let beforePublish = async () => {
         await inputMethod.getController().detach();
@@ -4268,14 +4341,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_InputMethod_IMF_Placeholder_0600', 124, done, beforePublish);
     });
 
-    /*
-    * @tc.number  Sub_InputMethod_IMF_DiscardTypingText_0300
-    * @tc.name    Sub_InputMethod_IMF_DiscardTypingText_0300
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_InputMethod_IMF_DiscardTypingText_0300
+     * @tc.number Sub_InputMethod_IMF_DiscardTypingText_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_InputMethod_IMF_DiscardTypingText_0300', Level.LEVEL2, async (done: Function) => {
       await inputMethod.getController().detach();
       const ATTRIBUTE: inputMethod.TextConfig = {
@@ -4298,14 +4372,15 @@ export default function inputMethodEngineJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  Sub_InputMethod_IMF_DiscardTypingText_0100
-    * @tc.name    Sub_InputMethod_IMF_DiscardTypingText_0100
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_InputMethod_IMF_DiscardTypingText_0100
+     * @tc.number Sub_InputMethod_IMF_DiscardTypingText_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_InputMethod_IMF_DiscardTypingText_0100', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -4330,14 +4405,15 @@ export default function inputMethodEngineJSUnit() {
       testTemplate('Sub_InputMethod_IMF_DiscardTypingText_0100', 125, done, beforePublish, afterPublish);
     });
 
-    /*
-    * @tc.number  Sub_InputMethod_IMF_DiscardTypingText_1000
-    * @tc.name    Sub_InputMethod_IMF_DiscardTypingText_1000
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level2
-    */
+    /**
+     * @generated.time 2025-11-09 20:53:27
+     * @tc.name   Sub_InputMethod_IMF_DiscardTypingText_1000
+     * @tc.number Sub_InputMethod_IMF_DiscardTypingText_1000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_InputMethod_IMF_DiscardTypingText_1000', Level.LEVEL2, async (done: Function) => {
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {

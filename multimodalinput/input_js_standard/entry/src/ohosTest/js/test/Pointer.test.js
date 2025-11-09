@@ -34,12 +34,13 @@ export default function Pointer_test() {
     }
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_SetPointerVisibleSync_Test_001
      * @tc.number MultimodalInputPointer_Test_001
-     * @tc.name Pointer_SetPointerVisibleSync_Test_001
-     * @tc.desc Pointer interface SetPointerVisibleSync test
-     * @tc.level Level3
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface SetPointerVisibleSync test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_SetPointerVisibleSync_Test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`Pointer_SetPointerVisibleSync_Test_001 enter`);
@@ -53,12 +54,13 @@ export default function Pointer_test() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_IsPointerVisibleSync_Test_002
      * @tc.number MultimodalInputPointer_Test_002
-     * @tc.name Pointer_IsPointerVisibleSync_Test_002
-     * @tc.desc Pointer interface isPointerVisibleSync test
-     * @tc.level Level3
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface isPointerVisibleSync test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_IsPointerVisibleSync_Test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`Pointer_IsPointerVisibleSync_Test_002 enter`);
@@ -73,12 +75,13 @@ export default function Pointer_test() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_GetPointerStyleSync_Test_003
      * @tc.number MultimodalInputPointer_Test_003
-     * @tc.name Pointer_GetPointerStyleSync_Test_003
-     * @tc.desc Pointer interface getPointerStyleSync test
-     * @tc.level Level3
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface getPointerStyleSync test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_GetPointerStyleSync_Test_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`Pointer_GetPointerStyleSync_Test_003 enter`);
@@ -93,12 +96,13 @@ export default function Pointer_test() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_PointerVisibleTest_001
      * @tc.number MultimodalInputPointer_Test_004
-     * @tc.name Pointer_PointerVisibleTest_001
-     * @tc.desc Pointer interface SetPointerVisible test
-     * @tc.level Level3
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface SetPointerVisible test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_PointerVisibleTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`Pointer_SetPointerVisibleTest_001 enter`);
@@ -137,12 +141,13 @@ export default function Pointer_test() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_PointerVisibleTest_002
      * @tc.number MultimodalInputPointer_Test_005
-     * @tc.name Pointer_PointerVisibleTest_002
-     * @tc.desc Pointer interface SetPointerVisible test
-     * @tc.level Level3
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface SetPointerVisible test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_PointerVisibleTest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`Pointer_PointerVisibleTest_002 enter`);
@@ -210,12 +215,13 @@ export default function Pointer_test() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_PointerVisibleTest_003
      * @tc.number Pointer_PointerVisibleTest_003
-     * @tc.name Pointer_PointerVisibleTest_003
-     * @tc.desc Pointer interface SetPointerVisible test
-     * @tc.level Level3
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface SetPointerVisible test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_PointerVisibleTest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`Pointer_PointerVisibleTest_003 enter`);
@@ -284,12 +290,13 @@ export default function Pointer_test() {
     });
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_SetPointerStyle_001
      * @tc.number MultimodalInputPointer_Test_006
-     * @tc.name Pointer_SetPointerStyle_001
-     * @tc.desc Pointer interface SetPointerStyle test
-     * @tc.level Level3
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface SetPointerStyle test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_SetPointerStyle_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`SetPointerStyle_001 enter`);
@@ -341,12 +348,13 @@ export default function Pointer_test() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_SetPointerStyle_002
      * @tc.number MultimodalInputPointer_Test_007
-     * @tc.name Pointer_SetPointerStyle_002
-     * @tc.desc Pointer interface SetPointerStyle test
-     * @tc.level Level3
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface SetPointerStyle test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_SetPointerStyle_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`SetPointerStyle_002 enter`);
@@ -404,12 +412,13 @@ export default function Pointer_test() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_GetPointerStyle_001
      * @tc.number MultimodalInputPointer_Test_008
-     * @tc.name Pointer_GetPointerStyle_001
-     * @tc.desc Pointer interface GetPointerStyle test
-     * @tc.level Level3
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface GetPointerStyle test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_GetPointerStyle_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`GetPointerStyle_001 enter`);
@@ -461,12 +470,13 @@ export default function Pointer_test() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_GetPointerStyle_002
      * @tc.number MultimodalInputPointer_Test_009
-     * @tc.name Pointer_GetPointerStyle_002
-     * @tc.desc Pointer interface GetPointerStyle test
-     * @tc.level Level3
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface GetPointerStyle test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_GetPointerStyle_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`GetPointerStyle_002 enter`);
@@ -522,12 +532,13 @@ export default function Pointer_test() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_PointerStyle_test
      * @tc.number MultimodalInputPointer_Test_010
-     * @tc.name Pointer_PointerStyle_test
-     * @tc.desc Pointer interface PointerStyle test
-     * @tc.level Level3
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface PointerStyle test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_PointerStyle_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info('Pointer_PointerStyle_test = ' + pointer.PointerStyle.DEFAULT);
@@ -658,12 +669,13 @@ export default function Pointer_test() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_PointerStyle_Loading_test
      * @tc.number MultimodalInputPointer_Test_011
-     * @tc.name Pointer_PointerStyle_Loading_test
-     * @tc.desc Pointer interface PointerStyle test
-     * @tc.level Level3
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface PointerStyle test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_PointerStyle_Loading_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info('Pointer_LOADING_test = ' + pointer.PointerStyle.LOADING);
@@ -671,12 +683,13 @@ export default function Pointer_test() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_PointerStyle_Running_test
      * @tc.number MultimodalInputPointer_Test_012
-     * @tc.name Pointer_PointerStyle_Running_test
-     * @tc.desc Pointer interface PointerStyle test
-     * @tc.level Level3
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface PointerStyle test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_PointerStyle_Running_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info('Pointer_RUNNING_test = ' + pointer.PointerStyle.RUNNING);
@@ -684,12 +697,13 @@ export default function Pointer_test() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Touchpad_RightClickType_test
      * @tc.number MultimodalInputPointer_Test_013
-     * @tc.name Touchpad_RightClickType_test
-     * @tc.desc Pointer interface PointerStyle test
-     * @tc.level Level3
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface PointerStyle test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Touchpad_RightClickType_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
       console.info('Touchpad_TOUCHPAD_RIGHT_BUTTON_test = ' + pointer.RightClickType.TOUCHPAD_RIGHT_BUTTON);
@@ -703,12 +717,13 @@ export default function Pointer_test() {
     })
     
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_PointerVisibleTest_Exception_Test_001
      * @tc.number MultimodalInputPointer_Test_014
-     * @tc.name Pointer_PointerVisibleTest_Exception_Test_001
-     * @tc.desc Pointer interface PointerVisible exception test
-     * @tc.level Level4
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface PointerVisible exception test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_PointerVisibleTest_Exception_Test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`Pointer_PointerVisibleTest_Exception_Test_001 enter`);
@@ -737,12 +752,13 @@ export default function Pointer_test() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_PointerVisibleTest_Exception_Test_002
      * @tc.number MultimodalInputPointer_Test_015
-     * @tc.name Pointer_PointerVisibleTest_Exception_Test_002
-     * @tc.desc Pointer interface PointerVisible exception test
-     * @tc.level Level4
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface PointerVisible exception test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_PointerVisibleTest_Exception_Test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`Pointer_PointerVisibleTest_Exception_Test_002 enter`);
@@ -774,12 +790,13 @@ export default function Pointer_test() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_PointerStyleTest_Exception_Test_001
      * @tc.number MultimodalInputPointer_Test_016
-     * @tc.name Pointer_PointerStyleTest_Exception_Test_001
-     * @tc.desc Pointer interface PointerStyle exception test
-     * @tc.level Level4
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface PointerStyle exception test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_PointerStyleTest_Exception_Test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`Pointer_PointerStyleTest_Exception_Test_001 enter`);
@@ -809,12 +826,13 @@ export default function Pointer_test() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_PointerStyleTest_Exception_Test_002
      * @tc.number MultimodalInputPointer_Test_017
-     * @tc.name Pointer_PointerStyleTest_Exception_Test_002
-     * @tc.desc Pointer interface PointerStyle exception test
-     * @tc.level Level4
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface PointerStyle exception test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_PointerStyleTest_Exception_Test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`Pointer_PointerStyleTest_Exception_Test_002 enter`);
@@ -844,12 +862,13 @@ export default function Pointer_test() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_SetPointerStyleSyncTest_Test_001
      * @tc.number MultimodalInputPointer_Test_018
-     * @tc.name Pointer_SetPointerStyleSyncTest_Test_001
-     * @tc.desc Pointer interface PointerStyle exception test
-     * @tc.level Level3
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Pointer interface PointerStyle exception test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_SetPointerStyleSyncTest_Test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`Pointer_SetPointerStyleSyncTest_Test_001 enter`);
@@ -865,12 +884,13 @@ export default function Pointer_test() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_setCustomCursorTest_Test_001
      * @tc.number MultimodalInputPointer_Test_019
-     * @tc.name Pointer_setCustomCursorTest_Test_001
-     * @tc.desc set custom cursor test
-     * @tc.level Level3
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   set custom cursor test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_setCustomCursorTest_Test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`Pointer_setCustomCursorSyncTest_Test_001 enter`);
@@ -890,12 +910,13 @@ export default function Pointer_test() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_setCustomCursorTest_Test_002
      * @tc.number MultimodalInputPointer_Test_020
-     * @tc.name Pointer_setCustomCursorTest_Test_002
-     * @tc.desc set custom cursor test
-     * @tc.level Level3
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   set custom cursor test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_setCustomCursorTest_Test_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`Pointer_setCustomCursorTest_Test_002 enter`);
@@ -917,12 +938,13 @@ export default function Pointer_test() {
     })
 
     /**
+     * @generated.time 2025-11-09 20:53:28
+     * @tc.name   Pointer_setCustomCursorTest_Exception_Test_001
      * @tc.number MultimodalInputPointer_Test_021
-     * @tc.name Pointer_setCustomCursorTest_Exception_Test_001
-     * @tc.desc Set custom cursor test
-     * @tc.level Level4
-     * @tc.size SmallTest
-     * @tc.type Function
+     * @tc.desc   Set custom cursor test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Pointer_setCustomCursorTest_Exception_Test_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(`Pointer_setCustomCursorTest_Exception_Test_001 enter`);
