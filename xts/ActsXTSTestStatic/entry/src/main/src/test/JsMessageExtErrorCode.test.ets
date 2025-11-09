@@ -35,13 +35,14 @@ export default function jsMessageExtErrorCode() {
     });
     
 
-    /*
-     * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETSTRING_0100
-     * @tc.name       : testJsMessageExtGetStringErrorStatic001
-     * @tc.desc       : test JsMessageExtGetString error
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetStringErrorStatic001
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETSTRING_0100
+     * @tc.desc   test JsMessageExtGetString error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testJsMessageExtGetStringErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
@@ -55,14 +56,15 @@ export default function jsMessageExtErrorCode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETSTRING_0200
-    * @tc.name       : testJsMessageExtGetStringErrorStatic002
-    * @tc.desc       : test JsMessageExtGetString error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetStringErrorStatic002
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETSTRING_0200
+     * @tc.desc   test JsMessageExtGetString error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetStringErrorStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetStringError002', 10)
@@ -74,14 +76,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETSTRING_0300
-    * @tc.name       : testJsMessageExtGetStringErrorStatic003
-    * @tc.desc       : test JsMessageExtGetString error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetStringErrorStatic003
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETSTRING_0300
+     * @tc.desc   test JsMessageExtGetString error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetStringErrorStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetStringError003', 10)
@@ -92,14 +95,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETSTRING_0400
-    * @tc.name       : testJsMessageExtGetStringErrorStatic004
-    * @tc.desc       : test JsMessageExtGetString error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetStringErrorStatic004
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETSTRING_0400
+     * @tc.desc   test JsMessageExtGetString error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetStringErrorStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetStringError004', 10)
@@ -110,14 +114,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETNUMBER_0100
-    * @tc.name       : testJsMessageExtGetNumberErrorStatic001
-    * @tc.desc       : test JsMessageExtGetString error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetNumberErrorStatic001
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETNUMBER_0100
+     * @tc.desc   test JsMessageExtGetString error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetNumberErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetNumberError001', 10)
@@ -128,14 +133,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETNUMBER_0200
-    * @tc.name       : testJsMessageExtGetNumberErrorStatic002
-    * @tc.desc       : test JsMessageExtGetString error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetNumberErrorStatic002
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETNUMBER_0200
+     * @tc.desc   test JsMessageExtGetString error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetNumberErrorStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetNumberError002', 10)
@@ -146,14 +152,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETNUMBER_0300
-    * @tc.name       : testJsMessageExtGetNumberErrorStatic003
-    * @tc.desc       : test JsMessageExtGetString error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetNumberErrorStatic003
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETNUMBER_0300
+     * @tc.desc   test JsMessageExtGetString error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetNumberErrorStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetNumberError003', 10)
@@ -164,14 +171,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETNUMBER_0400
-    * @tc.name       : testJsMessageExtGetNumberErrorStatic004
-    * @tc.desc       : test JsMessageExtGetString error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetNumberErrorStatic004
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETNUMBER_0400
+     * @tc.desc   test JsMessageExtGetString error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetNumberErrorStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetNumberError004', 10)
@@ -182,14 +190,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETBOOLEAN_0100
-    * @tc.name       : testJsMessageExtGetBooleanErrorStatic001
-    * @tc.desc       : test JsMessageExtGetBoolean error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetBooleanErrorStatic001
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETBOOLEAN_0100
+     * @tc.desc   test JsMessageExtGetBoolean error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetBooleanErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetBooleanError001', 10)
@@ -200,14 +209,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETBOOLEAN_0200
-    * @tc.name       : testJsMessageExtGetBooleanErrorStatic002
-    * @tc.desc       : test JsMessageExtGetBoolean error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetBooleanErrorStatic002
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETBOOLEAN_0200
+     * @tc.desc   test JsMessageExtGetBoolean error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetBooleanErrorStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetBooleanError002', 10)
@@ -218,14 +228,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETBOOLEAN_0300
-    * @tc.name       : testJsMessageExtGetBooleanErrorStatic003
-    * @tc.desc       : test JsMessageExtGetBoolean error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetBooleanErrorStatic003
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETBOOLEAN_0300
+     * @tc.desc   test JsMessageExtGetBoolean error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetBooleanErrorStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetBooleanError003', 10)
@@ -236,14 +247,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETBOOLEAN_0400
-    * @tc.name       : testJsMessageExtGetBooleanErrorStatic004
-    * @tc.desc       : test JsMessageExtGetBoolean error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetBooleanErrorStatic004
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETBOOLEAN_0400
+     * @tc.desc   test JsMessageExtGetBoolean error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetBooleanErrorStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetBooleanError004', 10)
@@ -254,14 +266,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAYBUFFER_0100
-    * @tc.name       : testJsMessageExtGetArrayBufferErrorStatic001
-    * @tc.desc       : test JsMessageExtGetArrayBuffer error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetArrayBufferErrorStatic001
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAYBUFFER_0100
+     * @tc.desc   test JsMessageExtGetArrayBuffer error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetArrayBufferErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetArrayBufferError001', 10)
@@ -272,14 +285,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAYBUFFER_0200
-    * @tc.name       : testJsMessageExtGetArrayBufferErrorStatic002
-    * @tc.desc       : test JsMessageExtGetArrayBuffer error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetArrayBufferErrorStatic002
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAYBUFFER_0200
+     * @tc.desc   test JsMessageExtGetArrayBuffer error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetArrayBufferErrorStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetArrayBufferError002', 10)
@@ -290,14 +304,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAYBUFFER_0300
-    * @tc.name       : testJsMessageExtGetArrayBufferErrorStatic003
-    * @tc.desc       : test JsMessageExtGetArrayBuffer error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetArrayBufferErrorStatic003
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAYBUFFER_0300
+     * @tc.desc   test JsMessageExtGetArrayBuffer error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetArrayBufferErrorStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetArrayBufferError003', 10)
@@ -308,14 +323,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAYBUFFER_0400
-    * @tc.name       : testJsMessageExtGetArrayBufferErrorStatic004
-    * @tc.desc       : test JsMessageExtGetArrayBuffer error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetArrayBufferErrorStatic004
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAYBUFFER_0400
+     * @tc.desc   test JsMessageExtGetArrayBuffer error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetArrayBufferErrorStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetArrayBufferError004', 10)
@@ -326,14 +342,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0100
-    * @tc.name       : testJsMessageExtGetArrayErrorStatic001
-    * @tc.desc       : test JsMessageExtGetArray error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetArrayErrorStatic001
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0100
+     * @tc.desc   test JsMessageExtGetArray error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetArrayErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetArrayError001', 10)
@@ -344,14 +361,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0200
-    * @tc.name       : testJsMessageExtGetArrayErrorStatic002
-    * @tc.desc       : test JsMessageExtGetArray error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetArrayErrorStatic002
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0200
+     * @tc.desc   test JsMessageExtGetArray error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetArrayErrorStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetArrayError002', 10)
@@ -362,14 +380,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0300
-    * @tc.name       : testJsMessageExtGetArrayErrorStatic003
-    * @tc.desc       : test JsMessageExtGetArray error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetArrayErrorStatic003
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0300
+     * @tc.desc   test JsMessageExtGetArray error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetArrayErrorStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetArrayError003', 10)
@@ -380,14 +399,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0400
-    * @tc.name       : testJsMessageExtGetArrayErrorStatic004
-    * @tc.desc       : test JsMessageExtGetArray error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   testJsMessageExtGetArrayErrorStatic004
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0400
+     * @tc.desc   test JsMessageExtGetArray error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testJsMessageExtGetArrayErrorStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
     async (done: () => void): Promise<void> => {
       Utils.emitEvent('testJsMessageExtGetArrayError004', 10)
@@ -398,14 +418,15 @@ export default function jsMessageExtErrorCode() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0500
-    * @tc.name       : SwitchNextPageStatic
-    * @tc.desc       : test PAGE_REDIRECT
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @generated.time 2025-11-09 20:57:57
+     * @tc.name   SwitchNextPageStatic
+     * @tc.number SUB_WEB_ERRORCODE_JSMESSAGEEXT_GETARRAY_0500
+     * @tc.desc   test PAGE_REDIRECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(2000);

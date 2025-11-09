@@ -21,13 +21,14 @@ export default function userauthTest() {
     describe('userauthTest_API9', function () {
 
         /**
-        * @tc.number    : Security_IAM_Func_0102
-        * @tc.name      : kit interface get AvailabeStatus
-        * @tc.desc      : Abnormal testing
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 0
-        */
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_Func_0102
+         * @tc.number Security_IAM_Func_0102
+         * @tc.desc   Abnormal testing
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_IAM_Func_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('testFace getAvailableStatusTest0102 start');
             let authType = [userAuthNorth.UserAuthType.FACE, userAuthNorth.UserAuthType.FINGERPRINT, userAuthNorth.UserAuthType.PIN]
@@ -80,14 +81,15 @@ export default function userauthTest() {
         })
 
 
-        /*
-            * @tc.number    : Security_IAM_Func_0104
-            * @tc.name      : getAvailableStatus invalid parameters
-            * @tc.desc      : Abnormal testing
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_Func_0104
+         * @tc.number Security_IAM_Func_0104
+         * @tc.desc   Abnormal testing
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_IAM_Func_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('testFace getAvailableStatusTest0104 start');
             //No AuthType
@@ -148,14 +150,15 @@ export default function userauthTest() {
             done()
         })
 
-        /*
-        * @tc.number    : Security_IAM_Func_0111
-        * @tc.name      : kit interface get getAuthInstance
-        * @tc.desc      : Abnormal testing
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_Func_0111
+         * @tc.number Security_IAM_Func_0111
+         * @tc.desc   Abnormal testing
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_IAM_Func_0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('testFace getAuthInstance start');
             let challenge = new Uint8Array([253, 19, 58, 160, 67, 200, 247, 37])
@@ -189,14 +192,15 @@ export default function userauthTest() {
             done()
         })
 
-        /*
-            * @tc.number    : Security_IAM_Func_0105
-            * @tc.name      : getAuthInstance invalid parameters
-            * @tc.desc      : Abnormal testing
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_Func_0105
+         * @tc.number Security_IAM_Func_0105
+         * @tc.desc   Abnormal testing
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_IAM_Func_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('testFace Security_IAM_Func_0105 start');
             let challenge = new Uint8Array([253, 19, 58, 160, 67, 200, 247, 37])
@@ -270,14 +274,15 @@ export default function userauthTest() {
             done()
         })
 
-        /*
-            * @tc.number    : Security_IAM_Func_0106
-            * @tc.name      : on,off invalid parameters
-            * @tc.desc      : Abnormal testing
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_Func_0106
+         * @tc.number Security_IAM_Func_0106
+         * @tc.desc   Abnormal testing
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_IAM_Func_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('testFace Security_IAM_Func_0106 start');
             let challenge = new Uint8Array([253, 19, 58, 160, 67, 200, 247, 37])
@@ -392,14 +397,15 @@ export default function userauthTest() {
             }
         })
 
-        /*
-        * @tc.number    : Security_IAM_Func_0103
-        * @tc.name      : kit interface auth & cancel auth
-        * @tc.desc      : Abnormal testing
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level 0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_Func_0103
+         * @tc.number Security_IAM_Func_0103
+         * @tc.desc   Abnormal testing
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_IAM_Func_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let challenge = new Uint8Array([253, 19, 58, 160, 67, 200, 247, 37])
             let authType = [userAuthNorth.UserAuthType.FACE, userAuthNorth.UserAuthType.FINGERPRINT];
@@ -449,13 +455,14 @@ export default function userauthTest() {
             done();
         })
 
-        /*
-         * @tc.number    : Security_IAM_Func_0108
-         * @tc.name      : off direct
-         * @tc.desc      : Abnormal testing
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_Func_0108
+         * @tc.number Security_IAM_Func_0108
+         * @tc.desc   Abnormal testing
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('Security_IAM_Func_0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let challenge = new Uint8Array([253, 19, 58, 160, 67, 200, 247, 37])
@@ -476,13 +483,14 @@ export default function userauthTest() {
             done();
         })
 
-        /*
-         * @tc.number    : Security_IAM_Func_0109
-         * @tc.name      : cancel direct
-         * @tc.desc      : Abnormal testing
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_Func_0109
+         * @tc.number Security_IAM_Func_0109
+         * @tc.desc   Abnormal testing
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('Security_IAM_Func_0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let challenge = new Uint8Array([253, 19, 58, 160, 67, 200, 247, 37])
@@ -500,13 +508,14 @@ export default function userauthTest() {
             }
         })
 
-        /*
-         * @tc.number    : Security_IAM_Func_0110
-         * @tc.name      : getAuthInstance faceType ATL4
-         * @tc.desc      : A normal response is expected
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_Func_0110
+         * @tc.number Security_IAM_Func_0110
+         * @tc.desc   A normal response is expected
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('Security_IAM_Func_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let challenge = new Uint8Array([253, 19, 58, 160, 67, 200, 247, 37])
@@ -523,14 +532,15 @@ export default function userauthTest() {
             }
         })
 
-        /*
-            * @tc.number    : Security_IAM_PIN_Kit_Func_0104
-            * @tc.name      : kit interface enum AuthTrustLevel
-            * @tc.desc      : Enumeration testing
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_PIN_Kit_Func_0104
+         * @tc.number Security_IAM_PIN_Kit_Func_0104
+         * @tc.desc   Enumeration testing
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_IAM_PIN_Kit_Func_0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('testFace Security_IAM_PIN_Kit_Func_0104 start');
             expect(10000).assertEqual(userAuthNorth.AuthTrustLevel.ATL1);
@@ -541,14 +551,15 @@ export default function userauthTest() {
             done();
         })
 
-        /*
-            * @tc.number    : Security_IAM_PIN_Kit_Func_0105
-            * @tc.name      : kit interface enum FaceTips
-            * @tc.desc      : Enumeration testing
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_PIN_Kit_Func_0105
+         * @tc.number Security_IAM_PIN_Kit_Func_0105
+         * @tc.desc   Enumeration testing
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_IAM_PIN_Kit_Func_0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('testFace Security_IAM_PIN_Kit_Func_0105 start');
             expect(1).assertEqual(userAuthNorth.FaceTips.FACE_AUTH_TIP_TOO_BRIGHT);
@@ -566,14 +577,15 @@ export default function userauthTest() {
             done();
         })
 
-        /*
-            * @tc.number    : Security_IAM_PIN_Kit_Func_0106
-            * @tc.name      : kit interface enum UserAuthType
-            * @tc.desc      : Enumeration testing
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_PIN_Kit_Func_0106
+         * @tc.number Security_IAM_PIN_Kit_Func_0106
+         * @tc.desc   Enumeration testing
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_IAM_PIN_Kit_Func_0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('testFace Security_IAM_PIN_Kit_Func_0106 start');
             expect(2).assertEqual(userAuthNorth.UserAuthType.FACE);
@@ -582,14 +594,15 @@ export default function userauthTest() {
             done();
         })
 
-        /*
-            * @tc.number    : Security_IAM_Func_0107
-            * @tc.name      : kit interface enum ResultCode
-            * @tc.desc      : Enumeration testing
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_Func_0107
+         * @tc.number Security_IAM_Func_0107
+         * @tc.desc   Enumeration testing
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_IAM_Func_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('testFace Security_IAM_Func_0107 start');
             expect(12500000).assertEqual(userAuthNorth.UserAuthResultCode.SUCCESS);
@@ -609,14 +622,15 @@ export default function userauthTest() {
             done();
         })
 
-        /*
-            * @tc.number    : Security_IAM_PIN_Kit_Func_0108
-            * @tc.name      : kit interface enum FingerprintTips
-            * @tc.desc      : Enumeration testing
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 0
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   Security_IAM_PIN_Kit_Func_0108
+         * @tc.number Security_IAM_PIN_Kit_Func_0108
+         * @tc.desc   Enumeration testing
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_IAM_PIN_Kit_Func_0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('testFace Security_IAM_PIN_Kit_Func_0108 start');
             expect(0).assertEqual(userAuthNorth.FingerprintTips.FINGERPRINT_AUTH_TIP_GOOD);
@@ -629,14 +643,15 @@ export default function userauthTest() {
             done();
         })
 
-        /*
-        * @tc.number     SUB_Security_IAM_UserAuth_FUNC_0110
-        * @tc.name       SUB_Security_IAM_UserAuth_FUNC_0110
-        * @tc.desc       getAuthLockState parameter validity check
-        * @tc.size       MediumTest
-        * @tc.type       Function
-        * @tc.level      Level 1
-        */
+        /**
+         * @generated.time 2025-11-09 20:57:57
+         * @tc.name   SUB_Security_IAM_UserAuth_FUNC_0110
+         * @tc.number SUB_Security_IAM_UserAuth_FUNC_0110
+         * @tc.desc   getAuthLockState parameter validity check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('SUB_Security_IAM_UserAuth_FUNC_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('testFace SUB_Security_IAM_UserAuth_FUNC_0110 start');
             let checkFace = await checkSupportOrNot(userAuthNorth.UserAuthType.FACE);
